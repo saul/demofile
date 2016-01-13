@@ -14,6 +14,7 @@ var net = require('./net');
 var consts = require('./consts');
 var extraTypes = require('./extratypes');
 var StringTables = require('./stringtables');
+var UserMessages = require('./usermessages');
 
 var FDEMO_NORMAL = 0;
 var FDEMO_USE_ORIGIN2 = ( 1 << 0 );
@@ -113,6 +114,9 @@ class DemoFile {
 
     this.stringTables = new StringTables();
     this.stringTables.listen(this.messageEvents);
+
+    this.userMessages = new UserMessages();
+    this.userMessages.listen(this.messageEvents);
   }
 
   open() {
@@ -164,7 +168,7 @@ class DemoFile {
       var size = chunk.readVarint32();
 
       var messageBuffer = chunk.readBytes(size);
-      
+
       var message = net.findByType(cmd);
       if (typeof message === 'undefined') {
         continue; // unknown net message
@@ -189,7 +193,7 @@ class DemoFile {
 
     var sendTable = net.findByName('svc_SendTable');
 
-    for (;;) {
+    for (; ;) {
       var type = chunk.readVarint32();
       assert.equal(type, sendTable.type, 'expected SendTable message');
 
