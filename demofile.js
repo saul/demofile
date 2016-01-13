@@ -9,13 +9,16 @@ var async = require('async');
 var util = require('util');
 var assert = require('assert');
 var EventEmitter = require('events');
+
 var ByteBuffer = require('./ext/bytebuffer');
+
 var net = require('./net');
 var consts = require('./consts');
 var extraTypes = require('./extratypes');
 var StringTables = require('./stringtables');
 var UserMessages = require('./usermessages');
 var GameEvents = require('./gameevents');
+var Entities = require('./entities');
 
 var FDEMO_NORMAL = 0;
 var FDEMO_USE_ORIGIN2 = ( 1 << 0 );
@@ -82,10 +85,11 @@ class DemoFile {
     this.fd = null;
     this.header = null;
     this.bytebuf = null;
-    this.dataTables = [];
-    this.serverClasses = [];
 
     this.messageEvents = new EventEmitter();
+
+    this.entities = new Entities();
+    this.entities.listen(this.messageEvents);
 
     this.gameEvents = new GameEvents();
     this.gameEvents.listen(this.messageEvents);
@@ -156,53 +160,9 @@ class DemoFile {
     this.bytebuf.readIBytes();
   }
 
-  findTableByName(name) {
-    return _.find(this.dataTables, _.matchesProperty('netTableName', name));
-  }
-
   handleDataTables() {
     var chunk = this.bytebuf.readIBytes();
-
-    var sendTable = net.findByName('svc_SendTable');
-
-    for (; ;) {
-      var type = chunk.readVarint32();
-      assert.equal(type, sendTable.type, 'expected SendTable message');
-
-      var msg = sendTable.class.decode(chunk.readVBytes());
-      if (msg.isEnd) {
-        break;
-      }
-
-      assert.equal(this.dataTables[msg.nClassID], undefined, 'table multiply defined');
-      this.dataTables.push(msg);
-    }
-
-    var serverClasses = chunk.readShort();
-    this.serverClassBits = Math.ceil(Math.log2(serverClasses));
-
-    for (var i = 0; i < serverClasses; ++i) {
-      var classId = chunk.readShort();
-      assert(classId === i, 'server class entry for invalid class ID');
-
-      var name = chunk.readCString();
-      var dtName = chunk.readCString();
-
-      var entry = {
-        'id': classId,
-        'name': name,
-        'dtName': dtName,
-        'dataTable': this.findTableByName(dtName)
-      };
-
-      assert(entry.dataTable, 'could not find table for server class');
-
-      this.serverClasses.push(entry);
-    }
-
-    // TODO: flatten data tables
-
-    assert.equal(chunk.remaining(), 0);
+    this.entities.handleDataTables(chunk);
   }
 
   handleUserCmd() {
