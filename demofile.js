@@ -12,38 +12,22 @@ var EventEmitter = require('events');
 var ByteBuffer = require('./ext/bytebuffer');
 var net = require('./net');
 var consts = require('./consts');
+var extraTypes = require('./extratypes');
+var StringTables = require('./stringtables');
 
 var FDEMO_NORMAL = 0;
 var FDEMO_USE_ORIGIN2 = ( 1 << 0 );
 var FDEMO_USE_ANGLES2 = ( 1 << 1 );
 var FDEMO_NOINTERP = ( 1 << 2 );	// don't interpolate between this an last view
 
-function charArray(fixedLength) {
-  return {
-    size: fixedLength,
-    alignment: ref.types.int8.alignment,
-    indirection: 1,
-    get(buffer, offset) {
-      if (offset > 0) {
-        buffer = buffer.slice(offset, offset + fixedLength);
-      }
-
-      return _.chain(_.range(fixedLength))
-        .map(i => buffer.readInt8(i))
-        .reduce((memo, val) => memo + String.fromCharCode(val), '')
-        .value();
-    }
-  };
-}
-
 var DemoHeader = StructType({
-  magic: charArray(8),
+  magic: extraTypes.charArray(8),
   protocol: ref.types.int32,
   networkProtocol: ref.types.int32,
-  serverName: charArray(consts.MAX_OSPATH),
-  clientName: charArray(consts.MAX_OSPATH),
-  mapName: charArray(consts.MAX_OSPATH),
-  gameDirectory: charArray(consts.MAX_OSPATH),
+  serverName: extraTypes.charArray(consts.MAX_OSPATH),
+  clientName: extraTypes.charArray(consts.MAX_OSPATH),
+  mapName: extraTypes.charArray(consts.MAX_OSPATH),
+  gameDirectory: extraTypes.charArray(consts.MAX_OSPATH),
   playbackTime: ref.types.float,
   playbackTicks: ref.types.int32,
   playbackFrames: ref.types.int32,
@@ -51,13 +35,13 @@ var DemoHeader = StructType({
 });
 
 var DemoCommands = {
-  signon: 1, // startup message, process as fast as possible
-  packet: 2, // it's a normal network packet that we stored off
+  signon: 1, // startup message
+  packet: 2, // normal network packet
   syncTick: 3, // sync client clock to demo tick
   consoleCmd: 4, // console command
   userCmd: 5, // user input command
   dataTables: 6, // network data tables
-  stop: 7, // end of time.
+  stop: 7, // end of time
   customData: 8, // a blob of binary data understood by a callback function
   stringTables: 9
 };
@@ -126,6 +110,9 @@ class DemoFile {
       var event = this.gameEventList[msg.eventid];
       this.gameEvents.emit(event.name, event.messageToObject(msg));
     });
+
+    this.stringTables = new StringTables();
+    this.stringTables.listen(this.messageEvents);
   }
 
   open() {
@@ -247,6 +234,11 @@ class DemoFile {
     this.handleDataChunk();
   }
 
+  handleStringTables() {
+    var chunk = this.bytebuf.readIBytes();
+    this.stringTables.handleStringTables(chunk);
+  }
+
   parse() {
     while (this.bytebuf.remaining()) {
       var cmdHeader = {
@@ -254,8 +246,6 @@ class DemoFile {
         tick: this.bytebuf.readInt32(),
         playerSlot: this.bytebuf.readUInt8()
       };
-
-      //console.log('*** Command:', util.inspect(cmdHeader));
 
       if (cmdHeader.command === DemoCommands.stop) {
         break;
@@ -273,7 +263,7 @@ class DemoFile {
         [DemoCommands.signon]: this.handleDemoPacket,
         [DemoCommands.packet]: this.handleDemoPacket,
         [DemoCommands.dataTables]: this.handleDataTables,
-        [DemoCommands.stringTables]: this.handleDataChunk, // TODO
+        [DemoCommands.stringTables]: this.handleStringTables,
         [DemoCommands.consoleCmd]: this.handleDataChunk, // TODO
         [DemoCommands.userCmd]: this.handleUserCmd
       };
@@ -289,4 +279,5 @@ class DemoFile {
 }
 
 var demo = new DemoFile('fnatic vs tsm de dust2 part 1.dem');
+//var demo = new DemoFile('auto0-20160107-211630-2083922612-de_dust2-Bog_Standard.dem');
 demo.open();
