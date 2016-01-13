@@ -2,7 +2,8 @@ module.exports = {
     "rules": {
         "indent": [
             2,
-            2
+            2,
+            {"SwitchCase": 1}
         ],
         "quotes": [
             2,
@@ -16,7 +17,8 @@ module.exports = {
             2,
             "always"
         ],
-        "eqeqeq": [2, "smart"]
+        "eqeqeq": [2, "smart"],
+        "no-constant-condition": 2
     },
     "env": {
         "es6": true,

@@ -1,6 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
+var assert = require('assert');
 var bitBuffer = require('bit-buffer');
 
 var originalGetBits = bitBuffer.BitView.prototype.getBits;
@@ -31,6 +32,29 @@ bitBuffer.BitStream.prototype.readUBits = function (bits) {
 
 bitBuffer.BitStream.prototype.readSBits = function (bits) {
   return this.readBits(bits, true);
+};
+
+bitBuffer.BitStream.prototype.readUBitVar = function () {
+  var ret = this.readUBits(6);
+
+  switch (ret & ( 16 | 32 )) {
+  case 16:
+    ret = ( ret & 15 ) | ( this.readUBits(4) << 4 );
+    assert(ret >= 16);
+    break;
+
+  case 32:
+    ret = ( ret & 15 ) | ( this.readUBits(8) << 4 );
+    assert(ret >= 256);
+    break;
+
+  case 48:
+    ret = ( ret & 15 ) | ( this.readUBits(32 - 4) << 4 );
+    assert(ret >= 4096);
+    break;
+  }
+
+  return ret;
 };
 
 bitBuffer.BitStream.prototype.readCString = bitBuffer.BitStream.prototype.readASCIIString;
