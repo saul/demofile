@@ -15,6 +15,7 @@ var consts = require('./consts');
 var extraTypes = require('./extratypes');
 var StringTables = require('./stringtables');
 var UserMessages = require('./usermessages');
+var GameEvents = require('./gameevents');
 
 var FDEMO_NORMAL = 0;
 var FDEMO_USE_ORIGIN2 = ( 1 << 0 );
@@ -75,25 +76,6 @@ var CmdInfo = StructType({
   u: refArray(SplitCmdInfo, consts.MAX_SPLITSCREEN_CLIENTS)
 });
 
-class GameEvent {
-  constructor(descriptor) {
-    this.name = descriptor.name;
-    this.id = descriptor.eventid;
-    this.keyNames = _.map(descriptor.keys, key => key.name);
-  }
-
-  messageToObject(eventMsg) {
-    assert(eventMsg.eventid === this.id);
-
-    return _.zipObject(
-      this.keyNames,
-      _.map(eventMsg.keys, key => {
-        return _.find(key, (value, name) => value !== null && name !== 'type');
-      })
-    );
-  }
-}
-
 class DemoFile {
   constructor(path) {
     this.path = path;
@@ -102,15 +84,11 @@ class DemoFile {
     this.bytebuf = null;
     this.dataTables = [];
     this.serverClasses = [];
-    this.gameEventList = {};
-    this.messageEvents = new EventEmitter();
-    this.gameEvents = new EventEmitter();
 
-    this.messageEvents.on('svc_GameEventList', this.handleGameEventList.bind(this));
-    this.messageEvents.on('svc_GameEvent', msg => {
-      var event = this.gameEventList[msg.eventid];
-      this.gameEvents.emit(event.name, event.messageToObject(msg));
-    });
+    this.messageEvents = new EventEmitter();
+
+    this.gameEvents = new GameEvents();
+    this.gameEvents.listen(this.messageEvents);
 
     this.stringTables = new StringTables();
     this.stringTables.listen(this.messageEvents);
@@ -148,12 +126,6 @@ class DemoFile {
     });
   }
 
-  handleGameEventList(msg) {
-    _.each(msg.descriptors, descriptor => {
-      this.gameEventList[descriptor.eventid] = new GameEvent(descriptor);
-    });
-  }
-
   handleDemoPacket() {
     var cmdInfo = CmdInfo.get(this.bytebuf.readBytes(CmdInfo.size).toSlicedBuffer());
 
@@ -185,7 +157,7 @@ class DemoFile {
   }
 
   findTableByName(name) {
-    return _.find(this.dataTables, table => table.netTableName === name);
+    return _.find(this.dataTables, _.matchesProperty('netTableName', name));
   }
 
   handleDataTables() {
