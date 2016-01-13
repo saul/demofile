@@ -23,12 +23,12 @@ class UserMessages extends EventEmitter {
     var msgInst = um.class.decode(msg.msgData);
     assert(msgInst, 'unable to decode user message');
 
+    this.emit(um.name, msgInst);
+
     this.emit('message', {
       name: um.name,
       msg: msgInst
     });
-
-    this.emit(um.name, msgInst);
   }
 }
 
