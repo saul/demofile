@@ -207,7 +207,7 @@ class DemoFile {
 
   handleUserCmd() {
     this.bytebuf.readInt32(); // outgoing sequence
-    this.handleDataChunk();
+    this.handleDataChunk(); // TODO: parse user command
   }
 
   handleStringTables() {
