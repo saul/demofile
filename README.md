@@ -8,11 +8,11 @@ node.js modern Source Engine demo file parser. This parser only handles protobuf
 
 ## Supported Features
 
-[x] Parsing demo files
-[x] User messages
-[x] String tables
-[ ] Entities
-[x] Data tables
-[x] Game events
-[ ] User commands
-[ ] Console commands
+- [x] Parsing demo files
+- [x] User messages
+- [x] String tables
+- [ ] Entities
+- [x] Data tables
+- [x] Game events
+- [ ] User commands
+- [ ] Console commands
