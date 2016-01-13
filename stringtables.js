@@ -201,11 +201,11 @@ class StringTables extends EventEmitter {
       entries: _.fill(Array(msg.maxEntries), {entry: null, userData: null})
     };
 
+    this.emit('create', table);
+
     this.parseStringTableUpdate(bitbuf, table, msg.numEntries, msg.maxEntries, msg.userDataSize, msg.userDataSizeBits, msg.userDataFixedSize);
 
     this.tables.push(table);
-
-    this.emit('create', table);
   }
 
   handleUpdateStringTable(msg) {
