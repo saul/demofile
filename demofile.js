@@ -20,10 +20,10 @@ var UserMessages = require('./usermessages');
 var GameEvents = require('./gameevents');
 var Entities = require('./entities');
 
-var FDEMO_NORMAL = 0;
-var FDEMO_USE_ORIGIN2 = ( 1 << 0 );
-var FDEMO_USE_ANGLES2 = ( 1 << 1 );
-var FDEMO_NOINTERP = ( 1 << 2 );	// don't interpolate between this an last view
+const FDEMO_NORMAL = 0;
+const FDEMO_USE_ORIGIN2 = ( 1 << 0 );
+const FDEMO_USE_ANGLES2 = ( 1 << 1 );
+const FDEMO_NOINTERP = ( 1 << 2 );	// don't interpolate between this an last view
 
 var DemoHeader = StructType({
   magic: extraTypes.charArray(8),
