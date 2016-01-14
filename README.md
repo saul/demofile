@@ -1,18 +1,16 @@
 # CSGO Demo Parser
 
-node.js modern Source Engine demo file parser. This parser only handles protobuf demos (i.e., Dota 2 and CS:GO).
+A node.js library for parsing modern (protobuf) Source Engine demo files.
 
 ## Supported Games
 
 - Counter-Strike: Global Offensive
 
-## Supported Features
+## Supported Demo Features
 
-- [x] Parsing demo files
+- [x] Entity updates, server classes, data tables
 - [x] User messages
 - [x] String tables
-- [x] Entities
-- [x] Data tables
 - [x] Game events
 - [ ] User commands
 - [ ] Console commands
