@@ -146,7 +146,7 @@ class DemoFile {
       var messageBuffer = chunk.readBytes(size);
 
       var message = net.findByType(cmd);
-      if (typeof message === 'undefined') {
+      if (message === undefined) {
         continue; // unknown net message
       }
 

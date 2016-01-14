@@ -66,7 +66,7 @@ class StringTables extends EventEmitter {
         var userDataSize = bitbuf.readUInt16();
         var userDataBuf = new Buffer(bitbuf.readBytes(userDataSize));
 
-        userData = typeof userDataCallback === 'undefined' ? userDataBuf : userDataCallback(userDataBuf);
+        userData = userDataCallback === undefined ? userDataBuf : userDataCallback(userDataBuf);
       }
 
       return {
@@ -164,7 +164,7 @@ class StringTables extends EventEmitter {
         // create a buffer from the array
         userData = new Buffer(userDataArray);
 
-        if (typeof userDataCallback !== 'undefined') {
+        if (userDataCallback !== undefined) {
           userData = userDataCallback(userData);
         }
 
@@ -212,7 +212,7 @@ class StringTables extends EventEmitter {
     var bitbuf = new bitBuffer.BitStream(msg.stringData.toSlicedBuffer());
 
     var table = this.tables[msg.tableId];
-    assert(typeof table !== 'undefined', 'bad table index');
+    assert(table !== undefined, 'bad table index');
 
     this.parseStringTableUpdate(bitbuf, table, msg.numChangedEntries, table.entries.length, 0, 0, false);
   }

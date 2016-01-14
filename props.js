@@ -50,20 +50,24 @@ class PropDecoder {
   decode() {
     assert(this.sendProp.type !== DPT_DataTable);
 
-    if (this.sendProp.type === DPT_Array) {
-      return this.arrayDecode();
+    switch (this.sendProp.type) {
+      case DPT_Int:
+        return this.intDecode();
+      case DPT_Float:
+        return this.floatDecode();
+      case DPT_Vector:
+        return this.vectorDecode();
+      case DPT_VectorXY:
+        return this.vectorXYDecode();
+      case DPT_String:
+        return this.stringDecode();
+      case DPT_Int64:
+        return this.int64Decode();
+      case DPT_Array:
+        return this.arrayDecode();
+      default:
+        throw 'Unsupported send prop type';
     }
-
-    var decoderMap = {
-      [DPT_Int]: this.intDecode,
-      [DPT_Float]: this.floatDecode,
-      [DPT_Vector]: this.vectorDecode,
-      [DPT_VectorXY]: this.vectorXYDecode,
-      [DPT_String]: this.stringDecode,
-      [DPT_Int64]: this.int64Decode
-    };
-
-    return decoderMap[this.sendProp.type].call(this);
   }
 
   intDecode() {
@@ -85,31 +89,31 @@ class PropDecoder {
   }
 
   decodeSpecialFloat() {
-    var flagDecoderMap = {
-      [SPROP_COORD]: () => this.bitbuf.readBitCoord(),
-      [SPROP_COORD_MP]: () => this.bitbuf.readBitCoordMP(bitBuffer.CW_None),
-      [SPROP_COORD_MP_LOWPRECISION]: () => this.bitbuf.readBitCoordMP(bitBuffer.CW_LowPrecision),
-      [SPROP_COORD_MP_INTEGRAL]: () => this.bitbuf.readBitCoordMP(bitBuffer.CW_Integral),
-      [SPROP_NOSCALE]: () => this.bitbuf.readBitFloat(),
-      [SPROP_NORMAL]: () => this.bitbuf.readBitNormal(),
-      [SPROP_CELL_COORD]: () => this.bitbuf.readBitCellCoord(this.sendProp.numBits, bitBuffer.CW_None),
-      [SPROP_CELL_COORD_LOWPRECISION]: () => this.bitbuf.readBitCellCoord(this.sendProp.numBits, bitBuffer.CW_LowPrecision),
-      [SPROP_CELL_COORD_INTEGRAL]: () => this.bitbuf.readBitCellCoord(this.sendProp.numBits, bitBuffer.CW_Integral)
-    };
-
-    for (var flag in flagDecoderMap) {
-      if ((this.flags & flag) !== 0) {
-        return flagDecoderMap[flag]();
-      }
+    if ((this.flags & SPROP_COORD) !== 0) {
+      return this.bitbuf.readBitCoord();
+    } else if ((this.flags & SPROP_COORD_MP) !== 0) {
+      return this.bitbuf.readBitCoordMP(bitBuffer.CW_None);
+    } else if ((this.flags & SPROP_COORD_MP_LOWPRECISION) !== 0) {
+      return this.bitbuf.readBitCoordMP(bitBuffer.CW_LowPrecision);
+    } else if ((this.flags & SPROP_COORD_MP_INTEGRAL) !== 0) {
+      return this.bitbuf.readBitCoordMP(bitBuffer.CW_Integral);
+    } else if ((this.flags & SPROP_NOSCALE) !== 0) {
+      return this.bitbuf.readBitFloat();
+    } else if ((this.flags & SPROP_NORMAL) !== 0) {
+      return this.bitbuf.readBitNormal();
+    } else if ((this.flags & SPROP_CELL_COORD) !== 0) {
+      return this.bitbuf.readBitCellCoord(this.sendProp.numBits, bitBuffer.CW_None);
+    } else if ((this.flags & SPROP_CELL_COORD_LOWPRECISION) !== 0) {
+      return this.bitbuf.readBitCellCoord(this.sendProp.numBits, bitBuffer.CW_LowPrecision);
+    } else if ((this.flags & SPROP_CELL_COORD_INTEGRAL) !== 0) {
+      return this.bitbuf.readBitCellCoord(this.sendProp.numBits, bitBuffer.CW_Integral);
     }
-
-    return null;
   }
 
   floatDecode() {
     var special = this.decodeSpecialFloat();
 
-    if (special !== null) {
+    if (special !== undefined) {
       return special;
     }
 

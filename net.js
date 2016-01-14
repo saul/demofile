@@ -25,7 +25,7 @@ function processMessageEnum(messages, enumNameConverterFunc) {
     .mapValues((name, type) => {
       var cls = builder[enumNameConverterFunc(name)];
 
-      if (typeof cls === 'undefined') {
+      if (cls === undefined) {
         return null;
       }
 

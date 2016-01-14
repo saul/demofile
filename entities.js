@@ -36,7 +36,7 @@ class Entity {
   }
 
   getProp(tableName, varName) {
-    if (typeof this.props[tableName] === 'undefined') {
+    if (this.props[tableName] === undefined) {
       return undefined;
     } else {
       return this.props[tableName][varName];
@@ -44,7 +44,7 @@ class Entity {
   }
 
   updateProp(tableName, varName, newValue) {
-    if (typeof this.props[tableName] === 'undefined') {
+    if (this.props[tableName] === undefined) {
       this.props[tableName] = {[varName]: newValue};
     } else {
       this.props[tableName][varName] = newValue;
@@ -254,6 +254,10 @@ class Entities extends EventEmitter {
   }
 
   addEntity(index, classId, serialNum) {
+    if (this.entities[index]) {
+      this.removeEntity(index);
+    }
+
     var entity = new Entity(index, classId, serialNum);
     this.entities[index] = entity;
 
@@ -263,9 +267,11 @@ class Entities extends EventEmitter {
   }
 
   removeEntity(index) {
+    assert(this.entities[index] !== undefined, 'cannot remove non-existent entity');
+
     this.emit('beforeremove', {entity: this.entities[index]});
 
-    this.entities[index] = null;
+    this.entities[index] = undefined;
 
     this.emit('remove', {index});
   }
