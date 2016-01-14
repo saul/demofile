@@ -3,6 +3,7 @@
 var _ = require('lodash');
 var assert = require('assert');
 var EventEmitter = require('events');
+var util = require('util');
 
 var bitBuffer = require('./ext/bitbuffer');
 
@@ -27,11 +28,27 @@ const FHDR_ENTERPVS = 0x0004;
 
 class Entity {
   constructor(index, classId, serialNum) {
-    this.index = index; // TODO: can remove this?
+    this.index = index;
     this.classId = classId;
     this.serialNum = serialNum;
 
     this.props = {};
+  }
+
+  getProp(tableName, varName) {
+    if (typeof this.props[tableName] === 'undefined') {
+      return undefined;
+    } else {
+      return this.props[tableName][varName];
+    }
+  }
+
+  updateProp(tableName, varName, newValue) {
+    if (typeof this.props[tableName] === 'undefined') {
+      this.props[tableName] = {[varName]: newValue};
+    } else {
+      this.props[tableName][varName] = newValue;
+    }
   }
 }
 
@@ -84,7 +101,7 @@ class Entities extends EventEmitter {
   }
 
   listen(messageEvents) {
-    //messageEvents.on('svc_PacketEntities', this.handlePacketEntities.bind(this));
+    messageEvents.on('svc_PacketEntities', this.handlePacketEntities.bind(this));
   }
 
   gatherExcludes(table) {
@@ -122,29 +139,72 @@ class Entities extends EventEmitter {
         var subTable = this.findTableByName(prop.dtName);
         assert(subTable);
 
-        // TODO: what to do with SPROP_COLLAPSIBLE ???
-        flattened.push.apply(flattened, this.gatherProps(subTable, excludes));
+        var childProps = this.gatherProps(subTable, excludes);
+
+        if ((prop.flags & props.SPROP_COLLAPSIBLE) === 0) {
+          _.forEach(childProps, fp => {
+            fp.collapsible = false;
+          });
+        }
+
+        flattened.push.apply(flattened, childProps);
       } else if (prop.type === props.DPT_Array) {
         flattened.push({
           prop,
-          arrayElementProp: table.props[index - 1]
+          arrayElementProp: table.props[index - 1],
+          table
         });
       } else {
-        flattened.push({prop});
+        flattened.push({prop, table});
       }
     }
 
-    return flattened;
+    // collapsible props should come after non-collapsible
+    return _.sortBy(flattened, fp => fp.collapsible === false ? 0 : 1);
+  }
+
+  debugProps(table, propList) {
+    console.log('%s,%s,', table.netTableName, _.map(propList, fp => util.format('%s %d%s', fp.prop.varName, fp.prop.priority, (fp.prop.flags & props.SPROP_CHANGES_OFTEN) ? '!!' : '')).join(','));
   }
 
   flattenDataTable(table) {
-    return _.sortBy(this.gatherProps(table, this.gatherExcludes(table)), fp => {
-      if ((fp.prop.flags & props.SPROP_CHANGES_OFTEN) !== 0) {
-        return 64;
-      } else {
-        return fp.prop.priority;
+    var flattenedProps = this.gatherProps(table, this.gatherExcludes(table));
+
+    var prioritySet = new Set(_.map(flattenedProps, fp => fp.prop.priority));
+
+    prioritySet.add(64);
+
+    var priorities = _.sortBy(Array.from(prioritySet));
+
+    var start = 0;
+
+    // sort flattenedProps by priority
+    for (var priority of priorities) {
+      while (true) {
+        let currentProp;
+
+        for (currentProp = start; currentProp < flattenedProps.length; ++currentProp) {
+          let prop = flattenedProps[currentProp].prop;
+
+          if (prop.priority === priority || (priority === 64 && (prop.flags & props.SPROP_CHANGES_OFTEN) !== 0)) {
+            if (start !== currentProp) {
+              let temp = flattenedProps[start];
+              flattenedProps[start] = flattenedProps[currentProp];
+              flattenedProps[currentProp] = temp;
+            }
+
+            start++;
+            break;
+          }
+        }
+
+        if (currentProp === flattenedProps.length) {
+          break;
+        }
       }
-    });
+    }
+
+    return flattenedProps;
   }
 
   findTableByName(name) {
@@ -168,7 +228,6 @@ class Entities extends EventEmitter {
 
     var serverClasses = chunk.readShort();
 
-    // ******* THIS MAY NEED +1 *******
     this.serverClassBits = Math.ceil(Math.log2(serverClasses));
 
     for (var i = 0; i < serverClasses; ++i) {
@@ -181,40 +240,38 @@ class Entities extends EventEmitter {
       var dataTable = this.findTableByName(dtName);
       assert(dataTable, 'no data table for server class');
 
-      var entry = {
+      var serverClass = {
         name,
         dtName,
         dataTable,
         flattenedProps: this.flattenDataTable(dataTable)
       };
 
-      this.serverClasses.push(entry);
+      this.serverClasses.push(serverClass);
     }
 
     assert.equal(chunk.remaining(), 0);
   }
 
   addEntity(index, classId, serialNum) {
-    var entity = this.entities[index];
+    var entity = new Entity(index, classId, serialNum);
+    this.entities[index] = entity;
 
-    if (entity) {
-      entity.classId = classId;
-      entity.serialNum = serialNum;
-    } else {
-      entity = new Entity(index, classId, serialNum);
-
-      this.entities[index] = entity;
-    }
+    this.emit('create', {entity});
 
     return entity;
   }
 
   removeEntity(index) {
+    this.emit('beforeremove', {entity: this.entities[index]});
+
     this.entities[index] = null;
+
+    this.emit('remove', {index});
   }
 
   readNewEntity(entityBitBuffer, entity) {
-    var newWay = entityBitBuffer.readOneBit();
+    var newWay = entityBitBuffer.readOneBit() === 1;
 
     var serverClass = this.serverClasses[entity.classId];
 
@@ -225,9 +282,22 @@ class Entities extends EventEmitter {
       assert(flattenedProp);
 
       var decoder = new props.PropDecoder(entityBitBuffer, flattenedProp, entity, index);
-      entity.props[flattenedProp.prop.varName] = decoder.decode();
 
-      // TODO: emit an 'updated' event
+      var tableName = flattenedProp.table.netTableName;
+      var varName = flattenedProp.prop.varName;
+
+      var oldValue = entity.getProp(tableName, varName);
+      var newValue = decoder.decode();
+
+      entity.updateProp(tableName, varName, newValue);
+
+      this.emit('change', {
+        entity,
+        tableName,
+        varName,
+        oldValue,
+        newValue
+      });
     }
   }
 
@@ -236,29 +306,6 @@ class Entities extends EventEmitter {
 
     var headerCount = msg.updatedEntries;
     var headerBase = -1;
-
-    /*
-     for(var i = 0; i < msg.updatedEntries; ++i) {
-     var newEntity = -1;
-
-     var updateFlags = 0;
-
-     newEntity = headerBase + 1 + entityBitBuffer.readUBitVar();
-     headerBase = newEntity;
-
-     if (entityBitBuffer.readOneBit()) {
-     updateFlags |= FHDR_LEAVEPVS;
-
-     if (entityBitBuffer.readOneBit()) {
-     updateFlags |= FHDR_DELETE;
-     }
-     } else if (entityBitBuffer.readOneBit()) {
-     updateFlags |= FHDR_ENTERPVS;
-     }
-
-
-     }
-     */
 
     var updateType = PRESERVE_ENT;
 
@@ -321,7 +368,7 @@ class Entities extends EventEmitter {
             var entity = this.entities[newEntity];
             assert(entity, 'delta on deleted entity');
 
-            readNewEntity(entityBitBuffer, entity);
+            this.readNewEntity(entityBitBuffer, entity);
 
             break;
 

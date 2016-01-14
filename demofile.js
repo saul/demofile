@@ -195,21 +195,26 @@ class DemoFile {
         throw 'Custom data not supported';
       }
 
-      var handlers = {
-        [DemoCommands.signon]: this.handleDemoPacket,
-        [DemoCommands.packet]: this.handleDemoPacket,
-        [DemoCommands.dataTables]: this.handleDataTables,
-        [DemoCommands.stringTables]: this.handleStringTables,
-        [DemoCommands.consoleCmd]: this.handleDataChunk, // TODO
-        [DemoCommands.userCmd]: this.handleUserCmd
-      };
-
-      if (typeof handlers[cmdHeader.command] === 'undefined') {
-        throw 'Unrecognised command';
+      switch (cmdHeader.command) {
+        case DemoCommands.packet:
+        case DemoCommands.signon:
+          this.handleDemoPacket();
+          break;
+        case DemoCommands.dataTables:
+          this.handleDataTables();
+          break;
+        case DemoCommands.stringTables:
+          this.handleStringTables();
+          break;
+        case DemoCommands.consoleCmd: // TODO
+          this.handleDataChunk();
+          break;
+        case DemoCommands.userCmd:
+          this.handleUserCmd();
+          break;
+        default:
+          throw 'Unrecognised command';
       }
-
-      var callback = handlers[cmdHeader.command];
-      callback.call(this);
     }
   }
 }

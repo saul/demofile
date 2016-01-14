@@ -3,6 +3,7 @@
 var _ = require('lodash');
 var assert = require('assert');
 var Long = require('long');
+var bitBuffer = require('./ext/bitbuffer');
 
 const DPT_Int = 0;
 const DPT_Float = 1;
@@ -67,6 +68,8 @@ class PropDecoder {
 
   intDecode() {
     if ((this.flags & SPROP_VARINT) !== 0) {
+      throw 'Not implemented'; // TODO
+
       if ((this.flags & SPROP_UNSIGNED) !== 0) {
         return this.bitbuf.readVarint32();
       } else {
@@ -84,14 +87,14 @@ class PropDecoder {
   decodeSpecialFloat() {
     var flagDecoderMap = {
       [SPROP_COORD]: () => this.bitbuf.readBitCoord(),
-      [SPROP_COORD_MP]: () => this.bitbuf.readBitCoordMP(kCW_None),
-      [SPROP_COORD_MP_LOWPRECISION]: () => this.bitbuf.readBitCoordMP(kCW_LowPrecision),
-      [SPROP_COORD_MP_INTEGRAL]: () => this.bitbuf.readBitCoordMP(kCW_Integral),
+      [SPROP_COORD_MP]: () => this.bitbuf.readBitCoordMP(bitBuffer.CW_None),
+      [SPROP_COORD_MP_LOWPRECISION]: () => this.bitbuf.readBitCoordMP(bitBuffer.CW_LowPrecision),
+      [SPROP_COORD_MP_INTEGRAL]: () => this.bitbuf.readBitCoordMP(bitBuffer.CW_Integral),
       [SPROP_NOSCALE]: () => this.bitbuf.readBitFloat(),
       [SPROP_NORMAL]: () => this.bitbuf.readBitNormal(),
-      [SPROP_CELL_COORD]: () => this.bitbuf.readBitCellCoord(sendProp.numBits, kCW_None),
-      [SPROP_CELL_COORD_LOWPRECISION]: () => this.bitbuf.readBitCellCoord(sendProp.numBits, kCW_LowPrecision),
-      [SPROP_CELL_COORD_INTEGRAL]: () => this.bitbuf.readBitCellCoord(sendProp.numBits, kCW_Integral)
+      [SPROP_CELL_COORD]: () => this.bitbuf.readBitCellCoord(this.sendProp.numBits, bitBuffer.CW_None),
+      [SPROP_CELL_COORD_LOWPRECISION]: () => this.bitbuf.readBitCellCoord(this.sendProp.numBits, bitBuffer.CW_LowPrecision),
+      [SPROP_CELL_COORD_INTEGRAL]: () => this.bitbuf.readBitCellCoord(this.sendProp.numBits, bitBuffer.CW_Integral)
     };
 
     for (var flag in flagDecoderMap) {
@@ -152,11 +155,13 @@ class PropDecoder {
 
   stringDecode() {
     var len = this.bitbuf.readUBits(DT_MAX_STRING_BITS);
-    return this.bitbuf.readIString(len); // TODO: add readIString to bit buffer
+    return this.bitbuf.readString(len);
   }
 
   int64Decode() {
     if ((this.flags & SPROP_VARINT) !== 0) {
+      throw 'Not implemented'; // TODO
+
       if ((this.flags & SPROP_UNSIGNED) !== 0) {
         return this.bitbuf.readVarint64();
       } else {
@@ -182,14 +187,17 @@ class PropDecoder {
 
   arrayDecode() {
     var maxElements = this.sendProp.numElements;
-    var numBits = Math.ceil(Math.log2(maxElements));
+    var numBits = Math.ceil(Math.log2(maxElements)) + 1;
+    var numElements = this.bitbuf.readUBits(numBits);
 
-    return _.map(_.range(this.bitbuf.readUBits(numBits)), () => {
+    var elements = _.map(_.range(numElements), () => {
       var tempProp = this.flattenedProp.arrayElementProp;
 
-      var decoder = new PropDecoder(this.bitbuf, tempProp, this.classId, this.fieldIndex);
+      var decoder = new PropDecoder(this.bitbuf, {prop: tempProp}, this.classId, this.fieldIndex);
       return decoder.decode();
     });
+
+    return elements;
   }
 }
 

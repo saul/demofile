@@ -11,7 +11,7 @@ node.js modern Source Engine demo file parser. This parser only handles protobuf
 - [x] Parsing demo files
 - [x] User messages
 - [x] String tables
-- [ ] Entities
+- [x] Entities
 - [x] Data tables
 - [x] Game events
 - [ ] User commands
