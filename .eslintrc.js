@@ -17,8 +17,7 @@ module.exports = {
             2,
             "always"
         ],
-        "eqeqeq": [2, "smart"],
-        "no-constant-condition": 2
+        "eqeqeq": [2, "smart"]
     },
     "env": {
         "es6": true,

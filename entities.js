@@ -3,7 +3,6 @@
 var _ = require('lodash');
 var assert = require('assert');
 var EventEmitter = require('events');
-var util = require('util');
 
 var bitBuffer = require('./ext/bitbuffer');
 
@@ -161,10 +160,6 @@ class Entities extends EventEmitter {
 
     // collapsible props should come after non-collapsible
     return _.sortBy(flattened, fp => fp.collapsible === false ? 0 : 1);
-  }
-
-  debugProps(table, propList) {
-    console.log('%s,%s,', table.netTableName, _.map(propList, fp => util.format('%s %d%s', fp.prop.varName, fp.prop.priority, (fp.prop.flags & props.SPROP_CHANGES_OFTEN) ? '!!' : '')).join(','));
   }
 
   flattenDataTable(table) {
@@ -358,8 +353,7 @@ class Entities extends EventEmitter {
             var classId = entityBitBuffer.readUBits(this.serverClassBits);
             var serialNum = entityBitBuffer.readUBits(consts.NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS);
 
-            var entity = this.addEntity(newEntity, classId, serialNum);
-            this.readNewEntity(entityBitBuffer, entity);
+            this.readNewEntity(entityBitBuffer, this.addEntity(newEntity, classId, serialNum));
 
             break;
 

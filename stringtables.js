@@ -21,16 +21,25 @@ var PlayerInfo = StructType({
   friendsName: extraTypes.charArray(consts.MAX_PLAYER_NAME_LENGTH), // friends name
   fakePlayer: ref.types.bool, // true, if player is a bot controlled by game.dll
   isHltv: ref.types.bool, // true if player is the HLTV proxy
-  customFiles: refArray(ref.types.uint32, consts.MAX_CUSTOM_FILES), // custom files CRC for this player
+  customFiles: refArray(ref.types.uint32, consts.MAX_CUSTOM_FILES) // custom files CRC for this player
   //filesDownloaded: ref.types.uchar // this counter increases each time the server downloaded a new file
 });
+
+function parseUserInfoData(buf) {
+  var info = PlayerInfo.get(buf).toObject();
+  //info.version = endian.swap64(info.version);
+  //info.xuid = endian.swap64(info.xuid);
+  info.userId = endian.swap32(info.userId);
+  info.friendsId = endian.swap32(info.friendsId);
+  return info;
+}
 
 class StringTables extends EventEmitter {
   constructor() {
     super();
 
     this.userDataCallbacks = {
-      userinfo: this.parseUserInfoData
+      userinfo: parseUserInfoData
     };
 
     this.tables = [];
@@ -39,15 +48,6 @@ class StringTables extends EventEmitter {
   listen(messageEvents) {
     messageEvents.on('svc_UpdateStringTable', this.handleUpdateStringTable.bind(this));
     messageEvents.on('svc_CreateStringTable', this.handleCreateStringTable.bind(this));
-  }
-
-  parseUserInfoData(buf) {
-    var info = PlayerInfo.get(buf).toObject();
-    //info.version = endian.swap64(info.version);
-    //info.xuid = endian.swap64(info.xuid);
-    info.userId = endian.swap32(info.userId);
-    info.friendsId = endian.swap32(info.friendsId);
-    return info;
   }
 
   findTableByName(name) {
@@ -82,26 +82,6 @@ class StringTables extends EventEmitter {
       name,
       entries
     };
-  }
-
-  handleStringTables(chunk) {
-    // the StringTables demo command doesn't tell us the 'max entries' for a specific table
-    // making it impossible to process UpdateStringTable messages.
-    return;
-
-    // reset string tables
-    this.tables = [];
-
-    var bitbuf = new bitBuffer.BitStream(chunk.toSlicedBuffer());
-
-    var numTables = bitbuf.readInt8();
-
-    for (var i = 0; i < numTables; ++i) {
-      var tableName = bitbuf.readCString();
-
-      assert(this.findTableByName(tableName) === undefined, 'string table multiply defined');
-      this.tables.push(this.handleStringTable(tableName, bitbuf));
-    }
   }
 
   parseStringTableUpdate(bitbuf, table, entries, maxEntries, userDataSize, userDataSizeBits, userDataFixedSize) {

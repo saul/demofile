@@ -1,13 +1,8 @@
 'use strict';
 
-var fs = require('fs');
 var ref = require('ref');
 var StructType = require('ref-struct');
 var refArray = require('ref-array');
-var _ = require('lodash');
-var async = require('async');
-var util = require('util');
-var assert = require('assert');
 var EventEmitter = require('events');
 
 var ByteBuffer = require('./ext/bytebuffer');
@@ -79,59 +74,30 @@ var CmdInfo = StructType({
   u: refArray(SplitCmdInfo, consts.MAX_SPLITSCREEN_CLIENTS)
 });
 
-class DemoFile {
-  constructor(path) {
-    this.path = path;
-    this.fd = null;
+class DemoFile extends EventEmitter {
+  constructor() {
+    super();
+
     this.header = null;
     this.bytebuf = null;
-
-    this.messageEvents = new EventEmitter();
+    this.currentTick = null;
+    this.playerSlot = null;
 
     this.entities = new Entities();
-    this.entities.listen(this.messageEvents);
+    this.entities.listen(this);
 
     this.gameEvents = new GameEvents();
-    this.gameEvents.listen(this.messageEvents);
+    this.gameEvents.listen(this);
 
     this.stringTables = new StringTables();
-    this.stringTables.listen(this.messageEvents);
+    this.stringTables.listen(this);
 
     this.userMessages = new UserMessages();
-    this.userMessages.listen(this.messageEvents);
-  }
-
-  open() {
-    async.waterfall([
-      cb => {
-        fs.open(this.path, 'r', cb);
-      },
-      (fd, cb) => {
-        this.fd = fd;
-        fs.fstat(fd, cb);
-      },
-      (stats, cb) => {
-        cb(null, stats.size);
-      },
-      (size, cb) => {
-        fs.read(this.fd, new Buffer(size), 0, size, 0, cb);
-      },
-      (bytes, buf, cb) => {
-        this.header = DemoHeader.get(buf).toObject();
-        this.bytebuf = ByteBuffer.wrap(buf.slice(DemoHeader.size), true);
-
-        this.parse();
-        cb(null);
-      }
-    ], err => {
-      if (err) {
-        throw util.format('Failed to open demo file: %s', err);
-      }
-    });
+    this.userMessages.listen(this);
   }
 
   handleDemoPacket() {
-    var cmdInfo = CmdInfo.get(this.bytebuf.readBytes(CmdInfo.size).toSlicedBuffer());
+    CmdInfo.get(this.bytebuf.readBytes(CmdInfo.size).toSlicedBuffer());
 
     // skip over sequence info
     this.bytebuf.readInt32();
@@ -152,7 +118,7 @@ class DemoFile {
 
       var msgInst = message.class.decode(messageBuffer);
 
-      this.messageEvents.emit(message.name, msgInst);
+      this.emit(message.name, msgInst);
     }
   }
 
@@ -171,31 +137,42 @@ class DemoFile {
   }
 
   handleStringTables() {
-    var chunk = this.bytebuf.readIBytes();
-    this.stringTables.handleStringTables(chunk);
+    // no need to parse
+    this.handleDataChunk();
   }
 
-  parse() {
-    while (this.bytebuf.remaining()) {
-      var cmdHeader = {
-        command: this.bytebuf.readUInt8(),
-        tick: this.bytebuf.readInt32(),
-        playerSlot: this.bytebuf.readUInt8()
-      };
+  parse(buffer) {
+    this.header = DemoHeader.get(buffer).toObject();
+    this.bytebuf = ByteBuffer.wrap(buffer.slice(DemoHeader.size), true);
 
-      if (cmdHeader.command === DemoCommands.stop) {
-        break;
+    this.emit('start');
+
+    while (true) {
+      var command = this.bytebuf.readUInt8();
+      var tick = this.bytebuf.readInt32();
+      this.playerSlot = this.bytebuf.readUInt8();
+
+      if (tick !== this.currentTick) {
+        this.emit('tickend', this.currentTick);
+        this.currentTick = tick;
+        this.emit('tickstart', this.currentTick);
       }
 
-      if (cmdHeader.command === DemoCommands.syncTick) {
+      if (command === DemoCommands.stop) {
+        this.emit('tickend', this.currentTick);
+        this.emit('end');
+        return;
+      }
+
+      if (command === DemoCommands.syncTick) {
         continue;
       }
 
-      if (cmdHeader.command === DemoCommands.customData) {
+      if (command === DemoCommands.customData) {
         throw 'Custom data not supported';
       }
 
-      switch (cmdHeader.command) {
+      switch (command) {
         case DemoCommands.packet:
         case DemoCommands.signon:
           this.handleDemoPacket();
@@ -219,6 +196,10 @@ class DemoFile {
   }
 }
 
-var demo = new DemoFile('fnatic vs tsm de dust2 part 1.dem');
-//var demo = new DemoFile('auto0-20160107-211630-2083922612-de_dust2-Bog_Standard.dem');
-demo.open();
+module.exports = {
+  DemoFile,
+  FDEMO_NORMAL,
+  FDEMO_USE_ORIGIN2,
+  FDEMO_USE_ANGLES2,
+  FDEMO_NOINTERP
+};

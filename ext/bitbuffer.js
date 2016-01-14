@@ -40,7 +40,7 @@ bitBuffer.BitView.prototype.getBits = function (offset, bits, signed) {
 
 bitBuffer.BitStream.prototype.readString = function (bytes) {
   return _.map(new Array(bytes), () => String.fromCharCode(this.readUInt8())).join('');
-}
+};
 
 bitBuffer.BitStream.prototype.readBytes = function (bytes) {
   return new Buffer(_.map(_.range(bytes), () => this.readUInt8()));
@@ -115,7 +115,7 @@ bitBuffer.BitStream.prototype.readBitCoordMP = function (coordType) {
   var lowPrecision = coordType === CW_LowPrecision;
 
   if (coordType === CW_Integral) {
-    var intval = this.readOneBit();
+    let intval = this.readOneBit();
 
     if (intval) {
       signbit = this.readOneBit();
@@ -127,7 +127,7 @@ bitBuffer.BitStream.prototype.readBitCoordMP = function (coordType) {
       }
     }
   } else {
-    var intval = this.readOneBit();
+    let intval = this.readOneBit();
     signbit = this.readOneBit();
 
     if (intval) {
