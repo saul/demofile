@@ -14,10 +14,13 @@ module.exports = {
           buffer = buffer.slice(offset, offset + fixedLength);
         }
 
-        return _.chain(_.range(fixedLength))
+        var fullStr = _.chain(_.range(fixedLength))
           .map(i => buffer.readInt8(i))
           .reduce((memo, val) => memo + String.fromCharCode(val), '')
           .value();
+
+        // Only return the portion before the NULL terminator
+        return fullStr.split('\x00', 1)[0];
       }
     };
   }
