@@ -1,7 +1,6 @@
-demofile
-========
+# demofile
 
-A node.js library for parsing modern (protobuf) Source Engine demo files.
+A node.js library for parsing modern (protobuf) Source 1 demo files.
 
 ## Supported Games
 
@@ -18,9 +17,11 @@ A node.js library for parsing modern (protobuf) Source Engine demo files.
 
 ## Installation
 
-  npm install --save demofile
+    npm install --save demofile
 
-## Usage
+## Example
+
+Print all player information to console:
 
 ```js
 var demofile = require('demofile');
@@ -35,6 +36,7 @@ fs.readFile('test.dem', function (err, buffer) {
     }
   });
 
+
   demo.parse(buffer);
 });
 ```
@@ -47,4 +49,4 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Acknowledgements
 
-- CS:GO Protobuf sources copied from SteamKit
+- [CS:GO Protobuf sources copied from SteamKit](https://github.com/SteamRE/SteamKit)
