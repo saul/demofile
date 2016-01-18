@@ -212,6 +212,7 @@ class DemoFile extends EventEmitter {
    * @fires DemoFile#end
    *
    * @param {ArrayBuffer} buffer - Buffer pointing to start of demo header
+   * @returns {undefined}
    */
   parse(buffer) {
     this.header = DemoHeader.get(buffer).toObject();
@@ -219,7 +220,7 @@ class DemoFile extends EventEmitter {
 
     this.emit('start');
 
-    while (true) {
+    while (true) { // eslint-disable-line no-constant-condition
       var command = this._bytebuf.readUInt8();
       var tick = this._bytebuf.readInt32();
       this.playerSlot = this._bytebuf.readUInt8();

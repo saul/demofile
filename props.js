@@ -71,6 +71,8 @@ class PropDecoder {
   }
 
   intDecode() {
+    /*eslint-disable no-unreachable*/
+
     if ((this.flags & SPROP_VARINT) !== 0) {
       throw 'Not implemented'; // TODO
 
@@ -86,6 +88,8 @@ class PropDecoder {
         return this.bitbuf.readSBits(this.sendProp.numBits);
       }
     }
+
+    /*eslint-enable no-unreachable*/
   }
 
   decodeSpecialFloat() {
@@ -164,6 +168,7 @@ class PropDecoder {
 
   int64Decode() {
     if ((this.flags & SPROP_VARINT) !== 0) {
+      /*eslint-disable no-unreachable*/
       throw 'Not implemented'; // TODO
 
       if ((this.flags & SPROP_UNSIGNED) !== 0) {
@@ -171,6 +176,7 @@ class PropDecoder {
       } else {
         return this.bitbuf.readSignedVarint64();
       }
+      /*eslint-enable no-unreachable*/
     } else {
       var highInt = 0;
       var lowInt = 0;
