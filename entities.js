@@ -11,29 +11,46 @@ var consts = require('./consts');
 var functional = require('./functional');
 var props = require('./props');
 
-const ENTER_PVS = 0;
-const LEAVE_PVS = 1;
-const DELTA_ENT = 2;
-const PRESERVE_ENT = 3;
-const FINISHED = 4;
+var EntityDelta = {
+  update: 0,
+  enter: 1,
+  leave: 2,
+  delete: 3
+};
 
-const ENTITY_SENTINEL = 9999;
-
-// Flags for delta encoding header
-const FHDR_ZERO = 0x0000;
-const FHDR_LEAVEPVS = 0x0001;
-const FHDR_DELETE = 0x0002;
-const FHDR_ENTERPVS = 0x0004;
-
+/**
+ * Represents an in-game entity.
+ */
 class Entity {
   constructor(index, classId, serialNum) {
+    /**
+     * Entity index.
+     * @type {int}
+     */
     this.index = index;
+
+    /**
+     * Server class ID.
+     * @type {int}
+     */
     this.classId = classId;
+
+    /**
+     * Serial number.
+     * @type {int}
+     */
     this.serialNum = serialNum;
 
     this.props = {};
   }
 
+  /**
+   * Retrieves the value of a networked property
+   * @param {string} tableName - Table name (e.g., DT_BaseEntity)
+   * @param {string} varName - Network variable name (e.g., m_vecOrigin)
+   * @returns {*} Property value, `undefined` if non-existent
+   * @public
+   */
   getProp(tableName, varName) {
     if (this.props[tableName] === undefined) {
       return undefined;
@@ -90,20 +107,28 @@ function readFieldIndex(entityBitBuffer, lastIndex, newWay) {
   return lastIndex + 1 + ret;
 }
 
+/**
+ * Represents entities and networked properties within a demo.
+ */
 class Entities extends EventEmitter {
   constructor() {
     super();
 
     this.dataTables = [];
     this.serverClasses = [];
+
+    /**
+     * Array of all entities in game.
+     * @type {Entity[]}
+     */
     this.entities = _.fill(new Array(1 << consts.MAX_EDICT_BITS), null);
   }
 
   listen(messageEvents) {
-    messageEvents.on('svc_PacketEntities', this.handlePacketEntities.bind(this));
+    messageEvents.on('svc_PacketEntities', this._handlePacketEntities.bind(this));
   }
 
-  gatherExcludes(table) {
+  _gatherExcludes(table) {
     var excludes = [];
 
     for (var index = 0; index < table.props.length; ++index) {
@@ -114,17 +139,17 @@ class Entities extends EventEmitter {
       }
 
       if (prop.type === props.DPT_DataTable) {
-        var subTable = this.findTableByName(prop.dtName);
+        var subTable = this._findTableByName(prop.dtName);
         assert(subTable);
 
-        excludes.push.apply(excludes, this.gatherExcludes(subTable));
+        excludes.push.apply(excludes, this._gatherExcludes(subTable));
       }
     }
 
     return excludes;
   }
 
-  gatherProps(table, excludes) {
+  _gatherProps(table, excludes) {
     var flattened = [];
 
     for (var index = 0; index < table.props.length; ++index) {
@@ -135,10 +160,10 @@ class Entities extends EventEmitter {
       }
 
       if (prop.type === props.DPT_DataTable) {
-        var subTable = this.findTableByName(prop.dtName);
+        var subTable = this._findTableByName(prop.dtName);
         assert(subTable);
 
-        var childProps = this.gatherProps(subTable, excludes);
+        var childProps = this._gatherProps(subTable, excludes);
 
         if ((prop.flags & props.SPROP_COLLAPSIBLE) === 0) {
           _.forEach(childProps, fp => {
@@ -162,8 +187,8 @@ class Entities extends EventEmitter {
     return _.sortBy(flattened, fp => fp.collapsible === false ? 0 : 1);
   }
 
-  flattenDataTable(table) {
-    var flattenedProps = this.gatherProps(table, this.gatherExcludes(table));
+  _flattenDataTable(table) {
+    var flattenedProps = this._gatherProps(table, this._gatherExcludes(table));
 
     var prioritySet = new Set(_.map(flattenedProps, fp => fp.prop.priority));
 
@@ -175,7 +200,7 @@ class Entities extends EventEmitter {
 
     // sort flattenedProps by priority
     for (var priority of priorities) {
-      while (true) {
+      while (true) { // eslint-disable-line no-constant-condition
         let currentProp;
 
         for (currentProp = start; currentProp < flattenedProps.length; ++currentProp) {
@@ -202,14 +227,14 @@ class Entities extends EventEmitter {
     return flattenedProps;
   }
 
-  findTableByName(name) {
+  _findTableByName(name) {
     return _.find(this.dataTables, _.matchesProperty('netTableName', name));
   }
 
-  handleDataTables(chunk) {
+  _handleDataTables(chunk) {
     var sendTable = net.findByName('svc_SendTable');
 
-    while (true) {
+    while (true) { // eslint-disable-line no-constant-condition
       var type = chunk.readVarint32();
       assert.equal(type, sendTable.type, 'expected SendTable message');
 
@@ -232,14 +257,14 @@ class Entities extends EventEmitter {
       var name = chunk.readCString();
 
       var dtName = chunk.readCString();
-      var dataTable = this.findTableByName(dtName);
+      var dataTable = this._findTableByName(dtName);
       assert(dataTable, 'no data table for server class');
 
       var serverClass = {
         name,
         dtName,
         dataTable,
-        flattenedProps: this.flattenDataTable(dataTable)
+        flattenedProps: this._flattenDataTable(dataTable)
       };
 
       this.serverClasses.push(serverClass);
@@ -248,9 +273,16 @@ class Entities extends EventEmitter {
     assert.equal(chunk.remaining(), 0);
   }
 
-  addEntity(index, classId, serialNum) {
+  /**
+   * Fired when an entity is created.
+   * @event Entities#create
+   * @type {Object}
+   * @property {Entity} entity - Created entity
+   */
+
+  _addEntity(index, classId, serialNum) {
     if (this.entities[index]) {
-      this.removeEntity(index);
+      this._removeEntity(index);
     }
 
     var entity = new Entity(index, classId, serialNum);
@@ -261,7 +293,21 @@ class Entities extends EventEmitter {
     return entity;
   }
 
-  removeEntity(index) {
+  /**
+   * Fired before an entity is deleted.
+   * @event Entities#beforeremove
+   * @type {Object}
+   * @property {Entity} entity - Entity to be deleted
+   */
+
+  /**
+   * Fired when an entity is removed.
+   * @event Entities#remove
+   * @type {Object}
+   * @property {int} index - Index of removed entity
+   */
+
+  _removeEntity(index) {
     assert(this.entities[index] !== undefined, 'cannot remove non-existent entity');
 
     this.emit('beforeremove', {entity: this.entities[index]});
@@ -271,7 +317,18 @@ class Entities extends EventEmitter {
     this.emit('remove', {index});
   }
 
-  readNewEntity(entityBitBuffer, entity) {
+  /**
+   * Fired when an entity property is changed.
+   * @event Entities#change
+   * @type {Object}
+   * @property {Entity} entity - Updated entity
+   * @property {string} tableName - Table containing updated property
+   * @property {string} varName - Network variable name
+   * @property {*|undefined} oldValue - Old variable value
+   * @property {*} newValue - New value of the property
+   */
+
+  _readNewEntity(entityBitBuffer, entity) {
     var newWay = entityBitBuffer.readOneBit() === 1;
 
     var serverClass = this.serverClasses[entity.classId];
@@ -302,80 +359,56 @@ class Entities extends EventEmitter {
     }
   }
 
-  handlePacketEntities(msg) {
+  _handlePacketEntities(msg) {
     var entityBitBuffer = new bitBuffer.BitStream(msg.entityData.toSlicedBuffer());
 
-    var headerCount = msg.updatedEntries;
-    var headerBase = -1;
+    var entityIndex = -1;
 
-    var updateType = PRESERVE_ENT;
+    for (var i = 0; i < msg.updatedEntries; ++i) {
+      entityIndex += 1 + entityBitBuffer.readUBitVar();
 
-    while (updateType < FINISHED) {
-      headerCount--;
+      assert(entityIndex < this.entities.length, 'newEntity >= MAX_EDICTS');
 
-      var newEntity = null;
-      var updateFlags = FHDR_ZERO;
-      var isEntity = headerCount >= 0;
+      var updateType = EntityDelta.update;
 
-      if (isEntity) {
-        newEntity = headerBase + 1 + entityBitBuffer.readUBitVar();
-        headerBase = newEntity;
+      if (entityBitBuffer.readOneBit()) {
+        updateType = EntityDelta.leave;
 
         if (entityBitBuffer.readOneBit()) {
-          updateFlags |= FHDR_LEAVEPVS;
-
-          if (entityBitBuffer.readOneBit()) {
-            updateFlags |= FHDR_DELETE;
-          }
-        } else if (entityBitBuffer.readOneBit()) {
-          updateFlags |= FHDR_ENTERPVS;
+          updateType = EntityDelta.delete;
         }
+      } else if (entityBitBuffer.readOneBit()) {
+        updateType = EntityDelta.enter;
       }
 
-      for (updateType = PRESERVE_ENT; updateType === PRESERVE_ENT;) {
-        if (!isEntity || newEntity > ENTITY_SENTINEL) {
-          updateType = FINISHED;
+      switch (updateType) {
+        case EntityDelta.enter:
+          var classId = entityBitBuffer.readUBits(this.serverClassBits);
+          var serialNum = entityBitBuffer.readUBits(consts.NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS);
+
+          this._readNewEntity(entityBitBuffer, this._addEntity(entityIndex, classId, serialNum));
+
           break;
-        }
 
-        assert(newEntity < this.entities.length, 'newEntity >= MAX_EDICTS');
+        case EntityDelta.delete:
+          assert(msg.isDelta, 'deleting entity on full update');
 
-        if ((updateFlags & FHDR_ENTERPVS) !== 0) {
-          updateType = ENTER_PVS;
-        } else if ((updateFlags & FHDR_LEAVEPVS) !== 0) {
-          updateType = LEAVE_PVS;
-        } else {
-          updateType = DELTA_ENT;
-        }
+          this._removeEntity(entityIndex);
 
-        switch (updateType) {
-          case ENTER_PVS:
-            var classId = entityBitBuffer.readUBits(this.serverClassBits);
-            var serialNum = entityBitBuffer.readUBits(consts.NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS);
+          break;
 
-            this.readNewEntity(entityBitBuffer, this.addEntity(newEntity, classId, serialNum));
+        case EntityDelta.update:
+          var entity = this.entities[entityIndex];
+          assert(entity, 'delta on deleted entity');
 
-            break;
+          this._readNewEntity(entityBitBuffer, entity);
 
-          case LEAVE_PVS:
-            assert(msg.isDelta, 'entity leaving PVS on full update');
+          break;
 
-            this.removeEntity(newEntity);
-
-            break;
-
-          case DELTA_ENT:
-            var entity = this.entities[newEntity];
-            assert(entity, 'delta on deleted entity');
-
-            this.readNewEntity(entityBitBuffer, entity);
-
-            break;
-
-          case PRESERVE_ENT:
-            assert(msg.isDelta, 'preserve entity on full update');
-            break;
-        }
+        case EntityDelta.leave:
+          assert(msg.isDelta, 'entity leaving PVS on full update');
+          // Maybe set a flag on the entity indicating that it is out of PVS?
+          break;
       }
     }
   }
