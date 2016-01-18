@@ -19,12 +19,17 @@ A node.js library for parsing modern (protobuf) Source 1 demo files.
 
     npm install --save demofile
 
+Generate documentation to `./out/`:
+
+    jsdoc .
+
 ## Example
 
 Print all player information to console:
 
 ```js
 var demofile = require('demofile');
+var fs = require('fs');
 
 fs.readFile('test.dem', function (err, buffer) {
   var demo = new demofile.DemoFile();
@@ -35,7 +40,6 @@ fs.readFile('test.dem', function (err, buffer) {
       console.log(e.entryIndex, e.userData);
     }
   });
-
 
   demo.parse(buffer);
 });
