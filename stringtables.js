@@ -11,50 +11,85 @@ var extraTypes = require('./extratypes');
 var bitBuffer = require('./ext/bitbuffer');
 var endian = require('./endian');
 
+/**
+ * Player info structure.
+ * @property {Long} xuid - Network XUID
+ * @property {string} name - Player name
+ * @property {int} userId - Local server user ID, unique while server is running
+ * @property {string} guid - Global unique player identifier (Steam2 ID)
+ * @property {int} friendsId - Friends identification number
+ * @property {string} friendsName - Friends name
+ * @property {bool} fakePlayer - true, if player is a bot controlled by game.dll
+ * @property {bool} isHltv - true, if player is the HLTV proxy
+ * @property {int[]} customFiles - custom files CRC for this player
+ */
 var PlayerInfo = StructType({
-  version: ref.types.uint64, // version for future compatibility
-  xuid: ref.types.uint64, // network xuid
-  name: extraTypes.charArray(consts.MAX_PLAYER_NAME_LENGTH), // scoreboard information
-  userId: ref.types.int32, // local server user ID, unique while server is running
-  guid: extraTypes.charArray(consts.SIGNED_GUID_LEN + 1), // global unique player identifier
-  friendsId: ref.types.uint32, // friends identification number
-  friendsName: extraTypes.charArray(consts.MAX_PLAYER_NAME_LENGTH), // friends name
-  fakePlayer: ref.types.bool, // true, if player is a bot controlled by game.dll
-  isHltv: ref.types.bool, // true if player is the HLTV proxy
-  customFiles: refArray(ref.types.uint32, consts.MAX_CUSTOM_FILES) // custom files CRC for this player
+  unknown: ref.types.uint64,
+  xuid_lo: ref.types.uint32,
+  xuid_hi: ref.types.uint32,
+  name: extraTypes.charArray(consts.MAX_PLAYER_NAME_LENGTH),
+  userId: ref.types.int32,
+  guid: extraTypes.charArray(consts.SIGNED_GUID_LEN + 1),
+  friendsId: ref.types.uint32,
+  friendsName: extraTypes.charArray(consts.MAX_PLAYER_NAME_LENGTH),
+  fakePlayer: ref.types.bool,
+  isHltv: ref.types.bool,
+  customFiles: refArray(ref.types.uint32, consts.MAX_CUSTOM_FILES)
   //filesDownloaded: ref.types.uchar // this counter increases each time the server downloaded a new file
 });
 
 function parseUserInfoData(buf) {
   var info = PlayerInfo.get(buf).toObject();
-  //info.version = endian.swap64(info.version);
-  //info.xuid = endian.swap64(info.xuid);
+  info.xuid = endian.swapu64(info.xuid_lo, info.xuid_hi);
   info.userId = endian.swap32(info.userId);
   info.friendsId = endian.swap32(info.friendsId);
   return info;
 }
 
+/**
+ * @name StringTableEntry
+ * @property {string} entry - Entry value
+ * @property {*|undefined} userData - User data
+ */
+
+/**
+ * @name StringTable
+ * @property {string} name - Table name
+ * @property {StringTableEntry[]} entries - Entries within the table
+ */
+
+/**
+ * Handles string tables for a demo file.
+ */
 class StringTables extends EventEmitter {
   constructor() {
     super();
 
+    /**
+     * User data handlers. Transform raw buffer into any other value.
+     * By default, `userinfo` user data is transformed to {@link PlayerInfo}
+     * objects.
+     */
     this.userDataCallbacks = {
       userinfo: parseUserInfoData
     };
 
+    /**
+     * @type {StringTable[]}
+     */
     this.tables = [];
   }
 
   listen(messageEvents) {
-    messageEvents.on('svc_UpdateStringTable', this.handleUpdateStringTable.bind(this));
-    messageEvents.on('svc_CreateStringTable', this.handleCreateStringTable.bind(this));
+    messageEvents.on('svc_UpdateStringTable', this._handleUpdateStringTable.bind(this));
+    messageEvents.on('svc_CreateStringTable', this._handleCreateStringTable.bind(this));
   }
 
   findTableByName(name) {
     return _.find(this.tables, table => table.name === name);
   }
 
-  handleStringTable(name, bitbuf) {
+  _handleStringTable(name, bitbuf) {
     var userDataCallback = this.userDataCallbacks[name];
 
     var entries = _.map(_.range(bitbuf.readUInt16()), function () {
@@ -84,7 +119,15 @@ class StringTables extends EventEmitter {
     };
   }
 
-  parseStringTableUpdate(bitbuf, table, entries, maxEntries, userDataSize, userDataSizeBits, userDataFixedSize) {
+  /**
+   * @event StringTables#update
+   * @property {StringTable} table - Updated string table
+   * @property {int} entryIndex - Index into the table that was updated
+   * @property {string|undefined} entry - New entry value
+   * @property {*|undefined} userData - New user data
+   */
+
+  _parseStringTableUpdate(bitbuf, table, entries, maxEntries, userDataSize, userDataSizeBits, userDataFixedSize) {
     // overflow silently. this is how the official parser handles overflows...
     bitbuf.view.silentOverflow = true;
 
@@ -169,7 +212,13 @@ class StringTables extends EventEmitter {
     }, -1);
   }
 
-  handleCreateStringTable(msg) {
+  /**
+   * Fired when a table is created. Entries are empty at this point.
+   * @event StringTables#create
+   * @type {StringTable}
+   */
+
+  _handleCreateStringTable(msg) {
     var bitbuf = new bitBuffer.BitStream(msg.stringData.toSlicedBuffer());
 
     // table shouldn't already exist
@@ -183,18 +232,18 @@ class StringTables extends EventEmitter {
 
     this.emit('create', table);
 
-    this.parseStringTableUpdate(bitbuf, table, msg.numEntries, msg.maxEntries, msg.userDataSize, msg.userDataSizeBits, msg.userDataFixedSize);
+    this._parseStringTableUpdate(bitbuf, table, msg.numEntries, msg.maxEntries, msg.userDataSize, msg.userDataSizeBits, msg.userDataFixedSize);
 
     this.tables.push(table);
   }
 
-  handleUpdateStringTable(msg) {
+  _handleUpdateStringTable(msg) {
     var bitbuf = new bitBuffer.BitStream(msg.stringData.toSlicedBuffer());
 
     var table = this.tables[msg.tableId];
     assert(table !== undefined, 'bad table index');
 
-    this.parseStringTableUpdate(bitbuf, table, msg.numChangedEntries, table.entries.length, 0, 0, false);
+    this._parseStringTableUpdate(bitbuf, table, msg.numChangedEntries, table.entries.length, 0, 0, false);
   }
 }
 

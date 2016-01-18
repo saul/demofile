@@ -23,6 +23,9 @@ class GameEvent {
   }
 }
 
+/**
+ * Manages game events for a demo file.
+ */
 class GameEvents extends EventEmitter {
   constructor() {
     super();
@@ -30,8 +33,24 @@ class GameEvents extends EventEmitter {
     this.gameEventList = {};
   }
 
+  /**
+   * Fired when a game event is fired (e.g., `player_death`).
+   * Parameters are event variables.
+   * @event GameEvents#game_event_name
+   * @type {Object}
+   */
+
+  /**
+   * Fired when a game event is fired.
+   * Note that this event is fired after the specific event (e.g., `player_death`).
+   * @event GameEvents#event
+   * @type {Object}
+   * @property {string} name - Event name
+   * @property {Object} event - Event variables
+   */
+
   listen(messageEvents) {
-    messageEvents.on('svc_GameEventList', this.handleGameEventList.bind(this));
+    messageEvents.on('svc_GameEventList', this._handleGameEventList.bind(this));
 
     messageEvents.on('svc_GameEvent', msg => {
       var event = this.gameEventList[msg.eventid];
@@ -46,7 +65,7 @@ class GameEvents extends EventEmitter {
     });
   }
 
-  handleGameEventList(msg) {
+  _handleGameEventList(msg) {
     _.each(msg.descriptors, descriptor => {
       this.gameEventList[descriptor.eventid] = new GameEvent(descriptor);
     });

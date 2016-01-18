@@ -20,6 +20,19 @@ const FDEMO_USE_ORIGIN2 = ( 1 << 0 );
 const FDEMO_USE_ANGLES2 = ( 1 << 1 );
 const FDEMO_NOINTERP = ( 1 << 2 );	// don't interpolate between this an last view
 
+/**
+ * @property {string} magic - Header magic
+ * @property {int} protocol - Demo protocol version
+ * @property {int} networkProtocol - Network protocol version
+ * @property {string} serverName - Server hostname
+ * @property {string} clientName - Recording player name
+ * @property {string} mapName - Level name
+ * @property {string} gameDirectory - Game directory
+ * @property {float} playbackTime - Total playback time (seconds)
+ * @property {int} playbackTicks - Total playback ticks
+ * @property {int} playbackFrames - Total playback frames
+ * @property {int} signonLength - Length of signon (bytes)
+ */
 var DemoHeader = StructType({
   magic: extraTypes.charArray(8),
   protocol: ref.types.int32,
@@ -74,36 +87,63 @@ var CmdInfo = StructType({
   u: refArray(SplitCmdInfo, consts.MAX_SPLITSCREEN_CLIENTS)
 });
 
+/**
+ * Represents a demo file for parsing.
+ */
 class DemoFile extends EventEmitter {
   constructor() {
     super();
 
+    this._bytebuf = null;
+
+    /**
+     * @type {DemoHeader}
+     */
     this.header = null;
-    this.bytebuf = null;
+
+    /**
+     * When parsing, set to current tick.
+     * @type {int}
+     */
     this.currentTick = null;
+
+    /**
+     * When parsing, set to player slot for current command.
+     * @type {int}
+     */
     this.playerSlot = null;
 
+    /** @type {Entities} */
     this.entities = new Entities();
     this.entities.listen(this);
 
+    /** @type {GameEvents} */
     this.gameEvents = new GameEvents();
     this.gameEvents.listen(this);
 
+    /** @type {StringTables} */
     this.stringTables = new StringTables();
     this.stringTables.listen(this);
 
+    /** @type {UserMessages} */
     this.userMessages = new UserMessages();
     this.userMessages.listen(this);
   }
 
-  handleDemoPacket() {
-    CmdInfo.get(this.bytebuf.readBytes(CmdInfo.size).toSlicedBuffer());
+  /**
+   * Fired when a packet of this type is hit. `svc_MessageName` events are also fired.
+   * @public
+   * @event DemoFile#net_MessageName
+   */
+
+  _handleDemoPacket() {
+    CmdInfo.get(this._bytebuf.readBytes(CmdInfo.size).toSlicedBuffer());
 
     // skip over sequence info
-    this.bytebuf.readInt32();
-    this.bytebuf.readInt32();
+    this._bytebuf.readInt32();
+    this._bytebuf.readInt32();
 
-    var chunk = this.bytebuf.readIBytes();
+    var chunk = this._bytebuf.readIBytes();
 
     while (chunk.remaining()) {
       var cmd = chunk.readVarint32();
@@ -122,35 +162,67 @@ class DemoFile extends EventEmitter {
     }
   }
 
-  handleDataChunk() {
-    this.bytebuf.readIBytes();
+  _handleDataChunk() {
+    this._bytebuf.readIBytes();
   }
 
-  handleDataTables() {
-    var chunk = this.bytebuf.readIBytes();
-    this.entities.handleDataTables(chunk);
+  _handleDataTables() {
+    var chunk = this._bytebuf.readIBytes();
+    this.entities._handleDataTables(chunk);
   }
 
-  handleUserCmd() {
-    this.bytebuf.readInt32(); // outgoing sequence
-    this.handleDataChunk(); // TODO: parse user command
+  _handleUserCmd() {
+    this._bytebuf.readInt32(); // outgoing sequence
+    this._handleDataChunk(); // TODO: parse user command
   }
 
-  handleStringTables() {
+  _handleStringTables() {
     // no need to parse
-    this.handleDataChunk();
+    this._handleDataChunk();
   }
 
+  /**
+   * Fired when parsing begins.
+   * @event DemoFile#start
+   */
+
+  /**
+   * Fired when parsing is complete.
+   * @event DemoFile#end
+   */
+
+  /**
+   * Fired when a tick starts, before any tick command processing.
+   * @event DemoFile#tickstart
+   * @type {int}
+   */
+
+  /**
+   * Fired after all commands are processed for a tick.
+   * @event DemoFile#tickend
+   * @type {int}
+   */
+
+  /**
+   * Parse buffer as a demo file.
+   *
+   * @fires DemoFile#start
+   * @fires DemoFile#tickstart
+   * @fires DemoFile#tickend
+   * @fires DemoFile#end
+   *
+   * @param {ArrayBuffer} buffer - Buffer pointing to start of demo header
+   */
   parse(buffer) {
     this.header = DemoHeader.get(buffer).toObject();
-    this.bytebuf = ByteBuffer.wrap(buffer.slice(DemoHeader.size), true);
+    this._bytebuf = ByteBuffer.wrap(buffer.slice(DemoHeader.size), true);
 
     this.emit('start');
 
     while (true) {
-      var command = this.bytebuf.readUInt8();
-      var tick = this.bytebuf.readInt32();
-      this.playerSlot = this.bytebuf.readUInt8();
+      var command = this._bytebuf.readUInt8();
+      var tick = this._bytebuf.readInt32();
+      this.playerSlot = this._bytebuf.readUInt8();
 
       if (tick !== this.currentTick) {
         this.emit('tickend', this.currentTick);
@@ -175,19 +247,19 @@ class DemoFile extends EventEmitter {
       switch (command) {
         case DemoCommands.packet:
         case DemoCommands.signon:
-          this.handleDemoPacket();
+          this._handleDemoPacket();
           break;
         case DemoCommands.dataTables:
-          this.handleDataTables();
+          this._handleDataTables();
           break;
         case DemoCommands.stringTables:
-          this.handleStringTables();
+          this._handleStringTables();
           break;
         case DemoCommands.consoleCmd: // TODO
-          this.handleDataChunk();
+          this._handleDataChunk();
           break;
         case DemoCommands.userCmd:
-          this.handleUserCmd();
+          this._handleUserCmd();
           break;
         default:
           throw 'Unrecognised command';

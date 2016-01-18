@@ -17,7 +17,8 @@ module.exports = {
             2,
             "always"
         ],
-        "eqeqeq": [2, "smart"]
+        "eqeqeq": [2, "smart"],
+        "valid-jsdoc": 2
     },
     "env": {
         "es6": true,

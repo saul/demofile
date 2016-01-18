@@ -4,16 +4,36 @@ var assert = require('assert');
 var EventEmitter = require('events');
 var net = require('./net');
 
+/**
+ * Handles user messages for a demo file.
+ */
 class UserMessages extends EventEmitter {
   constructor() {
     super();
   }
 
   listen(messageEvents) {
-    messageEvents.on('svc_UserMessage', this.handleUserMessage.bind(this));
+    messageEvents.on('svc_UserMessage', this._handleUserMessage.bind(this));
   }
 
-  handleUserMessage(msg) {
+  /**
+   * Fired for a specific user message being sent.
+   * Note the event has the name of the username (e.g., `SayText2`)
+   * @event UserMessages#UserMessageName
+   * @type {object}
+   */
+
+  /**
+   * Fired for a specific user message being sent.
+   * @note Fired after specific event is fired.
+   *
+   * @event UserMessages#message
+   * @type {object}
+   * @property {string} name - User message name
+   * @property {object} msg - User message
+   */
+
+  _handleUserMessage(msg) {
     var um = net.findUserMessageByType(msg.msgType);
     if (!um) {
       // TODO: warn of unknown user message
