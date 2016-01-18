@@ -5,7 +5,7 @@
 var fs = require('fs');
 var assert = require('assert');
 
-var demo = require('demofile');
+var demo = require('../demo');
 
 function parseDemoFile(path) {
   fs.readFile(path, function (err, buffer) {
