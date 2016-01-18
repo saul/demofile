@@ -7,7 +7,7 @@ var pace = require('pace');
 var demo = require('./demo');
 
 function parseDemoFile(path) {
-  fs.readFile(path, function(err, buffer) {
+  fs.readFile(path, function (err, buffer) {
     assert.ifError(err);
 
     var demoFile = new demo.DemoFile();
@@ -19,6 +19,14 @@ function parseDemoFile(path) {
 
     demoFile.on('tickend', tick => {
       pace.op(tick);
+    });
+
+    demoFile.stringTables.on('update', e => {
+      if (e.table.name !== 'userinfo' || e.userData == null) {
+        return;
+      }
+
+      console.log(e.entryIndex, e.userData);
     });
 
     demoFile.parse(buffer);
