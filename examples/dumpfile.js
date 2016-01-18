@@ -1,10 +1,11 @@
+/*eslint-disable no-console*/
+
 'use strict';
 
 var fs = require('fs');
 var assert = require('assert');
-var pace = require('pace');
 
-var demo = require('./demo');
+var demo = require('demofile');
 
 function parseDemoFile(path) {
   fs.readFile(path, function (err, buffer) {

@@ -4,9 +4,10 @@ var _ = require('lodash');
 var assert = require('assert');
 var ProtoBuf = require('protobufjs');
 var util = require('util');
+var path = require('path');
 
 ProtoBuf.convertFieldsToCamelCase = true;
-var builder = ProtoBuf.loadProtoFile('demoinfogo/src/cstrike15_usermessages_public.proto').build();
+var builder = ProtoBuf.loadProtoFile(path.resolve(__dirname, 'protobufs/cstrike15_usermessages.proto')).build();
 assert(builder !== null);
 
 function enumNetNameToClassName(enumName) {

@@ -44,3 +44,7 @@ fs.readFile('test.dem', function (err, buffer) {
 ### 0.1.0 (18/01/16)
 
 - Initial Release
+
+## Acknowledgements
+
+- CS:GO Protobuf sources copied from SteamKit
