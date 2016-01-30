@@ -47,9 +47,15 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.2.0 (30/01/16)
+
+- :zap: Each tick is now parsed on a separate process tick.
+- :zap: Game event callbacks are now fired at the end of the tick.
+- :bug: Fixed Vector props decoding to `undefined`.
+
 ### 0.1.0 (18/01/16)
 
-- Initial Release
+- :tada: Initial release.
 
 ## Acknowledgements
 
