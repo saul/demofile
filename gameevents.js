@@ -31,6 +31,7 @@ class GameEvents extends EventEmitter {
     super();
 
     this.gameEventList = {};
+    this.tickEvents = [];
   }
 
   /**
@@ -49,19 +50,32 @@ class GameEvents extends EventEmitter {
    * @property {Object} event - Event variables
    */
 
-  listen(messageEvents) {
-    messageEvents.on('svc_GameEventList', this._handleGameEventList.bind(this));
+  listen(demo) {
+    demo.on('svc_GameEventList', this._handleGameEventList.bind(this));
 
-    messageEvents.on('svc_GameEvent', msg => {
+    demo.on('svc_GameEvent', msg => {
       var event = this.gameEventList[msg.eventid];
 
       var eventVars = event.messageToObject(msg);
-      this.emit(event.name, eventVars);
 
-      this.emit('event', {
+      // buffer game events until the end of the tick
+      this.tickEvents.push({
         name: event.name,
         event: eventVars
+      })
+    });
+
+    demo.on('tickend', () => {
+      this.tickEvents.forEach(event => {
+        this.emit(event.name, event.event);
+
+        this.emit('event', {
+          name: event.name,
+          event: event.event
+        });
       });
+
+      this.tickEvents = [];
     });
   }
 
