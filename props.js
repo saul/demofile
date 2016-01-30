@@ -151,6 +151,8 @@ class PropDecoder {
         v.z *= -1.0;
       }
     }
+
+    return v;
   }
 
   vectorXYDecode() {
