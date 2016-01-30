@@ -88,6 +88,15 @@ var CmdInfo = StructType({
 });
 
 /**
+ * Parses a demo file header from the buffer.
+ * @param buffer -
+ * @returns {DemoHeader}
+ */
+function parseHeader(buffer) {
+  return DemoHeader.get(buffer).toObject();
+}
+
+/**
  * Represents a demo file for parsing.
  */
 class DemoFile extends EventEmitter {
@@ -203,6 +212,49 @@ class DemoFile extends EventEmitter {
    * @type {int}
    */
 
+  _parseRecurse() {
+    var command = this._bytebuf.readUInt8();
+    var tick = this._bytebuf.readInt32();
+    this.playerSlot = this._bytebuf.readUInt8();
+
+    if (tick !== this.currentTick) {
+      this.emit('tickend', this.currentTick);
+      this.currentTick = tick;
+      this.emit('tickstart', this.currentTick);
+    }
+
+    switch (command) {
+      case DemoCommands.packet:
+      case DemoCommands.signon:
+        this._handleDemoPacket();
+        break;
+      case DemoCommands.dataTables:
+        this._handleDataTables();
+        break;
+      case DemoCommands.stringTables:
+        this._handleStringTables();
+        break;
+      case DemoCommands.consoleCmd: // TODO
+        this._handleDataChunk();
+        break;
+      case DemoCommands.userCmd:
+        this._handleUserCmd();
+        break;
+      case DemoCommands.stop:
+        this.emit('tickend', this.currentTick);
+        this.emit('end');
+        return;
+      case DemoCommands.customData:
+        throw 'Custom data not supported';
+      case DemoCommands.syncTick:
+        break;
+      default:
+        throw 'Unrecognised command';
+    }
+
+    setImmediate(this._parseRecurse.bind(this));
+  }
+
   /**
    * Parse buffer as a demo file.
    *
@@ -215,62 +267,18 @@ class DemoFile extends EventEmitter {
    * @returns {undefined}
    */
   parse(buffer) {
-    this.header = DemoHeader.get(buffer).toObject();
+    this.header = parseHeader(buffer);
     this._bytebuf = ByteBuffer.wrap(buffer.slice(DemoHeader.size), true);
 
     this.emit('start');
 
-    while (true) { // eslint-disable-line no-constant-condition
-      var command = this._bytebuf.readUInt8();
-      var tick = this._bytebuf.readInt32();
-      this.playerSlot = this._bytebuf.readUInt8();
-
-      if (tick !== this.currentTick) {
-        this.emit('tickend', this.currentTick);
-        this.currentTick = tick;
-        this.emit('tickstart', this.currentTick);
-      }
-
-      if (command === DemoCommands.stop) {
-        this.emit('tickend', this.currentTick);
-        this.emit('end');
-        return;
-      }
-
-      if (command === DemoCommands.syncTick) {
-        continue;
-      }
-
-      if (command === DemoCommands.customData) {
-        throw 'Custom data not supported';
-      }
-
-      switch (command) {
-        case DemoCommands.packet:
-        case DemoCommands.signon:
-          this._handleDemoPacket();
-          break;
-        case DemoCommands.dataTables:
-          this._handleDataTables();
-          break;
-        case DemoCommands.stringTables:
-          this._handleStringTables();
-          break;
-        case DemoCommands.consoleCmd: // TODO
-          this._handleDataChunk();
-          break;
-        case DemoCommands.userCmd:
-          this._handleUserCmd();
-          break;
-        default:
-          throw 'Unrecognised command';
-      }
-    }
+    setImmediate(this._parseRecurse.bind(this));
   }
 }
 
 module.exports = {
   DemoFile,
+  parseHeader,
   FDEMO_NORMAL,
   FDEMO_USE_ORIGIN2,
   FDEMO_USE_ANGLES2,
