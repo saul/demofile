@@ -1,5 +1,7 @@
 # demofile
 
+[![Join the chat at https://gitter.im/saul/demofile](https://badges.gitter.im/saul/demofile.svg)](https://gitter.im/saul/demofile?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A node.js library for parsing modern (protobuf) Source 1 demo files.
 
 ## Supported Games
