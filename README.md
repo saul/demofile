@@ -49,6 +49,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.2.1 (25/03/16)
+
+- :card_index: Removed `node-protobuf` un-used dependency
+
 ### 0.2.0 (30/01/16)
 
 - :zap: Each tick is now parsed on a separate process tick.
