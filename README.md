@@ -49,6 +49,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.2.3 (03/07/16)
+
+- :sparkles: Instance baselines are now parsed and used by `Entity#getProp`
+
 ### 0.2.2 (03/07/16)
 
 - :bug: Fixed stringtable updates affecting all entries in the table
