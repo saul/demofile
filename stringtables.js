@@ -227,7 +227,9 @@ class StringTables extends EventEmitter {
     // create an empty table
     var table = {
       name: msg.name,
-      entries: _.fill(Array(msg.maxEntries), {entry: null, userData: null})
+      entries: _.map(_.range(msg.maxEntries), function () {
+        return {entry: null, userData: null}
+      })
     };
 
     this.emit('create', table);

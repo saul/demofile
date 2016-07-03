@@ -49,6 +49,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.2.2 (03/07/16)
+
+- :bug: Fixed stringtable updates affecting all entries in the table
+
 ### 0.2.1 (25/03/16)
 
 - :card_index: Removed `node-protobuf` un-used dependency
