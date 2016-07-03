@@ -124,18 +124,19 @@ class DemoFile extends EventEmitter {
 
     /** @type {Entities} */
     this.entities = new Entities();
-    this.entities.listen(this);
 
     /** @type {GameEvents} */
     this.gameEvents = new GameEvents();
-    this.gameEvents.listen(this);
 
     /** @type {StringTables} */
     this.stringTables = new StringTables();
-    this.stringTables.listen(this);
 
     /** @type {UserMessages} */
     this.userMessages = new UserMessages();
+
+    this.entities.listen(this);
+    this.gameEvents.listen(this);
+    this.stringTables.listen(this);
     this.userMessages.listen(this);
   }
 

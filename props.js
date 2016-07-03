@@ -38,13 +38,11 @@ const SPROP_VARINT = (1 << 19); // use var int encoded (google protobuf style), 
 const DT_MAX_STRING_BITS = 9;
 
 class PropDecoder {
-  constructor(entityBitBuffer, flattenedProp, classId, fieldIndex) {
+  constructor(entityBitBuffer, flattenedProp) {
     this.bitbuf = entityBitBuffer;
     this.flattenedProp = flattenedProp;
     this.sendProp = this.flattenedProp.prop;
     this.flags = this.sendProp.flags;
-    this.classId = classId;
-    this.fieldIndex = fieldIndex;
   }
 
   decode() {
@@ -205,7 +203,7 @@ class PropDecoder {
     var elements = _.map(_.range(numElements), () => {
       var tempProp = this.flattenedProp.arrayElementProp;
 
-      var decoder = new PropDecoder(this.bitbuf, {prop: tempProp}, this.classId, this.fieldIndex);
+      var decoder = new PropDecoder(this.bitbuf, {prop: tempProp});
       return decoder.decode();
     });
 

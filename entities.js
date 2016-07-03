@@ -22,7 +22,7 @@ var EntityDelta = {
  * Represents an in-game entity.
  */
 class Entity {
-  constructor(index, classId, serialNum) {
+  constructor(index, classId, serialNum, baseline) {
     /**
      * Entity index.
      * @type {int}
@@ -41,6 +41,8 @@ class Entity {
      */
     this.serialNum = serialNum;
 
+    this.baseline = baseline;
+
     this.props = {};
   }
 
@@ -52,10 +54,12 @@ class Entity {
    * @public
    */
   getProp(tableName, varName) {
-    if (this.props[tableName] === undefined) {
-      return undefined;
+    var value = this.props[tableName] && this.props[tableName][varName];
+
+    if (value === undefined) {
+      return this.baseline[tableName] && this.baseline[tableName][varName];
     } else {
-      return this.props[tableName][varName];
+      return value;
     }
   }
 
@@ -116,6 +120,8 @@ class Entities extends EventEmitter {
 
     this.dataTables = [];
     this.serverClasses = [];
+    this.instanceBaselines = {};
+    this.pendingBaselines = {};
 
     /**
      * Array of all entities in game.
@@ -124,8 +130,9 @@ class Entities extends EventEmitter {
     this.entities = _.fill(new Array(1 << consts.MAX_EDICT_BITS), null);
   }
 
-  listen(messageEvents) {
-    messageEvents.on('svc_PacketEntities', this._handlePacketEntities.bind(this));
+  listen(demo) {
+    demo.on('svc_PacketEntities', this._handlePacketEntities.bind(this));
+    demo.stringTables.on('update', this._handleStringTableUpdate.bind(this));
   }
 
   _gatherExcludes(table) {
@@ -268,6 +275,13 @@ class Entities extends EventEmitter {
       };
 
       this.serverClasses.push(serverClass);
+
+      // parse any pending baseline
+      var pendingBaseline = this.pendingBaselines[classId];
+      if (pendingBaseline) {
+        this.instanceBaselines[classId] = this._parseInstanceBaseline(pendingBaseline, classId);
+        delete this.pendingBaselines[classId];
+      }
     }
 
     assert.equal(chunk.remaining(), 0);
@@ -285,7 +299,7 @@ class Entities extends EventEmitter {
       this._removeEntity(index);
     }
 
-    var entity = new Entity(index, classId, serialNum);
+    var entity = new Entity(index, classId, serialNum, this.instanceBaselines[classId]);
     this.entities[index] = entity;
 
     this.emit('create', {entity});
@@ -328,33 +342,42 @@ class Entities extends EventEmitter {
    * @property {*} newValue - New value of the property
    */
 
-  _readNewEntity(entityBitBuffer, entity) {
+  _parseEntityUpdate(entityBitBuffer, classId) {
+    var serverClass = this.serverClasses[classId];
+
     var newWay = entityBitBuffer.readOneBit() === 1;
-
-    var serverClass = this.serverClasses[entity.classId];
-
     var fieldIndices = functional.fillUntil(-1, lastIndex => readFieldIndex(entityBitBuffer, lastIndex, newWay), -1);
+
+    var updatedProps = [];
 
     for (var index of fieldIndices) {
       var flattenedProp = serverClass.flattenedProps[index];
       assert(flattenedProp);
 
-      var decoder = new props.PropDecoder(entityBitBuffer, flattenedProp, entity, index);
+      var decoder = new props.PropDecoder(entityBitBuffer, flattenedProp);
+      updatedProps.push({prop: flattenedProp, value: decoder.decode()});
+    }
 
-      var tableName = flattenedProp.table.netTableName;
-      var varName = flattenedProp.prop.varName;
+    return updatedProps;
+  }
+
+  _readNewEntity(entityBitBuffer, entity) {
+    var updates = this._parseEntityUpdate(entityBitBuffer, entity.classId);
+
+    for (var update of updates) {
+      var tableName = update.prop.table.netTableName;
+      var varName = update.prop.prop.varName;
 
       var oldValue = entity.getProp(tableName, varName);
-      var newValue = decoder.decode();
 
-      entity.updateProp(tableName, varName, newValue);
+      entity.updateProp(tableName, varName, update.value);
 
       this.emit('change', {
         entity,
         tableName,
         varName,
         oldValue,
-        newValue
+        newValue: update.value
       });
     }
   }
@@ -411,6 +434,39 @@ class Entities extends EventEmitter {
           break;
       }
     }
+  }
+
+  _parseInstanceBaseline(baselineBuf, classId) {
+    var classBaseline = {};
+
+    for (var bl of this._parseEntityUpdate(baselineBuf, classId)) {
+      var tableName = bl.prop.table.netTableName;
+      var varName = bl.prop.prop.varName;
+
+      if (classBaseline[tableName] === undefined) {
+        classBaseline[tableName] = {[varName]: bl.value};
+      } else {
+        classBaseline[tableName][varName] = bl.value;
+      }
+    }
+
+    return classBaseline;
+  }
+
+  _handleStringTableUpdate(event) {
+    if (event.table.name !== 'instancebaseline' || !event.userData) {
+      return;
+    }
+
+    var classId = parseInt(event.entry, 10);
+    var baselineBuf = new bitBuffer.BitStream(event.userData);
+
+    if (!this.serverClasses[classId]) {
+      this.pendingBaselines[classId] = baselineBuf;
+      return;
+    }
+
+    this.instanceBaselines[classId] = this._parseInstanceBaseline(baselineBuf, classId);
   }
 }
 
