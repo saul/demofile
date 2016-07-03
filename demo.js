@@ -89,8 +89,8 @@ var CmdInfo = StructType({
 
 /**
  * Parses a demo file header from the buffer.
- * @param buffer -
- * @returns {DemoHeader}
+ * @param {ArrayBuffer} buffer - Buffer of the demo header
+ * @returns {DemoHeader} Header object
  */
 function parseHeader(buffer) {
   return DemoHeader.get(buffer).toObject();

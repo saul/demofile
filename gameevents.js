@@ -62,7 +62,7 @@ class GameEvents extends EventEmitter {
       this.tickEvents.push({
         name: event.name,
         event: eventVars
-      })
+      });
     });
 
     demo.on('tickend', () => {

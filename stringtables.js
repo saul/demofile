@@ -228,7 +228,7 @@ class StringTables extends EventEmitter {
     var table = {
       name: msg.name,
       entries: _.map(_.range(msg.maxEntries), function () {
-        return {entry: null, userData: null}
+        return {entry: null, userData: null};
       })
     };
 
