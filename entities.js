@@ -56,7 +56,7 @@ class Entity {
   getProp(tableName, varName) {
     var value = this.props[tableName] && this.props[tableName][varName];
 
-    if (value === undefined) {
+    if (value === undefined && this.baseline) {
       return this.baseline[tableName] && this.baseline[tableName][varName];
     } else {
       return value;

@@ -49,6 +49,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.2.4 (08/07/16)
+
+- :bug: Fixed retrieving properties on entities whose server class has no instance baseline
+
 ### 0.2.3 (03/07/16)
 
 - :sparkles: Instance baselines are now parsed and used by `Entity#getProp`
