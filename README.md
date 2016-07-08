@@ -49,6 +49,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.2.5 (08/07/16)
+
+- :sparkles: Added string table `postcreate` event which is fired after a new stringtable's entries have been populated
+
 ### 0.2.4 (08/07/16)
 
 - :bug: Fixed retrieving properties on entities whose server class has no instance baseline

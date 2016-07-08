@@ -218,6 +218,12 @@ class StringTables extends EventEmitter {
    * @type {StringTable}
    */
 
+  /**
+   * Fired after a table is created. Entries have been populated by now.
+   * @event StringTables#postcreate
+   * @type {StringTable}
+   */
+
   _handleCreateStringTable(msg) {
     var bitbuf = new bitBuffer.BitStream(msg.stringData.toSlicedBuffer());
 
@@ -237,6 +243,8 @@ class StringTables extends EventEmitter {
     this._parseStringTableUpdate(bitbuf, table, msg.numEntries, msg.maxEntries, msg.userDataSize, msg.userDataSizeBits, msg.userDataFixedSize);
 
     this.tables.push(table);
+
+    this.emit('postcreate', table);
   }
 
   _handleUpdateStringTable(msg) {
