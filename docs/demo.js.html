@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>demo.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DemoFile.html">DemoFile</a><ul class='methods'><li data-type='method'><a href="DemoFile.html#parse">parse</a></li></ul></li><li><a href="Entities.html">Entities</a></li><li><a href="Entity.html">Entity</a><ul class='methods'><li data-type='method'><a href="Entity.html#getProp">getProp</a></li></ul></li><li><a href="GameEvents.html">GameEvents</a></li><li><a href="StringTables.html">StringTables</a></li><li><a href="UserMessages.html">UserMessages</a></li></ul><h3>Events</h3><ul><li><a href="DemoFile.html#event:end">end</a></li><li><a href="DemoFile.html#event:net_MessageName">net_MessageName</a></li><li><a href="DemoFile.html#event:start">start</a></li><li><a href="DemoFile.html#event:tickend">tickend</a></li><li><a href="DemoFile.html#event:tickstart">tickstart</a></li><li><a href="Entities.html#event:beforeremove">beforeremove</a></li><li><a href="Entities.html#event:change">change</a></li><li><a href="Entities.html#event:create">create</a></li><li><a href="Entities.html#event:postcreate">postcreate</a></li><li><a href="Entities.html#event:remove">remove</a></li><li><a href="GameEvents.html#event:event">event</a></li><li><a href="GameEvents.html#event:game_event_name">game_event_name</a></li><li><a href="StringTables.html#event:create">create</a></li><li><a href="StringTables.html#event:postcreate">postcreate</a></li><li><a href="StringTables.html#event:update">update</a></li><li><a href="UserMessages.html#event:message">message</a></li><li><a href="UserMessages.html#event:UserMessageName">UserMessageName</a></li></ul><h3>Global</h3><ul><li><a href="global.html#DemoHeader">DemoHeader</a></li><li><a href="global.html#parseHeader">parseHeader</a></li><li><a href="global.html#PlayerInfo">PlayerInfo</a></li><li><a href="global.html#StringTable">StringTable</a></li><li><a href="global.html#StringTableEntry">StringTableEntry</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">demo.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+var ref = require('ref');
+var StructType = require('ref-struct');
+var refArray = require('ref-array');
+var EventEmitter = require('events');
+
+var ByteBuffer = require('./ext/bytebuffer');
+
+var net = require('./net');
+var consts = require('./consts');
+var extraTypes = require('./extratypes');
+var StringTables = require('./stringtables');
+var UserMessages = require('./usermessages');
+var GameEvents = require('./gameevents');
+var Entities = require('./entities');
+
+const FDEMO_NORMAL = 0;
+const FDEMO_USE_ORIGIN2 = ( 1 &lt;&lt; 0 );
+const FDEMO_USE_ANGLES2 = ( 1 &lt;&lt; 1 );
+const FDEMO_NOINTERP = ( 1 &lt;&lt; 2 );	// don't interpolate between this an last view
+
+/**
+ * @property {string} magic - Header magic
+ * @property {int} protocol - Demo protocol version
+ * @property {int} networkProtocol - Network protocol version
+ * @property {string} serverName - Server hostname
+ * @property {string} clientName - Recording player name
+ * @property {string} mapName - Level name
+ * @property {string} gameDirectory - Game directory
+ * @property {float} playbackTime - Total playback time (seconds)
+ * @property {int} playbackTicks - Total playback ticks
+ * @property {int} playbackFrames - Total playback frames
+ * @property {int} signonLength - Length of signon (bytes)
+ */
+var DemoHeader = StructType({
+  magic: extraTypes.charArray(8),
+  protocol: ref.types.int32,
+  networkProtocol: ref.types.int32,
+  serverName: extraTypes.charArray(consts.MAX_OSPATH),
+  clientName: extraTypes.charArray(consts.MAX_OSPATH),
+  mapName: extraTypes.charArray(consts.MAX_OSPATH),
+  gameDirectory: extraTypes.charArray(consts.MAX_OSPATH),
+  playbackTime: ref.types.float,
+  playbackTicks: ref.types.int32,
+  playbackFrames: ref.types.int32,
+  signonLength: ref.types.int32
+});
+
+var DemoCommands = {
+  signon: 1, // startup message
+  packet: 2, // normal network packet
+  syncTick: 3, // sync client clock to demo tick
+  consoleCmd: 4, // console command
+  userCmd: 5, // user input command
+  dataTables: 6, // network data tables
+  stop: 7, // end of time
+  customData: 8, // a blob of binary data understood by a callback function
+  stringTables: 9
+};
+
+var QAngle = StructType({
+  x: ref.types.float,
+  y: ref.types.float,
+  z: ref.types.float
+});
+
+var Vector = StructType({
+  x: ref.types.float,
+  y: ref.types.float,
+  z: ref.types.float
+});
+
+var OriginViewAngles = StructType({
+  viewOrigin: Vector,
+  viewAngles: QAngle,
+  localViewAngles: QAngle
+});
+
+var SplitCmdInfo = StructType({
+  flags: ref.types.int32,
+  original: OriginViewAngles,
+  resampled: OriginViewAngles
+});
+
+var CmdInfo = StructType({
+  u: refArray(SplitCmdInfo, consts.MAX_SPLITSCREEN_CLIENTS)
+});
+
+/**
+ * Parses a demo file header from the buffer.
+ * @param {ArrayBuffer} buffer - Buffer of the demo header
+ * @returns {DemoHeader} Header object
+ */
+function parseHeader(buffer) {
+  return DemoHeader.get(buffer).toObject();
+}
+
+/**
+ * Represents a demo file for parsing.
+ */
+class DemoFile extends EventEmitter {
+  constructor() {
+    super();
+
+    this._bytebuf = null;
+
+    /**
+     * @type {DemoHeader}
+     */
+    this.header = null;
+
+    /**
+     * When parsing, set to current tick.
+     * @type {int}
+     */
+    this.currentTick = null;
+
+    /**
+     * When parsing, set to player slot for current command.
+     * @type {int}
+     */
+    this.playerSlot = null;
+
+    /** @type {Entities} */
+    this.entities = new Entities();
+
+    /** @type {GameEvents} */
+    this.gameEvents = new GameEvents();
+
+    /** @type {StringTables} */
+    this.stringTables = new StringTables();
+
+    /** @type {UserMessages} */
+    this.userMessages = new UserMessages();
+
+    this.entities.listen(this);
+    this.gameEvents.listen(this);
+    this.stringTables.listen(this);
+    this.userMessages.listen(this);
+  }
+
+  /**
+   * Fired when a packet of this type is hit. `svc_MessageName` events are also fired.
+   * @public
+   * @event DemoFile#net_MessageName
+   */
+
+  _handleDemoPacket() {
+    CmdInfo.get(this._bytebuf.readBytes(CmdInfo.size).toSlicedBuffer());
+
+    // skip over sequence info
+    this._bytebuf.readInt32();
+    this._bytebuf.readInt32();
+
+    var chunk = this._bytebuf.readIBytes();
+
+    while (chunk.remaining()) {
+      var cmd = chunk.readVarint32();
+      var size = chunk.readVarint32();
+
+      var messageBuffer = chunk.readBytes(size);
+
+      var message = net.findByType(cmd);
+      if (message === undefined) {
+        continue; // unknown net message
+      }
+
+      var msgInst = message.class.decode(messageBuffer);
+
+      this.emit(message.name, msgInst);
+    }
+  }
+
+  _handleDataChunk() {
+    this._bytebuf.readIBytes();
+  }
+
+  _handleDataTables() {
+    var chunk = this._bytebuf.readIBytes();
+    this.entities._handleDataTables(chunk);
+  }
+
+  _handleUserCmd() {
+    this._bytebuf.readInt32(); // outgoing sequence
+    this._handleDataChunk(); // TODO: parse user command
+  }
+
+  _handleStringTables() {
+    // no need to parse
+    this._handleDataChunk();
+  }
+
+  /**
+   * Fired when parsing begins.
+   * @event DemoFile#start
+   */
+
+  /**
+   * Fired when parsing is complete.
+   * @event DemoFile#end
+   */
+
+  /**
+   * Fired when a tick starts, before any tick command processing.
+   * @event DemoFile#tickstart
+   * @type {int}
+   */
+
+  /**
+   * Fired after all commands are processed for a tick.
+   * @event DemoFile#tickend
+   * @type {int}
+   */
+
+  _parseRecurse() {
+    var command = this._bytebuf.readUInt8();
+    var tick = this._bytebuf.readInt32();
+    this.playerSlot = this._bytebuf.readUInt8();
+
+    if (tick !== this.currentTick) {
+      this.emit('tickend', this.currentTick);
+      this.currentTick = tick;
+      this.emit('tickstart', this.currentTick);
+    }
+
+    switch (command) {
+      case DemoCommands.packet:
+      case DemoCommands.signon:
+        this._handleDemoPacket();
+        break;
+      case DemoCommands.dataTables:
+        this._handleDataTables();
+        break;
+      case DemoCommands.stringTables:
+        this._handleStringTables();
+        break;
+      case DemoCommands.consoleCmd: // TODO
+        this._handleDataChunk();
+        break;
+      case DemoCommands.userCmd:
+        this._handleUserCmd();
+        break;
+      case DemoCommands.stop:
+        this.emit('tickend', this.currentTick);
+        this.emit('end');
+        return;
+      case DemoCommands.customData:
+        throw 'Custom data not supported';
+      case DemoCommands.syncTick:
+        break;
+      default:
+        throw 'Unrecognised command';
+    }
+
+    setImmediate(this._parseRecurse.bind(this));
+  }
+
+  /**
+   * Parse buffer as a demo file.
+   *
+   * @fires DemoFile#start
+   * @fires DemoFile#tickstart
+   * @fires DemoFile#tickend
+   * @fires DemoFile#end
+   *
+   * @param {ArrayBuffer} buffer - Buffer pointing to start of demo header
+   * @returns {undefined}
+   */
+  parse(buffer) {
+    this.header = parseHeader(buffer);
+    this._bytebuf = ByteBuffer.wrap(buffer.slice(DemoHeader.size), true);
+
+    this.emit('start');
+
+    setImmediate(this._parseRecurse.bind(this));
+  }
+}
+
+module.exports = {
+  DemoFile,
+  parseHeader,
+  FDEMO_NORMAL,
+  FDEMO_USE_ORIGIN2,
+  FDEMO_USE_ANGLES2,
+  FDEMO_NOINTERP
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Aug 23 2016 18:30:12 GMT+0100 (BST) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

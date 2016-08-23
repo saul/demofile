@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DemoFile.html">DemoFile</a><ul class='methods'><li data-type='method'><a href="DemoFile.html#parse">parse</a></li></ul></li><li><a href="Entities.html">Entities</a></li><li><a href="Entity.html">Entity</a><ul class='methods'><li data-type='method'><a href="Entity.html#getProp">getProp</a></li></ul></li><li><a href="GameEvents.html">GameEvents</a></li><li><a href="StringTables.html">StringTables</a></li><li><a href="UserMessages.html">UserMessages</a></li></ul><h3>Events</h3><ul><li><a href="DemoFile.html#event:end">end</a></li><li><a href="DemoFile.html#event:net_MessageName">net_MessageName</a></li><li><a href="DemoFile.html#event:start">start</a></li><li><a href="DemoFile.html#event:tickend">tickend</a></li><li><a href="DemoFile.html#event:tickstart">tickstart</a></li><li><a href="Entities.html#event:beforeremove">beforeremove</a></li><li><a href="Entities.html#event:change">change</a></li><li><a href="Entities.html#event:create">create</a></li><li><a href="Entities.html#event:postcreate">postcreate</a></li><li><a href="Entities.html#event:remove">remove</a></li><li><a href="GameEvents.html#event:event">event</a></li><li><a href="GameEvents.html#event:game_event_name">game_event_name</a></li><li><a href="StringTables.html#event:create">create</a></li><li><a href="StringTables.html#event:postcreate">postcreate</a></li><li><a href="StringTables.html#event:update">update</a></li><li><a href="UserMessages.html#event:message">message</a></li><li><a href="UserMessages.html#event:UserMessageName">UserMessageName</a></li></ul><h3>Global</h3><ul><li><a href="global.html#DemoHeader">DemoHeader</a></li><li><a href="global.html#parseHeader">parseHeader</a></li><li><a href="global.html#PlayerInfo">PlayerInfo</a></li><li><a href="global.html#StringTable">StringTable</a></li><li><a href="global.html#StringTableEntry">StringTableEntry</a></li></ul>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    <section class="readme">
+        <article><h1>demofile</h1><p><a href="https://gitter.im/saul/demofile?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/saul/demofile.svg" alt="Join the chat at https://gitter.im/saul/demofile"></a></p>
+<p>A node.js library for parsing modern (protobuf) Source 1 demo files.</p>
+<h2>Supported Games</h2><ul>
+<li>Counter-Strike: Global Offensive</li>
+</ul>
+<h2>Supported Demo Features</h2><ul>
+<li>[x] Entity updates, server classes, data tables</li>
+<li>[x] User messages</li>
+<li>[x] String tables</li>
+<li>[x] Game events</li>
+<li>[ ] User commands</li>
+<li>[ ] Console commands</li>
+</ul>
+<h2>Installation</h2><pre class="prettyprint source"><code>npm install --save demofile</code></pre><p>Generate documentation to <code>./out/</code>:</p>
+<pre class="prettyprint source"><code>npm run generate-docs</code></pre><h2>Example</h2><p>Print all player information to console:</p>
+<pre class="prettyprint source lang-js"><code>var demofile = require('demofile');
+var fs = require('fs');
+
+fs.readFile('test.dem', function (err, buffer) {
+  var demo = new demofile.DemoFile();
+
+  demo.stringTables.on('update', e => {
+    if (e.table.name === 'userinfo' && e.userData != null) {
+      console.log('Player info updated:');
+      console.log(e.entryIndex, e.userData);
+    }
+  });
+
+  demo.parse(buffer);
+});</code></pre><h2>Release History</h2><h3>0.2.6 (23/08/16)</h3><ul>
+<li>:sparkles: Added entity <code>postcreate</code> event which is fired after an entity has been created and all of its properties parsed.</li>
+</ul>
+<h3>0.2.5 (08/07/16)</h3><ul>
+<li>:sparkles: Added string table <code>postcreate</code> event which is fired after a new stringtable's entries have been populated</li>
+</ul>
+<h3>0.2.4 (08/07/16)</h3><ul>
+<li>:bug: Fixed retrieving properties on entities whose server class has no instance baseline</li>
+</ul>
+<h3>0.2.3 (03/07/16)</h3><ul>
+<li>:sparkles: Instance baselines are now parsed and used by <code>Entity#getProp</code></li>
+</ul>
+<h3>0.2.2 (03/07/16)</h3><ul>
+<li>:bug: Fixed stringtable updates affecting all entries in the table</li>
+</ul>
+<h3>0.2.1 (25/03/16)</h3><ul>
+<li>:card_index: Removed <code>node-protobuf</code> un-used dependency</li>
+</ul>
+<h3>0.2.0 (30/01/16)</h3><ul>
+<li>:zap: Each tick is now parsed on a separate process tick.</li>
+<li>:zap: Game event callbacks are now fired at the end of the tick.</li>
+<li>:bug: Fixed Vector props decoding to <code>undefined</code>.</li>
+</ul>
+<h3>0.1.0 (18/01/16)</h3><ul>
+<li>:tada: Initial release.</li>
+</ul>
+<h2>Acknowledgements</h2><ul>
+<li><a href="https://github.com/SteamRE/SteamKit">CS:GO Protobuf sources copied from SteamKit</a></li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Aug 23 2016 18:30:12 GMT+0100 (BST) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

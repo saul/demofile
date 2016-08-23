@@ -23,7 +23,7 @@ A node.js library for parsing modern (protobuf) Source 1 demo files.
 
 Generate documentation to `./out/`:
 
-    jsdoc .
+    npm run generate-docs
 
 ## Example
 
