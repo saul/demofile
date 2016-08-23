@@ -289,7 +289,17 @@ class Entities extends EventEmitter {
 
   /**
    * Fired when an entity is created.
+   * Note no entity properties are available yet.
+   * Use {@link Entities#postcreate} if you need access to properties.
    * @event Entities#create
+   * @type {Object}
+   * @property {Entity} entity - Created entity
+   */
+
+  /**
+   * Fired after an entity has been created.
+   * All properties are now available for inspection.
+   * @event Entities#postcreate
    * @type {Object}
    * @property {Entity} entity - Created entity
    */
@@ -409,7 +419,9 @@ class Entities extends EventEmitter {
           var classId = entityBitBuffer.readUBits(this.serverClassBits);
           var serialNum = entityBitBuffer.readUBits(consts.NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS);
 
-          this._readNewEntity(entityBitBuffer, this._addEntity(entityIndex, classId, serialNum));
+          let newEnt = this._addEntity(entityIndex, classId, serialNum);
+          this._readNewEntity(entityBitBuffer, newEnt);
+          this.emit('postcreate', {entity: newEnt});
 
           break;
 
@@ -421,7 +433,7 @@ class Entities extends EventEmitter {
           break;
 
         case EntityDelta.update:
-          var entity = this.entities[entityIndex];
+          let entity = this.entities[entityIndex];
           assert(entity, 'delta on deleted entity');
 
           this._readNewEntity(entityBitBuffer, entity);

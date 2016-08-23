@@ -49,6 +49,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.2.6 (23/08/16)
+
+- :sparkles: Added entity `postcreate` event which is fired after an entity has been created and all of its properties parsed.
+
 ### 0.2.5 (08/07/16)
 
 - :sparkles: Added string table `postcreate` event which is fired after a new stringtable's entries have been populated
