@@ -238,6 +238,12 @@ class Entities extends EventEmitter {
     return _.find(this.dataTables, _.matchesProperty('netTableName', name));
   }
 
+  /**
+   * Fired after data tables have been parsed.
+   * {@link Entities#serverClasses} can now be used.
+   * @event Entities#datatablesready
+   */
+
   _handleDataTables(chunk) {
     var sendTable = net.findByName('svc_SendTable');
 
@@ -285,6 +291,8 @@ class Entities extends EventEmitter {
     }
 
     assert.equal(chunk.remaining(), 0);
+
+    this.emit('datatablesready');
   }
 
   /**
