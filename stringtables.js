@@ -89,34 +89,66 @@ class StringTables extends EventEmitter {
     return _.find(this.tables, table => table.name === name);
   }
 
-  _handleStringTable(name, bitbuf) {
-    var userDataCallback = this.userDataCallbacks[name];
+  _handleStringTables(bitbuf) {
+    let numTables = bitbuf.readUInt8();
 
-    var entries = _.map(_.range(bitbuf.readUInt16()), function () {
-      var entry = bitbuf.readCString();
-      var userData = null;
+    for (var i = 0; i < numTables; ++i) {
+      let tableName = bitbuf.readCString();
+      this._handleStringTable(tableName, bitbuf);
+    }
+  }
+
+  _handleStringTable(name, bitbuf) {
+    let userDataCallback = this.userDataCallbacks[name];
+
+    let table = this.findTableByName(name);
+    assert(table != null);
+
+    let numEntries = bitbuf.readUInt16();
+
+    for (let entryIndex = 0; entryIndex < numEntries; ++entryIndex) {
+      let entry = bitbuf.readCString();
+      let userData = null;
 
       // has user data?
       if (bitbuf.readOneBit()) {
-        var userDataSize = bitbuf.readUInt16();
-        var userDataBuf = new Buffer(bitbuf.readBytes(userDataSize));
+        let userDataSize = bitbuf.readUInt16();
+        let userDataBuf = new Buffer(bitbuf.readBytes(userDataSize));
 
         userData = userDataCallback === undefined ? userDataBuf : userDataCallback(userDataBuf);
       }
 
-      return {
+      table.entries[entryIndex] = {entry, userData};
+
+      this.emit('update', {
+        table,
+        entryIndex,
         entry,
         userData
-      };
-    });
+      });
+    }
 
-    // TODO: client-side stuff
-    assert(bitbuf.readOneBit() === 0);
+    // parse client-side entries
+    if (bitbuf.readOneBit()) {
+      let numStrings = bitbuf.readUInt16();
 
-    return {
-      name,
-      entries
-    };
+      for (let i = 0; i < numStrings; ++i) {
+        let entry = bitbuf.readCString(); // eslint-disable-line no-unused-vars
+        let userData = null; // eslint-disable-line no-unused-vars
+
+        if (bitbuf.readOneBit()) {
+          let userDataSize = bitbuf.readUInt16();
+          let userDataBuf = new Buffer(bitbuf.readBytes(userDataSize));
+
+          userData = userDataCallback === undefined ? userDataBuf : userDataCallback(userDataBuf);
+        }
+
+        // TODO: do something with client-side entries
+      }
+    }
+
+    // table is ready
+    this.emit('postcreate', table);
   }
 
   /**
@@ -243,8 +275,6 @@ class StringTables extends EventEmitter {
     this._parseStringTableUpdate(bitbuf, table, msg.numEntries, msg.maxEntries, msg.userDataSize, msg.userDataSizeBits, msg.userDataFixedSize);
 
     this.tables.push(table);
-
-    this.emit('postcreate', table);
   }
 
   _handleUpdateStringTable(msg) {

@@ -10,7 +10,8 @@ A node.js library for parsing modern (protobuf) Source 1 demo files.
 
 ## Supported Demo Features
 
-- [x] Entity updates, server classes, data tables
+- [x] Entity updates, server classes, data tables (including instance baselines)
+- [x] Both perspectives (GOTV and client-side recorded)
 - [x] User messages
 - [x] String tables
 - [x] Game events
@@ -21,7 +22,7 @@ A node.js library for parsing modern (protobuf) Source 1 demo files.
 
     npm install --save demofile
 
-Generate documentation to `./out/`:
+Generate documentation to `./docs/`:
 
     npm run generate-docs
 
@@ -48,6 +49,11 @@ fs.readFile('test.dem', function (err, buffer) {
 ```
 
 ## Release History
+
+### 0.2.8 (30/08/16)
+
+- :sparkles: The `dem_StringTables` command, which holds additional string table data on client-side recorded demos, is now parsed
+- :zap: String table `postcreate` is now fired after `svc_CreateStringTable` and `dem_StringTables` are parsed
 
 ### 0.2.7 (23/08/16)
 

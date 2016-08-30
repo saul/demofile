@@ -6,6 +6,7 @@ var refArray = require('ref-array');
 var EventEmitter = require('events');
 
 var ByteBuffer = require('./ext/bytebuffer');
+var bitBuffer = require('./ext/bitbuffer');
 
 var net = require('./net');
 var consts = require('./consts');
@@ -187,8 +188,8 @@ class DemoFile extends EventEmitter {
   }
 
   _handleStringTables() {
-    // no need to parse
-    this._handleDataChunk();
+    let bitbuf = new bitBuffer.BitStream(this._bytebuf.readIBytes().toSlicedBuffer());
+    this.stringTables._handleStringTables(bitbuf);
   }
 
   /**
