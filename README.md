@@ -50,6 +50,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.2.9 (12/09/16)
+
+- :sparkles: Added entities `baselineupdate` event which is fired whenever the `instancebaseline` string table is updated with new properties.
+
 ### 0.2.8 (30/08/16)
 
 - :sparkles: The `dem_StringTables` command, which holds additional string table data on client-side recorded demos, is now parsed

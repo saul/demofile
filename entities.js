@@ -244,6 +244,15 @@ class Entities extends EventEmitter {
    * @event Entities#datatablesready
    */
 
+  /**
+   * Fired when an instance baseline is updated.
+   * @event Entities#baselineupdate
+   * @type {Object}
+   * @property {int} classId - Server class ID
+   * @property {Object} serverClass - Server class
+   * @property {Object} baseline - Baseline properties
+   */
+
   _handleDataTables(chunk) {
     var sendTable = net.findByName('svc_SendTable');
 
@@ -286,6 +295,7 @@ class Entities extends EventEmitter {
       var pendingBaseline = this.pendingBaselines[classId];
       if (pendingBaseline) {
         this.instanceBaselines[classId] = this._parseInstanceBaseline(pendingBaseline, classId);
+        this.emit('baselineupdate', {classId, serverClass, baseline: this.instanceBaselines[classId]});
         delete this.pendingBaselines[classId];
       }
     }
@@ -487,6 +497,11 @@ class Entities extends EventEmitter {
     }
 
     this.instanceBaselines[classId] = this._parseInstanceBaseline(baselineBuf, classId);
+    this.emit('baselineupdate', {
+      classId,
+      serverClass: this.serverClasses[classId],
+      baseline: this.instanceBaselines[classId]
+    });
   }
 }
 
