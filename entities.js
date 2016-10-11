@@ -11,6 +11,12 @@ var consts = require('./consts');
 var functional = require('./functional');
 var props = require('./props');
 
+const MAX_EDICT_BITS = 11;
+const NETWORKED_EHANDLE_ENT_ENTRY_MASK = (1 << MAX_EDICT_BITS) - 1;
+const NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS = 10;
+const NUM_NETWORKED_EHANDLE_BITS = MAX_EDICT_BITS + NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS;
+const INVALID_NETWORKED_EHANDLE_VALUE = (1 << NUM_NETWORKED_EHANDLE_BITS) - 1;
+
 var EntityDelta = {
   update: 0,
   enter: 1,
@@ -133,6 +139,24 @@ class Entities extends EventEmitter {
   listen(demo) {
     demo.on('svc_PacketEntities', this._handlePacketEntities.bind(this));
     demo.stringTables.on('update', this._handleStringTableUpdate.bind(this));
+  }
+
+  /**
+   * Returns the entity specified by a particular handle.
+   * @param {number} handle - Networked entity handle value
+   * @returns {Entity|null} Entity referenced by the handle. `null` if no matching entity.
+   */
+  getByHandle(handle) {
+    if (handle === INVALID_NETWORKED_EHANDLE_VALUE) {
+      return null;
+    }
+
+    let ent = this.entities[handle & NETWORKED_EHANDLE_ENT_ENTRY_MASK];
+    if (ent == null || ent.serialNum !== (handle >> MAX_EDICT_BITS)) {
+      return null;
+    }
+
+    return ent;
   }
 
   _gatherExcludes(table) {

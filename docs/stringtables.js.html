@@ -23,7 +23,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DemoFile.html">DemoFile</a><ul class='methods'><li data-type='method'><a href="DemoFile.html#parse">parse</a></li></ul></li><li><a href="Entities.html">Entities</a></li><li><a href="Entity.html">Entity</a><ul class='methods'><li data-type='method'><a href="Entity.html#getProp">getProp</a></li></ul></li><li><a href="GameEvents.html">GameEvents</a></li><li><a href="StringTables.html">StringTables</a></li><li><a href="UserMessages.html">UserMessages</a></li></ul><h3>Events</h3><ul><li><a href="DemoFile.html#event:end">end</a></li><li><a href="DemoFile.html#event:net_MessageName">net_MessageName</a></li><li><a href="DemoFile.html#event:start">start</a></li><li><a href="DemoFile.html#event:tickend">tickend</a></li><li><a href="DemoFile.html#event:tickstart">tickstart</a></li><li><a href="Entities.html#event:beforeremove">beforeremove</a></li><li><a href="Entities.html#event:change">change</a></li><li><a href="Entities.html#event:create">create</a></li><li><a href="Entities.html#event:postcreate">postcreate</a></li><li><a href="Entities.html#event:remove">remove</a></li><li><a href="GameEvents.html#event:event">event</a></li><li><a href="GameEvents.html#event:game_event_name">game_event_name</a></li><li><a href="StringTables.html#event:create">create</a></li><li><a href="StringTables.html#event:postcreate">postcreate</a></li><li><a href="StringTables.html#event:update">update</a></li><li><a href="UserMessages.html#event:message">message</a></li><li><a href="UserMessages.html#event:UserMessageName">UserMessageName</a></li></ul><h3>Global</h3><ul><li><a href="global.html#DemoHeader">DemoHeader</a></li><li><a href="global.html#parseHeader">parseHeader</a></li><li><a href="global.html#PlayerInfo">PlayerInfo</a></li><li><a href="global.html#StringTable">StringTable</a></li><li><a href="global.html#StringTableEntry">StringTableEntry</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DemoFile.html">DemoFile</a><ul class='methods'><li data-type='method'><a href="DemoFile.html#parse">parse</a></li></ul></li><li><a href="Entities.html">Entities</a><ul class='methods'><li data-type='method'><a href="Entities.html#getByHandle">getByHandle</a></li></ul></li><li><a href="Entity.html">Entity</a><ul class='methods'><li data-type='method'><a href="Entity.html#getProp">getProp</a></li></ul></li><li><a href="GameEvents.html">GameEvents</a></li><li><a href="StringTables.html">StringTables</a></li><li><a href="UserMessages.html">UserMessages</a></li></ul><h3>Events</h3><ul><li><a href="DemoFile.html#event:end">end</a></li><li><a href="DemoFile.html#event:net_MessageName">net_MessageName</a></li><li><a href="DemoFile.html#event:start">start</a></li><li><a href="DemoFile.html#event:tickend">tickend</a></li><li><a href="DemoFile.html#event:tickstart">tickstart</a></li><li><a href="Entities.html#event:baselineupdate">baselineupdate</a></li><li><a href="Entities.html#event:beforeremove">beforeremove</a></li><li><a href="Entities.html#event:change">change</a></li><li><a href="Entities.html#event:create">create</a></li><li><a href="Entities.html#event:datatablesready">datatablesready</a></li><li><a href="Entities.html#event:postcreate">postcreate</a></li><li><a href="Entities.html#event:remove">remove</a></li><li><a href="GameEvents.html#event:event">event</a></li><li><a href="GameEvents.html#event:game_event_name">game_event_name</a></li><li><a href="StringTables.html#event:create">create</a></li><li><a href="StringTables.html#event:postcreate">postcreate</a></li><li><a href="StringTables.html#event:update">update</a></li><li><a href="UserMessages.html#event:message">message</a></li><li><a href="UserMessages.html#event:UserMessageName">UserMessageName</a></li></ul><h3>Global</h3><ul><li><a href="global.html#DemoHeader">DemoHeader</a></li><li><a href="global.html#parseHeader">parseHeader</a></li><li><a href="global.html#PlayerInfo">PlayerInfo</a></li><li><a href="global.html#StringTable">StringTable</a></li><li><a href="global.html#StringTableEntry">StringTableEntry</a></li></ul>
 </nav>
 
 <div id="main">
@@ -129,34 +129,66 @@ class StringTables extends EventEmitter {
     return _.find(this.tables, table => table.name === name);
   }
 
-  _handleStringTable(name, bitbuf) {
-    var userDataCallback = this.userDataCallbacks[name];
+  _handleStringTables(bitbuf) {
+    let numTables = bitbuf.readUInt8();
 
-    var entries = _.map(_.range(bitbuf.readUInt16()), function () {
-      var entry = bitbuf.readCString();
-      var userData = null;
+    for (var i = 0; i &lt; numTables; ++i) {
+      let tableName = bitbuf.readCString();
+      this._handleStringTable(tableName, bitbuf);
+    }
+  }
+
+  _handleStringTable(name, bitbuf) {
+    let userDataCallback = this.userDataCallbacks[name];
+
+    let table = this.findTableByName(name);
+    assert(table != null);
+
+    let numEntries = bitbuf.readUInt16();
+
+    for (let entryIndex = 0; entryIndex &lt; numEntries; ++entryIndex) {
+      let entry = bitbuf.readCString();
+      let userData = null;
 
       // has user data?
       if (bitbuf.readOneBit()) {
-        var userDataSize = bitbuf.readUInt16();
-        var userDataBuf = new Buffer(bitbuf.readBytes(userDataSize));
+        let userDataSize = bitbuf.readUInt16();
+        let userDataBuf = new Buffer(bitbuf.readBytes(userDataSize));
 
         userData = userDataCallback === undefined ? userDataBuf : userDataCallback(userDataBuf);
       }
 
-      return {
+      table.entries[entryIndex] = {entry, userData};
+
+      this.emit('update', {
+        table,
+        entryIndex,
         entry,
         userData
-      };
-    });
+      });
+    }
 
-    // TODO: client-side stuff
-    assert(bitbuf.readOneBit() === 0);
+    // parse client-side entries
+    if (bitbuf.readOneBit()) {
+      let numStrings = bitbuf.readUInt16();
 
-    return {
-      name,
-      entries
-    };
+      for (let i = 0; i &lt; numStrings; ++i) {
+        let entry = bitbuf.readCString(); // eslint-disable-line no-unused-vars
+        let userData = null; // eslint-disable-line no-unused-vars
+
+        if (bitbuf.readOneBit()) {
+          let userDataSize = bitbuf.readUInt16();
+          let userDataBuf = new Buffer(bitbuf.readBytes(userDataSize));
+
+          userData = userDataCallback === undefined ? userDataBuf : userDataCallback(userDataBuf);
+        }
+
+        // TODO: do something with client-side entries
+      }
+    }
+
+    // table is ready
+    this.emit('postcreate', table);
   }
 
   /**
@@ -283,8 +315,6 @@ class StringTables extends EventEmitter {
     this._parseStringTableUpdate(bitbuf, table, msg.numEntries, msg.maxEntries, msg.userDataSize, msg.userDataSizeBits, msg.userDataFixedSize);
 
     this.tables.push(table);
-
-    this.emit('postcreate', table);
   }
 
   _handleUpdateStringTable(msg) {
@@ -310,7 +340,7 @@ module.exports = StringTables;
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Aug 23 2016 18:30:12 GMT+0100 (BST) using the Minami theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Oct 11 2016 19:07:51 GMT+0100 (BST) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
