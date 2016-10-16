@@ -142,6 +142,16 @@ class Entities extends EventEmitter {
   }
 
   /**
+   * Determines whether handle is set.
+   * This function does not determine whether the handle points to a valid entity.
+   * @param {number} handle - Networked entity handle value
+   * @returns {boolean} true if handle is set
+   */
+  isHandleSet(handle) {
+    return handle !== INVALID_NETWORKED_EHANDLE_VALUE;
+  }
+
+  /**
    * Returns the entity specified by a particular handle.
    * @param {number} handle - Networked entity handle value
    * @returns {Entity|null} Entity referenced by the handle. `null` if no matching entity.
