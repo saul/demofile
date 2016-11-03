@@ -3,46 +3,47 @@
 var assert = require('assert');
 var EventEmitter = require('events');
 var _ = require('lodash');
-var ref = require('ref');
-var StructType = require('ref-struct');
-var refArray = require('ref-array');
+var Parser = require('binary-parser').Parser;
+var Long = require('long');
 var consts = require('./consts');
-var extraTypes = require('./extratypes');
 var bitBuffer = require('./ext/bitbuffer');
-var endian = require('./endian');
 
 /**
  * Player info structure.
- * @property {Long} xuid - Network XUID
+ * @property {Long} xuid - 64-bit Steam ID (e.g. 76561197988627193)
  * @property {string} name - Player name
  * @property {int} userId - Local server user ID, unique while server is running
- * @property {string} guid - Global unique player identifier (Steam2 ID)
+ * @property {string} guid - Steam2 ID string (e.g. STEAM_0:1:14180732)
  * @property {int} friendsId - Friends identification number
  * @property {string} friendsName - Friends name
- * @property {bool} fakePlayer - true, if player is a bot controlled by game.dll
+ * @property {bool} fakePlayer - true, if player is a bot
  * @property {bool} isHltv - true, if player is the HLTV proxy
  * @property {int[]} customFiles - custom files CRC for this player
  */
-var PlayerInfo = StructType({
-  unknown: ref.types.uint64,
-  xuid_lo: ref.types.uint32,
-  xuid_hi: ref.types.uint32,
-  name: extraTypes.charArray(consts.MAX_PLAYER_NAME_LENGTH),
-  userId: ref.types.int32,
-  guid: extraTypes.charArray(consts.SIGNED_GUID_LEN + 1),
-  friendsId: ref.types.uint32,
-  friendsName: extraTypes.charArray(consts.MAX_PLAYER_NAME_LENGTH),
-  fakePlayer: ref.types.bool,
-  isHltv: ref.types.bool,
-  customFiles: refArray(ref.types.uint32, consts.MAX_CUSTOM_FILES)
-  //filesDownloaded: ref.types.uchar // this counter increases each time the server downloaded a new file
-});
+var PlayerInfo = new Parser()
+  .endianess('big')
+  .uint32('unknown_lo')
+  .uint32('unknown_hi')
+  .uint32('xuid_lo')
+  .uint32('xuid_hi')
+  .string('name', {length: consts.MAX_PLAYER_NAME_LENGTH, stripNull: true})
+  .int32('userId')
+  .string('guid', {length: consts.SIGNED_GUID_LEN + 1, stripNull: true})
+  .skip(3)
+  .uint32('friendsId')
+  .string('friendsName', {length: consts.MAX_PLAYER_NAME_LENGTH, stripNull: true})
+  .uint8('fakePlayer', {formatter: x => x !== 0})
+  .skip(3)
+  .uint8('isHltv', {formatter: x => x !== 0})
+  .skip(3)
+  .array('customFiles', {
+    type: 'uint32be',
+    length: consts.MAX_CUSTOM_FILES
+  });
 
 function parseUserInfoData(buf) {
-  var info = PlayerInfo.get(buf).toObject();
-  info.xuid = endian.swapu64(info.xuid_lo, info.xuid_hi);
-  info.userId = endian.swap32(info.userId);
-  info.friendsId = endian.swap32(info.friendsId);
+  var info = PlayerInfo.parse(buf);
+  info.xuid = new Long(info.xuid_hi, info.xuid_lo);
   return info;
 }
 

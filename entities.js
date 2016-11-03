@@ -467,7 +467,7 @@ class Entities extends EventEmitter {
       }
 
       switch (updateType) {
-        case EntityDelta.enter:
+        case EntityDelta.enter: {
           var classId = entityBitBuffer.readUBits(this.serverClassBits);
           var serialNum = entityBitBuffer.readUBits(consts.NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS);
 
@@ -476,26 +476,26 @@ class Entities extends EventEmitter {
           this.emit('postcreate', {entity: newEnt});
 
           break;
+        }
 
-        case EntityDelta.delete:
+        case EntityDelta.delete: {
           assert(msg.isDelta, 'deleting entity on full update');
-
           this._removeEntity(entityIndex);
-
           break;
+        }
 
-        case EntityDelta.update:
+        case EntityDelta.update: {
           let entity = this.entities[entityIndex];
           assert(entity, 'delta on deleted entity');
-
           this._readNewEntity(entityBitBuffer, entity);
-
           break;
+        }
 
-        case EntityDelta.leave:
+        case EntityDelta.leave: {
           assert(msg.isDelta, 'entity leaving PVS on full update');
           // Maybe set a flag on the entity indicating that it is out of PVS?
           break;
+        }
       }
     }
   }

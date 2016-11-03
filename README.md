@@ -2,11 +2,8 @@
 
 [![Join the chat at https://gitter.im/saul/demofile](https://badges.gitter.im/saul/demofile.svg)](https://gitter.im/saul/demofile?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A node.js library for parsing modern (protobuf) Source 1 demo files.
-
-## Supported Games
-
-- Counter-Strike: Global Offensive
+A node.js library for parsing Counter-Strike Global Offensive (CSGO) demo files.
+The library is also Browserify-able, and a standalone bundle that you can `&gt;script src="..."&gt;` is available in [browser/bundle.js](browser/bundle.js).
 
 ## Supported Demo Features
 
@@ -49,6 +46,13 @@ fs.readFile('test.dem', function (err, buffer) {
 ```
 
 ## Release History
+
+### 0.3 (??/??/??)
+
+Major update
+
+- The library now support Browserify and the compiled bundle can be included in web browsers
+- (more)
 
 ### 0.2.11 (16/10/16)
 
