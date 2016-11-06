@@ -18,20 +18,20 @@
   },
   "main": "demo.js",
   "dependencies": {
-    "async": "^1.5.0",
+    "async": "^2.1.2",
     "bit-buffer": "0.0.3",
     "bytebuffer": "^5.0.0",
-    "eslint": "^1.10.3",
-    "eslint-config-defaults": "^7.1.1",
+    "eslint": "^3.9.1",
+    "eslint-config-defaults": "^9.0.0",
     "jsdoc": "^3.4.0",
-    "lodash": "^3.10.1",
+    "lodash": "^4.16.6",
     "long": "^3.0.3",
     "pace": "0.0.4",
-    "protobufjs": "^4.1.3",
+    "protobufjs": "^5.0.1",
     "ref": "^1.3.2",
     "ref-array": "^1.1.2",
     "ref-struct": "^1.0.2",
-    "varint": "^4.0.0"
+    "varint": "^5.0.0"
   },
   "devDependencies": {
     "minami": "^1.1.1"
