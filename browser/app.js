@@ -13,7 +13,7 @@ ProtoBuf.Util.fetch = function(filePath, callback) {
     '/protobufs/netmessages.proto': fs.readFileSync(path.resolve(__dirname, '../protobufs/netmessages.proto')),
     '/protobufs/network_connection.proto': fs.readFileSync(path.resolve(__dirname, '../protobufs/network_connection.proto')),
     '/protobufs/cstrike15_gcmessages.proto': fs.readFileSync(path.resolve(__dirname, '../protobufs/cstrike15_gcmessages.proto')),
-    '/protobufs/steammessages.proto': ''
+    '/protobufs/steammessages.proto': '' // not used
   };
 
   let content = files[filePath];

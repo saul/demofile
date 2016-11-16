@@ -17,13 +17,6 @@ const NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS = 10;
 const NUM_NETWORKED_EHANDLE_BITS = MAX_EDICT_BITS + NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS;
 const INVALID_NETWORKED_EHANDLE_VALUE = (1 << NUM_NETWORKED_EHANDLE_BITS) - 1;
 
-var EntityDelta = {
-  update: 0,
-  enter: 1,
-  leave: 2,
-  delete: 3
-};
-
 /**
  * Represents an in-game entity.
  */
@@ -47,9 +40,7 @@ class Entity {
      */
     this.serialNum = serialNum;
 
-    this.baseline = baseline;
-
-    this.props = {};
+    this.props = baseline || {};
   }
 
   /**
@@ -60,21 +51,11 @@ class Entity {
    * @public
    */
   getProp(tableName, varName) {
-    var value = this.props[tableName] && this.props[tableName][varName];
-
-    if (value === undefined && this.baseline) {
-      return this.baseline[tableName] && this.baseline[tableName][varName];
-    } else {
-      return value;
-    }
+    return this.props[tableName][varName];
   }
 
   updateProp(tableName, varName, newValue) {
-    if (this.props[tableName] === undefined) {
-      this.props[tableName] = {[varName]: newValue};
-    } else {
-      this.props[tableName][varName] = newValue;
-    }
+    this.props[tableName][varName] = newValue;
   }
 }
 
@@ -361,7 +342,7 @@ class Entities extends EventEmitter {
       this._removeEntity(index);
     }
 
-    var entity = new Entity(index, classId, serialNum, this.instanceBaselines[classId]);
+    var entity = new Entity(index, classId, serialNum, _.cloneDeep(this.instanceBaselines[classId]));
     this.entities[index] = entity;
 
     this.emit('create', {entity});
@@ -454,48 +435,25 @@ class Entities extends EventEmitter {
 
       assert(entityIndex < this.entities.length, 'newEntity >= MAX_EDICTS');
 
-      var updateType = EntityDelta.update;
-
       if (entityBitBuffer.readOneBit()) {
-        updateType = EntityDelta.leave;
-
         if (entityBitBuffer.readOneBit()) {
-          updateType = EntityDelta.delete;
-        }
-      } else if (entityBitBuffer.readOneBit()) {
-        updateType = EntityDelta.enter;
-      }
-
-      switch (updateType) {
-        case EntityDelta.enter: {
-          var classId = entityBitBuffer.readUBits(this.serverClassBits);
-          var serialNum = entityBitBuffer.readUBits(consts.NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS);
-
-          let newEnt = this._addEntity(entityIndex, classId, serialNum);
-          this._readNewEntity(entityBitBuffer, newEnt);
-          this.emit('postcreate', {entity: newEnt});
-
-          break;
-        }
-
-        case EntityDelta.delete: {
           assert(msg.isDelta, 'deleting entity on full update');
           this._removeEntity(entityIndex);
-          break;
-        }
-
-        case EntityDelta.update: {
-          let entity = this.entities[entityIndex];
-          assert(entity, 'delta on deleted entity');
-          this._readNewEntity(entityBitBuffer, entity);
-          break;
-        }
-
-        case EntityDelta.leave: {
+        } else {
           assert(msg.isDelta, 'entity leaving PVS on full update');
           // Maybe set a flag on the entity indicating that it is out of PVS?
-          break;
         }
+      } else if (entityBitBuffer.readOneBit()) {
+        var classId = entityBitBuffer.readUBits(this.serverClassBits);
+        var serialNum = entityBitBuffer.readUBits(consts.NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS);
+
+        let newEnt = this._addEntity(entityIndex, classId, serialNum);
+        this._readNewEntity(entityBitBuffer, newEnt);
+        this.emit('postcreate', {entity: newEnt});
+      } else {
+        let entity = this.entities[entityIndex];
+        assert(entity, 'delta on deleted entity');
+        this._readNewEntity(entityBitBuffer, entity);
       }
     }
   }

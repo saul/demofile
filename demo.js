@@ -76,7 +76,6 @@ var OriginViewAngles = new Parser()
   .nest('viewAngles', {type: QAngle})
   .nest('localViewAngles', {type: QAngle});
 
-
 var SplitCmdInfo = new Parser()
   .endianess('little')
   .int32('flags')
@@ -215,6 +214,13 @@ class DemoFile extends EventEmitter {
    */
 
   /**
+   * Fired per command. Parameter is a value in range [0,1] that indicates
+   * the percentage of the demo file has been parsed so far. 
+   * @event DemoFile#progress
+   * @type {number}
+   */
+
+  /**
    * Fired after all commands are processed for a tick.
    * @event DemoFile#tickend
    * @type {int}
@@ -308,7 +314,7 @@ class DemoFile extends EventEmitter {
 
     this.emit('start');
 
-    setTimeout(this._parseRecurse.bind(this), 0);
+    timers.setTimeout(this._parseRecurse.bind(this), 0);
   }
 }
 
