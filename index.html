@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<script src="./browser/bundle.js"></script>
+</head>
+
+<body>
+
+<h1>Select a file</h1>
+<form>
+	<input type="file" id="file">
+	<label>
+		<input type="checkbox" id="printEvents">
+		Print events
+	</label>
+	<label>
+		<input type="checkbox" id="printUserInfo">
+		Print player info
+	</label>
+</form>
+
+<h1>Parsed output</h1>
+<progress id="progress" max="100"></progress>
+<pre id="output"></pre>
+
+<script type="text/javascript">
+	var file = document.getElementById('file');
+	var output = document.getElementById('output');
+	var progress = document.getElementById('progress');
+	var printEventsElement = document.getElementById('printEvents');
+	var printPlayerInfoElement = document.getElementById('printUserInfo');
+
+	file.addEventListener('change', function () {
+		progress.value = 0;
+		output.textContent = '';
+		var printEvents = printEventsElement.checked;
+		var printPlayerInfo = printPlayerInfoElement.checked;
+
+		var file = this.files[0];
+		var reader = new FileReader();
+
+		// Closure to capture the file information.
+		reader.onload = function() {
+			var buf = new Buffer(reader.result);
+			var demo = new demofile.DemoFile();
+
+			demo.on('progress', function(perc) {
+				progress.value = perc * 100;
+			});
+
+			demo.on('end', function() {
+				output.textContent += '\nParse complete.';
+			});
+
+			if (printEvents) {
+				demo.gameEvents.on('event', function(e) {
+					if (e.name !== 'player_footstep') {
+						output.textContent += '\n' + e.name + ' ' + JSON.stringify(e.event);
+					}
+				});
+			}
+
+			if (printPlayerInfo) {
+				demo.stringTables.on('update', function(e) {
+					if (e.table.name !== 'userinfo' || e.userData == null) {
+						return;
+					}
+
+					var relevantData = {name: e.userData.name, steamId: e.userData.guid};
+					output.textContent += '\nuser update: ' + e.entryIndex + ' ' + JSON.stringify(relevantData);
+				});
+			}
+
+			demo.parse(buf);
+		};
+
+		// Read in the image file as a data URL.
+		reader.readAsArrayBuffer(file);
+	});
+</script>
+
+</body>
+</html>

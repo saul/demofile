@@ -1,16 +1,14 @@
 'use strict';
 
-var ref = require('ref');
-var StructType = require('ref-struct');
-var refArray = require('ref-array');
+var Parser = require('binary-parser').Parser;
 var EventEmitter = require('events');
+var timers = require('timers');
 
 var ByteBuffer = require('./ext/bytebuffer');
 var bitBuffer = require('./ext/bitbuffer');
 
 var net = require('./net');
 var consts = require('./consts');
-var extraTypes = require('./extratypes');
 var StringTables = require('./stringtables');
 var UserMessages = require('./usermessages');
 var GameEvents = require('./gameevents');
@@ -34,19 +32,19 @@ const FDEMO_NOINTERP = ( 1 << 2 );	// don't interpolate between this an last vie
  * @property {int} playbackFrames - Total playback frames
  * @property {int} signonLength - Length of signon (bytes)
  */
-var DemoHeader = StructType({
-  magic: extraTypes.charArray(8),
-  protocol: ref.types.int32,
-  networkProtocol: ref.types.int32,
-  serverName: extraTypes.charArray(consts.MAX_OSPATH),
-  clientName: extraTypes.charArray(consts.MAX_OSPATH),
-  mapName: extraTypes.charArray(consts.MAX_OSPATH),
-  gameDirectory: extraTypes.charArray(consts.MAX_OSPATH),
-  playbackTime: ref.types.float,
-  playbackTicks: ref.types.int32,
-  playbackFrames: ref.types.int32,
-  signonLength: ref.types.int32
-});
+var DemoHeader = new Parser()
+  .endianess('little')
+  .string('magic', {length: 8, stripNull: true})
+  .int32('protocol')
+  .int32('networkProtocol')
+  .string('serverName', {length: consts.MAX_OSPATH, stripNull: true})
+  .string('clientName', {length: consts.MAX_OSPATH, stripNull: true})
+  .string('mapName', {length: consts.MAX_OSPATH, stripNull: true})
+  .string('gameDirectory', {length: consts.MAX_OSPATH, stripNull: true})
+  .float('playbackTime')
+  .int32('playbackTicks')
+  .int32('playbackFrames')
+  .int32('signonLength');
 
 var DemoCommands = {
   signon: 1, // startup message
@@ -60,33 +58,36 @@ var DemoCommands = {
   stringTables: 9
 };
 
-var QAngle = StructType({
-  x: ref.types.float,
-  y: ref.types.float,
-  z: ref.types.float
-});
+var QAngle = new Parser()
+  .endianess('little')
+  .float('pitch')
+  .float('yaw')
+  .float('roll');
 
-var Vector = StructType({
-  x: ref.types.float,
-  y: ref.types.float,
-  z: ref.types.float
-});
+var Vector = new Parser()
+  .endianess('little')
+  .float('x')
+  .float('y')
+  .float('z');
 
-var OriginViewAngles = StructType({
-  viewOrigin: Vector,
-  viewAngles: QAngle,
-  localViewAngles: QAngle
-});
+var OriginViewAngles = new Parser()
+  .endianess('little')
+  .nest('viewOrigin', {type: Vector})
+  .nest('viewAngles', {type: QAngle})
+  .nest('localViewAngles', {type: QAngle});
 
-var SplitCmdInfo = StructType({
-  flags: ref.types.int32,
-  original: OriginViewAngles,
-  resampled: OriginViewAngles
-});
+var SplitCmdInfo = new Parser()
+  .endianess('little')
+  .int32('flags')
+  .nest('original', {type: OriginViewAngles})
+  .nest('resampled', {type: OriginViewAngles});
 
-var CmdInfo = StructType({
-  u: refArray(SplitCmdInfo, consts.MAX_SPLITSCREEN_CLIENTS)
-});
+var CmdInfo = new Parser()
+  .endianess('little')
+  .array('u', {
+    type: SplitCmdInfo,
+    length: consts.MAX_SPLITSCREEN_CLIENTS
+  });
 
 /**
  * Parses a demo file header from the buffer.
@@ -94,7 +95,7 @@ var CmdInfo = StructType({
  * @returns {DemoHeader} Header object
  */
 function parseHeader(buffer) {
-  return DemoHeader.get(buffer).toObject();
+  return DemoHeader.parse(new Buffer(buffer));
 }
 
 /**
@@ -103,6 +104,10 @@ function parseHeader(buffer) {
 class DemoFile extends EventEmitter {
   constructor() {
     super();
+
+    this._lastThreadYieldTime = 0;
+    this._immediateTimerToken = null;
+    this._timeoutTimerToken = null;
 
     this._bytebuf = null;
 
@@ -148,7 +153,7 @@ class DemoFile extends EventEmitter {
    */
 
   _handleDemoPacket() {
-    CmdInfo.get(this._bytebuf.readBytes(CmdInfo.size).toSlicedBuffer());
+    CmdInfo.parse(new Buffer(this._bytebuf.readBytes(152).toSlicedBuffer()));
 
     // skip over sequence info
     this._bytebuf.readInt32();
@@ -209,12 +214,47 @@ class DemoFile extends EventEmitter {
    */
 
   /**
+   * Fired per command. Parameter is a value in range [0,1] that indicates
+   * the percentage of the demo file has been parsed so far. 
+   * @event DemoFile#progress
+   * @type {number}
+   */
+
+  /**
    * Fired after all commands are processed for a tick.
    * @event DemoFile#tickend
    * @type {int}
    */
 
+  _recurse() {
+    let now = Date.now();
+
+    if (now - this._lastThreadYieldTime < 32) {
+      this._immediateTimerToken = timers.setImmediate(this._parseRecurse.bind(this));
+    } else {
+      this._lastThreadYieldTime = now;
+      this._timeoutTimerToken = timers.setTimeout(this._parseRecurse.bind(this), 0);
+    }
+  }
+
+  /**
+   * Cancel the current parse operation.
+   * @returns {void}
+   */
+  cancel() {
+    if (this._immediateTimerToken) {
+      timers.cancelImmediate(this._immediateTimerToken);
+      this._immediateTimerToken = null;
+    }
+    if (this._timeoutTimerToken) {
+      timers.cancelTimeout(this._timeoutTimerToken);
+      this._timeoutTimerToken = null;
+    }
+  }
+
   _parseRecurse() {
+    this.emit('progress', this._bytebuf.offset / this._bytebuf.limit);
+
     var command = this._bytebuf.readUInt8();
     var tick = this._bytebuf.readInt32();
     this.playerSlot = this._bytebuf.readUInt8();
@@ -254,7 +294,7 @@ class DemoFile extends EventEmitter {
         throw 'Unrecognised command';
     }
 
-    setImmediate(this._parseRecurse.bind(this));
+    this._recurse();
   }
 
   /**
@@ -270,11 +310,11 @@ class DemoFile extends EventEmitter {
    */
   parse(buffer) {
     this.header = parseHeader(buffer);
-    this._bytebuf = ByteBuffer.wrap(buffer.slice(DemoHeader.size), true);
+    this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
 
     this.emit('start');
 
-    setImmediate(this._parseRecurse.bind(this));
+    timers.setTimeout(this._parseRecurse.bind(this), 0);
   }
 }
 

@@ -23,7 +23,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DemoFile.html">DemoFile</a><ul class='methods'><li data-type='method'><a href="DemoFile.html#parse">parse</a></li></ul></li><li><a href="Entities.html">Entities</a><ul class='methods'><li data-type='method'><a href="Entities.html#getByHandle">getByHandle</a></li></ul></li><li><a href="Entity.html">Entity</a><ul class='methods'><li data-type='method'><a href="Entity.html#getProp">getProp</a></li></ul></li><li><a href="GameEvents.html">GameEvents</a></li><li><a href="StringTables.html">StringTables</a></li><li><a href="UserMessages.html">UserMessages</a></li></ul><h3>Events</h3><ul><li><a href="DemoFile.html#event:end">end</a></li><li><a href="DemoFile.html#event:net_MessageName">net_MessageName</a></li><li><a href="DemoFile.html#event:start">start</a></li><li><a href="DemoFile.html#event:tickend">tickend</a></li><li><a href="DemoFile.html#event:tickstart">tickstart</a></li><li><a href="Entities.html#event:baselineupdate">baselineupdate</a></li><li><a href="Entities.html#event:beforeremove">beforeremove</a></li><li><a href="Entities.html#event:change">change</a></li><li><a href="Entities.html#event:create">create</a></li><li><a href="Entities.html#event:datatablesready">datatablesready</a></li><li><a href="Entities.html#event:postcreate">postcreate</a></li><li><a href="Entities.html#event:remove">remove</a></li><li><a href="GameEvents.html#event:event">event</a></li><li><a href="GameEvents.html#event:game_event_name">game_event_name</a></li><li><a href="StringTables.html#event:create">create</a></li><li><a href="StringTables.html#event:postcreate">postcreate</a></li><li><a href="StringTables.html#event:update">update</a></li><li><a href="UserMessages.html#event:message">message</a></li><li><a href="UserMessages.html#event:UserMessageName">UserMessageName</a></li></ul><h3>Global</h3><ul><li><a href="global.html#DemoHeader">DemoHeader</a></li><li><a href="global.html#parseHeader">parseHeader</a></li><li><a href="global.html#PlayerInfo">PlayerInfo</a></li><li><a href="global.html#StringTable">StringTable</a></li><li><a href="global.html#StringTableEntry">StringTableEntry</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DemoFile.html">DemoFile</a><ul class='methods'><li data-type='method'><a href="DemoFile.html#cancel">cancel</a></li><li data-type='method'><a href="DemoFile.html#parse">parse</a></li></ul></li><li><a href="Entities.html">Entities</a><ul class='methods'><li data-type='method'><a href="Entities.html#getByHandle">getByHandle</a></li><li data-type='method'><a href="Entities.html#isHandleSet">isHandleSet</a></li></ul></li><li><a href="Entity.html">Entity</a><ul class='methods'><li data-type='method'><a href="Entity.html#getProp">getProp</a></li></ul></li><li><a href="GameEvents.html">GameEvents</a></li><li><a href="StringTables.html">StringTables</a></li><li><a href="UserMessages.html">UserMessages</a></li></ul><h3>Events</h3><ul><li><a href="DemoFile.html#event:end">end</a></li><li><a href="DemoFile.html#event:net_MessageName">net_MessageName</a></li><li><a href="DemoFile.html#event:progress">progress</a></li><li><a href="DemoFile.html#event:start">start</a></li><li><a href="DemoFile.html#event:tickend">tickend</a></li><li><a href="DemoFile.html#event:tickstart">tickstart</a></li><li><a href="Entities.html#event:baselineupdate">baselineupdate</a></li><li><a href="Entities.html#event:beforeremove">beforeremove</a></li><li><a href="Entities.html#event:change">change</a></li><li><a href="Entities.html#event:create">create</a></li><li><a href="Entities.html#event:datatablesready">datatablesready</a></li><li><a href="Entities.html#event:postcreate">postcreate</a></li><li><a href="Entities.html#event:remove">remove</a></li><li><a href="GameEvents.html#event:event">event</a></li><li><a href="GameEvents.html#event:game_event_name">game_event_name</a></li><li><a href="StringTables.html#event:create">create</a></li><li><a href="StringTables.html#event:postcreate">postcreate</a></li><li><a href="StringTables.html#event:update">update</a></li><li><a href="UserMessages.html#event:message">message</a></li><li><a href="UserMessages.html#event:UserMessageName">UserMessageName</a></li></ul><h3>Global</h3><ul><li><a href="global.html#DemoHeader">DemoHeader</a></li><li><a href="global.html#parseHeader">parseHeader</a></li><li><a href="global.html#PlayerInfo">PlayerInfo</a></li><li><a href="global.html#StringTable">StringTable</a></li><li><a href="global.html#StringTableEntry">StringTableEntry</a></li></ul>
 </nav>
 
 <div id="main">
@@ -40,26 +40,24 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-var ref = require('ref');
-var StructType = require('ref-struct');
-var refArray = require('ref-array');
+var Parser = require('binary-parser').Parser;
 var EventEmitter = require('events');
+var timers = require('timers');
 
 var ByteBuffer = require('./ext/bytebuffer');
 var bitBuffer = require('./ext/bitbuffer');
 
 var net = require('./net');
 var consts = require('./consts');
-var extraTypes = require('./extratypes');
 var StringTables = require('./stringtables');
 var UserMessages = require('./usermessages');
 var GameEvents = require('./gameevents');
 var Entities = require('./entities');
 
 const FDEMO_NORMAL = 0;
-const FDEMO_USE_ORIGIN2 = ( 1 &lt;&lt; 0 );
-const FDEMO_USE_ANGLES2 = ( 1 &lt;&lt; 1 );
-const FDEMO_NOINTERP = ( 1 &lt;&lt; 2 );	// don't interpolate between this an last view
+const FDEMO_USE_ORIGIN2 = 1 &lt;&lt; 0;
+const FDEMO_USE_ANGLES2 = 1 &lt;&lt; 1;
+const FDEMO_NOINTERP = 1 &lt;&lt; 2; // don't interpolate between this an last view
 
 /**
  * @property {string} magic - Header magic
@@ -74,19 +72,19 @@ const FDEMO_NOINTERP = ( 1 &lt;&lt; 2 );	// don't interpolate between this an la
  * @property {int} playbackFrames - Total playback frames
  * @property {int} signonLength - Length of signon (bytes)
  */
-var DemoHeader = StructType({
-  magic: extraTypes.charArray(8),
-  protocol: ref.types.int32,
-  networkProtocol: ref.types.int32,
-  serverName: extraTypes.charArray(consts.MAX_OSPATH),
-  clientName: extraTypes.charArray(consts.MAX_OSPATH),
-  mapName: extraTypes.charArray(consts.MAX_OSPATH),
-  gameDirectory: extraTypes.charArray(consts.MAX_OSPATH),
-  playbackTime: ref.types.float,
-  playbackTicks: ref.types.int32,
-  playbackFrames: ref.types.int32,
-  signonLength: ref.types.int32
-});
+var DemoHeader = new Parser()
+  .endianess('little')
+  .string('magic', {length: 8, stripNull: true})
+  .int32('protocol')
+  .int32('networkProtocol')
+  .string('serverName', {length: consts.MAX_OSPATH, stripNull: true})
+  .string('clientName', {length: consts.MAX_OSPATH, stripNull: true})
+  .string('mapName', {length: consts.MAX_OSPATH, stripNull: true})
+  .string('gameDirectory', {length: consts.MAX_OSPATH, stripNull: true})
+  .float('playbackTime')
+  .int32('playbackTicks')
+  .int32('playbackFrames')
+  .int32('signonLength');
 
 var DemoCommands = {
   signon: 1, // startup message
@@ -100,33 +98,36 @@ var DemoCommands = {
   stringTables: 9
 };
 
-var QAngle = StructType({
-  x: ref.types.float,
-  y: ref.types.float,
-  z: ref.types.float
-});
+var QAngle = new Parser()
+  .endianess('little')
+  .float('pitch')
+  .float('yaw')
+  .float('roll');
 
-var Vector = StructType({
-  x: ref.types.float,
-  y: ref.types.float,
-  z: ref.types.float
-});
+var Vector = new Parser()
+  .endianess('little')
+  .float('x')
+  .float('y')
+  .float('z');
 
-var OriginViewAngles = StructType({
-  viewOrigin: Vector,
-  viewAngles: QAngle,
-  localViewAngles: QAngle
-});
+var OriginViewAngles = new Parser()
+  .endianess('little')
+  .nest('viewOrigin', {type: Vector})
+  .nest('viewAngles', {type: QAngle})
+  .nest('localViewAngles', {type: QAngle});
 
-var SplitCmdInfo = StructType({
-  flags: ref.types.int32,
-  original: OriginViewAngles,
-  resampled: OriginViewAngles
-});
+var SplitCmdInfo = new Parser()
+  .endianess('little')
+  .int32('flags')
+  .nest('original', {type: OriginViewAngles})
+  .nest('resampled', {type: OriginViewAngles});
 
-var CmdInfo = StructType({
-  u: refArray(SplitCmdInfo, consts.MAX_SPLITSCREEN_CLIENTS)
-});
+var CmdInfo = new Parser()
+  .endianess('little')
+  .array('u', {
+    type: SplitCmdInfo,
+    length: consts.MAX_SPLITSCREEN_CLIENTS
+  });
 
 /**
  * Parses a demo file header from the buffer.
@@ -134,7 +135,7 @@ var CmdInfo = StructType({
  * @returns {DemoHeader} Header object
  */
 function parseHeader(buffer) {
-  return DemoHeader.get(buffer).toObject();
+  return DemoHeader.parse(new Buffer(buffer));
 }
 
 /**
@@ -143,6 +144,10 @@ function parseHeader(buffer) {
 class DemoFile extends EventEmitter {
   constructor() {
     super();
+
+    this._lastThreadYieldTime = 0;
+    this._immediateTimerToken = null;
+    this._timeoutTimerToken = null;
 
     this._bytebuf = null;
 
@@ -188,7 +193,7 @@ class DemoFile extends EventEmitter {
    */
 
   _handleDemoPacket() {
-    CmdInfo.get(this._bytebuf.readBytes(CmdInfo.size).toSlicedBuffer());
+    CmdInfo.parse(new Buffer(this._bytebuf.readBytes(152).toSlicedBuffer()));
 
     // skip over sequence info
     this._bytebuf.readInt32();
@@ -249,12 +254,47 @@ class DemoFile extends EventEmitter {
    */
 
   /**
+   * Fired per command. Parameter is a value in range [0,1] that indicates
+   * the percentage of the demo file has been parsed so far. 
+   * @event DemoFile#progress
+   * @type {number}
+   */
+
+  /**
    * Fired after all commands are processed for a tick.
    * @event DemoFile#tickend
    * @type {int}
    */
 
+  _recurse() {
+    let now = Date.now();
+
+    if (now - this._lastThreadYieldTime &lt; 32) {
+      this._immediateTimerToken = timers.setImmediate(this._parseRecurse.bind(this));
+    } else {
+      this._lastThreadYieldTime = now;
+      this._timeoutTimerToken = timers.setTimeout(this._parseRecurse.bind(this), 0);
+    }
+  }
+
+  /**
+   * Cancel the current parse operation.
+   * @returns {void}
+   */
+  cancel() {
+    if (this._immediateTimerToken) {
+      timers.cancelImmediate(this._immediateTimerToken);
+      this._immediateTimerToken = null;
+    }
+    if (this._timeoutTimerToken) {
+      timers.cancelTimeout(this._timeoutTimerToken);
+      this._timeoutTimerToken = null;
+    }
+  }
+
   _parseRecurse() {
+    this.emit('progress', this._bytebuf.offset / this._bytebuf.limit);
+
     var command = this._bytebuf.readUInt8();
     var tick = this._bytebuf.readInt32();
     this.playerSlot = this._bytebuf.readUInt8();
@@ -294,7 +334,7 @@ class DemoFile extends EventEmitter {
         throw 'Unrecognised command';
     }
 
-    setImmediate(this._parseRecurse.bind(this));
+    this._recurse();
   }
 
   /**
@@ -310,11 +350,11 @@ class DemoFile extends EventEmitter {
    */
   parse(buffer) {
     this.header = parseHeader(buffer);
-    this._bytebuf = ByteBuffer.wrap(buffer.slice(DemoHeader.size), true);
+    this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
 
     this.emit('start');
 
-    setImmediate(this._parseRecurse.bind(this));
+    timers.setTimeout(this._parseRecurse.bind(this), 0);
   }
 }
 
@@ -338,7 +378,7 @@ module.exports = {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Oct 11 2016 19:07:51 GMT+0100 (BST) using the Minami theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Nov 16 2016 22:09:20 GMT+0000 (GMT) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

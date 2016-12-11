@@ -23,7 +23,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DemoFile.html">DemoFile</a><ul class='methods'><li data-type='method'><a href="DemoFile.html#parse">parse</a></li></ul></li><li><a href="Entities.html">Entities</a><ul class='methods'><li data-type='method'><a href="Entities.html#getByHandle">getByHandle</a></li></ul></li><li><a href="Entity.html">Entity</a><ul class='methods'><li data-type='method'><a href="Entity.html#getProp">getProp</a></li></ul></li><li><a href="GameEvents.html">GameEvents</a></li><li><a href="StringTables.html">StringTables</a></li><li><a href="UserMessages.html">UserMessages</a></li></ul><h3>Events</h3><ul><li><a href="DemoFile.html#event:end">end</a></li><li><a href="DemoFile.html#event:net_MessageName">net_MessageName</a></li><li><a href="DemoFile.html#event:start">start</a></li><li><a href="DemoFile.html#event:tickend">tickend</a></li><li><a href="DemoFile.html#event:tickstart">tickstart</a></li><li><a href="Entities.html#event:baselineupdate">baselineupdate</a></li><li><a href="Entities.html#event:beforeremove">beforeremove</a></li><li><a href="Entities.html#event:change">change</a></li><li><a href="Entities.html#event:create">create</a></li><li><a href="Entities.html#event:datatablesready">datatablesready</a></li><li><a href="Entities.html#event:postcreate">postcreate</a></li><li><a href="Entities.html#event:remove">remove</a></li><li><a href="GameEvents.html#event:event">event</a></li><li><a href="GameEvents.html#event:game_event_name">game_event_name</a></li><li><a href="StringTables.html#event:create">create</a></li><li><a href="StringTables.html#event:postcreate">postcreate</a></li><li><a href="StringTables.html#event:update">update</a></li><li><a href="UserMessages.html#event:message">message</a></li><li><a href="UserMessages.html#event:UserMessageName">UserMessageName</a></li></ul><h3>Global</h3><ul><li><a href="global.html#DemoHeader">DemoHeader</a></li><li><a href="global.html#parseHeader">parseHeader</a></li><li><a href="global.html#PlayerInfo">PlayerInfo</a></li><li><a href="global.html#StringTable">StringTable</a></li><li><a href="global.html#StringTableEntry">StringTableEntry</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DemoFile.html">DemoFile</a><ul class='methods'><li data-type='method'><a href="DemoFile.html#cancel">cancel</a></li><li data-type='method'><a href="DemoFile.html#parse">parse</a></li></ul></li><li><a href="Entities.html">Entities</a><ul class='methods'><li data-type='method'><a href="Entities.html#getByHandle">getByHandle</a></li><li data-type='method'><a href="Entities.html#isHandleSet">isHandleSet</a></li></ul></li><li><a href="Entity.html">Entity</a><ul class='methods'><li data-type='method'><a href="Entity.html#getProp">getProp</a></li></ul></li><li><a href="GameEvents.html">GameEvents</a></li><li><a href="StringTables.html">StringTables</a></li><li><a href="UserMessages.html">UserMessages</a></li></ul><h3>Events</h3><ul><li><a href="DemoFile.html#event:end">end</a></li><li><a href="DemoFile.html#event:net_MessageName">net_MessageName</a></li><li><a href="DemoFile.html#event:progress">progress</a></li><li><a href="DemoFile.html#event:start">start</a></li><li><a href="DemoFile.html#event:tickend">tickend</a></li><li><a href="DemoFile.html#event:tickstart">tickstart</a></li><li><a href="Entities.html#event:baselineupdate">baselineupdate</a></li><li><a href="Entities.html#event:beforeremove">beforeremove</a></li><li><a href="Entities.html#event:change">change</a></li><li><a href="Entities.html#event:create">create</a></li><li><a href="Entities.html#event:datatablesready">datatablesready</a></li><li><a href="Entities.html#event:postcreate">postcreate</a></li><li><a href="Entities.html#event:remove">remove</a></li><li><a href="GameEvents.html#event:event">event</a></li><li><a href="GameEvents.html#event:game_event_name">game_event_name</a></li><li><a href="StringTables.html#event:create">create</a></li><li><a href="StringTables.html#event:postcreate">postcreate</a></li><li><a href="StringTables.html#event:update">update</a></li><li><a href="UserMessages.html#event:message">message</a></li><li><a href="UserMessages.html#event:UserMessageName">UserMessageName</a></li></ul><h3>Global</h3><ul><li><a href="global.html#DemoHeader">DemoHeader</a></li><li><a href="global.html#parseHeader">parseHeader</a></li><li><a href="global.html#PlayerInfo">PlayerInfo</a></li><li><a href="global.html#StringTable">StringTable</a></li><li><a href="global.html#StringTableEntry">StringTableEntry</a></li></ul>
 </nav>
 
 <div id="main">
@@ -43,46 +43,47 @@
 var assert = require('assert');
 var EventEmitter = require('events');
 var _ = require('lodash');
-var ref = require('ref');
-var StructType = require('ref-struct');
-var refArray = require('ref-array');
+var Parser = require('binary-parser').Parser;
+var Long = require('long');
 var consts = require('./consts');
-var extraTypes = require('./extratypes');
 var bitBuffer = require('./ext/bitbuffer');
-var endian = require('./endian');
 
 /**
  * Player info structure.
- * @property {Long} xuid - Network XUID
+ * @property {Long} xuid - 64-bit Steam ID (e.g. 76561197988627193)
  * @property {string} name - Player name
  * @property {int} userId - Local server user ID, unique while server is running
- * @property {string} guid - Global unique player identifier (Steam2 ID)
+ * @property {string} guid - Steam2 ID string (e.g. STEAM_0:1:14180732)
  * @property {int} friendsId - Friends identification number
  * @property {string} friendsName - Friends name
- * @property {bool} fakePlayer - true, if player is a bot controlled by game.dll
+ * @property {bool} fakePlayer - true, if player is a bot
  * @property {bool} isHltv - true, if player is the HLTV proxy
  * @property {int[]} customFiles - custom files CRC for this player
  */
-var PlayerInfo = StructType({
-  unknown: ref.types.uint64,
-  xuid_lo: ref.types.uint32,
-  xuid_hi: ref.types.uint32,
-  name: extraTypes.charArray(consts.MAX_PLAYER_NAME_LENGTH),
-  userId: ref.types.int32,
-  guid: extraTypes.charArray(consts.SIGNED_GUID_LEN + 1),
-  friendsId: ref.types.uint32,
-  friendsName: extraTypes.charArray(consts.MAX_PLAYER_NAME_LENGTH),
-  fakePlayer: ref.types.bool,
-  isHltv: ref.types.bool,
-  customFiles: refArray(ref.types.uint32, consts.MAX_CUSTOM_FILES)
-  //filesDownloaded: ref.types.uchar // this counter increases each time the server downloaded a new file
-});
+var PlayerInfo = new Parser()
+  .endianess('big')
+  .uint32('unknown_lo')
+  .uint32('unknown_hi')
+  .uint32('xuid_lo')
+  .uint32('xuid_hi')
+  .string('name', {length: consts.MAX_PLAYER_NAME_LENGTH, stripNull: true})
+  .int32('userId')
+  .string('guid', {length: consts.SIGNED_GUID_LEN + 1, stripNull: true})
+  .skip(3)
+  .uint32('friendsId')
+  .string('friendsName', {length: consts.MAX_PLAYER_NAME_LENGTH, stripNull: true})
+  .uint8('fakePlayer', {formatter: x => x !== 0})
+  .skip(3)
+  .uint8('isHltv', {formatter: x => x !== 0})
+  .skip(3)
+  .array('customFiles', {
+    type: 'uint32be',
+    length: consts.MAX_CUSTOM_FILES
+  });
 
 function parseUserInfoData(buf) {
-  var info = PlayerInfo.get(buf).toObject();
-  info.xuid = endian.swapu64(info.xuid_lo, info.xuid_hi);
-  info.userId = endian.swap32(info.userId);
-  info.friendsId = endian.swap32(info.friendsId);
+  var info = PlayerInfo.parse(buf);
+  info.xuid = new Long(info.xuid_hi, info.xuid_lo);
   return info;
 }
 
@@ -340,7 +341,7 @@ module.exports = StringTables;
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Oct 11 2016 19:07:51 GMT+0100 (BST) using the Minami theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Nov 16 2016 22:09:20 GMT+0000 (GMT) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -12,14 +12,9 @@ function parseDemoFile(path) {
     assert.ifError(err);
 
     var demoFile = new demo.DemoFile();
-    var pace;
 
     demoFile.on('start', () => {
-      pace = require('pace')({total: demoFile.header.playbackTicks, maxBurden: 0.1});
-    });
-
-    demoFile.on('tickend', tick => {
-      pace.op(tick);
+      console.log(demoFile.header);
     });
 
     demoFile.stringTables.on('update', e => {

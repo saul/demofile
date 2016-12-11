@@ -1,1 +1,2 @@
-docs/*
+browser/bundle.js
+docs/**

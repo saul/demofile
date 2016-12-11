@@ -1,29 +1,17 @@
 module.exports = {
-    "rules": {
-        "indent": [
-            2,
-            2,
-            {"SwitchCase": 1}
-        ],
-        "quotes": [
-            2,
-            "single"
-        ],
-        "linebreak-style": [
-            2,
-            "unix"
-        ],
-        "semi": [
-            2,
-            "always"
-        ],
-        "eqeqeq": [2, "smart"],
-        "valid-jsdoc": 2
-    },
-    "env": {
-        "es6": true,
-        "node": true,
-        "browser": true
-    },
-    "extends": "eslint:recommended"
+  "env": {
+    "es6": true,
+    "browser": true,
+    "commonjs": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": ["error", 2, {"SwitchCase": 1}],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "eqeqeq": ["error", "smart"],
+    "valid-jsdoc": "error"
+  }
 };

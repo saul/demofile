@@ -2,11 +2,8 @@
 
 [![Join the chat at https://gitter.im/saul/demofile](https://badges.gitter.im/saul/demofile.svg)](https://gitter.im/saul/demofile?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A node.js library for parsing modern (protobuf) Source 1 demo files.
-
-## Supported Games
-
-- Counter-Strike: Global Offensive
+A node.js library for parsing Counter-Strike Global Offensive (CSGO) demo files.
+The library is also Browserify-able, and a standalone bundle that you can `<script src="...">` is available in [browser/bundle.js](browser/bundle.js).
 
 ## Supported Demo Features
 
@@ -19,6 +16,14 @@ A node.js library for parsing modern (protobuf) Source 1 demo files.
 - [ ] Console commands
 
 ## Installation
+
+### Browser
+
+    <script src="browser/bundle.js"></script>
+
+The `DemoFile` module will be available as `window.demofile`. 
+
+### Node
 
     npm install --save demofile
 
@@ -50,9 +55,17 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.3 (16/11/16)
+
+Major update
+
+- The library now support Browserify and the compiled bundle can be included in web browsers
+- Added DemoFile#progress event that indicates what percentage of the demo file has been parsed
+- Removed dependency on the `pace` library
+
 ### 0.2.11 (16/10/16)
 
-- :sparkles: Added entities `isHandleSet` to determine if a networked entity handle is set (the game uses `(1 << 21) - 1` to mean empty )
+- :sparkles: Added entities `isHandleSet` to determine if a networked entity handle is set (the game uses `(1 << 21) - 1` to mean empty)
 
 ### 0.2.10 (11/10/16)
 

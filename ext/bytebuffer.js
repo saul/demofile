@@ -1,4 +1,3 @@
-var ref = require('ref');
 var ByteBuffer = require('bytebuffer');
 
 ByteBuffer.prototype.readVBytes = function (offset) {
@@ -16,7 +15,7 @@ ByteBuffer.prototype.readIBytes = function (offset) {
   var length = this.readInt32(offset);
 
   if (typeof offset !== 'undefined') {
-    offset += ref.types.int32.size;
+    offset += 4;
   }
 
   return this.readBytes(length, offset);
