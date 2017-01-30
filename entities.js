@@ -51,11 +51,21 @@ class Entity {
    * @public
    */
   getProp(tableName, varName) {
-    return this.props[tableName][varName];
+    var value = this.props[tableName] && this.props[tableName][varName];
+
+    if (value === undefined && this.baseline) {
+      return this.baseline[tableName] && this.baseline[tableName][varName];
+    } else {
+      return value;
+    }
   }
 
   updateProp(tableName, varName, newValue) {
-    this.props[tableName][varName] = newValue;
+    if (this.props[tableName] === undefined) {
+      this.props[tableName] = {[varName]: newValue};
+    } else {
+      this.props[tableName][varName] = newValue;
+    }
   }
 }
 

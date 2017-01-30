@@ -55,6 +55,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.3.1 (30/01/17)
+
+- :bug: Fixed `Entity#getProp` exception when a prop is updated that is not part of the entity baseline
+
 ### 0.3 (16/11/16)
 
 Major update
