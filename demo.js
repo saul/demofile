@@ -13,11 +13,17 @@ var StringTables = require('./stringtables');
 var UserMessages = require('./usermessages');
 var GameEvents = require('./gameevents');
 var Entities = require('./entities');
+var ConVars = require('./convars');
 
 const FDEMO_NORMAL = 0;
 const FDEMO_USE_ORIGIN2 = ( 1 << 0 );
 const FDEMO_USE_ANGLES2 = ( 1 << 1 );
 const FDEMO_NOINTERP = ( 1 << 2 );	// don't interpolate between this an last view
+
+const TEAM_UNASSIGNED = 0;
+const TEAM_SPECTATOR = 1;
+const TEAM_TERRORISTS = 2;
+const TEAM_CTS = 3;
 
 /**
  * @property {string} magic - Header magic
@@ -140,10 +146,38 @@ class DemoFile extends EventEmitter {
     /** @type {UserMessages} */
     this.userMessages = new UserMessages();
 
+    /** @type {ConVars} */
+    this.conVars = new ConVars();
+
     this.entities.listen(this);
     this.gameEvents.listen(this);
     this.stringTables.listen(this);
     this.userMessages.listen(this);
+    this.conVars.listen(this);
+  }
+
+  /**
+   * Shortcut for `this.entities.players`
+   * @returns {Player[]}
+   */
+  get players() {
+    return this.entities.players;
+  }
+
+  /**
+   * Shortcut for `this.entities.teams`
+   * @returns {Team[]}
+   */
+  get teams() {
+    return this.entities.teams;
+  }
+
+  /**
+   * Shortcut for `this.entities.gameRules`
+   * @returns {GameRules|null}
+   */
+  get gameRules() {
+    return this.entities.gameRules;
   }
 
   /**
@@ -324,5 +358,9 @@ module.exports = {
   FDEMO_NORMAL,
   FDEMO_USE_ORIGIN2,
   FDEMO_USE_ANGLES2,
-  FDEMO_NOINTERP
+  FDEMO_NOINTERP,
+  TEAM_UNASSIGNED,
+  TEAM_SPECTATOR,
+  TEAM_TERRORISTS,
+  TEAM_CTS
 };

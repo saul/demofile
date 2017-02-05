@@ -55,6 +55,14 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.0 (05/02/17)
+
+Major update
+
+- Added new `Player`, `Team` and `GameRules` entities
+- Added `DemoFile#conVars` for accessing console variables and listening for changes
+- Updated `dumpfile.js` example to be more representative of real-world usage
+
 ### 0.3.1 (30/01/17)
 
 - :bug: Fixed `Entity#getProp` exception when a prop is updated that is not part of the entity baseline
