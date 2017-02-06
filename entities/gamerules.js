@@ -7,22 +7,21 @@ const BaseEntity = require('./baseentity.js');
  */
 class GameRules extends BaseEntity {
   /**
-   * @returns {bool}
+   * @returns {bool} Is the game currently in 'warmup' mode?
    */
   get isWarmup() {
     return this.getProp('DT_CSGameRules', 'm_bWarmupPeriod');
   }
 
   /**
-   * @returns {int}
+   * @returns {int} Current number of rounds played.
    */
   get roundNumber() {
     return this.getProp('DT_CSGameRules', 'm_totalRoundsPlayed');
   }
 
   /**
-   * One of: 'first', 'second', 'halftime', 'postgame'
-   * @returns {string}
+   * @returns {string} 'first', 'second', 'halftime' or 'postgame'
    */
   get phase() {
     const gamePhases = {

@@ -158,7 +158,7 @@ class DemoFile extends EventEmitter {
 
   /**
    * Shortcut for `this.entities.players`
-   * @returns {Player[]}
+   * @returns {Player[]} All connected player entities
    */
   get players() {
     return this.entities.players;
@@ -166,7 +166,7 @@ class DemoFile extends EventEmitter {
 
   /**
    * Shortcut for `this.entities.teams`
-   * @returns {Team[]}
+   * @returns {Team[]} All team entities
    */
   get teams() {
     return this.entities.teams;
@@ -174,7 +174,7 @@ class DemoFile extends EventEmitter {
 
   /**
    * Shortcut for `this.entities.gameRules`
-   * @returns {GameRules|null}
+   * @returns {GameRules|null} GameRules entity
    */
   get gameRules() {
     return this.entities.gameRules;

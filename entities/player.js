@@ -26,7 +26,7 @@ class Player extends BaseEntity {
     return {
       pitch: this.getProp('DT_CSPlayer', 'm_angEyeAngles[0]'),
       yaw: this.getProp('DT_CSPlayer', 'm_angEyeAngles[1]')
-    }
+    };
   }
 
   get position() {
@@ -35,7 +35,7 @@ class Player extends BaseEntity {
       x: xy.x,
       y: xy.y,
       z: this.getProp('DT_CSLocalPlayerExclusive', 'm_vecOrigin[2]')
-    }
+    };
   }
 
   /**
@@ -56,11 +56,11 @@ class Player extends BaseEntity {
    * @returns {bool} getLifeState() == 0
    */
   get isAlive() {
-    return this.getLifeState() == 0;
+    return this.getLifeState() === 0;
   }
 
   /**
-   * @returns {PlayerInfo}
+   * @returns {PlayerInfo|null} User info associated with this player
    */
   get userInfo() {
     let userInfoTable = this._demo.stringTables.findTableByName('userinfo');
@@ -89,42 +89,42 @@ class Player extends BaseEntity {
   }
 
   /**
-   * @returns {bool}
+   * @returns {bool} Is this player fake (i.e. a bot)
    */
   get isFakePlayer() {
     return this.userInfo.fakePlayer;
   }
 
   /**
-   * @returns {bool}
+   * @returns {bool} Is this player a HLTV relay
    */
   get isHltv() {
     return this.userInfo.isHltv;
   }
 
   /**
-   * @returns {int}
+   * @returns {int} Player armor (0-100)
    */
   get armor() {
     return this.getProp('DT_CSPlayer', 'm_ArmorValue');
   }
 
   /**
-   * @returns {string}
+   * @returns {string} Current navmesh place name
    */
   get placeName() {
     return this.getProp('DT_BasePlayer', 'm_szLastPlaceName');
   }
 
   /**
-   * @returns {Entity|null}
+   * @returns {Entity|null} Currently held weapon
    */
   get weapon() {
     return this._demo.entities.getByHandle(this.getProp('DT_BaseCombatCharacter', 'm_hActiveWeapon'));
   }
 
   /**
-   * @returns {Entity[]}
+   * @returns {Entity[]} All weapons helds by this player
    */
   get weapons() {
     let weapons = [];
@@ -141,42 +141,42 @@ class Player extends BaseEntity {
   }
 
   /**
-   * @returns {bool}
+   * @returns {bool} Is the player is the bomb zone?
    */
   get isInBombZone() {
     return this.getProp('DT_CSPlayer', 'm_bInBombZone');
   }
 
   /**
-   * @returns {bool}
+   * @returns {bool} Is the player in the buy zone?
    */
   get isInBuyZone() {
     return this.getProp('DT_CSPlayer', 'm_bInBuyZone');
   }
 
   /**
-   * @returns {bool}
+   * @returns {bool} Is the player defusing?
    */
   get isDefusing() {
     return this.getProp('DT_CSPlayer', 'm_bIsDefusing');
   }
 
   /**
-   * @returns {bool}
+   * @returns {bool} Does the player have a defuser?
    */
   get hasDefuser() {
     return this.getProp('DT_CSPlayer', 'm_bHasDefuser');
   }
 
   /**
-   * @returns {bool}
+   * @returns {bool} Does the player have a helmet?
    */
   get hasHelmet() {
     return this.getProp('DT_CSPlayer', 'm_bHasHelmet');
   }
 
   /**
-   * @returns {int}
+   * @returns {int} How many kills the player has made
    */
   get kills() {
     let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
@@ -185,7 +185,7 @@ class Player extends BaseEntity {
   }
 
   /**
-   * @returns {int}
+   * @returns {int} How many assists the player has made
    */
   get assists() {
     let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
@@ -194,7 +194,7 @@ class Player extends BaseEntity {
   }
 
   /**
-   * @returns {int}
+   * @returns {int} How many times the player has died
    */
   get deaths() {
     let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
@@ -203,11 +203,11 @@ class Player extends BaseEntity {
   }
 
   /**
-   * @returns {bool}
+   * @returns {bool} Whether the player holds the C4
    */
   get hasC4() {
     let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
-    return pr.getProp('DT_CSPlayerResource', 'm_iPlayerC4') == this.index;
+    return pr.getProp('DT_CSPlayerResource', 'm_iPlayerC4') === this.index;
   }
 
   /**
@@ -218,6 +218,7 @@ class Player extends BaseEntity {
   }
 
   /**
+   * @param {Player} other - Other player entity
    * @returns {bool} Is this player spotted by the other?
    */
   isSpottedBy(other) {
@@ -227,11 +228,11 @@ class Player extends BaseEntity {
     if (other.clientSlot < 32) {
       mask = this.getProp('m_bSpottedByMask', '000');
     } else {
-      bit = clientSlot - 32;
+      bit = other.clientSlot - 32;
       mask = this.getProp('m_bSpottedByMask', '001');
     }
 
-    return (mask & (1 << bit)) != 0;
+    return (mask & (1 << bit)) !== 0;
   }
 
   /**
@@ -247,13 +248,13 @@ class Player extends BaseEntity {
       .filter(i => {
         let bit = i % 32;
         let mask = masks[(i/32) >> 0];
-        return (mask & (1 << bit)) != 0;
+        return (mask & (1 << bit)) !== 0;
       })
       .map(clientSlot => this._demo.entities.entities[clientSlot + 1]);
   }
 
   /**
-   * @param {Player} other
+   * @param {Player} other - Other player entity
    * @returns {bool} Has this player spotted the other?
    */
   hasSpotted(other) {
@@ -265,15 +266,15 @@ class Player extends BaseEntity {
    */
   get allSpotted() {
     return this._demo.players
-      .filter(p => p.clientSlot != this.clientSlot && this.hasSpotted(p));
+      .filter(p => p.clientSlot !== this.clientSlot && this.hasSpotted(p));
   }
 
   /**
-   * @param {Player} other - Other player
+   * @param {Player} other - Other player entity
    * @returns {bool} Whether the two players are on the same team
    */
   isFriendly(other) {
-    let sameTeam = this.teamNumber == other.teamNumber;
+    let sameTeam = this.teamNumber === other.teamNumber;
     let teammatesAreEnemies = this._demo.conVars.vars['mp_teammates_are_enemies'] || 0;
 
     return sameTeam && !teammatesAreEnemies;

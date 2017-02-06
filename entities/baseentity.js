@@ -53,23 +53,31 @@ class BaseEntity {
     }
   }
 
+  /**
+   * Get the serverclass associated with this entity.
+   * @returns {object} Object representing the entity's class
+   */
   get serverClass() {
     return this._demo.entities.serverClasses[this.classId];
   }
 
+  /**
+   * Position of this entity in the game world.
+   * @returns {object} {x, y, z} world-space coordinates
+   */
   get position() {
     return this.getProp('DT_BaseEntity', 'm_vecOrigin');
   }
 
   /**
-   * @returns {Entity|null}
+   * @returns {Entity|null} Owning entity, if it exists
    */
   get owner() {
     return this._demo.entities.getByHandle(this.getProp('DT_BaseEntity', 'm_hOwnerEntity'));
   }
 
   /**
-   * @returns {int}
+   * @returns {int} Team number (0: Unassigned, 1: Spectator, 2: Terrorist, 3: Counter-Terrorist)
    */
   get teamNumber() {
     return this.getProp('DT_BaseEntity', 'm_iTeamNum');
@@ -80,11 +88,11 @@ class BaseEntity {
    */
   get team() {
     let teamNum = this.teamNumber;
-    if (teamNum == 0) {
+    if (teamNum === 0) {
       return null;
     }
 
-    return this._demo.entities.findAllWithClass(Team)[teamNum];
+    return this._demo.entities.teams[teamNum];
   }
 }
 

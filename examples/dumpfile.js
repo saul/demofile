@@ -19,11 +19,11 @@ function parseDemoFile(path) {
 
     demoFile.on('end', () => {
       console.log('Finished.');
-    })
+    });
 
     demoFile.conVars.on('change', e => {
-      console.log('%s: %s -> %s', e.name, e.oldValue, e.value)
-    })
+      console.log('%s: %s -> %s', e.name, e.oldValue, e.value);
+    });
 
     demoFile.gameEvents.on('player_death', e => {
       let victim = demoFile.entities.getByUserId(e.userid);
@@ -37,8 +37,8 @@ function parseDemoFile(path) {
       let teams = demoFile.teams;
       let terrorists = teams[demo.TEAM_TERRORISTS];
       let cts = teams[demo.TEAM_CTS];
-      console.log('*** Round ended \'%s\'\n\tTerrorists: %s score %d\n\tCTs: %s score %d', demoFile.gameRules.phase, terrorists.clanName, terrorists.score, cts.clanName, cts.score);
-    })
+      console.log('*** Round ended \'%s\' (reason: %s)\n\tTerrorists: %s score %d\n\tCTs: %s score %d', demoFile.gameRules.phase, e.reason, terrorists.clanName, terrorists.score, cts.clanName, cts.score);
+    });
 
     demoFile.entities.on('create', e => {
       if (e.entity.serverClass.name !== 'CCSPlayer') {

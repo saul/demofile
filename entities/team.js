@@ -56,14 +56,14 @@ class Team extends BaseEntity {
   }
 
   /**
-   * @returns {string}
+   * @returns {string} Team flag image
    */
   get flagImage() {
     return this.getProp('DT_Team', 'm_szTeamFlagImage');
   }
 
   /**
-   * @returns {string}
+   * @returns {string} Team logo image
    */
   get logoImage() {
     return this.getProp('DT_Team', 'm_szTeamLogoImage');

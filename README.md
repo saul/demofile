@@ -7,13 +7,12 @@ The library is also Browserify-able, and a standalone bundle that you can `<scri
 
 ## Supported Demo Features
 
-- [x] Entity updates, server classes, data tables (including instance baselines)
-- [x] Both perspectives (GOTV and client-side recorded)
-- [x] User messages
-- [x] String tables
-- [x] Game events
-- [ ] User commands
-- [ ] Console commands
+- Entity updates, server classes, data tables (including instance baselines)
+- Both perspectives (GOTV and client-side recorded)
+- User messages
+- String tables
+- Game events
+- Console variables
 
 ## Installation
 

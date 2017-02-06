@@ -81,8 +81,8 @@ class PropDecoder {
       }
     } else {
       if ((this.flags & SPROP_UNSIGNED) !== 0) {
-        if (this.sendProp.numBits == 1) {
-          return this.bitbuf.readUBits(1) != 0;
+        if (this.sendProp.numBits === 1) {
+          return this.bitbuf.readUBits(1) !== 0;
         } else {
           return this.bitbuf.readUBits(this.sendProp.numBits);
         }

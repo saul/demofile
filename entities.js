@@ -79,7 +79,7 @@ class Entities extends EventEmitter {
       DT_CSPlayer: Player,
       DT_Team: Team,
       DT_CSGameRules: GameRules
-    }
+    };
 
     /**
      * Array of all entities in game.
@@ -146,7 +146,7 @@ class Entities extends EventEmitter {
    * This entity is then cached, meaning subsequent lookups do not require a
    * linear search through all entities.
    * @param {string} table - Name of the table to search for
-   * @returns {Entity|null}
+   * @returns {Entity|null} Instance of the entity, if one exists
    */
   getSingleton(table) {
     if (table in this._singletonEnts) {
