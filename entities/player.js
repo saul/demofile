@@ -209,6 +209,75 @@ class Player extends BaseEntity {
     let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
     return pr.getProp('DT_CSPlayerResource', 'm_iPlayerC4') == this.index;
   }
+
+  /**
+   * @returns {bool} Has this player been spotted by any others?
+   */
+  get isSpotted() {
+    return this.getProp('DT_BaseEntity', 'm_bSpotted');
+  }
+
+  /**
+   * @returns {bool} Is this player spotted by the other?
+   */
+  isSpottedBy(other) {
+    let bit = other.clientSlot;
+    let mask = null;
+
+    if (other.clientSlot < 32) {
+      mask = this.getProp('m_bSpottedByMask', '000');
+    } else {
+      bit = clientSlot - 32;
+      mask = this.getProp('m_bSpottedByMask', '001');
+    }
+
+    return (mask & (1 << bit)) != 0;
+  }
+
+  /**
+   * @returns {Player[]} Players that have spotted this player
+   */
+  get allSpotters() {
+    let masks = [
+      this.getProp('m_bSpottedByMask', '000'),
+      this.getProp('m_bSpottedByMask', '001')
+    ];
+
+    return Array.from({length: 64}, (_, i) => i)
+      .filter(i => {
+        let bit = i % 32;
+        let mask = masks[(i/32) >> 0];
+        return (mask & (1 << bit)) != 0;
+      })
+      .map(clientSlot => this._demo.entities.entities[clientSlot + 1]);
+  }
+
+  /**
+   * @param {Player} other
+   * @returns {bool} Has this player spotted the other?
+   */
+  hasSpotted(other) {
+    return other.isSpottedBy(this);
+  }
+
+  /**
+   * @returns {Player[]} All players that this player has spotted
+   */
+  get allSpotted() {
+    return this._demo.players
+      .filter(p => p.clientSlot != this.clientSlot && this.hasSpotted(p));
+  }
+
+  /**
+   * @param {Player} other - Other player
+   * @returns {bool} Whether the two players are on the same team
+   */
+  isFriendly(other) {
+    let sameTeam = this.teamNumber == other.teamNumber;
+    let teammatesAreEnemies = this._demo.conVars.vars['mp_teammates_are_enemies'] || 0;
+
+    return sameTeam && !teammatesAreEnemies;
+  }
 }
 
 module.exports = Player;
