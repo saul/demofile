@@ -12,6 +12,7 @@ module.exports = {
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "eqeqeq": ["error", "smart"],
-    "valid-jsdoc": "error"
+    "valid-jsdoc": "error",
+    "linebreak-style": "off"
   }
 };

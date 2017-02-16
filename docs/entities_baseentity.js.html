@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>GameEvents - Documentation</title>
+    <title>entities/baseentity.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,397 +28,118 @@
 
 <div id="main">
     
-    <h1 class="page-title">GameEvents</h1>
-    
-
-    
-
-
-
-
-<section>
-
-<header>
-    
-        <h2>
-        GameEvents
-        </h2>
-        
-            <div class="class-description"><p>Manages game events for a demo file.</p></div>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-    
-    <h2>Constructor</h2>
-    
-
-    <h4 class="name" id="GameEvents"><span class="type-signature"></span>new GameEvents<span class="signature">()</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="gameevents.js.html">gameevents.js</a>, <a href="gameevents.js.html#line29">line 29</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Events</h3>
-
-        
-            
-
-    
-
-    <h4 class="name" id="event:event">event</h4>
-
-    
-
-
-
-<div class="description">
-    <p>Fired when a game event is fired.
-Note that this event is fired after the specific event (e.g., <code>player_death</code>).</p>
-</div>
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Event name</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Event variables</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="gameevents.js.html">gameevents.js</a>, <a href="gameevents.js.html#line44">line 44</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="event:game_event_name">game_event_name</h4>
-
-    
-
-
-
-<div class="description">
-    <p>Fired when a game event is fired (e.g., <code>player_death</code>).
-Parameters are event variables.</p>
-</div>
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="gameevents.js.html">gameevents.js</a>, <a href="gameevents.js.html#line37">line 37</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-</article>
-
-</section>
+    <h1 class="page-title">entities/baseentity.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+/**
+ * Represents an in-game entity.
+ */
+class BaseEntity {
+  constructor(demo, index, classId, serialNum, baseline) {
+    this._demo = demo;
+
+    /**
+     * Entity index.
+     * @type {int}
+     */
+    this.index = index;
+
+    /**
+     * Server class ID.
+     * @type {int}
+     */
+    this.classId = classId;
+
+    /**
+     * Serial number.
+     * @type {int}
+     */
+    this.serialNum = serialNum;
+
+    this.props = baseline || {};
+  }
+
+  /**
+   * Retrieves the value of a networked property
+   * @param {string} tableName - Table name (e.g., DT_BaseEntity)
+   * @param {string} varName - Network variable name (e.g., m_vecOrigin)
+   * @returns {*} Property value, `undefined` if non-existent
+   * @public
+   */
+  getProp(tableName, varName) {
+    var value = this.props[tableName] &amp;&amp; this.props[tableName][varName];
+
+    if (value === undefined &amp;&amp; this.baseline) {
+      return this.baseline[tableName] &amp;&amp; this.baseline[tableName][varName];
+    } else {
+      return value;
+    }
+  }
+
+  updateProp(tableName, varName, newValue) {
+    if (this.props[tableName] === undefined) {
+      this.props[tableName] = {[varName]: newValue};
+    } else {
+      this.props[tableName][varName] = newValue;
+    }
+  }
+
+  /**
+   * Get the serverclass associated with this entity.
+   * @returns {object} Object representing the entity's class
+   */
+  get serverClass() {
+    return this._demo.entities.serverClasses[this.classId];
+  }
+
+  /**
+   * Position of this entity in the game world.
+   * @returns {object} {x, y, z} world-space coordinates
+   */
+  get position() {
+    return this.getProp('DT_BaseEntity', 'm_vecOrigin');
+  }
+
+  /**
+   * @returns {Entity|null} Owning entity, if it exists
+   */
+  get owner() {
+    return this._demo.entities.getByHandle(this.getProp('DT_BaseEntity', 'm_hOwnerEntity'));
+  }
+
+  /**
+   * @returns {int} Team number (0: Unassigned, 1: Spectator, 2: Terrorist, 3: Counter-Terrorist)
+   */
+  get teamNumber() {
+    return this.getProp('DT_BaseEntity', 'm_iTeamNum');
+  }
+
+  /**
+   * @returns {Team|null} Team if assigned, null if unassigned.
+   */
+  get team() {
+    let teamNum = this.teamNumber;
+    if (teamNum === 0) {
+      return null;
+    }
+
+    return this._demo.entities.teams[teamNum];
+  }
+}
+
+module.exports = BaseEntity;
+</code></pre>
+        </article>
+    </section>
 
 
 

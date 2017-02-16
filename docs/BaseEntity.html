@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>StringTables - Documentation</title>
+    <title>BaseEntity - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,7 +28,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">StringTables</h1>
+    <h1 class="page-title">BaseEntity</h1>
     
 
     
@@ -41,10 +41,10 @@
 <header>
     
         <h2>
-        StringTables
+        BaseEntity
         </h2>
         
-            <div class="class-description"><p>Handles string tables for a demo file.</p></div>
+            <div class="class-description"><p>Represents an in-game entity.</p></div>
         
     
 </header>
@@ -58,7 +58,7 @@
     <h2>Constructor</h2>
     
 
-    <h4 class="name" id="StringTables"><span class="type-signature"></span>new StringTables<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="BaseEntity"><span class="type-signature"></span>new BaseEntity<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
@@ -105,7 +105,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="stringtables.js.html">stringtables.js</a>, <a href="stringtables.js.html#line65">line 65</a>
+        <a href="entities_baseentity.js.html">entities/baseentity.js</a>, <a href="entities_baseentity.js.html#line6">line 6</a>
     </li></ul></dd>
     
 
@@ -149,10 +149,14 @@
 
         
             
-<h4 class="name" id="tables"><span class="type-signature"></span>tables<span class="type-signature"> :Array.&lt;<a href="global.html#StringTable">StringTable</a>></span></h4>
+<h4 class="name" id="classId"><span class="type-signature"></span>classId<span class="type-signature"> :int</span></h4>
 
 
 
+
+<div class="description">
+    <p>Server class ID.</p>
+</div>
 
 
 
@@ -160,7 +164,7 @@
     <ul>
         <li>
             
-<span class="param-type">Array.&lt;<a href="global.html#StringTable">StringTable</a>></span>
+<span class="param-type">int</span>
 
 
         </li>
@@ -199,7 +203,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="stringtables.js.html">stringtables.js</a>, <a href="stringtables.js.html#line81">line 81</a>
+        <a href="entities_baseentity.js.html">entities/baseentity.js</a>, <a href="entities_baseentity.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -217,94 +221,14 @@
 
         
             
-<h4 class="name" id="userDataCallbacks"><span class="type-signature"></span>userDataCallbacks<span class="type-signature"></span></h4>
+<h4 class="name" id="index"><span class="type-signature"></span>index<span class="type-signature"> :int</span></h4>
 
 
 
 
 <div class="description">
-    <p>User data handlers. Transform raw buffer into any other value.
-By default, <code>userinfo</code> user data is transformed to <a href="global.html#PlayerInfo"><code>PlayerInfo</code></a>
-objects.</p>
+    <p>Entity index.</p>
 </div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="stringtables.js.html">stringtables.js</a>, <a href="stringtables.js.html#line74">line 74</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Events</h3>
-
-        
-            
-
-    
-
-    <h4 class="name" id="event:create">create</h4>
-
-    
-
-
-
-<div class="description">
-    <p>Fired when a table is created. Entries are empty at this point.</p>
-</div>
-
-
 
 
 
@@ -312,7 +236,7 @@ objects.</p>
     <ul>
         <li>
             
-<span class="param-type"><a href="global.html#StringTable">StringTable</a></span>
+<span class="param-type">int</span>
 
 
         </li>
@@ -322,6 +246,60 @@ objects.</p>
 
 
 
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="entities_baseentity.js.html">entities/baseentity.js</a>, <a href="entities_baseentity.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="owner"><span class="type-signature"></span>owner<span class="type-signature"></span></h4>
+
+
+
+
+
+
 
 
 
@@ -355,7 +333,7 @@ objects.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="stringtables.js.html">stringtables.js</a>, <a href="stringtables.js.html#line248">line 248</a>
+        <a href="entities_baseentity.js.html">entities/baseentity.js</a>, <a href="entities_baseentity.js.html#line75">line 75</a>
     </li></ul></dd>
     
 
@@ -371,10 +349,62 @@ objects.</p>
 
 
 
+        
+            
+<h4 class="name" id="position"><span class="type-signature"></span>position<span class="type-signature"></span></h4>
 
 
 
 
+<div class="description">
+    <p>Position of this entity in the game world.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="entities_baseentity.js.html">entities/baseentity.js</a>, <a href="entities_baseentity.js.html#line68">line 68</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
 
 
 
@@ -383,20 +413,14 @@ objects.</p>
 
         
             
+<h4 class="name" id="serialNum"><span class="type-signature"></span>serialNum<span class="type-signature"> :int</span></h4>
 
-    
-
-    <h4 class="name" id="event:postcreate">postcreate</h4>
-
-    
 
 
 
 <div class="description">
-    <p>Fired after a table is created. Entries have been populated by now.</p>
+    <p>Serial number.</p>
 </div>
-
-
 
 
 
@@ -404,7 +428,7 @@ objects.</p>
     <ul>
         <li>
             
-<span class="param-type"><a href="global.html#StringTable">StringTable</a></span>
+<span class="param-type">int</span>
 
 
         </li>
@@ -414,6 +438,64 @@ objects.</p>
 
 
 
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="entities_baseentity.js.html">entities/baseentity.js</a>, <a href="entities_baseentity.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="serverClass"><span class="type-signature"></span>serverClass<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>Get the serverclass associated with this entity.</p>
+</div>
+
+
+
 
 
 
@@ -447,7 +529,7 @@ objects.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="stringtables.js.html">stringtables.js</a>, <a href="stringtables.js.html#line254">line 254</a>
+        <a href="entities_baseentity.js.html">entities/baseentity.js</a>, <a href="entities_baseentity.js.html#line60">line 60</a>
     </li></ul></dd>
     
 
@@ -463,10 +545,58 @@ objects.</p>
 
 
 
+        
+            
+<h4 class="name" id="team"><span class="type-signature"></span>team<span class="type-signature"></span></h4>
 
 
 
 
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="entities_baseentity.js.html">entities/baseentity.js</a>, <a href="entities_baseentity.js.html#line89">line 89</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
 
 
 
@@ -475,15 +605,82 @@ objects.</p>
 
         
             
+<h4 class="name" id="teamNumber"><span class="type-signature"></span>teamNumber<span class="type-signature"></span></h4>
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
 
     
 
-    <h4 class="name" id="event:update">update</h4>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="entities_baseentity.js.html">entities/baseentity.js</a>, <a href="entities_baseentity.js.html#line82">line 82</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="getProp"><span class="type-signature"></span>getProp<span class="signature">(tableName, varName)</span><span class="type-signature"> &rarr; {*}</span></h4>
 
     
 
 
 
+<div class="description">
+    <p>Retrieves the value of a networked property</p>
+</div>
 
 
 
@@ -493,14 +690,10 @@ objects.</p>
 
 
 
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
+    <h5>Parameters:</h5>
     
 
-<table class="props">
+<table class="params">
     <thead>
     <tr>
         
@@ -522,62 +715,13 @@ objects.</p>
 
         <tr>
             
-                <td class="name"><code>table</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#StringTable">StringTable</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Updated string table</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>entryIndex</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Index into the table that was updated</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>entry</code></td>
+                <td class="name"><code>tableName</code></td>
             
 
             <td class="type">
             
                 
 <span class="param-type">string</span>
-|
-
-<span class="param-type">undefined</span>
 
 
             
@@ -587,23 +731,20 @@ objects.</p>
 
             
 
-            <td class="description last"><p>New entry value</p></td>
+            <td class="description last"><p>Table name (e.g., DT_BaseEntity)</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>userData</code></td>
+                <td class="name"><code>varName</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">*</span>
-|
-
-<span class="param-type">undefined</span>
+<span class="param-type">string</span>
 
 
             
@@ -613,12 +754,14 @@ objects.</p>
 
             
 
-            <td class="description last"><p>New user data</p></td>
+            <td class="description last"><p>Network variable name (e.g., m_vecOrigin)</p></td>
         </tr>
 
     
     </tbody>
 </table>
+
+
 
 
 
@@ -652,7 +795,7 @@ objects.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="stringtables.js.html">stringtables.js</a>, <a href="stringtables.js.html#line155">line 155</a>
+        <a href="entities_baseentity.js.html">entities/baseentity.js</a>, <a href="entities_baseentity.js.html#line38">line 38</a>
     </li></ul></dd>
     
 
@@ -675,10 +818,36 @@ objects.</p>
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Property value, <code>undefined</code> if non-existent</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
         
+    
+
+    
+
     
 </article>
 

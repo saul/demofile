@@ -7,13 +7,12 @@ The library is also Browserify-able, and a standalone bundle that you can `<scri
 
 ## Supported Demo Features
 
-- [x] Entity updates, server classes, data tables (including instance baselines)
-- [x] Both perspectives (GOTV and client-side recorded)
-- [x] User messages
-- [x] String tables
-- [x] Game events
-- [ ] User commands
-- [ ] Console commands
+- Entity updates, server classes, data tables (including instance baselines)
+- Both perspectives (GOTV and client-side recorded)
+- User messages
+- String tables
+- Game events
+- Console variables
 
 ## Installation
 
@@ -30,6 +29,18 @@ The `DemoFile` module will be available as `window.demofile`.
 Generate documentation to `./docs/`:
 
     npm run generate-docs
+
+## API
+
+This library provides full access to the data available in CSGO demo files. Unlike some other libraries, `demofile` is feature complete and supports the latest demos. As well as providing high-level APIs to access the state of the game, low-level access is available and is not discouraged.
+
+Take a look at the `examples/dumpfile.js` file for an indication as to how the library can be used to introspect demo files. This example is by no means exhaustive -- see the 'docs' folder for documentation on all public classes and methods.
+
+Note: It is important to note that events are fired at the end of a tick, after all entity props and string tables have been updated.
+
+### Useful links
+
+- [CS:GO Game Events - AlliedModders Wiki](https://wiki.alliedmods.net/Counter-Strike:_Global_Offensive_Events)
 
 ## Example
 
@@ -54,6 +65,14 @@ fs.readFile('test.dem', function (err, buffer) {
 ```
 
 ## Release History
+
+### 0.4.0 (05/02/17)
+
+Major update
+
+- Added new `Player`, `Team` and `GameRules` entities
+- Added `DemoFile#conVars` for accessing console variables and listening for changes
+- Updated `dumpfile.js` example to be more representative of real-world usage
 
 ### 0.3.1 (30/01/17)
 

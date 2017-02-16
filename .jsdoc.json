@@ -3,8 +3,12 @@
     "include": [
       "README.md"
     ],
-    "includePattern": ".js$",
-    "excludePattern": "(node_modules/|docs/|browser/)"
+    "exclude": [
+      "node_modules",
+      "docs",
+      "browser"
+    ],
+    "includePattern": ".js$"
   },
   "plugins": [
     "plugins/markdown"

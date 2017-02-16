@@ -11,63 +11,16 @@ var consts = require('./consts');
 var functional = require('./functional');
 var props = require('./props');
 
+var BaseEntity = require('./entities/baseentity.js');
+var GameRules = require('./entities/gamerules.js');
+var Player = require('./entities/player.js');
+var Team = require('./entities/team.js');
+
 const MAX_EDICT_BITS = 11;
 const NETWORKED_EHANDLE_ENT_ENTRY_MASK = (1 << MAX_EDICT_BITS) - 1;
 const NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS = 10;
 const NUM_NETWORKED_EHANDLE_BITS = MAX_EDICT_BITS + NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS;
 const INVALID_NETWORKED_EHANDLE_VALUE = (1 << NUM_NETWORKED_EHANDLE_BITS) - 1;
-
-/**
- * Represents an in-game entity.
- */
-class Entity {
-  constructor(index, classId, serialNum, baseline) {
-    /**
-     * Entity index.
-     * @type {int}
-     */
-    this.index = index;
-
-    /**
-     * Server class ID.
-     * @type {int}
-     */
-    this.classId = classId;
-
-    /**
-     * Serial number.
-     * @type {int}
-     */
-    this.serialNum = serialNum;
-
-    this.props = baseline || {};
-  }
-
-  /**
-   * Retrieves the value of a networked property
-   * @param {string} tableName - Table name (e.g., DT_BaseEntity)
-   * @param {string} varName - Network variable name (e.g., m_vecOrigin)
-   * @returns {*} Property value, `undefined` if non-existent
-   * @public
-   */
-  getProp(tableName, varName) {
-    var value = this.props[tableName] && this.props[tableName][varName];
-
-    if (value === undefined && this.baseline) {
-      return this.baseline[tableName] && this.baseline[tableName][varName];
-    } else {
-      return value;
-    }
-  }
-
-  updateProp(tableName, varName, newValue) {
-    if (this.props[tableName] === undefined) {
-      this.props[tableName] = {[varName]: newValue};
-    } else {
-      this.props[tableName][varName] = newValue;
-    }
-  }
-}
 
 function isPropExcluded(excludes, table, prop) {
   return _.find(excludes, excluded => table.netTableName === excluded.dtName && prop.varName === excluded.varName);
@@ -115,10 +68,18 @@ class Entities extends EventEmitter {
   constructor() {
     super();
 
+    this._demo = null;
+    this._singletonEnts = {};
+
     this.dataTables = [];
     this.serverClasses = [];
     this.instanceBaselines = {};
     this.pendingBaselines = {};
+    this.tableClassMap = {
+      DT_CSPlayer: Player,
+      DT_Team: Team,
+      DT_CSGameRules: GameRules
+    };
 
     /**
      * Array of all entities in game.
@@ -128,6 +89,7 @@ class Entities extends EventEmitter {
   }
 
   listen(demo) {
+    this._demo = demo;
     demo.on('svc_PacketEntities', this._handlePacketEntities.bind(this));
     demo.stringTables.on('update', this._handleStringTableUpdate.bind(this));
   }
@@ -158,6 +120,65 @@ class Entities extends EventEmitter {
     }
 
     return ent;
+  }
+
+  /**
+   * Returns the entity specified by a user ID.
+   * @param {number} userId - Player user ID
+   * @returns {Player|null} Entity referenced by the user ID. `null` if no matching player.
+   */
+  getByUserId(userId) {
+    let userInfos = this._demo.stringTables.findTableByName('userinfo').entries;
+
+    for (let i = 0; i < userInfos.length; ++i) {
+      let userEntry = userInfos[i];
+
+      if (userEntry.userData && userEntry.userData.userId === userId) {
+        return this.entities[i + 1];
+      }
+    }
+
+    return null;
+  }
+
+  /**
+   * Gets the first entity that contains the table specified in the parameter.
+   * This entity is then cached, meaning subsequent lookups do not require a
+   * linear search through all entities.
+   * @param {string} table - Name of the table to search for
+   * @returns {Entity|null} Instance of the entity, if one exists
+   */
+  getSingleton(table) {
+    if (table in this._singletonEnts) {
+      return this._singletonEnts[table];
+    }
+
+    let entity = this.entities.find(ent => ent && table in ent.props);
+    if (entity) {
+      this._singletonEnts[table] = entity;
+    }
+
+    return entity;
+  }
+
+  findAllWithTable(table) {
+    return this.entities.filter(ent => ent && table in ent.props);
+  }
+
+  findAllWithClass(klass) {
+    return this.entities.filter(ent => ent instanceof klass);
+  }
+
+  get gameRules() {
+    return this.getSingleton('DT_CSGameRules');
+  }
+
+  get teams() {
+    return this.findAllWithClass(Team);
+  }
+
+  get players() {
+    return this.findAllWithClass(Player);
   }
 
   _gatherExcludes(table) {
@@ -352,7 +373,21 @@ class Entities extends EventEmitter {
       this._removeEntity(index);
     }
 
-    var entity = new Entity(index, classId, serialNum, _.cloneDeep(this.instanceBaselines[classId]));
+    let baseline = this.instanceBaselines[classId];
+
+    let klass = BaseEntity;
+
+    // Try to find a suitable class for this entity
+    if (baseline !== undefined) {
+      for (let tableName in this.tableClassMap) {
+        if (baseline[tableName] !== undefined) {
+          klass = this.tableClassMap[tableName];
+          break;
+        }
+      }
+    }
+
+    var entity = new klass(this._demo, index, classId, serialNum, _.cloneDeep(baseline));
     this.entities[index] = entity;
 
     this.emit('create', {entity});
