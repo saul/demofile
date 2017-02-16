@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>GameEvents - Documentation</title>
+    <title>GameRules - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,7 +28,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">GameEvents</h1>
+    <h1 class="page-title">GameRules</h1>
     
 
     
@@ -41,10 +41,10 @@
 <header>
     
         <h2>
-        GameEvents
+        GameRules
         </h2>
         
-            <div class="class-description"><p>Manages game events for a demo file.</p></div>
+            <div class="class-description"><p>Represents the game rules.</p></div>
         
     
 </header>
@@ -58,7 +58,7 @@
     <h2>Constructor</h2>
     
 
-    <h4 class="name" id="GameEvents"><span class="type-signature"></span>new GameEvents<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="GameRules"><span class="type-signature"></span>new GameRules<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
@@ -105,7 +105,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="gameevents.js.html">gameevents.js</a>, <a href="gameevents.js.html#line29">line 29</a>
+        <a href="entities_gamerules.js.html">entities/gamerules.js</a>, <a href="entities_gamerules.js.html#line8">line 8</a>
     </li></ul></dd>
     
 
@@ -145,211 +145,12 @@
     
 
     
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Events</h3>
+        <h3 class="subsection-title">Members</h3>
 
         
             
+<h4 class="name" id="isWarmup"><span class="type-signature"></span>isWarmup<span class="type-signature"></span></h4>
 
-    
-
-    <h4 class="name" id="event:event">event</h4>
-
-    
-
-
-
-<div class="description">
-    <p>Fired when a game event is fired.
-Note that this event is fired after the specific event (e.g., <code>player_death</code>).</p>
-</div>
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Event name</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Event variables</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="gameevents.js.html">gameevents.js</a>, <a href="gameevents.js.html#line44">line 44</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="event:game_event_name">game_event_name</h4>
-
-    
-
-
-
-<div class="description">
-    <p>Fired when a game event is fired (e.g., <code>player_death</code>).
-Parameters are event variables.</p>
-</div>
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -388,7 +189,7 @@ Parameters are event variables.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="gameevents.js.html">gameevents.js</a>, <a href="gameevents.js.html#line37">line 37</a>
+        <a href="entities_gamerules.js.html">entities/gamerules.js</a>, <a href="entities_gamerules.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -404,10 +205,58 @@ Parameters are event variables.</p>
 
 
 
+        
+            
+<h4 class="name" id="phase"><span class="type-signature"></span>phase<span class="type-signature"></span></h4>
 
 
 
 
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="entities_gamerules.js.html">entities/gamerules.js</a>, <a href="entities_gamerules.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
 
 
 
@@ -415,6 +264,70 @@ Parameters are event variables.</p>
 
 
         
+            
+<h4 class="name" id="roundNumber"><span class="type-signature"></span>roundNumber<span class="type-signature"></span></h4>
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="entities_gamerules.js.html">entities/gamerules.js</a>, <a href="entities_gamerules.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
     
 </article>
 

@@ -157,6 +157,13 @@ class DemoFile extends EventEmitter {
   }
 
   /**
+   * @returns {float} Number of seconds elapsed
+   */
+  get currentTime() {
+    return this.currentTick * (this.header.playbackTicks / this.header.playbackTime);
+  }
+
+  /**
    * Shortcut for `this.entities.players`
    * @returns {Player[]} All connected player entities
    */

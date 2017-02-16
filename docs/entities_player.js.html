@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>entities/player.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="BaseEntity.html">BaseEntity</a><ul class='methods'><li data-type='method'><a href="BaseEntity.html#getProp">getProp</a></li></ul></li><li><a href="ConVars.html">ConVars</a></li><li><a href="DemoFile.html">DemoFile</a><ul class='methods'><li data-type='method'><a href="DemoFile.html#cancel">cancel</a></li><li data-type='method'><a href="DemoFile.html#parse">parse</a></li></ul></li><li><a href="Entities.html">Entities</a><ul class='methods'><li data-type='method'><a href="Entities.html#getByHandle">getByHandle</a></li><li data-type='method'><a href="Entities.html#getByUserId">getByUserId</a></li><li data-type='method'><a href="Entities.html#getSingleton">getSingleton</a></li><li data-type='method'><a href="Entities.html#isHandleSet">isHandleSet</a></li></ul></li><li><a href="GameEvents.html">GameEvents</a></li><li><a href="GameRules.html">GameRules</a></li><li><a href="Player.html">Player</a><ul class='methods'><li data-type='method'><a href="Player.html#hasSpotted">hasSpotted</a></li><li data-type='method'><a href="Player.html#isFriendly">isFriendly</a></li><li data-type='method'><a href="Player.html#isSpottedBy">isSpottedBy</a></li></ul></li><li><a href="StringTables.html">StringTables</a></li><li><a href="Team.html">Team</a></li><li><a href="UserMessages.html">UserMessages</a></li></ul><h3>Events</h3><ul><li><a href="ConVars.html#event:change">change</a></li><li><a href="ConVars.html#event:cvar_name">cvar_name</a></li><li><a href="DemoFile.html#event:end">end</a></li><li><a href="DemoFile.html#event:net_MessageName">net_MessageName</a></li><li><a href="DemoFile.html#event:progress">progress</a></li><li><a href="DemoFile.html#event:start">start</a></li><li><a href="DemoFile.html#event:tickend">tickend</a></li><li><a href="DemoFile.html#event:tickstart">tickstart</a></li><li><a href="Entities.html#event:baselineupdate">baselineupdate</a></li><li><a href="Entities.html#event:beforeremove">beforeremove</a></li><li><a href="Entities.html#event:change">change</a></li><li><a href="Entities.html#event:create">create</a></li><li><a href="Entities.html#event:datatablesready">datatablesready</a></li><li><a href="Entities.html#event:postcreate">postcreate</a></li><li><a href="Entities.html#event:remove">remove</a></li><li><a href="GameEvents.html#event:event">event</a></li><li><a href="GameEvents.html#event:game_event_name">game_event_name</a></li><li><a href="StringTables.html#event:create">create</a></li><li><a href="StringTables.html#event:postcreate">postcreate</a></li><li><a href="StringTables.html#event:update">update</a></li><li><a href="UserMessages.html#event:message">message</a></li><li><a href="UserMessages.html#event:UserMessageName">UserMessageName</a></li></ul><h3>Global</h3><ul><li><a href="global.html#DemoHeader">DemoHeader</a></li><li><a href="global.html#parseHeader">parseHeader</a></li><li><a href="global.html#PlayerInfo">PlayerInfo</a></li><li><a href="global.html#StringTable">StringTable</a></li><li><a href="global.html#StringTableEntry">StringTableEntry</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">entities/player.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+const BaseEntity = require('./baseentity.js');
+
+/**
+ * Represents an in-game player.
+ */
+class Player extends BaseEntity {
+  constructor(demo, index, classId, serialNum, baseline) {
+    super(demo, index, classId, serialNum, baseline);
+
+    /**
+     * The 'client slot' is the index into various arrays such as the userinfo table.
+     */
+    this.clientSlot = index - 1;
+  }
+
+  /**
+   * @returns {int} Current health
+   */
+  get health() {
+    return this.getProp('DT_BasePlayer', 'm_iHealth');
+  }
+
+  get eyeAngles() {
+    return {
+      pitch: this.getProp('DT_CSPlayer', 'm_angEyeAngles[0]'),
+      yaw: this.getProp('DT_CSPlayer', 'm_angEyeAngles[1]')
+    };
+  }
+
+  get position() {
+    let xy = this.getProp('DT_CSLocalPlayerExclusive', 'm_vecOrigin');
+    return {
+      x: xy.x,
+      y: xy.y,
+      z: this.getProp('DT_CSLocalPlayerExclusive', 'm_vecOrigin[2]')
+    };
+  }
+
+  /**
+   * @returns {int} Current cash
+   */
+  get account() {
+    return this.getProp('DT_CSPlayer', 'm_iAccount');
+  }
+
+  /**
+   * @returns {int} 0: Alive, 1: Dying, 2: Dead
+   */
+  get lifeState() {
+    return this.getProp('DT_BasePlayer', 'm_lifeState');
+  }
+
+  /**
+   * @returns {bool} getLifeState() == 0
+   */
+  get isAlive() {
+    return this.getLifeState() === 0;
+  }
+
+  /**
+   * @returns {PlayerInfo|null} User info associated with this player
+   */
+  get userInfo() {
+    let userInfoTable = this._demo.stringTables.findTableByName('userinfo');
+    return userInfoTable.entries[this.clientSlot].userData;
+  }
+
+  /**
+   * @returns {int} User ID
+   */
+  get userId() {
+    return this.userInfo.userId;
+  }
+
+  /**
+   * @returns {string} Steam ID
+   */
+  get steamId() {
+    return this.userInfo.guid;
+  }
+
+  /**
+   * @returns {string} Player name
+   */
+  get name() {
+    return this.userInfo.name;
+  }
+
+  /**
+   * @returns {bool} Is this player fake (i.e. a bot)
+   */
+  get isFakePlayer() {
+    return this.userInfo.fakePlayer;
+  }
+
+  /**
+   * @returns {bool} Is this player a HLTV relay
+   */
+  get isHltv() {
+    return this.userInfo.isHltv;
+  }
+
+  /**
+   * @returns {int} Player armor (0-100)
+   */
+  get armor() {
+    return this.getProp('DT_CSPlayer', 'm_ArmorValue');
+  }
+
+  /**
+   * @returns {string} Current navmesh place name
+   */
+  get placeName() {
+    return this.getProp('DT_BasePlayer', 'm_szLastPlaceName');
+  }
+
+  /**
+   * @returns {Entity|null} Currently held weapon
+   */
+  get weapon() {
+    return this._demo.entities.getByHandle(this.getProp('DT_BaseCombatCharacter', 'm_hActiveWeapon'));
+  }
+
+  /**
+   * @returns {Entity[]} All weapons helds by this player
+   */
+  get weapons() {
+    let weapons = [];
+
+    for(let index in this.props['m_hMyWeapons']) {
+      let weapon = this._demo.entities.getByHandle(this.props['m_hMyWeapons'][index]);
+
+      if (weapon) {
+        weapons.push(weapon);
+      }
+    }
+
+    return weapons;
+  }
+
+  /**
+   * @returns {bool} Is the player is the bomb zone?
+   */
+  get isInBombZone() {
+    return this.getProp('DT_CSPlayer', 'm_bInBombZone');
+  }
+
+  /**
+   * @returns {bool} Is the player in the buy zone?
+   */
+  get isInBuyZone() {
+    return this.getProp('DT_CSPlayer', 'm_bInBuyZone');
+  }
+
+  /**
+   * @returns {bool} Is the player defusing?
+   */
+  get isDefusing() {
+    return this.getProp('DT_CSPlayer', 'm_bIsDefusing');
+  }
+
+  /**
+   * @returns {bool} Does the player have a defuser?
+   */
+  get hasDefuser() {
+    return this.getProp('DT_CSPlayer', 'm_bHasDefuser');
+  }
+
+  /**
+   * @returns {bool} Does the player have a helmet?
+   */
+  get hasHelmet() {
+    return this.getProp('DT_CSPlayer', 'm_bHasHelmet');
+  }
+
+  /**
+   * @returns {int} How many kills the player has made
+   */
+  get kills() {
+    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
+    let kills = pr.props['m_iKills'];
+    return kills[Object.keys(kills)[this.index]];
+  }
+
+  /**
+   * @returns {int} How many assists the player has made
+   */
+  get assists() {
+    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
+    let assists = pr.props['m_iAssists'];
+    return assists[Object.keys(assists)[this.index]];
+  }
+
+  /**
+   * @returns {int} How many times the player has died
+   */
+  get deaths() {
+    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
+    let deaths = pr.props['m_iDeaths'];
+    return deaths[Object.keys(deaths)[this.index]];
+  }
+
+  /**
+   * @returns {bool} Whether the player holds the C4
+   */
+  get hasC4() {
+    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
+    return pr.getProp('DT_CSPlayerResource', 'm_iPlayerC4') === this.index;
+  }
+
+  /**
+   * @returns {bool} Has this player been spotted by any others?
+   */
+  get isSpotted() {
+    return this.getProp('DT_BaseEntity', 'm_bSpotted');
+  }
+
+  /**
+   * @param {Player} other - Other player entity
+   * @returns {bool} Is this player spotted by the other?
+   */
+  isSpottedBy(other) {
+    let bit = other.clientSlot;
+    let mask = null;
+
+    if (other.clientSlot &lt; 32) {
+      mask = this.getProp('m_bSpottedByMask', '000');
+    } else {
+      bit = other.clientSlot - 32;
+      mask = this.getProp('m_bSpottedByMask', '001');
+    }
+
+    return (mask &amp; (1 &lt;&lt; bit)) !== 0;
+  }
+
+  /**
+   * @returns {Player[]} Players that have spotted this player
+   */
+  get allSpotters() {
+    let masks = [
+      this.getProp('m_bSpottedByMask', '000'),
+      this.getProp('m_bSpottedByMask', '001')
+    ];
+
+    return Array.from({length: 64}, (_, i) => i)
+      .filter(i => {
+        let bit = i % 32;
+        let mask = masks[(i/32) >> 0];
+        return (mask &amp; (1 &lt;&lt; bit)) !== 0;
+      })
+      .map(clientSlot => this._demo.entities.entities[clientSlot + 1]);
+  }
+
+  /**
+   * @param {Player} other - Other player entity
+   * @returns {bool} Has this player spotted the other?
+   */
+  hasSpotted(other) {
+    return other.isSpottedBy(this);
+  }
+
+  /**
+   * @returns {Player[]} All players that this player has spotted
+   */
+  get allSpotted() {
+    return this._demo.players
+      .filter(p => p.clientSlot !== this.clientSlot &amp;&amp; this.hasSpotted(p));
+  }
+
+  /**
+   * @param {Player} other - Other player entity
+   * @returns {bool} Whether the two players are on the same team
+   */
+  isFriendly(other) {
+    let sameTeam = this.teamNumber === other.teamNumber;
+    let teammatesAreEnemies = this._demo.conVars.vars['mp_teammates_are_enemies'] || 0;
+
+    return sameTeam &amp;&amp; !teammatesAreEnemies;
+  }
+}
+
+module.exports = Player;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Feb 06 2017 22:24:20 GMT+0000 (GMT Standard Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

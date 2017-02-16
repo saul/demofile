@@ -30,6 +30,18 @@ Generate documentation to `./docs/`:
 
     npm run generate-docs
 
+## API
+
+This library provides full access to the data available in CSGO demo files. Unlike some other libraries, `demofile` is feature complete and supports the latest demos. As well as providing high-level APIs to access the state of the game, low-level access is available and is not discouraged.
+
+Take a look at the `examples/dumpfile.js` file for an indication as to how the library can be used to introspect demo files. This example is by no means exhaustive -- see the 'docs' folder for documentation on all public classes and methods.
+
+Note: It is important to note that events are fired at the end of a tick, after all entity props and string tables have been updated.
+
+### Useful links
+
+- [CS:GO Game Events - AlliedModders Wiki](https://wiki.alliedmods.net/Counter-Strike:_Global_Offensive_Events)
+
 ## Example
 
 Print all player information to console:
