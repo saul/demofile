@@ -53,10 +53,10 @@ class Player extends BaseEntity {
   }
 
   /**
-   * @returns {bool} getLifeState() == 0
+   * @returns {bool} lifeState == 0
    */
   get isAlive() {
-    return this.getLifeState() === 0;
+    return this.lifeState === 0;
   }
 
   /**

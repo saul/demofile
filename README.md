@@ -66,6 +66,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.1 (23/02/17)
+
+- :bug: Fixed exception in `Player#isAlive`
+
 ### 0.4.0 (05/02/17)
 
 Major update
