@@ -1,6 +1,6 @@
 {
   "name": "demofile",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "author": "Saul Rennison <saul.rennison@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -21,10 +21,10 @@
   "dependencies": {
     "async": "^1.5.0",
     "binary-parser": "^1.1.5",
-    "bit-buffer": "0.0.3",
+    "bit-buffer": "0.1.0",
     "brfs": "^1.4.3",
-    "buffer": "^5.0.0",
-    "bytebuffer": "^5.0.0",
+    "buffer": "^5.0.5",
+    "bytebuffer": "^5.0.1",
     "eslint": "^3.9.1",
     "jsdoc": "^3.4.0",
     "lodash": "^3.10.1",
