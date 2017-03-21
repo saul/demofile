@@ -66,7 +66,7 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
-### 0.4.3 (21/03/17)
+### 0.4.4 (21/03/17)
 
 - :bug: Revert accidental bit-buffer upgrade
 
