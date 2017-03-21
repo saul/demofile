@@ -21,10 +21,10 @@
   "dependencies": {
     "async": "^1.5.0",
     "binary-parser": "^1.1.5",
-    "bit-buffer": "0.1.0",
+    "bit-buffer": "0.0.3",
     "brfs": "^1.4.3",
-    "buffer": "^5.0.5",
-    "bytebuffer": "^5.0.1",
+    "buffer": "^5.0.0",
+    "bytebuffer": "^5.0.0",
     "eslint": "^3.9.1",
     "jsdoc": "^3.4.0",
     "lodash": "^3.10.1",
