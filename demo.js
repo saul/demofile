@@ -294,6 +294,8 @@ class DemoFile extends EventEmitter {
   }
 
   _parseRecurse() {
+    this._recurse();
+
     this.emit('progress', this._bytebuf.offset / this._bytebuf.limit);
 
     var command = this._bytebuf.readUInt8();
@@ -334,8 +336,6 @@ class DemoFile extends EventEmitter {
       default:
         throw 'Unrecognised command';
     }
-
-    this._recurse();
   }
 
   /**
