@@ -66,6 +66,14 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.4 (21/03/17)
+
+- :bug: Revert accidental bit-buffer upgrade
+
+### 0.4.2 (20/03/17)
+
+- :sparkles: Added `Player#steam64Id` for easy access to Steam64 ID (thanks @derpalmer)
+
 ### 0.4.1 (23/02/17)
 
 - :bug: Fixed exception in `Player#isAlive`
