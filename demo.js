@@ -284,11 +284,11 @@ class DemoFile extends EventEmitter {
    */
   cancel() {
     if (this._immediateTimerToken) {
-      timers.cancelImmediate(this._immediateTimerToken);
+      timers.clearImmediate(this._immediateTimerToken);
       this._immediateTimerToken = null;
     }
     if (this._timeoutTimerToken) {
-      timers.cancelTimeout(this._timeoutTimerToken);
+      timers.clearTimeout(this._timeoutTimerToken);
       this._timeoutTimerToken = null;
     }
   }

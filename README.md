@@ -66,6 +66,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.5 (15/04/17)
+
+- :bug: Fix exception when calling `DemoFile#cancel` (thanks @derpalmer)
+
 ### 0.4.4 (21/03/17)
 
 - :bug: Revert accidental bit-buffer upgrade
