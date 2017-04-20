@@ -218,6 +218,33 @@ class Player extends BaseEntity {
   }
 
   /**
+   * @returns {int} Score of the player
+   */
+  get score() {
+    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
+    let score = pr.props['m_iScore'];
+    return score[Object.keys(score)[this.index]];
+  }
+
+  /**
+   * @returns {int} MVPs of the player
+   */
+  get mvps() {
+    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
+    let mvps = pr.props['m_iMVPs'];
+    return mvps[Object.keys(mvps)[this.index]];
+  }
+
+  /**
+   * @returns {string} Clantag of the player
+   */
+  get clantag() {
+    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
+    let clantag = pr.props['m_szClan'];
+    return clantag[Object.keys(clantag)[this.index]];
+  }
+
+  /**
    * @returns {bool} Has this player been spotted by any others?
    */
   get isSpotted() {
