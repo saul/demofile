@@ -238,7 +238,7 @@ class Player extends BaseEntity {
   /**
    * @returns {string} Clantag of the player
    */
-  get clantag() {
+  get clanTag() {
     let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
     let clantag = pr.props['m_szClan'];
     return clantag[Object.keys(clantag)[this.index]];
