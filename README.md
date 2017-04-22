@@ -66,6 +66,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.6 (22/04/17)
+
+- :sparkles: Added `Player#score`, `Player#mvps` and `Player#clanTag` (thanks @derpalmer)
+
 ### 0.4.5 (15/04/17)
 
 - :bug: Fix exception when calling `DemoFile#cancel` (thanks @derpalmer)

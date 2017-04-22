@@ -245,15 +245,6 @@ class Player extends BaseEntity {
   }
 
   /**
-   * @returns {int} Team ID of the player
-   */
-  get teamId() {
-    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
-    let teamId = pr.props['m_iTeam'];
-    return teamId[Object.keys(teamId)[this.index]];
-  }
-
-  /**
    * @returns {bool} Has this player been spotted by any others?
    */
   get isSpotted() {
