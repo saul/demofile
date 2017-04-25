@@ -313,6 +313,48 @@ class Player extends BaseEntity {
 
     return sameTeam && !teammatesAreEnemies;
   }
+
+  /**
+   * @returns {bool} Is scoped
+   */
+  get isScoped() {
+    return this.getProp('DT_CSPlayer', 'm_bIsScoped');
+  }
+
+  /**
+   * @returns {bool} Is walking
+   */
+  get isWalking() {
+    return this.getProp('DT_CSPlayer', 'm_bIsWalking');
+  }
+
+  /**
+   * @returns {float} Duration of a flash that hit the player
+   */
+  get flashDuration() {
+    return this.getProp('DT_CSPlayer', 'm_flFlashDuration');
+  }
+
+  /**
+   * @returns {int} Current equipment value
+   */
+  get currentEquipmentValue() {
+    return this.getProp('DT_CSPlayer', 'm_unCurrentEquipmentValue');
+  }
+
+  /**
+   * @returns {int} Round start equipment value
+   */
+  get roundStartEquipmentValue() {
+    return this.getProp('DT_CSPlayer', 'm_unRoundStartEquipmentValue');
+  }
+
+  /**
+   * @returns {int} Freeze time end equipment value
+   */
+  get freezeTimeEndEquipmentValue() {
+    return this.getProp('DT_CSPlayer', 'm_unFreezetimeEndEquipmentValue');
+  }
 }
 
 module.exports = Player;
