@@ -41,6 +41,7 @@ Note: It is important to note that events are fired at the end of a tick, after 
 ### Useful links
 
 - [CS:GO Game Events - AlliedModders Wiki](https://wiki.alliedmods.net/Counter-Strike:_Global_Offensive_Events)
+- [Gitter community](https://gitter.im/saul/demofile)
 
 ## Example
 
