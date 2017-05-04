@@ -15,6 +15,7 @@ var BaseEntity = require('./entities/baseentity.js');
 var GameRules = require('./entities/gamerules.js');
 var Player = require('./entities/player.js');
 var Team = require('./entities/team.js');
+var Weapon = require('./entities/weapon.js');
 
 const MAX_EDICT_BITS = 11;
 const NETWORKED_EHANDLE_ENT_ENTRY_MASK = (1 << MAX_EDICT_BITS) - 1;
@@ -78,7 +79,8 @@ class Entities extends EventEmitter {
     this.tableClassMap = {
       DT_CSPlayer: Player,
       DT_Team: Team,
-      DT_CSGameRules: GameRules
+      DT_CSGameRules: GameRules,
+      DT_WeaponCSBase: Weapon,
     };
 
     /**
