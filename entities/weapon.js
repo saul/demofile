@@ -253,7 +253,7 @@ class Weapon extends BaseEntity {
     var userId = this.getProp('DT_WeaponCSBase', 'm_hPrevOwner'),
         user = null;
 
-    if (user = this._demo.entities.getByUserId(userId)) {
+    if (user = this._demo.entities.getByHandle(userId)) {
       return user;
     }
 
