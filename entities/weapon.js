@@ -237,6 +237,9 @@ class Weapon extends BaseEntity {
     return itemDefinitionIndexMap[weaponId] != undefined ? itemDefinitionIndexMap[weaponId].itemName : 'unknown';
   }
 
+  /**
+   * @returns {string} Class Name of the weapon
+   */
   get className() {
     var weaponId = this.itemIndex;
 
