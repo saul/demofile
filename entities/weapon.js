@@ -222,42 +222,36 @@ var itemDefinitionIndexMap = {
  */
 class Weapon extends BaseEntity {
   /**
-   * @returns {integer} Item index
+   * @returns {integer} Item definition index
    */
   get itemIndex() {
     return this.getProp('DT_ScriptCreatedItem', 'm_iItemDefinitionIndex');
   }
 
   /**
-   * @returns {string} Name of the weapon
+   * @returns {string|null} Name of the weapon (e.g. "Five-SeveN")
    */
   get itemName() {
     var weaponId = this.itemIndex;
 
-    return itemDefinitionIndexMap[weaponId] != undefined ? itemDefinitionIndexMap[weaponId].itemName : 'unknown';
+    return itemDefinitionIndexMap[weaponId] !== undefined ? itemDefinitionIndexMap[weaponId].itemName : null;
   }
 
   /**
-   * @returns {string} Class Name of the weapon
+   * @returns {string|null} Entity class name of the weapon (e.g. "weapon_ak47")
    */
   get className() {
     var weaponId = this.itemIndex;
 
-    return itemDefinitionIndexMap[weaponId] != undefined ? itemDefinitionIndexMap[weaponId].className : 'unknown';
+    return itemDefinitionIndexMap[weaponId] !== undefined ? itemDefinitionIndexMap[weaponId].className : null;
   }
 
   /**
-   * @returns {Player|null} Previous Owner
+   * @returns {Player|null} Previous owner
    */
   get prevOwner() {
-    var userId = this.getProp('DT_WeaponCSBase', 'm_hPrevOwner'),
-        user = null;
-
-    if (user = this._demo.entities.getByHandle(userId)) {
-      return user;
-    }
-
-    return null;
+    var handle = this.getProp('DT_WeaponCSBase', 'm_hPrevOwner');
+    return this._demo.entities.getByHandle(handle);
   }
 }
 

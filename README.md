@@ -67,6 +67,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.7 (08/05/17)
+
+- :sparkles: Added `Weapon` entity class to represent in-game items (thanks @pedrofornaza)
+
 ### 0.4.6 (22/04/17)
 
 - :sparkles: Added `Player#score`, `Player#mvps` and `Player#clanTag` (thanks @derpalmer)
