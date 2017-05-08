@@ -67,6 +67,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.8 (08/05/17)
+
+- :bug: #11: Fixed parse error when a 'stop' command is missing from the demo file 
+
 ### 0.4.7 (08/05/17)
 
 - :sparkles: Added `Weapon` entity class to represent in-game items (thanks @pedrofornaza)

@@ -298,14 +298,19 @@ class DemoFile extends EventEmitter {
 
     this.emit('progress', this._bytebuf.offset / this._bytebuf.limit);
 
-    var command = this._bytebuf.readUInt8();
-    var tick = this._bytebuf.readInt32();
-    this.playerSlot = this._bytebuf.readUInt8();
+    var command = DemoCommands.stop;
 
-    if (tick !== this.currentTick) {
-      this.emit('tickend', this.currentTick);
-      this.currentTick = tick;
-      this.emit('tickstart', this.currentTick);
+    // See GH #11: Some official MM demos end without writing a 'stop' command.
+    if (this._bytebuf.offset != this._bytebuf.limit) {
+      command = this._bytebuf.readUInt8();
+      var tick = this._bytebuf.readInt32();
+      this.playerSlot = this._bytebuf.readUInt8();
+
+      if (tick !== this.currentTick) {
+        this.emit('tickend', this.currentTick);
+        this.currentTick = tick;
+        this.emit('tickstart', this.currentTick);
+      }
     }
 
     switch (command) {
@@ -326,6 +331,7 @@ class DemoFile extends EventEmitter {
         this._handleUserCmd();
         break;
       case DemoCommands.stop:
+        this.cancel();
         this.emit('tickend', this.currentTick);
         this.emit('end');
         return;
