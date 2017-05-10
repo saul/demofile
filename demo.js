@@ -160,7 +160,7 @@ class DemoFile extends EventEmitter {
    * @returns {float} Number of seconds elapsed
    */
   get currentTime() {
-    return this.currentTick * (this.header.playbackTicks / this.header.playbackTime);
+    return this.currentTick * (this.header.playbackTime / this.header.playbackTicks);
   }
 
   /**
@@ -301,7 +301,7 @@ class DemoFile extends EventEmitter {
     var command = DemoCommands.stop;
 
     // See GH #11: Some official MM demos end without writing a 'stop' command.
-    if (this._bytebuf.offset != this._bytebuf.limit) {
+    if (this._bytebuf.offset !== this._bytebuf.limit) {
       command = this._bytebuf.readUInt8();
       var tick = this._bytebuf.readInt32();
       this.playerSlot = this._bytebuf.readUInt8();

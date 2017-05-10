@@ -67,6 +67,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.9 (10/05/17)
+
+- :bug: #31: Fixed `DemoFile#currentTime` returning the wrong game time
+
 ### 0.4.8 (08/05/17)
 
 - :bug: #11: Fixed parse error when a 'stop' command is missing from the demo file 
