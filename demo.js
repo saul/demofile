@@ -294,54 +294,59 @@ class DemoFile extends EventEmitter {
   }
 
   _parseRecurse() {
-    this._recurse();
+    try {
+      this._recurse();
 
-    this.emit('progress', this._bytebuf.offset / this._bytebuf.limit);
+      this.emit('progress', this._bytebuf.offset / this._bytebuf.limit);
 
-    var command = DemoCommands.stop;
+      var command = DemoCommands.stop;
 
-    // See GH #11: Some official MM demos end without writing a 'stop' command.
-    if (this._bytebuf.offset !== this._bytebuf.limit) {
-      command = this._bytebuf.readUInt8();
-      var tick = this._bytebuf.readInt32();
-      this.playerSlot = this._bytebuf.readUInt8();
+      // See GH #11: Some official MM demos end without writing a 'stop' command.
+      if (this._bytebuf.offset !== this._bytebuf.limit) {
+        command = this._bytebuf.readUInt8();
+        var tick = this._bytebuf.readInt32();
+        this.playerSlot = this._bytebuf.readUInt8();
 
-      if (tick !== this.currentTick) {
-        this.emit('tickend', this.currentTick);
-        this.currentTick = tick;
-        this.emit('tickstart', this.currentTick);
+        if (tick !== this.currentTick) {
+          this.emit('tickend', this.currentTick);
+          this.currentTick = tick;
+          this.emit('tickstart', this.currentTick);
+        }
       }
+
+      switch (command) {
+        case DemoCommands.packet:
+        case DemoCommands.signon:
+          this._handleDemoPacket();
+          break;
+        case DemoCommands.dataTables:
+          this._handleDataTables();
+          break;
+        case DemoCommands.stringTables:
+          this._handleStringTables();
+          break;
+        case DemoCommands.consoleCmd: // TODO
+          this._handleDataChunk();
+          break;
+        case DemoCommands.userCmd:
+          this._handleUserCmd();
+          break;
+        case DemoCommands.stop:
+          this.cancel();
+          this.emit('tickend', this.currentTick);
+          this.emit('end');
+          return;
+        case DemoCommands.customData:
+          throw 'Custom data not supported';
+        case DemoCommands.syncTick:
+          break;
+        default:
+          throw 'Unrecognised command';
+      }
+    } catch (error) {
+      // console.error("err name: ", error.name);
     }
 
-    switch (command) {
-      case DemoCommands.packet:
-      case DemoCommands.signon:
-        this._handleDemoPacket();
-        break;
-      case DemoCommands.dataTables:
-        this._handleDataTables();
-        break;
-      case DemoCommands.stringTables:
-        this._handleStringTables();
-        break;
-      case DemoCommands.consoleCmd: // TODO
-        this._handleDataChunk();
-        break;
-      case DemoCommands.userCmd:
-        this._handleUserCmd();
-        break;
-      case DemoCommands.stop:
-        this.cancel();
-        this.emit('tickend', this.currentTick);
-        this.emit('end');
-        return;
-      case DemoCommands.customData:
-        throw 'Custom data not supported';
-      case DemoCommands.syncTick:
-        break;
-      default:
-        throw 'Unrecognised command';
-    }
   }
 
   /**
