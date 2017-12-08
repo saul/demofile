@@ -66,6 +66,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.5 (08/12/17)
+
+- :sparkles: Added `Player#cashSpendTotal` and `Player#cashSpendThisRound`
+
 ### 0.4.4 (21/03/17)
 
 - :bug: Revert accidental bit-buffer upgrade

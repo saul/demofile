@@ -183,30 +183,49 @@ class Player extends BaseEntity {
   }
 
   /**
+   * Retrieves the value of an array property on the singleton entity DT_CSPlayerResource.
+   * @param {string} propName - Name of the property on DT_CSPlayerResource to retrieve
+   * @returns {*} Property value
+   */
+  resourceProp(propName) {
+    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
+    let values = pr.props[propName];
+    return values[Object.keys(values)[this.index]];
+  }
+
+  /**
    * @returns {int} How many kills the player has made
    */
   get kills() {
-    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
-    let kills = pr.props['m_iKills'];
-    return kills[Object.keys(kills)[this.index]];
+    return this.resourceProp('m_iKills');
   }
 
   /**
    * @returns {int} How many assists the player has made
    */
   get assists() {
-    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
-    let assists = pr.props['m_iAssists'];
-    return assists[Object.keys(assists)[this.index]];
+    return this.resourceProp('m_iAssists');
   }
 
   /**
    * @returns {int} How many times the player has died
    */
   get deaths() {
-    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
-    let deaths = pr.props['m_iDeaths'];
-    return deaths[Object.keys(deaths)[this.index]];
+    return this.resourceProp('m_iDeaths');
+  }
+
+  /**
+   * @returns {int} Cash that this player has spent this round
+   */
+  get cashSpendThisRound() {
+    return this.resourceProp('m_iCashSpentThisRound');
+  }
+
+  /**
+   * @returns {int} Cash that the player has spent all game
+   */
+  get cashSpendTotal() {
+    return this.resourceProp('m_iTotalCashSpent');
   }
 
   /**
