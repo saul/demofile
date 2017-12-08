@@ -160,7 +160,7 @@ class DemoFile extends EventEmitter {
    * @returns {float} Number of seconds elapsed
    */
   get currentTime() {
-    return this.currentTick * (this.header.playbackTicks / this.header.playbackTime);
+    return this.currentTick * (this.header.playbackTime / this.header.playbackTicks);
   }
 
   /**
@@ -284,26 +284,33 @@ class DemoFile extends EventEmitter {
    */
   cancel() {
     if (this._immediateTimerToken) {
-      timers.cancelImmediate(this._immediateTimerToken);
+      timers.clearImmediate(this._immediateTimerToken);
       this._immediateTimerToken = null;
     }
     if (this._timeoutTimerToken) {
-      timers.cancelTimeout(this._timeoutTimerToken);
+      timers.clearTimeout(this._timeoutTimerToken);
       this._timeoutTimerToken = null;
     }
   }
 
   _parseRecurse() {
+    this._recurse();
+
     this.emit('progress', this._bytebuf.offset / this._bytebuf.limit);
 
-    var command = this._bytebuf.readUInt8();
-    var tick = this._bytebuf.readInt32();
-    this.playerSlot = this._bytebuf.readUInt8();
+    var command = DemoCommands.stop;
 
-    if (tick !== this.currentTick) {
-      this.emit('tickend', this.currentTick);
-      this.currentTick = tick;
-      this.emit('tickstart', this.currentTick);
+    // See GH #11: Some official MM demos end without writing a 'stop' command.
+    if (this._bytebuf.offset !== this._bytebuf.limit) {
+      command = this._bytebuf.readUInt8();
+      var tick = this._bytebuf.readInt32();
+      this.playerSlot = this._bytebuf.readUInt8();
+
+      if (tick !== this.currentTick) {
+        this.emit('tickend', this.currentTick);
+        this.currentTick = tick;
+        this.emit('tickstart', this.currentTick);
+      }
     }
 
     switch (command) {
@@ -324,6 +331,7 @@ class DemoFile extends EventEmitter {
         this._handleUserCmd();
         break;
       case DemoCommands.stop:
+        this.cancel();
         this.emit('tickend', this.currentTick);
         this.emit('end');
         return;
@@ -334,8 +342,6 @@ class DemoFile extends EventEmitter {
       default:
         throw 'Unrecognised command';
     }
-
-    this._recurse();
   }
 
   /**

@@ -237,6 +237,33 @@ class Player extends BaseEntity {
   }
 
   /**
+   * @returns {int} Score of the player
+   */
+  get score() {
+    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
+    let score = pr.props['m_iScore'];
+    return score[Object.keys(score)[this.index]];
+  }
+
+  /**
+   * @returns {int} MVPs of the player
+   */
+  get mvps() {
+    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
+    let mvps = pr.props['m_iMVPs'];
+    return mvps[Object.keys(mvps)[this.index]];
+  }
+
+  /**
+   * @returns {string} Clantag of the player
+   */
+  get clanTag() {
+    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
+    let clantag = pr.props['m_szClan'];
+    return clantag[Object.keys(clantag)[this.index]];
+  }
+
+  /**
    * @returns {bool} Has this player been spotted by any others?
    */
   get isSpotted() {
@@ -304,6 +331,48 @@ class Player extends BaseEntity {
     let teammatesAreEnemies = this._demo.conVars.vars['mp_teammates_are_enemies'] || 0;
 
     return sameTeam && !teammatesAreEnemies;
+  }
+
+  /**
+   * @returns {bool} Is scoped
+   */
+  get isScoped() {
+    return this.getProp('DT_CSPlayer', 'm_bIsScoped');
+  }
+
+  /**
+   * @returns {bool} Is walking
+   */
+  get isWalking() {
+    return this.getProp('DT_CSPlayer', 'm_bIsWalking');
+  }
+
+  /**
+   * @returns {float} Duration of a flash that hit the player
+   */
+  get flashDuration() {
+    return this.getProp('DT_CSPlayer', 'm_flFlashDuration');
+  }
+
+  /**
+   * @returns {int} Current equipment value
+   */
+  get currentEquipmentValue() {
+    return this.getProp('DT_CSPlayer', 'm_unCurrentEquipmentValue');
+  }
+
+  /**
+   * @returns {int} Round start equipment value
+   */
+  get roundStartEquipmentValue() {
+    return this.getProp('DT_CSPlayer', 'm_unRoundStartEquipmentValue');
+  }
+
+  /**
+   * @returns {int} Freeze time end equipment value
+   */
+  get freezeTimeEndEquipmentValue() {
+    return this.getProp('DT_CSPlayer', 'm_unFreezetimeEndEquipmentValue');
   }
 }
 

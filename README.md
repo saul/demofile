@@ -41,6 +41,7 @@ Note: It is important to note that events are fired at the end of a tick, after 
 ### Useful links
 
 - [CS:GO Game Events - AlliedModders Wiki](https://wiki.alliedmods.net/Counter-Strike:_Global_Offensive_Events)
+- [Gitter community](https://gitter.im/saul/demofile)
 
 ## Example
 
@@ -66,9 +67,29 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
-### 0.4.5 (08/12/17)
+### 0.4.10 (08/12/17)
 
 - :sparkles: Added `Player#cashSpendTotal` and `Player#cashSpendThisRound`
+
+### 0.4.9 (10/05/17)
+
+- :bug: #31: Fixed `DemoFile#currentTime` returning the wrong game time
+
+### 0.4.8 (08/05/17)
+
+- :bug: #11: Fixed parse error when a 'stop' command is missing from the demo file 
+
+### 0.4.7 (08/05/17)
+
+- :sparkles: Added `Weapon` entity class to represent in-game items (thanks @pedrofornaza)
+
+### 0.4.6 (22/04/17)
+
+- :sparkles: Added `Player#score`, `Player#mvps` and `Player#clanTag` (thanks @derpalmer)
+
+### 0.4.5 (15/04/17)
+
+- :bug: Fix exception when calling `DemoFile#cancel` (thanks @derpalmer)
 
 ### 0.4.4 (21/03/17)
 
