@@ -67,43 +67,47 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
-### 0.4.10 (08/12/17)
+### 0.4.11 (2017-12-20)
+
+- :bug: #43: Fixed parsing of string tables updates for tables with fixed userdata sizes
+
+### 0.4.10 (2017-12-08)
 
 - :sparkles: Added `Player#cashSpendTotal` and `Player#cashSpendThisRound`
 
-### 0.4.9 (10/05/17)
+### 0.4.9 (2017-10-05)
 
 - :bug: #31: Fixed `DemoFile#currentTime` returning the wrong game time
 
-### 0.4.8 (08/05/17)
+### 0.4.8 (2017-05-08)
 
 - :bug: #11: Fixed parse error when a 'stop' command is missing from the demo file 
 
-### 0.4.7 (08/05/17)
+### 0.4.7 (2017-05-08)
 
 - :sparkles: Added `Weapon` entity class to represent in-game items (thanks @pedrofornaza)
 
-### 0.4.6 (22/04/17)
+### 0.4.6 (2017-04-22)
 
 - :sparkles: Added `Player#score`, `Player#mvps` and `Player#clanTag` (thanks @derpalmer)
 
-### 0.4.5 (15/04/17)
+### 0.4.5 (2017-04-15)
 
 - :bug: Fix exception when calling `DemoFile#cancel` (thanks @derpalmer)
 
-### 0.4.4 (21/03/17)
+### 0.4.4 (2017-03-21)
 
 - :bug: Revert accidental bit-buffer upgrade
 
-### 0.4.2 (20/03/17)
+### 0.4.2 (2017-03-20)
 
 - :sparkles: Added `Player#steam64Id` for easy access to Steam64 ID (thanks @derpalmer)
 
-### 0.4.1 (23/02/17)
+### 0.4.1 (2017-02-23)
 
 - :bug: Fixed exception in `Player#isAlive`
 
-### 0.4.0 (05/02/17)
+### 0.4.0 (2017-02-05)
 
 Major update
 
@@ -111,11 +115,11 @@ Major update
 - Added `DemoFile#conVars` for accessing console variables and listening for changes
 - Updated `dumpfile.js` example to be more representative of real-world usage
 
-### 0.3.1 (30/01/17)
+### 0.3.1 (2017-01-30)
 
 - :bug: Fixed `Entity#getProp` exception when a prop is updated that is not part of the entity baseline
 
-### 0.3 (16/11/16)
+### 0.3 (2016-11-16)
 
 Major update
 
@@ -123,58 +127,58 @@ Major update
 - Added DemoFile#progress event that indicates what percentage of the demo file has been parsed
 - Removed dependency on the `pace` library
 
-### 0.2.11 (16/10/16)
+### 0.2.11 (2016-10-16)
 
 - :sparkles: Added entities `isHandleSet` to determine if a networked entity handle is set (the game uses `(1 << 21) - 1` to mean empty)
 
-### 0.2.10 (11/10/16)
+### 0.2.10 (2016-10-11)
 
 - :sparkles: Added entities `getByHandle` to find an entity from a given networked entity handle (e.g., from m_hMyWeapons)
 
-### 0.2.9 (12/09/16)
+### 0.2.9 (2016-09-12)
 
 - :sparkles: Added entities `baselineupdate` event which is fired whenever the `instancebaseline` string table is updated with new properties.
 
-### 0.2.8 (30/08/16)
+### 0.2.8 (2016-08-30)
 
 - :sparkles: The `dem_StringTables` command, which holds additional string table data on client-side recorded demos, is now parsed
 - :zap: String table `postcreate` is now fired after `svc_CreateStringTable` and `dem_StringTables` are parsed
 
-### 0.2.7 (23/08/16)
+### 0.2.7 (2016-08-23)
 
 - :sparkles: Added entities `datatablesready` event which is fired when data tables have been parsed.
 
-### 0.2.6 (23/08/16)
+### 0.2.6 (2016-08-23)
 
 - :sparkles: Added entity `postcreate` event which is fired after an entity has been created and all of its properties parsed.
 
-### 0.2.5 (08/07/16)
+### 0.2.5 (2016-07-08)
 
 - :sparkles: Added string table `postcreate` event which is fired after a new stringtable's entries have been populated
 
-### 0.2.4 (08/07/16)
+### 0.2.4 (2016-07-08)
 
 - :bug: Fixed retrieving properties on entities whose server class has no instance baseline
 
-### 0.2.3 (03/07/16)
+### 0.2.3 (2016-07-03)
 
 - :sparkles: Instance baselines are now parsed and used by `Entity#getProp`
 
-### 0.2.2 (03/07/16)
+### 0.2.2 (2016-07-03)
 
 - :bug: Fixed stringtable updates affecting all entries in the table
 
-### 0.2.1 (25/03/16)
+### 0.2.1 (2016-03-25)
 
 - :card_index: Removed `node-protobuf` un-used dependency
 
-### 0.2.0 (30/01/16)
+### 0.2.0 (2016-01-30)
 
 - :zap: Each tick is now parsed on a separate process tick.
 - :zap: Game event callbacks are now fired at the end of the tick.
 - :bug: Fixed Vector props decoding to `undefined`.
 
-### 0.1.0 (18/01/16)
+### 0.1.0 (2016-01-18)
 
 - :tada: Initial release.
 

@@ -160,7 +160,7 @@ class StringTables extends EventEmitter {
    * @property {*|undefined} userData - New user data
    */
 
-  _parseStringTableUpdate(bitbuf, table, entries, maxEntries, userDataSize, userDataSizeBits, userDataFixedSize) {
+  _parseStringTableUpdate(bitbuf, table, entries, maxEntries) {
     // overflow silently. this is how the official parser handles overflows...
     bitbuf.view.silentOverflow = true;
 
@@ -207,11 +207,8 @@ class StringTables extends EventEmitter {
 
       if (bitbuf.readOneBit()) {
         // don't read the length, it's fixed length and the length was networked down already
-        if (userDataFixedSize) {
-          assert(userDataSize === Math.ceil(userDataSizeBits / 8), 'invalid user data byte size');
-          assert(userDataSizeBits <= 32, 'userdata value too large');
-
-          userDataArray = [bitbuf.readUBits(userDataSizeBits)];
+        if (table.userDataFixedSize) {
+          userDataArray = [bitbuf.readUBits(table.userDataSizeBits)];
         } else {
           var bytes = bitbuf.readUBits(consts.MAX_USERDATA_BITS);
           userDataArray = bitbuf.readBytes(bytes);
@@ -263,17 +260,22 @@ class StringTables extends EventEmitter {
     // table shouldn't already exist
     assert(this.findTableByName(msg.name) === undefined, 'table already exists');
 
+    assert(msg.userDataSize === Math.ceil(msg.userDataSizeBits / 8), 'invalid user data byte size');
+    assert(msg.userDataSizeBits <= 32, 'userdata value too large');
+
     // create an empty table
     var table = {
       name: msg.name,
       entries: _.map(_.range(msg.maxEntries), function () {
         return {entry: null, userData: null};
-      })
+      }),
+      userDataSizeBits: msg.userDataSizeBits,
+      userDataFixedSize: msg.userDataFixedSize
     };
 
     this.emit('create', table);
 
-    this._parseStringTableUpdate(bitbuf, table, msg.numEntries, msg.maxEntries, msg.userDataSize, msg.userDataSizeBits, msg.userDataFixedSize);
+    this._parseStringTableUpdate(bitbuf, table, msg.numEntries, msg.maxEntries);
 
     this.tables.push(table);
   }
@@ -284,7 +286,7 @@ class StringTables extends EventEmitter {
     var table = this.tables[msg.tableId];
     assert(table !== undefined, 'bad table index');
 
-    this._parseStringTableUpdate(bitbuf, table, msg.numChangedEntries, table.entries.length, 0, 0, false);
+    this._parseStringTableUpdate(bitbuf, table, msg.numChangedEntries, table.entries.length);
   }
 }
 
