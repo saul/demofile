@@ -67,6 +67,11 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.12 (2018-02-02)
+
+- :sparkles: #11: Fixed malformed demos resulting in an exception. Added `error` property to the `DemoFile#end` event
+- :zap: #52: `GameRules#roundNumber` has been renamed to `GameRules#roundsPlayed` - the old name is available for backwards compatibility
+
 ### 0.4.11 (2017-12-20)
 
 - :bug: #43: Fixed parsing of string tables updates for tables with fixed userdata sizes

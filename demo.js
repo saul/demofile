@@ -16,9 +16,9 @@ var Entities = require('./entities');
 var ConVars = require('./convars');
 
 const FDEMO_NORMAL = 0;
-const FDEMO_USE_ORIGIN2 = ( 1 << 0 );
-const FDEMO_USE_ANGLES2 = ( 1 << 1 );
-const FDEMO_NOINTERP = ( 1 << 2 );	// don't interpolate between this an last view
+const FDEMO_USE_ORIGIN2 = (1 << 0);
+const FDEMO_USE_ANGLES2 = (1 << 1);
+const FDEMO_NOINTERP = (1 << 2);	// don't interpolate between this an last view
 
 const TEAM_UNASSIGNED = 0;
 const TEAM_SPECTATOR = 1;
@@ -40,13 +40,13 @@ const TEAM_CTS = 3;
  */
 var DemoHeader = new Parser()
   .endianess('little')
-  .string('magic', {length: 8, stripNull: true})
+  .string('magic', { length: 8, stripNull: true })
   .int32('protocol')
   .int32('networkProtocol')
-  .string('serverName', {length: consts.MAX_OSPATH, stripNull: true})
-  .string('clientName', {length: consts.MAX_OSPATH, stripNull: true})
-  .string('mapName', {length: consts.MAX_OSPATH, stripNull: true})
-  .string('gameDirectory', {length: consts.MAX_OSPATH, stripNull: true})
+  .string('serverName', { length: consts.MAX_OSPATH, stripNull: true })
+  .string('clientName', { length: consts.MAX_OSPATH, stripNull: true })
+  .string('mapName', { length: consts.MAX_OSPATH, stripNull: true })
+  .string('gameDirectory', { length: consts.MAX_OSPATH, stripNull: true })
   .float('playbackTime')
   .int32('playbackTicks')
   .int32('playbackFrames')
@@ -78,15 +78,15 @@ var Vector = new Parser()
 
 var OriginViewAngles = new Parser()
   .endianess('little')
-  .nest('viewOrigin', {type: Vector})
-  .nest('viewAngles', {type: QAngle})
-  .nest('localViewAngles', {type: QAngle});
+  .nest('viewOrigin', { type: Vector })
+  .nest('viewAngles', { type: QAngle })
+  .nest('localViewAngles', { type: QAngle });
 
 var SplitCmdInfo = new Parser()
   .endianess('little')
   .int32('flags')
-  .nest('original', {type: OriginViewAngles})
-  .nest('resampled', {type: OriginViewAngles});
+  .nest('original', { type: OriginViewAngles })
+  .nest('resampled', { type: OriginViewAngles });
 
 var CmdInfo = new Parser()
   .endianess('little')
@@ -244,8 +244,10 @@ class DemoFile extends EventEmitter {
    */
 
   /**
-   * Fired when parsing is complete.
+   * Fired when parsing has finished, successfully or otherwise.
    * @event DemoFile#end
+   * @type {Object}
+   * @property {Error|null} error - Error that caused the premature end of parsing.
    */
 
   /**
@@ -296,13 +298,10 @@ class DemoFile extends EventEmitter {
   _parseRecurse() {
     this._recurse();
 
-    this.emit('progress', this._bytebuf.offset / this._bytebuf.limit);
+    try {
+      this.emit('progress', this._bytebuf.offset / this._bytebuf.limit);
 
-    var command = DemoCommands.stop;
-
-    // See GH #11: Some official MM demos end without writing a 'stop' command.
-    if (this._bytebuf.offset !== this._bytebuf.limit) {
-      command = this._bytebuf.readUInt8();
+      var command = this._bytebuf.readUInt8();
       var tick = this._bytebuf.readInt32();
       this.playerSlot = this._bytebuf.readUInt8();
 
@@ -311,36 +310,49 @@ class DemoFile extends EventEmitter {
         this.currentTick = tick;
         this.emit('tickstart', this.currentTick);
       }
-    }
 
-    switch (command) {
-      case DemoCommands.packet:
-      case DemoCommands.signon:
-        this._handleDemoPacket();
-        break;
-      case DemoCommands.dataTables:
-        this._handleDataTables();
-        break;
-      case DemoCommands.stringTables:
-        this._handleStringTables();
-        break;
-      case DemoCommands.consoleCmd: // TODO
-        this._handleDataChunk();
-        break;
-      case DemoCommands.userCmd:
-        this._handleUserCmd();
-        break;
-      case DemoCommands.stop:
-        this.cancel();
-        this.emit('tickend', this.currentTick);
-        this.emit('end');
-        return;
-      case DemoCommands.customData:
-        throw 'Custom data not supported';
-      case DemoCommands.syncTick:
-        break;
-      default:
-        throw 'Unrecognised command';
+      switch (command) {
+        case DemoCommands.packet:
+        case DemoCommands.signon:
+          this._handleDemoPacket();
+          break;
+        case DemoCommands.dataTables:
+          this._handleDataTables();
+          break;
+        case DemoCommands.stringTables:
+          this._handleStringTables();
+          break;
+        case DemoCommands.consoleCmd: // TODO
+          this._handleDataChunk();
+          break;
+        case DemoCommands.userCmd:
+          this._handleUserCmd();
+          break;
+        case DemoCommands.stop:
+          this.cancel();
+          this.emit('tickend', this.currentTick);
+          this.emit('end', { error: null });
+          return;
+        case DemoCommands.customData:
+          throw 'Custom data not supported';
+        case DemoCommands.syncTick:
+          break;
+        default:
+          throw 'Unrecognised command';
+      }
+    } catch (e) {
+      // Always cancel if we have an error - we've already scheduled the next tick
+      this.cancel();
+
+      this.emit('tickend', this.currentTick);
+      this.emit('end', { error: e });
+
+      // See GH #11: A sizeable proportion of demo files aren't complete.
+      // If we hit a RangeError, just silently swallow it (as the official
+      // game client does)
+      if (!(e instanceof RangeError)) {
+        throw e;
+      }
     }
   }
 
