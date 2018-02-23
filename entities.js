@@ -183,6 +183,10 @@ class Entities extends EventEmitter {
     return this.findAllWithClass(Player);
   }
 
+  get weapons() {
+    return this.findAllWithClass(Weapon);
+  }	
+
   _gatherExcludes(table) {
     var excludes = [];
 
