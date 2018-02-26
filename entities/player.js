@@ -136,7 +136,7 @@ class Player extends BaseEntity {
   get weapons() {
     let weapons = [];
 
-    for(let index in this.props['m_hMyWeapons']) {
+    for (let index in this.props['m_hMyWeapons']) {
       let weapon = this._demo.entities.getByHandle(this.props['m_hMyWeapons'][index]);
 
       if (weapon) {
@@ -297,10 +297,10 @@ class Player extends BaseEntity {
       this.getProp('m_bSpottedByMask', '001')
     ];
 
-    return Array.from({length: 64}, (_, i) => i)
+    return Array.from({ length: 64 }, (_, i) => i)
       .filter(i => {
         let bit = i % 32;
-        let mask = masks[(i/32) >> 0];
+        let mask = masks[(i / 32) >> 0];
         return (mask & (1 << bit)) !== 0;
       })
       .map(clientSlot => this._demo.entities.entities[clientSlot + 1]);
@@ -373,6 +373,37 @@ class Player extends BaseEntity {
    */
   get freezeTimeEndEquipmentValue() {
     return this.getProp('DT_CSPlayer', 'm_unFreezetimeEndEquipmentValue');
+  }
+
+  /**
+   * @returns {Object[]} Object representing the player's performance per round
+   * @property {string} kills - Kills dealt
+   * @property {string} damage - Damage dealt
+   * @property {string} equipmentValue - Total value of equipment (snapshot at the end of buy time)
+   * @property {string} moneySaved - Money remaining (snapshot at the end of buy time)
+   * @property {string} killReward - Money earnt by killing other players
+   * @property {string} liveTime - Number of seconds this player stayed alive (zero if survived the whole round)
+   * @property {string} deaths - Number of times the player died this round
+   * @property {string} assists - Kills assisted by this player
+   * @property {string} headShotKills - Kills that were headshots
+   * @property {string} objective - Number of times the player achieved the objective (e.g defused the bomb or planted the exploding bomb)
+   */
+  get matchStats() {
+    return Object.keys(this.props['m_iMatchStats_Kills'])
+      .map(roundIdx => {
+        return {
+          kills: this.props['m_iMatchStats_Kills'][roundIdx],
+          damage: this.props['m_iMatchStats_Damage'][roundIdx],
+          equipmentValue: this.props['m_iMatchStats_EquipmentValue'][roundIdx],
+          moneySaved: this.props['m_iMatchStats_MoneySaved'][roundIdx],
+          killReward: this.props['m_iMatchStats_KillReward'][roundIdx],
+          liveTime: this.props['m_iMatchStats_LiveTime'][roundIdx],
+          deaths: this.props['m_iMatchStats_Deaths'][roundIdx],
+          assists: this.props['m_iMatchStats_Assists'][roundIdx],
+          headShotKills: this.props['m_iMatchStats_HeadShotKills'][roundIdx],
+          objective: this.props['m_iMatchStats_Objective'][roundIdx]
+        };
+      });
   }
 }
 

@@ -67,6 +67,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.13 (2018-02-26)
+
+- :sparkles: Added `Player#matchStats` to represent player performance on a per-round basis
+
 ### 0.4.12 (2018-02-02)
 
 - :sparkles: #11: Fixed malformed demos resulting in an exception. Added `error` property to the `DemoFile#end` event
