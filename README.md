@@ -67,6 +67,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.14 (2018-02-26)
+
+- :sparkles: Added `Entities#weapons` (thanks @thorebear)
+
 ### 0.4.13 (2018-02-26)
 
 - :sparkles: Added `Player#matchStats` to represent player performance on a per-round basis
