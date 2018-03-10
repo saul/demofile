@@ -25,6 +25,12 @@ class BaseEntity {
      */
     this.serialNum = serialNum;
 
+    /**
+     * Entity is scheduled for removal this tick.
+     * @type {bool}
+     */
+    this.deleting = false;
+
     this.props = baseline || {};
   }
 

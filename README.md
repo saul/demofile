@@ -67,6 +67,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.15 (2018-03-10)
+
+- :zap: #58: Entities are now removed at `tickend`, after events are fired. This means the grenade entity can be accessed in flashbang_detonate and decoy_detonate.
+
 ### 0.4.14 (2018-02-26)
 
 - :sparkles: Added `Entities#weapons` (thanks @thorebear)
