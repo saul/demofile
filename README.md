@@ -67,6 +67,10 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.15 (2018-03-22)
+
+- :zap: #62: Fix entity position calculation. Use cell coordinates to determine entity positions.
+
 ### 0.4.14 (2018-02-26)
 
 - :sparkles: Added `Entities#weapons` (thanks @thorebear)
