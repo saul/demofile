@@ -149,8 +149,12 @@ class DemoFile extends EventEmitter {
     /** @type {ConVars} */
     this.conVars = new ConVars();
 
-    this.entities.listen(this);
     this.gameEvents.listen(this);
+
+    // It is important that entities listens after game events, as they both listen on
+    // tickend. 
+    this.entities.listen(this);
+
     this.stringTables.listen(this);
     this.userMessages.listen(this);
     this.conVars.listen(this);

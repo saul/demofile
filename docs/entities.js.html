@@ -80,17 +80,17 @@ function readFieldIndex(entityBitBuffer, lastIndex, newWay) {
   } else {
     ret = entityBitBuffer.readUBits(7);
 
-    switch (ret &amp; ( 32 | 64 )) {
+    switch (ret &amp; (32 | 64)) {
       case 32:
-        ret = ( ret &amp; ~96 ) | ( entityBitBuffer.readUBits(2) &lt;&lt; 5 );
+        ret = (ret &amp; ~96) | (entityBitBuffer.readUBits(2) &lt;&lt; 5);
         assert(ret >= 32);
         break;
       case 64:
-        ret = ( ret &amp; ~96 ) | ( entityBitBuffer.readUBits(4) &lt;&lt; 5 );
+        ret = (ret &amp; ~96) | (entityBitBuffer.readUBits(4) &lt;&lt; 5);
         assert(ret >= 128);
         break;
       case 96:
-        ret = ( ret &amp; ~96 ) | ( entityBitBuffer.readUBits(7) &lt;&lt; 5 );
+        ret = (ret &amp; ~96) | (entityBitBuffer.readUBits(7) &lt;&lt; 5);
         assert(ret >= 512);
         break;
     }
@@ -129,12 +129,25 @@ class Entities extends EventEmitter {
      * @type {Entity[]}
      */
     this.entities = _.fill(new Array(1 &lt;&lt; consts.MAX_EDICT_BITS), null);
+
+    this.markedForDeletion = [];
   }
 
   listen(demo) {
     this._demo = demo;
     demo.on('svc_PacketEntities', this._handlePacketEntities.bind(this));
     demo.stringTables.on('update', this._handleStringTableUpdate.bind(this));
+
+    demo.on('tickend', () => {
+      if (this.markedForDeletion.length > 0) {
+        for (var index of this.markedForDeletion) {
+          this.entities[index] = undefined;
+          this.emit('remove', { index });
+        }
+
+        this.markedForDeletion.length = 0;
+      }
+    });
   }
 
   /**
@@ -226,7 +239,7 @@ class Entities extends EventEmitter {
 
   get weapons() {
     return this.findAllWithClass(Weapon);
-  }	
+  }
 
   _gatherExcludes(table) {
     var excludes = [];
@@ -279,7 +292,7 @@ class Entities extends EventEmitter {
           table
         });
       } else {
-        flattened.push({prop, table});
+        flattened.push({ prop, table });
       }
     }
 
@@ -388,7 +401,7 @@ class Entities extends EventEmitter {
       var pendingBaseline = this.pendingBaselines[classId];
       if (pendingBaseline) {
         this.instanceBaselines[classId] = this._parseInstanceBaseline(pendingBaseline, classId);
-        this.emit('baselineupdate', {classId, serverClass, baseline: this.instanceBaselines[classId]});
+        this.emit('baselineupdate', { classId, serverClass, baseline: this.instanceBaselines[classId] });
         delete this.pendingBaselines[classId];
       }
     }
@@ -417,7 +430,7 @@ class Entities extends EventEmitter {
 
   _addEntity(index, classId, serialNum) {
     if (this.entities[index]) {
-      this._removeEntity(index);
+      this._removeEntity(index, true);
     }
 
     let baseline = this.instanceBaselines[classId];
@@ -437,33 +450,40 @@ class Entities extends EventEmitter {
     var entity = new klass(this._demo, index, classId, serialNum, _.cloneDeep(baseline));
     this.entities[index] = entity;
 
-    this.emit('create', {entity});
+    this.emit('create', { entity });
 
     return entity;
   }
 
   /**
-   * Fired before an entity is deleted.
+   * Fired when an entity is marked for deletion.
    * @event Entities#beforeremove
    * @type {Object}
    * @property {Entity} entity - Entity to be deleted
+   * @property {bool} immediate - Entity is being replaced immediately, 'remove' will fire now instead of at tickend.
    */
 
   /**
-   * Fired when an entity is removed.
+   * Fired during DemoFile#tickend when an entity is removed from the game.
    * @event Entities#remove
    * @type {Object}
    * @property {int} index - Index of removed entity
    */
 
-  _removeEntity(index) {
-    assert(this.entities[index] !== undefined, 'cannot remove non-existent entity');
+  _removeEntity(index, immediate) {
+    var entity = this.entities[index];
+    assert(entity !== undefined, 'cannot remove non-existent entity');
+    assert(!entity.deleting, 'cannot delete an entity already marked for deletion');
 
-    this.emit('beforeremove', {entity: this.entities[index]});
+    entity.deleting = true;
+    this.emit('beforeremove', { entity, immediate });
 
-    this.entities[index] = undefined;
-
-    this.emit('remove', {index});
+    if (immediate) {
+      this.entities[index] = undefined;
+      this.emit('remove', { index });
+    } else {
+      this.markedForDeletion.push(index);
+    }
   }
 
   /**
@@ -490,7 +510,7 @@ class Entities extends EventEmitter {
       assert(flattenedProp);
 
       var decoder = new props.PropDecoder(entityBitBuffer, flattenedProp);
-      updatedProps.push({prop: flattenedProp, value: decoder.decode()});
+      updatedProps.push({ prop: flattenedProp, value: decoder.decode() });
     }
 
     return updatedProps;
@@ -530,7 +550,7 @@ class Entities extends EventEmitter {
       if (entityBitBuffer.readOneBit()) {
         if (entityBitBuffer.readOneBit()) {
           assert(msg.isDelta, 'deleting entity on full update');
-          this._removeEntity(entityIndex);
+          this._removeEntity(entityIndex, false);
         } else {
           assert(msg.isDelta, 'entity leaving PVS on full update');
           // Maybe set a flag on the entity indicating that it is out of PVS?
@@ -541,7 +561,7 @@ class Entities extends EventEmitter {
 
         let newEnt = this._addEntity(entityIndex, classId, serialNum);
         this._readNewEntity(entityBitBuffer, newEnt);
-        this.emit('postcreate', {entity: newEnt});
+        this.emit('postcreate', { entity: newEnt });
       } else {
         let entity = this.entities[entityIndex];
         assert(entity, 'delta on deleted entity');
@@ -558,7 +578,7 @@ class Entities extends EventEmitter {
       var varName = bl.prop.prop.varName;
 
       if (classBaseline[tableName] === undefined) {
-        classBaseline[tableName] = {[varName]: bl.value};
+        classBaseline[tableName] = { [varName]: bl.value };
       } else {
         classBaseline[tableName][varName] = bl.value;
       }
@@ -602,7 +622,7 @@ module.exports = Entities;
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Mar 22 2018 09:06:58 GMT+0000 (GMT Standard Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Mar 22 2018 09:09:42 GMT+0000 (GMT Standard Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
