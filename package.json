@@ -1,6 +1,6 @@
 {
   "name": "demofile",
-  "version": "0.4.16",
+  "version": "0.4.17",
   "author": "Saul Rennison <saul.rennison@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -32,7 +32,8 @@
     "varint": "^4.0.0"
   },
   "devDependencies": {
-    "minami": "^1.2.3",
-    "jsdoc": "^3.5.5"
+    "ansi-styles": "^3.2.1",
+    "jsdoc": "^3.5.5",
+    "minami": "^1.2.3"
   }
 }
