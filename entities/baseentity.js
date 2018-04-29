@@ -95,7 +95,7 @@ class BaseEntity {
 
   /**
    * Speed of the entity.
-   * @returns {number}
+   * @returns {number} Speed in game units.
    */
   get speed() {
     var vel = this.velocity;

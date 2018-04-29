@@ -303,20 +303,8 @@ class Player extends BaseEntity {
    * @returns {Player[]} Alive players that have spotted this player
    */
   get allSpotters() {
-    let masks = [
-      this.getProp('m_bSpottedByMask', '000'),
-      this.getProp('m_bSpottedByMask', '001')
-    ];
-
-    return Array.from({ length: 64 }, (_, i) => i)
-      .filter(i => {
-        let bit = i % 32;
-        let index = i < 32 ? 0 : 1;
-        let mask = masks[index];
-        return (mask & (1 << bit)) !== 0;
-      })
-      .map(clientSlot => this._demo.entities.entities[clientSlot + 1])
-      .filter(player => player.isAlive);
+    return this._demo.players
+      .filter(p => p.clientSlot !== this.clientSlot && p.isAlive && this.isSpottedBy(p));
   }
 
   /**
@@ -330,11 +318,11 @@ class Player extends BaseEntity {
   }
 
   /**
-   * @returns {Player[]} All players that this player has spotted
+   * @returns {Player[]} Alive players that this player has spotted
    */
   get allSpotted() {
     return this._demo.players
-      .filter(p => p.clientSlot !== this.clientSlot && this.hasSpotted(p));
+      .filter(p => p.clientSlot !== this.clientSlot && p.isAlive && this.hasSpotted(p));
   }
 
   /**

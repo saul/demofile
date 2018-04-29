@@ -30,6 +30,10 @@ Generate documentation to `./docs/`:
 
     npm run generate-docs
 
+## Example
+
+![Example output](./example.png)
+
 ## API
 
 This library provides full access to the data available in CSGO demo files. Unlike some other libraries, `demofile` is feature complete and supports the latest demos. As well as providing high-level APIs to access the state of the game, low-level access is available and is not discouraged.
@@ -66,6 +70,12 @@ fs.readFile('test.dem', function (err, buffer) {
 ```
 
 ## Release History
+
+### 0.4.17 (2018-04-29)
+
+- :sparkles: Added `BaseEntity#velocity`, `BaseEntity#speed`.
+- :sparkles: Improved `dumpfile.js` example to be more through.
+- :zap: #69: `Player#allSpotters` and `Player#allSpotted` now only returns alive players.
 
 ### 0.4.16 (2018-03-22)
 

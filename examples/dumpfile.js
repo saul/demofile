@@ -1,4 +1,5 @@
 /*eslint-disable no-console*/
+/*eslint-disable no-control-regex*/
 
 // This file is an thorough example of how to log player kills,
 // team scores, chat text and server cvar changes from a demo file.
@@ -31,12 +32,12 @@ const colourReplacements = [
 const standardSayTextMessages = {
   'Cstrike_Chat_All': e => `\x03${e.params[0]}\x01 : ${e.params[1]}`,
   'Cstrike_Chat_AllDead': e => `*DEAD* \x03${e.params[0]}\x01 : ${e.params[1]}`
-}
+};
 
 function teamNumberToAnsi(teamNum) {
-  if (teamNum == demo.TEAM_TERRORISTS)
+  if (teamNum === demo.TEAM_TERRORISTS)
     return ansiStyles.redBright.open;
-  if (teamNum == demo.TEAM_CTS)
+  if (teamNum === demo.TEAM_CTS)
     return ansiStyles.blueBright.open;
   return ansiStyles.gray.open;
 }
