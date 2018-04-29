@@ -279,6 +279,9 @@ class Player extends BaseEntity {
   }
 
   /**
+   * Checks if this player has been spotted by the other.
+   * Note that this still returns true if spotted by the other player even if
+   * the other player is dead.
    * @param {Player} other - Other player entity
    * @returns {bool} Is this player spotted by the other?
    */
@@ -297,7 +300,7 @@ class Player extends BaseEntity {
   }
 
   /**
-   * @returns {Player[]} Players that have spotted this player
+   * @returns {Player[]} Alive players that have spotted this player
    */
   get allSpotters() {
     let masks = [
@@ -308,13 +311,17 @@ class Player extends BaseEntity {
     return Array.from({ length: 64 }, (_, i) => i)
       .filter(i => {
         let bit = i % 32;
-        let mask = masks[(i / 32) >> 0];
+        let index = i < 32 ? 0 : 1;
+        let mask = masks[index];
         return (mask & (1 << bit)) !== 0;
       })
-      .map(clientSlot => this._demo.entities.entities[clientSlot + 1]);
+      .map(clientSlot => this._demo.entities.entities[clientSlot + 1])
+      .filter(player => player.isAlive);
   }
 
   /**
+   * Checks if this player has spotted another.
+   * Can still return true even if this player is dead.
    * @param {Player} other - Other player entity
    * @returns {bool} Has this player spotted the other?
    */
