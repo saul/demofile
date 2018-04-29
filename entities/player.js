@@ -38,6 +38,14 @@ class Player extends BaseEntity {
     };
   }
 
+  get velocity() {
+    return {
+      x: this.getProp('DT_LocalPlayerExclusive', 'm_vecVelocity[0]'),
+      y: this.getProp('DT_LocalPlayerExclusive', 'm_vecVelocity[1]'),
+      z: this.getProp('DT_LocalPlayerExclusive', 'm_vecVelocity[2]')
+    };
+  }
+
   /**
    * @returns {int} Current cash
    */

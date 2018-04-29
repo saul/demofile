@@ -76,6 +76,23 @@ class BaseEntity {
   }
 
   /**
+   * Velocity of the entity.
+   * @returns {object} {x, y, z} speed in each axis
+   */
+  get velocity() {
+    return this.getProp('DT_BaseEntity', 'm_vecVelocity');
+  }
+
+  /**
+   * Speed of the entity.
+   * @returns {number}
+   */
+  get speed() {
+    var vel = this.velocity;
+    return Math.sqrt(vel.x * vel.x + vel.y * vel.y + vel.z * vel.z);
+  }
+
+  /**
    * @returns {Entity|null} Owning entity, if it exists
    */
   get owner() {
