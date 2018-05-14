@@ -71,6 +71,11 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ## Release History
 
+### 0.4.18 (2018-05-14)
+
+- :sparkles: Added `BaseEntity#handle`
+- :sparkles: Added `BaseEntity#modelName` - Name of the model that should be rendered for this entity. (e.g. 'models/Weapons/w_eq_smokegrenade_thrown.mdl')
+
 ### 0.4.17 (2018-04-29)
 
 - :sparkles: Added `BaseEntity#velocity`, `BaseEntity#speed`.

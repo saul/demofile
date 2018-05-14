@@ -1,5 +1,7 @@
 'use strict';
 
+const consts = require('../consts');
+
 /**
  * Represents an in-game entity.
  */
@@ -31,7 +33,8 @@ class BaseEntity {
      */
     this.deleting = false;
 
-    this.props = baseline || {};
+    this.baseline = baseline;
+    this.props = {};
   }
 
   /**
@@ -134,6 +137,21 @@ class BaseEntity {
     }
 
     return this._demo.entities.teams[teamNum];
+  }
+
+  /**
+   * @returns {string} Name of the model that should be rendered for this entity. (e.g. 'models/Weapons/w_eq_smokegrenade_thrown.mdl')
+   */
+  get modelName() {
+    let modelprecache = this._demo.stringTables.findTableByName('modelprecache');
+    return modelprecache.entries[this.getProp('DT_BaseEntity', 'm_nModelIndex')].entry;
+  }
+
+  /**
+   * @returns {number} Number uniquely identifying this entity. Should be unique throughout the entire demo.
+   */
+  get handle() {
+    return this.index | (this.serialNum << consts.MAX_EDICT_BITS);
   }
 }
 

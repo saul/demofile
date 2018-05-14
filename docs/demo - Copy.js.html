@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>stringtables.js - Documentation</title>
+    <title>demo - Copy.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">stringtables.js</h1>
+    <h1 class="page-title">demo - Copy.js</h1>
     
 
     
@@ -41,297 +41,389 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-var assert = require('assert');
-var EventEmitter = require('events');
-var _ = require('lodash');
 var Parser = require('binary-parser').Parser;
-var Long = require('long');
-var consts = require('./consts');
+var EventEmitter = require('events');
+var timers = require('timers');
+
+var ByteBuffer = require('./ext/bytebuffer');
 var bitBuffer = require('./ext/bitbuffer');
 
+var net = require('./net');
+var consts = require('./consts');
+var StringTables = require('./stringtables');
+var UserMessages = require('./usermessages');
+var GameEvents = require('./gameevents');
+var Entities = require('./entities');
+var ConVars = require('./convars');
+
+const FDEMO_NORMAL = 0;
+const FDEMO_USE_ORIGIN2 = (1 &lt;&lt; 0);
+const FDEMO_USE_ANGLES2 = (1 &lt;&lt; 1);
+const FDEMO_NOINTERP = (1 &lt;&lt; 2);	// don't interpolate between this an last view
+
+const TEAM_UNASSIGNED = 0;
+const TEAM_SPECTATOR = 1;
+const TEAM_TERRORISTS = 2;
+const TEAM_CTS = 3;
+
 /**
- * Player info structure.
- * @property {Long} xuid - 64-bit Steam ID (e.g. 76561197988627193)
- * @property {string} name - Player name
- * @property {int} userId - Local server user ID, unique while server is running
- * @property {string} guid - Steam2 ID string (e.g. STEAM_0:1:14180732)
- * @property {int} friendsId - Friends identification number
- * @property {string} friendsName - Friends name
- * @property {bool} fakePlayer - true, if player is a bot
- * @property {bool} isHltv - true, if player is the HLTV proxy
- * @property {int[]} customFiles - custom files CRC for this player
+ * @property {string} magic - Header magic
+ * @property {int} protocol - Demo protocol version
+ * @property {int} networkProtocol - Network protocol version
+ * @property {string} serverName - Server hostname
+ * @property {string} clientName - Recording player name
+ * @property {string} mapName - Level name
+ * @property {string} gameDirectory - Game directory
+ * @property {float} playbackTime - Total playback time (seconds)
+ * @property {int} playbackTicks - Total playback ticks
+ * @property {int} playbackFrames - Total playback frames
+ * @property {int} signonLength - Length of signon (bytes)
  */
-var PlayerInfo = new Parser()
-  .endianess('big')
-  .uint32('unknown_lo')
-  .uint32('unknown_hi')
-  .uint32('xuid_lo')
-  .uint32('xuid_hi')
-  .string('name', {length: consts.MAX_PLAYER_NAME_LENGTH, stripNull: true})
-  .int32('userId')
-  .string('guid', {length: consts.SIGNED_GUID_LEN + 1, stripNull: true})
-  .skip(3)
-  .uint32('friendsId')
-  .string('friendsName', {length: consts.MAX_PLAYER_NAME_LENGTH, stripNull: true})
-  .uint8('fakePlayer', {formatter: x => x !== 0})
-  .skip(3)
-  .uint8('isHltv', {formatter: x => x !== 0})
-  .skip(3)
-  .array('customFiles', {
-    type: 'uint32be',
-    length: consts.MAX_CUSTOM_FILES
+var DemoHeader = new Parser()
+  .endianess('little')
+  .string('magic', { length: 8, stripNull: true })
+  .int32('protocol')
+  .int32('networkProtocol')
+  .string('serverName', { length: consts.MAX_OSPATH, stripNull: true })
+  .string('clientName', { length: consts.MAX_OSPATH, stripNull: true })
+  .string('mapName', { length: consts.MAX_OSPATH, stripNull: true })
+  .string('gameDirectory', { length: consts.MAX_OSPATH, stripNull: true })
+  .float('playbackTime')
+  .int32('playbackTicks')
+  .int32('playbackFrames')
+  .int32('signonLength');
+
+const DEM_SIGNON = 1;
+const DEM_PACKET = 2;
+const DEM_SYNCTICK = 3;
+const DEM_CONSOLECMD = 4;
+const DEM_USERCMD = 5;
+const DEM_DATATABLES = 6;
+const DEM_STOP = 7;
+const DEM_CUSTOMDATA = 8;
+const DEM_STRINGTABLES = 9;
+
+/*
+var DemoCommands = {
+  signon: 1, // startup message
+  packet: 2, // normal network packet
+  syncTick: 3, // sync client clock to demo tick
+  consoleCmd: 4, // console command
+  userCmd: 5, // user input command
+  dataTables: 6, // network data tables
+  stop: 7, // end of time
+  customData: 8, // a blob of binary data understood by a callback function
+  stringTables: 9
+};
+*/
+
+var QAngle = new Parser()
+  .endianess('little')
+  .float('pitch')
+  .float('yaw')
+  .float('roll');
+
+var Vector = new Parser()
+  .endianess('little')
+  .float('x')
+  .float('y')
+  .float('z');
+
+var OriginViewAngles = new Parser()
+  .endianess('little')
+  .nest('viewOrigin', { type: Vector })
+  .nest('viewAngles', { type: QAngle })
+  .nest('localViewAngles', { type: QAngle });
+
+var SplitCmdInfo = new Parser()
+  .endianess('little')
+  .int32('flags')
+  .nest('original', { type: OriginViewAngles })
+  .nest('resampled', { type: OriginViewAngles });
+
+var CmdInfo = new Parser()
+  .endianess('little')
+  .array('u', {
+    type: SplitCmdInfo,
+    length: consts.MAX_SPLITSCREEN_CLIENTS
   });
 
-function parseUserInfoData(buf) {
-  var info = PlayerInfo.parse(buf);
-  info.xuid = new Long(info.xuid_hi, info.xuid_lo);
-  return info;
+/**
+ * Parses a demo file header from the buffer.
+ * @param {ArrayBuffer} buffer - Buffer of the demo header
+ * @returns {DemoHeader} Header object
+ */
+function parseHeader(buffer) {
+  return DemoHeader.parse(new Buffer(buffer));
 }
 
 /**
- * @name StringTableEntry
- * @property {string} entry - Entry value
- * @property {*|undefined} userData - User data
+ * Represents a demo file for parsing.
  */
-
-/**
- * @name StringTable
- * @property {string} name - Table name
- * @property {StringTableEntry[]} entries - Entries within the table
- */
-
-/**
- * Handles string tables for a demo file.
- */
-class StringTables extends EventEmitter {
+class DemoFile extends EventEmitter {
   constructor() {
     super();
 
-    /**
-     * User data handlers. Transform raw buffer into any other value.
-     * By default, `userinfo` user data is transformed to {@link PlayerInfo}
-     * objects.
-     */
-    this.userDataCallbacks = {
-      userinfo: parseUserInfoData
-    };
+    this._lastThreadYieldTime = 0;
+    this._immediateTimerToken = null;
+    this._timeoutTimerToken = null;
+
+    this._bytebuf = null;
 
     /**
-     * @type {StringTable[]}
+     * @type {DemoHeader}
      */
-    this.tables = [];
-  }
+    this.header = null;
 
-  listen(messageEvents) {
-    messageEvents.on('svc_UpdateStringTable', this._handleUpdateStringTable.bind(this));
-    messageEvents.on('svc_CreateStringTable', this._handleCreateStringTable.bind(this));
-  }
+    /**
+     * When parsing, set to current tick.
+     * @type {int}
+     */
+    this.currentTick = null;
 
-  findTableByName(name) {
-    return _.find(this.tables, table => table.name === name);
-  }
+    /**
+     * When parsing, set to player slot for current command.
+     * @type {int}
+     */
+    this.playerSlot = null;
 
-  _handleStringTables(bitbuf) {
-    let numTables = bitbuf.readUInt8();
+    /** @type {Entities} */
+    this.entities = new Entities();
 
-    for (var i = 0; i &lt; numTables; ++i) {
-      let tableName = bitbuf.readCString();
-      this._handleStringTable(tableName, bitbuf);
-    }
-  }
+    /** @type {GameEvents} */
+    this.gameEvents = new GameEvents();
 
-  _handleStringTable(name, bitbuf) {
-    let userDataCallback = this.userDataCallbacks[name];
+    /** @type {StringTables} */
+    this.stringTables = new StringTables();
 
-    let table = this.findTableByName(name);
-    assert(table != null);
+    /** @type {UserMessages} */
+    this.userMessages = new UserMessages();
 
-    let numEntries = bitbuf.readUInt16();
+    /** @type {ConVars} */
+    this.conVars = new ConVars();
 
-    for (let entryIndex = 0; entryIndex &lt; numEntries; ++entryIndex) {
-      let entry = bitbuf.readCString();
-      let userData = null;
+    this.gameEvents.listen(this);
 
-      // has user data?
-      if (bitbuf.readOneBit()) {
-        let userDataSize = bitbuf.readUInt16();
-        let userDataBuf = new Buffer(bitbuf.readBytes(userDataSize));
+    // It is important that entities listens after game events, as they both listen on
+    // tickend. 
+    this.entities.listen(this);
 
-        userData = userDataCallback === undefined ? userDataBuf : userDataCallback(userDataBuf);
-      }
-
-      table.entries[entryIndex] = {entry, userData};
-
-      this.emit('update', {
-        table,
-        entryIndex,
-        entry,
-        userData
-      });
-    }
-
-    // parse client-side entries
-    if (bitbuf.readOneBit()) {
-      let numStrings = bitbuf.readUInt16();
-
-      for (let i = 0; i &lt; numStrings; ++i) {
-        let entry = bitbuf.readCString(); // eslint-disable-line no-unused-vars
-        let userData = null; // eslint-disable-line no-unused-vars
-
-        if (bitbuf.readOneBit()) {
-          let userDataSize = bitbuf.readUInt16();
-          let userDataBuf = new Buffer(bitbuf.readBytes(userDataSize));
-
-          userData = userDataCallback === undefined ? userDataBuf : userDataCallback(userDataBuf);
-        }
-
-        // TODO: do something with client-side entries
-      }
-    }
-
-    // table is ready
-    this.emit('postcreate', table);
+    this.stringTables.listen(this);
+    this.userMessages.listen(this);
+    this.conVars.listen(this);
   }
 
   /**
-   * @event StringTables#update
-   * @property {StringTable} table - Updated string table
-   * @property {int} entryIndex - Index into the table that was updated
-   * @property {string|undefined} entry - New entry value
-   * @property {*|undefined} userData - New user data
+   * @returns {float} Number of seconds elapsed
    */
-
-  _parseStringTableUpdate(bitbuf, table, entries, maxEntries) {
-    // overflow silently. this is how the official parser handles overflows...
-    bitbuf.view.silentOverflow = true;
-
-    var history = [];
-
-    var entryBits = Math.ceil(Math.log2(maxEntries));
-
-    var userDataCallback = this.userDataCallbacks[table.name];
-
-    assert(!bitbuf.readOneBit(), 'dictionary encoding unsupported');
-
-    _.reduce(_.range(entries), (lastEntry) => {
-      var entryIndex = lastEntry + 1;
-
-      if (!bitbuf.readOneBit()) {
-        entryIndex = bitbuf.readUBits(entryBits);
-      }
-
-      assert(entryIndex >= 0 &amp;&amp; entryIndex &lt; maxEntries, 'bogus string index');
-
-      var entry = null;
-
-      // has the entry changed?
-      if (bitbuf.readOneBit()) {
-        // substring check
-        if (bitbuf.readOneBit()) {
-          var index = bitbuf.readUBits(5);
-          var bytesToCopy = bitbuf.readUBits(consts.SUBSTRING_BITS);
-
-          var subStr = history[index].slice(0, bytesToCopy);
-          var suffix = bitbuf.readCString();
-
-          entry = subStr + suffix;
-        } else {
-          entry = bitbuf.readCString();
-        }
-
-        table.entries[entryIndex].entry = entry;
-      }
-
-      // read in the user data
-      var userDataArray = null;
-      var userData = null;
-
-      if (bitbuf.readOneBit()) {
-        // don't read the length, it's fixed length and the length was networked down already
-        if (table.userDataFixedSize) {
-          userDataArray = [bitbuf.readUBits(table.userDataSizeBits)];
-        } else {
-          var bytes = bitbuf.readUBits(consts.MAX_USERDATA_BITS);
-          userDataArray = bitbuf.readBytes(bytes);
-        }
-
-        // create a buffer from the array
-        userData = new Buffer(userDataArray);
-
-        if (userDataCallback !== undefined) {
-          userData = userDataCallback(userData);
-        }
-
-        table.entries[entryIndex].userData = userData;
-      }
-
-      // add to history
-      if (history.length > 31) {
-        history.shift();
-      }
-
-      history.push(entry);
-
-      this.emit('update', {
-        table,
-        entryIndex,
-        entry,
-        userData
-      });
-
-      return entryIndex;
-    }, -1);
+  get currentTime() {
+    return this.currentTick * (this.header.playbackTime / this.header.playbackTicks);
   }
 
   /**
-   * Fired when a table is created. Entries are empty at this point.
-   * @event StringTables#create
-   * @type {StringTable}
+   * Shortcut for `this.entities.players`
+   * @returns {Player[]} All connected player entities
+   */
+  get players() {
+    return this.entities.players;
+  }
+
+  /**
+   * Shortcut for `this.entities.teams`
+   * @returns {Team[]} All team entities
+   */
+  get teams() {
+    return this.entities.teams;
+  }
+
+  /**
+   * Shortcut for `this.entities.gameRules`
+   * @returns {GameRules|null} GameRules entity
+   */
+  get gameRules() {
+    return this.entities.gameRules;
+  }
+
+  /**
+   * Fired when a packet of this type is hit. `svc_MessageName` events are also fired.
+   * @public
+   * @event DemoFile#net_MessageName
+   */
+
+  _handleDemoPacket() {
+    //CmdInfo.parse(new Buffer(this._bytebuf.readBytes(152).toSlicedBuffer()));
+
+    this._bytebuf.skip(160);
+
+    // skip over sequence info
+    //this._bytebuf.readInt32();
+    //this._bytebuf.readInt32();
+
+    var chunk = this._bytebuf.readIBytes();
+
+    while (chunk.remaining()) {
+      var cmd = chunk.readVarint32();
+      var size = chunk.readVarint32();
+
+      var messageBuffer = chunk.readBytes(size);
+
+      var message = net.findByType(cmd);
+      if (message === undefined) {
+        continue; // unknown net message
+      }
+
+      var msgInst = message.class.decode(messageBuffer);
+
+      this.emit(message.name, msgInst);
+    }
+  }
+
+  _handleDataChunk() {
+    this._bytebuf.readIBytes();
+  }
+
+  _handleDataTables() {
+    var chunk = this._bytebuf.readIBytes();
+    this.entities._handleDataTables(chunk);
+  }
+
+  _handleUserCmd() {
+    this._bytebuf.readInt32(); // outgoing sequence
+    this._handleDataChunk(); // TODO: parse user command
+  }
+
+  _handleStringTables() {
+    let bitbuf = new bitBuffer.BitStream(this._bytebuf.readIBytes().toSlicedBuffer());
+    this.stringTables._handleStringTables(bitbuf);
+  }
+
+  /**
+   * Fired when parsing begins.
+   * @event DemoFile#start
    */
 
   /**
-   * Fired after a table is created. Entries have been populated by now.
-   * @event StringTables#postcreate
-   * @type {StringTable}
+   * Fired when parsing has finished, successfully or otherwise.
+   * @event DemoFile#end
+   * @type {Object}
+   * @property {Error|null} error - Error that caused the premature end of parsing.
    */
 
-  _handleCreateStringTable(msg) {
-    var bitbuf = new bitBuffer.BitStream(msg.stringData.toSlicedBuffer());
+  /**
+   * Fired when a tick starts, before any tick command processing.
+   * @event DemoFile#tickstart
+   * @type {int}
+   */
 
-    // table shouldn't already exist
-    assert(this.findTableByName(msg.name) === undefined, 'table already exists');
+  /**
+   * Fired per command. Parameter is a value in range [0,1] that indicates
+   * the percentage of the demo file has been parsed so far. 
+   * @event DemoFile#progress
+   * @type {number}
+   */
 
-    assert(msg.userDataSize === Math.ceil(msg.userDataSizeBits / 8), 'invalid user data byte size');
-    assert(msg.userDataSizeBits &lt;= 32, 'userdata value too large');
+  /**
+   * Fired after all commands are processed for a tick.
+   * @event DemoFile#tickend
+   * @type {int}
+   */
 
-    // create an empty table
-    var table = {
-      name: msg.name,
-      entries: _.map(_.range(msg.maxEntries), function () {
-        return {entry: null, userData: null};
-      }),
-      userDataSizeBits: msg.userDataSizeBits,
-      userDataFixedSize: msg.userDataFixedSize
-    };
+  _recurse() {
+    let now = Date.now();
 
-    this.emit('create', table);
-
-    this._parseStringTableUpdate(bitbuf, table, msg.numEntries, msg.maxEntries);
-
-    this.tables.push(table);
+    if (now - this._lastThreadYieldTime &lt; 32) {
+      this._immediateTimerToken = timers.setImmediate(this._parseRecurse.bind(this));
+    } else {
+      this._lastThreadYieldTime = now;
+      this._timeoutTimerToken = timers.setTimeout(this._parseRecurse.bind(this), 0);
+    }
   }
 
-  _handleUpdateStringTable(msg) {
-    var bitbuf = new bitBuffer.BitStream(msg.stringData.toSlicedBuffer());
+  /**
+   * Cancel the current parse operation.
+   * @returns {void}
+   */
+  cancel() {
+    if (this._immediateTimerToken) {
+      timers.clearImmediate(this._immediateTimerToken);
+      this._immediateTimerToken = null;
+    }
+    if (this._timeoutTimerToken) {
+      timers.clearTimeout(this._timeoutTimerToken);
+      this._timeoutTimerToken = null;
+    }
+  }
 
-    var table = this.tables[msg.tableId];
-    assert(table !== undefined, 'bad table index');
+  _parseRecurse() {
+    while (true) {
+      //this.emit('progress', this._bytebuf.offset / this._bytebuf.limit);
 
-    this._parseStringTableUpdate(bitbuf, table, msg.numChangedEntries, table.entries.length);
+      var command = this._bytebuf.readUInt8();
+      var tick = this._bytebuf.readInt32();
+      this.playerSlot = this._bytebuf.readUInt8();
+
+      if (tick !== this.currentTick) {
+        this.emit('tickend', this.currentTick);
+        this.currentTick = tick;
+        this.emit('tickstart', this.currentTick);
+      }
+
+      if (command &lt;= DEM_PACKET) {
+        this._handleDemoPacket();
+      } else if (command == DEM_DATATABLES) {
+        this._handleDataTables();
+      } else if (command == DEM_STRINGTABLES) {
+        this._handleStringTables();
+      } else if (command == DEM_CONSOLECMD) {
+        // TODO
+        this._handleDataChunk();
+      } else if (command == DEM_USERCMD) {
+        this._handleUserCmd();
+      } else if (command == DEM_STOP) {
+        this.emit('tickend', this.currentTick);
+        this.emit('end', { error: null });
+        break;
+      } else if (command == DEM_CUSTOMDATA) {
+        throw 'Custom data not supported';
+      } else if (command != DEM_SYNCTICK) {
+        throw 'Unrecognised command';
+      }
+    }
+  }
+
+  /**
+   * Parse buffer as a demo file.
+   *
+   * @fires DemoFile#start
+   * @fires DemoFile#tickstart
+   * @fires DemoFile#tickend
+   * @fires DemoFile#end
+   *
+   * @param {ArrayBuffer} buffer - Buffer pointing to start of demo header
+   * @returns {undefined}
+   */
+  parse(buffer) {
+    this.header = parseHeader(buffer);
+    this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
+
+    this.emit('start');
+    this._parseRecurse();
+    //timers.setTimeout(this._parseRecurse.bind(this), 0);
   }
 }
 
-module.exports = StringTables;
+module.exports = {
+  DemoFile,
+  parseHeader,
+  FDEMO_NORMAL,
+  FDEMO_USE_ORIGIN2,
+  FDEMO_USE_ANGLES2,
+  FDEMO_NOINTERP,
+  TEAM_UNASSIGNED,
+  TEAM_SPECTATOR,
+  TEAM_TERRORISTS,
+  TEAM_CTS
+};
 </code></pre>
         </article>
     </section>

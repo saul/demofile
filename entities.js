@@ -17,12 +17,6 @@ var Player = require('./entities/player.js');
 var Team = require('./entities/team.js');
 var Weapon = require('./entities/weapon.js');
 
-const MAX_EDICT_BITS = 11;
-const NETWORKED_EHANDLE_ENT_ENTRY_MASK = (1 << MAX_EDICT_BITS) - 1;
-const NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS = 10;
-const NUM_NETWORKED_EHANDLE_BITS = MAX_EDICT_BITS + NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS;
-const INVALID_NETWORKED_EHANDLE_VALUE = (1 << NUM_NETWORKED_EHANDLE_BITS) - 1;
-
 function isPropExcluded(excludes, table, prop) {
   return _.find(excludes, excluded => table.netTableName === excluded.dtName && prop.varName === excluded.varName);
 }
@@ -116,7 +110,7 @@ class Entities extends EventEmitter {
    * @returns {boolean} true if handle is set
    */
   isHandleSet(handle) {
-    return handle !== INVALID_NETWORKED_EHANDLE_VALUE;
+    return handle !== consts.INVALID_NETWORKED_EHANDLE_VALUE;
   }
 
   /**
@@ -125,12 +119,12 @@ class Entities extends EventEmitter {
    * @returns {Entity|null} Entity referenced by the handle. `null` if no matching entity.
    */
   getByHandle(handle) {
-    if (handle === INVALID_NETWORKED_EHANDLE_VALUE) {
+    if (handle === consts.INVALID_NETWORKED_EHANDLE_VALUE) {
       return null;
     }
 
-    let ent = this.entities[handle & NETWORKED_EHANDLE_ENT_ENTRY_MASK];
-    if (ent == null || ent.serialNum !== (handle >> MAX_EDICT_BITS)) {
+    let ent = this.entities[handle & consts.NETWORKED_EHANDLE_ENT_ENTRY_MASK];
+    if (ent == null || ent.serialNum !== (handle >> consts.MAX_EDICT_BITS)) {
       return null;
     }
 
@@ -406,7 +400,7 @@ class Entities extends EventEmitter {
       }
     }
 
-    var entity = new klass(this._demo, index, classId, serialNum, _.cloneDeep(baseline));
+    var entity = new klass(this._demo, index, classId, serialNum, baseline);
     this.entities[index] = entity;
 
     this.emit('create', { entity });
