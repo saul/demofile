@@ -93,7 +93,7 @@ class BaseEntity {
    * @returns {object} {x, y, z} speed in each axis
    */
   get velocity() {
-    return this.getProp('DT_BaseEntity', 'm_vecVelocity');
+    return this.getProp('DT_LocalPlayerExclusive', 'm_vecVelocity');
   }
 
   /**
