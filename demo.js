@@ -161,6 +161,13 @@ class DemoFile extends EventEmitter {
   }
 
   /**
+   * @returns {float} Number of ticks per second
+   */
+  get tickRate() {
+    return this.header.playbackTicks / this.header.playbackTime;
+  }
+
+  /**
    * @returns {float} Number of seconds elapsed
    */
   get currentTime() {

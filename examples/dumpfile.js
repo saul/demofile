@@ -10,16 +10,18 @@ const fs = require('fs');
 const assert = require('assert');
 const ansiStyles = require('ansi-styles');
 const demo = require('../demo');
+const util = require('util');
 
 const colourReplacements = [
   { 'pattern': /\x01/g, 'ansi': ansiStyles.whiteBright.open }, // Default
   { 'pattern': /\x02/g, 'ansi': ansiStyles.red.open }, // Dark Red
+  { 'pattern': /\x03/g, 'ansi': ansiStyles.magenta.open }, // Light purple
   { 'pattern': /\x04/g, 'ansi': ansiStyles.greenBright.open }, // Bright Green
   { 'pattern': /\x05/g, 'ansi': ansiStyles.green.open }, // Pale Green
   { 'pattern': /\x06/g, 'ansi': ansiStyles.greenBright.open }, // Green
   { 'pattern': /\x07/g, 'ansi': ansiStyles.redBright.open }, // Pale Red
   { 'pattern': /\x08/g, 'ansi': ansiStyles.gray.open }, // Grey
-  { 'pattern': /\x09/g, 'ansi': ansiStyles.red.open }, // Yellow
+  { 'pattern': /\x09/g, 'ansi': ansiStyles.yellowBright.open }, // Yellow
   { 'pattern': /\x0A/g, 'ansi': ansiStyles.white.open }, // Silver
   { 'pattern': /\x0B/g, 'ansi': ansiStyles.blueBright.open }, // Blue
   { 'pattern': /\x0C/g, 'ansi': ansiStyles.blue.open }, // Dark Blue
@@ -29,9 +31,10 @@ const colourReplacements = [
   { 'pattern': /\x10/g, 'ansi': ansiStyles.yellow.open } // Orange
 ];
 
-const standardSayTextMessages = {
-  'Cstrike_Chat_All': e => `\x03${e.params[0]}\x01 : ${e.params[1]}`,
-  'Cstrike_Chat_AllDead': e => `*DEAD* \x03${e.params[0]}\x01 : ${e.params[1]}`
+const standardMessages = {
+  'Cstrike_Chat_All': '\x03%s\x01 : %s',
+  'Cstrike_Chat_AllDead': '*DEAD* \x03%s\x01 : %s',
+  'Game_connected': '%s connected.'
 };
 
 function teamNumberToAnsi(teamNum) {
@@ -60,18 +63,19 @@ function parseDemoFile(path) {
     function formatSayText(entityIndex, text) {
       text = '\x01' + text;
 
-      // Replace each colour code with its corresponding ANSI escape sequence
-      for (var r of colourReplacements) {
-        text = text.replace(r.pattern, ansiStyles.reset.open + r.ansi);
-      }
-
       // If we have an entity index set, colour 0x03 in that entity's team colour
-      if (entityIndex >= 0) {
+      if (entityIndex > 0) {
         let ent = demoFile.entities.entities[entityIndex];
         if (ent) {
           text = text.replace(/\x03/g, teamNumberToAnsi(ent.teamNumber));
         }
       }
+
+      // Replace each colour code with its corresponding ANSI escape sequence
+      for (var r of colourReplacements) {
+        text = text.replace(r.pattern, ansiStyles.reset.open + r.ansi);
+      }
+
       return text + ansiStyles.reset.open;
     }
 
@@ -103,21 +107,32 @@ function parseDemoFile(path) {
       console.log(`${attackerColour}${attackerName}${ansiStyles.reset.open} [${e.weapon}${headshotText}] ${victimColour}${victimName}${ansiStyles.reset.open}`);
     });
 
+    demoFile.userMessages.on('CS_UM_TextMsg', e => {
+      let params =
+        e.params
+          .map(param => param[0] === '#' ? standardMessages[param.substring(1)] || param : param)
+          .filter(s => s.length);
+
+      let formatted = util.format.apply(null, params);
+      console.log(formatSayText(0, formatted));
+    });
+
     demoFile.userMessages.on('CS_UM_SayText', e => {
       console.log(formatSayText(0, e.text));
     });
 
     demoFile.userMessages.on('CS_UM_SayText2', e => {
-      let standardFormatter = standardSayTextMessages[e.msgName];
-      let text = standardFormatter
-        ? standardFormatter(e)
-        : `${e.msgName} ${e.params.filter(s => s.length).join(' ')}`;
+      let nonEmptyParams = e.params.filter(s => s.length);
+      let msgText = standardMessages[e.msgName];
+      let formatted = msgText
+        ? util.format.apply(null, [msgText].concat(nonEmptyParams))
+        : `${e.msgName} ${nonEmptyParams.join(' ')}`;
 
-      console.log(formatSayText(e.entIdx, text));
+      console.log(formatSayText(e.entIdx, formatted));
     });
 
     demoFile.gameEvents.on('round_end', e => {
-      console.log('*** Round ended \'%s\' (reason: %s)', demoFile.gameRules.phase, e.reason);
+      console.log('*** Round ended \'%s\' (reason: %s, tick: %d)', demoFile.gameRules.phase, e.reason, demoFile.currentTick);
 
       // We can't print the team scores here as they haven't been updated yet.
       // See round_officially_ended below.
@@ -134,6 +149,14 @@ function parseDemoFile(path) {
       console.log('%s (%s) joined the game', e.entity.name, e.entity.steamId);
     });
 
+    demoFile.entities.on('beforeremove', e => {
+      if (e.entity.serverClass.name !== 'CCSPlayer') {
+        return;
+      }
+
+      console.log('%s left the game', e.entity.name);
+    });
+    
     // Start parsing the buffer now that we've added our event listeners
     demoFile.parse(buffer);
   });
