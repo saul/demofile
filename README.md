@@ -14,6 +14,27 @@ The library is also Browserify-able, and a standalone bundle that you can `<scri
 - Game events
 - Console variables
 
+[DemoFile](https://saul.github.io/demofile/DemoFile.html)|Represents a demo file for parsing.
+
+The *DemoFile* object has properties which point to instances of several other classes that can be used to query the game world:
+
+Class|Property|Description
+-----|--------|-----------
+[ConVars](https://saul.github.io/demofile/ConVars.html)|`demoFile.conVars`|Manages console variables. (Only `FCVAR_NOTIFY` and `FCVAR_REPLICATED` are available.)
+[Entities](https://saul.github.io/demofile/Entities.html)|`demoFile.entities`|Represents entities and networked properties within a demo.
+[GameEvents](https://saul.github.io/demofile/GameEvents.html)|`demoFile.gameEvents`|Manages game events for a demo file. (e.g. `player_death`, `player_footstep`)
+[StringTables](https://saul.github.io/demofile/StringTables.html)|`demoFile.stringTables`|Handles string tables for a demo file. (e.g. `userinfo`)
+[UserMessages](https://saul.github.io/demofile/UserMessages.html)|`demoFile.userMessages`|Handles user messages for a demo file. (e.g. `SayText` for in-game chat messages)
+
+There are several classes which allow access to different types of entities (e.g. players, items, props). These are summarised below:
+
+Entity|Usage|Description
+------|-----|-----------
+[BaseEntity](https://saul.github.io/demofile/BaseEntity.html)|`demoFile.entities.getByHandle`<br>`demoFile.entities.entities[entIndex]`|Represents an in-game entity.
+[Player](https://saul.github.io/demofile/Player.html)|`demoFile.entities.players`<br>`demoFile.entities.getByUserId`|Represents an in-game player.
+[Weapon](https://saul.github.io/demofile/Weapon.html)|`demoFile.entities.weapons`<br>`player.weapon`<br>`player.weapons`|Represents an in-game weapon (guns, grenades, knifes).
+
+
 ## Installation
 
 ### Browser
