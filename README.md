@@ -14,6 +14,12 @@ The library is also Browserify-able, and a standalone bundle that you can `<scri
 - Game events
 - Console variables
 
+## Documentation
+
+Auto-generated API documentation is available at [saul.github.io/demofile](https://saul.github.io/demofile).
+
+Class|Description
+-----|-----------
 [DemoFile](https://saul.github.io/demofile/DemoFile.html)|Represents a demo file for parsing.
 
 The *DemoFile* object has properties which point to instances of several other classes that can be used to query the game world:
