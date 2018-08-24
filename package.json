@@ -17,7 +17,7 @@
     "generate-docs": "jsdoc -c .jsdoc.json --verbose .",
     "bundle": "browserify browser/app.js -d -o browser/bundle.js -t brfs",
     "preversion": "npm run lint",
-    "version": "npm run generate-docs && npm run bundle && git add -A dist/bundle.js docs",
+    "version": "npm run generate-docs && npm run bundle && git add -A browser/bundle.js docs",
     "postversion": "git push && git push --tags && npm publish"
   },
   "main": "demo.js",
