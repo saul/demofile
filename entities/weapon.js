@@ -59,6 +59,10 @@ var itemDefinitionIndexMap = {
     itemName: 'P90',
     className: 'weapon_p90',
   },
+  23: {
+    itemName: 'MP5-SD',
+    className: 'weapon_mp5sd'
+  },	       
   24: {
     itemName: 'UMP-45',
     className: 'weapon_ump45',
