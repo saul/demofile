@@ -274,9 +274,10 @@ Tick rate: 64
 
 ## Release History
 
-### 0.4.19 (2018-06-11)
+### 0.4.19 (2018-08-24)
 
 - :sparkles: Added `DemoFile#tickRate`
+- :sparkles: Added support for MP5SD (thanks @thorebear)
 
 ### 0.4.18 (2018-05-14)
 
