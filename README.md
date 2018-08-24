@@ -274,6 +274,10 @@ Tick rate: 64
 
 ## Release History
 
+### 0.4.20 (2018-08-24)
+
+- :bug: Fixed #80, #78: Resource properties returning `undefined`
+
 ### 0.4.19 (2018-08-24)
 
 - :sparkles: Added `DemoFile#tickRate`

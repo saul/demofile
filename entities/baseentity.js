@@ -33,8 +33,7 @@ class BaseEntity {
      */
     this.deleting = false;
 
-    this.baseline = baseline;
-    this.props = {};
+    this.props = baseline || {};
   }
 
   /**
@@ -45,13 +44,7 @@ class BaseEntity {
    * @public
    */
   getProp(tableName, varName) {
-    var value = this.props[tableName] && this.props[tableName][varName];
-
-    if (value === undefined && this.baseline) {
-      return this.baseline[tableName] && this.baseline[tableName][varName];
-    } else {
-      return value;
-    }
+    return this.props[tableName] && this.props[tableName][varName];
   }
 
   updateProp(tableName, varName, newValue) {

@@ -400,7 +400,7 @@ class Entities extends EventEmitter {
       }
     }
 
-    var entity = new klass(this._demo, index, classId, serialNum, baseline);
+    var entity = new klass(this._demo, index, classId, serialNum, _.cloneDeep(baseline));
     this.entities[index] = entity;
 
     this.emit('create', { entity });
