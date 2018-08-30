@@ -219,6 +219,22 @@ var itemDefinitionIndexMap = {
     itemName: 'Shadow Dag',
     className: 'weapon_knife_push',
   },
+  519: {
+    itemName: 'Ursus Knife',
+    className: 'weapon_knife_ursus',
+  },
+  520: {
+    itemName: 'Navaja Knife',
+    className: 'weapon_knife_gypsy_jackknife',
+  },
+  522: {
+    itemName: 'Stiletto Knife',
+    className: 'weapon_knife_stiletto',
+  },
+  523: {
+    itemName: 'Talon Knife',
+    className: 'weapon_knife_widowmaker',
+  }
 };
 
 /**
