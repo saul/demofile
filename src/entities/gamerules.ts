@@ -1,22 +1,21 @@
-'use strict';
-
-const BaseEntity = require('./baseentity.js');
+import { BaseEntity } from './baseentity';
+import { UnknownEntityProps } from '../entities';
 
 /**
  * Represents the game rules.
  */
-class GameRules extends BaseEntity {
+export class GameRules extends BaseEntity<UnknownEntityProps> {
   /**
-   * @returns {bool} Is the game currently in 'warmup' mode?
+   * @returns Is the game currently in 'warmup' mode?
    */
-  get isWarmup() {
+  get isWarmup(): boolean {
     return this.getProp('DT_CSGameRules', 'm_bWarmupPeriod');
   }
 
   /**
    * @deprecated Use `GameRules#roundsPlayed` instead.
    */
-  get roundNumber() {
+  get roundNumber(): number {
     return this.roundsPlayed;
   }
 
@@ -25,9 +24,9 @@ class GameRules extends BaseEntity {
    * If you need to keep track of the current round number, store this value
    * at each `round_start`.
    *
-   * @returns {int} Total number of rounds played.
+   * @returns Total number of rounds played.
    */
-  get roundsPlayed() {
+  get roundsPlayed(): number {
     return this.getProp('DT_CSGameRules', 'm_totalRoundsPlayed');
   }
 
@@ -46,5 +45,3 @@ class GameRules extends BaseEntity {
     return gamePhases[phase];
   }
 }
-
-module.exports = GameRules;

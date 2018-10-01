@@ -1,8 +1,13 @@
-'use strict';
+import { BaseEntity } from './baseentity';
+import { Player } from './player';
+import { UnknownEntityProps } from '../entities';
 
-const BaseEntity = require('./baseentity.js');
+interface IItemDefinition {
+  itemName: string;
+  className: string;
+}
 
-var itemDefinitionIndexMap = {
+const itemDefinitionIndexMap: { [itemIndex: number]: IItemDefinition | undefined } = {
   1: {
     itemName: 'Desert Eagle',
     className: 'weapon_deagle',
@@ -62,7 +67,7 @@ var itemDefinitionIndexMap = {
   23: {
     itemName: 'MP5-SD',
     className: 'weapon_mp5sd'
-  },	       
+  },
   24: {
     itemName: 'UMP-45',
     className: 'weapon_ump45',
@@ -240,39 +245,37 @@ var itemDefinitionIndexMap = {
 /**
  * Represents an in-game weapon (guns, grenades, knifes).
  */
-class Weapon extends BaseEntity {
+export class Weapon extends BaseEntity<UnknownEntityProps> {
   /**
-   * @returns {integer} Item definition index
+   * @returns Item definition index
    */
-  get itemIndex() {
+  get itemIndex(): number {
     return this.getProp('DT_ScriptCreatedItem', 'm_iItemDefinitionIndex');
   }
 
   /**
-   * @returns {string|null} Name of the weapon (e.g. "Five-SeveN")
+   * @returns Name of the weapon (e.g. "Five-SeveN")
    */
-  get itemName() {
+  get itemName(): string | null {
     var weaponId = this.itemIndex;
-
-    return itemDefinitionIndexMap[weaponId] !== undefined ? itemDefinitionIndexMap[weaponId].itemName : null;
+    var itemDefinition = itemDefinitionIndexMap[weaponId];
+    return itemDefinition !== undefined ? itemDefinition.itemName : null;
   }
 
   /**
-   * @returns {string|null} Entity class name of the weapon (e.g. "weapon_ak47")
+   * @returns Entity class name of the weapon (e.g. "weapon_ak47")
    */
-  get className() {
+  get className(): string | null {
     var weaponId = this.itemIndex;
-
-    return itemDefinitionIndexMap[weaponId] !== undefined ? itemDefinitionIndexMap[weaponId].className : null;
+    var itemDefinition = itemDefinitionIndexMap[weaponId];
+    return itemDefinition !== undefined ? itemDefinition.className : null;
   }
 
   /**
-   * @returns {Player|null} Previous owner
+   * @returns Previous owner
    */
-  get prevOwner() {
+  get prevOwner(): Player | null {
     var handle = this.getProp('DT_WeaponCSBase', 'm_hPrevOwner');
     return this._demo.entities.getByHandle(handle);
   }
 }
-
-module.exports = Weapon;

@@ -1,6 +1,4 @@
-'use strict';
-
-module.exports.fillUntil = function fillUntil(endValue, callback, initial) {
+export function fillUntil<T>(endValue: T, callback: (value: T) => T, initial: T): T[] {
   var value = initial;
   var ret = [];
 

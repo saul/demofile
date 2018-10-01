@@ -1,12 +1,13 @@
-'use strict';
-
-var assert = require('assert');
-var EventEmitter = require('events');
-var _ = require('lodash');
-var Parser = require('binary-parser').Parser;
-var Long = require('long');
-var consts = require('./consts');
-var bitBuffer = require('./ext/bitbuffer');
+import * as assert from 'assert';
+import { EventEmitter } from 'events';
+import * as _ from 'lodash';
+import * as Long from 'long';
+import * as consts from './consts';
+import { BitStream } from './ext/bitbuffer';
+import { ICSVCMsg_UpdateStringTable, ICSVCMsg_CreateStringTable } from './protobufs/cstrike15_usermessages';
+import { DemoFile } from './demo';
+import * as ByteBuffer from 'bytebuffer';
+import assertExists from 'ts-assert-exists';
 
 /**
  * Player info structure.
@@ -20,49 +21,103 @@ var bitBuffer = require('./ext/bitbuffer');
  * @property {bool} isHltv - true, if player is the HLTV proxy
  * @property {int[]} customFiles - custom files CRC for this player
  */
-var PlayerInfo = new Parser()
-  .endianess('big')
-  .uint32('unknown_lo')
-  .uint32('unknown_hi')
-  .uint32('xuid_lo')
-  .uint32('xuid_hi')
-  .string('name', {length: consts.MAX_PLAYER_NAME_LENGTH, stripNull: true})
-  .int32('userId')
-  .string('guid', {length: consts.SIGNED_GUID_LEN + 1, stripNull: true})
-  .skip(3)
-  .uint32('friendsId')
-  .string('friendsName', {length: consts.MAX_PLAYER_NAME_LENGTH, stripNull: true})
-  .uint8('fakePlayer', {formatter: x => x !== 0})
-  .skip(3)
-  .uint8('isHltv', {formatter: x => x !== 0})
-  .skip(3)
-  .array('customFiles', {
-    type: 'uint32be',
-    length: consts.MAX_CUSTOM_FILES
-  });
 
-function parseUserInfoData(buf) {
-  var info = PlayerInfo.parse(buf);
-  info.xuid = new Long(info.xuid_hi, info.xuid_lo);
-  return info;
+export interface IPlayerInfo {
+  xuid: Long;
+  name: string;
+  userId: number;
+  guid: string;
+  friendsId: number;
+  friendsName: string;
+  fakePlayer: boolean;
+  isHltv: boolean;
+  //customFiles: number[];
 }
 
-/**
- * @name StringTableEntry
- * @property {string} entry - Entry value
- * @property {*|undefined} userData - User data
- */
+function parseUserInfoData(buf: Buffer): IPlayerInfo {
+  var bytebuf = ByteBuffer.wrap(buf, ByteBuffer.BIG_ENDIAN);
+  bytebuf.skip(8);
 
-/**
- * @name StringTable
- * @property {string} name - Table name
- * @property {StringTableEntry[]} entries - Entries within the table
- */
+  var xuid = new Long(bytebuf.readUint32(), bytebuf.readUint32());
+  var name = bytebuf.readString(consts.MAX_PLAYER_NAME_LENGTH);
+  var userId = bytebuf.readUint32();
+  var guid = bytebuf.readString(consts.SIGNED_GUID_LEN + 1);
+  bytebuf.skip(3);
+  var friendsId = bytebuf.readUint32();
+  var friendsName = bytebuf.readString(consts.MAX_PLAYER_NAME_LENGTH);
+  var fakePlayer = bytebuf.readByte() !== 0;
+  bytebuf.skip(3);
+  var isHltv = bytebuf.readByte() !== 0;
+  bytebuf.skip(3);
+
+  return {
+    xuid,
+    name,
+    userId,
+    guid,
+    friendsId,
+    friendsName,
+    fakePlayer,
+    isHltv
+  };
+}
+
+export interface IStringTableUpdateEvent<T> {
+  table: IStringTable<T>;
+  entryIndex: number;
+  entry: string;
+  userData: T | null;
+}
+
+export interface IStringTableEntry<T> {
+  entry: string | null;
+  userData: T | null;
+}
+
+export interface IStringTable<T> {
+  name: string;
+  entries: IStringTableEntry<T>[];
+  userDataSizeBits: number;
+  userDataFixedSize: boolean;
+}
+
+export type WellKnownStringTable =
+  'downloadables' |
+  'modelprecache' |
+  'genericprecache' |
+  'soundprecache' |
+  'decalprecache' |
+  'instancebaseline' |
+  'lightstyles' |
+  'userinfo' |
+  'dynamicmodel' |
+  'server_query_info' |
+  'ExtraParticleFilesTable' |
+  'ParticleEffectNames' |
+  'EffectDispatch' |
+  'VguiScreen' |
+  'Materials' |
+  'InfoPanel' |
+  'Scenes' |
+  'Movies' |
+  'GameRulesCreation';
+
+export declare interface StringTables {
+  findTableByName(table: 'userinfo'): IStringTable<IPlayerInfo> | undefined;
+  findTableByName(table: WellKnownStringTable): IStringTable<Buffer> | undefined;
+
+  on(event: 'create', listener: (table: IStringTable<any>) => void): this;
+  on(event: 'postcreate', listener: (table: IStringTable<any>) => void): this;
+  on(event: 'update', listener: (event: IStringTableUpdateEvent<any>) => void): this;
+}
 
 /**
  * Handles string tables for a demo file.
  */
-class StringTables extends EventEmitter {
+export class StringTables extends EventEmitter {
+  tables: IStringTable<any>[] = [];
+  userDataCallbacks: { [table: string]: (buf: Buffer) => any };
+
   constructor() {
     super();
 
@@ -74,37 +129,30 @@ class StringTables extends EventEmitter {
     this.userDataCallbacks = {
       userinfo: parseUserInfoData
     };
-
-    /**
-     * @type {StringTable[]}
-     */
-    this.tables = [];
   }
 
-  listen(messageEvents) {
+  listen(messageEvents: DemoFile) {
     messageEvents.on('svc_UpdateStringTable', this._handleUpdateStringTable.bind(this));
     messageEvents.on('svc_CreateStringTable', this._handleCreateStringTable.bind(this));
   }
 
-  findTableByName(name) {
-    return _.find(this.tables, table => table.name === name);
+  findTableByName(name: WellKnownStringTable): IStringTable<any> | undefined {
+    return this.tables.find(table => table.name === name);
   }
 
-  _handleStringTables(bitbuf) {
+  _handleStringTables(bitbuf: BitStream) {
     let numTables = bitbuf.readUInt8();
 
     for (var i = 0; i < numTables; ++i) {
       let tableName = bitbuf.readCString();
-      this._handleStringTable(tableName, bitbuf);
+      this._handleStringTable(tableName as WellKnownStringTable, bitbuf);
     }
   }
 
-  _handleStringTable(name, bitbuf) {
+  _handleStringTable(name: WellKnownStringTable, bitbuf: BitStream) {
     let userDataCallback = this.userDataCallbacks[name];
 
-    let table = this.findTableByName(name);
-    assert(table != null);
-
+    let table = assertExists(this.findTableByName(name));
     let numEntries = bitbuf.readUInt16();
 
     for (let entryIndex = 0; entryIndex < numEntries; ++entryIndex) {
@@ -119,7 +167,7 @@ class StringTables extends EventEmitter {
         userData = userDataCallback === undefined ? userDataBuf : userDataCallback(userDataBuf);
       }
 
-      table.entries[entryIndex] = {entry, userData};
+      table.entries[entryIndex] = { entry, userData };
 
       this.emit('update', {
         table,
@@ -160,11 +208,11 @@ class StringTables extends EventEmitter {
    * @property {*|undefined} userData - New user data
    */
 
-  _parseStringTableUpdate(bitbuf, table, entries, maxEntries) {
+  _parseStringTableUpdate(bitbuf: BitStream, table: IStringTable<any>, entries: number, maxEntries: number) {
     // overflow silently. this is how the official parser handles overflows...
     bitbuf.view.silentOverflow = true;
 
-    var history = [];
+    var history: (string | null)[] = [];
 
     var entryBits = Math.ceil(Math.log2(maxEntries));
 
@@ -190,7 +238,11 @@ class StringTables extends EventEmitter {
           var index = bitbuf.readUBits(5);
           var bytesToCopy = bitbuf.readUBits(consts.SUBSTRING_BITS);
 
-          var subStr = history[index].slice(0, bytesToCopy);
+          var last = history[index];
+          if (last == null)
+            throw 'string table entry is delta from non existent entry';
+
+          var subStr = last.slice(0, bytesToCopy);
           var suffix = bitbuf.readCString();
 
           entry = subStr + suffix;
@@ -209,13 +261,12 @@ class StringTables extends EventEmitter {
         // don't read the length, it's fixed length and the length was networked down already
         if (table.userDataFixedSize) {
           userDataArray = [bitbuf.readUBits(table.userDataSizeBits)];
+          userData = new Buffer(userDataArray);
         } else {
           var bytes = bitbuf.readUBits(consts.MAX_USERDATA_BITS);
           userDataArray = bitbuf.readBytes(bytes);
+          userData = new Buffer(userDataArray);
         }
-
-        // create a buffer from the array
-        userData = new Buffer(userDataArray);
 
         if (userDataCallback !== undefined) {
           userData = userDataCallback(userData);
@@ -254,20 +305,20 @@ class StringTables extends EventEmitter {
    * @type {StringTable}
    */
 
-  _handleCreateStringTable(msg) {
-    var bitbuf = new bitBuffer.BitStream(msg.stringData.toSlicedBuffer());
+  _handleCreateStringTable(msg: RequiredNonNullable<ICSVCMsg_CreateStringTable>) {
+    var bitbuf = new BitStream(msg.stringData.buffer as ArrayBuffer);
 
     // table shouldn't already exist
-    assert(this.findTableByName(msg.name) === undefined, 'table already exists');
+    assert(this.findTableByName(msg.name as WellKnownStringTable) === undefined, 'table already exists');
 
     assert(msg.userDataSize === Math.ceil(msg.userDataSizeBits / 8), 'invalid user data byte size');
     assert(msg.userDataSizeBits <= 32, 'userdata value too large');
 
     // create an empty table
-    var table = {
+    var table: IStringTable<any> = {
       name: msg.name,
-      entries: _.map(_.range(msg.maxEntries), function () {
-        return {entry: null, userData: null};
+      entries: new Array(msg.maxEntries).fill(0).map(() => {
+        return { entry: null, userData: null };
       }),
       userDataSizeBits: msg.userDataSizeBits,
       userDataFixedSize: msg.userDataFixedSize
@@ -280,8 +331,8 @@ class StringTables extends EventEmitter {
     this.tables.push(table);
   }
 
-  _handleUpdateStringTable(msg) {
-    var bitbuf = new bitBuffer.BitStream(msg.stringData.toSlicedBuffer());
+  _handleUpdateStringTable(msg: RequiredNonNullable<ICSVCMsg_UpdateStringTable>) {
+    var bitbuf = new BitStream(msg.stringData.buffer as ArrayBuffer);
 
     var table = this.tables[msg.tableId];
     assert(table !== undefined, 'bad table index');
@@ -289,5 +340,3 @@ class StringTables extends EventEmitter {
     this._parseStringTableUpdate(bitbuf, table, msg.numChangedEntries, table.entries.length);
   }
 }
-
-module.exports = StringTables;

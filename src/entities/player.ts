@@ -1,12 +1,75 @@
-'use strict';
+import { BaseEntity } from './baseentity';
+import { UnknownEntityProps } from '../entities';
+import { DemoFile } from '../demo';
+import { Vector } from '../props';
+import { IPlayerInfo } from '../stringtables';
+import { Weapon } from './weapon';
 
-const BaseEntity = require('./baseentity.js');
+export const enum LifeState {
+  Alive = 0,
+  Dying,
+  Dead
+}
+
+export interface IPlayerRoundStats {
+  /**
+   * Kills dealt
+   */
+  kills: number;
+
+  /**
+   * Damage dealt
+   */
+  damage: number;
+
+  /**
+   * Total value of equipment (snapshot at the end of buy time)
+   */
+  equipmentValue: number;
+
+  /**
+   * Money remaining (snapshot at the end of buy time)
+   */
+  moneySaved: number;
+
+  /**
+   * Money earnt by killing other players
+   */
+  killReward: number;
+
+  /**
+   * Number of seconds this player stayed alive (zero if survived the whole round)
+   */
+  liveTime: number;
+
+  /**
+   * Number of times the player died this round
+   */
+  deaths: number;
+
+  /**
+   * Kills assisted by this player
+   */
+  assists: number;
+
+  /**
+   * Kills that were headshots
+   */
+  headShotKills: number;
+
+  /**
+   * Number of times the player achieved the objective (e.g defused the bomb or planted the exploding bomb)
+   */
+  objective: number;
+}
 
 /**
  * Represents an in-game player.
  */
-class Player extends BaseEntity {
-  constructor(demo, index, classId, serialNum, baseline) {
+export class Player extends BaseEntity<UnknownEntityProps> {
+  clientSlot: number;
+
+  constructor(demo: DemoFile, index: number, classId: number, serialNum: number, baseline: UnknownEntityProps) {
     super(demo, index, classId, serialNum, baseline);
 
     /**
@@ -29,7 +92,7 @@ class Player extends BaseEntity {
     };
   }
 
-  get position() {
+  get position(): Vector {
     let xy = this.getProp('DT_CSLocalPlayerExclusive', 'm_vecOrigin');
     return {
       x: xy.x,
@@ -38,7 +101,7 @@ class Player extends BaseEntity {
     };
   }
 
-  get velocity() {
+  get velocity(): Vector {
     return {
       x: this.getProp('DT_LocalPlayerExclusive', 'm_vecVelocity[0]'),
       y: this.getProp('DT_LocalPlayerExclusive', 'm_vecVelocity[1]'),
@@ -47,105 +110,102 @@ class Player extends BaseEntity {
   }
 
   /**
-   * @returns {int} Current cash
+   * @returns Current cash
    */
-  get account() {
+  get account(): number {
     return this.getProp('DT_CSPlayer', 'm_iAccount');
   }
 
-  /**
-   * @returns {int} 0: Alive, 1: Dying, 2: Dead
-   */
-  get lifeState() {
+  get lifeState(): LifeState {
     return this.getProp('DT_BasePlayer', 'm_lifeState');
   }
 
   /**
-   * @returns {bool} lifeState == 0
+   * @returns lifeState == 0
    */
-  get isAlive() {
-    return this.lifeState === 0;
+  get isAlive(): boolean {
+    return this.lifeState === LifeState.Alive;
   }
 
   /**
-   * @returns {PlayerInfo|null} User info associated with this player
+   * @returns User info associated with this player
    */
-  get userInfo() {
+  get userInfo(): IPlayerInfo | null {
     let userInfoTable = this._demo.stringTables.findTableByName('userinfo');
-    return userInfoTable.entries[this.clientSlot].userData;
+    return userInfoTable ? userInfoTable.entries[this.clientSlot].userData : null;
   }
 
   /**
-   * @returns {int} User ID
+   * @returns User ID
    */
-  get userId() {
-    return this.userInfo.userId;
+  get userId(): number {
+    return this.userInfo!.userId;
   }
 
   /**
-   * @returns {string} Steam ID
+   * @returns Steam ID
    */
-  get steamId() {
-    return this.userInfo.guid;
+  get steamId(): string {
+    return this.userInfo!.guid;
   }
 
   /**
-   * @returns {string} Steam 64 ID
+   * @returns Steam 64 ID
    */
-  get steam64Id() {
-    return this.userInfo.xuid.toString();
+  get steam64Id(): string {
+    return this.userInfo!.xuid.toString();
   }
 
   /**
-   * @returns {string} Player name
+   * @returns Player name
    */
   get name() {
-    return this.userInfo.name;
+    return this.userInfo!.name;
   }
 
   /**
-   * @returns {bool} Is this player fake (i.e. a bot)
+   * @returns Is this player fake (i.e. a bot)
    */
-  get isFakePlayer() {
-    return this.userInfo.fakePlayer;
+  get isFakePlayer(): boolean {
+    return this.userInfo!.fakePlayer;
   }
 
   /**
-   * @returns {bool} Is this player a HLTV relay
+   * @returns Is this player a HLTV relay
    */
-  get isHltv() {
-    return this.userInfo.isHltv;
+  get isHltv(): boolean {
+    return this.userInfo!.isHltv;
   }
 
   /**
-   * @returns {int} Player armor (0-100)
+   * @returns Player armor (0-100)
    */
-  get armor() {
+  get armor(): number {
     return this.getProp('DT_CSPlayer', 'm_ArmorValue');
   }
 
   /**
-   * @returns {string} Current navmesh place name
+   * @returns Current navmesh place name
    */
-  get placeName() {
+  get placeName(): string {
     return this.getProp('DT_BasePlayer', 'm_szLastPlaceName');
   }
 
   /**
-   * @returns {Entity|null} Currently held weapon
+   * @returns Currently held weapon
    */
-  get weapon() {
+  get weapon(): Weapon | null {
     return this._demo.entities.getByHandle(this.getProp('DT_BaseCombatCharacter', 'm_hActiveWeapon'));
   }
 
   /**
-   * @returns {Entity[]} All weapons helds by this player
+   * @returns All weapons helds by this player
    */
-  get weapons() {
+  get weapons(): Weapon[] {
     let weapons = [];
 
-    for (let index in this.props['m_hMyWeapons']) {
-      let weapon = this._demo.entities.getByHandle(this.props['m_hMyWeapons'][index]);
+    for (let index in this.props.get('m_hMyWeapons')) {
+      let weapon = this._demo.entities.getByHandle(this.props.get('m_hMyWeapons')[index]);
 
       if (weapon) {
         weapons.push(weapon);
@@ -156,37 +216,37 @@ class Player extends BaseEntity {
   }
 
   /**
-   * @returns {bool} Is the player is the bomb zone?
+   * @returns Is the player is the bomb zone?
    */
-  get isInBombZone() {
+  get isInBombZone(): boolean {
     return this.getProp('DT_CSPlayer', 'm_bInBombZone');
   }
 
   /**
-   * @returns {bool} Is the player in the buy zone?
+   * @returns Is the player in the buy zone?
    */
-  get isInBuyZone() {
+  get isInBuyZone(): boolean {
     return this.getProp('DT_CSPlayer', 'm_bInBuyZone');
   }
 
   /**
-   * @returns {bool} Is the player defusing?
+   * @returns Is the player defusing?
    */
-  get isDefusing() {
+  get isDefusing(): boolean {
     return this.getProp('DT_CSPlayer', 'm_bIsDefusing');
   }
 
   /**
-   * @returns {bool} Does the player have a defuser?
+   * @returns Does the player have a defuser?
    */
-  get hasDefuser() {
+  get hasDefuser(): boolean {
     return this.getProp('DT_CSPlayer', 'm_bHasDefuser');
   }
 
   /**
-   * @returns {bool} Does the player have a helmet?
+   * @returns Does the player have a helmet?
    */
-  get hasHelmet() {
+  get hasHelmet(): boolean {
     return this.getProp('DT_CSPlayer', 'm_bHasHelmet');
   }
 
@@ -195,86 +255,86 @@ class Player extends BaseEntity {
    * @param {string} propName - Name of the property on DT_CSPlayerResource to retrieve
    * @returns {*} Property value
    */
-  resourceProp(propName) {
+  resourceProp(propName: string) {
     let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
     let values = pr.props[propName];
     return values[Object.keys(values)[this.index]];
   }
 
   /**
-   * @returns {int} How many kills the player has made
+   * @returns How many kills the player has made
    */
-  get kills() {
+  get kills(): number {
     return this.resourceProp('m_iKills');
   }
 
   /**
-   * @returns {int} How many assists the player has made
+   * @returns How many assists the player has made
    */
-  get assists() {
+  get assists(): number {
     return this.resourceProp('m_iAssists');
   }
 
   /**
-   * @returns {int} How many times the player has died
+   * @returns How many times the player has died
    */
-  get deaths() {
+  get deaths(): number {
     return this.resourceProp('m_iDeaths');
   }
 
   /**
-   * @returns {int} Cash that this player has spent this round
+   * @returns Cash that this player has spent this round
    */
-  get cashSpendThisRound() {
+  get cashSpendThisRound(): number {
     return this.resourceProp('m_iCashSpentThisRound');
   }
 
   /**
-   * @returns {int} Cash that the player has spent all game
+   * @returns Cash that the player has spent all game
    */
-  get cashSpendTotal() {
+  get cashSpendTotal(): number {
     return this.resourceProp('m_iTotalCashSpent');
   }
 
   /**
-   * @returns {bool} Whether the player holds the C4
+   * @returns Whether the player holds the C4
    */
-  get hasC4() {
+  get hasC4(): boolean {
     let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
     return pr.getProp('DT_CSPlayerResource', 'm_iPlayerC4') === this.index;
   }
 
   /**
-   * @returns {int} Score of the player
+   * @returns Score of the player
    */
-  get score() {
+  get score(): number {
     let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
     let score = pr.props['m_iScore'];
     return score[Object.keys(score)[this.index]];
   }
 
   /**
-   * @returns {int} MVPs of the player
+   * @returns MVPs of the player
    */
-  get mvps() {
+  get mvps(): number {
     let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
     let mvps = pr.props['m_iMVPs'];
     return mvps[Object.keys(mvps)[this.index]];
   }
 
   /**
-   * @returns {string} Clantag of the player
+   * @returns Clantag of the player
    */
-  get clanTag() {
+  get clanTag(): string {
     let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
     let clantag = pr.props['m_szClan'];
     return clantag[Object.keys(clantag)[this.index]];
   }
 
   /**
-   * @returns {bool} Has this player been spotted by any others?
+   * @returns Has this player been spotted by any others?
    */
-  get isSpotted() {
+  get isSpotted(): boolean {
     return this.getProp('DT_BaseEntity', 'm_bSpotted');
   }
 
@@ -282,10 +342,10 @@ class Player extends BaseEntity {
    * Checks if this player has been spotted by the other.
    * Note that this still returns true if spotted by the other player even if
    * the other player is dead.
-   * @param {Player} other - Other player entity
-   * @returns {bool} Is this player spotted by the other?
+   * @param other - Other player entity
+   * @returns Is this player spotted by the other?
    */
-  isSpottedBy(other) {
+  isSpottedBy(other: Player): boolean {
     let bit = other.clientSlot;
     let mask = null;
 
@@ -300,9 +360,9 @@ class Player extends BaseEntity {
   }
 
   /**
-   * @returns {Player[]} Alive players that have spotted this player
+   * @returns Alive players that have spotted this player
    */
-  get allSpotters() {
+  get allSpotters(): Player[] {
     return this._demo.players
       .filter(p => p.clientSlot !== this.clientSlot && p.isAlive && this.isSpottedBy(p));
   }
@@ -310,88 +370,78 @@ class Player extends BaseEntity {
   /**
    * Checks if this player has spotted another.
    * Can still return true even if this player is dead.
-   * @param {Player} other - Other player entity
-   * @returns {bool} Has this player spotted the other?
+   * @param other - Other player entity
+   * @returns Has this player spotted the other?
    */
-  hasSpotted(other) {
+  hasSpotted(other: Player): boolean {
     return other.isSpottedBy(this);
   }
 
   /**
-   * @returns {Player[]} Alive players that this player has spotted
+   * @returns Alive players that this player has spotted
    */
-  get allSpotted() {
+  get allSpotted(): Player[] {
     return this._demo.players
       .filter(p => p.clientSlot !== this.clientSlot && p.isAlive && this.hasSpotted(p));
   }
 
   /**
-   * @param {Player} other - Other player entity
-   * @returns {bool} Whether the two players are on the same team
+   * @param other - Other player entity
+   * @returns Whether the two players are on the same team
    */
-  isFriendly(other) {
+  isFriendly(other: Player): boolean {
     let sameTeam = this.teamNumber === other.teamNumber;
-    let teammatesAreEnemies = this._demo.conVars.vars['mp_teammates_are_enemies'] || 0;
+    let teammatesAreEnemies = this._demo.conVars.vars.get('mp_teammates_are_enemies') || 0;
 
     return sameTeam && !teammatesAreEnemies;
   }
 
   /**
-   * @returns {bool} Is scoped
+   * @returns Is scoped
    */
-  get isScoped() {
+  get isScoped(): boolean {
     return this.getProp('DT_CSPlayer', 'm_bIsScoped');
   }
 
   /**
-   * @returns {bool} Is walking
+   * @returns Is walking
    */
-  get isWalking() {
+  get isWalking(): boolean {
     return this.getProp('DT_CSPlayer', 'm_bIsWalking');
   }
 
   /**
-   * @returns {float} Duration of a flash that hit the player
+   * @returns Duration of a flash that hit the player
    */
-  get flashDuration() {
+  get flashDuration(): number {
     return this.getProp('DT_CSPlayer', 'm_flFlashDuration');
   }
 
   /**
-   * @returns {int} Current equipment value
+   * @returns Current equipment value
    */
-  get currentEquipmentValue() {
+  get currentEquipmentValue(): number {
     return this.getProp('DT_CSPlayer', 'm_unCurrentEquipmentValue');
   }
 
   /**
-   * @returns {int} Round start equipment value
+   * @returns Round start equipment value
    */
-  get roundStartEquipmentValue() {
+  get roundStartEquipmentValue(): number {
     return this.getProp('DT_CSPlayer', 'm_unRoundStartEquipmentValue');
   }
 
   /**
-   * @returns {int} Freeze time end equipment value
+   * @returns Freeze time end equipment value
    */
-  get freezeTimeEndEquipmentValue() {
+  get freezeTimeEndEquipmentValue(): number {
     return this.getProp('DT_CSPlayer', 'm_unFreezetimeEndEquipmentValue');
   }
 
   /**
-   * @returns {Object[]} Object representing the player's performance per round
-   * @property {string} kills - Kills dealt
-   * @property {string} damage - Damage dealt
-   * @property {string} equipmentValue - Total value of equipment (snapshot at the end of buy time)
-   * @property {string} moneySaved - Money remaining (snapshot at the end of buy time)
-   * @property {string} killReward - Money earnt by killing other players
-   * @property {string} liveTime - Number of seconds this player stayed alive (zero if survived the whole round)
-   * @property {string} deaths - Number of times the player died this round
-   * @property {string} assists - Kills assisted by this player
-   * @property {string} headShotKills - Kills that were headshots
-   * @property {string} objective - Number of times the player achieved the objective (e.g defused the bomb or planted the exploding bomb)
+   * @returns Object representing the player's performance per round
    */
-  get matchStats() {
+  get matchStats(): IPlayerRoundStats[] {
     return Object.keys(this.props['m_iMatchStats_Kills'])
       .map(roundIdx => {
         return {
@@ -409,5 +459,3 @@ class Player extends BaseEntity {
       });
   }
 }
-
-module.exports = Player;

@@ -1,73 +1,80 @@
-'use strict';
+import { BaseEntity } from './baseentity';
+import { Player } from './player';
+import { UnknownEntityProps } from '../entities';
 
-const BaseEntity = require('./baseentity.js');
+export type TeamName = 'SPECTATOR' | 'TERRORIST' | 'COUNTERTERRORIST';
+
+export const enum TeamNumber {
+  Unassigned = 0,
+  Spectator,
+  Terrorists,
+  CounterTerrorists
+}
 
 /**
  * Represents an in-game team.
  */
-class Team extends BaseEntity {
+export class Team extends BaseEntity<UnknownEntityProps> {
   /**
    * @returns {Player[]} All players in this team
    */
-  get members() {
+  get members(): Player[] {
     return this.getProp('DT_Team', '"player_array"').map(index => this._demo.entities.entities[index]);
   }
 
   /**
    * @returns {int} 0: Unassigned, 1: Spectator, 2: Terrorist, 3: Counter-Terrorist
    */
-  get teamNumber() {
+  get teamNumber(): TeamNumber {
     return this.getProp('DT_Team', 'm_iTeamNum');
   }
 
   /**
-   * @returns {string} Clan name
+   * @returns Clan name
    */
-  get clanName() {
+  get clanName(): string {
     return this.getProp('DT_Team', 'm_szClanTeamname');
   }
 
   /**
-   * @returns {string} 'SPECTATOR', 'TERRORIST' or 'COUNTERTERRORIST'
+   * @returns 'SPECTATOR', 'TERRORIST' or 'COUNTERTERRORIST'
    */
-  get teamName() {
+  get teamName(): TeamName {
     return this.getProp('DT_Team', 'm_szTeamname');
   }
 
   /**
-   * @returns {int} Total score
+   * @returns Total score
    */
-  get score() {
+  get score(): number {
     return this.getProp('DT_Team', 'm_scoreTotal');
   }
 
   /**
-   * @returns {int} First half score
+   * @returns First half score
    */
-  get scoreFirstHalf() {
+  get scoreFirstHalf(): number {
     return this.getProp('DT_Team', 'm_scoreFirstHalf');
   }
 
   /**
-   * @returns {int} Second half score
+   * @returns Second half score
    */
-  get scoreSecondHalf() {
+  get scoreSecondHalf(): number {
     return this.getProp('DT_Team', 'm_scoreSecondHalf');
   }
 
   /**
-   * @returns {string} Team flag image
+   * @returns Team flag image
    */
-  get flagImage() {
+  get flagImage(): string {
     return this.getProp('DT_Team', 'm_szTeamFlagImage');
   }
 
   /**
-   * @returns {string} Team logo image
+   * @returns Team logo image
    */
-  get logoImage() {
+  get logoImage(): string {
     return this.getProp('DT_Team', 'm_szTeamLogoImage');
   }
 }
-
-module.exports = Team;

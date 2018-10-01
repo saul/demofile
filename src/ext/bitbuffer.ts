@@ -1,12 +1,12 @@
-'use strict';
+import * as _ from 'lodash';
+import * as assert from 'assert';
+import { BitView, BitStream } from 'bit-buffer';
 
-var _ = require('lodash');
-var assert = require('assert');
-var bitBuffer = require('bit-buffer');
-
-const CW_None = 0;
-const CW_LowPrecision = 1;
-const CW_Integral = 2;
+export enum CoordType {
+  None = 0,
+  LowPrecision = 1,
+  Integral = 2
+}
 
 const COORD_INTEGER_BITS = 14;
 const COORD_FRACTIONAL_BITS = 5;
@@ -23,10 +23,38 @@ const NORMAL_FRACTIONAL_BITS = 11;
 const NORMAL_DENOMINATOR = (1 << NORMAL_FRACTIONAL_BITS) - 1;
 const NORMAL_RESOLUTION = (1.0 / NORMAL_DENOMINATOR);
 
+declare module 'bit-buffer' {
+  interface BitView {
+    silentOverflow: boolean;
+    _view: Uint8Array;
+  }
 
-var originalGetBits = bitBuffer.BitView.prototype.getBits;
+  interface BitStream {
+    readString(bytes: number): string;
+    readBytes(bytes: number): Buffer;
+    readOneBit(): boolean;
+    readUBits(bits: number): number;
+    readSBits(bits: number): number;
+    readUBitVar(): number;
+    readBitCoord(): number;
+    readBitCoordMP(coordType: CoordType): number;
+    readBitNormal(): number;
+    readBitFloat(): number;
+    readBitCellCoord(bits: number, coordType: CoordType): number;
 
-bitBuffer.BitView.prototype.getBits = function (offset, bits, signed) {
+    readCString(): string;
+    readUInt8(): number;
+    readUInt16(): number;
+    readUInt32(): number;
+    writeUInt8(value: number): void;
+    writeUInt16(value: number): void;
+    writeUInt32(value: number): void;
+  }
+}
+
+var originalGetBits = BitView.prototype.getBits;
+
+BitView.prototype.getBits = function (offset, bits, signed) {
   if (this.silentOverflow === true) {
     var available = (this._view.length * 8 - offset);
 
@@ -38,42 +66,42 @@ bitBuffer.BitView.prototype.getBits = function (offset, bits, signed) {
   return originalGetBits.call(this, offset, bits, signed);
 };
 
-bitBuffer.BitStream.prototype.readString = function (bytes) {
+BitStream.prototype.readString = function (bytes: number) {
   return _.map(new Array(bytes), () => String.fromCharCode(this.readUInt8())).join('');
 };
 
-bitBuffer.BitStream.prototype.readBytes = function (bytes) {
+BitStream.prototype.readBytes = function (bytes: number) {
   return new Buffer(_.map(_.range(bytes), () => this.readUInt8()));
 };
 
-bitBuffer.BitStream.prototype.readOneBit = function () {
-  return this.readBits(1, false);
+BitStream.prototype.readOneBit = function () {
+  return this.readBits(1, false) === 1;
 };
 
-bitBuffer.BitStream.prototype.readUBits = function (bits) {
+BitStream.prototype.readUBits = function (bits: number) {
   return this.readBits(bits, false);
 };
 
-bitBuffer.BitStream.prototype.readSBits = function (bits) {
+BitStream.prototype.readSBits = function (bits: number) {
   return this.readBits(bits, true);
 };
 
-bitBuffer.BitStream.prototype.readUBitVar = function () {
+BitStream.prototype.readUBitVar = function () {
   var ret = this.readUBits(6);
 
-  switch (ret & ( 16 | 32 )) {
+  switch (ret & (16 | 32)) {
     case 16:
-      ret = ( ret & 15 ) | ( this.readUBits(4) << 4 );
+      ret = (ret & 15) | (this.readUBits(4) << 4);
       assert(ret >= 16);
       break;
 
     case 32:
-      ret = ( ret & 15 ) | ( this.readUBits(8) << 4 );
+      ret = (ret & 15) | (this.readUBits(8) << 4);
       assert(ret >= 256);
       break;
 
     case 48:
-      ret = ( ret & 15 ) | ( this.readUBits(32 - 4) << 4 );
+      ret = (ret & 15) | (this.readUBits(32 - 4) << 4);
       assert(ret >= 4096);
       break;
   }
@@ -81,9 +109,9 @@ bitBuffer.BitStream.prototype.readUBitVar = function () {
   return ret;
 };
 
-bitBuffer.BitStream.prototype.readBitCoord = function () {
-  var intval = this.readOneBit();
-  var fractval = this.readOneBit();
+BitStream.prototype.readBitCoord = function () {
+  var intval = Number(this.readOneBit());
+  var fractval = Number(this.readOneBit());
 
   if (!intval && !fractval) {
     return 0.0;
@@ -108,13 +136,13 @@ bitBuffer.BitStream.prototype.readBitCoord = function () {
   return value;
 };
 
-bitBuffer.BitStream.prototype.readBitCoordMP = function (coordType) {
+BitStream.prototype.readBitCoordMP = function (coordType: CoordType) {
   var inBounds = this.readOneBit();
   var value = 0.0;
   var signbit = false;
-  var lowPrecision = coordType === CW_LowPrecision;
+  var lowPrecision = coordType === CoordType.LowPrecision;
 
-  if (coordType === CW_Integral) {
+  if (coordType === CoordType.Integral) {
     let intval = this.readOneBit();
 
     if (intval) {
@@ -127,7 +155,7 @@ bitBuffer.BitStream.prototype.readBitCoordMP = function (coordType) {
       }
     }
   } else {
-    let intval = this.readOneBit();
+    let intval = Number(this.readOneBit());
     signbit = this.readOneBit();
 
     if (intval) {
@@ -150,7 +178,7 @@ bitBuffer.BitStream.prototype.readBitCoordMP = function (coordType) {
   return value;
 };
 
-bitBuffer.BitStream.prototype.readBitNormal = function () {
+BitStream.prototype.readBitNormal = function () {
   var signbit = this.readOneBit();
 
   var fractval = this.readUBits(NORMAL_FRACTIONAL_BITS);
@@ -164,16 +192,16 @@ bitBuffer.BitStream.prototype.readBitNormal = function () {
   return value;
 };
 
-bitBuffer.BitStream.prototype.readBitFloat = function () {
+BitStream.prototype.readBitFloat = function () {
   return this.readFloat32();
 };
 
-bitBuffer.BitStream.prototype.readBitCellCoord = function (bits, coordType) {
-  var lowPrecision = coordType === CW_LowPrecision;
+BitStream.prototype.readBitCellCoord = function (bits, coordType) {
+  var lowPrecision = coordType === CoordType.LowPrecision;
 
   var value = 0.0;
 
-  if (coordType === CW_Integral) {
+  if (coordType === CoordType.Integral) {
     value = this.readUBits(bits);
   } else {
     var intval = this.readUBits(bits);
@@ -186,18 +214,12 @@ bitBuffer.BitStream.prototype.readBitCellCoord = function (bits, coordType) {
   return value;
 };
 
-bitBuffer.BitStream.prototype.readCString = bitBuffer.BitStream.prototype.readASCIIString;
-bitBuffer.BitStream.prototype.readUInt8 = bitBuffer.BitStream.prototype.readUint8;
-bitBuffer.BitStream.prototype.readUInt16 = bitBuffer.BitStream.prototype.readUint16;
-bitBuffer.BitStream.prototype.readUInt32 = bitBuffer.BitStream.prototype.readUint32;
-bitBuffer.BitStream.prototype.writeUInt8 = bitBuffer.BitStream.prototype.writeUint8;
-bitBuffer.BitStream.prototype.writeUInt16 = bitBuffer.BitStream.prototype.writeUint16;
-bitBuffer.BitStream.prototype.writeUInt32 = bitBuffer.BitStream.prototype.writeUint32;
+BitStream.prototype.readCString = BitStream.prototype.readASCIIString;
+BitStream.prototype.readUInt8 = BitStream.prototype.readUint8;
+BitStream.prototype.readUInt16 = BitStream.prototype.readUint16;
+BitStream.prototype.readUInt32 = BitStream.prototype.readUint32;
+BitStream.prototype.writeUInt8 = BitStream.prototype.writeUint8;
+BitStream.prototype.writeUInt16 = BitStream.prototype.writeUint16;
+BitStream.prototype.writeUInt32 = BitStream.prototype.writeUint32;
 
-module.exports = {
-  BitView: bitBuffer.BitView,
-  BitStream: bitBuffer.BitStream,
-  CW_None,
-  CW_LowPrecision,
-  CW_Integral
-};
+export { BitStream, BitView };

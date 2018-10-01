@@ -1,38 +1,43 @@
-'use strict';
-
-var _ = require('lodash');
-var assert = require('assert');
-var EventEmitter = require('events');
+import * as _ from 'lodash';
+import * as assert from 'assert';
+import { EventEmitter } from 'events';
+import { DemoFile } from './demo';
+import { ICSVCMsg_GameEvent, ICSVCMsg_GameEventList, CSVCMsg_GameEventList } from './protobufs/netmessages';
 
 class GameEvent {
-  constructor(descriptor) {
+  name: string;
+  id: number;
+  keyNames: string[];
+
+  constructor(descriptor: RequiredNonNullable<CSVCMsg_GameEventList.Idescriptor_t>) {
     this.name = descriptor.name;
     this.id = descriptor.eventid;
-    this.keyNames = _.map(descriptor.keys, key => key.name);
+    this.keyNames = descriptor.keys.map(key => key.name);
   }
 
-  messageToObject(eventMsg) {
+  messageToObject(eventMsg: RequiredNonNullable<ICSVCMsg_GameEvent>) {
     assert(eventMsg.eventid === this.id);
 
     return _.zipObject(
       this.keyNames,
-      _.map(eventMsg.keys, key => {
+      eventMsg.keys.map(key => {
         return _.find(key, (value, name) => value !== null && name !== 'type');
       })
     );
   }
 }
 
+interface GameEventEvent<T> {
+  name: string;
+  event: T;
+}
+
 /**
  * Manages game events for a demo file.
  */
-class GameEvents extends EventEmitter {
-  constructor() {
-    super();
-
-    this.gameEventList = {};
-    this.tickEvents = [];
-  }
+export class GameEvents extends EventEmitter {
+  gameEventList: GameEvent[] = [];
+  private _tickEvents: GameEventEvent<any>[] = [];
 
   /**
    * Fired when a game event is fired (e.g., `player_death`).
@@ -50,23 +55,25 @@ class GameEvents extends EventEmitter {
    * @property {Object} event - Event variables
    */
 
-  listen(demo) {
+  listen(demo: DemoFile) {
     demo.on('svc_GameEventList', this._handleGameEventList.bind(this));
 
     demo.on('svc_GameEvent', msg => {
       var event = this.gameEventList[msg.eventid];
+      if (!event)
+        return;
 
       var eventVars = event.messageToObject(msg);
 
       // buffer game events until the end of the tick
-      this.tickEvents.push({
+      this._tickEvents.push({
         name: event.name,
         event: eventVars
       });
     });
 
     demo.on('tickend', () => {
-      this.tickEvents.forEach(event => {
+      this._tickEvents.forEach(event => {
         this.emit(event.name, event.event);
 
         this.emit('event', {
@@ -75,15 +82,13 @@ class GameEvents extends EventEmitter {
         });
       });
 
-      this.tickEvents = [];
+      this._tickEvents = [];
     });
   }
 
-  _handleGameEventList(msg) {
-    _.each(msg.descriptors, descriptor => {
+  _handleGameEventList(msg: RequiredNonNullable<ICSVCMsg_GameEventList>) {
+    for (let descriptor of msg.descriptors) {
       this.gameEventList[descriptor.eventid] = new GameEvent(descriptor);
-    });
+    }
   }
 }
-
-module.exports = GameEvents;
