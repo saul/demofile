@@ -1,10 +1,10 @@
-import { BaseEntity } from './baseentity';
-import { UnknownEntityProps } from '../entities';
+import { CCSGameRulesProxy } from '../netprops';
+import { Networkable } from './networkable';
 
 /**
  * Represents the game rules.
  */
-export class GameRules extends BaseEntity<UnknownEntityProps> {
+export class GameRules extends Networkable<CCSGameRulesProxy> {
   /**
    * @returns Is the game currently in 'warmup' mode?
    */
@@ -31,10 +31,10 @@ export class GameRules extends BaseEntity<UnknownEntityProps> {
   }
 
   /**
-   * @returns {string} 'first', 'second', 'halftime' or 'postgame'
+   * @returns 'first', 'second', 'halftime' or 'postgame'
    */
-  get phase() {
-    const gamePhases = {
+  get phase(): string {
+    const gamePhases: { [phase: number]: string } = {
       2: 'first',
       3: 'second',
       4: 'halftime',

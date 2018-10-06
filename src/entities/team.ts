@@ -1,6 +1,6 @@
-import { BaseEntity } from './baseentity';
 import { Player } from './player';
-import { UnknownEntityProps } from '../entities';
+import { CTeam } from '../netprops';
+import { Networkable } from './networkable';
 
 export type TeamName = 'SPECTATOR' | 'TERRORIST' | 'COUNTERTERRORIST';
 
@@ -14,12 +14,14 @@ export const enum TeamNumber {
 /**
  * Represents an in-game team.
  */
-export class Team extends BaseEntity<UnknownEntityProps> {
+export class Team extends Networkable<CTeam> {
   /**
    * @returns {Player[]} All players in this team
    */
   get members(): Player[] {
-    return this.getProp('DT_Team', '"player_array"').map(index => this._demo.entities.entities[index]);
+    // UNSAFE: cast here as members will always be players
+    return this.getProp('DT_Team', '"player_array"')
+      .map(index => this._demo.entities.entities[index]) as unknown as Player[];
   }
 
   /**
@@ -40,7 +42,7 @@ export class Team extends BaseEntity<UnknownEntityProps> {
    * @returns 'SPECTATOR', 'TERRORIST' or 'COUNTERTERRORIST'
    */
   get teamName(): TeamName {
-    return this.getProp('DT_Team', 'm_szTeamname');
+    return this.getProp('DT_Team', 'm_szTeamname') as TeamName;
   }
 
   /**

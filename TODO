@@ -1,3 +1,8 @@
-- Add API example to README
-- Minify browser bundle
-- Add 'Design' section to the README
+TypeScript TODO:
+
+- [ ] Check all .emit have a corresponding .on declaration
+- [ ] Move all event comments to the .on declarations
+- [x] Remove 'module.exports'
+- [x] Create 'Networkable' which is the base type of BaseEntity.
+      BaseEntity should only be used if the entity has DT_BaseEntity
+- [ ] Search for 'as unknown' and comment each case

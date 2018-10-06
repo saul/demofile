@@ -1,6 +1,6 @@
 import { BaseEntity } from './baseentity';
 import { Player } from './player';
-import { UnknownEntityProps } from '../entities';
+import { CWeaponCSBase } from '../netprops';
 
 interface IItemDefinition {
   itemName: string;
@@ -245,7 +245,7 @@ const itemDefinitionIndexMap: { [itemIndex: number]: IItemDefinition | undefined
 /**
  * Represents an in-game weapon (guns, grenades, knifes).
  */
-export class Weapon extends BaseEntity<UnknownEntityProps> {
+export class Weapon extends BaseEntity<CWeaponCSBase> {
   /**
    * @returns Item definition index
    */
@@ -276,6 +276,6 @@ export class Weapon extends BaseEntity<UnknownEntityProps> {
    */
   get prevOwner(): Player | null {
     var handle = this.getProp('DT_WeaponCSBase', 'm_hPrevOwner');
-    return this._demo.entities.getByHandle(handle);
+    return this._demo.entities.getByHandle(handle) as Player | null;
   }
 }

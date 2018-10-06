@@ -1,9 +1,8 @@
 import { BaseEntity } from './baseentity';
-import { UnknownEntityProps } from '../entities';
 import { DemoFile } from '../demo';
-import { Vector } from '../props';
 import { IPlayerInfo } from '../stringtables';
 import { Weapon } from './weapon';
+import { CCSPlayer, Vector, CCSPlayerResource } from '../netprops';
 
 export const enum LifeState {
   Alive = 0,
@@ -66,10 +65,10 @@ export interface IPlayerRoundStats {
 /**
  * Represents an in-game player.
  */
-export class Player extends BaseEntity<UnknownEntityProps> {
+export class Player extends BaseEntity<CCSPlayer> {
   clientSlot: number;
 
-  constructor(demo: DemoFile, index: number, classId: number, serialNum: number, baseline: UnknownEntityProps) {
+  constructor(demo: DemoFile, index: number, classId: number, serialNum: number, baseline: CCSPlayer) {
     super(demo, index, classId, serialNum, baseline);
 
     /**
@@ -107,6 +106,15 @@ export class Player extends BaseEntity<UnknownEntityProps> {
       y: this.getProp('DT_LocalPlayerExclusive', 'm_vecVelocity[1]'),
       z: this.getProp('DT_LocalPlayerExclusive', 'm_vecVelocity[2]')
     };
+  }
+
+  /**
+   * Speed of the entity.
+   * @returns Speed in game units.
+   */
+  get speed(): number {
+    var vel = this.velocity;
+    return Math.sqrt(vel.x * vel.x + vel.y * vel.y + vel.z * vel.z);
   }
 
   /**
@@ -195,24 +203,16 @@ export class Player extends BaseEntity<UnknownEntityProps> {
    * @returns Currently held weapon
    */
   get weapon(): Weapon | null {
-    return this._demo.entities.getByHandle(this.getProp('DT_BaseCombatCharacter', 'm_hActiveWeapon'));
+    return this._demo.entities.getByHandle(this.getProp('DT_BaseCombatCharacter', 'm_hActiveWeapon')) as Weapon | null;
   }
 
   /**
    * @returns All weapons helds by this player
    */
   get weapons(): Weapon[] {
-    let weapons = [];
-
-    for (let index in this.props.get('m_hMyWeapons')) {
-      let weapon = this._demo.entities.getByHandle(this.props.get('m_hMyWeapons')[index]);
-
-      if (weapon) {
-        weapons.push(weapon);
-      }
-    }
-
-    return weapons;
+    return this.getIndexedProps('m_hMyWeapons')
+      .map(handle => this._demo.entities.getByHandle(handle))
+      .filter(ent => ent ? ent instanceof Weapon : false) as unknown as Weapon[];
   }
 
   /**
@@ -255,10 +255,9 @@ export class Player extends BaseEntity<UnknownEntityProps> {
    * @param {string} propName - Name of the property on DT_CSPlayerResource to retrieve
    * @returns {*} Property value
    */
-  resourceProp(propName: string) {
-    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
-    let values = pr.props[propName];
-    return values[Object.keys(values)[this.index]];
+  resourceProp<TableName extends keyof CCSPlayerResource, TableKeys extends keyof CCSPlayerResource[TableName], ElementType extends '000' extends TableKeys ? CCSPlayerResource[TableName][TableKeys] : never>(tableName: TableName): ElementType {
+    let array = this._demo.entities.playerResource.getIndexedProps(tableName)!;
+    return array[this.clientSlot] as ElementType;
   }
 
   /**
@@ -300,7 +299,7 @@ export class Player extends BaseEntity<UnknownEntityProps> {
    * @returns Whether the player holds the C4
    */
   get hasC4(): boolean {
-    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
+    let pr = this._demo.entities.playerResource;
     return pr.getProp('DT_CSPlayerResource', 'm_iPlayerC4') === this.index;
   }
 
@@ -308,27 +307,24 @@ export class Player extends BaseEntity<UnknownEntityProps> {
    * @returns Score of the player
    */
   get score(): number {
-    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
-    let score = pr.props['m_iScore'];
-    return score[Object.keys(score)[this.index]];
+    let pr = this._demo.entities.playerResource;
+    return pr.getIndexedProps('m_iScore')[this.index];
   }
 
   /**
    * @returns MVPs of the player
    */
   get mvps(): number {
-    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
-    let mvps = pr.props['m_iMVPs'];
-    return mvps[Object.keys(mvps)[this.index]];
+    let pr = this._demo.entities.playerResource;
+    return pr.getIndexedProps('m_iMVPs')[this.index];
   }
 
   /**
    * @returns Clantag of the player
    */
   get clanTag(): string {
-    let pr = this._demo.entities.getSingleton('DT_CSPlayerResource');
-    let clantag = pr.props['m_szClan'];
-    return clantag[Object.keys(clantag)[this.index]];
+    let pr = this._demo.entities.playerResource;
+    return pr.getIndexedProps('m_szClan')[this.index];
   }
 
   /**
@@ -442,20 +438,33 @@ export class Player extends BaseEntity<UnknownEntityProps> {
    * @returns Object representing the player's performance per round
    */
   get matchStats(): IPlayerRoundStats[] {
-    return Object.keys(this.props['m_iMatchStats_Kills'])
-      .map(roundIdx => {
-        return {
-          kills: this.props['m_iMatchStats_Kills'][roundIdx],
-          damage: this.props['m_iMatchStats_Damage'][roundIdx],
-          equipmentValue: this.props['m_iMatchStats_EquipmentValue'][roundIdx],
-          moneySaved: this.props['m_iMatchStats_MoneySaved'][roundIdx],
-          killReward: this.props['m_iMatchStats_KillReward'][roundIdx],
-          liveTime: this.props['m_iMatchStats_LiveTime'][roundIdx],
-          deaths: this.props['m_iMatchStats_Deaths'][roundIdx],
-          assists: this.props['m_iMatchStats_Assists'][roundIdx],
-          headShotKills: this.props['m_iMatchStats_HeadShotKills'][roundIdx],
-          objective: this.props['m_iMatchStats_Objective'][roundIdx]
-        };
+    let kills = this.getIndexedProps('m_iMatchStats_Kills');
+    let damage = this.getIndexedProps('m_iMatchStats_Damage');
+    let equipmentValue = this.getIndexedProps('m_iMatchStats_EquipmentValue');
+    let moneySaved = this.getIndexedProps('m_iMatchStats_MoneySaved');
+    let killReward = this.getIndexedProps('m_iMatchStats_KillReward');
+    let liveTime = this.getIndexedProps('m_iMatchStats_LiveTime');
+    let deaths = this.getIndexedProps('m_iMatchStats_Deaths');
+    let assists = this.getIndexedProps('m_iMatchStats_Assists');
+    let headShotKills = this.getIndexedProps('m_iMatchStats_HeadShotKills');
+    let objective = this.getIndexedProps('m_iMatchStats_Objective');
+
+    let rounds = [];
+    for (let roundIdx = 0; roundIdx < kills.length; ++roundIdx) {
+      rounds.push({
+        kills: kills[roundIdx],
+        damage: damage[roundIdx],
+        equipmentValue: equipmentValue[roundIdx],
+        moneySaved: moneySaved[roundIdx],
+        killReward: killReward[roundIdx],
+        liveTime: liveTime[roundIdx],
+        deaths: deaths[roundIdx],
+        assists: assists[roundIdx],
+        headShotKills: headShotKills[roundIdx],
+        objective: objective[roundIdx]
       });
+    }
+
+    return rounds;
   }
 }

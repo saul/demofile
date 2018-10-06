@@ -4,6 +4,9 @@ import Long = require('long');
 import { BitStream, CoordType } from './ext/bitbuffer';
 import { ISendProp } from './entities';
 import assertExists from 'ts-assert-exists';
+import { Vector } from './netprops';
+import { NUM_NETWORKED_EHANDLE_BITS } from './consts';
+import { EntityHandle } from './entityhandle';
 
 export const enum PropType {
   Int = 0,
@@ -39,13 +42,7 @@ export const SPROP_VARINT = (1 << 19); // use var int encoded (google protobuf s
 
 const DT_MAX_STRING_BITS = 9;
 
-export interface Vector {
-  x: number;
-  y: number;
-  z: number;
-}
-
-export type PropPrimitive = string | number | boolean | Long | Vector;
+export type PropPrimitive = string | number | boolean | Long | Vector | EntityHandle;
 export type PropValue = PropPrimitive | PropPrimitive[];
 
 export function makeDecoder(sendProp: ISendProp, arrayElementProp: ISendProp | undefined): (bitbuf: BitStream) => PropValue {
@@ -78,7 +75,7 @@ function makeValueDecoder(sendProp: ISendProp): (bitbuf: BitStream) => PropPrimi
   }
 }
 
-function makeIntDecoder(sendProp: ISendProp): (bitbuf: BitStream) => number | boolean {
+function makeIntDecoder(sendProp: ISendProp): (bitbuf: BitStream) => number | EntityHandle | boolean {
   if ((sendProp.flags & SPROP_VARINT) !== 0) {
     /*eslint-disable no-unreachable*/
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
@@ -92,7 +89,9 @@ function makeIntDecoder(sendProp: ISendProp): (bitbuf: BitStream) => number | bo
   } else {
     const numBits = sendProp.numBits;
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
-      if (numBits === 1) {
+      if ((sendProp.flags & SPROP_NOSCALE) !== 0 && sendProp.numBits == NUM_NETWORKED_EHANDLE_BITS) {
+        return bitbuf => new EntityHandle(bitbuf.readUBits(numBits));
+      } else if (numBits === 1) {
         return bitbuf => bitbuf.readOneBit();
       } else {
         return bitbuf => bitbuf.readUBits(numBits);
