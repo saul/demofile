@@ -3,3 +3,4 @@ node_modules
 typings
 .vscode
 demos
+dist/
