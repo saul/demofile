@@ -1,9 +1,0 @@
-TypeScript TODO:
-
-- [x] Check all .emit have a corresponding .on declaration
-- [x] Move all event comments to the .on declarations
-- [x] Remove 'module.exports'
-- [x] Create 'Networkable' which is the base type of BaseEntity.
-      BaseEntity should only be used if the entity has DT_BaseEntity
-- [x] Reading strings need to trim NULL
-- [ ] Search for 'as unknown' and comment each case
