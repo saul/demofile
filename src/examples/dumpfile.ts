@@ -4,13 +4,13 @@
 // This file is an thorough example of how to log player kills,
 // team scores, chat text and server cvar changes from a demo file.
 
-'use strict';
-
-const fs = require('fs');
-const assert = require('assert');
-const ansiStyles = require('ansi-styles');
-const demo = require('../demo');
-const util = require('util');
+import fs = require('fs');
+import assert = require('assert');
+import ansiStyles = require('ansi-styles');
+import demo = require('../demo');
+import util = require('util');
+import { TeamNumber } from '../entities/team';
+import { Player } from '../entities/player';
 
 const colourReplacements = [
   { 'pattern': /\x01/g, 'ansi': ansiStyles.whiteBright.open }, // Default
@@ -31,21 +31,21 @@ const colourReplacements = [
   { 'pattern': /\x10/g, 'ansi': ansiStyles.yellow.open } // Orange
 ];
 
-const standardMessages = {
+const standardMessages: { [message: string]: string | undefined } = {
   'Cstrike_Chat_All': '\x03%s\x01 : %s',
   'Cstrike_Chat_AllDead': '*DEAD* \x03%s\x01 : %s',
   'Game_connected': '%s connected.'
 };
 
-function teamNumberToAnsi(teamNum) {
-  if (teamNum === demo.TEAM_TERRORISTS)
+function teamNumberToAnsi(teamNum: TeamNumber) {
+  if (teamNum === TeamNumber.Terrorists)
     return ansiStyles.redBright.open;
-  if (teamNum === demo.TEAM_CTS)
+  if (teamNum === TeamNumber.CounterTerrorists)
     return ansiStyles.blueBright.open;
   return ansiStyles.gray.open;
 }
 
-function parseDemoFile(path) {
+function parseDemoFile(path: string) {
   fs.readFile(path, function (err, buffer) {
     assert.ifError(err);
 
@@ -54,19 +54,19 @@ function parseDemoFile(path) {
     function logTeamScores() {
       let teams = demoFile.teams;
 
-      let terrorists = teams[demo.TEAM_TERRORISTS];
-      let cts = teams[demo.TEAM_CTS];
+      let terrorists = teams[TeamNumber.Terrorists];
+      let cts = teams[TeamNumber.CounterTerrorists];
 
-      console.log('\tTerrorists: %s score %d\n\tCTs: %s score %d', terrorists.clanName, terrorists.score, cts.clanName, cts.score);
+      console.log('\t%s: %s score %d\n\t%s: %s score %d', terrorists.teamName, terrorists.clanName, terrorists.score, cts.teamName, cts.clanName, cts.score);
     }
 
-    function formatSayText(entityIndex, text) {
+    function formatSayText(entityIndex: number, text: string) {
       text = '\x01' + text;
 
       // If we have an entity index set, colour 0x03 in that entity's team colour
       if (entityIndex > 0) {
         let ent = demoFile.entities.entities[entityIndex];
-        if (ent) {
+        if (ent instanceof Player) {
           text = text.replace(/\x03/g, teamNumberToAnsi(ent.teamNumber));
         }
       }
@@ -95,11 +95,11 @@ function parseDemoFile(path) {
 
     demoFile.gameEvents.on('player_death', e => {
       let victim = demoFile.entities.getByUserId(e.userid);
-      let victimColour = teamNumberToAnsi(victim && victim.teamNumber);
+      let victimColour = teamNumberToAnsi(victim ? victim.teamNumber : TeamNumber.Spectator);
       let victimName = victim ? victim.name : 'unnamed';
 
       let attacker = demoFile.entities.getByUserId(e.attacker);
-      let attackerColour = teamNumberToAnsi(attacker && attacker.teamNumber);
+      let attackerColour = teamNumberToAnsi(attacker ? attacker.teamNumber : TeamNumber.Spectator);
       let attackerName = attacker ? attacker.name : 'unnamed';
 
       let headshotText = e.headshot ? ' HS' : '';
@@ -107,7 +107,7 @@ function parseDemoFile(path) {
       console.log(`${attackerColour}${attackerName}${ansiStyles.reset.open} [${e.weapon}${headshotText}] ${victimColour}${victimName}${ansiStyles.reset.open}`);
     });
 
-    demoFile.userMessages.on('CS_UM_TextMsg', e => {
+    demoFile.userMessages.on('TextMsg', e => {
       let params =
         e.params
           .map(param => param[0] === '#' ? standardMessages[param.substring(1)] || param : param)
@@ -117,11 +117,11 @@ function parseDemoFile(path) {
       console.log(formatSayText(0, formatted));
     });
 
-    demoFile.userMessages.on('CS_UM_SayText', e => {
+    demoFile.userMessages.on('SayText', e => {
       console.log(formatSayText(0, e.text));
     });
 
-    demoFile.userMessages.on('CS_UM_SayText2', e => {
+    demoFile.userMessages.on('SayText2', e => {
       let nonEmptyParams = e.params.filter(s => s.length);
       let msgText = standardMessages[e.msgName];
       let formatted = msgText
@@ -142,7 +142,7 @@ function parseDemoFile(path) {
 
     demoFile.entities.on('create', e => {
       // We're only interested in player entities being created.
-      if (e.entity.serverClass.name !== 'CCSPlayer') {
+      if (!(e.entity instanceof Player)) {
         return;
       }
 
@@ -150,13 +150,13 @@ function parseDemoFile(path) {
     });
 
     demoFile.entities.on('beforeremove', e => {
-      if (e.entity.serverClass.name !== 'CCSPlayer') {
+      if (!(e.entity instanceof Player)) {
         return;
       }
 
       console.log('%s left the game', e.entity.name);
     });
-    
+
     // Start parsing the buffer now that we've added our event listeners
     demoFile.parse(buffer);
   });

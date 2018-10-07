@@ -39,22 +39,6 @@ export class GameEvents extends EventEmitter {
   gameEventList: GameEvent[] = [];
   private _tickEvents: GameEventEvent<any>[] = [];
 
-  /**
-   * Fired when a game event is fired (e.g., `player_death`).
-   * Parameters are event variables.
-   * @event GameEvents#game_event_name
-   * @type {Object}
-   */
-
-  /**
-   * Fired when a game event is fired.
-   * Note that this event is fired after the specific event (e.g., `player_death`).
-   * @event GameEvents#event
-   * @type {Object}
-   * @property {string} name - Event name
-   * @property {Object} event - Event variables
-   */
-
   listen(demo: DemoFile) {
     demo.on('svc_GameEventList', this._handleGameEventList.bind(this));
 

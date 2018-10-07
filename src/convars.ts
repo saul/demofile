@@ -10,8 +10,17 @@ interface IConVarChangeEvent {
 }
 
 export declare interface ConVars {
+  /**
+   * Fired when any console variable is changed (e.g., 'mp_buytime').
+   */
   on(event: 'change', listener: (event: IConVarChangeEvent) => void): this;
+  emit(name: 'change', event: IConVarChangeEvent): boolean;
+
+  /**
+   * Fired when a specific console variable is changed (e.g., 'mp_buytime').
+   */
   on(event: string, listener: (event: IConVarChangeEvent) => void): this;
+  emit(name: string, event: IConVarChangeEvent): boolean;
 }
 
 /**
@@ -20,23 +29,6 @@ export declare interface ConVars {
 export class ConVars extends EventEmitter {
   private _vars: Map<string, string> = new Map();
   readonly vars: ReadonlyMap<string, string> = this._vars;
-
-  /**
-   * Fired when a console variable is changed (e.g., 'mp_buytime').
-   * @event ConVars#cvar_name
-   * @type {Object}
-   * @property {string} value - New value
-   * @property {string} oldValue - Old value
-   */
-
-  /**
-   * Fired when a console variable is changed (e.g., 'mp_buytime').
-   * @event ConVars#change
-   * @type {Object}
-   * @property {string} name - Console variable name
-   * @property {string} value - New value
-   * @property {string} oldValue - Old value
-   */
 
   listen(demo: DemoFile) {
     demo.on('net_SetConVar', (msg: RequiredNonNullable<ICNETMsg_SetConVar>) => {
@@ -49,7 +41,7 @@ export class ConVars extends EventEmitter {
         let oldValue = this.vars.get(cvar.name);
         this._vars.set(cvar.name, cvar.value);
 
-        let args: IConVarChangeEvent = {
+        let args = {
           name: cvar.name,
           value: cvar.value,
           oldValue

@@ -4,6 +4,7 @@ import * as net from './net';
 import { DemoFile } from './demo';
 import { ICSVCMsg_UserMessage } from './protobufs/netmessages';
 import { ICCSUsrMsg_VGUIMenu, ICCSUsrMsg_Geiger, ICCSUsrMsg_Train, ICCSUsrMsg_HudText, ICCSUsrMsg_SayText, ICCSUsrMsg_SayText2, ICCSUsrMsg_TextMsg, ICCSUsrMsg_HudMsg, ICCSUsrMsg_ResetHud, ICCSUsrMsg_GameTitle, ICCSUsrMsg_Shake, ICCSUsrMsg_Fade, ICCSUsrMsg_Rumble, ICCSUsrMsg_CloseCaption, ICCSUsrMsg_CloseCaptionDirect, ICCSUsrMsg_SendAudio, ICCSUsrMsg_RawAudio, ICCSUsrMsg_VoiceMask, ICCSUsrMsg_RequestState, ICCSUsrMsg_Damage, ICCSUsrMsg_RadioText, ICCSUsrMsg_HintText, ICCSUsrMsg_KeyHintText, ICCSUsrMsg_ProcessSpottedEntityUpdate, ICCSUsrMsg_ReloadEffect, ICCSUsrMsg_AdjustMoney, ICCSUsrMsg_StopSpectatorMode, ICCSUsrMsg_KillCam, ICCSUsrMsg_DesiredTimescale, ICCSUsrMsg_CurrentTimescale, ICCSUsrMsg_AchievementEvent, ICCSUsrMsg_MatchEndConditions, ICCSUsrMsg_DisconnectToLobby, ICCSUsrMsg_PlayerStatsUpdate, ICCSUsrMsg_DisplayInventory, ICCSUsrMsg_WarmupHasEnded, ICCSUsrMsg_ClientInfo, ICCSUsrMsg_XRankGet, ICCSUsrMsg_XRankUpd, ICCSUsrMsg_CallVoteFailed, ICCSUsrMsg_VoteStart, ICCSUsrMsg_VotePass, ICCSUsrMsg_VoteFailed, ICCSUsrMsg_VoteSetup, ICCSUsrMsg_ServerRankRevealAll, ICCSUsrMsg_SendLastKillerDamageToClient, ICCSUsrMsg_ServerRankUpdate, ICCSUsrMsg_ItemPickup, ICCSUsrMsg_ShowMenu, ICCSUsrMsg_BarTime, ICCSUsrMsg_AmmoDenied, ICCSUsrMsg_MarkAchievement, ICCSUsrMsg_MatchStatsUpdate, ICCSUsrMsg_ItemDrop, ICCSUsrMsg_GlowPropTurnOff, ICCSUsrMsg_SendPlayerItemDrops, ICCSUsrMsg_RoundBackupFilenames, ICCSUsrMsg_SendPlayerItemFound, ICCSUsrMsg_ReportHit, ICCSUsrMsg_XpUpdate, ICCSUsrMsg_QuestProgress } from './protobufs/cstrike15_usermessages';
+import { UserMessageName } from './net';
 
 interface IUserMessageEvent {
   name: string;
@@ -11,7 +12,14 @@ interface IUserMessageEvent {
 }
 
 export declare interface UserMessages {
+  /**
+   * Fired when any user message is sent.
+   * @note Fired after specific event is fired.
+   */
   on(message: 'message', listener: (event: IUserMessageEvent) => void): this;
+  emit(message: 'message', event: IUserMessageEvent): boolean;
+
+  emit(message: UserMessageName, msg: any): boolean;
   on(message: 'VGUIMenu', listener: (msg: RequiredNonNullable<ICCSUsrMsg_VGUIMenu>) => void): this;
   on(message: 'Geiger', listener: (msg: RequiredNonNullable<ICCSUsrMsg_Geiger>) => void): this;
   on(message: 'Train', listener: (msg: RequiredNonNullable<ICCSUsrMsg_Train>) => void): this;
@@ -83,27 +91,9 @@ export class UserMessages extends EventEmitter {
     demo.on('svc_UserMessage', this._handleUserMessage.bind(this));
   }
 
-  /**
-   * Fired for a specific user message being sent.
-   * Note the event has the name of the username (e.g., `SayText2`)
-   * @event UserMessages#UserMessageName
-   * @type {object}
-   */
-
-  /**
-   * Fired for a specific user message being sent.
-   * @note Fired after specific event is fired.
-   *
-   * @event UserMessages#message
-   * @type {object}
-   * @property {string} name - User message name
-   * @property {object} msg - User message
-   */
-
   _handleUserMessage(msg: RequiredNonNullable<ICSVCMsg_UserMessage>) {
     var um = net.findUserMessageByType(msg.msgType);
     if (!um) {
-      // TODO: warn of unknown user message
       return;
     }
 

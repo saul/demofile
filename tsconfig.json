@@ -4,7 +4,9 @@
         "outDir": "./dist",
         "allowJs": true,
         "target": "es2017",
-        "lib": ["es2017"],
+        "lib": [
+            "es2017"
+        ],
         "module": "commonjs",
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
@@ -12,6 +14,6 @@
         "noImplicitThis": true
     },
     "include": [
-        "./src/**/*"
+        "./src/**/*.ts"
     ]
 }

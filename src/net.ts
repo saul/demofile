@@ -40,9 +40,13 @@ export type NetMessageName =
   'svc_EncryptedData' |
   'svc_HltvReplay';
 
+interface NetMessage {
+  decode(buf: Uint8Array): any;
+}
+
 interface INetMessageDescriptor {
   name: NetMessageName;
-  'class': any;
+  'class': NetMessage;
 }
 
 export var messages: Array<INetMessageDescriptor> = [];

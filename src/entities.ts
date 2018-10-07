@@ -20,7 +20,7 @@ import { IStringTableUpdateEvent } from './stringtables';
 import { PropValue, SPROP_EXCLUDE, SPROP_INSIDEARRAY, PropType, SPROP_COLLAPSIBLE, SPROP_CHANGES_OFTEN, makeDecoder } from './props';
 import { EntityHandle } from './entityhandle';
 import { Networkable } from './entities/networkable';
-import { CCSGameRulesProxy, CCSPlayerResource } from './netprops';
+import { CCSGameRulesProxy, CCSPlayerResource, CCSTeam } from './sendtabletypes';
 
 export interface NetworkableConstructor<T = Networkable<any>> {
   new(demo: DemoFile, index: number, classId: number, serialNum: number, props: any | undefined): T;
@@ -90,6 +90,135 @@ function readFieldIndex(entityBitBuffer: BitStream, lastIndex: number, newWay: b
   }
 
   return lastIndex + 1 + ret;
+}
+
+export interface IBaselineUpdateEvent {
+  classId: number;
+  serverClass: IServerClass;
+  baseline: UnknownEntityProps;
+}
+
+export interface IEntityCreationEvent {
+  entity: Networkable;
+}
+
+export interface IEntityBeforeRemoveEvent {
+  /**
+   * Entity to be deleted
+   */
+  entity: Networkable;
+
+  /**
+   * Entity is being replaced immediately, 'remove' will fire now instead of at tickend.
+   */
+  immediate: boolean;
+}
+
+export interface IEntityRemoveEvent {
+  index: number;
+}
+
+export interface IEntityChangeEvent {
+  /**
+   * Updated entity
+   */
+  entity: Networkable;
+
+  /**
+   * Table containing updated property
+   */
+  tableName: string;
+
+  /**
+   * Network variable name
+   */
+  varName: string;
+
+  /**
+   * Old variable value
+   */
+  oldValue: PropValue | undefined;
+
+  /**
+   * New value of the property
+   */
+  newValue: PropValue;
+}
+
+export interface ITempEntEvent {
+  /**
+   * Delay in seconds in which the tempent should be fired.
+   */
+  delay: number;
+
+  /**
+   * Server class ID
+   */
+  classId: number;
+
+  /**
+   * Server class of the temporary entity
+   */
+  serverClass: IServerClass;
+
+  /**
+   * Props of the temporary entity
+   */
+  props: UnknownEntityProps;
+}
+
+export declare interface Entities {
+  /**
+   * Fired after data tables have been parsed.
+   * {@link Entities#serverClasses} can now be used.
+   */
+  on(event: 'datatablesready', listener: () => void): this;
+  emit(name: 'datatablesready'): boolean;
+
+  /**
+   * Fired when an instance baseline is updated.
+   */
+  on(event: 'baselineupdate', listener: (event: IBaselineUpdateEvent) => void): this;
+  emit(name: 'baselineupdate', event: IBaselineUpdateEvent): boolean;
+
+  /**
+   * Fired when an entity is created.
+   * Note no entity properties are available yet.
+   * Use {@link Entities#postcreate} if you need access to properties.
+   */
+  on(event: 'create', listener: (event: IEntityCreationEvent) => void): this;
+  emit(name: 'create', event: IEntityCreationEvent): boolean;
+
+  /**
+   * Fired after an entity has been created.
+   * All properties are now available for inspection.
+   */
+  on(event: 'postcreate', listener: (event: IEntityCreationEvent) => void): this;
+  emit(name: 'postcreate', event: IEntityCreationEvent): boolean;
+
+  /**
+   * Fired when an entity is marked for deletion.
+   */
+  on(event: 'beforeremove', listener: (event: IEntityBeforeRemoveEvent) => void): this;
+  emit(name: 'beforeremove', event: IEntityBeforeRemoveEvent): boolean;
+
+  /**
+   * Fired during DemoFile#tickend when an entity is removed from the game.
+   */
+  on(event: 'remove', listener: (event: IEntityRemoveEvent) => void): this;
+  emit(name: 'remove', event: IEntityRemoveEvent): boolean;
+
+  /**
+   * Fired when an entity property is changed.
+   */
+  on(event: 'change', listener: (event: IEntityChangeEvent) => void): this;
+  emit(name: 'change', event: IEntityChangeEvent): boolean;
+
+  /**
+   * Fired when an a temp ent is created.
+   */
+  on(event: 'tempent', listener: (event: ITempEntEvent) => void): this;
+  emit(name: 'tempent', event: ITempEntEvent): boolean;
 }
 
 /**
@@ -224,7 +353,7 @@ export class Entities extends EventEmitter {
   }
 
   get gameRules(): GameRules {
-    return this.getSingleton<CCSGameRulesProxy, GameRules>('CCSGameRules');
+    return this.getSingleton<CCSGameRulesProxy, GameRules>('CCSGameRulesProxy');
   }
 
   get teams(): Team[] {
@@ -335,29 +464,14 @@ export class Entities extends EventEmitter {
     return this.dataTables.find(table => table.netTableName == name);
   }
 
-  /**
-   * Fired after data tables have been parsed.
-   * {@link Entities#serverClasses} can now be used.
-   * @event Entities#datatablesready
-   */
-
-  /**
-   * Fired when an instance baseline is updated.
-   * @event Entities#baselineupdate
-   * @type {Object}
-   * @property {int} classId - Server class ID
-   * @property {Object} serverClass - Server class
-   * @property {Object} baseline - Baseline properties
-   */
-
   _handleDataTables(chunk: ByteBuffer) {
     while (true) { // eslint-disable-line no-constant-condition
       var descriptor = net.findByType(chunk.readVarint32());
-      assert.equal(descriptor.name, 'svc_DataTable', 'expected SendTable message');
+      assert(descriptor.name == 'svc_SendTable', 'expected SendTable message');
 
       var length = chunk.readVarint32();
 
-      var msg: RequiredNonNullable<ICSVCMsg_SendTable> = descriptor.class.decode(chunk.readBytes(length));
+      var msg: RequiredNonNullable<ICSVCMsg_SendTable> = descriptor.class.decode(new Uint8Array(chunk.readBytes(length).toBuffer()));
       if (msg.isEnd) {
         break;
       }
@@ -391,7 +505,7 @@ export class Entities extends EventEmitter {
       var pendingBaseline = this.pendingBaselines[classId];
       if (pendingBaseline) {
         this.instanceBaselines[classId] = this._parseInstanceBaseline(pendingBaseline, classId);
-        this.emit('baselineupdate', { classId, serverClass, baseline: this.instanceBaselines[classId] });
+        this.emit('baselineupdate', { classId, serverClass, baseline: this.instanceBaselines[classId]! });
         delete this.pendingBaselines[classId];
       }
     }
@@ -400,23 +514,6 @@ export class Entities extends EventEmitter {
 
     this.emit('datatablesready');
   }
-
-  /**
-   * Fired when an entity is created.
-   * Note no entity properties are available yet.
-   * Use {@link Entities#postcreate} if you need access to properties.
-   * @event Entities#create
-   * @type {Object}
-   * @property {Entity} entity - Created entity
-   */
-
-  /**
-   * Fired after an entity has been created.
-   * All properties are now available for inspection.
-   * @event Entities#postcreate
-   * @type {Object}
-   * @property {Entity} entity - Created entity
-   */
 
   _addEntity(index: number, classId: number, serialNum: number) {
     if (this.entities[index]) {
@@ -437,28 +534,13 @@ export class Entities extends EventEmitter {
       }
     }
 
-    var entity = new klass(this._demo, index, classId, serialNum, baseline);
+    var entity = new klass(this._demo, index, classId, serialNum, _.cloneDeep(baseline));
     this.entities[index] = entity;
 
     this.emit('create', { entity });
 
     return entity;
   }
-
-  /**
-   * Fired when an entity is marked for deletion.
-   * @event Entities#beforeremove
-   * @type {Object}
-   * @property {Entity} entity - Entity to be deleted
-   * @property {bool} immediate - Entity is being replaced immediately, 'remove' will fire now instead of at tickend.
-   */
-
-  /**
-   * Fired during DemoFile#tickend when an entity is removed from the game.
-   * @event Entities#remove
-   * @type {Object}
-   * @property {int} index - Index of removed entity
-   */
 
   _removeEntity(index: number, immediate: boolean) {
     var entity = assertExists(this.entities[index], 'cannot remove non-existent entity');
@@ -474,17 +556,6 @@ export class Entities extends EventEmitter {
       this.markedForDeletion.push(index);
     }
   }
-
-  /**
-   * Fired when an entity property is changed.
-   * @event Entities#change
-   * @type {Object}
-   * @property {Entity} entity - Updated entity
-   * @property {string} tableName - Table containing updated property
-   * @property {string} varName - Network variable name
-   * @property {*|undefined} oldValue - Old variable value
-   * @property {*} newValue - New value of the property
-   */
 
   _parseEntityUpdate(entityBitBuffer: BitStream, classId: number): ReadonlyArray<IPropUpdate> {
     var serverClass = this.serverClasses[classId];
@@ -534,7 +605,7 @@ export class Entities extends EventEmitter {
   }
 
   _handleTempEntities(msg: RequiredNonNullable<ICSVCMsg_TempEntities>) {
-    var entityBitBuffer = new BitStream(msg.entityData.buffer as ArrayBuffer);
+    var entityBitBuffer = BitStream.from(msg.entityData as Uint8Array);
     var lastClassId = -1;
     var lastProps: UnknownEntityProps | null = null;
 
@@ -567,7 +638,7 @@ export class Entities extends EventEmitter {
   }
 
   _handlePacketEntities(msg: RequiredNonNullable<ICSVCMsg_PacketEntities>) {
-    var entityBitBuffer = new BitStream(msg.entityData.buffer as ArrayBuffer);
+    var entityBitBuffer = BitStream.from(msg.entityData as Uint8Array);
 
     var entityIndex = -1;
 
@@ -625,7 +696,7 @@ export class Entities extends EventEmitter {
     }
 
     var classId = parseInt(event.entry, 10);
-    var baselineBuf = new BitStream(event.userData);
+    var baselineBuf = BitStream.from(event.userData);
 
     if (!this.serverClasses[classId]) {
       this.pendingBaselines[classId] = baselineBuf;

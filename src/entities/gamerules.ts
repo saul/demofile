@@ -1,4 +1,4 @@
-import { CCSGameRulesProxy } from '../netprops';
+import { CCSGameRulesProxy } from '../sendtabletypes';
 import { Networkable } from './networkable';
 
 /**

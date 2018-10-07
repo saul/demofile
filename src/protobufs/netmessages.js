@@ -21,7 +21,7 @@ const $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
  * @property {number} net_SignonState=7 net_SignonState value
  * @property {number} net_PlayerAvatarData=100 net_PlayerAvatarData value
  */
-$root.NET_Messages = (function () {
+export const NET_Messages = $root.NET_Messages = (function () {
     const valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "net_NOP"] = 0;
     values[valuesById[1] = "net_Disconnect"] = 1;
@@ -132,7 +132,7 @@ $root.ESplitScreenMessageType = (function () {
  * @property {number} svc_EncryptedData=35 svc_EncryptedData value
  * @property {number} svc_HltvReplay=36 svc_HltvReplay value
  */
-$root.SVC_Messages = (function () {
+export const SVC_Messages = $root.SVC_Messages = (function () {
     const valuesById = {}, values = Object.create(valuesById);
     values[valuesById[8] = "svc_ServerInfo"] = 8;
     values[valuesById[9] = "svc_SendTable"] = 9;

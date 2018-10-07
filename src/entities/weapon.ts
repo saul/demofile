@@ -1,6 +1,6 @@
 import { BaseEntity } from './baseentity';
 import { Player } from './player';
-import { CWeaponCSBase } from '../netprops';
+import { CWeaponCSBase } from '../sendtabletypes';
 
 interface IItemDefinition {
   itemName: string;

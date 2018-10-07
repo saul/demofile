@@ -74,7 +74,7 @@ const $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
  * @property {number} CS_UM_XpUpdate=65 CS_UM_XpUpdate value
  * @property {number} CS_UM_QuestProgress=66 CS_UM_QuestProgress value
  */
-$root.ECstrike15UserMessages = (function() {
+export const ECstrike15UserMessages = $root.ECstrike15UserMessages = (function() {
     const valuesById = {}, values = Object.create(valuesById);
     values[valuesById[1] = "CS_UM_VGUIMenu"] = 1;
     values[valuesById[2] = "CS_UM_Geiger"] = 2;

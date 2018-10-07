@@ -60,6 +60,9 @@ declare module 'bit-buffer' {
      */
     index: number;
 
+    // Defined by ext/bitbuffer.ts
+    static from: (array: Uint8Array) => BitStream;
+
     constructor(view: BitView | ArrayBuffer | Buffer, byteOffset?: number, byteLength?: number);
     readBits(bits: number, signed: boolean): number;
     writeBits(value: number, bits: number): void;

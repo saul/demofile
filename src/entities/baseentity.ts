@@ -1,5 +1,5 @@
 import { Team } from "./team";
-import { CBaseEntity, Vector } from "../netprops";
+import { CBaseEntity, Vector } from "../sendtabletypes";
 import { Networkable } from "./networkable";
 
 /**

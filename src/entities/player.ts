@@ -2,7 +2,7 @@ import { BaseEntity } from './baseentity';
 import { DemoFile } from '../demo';
 import { IPlayerInfo } from '../stringtables';
 import { Weapon } from './weapon';
-import { CCSPlayer, Vector, CCSPlayerResource } from '../netprops';
+import { CCSPlayer, Vector, CCSPlayerResource } from '../sendtabletypes';
 
 export const enum LifeState {
   Alive = 0,

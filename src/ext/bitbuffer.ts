@@ -66,12 +66,16 @@ BitView.prototype.getBits = function (offset, bits, signed) {
   return originalGetBits.call(this, offset, bits, signed);
 };
 
+BitStream.from = function (array: Uint8Array) {
+  return new BitStream(array.buffer as ArrayBuffer, array.byteOffset, array.byteLength);
+}
+
 BitStream.prototype.readString = function (bytes: number) {
-  return _.map(new Array(bytes), () => String.fromCharCode(this.readUInt8())).join('');
+  return new Array(bytes).fill(0).map(() => String.fromCharCode(this.readUInt8())).join('');
 };
 
 BitStream.prototype.readBytes = function (bytes: number) {
-  return new Buffer(_.map(_.range(bytes), () => this.readUInt8()));
+  return Buffer.from(new Array(bytes).fill(0).map(() => this.readUInt8()));
 };
 
 BitStream.prototype.readOneBit = function () {

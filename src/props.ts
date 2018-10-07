@@ -4,7 +4,7 @@ import Long = require('long');
 import { BitStream, CoordType } from './ext/bitbuffer';
 import { ISendProp } from './entities';
 import assertExists from 'ts-assert-exists';
-import { Vector } from './netprops';
+import { Vector } from './sendtabletypes';
 import { NUM_NETWORKED_EHANDLE_BITS } from './consts';
 import { EntityHandle } from './entityhandle';
 

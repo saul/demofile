@@ -1,14 +1,14 @@
 import { Player } from './player';
-import { CTeam } from '../netprops';
+import { CTeam } from '../sendtabletypes';
 import { Networkable } from './networkable';
 
 export type TeamName = 'SPECTATOR' | 'TERRORIST' | 'COUNTERTERRORIST';
 
 export const enum TeamNumber {
   Unassigned = 0,
-  Spectator,
-  Terrorists,
-  CounterTerrorists
+  Spectator = 1,
+  Terrorists = 2,
+  CounterTerrorists = 3
 }
 
 /**
