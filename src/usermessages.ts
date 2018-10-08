@@ -1,72 +1,72 @@
 import * as assert from "assert";
 import { EventEmitter } from "events";
-import * as net from "./net";
 import { DemoFile } from "./demo";
-import { ICSVCMsg_UserMessage } from "./protobufs/netmessages";
+import * as net from "./net";
+import { UserMessageName } from "./net";
 import {
-  ICCSUsrMsg_VGUIMenu,
-  ICCSUsrMsg_Geiger,
-  ICCSUsrMsg_Train,
-  ICCSUsrMsg_HudText,
-  ICCSUsrMsg_SayText,
-  ICCSUsrMsg_SayText2,
-  ICCSUsrMsg_TextMsg,
-  ICCSUsrMsg_HudMsg,
-  ICCSUsrMsg_ResetHud,
-  ICCSUsrMsg_GameTitle,
-  ICCSUsrMsg_Shake,
-  ICCSUsrMsg_Fade,
-  ICCSUsrMsg_Rumble,
+  ICCSUsrMsg_AchievementEvent,
+  ICCSUsrMsg_AdjustMoney,
+  ICCSUsrMsg_AmmoDenied,
+  ICCSUsrMsg_BarTime,
+  ICCSUsrMsg_CallVoteFailed,
+  ICCSUsrMsg_ClientInfo,
   ICCSUsrMsg_CloseCaption,
   ICCSUsrMsg_CloseCaptionDirect,
-  ICCSUsrMsg_SendAudio,
-  ICCSUsrMsg_RawAudio,
-  ICCSUsrMsg_VoiceMask,
-  ICCSUsrMsg_RequestState,
-  ICCSUsrMsg_Damage,
-  ICCSUsrMsg_RadioText,
-  ICCSUsrMsg_HintText,
-  ICCSUsrMsg_KeyHintText,
-  ICCSUsrMsg_ProcessSpottedEntityUpdate,
-  ICCSUsrMsg_ReloadEffect,
-  ICCSUsrMsg_AdjustMoney,
-  ICCSUsrMsg_StopSpectatorMode,
-  ICCSUsrMsg_KillCam,
-  ICCSUsrMsg_DesiredTimescale,
   ICCSUsrMsg_CurrentTimescale,
-  ICCSUsrMsg_AchievementEvent,
-  ICCSUsrMsg_MatchEndConditions,
+  ICCSUsrMsg_Damage,
+  ICCSUsrMsg_DesiredTimescale,
   ICCSUsrMsg_DisconnectToLobby,
-  ICCSUsrMsg_PlayerStatsUpdate,
   ICCSUsrMsg_DisplayInventory,
-  ICCSUsrMsg_WarmupHasEnded,
-  ICCSUsrMsg_ClientInfo,
-  ICCSUsrMsg_XRankGet,
-  ICCSUsrMsg_XRankUpd,
-  ICCSUsrMsg_CallVoteFailed,
-  ICCSUsrMsg_VoteStart,
-  ICCSUsrMsg_VotePass,
-  ICCSUsrMsg_VoteFailed,
-  ICCSUsrMsg_VoteSetup,
-  ICCSUsrMsg_ServerRankRevealAll,
-  ICCSUsrMsg_SendLastKillerDamageToClient,
-  ICCSUsrMsg_ServerRankUpdate,
-  ICCSUsrMsg_ItemPickup,
-  ICCSUsrMsg_ShowMenu,
-  ICCSUsrMsg_BarTime,
-  ICCSUsrMsg_AmmoDenied,
-  ICCSUsrMsg_MarkAchievement,
-  ICCSUsrMsg_MatchStatsUpdate,
-  ICCSUsrMsg_ItemDrop,
+  ICCSUsrMsg_Fade,
+  ICCSUsrMsg_GameTitle,
+  ICCSUsrMsg_Geiger,
   ICCSUsrMsg_GlowPropTurnOff,
-  ICCSUsrMsg_SendPlayerItemDrops,
-  ICCSUsrMsg_RoundBackupFilenames,
-  ICCSUsrMsg_SendPlayerItemFound,
+  ICCSUsrMsg_HintText,
+  ICCSUsrMsg_HudMsg,
+  ICCSUsrMsg_HudText,
+  ICCSUsrMsg_ItemDrop,
+  ICCSUsrMsg_ItemPickup,
+  ICCSUsrMsg_KeyHintText,
+  ICCSUsrMsg_KillCam,
+  ICCSUsrMsg_MarkAchievement,
+  ICCSUsrMsg_MatchEndConditions,
+  ICCSUsrMsg_MatchStatsUpdate,
+  ICCSUsrMsg_PlayerStatsUpdate,
+  ICCSUsrMsg_ProcessSpottedEntityUpdate,
+  ICCSUsrMsg_QuestProgress,
+  ICCSUsrMsg_RadioText,
+  ICCSUsrMsg_RawAudio,
+  ICCSUsrMsg_ReloadEffect,
   ICCSUsrMsg_ReportHit,
+  ICCSUsrMsg_RequestState,
+  ICCSUsrMsg_ResetHud,
+  ICCSUsrMsg_RoundBackupFilenames,
+  ICCSUsrMsg_Rumble,
+  ICCSUsrMsg_SayText,
+  ICCSUsrMsg_SayText2,
+  ICCSUsrMsg_SendAudio,
+  ICCSUsrMsg_SendLastKillerDamageToClient,
+  ICCSUsrMsg_SendPlayerItemDrops,
+  ICCSUsrMsg_SendPlayerItemFound,
+  ICCSUsrMsg_ServerRankRevealAll,
+  ICCSUsrMsg_ServerRankUpdate,
+  ICCSUsrMsg_Shake,
+  ICCSUsrMsg_ShowMenu,
+  ICCSUsrMsg_StopSpectatorMode,
+  ICCSUsrMsg_TextMsg,
+  ICCSUsrMsg_Train,
+  ICCSUsrMsg_VGUIMenu,
+  ICCSUsrMsg_VoiceMask,
+  ICCSUsrMsg_VoteFailed,
+  ICCSUsrMsg_VotePass,
+  ICCSUsrMsg_VoteSetup,
+  ICCSUsrMsg_VoteStart,
+  ICCSUsrMsg_WarmupHasEnded,
   ICCSUsrMsg_XpUpdate,
-  ICCSUsrMsg_QuestProgress
+  ICCSUsrMsg_XRankGet,
+  ICCSUsrMsg_XRankUpd
 } from "./protobufs/cstrike15_usermessages";
-import { UserMessageName } from "./net";
+import { ICSVCMsg_UserMessage } from "./protobufs/netmessages";
 
 interface IUserMessageEvent {
   name: string;
@@ -338,18 +338,18 @@ export declare interface UserMessages {
  * Handles user messages for a demo file.
  */
 export class UserMessages extends EventEmitter {
-  listen(demo: DemoFile) {
+  public listen(demo: DemoFile) {
     demo.on("svc_UserMessage", this._handleUserMessage.bind(this));
   }
 
-  _handleUserMessage(msg: RequiredNonNullable<ICSVCMsg_UserMessage>) {
-    var um = net.findUserMessageByType(msg.msgType);
+  private _handleUserMessage(msg: RequiredNonNullable<ICSVCMsg_UserMessage>) {
+    const um = net.findUserMessageByType(msg.msgType);
     if (!um) {
       return;
     }
 
     if (this.listenerCount(um.name) || this.listenerCount("message")) {
-      var msgInst = um.class.decode(msg.msgData);
+      const msgInst = um.class.decode(msg.msgData);
       assert(msgInst, "unable to decode user message");
 
       this.emit(um.name, msgInst);

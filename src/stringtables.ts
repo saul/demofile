@@ -1,17 +1,17 @@
 import * as assert from "assert";
+import * as ByteBuffer from "bytebuffer";
 import { EventEmitter } from "events";
 import * as _ from "lodash";
 import * as Long from "long";
+import assertExists from "ts-assert-exists";
 import * as consts from "./consts";
+import { MAX_PLAYER_NAME_LENGTH, SIGNED_GUID_LEN } from "./consts";
+import { DemoFile } from "./demo";
 import { BitStream } from "./ext/bitbuffer";
 import {
-  ICSVCMsg_UpdateStringTable,
-  ICSVCMsg_CreateStringTable
+  ICSVCMsg_CreateStringTable,
+  ICSVCMsg_UpdateStringTable
 } from "./protobufs/cstrike15_usermessages";
-import { DemoFile } from "./demo";
-import * as ByteBuffer from "bytebuffer";
-import assertExists from "ts-assert-exists";
-import { MAX_PLAYER_NAME_LENGTH, SIGNED_GUID_LEN } from "./consts";
 
 /**
  * Player info structure.
@@ -35,29 +35,29 @@ export interface IPlayerInfo {
   friendsName: string;
   fakePlayer: boolean;
   isHltv: boolean;
-  //customFiles: number[];
+  // customFiles: number[];
 }
 
 function parseUserInfoData(buf: Buffer): IPlayerInfo {
-  var bytebuf = ByteBuffer.wrap(buf, ByteBuffer.BIG_ENDIAN);
+  const bytebuf = ByteBuffer.wrap(buf, ByteBuffer.BIG_ENDIAN);
   bytebuf.skip(8);
 
-  var xuid = new Long(bytebuf.readUint32(), bytebuf.readUint32());
-  var name = bytebuf
+  const xuid = new Long(bytebuf.readUint32(), bytebuf.readUint32());
+  const name = bytebuf
     .readString(MAX_PLAYER_NAME_LENGTH, ByteBuffer.METRICS_BYTES)
     .split("\0", 2)[0];
-  var userId = bytebuf.readUint32();
-  var guid = bytebuf
+  const userId = bytebuf.readUint32();
+  const guid = bytebuf
     .readString(SIGNED_GUID_LEN + 1, ByteBuffer.METRICS_BYTES)
     .split("\0", 2)[0];
   bytebuf.skip(3);
-  var friendsId = bytebuf.readUint32();
-  var friendsName = bytebuf
+  const friendsId = bytebuf.readUint32();
+  const friendsName = bytebuf
     .readString(MAX_PLAYER_NAME_LENGTH, ByteBuffer.METRICS_BYTES)
     .split("\0", 2)[0];
-  var fakePlayer = bytebuf.readByte() !== 0;
+  const fakePlayer = bytebuf.readByte() !== 0;
   bytebuf.skip(3);
-  var isHltv = bytebuf.readByte() !== 0;
+  const isHltv = bytebuf.readByte() !== 0;
   bytebuf.skip(3);
 
   return {
@@ -86,7 +86,7 @@ export interface IStringTableEntry<T> {
 
 export interface IStringTable<T> {
   name: string;
-  entries: IStringTableEntry<T>[];
+  entries: Array<IStringTableEntry<T>>;
   userDataSizeBits: number;
   userDataFixedSize: boolean;
   maxEntries: number;
@@ -145,8 +145,8 @@ export declare interface StringTables {
  * Handles string tables for a demo file.
  */
 export class StringTables extends EventEmitter {
-  tables: IStringTable<any>[] = [];
-  userDataCallbacks: { [table: string]: (buf: Buffer) => any };
+  public tables: Array<IStringTable<any>> = [];
+  public userDataCallbacks: { [table: string]: (buf: Buffer) => any };
 
   constructor() {
     super();
@@ -161,7 +161,7 @@ export class StringTables extends EventEmitter {
     };
   }
 
-  listen(messageEvents: DemoFile) {
+  public listen(messageEvents: DemoFile) {
     messageEvents.on(
       "svc_UpdateStringTable",
       this._handleUpdateStringTable.bind(this)
@@ -172,33 +172,35 @@ export class StringTables extends EventEmitter {
     );
   }
 
-  findTableByName(name: WellKnownStringTable): IStringTable<any> | undefined {
+  public findTableByName(
+    name: WellKnownStringTable
+  ): IStringTable<any> | undefined {
     return this.tables.find(table => table.name === name);
   }
 
-  _handleStringTables(bitbuf: BitStream) {
-    let numTables = bitbuf.readUInt8();
+  public handleStringTables(bitbuf: BitStream) {
+    const numTables = bitbuf.readUInt8();
 
-    for (var i = 0; i < numTables; ++i) {
-      let tableName = bitbuf.readCString();
+    for (let i = 0; i < numTables; ++i) {
+      const tableName = bitbuf.readCString();
       this._handleStringTable(tableName as WellKnownStringTable, bitbuf);
     }
   }
 
-  _handleStringTable(name: WellKnownStringTable, bitbuf: BitStream) {
-    let userDataCallback = this.userDataCallbacks[name];
+  private _handleStringTable(name: WellKnownStringTable, bitbuf: BitStream) {
+    const userDataCallback = this.userDataCallbacks[name];
 
-    let table = assertExists(this.findTableByName(name));
-    let numEntries = bitbuf.readUInt16();
+    const table = assertExists(this.findTableByName(name));
+    const numEntries = bitbuf.readUInt16();
 
     for (let entryIndex = 0; entryIndex < numEntries; ++entryIndex) {
-      let entry = bitbuf.readCString();
+      const entry = bitbuf.readCString();
       let userData = null;
 
       // has user data?
       if (bitbuf.readOneBit()) {
-        let userDataSize = bitbuf.readUInt16();
-        let userDataBuf = bitbuf.readBytes(userDataSize);
+        const userDataSize = bitbuf.readUInt16();
+        const userDataBuf = bitbuf.readBytes(userDataSize);
 
         userData =
           userDataCallback === undefined
@@ -218,15 +220,15 @@ export class StringTables extends EventEmitter {
 
     // parse client-side entries
     if (bitbuf.readOneBit()) {
-      let numStrings = bitbuf.readUInt16();
+      const numStrings = bitbuf.readUInt16();
 
       for (let i = 0; i < numStrings; ++i) {
-        let entry = bitbuf.readCString(); // eslint-disable-line no-unused-vars
+        const entry = bitbuf.readCString(); // eslint-disable-line no-unused-vars
         let userData = null; // eslint-disable-line no-unused-vars
 
         if (bitbuf.readOneBit()) {
-          let userDataSize = bitbuf.readUInt16();
-          let userDataBuf = bitbuf.readBytes(userDataSize);
+          const userDataSize = bitbuf.readUInt16();
+          const userDataBuf = bitbuf.readBytes(userDataSize);
 
           userData =
             userDataCallback === undefined
@@ -242,7 +244,7 @@ export class StringTables extends EventEmitter {
     this.emit("postcreate", table);
   }
 
-  _parseStringTableUpdate(
+  private _parseStringTableUpdate(
     bitbuf: BitStream,
     table: IStringTable<any>,
     entries: number
@@ -250,18 +252,18 @@ export class StringTables extends EventEmitter {
     // overflow silently. this is how the official parser handles overflows...
     bitbuf.view.silentOverflow = true;
 
-    var history: (string | null)[] = [];
+    const history: Array<string | null> = [];
 
-    var entryBits = Math.ceil(Math.log2(table.maxEntries));
+    const entryBits = Math.ceil(Math.log2(table.maxEntries));
 
-    var userDataCallback = this.userDataCallbacks[table.name];
+    const userDataCallback = this.userDataCallbacks[table.name];
 
     assert(!bitbuf.readOneBit(), "dictionary encoding unsupported");
 
     _.reduce(
       _.range(entries),
       lastEntry => {
-        var entryIndex = lastEntry + 1;
+        let entryIndex = lastEntry + 1;
 
         if (!bitbuf.readOneBit()) {
           entryIndex = bitbuf.readUBits(entryBits);
@@ -272,22 +274,25 @@ export class StringTables extends EventEmitter {
           "bogus string index"
         );
 
-        let existingEntry = table.entries[entryIndex];
-        var entry = null;
+        const existingEntry = table.entries[entryIndex];
+        let entry = null;
 
         // has the entry changed?
         if (bitbuf.readOneBit()) {
           // substring check
           if (bitbuf.readOneBit()) {
-            var index = bitbuf.readUBits(5);
-            var bytesToCopy = bitbuf.readUBits(consts.SUBSTRING_BITS);
+            const index = bitbuf.readUBits(5);
+            const bytesToCopy = bitbuf.readUBits(consts.SUBSTRING_BITS);
 
-            var last = history[index];
-            if (last == null)
-              throw "string table entry is delta from non existent entry";
+            const last = history[index];
+            if (last == null) {
+              throw new Error(
+                "string table entry is delta from non existent entry"
+              );
+            }
 
-            var subStr = last.slice(0, bytesToCopy);
-            var suffix = bitbuf.readCString();
+            const subStr = last.slice(0, bytesToCopy);
+            const suffix = bitbuf.readCString();
 
             entry = subStr + suffix;
           } else {
@@ -299,8 +304,8 @@ export class StringTables extends EventEmitter {
         }
 
         // read in the user data
-        var userDataArray = null;
-        var userData = null;
+        let userDataArray = null;
+        let userData = null;
 
         if (bitbuf.readOneBit()) {
           // don't read the length, it's fixed length and the length was networked down already
@@ -308,7 +313,7 @@ export class StringTables extends EventEmitter {
             userDataArray = [bitbuf.readUBits(table.userDataSizeBits)];
             userData = Buffer.from(userDataArray);
           } else {
-            var bytes = bitbuf.readUBits(consts.MAX_USERDATA_BITS);
+            const bytes = bitbuf.readUBits(consts.MAX_USERDATA_BITS);
             userData = userDataArray = bitbuf.readBytes(bytes);
           }
 
@@ -341,10 +346,10 @@ export class StringTables extends EventEmitter {
     );
   }
 
-  _handleCreateStringTable(
+  private _handleCreateStringTable(
     msg: RequiredNonNullable<ICSVCMsg_CreateStringTable>
   ) {
-    var bitbuf = BitStream.from(msg.stringData as Uint8Array);
+    const bitbuf = BitStream.from(msg.stringData as Uint8Array);
 
     // table shouldn't already exist
     assert(
@@ -359,7 +364,7 @@ export class StringTables extends EventEmitter {
     assert(msg.userDataSizeBits <= 32, "userdata value too large");
 
     // create an empty table
-    var table: IStringTable<any> = {
+    const table: IStringTable<any> = {
       name: msg.name,
       entries: [],
       userDataSizeBits: msg.userDataSizeBits,
@@ -374,12 +379,12 @@ export class StringTables extends EventEmitter {
     this.tables.push(table);
   }
 
-  _handleUpdateStringTable(
+  private _handleUpdateStringTable(
     msg: RequiredNonNullable<ICSVCMsg_UpdateStringTable>
   ) {
-    var bitbuf = BitStream.from(msg.stringData as Uint8Array);
+    const bitbuf = BitStream.from(msg.stringData as Uint8Array);
 
-    var table = this.tables[msg.tableId];
+    const table = this.tables[msg.tableId];
     assert(table !== undefined, "bad table index");
 
     this._parseStringTableUpdate(bitbuf, table, msg.numChangedEntries);

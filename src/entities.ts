@@ -1,43 +1,43 @@
-import _ = require("lodash");
 import assert = require("assert");
 import EventEmitter = require("events");
+import _ = require("lodash");
 
-import { BitStream } from "./ext/bitbuffer";
 import assertExists from "ts-assert-exists";
+import { BitStream } from "./ext/bitbuffer";
 
-import net = require("./net");
 import consts = require("./consts");
 import functional = require("./functional");
+import net = require("./net");
 
+import { DemoFile } from "./demo";
 import { BaseEntity } from "./entities/baseentity";
 import { GameRules } from "./entities/gamerules";
+import { Networkable } from "./entities/networkable";
 import { Player } from "./entities/player";
 import { Team } from "./entities/team";
 import { Weapon } from "./entities/weapon";
-import { DemoFile } from "./demo";
-import {
-  ICSVCMsg_SendTable,
-  ICSVCMsg_TempEntities,
-  ICSVCMsg_PacketEntities,
-  CSVCMsg_SendTable
-} from "./protobufs/netmessages";
-import { IStringTableUpdateEvent } from "./stringtables";
-import {
-  PropValue,
-  SPROP_EXCLUDE,
-  SPROP_INSIDEARRAY,
-  PropType,
-  SPROP_COLLAPSIBLE,
-  SPROP_CHANGES_OFTEN,
-  makeDecoder
-} from "./props";
 import { EntityHandle } from "./entityhandle";
-import { Networkable } from "./entities/networkable";
+import {
+  makeDecoder,
+  PropType,
+  PropValue,
+  SPROP_CHANGES_OFTEN,
+  SPROP_COLLAPSIBLE,
+  SPROP_EXCLUDE,
+  SPROP_INSIDEARRAY
+} from "./props";
+import {
+  CSVCMsg_SendTable,
+  ICSVCMsg_PacketEntities,
+  ICSVCMsg_SendTable,
+  ICSVCMsg_TempEntities
+} from "./protobufs/netmessages";
 import {
   CCSGameRulesProxy,
   CCSPlayerResource,
   CCSTeam
 } from "./sendtabletypes";
+import { IStringTableUpdateEvent } from "./stringtables";
 
 export interface NetworkableConstructor<T = Networkable<any>> {
   new (
@@ -51,11 +51,11 @@ export interface NetworkableConstructor<T = Networkable<any>> {
 
 export type IDataTable = RequiredNonNullable<ICSVCMsg_SendTable>;
 
-export type UnknownEntityProps = {
+export interface UnknownEntityProps {
   [tableName: string]:
     | { [propName: string]: PropValue | undefined }
     | undefined;
-};
+}
 
 export type ISendProp = RequiredNonNullable<CSVCMsg_SendTable.Isendprop_t>;
 
@@ -99,7 +99,7 @@ function readFieldIndex(
     return lastIndex + 1;
   }
 
-  var ret = 0;
+  let ret = 0;
 
   if (newWay && entityBitBuffer.readOneBit()) {
     ret = entityBitBuffer.readUBits(3);
@@ -272,138 +272,6 @@ export declare interface Entities {
  * Represents entities and networked properties within a demo.
  */
 export class Entities extends EventEmitter {
-  _demo: DemoFile = null!;
-  _singletonEnts: { [table: string]: Networkable | undefined } = {};
-  _currentServerTick: number = -1;
-
-  dataTables: IDataTable[] = [];
-  serverClasses: IServerClass[] = [];
-
-  /**
-   * Array of all entities in game.
-   */
-  entities: (Networkable | null)[] = new Array(1 << consts.MAX_EDICT_BITS).fill(
-    null
-  );
-
-  markedForDeletion: number[] = [];
-
-  instanceBaselines: { [classId: number]: UnknownEntityProps | undefined } = {};
-  pendingBaselines: { [classId: number]: BitStream | undefined } = {};
-
-  serverClassBits: number = 0;
-
-  tableClassMap: { [tableName: string]: NetworkableConstructor } = {
-    DT_CSPlayer: Player,
-    DT_Team: Team,
-    DT_CSGameRules: GameRules,
-    DT_WeaponCSBase: Weapon,
-    DT_BaseEntity: BaseEntity
-  };
-
-  listen(demo: DemoFile) {
-    this._demo = demo;
-    demo.on("svc_PacketEntities", e => this._handlePacketEntities(e));
-    demo.on("svc_TempEntities", e => this._handleTempEntities(e));
-    demo.on("net_Tick", e => {
-      this._currentServerTick = e.tick;
-    });
-    demo.stringTables.on("update", e => this._handleStringTableUpdate(e));
-
-    demo.on("tickend", () => {
-      if (this.markedForDeletion.length > 0) {
-        for (var index of this.markedForDeletion) {
-          this.entities[index] = null;
-          this.emit("remove", { index });
-        }
-
-        this.markedForDeletion.length = 0;
-      }
-    });
-  }
-
-  /**
-   * Determines whether handle is set.
-   * This function does not determine whether the handle points to a valid entity.
-   * @param {number} handle - Networked entity handle value
-   * @returns {boolean} true if handle is set
-   */
-  isHandleSet(handle: number) {
-    return handle !== consts.INVALID_NETWORKED_EHANDLE_VALUE;
-  }
-
-  /**
-   * Returns the entity specified by a particular handle.
-   * @param {number} handle - Networked entity handle value
-   * @returns {Entity|null} Entity referenced by the handle. `null` if no matching entity.
-   */
-  getByHandle(handle: EntityHandle): Networkable | null {
-    if (!handle.isValid) {
-      return null;
-    }
-
-    let ent = this.entities[handle.index];
-    if (ent == null || ent.serialNum !== handle.serialNum) {
-      return null;
-    }
-
-    return ent;
-  }
-
-  /**
-   * Returns the entity specified by a user ID.
-   * @param {number} userId - Player user ID
-   * @returns {Player|null} Entity referenced by the user ID. `null` if no matching player.
-   */
-  getByUserId(userId: number): Player | null {
-    let userInfoTable = this._demo.stringTables.findTableByName("userinfo");
-    if (!userInfoTable) return null;
-
-    let userInfos = userInfoTable.entries;
-
-    for (let i = 0; i < userInfos.length; ++i) {
-      let userEntry = userInfos[i];
-
-      if (userEntry.userData && userEntry.userData.userId === userId) {
-        // UNSAFE: if we have 'userinfo' for this entity, it's definitely a player
-        return (this.entities[i + 1] as unknown) as Player;
-      }
-    }
-
-    return null;
-  }
-
-  getSingleton<TServerClass, TEntityClass extends Networkable<TServerClass>>(
-    serverClass: string
-  ): TEntityClass {
-    let existing = this._singletonEnts[serverClass];
-    if (existing) {
-      return (existing as unknown) as TEntityClass;
-    }
-
-    let entity = this.entities.find(
-      ent => (ent ? ent.serverClass.name == serverClass : false)
-    );
-    if (!entity) {
-      throw new Error(`Missing singleton ${serverClass}`);
-    }
-
-    this._singletonEnts[serverClass] = entity;
-    return (entity as unknown) as TEntityClass;
-  }
-
-  findAllWithTable(table: string): Networkable[] {
-    return this.entities.filter(
-      (ent): ent is Networkable => (ent != null ? table in ent.props : false)
-    );
-  }
-
-  findAllWithClass<T>(klass: NetworkableConstructor<T>): T[] {
-    return (this.entities.filter(
-      ent => (ent ? ent instanceof klass : false)
-    ) as unknown) as T[];
-  }
-
   get playerResource(): Networkable<CCSPlayerResource> {
     return this._demo.entities.getSingleton<
       CCSPlayerResource,
@@ -427,16 +295,218 @@ export class Entities extends EventEmitter {
     return this.findAllWithClass(Weapon);
   }
 
-  _gatherExcludes(table: IDataTable): ReadonlyArray<ISendProp> {
-    var excludes = [];
+  public dataTables: IDataTable[] = [];
+  public serverClasses: IServerClass[] = [];
 
-    for (var prop of table.props) {
+  /**
+   * Array of all entities in game.
+   */
+  public entities: Array<Networkable | null> = new Array(
+    1 << consts.MAX_EDICT_BITS
+  ).fill(null);
+
+  public markedForDeletion: number[] = [];
+
+  public instanceBaselines: {
+    [classId: number]: UnknownEntityProps | undefined;
+  } = {};
+  public pendingBaselines: { [classId: number]: BitStream | undefined } = {};
+
+  public serverClassBits: number = 0;
+
+  public tableClassMap: { [tableName: string]: NetworkableConstructor } = {
+    DT_CSPlayer: Player,
+    DT_Team: Team,
+    DT_CSGameRules: GameRules,
+    DT_WeaponCSBase: Weapon,
+    DT_BaseEntity: BaseEntity
+  };
+  private _demo: DemoFile = null!;
+  private _singletonEnts: { [table: string]: Networkable | undefined } = {};
+  private _currentServerTick: number = -1;
+
+  public listen(demo: DemoFile) {
+    this._demo = demo;
+    demo.on("svc_PacketEntities", e => this._handlePacketEntities(e));
+    demo.on("svc_TempEntities", e => this._handleTempEntities(e));
+    demo.on("net_Tick", e => {
+      this._currentServerTick = e.tick;
+    });
+    demo.stringTables.on("update", e => this._handleStringTableUpdate(e));
+
+    demo.on("tickend", () => {
+      if (this.markedForDeletion.length > 0) {
+        for (const index of this.markedForDeletion) {
+          this.entities[index] = null;
+          this.emit("remove", { index });
+        }
+
+        this.markedForDeletion.length = 0;
+      }
+    });
+  }
+
+  /**
+   * Determines whether handle is set.
+   * This function does not determine whether the handle points to a valid entity.
+   * @param {number} handle - Networked entity handle value
+   * @returns {boolean} true if handle is set
+   */
+  public isHandleSet(handle: number) {
+    return handle !== consts.INVALID_NETWORKED_EHANDLE_VALUE;
+  }
+
+  /**
+   * Returns the entity specified by a particular handle.
+   * @param {number} handle - Networked entity handle value
+   * @returns {Entity|null} Entity referenced by the handle. `null` if no matching entity.
+   */
+  public getByHandle(handle: EntityHandle): Networkable | null {
+    if (!handle.isValid) {
+      return null;
+    }
+
+    const ent = this.entities[handle.index];
+    if (ent == null || ent.serialNum !== handle.serialNum) {
+      return null;
+    }
+
+    return ent;
+  }
+
+  /**
+   * Returns the entity specified by a user ID.
+   * @param {number} userId - Player user ID
+   * @returns {Player|null} Entity referenced by the user ID. `null` if no matching player.
+   */
+  public getByUserId(userId: number): Player | null {
+    const userInfoTable = this._demo.stringTables.findTableByName("userinfo");
+    if (!userInfoTable) {
+      return null;
+    }
+
+    const userInfos = userInfoTable.entries;
+
+    for (let i = 0; i < userInfos.length; ++i) {
+      const userEntry = userInfos[i];
+
+      if (userEntry.userData && userEntry.userData.userId === userId) {
+        // UNSAFE: if we have 'userinfo' for this entity, it's definitely a player
+        return (this.entities[i + 1] as unknown) as Player;
+      }
+    }
+
+    return null;
+  }
+
+  public getSingleton<
+    TServerClass,
+    TEntityClass extends Networkable<TServerClass>
+  >(serverClass: string): TEntityClass {
+    const existing = this._singletonEnts[serverClass];
+    if (existing) {
+      return (existing as unknown) as TEntityClass;
+    }
+
+    const entity = this.entities.find(
+      ent => (ent ? ent.serverClass.name === serverClass : false)
+    );
+    if (!entity) {
+      throw new Error(`Missing singleton ${serverClass}`);
+    }
+
+    this._singletonEnts[serverClass] = entity;
+    return (entity as unknown) as TEntityClass;
+  }
+
+  public findAllWithTable(table: string): Networkable[] {
+    return this.entities.filter(
+      (ent): ent is Networkable => (ent != null ? table in ent.props : false)
+    );
+  }
+
+  public findAllWithClass<T>(klass: NetworkableConstructor<T>): T[] {
+    return (this.entities.filter(
+      ent => (ent ? ent instanceof klass : false)
+    ) as unknown) as T[];
+  }
+
+  public handleDataTables(chunk: ByteBuffer) {
+    while (true) {
+      // eslint-disable-line no-constant-condition
+      const descriptor = net.findByType(chunk.readVarint32());
+      assert(descriptor.name === "svc_SendTable", "expected SendTable message");
+
+      const length = chunk.readVarint32();
+
+      const msg: RequiredNonNullable<
+        ICSVCMsg_SendTable
+      > = descriptor.class.decode(
+        new Uint8Array(chunk.readBytes(length).toBuffer())
+      );
+      if (msg.isEnd) {
+        break;
+      }
+
+      this.dataTables.push(msg);
+    }
+
+    const serverClasses = chunk.readShort();
+
+    this.serverClassBits = Math.ceil(Math.log2(serverClasses));
+
+    for (let i = 0; i < serverClasses; ++i) {
+      const classId = chunk.readShort();
+      assert(classId === i, "server class entry for invalid class ID");
+
+      const name = chunk.readCString();
+
+      const dtName = chunk.readCString();
+      const dataTable = assertExists(
+        this._findTableByName(dtName),
+        "no data table for server class"
+      );
+
+      const serverClass = {
+        name,
+        dtName,
+        dataTable,
+        flattenedProps: this._flattenDataTable(dataTable)
+      };
+
+      this.serverClasses.push(serverClass);
+
+      // parse any pending baseline
+      const pendingBaseline = this.pendingBaselines[classId];
+      if (pendingBaseline) {
+        this.instanceBaselines[classId] = this._parseInstanceBaseline(
+          pendingBaseline,
+          classId
+        );
+        this.emit("baselineupdate", {
+          classId,
+          serverClass,
+          baseline: this.instanceBaselines[classId]!
+        });
+        delete this.pendingBaselines[classId];
+      }
+    }
+
+    assert.equal(chunk.remaining(), 0);
+
+    this.emit("datatablesready");
+  }
+
+  private _gatherExcludes(table: IDataTable): ReadonlyArray<ISendProp> {
+    const excludes = [];
+
+    for (const prop of table.props) {
       if ((prop.flags & SPROP_EXCLUDE) !== 0) {
         excludes.push(prop);
       }
 
       if (prop.type === PropType.DataTable) {
-        var subTable = assertExists(this._findTableByName(prop.dtName));
+        const subTable = assertExists(this._findTableByName(prop.dtName));
         excludes.push.apply(excludes, this._gatherExcludes(subTable));
       }
     }
@@ -444,14 +514,14 @@ export class Entities extends EventEmitter {
     return excludes;
   }
 
-  _gatherProps(
+  private _gatherProps(
     table: IDataTable,
     excludes: ReadonlyArray<ISendProp>
   ): ReadonlyArray<IFlattenedSendProp> {
-    var flattened: IFlattenedSendProp[] = [];
+    const flattened: IFlattenedSendProp[] = [];
 
-    for (var index = 0; index < table.props.length; ++index) {
-      var prop = table.props[index];
+    for (let index = 0; index < table.props.length; ++index) {
+      const prop = table.props[index];
 
       if (
         (prop.flags & SPROP_INSIDEARRAY) !== 0 ||
@@ -462,11 +532,11 @@ export class Entities extends EventEmitter {
       }
 
       if (prop.type === PropType.DataTable) {
-        var subTable = assertExists(this._findTableByName(prop.dtName));
-        var childProps = this._gatherProps(subTable, excludes);
+        const subTable = assertExists(this._findTableByName(prop.dtName));
+        const childProps = this._gatherProps(subTable, excludes);
 
         if ((prop.flags & SPROP_COLLAPSIBLE) === 0) {
-          for (var fp of childProps) {
+          for (const fp of childProps) {
             fp.collapsible = false;
           }
         }
@@ -489,22 +559,22 @@ export class Entities extends EventEmitter {
     return _.sortBy(flattened, fp => (fp.collapsible === false ? 0 : 1));
   }
 
-  _flattenDataTable(table: IDataTable) {
-    var flattenedProps = this._gatherProps(
+  private _flattenDataTable(table: IDataTable) {
+    const flattenedProps = this._gatherProps(
       table,
       this._gatherExcludes(table)
     ).slice();
 
-    var prioritySet = new Set(flattenedProps.map(fp => fp.prop.priority));
+    const prioritySet = new Set(flattenedProps.map(fp => fp.prop.priority));
 
     prioritySet.add(64);
 
-    var priorities = _.sortBy(Array.from(prioritySet));
+    const priorities = _.sortBy(Array.from(prioritySet));
 
-    var start = 0;
+    let start = 0;
 
     // sort flattenedProps by priority
-    for (var priority of priorities) {
+    for (const priority of priorities) {
       while (true) {
         // eslint-disable-line no-constant-condition
         let currentProp;
@@ -514,14 +584,14 @@ export class Entities extends EventEmitter {
           currentProp < flattenedProps.length;
           ++currentProp
         ) {
-          let prop = flattenedProps[currentProp].prop;
+          const prop = flattenedProps[currentProp].prop;
 
           if (
             prop.priority === priority ||
             (priority === 64 && (prop.flags & SPROP_CHANGES_OFTEN) !== 0)
           ) {
             if (start !== currentProp) {
-              let temp = flattenedProps[start];
+              const temp = flattenedProps[start];
               flattenedProps[start] = flattenedProps[currentProp];
               flattenedProps[currentProp] = temp;
             }
@@ -540,88 +610,22 @@ export class Entities extends EventEmitter {
     return flattenedProps;
   }
 
-  _findTableByName(name: string): IDataTable | undefined {
-    return this.dataTables.find(table => table.netTableName == name);
+  private _findTableByName(name: string): IDataTable | undefined {
+    return this.dataTables.find(table => table.netTableName === name);
   }
 
-  _handleDataTables(chunk: ByteBuffer) {
-    while (true) {
-      // eslint-disable-line no-constant-condition
-      var descriptor = net.findByType(chunk.readVarint32());
-      assert(descriptor.name == "svc_SendTable", "expected SendTable message");
-
-      var length = chunk.readVarint32();
-
-      var msg: RequiredNonNullable<
-        ICSVCMsg_SendTable
-      > = descriptor.class.decode(
-        new Uint8Array(chunk.readBytes(length).toBuffer())
-      );
-      if (msg.isEnd) {
-        break;
-      }
-
-      this.dataTables.push(msg);
-    }
-
-    var serverClasses = chunk.readShort();
-
-    this.serverClassBits = Math.ceil(Math.log2(serverClasses));
-
-    for (var i = 0; i < serverClasses; ++i) {
-      var classId = chunk.readShort();
-      assert(classId === i, "server class entry for invalid class ID");
-
-      var name = chunk.readCString();
-
-      var dtName = chunk.readCString();
-      var dataTable = assertExists(
-        this._findTableByName(dtName),
-        "no data table for server class"
-      );
-
-      var serverClass = {
-        name,
-        dtName,
-        dataTable,
-        flattenedProps: this._flattenDataTable(dataTable)
-      };
-
-      this.serverClasses.push(serverClass);
-
-      // parse any pending baseline
-      var pendingBaseline = this.pendingBaselines[classId];
-      if (pendingBaseline) {
-        this.instanceBaselines[classId] = this._parseInstanceBaseline(
-          pendingBaseline,
-          classId
-        );
-        this.emit("baselineupdate", {
-          classId,
-          serverClass,
-          baseline: this.instanceBaselines[classId]!
-        });
-        delete this.pendingBaselines[classId];
-      }
-    }
-
-    assert.equal(chunk.remaining(), 0);
-
-    this.emit("datatablesready");
-  }
-
-  _addEntity(index: number, classId: number, serialNum: number) {
+  private _addEntity(index: number, classId: number, serialNum: number) {
     if (this.entities[index]) {
       this._removeEntity(index, true);
     }
 
-    let baseline = this.instanceBaselines[classId];
+    const baseline = this.instanceBaselines[classId];
 
     let klass: NetworkableConstructor = Networkable;
 
     // Try to find a suitable class for this entity
     if (baseline !== undefined) {
-      for (let tableName in this.tableClassMap) {
+      for (const tableName in this.tableClassMap) {
         if (baseline[tableName]) {
           klass = this.tableClassMap[tableName];
           break;
@@ -629,7 +633,7 @@ export class Entities extends EventEmitter {
       }
     }
 
-    var entity = new klass(
+    const entity = new klass(
       this._demo,
       index,
       classId,
@@ -643,8 +647,8 @@ export class Entities extends EventEmitter {
     return entity;
   }
 
-  _removeEntity(index: number, immediate: boolean) {
-    var entity = assertExists(
+  private _removeEntity(index: number, immediate: boolean) {
+    const entity = assertExists(
       this.entities[index],
       "cannot remove non-existent entity"
     );
@@ -664,23 +668,23 @@ export class Entities extends EventEmitter {
     }
   }
 
-  _parseEntityUpdate(
+  private _parseEntityUpdate(
     entityBitBuffer: BitStream,
     classId: number
   ): ReadonlyArray<IPropUpdate> {
-    var serverClass = this.serverClasses[classId];
+    const serverClass = this.serverClasses[classId];
 
-    var newWay = entityBitBuffer.readOneBit();
-    var fieldIndices = functional.fillUntil(
+    const newWay = entityBitBuffer.readOneBit();
+    const fieldIndices = functional.fillUntil(
       -1,
       lastIndex => readFieldIndex(entityBitBuffer, lastIndex, newWay),
       -1
     );
 
-    var updatedProps = [];
+    const updatedProps = [];
 
-    for (var index of fieldIndices) {
-      var flattenedProp = serverClass.flattenedProps[index];
+    for (const index of fieldIndices) {
+      const flattenedProp = serverClass.flattenedProps[index];
       assert(flattenedProp);
       updatedProps.push({
         prop: flattenedProp,
@@ -691,14 +695,14 @@ export class Entities extends EventEmitter {
     return updatedProps;
   }
 
-  _readNewEntity(entityBitBuffer: BitStream, entity: Networkable<any>) {
-    var updates = this._parseEntityUpdate(entityBitBuffer, entity.classId);
+  private _readNewEntity(entityBitBuffer: BitStream, entity: Networkable<any>) {
+    const updates = this._parseEntityUpdate(entityBitBuffer, entity.classId);
 
-    for (var update of updates) {
-      var tableName = update.prop.table.netTableName;
-      var varName = update.prop.prop.varName;
+    for (const update of updates) {
+      const tableName = update.prop.table.netTableName;
+      const varName = update.prop.prop.varName;
 
-      var oldValue = entity.getProp(tableName, varName);
+      const oldValue = entity.getProp(tableName, varName);
 
       entity.updateProp(tableName, varName, update.value);
 
@@ -712,13 +716,13 @@ export class Entities extends EventEmitter {
     }
   }
 
-  _updatesToPropObject(
+  private _updatesToPropObject(
     target: UnknownEntityProps,
     updates: ReadonlyArray<IPropUpdate>
   ) {
-    for (var update of updates) {
-      var tableName = update.prop.table.netTableName;
-      var varName = update.prop.prop.varName;
+    for (const update of updates) {
+      const tableName = update.prop.table.netTableName;
+      const varName = update.prop.prop.varName;
       target[tableName] = Object.assign(target[tableName] || {}, {
         [varName]: update.value
       });
@@ -726,13 +730,13 @@ export class Entities extends EventEmitter {
     return target;
   }
 
-  _handleTempEntities(msg: RequiredNonNullable<ICSVCMsg_TempEntities>) {
-    var entityBitBuffer = BitStream.from(msg.entityData as Uint8Array);
-    var lastClassId = -1;
-    var lastProps: UnknownEntityProps | null = null;
+  private _handleTempEntities(msg: RequiredNonNullable<ICSVCMsg_TempEntities>) {
+    const entityBitBuffer = BitStream.from(msg.entityData as Uint8Array);
+    let lastClassId = -1;
+    let lastProps: UnknownEntityProps | null = null;
 
-    for (var i = 0; i < msg.numEntries; ++i) {
-      var fireDelay = 0.0;
+    for (let i = 0; i < msg.numEntries; ++i) {
+      let fireDelay = 0.0;
       if (entityBitBuffer.readOneBit()) {
         fireDelay = entityBitBuffer.readSBits(8) / 100.0;
       }
@@ -741,12 +745,12 @@ export class Entities extends EventEmitter {
         // TODO: figure out why this is the server class - 1
         lastClassId = entityBitBuffer.readUBits(this.serverClassBits) - 1;
 
-        var updates = this._parseEntityUpdate(entityBitBuffer, lastClassId);
+        const updates = this._parseEntityUpdate(entityBitBuffer, lastClassId);
         lastProps = this._updatesToPropObject({}, updates);
       } else {
         // delta against last temp entity
-        assert(lastClassId != -1, "Delta with no baseline");
-        var updates = this._parseEntityUpdate(entityBitBuffer, lastClassId);
+        assert(lastClassId !== -1, "Delta with no baseline");
+        const updates = this._parseEntityUpdate(entityBitBuffer, lastClassId);
         lastProps = this._updatesToPropObject(
           _.cloneDeep(assertExists(lastProps)),
           updates
@@ -762,16 +766,18 @@ export class Entities extends EventEmitter {
     }
   }
 
-  _handlePacketEntities(msg: RequiredNonNullable<ICSVCMsg_PacketEntities>) {
-    var entityBitBuffer = BitStream.from(msg.entityData as Uint8Array);
+  private _handlePacketEntities(
+    msg: RequiredNonNullable<ICSVCMsg_PacketEntities>
+  ) {
+    const entityBitBuffer = BitStream.from(msg.entityData as Uint8Array);
 
-    var entityIndex = -1;
+    let entityIndex = -1;
 
     // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/cl_ents_parse.cpp#L297-L431
     // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/cl_ents_parse.cpp#L544-L648
     // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/baseclientstate.cpp#L1245-L1312
 
-    for (var i = 0; i < msg.updatedEntries; ++i) {
+    for (let i = 0; i < msg.updatedEntries; ++i) {
       entityIndex += 1 + entityBitBuffer.readUBitVar();
 
       assert(entityIndex < this.entities.length, "newEntity >= MAX_EDICTS");
@@ -785,16 +791,16 @@ export class Entities extends EventEmitter {
           // Maybe set a flag on the entity indicating that it is out of PVS?
         }
       } else if (entityBitBuffer.readOneBit()) {
-        var classId = entityBitBuffer.readUBits(this.serverClassBits);
-        var serialNum = entityBitBuffer.readUBits(
+        const classId = entityBitBuffer.readUBits(this.serverClassBits);
+        const serialNum = entityBitBuffer.readUBits(
           consts.NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS
         );
 
-        let newEnt = this._addEntity(entityIndex, classId, serialNum);
+        const newEnt = this._addEntity(entityIndex, classId, serialNum);
         this._readNewEntity(entityBitBuffer, newEnt);
         this.emit("postcreate", { entity: newEnt });
       } else {
-        let entity = assertExists(
+        const entity = assertExists(
           this.entities[entityIndex],
           "delta on deleted entity"
         );
@@ -805,12 +811,12 @@ export class Entities extends EventEmitter {
     // TODO: Delete old frames that we no longer need to reference
   }
 
-  _parseInstanceBaseline(baselineBuf: BitStream, classId: number) {
-    var classBaseline: UnknownEntityProps = {};
-    for (var bl of this._parseEntityUpdate(baselineBuf, classId)) {
-      var tableName = bl.prop.table.netTableName;
-      var varName = bl.prop.prop.varName;
-      var table = classBaseline[tableName];
+  private _parseInstanceBaseline(baselineBuf: BitStream, classId: number) {
+    const classBaseline: UnknownEntityProps = {};
+    for (const bl of this._parseEntityUpdate(baselineBuf, classId)) {
+      const tableName = bl.prop.table.netTableName;
+      const varName = bl.prop.prop.varName;
+      const table = classBaseline[tableName];
       if (table === undefined) {
         classBaseline[tableName] = { [varName]: bl.value };
       } else {
@@ -820,20 +826,20 @@ export class Entities extends EventEmitter {
     return classBaseline;
   }
 
-  _handleStringTableUpdate(event: IStringTableUpdateEvent<Buffer>) {
+  private _handleStringTableUpdate(event: IStringTableUpdateEvent<Buffer>) {
     if (event.table.name !== "instancebaseline" || !event.userData) {
       return;
     }
 
-    var classId = parseInt(event.entry, 10);
-    var baselineBuf = BitStream.from(event.userData);
+    const classId = parseInt(event.entry, 10);
+    const baselineBuf = BitStream.from(event.userData);
 
     if (!this.serverClasses[classId]) {
       this.pendingBaselines[classId] = baselineBuf;
       return;
     }
 
-    var baseline = this._parseInstanceBaseline(baselineBuf, classId);
+    const baseline = this._parseInstanceBaseline(baselineBuf, classId);
     this.instanceBaselines[classId] = baseline;
 
     this.emit("baselineupdate", {

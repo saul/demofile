@@ -11,5 +11,6 @@
     "noImplicitAny": true,
     "noImplicitThis": true
   },
+  "compileOnSave": true,
   "include": ["./src/**/*.ts"]
 }

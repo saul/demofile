@@ -1,3 +1,5 @@
+// tslint:disable
+
 import * as $protobuf from "protobufjs";
 /** ECstrike15UserMessages enum. */
 export enum ECstrike15UserMessages {
@@ -80,21 +82,6 @@ export interface ICCSUsrMsg_VGUIMenu {
 /** Represents a CCSUsrMsg_VGUIMenu. */
 export class CCSUsrMsg_VGUIMenu implements ICCSUsrMsg_VGUIMenu {
   /**
-   * Constructs a new CCSUsrMsg_VGUIMenu.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_VGUIMenu);
-
-  /** CCSUsrMsg_VGUIMenu name. */
-  public name: string;
-
-  /** CCSUsrMsg_VGUIMenu show. */
-  public show: boolean;
-
-  /** CCSUsrMsg_VGUIMenu subkeys. */
-  public subkeys: CCSUsrMsg_VGUIMenu.ISubkey[];
-
-  /**
    * Decodes a CCSUsrMsg_VGUIMenu message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -106,6 +93,20 @@ export class CCSUsrMsg_VGUIMenu implements ICCSUsrMsg_VGUIMenu {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_VGUIMenu;
+
+  /** CCSUsrMsg_VGUIMenu name. */
+  public name: string;
+
+  /** CCSUsrMsg_VGUIMenu show. */
+  public show: boolean;
+
+  /** CCSUsrMsg_VGUIMenu subkeys. */
+  public subkeys: CCSUsrMsg_VGUIMenu.ISubkey[];
+  /**
+   * Constructs a new CCSUsrMsg_VGUIMenu.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_VGUIMenu);
 }
 
 export namespace CCSUsrMsg_VGUIMenu {
@@ -121,18 +122,6 @@ export namespace CCSUsrMsg_VGUIMenu {
   /** Represents a Subkey. */
   class Subkey implements ISubkey {
     /**
-     * Constructs a new Subkey.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CCSUsrMsg_VGUIMenu.ISubkey);
-
-    /** Subkey name. */
-    public name: string;
-
-    /** Subkey str. */
-    public str: string;
-
-    /**
      * Decodes a Subkey message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -144,6 +133,17 @@ export namespace CCSUsrMsg_VGUIMenu {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CCSUsrMsg_VGUIMenu.Subkey;
+
+    /** Subkey name. */
+    public name: string;
+
+    /** Subkey str. */
+    public str: string;
+    /**
+     * Constructs a new Subkey.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CCSUsrMsg_VGUIMenu.ISubkey);
   }
 }
 
@@ -156,15 +156,6 @@ export interface ICCSUsrMsg_Geiger {
 /** Represents a CCSUsrMsg_Geiger. */
 export class CCSUsrMsg_Geiger implements ICCSUsrMsg_Geiger {
   /**
-   * Constructs a new CCSUsrMsg_Geiger.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_Geiger);
-
-  /** CCSUsrMsg_Geiger range. */
-  public range: number;
-
-  /**
    * Decodes a CCSUsrMsg_Geiger message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -176,6 +167,14 @@ export class CCSUsrMsg_Geiger implements ICCSUsrMsg_Geiger {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_Geiger;
+
+  /** CCSUsrMsg_Geiger range. */
+  public range: number;
+  /**
+   * Constructs a new CCSUsrMsg_Geiger.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_Geiger);
 }
 
 /** Properties of a CCSUsrMsg_Train. */
@@ -186,15 +185,6 @@ export interface ICCSUsrMsg_Train {
 
 /** Represents a CCSUsrMsg_Train. */
 export class CCSUsrMsg_Train implements ICCSUsrMsg_Train {
-  /**
-   * Constructs a new CCSUsrMsg_Train.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_Train);
-
-  /** CCSUsrMsg_Train train. */
-  public train: number;
-
   /**
    * Decodes a CCSUsrMsg_Train message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -207,6 +197,14 @@ export class CCSUsrMsg_Train implements ICCSUsrMsg_Train {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_Train;
+
+  /** CCSUsrMsg_Train train. */
+  public train: number;
+  /**
+   * Constructs a new CCSUsrMsg_Train.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_Train);
 }
 
 /** Properties of a CCSUsrMsg_HudText. */
@@ -217,15 +215,6 @@ export interface ICCSUsrMsg_HudText {
 
 /** Represents a CCSUsrMsg_HudText. */
 export class CCSUsrMsg_HudText implements ICCSUsrMsg_HudText {
-  /**
-   * Constructs a new CCSUsrMsg_HudText.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_HudText);
-
-  /** CCSUsrMsg_HudText text. */
-  public text: string;
-
   /**
    * Decodes a CCSUsrMsg_HudText message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -238,6 +227,14 @@ export class CCSUsrMsg_HudText implements ICCSUsrMsg_HudText {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_HudText;
+
+  /** CCSUsrMsg_HudText text. */
+  public text: string;
+  /**
+   * Constructs a new CCSUsrMsg_HudText.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_HudText);
 }
 
 /** Properties of a CCSUsrMsg_SayText. */
@@ -258,10 +255,17 @@ export interface ICCSUsrMsg_SayText {
 /** Represents a CCSUsrMsg_SayText. */
 export class CCSUsrMsg_SayText implements ICCSUsrMsg_SayText {
   /**
-   * Constructs a new CCSUsrMsg_SayText.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_SayText message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_SayText
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_SayText);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_SayText;
 
   /** CCSUsrMsg_SayText entIdx. */
   public entIdx: number;
@@ -274,19 +278,11 @@ export class CCSUsrMsg_SayText implements ICCSUsrMsg_SayText {
 
   /** CCSUsrMsg_SayText textallchat. */
   public textallchat: boolean;
-
   /**
-   * Decodes a CCSUsrMsg_SayText message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_SayText
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_SayText.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_SayText;
+  constructor(properties?: ICCSUsrMsg_SayText);
 }
 
 /** Properties of a CCSUsrMsg_SayText2. */
@@ -310,10 +306,17 @@ export interface ICCSUsrMsg_SayText2 {
 /** Represents a CCSUsrMsg_SayText2. */
 export class CCSUsrMsg_SayText2 implements ICCSUsrMsg_SayText2 {
   /**
-   * Constructs a new CCSUsrMsg_SayText2.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_SayText2 message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_SayText2
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_SayText2);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_SayText2;
 
   /** CCSUsrMsg_SayText2 entIdx. */
   public entIdx: number;
@@ -329,19 +332,11 @@ export class CCSUsrMsg_SayText2 implements ICCSUsrMsg_SayText2 {
 
   /** CCSUsrMsg_SayText2 textallchat. */
   public textallchat: boolean;
-
   /**
-   * Decodes a CCSUsrMsg_SayText2 message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_SayText2
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_SayText2.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_SayText2;
+  constructor(properties?: ICCSUsrMsg_SayText2);
 }
 
 /** Properties of a CCSUsrMsg_TextMsg. */
@@ -356,18 +351,6 @@ export interface ICCSUsrMsg_TextMsg {
 /** Represents a CCSUsrMsg_TextMsg. */
 export class CCSUsrMsg_TextMsg implements ICCSUsrMsg_TextMsg {
   /**
-   * Constructs a new CCSUsrMsg_TextMsg.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_TextMsg);
-
-  /** CCSUsrMsg_TextMsg msgDst. */
-  public msgDst: number;
-
-  /** CCSUsrMsg_TextMsg params. */
-  public params: string[];
-
-  /**
    * Decodes a CCSUsrMsg_TextMsg message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -379,6 +362,17 @@ export class CCSUsrMsg_TextMsg implements ICCSUsrMsg_TextMsg {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_TextMsg;
+
+  /** CCSUsrMsg_TextMsg msgDst. */
+  public msgDst: number;
+
+  /** CCSUsrMsg_TextMsg params. */
+  public params: string[];
+  /**
+   * Constructs a new CCSUsrMsg_TextMsg.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_TextMsg);
 }
 
 /** Properties of a CCSUsrMsg_HudMsg. */
@@ -417,10 +411,17 @@ export interface ICCSUsrMsg_HudMsg {
 /** Represents a CCSUsrMsg_HudMsg. */
 export class CCSUsrMsg_HudMsg implements ICCSUsrMsg_HudMsg {
   /**
-   * Constructs a new CCSUsrMsg_HudMsg.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_HudMsg message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_HudMsg
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_HudMsg);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_HudMsg;
 
   /** CCSUsrMsg_HudMsg channel. */
   public channel: number;
@@ -451,19 +452,11 @@ export class CCSUsrMsg_HudMsg implements ICCSUsrMsg_HudMsg {
 
   /** CCSUsrMsg_HudMsg text. */
   public text: string;
-
   /**
-   * Decodes a CCSUsrMsg_HudMsg message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_HudMsg
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_HudMsg.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_HudMsg;
+  constructor(properties?: ICCSUsrMsg_HudMsg);
 }
 
 /** Properties of a CCSUsrMsg_Shake. */
@@ -484,10 +477,17 @@ export interface ICCSUsrMsg_Shake {
 /** Represents a CCSUsrMsg_Shake. */
 export class CCSUsrMsg_Shake implements ICCSUsrMsg_Shake {
   /**
-   * Constructs a new CCSUsrMsg_Shake.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_Shake message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_Shake
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_Shake);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_Shake;
 
   /** CCSUsrMsg_Shake command. */
   public command: number;
@@ -500,19 +500,11 @@ export class CCSUsrMsg_Shake implements ICCSUsrMsg_Shake {
 
   /** CCSUsrMsg_Shake duration. */
   public duration: number;
-
   /**
-   * Decodes a CCSUsrMsg_Shake message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_Shake
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_Shake.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_Shake;
+  constructor(properties?: ICCSUsrMsg_Shake);
 }
 
 /** Properties of a CCSUsrMsg_Fade. */
@@ -533,10 +525,17 @@ export interface ICCSUsrMsg_Fade {
 /** Represents a CCSUsrMsg_Fade. */
 export class CCSUsrMsg_Fade implements ICCSUsrMsg_Fade {
   /**
-   * Constructs a new CCSUsrMsg_Fade.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_Fade message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_Fade
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_Fade);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_Fade;
 
   /** CCSUsrMsg_Fade duration. */
   public duration: number;
@@ -549,19 +548,11 @@ export class CCSUsrMsg_Fade implements ICCSUsrMsg_Fade {
 
   /** CCSUsrMsg_Fade clr. */
   public clr?: ICMsgRGBA | null;
-
   /**
-   * Decodes a CCSUsrMsg_Fade message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_Fade
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_Fade.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_Fade;
+  constructor(properties?: ICCSUsrMsg_Fade);
 }
 
 /** Properties of a CCSUsrMsg_Rumble. */
@@ -579,21 +570,6 @@ export interface ICCSUsrMsg_Rumble {
 /** Represents a CCSUsrMsg_Rumble. */
 export class CCSUsrMsg_Rumble implements ICCSUsrMsg_Rumble {
   /**
-   * Constructs a new CCSUsrMsg_Rumble.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_Rumble);
-
-  /** CCSUsrMsg_Rumble index. */
-  public index: number;
-
-  /** CCSUsrMsg_Rumble data. */
-  public data: number;
-
-  /** CCSUsrMsg_Rumble flags. */
-  public flags: number;
-
-  /**
    * Decodes a CCSUsrMsg_Rumble message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -605,6 +581,20 @@ export class CCSUsrMsg_Rumble implements ICCSUsrMsg_Rumble {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_Rumble;
+
+  /** CCSUsrMsg_Rumble index. */
+  public index: number;
+
+  /** CCSUsrMsg_Rumble data. */
+  public data: number;
+
+  /** CCSUsrMsg_Rumble flags. */
+  public flags: number;
+  /**
+   * Constructs a new CCSUsrMsg_Rumble.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_Rumble);
 }
 
 /** Properties of a CCSUsrMsg_CloseCaption. */
@@ -622,21 +612,6 @@ export interface ICCSUsrMsg_CloseCaption {
 /** Represents a CCSUsrMsg_CloseCaption. */
 export class CCSUsrMsg_CloseCaption implements ICCSUsrMsg_CloseCaption {
   /**
-   * Constructs a new CCSUsrMsg_CloseCaption.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_CloseCaption);
-
-  /** CCSUsrMsg_CloseCaption hash. */
-  public hash: number;
-
-  /** CCSUsrMsg_CloseCaption duration. */
-  public duration: number;
-
-  /** CCSUsrMsg_CloseCaption fromPlayer. */
-  public fromPlayer: boolean;
-
-  /**
    * Decodes a CCSUsrMsg_CloseCaption message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -648,6 +623,20 @@ export class CCSUsrMsg_CloseCaption implements ICCSUsrMsg_CloseCaption {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_CloseCaption;
+
+  /** CCSUsrMsg_CloseCaption hash. */
+  public hash: number;
+
+  /** CCSUsrMsg_CloseCaption duration. */
+  public duration: number;
+
+  /** CCSUsrMsg_CloseCaption fromPlayer. */
+  public fromPlayer: boolean;
+  /**
+   * Constructs a new CCSUsrMsg_CloseCaption.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_CloseCaption);
 }
 
 /** Properties of a CCSUsrMsg_CloseCaptionDirect. */
@@ -666,21 +655,6 @@ export interface ICCSUsrMsg_CloseCaptionDirect {
 export class CCSUsrMsg_CloseCaptionDirect
   implements ICCSUsrMsg_CloseCaptionDirect {
   /**
-   * Constructs a new CCSUsrMsg_CloseCaptionDirect.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_CloseCaptionDirect);
-
-  /** CCSUsrMsg_CloseCaptionDirect hash. */
-  public hash: number;
-
-  /** CCSUsrMsg_CloseCaptionDirect duration. */
-  public duration: number;
-
-  /** CCSUsrMsg_CloseCaptionDirect fromPlayer. */
-  public fromPlayer: boolean;
-
-  /**
    * Decodes a CCSUsrMsg_CloseCaptionDirect message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -692,6 +666,20 @@ export class CCSUsrMsg_CloseCaptionDirect
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_CloseCaptionDirect;
+
+  /** CCSUsrMsg_CloseCaptionDirect hash. */
+  public hash: number;
+
+  /** CCSUsrMsg_CloseCaptionDirect duration. */
+  public duration: number;
+
+  /** CCSUsrMsg_CloseCaptionDirect fromPlayer. */
+  public fromPlayer: boolean;
+  /**
+   * Constructs a new CCSUsrMsg_CloseCaptionDirect.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_CloseCaptionDirect);
 }
 
 /** Properties of a CCSUsrMsg_SendAudio. */
@@ -702,15 +690,6 @@ export interface ICCSUsrMsg_SendAudio {
 
 /** Represents a CCSUsrMsg_SendAudio. */
 export class CCSUsrMsg_SendAudio implements ICCSUsrMsg_SendAudio {
-  /**
-   * Constructs a new CCSUsrMsg_SendAudio.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_SendAudio);
-
-  /** CCSUsrMsg_SendAudio radioSound. */
-  public radioSound: string;
-
   /**
    * Decodes a CCSUsrMsg_SendAudio message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -723,6 +702,14 @@ export class CCSUsrMsg_SendAudio implements ICCSUsrMsg_SendAudio {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_SendAudio;
+
+  /** CCSUsrMsg_SendAudio radioSound. */
+  public radioSound: string;
+  /**
+   * Constructs a new CCSUsrMsg_SendAudio.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_SendAudio);
 }
 
 /** Properties of a CCSUsrMsg_RawAudio. */
@@ -743,10 +730,17 @@ export interface ICCSUsrMsg_RawAudio {
 /** Represents a CCSUsrMsg_RawAudio. */
 export class CCSUsrMsg_RawAudio implements ICCSUsrMsg_RawAudio {
   /**
-   * Constructs a new CCSUsrMsg_RawAudio.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_RawAudio message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_RawAudio
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_RawAudio);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_RawAudio;
 
   /** CCSUsrMsg_RawAudio pitch. */
   public pitch: number;
@@ -759,19 +753,11 @@ export class CCSUsrMsg_RawAudio implements ICCSUsrMsg_RawAudio {
 
   /** CCSUsrMsg_RawAudio voiceFilename. */
   public voiceFilename: string;
-
   /**
-   * Decodes a CCSUsrMsg_RawAudio message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_RawAudio
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_RawAudio.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_RawAudio;
+  constructor(properties?: ICCSUsrMsg_RawAudio);
 }
 
 /** Properties of a CCSUsrMsg_VoiceMask. */
@@ -786,18 +772,6 @@ export interface ICCSUsrMsg_VoiceMask {
 /** Represents a CCSUsrMsg_VoiceMask. */
 export class CCSUsrMsg_VoiceMask implements ICCSUsrMsg_VoiceMask {
   /**
-   * Constructs a new CCSUsrMsg_VoiceMask.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_VoiceMask);
-
-  /** CCSUsrMsg_VoiceMask playerMasks. */
-  public playerMasks: CCSUsrMsg_VoiceMask.IPlayerMask[];
-
-  /** CCSUsrMsg_VoiceMask playerModEnable. */
-  public playerModEnable: boolean;
-
-  /**
    * Decodes a CCSUsrMsg_VoiceMask message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -809,6 +783,17 @@ export class CCSUsrMsg_VoiceMask implements ICCSUsrMsg_VoiceMask {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_VoiceMask;
+
+  /** CCSUsrMsg_VoiceMask playerMasks. */
+  public playerMasks: CCSUsrMsg_VoiceMask.IPlayerMask[];
+
+  /** CCSUsrMsg_VoiceMask playerModEnable. */
+  public playerModEnable: boolean;
+  /**
+   * Constructs a new CCSUsrMsg_VoiceMask.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_VoiceMask);
 }
 
 export namespace CCSUsrMsg_VoiceMask {
@@ -824,18 +809,6 @@ export namespace CCSUsrMsg_VoiceMask {
   /** Represents a PlayerMask. */
   class PlayerMask implements IPlayerMask {
     /**
-     * Constructs a new PlayerMask.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CCSUsrMsg_VoiceMask.IPlayerMask);
-
-    /** PlayerMask gameRulesMask. */
-    public gameRulesMask: number;
-
-    /** PlayerMask banMasks. */
-    public banMasks: number;
-
-    /**
      * Decodes a PlayerMask message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -847,6 +820,17 @@ export namespace CCSUsrMsg_VoiceMask {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CCSUsrMsg_VoiceMask.PlayerMask;
+
+    /** PlayerMask gameRulesMask. */
+    public gameRulesMask: number;
+
+    /** PlayerMask banMasks. */
+    public banMasks: number;
+    /**
+     * Constructs a new PlayerMask.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CCSUsrMsg_VoiceMask.IPlayerMask);
   }
 }
 
@@ -865,21 +849,6 @@ export interface ICCSUsrMsg_Damage {
 /** Represents a CCSUsrMsg_Damage. */
 export class CCSUsrMsg_Damage implements ICCSUsrMsg_Damage {
   /**
-   * Constructs a new CCSUsrMsg_Damage.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_Damage);
-
-  /** CCSUsrMsg_Damage amount. */
-  public amount: number;
-
-  /** CCSUsrMsg_Damage inflictorWorldPos. */
-  public inflictorWorldPos?: ICMsgVector | null;
-
-  /** CCSUsrMsg_Damage victimEntindex. */
-  public victimEntindex: number;
-
-  /**
    * Decodes a CCSUsrMsg_Damage message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -891,6 +860,20 @@ export class CCSUsrMsg_Damage implements ICCSUsrMsg_Damage {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_Damage;
+
+  /** CCSUsrMsg_Damage amount. */
+  public amount: number;
+
+  /** CCSUsrMsg_Damage inflictorWorldPos. */
+  public inflictorWorldPos?: ICMsgVector | null;
+
+  /** CCSUsrMsg_Damage victimEntindex. */
+  public victimEntindex: number;
+  /**
+   * Constructs a new CCSUsrMsg_Damage.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_Damage);
 }
 
 /** Properties of a CCSUsrMsg_RadioText. */
@@ -911,10 +894,17 @@ export interface ICCSUsrMsg_RadioText {
 /** Represents a CCSUsrMsg_RadioText. */
 export class CCSUsrMsg_RadioText implements ICCSUsrMsg_RadioText {
   /**
-   * Constructs a new CCSUsrMsg_RadioText.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_RadioText message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_RadioText
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_RadioText);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_RadioText;
 
   /** CCSUsrMsg_RadioText msgDst. */
   public msgDst: number;
@@ -927,19 +917,11 @@ export class CCSUsrMsg_RadioText implements ICCSUsrMsg_RadioText {
 
   /** CCSUsrMsg_RadioText params. */
   public params: string[];
-
   /**
-   * Decodes a CCSUsrMsg_RadioText message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_RadioText
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_RadioText.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_RadioText;
+  constructor(properties?: ICCSUsrMsg_RadioText);
 }
 
 /** Properties of a CCSUsrMsg_HintText. */
@@ -950,15 +932,6 @@ export interface ICCSUsrMsg_HintText {
 
 /** Represents a CCSUsrMsg_HintText. */
 export class CCSUsrMsg_HintText implements ICCSUsrMsg_HintText {
-  /**
-   * Constructs a new CCSUsrMsg_HintText.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_HintText);
-
-  /** CCSUsrMsg_HintText text. */
-  public text: string;
-
   /**
    * Decodes a CCSUsrMsg_HintText message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -971,6 +944,14 @@ export class CCSUsrMsg_HintText implements ICCSUsrMsg_HintText {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_HintText;
+
+  /** CCSUsrMsg_HintText text. */
+  public text: string;
+  /**
+   * Constructs a new CCSUsrMsg_HintText.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_HintText);
 }
 
 /** Properties of a CCSUsrMsg_KeyHintText. */
@@ -981,15 +962,6 @@ export interface ICCSUsrMsg_KeyHintText {
 
 /** Represents a CCSUsrMsg_KeyHintText. */
 export class CCSUsrMsg_KeyHintText implements ICCSUsrMsg_KeyHintText {
-  /**
-   * Constructs a new CCSUsrMsg_KeyHintText.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_KeyHintText);
-
-  /** CCSUsrMsg_KeyHintText hints. */
-  public hints: string[];
-
   /**
    * Decodes a CCSUsrMsg_KeyHintText message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -1002,6 +974,14 @@ export class CCSUsrMsg_KeyHintText implements ICCSUsrMsg_KeyHintText {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_KeyHintText;
+
+  /** CCSUsrMsg_KeyHintText hints. */
+  public hints: string[];
+  /**
+   * Constructs a new CCSUsrMsg_KeyHintText.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_KeyHintText);
 }
 
 /** Properties of a CCSUsrMsg_ProcessSpottedEntityUpdate. */
@@ -1019,18 +999,6 @@ export interface ICCSUsrMsg_ProcessSpottedEntityUpdate {
 export class CCSUsrMsg_ProcessSpottedEntityUpdate
   implements ICCSUsrMsg_ProcessSpottedEntityUpdate {
   /**
-   * Constructs a new CCSUsrMsg_ProcessSpottedEntityUpdate.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_ProcessSpottedEntityUpdate);
-
-  /** CCSUsrMsg_ProcessSpottedEntityUpdate newUpdate. */
-  public newUpdate: boolean;
-
-  /** CCSUsrMsg_ProcessSpottedEntityUpdate entityUpdates. */
-  public entityUpdates: CCSUsrMsg_ProcessSpottedEntityUpdate.ISpottedEntityUpdate[];
-
-  /**
    * Decodes a CCSUsrMsg_ProcessSpottedEntityUpdate message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -1042,6 +1010,17 @@ export class CCSUsrMsg_ProcessSpottedEntityUpdate
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_ProcessSpottedEntityUpdate;
+
+  /** CCSUsrMsg_ProcessSpottedEntityUpdate newUpdate. */
+  public newUpdate: boolean;
+
+  /** CCSUsrMsg_ProcessSpottedEntityUpdate entityUpdates. */
+  public entityUpdates: CCSUsrMsg_ProcessSpottedEntityUpdate.ISpottedEntityUpdate[];
+  /**
+   * Constructs a new CCSUsrMsg_ProcessSpottedEntityUpdate.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_ProcessSpottedEntityUpdate);
 }
 
 export namespace CCSUsrMsg_ProcessSpottedEntityUpdate {
@@ -1078,12 +1057,17 @@ export namespace CCSUsrMsg_ProcessSpottedEntityUpdate {
   /** Represents a SpottedEntityUpdate. */
   class SpottedEntityUpdate implements ISpottedEntityUpdate {
     /**
-     * Constructs a new SpottedEntityUpdate.
-     * @param [properties] Properties to set
+     * Decodes a SpottedEntityUpdate message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns SpottedEntityUpdate
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    constructor(
-      properties?: CCSUsrMsg_ProcessSpottedEntityUpdate.ISpottedEntityUpdate
-    );
+    public static decode(
+      reader: $protobuf.Reader | Uint8Array,
+      length?: number
+    ): CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate;
 
     /** SpottedEntityUpdate entityIdx. */
     public entityIdx: number;
@@ -1111,19 +1095,13 @@ export namespace CCSUsrMsg_ProcessSpottedEntityUpdate {
 
     /** SpottedEntityUpdate playerHasC4. */
     public playerHasC4: boolean;
-
     /**
-     * Decodes a SpottedEntityUpdate message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns SpottedEntityUpdate
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     * Constructs a new SpottedEntityUpdate.
+     * @param [properties] Properties to set
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate;
+    constructor(
+      properties?: CCSUsrMsg_ProcessSpottedEntityUpdate.ISpottedEntityUpdate
+    );
   }
 }
 
@@ -1137,15 +1115,6 @@ export interface ICCSUsrMsg_SendPlayerItemDrops {
 export class CCSUsrMsg_SendPlayerItemDrops
   implements ICCSUsrMsg_SendPlayerItemDrops {
   /**
-   * Constructs a new CCSUsrMsg_SendPlayerItemDrops.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_SendPlayerItemDrops);
-
-  /** CCSUsrMsg_SendPlayerItemDrops entityUpdates. */
-  public entityUpdates: ICEconItemPreviewDataBlock[];
-
-  /**
    * Decodes a CCSUsrMsg_SendPlayerItemDrops message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -1157,6 +1126,14 @@ export class CCSUsrMsg_SendPlayerItemDrops
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_SendPlayerItemDrops;
+
+  /** CCSUsrMsg_SendPlayerItemDrops entityUpdates. */
+  public entityUpdates: ICEconItemPreviewDataBlock[];
+  /**
+   * Constructs a new CCSUsrMsg_SendPlayerItemDrops.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_SendPlayerItemDrops);
 }
 
 /** Properties of a CCSUsrMsg_SendPlayerItemFound. */
@@ -1172,18 +1149,6 @@ export interface ICCSUsrMsg_SendPlayerItemFound {
 export class CCSUsrMsg_SendPlayerItemFound
   implements ICCSUsrMsg_SendPlayerItemFound {
   /**
-   * Constructs a new CCSUsrMsg_SendPlayerItemFound.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_SendPlayerItemFound);
-
-  /** CCSUsrMsg_SendPlayerItemFound iteminfo. */
-  public iteminfo?: ICEconItemPreviewDataBlock | null;
-
-  /** CCSUsrMsg_SendPlayerItemFound entindex. */
-  public entindex: number;
-
-  /**
    * Decodes a CCSUsrMsg_SendPlayerItemFound message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -1195,6 +1160,17 @@ export class CCSUsrMsg_SendPlayerItemFound
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_SendPlayerItemFound;
+
+  /** CCSUsrMsg_SendPlayerItemFound iteminfo. */
+  public iteminfo?: ICEconItemPreviewDataBlock | null;
+
+  /** CCSUsrMsg_SendPlayerItemFound entindex. */
+  public entindex: number;
+  /**
+   * Constructs a new CCSUsrMsg_SendPlayerItemFound.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_SendPlayerItemFound);
 }
 
 /** Properties of a CCSUsrMsg_ReloadEffect. */
@@ -1218,10 +1194,17 @@ export interface ICCSUsrMsg_ReloadEffect {
 /** Represents a CCSUsrMsg_ReloadEffect. */
 export class CCSUsrMsg_ReloadEffect implements ICCSUsrMsg_ReloadEffect {
   /**
-   * Constructs a new CCSUsrMsg_ReloadEffect.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_ReloadEffect message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_ReloadEffect
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_ReloadEffect);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_ReloadEffect;
 
   /** CCSUsrMsg_ReloadEffect entidx. */
   public entidx: number;
@@ -1237,19 +1220,11 @@ export class CCSUsrMsg_ReloadEffect implements ICCSUsrMsg_ReloadEffect {
 
   /** CCSUsrMsg_ReloadEffect originZ. */
   public originZ: number;
-
   /**
-   * Decodes a CCSUsrMsg_ReloadEffect message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_ReloadEffect
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_ReloadEffect.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_ReloadEffect;
+  constructor(properties?: ICCSUsrMsg_ReloadEffect);
 }
 
 /** Properties of a CCSUsrMsg_AdjustMoney. */
@@ -1260,15 +1235,6 @@ export interface ICCSUsrMsg_AdjustMoney {
 
 /** Represents a CCSUsrMsg_AdjustMoney. */
 export class CCSUsrMsg_AdjustMoney implements ICCSUsrMsg_AdjustMoney {
-  /**
-   * Constructs a new CCSUsrMsg_AdjustMoney.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_AdjustMoney);
-
-  /** CCSUsrMsg_AdjustMoney amount. */
-  public amount: number;
-
   /**
    * Decodes a CCSUsrMsg_AdjustMoney message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -1281,6 +1247,14 @@ export class CCSUsrMsg_AdjustMoney implements ICCSUsrMsg_AdjustMoney {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_AdjustMoney;
+
+  /** CCSUsrMsg_AdjustMoney amount. */
+  public amount: number;
+  /**
+   * Constructs a new CCSUsrMsg_AdjustMoney.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_AdjustMoney);
 }
 
 /** Properties of a CCSUsrMsg_ReportHit. */
@@ -1301,10 +1275,17 @@ export interface ICCSUsrMsg_ReportHit {
 /** Represents a CCSUsrMsg_ReportHit. */
 export class CCSUsrMsg_ReportHit implements ICCSUsrMsg_ReportHit {
   /**
-   * Constructs a new CCSUsrMsg_ReportHit.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_ReportHit message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_ReportHit
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_ReportHit);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_ReportHit;
 
   /** CCSUsrMsg_ReportHit posX. */
   public posX: number;
@@ -1317,19 +1298,11 @@ export class CCSUsrMsg_ReportHit implements ICCSUsrMsg_ReportHit {
 
   /** CCSUsrMsg_ReportHit posZ. */
   public posZ: number;
-
   /**
-   * Decodes a CCSUsrMsg_ReportHit message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_ReportHit
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_ReportHit.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_ReportHit;
+  constructor(properties?: ICCSUsrMsg_ReportHit);
 }
 
 /** Properties of a CCSUsrMsg_KillCam. */
@@ -1347,21 +1320,6 @@ export interface ICCSUsrMsg_KillCam {
 /** Represents a CCSUsrMsg_KillCam. */
 export class CCSUsrMsg_KillCam implements ICCSUsrMsg_KillCam {
   /**
-   * Constructs a new CCSUsrMsg_KillCam.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_KillCam);
-
-  /** CCSUsrMsg_KillCam obsMode. */
-  public obsMode: number;
-
-  /** CCSUsrMsg_KillCam firstTarget. */
-  public firstTarget: number;
-
-  /** CCSUsrMsg_KillCam secondTarget. */
-  public secondTarget: number;
-
-  /**
    * Decodes a CCSUsrMsg_KillCam message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -1373,6 +1331,20 @@ export class CCSUsrMsg_KillCam implements ICCSUsrMsg_KillCam {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_KillCam;
+
+  /** CCSUsrMsg_KillCam obsMode. */
+  public obsMode: number;
+
+  /** CCSUsrMsg_KillCam firstTarget. */
+  public firstTarget: number;
+
+  /** CCSUsrMsg_KillCam secondTarget. */
+  public secondTarget: number;
+  /**
+   * Constructs a new CCSUsrMsg_KillCam.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_KillCam);
 }
 
 /** Properties of a CCSUsrMsg_DesiredTimescale. */
@@ -1393,10 +1365,17 @@ export interface ICCSUsrMsg_DesiredTimescale {
 /** Represents a CCSUsrMsg_DesiredTimescale. */
 export class CCSUsrMsg_DesiredTimescale implements ICCSUsrMsg_DesiredTimescale {
   /**
-   * Constructs a new CCSUsrMsg_DesiredTimescale.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_DesiredTimescale message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_DesiredTimescale
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_DesiredTimescale);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_DesiredTimescale;
 
   /** CCSUsrMsg_DesiredTimescale desiredTimescale. */
   public desiredTimescale: number;
@@ -1409,19 +1388,11 @@ export class CCSUsrMsg_DesiredTimescale implements ICCSUsrMsg_DesiredTimescale {
 
   /** CCSUsrMsg_DesiredTimescale startBlendTime. */
   public startBlendTime: number;
-
   /**
-   * Decodes a CCSUsrMsg_DesiredTimescale message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_DesiredTimescale
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_DesiredTimescale.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_DesiredTimescale;
+  constructor(properties?: ICCSUsrMsg_DesiredTimescale);
 }
 
 /** Properties of a CCSUsrMsg_CurrentTimescale. */
@@ -1432,15 +1403,6 @@ export interface ICCSUsrMsg_CurrentTimescale {
 
 /** Represents a CCSUsrMsg_CurrentTimescale. */
 export class CCSUsrMsg_CurrentTimescale implements ICCSUsrMsg_CurrentTimescale {
-  /**
-   * Constructs a new CCSUsrMsg_CurrentTimescale.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_CurrentTimescale);
-
-  /** CCSUsrMsg_CurrentTimescale curTimescale. */
-  public curTimescale: number;
-
   /**
    * Decodes a CCSUsrMsg_CurrentTimescale message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -1453,6 +1415,14 @@ export class CCSUsrMsg_CurrentTimescale implements ICCSUsrMsg_CurrentTimescale {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_CurrentTimescale;
+
+  /** CCSUsrMsg_CurrentTimescale curTimescale. */
+  public curTimescale: number;
+  /**
+   * Constructs a new CCSUsrMsg_CurrentTimescale.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_CurrentTimescale);
 }
 
 /** Properties of a CCSUsrMsg_AchievementEvent. */
@@ -1470,21 +1440,6 @@ export interface ICCSUsrMsg_AchievementEvent {
 /** Represents a CCSUsrMsg_AchievementEvent. */
 export class CCSUsrMsg_AchievementEvent implements ICCSUsrMsg_AchievementEvent {
   /**
-   * Constructs a new CCSUsrMsg_AchievementEvent.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_AchievementEvent);
-
-  /** CCSUsrMsg_AchievementEvent achievement. */
-  public achievement: number;
-
-  /** CCSUsrMsg_AchievementEvent count. */
-  public count: number;
-
-  /** CCSUsrMsg_AchievementEvent userId. */
-  public userId: number;
-
-  /**
    * Decodes a CCSUsrMsg_AchievementEvent message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -1496,6 +1451,20 @@ export class CCSUsrMsg_AchievementEvent implements ICCSUsrMsg_AchievementEvent {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_AchievementEvent;
+
+  /** CCSUsrMsg_AchievementEvent achievement. */
+  public achievement: number;
+
+  /** CCSUsrMsg_AchievementEvent count. */
+  public count: number;
+
+  /** CCSUsrMsg_AchievementEvent userId. */
+  public userId: number;
+  /**
+   * Constructs a new CCSUsrMsg_AchievementEvent.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_AchievementEvent);
 }
 
 /** Properties of a CCSUsrMsg_MatchEndConditions. */
@@ -1517,10 +1486,17 @@ export interface ICCSUsrMsg_MatchEndConditions {
 export class CCSUsrMsg_MatchEndConditions
   implements ICCSUsrMsg_MatchEndConditions {
   /**
-   * Constructs a new CCSUsrMsg_MatchEndConditions.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_MatchEndConditions message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_MatchEndConditions
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_MatchEndConditions);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_MatchEndConditions;
 
   /** CCSUsrMsg_MatchEndConditions fraglimit. */
   public fraglimit: number;
@@ -1533,19 +1509,11 @@ export class CCSUsrMsg_MatchEndConditions
 
   /** CCSUsrMsg_MatchEndConditions mpTimelimit. */
   public mpTimelimit: number;
-
   /**
-   * Decodes a CCSUsrMsg_MatchEndConditions message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_MatchEndConditions
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_MatchEndConditions.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_MatchEndConditions;
+  constructor(properties?: ICCSUsrMsg_MatchEndConditions);
 }
 
 /** Properties of a CCSUsrMsg_PlayerStatsUpdate. */
@@ -1567,10 +1535,17 @@ export interface ICCSUsrMsg_PlayerStatsUpdate {
 export class CCSUsrMsg_PlayerStatsUpdate
   implements ICCSUsrMsg_PlayerStatsUpdate {
   /**
-   * Constructs a new CCSUsrMsg_PlayerStatsUpdate.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_PlayerStatsUpdate message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_PlayerStatsUpdate
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_PlayerStatsUpdate);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_PlayerStatsUpdate;
 
   /** CCSUsrMsg_PlayerStatsUpdate version. */
   public version: number;
@@ -1583,19 +1558,11 @@ export class CCSUsrMsg_PlayerStatsUpdate
 
   /** CCSUsrMsg_PlayerStatsUpdate crc. */
   public crc: number;
-
   /**
-   * Decodes a CCSUsrMsg_PlayerStatsUpdate message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_PlayerStatsUpdate
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_PlayerStatsUpdate.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_PlayerStatsUpdate;
+  constructor(properties?: ICCSUsrMsg_PlayerStatsUpdate);
 }
 
 export namespace CCSUsrMsg_PlayerStatsUpdate {
@@ -1611,18 +1578,6 @@ export namespace CCSUsrMsg_PlayerStatsUpdate {
   /** Represents a Stat. */
   class Stat implements IStat {
     /**
-     * Constructs a new Stat.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CCSUsrMsg_PlayerStatsUpdate.IStat);
-
-    /** Stat idx. */
-    public idx: number;
-
-    /** Stat delta. */
-    public delta: number;
-
-    /**
      * Decodes a Stat message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -1634,6 +1589,17 @@ export namespace CCSUsrMsg_PlayerStatsUpdate {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CCSUsrMsg_PlayerStatsUpdate.Stat;
+
+    /** Stat idx. */
+    public idx: number;
+
+    /** Stat delta. */
+    public delta: number;
+    /**
+     * Constructs a new Stat.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CCSUsrMsg_PlayerStatsUpdate.IStat);
   }
 }
 
@@ -1649,18 +1615,6 @@ export interface ICCSUsrMsg_DisplayInventory {
 /** Represents a CCSUsrMsg_DisplayInventory. */
 export class CCSUsrMsg_DisplayInventory implements ICCSUsrMsg_DisplayInventory {
   /**
-   * Constructs a new CCSUsrMsg_DisplayInventory.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_DisplayInventory);
-
-  /** CCSUsrMsg_DisplayInventory display. */
-  public display: boolean;
-
-  /** CCSUsrMsg_DisplayInventory userId. */
-  public userId: number;
-
-  /**
    * Decodes a CCSUsrMsg_DisplayInventory message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -1672,6 +1626,17 @@ export class CCSUsrMsg_DisplayInventory implements ICCSUsrMsg_DisplayInventory {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_DisplayInventory;
+
+  /** CCSUsrMsg_DisplayInventory display. */
+  public display: boolean;
+
+  /** CCSUsrMsg_DisplayInventory userId. */
+  public userId: number;
+  /**
+   * Constructs a new CCSUsrMsg_DisplayInventory.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_DisplayInventory);
 }
 
 /** Properties of a CCSUsrMsg_QuestProgress. */
@@ -1689,21 +1654,6 @@ export interface ICCSUsrMsg_QuestProgress {
 /** Represents a CCSUsrMsg_QuestProgress. */
 export class CCSUsrMsg_QuestProgress implements ICCSUsrMsg_QuestProgress {
   /**
-   * Constructs a new CCSUsrMsg_QuestProgress.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_QuestProgress);
-
-  /** CCSUsrMsg_QuestProgress questId. */
-  public questId: number;
-
-  /** CCSUsrMsg_QuestProgress normalPoints. */
-  public normalPoints: number;
-
-  /** CCSUsrMsg_QuestProgress bonusPoints. */
-  public bonusPoints: number;
-
-  /**
    * Decodes a CCSUsrMsg_QuestProgress message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -1715,6 +1665,20 @@ export class CCSUsrMsg_QuestProgress implements ICCSUsrMsg_QuestProgress {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_QuestProgress;
+
+  /** CCSUsrMsg_QuestProgress questId. */
+  public questId: number;
+
+  /** CCSUsrMsg_QuestProgress normalPoints. */
+  public normalPoints: number;
+
+  /** CCSUsrMsg_QuestProgress bonusPoints. */
+  public bonusPoints: number;
+  /**
+   * Constructs a new CCSUsrMsg_QuestProgress.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_QuestProgress);
 }
 
 /** Properties of a CCSUsrMsg_XRankGet. */
@@ -1729,18 +1693,6 @@ export interface ICCSUsrMsg_XRankGet {
 /** Represents a CCSUsrMsg_XRankGet. */
 export class CCSUsrMsg_XRankGet implements ICCSUsrMsg_XRankGet {
   /**
-   * Constructs a new CCSUsrMsg_XRankGet.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_XRankGet);
-
-  /** CCSUsrMsg_XRankGet modeIdx. */
-  public modeIdx: number;
-
-  /** CCSUsrMsg_XRankGet controller. */
-  public controller: number;
-
-  /**
    * Decodes a CCSUsrMsg_XRankGet message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -1752,6 +1704,17 @@ export class CCSUsrMsg_XRankGet implements ICCSUsrMsg_XRankGet {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_XRankGet;
+
+  /** CCSUsrMsg_XRankGet modeIdx. */
+  public modeIdx: number;
+
+  /** CCSUsrMsg_XRankGet controller. */
+  public controller: number;
+  /**
+   * Constructs a new CCSUsrMsg_XRankGet.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_XRankGet);
 }
 
 /** Properties of a CCSUsrMsg_XRankUpd. */
@@ -1769,21 +1732,6 @@ export interface ICCSUsrMsg_XRankUpd {
 /** Represents a CCSUsrMsg_XRankUpd. */
 export class CCSUsrMsg_XRankUpd implements ICCSUsrMsg_XRankUpd {
   /**
-   * Constructs a new CCSUsrMsg_XRankUpd.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_XRankUpd);
-
-  /** CCSUsrMsg_XRankUpd modeIdx. */
-  public modeIdx: number;
-
-  /** CCSUsrMsg_XRankUpd controller. */
-  public controller: number;
-
-  /** CCSUsrMsg_XRankUpd ranking. */
-  public ranking: number;
-
-  /**
    * Decodes a CCSUsrMsg_XRankUpd message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -1795,6 +1743,20 @@ export class CCSUsrMsg_XRankUpd implements ICCSUsrMsg_XRankUpd {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_XRankUpd;
+
+  /** CCSUsrMsg_XRankUpd modeIdx. */
+  public modeIdx: number;
+
+  /** CCSUsrMsg_XRankUpd controller. */
+  public controller: number;
+
+  /** CCSUsrMsg_XRankUpd ranking. */
+  public ranking: number;
+  /**
+   * Constructs a new CCSUsrMsg_XRankUpd.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_XRankUpd);
 }
 
 /** Properties of a CCSUsrMsg_CallVoteFailed. */
@@ -1809,18 +1771,6 @@ export interface ICCSUsrMsg_CallVoteFailed {
 /** Represents a CCSUsrMsg_CallVoteFailed. */
 export class CCSUsrMsg_CallVoteFailed implements ICCSUsrMsg_CallVoteFailed {
   /**
-   * Constructs a new CCSUsrMsg_CallVoteFailed.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_CallVoteFailed);
-
-  /** CCSUsrMsg_CallVoteFailed reason. */
-  public reason: number;
-
-  /** CCSUsrMsg_CallVoteFailed time. */
-  public time: number;
-
-  /**
    * Decodes a CCSUsrMsg_CallVoteFailed message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -1832,6 +1782,17 @@ export class CCSUsrMsg_CallVoteFailed implements ICCSUsrMsg_CallVoteFailed {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_CallVoteFailed;
+
+  /** CCSUsrMsg_CallVoteFailed reason. */
+  public reason: number;
+
+  /** CCSUsrMsg_CallVoteFailed time. */
+  public time: number;
+  /**
+   * Constructs a new CCSUsrMsg_CallVoteFailed.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_CallVoteFailed);
 }
 
 /** Properties of a CCSUsrMsg_VoteStart. */
@@ -1861,10 +1822,17 @@ export interface ICCSUsrMsg_VoteStart {
 /** Represents a CCSUsrMsg_VoteStart. */
 export class CCSUsrMsg_VoteStart implements ICCSUsrMsg_VoteStart {
   /**
-   * Constructs a new CCSUsrMsg_VoteStart.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_VoteStart message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_VoteStart
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_VoteStart);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_VoteStart;
 
   /** CCSUsrMsg_VoteStart team. */
   public team: number;
@@ -1886,19 +1854,11 @@ export class CCSUsrMsg_VoteStart implements ICCSUsrMsg_VoteStart {
 
   /** CCSUsrMsg_VoteStart isYesNoVote. */
   public isYesNoVote: boolean;
-
   /**
-   * Decodes a CCSUsrMsg_VoteStart message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_VoteStart
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_VoteStart.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_VoteStart;
+  constructor(properties?: ICCSUsrMsg_VoteStart);
 }
 
 /** Properties of a CCSUsrMsg_VotePass. */
@@ -1919,10 +1879,17 @@ export interface ICCSUsrMsg_VotePass {
 /** Represents a CCSUsrMsg_VotePass. */
 export class CCSUsrMsg_VotePass implements ICCSUsrMsg_VotePass {
   /**
-   * Constructs a new CCSUsrMsg_VotePass.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_VotePass message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_VotePass
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_VotePass);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_VotePass;
 
   /** CCSUsrMsg_VotePass team. */
   public team: number;
@@ -1935,19 +1902,11 @@ export class CCSUsrMsg_VotePass implements ICCSUsrMsg_VotePass {
 
   /** CCSUsrMsg_VotePass detailsStr. */
   public detailsStr: string;
-
   /**
-   * Decodes a CCSUsrMsg_VotePass message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_VotePass
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_VotePass.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_VotePass;
+  constructor(properties?: ICCSUsrMsg_VotePass);
 }
 
 /** Properties of a CCSUsrMsg_VoteFailed. */
@@ -1962,18 +1921,6 @@ export interface ICCSUsrMsg_VoteFailed {
 /** Represents a CCSUsrMsg_VoteFailed. */
 export class CCSUsrMsg_VoteFailed implements ICCSUsrMsg_VoteFailed {
   /**
-   * Constructs a new CCSUsrMsg_VoteFailed.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_VoteFailed);
-
-  /** CCSUsrMsg_VoteFailed team. */
-  public team: number;
-
-  /** CCSUsrMsg_VoteFailed reason. */
-  public reason: number;
-
-  /**
    * Decodes a CCSUsrMsg_VoteFailed message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -1985,6 +1932,17 @@ export class CCSUsrMsg_VoteFailed implements ICCSUsrMsg_VoteFailed {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_VoteFailed;
+
+  /** CCSUsrMsg_VoteFailed team. */
+  public team: number;
+
+  /** CCSUsrMsg_VoteFailed reason. */
+  public reason: number;
+  /**
+   * Constructs a new CCSUsrMsg_VoteFailed.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_VoteFailed);
 }
 
 /** Properties of a CCSUsrMsg_VoteSetup. */
@@ -1995,15 +1953,6 @@ export interface ICCSUsrMsg_VoteSetup {
 
 /** Represents a CCSUsrMsg_VoteSetup. */
 export class CCSUsrMsg_VoteSetup implements ICCSUsrMsg_VoteSetup {
-  /**
-   * Constructs a new CCSUsrMsg_VoteSetup.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_VoteSetup);
-
-  /** CCSUsrMsg_VoteSetup potentialIssues. */
-  public potentialIssues: string[];
-
   /**
    * Decodes a CCSUsrMsg_VoteSetup message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -2016,6 +1965,14 @@ export class CCSUsrMsg_VoteSetup implements ICCSUsrMsg_VoteSetup {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_VoteSetup;
+
+  /** CCSUsrMsg_VoteSetup potentialIssues. */
+  public potentialIssues: string[];
+  /**
+   * Constructs a new CCSUsrMsg_VoteSetup.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_VoteSetup);
 }
 
 /** Properties of a CCSUsrMsg_SendLastKillerDamageToClient. */
@@ -2037,10 +1994,17 @@ export interface ICCSUsrMsg_SendLastKillerDamageToClient {
 export class CCSUsrMsg_SendLastKillerDamageToClient
   implements ICCSUsrMsg_SendLastKillerDamageToClient {
   /**
-   * Constructs a new CCSUsrMsg_SendLastKillerDamageToClient.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_SendLastKillerDamageToClient message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_SendLastKillerDamageToClient
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_SendLastKillerDamageToClient);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_SendLastKillerDamageToClient;
 
   /** CCSUsrMsg_SendLastKillerDamageToClient numHitsGiven. */
   public numHitsGiven: number;
@@ -2053,19 +2017,11 @@ export class CCSUsrMsg_SendLastKillerDamageToClient
 
   /** CCSUsrMsg_SendLastKillerDamageToClient damageTaken. */
   public damageTaken: number;
-
   /**
-   * Decodes a CCSUsrMsg_SendLastKillerDamageToClient message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_SendLastKillerDamageToClient
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_SendLastKillerDamageToClient.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_SendLastKillerDamageToClient;
+  constructor(properties?: ICCSUsrMsg_SendLastKillerDamageToClient);
 }
 
 /** Properties of a CCSUsrMsg_ServerRankUpdate. */
@@ -2076,15 +2032,6 @@ export interface ICCSUsrMsg_ServerRankUpdate {
 
 /** Represents a CCSUsrMsg_ServerRankUpdate. */
 export class CCSUsrMsg_ServerRankUpdate implements ICCSUsrMsg_ServerRankUpdate {
-  /**
-   * Constructs a new CCSUsrMsg_ServerRankUpdate.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_ServerRankUpdate);
-
-  /** CCSUsrMsg_ServerRankUpdate rankUpdate. */
-  public rankUpdate: CCSUsrMsg_ServerRankUpdate.IRankUpdate[];
-
   /**
    * Decodes a CCSUsrMsg_ServerRankUpdate message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -2097,6 +2044,14 @@ export class CCSUsrMsg_ServerRankUpdate implements ICCSUsrMsg_ServerRankUpdate {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_ServerRankUpdate;
+
+  /** CCSUsrMsg_ServerRankUpdate rankUpdate. */
+  public rankUpdate: CCSUsrMsg_ServerRankUpdate.IRankUpdate[];
+  /**
+   * Constructs a new CCSUsrMsg_ServerRankUpdate.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_ServerRankUpdate);
 }
 
 export namespace CCSUsrMsg_ServerRankUpdate {
@@ -2121,10 +2076,17 @@ export namespace CCSUsrMsg_ServerRankUpdate {
   /** Represents a RankUpdate. */
   class RankUpdate implements IRankUpdate {
     /**
-     * Constructs a new RankUpdate.
-     * @param [properties] Properties to set
+     * Decodes a RankUpdate message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns RankUpdate
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    constructor(properties?: CCSUsrMsg_ServerRankUpdate.IRankUpdate);
+    public static decode(
+      reader: $protobuf.Reader | Uint8Array,
+      length?: number
+    ): CCSUsrMsg_ServerRankUpdate.RankUpdate;
 
     /** RankUpdate accountId. */
     public accountId: number;
@@ -2140,19 +2102,11 @@ export namespace CCSUsrMsg_ServerRankUpdate {
 
     /** RankUpdate rankChange. */
     public rankChange: number;
-
     /**
-     * Decodes a RankUpdate message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns RankUpdate
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     * Constructs a new RankUpdate.
+     * @param [properties] Properties to set
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): CCSUsrMsg_ServerRankUpdate.RankUpdate;
+    constructor(properties?: CCSUsrMsg_ServerRankUpdate.IRankUpdate);
   }
 }
 
@@ -2165,15 +2119,6 @@ export interface ICCSUsrMsg_XpUpdate {
 /** Represents a CCSUsrMsg_XpUpdate. */
 export class CCSUsrMsg_XpUpdate implements ICCSUsrMsg_XpUpdate {
   /**
-   * Constructs a new CCSUsrMsg_XpUpdate.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_XpUpdate);
-
-  /** CCSUsrMsg_XpUpdate data. */
-  public data?: ICMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded | null;
-
-  /**
    * Decodes a CCSUsrMsg_XpUpdate message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -2185,6 +2130,14 @@ export class CCSUsrMsg_XpUpdate implements ICCSUsrMsg_XpUpdate {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_XpUpdate;
+
+  /** CCSUsrMsg_XpUpdate data. */
+  public data?: ICMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded | null;
+  /**
+   * Constructs a new CCSUsrMsg_XpUpdate.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_XpUpdate);
 }
 
 /** Properties of a CCSUsrMsg_ItemPickup. */
@@ -2195,15 +2148,6 @@ export interface ICCSUsrMsg_ItemPickup {
 
 /** Represents a CCSUsrMsg_ItemPickup. */
 export class CCSUsrMsg_ItemPickup implements ICCSUsrMsg_ItemPickup {
-  /**
-   * Constructs a new CCSUsrMsg_ItemPickup.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_ItemPickup);
-
-  /** CCSUsrMsg_ItemPickup item. */
-  public item: string;
-
   /**
    * Decodes a CCSUsrMsg_ItemPickup message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -2216,6 +2160,14 @@ export class CCSUsrMsg_ItemPickup implements ICCSUsrMsg_ItemPickup {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_ItemPickup;
+
+  /** CCSUsrMsg_ItemPickup item. */
+  public item: string;
+  /**
+   * Constructs a new CCSUsrMsg_ItemPickup.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_ItemPickup);
 }
 
 /** Properties of a CCSUsrMsg_ShowMenu. */
@@ -2233,21 +2185,6 @@ export interface ICCSUsrMsg_ShowMenu {
 /** Represents a CCSUsrMsg_ShowMenu. */
 export class CCSUsrMsg_ShowMenu implements ICCSUsrMsg_ShowMenu {
   /**
-   * Constructs a new CCSUsrMsg_ShowMenu.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_ShowMenu);
-
-  /** CCSUsrMsg_ShowMenu bitsValidSlots. */
-  public bitsValidSlots: number;
-
-  /** CCSUsrMsg_ShowMenu displayTime. */
-  public displayTime: number;
-
-  /** CCSUsrMsg_ShowMenu menuString. */
-  public menuString: string;
-
-  /**
    * Decodes a CCSUsrMsg_ShowMenu message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -2259,6 +2196,20 @@ export class CCSUsrMsg_ShowMenu implements ICCSUsrMsg_ShowMenu {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_ShowMenu;
+
+  /** CCSUsrMsg_ShowMenu bitsValidSlots. */
+  public bitsValidSlots: number;
+
+  /** CCSUsrMsg_ShowMenu displayTime. */
+  public displayTime: number;
+
+  /** CCSUsrMsg_ShowMenu menuString. */
+  public menuString: string;
+  /**
+   * Constructs a new CCSUsrMsg_ShowMenu.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_ShowMenu);
 }
 
 /** Properties of a CCSUsrMsg_BarTime. */
@@ -2269,15 +2220,6 @@ export interface ICCSUsrMsg_BarTime {
 
 /** Represents a CCSUsrMsg_BarTime. */
 export class CCSUsrMsg_BarTime implements ICCSUsrMsg_BarTime {
-  /**
-   * Constructs a new CCSUsrMsg_BarTime.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_BarTime);
-
-  /** CCSUsrMsg_BarTime time. */
-  public time: string;
-
   /**
    * Decodes a CCSUsrMsg_BarTime message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -2290,6 +2232,14 @@ export class CCSUsrMsg_BarTime implements ICCSUsrMsg_BarTime {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_BarTime;
+
+  /** CCSUsrMsg_BarTime time. */
+  public time: string;
+  /**
+   * Constructs a new CCSUsrMsg_BarTime.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_BarTime);
 }
 
 /** Properties of a CCSUsrMsg_AmmoDenied. */
@@ -2300,15 +2250,6 @@ export interface ICCSUsrMsg_AmmoDenied {
 
 /** Represents a CCSUsrMsg_AmmoDenied. */
 export class CCSUsrMsg_AmmoDenied implements ICCSUsrMsg_AmmoDenied {
-  /**
-   * Constructs a new CCSUsrMsg_AmmoDenied.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_AmmoDenied);
-
-  /** CCSUsrMsg_AmmoDenied ammoIdx. */
-  public ammoIdx: number;
-
   /**
    * Decodes a CCSUsrMsg_AmmoDenied message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -2321,6 +2262,14 @@ export class CCSUsrMsg_AmmoDenied implements ICCSUsrMsg_AmmoDenied {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_AmmoDenied;
+
+  /** CCSUsrMsg_AmmoDenied ammoIdx. */
+  public ammoIdx: number;
+  /**
+   * Constructs a new CCSUsrMsg_AmmoDenied.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_AmmoDenied);
 }
 
 /** Properties of a CCSUsrMsg_MarkAchievement. */
@@ -2331,15 +2280,6 @@ export interface ICCSUsrMsg_MarkAchievement {
 
 /** Represents a CCSUsrMsg_MarkAchievement. */
 export class CCSUsrMsg_MarkAchievement implements ICCSUsrMsg_MarkAchievement {
-  /**
-   * Constructs a new CCSUsrMsg_MarkAchievement.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_MarkAchievement);
-
-  /** CCSUsrMsg_MarkAchievement achievement. */
-  public achievement: string;
-
   /**
    * Decodes a CCSUsrMsg_MarkAchievement message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -2352,6 +2292,14 @@ export class CCSUsrMsg_MarkAchievement implements ICCSUsrMsg_MarkAchievement {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_MarkAchievement;
+
+  /** CCSUsrMsg_MarkAchievement achievement. */
+  public achievement: string;
+  /**
+   * Constructs a new CCSUsrMsg_MarkAchievement.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_MarkAchievement);
 }
 
 /** Properties of a CCSUsrMsg_MatchStatsUpdate. */
@@ -2362,15 +2310,6 @@ export interface ICCSUsrMsg_MatchStatsUpdate {
 
 /** Represents a CCSUsrMsg_MatchStatsUpdate. */
 export class CCSUsrMsg_MatchStatsUpdate implements ICCSUsrMsg_MatchStatsUpdate {
-  /**
-   * Constructs a new CCSUsrMsg_MatchStatsUpdate.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_MatchStatsUpdate);
-
-  /** CCSUsrMsg_MatchStatsUpdate update. */
-  public update: string;
-
   /**
    * Decodes a CCSUsrMsg_MatchStatsUpdate message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -2383,6 +2322,14 @@ export class CCSUsrMsg_MatchStatsUpdate implements ICCSUsrMsg_MatchStatsUpdate {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_MatchStatsUpdate;
+
+  /** CCSUsrMsg_MatchStatsUpdate update. */
+  public update: string;
+  /**
+   * Constructs a new CCSUsrMsg_MatchStatsUpdate.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_MatchStatsUpdate);
 }
 
 /** Properties of a CCSUsrMsg_ItemDrop. */
@@ -2397,18 +2344,6 @@ export interface ICCSUsrMsg_ItemDrop {
 /** Represents a CCSUsrMsg_ItemDrop. */
 export class CCSUsrMsg_ItemDrop implements ICCSUsrMsg_ItemDrop {
   /**
-   * Constructs a new CCSUsrMsg_ItemDrop.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_ItemDrop);
-
-  /** CCSUsrMsg_ItemDrop itemid. */
-  public itemid: number | Long;
-
-  /** CCSUsrMsg_ItemDrop death. */
-  public death: boolean;
-
-  /**
    * Decodes a CCSUsrMsg_ItemDrop message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -2420,6 +2355,17 @@ export class CCSUsrMsg_ItemDrop implements ICCSUsrMsg_ItemDrop {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_ItemDrop;
+
+  /** CCSUsrMsg_ItemDrop itemid. */
+  public itemid: number | Long;
+
+  /** CCSUsrMsg_ItemDrop death. */
+  public death: boolean;
+  /**
+   * Constructs a new CCSUsrMsg_ItemDrop.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_ItemDrop);
 }
 
 /** Properties of a CCSUsrMsg_GlowPropTurnOff. */
@@ -2430,15 +2376,6 @@ export interface ICCSUsrMsg_GlowPropTurnOff {
 
 /** Represents a CCSUsrMsg_GlowPropTurnOff. */
 export class CCSUsrMsg_GlowPropTurnOff implements ICCSUsrMsg_GlowPropTurnOff {
-  /**
-   * Constructs a new CCSUsrMsg_GlowPropTurnOff.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_GlowPropTurnOff);
-
-  /** CCSUsrMsg_GlowPropTurnOff entidx. */
-  public entidx: number;
-
   /**
    * Decodes a CCSUsrMsg_GlowPropTurnOff message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -2451,6 +2388,14 @@ export class CCSUsrMsg_GlowPropTurnOff implements ICCSUsrMsg_GlowPropTurnOff {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_GlowPropTurnOff;
+
+  /** CCSUsrMsg_GlowPropTurnOff entidx. */
+  public entidx: number;
+  /**
+   * Constructs a new CCSUsrMsg_GlowPropTurnOff.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_GlowPropTurnOff);
 }
 
 /** Properties of a CCSUsrMsg_RoundBackupFilenames. */
@@ -2472,10 +2417,17 @@ export interface ICCSUsrMsg_RoundBackupFilenames {
 export class CCSUsrMsg_RoundBackupFilenames
   implements ICCSUsrMsg_RoundBackupFilenames {
   /**
-   * Constructs a new CCSUsrMsg_RoundBackupFilenames.
-   * @param [properties] Properties to set
+   * Decodes a CCSUsrMsg_RoundBackupFilenames message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCSUsrMsg_RoundBackupFilenames
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCSUsrMsg_RoundBackupFilenames);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCSUsrMsg_RoundBackupFilenames;
 
   /** CCSUsrMsg_RoundBackupFilenames count. */
   public count: number;
@@ -2488,19 +2440,11 @@ export class CCSUsrMsg_RoundBackupFilenames
 
   /** CCSUsrMsg_RoundBackupFilenames nicename. */
   public nicename: string;
-
   /**
-   * Decodes a CCSUsrMsg_RoundBackupFilenames message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCSUsrMsg_RoundBackupFilenames
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCSUsrMsg_RoundBackupFilenames.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCSUsrMsg_RoundBackupFilenames;
+  constructor(properties?: ICCSUsrMsg_RoundBackupFilenames);
 }
 
 /** Properties of a CCSUsrMsg_ResetHud. */
@@ -2511,15 +2455,6 @@ export interface ICCSUsrMsg_ResetHud {
 
 /** Represents a CCSUsrMsg_ResetHud. */
 export class CCSUsrMsg_ResetHud implements ICCSUsrMsg_ResetHud {
-  /**
-   * Constructs a new CCSUsrMsg_ResetHud.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_ResetHud);
-
-  /** CCSUsrMsg_ResetHud reset. */
-  public reset: boolean;
-
   /**
    * Decodes a CCSUsrMsg_ResetHud message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -2532,6 +2467,14 @@ export class CCSUsrMsg_ResetHud implements ICCSUsrMsg_ResetHud {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_ResetHud;
+
+  /** CCSUsrMsg_ResetHud reset. */
+  public reset: boolean;
+  /**
+   * Constructs a new CCSUsrMsg_ResetHud.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_ResetHud);
 }
 
 /** Properties of a CCSUsrMsg_GameTitle. */
@@ -2542,15 +2485,6 @@ export interface ICCSUsrMsg_GameTitle {
 
 /** Represents a CCSUsrMsg_GameTitle. */
 export class CCSUsrMsg_GameTitle implements ICCSUsrMsg_GameTitle {
-  /**
-   * Constructs a new CCSUsrMsg_GameTitle.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_GameTitle);
-
-  /** CCSUsrMsg_GameTitle dummy. */
-  public dummy: number;
-
   /**
    * Decodes a CCSUsrMsg_GameTitle message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -2563,6 +2497,14 @@ export class CCSUsrMsg_GameTitle implements ICCSUsrMsg_GameTitle {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_GameTitle;
+
+  /** CCSUsrMsg_GameTitle dummy. */
+  public dummy: number;
+  /**
+   * Constructs a new CCSUsrMsg_GameTitle.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_GameTitle);
 }
 
 /** Properties of a CCSUsrMsg_RequestState. */
@@ -2573,15 +2515,6 @@ export interface ICCSUsrMsg_RequestState {
 
 /** Represents a CCSUsrMsg_RequestState. */
 export class CCSUsrMsg_RequestState implements ICCSUsrMsg_RequestState {
-  /**
-   * Constructs a new CCSUsrMsg_RequestState.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_RequestState);
-
-  /** CCSUsrMsg_RequestState dummy. */
-  public dummy: number;
-
   /**
    * Decodes a CCSUsrMsg_RequestState message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -2594,6 +2527,14 @@ export class CCSUsrMsg_RequestState implements ICCSUsrMsg_RequestState {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_RequestState;
+
+  /** CCSUsrMsg_RequestState dummy. */
+  public dummy: number;
+  /**
+   * Constructs a new CCSUsrMsg_RequestState.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_RequestState);
 }
 
 /** Properties of a CCSUsrMsg_StopSpectatorMode. */
@@ -2606,15 +2547,6 @@ export interface ICCSUsrMsg_StopSpectatorMode {
 export class CCSUsrMsg_StopSpectatorMode
   implements ICCSUsrMsg_StopSpectatorMode {
   /**
-   * Constructs a new CCSUsrMsg_StopSpectatorMode.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_StopSpectatorMode);
-
-  /** CCSUsrMsg_StopSpectatorMode dummy. */
-  public dummy: number;
-
-  /**
    * Decodes a CCSUsrMsg_StopSpectatorMode message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -2626,6 +2558,14 @@ export class CCSUsrMsg_StopSpectatorMode
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_StopSpectatorMode;
+
+  /** CCSUsrMsg_StopSpectatorMode dummy. */
+  public dummy: number;
+  /**
+   * Constructs a new CCSUsrMsg_StopSpectatorMode.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_StopSpectatorMode);
 }
 
 /** Properties of a CCSUsrMsg_DisconnectToLobby. */
@@ -2638,15 +2578,6 @@ export interface ICCSUsrMsg_DisconnectToLobby {
 export class CCSUsrMsg_DisconnectToLobby
   implements ICCSUsrMsg_DisconnectToLobby {
   /**
-   * Constructs a new CCSUsrMsg_DisconnectToLobby.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_DisconnectToLobby);
-
-  /** CCSUsrMsg_DisconnectToLobby dummy. */
-  public dummy: number;
-
-  /**
    * Decodes a CCSUsrMsg_DisconnectToLobby message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -2658,6 +2589,14 @@ export class CCSUsrMsg_DisconnectToLobby
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_DisconnectToLobby;
+
+  /** CCSUsrMsg_DisconnectToLobby dummy. */
+  public dummy: number;
+  /**
+   * Constructs a new CCSUsrMsg_DisconnectToLobby.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_DisconnectToLobby);
 }
 
 /** Properties of a CCSUsrMsg_WarmupHasEnded. */
@@ -2668,15 +2607,6 @@ export interface ICCSUsrMsg_WarmupHasEnded {
 
 /** Represents a CCSUsrMsg_WarmupHasEnded. */
 export class CCSUsrMsg_WarmupHasEnded implements ICCSUsrMsg_WarmupHasEnded {
-  /**
-   * Constructs a new CCSUsrMsg_WarmupHasEnded.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_WarmupHasEnded);
-
-  /** CCSUsrMsg_WarmupHasEnded dummy. */
-  public dummy: number;
-
   /**
    * Decodes a CCSUsrMsg_WarmupHasEnded message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -2689,6 +2619,14 @@ export class CCSUsrMsg_WarmupHasEnded implements ICCSUsrMsg_WarmupHasEnded {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_WarmupHasEnded;
+
+  /** CCSUsrMsg_WarmupHasEnded dummy. */
+  public dummy: number;
+  /**
+   * Constructs a new CCSUsrMsg_WarmupHasEnded.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_WarmupHasEnded);
 }
 
 /** Properties of a CCSUsrMsg_ClientInfo. */
@@ -2699,15 +2637,6 @@ export interface ICCSUsrMsg_ClientInfo {
 
 /** Represents a CCSUsrMsg_ClientInfo. */
 export class CCSUsrMsg_ClientInfo implements ICCSUsrMsg_ClientInfo {
-  /**
-   * Constructs a new CCSUsrMsg_ClientInfo.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_ClientInfo);
-
-  /** CCSUsrMsg_ClientInfo dummy. */
-  public dummy: number;
-
   /**
    * Decodes a CCSUsrMsg_ClientInfo message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -2720,6 +2649,14 @@ export class CCSUsrMsg_ClientInfo implements ICCSUsrMsg_ClientInfo {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_ClientInfo;
+
+  /** CCSUsrMsg_ClientInfo dummy. */
+  public dummy: number;
+  /**
+   * Constructs a new CCSUsrMsg_ClientInfo.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_ClientInfo);
 }
 
 /** Properties of a CCSUsrMsg_ServerRankRevealAll. */
@@ -2732,15 +2669,6 @@ export interface ICCSUsrMsg_ServerRankRevealAll {
 export class CCSUsrMsg_ServerRankRevealAll
   implements ICCSUsrMsg_ServerRankRevealAll {
   /**
-   * Constructs a new CCSUsrMsg_ServerRankRevealAll.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCSUsrMsg_ServerRankRevealAll);
-
-  /** CCSUsrMsg_ServerRankRevealAll secondsTillShutdown. */
-  public secondsTillShutdown: number;
-
-  /**
    * Decodes a CCSUsrMsg_ServerRankRevealAll message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -2752,6 +2680,14 @@ export class CCSUsrMsg_ServerRankRevealAll
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCSUsrMsg_ServerRankRevealAll;
+
+  /** CCSUsrMsg_ServerRankRevealAll secondsTillShutdown. */
+  public secondsTillShutdown: number;
+  /**
+   * Constructs a new CCSUsrMsg_ServerRankRevealAll.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCSUsrMsg_ServerRankRevealAll);
 }
 
 /** Namespace google. */
@@ -2767,15 +2703,6 @@ export namespace google {
     /** Represents a FileDescriptorSet. */
     class FileDescriptorSet implements IFileDescriptorSet {
       /**
-       * Constructs a new FileDescriptorSet.
-       * @param [properties] Properties to set
-       */
-      constructor(properties?: google.protobuf.IFileDescriptorSet);
-
-      /** FileDescriptorSet file. */
-      public file: google.protobuf.IFileDescriptorProto[];
-
-      /**
        * Decodes a FileDescriptorSet message from the specified reader or buffer.
        * @param reader Reader or buffer to decode from
        * @param [length] Message length if known beforehand
@@ -2787,6 +2714,14 @@ export namespace google {
         reader: $protobuf.Reader | Uint8Array,
         length?: number
       ): google.protobuf.FileDescriptorSet;
+
+      /** FileDescriptorSet file. */
+      public file: google.protobuf.IFileDescriptorProto[];
+      /**
+       * Constructs a new FileDescriptorSet.
+       * @param [properties] Properties to set
+       */
+      constructor(properties?: google.protobuf.IFileDescriptorSet);
     }
 
     /** Properties of a FileDescriptorProto. */
@@ -2831,10 +2766,17 @@ export namespace google {
     /** Represents a FileDescriptorProto. */
     class FileDescriptorProto implements IFileDescriptorProto {
       /**
-       * Constructs a new FileDescriptorProto.
-       * @param [properties] Properties to set
+       * Decodes a FileDescriptorProto message from the specified reader or buffer.
+       * @param reader Reader or buffer to decode from
+       * @param [length] Message length if known beforehand
+       * @returns FileDescriptorProto
+       * @throws {Error} If the payload is not a reader or valid buffer
+       * @throws {$protobuf.util.ProtocolError} If required fields are missing
        */
-      constructor(properties?: google.protobuf.IFileDescriptorProto);
+      public static decode(
+        reader: $protobuf.Reader | Uint8Array,
+        length?: number
+      ): google.protobuf.FileDescriptorProto;
 
       /** FileDescriptorProto name. */
       public name: string;
@@ -2871,19 +2813,11 @@ export namespace google {
 
       /** FileDescriptorProto syntax. */
       public syntax: string;
-
       /**
-       * Decodes a FileDescriptorProto message from the specified reader or buffer.
-       * @param reader Reader or buffer to decode from
-       * @param [length] Message length if known beforehand
-       * @returns FileDescriptorProto
-       * @throws {Error} If the payload is not a reader or valid buffer
-       * @throws {$protobuf.util.ProtocolError} If required fields are missing
+       * Constructs a new FileDescriptorProto.
+       * @param [properties] Properties to set
        */
-      public static decode(
-        reader: $protobuf.Reader | Uint8Array,
-        length?: number
-      ): google.protobuf.FileDescriptorProto;
+      constructor(properties?: google.protobuf.IFileDescriptorProto);
     }
 
     /** Properties of a DescriptorProto. */
@@ -2922,10 +2856,17 @@ export namespace google {
     /** Represents a DescriptorProto. */
     class DescriptorProto implements IDescriptorProto {
       /**
-       * Constructs a new DescriptorProto.
-       * @param [properties] Properties to set
+       * Decodes a DescriptorProto message from the specified reader or buffer.
+       * @param reader Reader or buffer to decode from
+       * @param [length] Message length if known beforehand
+       * @returns DescriptorProto
+       * @throws {Error} If the payload is not a reader or valid buffer
+       * @throws {$protobuf.util.ProtocolError} If required fields are missing
        */
-      constructor(properties?: google.protobuf.IDescriptorProto);
+      public static decode(
+        reader: $protobuf.Reader | Uint8Array,
+        length?: number
+      ): google.protobuf.DescriptorProto;
 
       /** DescriptorProto name. */
       public name: string;
@@ -2956,19 +2897,11 @@ export namespace google {
 
       /** DescriptorProto reservedName. */
       public reservedName: string[];
-
       /**
-       * Decodes a DescriptorProto message from the specified reader or buffer.
-       * @param reader Reader or buffer to decode from
-       * @param [length] Message length if known beforehand
-       * @returns DescriptorProto
-       * @throws {Error} If the payload is not a reader or valid buffer
-       * @throws {$protobuf.util.ProtocolError} If required fields are missing
+       * Constructs a new DescriptorProto.
+       * @param [properties] Properties to set
        */
-      public static decode(
-        reader: $protobuf.Reader | Uint8Array,
-        length?: number
-      ): google.protobuf.DescriptorProto;
+      constructor(properties?: google.protobuf.IDescriptorProto);
     }
 
     namespace DescriptorProto {
@@ -2984,20 +2917,6 @@ export namespace google {
       /** Represents an ExtensionRange. */
       class ExtensionRange implements IExtensionRange {
         /**
-         * Constructs a new ExtensionRange.
-         * @param [properties] Properties to set
-         */
-        constructor(
-          properties?: google.protobuf.DescriptorProto.IExtensionRange
-        );
-
-        /** ExtensionRange start. */
-        public start: number;
-
-        /** ExtensionRange end. */
-        public end: number;
-
-        /**
          * Decodes an ExtensionRange message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3009,6 +2928,19 @@ export namespace google {
           reader: $protobuf.Reader | Uint8Array,
           length?: number
         ): google.protobuf.DescriptorProto.ExtensionRange;
+
+        /** ExtensionRange start. */
+        public start: number;
+
+        /** ExtensionRange end. */
+        public end: number;
+        /**
+         * Constructs a new ExtensionRange.
+         * @param [properties] Properties to set
+         */
+        constructor(
+          properties?: google.protobuf.DescriptorProto.IExtensionRange
+        );
       }
 
       /** Properties of a ReservedRange. */
@@ -3023,20 +2955,6 @@ export namespace google {
       /** Represents a ReservedRange. */
       class ReservedRange implements IReservedRange {
         /**
-         * Constructs a new ReservedRange.
-         * @param [properties] Properties to set
-         */
-        constructor(
-          properties?: google.protobuf.DescriptorProto.IReservedRange
-        );
-
-        /** ReservedRange start. */
-        public start: number;
-
-        /** ReservedRange end. */
-        public end: number;
-
-        /**
          * Decodes a ReservedRange message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3048,6 +2966,19 @@ export namespace google {
           reader: $protobuf.Reader | Uint8Array,
           length?: number
         ): google.protobuf.DescriptorProto.ReservedRange;
+
+        /** ReservedRange start. */
+        public start: number;
+
+        /** ReservedRange end. */
+        public end: number;
+        /**
+         * Constructs a new ReservedRange.
+         * @param [properties] Properties to set
+         */
+        constructor(
+          properties?: google.protobuf.DescriptorProto.IReservedRange
+        );
       }
     }
 
@@ -3087,10 +3018,17 @@ export namespace google {
     /** Represents a FieldDescriptorProto. */
     class FieldDescriptorProto implements IFieldDescriptorProto {
       /**
-       * Constructs a new FieldDescriptorProto.
-       * @param [properties] Properties to set
+       * Decodes a FieldDescriptorProto message from the specified reader or buffer.
+       * @param reader Reader or buffer to decode from
+       * @param [length] Message length if known beforehand
+       * @returns FieldDescriptorProto
+       * @throws {Error} If the payload is not a reader or valid buffer
+       * @throws {$protobuf.util.ProtocolError} If required fields are missing
        */
-      constructor(properties?: google.protobuf.IFieldDescriptorProto);
+      public static decode(
+        reader: $protobuf.Reader | Uint8Array,
+        length?: number
+      ): google.protobuf.FieldDescriptorProto;
 
       /** FieldDescriptorProto name. */
       public name: string;
@@ -3121,19 +3059,11 @@ export namespace google {
 
       /** FieldDescriptorProto options. */
       public options?: google.protobuf.IFieldOptions | null;
-
       /**
-       * Decodes a FieldDescriptorProto message from the specified reader or buffer.
-       * @param reader Reader or buffer to decode from
-       * @param [length] Message length if known beforehand
-       * @returns FieldDescriptorProto
-       * @throws {Error} If the payload is not a reader or valid buffer
-       * @throws {$protobuf.util.ProtocolError} If required fields are missing
+       * Constructs a new FieldDescriptorProto.
+       * @param [properties] Properties to set
        */
-      public static decode(
-        reader: $protobuf.Reader | Uint8Array,
-        length?: number
-      ): google.protobuf.FieldDescriptorProto;
+      constructor(properties?: google.protobuf.IFieldDescriptorProto);
     }
 
     namespace FieldDescriptorProto {
@@ -3179,18 +3109,6 @@ export namespace google {
     /** Represents an OneofDescriptorProto. */
     class OneofDescriptorProto implements IOneofDescriptorProto {
       /**
-       * Constructs a new OneofDescriptorProto.
-       * @param [properties] Properties to set
-       */
-      constructor(properties?: google.protobuf.IOneofDescriptorProto);
-
-      /** OneofDescriptorProto name. */
-      public name: string;
-
-      /** OneofDescriptorProto options. */
-      public options?: google.protobuf.IOneofOptions | null;
-
-      /**
        * Decodes an OneofDescriptorProto message from the specified reader or buffer.
        * @param reader Reader or buffer to decode from
        * @param [length] Message length if known beforehand
@@ -3202,6 +3120,17 @@ export namespace google {
         reader: $protobuf.Reader | Uint8Array,
         length?: number
       ): google.protobuf.OneofDescriptorProto;
+
+      /** OneofDescriptorProto name. */
+      public name: string;
+
+      /** OneofDescriptorProto options. */
+      public options?: google.protobuf.IOneofOptions | null;
+      /**
+       * Constructs a new OneofDescriptorProto.
+       * @param [properties] Properties to set
+       */
+      constructor(properties?: google.protobuf.IOneofDescriptorProto);
     }
 
     /** Properties of an EnumDescriptorProto. */
@@ -3219,21 +3148,6 @@ export namespace google {
     /** Represents an EnumDescriptorProto. */
     class EnumDescriptorProto implements IEnumDescriptorProto {
       /**
-       * Constructs a new EnumDescriptorProto.
-       * @param [properties] Properties to set
-       */
-      constructor(properties?: google.protobuf.IEnumDescriptorProto);
-
-      /** EnumDescriptorProto name. */
-      public name: string;
-
-      /** EnumDescriptorProto value. */
-      public value: google.protobuf.IEnumValueDescriptorProto[];
-
-      /** EnumDescriptorProto options. */
-      public options?: google.protobuf.IEnumOptions | null;
-
-      /**
        * Decodes an EnumDescriptorProto message from the specified reader or buffer.
        * @param reader Reader or buffer to decode from
        * @param [length] Message length if known beforehand
@@ -3245,6 +3159,20 @@ export namespace google {
         reader: $protobuf.Reader | Uint8Array,
         length?: number
       ): google.protobuf.EnumDescriptorProto;
+
+      /** EnumDescriptorProto name. */
+      public name: string;
+
+      /** EnumDescriptorProto value. */
+      public value: google.protobuf.IEnumValueDescriptorProto[];
+
+      /** EnumDescriptorProto options. */
+      public options?: google.protobuf.IEnumOptions | null;
+      /**
+       * Constructs a new EnumDescriptorProto.
+       * @param [properties] Properties to set
+       */
+      constructor(properties?: google.protobuf.IEnumDescriptorProto);
     }
 
     /** Properties of an EnumValueDescriptorProto. */
@@ -3262,21 +3190,6 @@ export namespace google {
     /** Represents an EnumValueDescriptorProto. */
     class EnumValueDescriptorProto implements IEnumValueDescriptorProto {
       /**
-       * Constructs a new EnumValueDescriptorProto.
-       * @param [properties] Properties to set
-       */
-      constructor(properties?: google.protobuf.IEnumValueDescriptorProto);
-
-      /** EnumValueDescriptorProto name. */
-      public name: string;
-
-      /** EnumValueDescriptorProto number. */
-      public number: number;
-
-      /** EnumValueDescriptorProto options. */
-      public options?: google.protobuf.IEnumValueOptions | null;
-
-      /**
        * Decodes an EnumValueDescriptorProto message from the specified reader or buffer.
        * @param reader Reader or buffer to decode from
        * @param [length] Message length if known beforehand
@@ -3288,6 +3201,20 @@ export namespace google {
         reader: $protobuf.Reader | Uint8Array,
         length?: number
       ): google.protobuf.EnumValueDescriptorProto;
+
+      /** EnumValueDescriptorProto name. */
+      public name: string;
+
+      /** EnumValueDescriptorProto number. */
+      public number: number;
+
+      /** EnumValueDescriptorProto options. */
+      public options?: google.protobuf.IEnumValueOptions | null;
+      /**
+       * Constructs a new EnumValueDescriptorProto.
+       * @param [properties] Properties to set
+       */
+      constructor(properties?: google.protobuf.IEnumValueDescriptorProto);
     }
 
     /** Properties of a ServiceDescriptorProto. */
@@ -3305,21 +3232,6 @@ export namespace google {
     /** Represents a ServiceDescriptorProto. */
     class ServiceDescriptorProto implements IServiceDescriptorProto {
       /**
-       * Constructs a new ServiceDescriptorProto.
-       * @param [properties] Properties to set
-       */
-      constructor(properties?: google.protobuf.IServiceDescriptorProto);
-
-      /** ServiceDescriptorProto name. */
-      public name: string;
-
-      /** ServiceDescriptorProto method. */
-      public method: google.protobuf.IMethodDescriptorProto[];
-
-      /** ServiceDescriptorProto options. */
-      public options?: google.protobuf.IServiceOptions | null;
-
-      /**
        * Decodes a ServiceDescriptorProto message from the specified reader or buffer.
        * @param reader Reader or buffer to decode from
        * @param [length] Message length if known beforehand
@@ -3331,6 +3243,20 @@ export namespace google {
         reader: $protobuf.Reader | Uint8Array,
         length?: number
       ): google.protobuf.ServiceDescriptorProto;
+
+      /** ServiceDescriptorProto name. */
+      public name: string;
+
+      /** ServiceDescriptorProto method. */
+      public method: google.protobuf.IMethodDescriptorProto[];
+
+      /** ServiceDescriptorProto options. */
+      public options?: google.protobuf.IServiceOptions | null;
+      /**
+       * Constructs a new ServiceDescriptorProto.
+       * @param [properties] Properties to set
+       */
+      constructor(properties?: google.protobuf.IServiceDescriptorProto);
     }
 
     /** Properties of a MethodDescriptorProto. */
@@ -3357,10 +3283,17 @@ export namespace google {
     /** Represents a MethodDescriptorProto. */
     class MethodDescriptorProto implements IMethodDescriptorProto {
       /**
-       * Constructs a new MethodDescriptorProto.
-       * @param [properties] Properties to set
+       * Decodes a MethodDescriptorProto message from the specified reader or buffer.
+       * @param reader Reader or buffer to decode from
+       * @param [length] Message length if known beforehand
+       * @returns MethodDescriptorProto
+       * @throws {Error} If the payload is not a reader or valid buffer
+       * @throws {$protobuf.util.ProtocolError} If required fields are missing
        */
-      constructor(properties?: google.protobuf.IMethodDescriptorProto);
+      public static decode(
+        reader: $protobuf.Reader | Uint8Array,
+        length?: number
+      ): google.protobuf.MethodDescriptorProto;
 
       /** MethodDescriptorProto name. */
       public name: string;
@@ -3379,19 +3312,11 @@ export namespace google {
 
       /** MethodDescriptorProto serverStreaming. */
       public serverStreaming: boolean;
-
       /**
-       * Decodes a MethodDescriptorProto message from the specified reader or buffer.
-       * @param reader Reader or buffer to decode from
-       * @param [length] Message length if known beforehand
-       * @returns MethodDescriptorProto
-       * @throws {Error} If the payload is not a reader or valid buffer
-       * @throws {$protobuf.util.ProtocolError} If required fields are missing
+       * Constructs a new MethodDescriptorProto.
+       * @param [properties] Properties to set
        */
-      public static decode(
-        reader: $protobuf.Reader | Uint8Array,
-        length?: number
-      ): google.protobuf.MethodDescriptorProto;
+      constructor(properties?: google.protobuf.IMethodDescriptorProto);
     }
 
     /** Properties of a FileOptions. */
@@ -3445,10 +3370,17 @@ export namespace google {
     /** Represents a FileOptions. */
     class FileOptions implements IFileOptions {
       /**
-       * Constructs a new FileOptions.
-       * @param [properties] Properties to set
+       * Decodes a FileOptions message from the specified reader or buffer.
+       * @param reader Reader or buffer to decode from
+       * @param [length] Message length if known beforehand
+       * @returns FileOptions
+       * @throws {Error} If the payload is not a reader or valid buffer
+       * @throws {$protobuf.util.ProtocolError} If required fields are missing
        */
-      constructor(properties?: google.protobuf.IFileOptions);
+      public static decode(
+        reader: $protobuf.Reader | Uint8Array,
+        length?: number
+      ): google.protobuf.FileOptions;
 
       /** FileOptions javaPackage. */
       public javaPackage: string;
@@ -3494,19 +3426,11 @@ export namespace google {
 
       /** FileOptions uninterpretedOption. */
       public uninterpretedOption: google.protobuf.IUninterpretedOption[];
-
       /**
-       * Decodes a FileOptions message from the specified reader or buffer.
-       * @param reader Reader or buffer to decode from
-       * @param [length] Message length if known beforehand
-       * @returns FileOptions
-       * @throws {Error} If the payload is not a reader or valid buffer
-       * @throws {$protobuf.util.ProtocolError} If required fields are missing
+       * Constructs a new FileOptions.
+       * @param [properties] Properties to set
        */
-      public static decode(
-        reader: $protobuf.Reader | Uint8Array,
-        length?: number
-      ): google.protobuf.FileOptions;
+      constructor(properties?: google.protobuf.IFileOptions);
     }
 
     namespace FileOptions {
@@ -3545,10 +3469,17 @@ export namespace google {
     /** Represents a MessageOptions. */
     class MessageOptions implements IMessageOptions {
       /**
-       * Constructs a new MessageOptions.
-       * @param [properties] Properties to set
+       * Decodes a MessageOptions message from the specified reader or buffer.
+       * @param reader Reader or buffer to decode from
+       * @param [length] Message length if known beforehand
+       * @returns MessageOptions
+       * @throws {Error} If the payload is not a reader or valid buffer
+       * @throws {$protobuf.util.ProtocolError} If required fields are missing
        */
-      constructor(properties?: google.protobuf.IMessageOptions);
+      public static decode(
+        reader: $protobuf.Reader | Uint8Array,
+        length?: number
+      ): google.protobuf.MessageOptions;
 
       /** MessageOptions messageSetWireFormat. */
       public messageSetWireFormat: boolean;
@@ -3570,19 +3501,11 @@ export namespace google {
 
       /** MessageOptions .msgpoolHardLimit. */
       public msgpoolHardLimit: number;
-
       /**
-       * Decodes a MessageOptions message from the specified reader or buffer.
-       * @param reader Reader or buffer to decode from
-       * @param [length] Message length if known beforehand
-       * @returns MessageOptions
-       * @throws {Error} If the payload is not a reader or valid buffer
-       * @throws {$protobuf.util.ProtocolError} If required fields are missing
+       * Constructs a new MessageOptions.
+       * @param [properties] Properties to set
        */
-      public static decode(
-        reader: $protobuf.Reader | Uint8Array,
-        length?: number
-      ): google.protobuf.MessageOptions;
+      constructor(properties?: google.protobuf.IMessageOptions);
     }
 
     /** Properties of a FieldOptions. */
@@ -3615,10 +3538,17 @@ export namespace google {
     /** Represents a FieldOptions. */
     class FieldOptions implements IFieldOptions {
       /**
-       * Constructs a new FieldOptions.
-       * @param [properties] Properties to set
+       * Decodes a FieldOptions message from the specified reader or buffer.
+       * @param reader Reader or buffer to decode from
+       * @param [length] Message length if known beforehand
+       * @returns FieldOptions
+       * @throws {Error} If the payload is not a reader or valid buffer
+       * @throws {$protobuf.util.ProtocolError} If required fields are missing
        */
-      constructor(properties?: google.protobuf.IFieldOptions);
+      public static decode(
+        reader: $protobuf.Reader | Uint8Array,
+        length?: number
+      ): google.protobuf.FieldOptions;
 
       /** FieldOptions ctype. */
       public ctype: google.protobuf.FieldOptions.CType;
@@ -3643,19 +3573,11 @@ export namespace google {
 
       /** FieldOptions .keyField. */
       public keyField: boolean;
-
       /**
-       * Decodes a FieldOptions message from the specified reader or buffer.
-       * @param reader Reader or buffer to decode from
-       * @param [length] Message length if known beforehand
-       * @returns FieldOptions
-       * @throws {Error} If the payload is not a reader or valid buffer
-       * @throws {$protobuf.util.ProtocolError} If required fields are missing
+       * Constructs a new FieldOptions.
+       * @param [properties] Properties to set
        */
-      public static decode(
-        reader: $protobuf.Reader | Uint8Array,
-        length?: number
-      ): google.protobuf.FieldOptions;
+      constructor(properties?: google.protobuf.IFieldOptions);
     }
 
     namespace FieldOptions {
@@ -3683,15 +3605,6 @@ export namespace google {
     /** Represents an OneofOptions. */
     class OneofOptions implements IOneofOptions {
       /**
-       * Constructs a new OneofOptions.
-       * @param [properties] Properties to set
-       */
-      constructor(properties?: google.protobuf.IOneofOptions);
-
-      /** OneofOptions uninterpretedOption. */
-      public uninterpretedOption: google.protobuf.IUninterpretedOption[];
-
-      /**
        * Decodes an OneofOptions message from the specified reader or buffer.
        * @param reader Reader or buffer to decode from
        * @param [length] Message length if known beforehand
@@ -3703,6 +3616,14 @@ export namespace google {
         reader: $protobuf.Reader | Uint8Array,
         length?: number
       ): google.protobuf.OneofOptions;
+
+      /** OneofOptions uninterpretedOption. */
+      public uninterpretedOption: google.protobuf.IUninterpretedOption[];
+      /**
+       * Constructs a new OneofOptions.
+       * @param [properties] Properties to set
+       */
+      constructor(properties?: google.protobuf.IOneofOptions);
     }
 
     /** Properties of an EnumOptions. */
@@ -3720,21 +3641,6 @@ export namespace google {
     /** Represents an EnumOptions. */
     class EnumOptions implements IEnumOptions {
       /**
-       * Constructs a new EnumOptions.
-       * @param [properties] Properties to set
-       */
-      constructor(properties?: google.protobuf.IEnumOptions);
-
-      /** EnumOptions allowAlias. */
-      public allowAlias: boolean;
-
-      /** EnumOptions deprecated. */
-      public deprecated: boolean;
-
-      /** EnumOptions uninterpretedOption. */
-      public uninterpretedOption: google.protobuf.IUninterpretedOption[];
-
-      /**
        * Decodes an EnumOptions message from the specified reader or buffer.
        * @param reader Reader or buffer to decode from
        * @param [length] Message length if known beforehand
@@ -3746,6 +3652,20 @@ export namespace google {
         reader: $protobuf.Reader | Uint8Array,
         length?: number
       ): google.protobuf.EnumOptions;
+
+      /** EnumOptions allowAlias. */
+      public allowAlias: boolean;
+
+      /** EnumOptions deprecated. */
+      public deprecated: boolean;
+
+      /** EnumOptions uninterpretedOption. */
+      public uninterpretedOption: google.protobuf.IUninterpretedOption[];
+      /**
+       * Constructs a new EnumOptions.
+       * @param [properties] Properties to set
+       */
+      constructor(properties?: google.protobuf.IEnumOptions);
     }
 
     /** Properties of an EnumValueOptions. */
@@ -3760,18 +3680,6 @@ export namespace google {
     /** Represents an EnumValueOptions. */
     class EnumValueOptions implements IEnumValueOptions {
       /**
-       * Constructs a new EnumValueOptions.
-       * @param [properties] Properties to set
-       */
-      constructor(properties?: google.protobuf.IEnumValueOptions);
-
-      /** EnumValueOptions deprecated. */
-      public deprecated: boolean;
-
-      /** EnumValueOptions uninterpretedOption. */
-      public uninterpretedOption: google.protobuf.IUninterpretedOption[];
-
-      /**
        * Decodes an EnumValueOptions message from the specified reader or buffer.
        * @param reader Reader or buffer to decode from
        * @param [length] Message length if known beforehand
@@ -3783,6 +3691,17 @@ export namespace google {
         reader: $protobuf.Reader | Uint8Array,
         length?: number
       ): google.protobuf.EnumValueOptions;
+
+      /** EnumValueOptions deprecated. */
+      public deprecated: boolean;
+
+      /** EnumValueOptions uninterpretedOption. */
+      public uninterpretedOption: google.protobuf.IUninterpretedOption[];
+      /**
+       * Constructs a new EnumValueOptions.
+       * @param [properties] Properties to set
+       */
+      constructor(properties?: google.protobuf.IEnumValueOptions);
     }
 
     /** Properties of a ServiceOptions. */
@@ -3797,18 +3716,6 @@ export namespace google {
     /** Represents a ServiceOptions. */
     class ServiceOptions implements IServiceOptions {
       /**
-       * Constructs a new ServiceOptions.
-       * @param [properties] Properties to set
-       */
-      constructor(properties?: google.protobuf.IServiceOptions);
-
-      /** ServiceOptions deprecated. */
-      public deprecated: boolean;
-
-      /** ServiceOptions uninterpretedOption. */
-      public uninterpretedOption: google.protobuf.IUninterpretedOption[];
-
-      /**
        * Decodes a ServiceOptions message from the specified reader or buffer.
        * @param reader Reader or buffer to decode from
        * @param [length] Message length if known beforehand
@@ -3820,6 +3727,17 @@ export namespace google {
         reader: $protobuf.Reader | Uint8Array,
         length?: number
       ): google.protobuf.ServiceOptions;
+
+      /** ServiceOptions deprecated. */
+      public deprecated: boolean;
+
+      /** ServiceOptions uninterpretedOption. */
+      public uninterpretedOption: google.protobuf.IUninterpretedOption[];
+      /**
+       * Constructs a new ServiceOptions.
+       * @param [properties] Properties to set
+       */
+      constructor(properties?: google.protobuf.IServiceOptions);
     }
 
     /** Properties of a MethodOptions. */
@@ -3834,18 +3752,6 @@ export namespace google {
     /** Represents a MethodOptions. */
     class MethodOptions implements IMethodOptions {
       /**
-       * Constructs a new MethodOptions.
-       * @param [properties] Properties to set
-       */
-      constructor(properties?: google.protobuf.IMethodOptions);
-
-      /** MethodOptions deprecated. */
-      public deprecated: boolean;
-
-      /** MethodOptions uninterpretedOption. */
-      public uninterpretedOption: google.protobuf.IUninterpretedOption[];
-
-      /**
        * Decodes a MethodOptions message from the specified reader or buffer.
        * @param reader Reader or buffer to decode from
        * @param [length] Message length if known beforehand
@@ -3857,6 +3763,17 @@ export namespace google {
         reader: $protobuf.Reader | Uint8Array,
         length?: number
       ): google.protobuf.MethodOptions;
+
+      /** MethodOptions deprecated. */
+      public deprecated: boolean;
+
+      /** MethodOptions uninterpretedOption. */
+      public uninterpretedOption: google.protobuf.IUninterpretedOption[];
+      /**
+       * Constructs a new MethodOptions.
+       * @param [properties] Properties to set
+       */
+      constructor(properties?: google.protobuf.IMethodOptions);
     }
 
     /** Properties of an UninterpretedOption. */
@@ -3886,10 +3803,17 @@ export namespace google {
     /** Represents an UninterpretedOption. */
     class UninterpretedOption implements IUninterpretedOption {
       /**
-       * Constructs a new UninterpretedOption.
-       * @param [properties] Properties to set
+       * Decodes an UninterpretedOption message from the specified reader or buffer.
+       * @param reader Reader or buffer to decode from
+       * @param [length] Message length if known beforehand
+       * @returns UninterpretedOption
+       * @throws {Error} If the payload is not a reader or valid buffer
+       * @throws {$protobuf.util.ProtocolError} If required fields are missing
        */
-      constructor(properties?: google.protobuf.IUninterpretedOption);
+      public static decode(
+        reader: $protobuf.Reader | Uint8Array,
+        length?: number
+      ): google.protobuf.UninterpretedOption;
 
       /** UninterpretedOption name. */
       public name: google.protobuf.UninterpretedOption.INamePart[];
@@ -3911,19 +3835,11 @@ export namespace google {
 
       /** UninterpretedOption aggregateValue. */
       public aggregateValue: string;
-
       /**
-       * Decodes an UninterpretedOption message from the specified reader or buffer.
-       * @param reader Reader or buffer to decode from
-       * @param [length] Message length if known beforehand
-       * @returns UninterpretedOption
-       * @throws {Error} If the payload is not a reader or valid buffer
-       * @throws {$protobuf.util.ProtocolError} If required fields are missing
+       * Constructs a new UninterpretedOption.
+       * @param [properties] Properties to set
        */
-      public static decode(
-        reader: $protobuf.Reader | Uint8Array,
-        length?: number
-      ): google.protobuf.UninterpretedOption;
+      constructor(properties?: google.protobuf.IUninterpretedOption);
     }
 
     namespace UninterpretedOption {
@@ -3939,18 +3855,6 @@ export namespace google {
       /** Represents a NamePart. */
       class NamePart implements INamePart {
         /**
-         * Constructs a new NamePart.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: google.protobuf.UninterpretedOption.INamePart);
-
-        /** NamePart namePart. */
-        public namePart: string;
-
-        /** NamePart isExtension. */
-        public isExtension: boolean;
-
-        /**
          * Decodes a NamePart message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3962,6 +3866,17 @@ export namespace google {
           reader: $protobuf.Reader | Uint8Array,
           length?: number
         ): google.protobuf.UninterpretedOption.NamePart;
+
+        /** NamePart namePart. */
+        public namePart: string;
+
+        /** NamePart isExtension. */
+        public isExtension: boolean;
+        /**
+         * Constructs a new NamePart.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: google.protobuf.UninterpretedOption.INamePart);
       }
     }
 
@@ -3974,15 +3889,6 @@ export namespace google {
     /** Represents a SourceCodeInfo. */
     class SourceCodeInfo implements ISourceCodeInfo {
       /**
-       * Constructs a new SourceCodeInfo.
-       * @param [properties] Properties to set
-       */
-      constructor(properties?: google.protobuf.ISourceCodeInfo);
-
-      /** SourceCodeInfo location. */
-      public location: google.protobuf.SourceCodeInfo.ILocation[];
-
-      /**
        * Decodes a SourceCodeInfo message from the specified reader or buffer.
        * @param reader Reader or buffer to decode from
        * @param [length] Message length if known beforehand
@@ -3994,6 +3900,14 @@ export namespace google {
         reader: $protobuf.Reader | Uint8Array,
         length?: number
       ): google.protobuf.SourceCodeInfo;
+
+      /** SourceCodeInfo location. */
+      public location: google.protobuf.SourceCodeInfo.ILocation[];
+      /**
+       * Constructs a new SourceCodeInfo.
+       * @param [properties] Properties to set
+       */
+      constructor(properties?: google.protobuf.ISourceCodeInfo);
     }
 
     namespace SourceCodeInfo {
@@ -4018,10 +3932,17 @@ export namespace google {
       /** Represents a Location. */
       class Location implements ILocation {
         /**
-         * Constructs a new Location.
-         * @param [properties] Properties to set
+         * Decodes a Location message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Location
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        constructor(properties?: google.protobuf.SourceCodeInfo.ILocation);
+        public static decode(
+          reader: $protobuf.Reader | Uint8Array,
+          length?: number
+        ): google.protobuf.SourceCodeInfo.Location;
 
         /** Location path. */
         public path: number[];
@@ -4037,19 +3958,11 @@ export namespace google {
 
         /** Location leadingDetachedComments. */
         public leadingDetachedComments: string[];
-
         /**
-         * Decodes a Location message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns Location
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         * Constructs a new Location.
+         * @param [properties] Properties to set
          */
-        public static decode(
-          reader: $protobuf.Reader | Uint8Array,
-          length?: number
-        ): google.protobuf.SourceCodeInfo.Location;
+        constructor(properties?: google.protobuf.SourceCodeInfo.ILocation);
       }
     }
 
@@ -4062,15 +3975,6 @@ export namespace google {
     /** Represents a GeneratedCodeInfo. */
     class GeneratedCodeInfo implements IGeneratedCodeInfo {
       /**
-       * Constructs a new GeneratedCodeInfo.
-       * @param [properties] Properties to set
-       */
-      constructor(properties?: google.protobuf.IGeneratedCodeInfo);
-
-      /** GeneratedCodeInfo annotation. */
-      public annotation: google.protobuf.GeneratedCodeInfo.IAnnotation[];
-
-      /**
        * Decodes a GeneratedCodeInfo message from the specified reader or buffer.
        * @param reader Reader or buffer to decode from
        * @param [length] Message length if known beforehand
@@ -4082,6 +3986,14 @@ export namespace google {
         reader: $protobuf.Reader | Uint8Array,
         length?: number
       ): google.protobuf.GeneratedCodeInfo;
+
+      /** GeneratedCodeInfo annotation. */
+      public annotation: google.protobuf.GeneratedCodeInfo.IAnnotation[];
+      /**
+       * Constructs a new GeneratedCodeInfo.
+       * @param [properties] Properties to set
+       */
+      constructor(properties?: google.protobuf.IGeneratedCodeInfo);
     }
 
     namespace GeneratedCodeInfo {
@@ -4103,10 +4015,17 @@ export namespace google {
       /** Represents an Annotation. */
       class Annotation implements IAnnotation {
         /**
-         * Constructs a new Annotation.
-         * @param [properties] Properties to set
+         * Decodes an Annotation message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Annotation
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        constructor(properties?: google.protobuf.GeneratedCodeInfo.IAnnotation);
+        public static decode(
+          reader: $protobuf.Reader | Uint8Array,
+          length?: number
+        ): google.protobuf.GeneratedCodeInfo.Annotation;
 
         /** Annotation path. */
         public path: number[];
@@ -4119,19 +4038,11 @@ export namespace google {
 
         /** Annotation end. */
         public end: number;
-
         /**
-         * Decodes an Annotation message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns Annotation
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         * Constructs a new Annotation.
+         * @param [properties] Properties to set
          */
-        public static decode(
-          reader: $protobuf.Reader | Uint8Array,
-          length?: number
-        ): google.protobuf.GeneratedCodeInfo.Annotation;
+        constructor(properties?: google.protobuf.GeneratedCodeInfo.IAnnotation);
       }
     }
   }
@@ -4233,21 +4144,6 @@ export interface ICMsgVector {
 /** Represents a CMsgVector. */
 export class CMsgVector implements ICMsgVector {
   /**
-   * Constructs a new CMsgVector.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgVector);
-
-  /** CMsgVector x. */
-  public x: number;
-
-  /** CMsgVector y. */
-  public y: number;
-
-  /** CMsgVector z. */
-  public z: number;
-
-  /**
    * Decodes a CMsgVector message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -4259,6 +4155,20 @@ export class CMsgVector implements ICMsgVector {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgVector;
+
+  /** CMsgVector x. */
+  public x: number;
+
+  /** CMsgVector y. */
+  public y: number;
+
+  /** CMsgVector z. */
+  public z: number;
+  /**
+   * Constructs a new CMsgVector.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgVector);
 }
 
 /** Properties of a CMsgVector2D. */
@@ -4273,18 +4183,6 @@ export interface ICMsgVector2D {
 /** Represents a CMsgVector2D. */
 export class CMsgVector2D implements ICMsgVector2D {
   /**
-   * Constructs a new CMsgVector2D.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgVector2D);
-
-  /** CMsgVector2D x. */
-  public x: number;
-
-  /** CMsgVector2D y. */
-  public y: number;
-
-  /**
    * Decodes a CMsgVector2D message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -4296,6 +4194,17 @@ export class CMsgVector2D implements ICMsgVector2D {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgVector2D;
+
+  /** CMsgVector2D x. */
+  public x: number;
+
+  /** CMsgVector2D y. */
+  public y: number;
+  /**
+   * Constructs a new CMsgVector2D.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgVector2D);
 }
 
 /** Properties of a CMsgQAngle. */
@@ -4313,21 +4222,6 @@ export interface ICMsgQAngle {
 /** Represents a CMsgQAngle. */
 export class CMsgQAngle implements ICMsgQAngle {
   /**
-   * Constructs a new CMsgQAngle.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgQAngle);
-
-  /** CMsgQAngle x. */
-  public x: number;
-
-  /** CMsgQAngle y. */
-  public y: number;
-
-  /** CMsgQAngle z. */
-  public z: number;
-
-  /**
    * Decodes a CMsgQAngle message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -4339,6 +4233,20 @@ export class CMsgQAngle implements ICMsgQAngle {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgQAngle;
+
+  /** CMsgQAngle x. */
+  public x: number;
+
+  /** CMsgQAngle y. */
+  public y: number;
+
+  /** CMsgQAngle z. */
+  public z: number;
+  /**
+   * Constructs a new CMsgQAngle.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgQAngle);
 }
 
 /** Properties of a CMsgRGBA. */
@@ -4359,10 +4267,17 @@ export interface ICMsgRGBA {
 /** Represents a CMsgRGBA. */
 export class CMsgRGBA implements ICMsgRGBA {
   /**
-   * Constructs a new CMsgRGBA.
-   * @param [properties] Properties to set
+   * Decodes a CMsgRGBA message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgRGBA
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgRGBA);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgRGBA;
 
   /** CMsgRGBA r. */
   public r: number;
@@ -4375,19 +4290,11 @@ export class CMsgRGBA implements ICMsgRGBA {
 
   /** CMsgRGBA a. */
   public a: number;
-
   /**
-   * Decodes a CMsgRGBA message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgRGBA
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgRGBA.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgRGBA;
+  constructor(properties?: ICMsgRGBA);
 }
 
 /** Properties of a CNETMsg_Tick. */
@@ -4411,10 +4318,17 @@ export interface ICNETMsg_Tick {
 /** Represents a CNETMsg_Tick. */
 export class CNETMsg_Tick implements ICNETMsg_Tick {
   /**
-   * Constructs a new CNETMsg_Tick.
-   * @param [properties] Properties to set
+   * Decodes a CNETMsg_Tick message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CNETMsg_Tick
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICNETMsg_Tick);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CNETMsg_Tick;
 
   /** CNETMsg_Tick tick. */
   public tick: number;
@@ -4430,19 +4344,11 @@ export class CNETMsg_Tick implements ICNETMsg_Tick {
 
   /** CNETMsg_Tick hltvReplayFlags. */
   public hltvReplayFlags: number;
-
   /**
-   * Decodes a CNETMsg_Tick message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CNETMsg_Tick
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CNETMsg_Tick.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CNETMsg_Tick;
+  constructor(properties?: ICNETMsg_Tick);
 }
 
 /** Properties of a CNETMsg_StringCmd. */
@@ -4453,15 +4359,6 @@ export interface ICNETMsg_StringCmd {
 
 /** Represents a CNETMsg_StringCmd. */
 export class CNETMsg_StringCmd implements ICNETMsg_StringCmd {
-  /**
-   * Constructs a new CNETMsg_StringCmd.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICNETMsg_StringCmd);
-
-  /** CNETMsg_StringCmd command. */
-  public command: string;
-
   /**
    * Decodes a CNETMsg_StringCmd message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -4474,6 +4371,14 @@ export class CNETMsg_StringCmd implements ICNETMsg_StringCmd {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CNETMsg_StringCmd;
+
+  /** CNETMsg_StringCmd command. */
+  public command: string;
+  /**
+   * Constructs a new CNETMsg_StringCmd.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICNETMsg_StringCmd);
 }
 
 /** Properties of a CNETMsg_SignonState. */
@@ -4497,10 +4402,17 @@ export interface ICNETMsg_SignonState {
 /** Represents a CNETMsg_SignonState. */
 export class CNETMsg_SignonState implements ICNETMsg_SignonState {
   /**
-   * Constructs a new CNETMsg_SignonState.
-   * @param [properties] Properties to set
+   * Decodes a CNETMsg_SignonState message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CNETMsg_SignonState
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICNETMsg_SignonState);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CNETMsg_SignonState;
 
   /** CNETMsg_SignonState signonState. */
   public signonState: number;
@@ -4516,19 +4428,11 @@ export class CNETMsg_SignonState implements ICNETMsg_SignonState {
 
   /** CNETMsg_SignonState mapName. */
   public mapName: string;
-
   /**
-   * Decodes a CNETMsg_SignonState message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CNETMsg_SignonState
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CNETMsg_SignonState.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CNETMsg_SignonState;
+  constructor(properties?: ICNETMsg_SignonState);
 }
 
 /** Properties of a CMsg_CVars. */
@@ -4539,15 +4443,6 @@ export interface ICMsg_CVars {
 
 /** Represents a CMsg_CVars. */
 export class CMsg_CVars implements ICMsg_CVars {
-  /**
-   * Constructs a new CMsg_CVars.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsg_CVars);
-
-  /** CMsg_CVars cvars. */
-  public cvars: CMsg_CVars.ICVar[];
-
   /**
    * Decodes a CMsg_CVars message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -4560,6 +4455,14 @@ export class CMsg_CVars implements ICMsg_CVars {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsg_CVars;
+
+  /** CMsg_CVars cvars. */
+  public cvars: CMsg_CVars.ICVar[];
+  /**
+   * Constructs a new CMsg_CVars.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsg_CVars);
 }
 
 export namespace CMsg_CVars {
@@ -4578,21 +4481,6 @@ export namespace CMsg_CVars {
   /** Represents a CVar. */
   class CVar implements ICVar {
     /**
-     * Constructs a new CVar.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsg_CVars.ICVar);
-
-    /** CVar name. */
-    public name: string;
-
-    /** CVar value. */
-    public value: string;
-
-    /** CVar dictionaryName. */
-    public dictionaryName: number;
-
-    /**
      * Decodes a CVar message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -4604,6 +4492,20 @@ export namespace CMsg_CVars {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsg_CVars.CVar;
+
+    /** CVar name. */
+    public name: string;
+
+    /** CVar value. */
+    public value: string;
+
+    /** CVar dictionaryName. */
+    public dictionaryName: number;
+    /**
+     * Constructs a new CVar.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsg_CVars.ICVar);
   }
 }
 
@@ -4616,15 +4518,6 @@ export interface ICNETMsg_SetConVar {
 /** Represents a CNETMsg_SetConVar. */
 export class CNETMsg_SetConVar implements ICNETMsg_SetConVar {
   /**
-   * Constructs a new CNETMsg_SetConVar.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICNETMsg_SetConVar);
-
-  /** CNETMsg_SetConVar convars. */
-  public convars?: ICMsg_CVars | null;
-
-  /**
    * Decodes a CNETMsg_SetConVar message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -4636,6 +4529,14 @@ export class CNETMsg_SetConVar implements ICNETMsg_SetConVar {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CNETMsg_SetConVar;
+
+  /** CNETMsg_SetConVar convars. */
+  public convars?: ICMsg_CVars | null;
+  /**
+   * Constructs a new CNETMsg_SetConVar.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICNETMsg_SetConVar);
 }
 
 /** Properties of a CNETMsg_NOP. */
@@ -4643,12 +4544,6 @@ export interface ICNETMsg_NOP {}
 
 /** Represents a CNETMsg_NOP. */
 export class CNETMsg_NOP implements ICNETMsg_NOP {
-  /**
-   * Constructs a new CNETMsg_NOP.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICNETMsg_NOP);
-
   /**
    * Decodes a CNETMsg_NOP message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -4661,6 +4556,11 @@ export class CNETMsg_NOP implements ICNETMsg_NOP {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CNETMsg_NOP;
+  /**
+   * Constructs a new CNETMsg_NOP.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICNETMsg_NOP);
 }
 
 /** Properties of a CNETMsg_Disconnect. */
@@ -4671,15 +4571,6 @@ export interface ICNETMsg_Disconnect {
 
 /** Represents a CNETMsg_Disconnect. */
 export class CNETMsg_Disconnect implements ICNETMsg_Disconnect {
-  /**
-   * Constructs a new CNETMsg_Disconnect.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICNETMsg_Disconnect);
-
-  /** CNETMsg_Disconnect text. */
-  public text: string;
-
   /**
    * Decodes a CNETMsg_Disconnect message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -4692,6 +4583,14 @@ export class CNETMsg_Disconnect implements ICNETMsg_Disconnect {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CNETMsg_Disconnect;
+
+  /** CNETMsg_Disconnect text. */
+  public text: string;
+  /**
+   * Constructs a new CNETMsg_Disconnect.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICNETMsg_Disconnect);
 }
 
 /** Properties of a CNETMsg_File. */
@@ -4712,10 +4611,17 @@ export interface ICNETMsg_File {
 /** Represents a CNETMsg_File. */
 export class CNETMsg_File implements ICNETMsg_File {
   /**
-   * Constructs a new CNETMsg_File.
-   * @param [properties] Properties to set
+   * Decodes a CNETMsg_File message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CNETMsg_File
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICNETMsg_File);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CNETMsg_File;
 
   /** CNETMsg_File transferId. */
   public transferId: number;
@@ -4728,19 +4634,11 @@ export class CNETMsg_File implements ICNETMsg_File {
 
   /** CNETMsg_File deny. */
   public deny: boolean;
-
   /**
-   * Decodes a CNETMsg_File message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CNETMsg_File
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CNETMsg_File.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CNETMsg_File;
+  constructor(properties?: ICNETMsg_File);
 }
 
 /** Properties of a CNETMsg_SplitScreenUser. */
@@ -4751,15 +4649,6 @@ export interface ICNETMsg_SplitScreenUser {
 
 /** Represents a CNETMsg_SplitScreenUser. */
 export class CNETMsg_SplitScreenUser implements ICNETMsg_SplitScreenUser {
-  /**
-   * Constructs a new CNETMsg_SplitScreenUser.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICNETMsg_SplitScreenUser);
-
-  /** CNETMsg_SplitScreenUser slot. */
-  public slot: number;
-
   /**
    * Decodes a CNETMsg_SplitScreenUser message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -4772,6 +4661,14 @@ export class CNETMsg_SplitScreenUser implements ICNETMsg_SplitScreenUser {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CNETMsg_SplitScreenUser;
+
+  /** CNETMsg_SplitScreenUser slot. */
+  public slot: number;
+  /**
+   * Constructs a new CNETMsg_SplitScreenUser.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICNETMsg_SplitScreenUser);
 }
 
 /** Properties of a CNETMsg_PlayerAvatarData. */
@@ -4786,18 +4683,6 @@ export interface ICNETMsg_PlayerAvatarData {
 /** Represents a CNETMsg_PlayerAvatarData. */
 export class CNETMsg_PlayerAvatarData implements ICNETMsg_PlayerAvatarData {
   /**
-   * Constructs a new CNETMsg_PlayerAvatarData.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICNETMsg_PlayerAvatarData);
-
-  /** CNETMsg_PlayerAvatarData accountid. */
-  public accountid: number;
-
-  /** CNETMsg_PlayerAvatarData rgb. */
-  public rgb: Uint8Array;
-
-  /**
    * Decodes a CNETMsg_PlayerAvatarData message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -4809,6 +4694,17 @@ export class CNETMsg_PlayerAvatarData implements ICNETMsg_PlayerAvatarData {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CNETMsg_PlayerAvatarData;
+
+  /** CNETMsg_PlayerAvatarData accountid. */
+  public accountid: number;
+
+  /** CNETMsg_PlayerAvatarData rgb. */
+  public rgb: Uint8Array;
+  /**
+   * Constructs a new CNETMsg_PlayerAvatarData.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICNETMsg_PlayerAvatarData);
 }
 
 /** Properties of a CCLCMsg_ClientInfo. */
@@ -4838,10 +4734,17 @@ export interface ICCLCMsg_ClientInfo {
 /** Represents a CCLCMsg_ClientInfo. */
 export class CCLCMsg_ClientInfo implements ICCLCMsg_ClientInfo {
   /**
-   * Constructs a new CCLCMsg_ClientInfo.
-   * @param [properties] Properties to set
+   * Decodes a CCLCMsg_ClientInfo message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCLCMsg_ClientInfo
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCLCMsg_ClientInfo);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCLCMsg_ClientInfo;
 
   /** CCLCMsg_ClientInfo sendTableCrc. */
   public sendTableCrc: number;
@@ -4863,19 +4766,11 @@ export class CCLCMsg_ClientInfo implements ICCLCMsg_ClientInfo {
 
   /** CCLCMsg_ClientInfo customFiles. */
   public customFiles: number[];
-
   /**
-   * Decodes a CCLCMsg_ClientInfo message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCLCMsg_ClientInfo
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCLCMsg_ClientInfo.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCLCMsg_ClientInfo;
+  constructor(properties?: ICCLCMsg_ClientInfo);
 }
 
 /** Properties of a CCLCMsg_Move. */
@@ -4893,21 +4788,6 @@ export interface ICCLCMsg_Move {
 /** Represents a CCLCMsg_Move. */
 export class CCLCMsg_Move implements ICCLCMsg_Move {
   /**
-   * Constructs a new CCLCMsg_Move.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCLCMsg_Move);
-
-  /** CCLCMsg_Move numBackupCommands. */
-  public numBackupCommands: number;
-
-  /** CCLCMsg_Move numNewCommands. */
-  public numNewCommands: number;
-
-  /** CCLCMsg_Move data. */
-  public data: Uint8Array;
-
-  /**
    * Decodes a CCLCMsg_Move message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -4919,6 +4799,20 @@ export class CCLCMsg_Move implements ICCLCMsg_Move {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCLCMsg_Move;
+
+  /** CCLCMsg_Move numBackupCommands. */
+  public numBackupCommands: number;
+
+  /** CCLCMsg_Move numNewCommands. */
+  public numNewCommands: number;
+
+  /** CCLCMsg_Move data. */
+  public data: Uint8Array;
+  /**
+   * Constructs a new CCLCMsg_Move.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCLCMsg_Move);
 }
 
 /** Properties of a CCLCMsg_VoiceData. */
@@ -4945,10 +4839,17 @@ export interface ICCLCMsg_VoiceData {
 /** Represents a CCLCMsg_VoiceData. */
 export class CCLCMsg_VoiceData implements ICCLCMsg_VoiceData {
   /**
-   * Constructs a new CCLCMsg_VoiceData.
-   * @param [properties] Properties to set
+   * Decodes a CCLCMsg_VoiceData message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCLCMsg_VoiceData
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCLCMsg_VoiceData);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCLCMsg_VoiceData;
 
   /** CCLCMsg_VoiceData data. */
   public data: Uint8Array;
@@ -4967,19 +4868,11 @@ export class CCLCMsg_VoiceData implements ICCLCMsg_VoiceData {
 
   /** CCLCMsg_VoiceData uncompressedSampleOffset. */
   public uncompressedSampleOffset: number;
-
   /**
-   * Decodes a CCLCMsg_VoiceData message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCLCMsg_VoiceData
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCLCMsg_VoiceData.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCLCMsg_VoiceData;
+  constructor(properties?: ICCLCMsg_VoiceData);
 }
 
 /** Properties of a CCLCMsg_BaselineAck. */
@@ -4994,18 +4887,6 @@ export interface ICCLCMsg_BaselineAck {
 /** Represents a CCLCMsg_BaselineAck. */
 export class CCLCMsg_BaselineAck implements ICCLCMsg_BaselineAck {
   /**
-   * Constructs a new CCLCMsg_BaselineAck.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCLCMsg_BaselineAck);
-
-  /** CCLCMsg_BaselineAck baselineTick. */
-  public baselineTick: number;
-
-  /** CCLCMsg_BaselineAck baselineNr. */
-  public baselineNr: number;
-
-  /**
    * Decodes a CCLCMsg_BaselineAck message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -5017,6 +4898,17 @@ export class CCLCMsg_BaselineAck implements ICCLCMsg_BaselineAck {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCLCMsg_BaselineAck;
+
+  /** CCLCMsg_BaselineAck baselineTick. */
+  public baselineTick: number;
+
+  /** CCLCMsg_BaselineAck baselineNr. */
+  public baselineNr: number;
+  /**
+   * Constructs a new CCLCMsg_BaselineAck.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCLCMsg_BaselineAck);
 }
 
 /** Properties of a CCLCMsg_ListenEvents. */
@@ -5027,15 +4919,6 @@ export interface ICCLCMsg_ListenEvents {
 
 /** Represents a CCLCMsg_ListenEvents. */
 export class CCLCMsg_ListenEvents implements ICCLCMsg_ListenEvents {
-  /**
-   * Constructs a new CCLCMsg_ListenEvents.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCLCMsg_ListenEvents);
-
-  /** CCLCMsg_ListenEvents eventMask. */
-  public eventMask: number[];
-
   /**
    * Decodes a CCLCMsg_ListenEvents message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -5048,6 +4931,14 @@ export class CCLCMsg_ListenEvents implements ICCLCMsg_ListenEvents {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCLCMsg_ListenEvents;
+
+  /** CCLCMsg_ListenEvents eventMask. */
+  public eventMask: number[];
+  /**
+   * Constructs a new CCLCMsg_ListenEvents.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCLCMsg_ListenEvents);
 }
 
 /** Properties of a CCLCMsg_RespondCvarValue. */
@@ -5068,10 +4959,17 @@ export interface ICCLCMsg_RespondCvarValue {
 /** Represents a CCLCMsg_RespondCvarValue. */
 export class CCLCMsg_RespondCvarValue implements ICCLCMsg_RespondCvarValue {
   /**
-   * Constructs a new CCLCMsg_RespondCvarValue.
-   * @param [properties] Properties to set
+   * Decodes a CCLCMsg_RespondCvarValue message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCLCMsg_RespondCvarValue
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCLCMsg_RespondCvarValue);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCLCMsg_RespondCvarValue;
 
   /** CCLCMsg_RespondCvarValue cookie. */
   public cookie: number;
@@ -5084,19 +4982,11 @@ export class CCLCMsg_RespondCvarValue implements ICCLCMsg_RespondCvarValue {
 
   /** CCLCMsg_RespondCvarValue value. */
   public value: string;
-
   /**
-   * Decodes a CCLCMsg_RespondCvarValue message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCLCMsg_RespondCvarValue
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCLCMsg_RespondCvarValue.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCLCMsg_RespondCvarValue;
+  constructor(properties?: ICCLCMsg_RespondCvarValue);
 }
 
 /** Properties of a CCLCMsg_FileCRCCheck. */
@@ -5138,10 +5028,17 @@ export interface ICCLCMsg_FileCRCCheck {
 /** Represents a CCLCMsg_FileCRCCheck. */
 export class CCLCMsg_FileCRCCheck implements ICCLCMsg_FileCRCCheck {
   /**
-   * Constructs a new CCLCMsg_FileCRCCheck.
-   * @param [properties] Properties to set
+   * Decodes a CCLCMsg_FileCRCCheck message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCLCMsg_FileCRCCheck
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCLCMsg_FileCRCCheck);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCLCMsg_FileCRCCheck;
 
   /** CCLCMsg_FileCRCCheck codePath. */
   public codePath: number;
@@ -5175,19 +5072,11 @@ export class CCLCMsg_FileCRCCheck implements ICCLCMsg_FileCRCCheck {
 
   /** CCLCMsg_FileCRCCheck packFileNumber. */
   public packFileNumber: number;
-
   /**
-   * Decodes a CCLCMsg_FileCRCCheck message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCLCMsg_FileCRCCheck
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCLCMsg_FileCRCCheck.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCLCMsg_FileCRCCheck;
+  constructor(properties?: ICCLCMsg_FileCRCCheck);
 }
 
 /** Properties of a CCLCMsg_LoadingProgress. */
@@ -5198,15 +5087,6 @@ export interface ICCLCMsg_LoadingProgress {
 
 /** Represents a CCLCMsg_LoadingProgress. */
 export class CCLCMsg_LoadingProgress implements ICCLCMsg_LoadingProgress {
-  /**
-   * Constructs a new CCLCMsg_LoadingProgress.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCLCMsg_LoadingProgress);
-
-  /** CCLCMsg_LoadingProgress progress. */
-  public progress: number;
-
   /**
    * Decodes a CCLCMsg_LoadingProgress message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -5219,6 +5099,14 @@ export class CCLCMsg_LoadingProgress implements ICCLCMsg_LoadingProgress {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCLCMsg_LoadingProgress;
+
+  /** CCLCMsg_LoadingProgress progress. */
+  public progress: number;
+  /**
+   * Constructs a new CCLCMsg_LoadingProgress.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCLCMsg_LoadingProgress);
 }
 
 /** Properties of a CCLCMsg_SplitPlayerConnect. */
@@ -5229,15 +5117,6 @@ export interface ICCLCMsg_SplitPlayerConnect {
 
 /** Represents a CCLCMsg_SplitPlayerConnect. */
 export class CCLCMsg_SplitPlayerConnect implements ICCLCMsg_SplitPlayerConnect {
-  /**
-   * Constructs a new CCLCMsg_SplitPlayerConnect.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCLCMsg_SplitPlayerConnect);
-
-  /** CCLCMsg_SplitPlayerConnect convars. */
-  public convars?: ICMsg_CVars | null;
-
   /**
    * Decodes a CCLCMsg_SplitPlayerConnect message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -5250,6 +5129,14 @@ export class CCLCMsg_SplitPlayerConnect implements ICCLCMsg_SplitPlayerConnect {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCLCMsg_SplitPlayerConnect;
+
+  /** CCLCMsg_SplitPlayerConnect convars. */
+  public convars?: ICMsg_CVars | null;
+  /**
+   * Constructs a new CCLCMsg_SplitPlayerConnect.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCLCMsg_SplitPlayerConnect);
 }
 
 /** Properties of a CCLCMsg_CmdKeyValues. */
@@ -5260,15 +5147,6 @@ export interface ICCLCMsg_CmdKeyValues {
 
 /** Represents a CCLCMsg_CmdKeyValues. */
 export class CCLCMsg_CmdKeyValues implements ICCLCMsg_CmdKeyValues {
-  /**
-   * Constructs a new CCLCMsg_CmdKeyValues.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICCLCMsg_CmdKeyValues);
-
-  /** CCLCMsg_CmdKeyValues keyvalues. */
-  public keyvalues: Uint8Array;
-
   /**
    * Decodes a CCLCMsg_CmdKeyValues message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -5281,6 +5159,14 @@ export class CCLCMsg_CmdKeyValues implements ICCLCMsg_CmdKeyValues {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CCLCMsg_CmdKeyValues;
+
+  /** CCLCMsg_CmdKeyValues keyvalues. */
+  public keyvalues: Uint8Array;
+  /**
+   * Constructs a new CCLCMsg_CmdKeyValues.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICCLCMsg_CmdKeyValues);
 }
 
 /** Properties of a CSVCMsg_ServerInfo. */
@@ -5355,10 +5241,17 @@ export interface ICSVCMsg_ServerInfo {
 /** Represents a CSVCMsg_ServerInfo. */
 export class CSVCMsg_ServerInfo implements ICSVCMsg_ServerInfo {
   /**
-   * Constructs a new CSVCMsg_ServerInfo.
-   * @param [properties] Properties to set
+   * Decodes a CSVCMsg_ServerInfo message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CSVCMsg_ServerInfo
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICSVCMsg_ServerInfo);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CSVCMsg_ServerInfo;
 
   /** CSVCMsg_ServerInfo protocol. */
   public protocol: number;
@@ -5425,19 +5318,11 @@ export class CSVCMsg_ServerInfo implements ICSVCMsg_ServerInfo {
 
   /** CSVCMsg_ServerInfo ugcMapId. */
   public ugcMapId: number | Long;
-
   /**
-   * Decodes a CSVCMsg_ServerInfo message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CSVCMsg_ServerInfo
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CSVCMsg_ServerInfo.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CSVCMsg_ServerInfo;
+  constructor(properties?: ICSVCMsg_ServerInfo);
 }
 
 /** Properties of a CSVCMsg_ClassInfo. */
@@ -5452,18 +5337,6 @@ export interface ICSVCMsg_ClassInfo {
 /** Represents a CSVCMsg_ClassInfo. */
 export class CSVCMsg_ClassInfo implements ICSVCMsg_ClassInfo {
   /**
-   * Constructs a new CSVCMsg_ClassInfo.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_ClassInfo);
-
-  /** CSVCMsg_ClassInfo createOnClient. */
-  public createOnClient: boolean;
-
-  /** CSVCMsg_ClassInfo classes. */
-  public classes: CSVCMsg_ClassInfo.Iclass_t[];
-
-  /**
    * Decodes a CSVCMsg_ClassInfo message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -5475,6 +5348,17 @@ export class CSVCMsg_ClassInfo implements ICSVCMsg_ClassInfo {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_ClassInfo;
+
+  /** CSVCMsg_ClassInfo createOnClient. */
+  public createOnClient: boolean;
+
+  /** CSVCMsg_ClassInfo classes. */
+  public classes: CSVCMsg_ClassInfo.Iclass_t[];
+  /**
+   * Constructs a new CSVCMsg_ClassInfo.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_ClassInfo);
 }
 
 export namespace CSVCMsg_ClassInfo {
@@ -5493,21 +5377,6 @@ export namespace CSVCMsg_ClassInfo {
   /** Represents a class_t. */
   class class_t implements Iclass_t {
     /**
-     * Constructs a new class_t.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CSVCMsg_ClassInfo.Iclass_t);
-
-    /** class_t classId. */
-    public classId: number;
-
-    /** class_t dataTableName. */
-    public dataTableName: string;
-
-    /** class_t className. */
-    public className: string;
-
-    /**
      * Decodes a class_t message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -5519,6 +5388,20 @@ export namespace CSVCMsg_ClassInfo {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CSVCMsg_ClassInfo.class_t;
+
+    /** class_t classId. */
+    public classId: number;
+
+    /** class_t dataTableName. */
+    public dataTableName: string;
+
+    /** class_t className. */
+    public className: string;
+    /**
+     * Constructs a new class_t.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CSVCMsg_ClassInfo.Iclass_t);
   }
 }
 
@@ -5540,10 +5423,17 @@ export interface ICSVCMsg_SendTable {
 /** Represents a CSVCMsg_SendTable. */
 export class CSVCMsg_SendTable implements ICSVCMsg_SendTable {
   /**
-   * Constructs a new CSVCMsg_SendTable.
-   * @param [properties] Properties to set
+   * Decodes a CSVCMsg_SendTable message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CSVCMsg_SendTable
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICSVCMsg_SendTable);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CSVCMsg_SendTable;
 
   /** CSVCMsg_SendTable isEnd. */
   public isEnd: boolean;
@@ -5556,19 +5446,11 @@ export class CSVCMsg_SendTable implements ICSVCMsg_SendTable {
 
   /** CSVCMsg_SendTable props. */
   public props: CSVCMsg_SendTable.Isendprop_t[];
-
   /**
-   * Decodes a CSVCMsg_SendTable message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CSVCMsg_SendTable
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CSVCMsg_SendTable.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CSVCMsg_SendTable;
+  constructor(properties?: ICSVCMsg_SendTable);
 }
 
 export namespace CSVCMsg_SendTable {
@@ -5605,10 +5487,17 @@ export namespace CSVCMsg_SendTable {
   /** Represents a sendprop_t. */
   class sendprop_t implements Isendprop_t {
     /**
-     * Constructs a new sendprop_t.
-     * @param [properties] Properties to set
+     * Decodes a sendprop_t message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns sendprop_t
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    constructor(properties?: CSVCMsg_SendTable.Isendprop_t);
+    public static decode(
+      reader: $protobuf.Reader | Uint8Array,
+      length?: number
+    ): CSVCMsg_SendTable.sendprop_t;
 
     /** sendprop_t type. */
     public type: number;
@@ -5636,19 +5525,11 @@ export namespace CSVCMsg_SendTable {
 
     /** sendprop_t numBits. */
     public numBits: number;
-
     /**
-     * Decodes a sendprop_t message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns sendprop_t
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     * Constructs a new sendprop_t.
+     * @param [properties] Properties to set
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): CSVCMsg_SendTable.sendprop_t;
+    constructor(properties?: CSVCMsg_SendTable.Isendprop_t);
   }
 }
 
@@ -5661,15 +5542,6 @@ export interface ICSVCMsg_Print {
 /** Represents a CSVCMsg_Print. */
 export class CSVCMsg_Print implements ICSVCMsg_Print {
   /**
-   * Constructs a new CSVCMsg_Print.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_Print);
-
-  /** CSVCMsg_Print text. */
-  public text: string;
-
-  /**
    * Decodes a CSVCMsg_Print message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -5681,6 +5553,14 @@ export class CSVCMsg_Print implements ICSVCMsg_Print {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_Print;
+
+  /** CSVCMsg_Print text. */
+  public text: string;
+  /**
+   * Constructs a new CSVCMsg_Print.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_Print);
 }
 
 /** Properties of a CSVCMsg_SetPause. */
@@ -5691,15 +5571,6 @@ export interface ICSVCMsg_SetPause {
 
 /** Represents a CSVCMsg_SetPause. */
 export class CSVCMsg_SetPause implements ICSVCMsg_SetPause {
-  /**
-   * Constructs a new CSVCMsg_SetPause.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_SetPause);
-
-  /** CSVCMsg_SetPause paused. */
-  public paused: boolean;
-
   /**
    * Decodes a CSVCMsg_SetPause message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -5712,6 +5583,14 @@ export class CSVCMsg_SetPause implements ICSVCMsg_SetPause {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_SetPause;
+
+  /** CSVCMsg_SetPause paused. */
+  public paused: boolean;
+  /**
+   * Constructs a new CSVCMsg_SetPause.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_SetPause);
 }
 
 /** Properties of a CSVCMsg_SetView. */
@@ -5722,15 +5601,6 @@ export interface ICSVCMsg_SetView {
 
 /** Represents a CSVCMsg_SetView. */
 export class CSVCMsg_SetView implements ICSVCMsg_SetView {
-  /**
-   * Constructs a new CSVCMsg_SetView.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_SetView);
-
-  /** CSVCMsg_SetView entityIndex. */
-  public entityIndex: number;
-
   /**
    * Decodes a CSVCMsg_SetView message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -5743,6 +5613,14 @@ export class CSVCMsg_SetView implements ICSVCMsg_SetView {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_SetView;
+
+  /** CSVCMsg_SetView entityIndex. */
+  public entityIndex: number;
+  /**
+   * Constructs a new CSVCMsg_SetView.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_SetView);
 }
 
 /** Properties of a CSVCMsg_CreateStringTable. */
@@ -5775,10 +5653,17 @@ export interface ICSVCMsg_CreateStringTable {
 /** Represents a CSVCMsg_CreateStringTable. */
 export class CSVCMsg_CreateStringTable implements ICSVCMsg_CreateStringTable {
   /**
-   * Constructs a new CSVCMsg_CreateStringTable.
-   * @param [properties] Properties to set
+   * Decodes a CSVCMsg_CreateStringTable message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CSVCMsg_CreateStringTable
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICSVCMsg_CreateStringTable);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CSVCMsg_CreateStringTable;
 
   /** CSVCMsg_CreateStringTable name. */
   public name: string;
@@ -5803,19 +5688,11 @@ export class CSVCMsg_CreateStringTable implements ICSVCMsg_CreateStringTable {
 
   /** CSVCMsg_CreateStringTable stringData. */
   public stringData: Uint8Array;
-
   /**
-   * Decodes a CSVCMsg_CreateStringTable message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CSVCMsg_CreateStringTable
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CSVCMsg_CreateStringTable.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CSVCMsg_CreateStringTable;
+  constructor(properties?: ICSVCMsg_CreateStringTable);
 }
 
 /** Properties of a CSVCMsg_UpdateStringTable. */
@@ -5833,21 +5710,6 @@ export interface ICSVCMsg_UpdateStringTable {
 /** Represents a CSVCMsg_UpdateStringTable. */
 export class CSVCMsg_UpdateStringTable implements ICSVCMsg_UpdateStringTable {
   /**
-   * Constructs a new CSVCMsg_UpdateStringTable.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_UpdateStringTable);
-
-  /** CSVCMsg_UpdateStringTable tableId. */
-  public tableId: number;
-
-  /** CSVCMsg_UpdateStringTable numChangedEntries. */
-  public numChangedEntries: number;
-
-  /** CSVCMsg_UpdateStringTable stringData. */
-  public stringData: Uint8Array;
-
-  /**
    * Decodes a CSVCMsg_UpdateStringTable message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -5859,6 +5721,20 @@ export class CSVCMsg_UpdateStringTable implements ICSVCMsg_UpdateStringTable {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_UpdateStringTable;
+
+  /** CSVCMsg_UpdateStringTable tableId. */
+  public tableId: number;
+
+  /** CSVCMsg_UpdateStringTable numChangedEntries. */
+  public numChangedEntries: number;
+
+  /** CSVCMsg_UpdateStringTable stringData. */
+  public stringData: Uint8Array;
+  /**
+   * Constructs a new CSVCMsg_UpdateStringTable.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_UpdateStringTable);
 }
 
 /** Properties of a CSVCMsg_VoiceInit. */
@@ -5876,21 +5752,6 @@ export interface ICSVCMsg_VoiceInit {
 /** Represents a CSVCMsg_VoiceInit. */
 export class CSVCMsg_VoiceInit implements ICSVCMsg_VoiceInit {
   /**
-   * Constructs a new CSVCMsg_VoiceInit.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_VoiceInit);
-
-  /** CSVCMsg_VoiceInit quality. */
-  public quality: number;
-
-  /** CSVCMsg_VoiceInit codec. */
-  public codec: string;
-
-  /** CSVCMsg_VoiceInit version. */
-  public version: number;
-
-  /**
    * Decodes a CSVCMsg_VoiceInit message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -5902,6 +5763,20 @@ export class CSVCMsg_VoiceInit implements ICSVCMsg_VoiceInit {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_VoiceInit;
+
+  /** CSVCMsg_VoiceInit quality. */
+  public quality: number;
+
+  /** CSVCMsg_VoiceInit codec. */
+  public codec: string;
+
+  /** CSVCMsg_VoiceInit version. */
+  public version: number;
+  /**
+   * Constructs a new CSVCMsg_VoiceInit.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_VoiceInit);
 }
 
 /** Properties of a CSVCMsg_VoiceData. */
@@ -5940,10 +5815,17 @@ export interface ICSVCMsg_VoiceData {
 /** Represents a CSVCMsg_VoiceData. */
 export class CSVCMsg_VoiceData implements ICSVCMsg_VoiceData {
   /**
-   * Constructs a new CSVCMsg_VoiceData.
-   * @param [properties] Properties to set
+   * Decodes a CSVCMsg_VoiceData message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CSVCMsg_VoiceData
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICSVCMsg_VoiceData);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CSVCMsg_VoiceData;
 
   /** CSVCMsg_VoiceData client. */
   public client: number;
@@ -5974,19 +5856,11 @@ export class CSVCMsg_VoiceData implements ICSVCMsg_VoiceData {
 
   /** CSVCMsg_VoiceData uncompressedSampleOffset. */
   public uncompressedSampleOffset: number;
-
   /**
-   * Decodes a CSVCMsg_VoiceData message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CSVCMsg_VoiceData
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CSVCMsg_VoiceData.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CSVCMsg_VoiceData;
+  constructor(properties?: ICSVCMsg_VoiceData);
 }
 
 /** Properties of a CSVCMsg_FixAngle. */
@@ -6001,18 +5875,6 @@ export interface ICSVCMsg_FixAngle {
 /** Represents a CSVCMsg_FixAngle. */
 export class CSVCMsg_FixAngle implements ICSVCMsg_FixAngle {
   /**
-   * Constructs a new CSVCMsg_FixAngle.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_FixAngle);
-
-  /** CSVCMsg_FixAngle relative. */
-  public relative: boolean;
-
-  /** CSVCMsg_FixAngle angle. */
-  public angle?: ICMsgQAngle | null;
-
-  /**
    * Decodes a CSVCMsg_FixAngle message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -6024,6 +5886,17 @@ export class CSVCMsg_FixAngle implements ICSVCMsg_FixAngle {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_FixAngle;
+
+  /** CSVCMsg_FixAngle relative. */
+  public relative: boolean;
+
+  /** CSVCMsg_FixAngle angle. */
+  public angle?: ICMsgQAngle | null;
+  /**
+   * Constructs a new CSVCMsg_FixAngle.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_FixAngle);
 }
 
 /** Properties of a CSVCMsg_CrosshairAngle. */
@@ -6034,15 +5907,6 @@ export interface ICSVCMsg_CrosshairAngle {
 
 /** Represents a CSVCMsg_CrosshairAngle. */
 export class CSVCMsg_CrosshairAngle implements ICSVCMsg_CrosshairAngle {
-  /**
-   * Constructs a new CSVCMsg_CrosshairAngle.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_CrosshairAngle);
-
-  /** CSVCMsg_CrosshairAngle angle. */
-  public angle?: ICMsgQAngle | null;
-
   /**
    * Decodes a CSVCMsg_CrosshairAngle message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -6055,6 +5919,14 @@ export class CSVCMsg_CrosshairAngle implements ICSVCMsg_CrosshairAngle {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_CrosshairAngle;
+
+  /** CSVCMsg_CrosshairAngle angle. */
+  public angle?: ICMsgQAngle | null;
+  /**
+   * Constructs a new CSVCMsg_CrosshairAngle.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_CrosshairAngle);
 }
 
 /** Properties of a CSVCMsg_Prefetch. */
@@ -6065,15 +5937,6 @@ export interface ICSVCMsg_Prefetch {
 
 /** Represents a CSVCMsg_Prefetch. */
 export class CSVCMsg_Prefetch implements ICSVCMsg_Prefetch {
-  /**
-   * Constructs a new CSVCMsg_Prefetch.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_Prefetch);
-
-  /** CSVCMsg_Prefetch soundIndex. */
-  public soundIndex: number;
-
   /**
    * Decodes a CSVCMsg_Prefetch message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -6086,6 +5949,14 @@ export class CSVCMsg_Prefetch implements ICSVCMsg_Prefetch {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_Prefetch;
+
+  /** CSVCMsg_Prefetch soundIndex. */
+  public soundIndex: number;
+  /**
+   * Constructs a new CSVCMsg_Prefetch.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_Prefetch);
 }
 
 /** Properties of a CSVCMsg_BSPDecal. */
@@ -6109,10 +5980,17 @@ export interface ICSVCMsg_BSPDecal {
 /** Represents a CSVCMsg_BSPDecal. */
 export class CSVCMsg_BSPDecal implements ICSVCMsg_BSPDecal {
   /**
-   * Constructs a new CSVCMsg_BSPDecal.
-   * @param [properties] Properties to set
+   * Decodes a CSVCMsg_BSPDecal message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CSVCMsg_BSPDecal
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICSVCMsg_BSPDecal);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CSVCMsg_BSPDecal;
 
   /** CSVCMsg_BSPDecal pos. */
   public pos?: ICMsgVector | null;
@@ -6128,19 +6006,11 @@ export class CSVCMsg_BSPDecal implements ICSVCMsg_BSPDecal {
 
   /** CSVCMsg_BSPDecal lowPriority. */
   public lowPriority: boolean;
-
   /**
-   * Decodes a CSVCMsg_BSPDecal message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CSVCMsg_BSPDecal
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CSVCMsg_BSPDecal.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CSVCMsg_BSPDecal;
+  constructor(properties?: ICSVCMsg_BSPDecal);
 }
 
 /** Properties of a CSVCMsg_SplitScreen. */
@@ -6158,21 +6028,6 @@ export interface ICSVCMsg_SplitScreen {
 /** Represents a CSVCMsg_SplitScreen. */
 export class CSVCMsg_SplitScreen implements ICSVCMsg_SplitScreen {
   /**
-   * Constructs a new CSVCMsg_SplitScreen.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_SplitScreen);
-
-  /** CSVCMsg_SplitScreen type. */
-  public type: ESplitScreenMessageType;
-
-  /** CSVCMsg_SplitScreen slot. */
-  public slot: number;
-
-  /** CSVCMsg_SplitScreen playerIndex. */
-  public playerIndex: number;
-
-  /**
    * Decodes a CSVCMsg_SplitScreen message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -6184,6 +6039,20 @@ export class CSVCMsg_SplitScreen implements ICSVCMsg_SplitScreen {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_SplitScreen;
+
+  /** CSVCMsg_SplitScreen type. */
+  public type: ESplitScreenMessageType;
+
+  /** CSVCMsg_SplitScreen slot. */
+  public slot: number;
+
+  /** CSVCMsg_SplitScreen playerIndex. */
+  public playerIndex: number;
+  /**
+   * Constructs a new CSVCMsg_SplitScreen.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_SplitScreen);
 }
 
 /** Properties of a CSVCMsg_GetCvarValue. */
@@ -6198,18 +6067,6 @@ export interface ICSVCMsg_GetCvarValue {
 /** Represents a CSVCMsg_GetCvarValue. */
 export class CSVCMsg_GetCvarValue implements ICSVCMsg_GetCvarValue {
   /**
-   * Constructs a new CSVCMsg_GetCvarValue.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_GetCvarValue);
-
-  /** CSVCMsg_GetCvarValue cookie. */
-  public cookie: number;
-
-  /** CSVCMsg_GetCvarValue cvarName. */
-  public cvarName: string;
-
-  /**
    * Decodes a CSVCMsg_GetCvarValue message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -6221,6 +6078,17 @@ export class CSVCMsg_GetCvarValue implements ICSVCMsg_GetCvarValue {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_GetCvarValue;
+
+  /** CSVCMsg_GetCvarValue cookie. */
+  public cookie: number;
+
+  /** CSVCMsg_GetCvarValue cvarName. */
+  public cvarName: string;
+  /**
+   * Constructs a new CSVCMsg_GetCvarValue.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_GetCvarValue);
 }
 
 /** Properties of a CSVCMsg_Menu. */
@@ -6235,18 +6103,6 @@ export interface ICSVCMsg_Menu {
 /** Represents a CSVCMsg_Menu. */
 export class CSVCMsg_Menu implements ICSVCMsg_Menu {
   /**
-   * Constructs a new CSVCMsg_Menu.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_Menu);
-
-  /** CSVCMsg_Menu dialogType. */
-  public dialogType: number;
-
-  /** CSVCMsg_Menu menuKeyValues. */
-  public menuKeyValues: Uint8Array;
-
-  /**
    * Decodes a CSVCMsg_Menu message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -6258,6 +6114,17 @@ export class CSVCMsg_Menu implements ICSVCMsg_Menu {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_Menu;
+
+  /** CSVCMsg_Menu dialogType. */
+  public dialogType: number;
+
+  /** CSVCMsg_Menu menuKeyValues. */
+  public menuKeyValues: Uint8Array;
+  /**
+   * Constructs a new CSVCMsg_Menu.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_Menu);
 }
 
 /** Properties of a CSVCMsg_UserMessage. */
@@ -6275,21 +6142,6 @@ export interface ICSVCMsg_UserMessage {
 /** Represents a CSVCMsg_UserMessage. */
 export class CSVCMsg_UserMessage implements ICSVCMsg_UserMessage {
   /**
-   * Constructs a new CSVCMsg_UserMessage.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_UserMessage);
-
-  /** CSVCMsg_UserMessage msgType. */
-  public msgType: number;
-
-  /** CSVCMsg_UserMessage msgData. */
-  public msgData: Uint8Array;
-
-  /** CSVCMsg_UserMessage passthrough. */
-  public passthrough: number;
-
-  /**
    * Decodes a CSVCMsg_UserMessage message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -6301,6 +6153,20 @@ export class CSVCMsg_UserMessage implements ICSVCMsg_UserMessage {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_UserMessage;
+
+  /** CSVCMsg_UserMessage msgType. */
+  public msgType: number;
+
+  /** CSVCMsg_UserMessage msgData. */
+  public msgData: Uint8Array;
+
+  /** CSVCMsg_UserMessage passthrough. */
+  public passthrough: number;
+  /**
+   * Constructs a new CSVCMsg_UserMessage.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_UserMessage);
 }
 
 /** Properties of a CSVCMsg_PaintmapData. */
@@ -6311,15 +6177,6 @@ export interface ICSVCMsg_PaintmapData {
 
 /** Represents a CSVCMsg_PaintmapData. */
 export class CSVCMsg_PaintmapData implements ICSVCMsg_PaintmapData {
-  /**
-   * Constructs a new CSVCMsg_PaintmapData.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_PaintmapData);
-
-  /** CSVCMsg_PaintmapData paintmap. */
-  public paintmap: Uint8Array;
-
   /**
    * Decodes a CSVCMsg_PaintmapData message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -6332,6 +6189,14 @@ export class CSVCMsg_PaintmapData implements ICSVCMsg_PaintmapData {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_PaintmapData;
+
+  /** CSVCMsg_PaintmapData paintmap. */
+  public paintmap: Uint8Array;
+  /**
+   * Constructs a new CSVCMsg_PaintmapData.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_PaintmapData);
 }
 
 /** Properties of a CSVCMsg_GameEvent. */
@@ -6352,10 +6217,17 @@ export interface ICSVCMsg_GameEvent {
 /** Represents a CSVCMsg_GameEvent. */
 export class CSVCMsg_GameEvent implements ICSVCMsg_GameEvent {
   /**
-   * Constructs a new CSVCMsg_GameEvent.
-   * @param [properties] Properties to set
+   * Decodes a CSVCMsg_GameEvent message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CSVCMsg_GameEvent
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICSVCMsg_GameEvent);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CSVCMsg_GameEvent;
 
   /** CSVCMsg_GameEvent eventName. */
   public eventName: string;
@@ -6368,19 +6240,11 @@ export class CSVCMsg_GameEvent implements ICSVCMsg_GameEvent {
 
   /** CSVCMsg_GameEvent passthrough. */
   public passthrough: number;
-
   /**
-   * Decodes a CSVCMsg_GameEvent message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CSVCMsg_GameEvent
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CSVCMsg_GameEvent.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CSVCMsg_GameEvent;
+  constructor(properties?: ICSVCMsg_GameEvent);
 }
 
 export namespace CSVCMsg_GameEvent {
@@ -6417,10 +6281,17 @@ export namespace CSVCMsg_GameEvent {
   /** Represents a key_t. */
   class key_t implements Ikey_t {
     /**
-     * Constructs a new key_t.
-     * @param [properties] Properties to set
+     * Decodes a key_t message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns key_t
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    constructor(properties?: CSVCMsg_GameEvent.Ikey_t);
+    public static decode(
+      reader: $protobuf.Reader | Uint8Array,
+      length?: number
+    ): CSVCMsg_GameEvent.key_t;
 
     /** key_t type. */
     public type: number;
@@ -6448,19 +6319,11 @@ export namespace CSVCMsg_GameEvent {
 
     /** key_t valWstring. */
     public valWstring: Uint8Array;
-
     /**
-     * Decodes a key_t message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns key_t
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     * Constructs a new key_t.
+     * @param [properties] Properties to set
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): CSVCMsg_GameEvent.key_t;
+    constructor(properties?: CSVCMsg_GameEvent.Ikey_t);
   }
 }
 
@@ -6473,15 +6336,6 @@ export interface ICSVCMsg_GameEventList {
 /** Represents a CSVCMsg_GameEventList. */
 export class CSVCMsg_GameEventList implements ICSVCMsg_GameEventList {
   /**
-   * Constructs a new CSVCMsg_GameEventList.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_GameEventList);
-
-  /** CSVCMsg_GameEventList descriptors. */
-  public descriptors: CSVCMsg_GameEventList.Idescriptor_t[];
-
-  /**
    * Decodes a CSVCMsg_GameEventList message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -6493,6 +6347,14 @@ export class CSVCMsg_GameEventList implements ICSVCMsg_GameEventList {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_GameEventList;
+
+  /** CSVCMsg_GameEventList descriptors. */
+  public descriptors: CSVCMsg_GameEventList.Idescriptor_t[];
+  /**
+   * Constructs a new CSVCMsg_GameEventList.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_GameEventList);
 }
 
 export namespace CSVCMsg_GameEventList {
@@ -6508,18 +6370,6 @@ export namespace CSVCMsg_GameEventList {
   /** Represents a key_t. */
   class key_t implements Ikey_t {
     /**
-     * Constructs a new key_t.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CSVCMsg_GameEventList.Ikey_t);
-
-    /** key_t type. */
-    public type: number;
-
-    /** key_t name. */
-    public name: string;
-
-    /**
      * Decodes a key_t message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -6531,6 +6381,17 @@ export namespace CSVCMsg_GameEventList {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CSVCMsg_GameEventList.key_t;
+
+    /** key_t type. */
+    public type: number;
+
+    /** key_t name. */
+    public name: string;
+    /**
+     * Constructs a new key_t.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CSVCMsg_GameEventList.Ikey_t);
   }
 
   /** Properties of a descriptor_t. */
@@ -6548,21 +6409,6 @@ export namespace CSVCMsg_GameEventList {
   /** Represents a descriptor_t. */
   class descriptor_t implements Idescriptor_t {
     /**
-     * Constructs a new descriptor_t.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CSVCMsg_GameEventList.Idescriptor_t);
-
-    /** descriptor_t eventid. */
-    public eventid: number;
-
-    /** descriptor_t name. */
-    public name: string;
-
-    /** descriptor_t keys. */
-    public keys: CSVCMsg_GameEventList.Ikey_t[];
-
-    /**
      * Decodes a descriptor_t message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -6574,6 +6420,20 @@ export namespace CSVCMsg_GameEventList {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CSVCMsg_GameEventList.descriptor_t;
+
+    /** descriptor_t eventid. */
+    public eventid: number;
+
+    /** descriptor_t name. */
+    public name: string;
+
+    /** descriptor_t keys. */
+    public keys: CSVCMsg_GameEventList.Ikey_t[];
+    /**
+     * Constructs a new descriptor_t.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CSVCMsg_GameEventList.Idescriptor_t);
   }
 }
 
@@ -6592,21 +6452,6 @@ export interface ICSVCMsg_TempEntities {
 /** Represents a CSVCMsg_TempEntities. */
 export class CSVCMsg_TempEntities implements ICSVCMsg_TempEntities {
   /**
-   * Constructs a new CSVCMsg_TempEntities.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_TempEntities);
-
-  /** CSVCMsg_TempEntities reliable. */
-  public reliable: boolean;
-
-  /** CSVCMsg_TempEntities numEntries. */
-  public numEntries: number;
-
-  /** CSVCMsg_TempEntities entityData. */
-  public entityData: Uint8Array;
-
-  /**
    * Decodes a CSVCMsg_TempEntities message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -6618,6 +6463,20 @@ export class CSVCMsg_TempEntities implements ICSVCMsg_TempEntities {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_TempEntities;
+
+  /** CSVCMsg_TempEntities reliable. */
+  public reliable: boolean;
+
+  /** CSVCMsg_TempEntities numEntries. */
+  public numEntries: number;
+
+  /** CSVCMsg_TempEntities entityData. */
+  public entityData: Uint8Array;
+  /**
+   * Constructs a new CSVCMsg_TempEntities.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_TempEntities);
 }
 
 /** Properties of a CSVCMsg_PacketEntities. */
@@ -6647,10 +6506,17 @@ export interface ICSVCMsg_PacketEntities {
 /** Represents a CSVCMsg_PacketEntities. */
 export class CSVCMsg_PacketEntities implements ICSVCMsg_PacketEntities {
   /**
-   * Constructs a new CSVCMsg_PacketEntities.
-   * @param [properties] Properties to set
+   * Decodes a CSVCMsg_PacketEntities message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CSVCMsg_PacketEntities
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICSVCMsg_PacketEntities);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CSVCMsg_PacketEntities;
 
   /** CSVCMsg_PacketEntities maxEntries. */
   public maxEntries: number;
@@ -6672,19 +6538,11 @@ export class CSVCMsg_PacketEntities implements ICSVCMsg_PacketEntities {
 
   /** CSVCMsg_PacketEntities entityData. */
   public entityData: Uint8Array;
-
   /**
-   * Decodes a CSVCMsg_PacketEntities message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CSVCMsg_PacketEntities
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CSVCMsg_PacketEntities.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CSVCMsg_PacketEntities;
+  constructor(properties?: ICSVCMsg_PacketEntities);
 }
 
 /** Properties of a CSVCMsg_Sounds. */
@@ -6699,18 +6557,6 @@ export interface ICSVCMsg_Sounds {
 /** Represents a CSVCMsg_Sounds. */
 export class CSVCMsg_Sounds implements ICSVCMsg_Sounds {
   /**
-   * Constructs a new CSVCMsg_Sounds.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_Sounds);
-
-  /** CSVCMsg_Sounds reliableSound. */
-  public reliableSound: boolean;
-
-  /** CSVCMsg_Sounds sounds. */
-  public sounds: CSVCMsg_Sounds.Isounddata_t[];
-
-  /**
    * Decodes a CSVCMsg_Sounds message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -6722,6 +6568,17 @@ export class CSVCMsg_Sounds implements ICSVCMsg_Sounds {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_Sounds;
+
+  /** CSVCMsg_Sounds reliableSound. */
+  public reliableSound: boolean;
+
+  /** CSVCMsg_Sounds sounds. */
+  public sounds: CSVCMsg_Sounds.Isounddata_t[];
+  /**
+   * Constructs a new CSVCMsg_Sounds.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_Sounds);
 }
 
 export namespace CSVCMsg_Sounds {
@@ -6782,10 +6639,17 @@ export namespace CSVCMsg_Sounds {
   /** Represents a sounddata_t. */
   class sounddata_t implements Isounddata_t {
     /**
-     * Constructs a new sounddata_t.
-     * @param [properties] Properties to set
+     * Decodes a sounddata_t message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns sounddata_t
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    constructor(properties?: CSVCMsg_Sounds.Isounddata_t);
+    public static decode(
+      reader: $protobuf.Reader | Uint8Array,
+      length?: number
+    ): CSVCMsg_Sounds.sounddata_t;
 
     /** sounddata_t originX. */
     public originX: number;
@@ -6837,19 +6701,11 @@ export namespace CSVCMsg_Sounds {
 
     /** sounddata_t isAmbient. */
     public isAmbient: boolean;
-
     /**
-     * Decodes a sounddata_t message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns sounddata_t
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     * Constructs a new sounddata_t.
+     * @param [properties] Properties to set
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): CSVCMsg_Sounds.sounddata_t;
+    constructor(properties?: CSVCMsg_Sounds.Isounddata_t);
   }
 }
 
@@ -6868,21 +6724,6 @@ export interface ICSVCMsg_EntityMsg {
 /** Represents a CSVCMsg_EntityMsg. */
 export class CSVCMsg_EntityMsg implements ICSVCMsg_EntityMsg {
   /**
-   * Constructs a new CSVCMsg_EntityMsg.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_EntityMsg);
-
-  /** CSVCMsg_EntityMsg entIndex. */
-  public entIndex: number;
-
-  /** CSVCMsg_EntityMsg classId. */
-  public classId: number;
-
-  /** CSVCMsg_EntityMsg entData. */
-  public entData: Uint8Array;
-
-  /**
    * Decodes a CSVCMsg_EntityMsg message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -6894,6 +6735,20 @@ export class CSVCMsg_EntityMsg implements ICSVCMsg_EntityMsg {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_EntityMsg;
+
+  /** CSVCMsg_EntityMsg entIndex. */
+  public entIndex: number;
+
+  /** CSVCMsg_EntityMsg classId. */
+  public classId: number;
+
+  /** CSVCMsg_EntityMsg entData. */
+  public entData: Uint8Array;
+  /**
+   * Constructs a new CSVCMsg_EntityMsg.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_EntityMsg);
 }
 
 /** Properties of a CSVCMsg_CmdKeyValues. */
@@ -6904,15 +6759,6 @@ export interface ICSVCMsg_CmdKeyValues {
 
 /** Represents a CSVCMsg_CmdKeyValues. */
 export class CSVCMsg_CmdKeyValues implements ICSVCMsg_CmdKeyValues {
-  /**
-   * Constructs a new CSVCMsg_CmdKeyValues.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_CmdKeyValues);
-
-  /** CSVCMsg_CmdKeyValues keyvalues. */
-  public keyvalues: Uint8Array;
-
   /**
    * Decodes a CSVCMsg_CmdKeyValues message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -6925,6 +6771,14 @@ export class CSVCMsg_CmdKeyValues implements ICSVCMsg_CmdKeyValues {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_CmdKeyValues;
+
+  /** CSVCMsg_CmdKeyValues keyvalues. */
+  public keyvalues: Uint8Array;
+  /**
+   * Constructs a new CSVCMsg_CmdKeyValues.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_CmdKeyValues);
 }
 
 /** Properties of a CSVCMsg_EncryptedData. */
@@ -6939,18 +6793,6 @@ export interface ICSVCMsg_EncryptedData {
 /** Represents a CSVCMsg_EncryptedData. */
 export class CSVCMsg_EncryptedData implements ICSVCMsg_EncryptedData {
   /**
-   * Constructs a new CSVCMsg_EncryptedData.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSVCMsg_EncryptedData);
-
-  /** CSVCMsg_EncryptedData encrypted. */
-  public encrypted: Uint8Array;
-
-  /** CSVCMsg_EncryptedData keyType. */
-  public keyType: number;
-
-  /**
    * Decodes a CSVCMsg_EncryptedData message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -6962,6 +6804,17 @@ export class CSVCMsg_EncryptedData implements ICSVCMsg_EncryptedData {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSVCMsg_EncryptedData;
+
+  /** CSVCMsg_EncryptedData encrypted. */
+  public encrypted: Uint8Array;
+
+  /** CSVCMsg_EncryptedData keyType. */
+  public keyType: number;
+  /**
+   * Constructs a new CSVCMsg_EncryptedData.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSVCMsg_EncryptedData);
 }
 
 /** Properties of a CSVCMsg_HltvReplay. */
@@ -6991,10 +6844,17 @@ export interface ICSVCMsg_HltvReplay {
 /** Represents a CSVCMsg_HltvReplay. */
 export class CSVCMsg_HltvReplay implements ICSVCMsg_HltvReplay {
   /**
-   * Constructs a new CSVCMsg_HltvReplay.
-   * @param [properties] Properties to set
+   * Decodes a CSVCMsg_HltvReplay message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CSVCMsg_HltvReplay
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICSVCMsg_HltvReplay);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CSVCMsg_HltvReplay;
 
   /** CSVCMsg_HltvReplay delay. */
   public delay: number;
@@ -7016,19 +6876,11 @@ export class CSVCMsg_HltvReplay implements ICSVCMsg_HltvReplay {
 
   /** CSVCMsg_HltvReplay replaySlowdownRate. */
   public replaySlowdownRate: number;
-
   /**
-   * Decodes a CSVCMsg_HltvReplay message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CSVCMsg_HltvReplay
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CSVCMsg_HltvReplay.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CSVCMsg_HltvReplay;
+  constructor(properties?: ICSVCMsg_HltvReplay);
 }
 
 /** Properties of a CCLCMsg_HltvReplay. */
@@ -7052,10 +6904,17 @@ export interface ICCLCMsg_HltvReplay {
 /** Represents a CCLCMsg_HltvReplay. */
 export class CCLCMsg_HltvReplay implements ICCLCMsg_HltvReplay {
   /**
-   * Constructs a new CCLCMsg_HltvReplay.
-   * @param [properties] Properties to set
+   * Decodes a CCLCMsg_HltvReplay message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CCLCMsg_HltvReplay
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICCLCMsg_HltvReplay);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CCLCMsg_HltvReplay;
 
   /** CCLCMsg_HltvReplay request. */
   public request: number;
@@ -7071,19 +6930,11 @@ export class CCLCMsg_HltvReplay implements ICCLCMsg_HltvReplay {
 
   /** CCLCMsg_HltvReplay eventTime. */
   public eventTime: number;
-
   /**
-   * Decodes a CCLCMsg_HltvReplay message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CCLCMsg_HltvReplay
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CCLCMsg_HltvReplay.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CCLCMsg_HltvReplay;
+  constructor(properties?: ICCLCMsg_HltvReplay);
 }
 
 /** ECsgoGCMsg enum. */
@@ -7185,10 +7036,17 @@ export interface IGameServerPing {
 /** Represents a GameServerPing. */
 export class GameServerPing implements IGameServerPing {
   /**
-   * Constructs a new GameServerPing.
-   * @param [properties] Properties to set
+   * Decodes a GameServerPing message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns GameServerPing
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: IGameServerPing);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): GameServerPing;
 
   /** GameServerPing gameserverId. */
   public gameserverId: number | Long;
@@ -7204,19 +7062,11 @@ export class GameServerPing implements IGameServerPing {
 
   /** GameServerPing instances. */
   public instances: number;
-
   /**
-   * Decodes a GameServerPing message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns GameServerPing
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new GameServerPing.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): GameServerPing;
+  constructor(properties?: IGameServerPing);
 }
 
 /** Properties of a DetailedSearchStatistic. */
@@ -7234,21 +7084,6 @@ export interface IDetailedSearchStatistic {
 /** Represents a DetailedSearchStatistic. */
 export class DetailedSearchStatistic implements IDetailedSearchStatistic {
   /**
-   * Constructs a new DetailedSearchStatistic.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: IDetailedSearchStatistic);
-
-  /** DetailedSearchStatistic gameType. */
-  public gameType: number;
-
-  /** DetailedSearchStatistic searchTimeAvg. */
-  public searchTimeAvg: number;
-
-  /** DetailedSearchStatistic playersSearching. */
-  public playersSearching: number;
-
-  /**
    * Decodes a DetailedSearchStatistic message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -7260,6 +7095,20 @@ export class DetailedSearchStatistic implements IDetailedSearchStatistic {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): DetailedSearchStatistic;
+
+  /** DetailedSearchStatistic gameType. */
+  public gameType: number;
+
+  /** DetailedSearchStatistic searchTimeAvg. */
+  public searchTimeAvg: number;
+
+  /** DetailedSearchStatistic playersSearching. */
+  public playersSearching: number;
+  /**
+   * Constructs a new DetailedSearchStatistic.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: IDetailedSearchStatistic);
 }
 
 /** Properties of a TournamentPlayer. */
@@ -7289,10 +7138,17 @@ export interface ITournamentPlayer {
 /** Represents a TournamentPlayer. */
 export class TournamentPlayer implements ITournamentPlayer {
   /**
-   * Constructs a new TournamentPlayer.
-   * @param [properties] Properties to set
+   * Decodes a TournamentPlayer message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns TournamentPlayer
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ITournamentPlayer);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): TournamentPlayer;
 
   /** TournamentPlayer accountId. */
   public accountId: number;
@@ -7314,19 +7170,11 @@ export class TournamentPlayer implements ITournamentPlayer {
 
   /** TournamentPlayer playerDesc. */
   public playerDesc: string;
-
   /**
-   * Decodes a TournamentPlayer message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns TournamentPlayer
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new TournamentPlayer.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): TournamentPlayer;
+  constructor(properties?: ITournamentPlayer);
 }
 
 /** Properties of a TournamentTeam. */
@@ -7350,10 +7198,17 @@ export interface ITournamentTeam {
 /** Represents a TournamentTeam. */
 export class TournamentTeam implements ITournamentTeam {
   /**
-   * Constructs a new TournamentTeam.
-   * @param [properties] Properties to set
+   * Decodes a TournamentTeam message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns TournamentTeam
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ITournamentTeam);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): TournamentTeam;
 
   /** TournamentTeam teamId. */
   public teamId: number;
@@ -7369,19 +7224,11 @@ export class TournamentTeam implements ITournamentTeam {
 
   /** TournamentTeam players. */
   public players: ITournamentPlayer[];
-
   /**
-   * Decodes a TournamentTeam message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns TournamentTeam
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new TournamentTeam.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): TournamentTeam;
+  constructor(properties?: ITournamentTeam);
 }
 
 /** Properties of a TournamentEvent. */
@@ -7417,10 +7264,17 @@ export interface ITournamentEvent {
 /** Represents a TournamentEvent. */
 export class TournamentEvent implements ITournamentEvent {
   /**
-   * Constructs a new TournamentEvent.
-   * @param [properties] Properties to set
+   * Decodes a TournamentEvent message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns TournamentEvent
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ITournamentEvent);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): TournamentEvent;
 
   /** TournamentEvent eventId. */
   public eventId: number;
@@ -7448,19 +7302,11 @@ export class TournamentEvent implements ITournamentEvent {
 
   /** TournamentEvent activeSectionId. */
   public activeSectionId: number;
-
   /**
-   * Decodes a TournamentEvent message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns TournamentEvent
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new TournamentEvent.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): TournamentEvent;
+  constructor(properties?: ITournamentEvent);
 }
 
 /** Properties of a GlobalStatistics. */
@@ -7508,10 +7354,17 @@ export interface IGlobalStatistics {
 /** Represents a GlobalStatistics. */
 export class GlobalStatistics implements IGlobalStatistics {
   /**
-   * Constructs a new GlobalStatistics.
-   * @param [properties] Properties to set
+   * Decodes a GlobalStatistics message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns GlobalStatistics
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: IGlobalStatistics);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): GlobalStatistics;
 
   /** GlobalStatistics playersOnline. */
   public playersOnline: number;
@@ -7551,19 +7404,11 @@ export class GlobalStatistics implements IGlobalStatistics {
 
   /** GlobalStatistics activeSurveyId. */
   public activeSurveyId: number;
-
   /**
-   * Decodes a GlobalStatistics message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns GlobalStatistics
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new GlobalStatistics.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): GlobalStatistics;
+  constructor(properties?: IGlobalStatistics);
 }
 
 /** Properties of an OperationalStatisticDescription. */
@@ -7579,18 +7424,6 @@ export interface IOperationalStatisticDescription {
 export class OperationalStatisticDescription
   implements IOperationalStatisticDescription {
   /**
-   * Constructs a new OperationalStatisticDescription.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: IOperationalStatisticDescription);
-
-  /** OperationalStatisticDescription name. */
-  public name: string;
-
-  /** OperationalStatisticDescription idkey. */
-  public idkey: number;
-
-  /**
    * Decodes an OperationalStatisticDescription message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -7602,6 +7435,17 @@ export class OperationalStatisticDescription
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): OperationalStatisticDescription;
+
+  /** OperationalStatisticDescription name. */
+  public name: string;
+
+  /** OperationalStatisticDescription idkey. */
+  public idkey: number;
+  /**
+   * Constructs a new OperationalStatisticDescription.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: IOperationalStatisticDescription);
 }
 
 /** Properties of an OperationalStatisticElement. */
@@ -7617,18 +7461,6 @@ export interface IOperationalStatisticElement {
 export class OperationalStatisticElement
   implements IOperationalStatisticElement {
   /**
-   * Constructs a new OperationalStatisticElement.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: IOperationalStatisticElement);
-
-  /** OperationalStatisticElement idkey. */
-  public idkey: number;
-
-  /** OperationalStatisticElement values. */
-  public values: number[];
-
-  /**
    * Decodes an OperationalStatisticElement message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -7640,6 +7472,17 @@ export class OperationalStatisticElement
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): OperationalStatisticElement;
+
+  /** OperationalStatisticElement idkey. */
+  public idkey: number;
+
+  /** OperationalStatisticElement values. */
+  public values: number[];
+  /**
+   * Constructs a new OperationalStatisticElement.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: IOperationalStatisticElement);
 }
 
 /** Properties of an OperationalStatisticsPacket. */
@@ -7658,21 +7501,6 @@ export interface IOperationalStatisticsPacket {
 export class OperationalStatisticsPacket
   implements IOperationalStatisticsPacket {
   /**
-   * Constructs a new OperationalStatisticsPacket.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: IOperationalStatisticsPacket);
-
-  /** OperationalStatisticsPacket packetid. */
-  public packetid: number;
-
-  /** OperationalStatisticsPacket mstimestamp. */
-  public mstimestamp: number;
-
-  /** OperationalStatisticsPacket values. */
-  public values: IOperationalStatisticElement[];
-
-  /**
    * Decodes an OperationalStatisticsPacket message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -7684,6 +7512,20 @@ export class OperationalStatisticsPacket
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): OperationalStatisticsPacket;
+
+  /** OperationalStatisticsPacket packetid. */
+  public packetid: number;
+
+  /** OperationalStatisticsPacket mstimestamp. */
+  public mstimestamp: number;
+
+  /** OperationalStatisticsPacket values. */
+  public values: IOperationalStatisticElement[];
+  /**
+   * Constructs a new OperationalStatisticsPacket.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: IOperationalStatisticsPacket);
 }
 
 /** Properties of a PlayerRankingInfo. */
@@ -7704,10 +7546,17 @@ export interface IPlayerRankingInfo {
 /** Represents a PlayerRankingInfo. */
 export class PlayerRankingInfo implements IPlayerRankingInfo {
   /**
-   * Constructs a new PlayerRankingInfo.
-   * @param [properties] Properties to set
+   * Decodes a PlayerRankingInfo message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns PlayerRankingInfo
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: IPlayerRankingInfo);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): PlayerRankingInfo;
 
   /** PlayerRankingInfo accountId. */
   public accountId: number;
@@ -7720,19 +7569,11 @@ export class PlayerRankingInfo implements IPlayerRankingInfo {
 
   /** PlayerRankingInfo rankChange. */
   public rankChange: number;
-
   /**
-   * Decodes a PlayerRankingInfo message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns PlayerRankingInfo
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new PlayerRankingInfo.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): PlayerRankingInfo;
+  constructor(properties?: IPlayerRankingInfo);
 }
 
 /** Properties of a PlayerCommendationInfo. */
@@ -7750,21 +7591,6 @@ export interface IPlayerCommendationInfo {
 /** Represents a PlayerCommendationInfo. */
 export class PlayerCommendationInfo implements IPlayerCommendationInfo {
   /**
-   * Constructs a new PlayerCommendationInfo.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: IPlayerCommendationInfo);
-
-  /** PlayerCommendationInfo cmdFriendly. */
-  public cmdFriendly: number;
-
-  /** PlayerCommendationInfo cmdTeaching. */
-  public cmdTeaching: number;
-
-  /** PlayerCommendationInfo cmdLeader. */
-  public cmdLeader: number;
-
-  /**
    * Decodes a PlayerCommendationInfo message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -7776,6 +7602,20 @@ export class PlayerCommendationInfo implements IPlayerCommendationInfo {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): PlayerCommendationInfo;
+
+  /** PlayerCommendationInfo cmdFriendly. */
+  public cmdFriendly: number;
+
+  /** PlayerCommendationInfo cmdTeaching. */
+  public cmdTeaching: number;
+
+  /** PlayerCommendationInfo cmdLeader. */
+  public cmdLeader: number;
+  /**
+   * Constructs a new PlayerCommendationInfo.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: IPlayerCommendationInfo);
 }
 
 /** Properties of a PlayerMedalsInfo. */
@@ -7805,10 +7645,17 @@ export interface IPlayerMedalsInfo {
 /** Represents a PlayerMedalsInfo. */
 export class PlayerMedalsInfo implements IPlayerMedalsInfo {
   /**
-   * Constructs a new PlayerMedalsInfo.
-   * @param [properties] Properties to set
+   * Decodes a PlayerMedalsInfo message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns PlayerMedalsInfo
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: IPlayerMedalsInfo);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): PlayerMedalsInfo;
 
   /** PlayerMedalsInfo medalTeam. */
   public medalTeam: number;
@@ -7830,19 +7677,11 @@ export class PlayerMedalsInfo implements IPlayerMedalsInfo {
 
   /** PlayerMedalsInfo featuredDisplayItemDefidx. */
   public featuredDisplayItemDefidx: number;
-
   /**
-   * Decodes a PlayerMedalsInfo message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns PlayerMedalsInfo
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new PlayerMedalsInfo.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): PlayerMedalsInfo;
+  constructor(properties?: IPlayerMedalsInfo);
 }
 
 /** Properties of an AccountActivity. */
@@ -7860,21 +7699,6 @@ export interface IAccountActivity {
 /** Represents an AccountActivity. */
 export class AccountActivity implements IAccountActivity {
   /**
-   * Constructs a new AccountActivity.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: IAccountActivity);
-
-  /** AccountActivity activity. */
-  public activity: number;
-
-  /** AccountActivity mode. */
-  public mode: number;
-
-  /** AccountActivity map. */
-  public map: number;
-
-  /**
    * Decodes an AccountActivity message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -7886,6 +7710,20 @@ export class AccountActivity implements IAccountActivity {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): AccountActivity;
+
+  /** AccountActivity activity. */
+  public activity: number;
+
+  /** AccountActivity mode. */
+  public mode: number;
+
+  /** AccountActivity map. */
+  public map: number;
+  /**
+   * Constructs a new AccountActivity.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: IAccountActivity);
 }
 
 /** Properties of a TournamentMatchSetup. */
@@ -7906,10 +7744,17 @@ export interface ITournamentMatchSetup {
 /** Represents a TournamentMatchSetup. */
 export class TournamentMatchSetup implements ITournamentMatchSetup {
   /**
-   * Constructs a new TournamentMatchSetup.
-   * @param [properties] Properties to set
+   * Decodes a TournamentMatchSetup message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns TournamentMatchSetup
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ITournamentMatchSetup);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): TournamentMatchSetup;
 
   /** TournamentMatchSetup eventId. */
   public eventId: number;
@@ -7922,19 +7767,11 @@ export class TournamentMatchSetup implements ITournamentMatchSetup {
 
   /** TournamentMatchSetup eventStageId. */
   public eventStageId: number;
-
   /**
-   * Decodes a TournamentMatchSetup message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns TournamentMatchSetup
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new TournamentMatchSetup.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): TournamentMatchSetup;
+  constructor(properties?: ITournamentMatchSetup);
 }
 
 /** Properties of a ServerHltvInfo. */
@@ -8000,10 +7837,17 @@ export interface IServerHltvInfo {
 /** Represents a ServerHltvInfo. */
 export class ServerHltvInfo implements IServerHltvInfo {
   /**
-   * Constructs a new ServerHltvInfo.
-   * @param [properties] Properties to set
+   * Decodes a ServerHltvInfo message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns ServerHltvInfo
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: IServerHltvInfo);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): ServerHltvInfo;
 
   /** ServerHltvInfo tvUdpPort. */
   public tvUdpPort: number;
@@ -8061,19 +7905,11 @@ export class ServerHltvInfo implements IServerHltvInfo {
 
   /** ServerHltvInfo tvRelaySteamid. */
   public tvRelaySteamid: number | Long;
-
   /**
-   * Decodes a ServerHltvInfo message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns ServerHltvInfo
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new ServerHltvInfo.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): ServerHltvInfo;
+  constructor(properties?: IServerHltvInfo);
 }
 
 /** Properties of an IpAddressMask. */
@@ -8100,10 +7936,17 @@ export interface IIpAddressMask {
 /** Represents an IpAddressMask. */
 export class IpAddressMask implements IIpAddressMask {
   /**
-   * Constructs a new IpAddressMask.
-   * @param [properties] Properties to set
+   * Decodes an IpAddressMask message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns IpAddressMask
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: IIpAddressMask);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): IpAddressMask;
 
   /** IpAddressMask a. */
   public a: number;
@@ -8122,19 +7965,11 @@ export class IpAddressMask implements IIpAddressMask {
 
   /** IpAddressMask token. */
   public token: number;
-
   /**
-   * Decodes an IpAddressMask message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns IpAddressMask
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new IpAddressMask.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): IpAddressMask;
+  constructor(properties?: IIpAddressMask);
 }
 
 /** Properties of a XpProgressData. */
@@ -8149,18 +7984,6 @@ export interface IXpProgressData {
 /** Represents a XpProgressData. */
 export class XpProgressData implements IXpProgressData {
   /**
-   * Constructs a new XpProgressData.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: IXpProgressData);
-
-  /** XpProgressData xpPoints. */
-  public xpPoints: number;
-
-  /** XpProgressData xpCategory. */
-  public xpCategory: number;
-
-  /**
    * Decodes a XpProgressData message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -8172,6 +7995,17 @@ export class XpProgressData implements IXpProgressData {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): XpProgressData;
+
+  /** XpProgressData xpPoints. */
+  public xpPoints: number;
+
+  /** XpProgressData xpCategory. */
+  public xpCategory: number;
+  /**
+   * Constructs a new XpProgressData.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: IXpProgressData);
 }
 
 /** Properties of a MatchEndItemUpdates. */
@@ -8189,21 +8023,6 @@ export interface IMatchEndItemUpdates {
 /** Represents a MatchEndItemUpdates. */
 export class MatchEndItemUpdates implements IMatchEndItemUpdates {
   /**
-   * Constructs a new MatchEndItemUpdates.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: IMatchEndItemUpdates);
-
-  /** MatchEndItemUpdates itemId. */
-  public itemId: number | Long;
-
-  /** MatchEndItemUpdates itemAttrDefidx. */
-  public itemAttrDefidx: number;
-
-  /** MatchEndItemUpdates itemAttrDeltaValue. */
-  public itemAttrDeltaValue: number;
-
-  /**
    * Decodes a MatchEndItemUpdates message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -8215,6 +8034,20 @@ export class MatchEndItemUpdates implements IMatchEndItemUpdates {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): MatchEndItemUpdates;
+
+  /** MatchEndItemUpdates itemId. */
+  public itemId: number | Long;
+
+  /** MatchEndItemUpdates itemAttrDefidx. */
+  public itemAttrDefidx: number;
+
+  /** MatchEndItemUpdates itemAttrDeltaValue. */
+  public itemAttrDeltaValue: number;
+  /**
+   * Constructs a new MatchEndItemUpdates.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: IMatchEndItemUpdates);
 }
 
 /** Properties of a PlayerQuestData. */
@@ -8241,10 +8074,17 @@ export interface IPlayerQuestData {
 /** Represents a PlayerQuestData. */
 export class PlayerQuestData implements IPlayerQuestData {
   /**
-   * Constructs a new PlayerQuestData.
-   * @param [properties] Properties to set
+   * Decodes a PlayerQuestData message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns PlayerQuestData
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: IPlayerQuestData);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): PlayerQuestData;
 
   /** PlayerQuestData questerAccountId. */
   public questerAccountId: number;
@@ -8263,19 +8103,11 @@ export class PlayerQuestData implements IPlayerQuestData {
 
   /** PlayerQuestData itemUpdates. */
   public itemUpdates: IMatchEndItemUpdates[];
-
   /**
-   * Decodes a PlayerQuestData message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns PlayerQuestData
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new PlayerQuestData.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): PlayerQuestData;
+  constructor(properties?: IPlayerQuestData);
 }
 
 export namespace PlayerQuestData {
@@ -8294,21 +8126,6 @@ export namespace PlayerQuestData {
   /** Represents a QuestItemData. */
   class QuestItemData implements IQuestItemData {
     /**
-     * Constructs a new QuestItemData.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: PlayerQuestData.IQuestItemData);
-
-    /** QuestItemData questId. */
-    public questId: number | Long;
-
-    /** QuestItemData questNormalPointsEarned. */
-    public questNormalPointsEarned: number;
-
-    /** QuestItemData questBonusPointsEarned. */
-    public questBonusPointsEarned: number;
-
-    /**
      * Decodes a QuestItemData message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -8320,6 +8137,20 @@ export namespace PlayerQuestData {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): PlayerQuestData.QuestItemData;
+
+    /** QuestItemData questId. */
+    public questId: number | Long;
+
+    /** QuestItemData questNormalPointsEarned. */
+    public questNormalPointsEarned: number;
+
+    /** QuestItemData questBonusPointsEarned. */
+    public questBonusPointsEarned: number;
+    /**
+     * Constructs a new QuestItemData.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: PlayerQuestData.IQuestItemData);
   }
 }
 
@@ -8333,15 +8164,6 @@ export interface ICMsgGC_ServerQuestUpdateData {
 export class CMsgGC_ServerQuestUpdateData
   implements ICMsgGC_ServerQuestUpdateData {
   /**
-   * Constructs a new CMsgGC_ServerQuestUpdateData.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGC_ServerQuestUpdateData);
-
-  /** CMsgGC_ServerQuestUpdateData playerQuestData. */
-  public playerQuestData: IPlayerQuestData[];
-
-  /**
    * Decodes a CMsgGC_ServerQuestUpdateData message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -8353,6 +8175,14 @@ export class CMsgGC_ServerQuestUpdateData
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGC_ServerQuestUpdateData;
+
+  /** CMsgGC_ServerQuestUpdateData playerQuestData. */
+  public playerQuestData: IPlayerQuestData[];
+  /**
+   * Constructs a new CMsgGC_ServerQuestUpdateData.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGC_ServerQuestUpdateData);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingGCOperationalStats. */
@@ -8371,21 +8201,6 @@ export interface ICMsgGCCStrike15_v2_MatchmakingGCOperationalStats {
 export class CMsgGCCStrike15_v2_MatchmakingGCOperationalStats
   implements ICMsgGCCStrike15_v2_MatchmakingGCOperationalStats {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGCOperationalStats.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGCOperationalStats);
-
-  /** CMsgGCCStrike15_v2_MatchmakingGCOperationalStats packetid. */
-  public packetid: number;
-
-  /** CMsgGCCStrike15_v2_MatchmakingGCOperationalStats namekeys. */
-  public namekeys: IOperationalStatisticDescription[];
-
-  /** CMsgGCCStrike15_v2_MatchmakingGCOperationalStats packets. */
-  public packets: IOperationalStatisticsPacket[];
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_MatchmakingGCOperationalStats message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -8397,6 +8212,20 @@ export class CMsgGCCStrike15_v2_MatchmakingGCOperationalStats
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchmakingGCOperationalStats;
+
+  /** CMsgGCCStrike15_v2_MatchmakingGCOperationalStats packetid. */
+  public packetid: number;
+
+  /** CMsgGCCStrike15_v2_MatchmakingGCOperationalStats namekeys. */
+  public namekeys: IOperationalStatisticDescription[];
+
+  /** CMsgGCCStrike15_v2_MatchmakingGCOperationalStats packets. */
+  public packets: IOperationalStatisticsPacket[];
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGCOperationalStats.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGCOperationalStats);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm. */
@@ -8415,21 +8244,6 @@ export interface ICMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm {
 export class CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm
   implements ICMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm);
-
-  /** CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm token. */
-  public token: number;
-
-  /** CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm stamp. */
-  public stamp: number;
-
-  /** CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm exchange. */
-  public exchange: number | Long;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -8441,6 +8255,20 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm;
+
+  /** CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm token. */
+  public token: number;
+
+  /** CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm stamp. */
+  public stamp: number;
+
+  /** CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm exchange. */
+  public exchange: number | Long;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_GC2ServerReservationUpdate. */
@@ -8456,18 +8284,6 @@ export interface ICMsgGCCStrike15_v2_GC2ServerReservationUpdate {
 export class CMsgGCCStrike15_v2_GC2ServerReservationUpdate
   implements ICMsgGCCStrike15_v2_GC2ServerReservationUpdate {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_GC2ServerReservationUpdate.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_GC2ServerReservationUpdate);
-
-  /** CMsgGCCStrike15_v2_GC2ServerReservationUpdate viewersExternalTotal. */
-  public viewersExternalTotal: number;
-
-  /** CMsgGCCStrike15_v2_GC2ServerReservationUpdate viewersExternalSteam. */
-  public viewersExternalSteam: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_GC2ServerReservationUpdate message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -8479,6 +8295,17 @@ export class CMsgGCCStrike15_v2_GC2ServerReservationUpdate
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_GC2ServerReservationUpdate;
+
+  /** CMsgGCCStrike15_v2_GC2ServerReservationUpdate viewersExternalTotal. */
+  public viewersExternalTotal: number;
+
+  /** CMsgGCCStrike15_v2_GC2ServerReservationUpdate viewersExternalSteam. */
+  public viewersExternalSteam: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_GC2ServerReservationUpdate.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_GC2ServerReservationUpdate);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingStart. */
@@ -8503,10 +8330,17 @@ export interface ICMsgGCCStrike15_v2_MatchmakingStart {
 export class CMsgGCCStrike15_v2_MatchmakingStart
   implements ICMsgGCCStrike15_v2_MatchmakingStart {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingStart.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_MatchmakingStart message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_MatchmakingStart
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingStart);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_MatchmakingStart;
 
   /** CMsgGCCStrike15_v2_MatchmakingStart accountIds. */
   public accountIds: number[];
@@ -8522,19 +8356,11 @@ export class CMsgGCCStrike15_v2_MatchmakingStart
 
   /** CMsgGCCStrike15_v2_MatchmakingStart tournamentMatch. */
   public tournamentMatch?: ITournamentMatchSetup | null;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_MatchmakingStart message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_MatchmakingStart
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingStart.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_MatchmakingStart;
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingStart);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingStop. */
@@ -8547,15 +8373,6 @@ export interface ICMsgGCCStrike15_v2_MatchmakingStop {
 export class CMsgGCCStrike15_v2_MatchmakingStop
   implements ICMsgGCCStrike15_v2_MatchmakingStop {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingStop.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingStop);
-
-  /** CMsgGCCStrike15_v2_MatchmakingStop abandon. */
-  public abandon: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_MatchmakingStop message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -8567,6 +8384,14 @@ export class CMsgGCCStrike15_v2_MatchmakingStop
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchmakingStop;
+
+  /** CMsgGCCStrike15_v2_MatchmakingStop abandon. */
+  public abandon: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingStop.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingStop);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingClient2ServerPing. */
@@ -8585,21 +8410,6 @@ export interface ICMsgGCCStrike15_v2_MatchmakingClient2ServerPing {
 export class CMsgGCCStrike15_v2_MatchmakingClient2ServerPing
   implements ICMsgGCCStrike15_v2_MatchmakingClient2ServerPing {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingClient2ServerPing.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingClient2ServerPing);
-
-  /** CMsgGCCStrike15_v2_MatchmakingClient2ServerPing gameserverpings. */
-  public gameserverpings: IGameServerPing[];
-
-  /** CMsgGCCStrike15_v2_MatchmakingClient2ServerPing offsetIndex. */
-  public offsetIndex: number;
-
-  /** CMsgGCCStrike15_v2_MatchmakingClient2ServerPing finalBatch. */
-  public finalBatch: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_MatchmakingClient2ServerPing message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -8611,6 +8421,20 @@ export class CMsgGCCStrike15_v2_MatchmakingClient2ServerPing
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchmakingClient2ServerPing;
+
+  /** CMsgGCCStrike15_v2_MatchmakingClient2ServerPing gameserverpings. */
+  public gameserverpings: IGameServerPing[];
+
+  /** CMsgGCCStrike15_v2_MatchmakingClient2ServerPing offsetIndex. */
+  public offsetIndex: number;
+
+  /** CMsgGCCStrike15_v2_MatchmakingClient2ServerPing finalBatch. */
+  public finalBatch: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingClient2ServerPing.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingClient2ServerPing);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate. */
@@ -8659,10 +8483,17 @@ export interface ICMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate {
 export class CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
   implements ICMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate;
 
   /** CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate matchmaking. */
   public matchmaking: number;
@@ -8702,19 +8533,11 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
 
   /** CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate insufficientlevelSessions. */
   public insufficientlevelSessions: number[];
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate;
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate);
 }
 
 export namespace CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate {
@@ -8736,12 +8559,17 @@ export namespace CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate {
   /** Represents a Note. */
   class Note implements INote {
     /**
-     * Constructs a new Note.
-     * @param [properties] Properties to set
+     * Decodes a Note message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns Note
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    constructor(
-      properties?: CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.INote
-    );
+    public static decode(
+      reader: $protobuf.Reader | Uint8Array,
+      length?: number
+    ): CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.Note;
 
     /** Note type. */
     public type: number;
@@ -8754,19 +8582,13 @@ export namespace CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate {
 
     /** Note distance. */
     public distance: number;
-
     /**
-     * Decodes a Note message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns Note
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     * Constructs a new Note.
+     * @param [properties] Properties to set
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.Note;
+    constructor(
+      properties?: CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.INote
+    );
   }
 }
 
@@ -8807,10 +8629,17 @@ export interface ICDataGCCStrike15_v2_TournamentMatchDraft {
 export class CDataGCCStrike15_v2_TournamentMatchDraft
   implements ICDataGCCStrike15_v2_TournamentMatchDraft {
   /**
-   * Constructs a new CDataGCCStrike15_v2_TournamentMatchDraft.
-   * @param [properties] Properties to set
+   * Decodes a CDataGCCStrike15_v2_TournamentMatchDraft message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CDataGCCStrike15_v2_TournamentMatchDraft
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICDataGCCStrike15_v2_TournamentMatchDraft);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CDataGCCStrike15_v2_TournamentMatchDraft;
 
   /** CDataGCCStrike15_v2_TournamentMatchDraft eventId. */
   public eventId: number;
@@ -8841,19 +8670,11 @@ export class CDataGCCStrike15_v2_TournamentMatchDraft
 
   /** CDataGCCStrike15_v2_TournamentMatchDraft drafts. */
   public drafts: CDataGCCStrike15_v2_TournamentMatchDraft.IEntry[];
-
   /**
-   * Decodes a CDataGCCStrike15_v2_TournamentMatchDraft message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CDataGCCStrike15_v2_TournamentMatchDraft
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CDataGCCStrike15_v2_TournamentMatchDraft.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CDataGCCStrike15_v2_TournamentMatchDraft;
+  constructor(properties?: ICDataGCCStrike15_v2_TournamentMatchDraft);
 }
 
 export namespace CDataGCCStrike15_v2_TournamentMatchDraft {
@@ -8869,18 +8690,6 @@ export namespace CDataGCCStrike15_v2_TournamentMatchDraft {
   /** Represents an Entry. */
   class Entry implements IEntry {
     /**
-     * Constructs a new Entry.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CDataGCCStrike15_v2_TournamentMatchDraft.IEntry);
-
-    /** Entry mapid. */
-    public mapid: number;
-
-    /** Entry teamIdCt. */
-    public teamIdCt: number;
-
-    /**
      * Decodes an Entry message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -8892,6 +8701,17 @@ export namespace CDataGCCStrike15_v2_TournamentMatchDraft {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CDataGCCStrike15_v2_TournamentMatchDraft.Entry;
+
+    /** Entry mapid. */
+    public mapid: number;
+
+    /** Entry teamIdCt. */
+    public teamIdCt: number;
+    /**
+     * Constructs a new Entry.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CDataGCCStrike15_v2_TournamentMatchDraft.IEntry);
   }
 }
 
@@ -8910,21 +8730,6 @@ export interface ICPreMatchInfoData {
 /** Represents a CPreMatchInfoData. */
 export class CPreMatchInfoData implements ICPreMatchInfoData {
   /**
-   * Constructs a new CPreMatchInfoData.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICPreMatchInfoData);
-
-  /** CPreMatchInfoData predictionsPct. */
-  public predictionsPct: number;
-
-  /** CPreMatchInfoData draft. */
-  public draft?: ICDataGCCStrike15_v2_TournamentMatchDraft | null;
-
-  /** CPreMatchInfoData stats. */
-  public stats: CPreMatchInfoData.ITeamStats[];
-
-  /**
    * Decodes a CPreMatchInfoData message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -8936,6 +8741,20 @@ export class CPreMatchInfoData implements ICPreMatchInfoData {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CPreMatchInfoData;
+
+  /** CPreMatchInfoData predictionsPct. */
+  public predictionsPct: number;
+
+  /** CPreMatchInfoData draft. */
+  public draft?: ICDataGCCStrike15_v2_TournamentMatchDraft | null;
+
+  /** CPreMatchInfoData stats. */
+  public stats: CPreMatchInfoData.ITeamStats[];
+  /**
+   * Constructs a new CPreMatchInfoData.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICPreMatchInfoData);
 }
 
 export namespace CPreMatchInfoData {
@@ -8954,21 +8773,6 @@ export namespace CPreMatchInfoData {
   /** Represents a TeamStats. */
   class TeamStats implements ITeamStats {
     /**
-     * Constructs a new TeamStats.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CPreMatchInfoData.ITeamStats);
-
-    /** TeamStats matchInfoIdxtxt. */
-    public matchInfoIdxtxt: number;
-
-    /** TeamStats matchInfoTxt. */
-    public matchInfoTxt: string;
-
-    /** TeamStats matchInfoTeams. */
-    public matchInfoTeams: string[];
-
-    /**
      * Decodes a TeamStats message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -8980,6 +8784,20 @@ export namespace CPreMatchInfoData {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CPreMatchInfoData.TeamStats;
+
+    /** TeamStats matchInfoIdxtxt. */
+    public matchInfoIdxtxt: number;
+
+    /** TeamStats matchInfoTxt. */
+    public matchInfoTxt: string;
+
+    /** TeamStats matchInfoTeams. */
+    public matchInfoTeams: string[];
+    /**
+     * Constructs a new TeamStats.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CPreMatchInfoData.ITeamStats);
   }
 }
 
@@ -9035,10 +8853,17 @@ export interface ICMsgGCCStrike15_v2_MatchmakingGC2ServerReserve {
 export class CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
   implements ICMsgGCCStrike15_v2_MatchmakingGC2ServerReserve {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ServerReserve);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve;
 
   /** CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve accountIds. */
   public accountIds: number[];
@@ -9084,19 +8909,11 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
 
   /** CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve preMatchData. */
   public preMatchData?: ICPreMatchInfoData | null;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve;
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ServerReserve);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingServerReservationResponse. */
@@ -9148,12 +8965,17 @@ export interface ICMsgGCCStrike15_v2_MatchmakingServerReservationResponse {
 export class CMsgGCCStrike15_v2_MatchmakingServerReservationResponse
   implements ICMsgGCCStrike15_v2_MatchmakingServerReservationResponse {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingServerReservationResponse.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_MatchmakingServerReservationResponse message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_MatchmakingServerReservationResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(
-    properties?: ICMsgGCCStrike15_v2_MatchmakingServerReservationResponse
-  );
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_MatchmakingServerReservationResponse;
 
   /** CMsgGCCStrike15_v2_MatchmakingServerReservationResponse reservationid. */
   public reservationid: number | Long;
@@ -9196,19 +9018,13 @@ export class CMsgGCCStrike15_v2_MatchmakingServerReservationResponse
 
   /** CMsgGCCStrike15_v2_MatchmakingServerReservationResponse steamdatagramPort. */
   public steamdatagramPort: number;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_MatchmakingServerReservationResponse message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_MatchmakingServerReservationResponse
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingServerReservationResponse.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_MatchmakingServerReservationResponse;
+  constructor(
+    properties?: ICMsgGCCStrike15_v2_MatchmakingServerReservationResponse
+  );
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve. */
@@ -9239,10 +9055,17 @@ export interface ICMsgGCCStrike15_v2_MatchmakingGC2ClientReserve {
 export class CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve
   implements ICMsgGCCStrike15_v2_MatchmakingGC2ClientReserve {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ClientReserve);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve;
 
   /** CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve serverid. */
   public serverid: number | Long;
@@ -9264,19 +9087,11 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve
 
   /** CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve map. */
   public map: string;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve;
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ClientReserve);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingServerRoundStats. */
@@ -9364,10 +9179,17 @@ export interface ICMsgGCCStrike15_v2_MatchmakingServerRoundStats {
 export class CMsgGCCStrike15_v2_MatchmakingServerRoundStats
   implements ICMsgGCCStrike15_v2_MatchmakingServerRoundStats {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingServerRoundStats.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_MatchmakingServerRoundStats message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_MatchmakingServerRoundStats
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingServerRoundStats);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_MatchmakingServerRoundStats;
 
   /** CMsgGCCStrike15_v2_MatchmakingServerRoundStats reservationid. */
   public reservationid: number | Long;
@@ -9446,19 +9268,11 @@ export class CMsgGCCStrike15_v2_MatchmakingServerRoundStats
 
   /** CMsgGCCStrike15_v2_MatchmakingServerRoundStats dropInfo. */
   public dropInfo?: CMsgGCCStrike15_v2_MatchmakingServerRoundStats.IDropInfo | null;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_MatchmakingServerRoundStats message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_MatchmakingServerRoundStats
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingServerRoundStats.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_MatchmakingServerRoundStats;
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingServerRoundStats);
 }
 
 export namespace CMsgGCCStrike15_v2_MatchmakingServerRoundStats {
@@ -9471,17 +9285,6 @@ export namespace CMsgGCCStrike15_v2_MatchmakingServerRoundStats {
   /** Represents a DropInfo. */
   class DropInfo implements IDropInfo {
     /**
-     * Constructs a new DropInfo.
-     * @param [properties] Properties to set
-     */
-    constructor(
-      properties?: CMsgGCCStrike15_v2_MatchmakingServerRoundStats.IDropInfo
-    );
-
-    /** DropInfo accountMvp. */
-    public accountMvp: number;
-
-    /**
      * Decodes a DropInfo message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -9493,6 +9296,16 @@ export namespace CMsgGCCStrike15_v2_MatchmakingServerRoundStats {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgGCCStrike15_v2_MatchmakingServerRoundStats.DropInfo;
+
+    /** DropInfo accountMvp. */
+    public accountMvp: number;
+    /**
+     * Constructs a new DropInfo.
+     * @param [properties] Properties to set
+     */
+    constructor(
+      properties?: CMsgGCCStrike15_v2_MatchmakingServerRoundStats.IDropInfo
+    );
   }
 }
 
@@ -9524,10 +9337,17 @@ export interface ICMsgGCCStrike15_v2_MatchmakingServerMatchEnd {
 export class CMsgGCCStrike15_v2_MatchmakingServerMatchEnd
   implements ICMsgGCCStrike15_v2_MatchmakingServerMatchEnd {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingServerMatchEnd.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_MatchmakingServerMatchEnd message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_MatchmakingServerMatchEnd
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingServerMatchEnd);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_MatchmakingServerMatchEnd;
 
   /** CMsgGCCStrike15_v2_MatchmakingServerMatchEnd stats. */
   public stats?: ICMsgGCCStrike15_v2_MatchmakingServerRoundStats | null;
@@ -9549,19 +9369,11 @@ export class CMsgGCCStrike15_v2_MatchmakingServerMatchEnd
 
   /** CMsgGCCStrike15_v2_MatchmakingServerMatchEnd matchEndQuestData. */
   public matchEndQuestData?: ICMsgGC_ServerQuestUpdateData | null;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_MatchmakingServerMatchEnd message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_MatchmakingServerMatchEnd
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingServerMatchEnd.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_MatchmakingServerMatchEnd;
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingServerMatchEnd);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingClient2GCHello. */
@@ -9570,12 +9382,6 @@ export interface ICMsgGCCStrike15_v2_MatchmakingClient2GCHello {}
 /** Represents a CMsgGCCStrike15_v2_MatchmakingClient2GCHello. */
 export class CMsgGCCStrike15_v2_MatchmakingClient2GCHello
   implements ICMsgGCCStrike15_v2_MatchmakingClient2GCHello {
-  /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingClient2GCHello.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingClient2GCHello);
-
   /**
    * Decodes a CMsgGCCStrike15_v2_MatchmakingClient2GCHello message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -9588,6 +9394,11 @@ export class CMsgGCCStrike15_v2_MatchmakingClient2GCHello
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchmakingClient2GCHello;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingClient2GCHello.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingClient2GCHello);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingGC2ClientHello. */
@@ -9651,10 +9462,17 @@ export interface ICMsgGCCStrike15_v2_MatchmakingGC2ClientHello {
 export class CMsgGCCStrike15_v2_MatchmakingGC2ClientHello
   implements ICMsgGCCStrike15_v2_MatchmakingGC2ClientHello {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ClientHello.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ClientHello message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_MatchmakingGC2ClientHello
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ClientHello);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_MatchmakingGC2ClientHello;
 
   /** CMsgGCCStrike15_v2_MatchmakingGC2ClientHello accountId. */
   public accountId: number;
@@ -9709,19 +9527,11 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ClientHello
 
   /** CMsgGCCStrike15_v2_MatchmakingGC2ClientHello playerXpBonusFlags. */
   public playerXpBonusFlags: number;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ClientHello message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_MatchmakingGC2ClientHello
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ClientHello.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_MatchmakingGC2ClientHello;
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ClientHello);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_AccountPrivacySettings. */
@@ -9734,15 +9544,6 @@ export interface ICMsgGCCStrike15_v2_AccountPrivacySettings {
 export class CMsgGCCStrike15_v2_AccountPrivacySettings
   implements ICMsgGCCStrike15_v2_AccountPrivacySettings {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_AccountPrivacySettings.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_AccountPrivacySettings);
-
-  /** CMsgGCCStrike15_v2_AccountPrivacySettings settings. */
-  public settings: CMsgGCCStrike15_v2_AccountPrivacySettings.ISetting[];
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_AccountPrivacySettings message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -9754,6 +9555,14 @@ export class CMsgGCCStrike15_v2_AccountPrivacySettings
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_AccountPrivacySettings;
+
+  /** CMsgGCCStrike15_v2_AccountPrivacySettings settings. */
+  public settings: CMsgGCCStrike15_v2_AccountPrivacySettings.ISetting[];
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_AccountPrivacySettings.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_AccountPrivacySettings);
 }
 
 export namespace CMsgGCCStrike15_v2_AccountPrivacySettings {
@@ -9769,20 +9578,6 @@ export namespace CMsgGCCStrike15_v2_AccountPrivacySettings {
   /** Represents a Setting. */
   class Setting implements ISetting {
     /**
-     * Constructs a new Setting.
-     * @param [properties] Properties to set
-     */
-    constructor(
-      properties?: CMsgGCCStrike15_v2_AccountPrivacySettings.ISetting
-    );
-
-    /** Setting settingType. */
-    public settingType: number;
-
-    /** Setting settingValue. */
-    public settingValue: number;
-
-    /**
      * Decodes a Setting message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -9794,6 +9589,19 @@ export namespace CMsgGCCStrike15_v2_AccountPrivacySettings {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgGCCStrike15_v2_AccountPrivacySettings.Setting;
+
+    /** Setting settingType. */
+    public settingType: number;
+
+    /** Setting settingValue. */
+    public settingValue: number;
+    /**
+     * Constructs a new Setting.
+     * @param [properties] Properties to set
+     */
+    constructor(
+      properties?: CMsgGCCStrike15_v2_AccountPrivacySettings.ISetting
+    );
   }
 }
 
@@ -9816,10 +9624,17 @@ export interface ICMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon {
 export class CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon
   implements ICMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon;
 
   /** CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon accountId. */
   public accountId: number;
@@ -9832,19 +9647,11 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon
 
   /** CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon penaltyReason. */
   public penaltyReason: number;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon;
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingServer2GCKick. */
@@ -9863,21 +9670,6 @@ export interface ICMsgGCCStrike15_v2_MatchmakingServer2GCKick {
 export class CMsgGCCStrike15_v2_MatchmakingServer2GCKick
   implements ICMsgGCCStrike15_v2_MatchmakingServer2GCKick {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingServer2GCKick.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingServer2GCKick);
-
-  /** CMsgGCCStrike15_v2_MatchmakingServer2GCKick accountId. */
-  public accountId: number;
-
-  /** CMsgGCCStrike15_v2_MatchmakingServer2GCKick reservation. */
-  public reservation?: ICMsgGCCStrike15_v2_MatchmakingGC2ServerReserve | null;
-
-  /** CMsgGCCStrike15_v2_MatchmakingServer2GCKick reason. */
-  public reason: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_MatchmakingServer2GCKick message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -9889,6 +9681,20 @@ export class CMsgGCCStrike15_v2_MatchmakingServer2GCKick
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchmakingServer2GCKick;
+
+  /** CMsgGCCStrike15_v2_MatchmakingServer2GCKick accountId. */
+  public accountId: number;
+
+  /** CMsgGCCStrike15_v2_MatchmakingServer2GCKick reservation. */
+  public reservation?: ICMsgGCCStrike15_v2_MatchmakingGC2ServerReserve | null;
+
+  /** CMsgGCCStrike15_v2_MatchmakingServer2GCKick reason. */
+  public reason: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingServer2GCKick.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingServer2GCKick);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate. */
@@ -9904,18 +9710,6 @@ export interface ICMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate {
 export class CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate
   implements ICMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate);
-
-  /** CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate rankings. */
-  public rankings: IPlayerRankingInfo[];
-
-  /** CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate matchId. */
-  public matchId: number | Long;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -9927,6 +9721,17 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate;
+
+  /** CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate rankings. */
+  public rankings: IPlayerRankingInfo[];
+
+  /** CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate matchId. */
+  public matchId: number | Long;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate. */
@@ -9939,17 +9744,6 @@ export interface ICMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate {
 export class CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate
   implements ICMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate.
-   * @param [properties] Properties to set
-   */
-  constructor(
-    properties?: ICMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate
-  );
-
-  /** CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate mainPostUrl. */
-  public mainPostUrl: string;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -9961,6 +9755,16 @@ export class CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate;
+
+  /** CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate mainPostUrl. */
+  public mainPostUrl: string;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate.
+   * @param [properties] Properties to set
+   */
+  constructor(
+    properties?: ICMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate
+  );
 }
 
 /** Properties of a CMsgGCCStrike15_v2_ServerNotificationForUserPenalty. */
@@ -9979,23 +9783,6 @@ export interface ICMsgGCCStrike15_v2_ServerNotificationForUserPenalty {
 export class CMsgGCCStrike15_v2_ServerNotificationForUserPenalty
   implements ICMsgGCCStrike15_v2_ServerNotificationForUserPenalty {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_ServerNotificationForUserPenalty.
-   * @param [properties] Properties to set
-   */
-  constructor(
-    properties?: ICMsgGCCStrike15_v2_ServerNotificationForUserPenalty
-  );
-
-  /** CMsgGCCStrike15_v2_ServerNotificationForUserPenalty accountId. */
-  public accountId: number;
-
-  /** CMsgGCCStrike15_v2_ServerNotificationForUserPenalty reason. */
-  public reason: number;
-
-  /** CMsgGCCStrike15_v2_ServerNotificationForUserPenalty seconds. */
-  public seconds: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_ServerNotificationForUserPenalty message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -10007,6 +9794,22 @@ export class CMsgGCCStrike15_v2_ServerNotificationForUserPenalty
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_ServerNotificationForUserPenalty;
+
+  /** CMsgGCCStrike15_v2_ServerNotificationForUserPenalty accountId. */
+  public accountId: number;
+
+  /** CMsgGCCStrike15_v2_ServerNotificationForUserPenalty reason. */
+  public reason: number;
+
+  /** CMsgGCCStrike15_v2_ServerNotificationForUserPenalty seconds. */
+  public seconds: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_ServerNotificationForUserPenalty.
+   * @param [properties] Properties to set
+   */
+  constructor(
+    properties?: ICMsgGCCStrike15_v2_ServerNotificationForUserPenalty
+  );
 }
 
 /** Properties of a CMsgGCCStrike15_v2_ClientReportPlayer. */
@@ -10040,10 +9843,17 @@ export interface ICMsgGCCStrike15_v2_ClientReportPlayer {
 export class CMsgGCCStrike15_v2_ClientReportPlayer
   implements ICMsgGCCStrike15_v2_ClientReportPlayer {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_ClientReportPlayer.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_ClientReportPlayer message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_ClientReportPlayer
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_ClientReportPlayer);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_ClientReportPlayer;
 
   /** CMsgGCCStrike15_v2_ClientReportPlayer accountId. */
   public accountId: number;
@@ -10068,19 +9878,11 @@ export class CMsgGCCStrike15_v2_ClientReportPlayer
 
   /** CMsgGCCStrike15_v2_ClientReportPlayer matchId. */
   public matchId: number | Long;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_ClientReportPlayer message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_ClientReportPlayer
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_ClientReportPlayer.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_ClientReportPlayer;
+  constructor(properties?: ICMsgGCCStrike15_v2_ClientReportPlayer);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_ClientCommendPlayer. */
@@ -10102,10 +9904,17 @@ export interface ICMsgGCCStrike15_v2_ClientCommendPlayer {
 export class CMsgGCCStrike15_v2_ClientCommendPlayer
   implements ICMsgGCCStrike15_v2_ClientCommendPlayer {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_ClientCommendPlayer.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_ClientCommendPlayer message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_ClientCommendPlayer
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_ClientCommendPlayer);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_ClientCommendPlayer;
 
   /** CMsgGCCStrike15_v2_ClientCommendPlayer accountId. */
   public accountId: number;
@@ -10118,19 +9927,11 @@ export class CMsgGCCStrike15_v2_ClientCommendPlayer
 
   /** CMsgGCCStrike15_v2_ClientCommendPlayer tokens. */
   public tokens: number;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_ClientCommendPlayer message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_ClientCommendPlayer
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_ClientCommendPlayer.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_ClientCommendPlayer;
+  constructor(properties?: ICMsgGCCStrike15_v2_ClientCommendPlayer);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_ClientReportServer. */
@@ -10158,10 +9959,17 @@ export interface ICMsgGCCStrike15_v2_ClientReportServer {
 export class CMsgGCCStrike15_v2_ClientReportServer
   implements ICMsgGCCStrike15_v2_ClientReportServer {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_ClientReportServer.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_ClientReportServer message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_ClientReportServer
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_ClientReportServer);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_ClientReportServer;
 
   /** CMsgGCCStrike15_v2_ClientReportServer rptPoorperf. */
   public rptPoorperf: number;
@@ -10180,19 +9988,11 @@ export class CMsgGCCStrike15_v2_ClientReportServer
 
   /** CMsgGCCStrike15_v2_ClientReportServer matchId. */
   public matchId: number | Long;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_ClientReportServer message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_ClientReportServer
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_ClientReportServer.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_ClientReportServer;
+  constructor(properties?: ICMsgGCCStrike15_v2_ClientReportServer);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_ClientReportResponse. */
@@ -10220,10 +10020,17 @@ export interface ICMsgGCCStrike15_v2_ClientReportResponse {
 export class CMsgGCCStrike15_v2_ClientReportResponse
   implements ICMsgGCCStrike15_v2_ClientReportResponse {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_ClientReportResponse.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_ClientReportResponse message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_ClientReportResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_ClientReportResponse);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_ClientReportResponse;
 
   /** CMsgGCCStrike15_v2_ClientReportResponse confirmationId. */
   public confirmationId: number | Long;
@@ -10242,19 +10049,11 @@ export class CMsgGCCStrike15_v2_ClientReportResponse
 
   /** CMsgGCCStrike15_v2_ClientReportResponse tokens. */
   public tokens: number;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_ClientReportResponse message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_ClientReportResponse
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_ClientReportResponse.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_ClientReportResponse;
+  constructor(properties?: ICMsgGCCStrike15_v2_ClientReportResponse);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends. */
@@ -10276,10 +10075,17 @@ export interface ICMsgGCCStrike15_v2_ClientRequestWatchInfoFriends {
 export class CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends
   implements ICMsgGCCStrike15_v2_ClientRequestWatchInfoFriends {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_ClientRequestWatchInfoFriends);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends;
 
   /** CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends requestId. */
   public requestId: number;
@@ -10292,19 +10098,11 @@ export class CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends
 
   /** CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends matchid. */
   public matchid: number | Long;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends;
+  constructor(properties?: ICMsgGCCStrike15_v2_ClientRequestWatchInfoFriends);
 }
 
 /** Properties of a WatchableMatchInfo. */
@@ -10352,10 +10150,17 @@ export interface IWatchableMatchInfo {
 /** Represents a WatchableMatchInfo. */
 export class WatchableMatchInfo implements IWatchableMatchInfo {
   /**
-   * Constructs a new WatchableMatchInfo.
-   * @param [properties] Properties to set
+   * Decodes a WatchableMatchInfo message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns WatchableMatchInfo
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: IWatchableMatchInfo);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): WatchableMatchInfo;
 
   /** WatchableMatchInfo serverIp. */
   public serverIp: number;
@@ -10395,19 +10200,11 @@ export class WatchableMatchInfo implements IWatchableMatchInfo {
 
   /** WatchableMatchInfo reservationId. */
   public reservationId: number | Long;
-
   /**
-   * Decodes a WatchableMatchInfo message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns WatchableMatchInfo
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new WatchableMatchInfo.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): WatchableMatchInfo;
+  constructor(properties?: IWatchableMatchInfo);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_ClientRequestJoinFriendData. */
@@ -10435,10 +10232,17 @@ export interface ICMsgGCCStrike15_v2_ClientRequestJoinFriendData {
 export class CMsgGCCStrike15_v2_ClientRequestJoinFriendData
   implements ICMsgGCCStrike15_v2_ClientRequestJoinFriendData {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_ClientRequestJoinFriendData.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_ClientRequestJoinFriendData message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_ClientRequestJoinFriendData
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_ClientRequestJoinFriendData);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_ClientRequestJoinFriendData;
 
   /** CMsgGCCStrike15_v2_ClientRequestJoinFriendData version. */
   public version: number;
@@ -10457,19 +10261,11 @@ export class CMsgGCCStrike15_v2_ClientRequestJoinFriendData
 
   /** CMsgGCCStrike15_v2_ClientRequestJoinFriendData errormsg. */
   public errormsg: string;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_ClientRequestJoinFriendData message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_ClientRequestJoinFriendData
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_ClientRequestJoinFriendData.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_ClientRequestJoinFriendData;
+  constructor(properties?: ICMsgGCCStrike15_v2_ClientRequestJoinFriendData);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_ClientRequestJoinServerData. */
@@ -10497,10 +10293,17 @@ export interface ICMsgGCCStrike15_v2_ClientRequestJoinServerData {
 export class CMsgGCCStrike15_v2_ClientRequestJoinServerData
   implements ICMsgGCCStrike15_v2_ClientRequestJoinServerData {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_ClientRequestJoinServerData.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_ClientRequestJoinServerData message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_ClientRequestJoinServerData
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_ClientRequestJoinServerData);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_ClientRequestJoinServerData;
 
   /** CMsgGCCStrike15_v2_ClientRequestJoinServerData version. */
   public version: number;
@@ -10519,19 +10322,11 @@ export class CMsgGCCStrike15_v2_ClientRequestJoinServerData
 
   /** CMsgGCCStrike15_v2_ClientRequestJoinServerData res. */
   public res?: ICMsgGCCStrike15_v2_MatchmakingGC2ClientReserve | null;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_ClientRequestJoinServerData message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_ClientRequestJoinServerData
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_ClientRequestJoinServerData.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_ClientRequestJoinServerData;
+  constructor(properties?: ICMsgGCCStrike15_v2_ClientRequestJoinServerData);
 }
 
 /** Properties of a CMsgGCCstrike15_v2_ClientRequestNewMission. */
@@ -10547,18 +10342,6 @@ export interface ICMsgGCCstrike15_v2_ClientRequestNewMission {
 export class CMsgGCCstrike15_v2_ClientRequestNewMission
   implements ICMsgGCCstrike15_v2_ClientRequestNewMission {
   /**
-   * Constructs a new CMsgGCCstrike15_v2_ClientRequestNewMission.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCstrike15_v2_ClientRequestNewMission);
-
-  /** CMsgGCCstrike15_v2_ClientRequestNewMission missionId. */
-  public missionId: number;
-
-  /** CMsgGCCstrike15_v2_ClientRequestNewMission campaignId. */
-  public campaignId: number;
-
-  /**
    * Decodes a CMsgGCCstrike15_v2_ClientRequestNewMission message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -10570,6 +10353,17 @@ export class CMsgGCCstrike15_v2_ClientRequestNewMission
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCstrike15_v2_ClientRequestNewMission;
+
+  /** CMsgGCCstrike15_v2_ClientRequestNewMission missionId. */
+  public missionId: number;
+
+  /** CMsgGCCstrike15_v2_ClientRequestNewMission campaignId. */
+  public campaignId: number;
+  /**
+   * Constructs a new CMsgGCCstrike15_v2_ClientRequestNewMission.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCstrike15_v2_ClientRequestNewMission);
 }
 
 /** Properties of a CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded. */
@@ -10594,10 +10388,17 @@ export interface ICMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded {
 export class CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded
   implements ICMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded {
   /**
-   * Constructs a new CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded;
 
   /** CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded xpProgressData. */
   public xpProgressData: IXpProgressData[];
@@ -10613,19 +10414,11 @@ export class CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded
 
   /** CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded upgradedDefidx. */
   public upgradedDefidx: number;
-
   /**
-   * Decodes a CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded;
+  constructor(properties?: ICMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_WatchInfoUsers. */
@@ -10647,10 +10440,17 @@ export interface ICMsgGCCStrike15_v2_WatchInfoUsers {
 export class CMsgGCCStrike15_v2_WatchInfoUsers
   implements ICMsgGCCStrike15_v2_WatchInfoUsers {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_WatchInfoUsers.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_WatchInfoUsers message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_WatchInfoUsers
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_WatchInfoUsers);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_WatchInfoUsers;
 
   /** CMsgGCCStrike15_v2_WatchInfoUsers requestId. */
   public requestId: number;
@@ -10663,19 +10463,11 @@ export class CMsgGCCStrike15_v2_WatchInfoUsers
 
   /** CMsgGCCStrike15_v2_WatchInfoUsers extendedTimeout. */
   public extendedTimeout: number;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_WatchInfoUsers message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_WatchInfoUsers
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_WatchInfoUsers.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_WatchInfoUsers;
+  constructor(properties?: ICMsgGCCStrike15_v2_WatchInfoUsers);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_ClientRequestPlayersProfile. */
@@ -10697,10 +10489,17 @@ export interface ICMsgGCCStrike15_v2_ClientRequestPlayersProfile {
 export class CMsgGCCStrike15_v2_ClientRequestPlayersProfile
   implements ICMsgGCCStrike15_v2_ClientRequestPlayersProfile {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_ClientRequestPlayersProfile.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_ClientRequestPlayersProfile message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_ClientRequestPlayersProfile
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_ClientRequestPlayersProfile);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_ClientRequestPlayersProfile;
 
   /** CMsgGCCStrike15_v2_ClientRequestPlayersProfile requestId_Deprecated. */
   public requestId_Deprecated: number;
@@ -10713,19 +10512,11 @@ export class CMsgGCCStrike15_v2_ClientRequestPlayersProfile
 
   /** CMsgGCCStrike15_v2_ClientRequestPlayersProfile requestLevel. */
   public requestLevel: number;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_ClientRequestPlayersProfile message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_ClientRequestPlayersProfile
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_ClientRequestPlayersProfile.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_ClientRequestPlayersProfile;
+  constructor(properties?: ICMsgGCCStrike15_v2_ClientRequestPlayersProfile);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_PlayersProfile. */
@@ -10741,18 +10532,6 @@ export interface ICMsgGCCStrike15_v2_PlayersProfile {
 export class CMsgGCCStrike15_v2_PlayersProfile
   implements ICMsgGCCStrike15_v2_PlayersProfile {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_PlayersProfile.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_PlayersProfile);
-
-  /** CMsgGCCStrike15_v2_PlayersProfile requestId. */
-  public requestId: number;
-
-  /** CMsgGCCStrike15_v2_PlayersProfile accountProfiles. */
-  public accountProfiles: ICMsgGCCStrike15_v2_MatchmakingGC2ClientHello[];
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_PlayersProfile message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -10764,6 +10543,17 @@ export class CMsgGCCStrike15_v2_PlayersProfile
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_PlayersProfile;
+
+  /** CMsgGCCStrike15_v2_PlayersProfile requestId. */
+  public requestId: number;
+
+  /** CMsgGCCStrike15_v2_PlayersProfile accountProfiles. */
+  public accountProfiles: ICMsgGCCStrike15_v2_MatchmakingGC2ClientHello[];
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_PlayersProfile.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_PlayersProfile);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate. */
@@ -10797,10 +10587,17 @@ export interface ICMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate {
 export class CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate
   implements ICMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate;
 
   /** CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate caseid. */
   public caseid: number | Long;
@@ -10825,19 +10622,11 @@ export class CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate
 
   /** CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate reason. */
   public reason: number;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate;
+  constructor(properties?: ICMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment. */
@@ -10880,10 +10669,17 @@ export interface ICMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment {
 export class CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment
   implements ICMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment;
 
   /** CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment caseid. */
   public caseid: number | Long;
@@ -10917,19 +10713,11 @@ export class CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment
 
   /** CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment reason. */
   public reason: number;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment;
+  constructor(properties?: ICMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus. */
@@ -10945,18 +10733,6 @@ export interface ICMsgGCCStrike15_v2_PlayerOverwatchCaseStatus {
 export class CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus
   implements ICMsgGCCStrike15_v2_PlayerOverwatchCaseStatus {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_PlayerOverwatchCaseStatus);
-
-  /** CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus caseid. */
-  public caseid: number | Long;
-
-  /** CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus statusid. */
-  public statusid: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -10968,6 +10744,17 @@ export class CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus;
+
+  /** CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus caseid. */
+  public caseid: number | Long;
+
+  /** CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus statusid. */
+  public statusid: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_PlayerOverwatchCaseStatus);
 }
 
 /** Properties of a CClientHeaderOverwatchEvidence. */
@@ -10983,18 +10770,6 @@ export interface ICClientHeaderOverwatchEvidence {
 export class CClientHeaderOverwatchEvidence
   implements ICClientHeaderOverwatchEvidence {
   /**
-   * Constructs a new CClientHeaderOverwatchEvidence.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICClientHeaderOverwatchEvidence);
-
-  /** CClientHeaderOverwatchEvidence accountid. */
-  public accountid: number;
-
-  /** CClientHeaderOverwatchEvidence caseid. */
-  public caseid: number | Long;
-
-  /**
    * Decodes a CClientHeaderOverwatchEvidence message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -11006,6 +10781,17 @@ export class CClientHeaderOverwatchEvidence
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CClientHeaderOverwatchEvidence;
+
+  /** CClientHeaderOverwatchEvidence accountid. */
+  public accountid: number;
+
+  /** CClientHeaderOverwatchEvidence caseid. */
+  public caseid: number | Long;
+  /**
+   * Constructs a new CClientHeaderOverwatchEvidence.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICClientHeaderOverwatchEvidence);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_GC2ClientTextMsg. */
@@ -11024,21 +10810,6 @@ export interface ICMsgGCCStrike15_v2_GC2ClientTextMsg {
 export class CMsgGCCStrike15_v2_GC2ClientTextMsg
   implements ICMsgGCCStrike15_v2_GC2ClientTextMsg {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_GC2ClientTextMsg.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_GC2ClientTextMsg);
-
-  /** CMsgGCCStrike15_v2_GC2ClientTextMsg id. */
-  public id: number;
-
-  /** CMsgGCCStrike15_v2_GC2ClientTextMsg type. */
-  public type: number;
-
-  /** CMsgGCCStrike15_v2_GC2ClientTextMsg payload. */
-  public payload: Uint8Array;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_GC2ClientTextMsg message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -11050,6 +10821,20 @@ export class CMsgGCCStrike15_v2_GC2ClientTextMsg
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_GC2ClientTextMsg;
+
+  /** CMsgGCCStrike15_v2_GC2ClientTextMsg id. */
+  public id: number;
+
+  /** CMsgGCCStrike15_v2_GC2ClientTextMsg type. */
+  public type: number;
+
+  /** CMsgGCCStrike15_v2_GC2ClientTextMsg payload. */
+  public payload: Uint8Array;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_GC2ClientTextMsg.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_GC2ClientTextMsg);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_Client2GCTextMsg. */
@@ -11065,18 +10850,6 @@ export interface ICMsgGCCStrike15_v2_Client2GCTextMsg {
 export class CMsgGCCStrike15_v2_Client2GCTextMsg
   implements ICMsgGCCStrike15_v2_Client2GCTextMsg {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_Client2GCTextMsg.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_Client2GCTextMsg);
-
-  /** CMsgGCCStrike15_v2_Client2GCTextMsg id. */
-  public id: number;
-
-  /** CMsgGCCStrike15_v2_Client2GCTextMsg args. */
-  public args: Uint8Array[];
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_Client2GCTextMsg message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -11088,6 +10861,17 @@ export class CMsgGCCStrike15_v2_Client2GCTextMsg
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_Client2GCTextMsg;
+
+  /** CMsgGCCStrike15_v2_Client2GCTextMsg id. */
+  public id: number;
+
+  /** CMsgGCCStrike15_v2_Client2GCTextMsg args. */
+  public args: Uint8Array[];
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_Client2GCTextMsg.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_Client2GCTextMsg);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchEndRunRewardDrops. */
@@ -11103,18 +10887,6 @@ export interface ICMsgGCCStrike15_v2_MatchEndRunRewardDrops {
 export class CMsgGCCStrike15_v2_MatchEndRunRewardDrops
   implements ICMsgGCCStrike15_v2_MatchEndRunRewardDrops {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchEndRunRewardDrops.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchEndRunRewardDrops);
-
-  /** CMsgGCCStrike15_v2_MatchEndRunRewardDrops serverinfo. */
-  public serverinfo?: ICMsgGCCStrike15_v2_MatchmakingServerReservationResponse | null;
-
-  /** CMsgGCCStrike15_v2_MatchEndRunRewardDrops matchEndQuestData. */
-  public matchEndQuestData?: ICMsgGC_ServerQuestUpdateData | null;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_MatchEndRunRewardDrops message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -11126,6 +10898,17 @@ export class CMsgGCCStrike15_v2_MatchEndRunRewardDrops
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchEndRunRewardDrops;
+
+  /** CMsgGCCStrike15_v2_MatchEndRunRewardDrops serverinfo. */
+  public serverinfo?: ICMsgGCCStrike15_v2_MatchmakingServerReservationResponse | null;
+
+  /** CMsgGCCStrike15_v2_MatchEndRunRewardDrops matchEndQuestData. */
+  public matchEndQuestData?: ICMsgGC_ServerQuestUpdateData | null;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchEndRunRewardDrops.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchEndRunRewardDrops);
 }
 
 /** Properties of a CEconItemPreviewDataBlock. */
@@ -11182,10 +10965,17 @@ export interface ICEconItemPreviewDataBlock {
 /** Represents a CEconItemPreviewDataBlock. */
 export class CEconItemPreviewDataBlock implements ICEconItemPreviewDataBlock {
   /**
-   * Constructs a new CEconItemPreviewDataBlock.
-   * @param [properties] Properties to set
+   * Decodes a CEconItemPreviewDataBlock message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CEconItemPreviewDataBlock
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICEconItemPreviewDataBlock);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CEconItemPreviewDataBlock;
 
   /** CEconItemPreviewDataBlock accountid. */
   public accountid: number;
@@ -11234,19 +11024,11 @@ export class CEconItemPreviewDataBlock implements ICEconItemPreviewDataBlock {
 
   /** CEconItemPreviewDataBlock dropreason. */
   public dropreason: number;
-
   /**
-   * Decodes a CEconItemPreviewDataBlock message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CEconItemPreviewDataBlock
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CEconItemPreviewDataBlock.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CEconItemPreviewDataBlock;
+  constructor(properties?: ICEconItemPreviewDataBlock);
 }
 
 export namespace CEconItemPreviewDataBlock {
@@ -11271,10 +11053,17 @@ export namespace CEconItemPreviewDataBlock {
   /** Represents a Sticker. */
   class Sticker implements ISticker {
     /**
-     * Constructs a new Sticker.
-     * @param [properties] Properties to set
+     * Decodes a Sticker message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns Sticker
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    constructor(properties?: CEconItemPreviewDataBlock.ISticker);
+    public static decode(
+      reader: $protobuf.Reader | Uint8Array,
+      length?: number
+    ): CEconItemPreviewDataBlock.Sticker;
 
     /** Sticker slot. */
     public slot: number;
@@ -11290,19 +11079,11 @@ export namespace CEconItemPreviewDataBlock {
 
     /** Sticker rotation. */
     public rotation: number;
-
     /**
-     * Decodes a Sticker message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns Sticker
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     * Constructs a new Sticker.
+     * @param [properties] Properties to set
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): CEconItemPreviewDataBlock.Sticker;
+    constructor(properties?: CEconItemPreviewDataBlock.ISticker);
   }
 }
 
@@ -11316,15 +11097,6 @@ export interface ICMsgGCCStrike15_v2_MatchEndRewardDropsNotification {
 export class CMsgGCCStrike15_v2_MatchEndRewardDropsNotification
   implements ICMsgGCCStrike15_v2_MatchEndRewardDropsNotification {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchEndRewardDropsNotification.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchEndRewardDropsNotification);
-
-  /** CMsgGCCStrike15_v2_MatchEndRewardDropsNotification iteminfo. */
-  public iteminfo?: ICEconItemPreviewDataBlock | null;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_MatchEndRewardDropsNotification message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -11336,6 +11108,14 @@ export class CMsgGCCStrike15_v2_MatchEndRewardDropsNotification
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchEndRewardDropsNotification;
+
+  /** CMsgGCCStrike15_v2_MatchEndRewardDropsNotification iteminfo. */
+  public iteminfo?: ICEconItemPreviewDataBlock | null;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchEndRewardDropsNotification.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchEndRewardDropsNotification);
 }
 
 /** Properties of a CMsgItemAcknowledged. */
@@ -11346,15 +11126,6 @@ export interface ICMsgItemAcknowledged {
 
 /** Represents a CMsgItemAcknowledged. */
 export class CMsgItemAcknowledged implements ICMsgItemAcknowledged {
-  /**
-   * Constructs a new CMsgItemAcknowledged.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgItemAcknowledged);
-
-  /** CMsgItemAcknowledged iteminfo. */
-  public iteminfo?: ICEconItemPreviewDataBlock | null;
-
   /**
    * Decodes a CMsgItemAcknowledged message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -11367,6 +11138,14 @@ export class CMsgItemAcknowledged implements ICMsgItemAcknowledged {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgItemAcknowledged;
+
+  /** CMsgItemAcknowledged iteminfo. */
+  public iteminfo?: ICEconItemPreviewDataBlock | null;
+  /**
+   * Constructs a new CMsgItemAcknowledged.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgItemAcknowledged);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest. */
@@ -11388,12 +11167,17 @@ export interface ICMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest {
 export class CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest
   implements ICMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(
-    properties?: ICMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest
-  );
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest;
 
   /** CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest paramS. */
   public paramS: number | Long;
@@ -11406,19 +11190,13 @@ export class CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest
 
   /** CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest paramM. */
   public paramM: number | Long;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest;
+  constructor(
+    properties?: ICMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest
+  );
 }
 
 /** Properties of a CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse. */
@@ -11431,17 +11209,6 @@ export interface ICMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse {
 export class CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse
   implements ICMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse.
-   * @param [properties] Properties to set
-   */
-  constructor(
-    properties?: ICMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse
-  );
-
-  /** CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse iteminfo. */
-  public iteminfo?: ICEconItemPreviewDataBlock | null;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -11453,6 +11220,16 @@ export class CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse;
+
+  /** CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse iteminfo. */
+  public iteminfo?: ICEconItemPreviewDataBlock | null;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(
+    properties?: ICMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse
+  );
 }
 
 /** Properties of a CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification. */
@@ -11471,23 +11248,6 @@ export interface ICMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification {
 export class CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification
   implements ICMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification.
-   * @param [properties] Properties to set
-   */
-  constructor(
-    properties?: ICMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification
-  );
-
-  /** CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification matchId. */
-  public matchId: number | Long;
-
-  /** CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification defindex. */
-  public defindex: number;
-
-  /** CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification accountids. */
-  public accountids: number[];
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -11499,6 +11259,22 @@ export class CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification;
+
+  /** CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification matchId. */
+  public matchId: number | Long;
+
+  /** CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification defindex. */
+  public defindex: number;
+
+  /** CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification accountids. */
+  public accountids: number[];
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification.
+   * @param [properties] Properties to set
+   */
+  constructor(
+    properties?: ICMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification
+  );
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames. */
@@ -11507,14 +11283,6 @@ export interface ICMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames {}
 /** Represents a CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames. */
 export class CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames
   implements ICMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames {
-  /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames.
-   * @param [properties] Properties to set
-   */
-  constructor(
-    properties?: ICMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames
-  );
-
   /**
    * Decodes a CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -11527,6 +11295,13 @@ export class CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames.
+   * @param [properties] Properties to set
+   */
+  constructor(
+    properties?: ICMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames
+  );
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser. */
@@ -11539,15 +11314,6 @@ export interface ICMsgGCCStrike15_v2_MatchListRequestLiveGameForUser {
 export class CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser
   implements ICMsgGCCStrike15_v2_MatchListRequestLiveGameForUser {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchListRequestLiveGameForUser);
-
-  /** CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser accountid. */
-  public accountid: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -11559,6 +11325,14 @@ export class CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser;
+
+  /** CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser accountid. */
+  public accountid: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchListRequestLiveGameForUser);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchListRequestRecentUserGames. */
@@ -11571,15 +11345,6 @@ export interface ICMsgGCCStrike15_v2_MatchListRequestRecentUserGames {
 export class CMsgGCCStrike15_v2_MatchListRequestRecentUserGames
   implements ICMsgGCCStrike15_v2_MatchListRequestRecentUserGames {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchListRequestRecentUserGames.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchListRequestRecentUserGames);
-
-  /** CMsgGCCStrike15_v2_MatchListRequestRecentUserGames accountid. */
-  public accountid: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_MatchListRequestRecentUserGames message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -11591,6 +11356,14 @@ export class CMsgGCCStrike15_v2_MatchListRequestRecentUserGames
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchListRequestRecentUserGames;
+
+  /** CMsgGCCStrike15_v2_MatchListRequestRecentUserGames accountid. */
+  public accountid: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchListRequestRecentUserGames.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchListRequestRecentUserGames);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchListRequestTournamentGames. */
@@ -11603,15 +11376,6 @@ export interface ICMsgGCCStrike15_v2_MatchListRequestTournamentGames {
 export class CMsgGCCStrike15_v2_MatchListRequestTournamentGames
   implements ICMsgGCCStrike15_v2_MatchListRequestTournamentGames {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchListRequestTournamentGames.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchListRequestTournamentGames);
-
-  /** CMsgGCCStrike15_v2_MatchListRequestTournamentGames eventid. */
-  public eventid: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_MatchListRequestTournamentGames message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -11623,6 +11387,14 @@ export class CMsgGCCStrike15_v2_MatchListRequestTournamentGames
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchListRequestTournamentGames;
+
+  /** CMsgGCCStrike15_v2_MatchListRequestTournamentGames eventid. */
+  public eventid: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchListRequestTournamentGames.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchListRequestTournamentGames);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchListRequestFullGameInfo. */
@@ -11641,21 +11413,6 @@ export interface ICMsgGCCStrike15_v2_MatchListRequestFullGameInfo {
 export class CMsgGCCStrike15_v2_MatchListRequestFullGameInfo
   implements ICMsgGCCStrike15_v2_MatchListRequestFullGameInfo {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchListRequestFullGameInfo.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchListRequestFullGameInfo);
-
-  /** CMsgGCCStrike15_v2_MatchListRequestFullGameInfo matchid. */
-  public matchid: number | Long;
-
-  /** CMsgGCCStrike15_v2_MatchListRequestFullGameInfo outcomeid. */
-  public outcomeid: number | Long;
-
-  /** CMsgGCCStrike15_v2_MatchListRequestFullGameInfo token. */
-  public token: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_MatchListRequestFullGameInfo message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -11667,6 +11424,20 @@ export class CMsgGCCStrike15_v2_MatchListRequestFullGameInfo
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_MatchListRequestFullGameInfo;
+
+  /** CMsgGCCStrike15_v2_MatchListRequestFullGameInfo matchid. */
+  public matchid: number | Long;
+
+  /** CMsgGCCStrike15_v2_MatchListRequestFullGameInfo outcomeid. */
+  public outcomeid: number | Long;
+
+  /** CMsgGCCStrike15_v2_MatchListRequestFullGameInfo token. */
+  public token: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_MatchListRequestFullGameInfo.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchListRequestFullGameInfo);
 }
 
 /** Properties of a CDataGCCStrike15_v2_MatchInfo. */
@@ -11691,10 +11462,17 @@ export interface ICDataGCCStrike15_v2_MatchInfo {
 export class CDataGCCStrike15_v2_MatchInfo
   implements ICDataGCCStrike15_v2_MatchInfo {
   /**
-   * Constructs a new CDataGCCStrike15_v2_MatchInfo.
-   * @param [properties] Properties to set
+   * Decodes a CDataGCCStrike15_v2_MatchInfo message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CDataGCCStrike15_v2_MatchInfo
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICDataGCCStrike15_v2_MatchInfo);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CDataGCCStrike15_v2_MatchInfo;
 
   /** CDataGCCStrike15_v2_MatchInfo matchid. */
   public matchid: number | Long;
@@ -11710,19 +11488,11 @@ export class CDataGCCStrike15_v2_MatchInfo
 
   /** CDataGCCStrike15_v2_MatchInfo roundstatsall. */
   public roundstatsall: ICMsgGCCStrike15_v2_MatchmakingServerRoundStats[];
-
   /**
-   * Decodes a CDataGCCStrike15_v2_MatchInfo message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CDataGCCStrike15_v2_MatchInfo
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CDataGCCStrike15_v2_MatchInfo.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CDataGCCStrike15_v2_MatchInfo;
+  constructor(properties?: ICDataGCCStrike15_v2_MatchInfo);
 }
 
 /** Properties of a CDataGCCStrike15_v2_TournamentGroupTeam. */
@@ -11741,21 +11511,6 @@ export interface ICDataGCCStrike15_v2_TournamentGroupTeam {
 export class CDataGCCStrike15_v2_TournamentGroupTeam
   implements ICDataGCCStrike15_v2_TournamentGroupTeam {
   /**
-   * Constructs a new CDataGCCStrike15_v2_TournamentGroupTeam.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICDataGCCStrike15_v2_TournamentGroupTeam);
-
-  /** CDataGCCStrike15_v2_TournamentGroupTeam teamId. */
-  public teamId: number;
-
-  /** CDataGCCStrike15_v2_TournamentGroupTeam score. */
-  public score: number;
-
-  /** CDataGCCStrike15_v2_TournamentGroupTeam correctpick. */
-  public correctpick: boolean;
-
-  /**
    * Decodes a CDataGCCStrike15_v2_TournamentGroupTeam message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -11767,6 +11522,20 @@ export class CDataGCCStrike15_v2_TournamentGroupTeam
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CDataGCCStrike15_v2_TournamentGroupTeam;
+
+  /** CDataGCCStrike15_v2_TournamentGroupTeam teamId. */
+  public teamId: number;
+
+  /** CDataGCCStrike15_v2_TournamentGroupTeam score. */
+  public score: number;
+
+  /** CDataGCCStrike15_v2_TournamentGroupTeam correctpick. */
+  public correctpick: boolean;
+  /**
+   * Constructs a new CDataGCCStrike15_v2_TournamentGroupTeam.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICDataGCCStrike15_v2_TournamentGroupTeam);
 }
 
 /** Properties of a CDataGCCStrike15_v2_TournamentGroup. */
@@ -11806,10 +11575,17 @@ export interface ICDataGCCStrike15_v2_TournamentGroup {
 export class CDataGCCStrike15_v2_TournamentGroup
   implements ICDataGCCStrike15_v2_TournamentGroup {
   /**
-   * Constructs a new CDataGCCStrike15_v2_TournamentGroup.
-   * @param [properties] Properties to set
+   * Decodes a CDataGCCStrike15_v2_TournamentGroup message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CDataGCCStrike15_v2_TournamentGroup
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICDataGCCStrike15_v2_TournamentGroup);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CDataGCCStrike15_v2_TournamentGroup;
 
   /** CDataGCCStrike15_v2_TournamentGroup groupid. */
   public groupid: number;
@@ -11840,19 +11616,11 @@ export class CDataGCCStrike15_v2_TournamentGroup
 
   /** CDataGCCStrike15_v2_TournamentGroup picks. */
   public picks: CDataGCCStrike15_v2_TournamentGroup.IPicks[];
-
   /**
-   * Decodes a CDataGCCStrike15_v2_TournamentGroup message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CDataGCCStrike15_v2_TournamentGroup
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CDataGCCStrike15_v2_TournamentGroup.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CDataGCCStrike15_v2_TournamentGroup;
+  constructor(properties?: ICDataGCCStrike15_v2_TournamentGroup);
 }
 
 export namespace CDataGCCStrike15_v2_TournamentGroup {
@@ -11865,15 +11633,6 @@ export namespace CDataGCCStrike15_v2_TournamentGroup {
   /** Represents a Picks. */
   class Picks implements IPicks {
     /**
-     * Constructs a new Picks.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CDataGCCStrike15_v2_TournamentGroup.IPicks);
-
-    /** Picks pickids. */
-    public pickids: number[];
-
-    /**
      * Decodes a Picks message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -11885,6 +11644,14 @@ export namespace CDataGCCStrike15_v2_TournamentGroup {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CDataGCCStrike15_v2_TournamentGroup.Picks;
+
+    /** Picks pickids. */
+    public pickids: number[];
+    /**
+     * Constructs a new Picks.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CDataGCCStrike15_v2_TournamentGroup.IPicks);
   }
 }
 
@@ -11907,10 +11674,17 @@ export interface ICDataGCCStrike15_v2_TournamentSection {
 export class CDataGCCStrike15_v2_TournamentSection
   implements ICDataGCCStrike15_v2_TournamentSection {
   /**
-   * Constructs a new CDataGCCStrike15_v2_TournamentSection.
-   * @param [properties] Properties to set
+   * Decodes a CDataGCCStrike15_v2_TournamentSection message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CDataGCCStrike15_v2_TournamentSection
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICDataGCCStrike15_v2_TournamentSection);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CDataGCCStrike15_v2_TournamentSection;
 
   /** CDataGCCStrike15_v2_TournamentSection sectionid. */
   public sectionid: number;
@@ -11923,19 +11697,11 @@ export class CDataGCCStrike15_v2_TournamentSection
 
   /** CDataGCCStrike15_v2_TournamentSection groups. */
   public groups: ICDataGCCStrike15_v2_TournamentGroup[];
-
   /**
-   * Decodes a CDataGCCStrike15_v2_TournamentSection message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CDataGCCStrike15_v2_TournamentSection
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CDataGCCStrike15_v2_TournamentSection.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CDataGCCStrike15_v2_TournamentSection;
+  constructor(properties?: ICDataGCCStrike15_v2_TournamentSection);
 }
 
 /** Properties of a CDataGCCStrike15_v2_TournamentInfo. */
@@ -11954,21 +11720,6 @@ export interface ICDataGCCStrike15_v2_TournamentInfo {
 export class CDataGCCStrike15_v2_TournamentInfo
   implements ICDataGCCStrike15_v2_TournamentInfo {
   /**
-   * Constructs a new CDataGCCStrike15_v2_TournamentInfo.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICDataGCCStrike15_v2_TournamentInfo);
-
-  /** CDataGCCStrike15_v2_TournamentInfo sections. */
-  public sections: ICDataGCCStrike15_v2_TournamentSection[];
-
-  /** CDataGCCStrike15_v2_TournamentInfo tournamentEvent. */
-  public tournamentEvent?: ITournamentEvent | null;
-
-  /** CDataGCCStrike15_v2_TournamentInfo tournamentTeams. */
-  public tournamentTeams: ITournamentTeam[];
-
-  /**
    * Decodes a CDataGCCStrike15_v2_TournamentInfo message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -11980,6 +11731,20 @@ export class CDataGCCStrike15_v2_TournamentInfo
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CDataGCCStrike15_v2_TournamentInfo;
+
+  /** CDataGCCStrike15_v2_TournamentInfo sections. */
+  public sections: ICDataGCCStrike15_v2_TournamentSection[];
+
+  /** CDataGCCStrike15_v2_TournamentInfo tournamentEvent. */
+  public tournamentEvent?: ITournamentEvent | null;
+
+  /** CDataGCCStrike15_v2_TournamentInfo tournamentTeams. */
+  public tournamentTeams: ITournamentTeam[];
+  /**
+   * Constructs a new CDataGCCStrike15_v2_TournamentInfo.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICDataGCCStrike15_v2_TournamentInfo);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_MatchList. */
@@ -12007,10 +11772,17 @@ export interface ICMsgGCCStrike15_v2_MatchList {
 export class CMsgGCCStrike15_v2_MatchList
   implements ICMsgGCCStrike15_v2_MatchList {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_MatchList.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_MatchList message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_MatchList
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_MatchList);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_MatchList;
 
   /** CMsgGCCStrike15_v2_MatchList msgrequestid. */
   public msgrequestid: number;
@@ -12029,19 +11801,11 @@ export class CMsgGCCStrike15_v2_MatchList
 
   /** CMsgGCCStrike15_v2_MatchList tournamentinfo. */
   public tournamentinfo?: ICDataGCCStrike15_v2_TournamentInfo | null;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_MatchList message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_MatchList
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_MatchList.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_MatchList;
+  constructor(properties?: ICMsgGCCStrike15_v2_MatchList);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_Predictions. */
@@ -12059,18 +11823,6 @@ export interface ICMsgGCCStrike15_v2_Predictions {
 export class CMsgGCCStrike15_v2_Predictions
   implements ICMsgGCCStrike15_v2_Predictions {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_Predictions.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_Predictions);
-
-  /** CMsgGCCStrike15_v2_Predictions eventId. */
-  public eventId: number;
-
-  /** CMsgGCCStrike15_v2_Predictions groupMatchTeamPicks. */
-  public groupMatchTeamPicks: CMsgGCCStrike15_v2_Predictions.IGroupMatchTeamPick[];
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_Predictions message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -12082,6 +11834,17 @@ export class CMsgGCCStrike15_v2_Predictions
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_Predictions;
+
+  /** CMsgGCCStrike15_v2_Predictions eventId. */
+  public eventId: number;
+
+  /** CMsgGCCStrike15_v2_Predictions groupMatchTeamPicks. */
+  public groupMatchTeamPicks: CMsgGCCStrike15_v2_Predictions.IGroupMatchTeamPick[];
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_Predictions.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_Predictions);
 }
 
 export namespace CMsgGCCStrike15_v2_Predictions {
@@ -12106,12 +11869,17 @@ export namespace CMsgGCCStrike15_v2_Predictions {
   /** Represents a GroupMatchTeamPick. */
   class GroupMatchTeamPick implements IGroupMatchTeamPick {
     /**
-     * Constructs a new GroupMatchTeamPick.
-     * @param [properties] Properties to set
+     * Decodes a GroupMatchTeamPick message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns GroupMatchTeamPick
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    constructor(
-      properties?: CMsgGCCStrike15_v2_Predictions.IGroupMatchTeamPick
-    );
+    public static decode(
+      reader: $protobuf.Reader | Uint8Array,
+      length?: number
+    ): CMsgGCCStrike15_v2_Predictions.GroupMatchTeamPick;
 
     /** GroupMatchTeamPick sectionid. */
     public sectionid: number;
@@ -12127,19 +11895,13 @@ export namespace CMsgGCCStrike15_v2_Predictions {
 
     /** GroupMatchTeamPick itemid. */
     public itemid: number | Long;
-
     /**
-     * Decodes a GroupMatchTeamPick message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns GroupMatchTeamPick
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     * Constructs a new GroupMatchTeamPick.
+     * @param [properties] Properties to set
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): CMsgGCCStrike15_v2_Predictions.GroupMatchTeamPick;
+    constructor(
+      properties?: CMsgGCCStrike15_v2_Predictions.IGroupMatchTeamPick
+    );
   }
 }
 
@@ -12155,18 +11917,6 @@ export interface ICMsgGCCStrike15_v2_Fantasy {
 /** Represents a CMsgGCCStrike15_v2_Fantasy. */
 export class CMsgGCCStrike15_v2_Fantasy implements ICMsgGCCStrike15_v2_Fantasy {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_Fantasy.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_Fantasy);
-
-  /** CMsgGCCStrike15_v2_Fantasy eventId. */
-  public eventId: number;
-
-  /** CMsgGCCStrike15_v2_Fantasy teams. */
-  public teams: CMsgGCCStrike15_v2_Fantasy.IFantasyTeam[];
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_Fantasy message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -12178,6 +11928,17 @@ export class CMsgGCCStrike15_v2_Fantasy implements ICMsgGCCStrike15_v2_Fantasy {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_Fantasy;
+
+  /** CMsgGCCStrike15_v2_Fantasy eventId. */
+  public eventId: number;
+
+  /** CMsgGCCStrike15_v2_Fantasy teams. */
+  public teams: CMsgGCCStrike15_v2_Fantasy.IFantasyTeam[];
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_Fantasy.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_Fantasy);
 }
 
 export namespace CMsgGCCStrike15_v2_Fantasy {
@@ -12196,21 +11957,6 @@ export namespace CMsgGCCStrike15_v2_Fantasy {
   /** Represents a FantasySlot. */
   class FantasySlot implements IFantasySlot {
     /**
-     * Constructs a new FantasySlot.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsgGCCStrike15_v2_Fantasy.IFantasySlot);
-
-    /** FantasySlot type. */
-    public type: number;
-
-    /** FantasySlot pick. */
-    public pick: number;
-
-    /** FantasySlot itemid. */
-    public itemid: number | Long;
-
-    /**
      * Decodes a FantasySlot message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -12222,6 +11968,20 @@ export namespace CMsgGCCStrike15_v2_Fantasy {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgGCCStrike15_v2_Fantasy.FantasySlot;
+
+    /** FantasySlot type. */
+    public type: number;
+
+    /** FantasySlot pick. */
+    public pick: number;
+
+    /** FantasySlot itemid. */
+    public itemid: number | Long;
+    /**
+     * Constructs a new FantasySlot.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsgGCCStrike15_v2_Fantasy.IFantasySlot);
   }
 
   /** Properties of a FantasyTeam. */
@@ -12236,18 +11996,6 @@ export namespace CMsgGCCStrike15_v2_Fantasy {
   /** Represents a FantasyTeam. */
   class FantasyTeam implements IFantasyTeam {
     /**
-     * Constructs a new FantasyTeam.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsgGCCStrike15_v2_Fantasy.IFantasyTeam);
-
-    /** FantasyTeam sectionid. */
-    public sectionid: number;
-
-    /** FantasyTeam slots. */
-    public slots: CMsgGCCStrike15_v2_Fantasy.IFantasySlot[];
-
-    /**
      * Decodes a FantasyTeam message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -12259,6 +12007,17 @@ export namespace CMsgGCCStrike15_v2_Fantasy {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgGCCStrike15_v2_Fantasy.FantasyTeam;
+
+    /** FantasyTeam sectionid. */
+    public sectionid: number;
+
+    /** FantasyTeam slots. */
+    public slots: CMsgGCCStrike15_v2_Fantasy.IFantasySlot[];
+    /**
+     * Constructs a new FantasyTeam.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsgGCCStrike15_v2_Fantasy.IFantasyTeam);
   }
 }
 
@@ -12271,15 +12030,6 @@ export interface ICAttribute_String {
 /** Represents a CAttribute_String. */
 export class CAttribute_String implements ICAttribute_String {
   /**
-   * Constructs a new CAttribute_String.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICAttribute_String);
-
-  /** CAttribute_String value. */
-  public value: string;
-
-  /**
    * Decodes a CAttribute_String message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -12291,6 +12041,14 @@ export class CAttribute_String implements ICAttribute_String {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CAttribute_String;
+
+  /** CAttribute_String value. */
+  public value: string;
+  /**
+   * Constructs a new CAttribute_String.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICAttribute_String);
 }
 
 /** Properties of a CMsgGCToGCReloadVersions. */
@@ -12298,12 +12056,6 @@ export interface ICMsgGCToGCReloadVersions {}
 
 /** Represents a CMsgGCToGCReloadVersions. */
 export class CMsgGCToGCReloadVersions implements ICMsgGCToGCReloadVersions {
-  /**
-   * Constructs a new CMsgGCToGCReloadVersions.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCToGCReloadVersions);
-
   /**
    * Decodes a CMsgGCToGCReloadVersions message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -12316,6 +12068,11 @@ export class CMsgGCToGCReloadVersions implements ICMsgGCToGCReloadVersions {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCToGCReloadVersions;
+  /**
+   * Constructs a new CMsgGCToGCReloadVersions.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCToGCReloadVersions);
 }
 
 /** Properties of a CMsgCStrike15Welcome. */
@@ -12345,10 +12102,17 @@ export interface ICMsgCStrike15Welcome {
 /** Represents a CMsgCStrike15Welcome. */
 export class CMsgCStrike15Welcome implements ICMsgCStrike15Welcome {
   /**
-   * Constructs a new CMsgCStrike15Welcome.
-   * @param [properties] Properties to set
+   * Decodes a CMsgCStrike15Welcome message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgCStrike15Welcome
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgCStrike15Welcome);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgCStrike15Welcome;
 
   /** CMsgCStrike15Welcome storeItemHash. */
   public storeItemHash: number;
@@ -12370,19 +12134,11 @@ export class CMsgCStrike15Welcome implements ICMsgCStrike15Welcome {
 
   /** CMsgCStrike15Welcome uniqueid. */
   public uniqueid: number | Long;
-
   /**
-   * Decodes a CMsgCStrike15Welcome message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgCStrike15Welcome
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgCStrike15Welcome.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgCStrike15Welcome;
+  constructor(properties?: ICMsgCStrike15Welcome);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_ClientVarValueNotificationInfo. */
@@ -12407,10 +12163,17 @@ export interface ICMsgGCCStrike15_v2_ClientVarValueNotificationInfo {
 export class CMsgGCCStrike15_v2_ClientVarValueNotificationInfo
   implements ICMsgGCCStrike15_v2_ClientVarValueNotificationInfo {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_ClientVarValueNotificationInfo.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_ClientVarValueNotificationInfo message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_ClientVarValueNotificationInfo
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_ClientVarValueNotificationInfo);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_ClientVarValueNotificationInfo;
 
   /** CMsgGCCStrike15_v2_ClientVarValueNotificationInfo valueName. */
   public valueName: string;
@@ -12426,19 +12189,11 @@ export class CMsgGCCStrike15_v2_ClientVarValueNotificationInfo
 
   /** CMsgGCCStrike15_v2_ClientVarValueNotificationInfo chokedBlocks. */
   public chokedBlocks: string[];
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_ClientVarValueNotificationInfo message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_ClientVarValueNotificationInfo
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_ClientVarValueNotificationInfo.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_ClientVarValueNotificationInfo;
+  constructor(properties?: ICMsgGCCStrike15_v2_ClientVarValueNotificationInfo);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_ServerVarValueNotificationInfo. */
@@ -12457,21 +12212,6 @@ export interface ICMsgGCCStrike15_v2_ServerVarValueNotificationInfo {
 export class CMsgGCCStrike15_v2_ServerVarValueNotificationInfo
   implements ICMsgGCCStrike15_v2_ServerVarValueNotificationInfo {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_ServerVarValueNotificationInfo.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_ServerVarValueNotificationInfo);
-
-  /** CMsgGCCStrike15_v2_ServerVarValueNotificationInfo accountid. */
-  public accountid: number;
-
-  /** CMsgGCCStrike15_v2_ServerVarValueNotificationInfo viewangles. */
-  public viewangles: number[];
-
-  /** CMsgGCCStrike15_v2_ServerVarValueNotificationInfo type. */
-  public type: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_ServerVarValueNotificationInfo message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -12483,6 +12223,20 @@ export class CMsgGCCStrike15_v2_ServerVarValueNotificationInfo
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_ServerVarValueNotificationInfo;
+
+  /** CMsgGCCStrike15_v2_ServerVarValueNotificationInfo accountid. */
+  public accountid: number;
+
+  /** CMsgGCCStrike15_v2_ServerVarValueNotificationInfo viewangles. */
+  public viewangles: number[];
+
+  /** CMsgGCCStrike15_v2_ServerVarValueNotificationInfo type. */
+  public type: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_ServerVarValueNotificationInfo.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_ServerVarValueNotificationInfo);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_GiftsLeaderboardRequest. */
@@ -12491,12 +12245,6 @@ export interface ICMsgGCCStrike15_v2_GiftsLeaderboardRequest {}
 /** Represents a CMsgGCCStrike15_v2_GiftsLeaderboardRequest. */
 export class CMsgGCCStrike15_v2_GiftsLeaderboardRequest
   implements ICMsgGCCStrike15_v2_GiftsLeaderboardRequest {
-  /**
-   * Constructs a new CMsgGCCStrike15_v2_GiftsLeaderboardRequest.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_GiftsLeaderboardRequest);
-
   /**
    * Decodes a CMsgGCCStrike15_v2_GiftsLeaderboardRequest message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -12509,6 +12257,11 @@ export class CMsgGCCStrike15_v2_GiftsLeaderboardRequest
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_GiftsLeaderboardRequest;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_GiftsLeaderboardRequest.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_GiftsLeaderboardRequest);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_GiftsLeaderboardResponse. */
@@ -12535,10 +12288,17 @@ export interface ICMsgGCCStrike15_v2_GiftsLeaderboardResponse {
 export class CMsgGCCStrike15_v2_GiftsLeaderboardResponse
   implements ICMsgGCCStrike15_v2_GiftsLeaderboardResponse {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_GiftsLeaderboardResponse.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_GiftsLeaderboardResponse message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_GiftsLeaderboardResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_GiftsLeaderboardResponse);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_GiftsLeaderboardResponse;
 
   /** CMsgGCCStrike15_v2_GiftsLeaderboardResponse servertime. */
   public servertime: number;
@@ -12554,19 +12314,11 @@ export class CMsgGCCStrike15_v2_GiftsLeaderboardResponse
 
   /** CMsgGCCStrike15_v2_GiftsLeaderboardResponse entries. */
   public entries: CMsgGCCStrike15_v2_GiftsLeaderboardResponse.IGiftLeaderboardEntry[];
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_GiftsLeaderboardResponse message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_GiftsLeaderboardResponse
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_GiftsLeaderboardResponse.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_GiftsLeaderboardResponse;
+  constructor(properties?: ICMsgGCCStrike15_v2_GiftsLeaderboardResponse);
 }
 
 export namespace CMsgGCCStrike15_v2_GiftsLeaderboardResponse {
@@ -12582,20 +12334,6 @@ export namespace CMsgGCCStrike15_v2_GiftsLeaderboardResponse {
   /** Represents a GiftLeaderboardEntry. */
   class GiftLeaderboardEntry implements IGiftLeaderboardEntry {
     /**
-     * Constructs a new GiftLeaderboardEntry.
-     * @param [properties] Properties to set
-     */
-    constructor(
-      properties?: CMsgGCCStrike15_v2_GiftsLeaderboardResponse.IGiftLeaderboardEntry
-    );
-
-    /** GiftLeaderboardEntry accountid. */
-    public accountid: number;
-
-    /** GiftLeaderboardEntry gifts. */
-    public gifts: number;
-
-    /**
      * Decodes a GiftLeaderboardEntry message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -12607,6 +12345,19 @@ export namespace CMsgGCCStrike15_v2_GiftsLeaderboardResponse {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgGCCStrike15_v2_GiftsLeaderboardResponse.GiftLeaderboardEntry;
+
+    /** GiftLeaderboardEntry accountid. */
+    public accountid: number;
+
+    /** GiftLeaderboardEntry gifts. */
+    public gifts: number;
+    /**
+     * Constructs a new GiftLeaderboardEntry.
+     * @param [properties] Properties to set
+     */
+    constructor(
+      properties?: CMsgGCCStrike15_v2_GiftsLeaderboardResponse.IGiftLeaderboardEntry
+    );
   }
 }
 
@@ -12623,18 +12374,6 @@ export interface ICMsgGCCStrike15_v2_ClientSubmitSurveyVote {
 export class CMsgGCCStrike15_v2_ClientSubmitSurveyVote
   implements ICMsgGCCStrike15_v2_ClientSubmitSurveyVote {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_ClientSubmitSurveyVote.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_ClientSubmitSurveyVote);
-
-  /** CMsgGCCStrike15_v2_ClientSubmitSurveyVote surveyId. */
-  public surveyId: number;
-
-  /** CMsgGCCStrike15_v2_ClientSubmitSurveyVote vote. */
-  public vote: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_ClientSubmitSurveyVote message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -12646,6 +12385,17 @@ export class CMsgGCCStrike15_v2_ClientSubmitSurveyVote
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_ClientSubmitSurveyVote;
+
+  /** CMsgGCCStrike15_v2_ClientSubmitSurveyVote surveyId. */
+  public surveyId: number;
+
+  /** CMsgGCCStrike15_v2_ClientSubmitSurveyVote vote. */
+  public vote: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_ClientSubmitSurveyVote.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_ClientSubmitSurveyVote);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_Server2GCClientValidate. */
@@ -12658,15 +12408,6 @@ export interface ICMsgGCCStrike15_v2_Server2GCClientValidate {
 export class CMsgGCCStrike15_v2_Server2GCClientValidate
   implements ICMsgGCCStrike15_v2_Server2GCClientValidate {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_Server2GCClientValidate.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_Server2GCClientValidate);
-
-  /** CMsgGCCStrike15_v2_Server2GCClientValidate accountid. */
-  public accountid: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_Server2GCClientValidate message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -12678,6 +12419,14 @@ export class CMsgGCCStrike15_v2_Server2GCClientValidate
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_Server2GCClientValidate;
+
+  /** CMsgGCCStrike15_v2_Server2GCClientValidate accountid. */
+  public accountid: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_Server2GCClientValidate.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_Server2GCClientValidate);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure. */
@@ -12711,12 +12460,17 @@ export interface ICMsgGCCStrike15_v2_Server2GCPureServerValidationFailure {
 export class CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure
   implements ICMsgGCCStrike15_v2_Server2GCPureServerValidationFailure {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(
-    properties?: ICMsgGCCStrike15_v2_Server2GCPureServerValidationFailure
-  );
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure;
 
   /** CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure accountid. */
   public accountid: number;
@@ -12741,19 +12495,13 @@ export class CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure
 
   /** CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure packFileId. */
   public packFileId: number;
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure;
+  constructor(
+    properties?: ICMsgGCCStrike15_v2_Server2GCPureServerValidationFailure
+  );
 }
 
 /** Properties of a CMsgGCCStrike15_v2_GC2ClientTournamentInfo. */
@@ -12775,10 +12523,17 @@ export interface ICMsgGCCStrike15_v2_GC2ClientTournamentInfo {
 export class CMsgGCCStrike15_v2_GC2ClientTournamentInfo
   implements ICMsgGCCStrike15_v2_GC2ClientTournamentInfo {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_GC2ClientTournamentInfo.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCCStrike15_v2_GC2ClientTournamentInfo message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCCStrike15_v2_GC2ClientTournamentInfo
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCCStrike15_v2_GC2ClientTournamentInfo);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCCStrike15_v2_GC2ClientTournamentInfo;
 
   /** CMsgGCCStrike15_v2_GC2ClientTournamentInfo eventid. */
   public eventid: number;
@@ -12791,19 +12546,11 @@ export class CMsgGCCStrike15_v2_GC2ClientTournamentInfo
 
   /** CMsgGCCStrike15_v2_GC2ClientTournamentInfo teamids. */
   public teamids: number[];
-
   /**
-   * Decodes a CMsgGCCStrike15_v2_GC2ClientTournamentInfo message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCCStrike15_v2_GC2ClientTournamentInfo
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCCStrike15_v2_GC2ClientTournamentInfo.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCCStrike15_v2_GC2ClientTournamentInfo;
+  constructor(properties?: ICMsgGCCStrike15_v2_GC2ClientTournamentInfo);
 }
 
 /** Properties of a CSOEconCoupon. */
@@ -12821,21 +12568,6 @@ export interface ICSOEconCoupon {
 /** Represents a CSOEconCoupon. */
 export class CSOEconCoupon implements ICSOEconCoupon {
   /**
-   * Constructs a new CSOEconCoupon.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSOEconCoupon);
-
-  /** CSOEconCoupon entryid. */
-  public entryid: number;
-
-  /** CSOEconCoupon defidx. */
-  public defidx: number;
-
-  /** CSOEconCoupon expirationDate. */
-  public expirationDate: number;
-
-  /**
    * Decodes a CSOEconCoupon message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -12847,6 +12579,20 @@ export class CSOEconCoupon implements ICSOEconCoupon {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSOEconCoupon;
+
+  /** CSOEconCoupon entryid. */
+  public entryid: number;
+
+  /** CSOEconCoupon defidx. */
+  public defidx: number;
+
+  /** CSOEconCoupon expirationDate. */
+  public expirationDate: number;
+  /**
+   * Constructs a new CSOEconCoupon.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSOEconCoupon);
 }
 
 /** Properties of a CSOQuestProgress. */
@@ -12864,21 +12610,6 @@ export interface ICSOQuestProgress {
 /** Represents a CSOQuestProgress. */
 export class CSOQuestProgress implements ICSOQuestProgress {
   /**
-   * Constructs a new CSOQuestProgress.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSOQuestProgress);
-
-  /** CSOQuestProgress questid. */
-  public questid: number;
-
-  /** CSOQuestProgress pointsRemaining. */
-  public pointsRemaining: number;
-
-  /** CSOQuestProgress bonusPoints. */
-  public bonusPoints: number;
-
-  /**
    * Decodes a CSOQuestProgress message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -12890,6 +12621,20 @@ export class CSOQuestProgress implements ICSOQuestProgress {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSOQuestProgress;
+
+  /** CSOQuestProgress questid. */
+  public questid: number;
+
+  /** CSOQuestProgress pointsRemaining. */
+  public pointsRemaining: number;
+
+  /** CSOQuestProgress bonusPoints. */
+  public bonusPoints: number;
+  /**
+   * Constructs a new CSOQuestProgress.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSOQuestProgress);
 }
 
 /** Properties of a CSOPersonaDataPublic. */
@@ -12904,18 +12649,6 @@ export interface ICSOPersonaDataPublic {
 /** Represents a CSOPersonaDataPublic. */
 export class CSOPersonaDataPublic implements ICSOPersonaDataPublic {
   /**
-   * Constructs a new CSOPersonaDataPublic.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICSOPersonaDataPublic);
-
-  /** CSOPersonaDataPublic playerLevel. */
-  public playerLevel: number;
-
-  /** CSOPersonaDataPublic commendation. */
-  public commendation?: IPlayerCommendationInfo | null;
-
-  /**
    * Decodes a CSOPersonaDataPublic message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -12927,6 +12660,17 @@ export class CSOPersonaDataPublic implements ICSOPersonaDataPublic {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CSOPersonaDataPublic;
+
+  /** CSOPersonaDataPublic playerLevel. */
+  public playerLevel: number;
+
+  /** CSOPersonaDataPublic commendation. */
+  public commendation?: IPlayerCommendationInfo | null;
+  /**
+   * Constructs a new CSOPersonaDataPublic.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICSOPersonaDataPublic);
 }
 
 /** Properties of a CMsgGC_GlobalGame_Subscribe. */
@@ -12939,15 +12683,6 @@ export interface ICMsgGC_GlobalGame_Subscribe {
 export class CMsgGC_GlobalGame_Subscribe
   implements ICMsgGC_GlobalGame_Subscribe {
   /**
-   * Constructs a new CMsgGC_GlobalGame_Subscribe.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGC_GlobalGame_Subscribe);
-
-  /** CMsgGC_GlobalGame_Subscribe ticket. */
-  public ticket: number | Long;
-
-  /**
    * Decodes a CMsgGC_GlobalGame_Subscribe message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -12959,6 +12694,14 @@ export class CMsgGC_GlobalGame_Subscribe
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGC_GlobalGame_Subscribe;
+
+  /** CMsgGC_GlobalGame_Subscribe ticket. */
+  public ticket: number | Long;
+  /**
+   * Constructs a new CMsgGC_GlobalGame_Subscribe.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGC_GlobalGame_Subscribe);
 }
 
 /** Properties of a CMsgGC_GlobalGame_Unsubscribe. */
@@ -12971,15 +12714,6 @@ export interface ICMsgGC_GlobalGame_Unsubscribe {
 export class CMsgGC_GlobalGame_Unsubscribe
   implements ICMsgGC_GlobalGame_Unsubscribe {
   /**
-   * Constructs a new CMsgGC_GlobalGame_Unsubscribe.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGC_GlobalGame_Unsubscribe);
-
-  /** CMsgGC_GlobalGame_Unsubscribe timeleft. */
-  public timeleft: number;
-
-  /**
    * Decodes a CMsgGC_GlobalGame_Unsubscribe message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -12991,6 +12725,14 @@ export class CMsgGC_GlobalGame_Unsubscribe
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGC_GlobalGame_Unsubscribe;
+
+  /** CMsgGC_GlobalGame_Unsubscribe timeleft. */
+  public timeleft: number;
+  /**
+   * Constructs a new CMsgGC_GlobalGame_Unsubscribe.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGC_GlobalGame_Unsubscribe);
 }
 
 /** Properties of a CMsgGC_GlobalGame_Play. */
@@ -13008,21 +12750,6 @@ export interface ICMsgGC_GlobalGame_Play {
 /** Represents a CMsgGC_GlobalGame_Play. */
 export class CMsgGC_GlobalGame_Play implements ICMsgGC_GlobalGame_Play {
   /**
-   * Constructs a new CMsgGC_GlobalGame_Play.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGC_GlobalGame_Play);
-
-  /** CMsgGC_GlobalGame_Play ticket. */
-  public ticket: number | Long;
-
-  /** CMsgGC_GlobalGame_Play gametimems. */
-  public gametimems: number;
-
-  /** CMsgGC_GlobalGame_Play msperpoint. */
-  public msperpoint: number;
-
-  /**
    * Decodes a CMsgGC_GlobalGame_Play message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -13034,6 +12761,20 @@ export class CMsgGC_GlobalGame_Play implements ICMsgGC_GlobalGame_Play {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGC_GlobalGame_Play;
+
+  /** CMsgGC_GlobalGame_Play ticket. */
+  public ticket: number | Long;
+
+  /** CMsgGC_GlobalGame_Play gametimems. */
+  public gametimems: number;
+
+  /** CMsgGC_GlobalGame_Play msperpoint. */
+  public msperpoint: number;
+  /**
+   * Constructs a new CMsgGC_GlobalGame_Play.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGC_GlobalGame_Play);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_AcknowledgePenalty. */
@@ -13046,15 +12787,6 @@ export interface ICMsgGCCStrike15_v2_AcknowledgePenalty {
 export class CMsgGCCStrike15_v2_AcknowledgePenalty
   implements ICMsgGCCStrike15_v2_AcknowledgePenalty {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_AcknowledgePenalty.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_AcknowledgePenalty);
-
-  /** CMsgGCCStrike15_v2_AcknowledgePenalty acknowledged. */
-  public acknowledged: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_AcknowledgePenalty message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -13066,6 +12798,14 @@ export class CMsgGCCStrike15_v2_AcknowledgePenalty
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_AcknowledgePenalty;
+
+  /** CMsgGCCStrike15_v2_AcknowledgePenalty acknowledged. */
+  public acknowledged: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_AcknowledgePenalty.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_AcknowledgePenalty);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin. */
@@ -13074,12 +12814,6 @@ export interface ICMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin {}
 /** Represents a CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin. */
 export class CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin
   implements ICMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin {
-  /**
-   * Constructs a new CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin);
-
   /**
    * Decodes a CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -13092,6 +12826,11 @@ export class CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin);
 }
 
 /** Properties of a CMsgGCCStrike15_v2_Client2GCStreamUnlock. */
@@ -13107,18 +12846,6 @@ export interface ICMsgGCCStrike15_v2_Client2GCStreamUnlock {
 export class CMsgGCCStrike15_v2_Client2GCStreamUnlock
   implements ICMsgGCCStrike15_v2_Client2GCStreamUnlock {
   /**
-   * Constructs a new CMsgGCCStrike15_v2_Client2GCStreamUnlock.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCStrike15_v2_Client2GCStreamUnlock);
-
-  /** CMsgGCCStrike15_v2_Client2GCStreamUnlock ticket. */
-  public ticket: number | Long;
-
-  /** CMsgGCCStrike15_v2_Client2GCStreamUnlock os. */
-  public os: number;
-
-  /**
    * Decodes a CMsgGCCStrike15_v2_Client2GCStreamUnlock message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -13130,6 +12857,17 @@ export class CMsgGCCStrike15_v2_Client2GCStreamUnlock
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCStrike15_v2_Client2GCStreamUnlock;
+
+  /** CMsgGCCStrike15_v2_Client2GCStreamUnlock ticket. */
+  public ticket: number | Long;
+
+  /** CMsgGCCStrike15_v2_Client2GCStreamUnlock os. */
+  public os: number;
+  /**
+   * Constructs a new CMsgGCCStrike15_v2_Client2GCStreamUnlock.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCStrike15_v2_Client2GCStreamUnlock);
 }
 
 /** GCProtoBufMsgSrc enum. */
@@ -13177,10 +12915,17 @@ export interface ICMsgProtoBufHeader {
 /** Represents a CMsgProtoBufHeader. */
 export class CMsgProtoBufHeader implements ICMsgProtoBufHeader {
   /**
-   * Constructs a new CMsgProtoBufHeader.
-   * @param [properties] Properties to set
+   * Decodes a CMsgProtoBufHeader message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgProtoBufHeader
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgProtoBufHeader);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgProtoBufHeader;
 
   /** CMsgProtoBufHeader clientSteamId. */
   public clientSteamId: number | Long;
@@ -13211,19 +12956,11 @@ export class CMsgProtoBufHeader implements ICMsgProtoBufHeader {
 
   /** CMsgProtoBufHeader gcDirIndexSource. */
   public gcDirIndexSource: number;
-
   /**
-   * Decodes a CMsgProtoBufHeader message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgProtoBufHeader
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgProtoBufHeader.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgProtoBufHeader;
+  constructor(properties?: ICMsgProtoBufHeader);
 }
 
 /** Properties of a CMsgWebAPIKey. */
@@ -13247,10 +12984,17 @@ export interface ICMsgWebAPIKey {
 /** Represents a CMsgWebAPIKey. */
 export class CMsgWebAPIKey implements ICMsgWebAPIKey {
   /**
-   * Constructs a new CMsgWebAPIKey.
-   * @param [properties] Properties to set
+   * Decodes a CMsgWebAPIKey message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgWebAPIKey
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgWebAPIKey);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgWebAPIKey;
 
   /** CMsgWebAPIKey status. */
   public status: number;
@@ -13266,19 +13010,11 @@ export class CMsgWebAPIKey implements ICMsgWebAPIKey {
 
   /** CMsgWebAPIKey domain. */
   public domain: string;
-
   /**
-   * Decodes a CMsgWebAPIKey message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgWebAPIKey
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgWebAPIKey.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgWebAPIKey;
+  constructor(properties?: ICMsgWebAPIKey);
 }
 
 /** Properties of a CMsgHttpRequest. */
@@ -13311,10 +13047,17 @@ export interface ICMsgHttpRequest {
 /** Represents a CMsgHttpRequest. */
 export class CMsgHttpRequest implements ICMsgHttpRequest {
   /**
-   * Constructs a new CMsgHttpRequest.
-   * @param [properties] Properties to set
+   * Decodes a CMsgHttpRequest message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgHttpRequest
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgHttpRequest);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgHttpRequest;
 
   /** CMsgHttpRequest requestMethod. */
   public requestMethod: number;
@@ -13339,19 +13082,11 @@ export class CMsgHttpRequest implements ICMsgHttpRequest {
 
   /** CMsgHttpRequest absoluteTimeout. */
   public absoluteTimeout: number;
-
   /**
-   * Decodes a CMsgHttpRequest message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgHttpRequest
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgHttpRequest.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgHttpRequest;
+  constructor(properties?: ICMsgHttpRequest);
 }
 
 export namespace CMsgHttpRequest {
@@ -13367,18 +13102,6 @@ export namespace CMsgHttpRequest {
   /** Represents a RequestHeader. */
   class RequestHeader implements IRequestHeader {
     /**
-     * Constructs a new RequestHeader.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsgHttpRequest.IRequestHeader);
-
-    /** RequestHeader name. */
-    public name: string;
-
-    /** RequestHeader value. */
-    public value: string;
-
-    /**
      * Decodes a RequestHeader message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -13390,6 +13113,17 @@ export namespace CMsgHttpRequest {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgHttpRequest.RequestHeader;
+
+    /** RequestHeader name. */
+    public name: string;
+
+    /** RequestHeader value. */
+    public value: string;
+    /**
+     * Constructs a new RequestHeader.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsgHttpRequest.IRequestHeader);
   }
 
   /** Properties of a QueryParam. */
@@ -13404,18 +13138,6 @@ export namespace CMsgHttpRequest {
   /** Represents a QueryParam. */
   class QueryParam implements IQueryParam {
     /**
-     * Constructs a new QueryParam.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsgHttpRequest.IQueryParam);
-
-    /** QueryParam name. */
-    public name: string;
-
-    /** QueryParam value. */
-    public value: Uint8Array;
-
-    /**
      * Decodes a QueryParam message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -13427,6 +13149,17 @@ export namespace CMsgHttpRequest {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgHttpRequest.QueryParam;
+
+    /** QueryParam name. */
+    public name: string;
+
+    /** QueryParam value. */
+    public value: Uint8Array;
+    /**
+     * Constructs a new QueryParam.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsgHttpRequest.IQueryParam);
   }
 }
 
@@ -13457,10 +13190,17 @@ export interface ICMsgWebAPIRequest {
 /** Represents a CMsgWebAPIRequest. */
 export class CMsgWebAPIRequest implements ICMsgWebAPIRequest {
   /**
-   * Constructs a new CMsgWebAPIRequest.
-   * @param [properties] Properties to set
+   * Decodes a CMsgWebAPIRequest message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgWebAPIRequest
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgWebAPIRequest);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgWebAPIRequest;
 
   /** CMsgWebAPIRequest UNUSEDJobName. */
   public UNUSEDJobName: string;
@@ -13482,19 +13222,11 @@ export class CMsgWebAPIRequest implements ICMsgWebAPIRequest {
 
   /** CMsgWebAPIRequest routingAppId. */
   public routingAppId: number;
-
   /**
-   * Decodes a CMsgWebAPIRequest message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgWebAPIRequest
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgWebAPIRequest.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgWebAPIRequest;
+  constructor(properties?: ICMsgWebAPIRequest);
 }
 
 /** Properties of a CMsgHttpResponse. */
@@ -13512,21 +13244,6 @@ export interface ICMsgHttpResponse {
 /** Represents a CMsgHttpResponse. */
 export class CMsgHttpResponse implements ICMsgHttpResponse {
   /**
-   * Constructs a new CMsgHttpResponse.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgHttpResponse);
-
-  /** CMsgHttpResponse statusCode. */
-  public statusCode: number;
-
-  /** CMsgHttpResponse headers. */
-  public headers: CMsgHttpResponse.IResponseHeader[];
-
-  /** CMsgHttpResponse body. */
-  public body: Uint8Array;
-
-  /**
    * Decodes a CMsgHttpResponse message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -13538,6 +13255,20 @@ export class CMsgHttpResponse implements ICMsgHttpResponse {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgHttpResponse;
+
+  /** CMsgHttpResponse statusCode. */
+  public statusCode: number;
+
+  /** CMsgHttpResponse headers. */
+  public headers: CMsgHttpResponse.IResponseHeader[];
+
+  /** CMsgHttpResponse body. */
+  public body: Uint8Array;
+  /**
+   * Constructs a new CMsgHttpResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgHttpResponse);
 }
 
 export namespace CMsgHttpResponse {
@@ -13553,18 +13284,6 @@ export namespace CMsgHttpResponse {
   /** Represents a ResponseHeader. */
   class ResponseHeader implements IResponseHeader {
     /**
-     * Constructs a new ResponseHeader.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsgHttpResponse.IResponseHeader);
-
-    /** ResponseHeader name. */
-    public name: string;
-
-    /** ResponseHeader value. */
-    public value: string;
-
-    /**
      * Decodes a ResponseHeader message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -13576,6 +13295,17 @@ export namespace CMsgHttpResponse {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgHttpResponse.ResponseHeader;
+
+    /** ResponseHeader name. */
+    public name: string;
+
+    /** ResponseHeader value. */
+    public value: string;
+    /**
+     * Constructs a new ResponseHeader.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsgHttpResponse.IResponseHeader);
   }
 }
 
@@ -13591,18 +13321,6 @@ export interface ICMsgAMFindAccounts {
 /** Represents a CMsgAMFindAccounts. */
 export class CMsgAMFindAccounts implements ICMsgAMFindAccounts {
   /**
-   * Constructs a new CMsgAMFindAccounts.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgAMFindAccounts);
-
-  /** CMsgAMFindAccounts searchType. */
-  public searchType: number;
-
-  /** CMsgAMFindAccounts searchString. */
-  public searchString: string;
-
-  /**
    * Decodes a CMsgAMFindAccounts message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -13614,25 +13332,27 @@ export class CMsgAMFindAccounts implements ICMsgAMFindAccounts {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgAMFindAccounts;
+
+  /** CMsgAMFindAccounts searchType. */
+  public searchType: number;
+
+  /** CMsgAMFindAccounts searchString. */
+  public searchString: string;
+  /**
+   * Constructs a new CMsgAMFindAccounts.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgAMFindAccounts);
 }
 
 /** Properties of a CMsgAMFindAccountsResponse. */
 export interface ICMsgAMFindAccountsResponse {
   /** CMsgAMFindAccountsResponse steamId */
-  steamId?: (number | Long)[] | null;
+  steamId?: Array<number | Long> | null;
 }
 
 /** Represents a CMsgAMFindAccountsResponse. */
 export class CMsgAMFindAccountsResponse implements ICMsgAMFindAccountsResponse {
-  /**
-   * Constructs a new CMsgAMFindAccountsResponse.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgAMFindAccountsResponse);
-
-  /** CMsgAMFindAccountsResponse steamId. */
-  public steamId: (number | Long)[];
-
   /**
    * Decodes a CMsgAMFindAccountsResponse message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -13645,6 +13365,14 @@ export class CMsgAMFindAccountsResponse implements ICMsgAMFindAccountsResponse {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgAMFindAccountsResponse;
+
+  /** CMsgAMFindAccountsResponse steamId. */
+  public steamId: Array<number | Long>;
+  /**
+   * Constructs a new CMsgAMFindAccountsResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgAMFindAccountsResponse);
 }
 
 /** Properties of a CMsgNotifyWatchdog. */
@@ -13674,10 +13402,17 @@ export interface ICMsgNotifyWatchdog {
 /** Represents a CMsgNotifyWatchdog. */
 export class CMsgNotifyWatchdog implements ICMsgNotifyWatchdog {
   /**
-   * Constructs a new CMsgNotifyWatchdog.
-   * @param [properties] Properties to set
+   * Decodes a CMsgNotifyWatchdog message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgNotifyWatchdog
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgNotifyWatchdog);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgNotifyWatchdog;
 
   /** CMsgNotifyWatchdog source. */
   public source: number;
@@ -13699,19 +13434,11 @@ export class CMsgNotifyWatchdog implements ICMsgNotifyWatchdog {
 
   /** CMsgNotifyWatchdog text. */
   public text: string;
-
   /**
-   * Decodes a CMsgNotifyWatchdog message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgNotifyWatchdog
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgNotifyWatchdog.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgNotifyWatchdog;
+  constructor(properties?: ICMsgNotifyWatchdog);
 }
 
 /** Properties of a CMsgAMGetLicenses. */
@@ -13722,15 +13449,6 @@ export interface ICMsgAMGetLicenses {
 
 /** Represents a CMsgAMGetLicenses. */
 export class CMsgAMGetLicenses implements ICMsgAMGetLicenses {
-  /**
-   * Constructs a new CMsgAMGetLicenses.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgAMGetLicenses);
-
-  /** CMsgAMGetLicenses steamid. */
-  public steamid: number | Long;
-
   /**
    * Decodes a CMsgAMGetLicenses message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -13743,6 +13461,14 @@ export class CMsgAMGetLicenses implements ICMsgAMGetLicenses {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgAMGetLicenses;
+
+  /** CMsgAMGetLicenses steamid. */
+  public steamid: number | Long;
+  /**
+   * Constructs a new CMsgAMGetLicenses.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgAMGetLicenses);
 }
 
 /** Properties of a CMsgPackageLicense. */
@@ -13760,21 +13486,6 @@ export interface ICMsgPackageLicense {
 /** Represents a CMsgPackageLicense. */
 export class CMsgPackageLicense implements ICMsgPackageLicense {
   /**
-   * Constructs a new CMsgPackageLicense.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgPackageLicense);
-
-  /** CMsgPackageLicense packageId. */
-  public packageId: number;
-
-  /** CMsgPackageLicense timeCreated. */
-  public timeCreated: number;
-
-  /** CMsgPackageLicense ownerId. */
-  public ownerId: number;
-
-  /**
    * Decodes a CMsgPackageLicense message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -13786,6 +13497,20 @@ export class CMsgPackageLicense implements ICMsgPackageLicense {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgPackageLicense;
+
+  /** CMsgPackageLicense packageId. */
+  public packageId: number;
+
+  /** CMsgPackageLicense timeCreated. */
+  public timeCreated: number;
+
+  /** CMsgPackageLicense ownerId. */
+  public ownerId: number;
+  /**
+   * Constructs a new CMsgPackageLicense.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgPackageLicense);
 }
 
 /** Properties of a CMsgAMGetLicensesResponse. */
@@ -13800,18 +13525,6 @@ export interface ICMsgAMGetLicensesResponse {
 /** Represents a CMsgAMGetLicensesResponse. */
 export class CMsgAMGetLicensesResponse implements ICMsgAMGetLicensesResponse {
   /**
-   * Constructs a new CMsgAMGetLicensesResponse.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgAMGetLicensesResponse);
-
-  /** CMsgAMGetLicensesResponse license. */
-  public license: ICMsgPackageLicense[];
-
-  /** CMsgAMGetLicensesResponse result. */
-  public result: number;
-
-  /**
    * Decodes a CMsgAMGetLicensesResponse message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -13823,6 +13536,17 @@ export class CMsgAMGetLicensesResponse implements ICMsgAMGetLicensesResponse {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgAMGetLicensesResponse;
+
+  /** CMsgAMGetLicensesResponse license. */
+  public license: ICMsgPackageLicense[];
+
+  /** CMsgAMGetLicensesResponse result. */
+  public result: number;
+  /**
+   * Constructs a new CMsgAMGetLicensesResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgAMGetLicensesResponse);
 }
 
 /** Properties of a CMsgAMGetUserGameStats. */
@@ -13840,21 +13564,6 @@ export interface ICMsgAMGetUserGameStats {
 /** Represents a CMsgAMGetUserGameStats. */
 export class CMsgAMGetUserGameStats implements ICMsgAMGetUserGameStats {
   /**
-   * Constructs a new CMsgAMGetUserGameStats.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgAMGetUserGameStats);
-
-  /** CMsgAMGetUserGameStats steamId. */
-  public steamId: number | Long;
-
-  /** CMsgAMGetUserGameStats gameId. */
-  public gameId: number | Long;
-
-  /** CMsgAMGetUserGameStats stats. */
-  public stats: number[];
-
-  /**
    * Decodes a CMsgAMGetUserGameStats message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -13866,6 +13575,20 @@ export class CMsgAMGetUserGameStats implements ICMsgAMGetUserGameStats {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgAMGetUserGameStats;
+
+  /** CMsgAMGetUserGameStats steamId. */
+  public steamId: number | Long;
+
+  /** CMsgAMGetUserGameStats gameId. */
+  public gameId: number | Long;
+
+  /** CMsgAMGetUserGameStats stats. */
+  public stats: number[];
+  /**
+   * Constructs a new CMsgAMGetUserGameStats.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgAMGetUserGameStats);
 }
 
 /** Properties of a CMsgAMGetUserGameStatsResponse. */
@@ -13892,10 +13615,17 @@ export interface ICMsgAMGetUserGameStatsResponse {
 export class CMsgAMGetUserGameStatsResponse
   implements ICMsgAMGetUserGameStatsResponse {
   /**
-   * Constructs a new CMsgAMGetUserGameStatsResponse.
-   * @param [properties] Properties to set
+   * Decodes a CMsgAMGetUserGameStatsResponse message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgAMGetUserGameStatsResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgAMGetUserGameStatsResponse);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgAMGetUserGameStatsResponse;
 
   /** CMsgAMGetUserGameStatsResponse steamId. */
   public steamId: number | Long;
@@ -13911,19 +13641,11 @@ export class CMsgAMGetUserGameStatsResponse
 
   /** CMsgAMGetUserGameStatsResponse achievementBlocks. */
   public achievementBlocks: CMsgAMGetUserGameStatsResponse.IAchievement_Blocks[];
-
   /**
-   * Decodes a CMsgAMGetUserGameStatsResponse message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgAMGetUserGameStatsResponse
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgAMGetUserGameStatsResponse.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgAMGetUserGameStatsResponse;
+  constructor(properties?: ICMsgAMGetUserGameStatsResponse);
 }
 
 export namespace CMsgAMGetUserGameStatsResponse {
@@ -13939,18 +13661,6 @@ export namespace CMsgAMGetUserGameStatsResponse {
   /** Represents a Stats. */
   class Stats implements IStats {
     /**
-     * Constructs a new Stats.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsgAMGetUserGameStatsResponse.IStats);
-
-    /** Stats statId. */
-    public statId: number;
-
-    /** Stats statValue. */
-    public statValue: number;
-
-    /**
      * Decodes a Stats message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -13962,6 +13672,17 @@ export namespace CMsgAMGetUserGameStatsResponse {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgAMGetUserGameStatsResponse.Stats;
+
+    /** Stats statId. */
+    public statId: number;
+
+    /** Stats statValue. */
+    public statValue: number;
+    /**
+     * Constructs a new Stats.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsgAMGetUserGameStatsResponse.IStats);
   }
 
   /** Properties of an Achievement_Blocks. */
@@ -13979,23 +13700,6 @@ export namespace CMsgAMGetUserGameStatsResponse {
   /** Represents an Achievement_Blocks. */
   class Achievement_Blocks implements IAchievement_Blocks {
     /**
-     * Constructs a new Achievement_Blocks.
-     * @param [properties] Properties to set
-     */
-    constructor(
-      properties?: CMsgAMGetUserGameStatsResponse.IAchievement_Blocks
-    );
-
-    /** Achievement_Blocks achievementId. */
-    public achievementId: number;
-
-    /** Achievement_Blocks achievementBitId. */
-    public achievementBitId: number;
-
-    /** Achievement_Blocks unlockTime. */
-    public unlockTime: number;
-
-    /**
      * Decodes an Achievement_Blocks message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -14007,6 +13711,22 @@ export namespace CMsgAMGetUserGameStatsResponse {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgAMGetUserGameStatsResponse.Achievement_Blocks;
+
+    /** Achievement_Blocks achievementId. */
+    public achievementId: number;
+
+    /** Achievement_Blocks achievementBitId. */
+    public achievementBitId: number;
+
+    /** Achievement_Blocks unlockTime. */
+    public unlockTime: number;
+    /**
+     * Constructs a new Achievement_Blocks.
+     * @param [properties] Properties to set
+     */
+    constructor(
+      properties?: CMsgAMGetUserGameStatsResponse.IAchievement_Blocks
+    );
   }
 }
 
@@ -14022,18 +13742,6 @@ export interface ICMsgGCGetCommandList {
 /** Represents a CMsgGCGetCommandList. */
 export class CMsgGCGetCommandList implements ICMsgGCGetCommandList {
   /**
-   * Constructs a new CMsgGCGetCommandList.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCGetCommandList);
-
-  /** CMsgGCGetCommandList appId. */
-  public appId: number;
-
-  /** CMsgGCGetCommandList commandPrefix. */
-  public commandPrefix: string;
-
-  /**
    * Decodes a CMsgGCGetCommandList message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -14045,6 +13753,17 @@ export class CMsgGCGetCommandList implements ICMsgGCGetCommandList {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCGetCommandList;
+
+  /** CMsgGCGetCommandList appId. */
+  public appId: number;
+
+  /** CMsgGCGetCommandList commandPrefix. */
+  public commandPrefix: string;
+  /**
+   * Constructs a new CMsgGCGetCommandList.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCGetCommandList);
 }
 
 /** Properties of a CMsgGCGetCommandListResponse. */
@@ -14057,15 +13776,6 @@ export interface ICMsgGCGetCommandListResponse {
 export class CMsgGCGetCommandListResponse
   implements ICMsgGCGetCommandListResponse {
   /**
-   * Constructs a new CMsgGCGetCommandListResponse.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCGetCommandListResponse);
-
-  /** CMsgGCGetCommandListResponse commandName. */
-  public commandName: string[];
-
-  /**
    * Decodes a CMsgGCGetCommandListResponse message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -14077,6 +13787,14 @@ export class CMsgGCGetCommandListResponse
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCGetCommandListResponse;
+
+  /** CMsgGCGetCommandListResponse commandName. */
+  public commandName: string[];
+  /**
+   * Constructs a new CMsgGCGetCommandListResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCGetCommandListResponse);
 }
 
 /** Properties of a CGCMsgMemCachedGet. */
@@ -14087,15 +13805,6 @@ export interface ICGCMsgMemCachedGet {
 
 /** Represents a CGCMsgMemCachedGet. */
 export class CGCMsgMemCachedGet implements ICGCMsgMemCachedGet {
-  /**
-   * Constructs a new CGCMsgMemCachedGet.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICGCMsgMemCachedGet);
-
-  /** CGCMsgMemCachedGet keys. */
-  public keys: string[];
-
   /**
    * Decodes a CGCMsgMemCachedGet message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -14108,6 +13817,14 @@ export class CGCMsgMemCachedGet implements ICGCMsgMemCachedGet {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CGCMsgMemCachedGet;
+
+  /** CGCMsgMemCachedGet keys. */
+  public keys: string[];
+  /**
+   * Constructs a new CGCMsgMemCachedGet.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICGCMsgMemCachedGet);
 }
 
 /** Properties of a CGCMsgMemCachedGetResponse. */
@@ -14118,15 +13835,6 @@ export interface ICGCMsgMemCachedGetResponse {
 
 /** Represents a CGCMsgMemCachedGetResponse. */
 export class CGCMsgMemCachedGetResponse implements ICGCMsgMemCachedGetResponse {
-  /**
-   * Constructs a new CGCMsgMemCachedGetResponse.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICGCMsgMemCachedGetResponse);
-
-  /** CGCMsgMemCachedGetResponse values. */
-  public values: CGCMsgMemCachedGetResponse.IValueTag[];
-
   /**
    * Decodes a CGCMsgMemCachedGetResponse message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -14139,6 +13847,14 @@ export class CGCMsgMemCachedGetResponse implements ICGCMsgMemCachedGetResponse {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CGCMsgMemCachedGetResponse;
+
+  /** CGCMsgMemCachedGetResponse values. */
+  public values: CGCMsgMemCachedGetResponse.IValueTag[];
+  /**
+   * Constructs a new CGCMsgMemCachedGetResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICGCMsgMemCachedGetResponse);
 }
 
 export namespace CGCMsgMemCachedGetResponse {
@@ -14154,18 +13870,6 @@ export namespace CGCMsgMemCachedGetResponse {
   /** Represents a ValueTag. */
   class ValueTag implements IValueTag {
     /**
-     * Constructs a new ValueTag.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CGCMsgMemCachedGetResponse.IValueTag);
-
-    /** ValueTag found. */
-    public found: boolean;
-
-    /** ValueTag value. */
-    public value: Uint8Array;
-
-    /**
      * Decodes a ValueTag message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -14177,6 +13881,17 @@ export namespace CGCMsgMemCachedGetResponse {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CGCMsgMemCachedGetResponse.ValueTag;
+
+    /** ValueTag found. */
+    public found: boolean;
+
+    /** ValueTag value. */
+    public value: Uint8Array;
+    /**
+     * Constructs a new ValueTag.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CGCMsgMemCachedGetResponse.IValueTag);
   }
 }
 
@@ -14189,15 +13904,6 @@ export interface ICGCMsgMemCachedSet {
 /** Represents a CGCMsgMemCachedSet. */
 export class CGCMsgMemCachedSet implements ICGCMsgMemCachedSet {
   /**
-   * Constructs a new CGCMsgMemCachedSet.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICGCMsgMemCachedSet);
-
-  /** CGCMsgMemCachedSet keys. */
-  public keys: CGCMsgMemCachedSet.IKeyPair[];
-
-  /**
    * Decodes a CGCMsgMemCachedSet message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -14209,6 +13915,14 @@ export class CGCMsgMemCachedSet implements ICGCMsgMemCachedSet {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CGCMsgMemCachedSet;
+
+  /** CGCMsgMemCachedSet keys. */
+  public keys: CGCMsgMemCachedSet.IKeyPair[];
+  /**
+   * Constructs a new CGCMsgMemCachedSet.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICGCMsgMemCachedSet);
 }
 
 export namespace CGCMsgMemCachedSet {
@@ -14224,18 +13938,6 @@ export namespace CGCMsgMemCachedSet {
   /** Represents a KeyPair. */
   class KeyPair implements IKeyPair {
     /**
-     * Constructs a new KeyPair.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CGCMsgMemCachedSet.IKeyPair);
-
-    /** KeyPair name. */
-    public name: string;
-
-    /** KeyPair value. */
-    public value: Uint8Array;
-
-    /**
      * Decodes a KeyPair message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -14247,6 +13949,17 @@ export namespace CGCMsgMemCachedSet {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CGCMsgMemCachedSet.KeyPair;
+
+    /** KeyPair name. */
+    public name: string;
+
+    /** KeyPair value. */
+    public value: Uint8Array;
+    /**
+     * Constructs a new KeyPair.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CGCMsgMemCachedSet.IKeyPair);
   }
 }
 
@@ -14259,15 +13972,6 @@ export interface ICGCMsgMemCachedDelete {
 /** Represents a CGCMsgMemCachedDelete. */
 export class CGCMsgMemCachedDelete implements ICGCMsgMemCachedDelete {
   /**
-   * Constructs a new CGCMsgMemCachedDelete.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICGCMsgMemCachedDelete);
-
-  /** CGCMsgMemCachedDelete keys. */
-  public keys: string[];
-
-  /**
    * Decodes a CGCMsgMemCachedDelete message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -14279,6 +13983,14 @@ export class CGCMsgMemCachedDelete implements ICGCMsgMemCachedDelete {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CGCMsgMemCachedDelete;
+
+  /** CGCMsgMemCachedDelete keys. */
+  public keys: string[];
+  /**
+   * Constructs a new CGCMsgMemCachedDelete.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICGCMsgMemCachedDelete);
 }
 
 /** Properties of a CGCMsgMemCachedStats. */
@@ -14286,12 +13998,6 @@ export interface ICGCMsgMemCachedStats {}
 
 /** Represents a CGCMsgMemCachedStats. */
 export class CGCMsgMemCachedStats implements ICGCMsgMemCachedStats {
-  /**
-   * Constructs a new CGCMsgMemCachedStats.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICGCMsgMemCachedStats);
-
   /**
    * Decodes a CGCMsgMemCachedStats message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -14304,6 +14010,11 @@ export class CGCMsgMemCachedStats implements ICGCMsgMemCachedStats {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CGCMsgMemCachedStats;
+  /**
+   * Constructs a new CGCMsgMemCachedStats.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICGCMsgMemCachedStats);
 }
 
 /** Properties of a CGCMsgMemCachedStatsResponse. */
@@ -14355,10 +14066,17 @@ export interface ICGCMsgMemCachedStatsResponse {
 export class CGCMsgMemCachedStatsResponse
   implements ICGCMsgMemCachedStatsResponse {
   /**
-   * Constructs a new CGCMsgMemCachedStatsResponse.
-   * @param [properties] Properties to set
+   * Decodes a CGCMsgMemCachedStatsResponse message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CGCMsgMemCachedStatsResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICGCMsgMemCachedStatsResponse);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CGCMsgMemCachedStatsResponse;
 
   /** CGCMsgMemCachedStatsResponse currConnections. */
   public currConnections: number | Long;
@@ -14401,19 +14119,11 @@ export class CGCMsgMemCachedStatsResponse
 
   /** CGCMsgMemCachedStatsResponse bytes. */
   public bytes: number | Long;
-
   /**
-   * Decodes a CGCMsgMemCachedStatsResponse message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CGCMsgMemCachedStatsResponse
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CGCMsgMemCachedStatsResponse.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CGCMsgMemCachedStatsResponse;
+  constructor(properties?: ICGCMsgMemCachedStatsResponse);
 }
 
 /** Properties of a CGCMsgSQLStats. */
@@ -14424,15 +14134,6 @@ export interface ICGCMsgSQLStats {
 
 /** Represents a CGCMsgSQLStats. */
 export class CGCMsgSQLStats implements ICGCMsgSQLStats {
-  /**
-   * Constructs a new CGCMsgSQLStats.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICGCMsgSQLStats);
-
-  /** CGCMsgSQLStats schemaCatalog. */
-  public schemaCatalog: number;
-
   /**
    * Decodes a CGCMsgSQLStats message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -14445,6 +14146,14 @@ export class CGCMsgSQLStats implements ICGCMsgSQLStats {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CGCMsgSQLStats;
+
+  /** CGCMsgSQLStats schemaCatalog. */
+  public schemaCatalog: number;
+  /**
+   * Constructs a new CGCMsgSQLStats.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICGCMsgSQLStats);
 }
 
 /** Properties of a CGCMsgSQLStatsResponse. */
@@ -14480,10 +14189,17 @@ export interface ICGCMsgSQLStatsResponse {
 /** Represents a CGCMsgSQLStatsResponse. */
 export class CGCMsgSQLStatsResponse implements ICGCMsgSQLStatsResponse {
   /**
-   * Constructs a new CGCMsgSQLStatsResponse.
-   * @param [properties] Properties to set
+   * Decodes a CGCMsgSQLStatsResponse message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CGCMsgSQLStatsResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICGCMsgSQLStatsResponse);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CGCMsgSQLStatsResponse;
 
   /** CGCMsgSQLStatsResponse threads. */
   public threads: number;
@@ -14511,19 +14227,11 @@ export class CGCMsgSQLStatsResponse implements ICGCMsgSQLStatsResponse {
 
   /** CGCMsgSQLStatsResponse errors. */
   public errors: number;
-
   /**
-   * Decodes a CGCMsgSQLStatsResponse message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CGCMsgSQLStatsResponse
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CGCMsgSQLStatsResponse.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CGCMsgSQLStatsResponse;
+  constructor(properties?: ICGCMsgSQLStatsResponse);
 }
 
 /** Properties of a CMsgAMAddFreeLicense. */
@@ -14544,10 +14252,17 @@ export interface ICMsgAMAddFreeLicense {
 /** Represents a CMsgAMAddFreeLicense. */
 export class CMsgAMAddFreeLicense implements ICMsgAMAddFreeLicense {
   /**
-   * Constructs a new CMsgAMAddFreeLicense.
-   * @param [properties] Properties to set
+   * Decodes a CMsgAMAddFreeLicense message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgAMAddFreeLicense
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgAMAddFreeLicense);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgAMAddFreeLicense;
 
   /** CMsgAMAddFreeLicense steamid. */
   public steamid: number | Long;
@@ -14560,19 +14275,11 @@ export class CMsgAMAddFreeLicense implements ICMsgAMAddFreeLicense {
 
   /** CMsgAMAddFreeLicense storeCountryCode. */
   public storeCountryCode: string;
-
   /**
-   * Decodes a CMsgAMAddFreeLicense message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgAMAddFreeLicense
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgAMAddFreeLicense.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgAMAddFreeLicense;
+  constructor(properties?: ICMsgAMAddFreeLicense);
 }
 
 /** Properties of a CMsgAMAddFreeLicenseResponse. */
@@ -14591,21 +14298,6 @@ export interface ICMsgAMAddFreeLicenseResponse {
 export class CMsgAMAddFreeLicenseResponse
   implements ICMsgAMAddFreeLicenseResponse {
   /**
-   * Constructs a new CMsgAMAddFreeLicenseResponse.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgAMAddFreeLicenseResponse);
-
-  /** CMsgAMAddFreeLicenseResponse eresult. */
-  public eresult: number;
-
-  /** CMsgAMAddFreeLicenseResponse purchaseResultDetail. */
-  public purchaseResultDetail: number;
-
-  /** CMsgAMAddFreeLicenseResponse transid. */
-  public transid: number | Long;
-
-  /**
    * Decodes a CMsgAMAddFreeLicenseResponse message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -14617,6 +14309,20 @@ export class CMsgAMAddFreeLicenseResponse
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgAMAddFreeLicenseResponse;
+
+  /** CMsgAMAddFreeLicenseResponse eresult. */
+  public eresult: number;
+
+  /** CMsgAMAddFreeLicenseResponse purchaseResultDetail. */
+  public purchaseResultDetail: number;
+
+  /** CMsgAMAddFreeLicenseResponse transid. */
+  public transid: number | Long;
+  /**
+   * Constructs a new CMsgAMAddFreeLicenseResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgAMAddFreeLicenseResponse);
 }
 
 /** Properties of a CGCMsgGetIPLocation. */
@@ -14627,15 +14333,6 @@ export interface ICGCMsgGetIPLocation {
 
 /** Represents a CGCMsgGetIPLocation. */
 export class CGCMsgGetIPLocation implements ICGCMsgGetIPLocation {
-  /**
-   * Constructs a new CGCMsgGetIPLocation.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICGCMsgGetIPLocation);
-
-  /** CGCMsgGetIPLocation ips. */
-  public ips: number[];
-
   /**
    * Decodes a CGCMsgGetIPLocation message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -14648,6 +14345,14 @@ export class CGCMsgGetIPLocation implements ICGCMsgGetIPLocation {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CGCMsgGetIPLocation;
+
+  /** CGCMsgGetIPLocation ips. */
+  public ips: number[];
+  /**
+   * Constructs a new CGCMsgGetIPLocation.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICGCMsgGetIPLocation);
 }
 
 /** Properties of a CIPLocationInfo. */
@@ -14674,10 +14379,17 @@ export interface ICIPLocationInfo {
 /** Represents a CIPLocationInfo. */
 export class CIPLocationInfo implements ICIPLocationInfo {
   /**
-   * Constructs a new CIPLocationInfo.
-   * @param [properties] Properties to set
+   * Decodes a CIPLocationInfo message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CIPLocationInfo
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICIPLocationInfo);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CIPLocationInfo;
 
   /** CIPLocationInfo ip. */
   public ip: number;
@@ -14696,19 +14408,11 @@ export class CIPLocationInfo implements ICIPLocationInfo {
 
   /** CIPLocationInfo city. */
   public city: string;
-
   /**
-   * Decodes a CIPLocationInfo message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CIPLocationInfo
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CIPLocationInfo.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CIPLocationInfo;
+  constructor(properties?: ICIPLocationInfo);
 }
 
 /** Properties of a CGCMsgGetIPLocationResponse. */
@@ -14721,15 +14425,6 @@ export interface ICGCMsgGetIPLocationResponse {
 export class CGCMsgGetIPLocationResponse
   implements ICGCMsgGetIPLocationResponse {
   /**
-   * Constructs a new CGCMsgGetIPLocationResponse.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICGCMsgGetIPLocationResponse);
-
-  /** CGCMsgGetIPLocationResponse infos. */
-  public infos: ICIPLocationInfo[];
-
-  /**
    * Decodes a CGCMsgGetIPLocationResponse message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -14741,6 +14436,14 @@ export class CGCMsgGetIPLocationResponse
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CGCMsgGetIPLocationResponse;
+
+  /** CGCMsgGetIPLocationResponse infos. */
+  public infos: ICIPLocationInfo[];
+  /**
+   * Constructs a new CGCMsgGetIPLocationResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICGCMsgGetIPLocationResponse);
 }
 
 /** Properties of a CGCMsgSystemStatsSchema. */
@@ -14755,18 +14458,6 @@ export interface ICGCMsgSystemStatsSchema {
 /** Represents a CGCMsgSystemStatsSchema. */
 export class CGCMsgSystemStatsSchema implements ICGCMsgSystemStatsSchema {
   /**
-   * Constructs a new CGCMsgSystemStatsSchema.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICGCMsgSystemStatsSchema);
-
-  /** CGCMsgSystemStatsSchema gcAppId. */
-  public gcAppId: number;
-
-  /** CGCMsgSystemStatsSchema schemaKv. */
-  public schemaKv: Uint8Array;
-
-  /**
    * Decodes a CGCMsgSystemStatsSchema message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -14778,6 +14469,17 @@ export class CGCMsgSystemStatsSchema implements ICGCMsgSystemStatsSchema {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CGCMsgSystemStatsSchema;
+
+  /** CGCMsgSystemStatsSchema gcAppId. */
+  public gcAppId: number;
+
+  /** CGCMsgSystemStatsSchema schemaKv. */
+  public schemaKv: Uint8Array;
+  /**
+   * Constructs a new CGCMsgSystemStatsSchema.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICGCMsgSystemStatsSchema);
 }
 
 /** Properties of a CGCMsgGetSystemStats. */
@@ -14785,12 +14487,6 @@ export interface ICGCMsgGetSystemStats {}
 
 /** Represents a CGCMsgGetSystemStats. */
 export class CGCMsgGetSystemStats implements ICGCMsgGetSystemStats {
-  /**
-   * Constructs a new CGCMsgGetSystemStats.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICGCMsgGetSystemStats);
-
   /**
    * Decodes a CGCMsgGetSystemStats message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -14803,6 +14499,11 @@ export class CGCMsgGetSystemStats implements ICGCMsgGetSystemStats {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CGCMsgGetSystemStats;
+  /**
+   * Constructs a new CGCMsgGetSystemStats.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICGCMsgGetSystemStats);
 }
 
 /** Properties of a CGCMsgGetSystemStatsResponse. */
@@ -14851,10 +14552,17 @@ export interface ICGCMsgGetSystemStatsResponse {
 export class CGCMsgGetSystemStatsResponse
   implements ICGCMsgGetSystemStatsResponse {
   /**
-   * Constructs a new CGCMsgGetSystemStatsResponse.
-   * @param [properties] Properties to set
+   * Decodes a CGCMsgGetSystemStatsResponse message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CGCMsgGetSystemStatsResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICGCMsgGetSystemStatsResponse);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CGCMsgGetSystemStatsResponse;
 
   /** CGCMsgGetSystemStatsResponse gcAppId. */
   public gcAppId: number;
@@ -14894,19 +14602,11 @@ export class CGCMsgGetSystemStatsResponse
 
   /** CGCMsgGetSystemStatsResponse logonJobs. */
   public logonJobs: number;
-
   /**
-   * Decodes a CGCMsgGetSystemStatsResponse message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CGCMsgGetSystemStatsResponse
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CGCMsgGetSystemStatsResponse.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CGCMsgGetSystemStatsResponse;
+  constructor(properties?: ICGCMsgGetSystemStatsResponse);
 }
 
 /** Properties of a CMsgAMSendEmail. */
@@ -14933,10 +14633,17 @@ export interface ICMsgAMSendEmail {
 /** Represents a CMsgAMSendEmail. */
 export class CMsgAMSendEmail implements ICMsgAMSendEmail {
   /**
-   * Constructs a new CMsgAMSendEmail.
-   * @param [properties] Properties to set
+   * Decodes a CMsgAMSendEmail message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgAMSendEmail
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgAMSendEmail);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgAMSendEmail;
 
   /** CMsgAMSendEmail steamid. */
   public steamid: number | Long;
@@ -14955,19 +14662,11 @@ export class CMsgAMSendEmail implements ICMsgAMSendEmail {
 
   /** CMsgAMSendEmail tokens. */
   public tokens: CMsgAMSendEmail.IReplacementToken[];
-
   /**
-   * Decodes a CMsgAMSendEmail message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgAMSendEmail
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgAMSendEmail.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgAMSendEmail;
+  constructor(properties?: ICMsgAMSendEmail);
 }
 
 export namespace CMsgAMSendEmail {
@@ -14983,18 +14682,6 @@ export namespace CMsgAMSendEmail {
   /** Represents a ReplacementToken. */
   class ReplacementToken implements IReplacementToken {
     /**
-     * Constructs a new ReplacementToken.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsgAMSendEmail.IReplacementToken);
-
-    /** ReplacementToken tokenName. */
-    public tokenName: string;
-
-    /** ReplacementToken tokenValue. */
-    public tokenValue: string;
-
-    /**
      * Decodes a ReplacementToken message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -15006,6 +14693,17 @@ export namespace CMsgAMSendEmail {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgAMSendEmail.ReplacementToken;
+
+    /** ReplacementToken tokenName. */
+    public tokenName: string;
+
+    /** ReplacementToken tokenValue. */
+    public tokenValue: string;
+    /**
+     * Constructs a new ReplacementToken.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsgAMSendEmail.IReplacementToken);
   }
 
   /** Properties of a PersonaNameReplacementToken. */
@@ -15020,18 +14718,6 @@ export namespace CMsgAMSendEmail {
   /** Represents a PersonaNameReplacementToken. */
   class PersonaNameReplacementToken implements IPersonaNameReplacementToken {
     /**
-     * Constructs a new PersonaNameReplacementToken.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsgAMSendEmail.IPersonaNameReplacementToken);
-
-    /** PersonaNameReplacementToken steamid. */
-    public steamid: number | Long;
-
-    /** PersonaNameReplacementToken tokenName. */
-    public tokenName: string;
-
-    /**
      * Decodes a PersonaNameReplacementToken message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -15043,6 +14729,17 @@ export namespace CMsgAMSendEmail {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgAMSendEmail.PersonaNameReplacementToken;
+
+    /** PersonaNameReplacementToken steamid. */
+    public steamid: number | Long;
+
+    /** PersonaNameReplacementToken tokenName. */
+    public tokenName: string;
+    /**
+     * Constructs a new PersonaNameReplacementToken.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsgAMSendEmail.IPersonaNameReplacementToken);
   }
 }
 
@@ -15055,15 +14752,6 @@ export interface ICMsgAMSendEmailResponse {
 /** Represents a CMsgAMSendEmailResponse. */
 export class CMsgAMSendEmailResponse implements ICMsgAMSendEmailResponse {
   /**
-   * Constructs a new CMsgAMSendEmailResponse.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgAMSendEmailResponse);
-
-  /** CMsgAMSendEmailResponse eresult. */
-  public eresult: number;
-
-  /**
    * Decodes a CMsgAMSendEmailResponse message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -15075,6 +14763,14 @@ export class CMsgAMSendEmailResponse implements ICMsgAMSendEmailResponse {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgAMSendEmailResponse;
+
+  /** CMsgAMSendEmailResponse eresult. */
+  public eresult: number;
+  /**
+   * Constructs a new CMsgAMSendEmailResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgAMSendEmailResponse);
 }
 
 /** Properties of a CMsgGCGetEmailTemplate. */
@@ -15095,10 +14791,17 @@ export interface ICMsgGCGetEmailTemplate {
 /** Represents a CMsgGCGetEmailTemplate. */
 export class CMsgGCGetEmailTemplate implements ICMsgGCGetEmailTemplate {
   /**
-   * Constructs a new CMsgGCGetEmailTemplate.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCGetEmailTemplate message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCGetEmailTemplate
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCGetEmailTemplate);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCGetEmailTemplate;
 
   /** CMsgGCGetEmailTemplate appId. */
   public appId: number;
@@ -15111,19 +14814,11 @@ export class CMsgGCGetEmailTemplate implements ICMsgGCGetEmailTemplate {
 
   /** CMsgGCGetEmailTemplate emailFormat. */
   public emailFormat: number;
-
   /**
-   * Decodes a CMsgGCGetEmailTemplate message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCGetEmailTemplate
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCGetEmailTemplate.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCGetEmailTemplate;
+  constructor(properties?: ICMsgGCGetEmailTemplate);
 }
 
 /** Properties of a CMsgGCGetEmailTemplateResponse. */
@@ -15142,21 +14837,6 @@ export interface ICMsgGCGetEmailTemplateResponse {
 export class CMsgGCGetEmailTemplateResponse
   implements ICMsgGCGetEmailTemplateResponse {
   /**
-   * Constructs a new CMsgGCGetEmailTemplateResponse.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCGetEmailTemplateResponse);
-
-  /** CMsgGCGetEmailTemplateResponse eresult. */
-  public eresult: number;
-
-  /** CMsgGCGetEmailTemplateResponse templateExists. */
-  public templateExists: boolean;
-
-  /** CMsgGCGetEmailTemplateResponse template. */
-  public template: string;
-
-  /**
    * Decodes a CMsgGCGetEmailTemplateResponse message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -15168,6 +14848,20 @@ export class CMsgGCGetEmailTemplateResponse
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCGetEmailTemplateResponse;
+
+  /** CMsgGCGetEmailTemplateResponse eresult. */
+  public eresult: number;
+
+  /** CMsgGCGetEmailTemplateResponse templateExists. */
+  public templateExists: boolean;
+
+  /** CMsgGCGetEmailTemplateResponse template. */
+  public template: string;
+  /**
+   * Constructs a new CMsgGCGetEmailTemplateResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCGetEmailTemplateResponse);
 }
 
 /** Properties of a CMsgAMGrantGuestPasses2. */
@@ -15191,10 +14885,17 @@ export interface ICMsgAMGrantGuestPasses2 {
 /** Represents a CMsgAMGrantGuestPasses2. */
 export class CMsgAMGrantGuestPasses2 implements ICMsgAMGrantGuestPasses2 {
   /**
-   * Constructs a new CMsgAMGrantGuestPasses2.
-   * @param [properties] Properties to set
+   * Decodes a CMsgAMGrantGuestPasses2 message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgAMGrantGuestPasses2
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgAMGrantGuestPasses2);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgAMGrantGuestPasses2;
 
   /** CMsgAMGrantGuestPasses2 steamId. */
   public steamId: number | Long;
@@ -15210,19 +14911,11 @@ export class CMsgAMGrantGuestPasses2 implements ICMsgAMGrantGuestPasses2 {
 
   /** CMsgAMGrantGuestPasses2 action. */
   public action: number;
-
   /**
-   * Decodes a CMsgAMGrantGuestPasses2 message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgAMGrantGuestPasses2
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgAMGrantGuestPasses2.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgAMGrantGuestPasses2;
+  constructor(properties?: ICMsgAMGrantGuestPasses2);
 }
 
 /** Properties of a CMsgAMGrantGuestPasses2Response. */
@@ -15238,18 +14931,6 @@ export interface ICMsgAMGrantGuestPasses2Response {
 export class CMsgAMGrantGuestPasses2Response
   implements ICMsgAMGrantGuestPasses2Response {
   /**
-   * Constructs a new CMsgAMGrantGuestPasses2Response.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgAMGrantGuestPasses2Response);
-
-  /** CMsgAMGrantGuestPasses2Response eresult. */
-  public eresult: number;
-
-  /** CMsgAMGrantGuestPasses2Response passesGranted. */
-  public passesGranted: number;
-
-  /**
    * Decodes a CMsgAMGrantGuestPasses2Response message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -15261,6 +14942,17 @@ export class CMsgAMGrantGuestPasses2Response
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgAMGrantGuestPasses2Response;
+
+  /** CMsgAMGrantGuestPasses2Response eresult. */
+  public eresult: number;
+
+  /** CMsgAMGrantGuestPasses2Response passesGranted. */
+  public passesGranted: number;
+  /**
+   * Constructs a new CMsgAMGrantGuestPasses2Response.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgAMGrantGuestPasses2Response);
 }
 
 /** Properties of a CGCSystemMsg_GetAccountDetails. */
@@ -15276,18 +14968,6 @@ export interface ICGCSystemMsg_GetAccountDetails {
 export class CGCSystemMsg_GetAccountDetails
   implements ICGCSystemMsg_GetAccountDetails {
   /**
-   * Constructs a new CGCSystemMsg_GetAccountDetails.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICGCSystemMsg_GetAccountDetails);
-
-  /** CGCSystemMsg_GetAccountDetails steamid. */
-  public steamid: number | Long;
-
-  /** CGCSystemMsg_GetAccountDetails appid. */
-  public appid: number;
-
-  /**
    * Decodes a CGCSystemMsg_GetAccountDetails message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -15299,6 +14979,17 @@ export class CGCSystemMsg_GetAccountDetails
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CGCSystemMsg_GetAccountDetails;
+
+  /** CGCSystemMsg_GetAccountDetails steamid. */
+  public steamid: number | Long;
+
+  /** CGCSystemMsg_GetAccountDetails appid. */
+  public appid: number;
+  /**
+   * Constructs a new CGCSystemMsg_GetAccountDetails.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICGCSystemMsg_GetAccountDetails);
 }
 
 /** Properties of a CGCSystemMsg_GetAccountDetails_Response. */
@@ -15374,10 +15065,17 @@ export interface ICGCSystemMsg_GetAccountDetails_Response {
 export class CGCSystemMsg_GetAccountDetails_Response
   implements ICGCSystemMsg_GetAccountDetails_Response {
   /**
-   * Constructs a new CGCSystemMsg_GetAccountDetails_Response.
-   * @param [properties] Properties to set
+   * Decodes a CGCSystemMsg_GetAccountDetails_Response message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CGCSystemMsg_GetAccountDetails_Response
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICGCSystemMsg_GetAccountDetails_Response);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CGCSystemMsg_GetAccountDetails_Response;
 
   /** CGCSystemMsg_GetAccountDetails_Response eresultDeprecated. */
   public eresultDeprecated: number;
@@ -15444,38 +15142,21 @@ export class CGCSystemMsg_GetAccountDetails_Response
 
   /** CGCSystemMsg_GetAccountDetails_Response steamLevel. */
   public steamLevel: number;
-
   /**
-   * Decodes a CGCSystemMsg_GetAccountDetails_Response message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CGCSystemMsg_GetAccountDetails_Response
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CGCSystemMsg_GetAccountDetails_Response.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CGCSystemMsg_GetAccountDetails_Response;
+  constructor(properties?: ICGCSystemMsg_GetAccountDetails_Response);
 }
 
 /** Properties of a CMsgGCGetPersonaNames. */
 export interface ICMsgGCGetPersonaNames {
   /** CMsgGCGetPersonaNames steamids */
-  steamids?: (number | Long)[] | null;
+  steamids?: Array<number | Long> | null;
 }
 
 /** Represents a CMsgGCGetPersonaNames. */
 export class CMsgGCGetPersonaNames implements ICMsgGCGetPersonaNames {
-  /**
-   * Constructs a new CMsgGCGetPersonaNames.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCGetPersonaNames);
-
-  /** CMsgGCGetPersonaNames steamids. */
-  public steamids: (number | Long)[];
-
   /**
    * Decodes a CMsgGCGetPersonaNames message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -15488,6 +15169,14 @@ export class CMsgGCGetPersonaNames implements ICMsgGCGetPersonaNames {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCGetPersonaNames;
+
+  /** CMsgGCGetPersonaNames steamids. */
+  public steamids: Array<number | Long>;
+  /**
+   * Constructs a new CMsgGCGetPersonaNames.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCGetPersonaNames);
 }
 
 /** Properties of a CMsgGCGetPersonaNames_Response. */
@@ -15496,24 +15185,12 @@ export interface ICMsgGCGetPersonaNames_Response {
   succeededLookups?: CMsgGCGetPersonaNames_Response.IPersonaName[] | null;
 
   /** CMsgGCGetPersonaNames_Response failedLookupSteamids */
-  failedLookupSteamids?: (number | Long)[] | null;
+  failedLookupSteamids?: Array<number | Long> | null;
 }
 
 /** Represents a CMsgGCGetPersonaNames_Response. */
 export class CMsgGCGetPersonaNames_Response
   implements ICMsgGCGetPersonaNames_Response {
-  /**
-   * Constructs a new CMsgGCGetPersonaNames_Response.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCGetPersonaNames_Response);
-
-  /** CMsgGCGetPersonaNames_Response succeededLookups. */
-  public succeededLookups: CMsgGCGetPersonaNames_Response.IPersonaName[];
-
-  /** CMsgGCGetPersonaNames_Response failedLookupSteamids. */
-  public failedLookupSteamids: (number | Long)[];
-
   /**
    * Decodes a CMsgGCGetPersonaNames_Response message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
@@ -15526,6 +15203,17 @@ export class CMsgGCGetPersonaNames_Response
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCGetPersonaNames_Response;
+
+  /** CMsgGCGetPersonaNames_Response succeededLookups. */
+  public succeededLookups: CMsgGCGetPersonaNames_Response.IPersonaName[];
+
+  /** CMsgGCGetPersonaNames_Response failedLookupSteamids. */
+  public failedLookupSteamids: Array<number | Long>;
+  /**
+   * Constructs a new CMsgGCGetPersonaNames_Response.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCGetPersonaNames_Response);
 }
 
 export namespace CMsgGCGetPersonaNames_Response {
@@ -15541,18 +15229,6 @@ export namespace CMsgGCGetPersonaNames_Response {
   /** Represents a PersonaName. */
   class PersonaName implements IPersonaName {
     /**
-     * Constructs a new PersonaName.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsgGCGetPersonaNames_Response.IPersonaName);
-
-    /** PersonaName steamid. */
-    public steamid: number | Long;
-
-    /** PersonaName personaName. */
-    public personaName: string;
-
-    /**
      * Decodes a PersonaName message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -15564,6 +15240,17 @@ export namespace CMsgGCGetPersonaNames_Response {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgGCGetPersonaNames_Response.PersonaName;
+
+    /** PersonaName steamid. */
+    public steamid: number | Long;
+
+    /** PersonaName personaName. */
+    public personaName: string;
+    /**
+     * Constructs a new PersonaName.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsgGCGetPersonaNames_Response.IPersonaName);
   }
 }
 
@@ -15579,18 +15266,6 @@ export interface ICMsgGCCheckFriendship {
 /** Represents a CMsgGCCheckFriendship. */
 export class CMsgGCCheckFriendship implements ICMsgGCCheckFriendship {
   /**
-   * Constructs a new CMsgGCCheckFriendship.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCheckFriendship);
-
-  /** CMsgGCCheckFriendship steamidLeft. */
-  public steamidLeft: number | Long;
-
-  /** CMsgGCCheckFriendship steamidRight. */
-  public steamidRight: number | Long;
-
-  /**
    * Decodes a CMsgGCCheckFriendship message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -15602,6 +15277,17 @@ export class CMsgGCCheckFriendship implements ICMsgGCCheckFriendship {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCheckFriendship;
+
+  /** CMsgGCCheckFriendship steamidLeft. */
+  public steamidLeft: number | Long;
+
+  /** CMsgGCCheckFriendship steamidRight. */
+  public steamidRight: number | Long;
+  /**
+   * Constructs a new CMsgGCCheckFriendship.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCheckFriendship);
 }
 
 /** Properties of a CMsgGCCheckFriendship_Response. */
@@ -15617,18 +15303,6 @@ export interface ICMsgGCCheckFriendship_Response {
 export class CMsgGCCheckFriendship_Response
   implements ICMsgGCCheckFriendship_Response {
   /**
-   * Constructs a new CMsgGCCheckFriendship_Response.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCCheckFriendship_Response);
-
-  /** CMsgGCCheckFriendship_Response success. */
-  public success: boolean;
-
-  /** CMsgGCCheckFriendship_Response foundFriendship. */
-  public foundFriendship: boolean;
-
-  /**
    * Decodes a CMsgGCCheckFriendship_Response message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -15640,6 +15314,17 @@ export class CMsgGCCheckFriendship_Response
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCCheckFriendship_Response;
+
+  /** CMsgGCCheckFriendship_Response success. */
+  public success: boolean;
+
+  /** CMsgGCCheckFriendship_Response foundFriendship. */
+  public foundFriendship: boolean;
+  /**
+   * Constructs a new CMsgGCCheckFriendship_Response.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCCheckFriendship_Response);
 }
 
 /** Properties of a CMsgGCMsgMasterSetDirectory. */
@@ -15655,18 +15340,6 @@ export interface ICMsgGCMsgMasterSetDirectory {
 export class CMsgGCMsgMasterSetDirectory
   implements ICMsgGCMsgMasterSetDirectory {
   /**
-   * Constructs a new CMsgGCMsgMasterSetDirectory.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCMsgMasterSetDirectory);
-
-  /** CMsgGCMsgMasterSetDirectory masterDirIndex. */
-  public masterDirIndex: number;
-
-  /** CMsgGCMsgMasterSetDirectory dir. */
-  public dir: CMsgGCMsgMasterSetDirectory.ISubGC[];
-
-  /**
    * Decodes a CMsgGCMsgMasterSetDirectory message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -15678,6 +15351,17 @@ export class CMsgGCMsgMasterSetDirectory
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetDirectory;
+
+  /** CMsgGCMsgMasterSetDirectory masterDirIndex. */
+  public masterDirIndex: number;
+
+  /** CMsgGCMsgMasterSetDirectory dir. */
+  public dir: CMsgGCMsgMasterSetDirectory.ISubGC[];
+  /**
+   * Constructs a new CMsgGCMsgMasterSetDirectory.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCMsgMasterSetDirectory);
 }
 
 export namespace CMsgGCMsgMasterSetDirectory {
@@ -15702,10 +15386,17 @@ export namespace CMsgGCMsgMasterSetDirectory {
   /** Represents a SubGC. */
   class SubGC implements ISubGC {
     /**
-     * Constructs a new SubGC.
-     * @param [properties] Properties to set
+     * Decodes a SubGC message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns SubGC
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    constructor(properties?: CMsgGCMsgMasterSetDirectory.ISubGC);
+    public static decode(
+      reader: $protobuf.Reader | Uint8Array,
+      length?: number
+    ): CMsgGCMsgMasterSetDirectory.SubGC;
 
     /** SubGC dirIndex. */
     public dirIndex: number;
@@ -15721,19 +15412,11 @@ export namespace CMsgGCMsgMasterSetDirectory {
 
     /** SubGC gcBinary. */
     public gcBinary: string;
-
     /**
-     * Decodes a SubGC message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns SubGC
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     * Constructs a new SubGC.
+     * @param [properties] Properties to set
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): CMsgGCMsgMasterSetDirectory.SubGC;
+    constructor(properties?: CMsgGCMsgMasterSetDirectory.ISubGC);
   }
 }
 
@@ -15747,15 +15430,6 @@ export interface ICMsgGCMsgMasterSetDirectory_Response {
 export class CMsgGCMsgMasterSetDirectory_Response
   implements ICMsgGCMsgMasterSetDirectory_Response {
   /**
-   * Constructs a new CMsgGCMsgMasterSetDirectory_Response.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCMsgMasterSetDirectory_Response);
-
-  /** CMsgGCMsgMasterSetDirectory_Response eresult. */
-  public eresult: number;
-
-  /**
    * Decodes a CMsgGCMsgMasterSetDirectory_Response message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -15767,6 +15441,14 @@ export class CMsgGCMsgMasterSetDirectory_Response
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetDirectory_Response;
+
+  /** CMsgGCMsgMasterSetDirectory_Response eresult. */
+  public eresult: number;
+  /**
+   * Constructs a new CMsgGCMsgMasterSetDirectory_Response.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCMsgMasterSetDirectory_Response);
 }
 
 /** Properties of a CMsgGCMsgWebAPIJobRequestForwardResponse. */
@@ -15779,15 +15461,6 @@ export interface ICMsgGCMsgWebAPIJobRequestForwardResponse {
 export class CMsgGCMsgWebAPIJobRequestForwardResponse
   implements ICMsgGCMsgWebAPIJobRequestForwardResponse {
   /**
-   * Constructs a new CMsgGCMsgWebAPIJobRequestForwardResponse.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCMsgWebAPIJobRequestForwardResponse);
-
-  /** CMsgGCMsgWebAPIJobRequestForwardResponse dirIndex. */
-  public dirIndex: number;
-
-  /**
    * Decodes a CMsgGCMsgWebAPIJobRequestForwardResponse message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -15799,6 +15472,14 @@ export class CMsgGCMsgWebAPIJobRequestForwardResponse
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgWebAPIJobRequestForwardResponse;
+
+  /** CMsgGCMsgWebAPIJobRequestForwardResponse dirIndex. */
+  public dirIndex: number;
+  /**
+   * Constructs a new CMsgGCMsgWebAPIJobRequestForwardResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCMsgWebAPIJobRequestForwardResponse);
 }
 
 /** Properties of a CGCSystemMsg_GetPurchaseTrust_Request. */
@@ -15811,15 +15492,6 @@ export interface ICGCSystemMsg_GetPurchaseTrust_Request {
 export class CGCSystemMsg_GetPurchaseTrust_Request
   implements ICGCSystemMsg_GetPurchaseTrust_Request {
   /**
-   * Constructs a new CGCSystemMsg_GetPurchaseTrust_Request.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICGCSystemMsg_GetPurchaseTrust_Request);
-
-  /** CGCSystemMsg_GetPurchaseTrust_Request steamid. */
-  public steamid: number | Long;
-
-  /**
    * Decodes a CGCSystemMsg_GetPurchaseTrust_Request message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -15831,6 +15503,14 @@ export class CGCSystemMsg_GetPurchaseTrust_Request
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CGCSystemMsg_GetPurchaseTrust_Request;
+
+  /** CGCSystemMsg_GetPurchaseTrust_Request steamid. */
+  public steamid: number | Long;
+  /**
+   * Constructs a new CGCSystemMsg_GetPurchaseTrust_Request.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICGCSystemMsg_GetPurchaseTrust_Request);
 }
 
 /** Properties of a CGCSystemMsg_GetPurchaseTrust_Response. */
@@ -15852,10 +15532,17 @@ export interface ICGCSystemMsg_GetPurchaseTrust_Response {
 export class CGCSystemMsg_GetPurchaseTrust_Response
   implements ICGCSystemMsg_GetPurchaseTrust_Response {
   /**
-   * Constructs a new CGCSystemMsg_GetPurchaseTrust_Response.
-   * @param [properties] Properties to set
+   * Decodes a CGCSystemMsg_GetPurchaseTrust_Response message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CGCSystemMsg_GetPurchaseTrust_Response
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICGCSystemMsg_GetPurchaseTrust_Response);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CGCSystemMsg_GetPurchaseTrust_Response;
 
   /** CGCSystemMsg_GetPurchaseTrust_Response hasPriorPurchaseHistory. */
   public hasPriorPurchaseHistory: boolean;
@@ -15868,19 +15555,11 @@ export class CGCSystemMsg_GetPurchaseTrust_Response
 
   /** CGCSystemMsg_GetPurchaseTrust_Response timeAllTrusted. */
   public timeAllTrusted: number;
-
   /**
-   * Decodes a CGCSystemMsg_GetPurchaseTrust_Response message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CGCSystemMsg_GetPurchaseTrust_Response
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CGCSystemMsg_GetPurchaseTrust_Response.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CGCSystemMsg_GetPurchaseTrust_Response;
+  constructor(properties?: ICGCSystemMsg_GetPurchaseTrust_Response);
 }
 
 /** Properties of a CMsgGCHAccountVacStatusChange. */
@@ -15905,10 +15584,17 @@ export interface ICMsgGCHAccountVacStatusChange {
 export class CMsgGCHAccountVacStatusChange
   implements ICMsgGCHAccountVacStatusChange {
   /**
-   * Constructs a new CMsgGCHAccountVacStatusChange.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCHAccountVacStatusChange message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCHAccountVacStatusChange
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCHAccountVacStatusChange);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCHAccountVacStatusChange;
 
   /** CMsgGCHAccountVacStatusChange steamId. */
   public steamId: number | Long;
@@ -15924,19 +15610,11 @@ export class CMsgGCHAccountVacStatusChange
 
   /** CMsgGCHAccountVacStatusChange isBannedFuture. */
   public isBannedFuture: boolean;
-
   /**
-   * Decodes a CMsgGCHAccountVacStatusChange message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCHAccountVacStatusChange
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCHAccountVacStatusChange.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCHAccountVacStatusChange;
+  constructor(properties?: ICMsgGCHAccountVacStatusChange);
 }
 
 /** Properties of a CMsgGCGetPartnerAccountLink. */
@@ -15949,15 +15627,6 @@ export interface ICMsgGCGetPartnerAccountLink {
 export class CMsgGCGetPartnerAccountLink
   implements ICMsgGCGetPartnerAccountLink {
   /**
-   * Constructs a new CMsgGCGetPartnerAccountLink.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCGetPartnerAccountLink);
-
-  /** CMsgGCGetPartnerAccountLink steamid. */
-  public steamid: number | Long;
-
-  /**
    * Decodes a CMsgGCGetPartnerAccountLink message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -15969,6 +15638,14 @@ export class CMsgGCGetPartnerAccountLink
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCGetPartnerAccountLink;
+
+  /** CMsgGCGetPartnerAccountLink steamid. */
+  public steamid: number | Long;
+  /**
+   * Constructs a new CMsgGCGetPartnerAccountLink.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCGetPartnerAccountLink);
 }
 
 /** Properties of a CMsgGCGetPartnerAccountLink_Response. */
@@ -15984,18 +15661,6 @@ export interface ICMsgGCGetPartnerAccountLink_Response {
 export class CMsgGCGetPartnerAccountLink_Response
   implements ICMsgGCGetPartnerAccountLink_Response {
   /**
-   * Constructs a new CMsgGCGetPartnerAccountLink_Response.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCGetPartnerAccountLink_Response);
-
-  /** CMsgGCGetPartnerAccountLink_Response pwid. */
-  public pwid: number;
-
-  /** CMsgGCGetPartnerAccountLink_Response nexonid. */
-  public nexonid: number;
-
-  /**
    * Decodes a CMsgGCGetPartnerAccountLink_Response message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -16007,6 +15672,17 @@ export class CMsgGCGetPartnerAccountLink_Response
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCGetPartnerAccountLink_Response;
+
+  /** CMsgGCGetPartnerAccountLink_Response pwid. */
+  public pwid: number;
+
+  /** CMsgGCGetPartnerAccountLink_Response nexonid. */
+  public nexonid: number;
+  /**
+   * Constructs a new CMsgGCGetPartnerAccountLink_Response.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCGetPartnerAccountLink_Response);
 }
 
 /** Properties of a CMsgGCRoutingInfo. */
@@ -16030,10 +15706,17 @@ export interface ICMsgGCRoutingInfo {
 /** Represents a CMsgGCRoutingInfo. */
 export class CMsgGCRoutingInfo implements ICMsgGCRoutingInfo {
   /**
-   * Constructs a new CMsgGCRoutingInfo.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCRoutingInfo message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCRoutingInfo
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCRoutingInfo);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCRoutingInfo;
 
   /** CMsgGCRoutingInfo dirIndex. */
   public dirIndex: number[];
@@ -16049,19 +15732,11 @@ export class CMsgGCRoutingInfo implements ICMsgGCRoutingInfo {
 
   /** CMsgGCRoutingInfo webapiParam. */
   public webapiParam: string;
-
   /**
-   * Decodes a CMsgGCRoutingInfo message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCRoutingInfo
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCRoutingInfo.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCRoutingInfo;
+  constructor(properties?: ICMsgGCRoutingInfo);
 }
 
 export namespace CMsgGCRoutingInfo {
@@ -16085,15 +15760,6 @@ export interface ICMsgGCMsgMasterSetWebAPIRouting {
 export class CMsgGCMsgMasterSetWebAPIRouting
   implements ICMsgGCMsgMasterSetWebAPIRouting {
   /**
-   * Constructs a new CMsgGCMsgMasterSetWebAPIRouting.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCMsgMasterSetWebAPIRouting);
-
-  /** CMsgGCMsgMasterSetWebAPIRouting entries. */
-  public entries: CMsgGCMsgMasterSetWebAPIRouting.IEntry[];
-
-  /**
    * Decodes a CMsgGCMsgMasterSetWebAPIRouting message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -16105,6 +15771,14 @@ export class CMsgGCMsgMasterSetWebAPIRouting
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetWebAPIRouting;
+
+  /** CMsgGCMsgMasterSetWebAPIRouting entries. */
+  public entries: CMsgGCMsgMasterSetWebAPIRouting.IEntry[];
+  /**
+   * Constructs a new CMsgGCMsgMasterSetWebAPIRouting.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCMsgMasterSetWebAPIRouting);
 }
 
 export namespace CMsgGCMsgMasterSetWebAPIRouting {
@@ -16123,21 +15797,6 @@ export namespace CMsgGCMsgMasterSetWebAPIRouting {
   /** Represents an Entry. */
   class Entry implements IEntry {
     /**
-     * Constructs a new Entry.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsgGCMsgMasterSetWebAPIRouting.IEntry);
-
-    /** Entry interfaceName. */
-    public interfaceName: string;
-
-    /** Entry methodName. */
-    public methodName: string;
-
-    /** Entry routing. */
-    public routing?: ICMsgGCRoutingInfo | null;
-
-    /**
      * Decodes an Entry message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -16149,6 +15808,20 @@ export namespace CMsgGCMsgMasterSetWebAPIRouting {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgGCMsgMasterSetWebAPIRouting.Entry;
+
+    /** Entry interfaceName. */
+    public interfaceName: string;
+
+    /** Entry methodName. */
+    public methodName: string;
+
+    /** Entry routing. */
+    public routing?: ICMsgGCRoutingInfo | null;
+    /**
+     * Constructs a new Entry.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsgGCMsgMasterSetWebAPIRouting.IEntry);
   }
 }
 
@@ -16162,15 +15835,6 @@ export interface ICMsgGCMsgMasterSetClientMsgRouting {
 export class CMsgGCMsgMasterSetClientMsgRouting
   implements ICMsgGCMsgMasterSetClientMsgRouting {
   /**
-   * Constructs a new CMsgGCMsgMasterSetClientMsgRouting.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCMsgMasterSetClientMsgRouting);
-
-  /** CMsgGCMsgMasterSetClientMsgRouting entries. */
-  public entries: CMsgGCMsgMasterSetClientMsgRouting.IEntry[];
-
-  /**
    * Decodes a CMsgGCMsgMasterSetClientMsgRouting message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -16182,6 +15846,14 @@ export class CMsgGCMsgMasterSetClientMsgRouting
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetClientMsgRouting;
+
+  /** CMsgGCMsgMasterSetClientMsgRouting entries. */
+  public entries: CMsgGCMsgMasterSetClientMsgRouting.IEntry[];
+  /**
+   * Constructs a new CMsgGCMsgMasterSetClientMsgRouting.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCMsgMasterSetClientMsgRouting);
 }
 
 export namespace CMsgGCMsgMasterSetClientMsgRouting {
@@ -16197,18 +15869,6 @@ export namespace CMsgGCMsgMasterSetClientMsgRouting {
   /** Represents an Entry. */
   class Entry implements IEntry {
     /**
-     * Constructs a new Entry.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsgGCMsgMasterSetClientMsgRouting.IEntry);
-
-    /** Entry msgType. */
-    public msgType: number;
-
-    /** Entry routing. */
-    public routing?: ICMsgGCRoutingInfo | null;
-
-    /**
      * Decodes an Entry message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -16220,6 +15880,17 @@ export namespace CMsgGCMsgMasterSetClientMsgRouting {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgGCMsgMasterSetClientMsgRouting.Entry;
+
+    /** Entry msgType. */
+    public msgType: number;
+
+    /** Entry routing. */
+    public routing?: ICMsgGCRoutingInfo | null;
+    /**
+     * Constructs a new Entry.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsgGCMsgMasterSetClientMsgRouting.IEntry);
   }
 }
 
@@ -16233,15 +15904,6 @@ export interface ICMsgGCMsgMasterSetWebAPIRouting_Response {
 export class CMsgGCMsgMasterSetWebAPIRouting_Response
   implements ICMsgGCMsgMasterSetWebAPIRouting_Response {
   /**
-   * Constructs a new CMsgGCMsgMasterSetWebAPIRouting_Response.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCMsgMasterSetWebAPIRouting_Response);
-
-  /** CMsgGCMsgMasterSetWebAPIRouting_Response eresult. */
-  public eresult: number;
-
-  /**
    * Decodes a CMsgGCMsgMasterSetWebAPIRouting_Response message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -16253,6 +15915,14 @@ export class CMsgGCMsgMasterSetWebAPIRouting_Response
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetWebAPIRouting_Response;
+
+  /** CMsgGCMsgMasterSetWebAPIRouting_Response eresult. */
+  public eresult: number;
+  /**
+   * Constructs a new CMsgGCMsgMasterSetWebAPIRouting_Response.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCMsgMasterSetWebAPIRouting_Response);
 }
 
 /** Properties of a CMsgGCMsgMasterSetClientMsgRouting_Response. */
@@ -16265,15 +15935,6 @@ export interface ICMsgGCMsgMasterSetClientMsgRouting_Response {
 export class CMsgGCMsgMasterSetClientMsgRouting_Response
   implements ICMsgGCMsgMasterSetClientMsgRouting_Response {
   /**
-   * Constructs a new CMsgGCMsgMasterSetClientMsgRouting_Response.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCMsgMasterSetClientMsgRouting_Response);
-
-  /** CMsgGCMsgMasterSetClientMsgRouting_Response eresult. */
-  public eresult: number;
-
-  /**
    * Decodes a CMsgGCMsgMasterSetClientMsgRouting_Response message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -16285,6 +15946,14 @@ export class CMsgGCMsgMasterSetClientMsgRouting_Response
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetClientMsgRouting_Response;
+
+  /** CMsgGCMsgMasterSetClientMsgRouting_Response eresult. */
+  public eresult: number;
+  /**
+   * Constructs a new CMsgGCMsgMasterSetClientMsgRouting_Response.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCMsgMasterSetClientMsgRouting_Response);
 }
 
 /** Properties of a CMsgGCMsgSetOptions. */
@@ -16299,18 +15968,6 @@ export interface ICMsgGCMsgSetOptions {
 /** Represents a CMsgGCMsgSetOptions. */
 export class CMsgGCMsgSetOptions implements ICMsgGCMsgSetOptions {
   /**
-   * Constructs a new CMsgGCMsgSetOptions.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgGCMsgSetOptions);
-
-  /** CMsgGCMsgSetOptions options. */
-  public options: CMsgGCMsgSetOptions.Option[];
-
-  /** CMsgGCMsgSetOptions clientMsgRanges. */
-  public clientMsgRanges: CMsgGCMsgSetOptions.IMessageRange[];
-
-  /**
    * Decodes a CMsgGCMsgSetOptions message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -16322,6 +15979,17 @@ export class CMsgGCMsgSetOptions implements ICMsgGCMsgSetOptions {
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgSetOptions;
+
+  /** CMsgGCMsgSetOptions options. */
+  public options: CMsgGCMsgSetOptions.Option[];
+
+  /** CMsgGCMsgSetOptions clientMsgRanges. */
+  public clientMsgRanges: CMsgGCMsgSetOptions.IMessageRange[];
+  /**
+   * Constructs a new CMsgGCMsgSetOptions.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgGCMsgSetOptions);
 }
 
 export namespace CMsgGCMsgSetOptions {
@@ -16337,18 +16005,6 @@ export namespace CMsgGCMsgSetOptions {
   /** Represents a MessageRange. */
   class MessageRange implements IMessageRange {
     /**
-     * Constructs a new MessageRange.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsgGCMsgSetOptions.IMessageRange);
-
-    /** MessageRange low. */
-    public low: number;
-
-    /** MessageRange high. */
-    public high: number;
-
-    /**
      * Decodes a MessageRange message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -16360,6 +16016,17 @@ export namespace CMsgGCMsgSetOptions {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgGCMsgSetOptions.MessageRange;
+
+    /** MessageRange low. */
+    public low: number;
+
+    /** MessageRange high. */
+    public high: number;
+    /**
+     * Constructs a new MessageRange.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsgGCMsgSetOptions.IMessageRange);
   }
 
   /** Option enum. */
@@ -16404,10 +16071,17 @@ export interface ICMsgGCHUpdateSession {
 /** Represents a CMsgGCHUpdateSession. */
 export class CMsgGCHUpdateSession implements ICMsgGCHUpdateSession {
   /**
-   * Constructs a new CMsgGCHUpdateSession.
-   * @param [properties] Properties to set
+   * Decodes a CMsgGCHUpdateSession message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns CMsgGCHUpdateSession
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  constructor(properties?: ICMsgGCHUpdateSession);
+  public static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): CMsgGCHUpdateSession;
 
   /** CMsgGCHUpdateSession steamId. */
   public steamId: number | Long;
@@ -16435,19 +16109,11 @@ export class CMsgGCHUpdateSession implements ICMsgGCHUpdateSession {
 
   /** CMsgGCHUpdateSession extraFields. */
   public extraFields: CMsgGCHUpdateSession.IExtraField[];
-
   /**
-   * Decodes a CMsgGCHUpdateSession message from the specified reader or buffer.
-   * @param reader Reader or buffer to decode from
-   * @param [length] Message length if known beforehand
-   * @returns CMsgGCHUpdateSession
-   * @throws {Error} If the payload is not a reader or valid buffer
-   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   * Constructs a new CMsgGCHUpdateSession.
+   * @param [properties] Properties to set
    */
-  public static decode(
-    reader: $protobuf.Reader | Uint8Array,
-    length?: number
-  ): CMsgGCHUpdateSession;
+  constructor(properties?: ICMsgGCHUpdateSession);
 }
 
 export namespace CMsgGCHUpdateSession {
@@ -16463,18 +16129,6 @@ export namespace CMsgGCHUpdateSession {
   /** Represents an ExtraField. */
   class ExtraField implements IExtraField {
     /**
-     * Constructs a new ExtraField.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: CMsgGCHUpdateSession.IExtraField);
-
-    /** ExtraField name. */
-    public name: string;
-
-    /** ExtraField value. */
-    public value: string;
-
-    /**
      * Decodes an ExtraField message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
@@ -16486,6 +16140,17 @@ export namespace CMsgGCHUpdateSession {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgGCHUpdateSession.ExtraField;
+
+    /** ExtraField name. */
+    public name: string;
+
+    /** ExtraField value. */
+    public value: string;
+    /**
+     * Constructs a new ExtraField.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: CMsgGCHUpdateSession.IExtraField);
   }
 }
 
@@ -16505,21 +16170,6 @@ export interface ICMsgNotificationOfSuspiciousActivity {
 export class CMsgNotificationOfSuspiciousActivity
   implements ICMsgNotificationOfSuspiciousActivity {
   /**
-   * Constructs a new CMsgNotificationOfSuspiciousActivity.
-   * @param [properties] Properties to set
-   */
-  constructor(properties?: ICMsgNotificationOfSuspiciousActivity);
-
-  /** CMsgNotificationOfSuspiciousActivity steamid. */
-  public steamid: number | Long;
-
-  /** CMsgNotificationOfSuspiciousActivity appid. */
-  public appid: number;
-
-  /** CMsgNotificationOfSuspiciousActivity multipleInstances. */
-  public multipleInstances?: CMsgNotificationOfSuspiciousActivity.IMultipleGameInstances | null;
-
-  /**
    * Decodes a CMsgNotificationOfSuspiciousActivity message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
@@ -16531,6 +16181,20 @@ export class CMsgNotificationOfSuspiciousActivity
     reader: $protobuf.Reader | Uint8Array,
     length?: number
   ): CMsgNotificationOfSuspiciousActivity;
+
+  /** CMsgNotificationOfSuspiciousActivity steamid. */
+  public steamid: number | Long;
+
+  /** CMsgNotificationOfSuspiciousActivity appid. */
+  public appid: number;
+
+  /** CMsgNotificationOfSuspiciousActivity multipleInstances. */
+  public multipleInstances?: CMsgNotificationOfSuspiciousActivity.IMultipleGameInstances | null;
+  /**
+   * Constructs a new CMsgNotificationOfSuspiciousActivity.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: ICMsgNotificationOfSuspiciousActivity);
 }
 
 export namespace CMsgNotificationOfSuspiciousActivity {
@@ -16540,25 +16204,11 @@ export namespace CMsgNotificationOfSuspiciousActivity {
     appInstanceCount?: number | null;
 
     /** MultipleGameInstances otherSteamids */
-    otherSteamids?: (number | Long)[] | null;
+    otherSteamids?: Array<number | Long> | null;
   }
 
   /** Represents a MultipleGameInstances. */
   class MultipleGameInstances implements IMultipleGameInstances {
-    /**
-     * Constructs a new MultipleGameInstances.
-     * @param [properties] Properties to set
-     */
-    constructor(
-      properties?: CMsgNotificationOfSuspiciousActivity.IMultipleGameInstances
-    );
-
-    /** MultipleGameInstances appInstanceCount. */
-    public appInstanceCount: number;
-
-    /** MultipleGameInstances otherSteamids. */
-    public otherSteamids: (number | Long)[];
-
     /**
      * Decodes a MultipleGameInstances message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
@@ -16571,5 +16221,18 @@ export namespace CMsgNotificationOfSuspiciousActivity {
       reader: $protobuf.Reader | Uint8Array,
       length?: number
     ): CMsgNotificationOfSuspiciousActivity.MultipleGameInstances;
+
+    /** MultipleGameInstances appInstanceCount. */
+    public appInstanceCount: number;
+
+    /** MultipleGameInstances otherSteamids. */
+    public otherSteamids: Array<number | Long>;
+    /**
+     * Constructs a new MultipleGameInstances.
+     * @param [properties] Properties to set
+     */
+    constructor(
+      properties?: CMsgNotificationOfSuspiciousActivity.IMultipleGameInstances
+    );
   }
 }

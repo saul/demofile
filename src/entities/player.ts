@@ -1,8 +1,8 @@
-import { BaseEntity } from "./baseentity";
 import { DemoFile } from "../demo";
+import { CCSPlayer, CCSPlayerResource, Vector } from "../sendtabletypes";
 import { IPlayerInfo } from "../stringtables";
+import { BaseEntity } from "./baseentity";
 import { Weapon } from "./weapon";
-import { CCSPlayer, Vector, CCSPlayerResource } from "../sendtabletypes";
 
 export const enum LifeState {
   Alive = 0,
@@ -66,7 +66,7 @@ export interface IPlayerRoundStats {
  * Represents an in-game player.
  */
 export class Player extends BaseEntity<CCSPlayer> {
-  clientSlot: number;
+  public clientSlot: number;
 
   constructor(
     demo: DemoFile,
@@ -98,7 +98,7 @@ export class Player extends BaseEntity<CCSPlayer> {
   }
 
   get position(): Vector {
-    let xy = this.getProp("DT_CSLocalPlayerExclusive", "m_vecOrigin");
+    const xy = this.getProp("DT_CSLocalPlayerExclusive", "m_vecOrigin");
     return {
       x: xy.x,
       y: xy.y,
@@ -119,7 +119,7 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @returns Speed in game units.
    */
   get speed(): number {
-    var vel = this.velocity;
+    const vel = this.velocity;
     return Math.sqrt(vel.x * vel.x + vel.y * vel.y + vel.z * vel.z);
   }
 
@@ -145,7 +145,7 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @returns User info associated with this player
    */
   get userInfo(): IPlayerInfo | null {
-    let userInfoTable = this._demo.stringTables.findTableByName("userinfo");
+    const userInfoTable = this._demo.stringTables.findTableByName("userinfo");
     return userInfoTable
       ? userInfoTable.entries[this.clientSlot].userData
       : null;
@@ -267,14 +267,16 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @param {string} propName - Name of the property on DT_CSPlayerResource to retrieve
    * @returns {*} Property value
    */
-  resourceProp<
+  public resourceProp<
     TableName extends keyof CCSPlayerResource,
     TableKeys extends keyof CCSPlayerResource[TableName],
     ElementType extends "000" extends TableKeys
       ? CCSPlayerResource[TableName][TableKeys]
       : never
   >(tableName: TableName): ElementType {
-    let array = this._demo.entities.playerResource.getIndexedProps(tableName)!;
+    const array = this._demo.entities.playerResource.getIndexedProps(
+      tableName
+    )!;
     return array[this.clientSlot] as ElementType;
   }
 
@@ -317,7 +319,7 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @returns Whether the player holds the C4
    */
   get hasC4(): boolean {
-    let pr = this._demo.entities.playerResource;
+    const pr = this._demo.entities.playerResource;
     return pr.getProp("DT_CSPlayerResource", "m_iPlayerC4") === this.index;
   }
 
@@ -325,7 +327,7 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @returns Score of the player
    */
   get score(): number {
-    let pr = this._demo.entities.playerResource;
+    const pr = this._demo.entities.playerResource;
     return pr.getIndexedProps("m_iScore")[this.index];
   }
 
@@ -333,7 +335,7 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @returns MVPs of the player
    */
   get mvps(): number {
-    let pr = this._demo.entities.playerResource;
+    const pr = this._demo.entities.playerResource;
     return pr.getIndexedProps("m_iMVPs")[this.index];
   }
 
@@ -341,7 +343,7 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @returns Clantag of the player
    */
   get clanTag(): string {
-    let pr = this._demo.entities.playerResource;
+    const pr = this._demo.entities.playerResource;
     return pr.getIndexedProps("m_szClan")[this.index];
   }
 
@@ -359,7 +361,7 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @param other - Other player entity
    * @returns Is this player spotted by the other?
    */
-  isSpottedBy(other: Player): boolean {
+  public isSpottedBy(other: Player): boolean {
     let bit = other.clientSlot;
     let mask = null;
 
@@ -388,7 +390,7 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @param other - Other player entity
    * @returns Has this player spotted the other?
    */
-  hasSpotted(other: Player): boolean {
+  public hasSpotted(other: Player): boolean {
     return other.isSpottedBy(this);
   }
 
@@ -405,9 +407,9 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @param other - Other player entity
    * @returns Whether the two players are on the same team
    */
-  isFriendly(other: Player): boolean {
-    let sameTeam = this.teamNumber === other.teamNumber;
-    let teammatesAreEnemies =
+  public isFriendly(other: Player): boolean {
+    const sameTeam = this.teamNumber === other.teamNumber;
+    const teammatesAreEnemies =
       this._demo.conVars.vars.get("mp_teammates_are_enemies") || 0;
 
     return sameTeam && !teammatesAreEnemies;
@@ -459,18 +461,18 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @returns Object representing the player's performance per round
    */
   get matchStats(): IPlayerRoundStats[] {
-    let kills = this.getIndexedProps("m_iMatchStats_Kills");
-    let damage = this.getIndexedProps("m_iMatchStats_Damage");
-    let equipmentValue = this.getIndexedProps("m_iMatchStats_EquipmentValue");
-    let moneySaved = this.getIndexedProps("m_iMatchStats_MoneySaved");
-    let killReward = this.getIndexedProps("m_iMatchStats_KillReward");
-    let liveTime = this.getIndexedProps("m_iMatchStats_LiveTime");
-    let deaths = this.getIndexedProps("m_iMatchStats_Deaths");
-    let assists = this.getIndexedProps("m_iMatchStats_Assists");
-    let headShotKills = this.getIndexedProps("m_iMatchStats_HeadShotKills");
-    let objective = this.getIndexedProps("m_iMatchStats_Objective");
+    const kills = this.getIndexedProps("m_iMatchStats_Kills");
+    const damage = this.getIndexedProps("m_iMatchStats_Damage");
+    const equipmentValue = this.getIndexedProps("m_iMatchStats_EquipmentValue");
+    const moneySaved = this.getIndexedProps("m_iMatchStats_MoneySaved");
+    const killReward = this.getIndexedProps("m_iMatchStats_KillReward");
+    const liveTime = this.getIndexedProps("m_iMatchStats_LiveTime");
+    const deaths = this.getIndexedProps("m_iMatchStats_Deaths");
+    const assists = this.getIndexedProps("m_iMatchStats_Assists");
+    const headShotKills = this.getIndexedProps("m_iMatchStats_HeadShotKills");
+    const objective = this.getIndexedProps("m_iMatchStats_Objective");
 
-    let rounds = [];
+    const rounds = [];
     for (let roundIdx = 0; roundIdx < kills.length; ++roundIdx) {
       rounds.push({
         kills: kills[roundIdx],

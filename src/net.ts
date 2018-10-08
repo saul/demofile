@@ -1,108 +1,108 @@
 import {
-  NET_Messages,
-  CNETMsg_NOP,
-  CNETMsg_Disconnect,
-  CNETMsg_File,
-  CNETMsg_SplitScreenUser,
-  CNETMsg_Tick,
-  CNETMsg_StringCmd,
-  CNETMsg_SetConVar,
-  CNETMsg_SignonState,
-  CNETMsg_PlayerAvatarData,
-  SVC_Messages,
-  CSVCMsg_ServerInfo,
-  CSVCMsg_SendTable,
-  CSVCMsg_ClassInfo,
-  CSVCMsg_SetPause,
-  CSVCMsg_CreateStringTable,
-  CSVCMsg_UpdateStringTable,
-  CSVCMsg_VoiceInit,
-  CSVCMsg_VoiceData,
-  CSVCMsg_Print,
-  CSVCMsg_Sounds,
-  CSVCMsg_SetView,
-  CSVCMsg_FixAngle,
-  CSVCMsg_CrosshairAngle,
-  CSVCMsg_BSPDecal,
-  CSVCMsg_SplitScreen,
-  CSVCMsg_UserMessage,
-  CSVCMsg_GameEvent,
-  CSVCMsg_PacketEntities,
-  CSVCMsg_TempEntities,
-  CSVCMsg_Prefetch,
-  CSVCMsg_Menu,
-  CSVCMsg_GameEventList,
-  CSVCMsg_GetCvarValue,
-  CSVCMsg_PaintmapData,
-  CSVCMsg_CmdKeyValues,
-  CSVCMsg_EncryptedData,
-  CSVCMsg_HltvReplay,
-  CSVCMsg_EntityMsg
-} from "./protobufs/netmessages";
-import {
-  ECstrike15UserMessages,
-  CCSUsrMsg_VGUIMenu,
-  CCSUsrMsg_Geiger,
-  CCSUsrMsg_Train,
-  CCSUsrMsg_HudText,
-  CCSUsrMsg_SayText,
-  CCSUsrMsg_SayText2,
-  CCSUsrMsg_TextMsg,
-  CCSUsrMsg_HudMsg,
-  CCSUsrMsg_ResetHud,
-  CCSUsrMsg_GameTitle,
-  CCSUsrMsg_Shake,
-  CCSUsrMsg_Fade,
-  CCSUsrMsg_Rumble,
+  CCSUsrMsg_AchievementEvent,
+  CCSUsrMsg_AdjustMoney,
+  CCSUsrMsg_AmmoDenied,
+  CCSUsrMsg_BarTime,
+  CCSUsrMsg_CallVoteFailed,
+  CCSUsrMsg_ClientInfo,
   CCSUsrMsg_CloseCaption,
   CCSUsrMsg_CloseCaptionDirect,
-  CCSUsrMsg_SendAudio,
-  CCSUsrMsg_RawAudio,
-  CCSUsrMsg_VoiceMask,
-  CCSUsrMsg_RequestState,
-  CCSUsrMsg_Damage,
-  CCSUsrMsg_RadioText,
-  CCSUsrMsg_HintText,
-  CCSUsrMsg_KeyHintText,
-  CCSUsrMsg_ProcessSpottedEntityUpdate,
-  CCSUsrMsg_ReloadEffect,
-  CCSUsrMsg_AdjustMoney,
-  CCSUsrMsg_StopSpectatorMode,
-  CCSUsrMsg_KillCam,
-  CCSUsrMsg_DesiredTimescale,
   CCSUsrMsg_CurrentTimescale,
-  CCSUsrMsg_AchievementEvent,
-  CCSUsrMsg_MatchEndConditions,
+  CCSUsrMsg_Damage,
+  CCSUsrMsg_DesiredTimescale,
   CCSUsrMsg_DisconnectToLobby,
-  CCSUsrMsg_PlayerStatsUpdate,
   CCSUsrMsg_DisplayInventory,
+  CCSUsrMsg_Fade,
+  CCSUsrMsg_GameTitle,
+  CCSUsrMsg_Geiger,
+  CCSUsrMsg_GlowPropTurnOff,
+  CCSUsrMsg_HintText,
+  CCSUsrMsg_HudMsg,
+  CCSUsrMsg_HudText,
+  CCSUsrMsg_ItemDrop,
+  CCSUsrMsg_ItemPickup,
+  CCSUsrMsg_KeyHintText,
+  CCSUsrMsg_KillCam,
+  CCSUsrMsg_MarkAchievement,
+  CCSUsrMsg_MatchEndConditions,
+  CCSUsrMsg_MatchStatsUpdate,
+  CCSUsrMsg_PlayerStatsUpdate,
+  CCSUsrMsg_ProcessSpottedEntityUpdate,
+  CCSUsrMsg_QuestProgress,
+  CCSUsrMsg_RadioText,
+  CCSUsrMsg_RawAudio,
+  CCSUsrMsg_ReloadEffect,
+  CCSUsrMsg_ReportHit,
+  CCSUsrMsg_RequestState,
+  CCSUsrMsg_ResetHud,
+  CCSUsrMsg_RoundBackupFilenames,
+  CCSUsrMsg_Rumble,
+  CCSUsrMsg_SayText,
+  CCSUsrMsg_SayText2,
+  CCSUsrMsg_SendAudio,
+  CCSUsrMsg_SendLastKillerDamageToClient,
+  CCSUsrMsg_SendPlayerItemDrops,
+  CCSUsrMsg_SendPlayerItemFound,
+  CCSUsrMsg_ServerRankRevealAll,
+  CCSUsrMsg_ServerRankUpdate,
+  CCSUsrMsg_Shake,
+  CCSUsrMsg_ShowMenu,
+  CCSUsrMsg_StopSpectatorMode,
+  CCSUsrMsg_TextMsg,
+  CCSUsrMsg_Train,
+  CCSUsrMsg_VGUIMenu,
+  CCSUsrMsg_VoiceMask,
+  CCSUsrMsg_VoteFailed,
+  CCSUsrMsg_VotePass,
+  CCSUsrMsg_VoteSetup,
+  CCSUsrMsg_VoteStart,
   CCSUsrMsg_WarmupHasEnded,
-  CCSUsrMsg_ClientInfo,
+  CCSUsrMsg_XpUpdate,
   CCSUsrMsg_XRankGet,
   CCSUsrMsg_XRankUpd,
-  CCSUsrMsg_CallVoteFailed,
-  CCSUsrMsg_VoteStart,
-  CCSUsrMsg_VotePass,
-  CCSUsrMsg_VoteFailed,
-  CCSUsrMsg_VoteSetup,
-  CCSUsrMsg_ServerRankRevealAll,
-  CCSUsrMsg_SendLastKillerDamageToClient,
-  CCSUsrMsg_ServerRankUpdate,
-  CCSUsrMsg_ItemPickup,
-  CCSUsrMsg_ShowMenu,
-  CCSUsrMsg_BarTime,
-  CCSUsrMsg_AmmoDenied,
-  CCSUsrMsg_MarkAchievement,
-  CCSUsrMsg_MatchStatsUpdate,
-  CCSUsrMsg_ItemDrop,
-  CCSUsrMsg_GlowPropTurnOff,
-  CCSUsrMsg_SendPlayerItemDrops,
-  CCSUsrMsg_RoundBackupFilenames,
-  CCSUsrMsg_SendPlayerItemFound,
-  CCSUsrMsg_ReportHit,
-  CCSUsrMsg_XpUpdate,
-  CCSUsrMsg_QuestProgress
+  ECstrike15UserMessages
 } from "./protobufs/cstrike15_usermessages";
+import {
+  CNETMsg_Disconnect,
+  CNETMsg_File,
+  CNETMsg_NOP,
+  CNETMsg_PlayerAvatarData,
+  CNETMsg_SetConVar,
+  CNETMsg_SignonState,
+  CNETMsg_SplitScreenUser,
+  CNETMsg_StringCmd,
+  CNETMsg_Tick,
+  CSVCMsg_BSPDecal,
+  CSVCMsg_ClassInfo,
+  CSVCMsg_CmdKeyValues,
+  CSVCMsg_CreateStringTable,
+  CSVCMsg_CrosshairAngle,
+  CSVCMsg_EncryptedData,
+  CSVCMsg_EntityMsg,
+  CSVCMsg_FixAngle,
+  CSVCMsg_GameEvent,
+  CSVCMsg_GameEventList,
+  CSVCMsg_GetCvarValue,
+  CSVCMsg_HltvReplay,
+  CSVCMsg_Menu,
+  CSVCMsg_PacketEntities,
+  CSVCMsg_PaintmapData,
+  CSVCMsg_Prefetch,
+  CSVCMsg_Print,
+  CSVCMsg_SendTable,
+  CSVCMsg_ServerInfo,
+  CSVCMsg_SetPause,
+  CSVCMsg_SetView,
+  CSVCMsg_Sounds,
+  CSVCMsg_SplitScreen,
+  CSVCMsg_TempEntities,
+  CSVCMsg_UpdateStringTable,
+  CSVCMsg_UserMessage,
+  CSVCMsg_VoiceData,
+  CSVCMsg_VoiceInit,
+  NET_Messages,
+  SVC_Messages
+} from "./protobufs/netmessages";
 
 export type NetMessageName =
   | "net_NOP"
@@ -152,7 +152,7 @@ interface INetMessageDescriptor {
   class: NetMessage;
 }
 
-export var messages: Array<INetMessageDescriptor> = [];
+export let messages: INetMessageDescriptor[] = [];
 messages[NET_Messages.net_NOP] = { name: "net_NOP", class: CNETMsg_NOP };
 messages[NET_Messages.net_Disconnect] = {
   name: "net_Disconnect",
@@ -289,7 +289,7 @@ messages[SVC_Messages.svc_HltvReplay] = {
 
 export function findByName(name: NetMessageName) {
   return messages.find(
-    descriptor => descriptor.name == name
+    descriptor => descriptor.name === name
   ) as INetMessageDescriptor;
 }
 
@@ -365,7 +365,7 @@ interface IUserMessageDescriptor {
   class: any;
 }
 
-export var userMessages: Array<IUserMessageDescriptor> = [];
+export let userMessages: IUserMessageDescriptor[] = [];
 userMessages[ECstrike15UserMessages.CS_UM_VGUIMenu] = {
   name: "VGUIMenu",
   class: CCSUsrMsg_VGUIMenu
@@ -613,7 +613,7 @@ userMessages[ECstrike15UserMessages.CS_UM_QuestProgress] = {
 
 export function findUserMessageByName(name: UserMessageName) {
   return userMessages.find(
-    descriptor => descriptor.name == name
+    descriptor => descriptor.name === name
   ) as IUserMessageDescriptor;
 }
 

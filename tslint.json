@@ -2,6 +2,19 @@
   "defaultSeverity": "error",
   "extends": ["tslint:recommended", "tslint-config-prettier"],
   "jsRules": {},
-  "rules": { "no-bitwise": false, "no-empty-interface": false },
+  "rules": {
+    "no-bitwise": false,
+    "no-empty-interface": false,
+    "adjacent-overload-signatures": false,
+    "object-literal-sort-keys": false,
+    "interface-name": false,
+    "unified-signatures": false,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore"
+    ]
+  },
   "rulesDirectory": []
 }

@@ -1,6 +1,6 @@
-import { Team } from "./team";
 import { CBaseEntity, Vector } from "../sendtabletypes";
 import { Networkable } from "./networkable";
+import { Team } from "./team";
 
 /**
  * Represents an in-game entity.
@@ -13,11 +13,11 @@ export class BaseEntity<
    * @returns World-space coordinates
    */
   get position(): Vector {
-    let cellWidth = 1 << this.getProp("DT_BaseEntity", "m_cellbits")!;
-    let cellX = this.getProp("DT_BaseEntity", "m_cellX");
-    let cellY = this.getProp("DT_BaseEntity", "m_cellY");
-    let cellZ = this.getProp("DT_BaseEntity", "m_cellZ");
-    let cellOffset = this.getProp("DT_BaseEntity", "m_vecOrigin");
+    const cellWidth = 1 << this.getProp("DT_BaseEntity", "m_cellbits")!;
+    const cellX = this.getProp("DT_BaseEntity", "m_cellX");
+    const cellY = this.getProp("DT_BaseEntity", "m_cellY");
+    const cellZ = this.getProp("DT_BaseEntity", "m_cellZ");
+    const cellOffset = this.getProp("DT_BaseEntity", "m_vecOrigin");
 
     return {
       x: cellX * cellWidth - 16384 + cellOffset.x,
@@ -57,7 +57,7 @@ export class BaseEntity<
    * @returns Team if assigned, null if unassigned.
    */
   get team(): Team | null {
-    let teamNum = this.teamNumber;
+    const teamNum = this.teamNumber;
     if (teamNum === 0) {
       return null;
     }
@@ -69,10 +69,12 @@ export class BaseEntity<
    * @returns Name of the model that should be rendered for this entity. (e.g. 'models/Weapons/w_eq_smokegrenade_thrown.mdl')
    */
   get modelName(): string | null {
-    let modelprecache = this._demo.stringTables.findTableByName(
+    const modelprecache = this._demo.stringTables.findTableByName(
       "modelprecache"
     );
-    if (!modelprecache) return null;
+    if (!modelprecache) {
+      return null;
+    }
     return modelprecache.entries[this.getProp("DT_BaseEntity", "m_nModelIndex")]
       .entry;
   }

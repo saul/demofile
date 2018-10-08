@@ -1,14 +1,14 @@
 import {
-  NUM_NETWORKED_EHANDLE_BITS,
+  MAX_EDICT_BITS,
   NETWORKED_EHANDLE_ENT_ENTRY_MASK,
-  MAX_EDICT_BITS
+  NUM_NETWORKED_EHANDLE_BITS
 } from "./consts";
 
 export class EntityHandle {
   constructor(public readonly value: number) {}
 
   get isValid() {
-    return this.value != NUM_NETWORKED_EHANDLE_BITS;
+    return this.value !== NUM_NETWORKED_EHANDLE_BITS;
   }
 
   get index() {

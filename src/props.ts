@@ -1,12 +1,12 @@
-import _ = require("lodash");
 import assert = require("assert");
+import _ = require("lodash");
 import Long = require("long");
-import { BitStream, CoordType } from "./ext/bitbuffer";
-import { ISendProp } from "./entities";
 import assertExists from "ts-assert-exists";
-import { Vector } from "./sendtabletypes";
 import { NUM_NETWORKED_EHANDLE_BITS } from "./consts";
+import { ISendProp } from "./entities";
 import { EntityHandle } from "./entityhandle";
+import { BitStream, CoordType } from "./ext/bitbuffer";
+import { Vector } from "./sendtabletypes";
 
 export const enum PropType {
   Int = 0,
@@ -58,7 +58,7 @@ export function makeDecoder(
   const type = sendProp.type as PropType;
   assert(type !== PropType.DataTable);
 
-  if (type == PropType.Array) {
+  if (type === PropType.Array) {
     return makeArrayDecoder(
       sendProp,
       assertExists(arrayElementProp, "array prop with no element prop")
@@ -85,7 +85,7 @@ function makeValueDecoder(
     case PropType.Int64:
       return makeInt64Decoder(sendProp);
     default:
-      throw `Unsupported send prop type ${sendProp.type}`;
+      throw new Error(`Unsupported send prop type ${sendProp.type}`);
   }
 }
 
@@ -95,11 +95,11 @@ function makeIntDecoder(
   if ((sendProp.flags & SPROP_VARINT) !== 0) {
     /*eslint-disable no-unreachable*/
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
-      //return this.bitbuf.readVarint32();
-      throw "Not implemented"; // TODO
+      // return this.bitbuf.readVarint32();
+      throw new Error("Not implemented"); // TODO
     } else {
-      //return this.bitbuf.readSignedVarint32();
-      throw "Not implemented"; // TODO
+      // return this.bitbuf.readSignedVarint32();
+      throw new Error("Not implemented"); // TODO
     }
     /*eslint-enable no-unreachable*/
   } else {
@@ -107,7 +107,7 @@ function makeIntDecoder(
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
       if (
         (sendProp.flags & SPROP_NOSCALE) !== 0 &&
-        sendProp.numBits == NUM_NETWORKED_EHANDLE_BITS
+        sendProp.numBits === NUM_NETWORKED_EHANDLE_BITS
       ) {
         return bitbuf => new EntityHandle(bitbuf.readUBits(numBits));
       } else if (numBits === 1) {
@@ -150,7 +150,7 @@ function makeSpecialFloatDecoder(
 }
 
 function makeFloatDecoder(sendProp: ISendProp): (bitbuf: BitStream) => number {
-  var special = makeSpecialFloatDecoder(sendProp);
+  const special = makeSpecialFloatDecoder(sendProp);
 
   if (special !== undefined) {
     return special;
@@ -222,11 +222,11 @@ function makeInt64Decoder(sendProp: ISendProp): (bitbuf: BitStream) => Long {
   if ((sendProp.flags & SPROP_VARINT) !== 0) {
     /*eslint-disable no-unreachable*/
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
-      //return this.bitbuf.readVarint64();
-      throw "Not implemented"; // TODO
+      // return this.bitbuf.readVarint64();
+      throw new Error("Not implemented"); // TODO
     } else {
-      //return this.bitbuf.readSignedVarint64();
-      throw "Not implemented"; // TODO
+      // return this.bitbuf.readSignedVarint64();
+      throw new Error("Not implemented"); // TODO
     }
     /*eslint-enable no-unreachable*/
   } else {

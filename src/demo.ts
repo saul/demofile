@@ -4,57 +4,57 @@ import * as timers from "timers";
 import * as ByteBuffer from "bytebuffer";
 import { BitStream } from "./ext/bitbuffer";
 
-import * as net from "./net";
-import { StringTables } from "./stringtables";
-import { UserMessages } from "./usermessages";
-import { GameEvents } from "./gameevents";
-import { Entities } from "./entities";
-import { ConVars } from "./convars";
-import {
-  ICNETMsg_NOP,
-  ICNETMsg_Disconnect,
-  ICNETMsg_File,
-  ICNETMsg_SplitScreenUser,
-  ICNETMsg_Tick,
-  ICNETMsg_StringCmd,
-  ICNETMsg_SetConVar,
-  ICNETMsg_SignonState,
-  ICNETMsg_PlayerAvatarData,
-  ICSVCMsg_ServerInfo,
-  ICSVCMsg_SendTable,
-  ICSVCMsg_ClassInfo,
-  ICSVCMsg_SetPause,
-  ICSVCMsg_CreateStringTable,
-  ICSVCMsg_UpdateStringTable,
-  ICSVCMsg_VoiceInit,
-  ICSVCMsg_VoiceData,
-  ICSVCMsg_Print,
-  ICSVCMsg_Sounds,
-  ICSVCMsg_SetView,
-  ICSVCMsg_FixAngle,
-  ICSVCMsg_CrosshairAngle,
-  ICSVCMsg_BSPDecal,
-  ICSVCMsg_SplitScreen,
-  ICSVCMsg_UserMessage,
-  ICSVCMsg_GameEvent,
-  ICSVCMsg_PacketEntities,
-  ICSVCMsg_TempEntities,
-  ICSVCMsg_Prefetch,
-  ICSVCMsg_Menu,
-  ICSVCMsg_GameEventList,
-  ICSVCMsg_GetCvarValue,
-  ICSVCMsg_PaintmapData,
-  ICSVCMsg_CmdKeyValues,
-  ICSVCMsg_EncryptedData,
-  ICSVCMsg_HltvReplay,
-  ICSVCMsg_EntityMsg
-} from "./protobufs/netmessages";
 import assert = require("assert");
+import { MAX_OSPATH } from "./consts";
+import { ConVars } from "./convars";
+import { Entities } from "./entities";
+import { GameRules } from "./entities/gamerules";
 import { Player } from "./entities/player";
 import { Team } from "./entities/team";
-import { GameRules } from "./entities/gamerules";
-import { MAX_OSPATH } from "./consts";
+import { GameEvents } from "./gameevents";
+import * as net from "./net";
 import { NetMessageName } from "./net";
+import {
+  ICNETMsg_Disconnect,
+  ICNETMsg_File,
+  ICNETMsg_NOP,
+  ICNETMsg_PlayerAvatarData,
+  ICNETMsg_SetConVar,
+  ICNETMsg_SignonState,
+  ICNETMsg_SplitScreenUser,
+  ICNETMsg_StringCmd,
+  ICNETMsg_Tick,
+  ICSVCMsg_BSPDecal,
+  ICSVCMsg_ClassInfo,
+  ICSVCMsg_CmdKeyValues,
+  ICSVCMsg_CreateStringTable,
+  ICSVCMsg_CrosshairAngle,
+  ICSVCMsg_EncryptedData,
+  ICSVCMsg_EntityMsg,
+  ICSVCMsg_FixAngle,
+  ICSVCMsg_GameEvent,
+  ICSVCMsg_GameEventList,
+  ICSVCMsg_GetCvarValue,
+  ICSVCMsg_HltvReplay,
+  ICSVCMsg_Menu,
+  ICSVCMsg_PacketEntities,
+  ICSVCMsg_PaintmapData,
+  ICSVCMsg_Prefetch,
+  ICSVCMsg_Print,
+  ICSVCMsg_SendTable,
+  ICSVCMsg_ServerInfo,
+  ICSVCMsg_SetPause,
+  ICSVCMsg_SetView,
+  ICSVCMsg_Sounds,
+  ICSVCMsg_SplitScreen,
+  ICSVCMsg_TempEntities,
+  ICSVCMsg_UpdateStringTable,
+  ICSVCMsg_UserMessage,
+  ICSVCMsg_VoiceData,
+  ICSVCMsg_VoiceInit
+} from "./protobufs/netmessages";
+import { StringTables } from "./stringtables";
+import { UserMessages } from "./usermessages";
 export { parseBinaryKeyValues } from "./keyvalues";
 
 interface IDemoHeader {
@@ -141,7 +141,7 @@ const enum DemoCommands {
  * @returns {IDemoHeader} Header object
  */
 export function parseHeader(buffer: Buffer): IDemoHeader {
-  let bytebuf = ByteBuffer.wrap(buffer, true);
+  const bytebuf = ByteBuffer.wrap(buffer, true);
   return {
     magic: bytebuf.readString(8, ByteBuffer.METRICS_BYTES).split("\0", 2)[0],
     protocol: bytebuf.readInt32(),
@@ -166,7 +166,7 @@ export function parseHeader(buffer: Buffer): IDemoHeader {
 }
 
 function readIBytes(bytebuf: ByteBuffer) {
-  var length = bytebuf.readInt32();
+  const length = bytebuf.readInt32();
   return bytebuf.readBytes(length);
 }
 
@@ -364,67 +364,6 @@ export declare interface DemoFile {
  * Represents a demo file for parsing.
  */
 export class DemoFile extends EventEmitter {
-  private _lastThreadYieldTime = 0;
-  private _immediateTimerToken: NodeJS.Timer | null = null;
-  private _timeoutTimerToken: NodeJS.Timer | null = null;
-
-  /**
-   * When parsing, set to current tick.
-   */
-  currentTick: number = 0;
-
-  header!: IDemoHeader;
-  _bytebuf!: ByteBuffer;
-
-  /**
-   * When parsing, set to player slot for current command.
-   */
-  playerSlot: number = 0;
-
-  readonly entities: Entities;
-  readonly gameEvents: GameEvents;
-  readonly stringTables: StringTables;
-  readonly userMessages: UserMessages;
-  readonly conVars: ConVars;
-
-  /**
-   * Starts parsing buffer as a demo file.
-   *
-   * @fires DemoFile#tickstart
-   * @fires DemoFile#tickend
-   * @fires DemoFile#end
-   *
-   * @param {ArrayBuffer} buffer - Buffer pointing to start of demo header
-   */
-  constructor() {
-    super();
-
-    this.entities = new Entities();
-    this.gameEvents = new GameEvents();
-    this.stringTables = new StringTables();
-    this.userMessages = new UserMessages();
-    this.conVars = new ConVars();
-
-    this.gameEvents.listen(this);
-
-    // It is important that entities listens after game events, as they both listen on
-    // tickend.
-    this.entities.listen(this);
-
-    this.stringTables.listen(this);
-    this.userMessages.listen(this);
-    this.conVars.listen(this);
-  }
-
-  parse(buffer: Buffer) {
-    this.header = parseHeader(buffer);
-    this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
-
-    this.emit("start");
-
-    timers.setTimeout(this._parseRecurse.bind(this), 0);
-  }
-
   /**
    * @returns Number of ticks per second
    */
@@ -466,12 +405,87 @@ export class DemoFile extends EventEmitter {
   }
 
   /**
+   * When parsing, set to current tick.
+   */
+  public currentTick: number = 0;
+
+  public header!: IDemoHeader;
+
+  /**
+   * When parsing, set to player slot for current command.
+   */
+  public playerSlot: number = 0;
+
+  public readonly entities: Entities;
+  public readonly gameEvents: GameEvents;
+  public readonly stringTables: StringTables;
+  public readonly userMessages: UserMessages;
+  public readonly conVars: ConVars;
+
+  private _bytebuf!: ByteBuffer;
+  private _lastThreadYieldTime = 0;
+  private _immediateTimerToken: NodeJS.Timer | null = null;
+  private _timeoutTimerToken: NodeJS.Timer | null = null;
+
+  /**
+   * Starts parsing buffer as a demo file.
+   *
+   * @fires DemoFile#tickstart
+   * @fires DemoFile#tickend
+   * @fires DemoFile#end
+   *
+   * @param {ArrayBuffer} buffer - Buffer pointing to start of demo header
+   */
+  constructor() {
+    super();
+
+    this.entities = new Entities();
+    this.gameEvents = new GameEvents();
+    this.stringTables = new StringTables();
+    this.userMessages = new UserMessages();
+    this.conVars = new ConVars();
+
+    this.gameEvents.listen(this);
+
+    // It is important that entities listens after game events, as they both listen on
+    // tickend.
+    this.entities.listen(this);
+
+    this.stringTables.listen(this);
+    this.userMessages.listen(this);
+    this.conVars.listen(this);
+  }
+
+  public parse(buffer: Buffer) {
+    this.header = parseHeader(buffer);
+    this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
+
+    this.emit("start");
+
+    timers.setTimeout(this._parseRecurse.bind(this), 0);
+  }
+
+  /**
+   * Cancel the current parse operation.
+   */
+  public cancel() {
+    if (this._immediateTimerToken) {
+      timers.clearImmediate(this._immediateTimerToken);
+      this._immediateTimerToken = null;
+    }
+    if (this._timeoutTimerToken) {
+      timers.clearTimeout(this._timeoutTimerToken);
+      this._timeoutTimerToken = null;
+    }
+  }
+
+  /**
    * Fired when a packet of this type is hit. `svc_MessageName` events are also fired.
    * @public
    * @event DemoFile#net_MessageName
    */
 
-  _handleDemoPacket() {
+  private _handleDemoPacket() {
     // skip cmd info
     this._bytebuf.skip(152);
 
@@ -479,13 +493,13 @@ export class DemoFile extends EventEmitter {
     this._bytebuf.readInt32();
     this._bytebuf.readInt32();
 
-    var chunk = readIBytes(this._bytebuf);
+    const chunk = readIBytes(this._bytebuf);
 
     while (chunk.remaining()) {
-      var cmd = chunk.readVarint32();
-      var size = chunk.readVarint32();
+      const cmd = chunk.readVarint32();
+      const size = chunk.readVarint32();
 
-      var message = net.findByType(cmd);
+      const message = net.findByType(cmd);
       assert(message != null, `No message handler for ${cmd}`);
 
       if (message === null) {
@@ -494,8 +508,8 @@ export class DemoFile extends EventEmitter {
       }
 
       if (this.listenerCount(message.name)) {
-        var messageBuffer = chunk.readBytes(size);
-        var msgInst = message.class.decode(
+        const messageBuffer = chunk.readBytes(size);
+        const msgInst = message.class.decode(
           new Uint8Array(messageBuffer.toBuffer())
         );
         this.emit(message.name, msgInst);
@@ -505,28 +519,30 @@ export class DemoFile extends EventEmitter {
     }
   }
 
-  _handleDataChunk() {
+  private _handleDataChunk() {
     readIBytes(this._bytebuf);
   }
 
-  _handleDataTables() {
-    var chunk = readIBytes(this._bytebuf);
-    this.entities._handleDataTables(chunk);
+  private _handleDataTables() {
+    const chunk = readIBytes(this._bytebuf);
+    this.entities.handleDataTables(chunk);
   }
 
-  _handleUserCmd() {
+  private _handleUserCmd() {
     this._bytebuf.readInt32(); // outgoing sequence
     this._handleDataChunk(); // TODO: parse user command
   }
 
-  _handleStringTables() {
-    var chunk = readIBytes(this._bytebuf);
-    let bitbuf = BitStream.from(chunk.buffer.slice(chunk.offset, chunk.limit));
-    this.stringTables._handleStringTables(bitbuf);
+  private _handleStringTables() {
+    const chunk = readIBytes(this._bytebuf);
+    const bitbuf = BitStream.from(
+      chunk.buffer.slice(chunk.offset, chunk.limit)
+    );
+    this.stringTables.handleStringTables(bitbuf);
   }
 
-  _recurse() {
-    let now = Date.now();
+  private _recurse() {
+    const now = Date.now();
 
     if (now - this._lastThreadYieldTime < 32) {
       this._immediateTimerToken = timers.setImmediate(
@@ -541,28 +557,14 @@ export class DemoFile extends EventEmitter {
     }
   }
 
-  /**
-   * Cancel the current parse operation.
-   */
-  cancel() {
-    if (this._immediateTimerToken) {
-      timers.clearImmediate(this._immediateTimerToken);
-      this._immediateTimerToken = null;
-    }
-    if (this._timeoutTimerToken) {
-      timers.clearTimeout(this._timeoutTimerToken);
-      this._timeoutTimerToken = null;
-    }
-  }
-
-  _parseRecurse() {
+  private _parseRecurse() {
     this._recurse();
 
     try {
       this.emit("progress", this._bytebuf.offset / this._bytebuf.limit);
 
-      var command = this._bytebuf.readUint8();
-      var tick = this._bytebuf.readInt32();
+      const command = this._bytebuf.readUint8();
+      const tick = this._bytebuf.readInt32();
       this.playerSlot = this._bytebuf.readUint8();
 
       if (tick !== this.currentTick) {
@@ -594,11 +596,11 @@ export class DemoFile extends EventEmitter {
           this.emit("end", {});
           return;
         case DemoCommands.CustomData:
-          throw "Custom data not supported";
+          throw new Error("Custom data not supported");
         case DemoCommands.SyncTick:
           break;
         default:
-          throw "Unrecognised command";
+          throw new Error("Unrecognised command");
       }
     } catch (e) {
       // Always cancel if we have an error - we've already scheduled the next tick

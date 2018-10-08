@@ -1,6 +1,6 @@
+import { CWeaponCSBase } from "../sendtabletypes";
 import { BaseEntity } from "./baseentity";
 import { Player } from "./player";
-import { CWeaponCSBase } from "../sendtabletypes";
 
 interface IItemDefinition {
   itemName: string;
@@ -259,8 +259,8 @@ export class Weapon extends BaseEntity<CWeaponCSBase> {
    * @returns Name of the weapon (e.g. "Five-SeveN")
    */
   get itemName(): string | null {
-    var weaponId = this.itemIndex;
-    var itemDefinition = itemDefinitionIndexMap[weaponId];
+    const weaponId = this.itemIndex;
+    const itemDefinition = itemDefinitionIndexMap[weaponId];
     return itemDefinition !== undefined ? itemDefinition.itemName : null;
   }
 
@@ -268,8 +268,8 @@ export class Weapon extends BaseEntity<CWeaponCSBase> {
    * @returns Entity class name of the weapon (e.g. "weapon_ak47")
    */
   get className(): string | null {
-    var weaponId = this.itemIndex;
-    var itemDefinition = itemDefinitionIndexMap[weaponId];
+    const weaponId = this.itemIndex;
+    const itemDefinition = itemDefinitionIndexMap[weaponId];
     return itemDefinition !== undefined ? itemDefinition.className : null;
   }
 
@@ -277,7 +277,7 @@ export class Weapon extends BaseEntity<CWeaponCSBase> {
    * @returns Previous owner
    */
   get prevOwner(): Player | null {
-    var handle = this.getProp("DT_WeaponCSBase", "m_hPrevOwner");
+    const handle = this.getProp("DT_WeaponCSBase", "m_hPrevOwner");
     return this._demo.entities.getByHandle(handle) as Player | null;
   }
 }

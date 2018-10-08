@@ -1,6 +1,6 @@
-import { Player } from "./player";
 import { CTeam } from "../sendtabletypes";
 import { Networkable } from "./networkable";
+import { Player } from "./player";
 
 export type TeamName = "SPECTATOR" | "TERRORIST" | "COUNTERTERRORIST";
 

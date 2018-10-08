@@ -1,16 +1,15 @@
-/*eslint-disable no-console*/
-/*eslint-disable no-control-regex*/
+// tslint:disable:no-console
 
 // This file is an thorough example of how to log player kills,
 // team scores, chat text and server cvar changes from a demo file.
 
-import fs = require("fs");
-import assert = require("assert");
 import ansiStyles = require("ansi-styles");
-import demo = require("../demo");
+import assert = require("assert");
+import fs = require("fs");
 import util = require("util");
-import { TeamNumber } from "../entities/team";
+import demo = require("../demo");
 import { Player } from "../entities/player";
+import { TeamNumber } from "../entities/team";
 
 const colourReplacements = [
   { pattern: /\x01/g, ansi: ansiStyles.whiteBright.open }, // Default
@@ -38,23 +37,26 @@ const standardMessages: { [message: string]: string | undefined } = {
 };
 
 function teamNumberToAnsi(teamNum: TeamNumber) {
-  if (teamNum === TeamNumber.Terrorists) return ansiStyles.redBright.open;
-  if (teamNum === TeamNumber.CounterTerrorists)
+  if (teamNum === TeamNumber.Terrorists) {
+    return ansiStyles.redBright.open;
+  }
+  if (teamNum === TeamNumber.CounterTerrorists) {
     return ansiStyles.blueBright.open;
+  }
   return ansiStyles.gray.open;
 }
 
 function parseDemoFile(path: string) {
-  fs.readFile(path, function(err, buffer) {
+  fs.readFile(path, (err, buffer) => {
     assert.ifError(err);
 
     const demoFile = new demo.DemoFile();
 
     function logTeamScores() {
-      let teams = demoFile.teams;
+      const teams = demoFile.teams;
 
-      let terrorists = teams[TeamNumber.Terrorists];
-      let cts = teams[TeamNumber.CounterTerrorists];
+      const terrorists = teams[TeamNumber.Terrorists];
+      const cts = teams[TeamNumber.CounterTerrorists];
 
       console.log(
         "\t%s: %s score %d\n\t%s: %s score %d",
@@ -72,14 +74,14 @@ function parseDemoFile(path: string) {
 
       // If we have an entity index set, colour 0x03 in that entity's team colour
       if (entityIndex > 0) {
-        let ent = demoFile.entities.entities[entityIndex];
+        const ent = demoFile.entities.entities[entityIndex];
         if (ent instanceof Player) {
           text = text.replace(/\x03/g, teamNumberToAnsi(ent.teamNumber));
         }
       }
 
       // Replace each colour code with its corresponding ANSI escape sequence
-      for (var r of colourReplacements) {
+      for (const r of colourReplacements) {
         text = text.replace(r.pattern, ansiStyles.reset.open + r.ansi);
       }
 
@@ -101,19 +103,19 @@ function parseDemoFile(path: string) {
     });
 
     demoFile.gameEvents.on("player_death", e => {
-      let victim = demoFile.entities.getByUserId(e.userid);
-      let victimColour = teamNumberToAnsi(
+      const victim = demoFile.entities.getByUserId(e.userid);
+      const victimColour = teamNumberToAnsi(
         victim ? victim.teamNumber : TeamNumber.Spectator
       );
-      let victimName = victim ? victim.name : "unnamed";
+      const victimName = victim ? victim.name : "unnamed";
 
-      let attacker = demoFile.entities.getByUserId(e.attacker);
-      let attackerColour = teamNumberToAnsi(
+      const attacker = demoFile.entities.getByUserId(e.attacker);
+      const attackerColour = teamNumberToAnsi(
         attacker ? attacker.teamNumber : TeamNumber.Spectator
       );
-      let attackerName = attacker ? attacker.name : "unnamed";
+      const attackerName = attacker ? attacker.name : "unnamed";
 
-      let headshotText = e.headshot ? " HS" : "";
+      const headshotText = e.headshot ? " HS" : "";
 
       console.log(
         `${attackerColour}${attackerName}${ansiStyles.reset.open} [${
@@ -123,7 +125,7 @@ function parseDemoFile(path: string) {
     });
 
     demoFile.userMessages.on("TextMsg", e => {
-      let params = e.params
+      const params = e.params
         .map(
           param =>
             param[0] === "#"
@@ -132,7 +134,7 @@ function parseDemoFile(path: string) {
         )
         .filter(s => s.length);
 
-      let formatted = util.format.apply(null, params);
+      const formatted = util.format.apply(null, params);
       console.log(formatSayText(0, formatted));
     });
 
@@ -141,9 +143,9 @@ function parseDemoFile(path: string) {
     });
 
     demoFile.userMessages.on("SayText2", e => {
-      let nonEmptyParams = e.params.filter(s => s.length);
-      let msgText = standardMessages[e.msgName];
-      let formatted = msgText
+      const nonEmptyParams = e.params.filter(s => s.length);
+      const msgText = standardMessages[e.msgName];
+      const formatted = msgText
         ? util.format.apply(null, [msgText].concat(nonEmptyParams))
         : `${e.msgName} ${nonEmptyParams.join(" ")}`;
 

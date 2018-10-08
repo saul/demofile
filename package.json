@@ -13,7 +13,7 @@
     "url": "https://github.com/saul/demofile.git"
   },
   "scripts": {
-    "lint": "tslint 'src/**/*.ts'",
+    "lint": "tslint --fix 'src/**/*.ts' --exclude 'src/**/*.d.ts'",
     "build": "tsc",
     "watch": "tsc -w",
     "generate-docs": "shx rm -rf docs && jsdoc -c .jsdoc.json --verbose .",
