@@ -22,7 +22,7 @@
     "version": "npm run generate-docs && npm run bundle && git add -A browser/bundle.js docs",
     "postversion": "git push && git push --tags && npm publish"
   },
-  "main": "demo.js",
+  "main": "dist/demo.js",
   "dependencies": {
     "@types/bytebuffer": "^5.0.37",
     "@types/lodash": "^4.14.116",
