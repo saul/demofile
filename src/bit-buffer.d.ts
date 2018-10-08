@@ -1,4 +1,4 @@
-declare module 'bit-buffer' {
+declare module "bit-buffer" {
   export class BitView {
     readonly buffer: ArrayBuffer;
 
@@ -63,7 +63,11 @@ declare module 'bit-buffer' {
     // Defined by ext/bitbuffer.ts
     static from: (array: Uint8Array) => BitStream;
 
-    constructor(view: BitView | ArrayBuffer | Buffer, byteOffset?: number, byteLength?: number);
+    constructor(
+      view: BitView | ArrayBuffer | Buffer,
+      byteOffset?: number,
+      byteLength?: number
+    );
     readBits(bits: number, signed: boolean): number;
     writeBits(value: number, bits: number): void;
     readUint8(): number;

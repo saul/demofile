@@ -30,12 +30,18 @@ export class Networkable<Props = UnknownEntityProps> {
    */
   deleting: boolean = false;
 
-  constructor(demo: DemoFile, index: number, classId: number, serialNum: number, props: Props | undefined) {
+  constructor(
+    demo: DemoFile,
+    index: number,
+    classId: number,
+    serialNum: number,
+    props: Props | undefined
+  ) {
     this._demo = demo;
     this.index = index;
     this.classId = classId;
     this.serialNum = serialNum;
-    this.props = props || {} as Props;
+    this.props = props || ({} as Props);
   }
 
   /**
@@ -45,7 +51,10 @@ export class Networkable<Props = UnknownEntityProps> {
    * @returns {*} Property value, `undefined` if non-existent
    * @public
    */
-  getProp<Table extends keyof Props, VarName extends keyof Props[Table]>(tableName: Table, varName: VarName): Props[Table][VarName] {
+  getProp<Table extends keyof Props, VarName extends keyof Props[Table]>(
+    tableName: Table,
+    varName: VarName
+  ): Props[Table][VarName] {
     return this.props[tableName][varName];
   }
 
@@ -53,9 +62,14 @@ export class Networkable<Props = UnknownEntityProps> {
    * Interpret an array-like data table (e.g., m_iAmmo) as an array
    * @param tableName Name of the data table
    */
-  getIndexedProps<TableName extends keyof Props, TableKeys extends keyof Props[TableName], ArrayType extends ('000' extends TableKeys ? Props[TableName][TableKeys][] : undefined)>(tableName: TableName): ArrayType {
-    if (!('000' in this.props[tableName]))
-      return undefined as ArrayType;
+  getIndexedProps<
+    TableName extends keyof Props,
+    TableKeys extends keyof Props[TableName],
+    ArrayType extends "000" extends TableKeys
+      ? Props[TableName][TableKeys][]
+      : undefined
+  >(tableName: TableName): ArrayType {
+    if (!("000" in this.props[tableName])) return undefined as ArrayType;
     return Object.values(this.props[tableName]) as ArrayType;
   }
 
@@ -65,10 +79,16 @@ export class Networkable<Props = UnknownEntityProps> {
    * @param varName Name of the prop to update
    * @param newValue New prop value
    */
-  updateProp<Table extends keyof Props, VarName extends keyof Props[Table], PropType extends Props[Table][VarName]>(tableName: Table, varName: VarName, newValue: PropType) {
+  updateProp<
+    Table extends keyof Props,
+    VarName extends keyof Props[Table],
+    PropType extends Props[Table][VarName]
+  >(tableName: Table, varName: VarName, newValue: PropType) {
     const table = this.props[tableName];
     if (table === undefined) {
-      this.props[tableName] = { [varName]: newValue } as unknown as Props[Table];
+      this.props[tableName] = ({
+        [varName]: newValue
+      } as unknown) as Props[Table];
     } else {
       table[varName] = newValue;
     }

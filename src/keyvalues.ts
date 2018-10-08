@@ -20,7 +20,12 @@ interface Color {
   a: number;
 }
 
-export type KeyValuesPrimitive = string | number | Color | Long | { [key: string]: KeyValues };
+export type KeyValuesPrimitive =
+  | string
+  | number
+  | Color
+  | Long
+  | { [key: string]: KeyValues };
 export type KeyValues = KeyValuesPrimitive[] | KeyValuesPrimitive;
 
 function parseValue(type: KeyValueType, buffer: ByteBuffer): KeyValues {
@@ -31,9 +36,9 @@ function parseValue(type: KeyValueType, buffer: ByteBuffer): KeyValues {
       while (type !== KeyValueType.NumTypes) {
         var name = buffer.readCString();
         var value = parseValue(type, buffer);
-        if (name == '') {
-          if (typeof value !== 'string')
-            throw 'Expected keyless KeyValues to have string value';
+        if (name == "") {
+          if (typeof value !== "string")
+            throw "Expected keyless KeyValues to have string value";
           if (Array.isArray(inner)) {
             inner.push(value);
           } else {
@@ -41,7 +46,7 @@ function parseValue(type: KeyValueType, buffer: ByteBuffer): KeyValues {
           }
         } else {
           if (Array.isArray(inner))
-            throw 'Unexpected mix of empty and non-empty keys in KeyValues';
+            throw "Unexpected mix of empty and non-empty keys in KeyValues";
           inner[name] = value;
         }
 
@@ -57,7 +62,7 @@ function parseValue(type: KeyValueType, buffer: ByteBuffer): KeyValues {
     case KeyValueType.Ptr:
       return buffer.readUint32();
     case KeyValueType.WString:
-      throw 'wstring values are not supported';
+      throw "wstring values are not supported";
     case KeyValueType.Color:
       return {
         r: buffer.readUint8(),
@@ -78,7 +83,9 @@ function parseValue(type: KeyValueType, buffer: ByteBuffer): KeyValues {
   }
 }
 
-export function parseBinaryKeyValues(buffer: ByteBuffer): { [name: string]: KeyValues } {
+export function parseBinaryKeyValues(
+  buffer: ByteBuffer
+): { [name: string]: KeyValues } {
   var type = buffer.readUint8();
   return {
     [buffer.readCString()]: parseValue(type, buffer)

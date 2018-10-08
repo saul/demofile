@@ -1,7 +1,7 @@
-import { EventEmitter } from 'events';
-import { DemoFile } from './demo';
-import { ICNETMsg_SetConVar } from './protobufs/netmessages';
-import { ICMsg_CVars } from './protobufs/cstrike15_usermessages';
+import { EventEmitter } from "events";
+import { DemoFile } from "./demo";
+import { ICNETMsg_SetConVar } from "./protobufs/netmessages";
+import { ICMsg_CVars } from "./protobufs/cstrike15_usermessages";
 
 interface IConVarChangeEvent {
   name: string;
@@ -13,8 +13,8 @@ export declare interface ConVars {
   /**
    * Fired when any console variable is changed (e.g., 'mp_buytime').
    */
-  on(event: 'change', listener: (event: IConVarChangeEvent) => void): this;
-  emit(name: 'change', event: IConVarChangeEvent): boolean;
+  on(event: "change", listener: (event: IConVarChangeEvent) => void): this;
+  emit(name: "change", event: IConVarChangeEvent): boolean;
 
   /**
    * Fired when a specific console variable is changed (e.g., 'mp_buytime').
@@ -31,7 +31,7 @@ export class ConVars extends EventEmitter {
   readonly vars: ReadonlyMap<string, string> = this._vars;
 
   listen(demo: DemoFile) {
-    demo.on('net_SetConVar', (msg: RequiredNonNullable<ICNETMsg_SetConVar>) => {
+    demo.on("net_SetConVar", (msg: RequiredNonNullable<ICNETMsg_SetConVar>) => {
       var convars = msg.convars as RequiredNonNullable<ICMsg_CVars>;
       for (let cvar of convars.cvars) {
         if (cvar.name == null || cvar.value == null) {
@@ -48,7 +48,7 @@ export class ConVars extends EventEmitter {
         };
 
         this.emit(cvar.name, args);
-        this.emit('change', args);
+        this.emit("change", args);
       }
     });
   }

@@ -1,5 +1,5 @@
-import { CCSGameRulesProxy } from '../sendtabletypes';
-import { Networkable } from './networkable';
+import { CCSGameRulesProxy } from "../sendtabletypes";
+import { Networkable } from "./networkable";
 
 /**
  * Represents the game rules.
@@ -9,7 +9,7 @@ export class GameRules extends Networkable<CCSGameRulesProxy> {
    * @returns Is the game currently in 'warmup' mode?
    */
   get isWarmup(): boolean {
-    return this.getProp('DT_CSGameRules', 'm_bWarmupPeriod');
+    return this.getProp("DT_CSGameRules", "m_bWarmupPeriod");
   }
 
   /**
@@ -27,7 +27,7 @@ export class GameRules extends Networkable<CCSGameRulesProxy> {
    * @returns Total number of rounds played.
    */
   get roundsPlayed(): number {
-    return this.getProp('DT_CSGameRules', 'm_totalRoundsPlayed');
+    return this.getProp("DT_CSGameRules", "m_totalRoundsPlayed");
   }
 
   /**
@@ -35,13 +35,13 @@ export class GameRules extends Networkable<CCSGameRulesProxy> {
    */
   get phase(): string {
     const gamePhases: { [phase: number]: string } = {
-      2: 'first',
-      3: 'second',
-      4: 'halftime',
-      5: 'postgame'
+      2: "first",
+      3: "second",
+      4: "halftime",
+      5: "postgame"
     };
 
-    let phase = this.getProp('DT_CSGameRules', 'm_gamePhase');
+    let phase = this.getProp("DT_CSGameRules", "m_gamePhase");
     return gamePhases[phase];
   }
 }

@@ -4,49 +4,48 @@
 // This file is an thorough example of how to log player kills,
 // team scores, chat text and server cvar changes from a demo file.
 
-import fs = require('fs');
-import assert = require('assert');
-import ansiStyles = require('ansi-styles');
-import demo = require('../demo');
-import util = require('util');
-import { TeamNumber } from '../entities/team';
-import { Player } from '../entities/player';
+import fs = require("fs");
+import assert = require("assert");
+import ansiStyles = require("ansi-styles");
+import demo = require("../demo");
+import util = require("util");
+import { TeamNumber } from "../entities/team";
+import { Player } from "../entities/player";
 
 const colourReplacements = [
-  { 'pattern': /\x01/g, 'ansi': ansiStyles.whiteBright.open }, // Default
-  { 'pattern': /\x02/g, 'ansi': ansiStyles.red.open }, // Dark Red
-  { 'pattern': /\x03/g, 'ansi': ansiStyles.magenta.open }, // Light purple
-  { 'pattern': /\x04/g, 'ansi': ansiStyles.greenBright.open }, // Bright Green
-  { 'pattern': /\x05/g, 'ansi': ansiStyles.green.open }, // Pale Green
-  { 'pattern': /\x06/g, 'ansi': ansiStyles.greenBright.open }, // Green
-  { 'pattern': /\x07/g, 'ansi': ansiStyles.redBright.open }, // Pale Red
-  { 'pattern': /\x08/g, 'ansi': ansiStyles.gray.open }, // Grey
-  { 'pattern': /\x09/g, 'ansi': ansiStyles.yellowBright.open }, // Yellow
-  { 'pattern': /\x0A/g, 'ansi': ansiStyles.white.open }, // Silver
-  { 'pattern': /\x0B/g, 'ansi': ansiStyles.blueBright.open }, // Blue
-  { 'pattern': /\x0C/g, 'ansi': ansiStyles.blue.open }, // Dark Blue
-  { 'pattern': /\x0D/g, 'ansi': ansiStyles.magenta.open }, // Blue Grey for SayText2, Purple for SayText
-  { 'pattern': /\x0E/g, 'ansi': ansiStyles.magentaBright.open }, // Magenta
-  { 'pattern': /\x0F/g, 'ansi': ansiStyles.red.open }, // Dull Red
-  { 'pattern': /\x10/g, 'ansi': ansiStyles.yellow.open } // Orange
+  { pattern: /\x01/g, ansi: ansiStyles.whiteBright.open }, // Default
+  { pattern: /\x02/g, ansi: ansiStyles.red.open }, // Dark Red
+  { pattern: /\x03/g, ansi: ansiStyles.magenta.open }, // Light purple
+  { pattern: /\x04/g, ansi: ansiStyles.greenBright.open }, // Bright Green
+  { pattern: /\x05/g, ansi: ansiStyles.green.open }, // Pale Green
+  { pattern: /\x06/g, ansi: ansiStyles.greenBright.open }, // Green
+  { pattern: /\x07/g, ansi: ansiStyles.redBright.open }, // Pale Red
+  { pattern: /\x08/g, ansi: ansiStyles.gray.open }, // Grey
+  { pattern: /\x09/g, ansi: ansiStyles.yellowBright.open }, // Yellow
+  { pattern: /\x0A/g, ansi: ansiStyles.white.open }, // Silver
+  { pattern: /\x0B/g, ansi: ansiStyles.blueBright.open }, // Blue
+  { pattern: /\x0C/g, ansi: ansiStyles.blue.open }, // Dark Blue
+  { pattern: /\x0D/g, ansi: ansiStyles.magenta.open }, // Blue Grey for SayText2, Purple for SayText
+  { pattern: /\x0E/g, ansi: ansiStyles.magentaBright.open }, // Magenta
+  { pattern: /\x0F/g, ansi: ansiStyles.red.open }, // Dull Red
+  { pattern: /\x10/g, ansi: ansiStyles.yellow.open } // Orange
 ];
 
 const standardMessages: { [message: string]: string | undefined } = {
-  'Cstrike_Chat_All': '\x03%s\x01 : %s',
-  'Cstrike_Chat_AllDead': '*DEAD* \x03%s\x01 : %s',
-  'Game_connected': '%s connected.'
+  Cstrike_Chat_All: "\x03%s\x01 : %s",
+  Cstrike_Chat_AllDead: "*DEAD* \x03%s\x01 : %s",
+  Game_connected: "%s connected."
 };
 
 function teamNumberToAnsi(teamNum: TeamNumber) {
-  if (teamNum === TeamNumber.Terrorists)
-    return ansiStyles.redBright.open;
+  if (teamNum === TeamNumber.Terrorists) return ansiStyles.redBright.open;
   if (teamNum === TeamNumber.CounterTerrorists)
     return ansiStyles.blueBright.open;
   return ansiStyles.gray.open;
 }
 
 function parseDemoFile(path: string) {
-  fs.readFile(path, function (err, buffer) {
+  fs.readFile(path, function(err, buffer) {
     assert.ifError(err);
 
     const demoFile = new demo.DemoFile();
@@ -57,11 +56,19 @@ function parseDemoFile(path: string) {
       let terrorists = teams[TeamNumber.Terrorists];
       let cts = teams[TeamNumber.CounterTerrorists];
 
-      console.log('\t%s: %s score %d\n\t%s: %s score %d', terrorists.teamName, terrorists.clanName, terrorists.score, cts.teamName, cts.clanName, cts.score);
+      console.log(
+        "\t%s: %s score %d\n\t%s: %s score %d",
+        terrorists.teamName,
+        terrorists.clanName,
+        terrorists.score,
+        cts.teamName,
+        cts.clanName,
+        cts.score
+      );
     }
 
     function formatSayText(entityIndex: number, text: string) {
-      text = '\x01' + text;
+      text = "\x01" + text;
 
       // If we have an entity index set, colour 0x03 in that entity's team colour
       if (entityIndex > 0) {
@@ -79,82 +86,99 @@ function parseDemoFile(path: string) {
       return text + ansiStyles.reset.open;
     }
 
-    demoFile.on('start', () => {
-      console.log('Demo header:', demoFile.header);
+    demoFile.on("start", () => {
+      console.log("Demo header:", demoFile.header);
     });
 
-    demoFile.on('end', () => {
+    demoFile.on("end", () => {
       logTeamScores();
 
-      console.log('Finished.');
+      console.log("Finished.");
     });
 
-    demoFile.conVars.on('change', e => {
-      console.log('%s: %s -> %s', e.name, e.oldValue, e.value);
+    demoFile.conVars.on("change", e => {
+      console.log("%s: %s -> %s", e.name, e.oldValue, e.value);
     });
 
-    demoFile.gameEvents.on('player_death', e => {
+    demoFile.gameEvents.on("player_death", e => {
       let victim = demoFile.entities.getByUserId(e.userid);
-      let victimColour = teamNumberToAnsi(victim ? victim.teamNumber : TeamNumber.Spectator);
-      let victimName = victim ? victim.name : 'unnamed';
+      let victimColour = teamNumberToAnsi(
+        victim ? victim.teamNumber : TeamNumber.Spectator
+      );
+      let victimName = victim ? victim.name : "unnamed";
 
       let attacker = demoFile.entities.getByUserId(e.attacker);
-      let attackerColour = teamNumberToAnsi(attacker ? attacker.teamNumber : TeamNumber.Spectator);
-      let attackerName = attacker ? attacker.name : 'unnamed';
+      let attackerColour = teamNumberToAnsi(
+        attacker ? attacker.teamNumber : TeamNumber.Spectator
+      );
+      let attackerName = attacker ? attacker.name : "unnamed";
 
-      let headshotText = e.headshot ? ' HS' : '';
+      let headshotText = e.headshot ? " HS" : "";
 
-      console.log(`${attackerColour}${attackerName}${ansiStyles.reset.open} [${e.weapon}${headshotText}] ${victimColour}${victimName}${ansiStyles.reset.open}`);
+      console.log(
+        `${attackerColour}${attackerName}${ansiStyles.reset.open} [${
+          e.weapon
+        }${headshotText}] ${victimColour}${victimName}${ansiStyles.reset.open}`
+      );
     });
 
-    demoFile.userMessages.on('TextMsg', e => {
-      let params =
-        e.params
-          .map(param => param[0] === '#' ? standardMessages[param.substring(1)] || param : param)
-          .filter(s => s.length);
+    demoFile.userMessages.on("TextMsg", e => {
+      let params = e.params
+        .map(
+          param =>
+            param[0] === "#"
+              ? standardMessages[param.substring(1)] || param
+              : param
+        )
+        .filter(s => s.length);
 
       let formatted = util.format.apply(null, params);
       console.log(formatSayText(0, formatted));
     });
 
-    demoFile.userMessages.on('SayText', e => {
+    demoFile.userMessages.on("SayText", e => {
       console.log(formatSayText(0, e.text));
     });
 
-    demoFile.userMessages.on('SayText2', e => {
+    demoFile.userMessages.on("SayText2", e => {
       let nonEmptyParams = e.params.filter(s => s.length);
       let msgText = standardMessages[e.msgName];
       let formatted = msgText
         ? util.format.apply(null, [msgText].concat(nonEmptyParams))
-        : `${e.msgName} ${nonEmptyParams.join(' ')}`;
+        : `${e.msgName} ${nonEmptyParams.join(" ")}`;
 
       console.log(formatSayText(e.entIdx, formatted));
     });
 
-    demoFile.gameEvents.on('round_end', e => {
-      console.log('*** Round ended \'%s\' (reason: %s, tick: %d)', demoFile.gameRules.phase, e.reason, demoFile.currentTick);
+    demoFile.gameEvents.on("round_end", e => {
+      console.log(
+        "*** Round ended '%s' (reason: %s, tick: %d)",
+        demoFile.gameRules.phase,
+        e.reason,
+        demoFile.currentTick
+      );
 
       // We can't print the team scores here as they haven't been updated yet.
       // See round_officially_ended below.
     });
 
-    demoFile.gameEvents.on('round_officially_ended', logTeamScores);
+    demoFile.gameEvents.on("round_officially_ended", logTeamScores);
 
-    demoFile.entities.on('create', e => {
+    demoFile.entities.on("create", e => {
       // We're only interested in player entities being created.
       if (!(e.entity instanceof Player)) {
         return;
       }
 
-      console.log('%s (%s) joined the game', e.entity.name, e.entity.steamId);
+      console.log("%s (%s) joined the game", e.entity.name, e.entity.steamId);
     });
 
-    demoFile.entities.on('beforeremove', e => {
+    demoFile.entities.on("beforeremove", e => {
       if (!(e.entity instanceof Player)) {
         return;
       }
 
-      console.log('%s left the game', e.entity.name);
+      console.log("%s left the game", e.entity.name);
     });
 
     // Start parsing the buffer now that we've added our event listeners

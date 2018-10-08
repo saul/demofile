@@ -1,12 +1,12 @@
-import _ = require('lodash');
-import assert = require('assert');
-import Long = require('long');
-import { BitStream, CoordType } from './ext/bitbuffer';
-import { ISendProp } from './entities';
-import assertExists from 'ts-assert-exists';
-import { Vector } from './sendtabletypes';
-import { NUM_NETWORKED_EHANDLE_BITS } from './consts';
-import { EntityHandle } from './entityhandle';
+import _ = require("lodash");
+import assert = require("assert");
+import Long = require("long");
+import { BitStream, CoordType } from "./ext/bitbuffer";
+import { ISendProp } from "./entities";
+import assertExists from "ts-assert-exists";
+import { Vector } from "./sendtabletypes";
+import { NUM_NETWORKED_EHANDLE_BITS } from "./consts";
+import { EntityHandle } from "./entityhandle";
 
 export const enum PropType {
   Int = 0,
@@ -19,44 +19,58 @@ export const enum PropType {
   Int64 = 7
 }
 
-export const SPROP_UNSIGNED = (1 << 0); // Unsigned integer data.
-export const SPROP_COORD = (1 << 1); // If this is set, the float/vector is treated like a world coordinate. Note that the bit count is ignored in this case.
-export const SPROP_NOSCALE = (1 << 2); // For floating point, don't scale into range, just take value as is.
-export const SPROP_ROUNDDOWN = (1 << 3); // For floating point, limit high value to range minus one bit unit
-export const SPROP_ROUNDUP = (1 << 4); // For floating point, limit low value to range minus one bit unit
-export const SPROP_NORMAL = (1 << 5); // If this is set, the vector is treated like a normal (only valid for vectors)
-export const SPROP_EXCLUDE = (1 << 6); // This is an exclude prop (not excludED, but it points at another prop to be excluded).
-export const SPROP_XYZE = (1 << 7); // Use XYZ/Exponent encoding for vectors.
-export const SPROP_INSIDEARRAY = (1 << 8); // This tells us that the property is inside an array, so it shouldn't be put into the flattened property list. Its array will point at it when it needs to.
-export const SPROP_PROXY_ALWAYS_YES = (1 << 9); // Set for datatable props using one of the default datatable proxies like SendProxy_DataTableToDataTable that always send the data to all clients.
-export const SPROP_IS_A_VECTOR_ELEM = (1 << 10); // Set automatically if SPROP_VECTORELEM is used.
-export const SPROP_COLLAPSIBLE = (1 << 11); // Set automatically if it's a datatable with an offset of 0 that doesn't change the pointer (ie: for all automatically-chained base classes).
-export const SPROP_COORD_MP = (1 << 12); // Like SPROP_COORD, but special handling for multiplayer games
-export const SPROP_COORD_MP_LOWPRECISION = (1 << 13); // Like SPROP_COORD, but special handling for multiplayer games where the fractional component only gets a 3 bits instead of 5
-export const SPROP_COORD_MP_INTEGRAL = (1 << 14); // SPROP_COORD_MP, but coordinates are rounded to integral boundaries
-export const SPROP_CELL_COORD = (1 << 15); // Like SPROP_COORD, but special encoding for cell coordinates that can't be negative, bit count indicate maximum value
-export const SPROP_CELL_COORD_LOWPRECISION = (1 << 16); // Like SPROP_CELL_COORD, but special handling where the fractional component only gets a 3 bits instead of 5
-export const SPROP_CELL_COORD_INTEGRAL = (1 << 17); // SPROP_CELL_COORD, but coordinates are rounded to integral boundaries
-export const SPROP_CHANGES_OFTEN = (1 << 18); // this is an often changed field, moved to head of sendtable so it gets a small index
-export const SPROP_VARINT = (1 << 19); // use var int encoded (google protobuf style), note you want to include SPROP_UNSIGNED if needed, its more efficient
+export const SPROP_UNSIGNED = 1 << 0; // Unsigned integer data.
+export const SPROP_COORD = 1 << 1; // If this is set, the float/vector is treated like a world coordinate. Note that the bit count is ignored in this case.
+export const SPROP_NOSCALE = 1 << 2; // For floating point, don't scale into range, just take value as is.
+export const SPROP_ROUNDDOWN = 1 << 3; // For floating point, limit high value to range minus one bit unit
+export const SPROP_ROUNDUP = 1 << 4; // For floating point, limit low value to range minus one bit unit
+export const SPROP_NORMAL = 1 << 5; // If this is set, the vector is treated like a normal (only valid for vectors)
+export const SPROP_EXCLUDE = 1 << 6; // This is an exclude prop (not excludED, but it points at another prop to be excluded).
+export const SPROP_XYZE = 1 << 7; // Use XYZ/Exponent encoding for vectors.
+export const SPROP_INSIDEARRAY = 1 << 8; // This tells us that the property is inside an array, so it shouldn't be put into the flattened property list. Its array will point at it when it needs to.
+export const SPROP_PROXY_ALWAYS_YES = 1 << 9; // Set for datatable props using one of the default datatable proxies like SendProxy_DataTableToDataTable that always send the data to all clients.
+export const SPROP_IS_A_VECTOR_ELEM = 1 << 10; // Set automatically if SPROP_VECTORELEM is used.
+export const SPROP_COLLAPSIBLE = 1 << 11; // Set automatically if it's a datatable with an offset of 0 that doesn't change the pointer (ie: for all automatically-chained base classes).
+export const SPROP_COORD_MP = 1 << 12; // Like SPROP_COORD, but special handling for multiplayer games
+export const SPROP_COORD_MP_LOWPRECISION = 1 << 13; // Like SPROP_COORD, but special handling for multiplayer games where the fractional component only gets a 3 bits instead of 5
+export const SPROP_COORD_MP_INTEGRAL = 1 << 14; // SPROP_COORD_MP, but coordinates are rounded to integral boundaries
+export const SPROP_CELL_COORD = 1 << 15; // Like SPROP_COORD, but special encoding for cell coordinates that can't be negative, bit count indicate maximum value
+export const SPROP_CELL_COORD_LOWPRECISION = 1 << 16; // Like SPROP_CELL_COORD, but special handling where the fractional component only gets a 3 bits instead of 5
+export const SPROP_CELL_COORD_INTEGRAL = 1 << 17; // SPROP_CELL_COORD, but coordinates are rounded to integral boundaries
+export const SPROP_CHANGES_OFTEN = 1 << 18; // this is an often changed field, moved to head of sendtable so it gets a small index
+export const SPROP_VARINT = 1 << 19; // use var int encoded (google protobuf style), note you want to include SPROP_UNSIGNED if needed, its more efficient
 
 const DT_MAX_STRING_BITS = 9;
 
-export type PropPrimitive = string | number | boolean | Long | Vector | EntityHandle;
+export type PropPrimitive =
+  | string
+  | number
+  | boolean
+  | Long
+  | Vector
+  | EntityHandle;
 export type PropValue = PropPrimitive | PropPrimitive[];
 
-export function makeDecoder(sendProp: ISendProp, arrayElementProp: ISendProp | undefined): (bitbuf: BitStream) => PropValue {
+export function makeDecoder(
+  sendProp: ISendProp,
+  arrayElementProp: ISendProp | undefined
+): (bitbuf: BitStream) => PropValue {
   const type = sendProp.type as PropType;
   assert(type !== PropType.DataTable);
 
   if (type == PropType.Array) {
-    return makeArrayDecoder(sendProp, assertExists(arrayElementProp, 'array prop with no element prop'));
+    return makeArrayDecoder(
+      sendProp,
+      assertExists(arrayElementProp, "array prop with no element prop")
+    );
   } else {
     return makeValueDecoder(sendProp);
   }
 }
 
-function makeValueDecoder(sendProp: ISendProp): (bitbuf: BitStream) => PropPrimitive {
+function makeValueDecoder(
+  sendProp: ISendProp
+): (bitbuf: BitStream) => PropPrimitive {
   switch (sendProp.type as PropType) {
     case PropType.Int:
       return makeIntDecoder(sendProp);
@@ -75,21 +89,26 @@ function makeValueDecoder(sendProp: ISendProp): (bitbuf: BitStream) => PropPrimi
   }
 }
 
-function makeIntDecoder(sendProp: ISendProp): (bitbuf: BitStream) => number | EntityHandle | boolean {
+function makeIntDecoder(
+  sendProp: ISendProp
+): (bitbuf: BitStream) => number | EntityHandle | boolean {
   if ((sendProp.flags & SPROP_VARINT) !== 0) {
     /*eslint-disable no-unreachable*/
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
       //return this.bitbuf.readVarint32();
-      throw 'Not implemented'; // TODO
+      throw "Not implemented"; // TODO
     } else {
       //return this.bitbuf.readSignedVarint32();
-      throw 'Not implemented'; // TODO
+      throw "Not implemented"; // TODO
     }
     /*eslint-enable no-unreachable*/
   } else {
     const numBits = sendProp.numBits;
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
-      if ((sendProp.flags & SPROP_NOSCALE) !== 0 && sendProp.numBits == NUM_NETWORKED_EHANDLE_BITS) {
+      if (
+        (sendProp.flags & SPROP_NOSCALE) !== 0 &&
+        sendProp.numBits == NUM_NETWORKED_EHANDLE_BITS
+      ) {
         return bitbuf => new EntityHandle(bitbuf.readUBits(numBits));
       } else if (numBits === 1) {
         return bitbuf => bitbuf.readOneBit();
@@ -102,7 +121,9 @@ function makeIntDecoder(sendProp: ISendProp): (bitbuf: BitStream) => number | En
   }
 }
 
-function makeSpecialFloatDecoder(sendProp: ISendProp): ((bitbuf: BitStream) => number) | undefined {
+function makeSpecialFloatDecoder(
+  sendProp: ISendProp
+): ((bitbuf: BitStream) => number) | undefined {
   if ((sendProp.flags & SPROP_COORD) !== 0) {
     return bitbuf => bitbuf.readBitCoord();
   } else if ((sendProp.flags & SPROP_COORD_MP) !== 0) {
@@ -118,9 +139,11 @@ function makeSpecialFloatDecoder(sendProp: ISendProp): ((bitbuf: BitStream) => n
   } else if ((sendProp.flags & SPROP_CELL_COORD) !== 0) {
     return bitbuf => bitbuf.readBitCellCoord(sendProp.numBits, CoordType.None);
   } else if ((sendProp.flags & SPROP_CELL_COORD_LOWPRECISION) !== 0) {
-    return bitbuf => bitbuf.readBitCellCoord(sendProp.numBits, CoordType.LowPrecision);
+    return bitbuf =>
+      bitbuf.readBitCellCoord(sendProp.numBits, CoordType.LowPrecision);
   } else if ((sendProp.flags & SPROP_CELL_COORD_INTEGRAL) !== 0) {
-    return bitbuf => bitbuf.readBitCellCoord(sendProp.numBits, CoordType.Integral);
+    return bitbuf =>
+      bitbuf.readBitCellCoord(sendProp.numBits, CoordType.Integral);
   } else {
     return undefined;
   }
@@ -176,7 +199,9 @@ function makeVectorDecoder(sendProp: ISendProp): (bitbuf: BitStream) => Vector {
   };
 }
 
-function makeVectorXYDecoder(sendProp: ISendProp): (bitbuf: BitStream) => Vector {
+function makeVectorXYDecoder(
+  sendProp: ISendProp
+): (bitbuf: BitStream) => Vector {
   const floatDecode = makeFloatDecoder(sendProp);
 
   return bitbuf => ({
@@ -198,10 +223,10 @@ function makeInt64Decoder(sendProp: ISendProp): (bitbuf: BitStream) => Long {
     /*eslint-disable no-unreachable*/
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
       //return this.bitbuf.readVarint64();
-      throw 'Not implemented'; // TODO
+      throw "Not implemented"; // TODO
     } else {
       //return this.bitbuf.readSignedVarint64();
-      throw 'Not implemented'; // TODO
+      throw "Not implemented"; // TODO
     }
     /*eslint-enable no-unreachable*/
   } else {
@@ -224,7 +249,10 @@ function makeInt64Decoder(sendProp: ISendProp): (bitbuf: BitStream) => Long {
   }
 }
 
-function makeArrayDecoder(sendProp: ISendProp, arrayElementProp: ISendProp): (bitbuf: BitStream) => PropPrimitive[] {
+function makeArrayDecoder(
+  sendProp: ISendProp,
+  arrayElementProp: ISendProp
+): (bitbuf: BitStream) => PropPrimitive[] {
   const maxElements = sendProp.numElements;
   const numBits = Math.ceil(Math.log2(maxElements)) + 1;
   const elementDecoder = makeValueDecoder(arrayElementProp);

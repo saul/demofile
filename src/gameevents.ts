@@ -1,15 +1,21 @@
-import * as _ from 'lodash';
-import * as assert from 'assert';
-import { EventEmitter } from 'events';
-import { DemoFile } from './demo';
-import { ICSVCMsg_GameEvent, ICSVCMsg_GameEventList, CSVCMsg_GameEventList } from './protobufs/netmessages';
+import * as _ from "lodash";
+import * as assert from "assert";
+import { EventEmitter } from "events";
+import { DemoFile } from "./demo";
+import {
+  ICSVCMsg_GameEvent,
+  ICSVCMsg_GameEventList,
+  CSVCMsg_GameEventList
+} from "./protobufs/netmessages";
 
 class GameEvent {
   name: string;
   id: number;
   keyNames: string[];
 
-  constructor(descriptor: RequiredNonNullable<CSVCMsg_GameEventList.Idescriptor_t>) {
+  constructor(
+    descriptor: RequiredNonNullable<CSVCMsg_GameEventList.Idescriptor_t>
+  ) {
     this.name = descriptor.name;
     this.id = descriptor.eventid;
     this.keyNames = descriptor.keys.map(key => key.name);
@@ -21,7 +27,7 @@ class GameEvent {
     return _.zipObject(
       this.keyNames,
       eventMsg.keys.map(key => {
-        return _.find(key, (value, name) => value !== null && name !== 'type');
+        return _.find(key, (value, name) => value !== null && name !== "type");
       })
     );
   }
@@ -40,12 +46,11 @@ export class GameEvents extends EventEmitter {
   private _tickEvents: GameEventEvent<any>[] = [];
 
   listen(demo: DemoFile) {
-    demo.on('svc_GameEventList', this._handleGameEventList.bind(this));
+    demo.on("svc_GameEventList", this._handleGameEventList.bind(this));
 
-    demo.on('svc_GameEvent', msg => {
+    demo.on("svc_GameEvent", msg => {
       var event = this.gameEventList[msg.eventid];
-      if (!event)
-        return;
+      if (!event) return;
 
       var eventVars = event.messageToObject(msg);
 
@@ -56,11 +61,11 @@ export class GameEvents extends EventEmitter {
       });
     });
 
-    demo.on('tickend', () => {
+    demo.on("tickend", () => {
       this._tickEvents.forEach(event => {
         this.emit(event.name, event.event);
 
-        this.emit('event', {
+        this.emit("event", {
           name: event.name,
           event: event.event
         });

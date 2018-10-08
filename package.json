@@ -13,9 +13,11 @@
     "url": "https://github.com/saul/demofile.git"
   },
   "scripts": {
-    "lint": "eslint .",
-    "generate-docs": "jsdoc -c .jsdoc.json --verbose .",
-    "bundle": "browserify browser/app.js -d -o browser/bundle.js -t brfs",
+    "lint": "tslint 'src/**/*.ts'",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "generate-docs": "shx rm -rf docs && jsdoc -c .jsdoc.json --verbose .",
+    "bundle": "browserify browser/app.js -d -o browser/bundle.js",
     "preversion": "npm run lint",
     "version": "npm run generate-docs && npm run bundle && git add -A browser/bundle.js docs",
     "postversion": "git push && git push --tags && npm publish"
@@ -25,28 +27,35 @@
     "@types/bytebuffer": "^5.0.37",
     "@types/lodash": "^4.14.116",
     "@types/node": "^10.11.3",
-    "async": "^1.5.0",
-    "binary-parser": "^1.1.5",
     "bit-buffer": "0.0.3",
-    "brfs": "^1.4.3",
-    "buffer": "^5.0.0",
     "bytebuffer": "^5.0.0",
-    "eslint": "^3.9.1",
     "lodash": "^4.17.11",
     "long": "^3.0.3",
-    "npm": "^6.4.1",
     "protobufjs": "^6.8.8",
     "ts-assert-exists": "^1.0.4",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.1.1",
-    "utf8": "^3.0.0",
-    "varint": "^4.0.0"
+    "typescript": "^3.1.1"
   },
   "devDependencies": {
     "@types/ansi-styles": "^3.2.0",
-    "@types/utf8": "^2.1.6",
     "ansi-styles": "^3.2.1",
+    "husky": "^1.1.1",
     "jsdoc": "^3.5.5",
-    "minami": "^1.2.3"
+    "lint-staged": "^7.3.0",
+    "minami": "^1.2.3",
+    "prettier": "1.14.3",
+    "shx": "^0.3.2",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
