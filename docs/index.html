@@ -1,170 +1,191 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="default no-js">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home - Documentation</title>
-
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>demofile</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">demofile</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> demofile</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="demofile">demofile</h1>
+				<p><a href="https://gitter.im/saul/demofile?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/saul/demofile.svg" alt="Join the chat at https://gitter.im/saul/demofile"></a></p>
+				<p>A node.js library for parsing Counter-Strike Global Offensive (CSGO) demo files.
+				The library is also Browserify-able, and a standalone bundle that you can <code>&lt;script src=&quot;...&quot;&gt;</code> is available in <a href="browser/bundle.js">browser/bundle.js</a>.</p>
+				<h2 id="supported-demo-features">Supported Demo Features</h2>
+				<ul>
+					<li>Entity updates, server classes, data tables (including instance baselines)</li>
+					<li>Both perspectives (GOTV and client-side recorded)</li>
+					<li>User messages</li>
+					<li>String tables</li>
+					<li>Game events</li>
+					<li>Console variables</li>
+				</ul>
+				<h2 id="documentation">Documentation</h2>
+				<p>Auto-generated API documentation is available at <a href="https://saul.github.io/demofile">saul.github.io/demofile</a>.</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Class</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td><a href="https://saul.github.io/demofile/DemoFile.html">DemoFile</a></td>
+							<td>Represents a demo file for parsing.</td>
+						</tr>
+				</tbody></table>
+				<p>The <em>DemoFile</em> object has properties which point to instances of several other classes that can be used to query the game world:</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Class</th>
+							<th>Property</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td><a href="https://saul.github.io/demofile/ConVars.html">ConVars</a></td>
+							<td><code>demoFile.conVars</code></td>
+							<td>Manages console variables. (Only <code>FCVAR_NOTIFY</code> and <code>FCVAR_REPLICATED</code> are available.)</td>
+						</tr>
+						<tr>
+							<td><a href="https://saul.github.io/demofile/Entities.html">Entities</a></td>
+							<td><code>demoFile.entities</code></td>
+							<td>Represents entities and networked properties within a demo.</td>
+						</tr>
+						<tr>
+							<td><a href="https://saul.github.io/demofile/GameEvents.html">GameEvents</a></td>
+							<td><code>demoFile.gameEvents</code></td>
+							<td>Manages game events for a demo file. (e.g. <code>player_death</code>, <code>player_footstep</code>)</td>
+						</tr>
+						<tr>
+							<td><a href="https://saul.github.io/demofile/StringTables.html">StringTables</a></td>
+							<td><code>demoFile.stringTables</code></td>
+							<td>Handles string tables for a demo file. (e.g. <code>userinfo</code>)</td>
+						</tr>
+						<tr>
+							<td><a href="https://saul.github.io/demofile/UserMessages.html">UserMessages</a></td>
+							<td><code>demoFile.userMessages</code></td>
+							<td>Handles user messages for a demo file. (e.g. <code>SayText</code> for in-game chat messages)</td>
+						</tr>
+				</tbody></table>
+				<p>There are several classes which allow access to different types of entities (e.g. players, items, props). These are summarised below:</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Entity</th>
+							<th>Usage</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td><a href="https://saul.github.io/demofile/BaseEntity.html">BaseEntity</a></td>
+							<td><code>demoFile.entities.getByHandle</code><br><code>demoFile.entities.entities[entIndex]</code></td>
+							<td>Represents an in-game entity.</td>
+						</tr>
+						<tr>
+							<td><a href="https://saul.github.io/demofile/Player.html">Player</a></td>
+							<td><code>demoFile.entities.players</code><br><code>demoFile.entities.getByUserId</code></td>
+							<td>Represents an in-game player.</td>
+						</tr>
+						<tr>
+							<td><a href="https://saul.github.io/demofile/Weapon.html">Weapon</a></td>
+							<td><code>demoFile.entities.weapons</code><br><code>player.weapon</code><br><code>player.weapons</code></td>
+							<td>Represents an in-game weapon (guns, grenades, knifes).</td>
+						</tr>
+				</tbody></table>
+				<h2 id="installation">Installation</h2>
+				<h3 id="browser">Browser</h3>
+				<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"browser/bundle.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre><p>The <code>DemoFile</code> module will be available as <code>window.demofile</code>. </p>
+				<h3 id="node">Node</h3>
+				<pre><code>npm <span class="hljs-keyword">install</span> <span class="hljs-comment">--save demofile</span></code></pre><p>Generate documentation to <code>./docs/</code>:</p>
+				<pre><code>npm run <span class="hljs-keyword">generate</span>-docs</code></pre><h2 id="screenshot">Screenshot</h2>
+				<p><img src="./example.png" alt="Example output"></p>
+				<h2 id="api">API</h2>
+				<p>This library provides full access to the data available in CSGO demo files. Unlike some other libraries, <code>demofile</code> is feature complete and supports the latest demos. As well as providing high-level APIs to access the state of the game, low-level access is available and is not discouraged.</p>
+				<p>Take a look at the <code>examples/dumpfile.js</code> file for an indication as to how the library can be used to introspect demo files. This example is by no means exhaustive -- see the &#39;docs&#39; folder for documentation on all public classes and methods.</p>
+				<p>Note: It is important to note that events are fired at the end of a tick, after all entity props and string tables have been updated.</p>
+				<h3 id="useful-links">Useful links</h3>
+				<ul>
+					<li><a href="https://wiki.alliedmods.net/Counter-Strike:_Global_Offensive_Events">CS:GO Game Events - AlliedModders Wiki</a></li>
+					<li><a href="https://gitter.im/saul/demofile">Gitter community</a></li>
+				</ul>
+				<h2 id="examples">Examples</h2>
+				<h3 id="print-player-information-when-it-changes">Print player information when it changes</h3>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">'demofile'</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
+fs.readFile(<span class="hljs-string">'test.dem'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, buffer</span>) </span>{
+  <span class="hljs-keyword">let</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-<label for="nav-trigger" class="overlay"></label>
-
-<nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="BaseEntity.html">BaseEntity</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="BaseEntity.html#getProp">getProp</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="ConVars.html">ConVars</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="DemoFile.html">DemoFile</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="DemoFile.html#cancel">cancel</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="DemoFile.html#parse">parse</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Entities.html">Entities</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Entities.html#getByHandle">getByHandle</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Entities.html#getByUserId">getByUserId</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Entities.html#getSingleton">getSingleton</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Entities.html#isHandleSet">isHandleSet</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="GameEvents.html">GameEvents</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="GameRules.html">GameRules</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Player.html">Player</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Player.html#hasSpotted">hasSpotted</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Player.html#isFriendly">isFriendly</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Player.html#isSpottedBy">isSpottedBy</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Player.html#resourceProp">resourceProp</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="StringTables.html">StringTables</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Team.html">Team</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="UserMessages.html">UserMessages</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Weapon.html">Weapon</a></span></li><li class="nav-heading">Events</li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="ConVars.html#event:change">change</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="ConVars.html#event:cvar_name">cvar_name</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="DemoFile.html#event:end">end</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="DemoFile.html#event:net_MessageName">net_MessageName</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="DemoFile.html#event:progress">progress</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="DemoFile.html#event:start">start</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="DemoFile.html#event:tickend">tickend</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="DemoFile.html#event:tickstart">tickstart</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="Entities.html#event:baselineupdate">baselineupdate</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="Entities.html#event:beforeremove">beforeremove</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="Entities.html#event:change">change</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="Entities.html#event:create">create</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="Entities.html#event:datatablesready">datatablesready</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="Entities.html#event:postcreate">postcreate</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="Entities.html#event:remove">remove</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="GameEvents.html#event:event">event</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="GameEvents.html#event:game_event_name">game_event_name</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="StringTables.html#event:create">create</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="StringTables.html#event:postcreate">postcreate</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="StringTables.html#event:update">update</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="UserMessages.html#event:message">message</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="UserMessages.html#event:UserMessageName">UserMessageName</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#DemoHeader">DemoHeader</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#parseHeader">parseHeader</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#PlayerInfo">PlayerInfo</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#StringTable">StringTable</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#StringTableEntry">StringTableEntry</a></span></li>
-</nav>
-
-<div id="main">
-    
-
-    
-
-
-
-    
-
-
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><h1>demofile</h1><p><a href="https://gitter.im/saul/demofile?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/saul/demofile.svg" alt="Join the chat at https://gitter.im/saul/demofile"></a></p>
-<p>A node.js library for parsing Counter-Strike Global Offensive (CSGO) demo files.
-The library is also Browserify-able, and a standalone bundle that you can <code>&lt;script src=&quot;...&quot;&gt;</code> is available in <a href="browser/bundle.js">browser/bundle.js</a>.</p>
-<h2>Supported Demo Features</h2><ul>
-<li>Entity updates, server classes, data tables (including instance baselines)</li>
-<li>Both perspectives (GOTV and client-side recorded)</li>
-<li>User messages</li>
-<li>String tables</li>
-<li>Game events</li>
-<li>Console variables</li>
-</ul>
-<h2>Documentation</h2><p>Auto-generated API documentation is available at <a href="https://saul.github.io/demofile">saul.github.io/demofile</a>.</p>
-<table>
-<thead>
-<tr>
-<th>Class</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://saul.github.io/demofile/DemoFile.html">DemoFile</a></td>
-<td>Represents a demo file for parsing.</td>
-</tr>
-</tbody>
-</table>
-<p>The <em>DemoFile</em> object has properties which point to instances of several other classes that can be used to query the game world:</p>
-<table>
-<thead>
-<tr>
-<th>Class</th>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://saul.github.io/demofile/ConVars.html">ConVars</a></td>
-<td><code>demoFile.conVars</code></td>
-<td>Manages console variables. (Only <code>FCVAR_NOTIFY</code> and <code>FCVAR_REPLICATED</code> are available.)</td>
-</tr>
-<tr>
-<td><a href="https://saul.github.io/demofile/Entities.html">Entities</a></td>
-<td><code>demoFile.entities</code></td>
-<td>Represents entities and networked properties within a demo.</td>
-</tr>
-<tr>
-<td><a href="https://saul.github.io/demofile/GameEvents.html">GameEvents</a></td>
-<td><code>demoFile.gameEvents</code></td>
-<td>Manages game events for a demo file. (e.g. <code>player_death</code>, <code>player_footstep</code>)</td>
-</tr>
-<tr>
-<td><a href="https://saul.github.io/demofile/StringTables.html">StringTables</a></td>
-<td><code>demoFile.stringTables</code></td>
-<td>Handles string tables for a demo file. (e.g. <code>userinfo</code>)</td>
-</tr>
-<tr>
-<td><a href="https://saul.github.io/demofile/UserMessages.html">UserMessages</a></td>
-<td><code>demoFile.userMessages</code></td>
-<td>Handles user messages for a demo file. (e.g. <code>SayText</code> for in-game chat messages)</td>
-</tr>
-</tbody>
-</table>
-<p>There are several classes which allow access to different types of entities (e.g. players, items, props). These are summarised below:</p>
-<table>
-<thead>
-<tr>
-<th>Entity</th>
-<th>Usage</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://saul.github.io/demofile/BaseEntity.html">BaseEntity</a></td>
-<td><code>demoFile.entities.getByHandle</code><br><code>demoFile.entities.entities[entIndex]</code></td>
-<td>Represents an in-game entity.</td>
-</tr>
-<tr>
-<td><a href="https://saul.github.io/demofile/Player.html">Player</a></td>
-<td><code>demoFile.entities.players</code><br><code>demoFile.entities.getByUserId</code></td>
-<td>Represents an in-game player.</td>
-</tr>
-<tr>
-<td><a href="https://saul.github.io/demofile/Weapon.html">Weapon</a></td>
-<td><code>demoFile.entities.weapons</code><br><code>player.weapon</code><br><code>player.weapons</code></td>
-<td>Represents an in-game weapon (guns, grenades, knifes).</td>
-</tr>
-</tbody>
-</table>
-<h2>Installation</h2><h3>Browser</h3><pre class="prettyprint source"><code>&lt;script src=&quot;browser/bundle.js&quot;>&lt;/script></code></pre><p>The <code>DemoFile</code> module will be available as <code>window.demofile</code>. </p>
-<h3>Node</h3><pre class="prettyprint source"><code>npm install --save demofile</code></pre><p>Generate documentation to <code>./docs/</code>:</p>
-<pre class="prettyprint source"><code>npm run generate-docs</code></pre><h2>Screenshot</h2><p><img src="./example.png" alt="Example output"></p>
-<h2>API</h2><p>This library provides full access to the data available in CSGO demo files. Unlike some other libraries, <code>demofile</code> is feature complete and supports the latest demos. As well as providing high-level APIs to access the state of the game, low-level access is available and is not discouraged.</p>
-<p>Take a look at the <code>examples/dumpfile.js</code> file for an indication as to how the library can be used to introspect demo files. This example is by no means exhaustive -- see the 'docs' folder for documentation on all public classes and methods.</p>
-<p>Note: It is important to note that events are fired at the end of a tick, after all entity props and string tables have been updated.</p>
-<h3>Useful links</h3><ul>
-<li><a href="https://wiki.alliedmods.net/Counter-Strike:_Global_Offensive_Events">CS:GO Game Events - AlliedModders Wiki</a></li>
-<li><a href="https://gitter.im/saul/demofile">Gitter community</a></li>
-</ul>
-<h2>Examples</h2><h3>Print player information when it changes</h3><pre class="prettyprint source lang-js"><code>const demofile = require('demofile');
-const fs = require('fs');
-
-fs.readFile('test.dem', function (err, buffer) {
-  let demoFile = new demofile.DemoFile();
-
-  demoFile.stringTables.on('update', e => {
-    if (e.table.name === 'userinfo' && e.userData != null) {
-      console.log('\nPlayer info updated:');
-      console.log(e.entryIndex, e.userData);
+  demoFile.stringTables.on(<span class="hljs-string">'update'</span>, e =&gt; {
+    <span class="hljs-keyword">if</span> (e.table.name === <span class="hljs-string">'userinfo'</span> &amp;&amp; e.userData != <span class="hljs-literal">null</span>) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'\nPlayer info updated:'</span>);
+      <span class="hljs-built_in">console</span>.log(e.entryIndex, e.userData);
     }
   });
 
   demoFile.parse(buffer);
 });
 
-/* Outputs:
+<span class="hljs-comment">/* Outputs:
 
 Player info updated:
 12 { unknown_lo: 4294967295,
@@ -182,31 +203,33 @@ Player info updated:
   xuid: Long { low: 3417033, high: 17825793, unsigned: false } }
 
 [repeated for other players]
-*/</code></pre><h3>Print kills</h3><pre class="prettyprint source lang-js"><code>const demofile = require('demofile');
-const fs = require('fs');
+*/</span></code></pre>
+				<h3 id="print-kills">Print kills</h3>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">'demofile'</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
 
-fs.readFile('test.dem', function (err, buffer) {
-  let demoFile = new demofile.DemoFile();
+fs.readFile(<span class="hljs-string">'test.dem'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, buffer</span>) </span>{
+  <span class="hljs-keyword">let</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.gameEvents.on('player_death', e => {
-    let victim = demoFile.entities.getByUserId(e.userid);
-    let victimName = victim ? victim.name : 'unnamed';
+  demoFile.gameEvents.on(<span class="hljs-string">'player_death'</span>, e =&gt; {
+    <span class="hljs-keyword">let</span> victim = demoFile.entities.getByUserId(e.userid);
+    <span class="hljs-keyword">let</span> victimName = victim ? victim.name : <span class="hljs-string">'unnamed'</span>;
 
-    // Attacker may have disconnected so be aware.
-    // e.g. attacker could have thrown a grenade, disconnected, then that grenade
-    // killed another player.
-    let attacker = demoFile.entities.getByUserId(e.attacker);
-    let attackerName = attacker ? attacker.name : 'unnamed';
+    <span class="hljs-comment">// Attacker may have disconnected so be aware.</span>
+    <span class="hljs-comment">// e.g. attacker could have thrown a grenade, disconnected, then that grenade</span>
+    <span class="hljs-comment">// killed another player.</span>
+    <span class="hljs-keyword">let</span> attacker = demoFile.entities.getByUserId(e.attacker);
+    <span class="hljs-keyword">let</span> attackerName = attacker ? attacker.name : <span class="hljs-string">'unnamed'</span>;
 
-    let headshotText = e.headshot ? ' HS' : '';
+    <span class="hljs-keyword">let</span> headshotText = e.headshot ? <span class="hljs-string">' HS'</span> : <span class="hljs-string">''</span>;
 
-    console.log(`${attackerName} [${e.weapon}${headshotText}] ${victimName}`);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${attackerName}</span> [<span class="hljs-subst">${e.weapon}</span><span class="hljs-subst">${headshotText}</span>] <span class="hljs-subst">${victimName}</span>`</span>);
   });
 
   demoFile.parse(buffer);
 });
 
-/* Outputs:
+<span class="hljs-comment">/* Outputs:
 
 HS [cz75a HS] flusha
 Lekr0 [ak47 HS] friberg
@@ -215,32 +238,34 @@ JW [mac10 HS] Mixwell
 JW [hegrenade] HS
 JW [mac10 HS] Magisk
 
-*/</code></pre><h3>Print round changes</h3><pre class="prettyprint source lang-js"><code>const demofile = require('demofile');
-const fs = require('fs');
+*/</span></code></pre>
+				<h3 id="print-round-changes">Print round changes</h3>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">'demofile'</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
 
-fs.readFile('test.dem', function (err, buffer) {
-  let demoFile = new demofile.DemoFile();
+fs.readFile(<span class="hljs-string">'test.dem'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, buffer</span>) </span>{
+  <span class="hljs-keyword">let</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.gameEvents.on('round_end', e => {
-    console.log('*** Round ended \'%s\' (reason: %s, time: %d seconds)', demoFile.gameRules.phase, e.reason, demoFile.currentTime);
+  demoFile.gameEvents.on(<span class="hljs-string">'round_end'</span>, e =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'*** Round ended \'%s\' (reason: %s, time: %d seconds)'</span>, demoFile.gameRules.phase, e.reason, demoFile.currentTime);
 
-    // We can't print the team scores here as they haven't been updated yet.
-    // See round_officially_ended below.
+    <span class="hljs-comment">// We can't print the team scores here as they haven't been updated yet.</span>
+    <span class="hljs-comment">// See round_officially_ended below.</span>
   });
 
-  demoFile.gameEvents.on('round_officially_ended', e => {
-    let teams = demoFile.teams;
+  demoFile.gameEvents.on(<span class="hljs-string">'round_officially_ended'</span>, e =&gt; {
+    <span class="hljs-keyword">let</span> teams = demoFile.teams;
 
-    let terrorists = teams[demo.TEAM_TERRORISTS];
-    let cts = teams[demo.TEAM_CTS];
+    <span class="hljs-keyword">let</span> terrorists = teams[demo.TEAM_TERRORISTS];
+    <span class="hljs-keyword">let</span> cts = teams[demo.TEAM_CTS];
 
-    console.log('\tTerrorists: %s score %d\n\tCTs: %s score %d', terrorists.clanName, terrorists.score, cts.clanName, cts.score);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'\tTerrorists: %s score %d\n\tCTs: %s score %d'</span>, terrorists.clanName, terrorists.score, cts.clanName, cts.score);
   });
 
   demoFile.parse(buffer);
 });
 
-/* Outputs:
+<span class="hljs-comment">/* Outputs:
 
 *** Round ended 'first' (reason: 7, time: 74.3828125 seconds)
         Terrorists: fnatic score 0
@@ -252,54 +277,58 @@ fs.readFile('test.dem', function (err, buffer) {
         Terrorists: fnatic score 1
         CTs: OpTic Gaming score 2
 
-*/</code></pre><h3>Print player joining/leaving</h3><pre class="prettyprint source lang-js"><code>const demofile = require('demofile');
-const fs = require('fs');
+*/</span></code></pre>
+				<h3 id="print-player-joining-leaving">Print player joining/leaving</h3>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">'demofile'</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
 
-fs.readFile('test.dem', function (err, buffer) {
-  let demoFile = new demofile.DemoFile();
+fs.readFile(<span class="hljs-string">'test.dem'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, buffer</span>) </span>{
+  <span class="hljs-keyword">let</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.entities.on('create', e => {
-    // We're only interested in player entities being created.
-    if (e.entity.serverClass.name !== 'CCSPlayer') {
-      return;
+  demoFile.entities.on(<span class="hljs-string">'create'</span>, e =&gt; {
+    <span class="hljs-comment">// We're only interested in player entities being created.</span>
+    <span class="hljs-keyword">if</span> (e.entity.serverClass.name !== <span class="hljs-string">'CCSPlayer'</span>) {
+      <span class="hljs-keyword">return</span>;
     }
 
-    console.log('[Time: %d] %s (%s) joined the game', demoFile.currentTime, e.entity.name, e.entity.steamId);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'[Time: %d] %s (%s) joined the game'</span>, demoFile.currentTime, e.entity.name, e.entity.steamId);
   });
 
-  demoFile.entities.on('beforeremove', e => {
-    if (e.entity.serverClass.name !== 'CCSPlayer') {
-      return;
+  demoFile.entities.on(<span class="hljs-string">'beforeremove'</span>, e =&gt; {
+    <span class="hljs-keyword">if</span> (e.entity.serverClass.name !== <span class="hljs-string">'CCSPlayer'</span>) {
+      <span class="hljs-keyword">return</span>;
     }
 
-    console.log('[Time: %d] %s left the game', demoFile.currentTime, e.entity.name);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'[Time: %d] %s left the game'</span>, demoFile.currentTime, e.entity.name);
   });
 
   demoFile.parse(buffer);
 });
 
-/* Outputs:
+<span class="hljs-comment">/* Outputs:
 
 [Time: 51.3125] btx`akatro (STEAM_1:0:2143797827) joined the game
 [Time: 60.78125] Nabeegh (STEAM_1:0:427524390) joined the game
 [Time: 65.71875] TAURUS left the game
 [Time: 76.65625] drragster (STEAM_1:0:2144425259) joined the game
 
-*/</code></pre><h3>Print demo information (e.g. tick rate)</h3><pre class="prettyprint source lang-js"><code>const demofile = require('demofile');
-const fs = require('fs');
+*/</span></code></pre>
+				<h3 id="print-demo-information-e-g-tick-rate-">Print demo information (e.g. tick rate)</h3>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">'demofile'</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
 
-fs.readFile('test.dem', function (err, buffer) {
-  let demoFile = new demofile.DemoFile();
+fs.readFile(<span class="hljs-string">'test.dem'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, buffer</span>) </span>{
+  <span class="hljs-keyword">let</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.on('start', () => {
-    console.log('Demo header:', demoFile.header);
-    console.log('Tick rate:', demoFile.tickRate);
+  demoFile.on(<span class="hljs-string">'start'</span>, () =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Demo header:'</span>, demoFile.header);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Tick rate:'</span>, demoFile.tickRate);
   });
 
   demoFile.parse(buffer);
 });
 
-/* Outputs:
+<span class="hljs-comment">/* Outputs:
 
 Demo header: { magic: 'HL2DEMO',
   protocol: 4,
@@ -314,144 +343,322 @@ Demo header: { magic: 'HL2DEMO',
   signonLength: 325854 }
 Tick rate: 64
 
-*/</code></pre><h2>Release History</h2><h3>0.4.20 (2018-08-24)</h3><ul>
-<li>:bug: Fixed #80, #78: Resource properties returning <code>undefined</code></li>
-</ul>
-<h3>0.4.19 (2018-08-24)</h3><ul>
-<li>:sparkles: Added <code>DemoFile#tickRate</code></li>
-<li>:sparkles: Added support for MP5SD (thanks @thorebear)</li>
-</ul>
-<h3>0.4.18 (2018-05-14)</h3><ul>
-<li>:sparkles: Added <code>BaseEntity#handle</code></li>
-<li>:sparkles: Added <code>BaseEntity#modelName</code> - Name of the model that should be rendered for this entity. (e.g. 'models/Weapons/w_eq_smokegrenade_thrown.mdl')</li>
-</ul>
-<h3>0.4.17 (2018-04-29)</h3><ul>
-<li>:sparkles: Added <code>BaseEntity#velocity</code>, <code>BaseEntity#speed</code>.</li>
-<li>:sparkles: Improved <code>dumpfile.js</code> example to be more through.</li>
-<li>:zap: #69: <code>Player#allSpotters</code> and <code>Player#allSpotted</code> now only returns alive players.</li>
-</ul>
-<h3>0.4.16 (2018-03-22)</h3><ul>
-<li>:zap: #62: Fix entity position calculation. Use cell coordinates to determine entity positions.</li>
-</ul>
-<h3>0.4.15 (2018-03-10)</h3><ul>
-<li>:zap: #58: Entities are now removed at <code>tickend</code>, after events are fired. This means the grenade entity can be accessed in flashbang_detonate and decoy_detonate.</li>
-</ul>
-<h3>0.4.14 (2018-02-26)</h3><ul>
-<li>:sparkles: Added <code>Entities#weapons</code> (thanks @thorebear)</li>
-</ul>
-<h3>0.4.13 (2018-02-26)</h3><ul>
-<li>:sparkles: Added <code>Player#matchStats</code> to represent player performance on a per-round basis</li>
-</ul>
-<h3>0.4.12 (2018-02-02)</h3><ul>
-<li>:sparkles: #11: Fixed malformed demos resulting in an exception. Added <code>error</code> property to the <code>DemoFile#end</code> event</li>
-<li>:zap: #52: <code>GameRules#roundNumber</code> has been renamed to <code>GameRules#roundsPlayed</code> - the old name is available for backwards compatibility</li>
-</ul>
-<h3>0.4.11 (2017-12-20)</h3><ul>
-<li>:bug: #43: Fixed parsing of string tables updates for tables with fixed userdata sizes</li>
-</ul>
-<h3>0.4.10 (2017-12-08)</h3><ul>
-<li>:sparkles: Added <code>Player#cashSpendTotal</code> and <code>Player#cashSpendThisRound</code></li>
-</ul>
-<h3>0.4.9 (2017-10-05)</h3><ul>
-<li>:bug: #31: Fixed <code>DemoFile#currentTime</code> returning the wrong game time</li>
-</ul>
-<h3>0.4.8 (2017-05-08)</h3><ul>
-<li>:bug: #11: Fixed parse error when a 'stop' command is missing from the demo file </li>
-</ul>
-<h3>0.4.7 (2017-05-08)</h3><ul>
-<li>:sparkles: Added <code>Weapon</code> entity class to represent in-game items (thanks @pedrofornaza)</li>
-</ul>
-<h3>0.4.6 (2017-04-22)</h3><ul>
-<li>:sparkles: Added <code>Player#score</code>, <code>Player#mvps</code> and <code>Player#clanTag</code> (thanks @derpalmer)</li>
-</ul>
-<h3>0.4.5 (2017-04-15)</h3><ul>
-<li>:bug: Fix exception when calling <code>DemoFile#cancel</code> (thanks @derpalmer)</li>
-</ul>
-<h3>0.4.4 (2017-03-21)</h3><ul>
-<li>:bug: Revert accidental bit-buffer upgrade</li>
-</ul>
-<h3>0.4.2 (2017-03-20)</h3><ul>
-<li>:sparkles: Added <code>Player#steam64Id</code> for easy access to Steam64 ID (thanks @derpalmer)</li>
-</ul>
-<h3>0.4.1 (2017-02-23)</h3><ul>
-<li>:bug: Fixed exception in <code>Player#isAlive</code></li>
-</ul>
-<h3>0.4.0 (2017-02-05)</h3><p>Major update</p>
-<ul>
-<li>Added new <code>Player</code>, <code>Team</code> and <code>GameRules</code> entities</li>
-<li>Added <code>DemoFile#conVars</code> for accessing console variables and listening for changes</li>
-<li>Updated <code>dumpfile.js</code> example to be more representative of real-world usage</li>
-</ul>
-<h3>0.3.1 (2017-01-30)</h3><ul>
-<li>:bug: Fixed <code>Entity#getProp</code> exception when a prop is updated that is not part of the entity baseline</li>
-</ul>
-<h3>0.3 (2016-11-16)</h3><p>Major update</p>
-<ul>
-<li>The library now support Browserify and the compiled bundle can be included in web browsers</li>
-<li>Added DemoFile#progress event that indicates what percentage of the demo file has been parsed</li>
-<li>Removed dependency on the <code>pace</code> library</li>
-</ul>
-<h3>0.2.11 (2016-10-16)</h3><ul>
-<li>:sparkles: Added entities <code>isHandleSet</code> to determine if a networked entity handle is set (the game uses <code>(1 &lt;&lt; 21) - 1</code> to mean empty)</li>
-</ul>
-<h3>0.2.10 (2016-10-11)</h3><ul>
-<li>:sparkles: Added entities <code>getByHandle</code> to find an entity from a given networked entity handle (e.g., from m_hMyWeapons)</li>
-</ul>
-<h3>0.2.9 (2016-09-12)</h3><ul>
-<li>:sparkles: Added entities <code>baselineupdate</code> event which is fired whenever the <code>instancebaseline</code> string table is updated with new properties.</li>
-</ul>
-<h3>0.2.8 (2016-08-30)</h3><ul>
-<li>:sparkles: The <code>dem_StringTables</code> command, which holds additional string table data on client-side recorded demos, is now parsed</li>
-<li>:zap: String table <code>postcreate</code> is now fired after <code>svc_CreateStringTable</code> and <code>dem_StringTables</code> are parsed</li>
-</ul>
-<h3>0.2.7 (2016-08-23)</h3><ul>
-<li>:sparkles: Added entities <code>datatablesready</code> event which is fired when data tables have been parsed.</li>
-</ul>
-<h3>0.2.6 (2016-08-23)</h3><ul>
-<li>:sparkles: Added entity <code>postcreate</code> event which is fired after an entity has been created and all of its properties parsed.</li>
-</ul>
-<h3>0.2.5 (2016-07-08)</h3><ul>
-<li>:sparkles: Added string table <code>postcreate</code> event which is fired after a new stringtable's entries have been populated</li>
-</ul>
-<h3>0.2.4 (2016-07-08)</h3><ul>
-<li>:bug: Fixed retrieving properties on entities whose server class has no instance baseline</li>
-</ul>
-<h3>0.2.3 (2016-07-03)</h3><ul>
-<li>:sparkles: Instance baselines are now parsed and used by <code>Entity#getProp</code></li>
-</ul>
-<h3>0.2.2 (2016-07-03)</h3><ul>
-<li>:bug: Fixed stringtable updates affecting all entries in the table</li>
-</ul>
-<h3>0.2.1 (2016-03-25)</h3><ul>
-<li>:card_index: Removed <code>node-protobuf</code> un-used dependency</li>
-</ul>
-<h3>0.2.0 (2016-01-30)</h3><ul>
-<li>:zap: Each tick is now parsed on a separate process tick.</li>
-<li>:zap: Game event callbacks are now fired at the end of the tick.</li>
-<li>:bug: Fixed Vector props decoding to <code>undefined</code>.</li>
-</ul>
-<h3>0.1.0 (2016-01-18)</h3><ul>
-<li>:tada: Initial release.</li>
-</ul>
-<h2>Acknowledgements</h2><ul>
-<li><a href="https://github.com/SteamRE/SteamKit">CS:GO Protobuf sources copied from SteamKit</a></li>
-</ul></article>
-    </section>
-
-
-
-
-
-
+*/</span></code></pre>
+				<h2 id="release-history">Release History</h2>
+				<h3 id="0-4-20-2018-08-24-">0.4.20 (2018-08-24)</h3>
+				<ul>
+					<li>:bug: Fixed #80, #78: Resource properties returning <code>undefined</code></li>
+				</ul>
+				<h3 id="0-4-19-2018-08-24-">0.4.19 (2018-08-24)</h3>
+				<ul>
+					<li>:sparkles: Added <code>DemoFile#tickRate</code></li>
+					<li>:sparkles: Added support for MP5SD (thanks @thorebear)</li>
+				</ul>
+				<h3 id="0-4-18-2018-05-14-">0.4.18 (2018-05-14)</h3>
+				<ul>
+					<li>:sparkles: Added <code>BaseEntity#handle</code></li>
+					<li>:sparkles: Added <code>BaseEntity#modelName</code> - Name of the model that should be rendered for this entity. (e.g. &#39;models/Weapons/w_eq_smokegrenade_thrown.mdl&#39;)</li>
+				</ul>
+				<h3 id="0-4-17-2018-04-29-">0.4.17 (2018-04-29)</h3>
+				<ul>
+					<li>:sparkles: Added <code>BaseEntity#velocity</code>, <code>BaseEntity#speed</code>.</li>
+					<li>:sparkles: Improved <code>dumpfile.js</code> example to be more through.</li>
+					<li>:zap: #69: <code>Player#allSpotters</code> and <code>Player#allSpotted</code> now only returns alive players.</li>
+				</ul>
+				<h3 id="0-4-16-2018-03-22-">0.4.16 (2018-03-22)</h3>
+				<ul>
+					<li>:zap: #62: Fix entity position calculation. Use cell coordinates to determine entity positions.</li>
+				</ul>
+				<h3 id="0-4-15-2018-03-10-">0.4.15 (2018-03-10)</h3>
+				<ul>
+					<li>:zap: #58: Entities are now removed at <code>tickend</code>, after events are fired. This means the grenade entity can be accessed in flashbang_detonate and decoy_detonate.</li>
+				</ul>
+				<h3 id="0-4-14-2018-02-26-">0.4.14 (2018-02-26)</h3>
+				<ul>
+					<li>:sparkles: Added <code>Entities#weapons</code> (thanks @thorebear)</li>
+				</ul>
+				<h3 id="0-4-13-2018-02-26-">0.4.13 (2018-02-26)</h3>
+				<ul>
+					<li>:sparkles: Added <code>Player#matchStats</code> to represent player performance on a per-round basis</li>
+				</ul>
+				<h3 id="0-4-12-2018-02-02-">0.4.12 (2018-02-02)</h3>
+				<ul>
+					<li>:sparkles: #11: Fixed malformed demos resulting in an exception. Added <code>error</code> property to the <code>DemoFile#end</code> event</li>
+					<li>:zap: #52: <code>GameRules#roundNumber</code> has been renamed to <code>GameRules#roundsPlayed</code> - the old name is available for backwards compatibility</li>
+				</ul>
+				<h3 id="0-4-11-2017-12-20-">0.4.11 (2017-12-20)</h3>
+				<ul>
+					<li>:bug: #43: Fixed parsing of string tables updates for tables with fixed userdata sizes</li>
+				</ul>
+				<h3 id="0-4-10-2017-12-08-">0.4.10 (2017-12-08)</h3>
+				<ul>
+					<li>:sparkles: Added <code>Player#cashSpendTotal</code> and <code>Player#cashSpendThisRound</code></li>
+				</ul>
+				<h3 id="0-4-9-2017-10-05-">0.4.9 (2017-10-05)</h3>
+				<ul>
+					<li>:bug: #31: Fixed <code>DemoFile#currentTime</code> returning the wrong game time</li>
+				</ul>
+				<h3 id="0-4-8-2017-05-08-">0.4.8 (2017-05-08)</h3>
+				<ul>
+					<li>:bug: #11: Fixed parse error when a &#39;stop&#39; command is missing from the demo file </li>
+				</ul>
+				<h3 id="0-4-7-2017-05-08-">0.4.7 (2017-05-08)</h3>
+				<ul>
+					<li>:sparkles: Added <code>Weapon</code> entity class to represent in-game items (thanks @pedrofornaza)</li>
+				</ul>
+				<h3 id="0-4-6-2017-04-22-">0.4.6 (2017-04-22)</h3>
+				<ul>
+					<li>:sparkles: Added <code>Player#score</code>, <code>Player#mvps</code> and <code>Player#clanTag</code> (thanks @derpalmer)</li>
+				</ul>
+				<h3 id="0-4-5-2017-04-15-">0.4.5 (2017-04-15)</h3>
+				<ul>
+					<li>:bug: Fix exception when calling <code>DemoFile#cancel</code> (thanks @derpalmer)</li>
+				</ul>
+				<h3 id="0-4-4-2017-03-21-">0.4.4 (2017-03-21)</h3>
+				<ul>
+					<li>:bug: Revert accidental bit-buffer upgrade</li>
+				</ul>
+				<h3 id="0-4-2-2017-03-20-">0.4.2 (2017-03-20)</h3>
+				<ul>
+					<li>:sparkles: Added <code>Player#steam64Id</code> for easy access to Steam64 ID (thanks @derpalmer)</li>
+				</ul>
+				<h3 id="0-4-1-2017-02-23-">0.4.1 (2017-02-23)</h3>
+				<ul>
+					<li>:bug: Fixed exception in <code>Player#isAlive</code></li>
+				</ul>
+				<h3 id="0-4-0-2017-02-05-">0.4.0 (2017-02-05)</h3>
+				<p>Major update</p>
+				<ul>
+					<li>Added new <code>Player</code>, <code>Team</code> and <code>GameRules</code> entities</li>
+					<li>Added <code>DemoFile#conVars</code> for accessing console variables and listening for changes</li>
+					<li>Updated <code>dumpfile.js</code> example to be more representative of real-world usage</li>
+				</ul>
+				<h3 id="0-3-1-2017-01-30-">0.3.1 (2017-01-30)</h3>
+				<ul>
+					<li>:bug: Fixed <code>Entity#getProp</code> exception when a prop is updated that is not part of the entity baseline</li>
+				</ul>
+				<h3 id="0-3-2016-11-16-">0.3 (2016-11-16)</h3>
+				<p>Major update</p>
+				<ul>
+					<li>The library now support Browserify and the compiled bundle can be included in web browsers</li>
+					<li>Added DemoFile#progress event that indicates what percentage of the demo file has been parsed</li>
+					<li>Removed dependency on the <code>pace</code> library</li>
+				</ul>
+				<h3 id="0-2-11-2016-10-16-">0.2.11 (2016-10-16)</h3>
+				<ul>
+					<li>:sparkles: Added entities <code>isHandleSet</code> to determine if a networked entity handle is set (the game uses <code>(1 &lt;&lt; 21) - 1</code> to mean empty)</li>
+				</ul>
+				<h3 id="0-2-10-2016-10-11-">0.2.10 (2016-10-11)</h3>
+				<ul>
+					<li>:sparkles: Added entities <code>getByHandle</code> to find an entity from a given networked entity handle (e.g., from m_hMyWeapons)</li>
+				</ul>
+				<h3 id="0-2-9-2016-09-12-">0.2.9 (2016-09-12)</h3>
+				<ul>
+					<li>:sparkles: Added entities <code>baselineupdate</code> event which is fired whenever the <code>instancebaseline</code> string table is updated with new properties.</li>
+				</ul>
+				<h3 id="0-2-8-2016-08-30-">0.2.8 (2016-08-30)</h3>
+				<ul>
+					<li>:sparkles: The <code>dem_StringTables</code> command, which holds additional string table data on client-side recorded demos, is now parsed</li>
+					<li>:zap: String table <code>postcreate</code> is now fired after <code>svc_CreateStringTable</code> and <code>dem_StringTables</code> are parsed</li>
+				</ul>
+				<h3 id="0-2-7-2016-08-23-">0.2.7 (2016-08-23)</h3>
+				<ul>
+					<li>:sparkles: Added entities <code>datatablesready</code> event which is fired when data tables have been parsed.</li>
+				</ul>
+				<h3 id="0-2-6-2016-08-23-">0.2.6 (2016-08-23)</h3>
+				<ul>
+					<li>:sparkles: Added entity <code>postcreate</code> event which is fired after an entity has been created and all of its properties parsed.</li>
+				</ul>
+				<h3 id="0-2-5-2016-07-08-">0.2.5 (2016-07-08)</h3>
+				<ul>
+					<li>:sparkles: Added string table <code>postcreate</code> event which is fired after a new stringtable&#39;s entries have been populated</li>
+				</ul>
+				<h3 id="0-2-4-2016-07-08-">0.2.4 (2016-07-08)</h3>
+				<ul>
+					<li>:bug: Fixed retrieving properties on entities whose server class has no instance baseline</li>
+				</ul>
+				<h3 id="0-2-3-2016-07-03-">0.2.3 (2016-07-03)</h3>
+				<ul>
+					<li>:sparkles: Instance baselines are now parsed and used by <code>Entity#getProp</code></li>
+				</ul>
+				<h3 id="0-2-2-2016-07-03-">0.2.2 (2016-07-03)</h3>
+				<ul>
+					<li>:bug: Fixed stringtable updates affecting all entries in the table</li>
+				</ul>
+				<h3 id="0-2-1-2016-03-25-">0.2.1 (2016-03-25)</h3>
+				<ul>
+					<li>:card_index: Removed <code>node-protobuf</code> un-used dependency</li>
+				</ul>
+				<h3 id="0-2-0-2016-01-30-">0.2.0 (2016-01-30)</h3>
+				<ul>
+					<li>:zap: Each tick is now parsed on a separate process tick.</li>
+					<li>:zap: Game event callbacks are now fired at the end of the tick.</li>
+					<li>:bug: Fixed Vector props decoding to <code>undefined</code>.</li>
+				</ul>
+				<h3 id="0-1-0-2016-01-18-">0.1.0 (2016-01-18)</h3>
+				<ul>
+					<li>:tada: Initial release.</li>
+				</ul>
+				<h2 id="acknowledgements">Acknowledgements</h2>
+				<ul>
+					<li><a href="https://github.com/SteamRE/SteamKit">CS:GO Protobuf sources copied from SteamKit</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_consts_.html">"consts"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_convars_.html">"convars"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_demo_.html">"demo"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_entities_.html">"entities"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_entities_baseentity_.html">"entities/baseentity"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_entities_gamerules_.html">"entities/gamerules"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_entities_networkable_.html">"entities/networkable"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_entities_player_.html">"entities/player"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_entities_team_.html">"entities/team"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_entities_weapon_.html">"entities/weapon"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_entityhandle_.html">"entityhandle"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_eventtypes_.html">"eventtypes"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_examples_dumpfile_.html">"examples/dumpfile"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_ext_bitbuffer_.html">"ext/bitbuffer"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_functional_.html">"functional"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_gameevent_.html">"gameevent"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_gameevents_.html">"gameevents"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_generators_eventtypes_.html">"generators/eventtypes"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_generators_sendtabletypes_.html">"generators/sendtabletypes"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_keyvalues_.html">"keyvalues"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_net_.html">"net"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_props_.html">"props"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_sendtabletypes_.html">"sendtabletypes"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_stringtables_.html">"stringtables"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_usermessages_.html">"usermessages"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
 </div>
-
-<br class="clear">
-
-<footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Aug 24 2018 20:58:52 GMT+0100 (GMT Summer Time) using the Minami theme.
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
 </footer>
-
-<script>prettyPrint();</script>
-<script src="scripts/linenumber.js"></script>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

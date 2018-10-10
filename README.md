@@ -20,25 +20,26 @@ Auto-generated API documentation is available at [saul.github.io/demofile](https
 
 Class|Description
 -----|-----------
-[DemoFile](https://saul.github.io/demofile/DemoFile.html)|Represents a demo file for parsing.
+[DemoFile](https://saul.github.io/demofile/classes/_demo_demofile.html)|Represents a demo file for parsing.
 
 The *DemoFile* object has properties which point to instances of several other classes that can be used to query the game world:
 
 Class|Property|Description
 -----|--------|-----------
-[ConVars](https://saul.github.io/demofile/ConVars.html)|`demoFile.conVars`|Manages console variables. (Only `FCVAR_NOTIFY` and `FCVAR_REPLICATED` are available.)
-[Entities](https://saul.github.io/demofile/Entities.html)|`demoFile.entities`|Represents entities and networked properties within a demo.
-[GameEvents](https://saul.github.io/demofile/GameEvents.html)|`demoFile.gameEvents`|Manages game events for a demo file. (e.g. `player_death`, `player_footstep`)
-[StringTables](https://saul.github.io/demofile/StringTables.html)|`demoFile.stringTables`|Handles string tables for a demo file. (e.g. `userinfo`)
-[UserMessages](https://saul.github.io/demofile/UserMessages.html)|`demoFile.userMessages`|Handles user messages for a demo file. (e.g. `SayText` for in-game chat messages)
+[ConVars](https://saul.github.io/demofile/classes/_convars_.convars.html)|`demoFile.conVars`|Manages console variables. (Only `FCVAR_NOTIFY` and `FCVAR_REPLICATED` are available.)
+[Entities](https://saul.github.io/demofile/classes/_entities_.entities.html)|`demoFile.entities`|Represents entities and networked properties within a demo.
+[GameEvents](https://saul.github.io/demofile/classes/_gameevents_.gameevents.html)|`demoFile.gameEvents`|Manages game events for a demo file. (e.g. `player_death`, `player_footstep`)
+[StringTables](https://saul.github.io/demofile/classes/_stringtables_.stringtables.html)|`demoFile.stringTables`|Handles string tables for a demo file. (e.g. `userinfo`)
+[UserMessages](https://saul.github.io/demofile/classes/_usermessages_.usermessages.html)|`demoFile.userMessages`|Handles user messages for a demo file. (e.g. `SayText` for in-game chat messages)
 
 There are several classes which allow access to different types of entities (e.g. players, items, props). These are summarised below:
 
 Entity|Usage|Description
 ------|-----|-----------
-[BaseEntity](https://saul.github.io/demofile/BaseEntity.html)|`demoFile.entities.getByHandle`<br>`demoFile.entities.entities[entIndex]`|Represents an in-game entity.
-[Player](https://saul.github.io/demofile/Player.html)|`demoFile.entities.players`<br>`demoFile.entities.getByUserId`|Represents an in-game player.
-[Weapon](https://saul.github.io/demofile/Weapon.html)|`demoFile.entities.weapons`<br>`player.weapon`<br>`player.weapons`|Represents an in-game weapon (guns, grenades, knifes).
+[Networkable](https://saul.github.io/demofile/classes/_entities_networkable_.networkable.html)|`demoFile.entities.getByHandle`<br>`demoFile.entities.entities[entIndex]`|Base class of all in-game entities, even non-renderable entities (e.g. `CCSTeam`).
+[BaseEntity](https://saul.github.io/demofile/classes/_entities_baseentity_.baseentity.html)||Base class of most in-game entities (e.g. players, weapons, all other renderable entities).
+[Player](https://saul.github.io/demofile/classes/_entities_player_.player.html)|`demoFile.entities.players`<br>`demoFile.entities.getByUserId`|Represents an in-game player.
+[Weapon](https://saul.github.io/demofile/classes/_entities_weapon_.weapon.html)|`demoFile.entities.weapons`<br>`player.weapon`<br>`player.weapons`|Represents an in-game weapon (guns, grenades, knifes).
 
 
 ## Installation
@@ -52,10 +53,6 @@ The `DemoFile` module will be available as `window.demofile`.
 ### Node
 
     npm install --save demofile
-
-Generate documentation to `./docs/`:
-
-    npm run generate-docs
 
 ## Screenshot
 

@@ -16,7 +16,7 @@
     "lint": "tslint -p . --fix --exclude 'src/**/*.d.ts'",
     "build": "tsc",
     "watch": "tsc -w",
-    "generate-docs": "shx rm -rf docs && jsdoc -c .jsdoc.json --verbose .",
+    "generate-docs": "shx rm -rf docs && typedoc --out docs/",
     "bundle": "browserify browser/app.js -d -o browser/bundle.js",
     "preversion": "npm run lint",
     "version": "npm run generate-docs && npm run bundle && git add -A browser/bundle.js docs",
@@ -38,6 +38,7 @@
   "devDependencies": {
     "@types/ansi-styles": "^3.2.0",
     "ansi-styles": "^3.2.1",
+    "buffer": "^5.2.1",
     "husky": "^1.1.1",
     "lint-staged": "^7.3.0",
     "minami": "^1.2.3",
@@ -55,7 +56,7 @@
     }
   },
   "lint-staged": {
-    "*.{ts,json,md}": [
+    "*.{ts,json}": [
       "prettier --write",
       "git add"
     ]
