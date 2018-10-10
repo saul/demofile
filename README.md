@@ -271,6 +271,17 @@ Tick rate: 64
 
 ## Release History
 
+### Upcoming
+
+- :sparkles: #56: **Ported to TypeScript**!
+- :sparkles: Added `Networkable` type, which is the new base class of all entities
+- :sparkles: `BaseEntity` is now only the base class of renderable entities
+- :zap: Removed `BaseEntity#velocity`
+- :zap: User messages are now listened without the 'CS_UM_' prefix
+- :zap: String tables are now no longer initialised to their maximum size, instead they grow as needed
+- :bug: #86: Fixed `Cannot read property 'messageToObject' of undefined` on some game events
+- :bug: Fixed error when trying to parse svc_EntityMsg messages
+
 ### 0.4.20 (2018-08-24)
 
 - :bug: Fixed #80, #78: Resource properties returning `undefined`
