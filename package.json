@@ -17,8 +17,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "generate-docs": "shx rm -rf docs && typedoc --out docs/",
-    "bundle": "browserify browser/app.js -d -o browser/bundle.js",
-    "preversion": "npm run lint",
+    "bundle": "npm run build && browserify browser/app.js -d -o browser/bundle.js",
+    "preversion": "npm run build && npm run lint",
     "version": "npm run generate-docs && npm run bundle && git add -A browser/bundle.js docs",
     "postversion": "git push && git push --tags && npm publish"
   },
