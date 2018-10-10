@@ -13,7 +13,7 @@ export class BaseEntity<
    * @returns World-space coordinates
    */
   get position(): Vector {
-    const cellWidth = 1 << this.getProp("DT_BaseEntity", "m_cellbits")!;
+    const cellWidth = 1 << this.getProp("DT_BaseEntity", "m_cellbits");
     const cellX = this.getProp("DT_BaseEntity", "m_cellX");
     const cellY = this.getProp("DT_BaseEntity", "m_cellY");
     const cellZ = this.getProp("DT_BaseEntity", "m_cellZ");

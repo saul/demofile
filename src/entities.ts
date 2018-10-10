@@ -32,11 +32,7 @@ import {
   ICSVCMsg_SendTable,
   ICSVCMsg_TempEntities
 } from "./protobufs/netmessages";
-import {
-  CCSGameRulesProxy,
-  CCSPlayerResource,
-  CCSTeam
-} from "./sendtabletypes";
+import { CCSGameRulesProxy, CCSPlayerResource } from "./sendtabletypes";
 import { IStringTableUpdateEvent } from "./stringtables";
 
 export interface NetworkableConstructor<T = Networkable<any>> {
@@ -790,6 +786,7 @@ export class Entities extends EventEmitter {
           assert(msg.isDelta, "entity leaving PVS on full update");
           // Maybe set a flag on the entity indicating that it is out of PVS?
         }
+        // tslint:disable-next-line:no-identical-conditions
       } else if (entityBitBuffer.readOneBit()) {
         const classId = entityBitBuffer.readUBits(this.serverClassBits);
         const serialNum = entityBitBuffer.readUBits(
@@ -798,7 +795,9 @@ export class Entities extends EventEmitter {
 
         const newEnt = this._addEntity(entityIndex, classId, serialNum);
         this._readNewEntity(entityBitBuffer, newEnt);
-        this.emit("postcreate", { entity: newEnt });
+        this.emit("postcreate", {
+          entity: newEnt
+        });
       } else {
         const entity = assertExists(
           this.entities[entityIndex],

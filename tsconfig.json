@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "plugins": [
+      {
+        "name": "tslint-language-service-ts3",
+        "ignoreDefinitionFiles": true
+      }
+    ],
     "strict": true,
     "outDir": "./dist",
     "allowJs": true,

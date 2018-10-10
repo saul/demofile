@@ -1,13 +1,8 @@
-import * as assert from "assert";
 import { EventEmitter } from "events";
 import * as _ from "lodash";
 import { DemoFile } from "./demo";
 import { GameEvent } from "./gameevent";
-import {
-  CSVCMsg_GameEventList,
-  ICSVCMsg_GameEvent,
-  ICSVCMsg_GameEventList
-} from "./protobufs/netmessages";
+import { ICSVCMsg_GameEventList } from "./protobufs/netmessages";
 
 interface GameEventEvent<T> {
   name: string;

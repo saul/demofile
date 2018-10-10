@@ -34,7 +34,7 @@ function parseDemoFile(path: string) {
       for (const dt of demoFile.entities.dataTables) {
         console.log(`export interface ${dt.netTableName} {`);
 
-        let lastElemType;
+        let lastElemType: string | undefined;
         for (const prop of dt.props) {
           let typeStr;
 
@@ -64,6 +64,11 @@ function parseDemoFile(path: string) {
           } else if (prop.type === PropType.String) {
             typeStr = "string";
           } else if (prop.type === PropType.Array) {
+            if (typeof lastElemType === "undefined")
+              throw new Error(
+                "Array prop type was not preceded by SPROP_INSIDEARRAY"
+              );
+
             typeStr = lastElemType + "[]";
           } else if (prop.type === PropType.DataTable) {
             console.log(`  // ${prop.varName}: DataTable;`);

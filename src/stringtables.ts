@@ -223,13 +223,14 @@ export class StringTables extends EventEmitter {
       const numStrings = bitbuf.readUInt16();
 
       for (let i = 0; i < numStrings; ++i) {
-        const entry = bitbuf.readCString(); // eslint-disable-line no-unused-vars
-        let userData = null; // eslint-disable-line no-unused-vars
+        const entry = bitbuf.readCString(); // tslint:disable-line no-dead-store
+        let userData = null;
 
         if (bitbuf.readOneBit()) {
           const userDataSize = bitbuf.readUInt16();
           const userDataBuf = bitbuf.readBytes(userDataSize);
 
+          // tslint:disable-next-line no-dead-store
           userData =
             userDataCallback === undefined
               ? userDataBuf
@@ -304,17 +305,16 @@ export class StringTables extends EventEmitter {
         }
 
         // read in the user data
-        let userDataArray = null;
         let userData = null;
 
         if (bitbuf.readOneBit()) {
           // don't read the length, it's fixed length and the length was networked down already
           if (table.userDataFixedSize) {
-            userDataArray = [bitbuf.readUBits(table.userDataSizeBits)];
+            const userDataArray = [bitbuf.readUBits(table.userDataSizeBits)];
             userData = Buffer.from(userDataArray);
           } else {
             const bytes = bitbuf.readUBits(consts.MAX_USERDATA_BITS);
-            userData = userDataArray = bitbuf.readBytes(bytes);
+            userData = bitbuf.readBytes(bytes);
           }
 
           if (userDataCallback !== undefined) {

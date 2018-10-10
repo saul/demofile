@@ -274,6 +274,7 @@ export class Player extends BaseEntity<CCSPlayer> {
       ? CCSPlayerResource[TableName][TableKeys]
       : never
   >(tableName: TableName): ElementType {
+    // tslint:disable-next-line:no-useless-cast
     const array = this._demo.entities.playerResource.getIndexedProps(
       tableName
     )!;

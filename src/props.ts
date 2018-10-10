@@ -95,11 +95,9 @@ function makeIntDecoder(
   if ((sendProp.flags & SPROP_VARINT) !== 0) {
     /*eslint-disable no-unreachable*/
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
-      // return this.bitbuf.readVarint32();
-      throw new Error("Not implemented"); // TODO
+      throw new Error("32-bit unsigned varints not implemented"); // TODO
     } else {
-      // return this.bitbuf.readSignedVarint32();
-      throw new Error("Not implemented"); // TODO
+      throw new Error("32-bit signed varints not implemented"); // TODO
     }
     /*eslint-enable no-unreachable*/
   } else {
@@ -211,7 +209,9 @@ function makeVectorXYDecoder(
   });
 }
 
-function makeStringDecoder(sendProp: ISendProp): (bitbuf: BitStream) => string {
+function makeStringDecoder(
+  _sendProp: ISendProp
+): (bitbuf: BitStream) => string {
   return bitbuf => {
     const len = bitbuf.readUBits(DT_MAX_STRING_BITS);
     return bitbuf.readString(len);
@@ -222,11 +222,9 @@ function makeInt64Decoder(sendProp: ISendProp): (bitbuf: BitStream) => Long {
   if ((sendProp.flags & SPROP_VARINT) !== 0) {
     /*eslint-disable no-unreachable*/
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
-      // return this.bitbuf.readVarint64();
-      throw new Error("Not implemented"); // TODO
+      throw new Error("64-bit unsigned varint not implemented"); // TODO
     } else {
-      // return this.bitbuf.readSignedVarint64();
-      throw new Error("Not implemented"); // TODO
+      throw new Error("64-bit signed varint not implemented"); // TODO
     }
     /*eslint-enable no-unreachable*/
   } else {

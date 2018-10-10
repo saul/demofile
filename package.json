@@ -13,7 +13,7 @@
     "url": "https://github.com/saul/demofile.git"
   },
   "scripts": {
-    "lint": "tslint --fix 'src/**/*.ts' --exclude 'src/**/*.d.ts'",
+    "lint": "tslint -p . --fix --exclude 'src/**/*.d.ts'",
     "build": "tsc",
     "watch": "tsc -w",
     "generate-docs": "shx rm -rf docs && jsdoc -c .jsdoc.json --verbose .",
@@ -39,13 +39,15 @@
     "@types/ansi-styles": "^3.2.0",
     "ansi-styles": "^3.2.1",
     "husky": "^1.1.1",
-    "jsdoc": "^3.5.5",
     "lint-staged": "^7.3.0",
     "minami": "^1.2.3",
     "prettier": "1.14.3",
     "shx": "^0.3.2",
     "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.15.0"
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-language-service-ts3": "^1.0.0",
+    "typedoc": "^0.13.0",
+    "typestrict": "^1.0.1"
   },
   "husky": {
     "hooks": {
