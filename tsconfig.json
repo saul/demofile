@@ -18,5 +18,5 @@
     "noImplicitThis": true
   },
   "compileOnSave": true,
-  "include": ["./src/**/*.ts"]
+  "include": ["./src/**/*.ts", "./src/protobufs/*.js"]
 }
