@@ -87,7 +87,7 @@
 						</tr>
 					</thead>
 					<tbody><tr>
-							<td><a href="https://saul.github.io/demofile/DemoFile.html">DemoFile</a></td>
+							<td><a href="https://saul.github.io/demofile/classes/_demo_demofile.html">DemoFile</a></td>
 							<td>Represents a demo file for parsing.</td>
 						</tr>
 				</tbody></table>
@@ -101,27 +101,27 @@
 						</tr>
 					</thead>
 					<tbody><tr>
-							<td><a href="https://saul.github.io/demofile/ConVars.html">ConVars</a></td>
+							<td><a href="https://saul.github.io/demofile/classes/_convars_.convars.html">ConVars</a></td>
 							<td><code>demoFile.conVars</code></td>
 							<td>Manages console variables. (Only <code>FCVAR_NOTIFY</code> and <code>FCVAR_REPLICATED</code> are available.)</td>
 						</tr>
 						<tr>
-							<td><a href="https://saul.github.io/demofile/Entities.html">Entities</a></td>
+							<td><a href="https://saul.github.io/demofile/classes/_entities_.entities.html">Entities</a></td>
 							<td><code>demoFile.entities</code></td>
 							<td>Represents entities and networked properties within a demo.</td>
 						</tr>
 						<tr>
-							<td><a href="https://saul.github.io/demofile/GameEvents.html">GameEvents</a></td>
+							<td><a href="https://saul.github.io/demofile/classes/_gameevents_.gameevents.html">GameEvents</a></td>
 							<td><code>demoFile.gameEvents</code></td>
 							<td>Manages game events for a demo file. (e.g. <code>player_death</code>, <code>player_footstep</code>)</td>
 						</tr>
 						<tr>
-							<td><a href="https://saul.github.io/demofile/StringTables.html">StringTables</a></td>
+							<td><a href="https://saul.github.io/demofile/classes/_stringtables_.stringtables.html">StringTables</a></td>
 							<td><code>demoFile.stringTables</code></td>
 							<td>Handles string tables for a demo file. (e.g. <code>userinfo</code>)</td>
 						</tr>
 						<tr>
-							<td><a href="https://saul.github.io/demofile/UserMessages.html">UserMessages</a></td>
+							<td><a href="https://saul.github.io/demofile/classes/_usermessages_.usermessages.html">UserMessages</a></td>
 							<td><code>demoFile.userMessages</code></td>
 							<td>Handles user messages for a demo file. (e.g. <code>SayText</code> for in-game chat messages)</td>
 						</tr>
@@ -136,17 +136,22 @@
 						</tr>
 					</thead>
 					<tbody><tr>
-							<td><a href="https://saul.github.io/demofile/BaseEntity.html">BaseEntity</a></td>
+							<td><a href="https://saul.github.io/demofile/classes/_entities_networkable_.networkable.html">Networkable</a></td>
 							<td><code>demoFile.entities.getByHandle</code><br><code>demoFile.entities.entities[entIndex]</code></td>
-							<td>Represents an in-game entity.</td>
+							<td>Base class of all in-game entities, even non-renderable entities (e.g. <code>CCSTeam</code>).</td>
 						</tr>
 						<tr>
-							<td><a href="https://saul.github.io/demofile/Player.html">Player</a></td>
+							<td><a href="https://saul.github.io/demofile/classes/_entities_baseentity_.baseentity.html">BaseEntity</a></td>
+							<td>|Base class of most in-game entities (e.g. players, weapons, all other renderable entities).</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><a href="https://saul.github.io/demofile/classes/_entities_player_.player.html">Player</a></td>
 							<td><code>demoFile.entities.players</code><br><code>demoFile.entities.getByUserId</code></td>
 							<td>Represents an in-game player.</td>
 						</tr>
 						<tr>
-							<td><a href="https://saul.github.io/demofile/Weapon.html">Weapon</a></td>
+							<td><a href="https://saul.github.io/demofile/classes/_entities_weapon_.weapon.html">Weapon</a></td>
 							<td><code>demoFile.entities.weapons</code><br><code>player.weapon</code><br><code>player.weapons</code></td>
 							<td>Represents an in-game weapon (guns, grenades, knifes).</td>
 						</tr>
@@ -155,8 +160,7 @@
 				<h3 id="browser">Browser</h3>
 				<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"browser/bundle.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre><p>The <code>DemoFile</code> module will be available as <code>window.demofile</code>. </p>
 				<h3 id="node">Node</h3>
-				<pre><code>npm <span class="hljs-keyword">install</span> <span class="hljs-comment">--save demofile</span></code></pre><p>Generate documentation to <code>./docs/</code>:</p>
-				<pre><code>npm run <span class="hljs-keyword">generate</span>-docs</code></pre><h2 id="screenshot">Screenshot</h2>
+				<pre><code>npm <span class="hljs-keyword">install</span> <span class="hljs-comment">--save demofile</span></code></pre><h2 id="screenshot">Screenshot</h2>
 				<p><img src="./example.png" alt="Example output"></p>
 				<h2 id="api">API</h2>
 				<p>This library provides full access to the data available in CSGO demo files. Unlike some other libraries, <code>demofile</code> is feature complete and supports the latest demos. As well as providing high-level APIs to access the state of the game, low-level access is available and is not discouraged.</p>
@@ -345,6 +349,17 @@ Tick rate: 64
 
 */</span></code></pre>
 				<h2 id="release-history">Release History</h2>
+				<h3 id="upcoming">Upcoming</h3>
+				<ul>
+					<li>:sparkles: #56: <strong>Ported to TypeScript</strong>!</li>
+					<li>:sparkles: Added <code>Networkable</code> type, which is the new base class of all entities</li>
+					<li>:sparkles: <code>BaseEntity</code> is now only the base class of renderable entities</li>
+					<li>:zap: Removed <code>BaseEntity#velocity</code></li>
+					<li>:zap: User messages are now listened without the &#39;CS_UM_&#39; prefix</li>
+					<li>:zap: String tables are now no longer initialised to their maximum size, instead they grow as needed</li>
+					<li>:bug: #86: Fixed <code>Cannot read property &#39;messageToObject&#39; of undefined</code> on some game events</li>
+					<li>:bug: Fixed error when trying to parse svc_EntityMsg messages</li>
+				</ul>
 				<h3 id="0-4-20-2018-08-24-">0.4.20 (2018-08-24)</h3>
 				<ul>
 					<li>:bug: Fixed #80, #78: Resource properties returning <code>undefined</code></li>
@@ -576,6 +591,12 @@ Tick rate: 64
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_props_.html">"props"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_protobufs_cstrike15_usermessages_.html">"protobufs/cstrike15_<wbr>usermessages"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_protobufs_netmessages_.html">"protobufs/netmessages"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_sendtabletypes_.html">"sendtabletypes"</a>
