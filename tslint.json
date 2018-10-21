@@ -1,0 +1,22 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-config-prettier", "typestrict"],
+  "jsRules": {},
+  "rules": {
+    "no-unused-variable": false,
+    "no-bitwise": false,
+    "no-empty-interface": false,
+    "adjacent-overload-signatures": false,
+    "object-literal-sort-keys": false,
+    "interface-name": false,
+    "unified-signatures": false,
+    "curly": false,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore"
+    ]
+  },
+  "rulesDirectory": []
+}
