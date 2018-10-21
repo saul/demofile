@@ -1,6 +1,4 @@
 node_modules
 *.log
-typings
 .vscode
 demos
-dist/
