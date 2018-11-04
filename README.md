@@ -75,16 +75,16 @@ Note: It is important to note that events are fired at the end of a tick, after 
 
 ### Print player information when it changes
 
-```js
-const demofile = require('demofile');
-const fs = require('fs');
+```ts
+import fs = require("fs");
+import demofile = require("demofile");
 
-fs.readFile('test.dem', function (err, buffer) {
-  let demoFile = new demofile.DemoFile();
+fs.readFile("test.dem", (err, buffer) => {
+  const demoFile = new demofile.DemoFile();
 
-  demoFile.stringTables.on('update', e => {
-    if (e.table.name === 'userinfo' && e.userData != null) {
-      console.log('\nPlayer info updated:');
+  demoFile.stringTables.on("update", e => {
+    if (e.table.name === "userinfo" && e.userData != null) {
+      console.log("\nPlayer info updated:");
       console.log(e.entryIndex, e.userData);
     }
   });
@@ -115,24 +115,24 @@ Player info updated:
 
 ### Print kills
 
-```js
-const demofile = require('demofile');
-const fs = require('fs');
+```ts
+import fs = require("fs");
+import demofile = require("demofile");
 
-fs.readFile('test.dem', function (err, buffer) {
-  let demoFile = new demofile.DemoFile();
+fs.readFile("test.dem", (err, buffer) => {
+  const demoFile = new demofile.DemoFile();
 
-  demoFile.gameEvents.on('player_death', e => {
-    let victim = demoFile.entities.getByUserId(e.userid);
-    let victimName = victim ? victim.name : 'unnamed';
+  demoFile.gameEvents.on("player_death", e => {
+    const victim = demoFile.entities.getByUserId(e.userid);
+    const victimName = victim ? victim.name : "unnamed";
 
     // Attacker may have disconnected so be aware.
     // e.g. attacker could have thrown a grenade, disconnected, then that grenade
     // killed another player.
-    let attacker = demoFile.entities.getByUserId(e.attacker);
-    let attackerName = attacker ? attacker.name : 'unnamed';
+    const attacker = demoFile.entities.getByUserId(e.attacker);
+    const attackerName = attacker ? attacker.name : "unnamed";
 
-    let headshotText = e.headshot ? ' HS' : '';
+    const headshotText = e.headshot ? " HS" : "";
 
     console.log(`${attackerName} [${e.weapon}${headshotText}] ${victimName}`);
   });
@@ -154,27 +154,38 @@ JW [mac10 HS] Magisk
 
 ### Print round changes
 
-```js
-const demofile = require('demofile');
-const fs = require('fs');
+```ts
+import fs = require("fs");
+import demofile = require("demofile");
 
-fs.readFile('test.dem', function (err, buffer) {
-  let demoFile = new demofile.DemoFile();
+fs.readFile("test.dem", (err, buffer) => {
+  const demoFile = new demofile.DemoFile();
 
-  demoFile.gameEvents.on('round_end', e => {
-    console.log('*** Round ended \'%s\' (reason: %s, time: %d seconds)', demoFile.gameRules.phase, e.reason, demoFile.currentTime);
+  demoFile.gameEvents.on("round_end", e => {
+    console.log(
+      "*** Round ended '%s' (reason: %s, time: %d seconds)",
+      demoFile.gameRules.phase,
+      e.reason,
+      demoFile.currentTime
+    );
 
     // We can't print the team scores here as they haven't been updated yet.
     // See round_officially_ended below.
   });
 
-  demoFile.gameEvents.on('round_officially_ended', e => {
-    let teams = demoFile.teams;
+  demoFile.gameEvents.on("round_officially_ended", e => {
+    const teams = demoFile.teams;
 
-    let terrorists = teams[demo.TEAM_TERRORISTS];
-    let cts = teams[demo.TEAM_CTS];
+    const terrorists = teams[2];
+    const cts = teams[3];
 
-    console.log('\tTerrorists: %s score %d\n\tCTs: %s score %d', terrorists.clanName, terrorists.score, cts.clanName, cts.score);
+    console.log(
+      "\tTerrorists: %s score %d\n\tCTs: %s score %d",
+      terrorists.clanName,
+      terrorists.score,
+      cts.clanName,
+      cts.score
+    );
   });
 
   demoFile.parse(buffer);
@@ -197,28 +208,37 @@ fs.readFile('test.dem', function (err, buffer) {
 
 ### Print player joining/leaving
 
-```js
-const demofile = require('demofile');
-const fs = require('fs');
+```ts
+import fs = require("fs");
+import demofile = require("demofile");
 
-fs.readFile('test.dem', function (err, buffer) {
-  let demoFile = new demofile.DemoFile();
+fs.readFile("test.dem", (err, buffer) => {
+  const demoFile = new demofile.DemoFile();
 
-  demoFile.entities.on('create', e => {
+  demoFile.entities.on("create", e => {
     // We're only interested in player entities being created.
-    if (e.entity.serverClass.name !== 'CCSPlayer') {
+    if (!(e.entity instanceof demofile.Player)) {
       return;
     }
 
-    console.log('[Time: %d] %s (%s) joined the game', demoFile.currentTime, e.entity.name, e.entity.steamId);
+    console.log(
+      "[Time: %d] %s (%s) joined the game",
+      demoFile.currentTime,
+      e.entity.name,
+      e.entity.steamId
+    );
   });
 
-  demoFile.entities.on('beforeremove', e => {
-    if (e.entity.serverClass.name !== 'CCSPlayer') {
+  demoFile.entities.on("beforeremove", e => {
+    if (!(e.entity instanceof demofile.Player)) {
       return;
     }
 
-    console.log('[Time: %d] %s left the game', demoFile.currentTime, e.entity.name);
+    console.log(
+      "[Time: %d] %s left the game",
+      demoFile.currentTime,
+      e.entity.name
+    );
   });
 
   demoFile.parse(buffer);
@@ -237,15 +257,18 @@ fs.readFile('test.dem', function (err, buffer) {
 ### Print demo information (e.g. tick rate)
 
 ```js
-const demofile = require('demofile');
-const fs = require('fs');
+import fs = require("fs");
+import demofile = require("demofile");
 
-fs.readFile('test.dem', function (err, buffer) {
-  let demoFile = new demofile.DemoFile();
+fs.readFile("test.dem", (err, buffer) => {
+  const demoFile = new demofile.DemoFile();
 
-  demoFile.on('start', () => {
-    console.log('Demo header:', demoFile.header);
-    console.log('Tick rate:', demoFile.tickRate);
+  demoFile.on("start", () => {
+    console.log("Demo header:", demoFile.header);
+    console.log("Tick rate:", demoFile.tickRate);
+
+    // Stop parsing - we're finished
+    demoFile.cancel();
   });
 
   demoFile.parse(buffer);
@@ -271,7 +294,7 @@ Tick rate: 64
 
 ## Release History
 
-### Upcoming
+### 1.0.0-beta.1 (2018-10-21)
 
 - :sparkles: #56: **Ported to TypeScript**!
 - :sparkles: Added `Networkable` type, which is the new base class of all entities
