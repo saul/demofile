@@ -4,6 +4,7 @@ import * as timers from "timers";
 import * as ByteBuffer from "bytebuffer";
 import { BitStream } from "./ext/bitbuffer";
 
+import process = require("process");
 import assert = require("assert");
 import { MAX_OSPATH } from "./consts";
 import { ConVars } from "./convars";
@@ -616,7 +617,7 @@ export class DemoFile extends EventEmitter {
       // If we hit a RangeError, just silently swallow it (as the official
       // game client does)
       if (!(e instanceof RangeError)) {
-        throw e;
+          process.emitWarning(e);
       }
     }
   }
