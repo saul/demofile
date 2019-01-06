@@ -252,7 +252,7 @@ function makeArrayDecoder(
   arrayElementProp: ISendProp
 ): (bitbuf: BitStream) => PropPrimitive[] {
   const maxElements = sendProp.numElements;
-  const numBits = Math.ceil(Math.log2(maxElements)) + 1;
+  const numBits = Math.floor(Math.log2(maxElements)) + 1;
   const elementDecoder = makeValueDecoder(arrayElementProp);
 
   return bitbuf => {

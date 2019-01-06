@@ -206,7 +206,7 @@ function makeInt64Decoder(sendProp) {
 }
 function makeArrayDecoder(sendProp, arrayElementProp) {
     const maxElements = sendProp.numElements;
-    const numBits = Math.ceil(Math.log2(maxElements)) + 1;
+    const numBits = Math.floor(Math.log2(maxElements)) + 1;
     const elementDecoder = makeValueDecoder(arrayElementProp);
     return bitbuf => {
         const numElements = bitbuf.readUBits(numBits);
