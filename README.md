@@ -294,6 +294,11 @@ Tick rate: 64
 
 ## Release History
 
+### 1.0.0 (2019-01-06)
+
+- :zap: Removed `process.emitWarning` on parsing error. Use `IDemoEndEvent#error` instead.
+- :bug: #95: Fixed array decoding bug which made demos made after the Danger Zone update unparseable (thanks @JeffreyLimbacher)
+
 ### 1.0.0-beta.1 (2018-10-21)
 
 - :sparkles: #56: **Ported to TypeScript**!
