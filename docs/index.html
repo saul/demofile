@@ -173,15 +173,15 @@
 				</ul>
 				<h2 id="examples">Examples</h2>
 				<h3 id="print-player-information-when-it-changes">Print player information when it changes</h3>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">'demofile'</span>);
-<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
+<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"demofile"</span>);
 
-fs.readFile(<span class="hljs-string">'test.dem'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, buffer</span>) </span>{
-  <span class="hljs-keyword">let</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
+fs.readFile(<span class="hljs-string">"test.dem"</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.stringTables.on(<span class="hljs-string">'update'</span>, e =&gt; {
-    <span class="hljs-keyword">if</span> (e.table.name === <span class="hljs-string">'userinfo'</span> &amp;&amp; e.userData != <span class="hljs-literal">null</span>) {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'\nPlayer info updated:'</span>);
+  demoFile.stringTables.on(<span class="hljs-string">"update"</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (e.table.name === <span class="hljs-string">"userinfo"</span> &amp;&amp; e.userData != <span class="hljs-literal">null</span>) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"\nPlayer info updated:"</span>);
       <span class="hljs-built_in">console</span>.log(e.entryIndex, e.userData);
     }
   });
@@ -209,23 +209,23 @@ Player info updated:
 [repeated for other players]
 */</span></code></pre>
 				<h3 id="print-kills">Print kills</h3>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">'demofile'</span>);
-<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
+<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"demofile"</span>);
 
-fs.readFile(<span class="hljs-string">'test.dem'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, buffer</span>) </span>{
-  <span class="hljs-keyword">let</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
+fs.readFile(<span class="hljs-string">"test.dem"</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.gameEvents.on(<span class="hljs-string">'player_death'</span>, e =&gt; {
-    <span class="hljs-keyword">let</span> victim = demoFile.entities.getByUserId(e.userid);
-    <span class="hljs-keyword">let</span> victimName = victim ? victim.name : <span class="hljs-string">'unnamed'</span>;
+  demoFile.gameEvents.on(<span class="hljs-string">"player_death"</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> victim = demoFile.entities.getByUserId(e.userid);
+    <span class="hljs-keyword">const</span> victimName = victim ? victim.name : <span class="hljs-string">"unnamed"</span>;
 
     <span class="hljs-comment">// Attacker may have disconnected so be aware.</span>
     <span class="hljs-comment">// e.g. attacker could have thrown a grenade, disconnected, then that grenade</span>
     <span class="hljs-comment">// killed another player.</span>
-    <span class="hljs-keyword">let</span> attacker = demoFile.entities.getByUserId(e.attacker);
-    <span class="hljs-keyword">let</span> attackerName = attacker ? attacker.name : <span class="hljs-string">'unnamed'</span>;
+    <span class="hljs-keyword">const</span> attacker = demoFile.entities.getByUserId(e.attacker);
+    <span class="hljs-keyword">const</span> attackerName = attacker ? attacker.name : <span class="hljs-string">"unnamed"</span>;
 
-    <span class="hljs-keyword">let</span> headshotText = e.headshot ? <span class="hljs-string">' HS'</span> : <span class="hljs-string">''</span>;
+    <span class="hljs-keyword">const</span> headshotText = e.headshot ? <span class="hljs-string">" HS"</span> : <span class="hljs-string">""</span>;
 
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${attackerName}</span> [<span class="hljs-subst">${e.weapon}</span><span class="hljs-subst">${headshotText}</span>] <span class="hljs-subst">${victimName}</span>`</span>);
   });
@@ -244,26 +244,37 @@ JW [mac10 HS] Magisk
 
 */</span></code></pre>
 				<h3 id="print-round-changes">Print round changes</h3>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">'demofile'</span>);
-<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
+<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"demofile"</span>);
 
-fs.readFile(<span class="hljs-string">'test.dem'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, buffer</span>) </span>{
-  <span class="hljs-keyword">let</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
+fs.readFile(<span class="hljs-string">"test.dem"</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.gameEvents.on(<span class="hljs-string">'round_end'</span>, e =&gt; {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'*** Round ended \'%s\' (reason: %s, time: %d seconds)'</span>, demoFile.gameRules.phase, e.reason, demoFile.currentTime);
+  demoFile.gameEvents.on(<span class="hljs-string">"round_end"</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(
+      <span class="hljs-string">"*** Round ended '%s' (reason: %s, time: %d seconds)"</span>,
+      demoFile.gameRules.phase,
+      e.reason,
+      demoFile.currentTime
+    );
 
     <span class="hljs-comment">// We can't print the team scores here as they haven't been updated yet.</span>
     <span class="hljs-comment">// See round_officially_ended below.</span>
   });
 
-  demoFile.gameEvents.on(<span class="hljs-string">'round_officially_ended'</span>, e =&gt; {
-    <span class="hljs-keyword">let</span> teams = demoFile.teams;
+  demoFile.gameEvents.on(<span class="hljs-string">"round_officially_ended"</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> teams = demoFile.teams;
 
-    <span class="hljs-keyword">let</span> terrorists = teams[demo.TEAM_TERRORISTS];
-    <span class="hljs-keyword">let</span> cts = teams[demo.TEAM_CTS];
+    <span class="hljs-keyword">const</span> terrorists = teams[<span class="hljs-number">2</span>];
+    <span class="hljs-keyword">const</span> cts = teams[<span class="hljs-number">3</span>];
 
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'\tTerrorists: %s score %d\n\tCTs: %s score %d'</span>, terrorists.clanName, terrorists.score, cts.clanName, cts.score);
+    <span class="hljs-built_in">console</span>.log(
+      <span class="hljs-string">"\tTerrorists: %s score %d\n\tCTs: %s score %d"</span>,
+      terrorists.clanName,
+      terrorists.score,
+      cts.clanName,
+      cts.score
+    );
   });
 
   demoFile.parse(buffer);
@@ -283,27 +294,36 @@ fs.readFile(<span class="hljs-string">'test.dem'</span>, <span class="hljs-funct
 
 */</span></code></pre>
 				<h3 id="print-player-joining-leaving">Print player joining/leaving</h3>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">'demofile'</span>);
-<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
+<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"demofile"</span>);
 
-fs.readFile(<span class="hljs-string">'test.dem'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, buffer</span>) </span>{
-  <span class="hljs-keyword">let</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
+fs.readFile(<span class="hljs-string">"test.dem"</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.entities.on(<span class="hljs-string">'create'</span>, e =&gt; {
+  demoFile.entities.on(<span class="hljs-string">"create"</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
     <span class="hljs-comment">// We're only interested in player entities being created.</span>
-    <span class="hljs-keyword">if</span> (e.entity.serverClass.name !== <span class="hljs-string">'CCSPlayer'</span>) {
+    <span class="hljs-keyword">if</span> (!(e.entity <span class="hljs-keyword">instanceof</span> demofile.Player)) {
       <span class="hljs-keyword">return</span>;
     }
 
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'[Time: %d] %s (%s) joined the game'</span>, demoFile.currentTime, e.entity.name, e.entity.steamId);
+    <span class="hljs-built_in">console</span>.log(
+      <span class="hljs-string">"[Time: %d] %s (%s) joined the game"</span>,
+      demoFile.currentTime,
+      e.entity.name,
+      e.entity.steamId
+    );
   });
 
-  demoFile.entities.on(<span class="hljs-string">'beforeremove'</span>, e =&gt; {
-    <span class="hljs-keyword">if</span> (e.entity.serverClass.name !== <span class="hljs-string">'CCSPlayer'</span>) {
+  demoFile.entities.on(<span class="hljs-string">"beforeremove"</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (!(e.entity <span class="hljs-keyword">instanceof</span> demofile.Player)) {
       <span class="hljs-keyword">return</span>;
     }
 
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'[Time: %d] %s left the game'</span>, demoFile.currentTime, e.entity.name);
+    <span class="hljs-built_in">console</span>.log(
+      <span class="hljs-string">"[Time: %d] %s left the game"</span>,
+      demoFile.currentTime,
+      e.entity.name
+    );
   });
 
   demoFile.parse(buffer);
@@ -318,15 +338,18 @@ fs.readFile(<span class="hljs-string">'test.dem'</span>, <span class="hljs-funct
 
 */</span></code></pre>
 				<h3 id="print-demo-information-e-g-tick-rate-">Print demo information (e.g. tick rate)</h3>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">'demofile'</span>);
-<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
+<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"demofile"</span>);
 
-fs.readFile(<span class="hljs-string">'test.dem'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, buffer</span>) </span>{
-  <span class="hljs-keyword">let</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
+fs.readFile(<span class="hljs-string">"test.dem"</span>, (err, buffer) =&gt; {
+  <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.on(<span class="hljs-string">'start'</span>, () =&gt; {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Demo header:'</span>, demoFile.header);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Tick rate:'</span>, demoFile.tickRate);
+  demoFile.on(<span class="hljs-string">"start"</span>, () =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Demo header:"</span>, demoFile.header);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Tick rate:"</span>, demoFile.tickRate);
+
+    <span class="hljs-comment">// Stop parsing - we're finished</span>
+    demoFile.cancel();
   });
 
   demoFile.parse(buffer);
@@ -349,7 +372,7 @@ Tick rate: 64
 
 */</span></code></pre>
 				<h2 id="release-history">Release History</h2>
-				<h3 id="upcoming">Upcoming</h3>
+				<h3 id="1-0-0-beta-1-2018-10-21-">1.0.0-beta.1 (2018-10-21)</h3>
 				<ul>
 					<li>:sparkles: #56: <strong>Ported to TypeScript</strong>!</li>
 					<li>:sparkles: Added <code>Networkable</code> type, which is the new base class of all entities</li>

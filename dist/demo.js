@@ -4,7 +4,6 @@ const events_1 = require("events");
 const timers = require("timers");
 const ByteBuffer = require("bytebuffer");
 const bitbuffer_1 = require("./ext/bitbuffer");
-const process = require("process");
 const assert = require("assert");
 const consts_1 = require("./consts");
 const convars_1 = require("./convars");
@@ -250,12 +249,6 @@ class DemoFile extends events_1.EventEmitter {
             this.cancel();
             this.emit("tickend", this.currentTick);
             this.emit("end", { error: e });
-            // See GH #11: A sizeable proportion of demo files aren't complete.
-            // If we hit a RangeError, just silently swallow it (as the official
-            // game client does)
-            if (!(e instanceof RangeError)) {
-                process.emitWarning(e);
-            }
         }
     }
 }
