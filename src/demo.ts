@@ -4,7 +4,6 @@ import * as timers from "timers";
 import * as ByteBuffer from "bytebuffer";
 import { BitStream } from "./ext/bitbuffer";
 
-import process = require("process");
 import assert = require("assert");
 import { MAX_OSPATH } from "./consts";
 import { ConVars } from "./convars";
@@ -612,13 +611,6 @@ export class DemoFile extends EventEmitter {
 
       this.emit("tickend", this.currentTick);
       this.emit("end", { error: e });
-
-      // See GH #11: A sizeable proportion of demo files aren't complete.
-      // If we hit a RangeError, just silently swallow it (as the official
-      // game client does)
-      if (!(e instanceof RangeError)) {
-          process.emitWarning(e);
-      }
     }
   }
 }
