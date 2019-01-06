@@ -92,8 +92,12 @@ function parseDemoFile(path: string) {
       console.log("Demo header:", demoFile.header);
     });
 
-    demoFile.on("end", () => {
-      logTeamScores();
+    demoFile.on("end", e => {
+      if (e.error) {
+        console.error("Error during parsing:", e.error);
+      } else {
+        logTeamScores();
+      }
 
       console.log("Finished.");
     });
