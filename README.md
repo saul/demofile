@@ -294,6 +294,10 @@ Tick rate: 64
 
 ## Release History
 
+### 1.0.1 (2019-01-07)
+
+- :bug: #98: Fixed Steam 64 IDs being invalid
+
 ### 1.0.0 (2019-01-06)
 
 - :zap: Removed `process.emitWarning` on parsing error. Use `IDemoEndEvent#error` instead.

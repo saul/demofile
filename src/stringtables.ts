@@ -42,7 +42,10 @@ function parseUserInfoData(buf: Buffer): IPlayerInfo {
   const bytebuf = ByteBuffer.wrap(buf, ByteBuffer.BIG_ENDIAN);
   bytebuf.skip(8);
 
-  const xuid = new Long(bytebuf.readUint32(), bytebuf.readUint32());
+  let hi = bytebuf.readUint32();
+  let lo = bytebuf.readUint32();
+
+  const xuid = Long.fromBits(lo, hi);
   const name = bytebuf
     .readString(MAX_PLAYER_NAME_LENGTH, ByteBuffer.METRICS_BYTES)
     .split("\0", 2)[0];
