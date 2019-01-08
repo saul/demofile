@@ -311,7 +311,7 @@ export class Entities extends EventEmitter {
     1 << consts.MAX_EDICT_BITS
   ).fill(null);
 
-  public markedForDeletion: number[] = [];
+  public markedForDeletion: Set<number> = new Set();
 
   public staticBaselines: {
     [classId: number]: UnknownEntityProps | undefined;
@@ -341,19 +341,16 @@ export class Entities extends EventEmitter {
     demo.on("svc_TempEntities", e => this._handleTempEntities(e));
     demo.stringTables.on("update", e => this._handleStringTableUpdate(e));
 
-    /*
-    TODO: reimplement entity deletion
     demo.on("tickend", () => {
-      if (this.markedForDeletion.length > 0) {
+      if (this.markedForDeletion.size > 0) {
         for (const index of this.markedForDeletion) {
           this.entities[index] = null;
           this.emit("remove", { index });
         }
 
-        this.markedForDeletion.length = 0;
+        this.markedForDeletion.clear();
       }
     });
-    */
   }
 
   /**
@@ -681,22 +678,13 @@ export class Entities extends EventEmitter {
 
     this.emit("beforeremove", { entity, immediate });
 
-    // TODO: reimplement deletion
-    /*
     if (immediate) {
-    */
-    this.entities[index] = null;
-    this.emit("remove", { index });
-    /*
+      this.entities[index] = null;
+      this.emit("remove", { index });
     } else {
-      assert(
-        !entity.deleting,
-        "cannot delete an entity already marked for deletion"
-      );
       entity.deleting = true;
-      this.markedForDeletion.push(index);
+      this.markedForDeletion.add(index);
     }
-    */
   }
 
   private _parseEntityUpdate(

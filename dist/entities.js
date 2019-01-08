@@ -62,7 +62,7 @@ class Entities extends EventEmitter {
          * Array of all entities in game.
          */
         this.entities = new Array(1 << consts.MAX_EDICT_BITS).fill(null);
-        this.markedForDeletion = [];
+        this.markedForDeletion = new Set();
         this.staticBaselines = {};
         this.pendingBaselines = {};
         this.serverClassBits = 0;
@@ -97,19 +97,15 @@ class Entities extends EventEmitter {
         demo.on("svc_PacketEntities", e => this._handlePacketEntities(e));
         demo.on("svc_TempEntities", e => this._handleTempEntities(e));
         demo.stringTables.on("update", e => this._handleStringTableUpdate(e));
-        /*
-        TODO: reimplement entity deletion
         demo.on("tickend", () => {
-          if (this.markedForDeletion.length > 0) {
-            for (const index of this.markedForDeletion) {
-              this.entities[index] = null;
-              this.emit("remove", { index });
+            if (this.markedForDeletion.size > 0) {
+                for (const index of this.markedForDeletion) {
+                    this.entities[index] = null;
+                    this.emit("remove", { index });
+                }
+                this.markedForDeletion.clear();
             }
-    
-            this.markedForDeletion.length = 0;
-          }
         });
-        */
     }
     /**
      * Determines whether handle is set.
@@ -324,22 +320,14 @@ class Entities extends EventEmitter {
         if (!entity)
             return;
         this.emit("beforeremove", { entity, immediate });
-        // TODO: reimplement deletion
-        /*
         if (immediate) {
-        */
-        this.entities[index] = null;
-        this.emit("remove", { index });
-        /*
-        } else {
-          assert(
-            !entity.deleting,
-            "cannot delete an entity already marked for deletion"
-          );
-          entity.deleting = true;
-          this.markedForDeletion.push(index);
+            this.entities[index] = null;
+            this.emit("remove", { index });
         }
-        */
+        else {
+            entity.deleting = true;
+            this.markedForDeletion.add(index);
+        }
     }
     _parseEntityUpdate(entityBitBuffer, classId) {
         const serverClass = this.serverClasses[classId];
