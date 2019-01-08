@@ -335,8 +335,6 @@ export class Entities extends EventEmitter {
     new Array(1 << consts.MAX_EDICT_BITS).fill(null)
   );
 
-  private _frames: Map<number, Array<Networkable | null>> = new Map();
-
   public listen(demo: DemoFile) {
     this._demo = demo;
     demo.on("svc_PacketEntities", e => this._handlePacketEntities(e));
@@ -741,15 +739,16 @@ export class Entities extends EventEmitter {
 
       const oldValue = entity.getProp(tableName, varName);
 
-      entity.updateProp(tableName, varName, update.value);
+      const newValue = update.value;
+      entity.updateProp(tableName, varName, newValue);
 
-      if (emitChangeEvents === ChangeEventMode.Fire)
+      if (emitChangeEvents === ChangeEventMode.Fire && oldValue !== newValue)
         this.emit("change", {
           entity,
           tableName,
           varName,
           oldValue,
-          newValue: update.value
+          newValue
         });
     }
   }
@@ -807,11 +806,15 @@ export class Entities extends EventEmitter {
   private _handlePacketEntities(
     msg: RequiredNonNullable<ICSVCMsg_PacketEntities>
   ) {
+    /*
     console.log(
       `${this._demo.currentTick}: baseline=${msg.baseline}, isDelta=${
         msg.isDelta ? "yes" : "no "
-      }, deltaFrom=${msg.deltaFrom}, updatedEntries=${msg.updatedEntries}`
+      }, deltaFrom=${msg.deltaFrom}, updatedEntries=${
+        msg.updatedEntries
+      }, size=${msg.entityData.byteLength * 8} bits`
     );
+    */
 
     // CL_ProcessPacketEntities:
     // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/cl_ents_parse.cpp#L544-L648
@@ -820,22 +823,6 @@ export class Entities extends EventEmitter {
     // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/baseclientstate.cpp#L1245-L1312
 
     const entityBitBuffer = BitStream.from(msg.entityData as Uint8Array);
-
-    /*
-    let newFrame: Array<Networkable | null>;
-    if (msg.isDelta) {
-      // TODO: optimise this
-      newFrame = _.cloneDeep(this._frames.get(msg.deltaFrom)!);
-
-      assert(
-        msg.deltaFrom !== this._currentServerTick,
-        "self-referencing packet entities"
-      );
-    } else {
-      // TODO: delete all existing entities
-      newFrame = new Array(1 << consts.MAX_EDICT_BITS).fill(null);
-    }
-    */
 
     const otherBaseline = msg.baseline === 0 ? 1 : 0;
 
@@ -911,6 +898,8 @@ export class Entities extends EventEmitter {
       }
     }
 
+    /*
+    TODO: figure out why this isn't working
     if (msg.isDelta) {
       while (entityBitBuffer.readOneBit()) {
         const idx = entityBitBuffer.readUBits(consts.MAX_EDICT_BITS);
@@ -918,6 +907,7 @@ export class Entities extends EventEmitter {
         this._removeEntity(idx, false);
       }
     }
+    */
   }
 
   private _parseInstanceBaseline(baselineBuf: BitStream, classId: number) {

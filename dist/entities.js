@@ -76,7 +76,6 @@ class Entities extends EventEmitter {
         this._demo = null;
         this._singletonEnts = {};
         this._baselines = [0, 1].map(() => new Array(1 << consts.MAX_EDICT_BITS).fill(null));
-        this._frames = new Map();
     }
     get playerResource() {
         return this._demo.entities.getSingleton("CCSPlayerResource");
@@ -363,14 +362,15 @@ class Entities extends EventEmitter {
             const tableName = update.prop.table.netTableName;
             const varName = update.prop.prop.varName;
             const oldValue = entity.getProp(tableName, varName);
-            entity.updateProp(tableName, varName, update.value);
-            if (emitChangeEvents === 1 /* Fire */)
+            const newValue = update.value;
+            entity.updateProp(tableName, varName, newValue);
+            if (emitChangeEvents === 1 /* Fire */ && oldValue !== newValue)
                 this.emit("change", {
                     entity,
                     tableName,
                     varName,
                     oldValue,
-                    newValue: update.value
+                    newValue
                 });
         }
     }
@@ -414,28 +414,21 @@ class Entities extends EventEmitter {
         }
     }
     _handlePacketEntities(msg) {
-        console.log(`${this._demo.currentTick}: baseline=${msg.baseline}, isDelta=${msg.isDelta ? "yes" : "no "}, deltaFrom=${msg.deltaFrom}, updatedEntries=${msg.updatedEntries}`);
+        /*
+        console.log(
+          `${this._demo.currentTick}: baseline=${msg.baseline}, isDelta=${
+            msg.isDelta ? "yes" : "no "
+          }, deltaFrom=${msg.deltaFrom}, updatedEntries=${
+            msg.updatedEntries
+          }, size=${msg.entityData.byteLength * 8} bits`
+        );
+        */
         // CL_ProcessPacketEntities:
         // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/cl_ents_parse.cpp#L544-L648
         //
         // ReadPacketEntities:
         // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/baseclientstate.cpp#L1245-L1312
         const entityBitBuffer = bitbuffer_1.BitStream.from(msg.entityData);
-        /*
-        let newFrame: Array<Networkable | null>;
-        if (msg.isDelta) {
-          // TODO: optimise this
-          newFrame = _.cloneDeep(this._frames.get(msg.deltaFrom)!);
-    
-          assert(
-            msg.deltaFrom !== this._currentServerTick,
-            "self-referencing packet entities"
-          );
-        } else {
-          // TODO: delete all existing entities
-          newFrame = new Array(1 << consts.MAX_EDICT_BITS).fill(null);
-        }
-        */
         const otherBaseline = msg.baseline === 0 ? 1 : 0;
         // Server requested to use this snapshot as baseline update
         if (msg.updateBaseline) {
@@ -485,22 +478,16 @@ class Entities extends EventEmitter {
                 this._readNewEntity(entityBitBuffer, entity, 1 /* Fire */);
             }
         }
+        /*
+        TODO: figure out why this isn't working
         if (msg.isDelta) {
-            while (entityBitBuffer.readOneBit()) {
-                const idx = entityBitBuffer.readUBits(consts.MAX_EDICT_BITS);
-                console.log(`  explicit delete for ${idx}`);
-                this._removeEntity(idx, false);
-            }
+          while (entityBitBuffer.readOneBit()) {
+            const idx = entityBitBuffer.readUBits(consts.MAX_EDICT_BITS);
+            console.log(`  explicit delete for ${idx}`);
+            this._removeEntity(idx, false);
+          }
         }
-        // Delete frames that are < msg.deltaFrom
-        // They'll never be referenced again
-        for (const frameNumber of this._frames.keys()) {
-            if (frameNumber >= msg.deltaFrom)
-                break;
-            this._frames.delete(frameNumber);
-        }
-        assert(this._currentServerTick >= 0, "packet entities before tick");
-        //this._frames.set(this._currentServerTick, _.cloneDeep(this.entities));
+        */
     }
     _parseInstanceBaseline(baselineBuf, classId) {
         const classBaseline = {};
