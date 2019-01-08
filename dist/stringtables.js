@@ -118,8 +118,6 @@ class StringTables extends events_1.EventEmitter {
         this.emit("postcreate", table);
     }
     _parseStringTableUpdate(bitbuf, table, entries) {
-        // overflow silently. this is how the official parser handles overflows...
-        bitbuf.view.silentOverflow = true;
         const history = [];
         const entryBits = Math.ceil(Math.log2(table.maxEntries));
         const userDataCallback = this.userDataCallbacks[table.name];

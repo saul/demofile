@@ -63,7 +63,7 @@ class Entities extends EventEmitter {
          */
         this.entities = new Array(1 << consts.MAX_EDICT_BITS).fill(null);
         this.markedForDeletion = [];
-        this.instanceBaselines = {};
+        this.staticBaselines = {};
         this.pendingBaselines = {};
         this.serverClassBits = 0;
         this.tableClassMap = {
@@ -75,7 +75,8 @@ class Entities extends EventEmitter {
         };
         this._demo = null;
         this._singletonEnts = {};
-        this._currentServerTick = -1;
+        this._baselines = [0, 1].map(() => new Array(1 << consts.MAX_EDICT_BITS).fill(null));
+        this._frames = new Map();
     }
     get playerResource() {
         return this._demo.entities.getSingleton("CCSPlayerResource");
@@ -96,19 +97,20 @@ class Entities extends EventEmitter {
         this._demo = demo;
         demo.on("svc_PacketEntities", e => this._handlePacketEntities(e));
         demo.on("svc_TempEntities", e => this._handleTempEntities(e));
-        demo.on("net_Tick", e => {
-            this._currentServerTick = e.tick;
-        });
         demo.stringTables.on("update", e => this._handleStringTableUpdate(e));
+        /*
+        TODO: reimplement entity deletion
         demo.on("tickend", () => {
-            if (this.markedForDeletion.length > 0) {
-                for (const index of this.markedForDeletion) {
-                    this.entities[index] = null;
-                    this.emit("remove", { index });
-                }
-                this.markedForDeletion.length = 0;
+          if (this.markedForDeletion.length > 0) {
+            for (const index of this.markedForDeletion) {
+              this.entities[index] = null;
+              this.emit("remove", { index });
             }
+    
+            this.markedForDeletion.length = 0;
+          }
         });
+        */
     }
     /**
      * Determines whether handle is set.
@@ -202,11 +204,11 @@ class Entities extends EventEmitter {
             // parse any pending baseline
             const pendingBaseline = this.pendingBaselines[classId];
             if (pendingBaseline) {
-                this.instanceBaselines[classId] = this._parseInstanceBaseline(pendingBaseline, classId);
+                this.staticBaselines[classId] = this._parseInstanceBaseline(pendingBaseline, classId);
                 this.emit("baselineupdate", {
                     classId,
                     serverClass,
-                    baseline: this.instanceBaselines[classId]
+                    baseline: this.staticBaselines[classId]
                 });
                 delete this.pendingBaselines[classId];
             }
@@ -292,38 +294,53 @@ class Entities extends EventEmitter {
     _findTableByName(name) {
         return this.dataTables.find(table => table.netTableName === name);
     }
-    _addEntity(index, classId, serialNum) {
-        if (this.entities[index]) {
-            this._removeEntity(index, true);
+    _addEntity(index, classId, serialNum, baseline) {
+        const instanceBaseline = baseline !== undefined ? this._baselines[baseline][index] : null;
+        let entityBaseline;
+        if (instanceBaseline && instanceBaseline.classId === classId) {
+            entityBaseline = instanceBaseline.props;
         }
-        const baseline = this.instanceBaselines[classId];
-        let klass = networkable_1.Networkable;
+        else {
+            const staticBaseline = this.staticBaselines[classId];
+            // Every entity must have a static or an instance baseline when we get here
+            entityBaseline = ts_assert_exists_1.default(staticBaseline, `entity with class id ${classId} has no static baseline`);
+        }
         // Try to find a suitable class for this entity
-        if (baseline !== undefined) {
-            for (const tableName in this.tableClassMap) {
-                if (baseline[tableName]) {
-                    klass = this.tableClassMap[tableName];
-                    break;
-                }
+        let klass = networkable_1.Networkable;
+        for (const tableName in this.tableClassMap) {
+            if (entityBaseline[tableName]) {
+                klass = this.tableClassMap[tableName];
+                break;
             }
         }
-        const entity = new klass(this._demo, index, classId, serialNum, _.cloneDeep(baseline));
+        const entity = new klass(this._demo, index, classId, serialNum, _.cloneDeep(entityBaseline));
         this.entities[index] = entity;
         this.emit("create", { entity });
         return entity;
     }
     _removeEntity(index, immediate) {
-        const entity = ts_assert_exists_1.default(this.entities[index], "cannot remove non-existent entity");
+        // CL_DeleteDLLEntity:
+        // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/cl_ents_parse.cpp#L117-L135
+        const entity = this.entities[index];
+        if (!entity)
+            return;
         this.emit("beforeremove", { entity, immediate });
+        // TODO: reimplement deletion
+        /*
         if (immediate) {
-            this.entities[index] = null;
-            this.emit("remove", { index });
+        */
+        this.entities[index] = null;
+        this.emit("remove", { index });
+        /*
+        } else {
+          assert(
+            !entity.deleting,
+            "cannot delete an entity already marked for deletion"
+          );
+          entity.deleting = true;
+          this.markedForDeletion.push(index);
         }
-        else {
-            assert(!entity.deleting, "cannot delete an entity already marked for deletion");
-            entity.deleting = true;
-            this.markedForDeletion.push(index);
-        }
+        */
     }
     _parseEntityUpdate(entityBitBuffer, classId) {
         const serverClass = this.serverClasses[classId];
@@ -340,20 +357,21 @@ class Entities extends EventEmitter {
         }
         return updatedProps;
     }
-    _readNewEntity(entityBitBuffer, entity) {
+    _readNewEntity(entityBitBuffer, entity, emitChangeEvents) {
         const updates = this._parseEntityUpdate(entityBitBuffer, entity.classId);
         for (const update of updates) {
             const tableName = update.prop.table.netTableName;
             const varName = update.prop.prop.varName;
             const oldValue = entity.getProp(tableName, varName);
             entity.updateProp(tableName, varName, update.value);
-            this.emit("change", {
-                entity,
-                tableName,
-                varName,
-                oldValue,
-                newValue: update.value
-            });
+            if (emitChangeEvents === 1 /* Fire */)
+                this.emit("change", {
+                    entity,
+                    tableName,
+                    varName,
+                    oldValue,
+                    newValue: update.value
+                });
         }
     }
     _updatesToPropObject(target, updates) {
@@ -396,40 +414,93 @@ class Entities extends EventEmitter {
         }
     }
     _handlePacketEntities(msg) {
-        const entityBitBuffer = bitbuffer_1.BitStream.from(msg.entityData);
-        let entityIndex = -1;
-        // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/cl_ents_parse.cpp#L297-L431
+        console.log(`${this._demo.currentTick}: baseline=${msg.baseline}, isDelta=${msg.isDelta ? "yes" : "no "}, deltaFrom=${msg.deltaFrom}, updatedEntries=${msg.updatedEntries}`);
+        // CL_ProcessPacketEntities:
         // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/cl_ents_parse.cpp#L544-L648
+        //
+        // ReadPacketEntities:
         // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/baseclientstate.cpp#L1245-L1312
+        const entityBitBuffer = bitbuffer_1.BitStream.from(msg.entityData);
+        /*
+        let newFrame: Array<Networkable | null>;
+        if (msg.isDelta) {
+          // TODO: optimise this
+          newFrame = _.cloneDeep(this._frames.get(msg.deltaFrom)!);
+    
+          assert(
+            msg.deltaFrom !== this._currentServerTick,
+            "self-referencing packet entities"
+          );
+        } else {
+          // TODO: delete all existing entities
+          newFrame = new Array(1 << consts.MAX_EDICT_BITS).fill(null);
+        }
+        */
+        const otherBaseline = msg.baseline === 0 ? 1 : 0;
+        // Server requested to use this snapshot as baseline update
+        if (msg.updateBaseline) {
+            this._baselines[otherBaseline] = _.cloneDeep(this._baselines[msg.baseline]);
+        }
+        let entityIndex = -1;
         for (let i = 0; i < msg.updatedEntries; ++i) {
             entityIndex += 1 + entityBitBuffer.readUBitVar();
             assert(entityIndex < this.entities.length, "newEntity >= MAX_EDICTS");
             if (entityBitBuffer.readOneBit()) {
                 if (entityBitBuffer.readOneBit()) {
                     assert(msg.isDelta, "deleting entity on full update");
+                    // Inconsistency: the real game client doesn't check if the entity exists before trying to delete it
                     this._removeEntity(entityIndex, false);
                 }
                 else {
                     assert(msg.isDelta, "entity leaving PVS on full update");
-                    // Maybe set a flag on the entity indicating that it is out of PVS?
+                    // TODO: set a flag on the entity indicating that it is out of PVS?
                 }
                 // tslint:disable-next-line:no-identical-conditions
             }
             else if (entityBitBuffer.readOneBit()) {
+                // CL_CopyNewEntity:
+                // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/cl_ents_parse.cpp#L297-L431
                 const classId = entityBitBuffer.readUBits(this.serverClassBits);
                 const serialNum = entityBitBuffer.readUBits(consts.NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS);
-                const newEnt = this._addEntity(entityIndex, classId, serialNum);
-                this._readNewEntity(entityBitBuffer, newEnt);
-                this.emit("postcreate", {
-                    entity: newEnt
-                });
+                const existingEnt = this.entities[entityIndex];
+                const isNew = !existingEnt || existingEnt.serialNum !== serialNum;
+                const entity = isNew
+                    ? this._addEntity(entityIndex, classId, serialNum, msg.isDelta ? msg.baseline : undefined)
+                    : existingEnt;
+                this._readNewEntity(entityBitBuffer, entity, isNew ? 0 /* DontFire */ : 1 /* Fire */);
+                // Update the OTHER baseline with the new entity props
+                if (msg.updateBaseline) {
+                    this._baselines[otherBaseline][entity.index] = {
+                        classId,
+                        props: _.cloneDeep(entity.props)
+                    };
+                }
+                if (isNew)
+                    this.emit("postcreate", { entity });
             }
             else {
+                // CL_CopyExistingEntity:
+                // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/cl_ents_parse.cpp#L434-L482
                 const entity = ts_assert_exists_1.default(this.entities[entityIndex], "delta on deleted entity");
-                this._readNewEntity(entityBitBuffer, entity);
+                this._readNewEntity(entityBitBuffer, entity, 1 /* Fire */);
             }
         }
-        // TODO: Delete old frames that we no longer need to reference
+        if (msg.isDelta) {
+            while (entityBitBuffer.readOneBit()) {
+                const idx = entityBitBuffer.readUBits(consts.MAX_EDICT_BITS);
+                console.log(`  explicit delete for ${idx}`);
+                this._removeEntity(idx, false);
+            }
+        }
+        // Delete frames that are < msg.deltaFrom
+        // They'll never be referenced again
+        for (const frameNumber of this._frames.keys()) {
+            if (frameNumber >= msg.deltaFrom)
+                break;
+            this._frames.delete(frameNumber);
+        }
+        assert(this._currentServerTick >= 0, "packet entities before tick");
+        //this._frames.set(this._currentServerTick, _.cloneDeep(this.entities));
     }
     _parseInstanceBaseline(baselineBuf, classId) {
         const classBaseline = {};
@@ -457,7 +528,7 @@ class Entities extends EventEmitter {
             return;
         }
         const baseline = this._parseInstanceBaseline(baselineBuf, classId);
-        this.instanceBaselines[classId] = baseline;
+        this.staticBaselines[classId] = baseline;
         this.emit("baselineupdate", {
             classId,
             serverClass: this.serverClasses[classId],

@@ -78,9 +78,6 @@ function parseDemoFile(path) {
             }
             console.log("Finished.");
         });
-        demoFile.conVars.on("change", e => {
-            console.log("%s: %s -> %s", e.name, e.oldValue, e.value);
-        });
         demoFile.gameEvents.on("player_death", e => {
             const victim = demoFile.entities.getByUserId(e.userid);
             const victimColour = teamNumberToAnsi(victim ? victim.teamNumber : 1 /* Spectator */);

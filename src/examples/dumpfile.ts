@@ -102,10 +102,6 @@ function parseDemoFile(path: string) {
       console.log("Finished.");
     });
 
-    demoFile.conVars.on("change", e => {
-      console.log("%s: %s -> %s", e.name, e.oldValue, e.value);
-    });
-
     demoFile.gameEvents.on("player_death", e => {
       const victim = demoFile.entities.getByUserId(e.userid);
       const victimColour = teamNumberToAnsi(

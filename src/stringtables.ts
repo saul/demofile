@@ -42,8 +42,8 @@ function parseUserInfoData(buf: Buffer): IPlayerInfo {
   const bytebuf = ByteBuffer.wrap(buf, ByteBuffer.BIG_ENDIAN);
   bytebuf.skip(8);
 
-  let hi = bytebuf.readUint32();
-  let lo = bytebuf.readUint32();
+  const hi = bytebuf.readUint32();
+  const lo = bytebuf.readUint32();
 
   const xuid = Long.fromBits(lo, hi);
   const name = bytebuf
@@ -253,13 +253,8 @@ export class StringTables extends EventEmitter {
     table: IStringTable<any>,
     entries: number
   ) {
-    // overflow silently. this is how the official parser handles overflows...
-    bitbuf.view.silentOverflow = true;
-
     const history: Array<string | null> = [];
-
     const entryBits = Math.ceil(Math.log2(table.maxEntries));
-
     const userDataCallback = this.userDataCallbacks[table.name];
 
     assert(!bitbuf.readOneBit(), "dictionary encoding unsupported");
