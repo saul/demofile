@@ -12,8 +12,8 @@ const bitbuffer_1 = require("./ext/bitbuffer");
 function parseUserInfoData(buf) {
     const bytebuf = ByteBuffer.wrap(buf, ByteBuffer.BIG_ENDIAN);
     bytebuf.skip(8);
-    const hi = bytebuf.readUint32();
-    const lo = bytebuf.readUint32();
+    let hi = bytebuf.readUint32();
+    let lo = bytebuf.readUint32();
     const xuid = Long.fromBits(lo, hi);
     const name = bytebuf
         .readString(consts_1.MAX_PLAYER_NAME_LENGTH, ByteBuffer.METRICS_BYTES)

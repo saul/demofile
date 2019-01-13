@@ -172,7 +172,7 @@ class Player extends baseentity_1.BaseEntity {
     resourceProp(tableName) {
         // tslint:disable-next-line:no-useless-cast
         const array = this._demo.entities.playerResource.getIndexedProps(tableName);
-        return array[this.clientSlot];
+        return array[this.index];
     }
     /**
      * @returns How many kills the player has made

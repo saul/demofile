@@ -278,7 +278,7 @@ export class Player extends BaseEntity<CCSPlayer> {
     const array = this._demo.entities.playerResource.getIndexedProps(
       tableName
     )!;
-    return array[this.clientSlot] as ElementType;
+    return array[this.index] as ElementType;
   }
 
   /**
