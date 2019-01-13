@@ -294,6 +294,10 @@ Tick rate: 64
 
 ## Release History
 
+### 1.0.2 (2019-01-13)
+
+- :bug: #101: Fixed player resource indexing one-off error
+
 ### 1.0.1 (2019-01-07)
 
 - :bug: #98: Fixed Steam 64 IDs being invalid
