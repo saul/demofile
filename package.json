@@ -16,7 +16,7 @@
     "lint": "tslint -p . --fix --exclude 'src/**/*.d.ts'",
     "build": "tsc",
     "watch": "tsc -w",
-    "generate-docs": "shx rm -rf docs && typedoc --out docs/",
+    "generate-docs": "shx rm -rf docs && typedoc --out docs/ && shx touch docs/.nojekyll",
     "bundle": "npm run build && browserify browser/app.js -d -o browser/bundle.js",
     "preversion": "npm run lint && shx rm -rf dist browser/bundle.js && npm run bundle && git add -A browser/bundle.js dist/**",
     "version": "npm run generate-docs && git add -A docs",
