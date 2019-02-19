@@ -294,6 +294,10 @@ Tick rate: 64
 
 ## Release History
 
+### 1.0.3 (2019-02-19)
+
+- :zap: Add source maps to dist `.js` files
+
 ### 1.0.2 (2019-01-13)
 
 - :bug: #101: Fixed player resource indexing one-off error

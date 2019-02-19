@@ -30,3 +30,4 @@ class ConVars extends events_1.EventEmitter {
     }
 }
 exports.ConVars = ConVars;
+//# sourceMappingURL=convars.js.map

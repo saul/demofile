@@ -213,3 +213,4 @@ function makeArrayDecoder(sendProp, arrayElementProp) {
         return new Array(numElements).fill(0).map(() => elementDecoder(bitbuf));
     };
 }
+//# sourceMappingURL=props.js.map

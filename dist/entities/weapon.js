@@ -270,3 +270,4 @@ class Weapon extends baseentity_1.BaseEntity {
     }
 }
 exports.Weapon = Weapon;
+//# sourceMappingURL=weapon.js.map

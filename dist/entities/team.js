@@ -62,3 +62,4 @@ class Team extends networkable_1.Networkable {
     }
 }
 exports.Team = Team;
+//# sourceMappingURL=team.js.map

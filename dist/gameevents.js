@@ -43,3 +43,4 @@ class GameEvents extends events_1.EventEmitter {
     }
 }
 exports.GameEvents = GameEvents;
+//# sourceMappingURL=gameevents.js.map

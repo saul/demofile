@@ -27,3 +27,4 @@ class UserMessages extends events_1.EventEmitter {
     }
 }
 exports.UserMessages = UserMessages;
+//# sourceMappingURL=usermessages.js.map

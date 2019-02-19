@@ -42,3 +42,4 @@ class GameRules extends networkable_1.Networkable {
     }
 }
 exports.GameRules = GameRules;
+//# sourceMappingURL=gamerules.js.map

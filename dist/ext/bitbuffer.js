@@ -168,3 +168,4 @@ bit_buffer_1.BitStream.prototype.readUInt32 = bit_buffer_1.BitStream.prototype.r
 bit_buffer_1.BitStream.prototype.writeUInt8 = bit_buffer_1.BitStream.prototype.writeUint8;
 bit_buffer_1.BitStream.prototype.writeUInt16 = bit_buffer_1.BitStream.prototype.writeUint16;
 bit_buffer_1.BitStream.prototype.writeUInt32 = bit_buffer_1.BitStream.prototype.writeUint32;
+//# sourceMappingURL=bitbuffer.js.map

@@ -16,3 +16,4 @@ class EntityHandle {
     }
 }
 exports.EntityHandle = EntityHandle;
+//# sourceMappingURL=entityhandle.js.map

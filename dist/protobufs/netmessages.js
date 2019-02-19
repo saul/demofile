@@ -5523,3 +5523,4 @@ exports.CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
     };
     return CCLCMsg_HltvReplay;
 })();
+//# sourceMappingURL=netmessages.js.map

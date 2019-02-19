@@ -64,3 +64,4 @@ class BaseEntity extends networkable_1.Networkable {
     }
 }
 exports.BaseEntity = BaseEntity;
+//# sourceMappingURL=baseentity.js.map

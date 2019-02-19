@@ -214,3 +214,4 @@ class StringTables extends events_1.EventEmitter {
     }
 }
 exports.StringTables = StringTables;
+//# sourceMappingURL=stringtables.js.map

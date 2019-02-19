@@ -87,3 +87,4 @@ function parseDemoFile(path) {
     });
 }
 parseDemoFile(process.argv[2]);
+//# sourceMappingURL=eventtypes.js.map

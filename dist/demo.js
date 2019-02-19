@@ -253,3 +253,4 @@ class DemoFile extends events_1.EventEmitter {
     }
 }
 exports.DemoFile = DemoFile;
+//# sourceMappingURL=demo.js.map

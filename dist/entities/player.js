@@ -356,3 +356,4 @@ class Player extends baseentity_1.BaseEntity {
     }
 }
 exports.Player = Player;
+//# sourceMappingURL=player.js.map

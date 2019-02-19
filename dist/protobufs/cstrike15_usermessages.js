@@ -31222,3 +31222,4 @@ exports.CMsgNotificationOfSuspiciousActivity = $root.CMsgNotificationOfSuspiciou
     })();
     return CMsgNotificationOfSuspiciousActivity;
 })();
+//# sourceMappingURL=cstrike15_usermessages.js.map

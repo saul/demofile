@@ -135,3 +135,4 @@ function parseDemoFile(path) {
     });
 }
 parseDemoFile(process.argv[2]);
+//# sourceMappingURL=dumpfile.js.map

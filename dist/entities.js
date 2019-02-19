@@ -466,3 +466,4 @@ class Entities extends EventEmitter {
     }
 }
 exports.Entities = Entities;
+//# sourceMappingURL=entities.js.map

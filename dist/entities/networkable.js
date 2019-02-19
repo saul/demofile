@@ -68,3 +68,4 @@ class Networkable {
     }
 }
 exports.Networkable = Networkable;
+//# sourceMappingURL=networkable.js.map

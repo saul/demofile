@@ -16,3 +16,4 @@ class GameEvent {
     }
 }
 exports.GameEvent = GameEvent;
+//# sourceMappingURL=gameevent.js.map

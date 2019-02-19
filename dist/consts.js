@@ -12,3 +12,4 @@ exports.MAX_CUSTOM_FILES = 4;
 exports.SUBSTRING_BITS = 5;
 exports.MAX_USERDATA_BITS = 14;
 exports.INVALID_NETWORKED_EHANDLE_VALUE = (1 << exports.NUM_NETWORKED_EHANDLE_BITS) - 1;
+//# sourceMappingURL=consts.js.map
