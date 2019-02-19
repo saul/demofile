@@ -345,7 +345,8 @@ class Entities extends EventEmitter {
         for (const update of updates) {
             const tableName = update.prop.table.netTableName;
             const varName = update.prop.prop.varName;
-            const oldValue = entity.getProp(tableName, varName);
+            const table = entity.props[tableName];
+            const oldValue = table && varName in table ? table[varName] : undefined;
             entity.updateProp(tableName, varName, update.value);
             this.emit("change", {
                 entity,

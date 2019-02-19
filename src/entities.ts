@@ -698,7 +698,8 @@ export class Entities extends EventEmitter {
       const tableName = update.prop.table.netTableName;
       const varName = update.prop.prop.varName;
 
-      const oldValue = entity.getProp(tableName, varName);
+      const table = entity.props[tableName];
+      const oldValue = table && varName in table ? table[varName] : undefined;
 
       entity.updateProp(tableName, varName, update.value);
 

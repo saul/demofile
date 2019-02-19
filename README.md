@@ -294,6 +294,10 @@ Tick rate: 64
 
 ## Release History
 
+### 1.0.4 (2019-02-19)
+
+- :bug: #106: Fixed _Cannot read property 'm_iPrimaryAmmoType' of undefined_
+
 ### 1.0.3 (2019-02-19)
 
 - :zap: Add source maps to dist `.js` files
