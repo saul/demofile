@@ -37,6 +37,7 @@
     "@types/lodash": "^4.14.116",
     "@types/node": "^10.11.3",
     "ansi-styles": "^3.2.1",
+    "browserify": "^16.2.3",
     "buffer": "^5.2.1",
     "husky": "^1.1.1",
     "lint-staged": "^7.3.0",
