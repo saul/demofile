@@ -24,20 +24,20 @@
   },
   "main": "dist/demo.js",
   "dependencies": {
-    "@types/bytebuffer": "^5.0.37",
-    "@types/lodash": "^4.14.116",
-    "@types/node": "^10.11.3",
     "bit-buffer": "0.0.3",
     "bytebuffer": "^5.0.0",
     "lodash": "^4.17.11",
     "long": "^3.0.3",
     "protobufjs": "^6.8.8",
-    "ts-assert-exists": "^1.0.4",
-    "typescript": "^3.1.1"
+    "ts-assert-exists": "^1.0.4"
   },
   "devDependencies": {
     "@types/ansi-styles": "^3.2.0",
+    "@types/bytebuffer": "^5.0.37",
+    "@types/lodash": "^4.14.116",
+    "@types/node": "^10.11.3",
     "ansi-styles": "^3.2.1",
+    "browserify": "^16.2.3",
     "buffer": "^5.2.1",
     "husky": "^1.1.1",
     "lint-staged": "^7.3.0",
@@ -48,6 +48,7 @@
     "tslint-config-prettier": "^1.15.0",
     "tslint-language-service-ts3": "^1.0.0",
     "typedoc": "^0.13.0",
+    "typescript": "^3.1.1",
     "typestrict": "^1.0.1"
   },
   "husky": {
