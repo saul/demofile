@@ -1,7 +1,7 @@
 import assert = require("assert");
 import _ = require("lodash");
 import Long = require("long");
-import assertExists from "ts-assert-exists";
+import assertExists from "../ts-assert-exists";
 import { NUM_NETWORKED_EHANDLE_BITS } from "./consts";
 import { ISendProp } from "./entities";
 import { EntityHandle } from "./entityhandle";

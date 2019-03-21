@@ -3,7 +3,7 @@ import * as ByteBuffer from "bytebuffer";
 import { EventEmitter } from "events";
 import * as _ from "lodash";
 import * as Long from "long";
-import assertExists from "ts-assert-exists";
+import assertExists from "../ts-assert-exists";
 import * as consts from "./consts";
 import { MAX_PLAYER_NAME_LENGTH, SIGNED_GUID_LEN } from "./consts";
 import { DemoFile } from "./demo";

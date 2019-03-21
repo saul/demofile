@@ -28,8 +28,7 @@
     "bytebuffer": "^5.0.0",
     "lodash": "^4.17.11",
     "long": "^3.0.3",
-    "protobufjs": "^6.8.8",
-    "ts-assert-exists": "^1.0.4"
+    "protobufjs": "^6.8.8"
   },
   "devDependencies": {
     "@types/ansi-styles": "^3.2.0",
