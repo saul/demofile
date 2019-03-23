@@ -294,6 +294,10 @@ Tick rate: 64
 
 ## Release History
 
+### 1.0.6 (2019-03-23)
+
+- :zap: #112: Removed reference to `ts-assert-exists`
+
 ### 1.0.5 (2019-03-20)
 
 - :zap: #112: Moved some package dependencies to be devDependencies (thanks @razor-x)
