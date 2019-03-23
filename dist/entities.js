@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const assert = require("assert");
 const EventEmitter = require("events");
 const _ = require("lodash");
-const ts_assert_exists_1 = require("ts-assert-exists");
+const assert_exists_1 = require("./assert-exists");
 const bitbuffer_1 = require("./ext/bitbuffer");
 const consts = require("./consts");
 const functional = require("./functional");
@@ -191,7 +191,7 @@ class Entities extends EventEmitter {
             assert(classId === i, "server class entry for invalid class ID");
             const name = chunk.readCString();
             const dtName = chunk.readCString();
-            const dataTable = ts_assert_exists_1.default(this._findTableByName(dtName), "no data table for server class");
+            const dataTable = assert_exists_1.default(this._findTableByName(dtName), "no data table for server class");
             const serverClass = {
                 name,
                 dtName,
@@ -221,7 +221,7 @@ class Entities extends EventEmitter {
                 excludes.push(prop);
             }
             if (prop.type === 6 /* DataTable */) {
-                const subTable = ts_assert_exists_1.default(this._findTableByName(prop.dtName));
+                const subTable = assert_exists_1.default(this._findTableByName(prop.dtName));
                 excludes.push.apply(excludes, this._gatherExcludes(subTable));
             }
         }
@@ -237,7 +237,7 @@ class Entities extends EventEmitter {
                 continue;
             }
             if (prop.type === 6 /* DataTable */) {
-                const subTable = ts_assert_exists_1.default(this._findTableByName(prop.dtName));
+                const subTable = assert_exists_1.default(this._findTableByName(prop.dtName));
                 const childProps = this._gatherProps(subTable, excludes);
                 if ((prop.flags & props_1.SPROP_COLLAPSIBLE) === 0) {
                     for (const fp of childProps) {
@@ -313,7 +313,7 @@ class Entities extends EventEmitter {
         return entity;
     }
     _removeEntity(index, immediate) {
-        const entity = ts_assert_exists_1.default(this.entities[index], "cannot remove non-existent entity");
+        const entity = assert_exists_1.default(this.entities[index], "cannot remove non-existent entity");
         this.emit("beforeremove", { entity, immediate });
         if (immediate) {
             this.entities[index] = null;
@@ -386,7 +386,7 @@ class Entities extends EventEmitter {
                 // delta against last temp entity
                 assert(lastClassId !== -1, "Delta with no baseline");
                 const updates = this._parseEntityUpdate(entityBitBuffer, lastClassId);
-                lastProps = this._updatesToPropObject(_.cloneDeep(ts_assert_exists_1.default(lastProps)), updates);
+                lastProps = this._updatesToPropObject(_.cloneDeep(assert_exists_1.default(lastProps)), updates);
             }
             this.emit("tempent", {
                 delay: fireDelay,
@@ -426,7 +426,7 @@ class Entities extends EventEmitter {
                 });
             }
             else {
-                const entity = ts_assert_exists_1.default(this.entities[entityIndex], "delta on deleted entity");
+                const entity = assert_exists_1.default(this.entities[entityIndex], "delta on deleted entity");
                 this._readNewEntity(entityBitBuffer, entity);
             }
         }

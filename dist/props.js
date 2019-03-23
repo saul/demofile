@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const assert = require("assert");
 const Long = require("long");
-const ts_assert_exists_1 = require("ts-assert-exists");
+const assert_exists_1 = require("./assert-exists");
 const consts_1 = require("./consts");
 const entityhandle_1 = require("./entityhandle");
 const bitbuffer_1 = require("./ext/bitbuffer");
@@ -31,7 +31,7 @@ function makeDecoder(sendProp, arrayElementProp) {
     const type = sendProp.type;
     assert(type !== 6 /* DataTable */);
     if (type === 5 /* Array */) {
-        return makeArrayDecoder(sendProp, ts_assert_exists_1.default(arrayElementProp, "array prop with no element prop"));
+        return makeArrayDecoder(sendProp, assert_exists_1.default(arrayElementProp, "array prop with no element prop"));
     }
     else {
         return makeValueDecoder(sendProp);

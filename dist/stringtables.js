@@ -5,7 +5,7 @@ const ByteBuffer = require("bytebuffer");
 const events_1 = require("events");
 const _ = require("lodash");
 const Long = require("long");
-const ts_assert_exists_1 = require("ts-assert-exists");
+const assert_exists_1 = require("./assert-exists");
 const consts = require("./consts");
 const consts_1 = require("./consts");
 const bitbuffer_1 = require("./ext/bitbuffer");
@@ -74,7 +74,7 @@ class StringTables extends events_1.EventEmitter {
     }
     _handleStringTable(name, bitbuf) {
         const userDataCallback = this.userDataCallbacks[name];
-        const table = ts_assert_exists_1.default(this.findTableByName(name));
+        const table = assert_exists_1.default(this.findTableByName(name));
         const numEntries = bitbuf.readUInt16();
         for (let entryIndex = 0; entryIndex < numEntries; ++entryIndex) {
             const entry = bitbuf.readCString();
@@ -152,7 +152,7 @@ class StringTables extends events_1.EventEmitter {
             }
             else {
                 // If the string itself hasn't changed, this entry must already exist
-                entry = ts_assert_exists_1.default(existingEntry).entry;
+                entry = assert_exists_1.default(existingEntry).entry;
             }
             // read in the user data
             let userData = null;
