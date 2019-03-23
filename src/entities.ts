@@ -2,7 +2,7 @@ import assert = require("assert");
 import EventEmitter = require("events");
 import _ = require("lodash");
 
-import assertExists from "ts-assert-exists";
+import assertExists from "./assert-exists";
 import { BitStream } from "./ext/bitbuffer";
 
 import consts = require("./consts");
