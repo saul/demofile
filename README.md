@@ -45,13 +45,17 @@ There are several classes which allow access to different types of entities (e.g
 
 ### Browser
 
-    <script src="browser/bundle.js"></script>
+```html
+<script src="browser/bundle.js"></script>
+```
 
 The `DemoFile` module will be available as `window.demofile`.
 
 ### Node
 
-    npm install --save demofile
+```bash
+npm install --save demofile
+```
 
 ## Screenshot
 
@@ -292,6 +296,10 @@ Tick rate: 64
 ```
 
 ## Release History
+
+### 1.1.0 (2019-10-23)
+
+- :sparkles: #115: TypeScript definitions are now available
 
 ### 1.0.7 (2019-10-23)
 

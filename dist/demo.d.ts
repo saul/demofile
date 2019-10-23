@@ -1,11 +1,5 @@
+/// <reference types="node" />
 import { EventEmitter } from "events";
-import * as timers from "timers";
-
-import * as ByteBuffer from "bytebuffer";
-import { BitStream } from "./ext/bitbuffer";
-
-import assert = require("assert");
-import { MAX_OSPATH } from "./consts";
 import { ConVars } from "./convars";
 import { Entities } from "./entities";
 export { GameRules } from "./entities/gamerules";
@@ -15,7 +9,6 @@ import { GameRules } from "./entities/gamerules";
 import { Player } from "./entities/player";
 import { Team } from "./entities/team";
 import { GameEvents } from "./gameevents";
-import * as net from "./net";
 import { NetMessageName } from "./net";
 import {
   ICNETMsg_Disconnect,
@@ -59,159 +52,91 @@ import {
 import { StringTables } from "./stringtables";
 import { UserMessages } from "./usermessages";
 export { parseBinaryKeyValues } from "./keyvalues";
-
 interface IDemoHeader {
   /**
    * Header magic (HL2DEMO)
    */
   magic: string;
-
   /**
    * Demo protocol version
    */
   protocol: number;
-
   /**
    * Network protocol version
    */
   networkProtocol: number;
-
   /**
    * Server hostname
    */
   serverName: string;
-
   /**
    * Recording player name
    */
   clientName: string;
-
   /**
    * Level name
    */
   mapName: string;
-
   /**
    * Game directory
    */
   gameDirectory: string;
-
   /**
    * Total playback time (seconds)
    */
   playbackTime: number;
-
   /**
    * Total playback ticks
    */
   playbackTicks: number;
-
   /**
    * Total playback frames
    */
   playbackFrames: number;
-
   /**
    * Length of signon (bytes)
    */
   signonLength: number;
 }
-
-const enum DemoCommands {
-  Signon = 1,
-  Packet = 2,
-
-  /**
-   * Sync client clock to demo tick
-   */
-  SyncTick = 3,
-
-  ConsoleCmd = 4,
-  UserCmd = 5,
-  DataTables = 6,
-  Stop = 7,
-
-  /**
-   * A blob of binary data understood by a callback function
-   */
-  CustomData = 8,
-  StringTables = 9
-}
-
 /**
  * Parses a demo file header from the buffer.
  * @param {ArrayBuffer} buffer - Buffer of the demo header
  * @returns {IDemoHeader} Header object
  */
-export function parseHeader(buffer: Buffer): IDemoHeader {
-  const bytebuf = ByteBuffer.wrap(buffer, true);
-  return {
-    magic: bytebuf.readString(8, ByteBuffer.METRICS_BYTES).split("\0", 2)[0],
-    protocol: bytebuf.readInt32(),
-    networkProtocol: bytebuf.readInt32(),
-    serverName: bytebuf
-      .readString(MAX_OSPATH, ByteBuffer.METRICS_BYTES)
-      .split("\0", 2)[0],
-    clientName: bytebuf
-      .readString(MAX_OSPATH, ByteBuffer.METRICS_BYTES)
-      .split("\0", 2)[0],
-    mapName: bytebuf
-      .readString(MAX_OSPATH, ByteBuffer.METRICS_BYTES)
-      .split("\0", 2)[0],
-    gameDirectory: bytebuf
-      .readString(MAX_OSPATH, ByteBuffer.METRICS_BYTES)
-      .split("\0", 2)[0],
-    playbackTime: bytebuf.readFloat(),
-    playbackTicks: bytebuf.readInt32(),
-    playbackFrames: bytebuf.readInt32(),
-    signonLength: bytebuf.readInt32()
-  };
-}
-
-function readIBytes(bytebuf: ByteBuffer) {
-  const length = bytebuf.readInt32();
-  return bytebuf.readBytes(length);
-}
-
+export declare function parseHeader(buffer: Buffer): IDemoHeader;
 export interface IDemoEndEvent {
   /**
    * Error that caused the premature end of parsing.
    */
   error?: Error;
 }
-
 export declare interface DemoFile {
   /**
    * Fired when parsing begins.
    */
   on(event: "start", listener: () => void): this;
   emit(name: "start"): boolean;
-
   /**
    * Fired when parsing has finished, successfully or otherwise.
    */
   on(event: "end", listener: (event: IDemoEndEvent) => void): this;
   emit(name: "end", event: IDemoEndEvent): boolean;
-
   /**
    * Fired when a tick starts, before any tick command processing.
    */
   on(event: "tickstart", listener: (tick: number) => void): this;
   emit(name: "tickstart", tick: number): boolean;
-
   /**
    * Fired per command. Parameter is a value in range [0,1] that indicates
    * the percentage of the demo file has been parsed so far.
    */
   on(event: "progress", listener: (progressFraction: number) => void): this;
   emit(name: "progress", progressFraction: number): boolean;
-
   /**
    * Fired after all commands are processed for a tick.
    */
   on(event: "tickend", listener: (tick: number) => void): this;
   emit(name: "tickend", tick: number): boolean;
-
   emit(name: NetMessageName, msg: any): boolean;
   on(
     message: "net_NOP",
@@ -362,74 +287,51 @@ export declare interface DemoFile {
     listener: (msg: RequiredNonNullable<ICSVCMsg_HltvReplay>) => void
   ): this;
 }
-
 /**
  * Represents a demo file for parsing.
  */
-export class DemoFile extends EventEmitter {
+export declare class DemoFile extends EventEmitter {
   /**
    * @returns Number of ticks per second
    */
-  get tickRate() {
-    return this.header.playbackTicks / this.header.playbackTime;
-  }
-
+  readonly tickRate: number;
   /**
    * @returns Number of seconds elapsed
    */
-  get currentTime() {
-    return (
-      this.currentTick * (this.header.playbackTime / this.header.playbackTicks)
-    );
-  }
-
+  readonly currentTime: number;
   /**
    * Shortcut for `this.entities.players`
    * @returns All connected player entities
    */
-  get players(): Player[] {
-    return this.entities.players;
-  }
-
+  readonly players: Player[];
   /**
    * Shortcut for `this.entities.teams`
    * @returns All team entities
    */
-  get teams(): Team[] {
-    return this.entities.teams;
-  }
-
+  readonly teams: Team[];
   /**
    * Shortcut for `this.entities.gameRules`
    * @returns GameRules entity
    */
-  get gameRules(): GameRules {
-    return this.entities.gameRules;
-  }
-
+  readonly gameRules: GameRules;
   /**
    * When parsing, set to current tick.
    */
-  public currentTick: number = 0;
-
-  public header!: IDemoHeader;
-
+  currentTick: number;
+  header: IDemoHeader;
   /**
    * When parsing, set to player slot for current command.
    */
-  public playerSlot: number = 0;
-
-  public readonly entities: Entities;
-  public readonly gameEvents: GameEvents;
-  public readonly stringTables: StringTables;
-  public readonly userMessages: UserMessages;
-  public readonly conVars: ConVars;
-
-  private _bytebuf!: ByteBuffer;
-  private _lastThreadYieldTime = 0;
-  private _immediateTimerToken: NodeJS.Immediate | null = null;
-  private _timeoutTimerToken: NodeJS.Timer | null = null;
-
+  playerSlot: number;
+  readonly entities: Entities;
+  readonly gameEvents: GameEvents;
+  readonly stringTables: StringTables;
+  readonly userMessages: UserMessages;
+  readonly conVars: ConVars;
+  private _bytebuf;
+  private _lastThreadYieldTime;
+  private _immediateTimerToken;
+  private _timeoutTimerToken;
   /**
    * Starts parsing buffer as a demo file.
    *
@@ -439,178 +341,22 @@ export class DemoFile extends EventEmitter {
    *
    * @param {ArrayBuffer} buffer - Buffer pointing to start of demo header
    */
-  constructor() {
-    super();
-
-    this.entities = new Entities();
-    this.gameEvents = new GameEvents();
-    this.stringTables = new StringTables();
-    this.userMessages = new UserMessages();
-    this.conVars = new ConVars();
-
-    this.gameEvents.listen(this);
-
-    // It is important that entities listens after game events, as they both listen on
-    // tickend.
-    this.entities.listen(this);
-
-    this.stringTables.listen(this);
-    this.userMessages.listen(this);
-    this.conVars.listen(this);
-  }
-
-  public parse(buffer: Buffer) {
-    this.header = parseHeader(buffer);
-    this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
-
-    this.emit("start");
-
-    timers.setTimeout(this._parseRecurse.bind(this), 0);
-  }
-
+  constructor();
+  parse(buffer: Buffer): void;
   /**
    * Cancel the current parse operation.
    */
-  public cancel() {
-    if (this._immediateTimerToken) {
-      timers.clearImmediate(this._immediateTimerToken);
-      this._immediateTimerToken = null;
-    }
-    if (this._timeoutTimerToken) {
-      timers.clearTimeout(this._timeoutTimerToken);
-      this._timeoutTimerToken = null;
-    }
-  }
-
+  cancel(): void;
   /**
    * Fired when a packet of this type is hit. `svc_MessageName` events are also fired.
    * @public
    * @event DemoFile#net_MessageName
    */
-
-  private _handleDemoPacket() {
-    // skip cmd info
-    this._bytebuf.skip(152);
-
-    // skip over sequence info
-    this._bytebuf.readInt32();
-    this._bytebuf.readInt32();
-
-    const chunk = readIBytes(this._bytebuf);
-
-    while (chunk.remaining()) {
-      const cmd = chunk.readVarint32();
-      const size = chunk.readVarint32();
-
-      const message = net.findByType(cmd);
-      assert(message != null, `No message handler for ${cmd}`);
-
-      if (message === null) {
-        chunk.skip(size);
-        continue;
-      }
-
-      if (this.listenerCount(message.name)) {
-        const messageBuffer = chunk.readBytes(size);
-        const msgInst = message.class.decode(
-          new Uint8Array(messageBuffer.toBuffer())
-        );
-        this.emit(message.name, msgInst);
-      } else {
-        chunk.skip(size);
-      }
-    }
-  }
-
-  private _handleDataChunk() {
-    readIBytes(this._bytebuf);
-  }
-
-  private _handleDataTables() {
-    const chunk = readIBytes(this._bytebuf);
-    this.entities.handleDataTables(chunk);
-  }
-
-  private _handleUserCmd() {
-    this._bytebuf.readInt32(); // outgoing sequence
-    this._handleDataChunk(); // TODO: parse user command
-  }
-
-  private _handleStringTables() {
-    const chunk = readIBytes(this._bytebuf);
-    const bitbuf = BitStream.from(
-      chunk.buffer.slice(chunk.offset, chunk.limit)
-    );
-    this.stringTables.handleStringTables(bitbuf);
-  }
-
-  private _recurse() {
-    const now = Date.now();
-
-    if (now - this._lastThreadYieldTime < 32) {
-      this._immediateTimerToken = timers.setImmediate(
-        this._parseRecurse.bind(this)
-      );
-    } else {
-      this._lastThreadYieldTime = now;
-      this._timeoutTimerToken = timers.setTimeout(
-        this._parseRecurse.bind(this),
-        0
-      );
-    }
-  }
-
-  private _parseRecurse() {
-    this._recurse();
-
-    try {
-      this.emit("progress", this._bytebuf.offset / this._bytebuf.limit);
-
-      const command = this._bytebuf.readUint8();
-      const tick = this._bytebuf.readInt32();
-      this.playerSlot = this._bytebuf.readUint8();
-
-      if (tick !== this.currentTick) {
-        this.emit("tickend", this.currentTick);
-        this.currentTick = tick;
-        this.emit("tickstart", this.currentTick);
-      }
-
-      switch (command) {
-        case DemoCommands.Packet:
-        case DemoCommands.Signon:
-          this._handleDemoPacket();
-          break;
-        case DemoCommands.DataTables:
-          this._handleDataTables();
-          break;
-        case DemoCommands.StringTables:
-          this._handleStringTables();
-          break;
-        case DemoCommands.ConsoleCmd: // TODO
-          this._handleDataChunk();
-          break;
-        case DemoCommands.UserCmd:
-          this._handleUserCmd();
-          break;
-        case DemoCommands.Stop:
-          this.cancel();
-          this.emit("tickend", this.currentTick);
-          this.emit("end", {});
-          return;
-        case DemoCommands.CustomData:
-          throw new Error("Custom data not supported");
-        case DemoCommands.SyncTick:
-          break;
-        default:
-          throw new Error("Unrecognised command");
-      }
-    } catch (e) {
-      // Always cancel if we have an error - we've already scheduled the next tick
-      this.cancel();
-
-      this.emit("tickend", this.currentTick);
-      this.emit("end", { error: e });
-    }
-  }
+  private _handleDemoPacket;
+  private _handleDataChunk;
+  private _handleDataTables;
+  private _handleUserCmd;
+  private _handleStringTables;
+  private _recurse;
+  private _parseRecurse;
 }

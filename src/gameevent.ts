@@ -18,7 +18,16 @@ export class GameEvent {
     this.keyNames = descriptor.keys.map(key => key.name);
   }
 
-  public messageToObject(eventMsg: RequiredNonNullable<ICSVCMsg_GameEvent>) {
+  public messageToObject(
+    eventMsg: RequiredNonNullable<ICSVCMsg_GameEvent>
+  ): _.Dictionary<
+    | string
+    | number
+    | boolean
+    | RequiredNonNullable<Uint8Array>
+    | RequiredNonNullable<Long>
+    | undefined
+  > {
     assert(eventMsg.eventid === this.id);
 
     return _.zipObject(

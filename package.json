@@ -2,6 +2,7 @@
   "name": "demofile",
   "version": "1.0.7",
   "author": "Saul Rennison <saul.rennison@gmail.com>",
+  "typings": "dist/index.d.ts",
   "license": "MIT",
   "keywords": [
     "demo",
@@ -14,7 +15,7 @@
   },
   "scripts": {
     "lint": "tslint -p . --fix --exclude 'src/**/*.d.ts'",
-    "build": "tsc",
+    "build": "tsc && shx cp src/**/*.d.ts dist",
     "watch": "tsc -w",
     "generate-docs": "shx rm -rf docs && typedoc --out docs/ && shx touch docs/.nojekyll",
     "bundle": "npm run build && browserify browser/app.js -d -o browser/bundle.js",
@@ -35,7 +36,7 @@
     "@types/ansi-styles": "^3.2.0",
     "@types/bytebuffer": "^5.0.37",
     "@types/lodash": "^4.14.116",
-    "@types/node": "^10.11.3",
+    "@types/node": "^10.14.22",
     "ansi-styles": "^3.2.1",
     "browserify": "^16.2.3",
     "buffer": "^5.2.1",
@@ -48,7 +49,7 @@
     "tslint-config-prettier": "^1.15.0",
     "tslint-language-service-ts3": "^1.0.0",
     "typedoc": "^0.13.0",
-    "typescript": "^3.1.1",
+    "typescript": "^3.6.4",
     "typestrict": "^1.0.1"
   },
   "husky": {
