@@ -31,6 +31,7 @@
     "protobufjs": "^6.8.8"
   },
   "devDependencies": {
+    "@node-steam/vdf": "^2.1.0",
     "@types/ansi-styles": "^3.2.0",
     "@types/bytebuffer": "^5.0.37",
     "@types/lodash": "^4.14.116",

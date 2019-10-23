@@ -23,10 +23,12 @@ async function parseItems(root: string) {
   );
   const { lang } = parse(englishData);
   const tokens = new Map(
-    Object.entries(lang.Tokens).map(([token, value]) => [
-      token.toLowerCase(),
-      value
-    ])
+    Object.entries(lang.Tokens).map(
+      ([token, value]: [string, {}]): [string, string] => [
+        token.toLowerCase(),
+        value as string
+      ]
+    )
   );
 
   const translate = (token: string | undefined) =>
