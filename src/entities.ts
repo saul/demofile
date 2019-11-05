@@ -503,7 +503,7 @@ export class Entities extends EventEmitter {
 
       if (prop.type === PropType.DataTable) {
         const subTable = assertExists(this._findTableByName(prop.dtName));
-        excludes.push.apply(excludes, this._gatherExcludes(subTable));
+        excludes.push(...this._gatherExcludes(subTable));
       }
     }
 
@@ -537,7 +537,7 @@ export class Entities extends EventEmitter {
           }
         }
 
-        flattened.push.apply(flattened, childProps);
+        flattened.push(...childProps);
       } else {
         flattened.push({
           prop,

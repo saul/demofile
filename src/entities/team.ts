@@ -4,7 +4,7 @@ import { Player } from "./player";
 
 export type TeamName = "SPECTATOR" | "TERRORIST" | "COUNTERTERRORIST";
 
-export const enum TeamNumber {
+export enum TeamNumber {
   Unassigned = 0,
   Spectator = 1,
   Terrorists = 2,

@@ -138,7 +138,7 @@ function parseDemoFile(path: string) {
         )
         .filter(s => s.length);
 
-      const formatted = util.format.apply(null, params);
+      const formatted = util.format(params);
       console.log(formatSayText(0, formatted));
     });
 
@@ -150,7 +150,7 @@ function parseDemoFile(path: string) {
       const nonEmptyParams = e.params.filter(s => s.length);
       const msgText = standardMessages[e.msgName];
       const formatted = msgText
-        ? util.format.apply(null, [msgText].concat(nonEmptyParams))
+        ? util.format([msgText].concat(nonEmptyParams))
         : `${e.msgName} ${nonEmptyParams.join(" ")}`;
 
       console.log(formatSayText(e.entIdx, formatted));
