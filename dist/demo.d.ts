@@ -294,26 +294,26 @@ export declare class DemoFile extends EventEmitter {
   /**
    * @returns Number of ticks per second
    */
-  readonly tickRate: number;
+  get tickRate(): number;
   /**
    * @returns Number of seconds elapsed
    */
-  readonly currentTime: number;
+  get currentTime(): number;
   /**
    * Shortcut for `this.entities.players`
    * @returns All connected player entities
    */
-  readonly players: Player[];
+  get players(): Player[];
   /**
    * Shortcut for `this.entities.teams`
    * @returns All team entities
    */
-  readonly teams: Team[];
+  get teams(): Team[];
   /**
    * Shortcut for `this.entities.gameRules`
    * @returns GameRules entity
    */
-  readonly gameRules: GameRules;
+  get gameRules(): GameRules;
   /**
    * When parsing, set to current tick.
    */

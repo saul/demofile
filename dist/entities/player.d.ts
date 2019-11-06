@@ -65,91 +65,91 @@ export declare class Player extends BaseEntity<CCSPlayer> {
   /**
    * @returns {int} Current health
    */
-  readonly health: number;
-  readonly eyeAngles: {
+  get health(): number;
+  get eyeAngles(): {
     pitch: number;
     yaw: number;
   };
-  readonly position: Vector;
-  readonly velocity: Vector;
+  get position(): Vector;
+  get velocity(): Vector;
   /**
    * Speed of the entity.
    * @returns Speed in game units.
    */
-  readonly speed: number;
+  get speed(): number;
   /**
    * @returns Current cash
    */
-  readonly account: number;
-  readonly lifeState: LifeState;
+  get account(): number;
+  get lifeState(): LifeState;
   /**
    * @returns lifeState == 0
    */
-  readonly isAlive: boolean;
+  get isAlive(): boolean;
   /**
    * @returns User info associated with this player
    */
-  readonly userInfo: IPlayerInfo | null;
+  get userInfo(): IPlayerInfo | null;
   /**
    * @returns User ID
    */
-  readonly userId: number;
+  get userId(): number;
   /**
    * @returns Steam ID
    */
-  readonly steamId: string;
+  get steamId(): string;
   /**
    * @returns Steam 64 ID
    */
-  readonly steam64Id: string;
+  get steam64Id(): string;
   /**
    * @returns Player name
    */
-  readonly name: string;
+  get name(): string;
   /**
    * @returns Is this player fake (i.e. a bot)
    */
-  readonly isFakePlayer: boolean;
+  get isFakePlayer(): boolean;
   /**
    * @returns Is this player a HLTV relay
    */
-  readonly isHltv: boolean;
+  get isHltv(): boolean;
   /**
    * @returns Player armor (0-100)
    */
-  readonly armor: number;
+  get armor(): number;
   /**
    * @returns Current navmesh place name
    */
-  readonly placeName: string;
+  get placeName(): string;
   /**
    * @returns Currently held weapon
    */
-  readonly weapon: Weapon | null;
+  get weapon(): Weapon | null;
   /**
    * @returns All weapons helds by this player
    */
-  readonly weapons: Weapon[];
+  get weapons(): Weapon[];
   /**
    * @returns Is the player is the bomb zone?
    */
-  readonly isInBombZone: boolean;
+  get isInBombZone(): boolean;
   /**
    * @returns Is the player in the buy zone?
    */
-  readonly isInBuyZone: boolean;
+  get isInBuyZone(): boolean;
   /**
    * @returns Is the player defusing?
    */
-  readonly isDefusing: boolean;
+  get isDefusing(): boolean;
   /**
    * @returns Does the player have a defuser?
    */
-  readonly hasDefuser: boolean;
+  get hasDefuser(): boolean;
   /**
    * @returns Does the player have a helmet?
    */
-  readonly hasHelmet: boolean;
+  get hasHelmet(): boolean;
   /**
    * Retrieves the value of an array property on the singleton entity DT_CSPlayerResource.
    * @param {string} propName - Name of the property on DT_CSPlayerResource to retrieve
@@ -165,43 +165,43 @@ export declare class Player extends BaseEntity<CCSPlayer> {
   /**
    * @returns How many kills the player has made
    */
-  readonly kills: number;
+  get kills(): number;
   /**
    * @returns How many assists the player has made
    */
-  readonly assists: number;
+  get assists(): number;
   /**
    * @returns How many times the player has died
    */
-  readonly deaths: number;
+  get deaths(): number;
   /**
    * @returns Cash that this player has spent this round
    */
-  readonly cashSpendThisRound: number;
+  get cashSpendThisRound(): number;
   /**
    * @returns Cash that the player has spent all game
    */
-  readonly cashSpendTotal: number;
+  get cashSpendTotal(): number;
   /**
    * @returns Whether the player holds the C4
    */
-  readonly hasC4: boolean;
+  get hasC4(): boolean;
   /**
    * @returns Score of the player
    */
-  readonly score: number;
+  get score(): number;
   /**
    * @returns MVPs of the player
    */
-  readonly mvps: number;
+  get mvps(): number;
   /**
    * @returns Clantag of the player
    */
-  readonly clanTag: string;
+  get clanTag(): string;
   /**
    * @returns Has this player been spotted by any others?
    */
-  readonly isSpotted: boolean;
+  get isSpotted(): boolean;
   /**
    * Checks if this player has been spotted by the other.
    * Note that this still returns true if spotted by the other player even if
@@ -213,7 +213,7 @@ export declare class Player extends BaseEntity<CCSPlayer> {
   /**
    * @returns Alive players that have spotted this player
    */
-  readonly allSpotters: Player[];
+  get allSpotters(): Player[];
   /**
    * Checks if this player has spotted another.
    * Can still return true even if this player is dead.
@@ -224,7 +224,7 @@ export declare class Player extends BaseEntity<CCSPlayer> {
   /**
    * @returns Alive players that this player has spotted
    */
-  readonly allSpotted: Player[];
+  get allSpotted(): Player[];
   /**
    * @param other - Other player entity
    * @returns Whether the two players are on the same team
@@ -233,29 +233,29 @@ export declare class Player extends BaseEntity<CCSPlayer> {
   /**
    * @returns Is scoped
    */
-  readonly isScoped: boolean;
+  get isScoped(): boolean;
   /**
    * @returns Is walking
    */
-  readonly isWalking: boolean;
+  get isWalking(): boolean;
   /**
    * @returns Duration of a flash that hit the player
    */
-  readonly flashDuration: number;
+  get flashDuration(): number;
   /**
    * @returns Current equipment value
    */
-  readonly currentEquipmentValue: number;
+  get currentEquipmentValue(): number;
   /**
    * @returns Round start equipment value
    */
-  readonly roundStartEquipmentValue: number;
+  get roundStartEquipmentValue(): number;
   /**
    * @returns Freeze time end equipment value
    */
-  readonly freezeTimeEndEquipmentValue: number;
+  get freezeTimeEndEquipmentValue(): number;
   /**
    * @returns Object representing the player's performance per round
    */
-  readonly matchStats: IPlayerRoundStats[];
+  get matchStats(): IPlayerRoundStats[];
 }

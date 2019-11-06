@@ -15,7 +15,7 @@
   },
   "scripts": {
     "lint": "tslint -p . --fix --exclude 'src/**/*.d.ts'",
-    "build": "tsc && shx mkdir dist/protobufs && shx cp src/*.d.ts dist && shx cp src/protobufs/*.d.ts dist/protobufs",
+    "build": "tsc && shx cp src/*.d.ts dist && shx mkdir dist/protobufs && shx cp src/protobufs/*.{d.ts,js} dist/protobufs",
     "watch": "tsc -w",
     "generate-docs": "shx rm -rf docs && typedoc --out docs/ && shx touch docs/.nojekyll",
     "bundle": "npm run build && browserify browser/app.js -d -o browser/bundle.js",
@@ -49,7 +49,7 @@
     "tslint-config-prettier": "^1.15.0",
     "tslint-language-service-ts3": "^1.0.0",
     "typedoc": "^0.13.0",
-    "typescript": "^3.6.4",
+    "typescript": "^3.7.2",
     "typestrict": "^1.0.1"
   },
   "husky": {

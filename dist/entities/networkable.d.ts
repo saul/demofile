@@ -8,11 +8,11 @@ export declare class Networkable<Props = UnknownEntityProps> {
    * Get the serverclass associated with this entity.
    * @returns Object representing the entity's class
    */
-  readonly serverClass: IServerClass;
+  get serverClass(): IServerClass;
   /**
    * @returns Number uniquely identifying this entity. Should be unique throughout the entire demo.
    */
-  readonly handle: number;
+  get handle(): number;
   /**
    * Entity index.
    */

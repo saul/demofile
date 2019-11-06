@@ -168,11 +168,11 @@ export declare interface Entities {
  * Represents entities and networked properties within a demo.
  */
 export declare class Entities extends EventEmitter {
-  readonly playerResource: Networkable<CCSPlayerResource>;
-  readonly gameRules: GameRules;
-  readonly teams: Team[];
-  readonly players: Player[];
-  readonly weapons: Weapon[];
+  get playerResource(): Networkable<CCSPlayerResource>;
+  get gameRules(): GameRules;
+  get teams(): Team[];
+  get players(): Player[];
+  get weapons(): Weapon[];
   dataTables: IDataTable[];
   serverClasses: IServerClass[];
   /**

@@ -15,37 +15,37 @@ export declare class Team extends Networkable<CTeam> {
   /**
    * @returns {Player[]} All players in this team
    */
-  readonly members: Player[];
+  get members(): Player[];
   /**
    * @returns {int} 0: Unassigned, 1: Spectator, 2: Terrorist, 3: Counter-Terrorist
    */
-  readonly teamNumber: TeamNumber;
+  get teamNumber(): TeamNumber;
   /**
    * @returns Clan name
    */
-  readonly clanName: string;
+  get clanName(): string;
   /**
    * @returns 'SPECTATOR', 'TERRORIST' or 'COUNTERTERRORIST'
    */
-  readonly teamName: TeamName;
+  get teamName(): TeamName;
   /**
    * @returns Total score
    */
-  readonly score: number;
+  get score(): number;
   /**
    * @returns First half score
    */
-  readonly scoreFirstHalf: number;
+  get scoreFirstHalf(): number;
   /**
    * @returns Second half score
    */
-  readonly scoreSecondHalf: number;
+  get scoreSecondHalf(): number;
   /**
    * @returns Team flag image
    */
-  readonly flagImage: string;
+  get flagImage(): string;
   /**
    * @returns Team logo image
    */
-  readonly logoImage: string;
+  get logoImage(): string;
 }

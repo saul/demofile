@@ -7,11 +7,11 @@ export declare class GameRules extends Networkable<CCSGameRulesProxy> {
   /**
    * @returns Is the game currently in 'warmup' mode?
    */
-  readonly isWarmup: boolean;
+  get isWarmup(): boolean;
   /**
    * @deprecated Use `GameRules#roundsPlayed` instead.
    */
-  readonly roundNumber: number;
+  get roundNumber(): number;
   /**
    * This value is incremented when the scores are updated at round end.
    * If you need to keep track of the current round number, store this value
@@ -19,9 +19,9 @@ export declare class GameRules extends Networkable<CCSGameRulesProxy> {
    *
    * @returns Total number of rounds played.
    */
-  readonly roundsPlayed: number;
+  get roundsPlayed(): number;
   /**
    * @returns 'first', 'second', 'halftime' or 'postgame'
    */
-  readonly phase: string;
+  get phase(): string;
 }

@@ -8,17 +8,17 @@ export declare class Weapon extends BaseEntity<CWeaponCSBase> {
   /**
    * @returns Item definition index
    */
-  readonly itemIndex: number;
+  get itemIndex(): number;
   /**
    * @returns Name of the weapon (e.g. "Five-SeveN")
    */
-  readonly itemName: string | null;
+  get itemName(): string | null;
   /**
    * @returns Entity class name of the weapon (e.g. "weapon_ak47")
    */
-  readonly className: string | null;
+  get className(): string | null;
   /**
    * @returns Previous owner
    */
-  readonly prevOwner: Player | null;
+  get prevOwner(): Player | null;
 }
