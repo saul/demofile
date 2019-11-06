@@ -297,9 +297,9 @@ Tick rate: 64
 
 ## Release History
 
-### 1.1.0 (2019-10-23)
+### 1.1.0 (2019-11-06)
 
-- :sparkles: #115: TypeScript definitions are now available
+- :sparkles: #115: TypeScript definitions are now available (thanks to @akiver)
 
 ### 1.0.7 (2019-10-23)
 
