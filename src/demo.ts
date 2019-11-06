@@ -427,7 +427,7 @@ export class DemoFile extends EventEmitter {
 
   private _bytebuf!: ByteBuffer;
   private _lastThreadYieldTime = 0;
-  private _immediateTimerToken: NodeJS.Timer | null = null;
+  private _immediateTimerToken: NodeJS.Immediate | null = null;
   private _timeoutTimerToken: NodeJS.Timer | null = null;
 
   /**

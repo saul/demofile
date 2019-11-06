@@ -8,7 +8,7 @@
     ],
     "strict": true,
     "outDir": "./dist",
-    "allowJs": true,
+    "allowJs": false,
     "target": "es2017",
     "lib": ["es2017"],
     "module": "commonjs",
@@ -16,8 +16,9 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "declaration": true
   },
   "compileOnSave": true,
-  "include": ["./src/**/*.ts", "./src/protobufs/*.js"]
+  "include": ["./src/**/*.ts"]
 }

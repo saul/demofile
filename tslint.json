@@ -11,6 +11,7 @@
     "interface-name": false,
     "unified-signatures": false,
     "curly": false,
+    "no-reference": false,
     "variable-name": [
       true,
       "ban-keywords",
