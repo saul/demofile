@@ -15,7 +15,7 @@
   },
   "scripts": {
     "lint": "tslint -p . --fix --exclude 'src/**/*.d.ts'",
-    "build": "shx rm -rf dist && tsc && shx cp src/*.d.ts dist && shx mkdir dist/protobufs && shx cp src/protobufs/*.{d.ts,js} dist/protobufs",
+    "build": "shx rm -rf dist && tsc && tsc -p tsconfig.decl.json && shx cp src/*.d.ts dist && shx cp src/protobufs/*.d.ts dist/protobufs",
     "watch": "tsc -w",
     "generate-docs": "shx rm -rf docs && typedoc --out docs/ && shx touch docs/.nojekyll",
     "bundle": "npm run build && browserify browser/app.js -d -o browser/bundle.js",
