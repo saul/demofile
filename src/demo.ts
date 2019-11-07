@@ -212,6 +212,9 @@ export declare interface DemoFile {
   on(event: "tickend", listener: (tick: number) => void): this;
   emit(name: "tickend", tick: number): boolean;
 
+  on(event: "frame", listener: (frame: number) => void): this;
+  emit(name: "frame", frame: number): boolean;
+
   emit(name: NetMessageName, msg: any): boolean;
   on(
     message: "net_NOP",
@@ -410,6 +413,8 @@ export class DemoFile extends EventEmitter {
    */
   public currentTick: number = 0;
 
+  public currentFrame: number = 0;
+
   /**
    * Number of seconds per tick
    */
@@ -579,6 +584,9 @@ export class DemoFile extends EventEmitter {
     this._recurse();
 
     try {
+      this.emit("frame", this.currentFrame);
+      this.currentFrame++;
+
       this.emit("progress", this._bytebuf.offset / this._bytebuf.limit);
 
       const command = this._bytebuf.readUint8();
