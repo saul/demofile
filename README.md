@@ -74,6 +74,10 @@ Note: It is important to note that events are fired at the end of a tick, after 
 - [CS:GO Game Events - AlliedModders Wiki](https://wiki.alliedmods.net/Counter-Strike:_Global_Offensive_Events)
 - [Gitter community](https://gitter.im/saul/demofile)
 
+## Contributing
+
+Please read the [Contributing Guidelines](./CONTRIBUTING.md) to learn how you can help out on the project.
+
 ## Examples
 
 ### Print player information when it changes
