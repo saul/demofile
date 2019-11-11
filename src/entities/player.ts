@@ -436,6 +436,13 @@ export class Player extends BaseEntity<CCSPlayer> {
   get isDucking(): boolean {
     return this.getProp("DT_Local", "m_bDucking");
   }
+    
+  /**
+   * @returns Is ducked
+   */
+  get isDucked(): boolean {
+    return this.getProp("DT_Local", "m_bDucked");
+  }
 
   /**
    * @returns Duration of a flash that hit the player
