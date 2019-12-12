@@ -12,6 +12,11 @@ export const enum LifeState {
 
 export interface IPlayerRoundStats {
   /**
+   * Game round
+   */
+  roundNumber: number;
+
+  /**
    * Kills dealt
    */
   kills: number;
@@ -490,6 +495,7 @@ export class Player extends BaseEntity<CCSPlayer> {
     const rounds = [];
     for (let roundIdx = 0; roundIdx < kills.length; ++roundIdx) {
       rounds.push({
+        roundNumber: roundIdx + 1,
         kills: kills[roundIdx],
         damage: damage[roundIdx],
         equipmentValue: equipmentValue[roundIdx],
