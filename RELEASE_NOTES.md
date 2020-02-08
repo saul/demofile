@@ -6,6 +6,10 @@
 - Unreleased release notes here
 -->
 
+### 1.2.0 (2020-02-08)
+
+- :bug: #65: Fixed tick/time calculations on demos with incomplete headers
+
 ### 1.1.1 (2019-11-06)
 
 - :bug: Fix .js protobuf files not being compiled
