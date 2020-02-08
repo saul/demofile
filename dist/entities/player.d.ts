@@ -239,6 +239,14 @@ export declare class Player extends BaseEntity<CCSPlayer> {
    */
   get isWalking(): boolean;
   /**
+   * @returns Player is transitioning from ducked -> standing or standing -> ducked
+   */
+  get isDucking(): boolean;
+  /**
+   * @returns Is ducked
+   */
+  get isDucked(): boolean;
+  /**
    * @returns Duration of a flash that hit the player
    */
   get flashDuration(): number;

@@ -109,6 +109,7 @@ export interface IEventPlayerDeath {
   userid: number;
   attacker: number;
   assister: number;
+  assistedflash: boolean;
   weapon: string;
   weapon_itemid: string;
   weapon_fauxitemid: string;

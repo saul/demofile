@@ -318,6 +318,10 @@ export declare class DemoFile extends EventEmitter {
    * When parsing, set to current tick.
    */
   currentTick: number;
+  /**
+   * Number of seconds per tick
+   */
+  tickInterval: number;
   header: IDemoHeader;
   /**
    * When parsing, set to player slot for current command.

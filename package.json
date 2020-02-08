@@ -1,6 +1,6 @@
 {
   "name": "demofile",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": "Saul Rennison <saul.rennison@gmail.com>",
   "typings": "dist/index.d.ts",
   "license": "MIT",
