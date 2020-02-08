@@ -371,16 +371,14 @@ export class DemoFile extends EventEmitter {
    * @returns Number of ticks per second
    */
   get tickRate() {
-    return this.header.playbackTicks / this.header.playbackTime;
+    return 1.0 / this.tickInterval;
   }
 
   /**
    * @returns Number of seconds elapsed
    */
   get currentTime() {
-    return (
-      this.currentTick * (this.header.playbackTime / this.header.playbackTicks)
-    );
+    return this.currentTick * this.tickInterval;
   }
 
   /**
@@ -411,6 +409,11 @@ export class DemoFile extends EventEmitter {
    * When parsing, set to current tick.
    */
   public currentTick: number = 0;
+
+  /**
+   * Number of seconds per tick
+   */
+  public tickInterval: number = NaN;
 
   public header!: IDemoHeader;
 
@@ -457,10 +460,22 @@ export class DemoFile extends EventEmitter {
     this.stringTables.listen(this);
     this.userMessages.listen(this);
     this.conVars.listen(this);
+
+    // #65: Some demos are missing playbackTicks from the header
+    // Pull the tick interval from ServerInfo
+    this.on("svc_ServerInfo", msg => {
+      this.tickInterval = msg.tickInterval;
+    });
   }
 
   public parse(buffer: Buffer) {
     this.header = parseHeader(buffer);
+
+    // #65: Some demos are missing playbackTicks from the header
+    if (this.header.playbackTicks > 0) {
+      this.tickInterval = this.header.playbackTime / this.header.playbackTicks;
+    }
+
     this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
 
     this.emit("start");

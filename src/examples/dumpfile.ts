@@ -158,10 +158,11 @@ function parseDemoFile(path: string) {
 
     demoFile.gameEvents.on("round_end", e => {
       console.log(
-        "*** Round ended '%s' (reason: %s, tick: %d)",
+        "*** Round ended '%s' (reason: %s, tick: %d, time: %d secs)",
         demoFile.gameRules.phase,
         e.reason,
-        demoFile.currentTick
+        demoFile.currentTick,
+        demoFile.currentTime | 0
       );
 
       // We can't print the team scores here as they haven't been updated yet.
