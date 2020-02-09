@@ -6,6 +6,10 @@
 - Unreleased release notes here
 -->
 
+### 1.3.0 (2020-02-09)
+
+- :sparkles: #128: Add `Weapon#clipAmmo`, `Weapon#reserveAmmo` and `Weapon#ownerAmmo`
+
 ### 1.2.0 (2020-02-08)
 
 - :bug: #65: Fixed tick/time calculations on demos with incomplete headers

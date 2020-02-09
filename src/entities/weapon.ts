@@ -8,6 +8,13 @@ import { Player } from "./player";
  */
 export class Weapon extends BaseEntity<CWeaponCSBase> {
   /**
+   * @returns Owning player, if any
+   */
+  get owner(): Player | null {
+    return super.owner as Player | null;
+  }
+
+  /**
    * @returns Item definition index
    */
   get itemIndex(): number {
@@ -38,5 +45,29 @@ export class Weapon extends BaseEntity<CWeaponCSBase> {
   get prevOwner(): Player | null {
     const handle = this.getProp("DT_WeaponCSBase", "m_hPrevOwner");
     return this._demo.entities.getByHandle(handle) as Player | null;
+  }
+
+  /**
+   * @returns Amount of ammo in the clip of the weapon
+   */
+  get clipAmmo(): number {
+    return this.getProp("DT_BaseCombatWeapon", "m_iClip1");
+  }
+
+  /**
+   * @returns The amount ammo this weapon has in reserve
+   */
+  get reserveAmmo(): number {
+    return this.getProp("DT_BaseCombatWeapon", "m_iPrimaryReserveAmmoCount");
+  }
+
+  /**
+   * @returns The amount of ammo the owner holds for this weapon. Null if no owner.
+   */
+  get ownerAmmo(): number | null {
+    if (!this.owner) return null;
+    const ammoType = this.getProp("DT_LocalWeaponData", "m_iPrimaryAmmoType");
+    if (ammoType === -1) return null;
+    return this.owner.getIndexedProps("m_iAmmo")[ammoType];
   }
 }

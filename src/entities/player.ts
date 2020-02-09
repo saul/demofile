@@ -429,14 +429,14 @@ export class Player extends BaseEntity<CCSPlayer> {
   get isWalking(): boolean {
     return this.getProp("DT_CSPlayer", "m_bIsWalking");
   }
-    
+
   /**
    * @returns Player is transitioning from ducked -> standing or standing -> ducked
    */
   get isDucking(): boolean {
     return this.getProp("DT_Local", "m_bDucking");
   }
-    
+
   /**
    * @returns Is ducked
    */
