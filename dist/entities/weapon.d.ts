@@ -6,6 +6,10 @@ import { Player } from "./player";
  */
 export declare class Weapon extends BaseEntity<CWeaponCSBase> {
   /**
+   * @returns Owning player, if any
+   */
+  get owner(): Player | null;
+  /**
    * @returns Item definition index
    */
   get itemIndex(): number;
@@ -21,4 +25,16 @@ export declare class Weapon extends BaseEntity<CWeaponCSBase> {
    * @returns Previous owner
    */
   get prevOwner(): Player | null;
+  /**
+   * @returns Amount of ammo in the clip of the weapon
+   */
+  get clipAmmo(): number;
+  /**
+   * @returns The amount ammo this weapon has in reserve
+   */
+  get reserveAmmo(): number;
+  /**
+   * @returns The amount of ammo the owner holds for this weapon. Null if no owner.
+   */
+  get ownerAmmo(): number | null;
 }
