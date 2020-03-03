@@ -82657,7 +82657,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.7.classname-61",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.7.classname-65",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.7'
     },
@@ -82666,7 +82666,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.7.itemname-61",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.7.itemname-65",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.7'
     },
@@ -82683,7 +82683,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.8.classname-67",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.8.classname-71",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.8'
     },
@@ -82692,7 +82692,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.8.itemname-67",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.8.itemname-71",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.8'
     },
@@ -82709,7 +82709,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.9.classname-74",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.9.classname-78",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.9'
     },
@@ -82718,7 +82718,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.9.itemname-74",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.9.itemname-78",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.9'
     },
@@ -83619,7 +83619,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.57.classname-53",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.57.classname-57",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.57'
     },
@@ -83628,7 +83628,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.57.itemname-53",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.57.itemname-57",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.57'
     },
@@ -83645,7 +83645,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.59.classname-54",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.59.classname-58",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.59'
     },
@@ -83654,7 +83654,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.59.itemname-54",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.59.itemname-58",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.59'
     },
@@ -83671,7 +83671,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.60.classname-55",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.60.classname-59",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.60'
     },
@@ -83680,7 +83680,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.60.itemname-55",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.60.itemname-59",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.60'
     },
@@ -83697,7 +83697,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.61.classname-56",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.61.classname-60",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.61'
     },
@@ -83706,7 +83706,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.61.itemname-56",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.61.itemname-60",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.61'
     },
@@ -83723,7 +83723,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.63.classname-57",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.63.classname-61",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.63'
     },
@@ -83732,7 +83732,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.63.itemname-57",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.63.itemname-61",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.63'
     },
@@ -83749,7 +83749,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.64.classname-58",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.64.classname-62",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.64'
     },
@@ -83758,7 +83758,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.64.itemname-58",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.64.itemname-62",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.64'
     },
@@ -83775,7 +83775,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.68.classname-59",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.68.classname-63",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.68'
     },
@@ -83784,7 +83784,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.68.itemname-59",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.68.itemname-63",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.68'
     },
@@ -83801,7 +83801,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.69.classname-60",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.69.classname-64",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.69'
     },
@@ -83810,7 +83810,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.69.itemname-60",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.69.itemname-64",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.69'
     },
@@ -83827,7 +83827,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.70.classname-62",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.70.classname-66",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.70'
     },
@@ -83836,7 +83836,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.70.itemname-62",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.70.itemname-66",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.70'
     },
@@ -83853,7 +83853,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.72.classname-63",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.72.classname-67",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.72'
     },
@@ -83862,7 +83862,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.72.itemname-63",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.72.itemname-67",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.72'
     },
@@ -83879,7 +83879,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.75.classname-64",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.75.classname-68",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.75'
     },
@@ -83888,7 +83888,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.75.itemname-64",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.75.itemname-68",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.75'
     },
@@ -83905,7 +83905,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.76.classname-65",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.76.classname-69",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.76'
     },
@@ -83914,7 +83914,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.76.itemname-65",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.76.itemname-69",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.76'
     },
@@ -83931,7 +83931,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.78.classname-66",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.78.classname-70",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.78'
     },
@@ -83940,7 +83940,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.78.itemname-66",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.78.itemname-70",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.78'
     },
@@ -83957,7 +83957,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.80.classname-68",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.80.classname-72",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.80'
     },
@@ -83966,7 +83966,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.80.itemname-68",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.80.itemname-72",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.80'
     },
@@ -83983,7 +83983,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.81.classname-69",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.81.classname-73",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.81'
     },
@@ -83992,7 +83992,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.81.itemname-69",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.81.itemname-73",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.81'
     },
@@ -84009,7 +84009,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.82.classname-70",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.82.classname-74",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.82'
     },
@@ -84018,7 +84018,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.82.itemname-70",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.82.itemname-74",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.82'
     },
@@ -84035,7 +84035,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.83.classname-71",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.83.classname-75",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.83'
     },
@@ -84044,7 +84044,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.83.itemname-71",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.83.itemname-75",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.83'
     },
@@ -84061,7 +84061,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.84.classname-72",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.84.classname-76",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.84'
     },
@@ -84070,7 +84070,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.84.itemname-72",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.84.itemname-76",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.84'
     },
@@ -84087,7 +84087,7 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.85.classname-73",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.85.classname-77",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.85'
     },
@@ -84096,7 +84096,7 @@ typedoc.search.data = {
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.85.itemname-73",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.85.itemname-77",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.85'
     },
@@ -84389,8 +84389,8 @@ typedoc.search.data = {
     {
       id: 10326,
       kind: 2097152,
-      name: "519",
-      url: "modules/_entities_itemdefs_.html#itemdefinitionindexmap.519",
+      name: "517",
+      url: "modules/_entities_itemdefs_.html#itemdefinitionindexmap.517",
       classes: "tsd-kind-object-literal tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap'
     },
@@ -84399,24 +84399,24 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.519.classname-49",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.517.classname-49",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
-      parent: '"entities/itemdefs".itemDefinitionIndexMap.519'
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.517'
     },
     {
       id: 10328,
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.519.itemname-49",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.517.itemname-49",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
-      parent: '"entities/itemdefs".itemDefinitionIndexMap.519'
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.517'
     },
     {
       id: 10329,
       kind: 2097152,
-      name: "520",
-      url: "modules/_entities_itemdefs_.html#itemdefinitionindexmap.520",
+      name: "518",
+      url: "modules/_entities_itemdefs_.html#itemdefinitionindexmap.518",
       classes: "tsd-kind-object-literal tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap'
     },
@@ -84425,24 +84425,24 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.520.classname-50",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.518.classname-50",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
-      parent: '"entities/itemdefs".itemDefinitionIndexMap.520'
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.518'
     },
     {
       id: 10331,
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.520.itemname-50",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.518.itemname-50",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
-      parent: '"entities/itemdefs".itemDefinitionIndexMap.520'
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.518'
     },
     {
       id: 10332,
       kind: 2097152,
-      name: "522",
-      url: "modules/_entities_itemdefs_.html#itemdefinitionindexmap.522",
+      name: "519",
+      url: "modules/_entities_itemdefs_.html#itemdefinitionindexmap.519",
       classes: "tsd-kind-object-literal tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap'
     },
@@ -84451,24 +84451,24 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.522.classname-51",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.519.classname-51",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
-      parent: '"entities/itemdefs".itemDefinitionIndexMap.522'
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.519'
     },
     {
       id: 10334,
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.522.itemname-51",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.519.itemname-51",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
-      parent: '"entities/itemdefs".itemDefinitionIndexMap.522'
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.519'
     },
     {
       id: 10335,
       kind: 2097152,
-      name: "523",
-      url: "modules/_entities_itemdefs_.html#itemdefinitionindexmap.523",
+      name: "520",
+      url: "modules/_entities_itemdefs_.html#itemdefinitionindexmap.520",
       classes: "tsd-kind-object-literal tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap'
     },
@@ -84477,28 +84477,132 @@ typedoc.search.data = {
       kind: 32,
       name: "className",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.523.classname-52",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.520.classname-52",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
-      parent: '"entities/itemdefs".itemDefinitionIndexMap.523'
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.520'
     },
     {
       id: 10337,
       kind: 32,
       name: "itemName",
       url:
-        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.523.itemname-52",
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.520.itemname-52",
+      classes: "tsd-kind-variable tsd-parent-kind-object-literal",
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.520'
+    },
+    {
+      id: 10338,
+      kind: 2097152,
+      name: "521",
+      url: "modules/_entities_itemdefs_.html#itemdefinitionindexmap.521",
+      classes: "tsd-kind-object-literal tsd-parent-kind-object-literal",
+      parent: '"entities/itemdefs".itemDefinitionIndexMap'
+    },
+    {
+      id: 10339,
+      kind: 32,
+      name: "className",
+      url:
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.521.classname-53",
+      classes: "tsd-kind-variable tsd-parent-kind-object-literal",
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.521'
+    },
+    {
+      id: 10340,
+      kind: 32,
+      name: "itemName",
+      url:
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.521.itemname-53",
+      classes: "tsd-kind-variable tsd-parent-kind-object-literal",
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.521'
+    },
+    {
+      id: 10341,
+      kind: 2097152,
+      name: "522",
+      url: "modules/_entities_itemdefs_.html#itemdefinitionindexmap.522",
+      classes: "tsd-kind-object-literal tsd-parent-kind-object-literal",
+      parent: '"entities/itemdefs".itemDefinitionIndexMap'
+    },
+    {
+      id: 10342,
+      kind: 32,
+      name: "className",
+      url:
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.522.classname-54",
+      classes: "tsd-kind-variable tsd-parent-kind-object-literal",
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.522'
+    },
+    {
+      id: 10343,
+      kind: 32,
+      name: "itemName",
+      url:
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.522.itemname-54",
+      classes: "tsd-kind-variable tsd-parent-kind-object-literal",
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.522'
+    },
+    {
+      id: 10344,
+      kind: 2097152,
+      name: "523",
+      url: "modules/_entities_itemdefs_.html#itemdefinitionindexmap.523",
+      classes: "tsd-kind-object-literal tsd-parent-kind-object-literal",
+      parent: '"entities/itemdefs".itemDefinitionIndexMap'
+    },
+    {
+      id: 10345,
+      kind: 32,
+      name: "className",
+      url:
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.523.classname-55",
       classes: "tsd-kind-variable tsd-parent-kind-object-literal",
       parent: '"entities/itemdefs".itemDefinitionIndexMap.523'
     },
     {
-      id: 10338,
+      id: 10346,
+      kind: 32,
+      name: "itemName",
+      url:
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.523.itemname-55",
+      classes: "tsd-kind-variable tsd-parent-kind-object-literal",
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.523'
+    },
+    {
+      id: 10347,
+      kind: 2097152,
+      name: "525",
+      url: "modules/_entities_itemdefs_.html#itemdefinitionindexmap.525",
+      classes: "tsd-kind-object-literal tsd-parent-kind-object-literal",
+      parent: '"entities/itemdefs".itemDefinitionIndexMap'
+    },
+    {
+      id: 10348,
+      kind: 32,
+      name: "className",
+      url:
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.525.classname-56",
+      classes: "tsd-kind-variable tsd-parent-kind-object-literal",
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.525'
+    },
+    {
+      id: 10349,
+      kind: 32,
+      name: "itemName",
+      url:
+        "modules/_entities_itemdefs_.html#itemdefinitionindexmap.525.itemname-56",
+      classes: "tsd-kind-variable tsd-parent-kind-object-literal",
+      parent: '"entities/itemdefs".itemDefinitionIndexMap.525'
+    },
+    {
+      id: 10350,
       kind: 1,
       name: '"entities/weapon"',
       url: "modules/_entities_weapon_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10339,
+      id: 10351,
       kind: 128,
       name: "Weapon",
       url: "classes/_entities_weapon_.weapon.html",
@@ -84506,7 +84610,7 @@ typedoc.search.data = {
       parent: '"entities/weapon"'
     },
     {
-      id: 10340,
+      id: 10352,
       kind: 262144,
       name: "owner",
       url: "classes/_entities_weapon_.weapon.html#owner",
@@ -84514,7 +84618,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10341,
+      id: 10353,
       kind: 262144,
       name: "itemIndex",
       url: "classes/_entities_weapon_.weapon.html#itemindex",
@@ -84522,7 +84626,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10342,
+      id: 10354,
       kind: 262144,
       name: "itemName",
       url: "classes/_entities_weapon_.weapon.html#itemname",
@@ -84530,7 +84634,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10343,
+      id: 10355,
       kind: 262144,
       name: "className",
       url: "classes/_entities_weapon_.weapon.html#classname",
@@ -84538,7 +84642,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10344,
+      id: 10356,
       kind: 262144,
       name: "prevOwner",
       url: "classes/_entities_weapon_.weapon.html#prevowner",
@@ -84546,7 +84650,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10345,
+      id: 10357,
       kind: 262144,
       name: "clipAmmo",
       url: "classes/_entities_weapon_.weapon.html#clipammo",
@@ -84554,7 +84658,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10346,
+      id: 10358,
       kind: 262144,
       name: "reserveAmmo",
       url: "classes/_entities_weapon_.weapon.html#reserveammo",
@@ -84562,7 +84666,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10347,
+      id: 10359,
       kind: 262144,
       name: "ownerAmmo",
       url: "classes/_entities_weapon_.weapon.html#ownerammo",
@@ -84570,7 +84674,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10348,
+      id: 10360,
       kind: 262144,
       name: "position",
       url: "classes/_entities_weapon_.weapon.html#position",
@@ -84578,7 +84682,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10349,
+      id: 10361,
       kind: 262144,
       name: "moveParent",
       url: "classes/_entities_weapon_.weapon.html#moveparent",
@@ -84586,7 +84690,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10350,
+      id: 10362,
       kind: 262144,
       name: "teamNumber",
       url: "classes/_entities_weapon_.weapon.html#teamnumber",
@@ -84594,7 +84698,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10351,
+      id: 10363,
       kind: 262144,
       name: "team",
       url: "classes/_entities_weapon_.weapon.html#team",
@@ -84602,7 +84706,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10352,
+      id: 10364,
       kind: 262144,
       name: "modelName",
       url: "classes/_entities_weapon_.weapon.html#modelname",
@@ -84610,7 +84714,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10353,
+      id: 10365,
       kind: 262144,
       name: "serverClass",
       url: "classes/_entities_weapon_.weapon.html#serverclass",
@@ -84618,7 +84722,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10354,
+      id: 10366,
       kind: 262144,
       name: "handle",
       url: "classes/_entities_weapon_.weapon.html#handle",
@@ -84626,7 +84730,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10355,
+      id: 10367,
       kind: 1024,
       name: "index",
       url: "classes/_entities_weapon_.weapon.html#index",
@@ -84634,7 +84738,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10356,
+      id: 10368,
       kind: 1024,
       name: "classId",
       url: "classes/_entities_weapon_.weapon.html#classid",
@@ -84642,7 +84746,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10357,
+      id: 10369,
       kind: 1024,
       name: "serialNum",
       url: "classes/_entities_weapon_.weapon.html#serialnum",
@@ -84650,7 +84754,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10358,
+      id: 10370,
       kind: 1024,
       name: "props",
       url: "classes/_entities_weapon_.weapon.html#props",
@@ -84658,7 +84762,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10359,
+      id: 10371,
       kind: 1024,
       name: "deleting",
       url: "classes/_entities_weapon_.weapon.html#deleting",
@@ -84666,7 +84770,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10360,
+      id: 10372,
       kind: 1024,
       name: "_demo",
       url: "classes/_entities_weapon_.weapon.html#_demo",
@@ -84675,7 +84779,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10361,
+      id: 10373,
       kind: 512,
       name: "constructor",
       url: "classes/_entities_weapon_.weapon.html#constructor",
@@ -84683,7 +84787,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10362,
+      id: 10374,
       kind: 2048,
       name: "getProp",
       url: "classes/_entities_weapon_.weapon.html#getprop",
@@ -84692,7 +84796,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10363,
+      id: 10375,
       kind: 2048,
       name: "getIndexedProps",
       url: "classes/_entities_weapon_.weapon.html#getindexedprops",
@@ -84701,7 +84805,7 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10364,
+      id: 10376,
       kind: 2048,
       name: "updateProp",
       url: "classes/_entities_weapon_.weapon.html#updateprop",
@@ -84710,14 +84814,14 @@ typedoc.search.data = {
       parent: '"entities/weapon".Weapon'
     },
     {
-      id: 10365,
+      id: 10377,
       kind: 1,
       name: '"entities/player"',
       url: "modules/_entities_player_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10366,
+      id: 10378,
       kind: 4,
       name: "LifeState",
       url: "enums/_entities_player_.lifestate.html",
@@ -84725,7 +84829,7 @@ typedoc.search.data = {
       parent: '"entities/player"'
     },
     {
-      id: 10367,
+      id: 10379,
       kind: 16,
       name: "Alive",
       url: "enums/_entities_player_.lifestate.html#alive",
@@ -84733,7 +84837,7 @@ typedoc.search.data = {
       parent: '"entities/player".LifeState'
     },
     {
-      id: 10368,
+      id: 10380,
       kind: 16,
       name: "Dying",
       url: "enums/_entities_player_.lifestate.html#dying",
@@ -84741,7 +84845,7 @@ typedoc.search.data = {
       parent: '"entities/player".LifeState'
     },
     {
-      id: 10369,
+      id: 10381,
       kind: 16,
       name: "Dead",
       url: "enums/_entities_player_.lifestate.html#dead",
@@ -84749,7 +84853,7 @@ typedoc.search.data = {
       parent: '"entities/player".LifeState'
     },
     {
-      id: 10370,
+      id: 10382,
       kind: 256,
       name: "IPlayerRoundStats",
       url: "interfaces/_entities_player_.iplayerroundstats.html",
@@ -84757,7 +84861,7 @@ typedoc.search.data = {
       parent: '"entities/player"'
     },
     {
-      id: 10371,
+      id: 10383,
       kind: 1024,
       name: "kills",
       url: "interfaces/_entities_player_.iplayerroundstats.html#kills",
@@ -84765,7 +84869,7 @@ typedoc.search.data = {
       parent: '"entities/player".IPlayerRoundStats'
     },
     {
-      id: 10372,
+      id: 10384,
       kind: 1024,
       name: "damage",
       url: "interfaces/_entities_player_.iplayerroundstats.html#damage",
@@ -84773,7 +84877,7 @@ typedoc.search.data = {
       parent: '"entities/player".IPlayerRoundStats'
     },
     {
-      id: 10373,
+      id: 10385,
       kind: 1024,
       name: "equipmentValue",
       url: "interfaces/_entities_player_.iplayerroundstats.html#equipmentvalue",
@@ -84781,7 +84885,7 @@ typedoc.search.data = {
       parent: '"entities/player".IPlayerRoundStats'
     },
     {
-      id: 10374,
+      id: 10386,
       kind: 1024,
       name: "moneySaved",
       url: "interfaces/_entities_player_.iplayerroundstats.html#moneysaved",
@@ -84789,7 +84893,7 @@ typedoc.search.data = {
       parent: '"entities/player".IPlayerRoundStats'
     },
     {
-      id: 10375,
+      id: 10387,
       kind: 1024,
       name: "killReward",
       url: "interfaces/_entities_player_.iplayerroundstats.html#killreward",
@@ -84797,7 +84901,7 @@ typedoc.search.data = {
       parent: '"entities/player".IPlayerRoundStats'
     },
     {
-      id: 10376,
+      id: 10388,
       kind: 1024,
       name: "liveTime",
       url: "interfaces/_entities_player_.iplayerroundstats.html#livetime",
@@ -84805,7 +84909,7 @@ typedoc.search.data = {
       parent: '"entities/player".IPlayerRoundStats'
     },
     {
-      id: 10377,
+      id: 10389,
       kind: 1024,
       name: "deaths",
       url: "interfaces/_entities_player_.iplayerroundstats.html#deaths",
@@ -84813,7 +84917,7 @@ typedoc.search.data = {
       parent: '"entities/player".IPlayerRoundStats'
     },
     {
-      id: 10378,
+      id: 10390,
       kind: 1024,
       name: "assists",
       url: "interfaces/_entities_player_.iplayerroundstats.html#assists",
@@ -84821,7 +84925,7 @@ typedoc.search.data = {
       parent: '"entities/player".IPlayerRoundStats'
     },
     {
-      id: 10379,
+      id: 10391,
       kind: 1024,
       name: "headShotKills",
       url: "interfaces/_entities_player_.iplayerroundstats.html#headshotkills",
@@ -84829,7 +84933,7 @@ typedoc.search.data = {
       parent: '"entities/player".IPlayerRoundStats'
     },
     {
-      id: 10380,
+      id: 10392,
       kind: 1024,
       name: "objective",
       url: "interfaces/_entities_player_.iplayerroundstats.html#objective",
@@ -84837,7 +84941,7 @@ typedoc.search.data = {
       parent: '"entities/player".IPlayerRoundStats'
     },
     {
-      id: 10381,
+      id: 10393,
       kind: 128,
       name: "Player",
       url: "classes/_entities_player_.player.html",
@@ -84845,7 +84949,7 @@ typedoc.search.data = {
       parent: '"entities/player"'
     },
     {
-      id: 10382,
+      id: 10394,
       kind: 1024,
       name: "clientSlot",
       url: "classes/_entities_player_.player.html#clientslot",
@@ -84853,7 +84957,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10383,
+      id: 10395,
       kind: 512,
       name: "constructor",
       url: "classes/_entities_player_.player.html#constructor",
@@ -84861,7 +84965,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10384,
+      id: 10396,
       kind: 262144,
       name: "health",
       url: "classes/_entities_player_.player.html#health",
@@ -84869,7 +84973,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10385,
+      id: 10397,
       kind: 262144,
       name: "eyeAngles",
       url: "classes/_entities_player_.player.html#eyeangles",
@@ -84877,7 +84981,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10386,
+      id: 10398,
       kind: 262144,
       name: "position",
       url: "classes/_entities_player_.player.html#position",
@@ -84885,7 +84989,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10387,
+      id: 10399,
       kind: 262144,
       name: "velocity",
       url: "classes/_entities_player_.player.html#velocity",
@@ -84893,7 +84997,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10388,
+      id: 10400,
       kind: 262144,
       name: "speed",
       url: "classes/_entities_player_.player.html#speed",
@@ -84901,7 +85005,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10389,
+      id: 10401,
       kind: 262144,
       name: "account",
       url: "classes/_entities_player_.player.html#account",
@@ -84909,7 +85013,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10390,
+      id: 10402,
       kind: 262144,
       name: "lifeState",
       url: "classes/_entities_player_.player.html#lifestate",
@@ -84917,7 +85021,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10391,
+      id: 10403,
       kind: 262144,
       name: "isAlive",
       url: "classes/_entities_player_.player.html#isalive",
@@ -84925,7 +85029,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10392,
+      id: 10404,
       kind: 262144,
       name: "userInfo",
       url: "classes/_entities_player_.player.html#userinfo",
@@ -84933,7 +85037,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10393,
+      id: 10405,
       kind: 262144,
       name: "userId",
       url: "classes/_entities_player_.player.html#userid",
@@ -84941,7 +85045,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10394,
+      id: 10406,
       kind: 262144,
       name: "steamId",
       url: "classes/_entities_player_.player.html#steamid",
@@ -84949,7 +85053,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10395,
+      id: 10407,
       kind: 262144,
       name: "steam64Id",
       url: "classes/_entities_player_.player.html#steam64id",
@@ -84957,7 +85061,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10396,
+      id: 10408,
       kind: 262144,
       name: "name",
       url: "classes/_entities_player_.player.html#name",
@@ -84965,7 +85069,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10397,
+      id: 10409,
       kind: 262144,
       name: "isFakePlayer",
       url: "classes/_entities_player_.player.html#isfakeplayer",
@@ -84973,7 +85077,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10398,
+      id: 10410,
       kind: 262144,
       name: "isHltv",
       url: "classes/_entities_player_.player.html#ishltv",
@@ -84981,7 +85085,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10399,
+      id: 10411,
       kind: 262144,
       name: "armor",
       url: "classes/_entities_player_.player.html#armor",
@@ -84989,7 +85093,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10400,
+      id: 10412,
       kind: 262144,
       name: "placeName",
       url: "classes/_entities_player_.player.html#placename",
@@ -84997,7 +85101,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10401,
+      id: 10413,
       kind: 262144,
       name: "weapon",
       url: "classes/_entities_player_.player.html#weapon",
@@ -85005,7 +85109,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10402,
+      id: 10414,
       kind: 262144,
       name: "weapons",
       url: "classes/_entities_player_.player.html#weapons",
@@ -85013,7 +85117,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10403,
+      id: 10415,
       kind: 262144,
       name: "isInBombZone",
       url: "classes/_entities_player_.player.html#isinbombzone",
@@ -85021,7 +85125,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10404,
+      id: 10416,
       kind: 262144,
       name: "isInBuyZone",
       url: "classes/_entities_player_.player.html#isinbuyzone",
@@ -85029,7 +85133,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10405,
+      id: 10417,
       kind: 262144,
       name: "isDefusing",
       url: "classes/_entities_player_.player.html#isdefusing",
@@ -85037,7 +85141,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10406,
+      id: 10418,
       kind: 262144,
       name: "hasDefuser",
       url: "classes/_entities_player_.player.html#hasdefuser",
@@ -85045,7 +85149,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10407,
+      id: 10419,
       kind: 262144,
       name: "hasHelmet",
       url: "classes/_entities_player_.player.html#hashelmet",
@@ -85053,7 +85157,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10408,
+      id: 10420,
       kind: 2048,
       name: "resourceProp",
       url: "classes/_entities_player_.player.html#resourceprop",
@@ -85061,7 +85165,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10409,
+      id: 10421,
       kind: 262144,
       name: "kills",
       url: "classes/_entities_player_.player.html#kills",
@@ -85069,7 +85173,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10410,
+      id: 10422,
       kind: 262144,
       name: "assists",
       url: "classes/_entities_player_.player.html#assists",
@@ -85077,7 +85181,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10411,
+      id: 10423,
       kind: 262144,
       name: "deaths",
       url: "classes/_entities_player_.player.html#deaths",
@@ -85085,7 +85189,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10412,
+      id: 10424,
       kind: 262144,
       name: "cashSpendThisRound",
       url: "classes/_entities_player_.player.html#cashspendthisround",
@@ -85093,7 +85197,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10413,
+      id: 10425,
       kind: 262144,
       name: "cashSpendTotal",
       url: "classes/_entities_player_.player.html#cashspendtotal",
@@ -85101,7 +85205,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10414,
+      id: 10426,
       kind: 262144,
       name: "hasC4",
       url: "classes/_entities_player_.player.html#hasc4",
@@ -85109,7 +85213,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10415,
+      id: 10427,
       kind: 262144,
       name: "score",
       url: "classes/_entities_player_.player.html#score",
@@ -85117,7 +85221,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10416,
+      id: 10428,
       kind: 262144,
       name: "mvps",
       url: "classes/_entities_player_.player.html#mvps",
@@ -85125,7 +85229,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10417,
+      id: 10429,
       kind: 262144,
       name: "clanTag",
       url: "classes/_entities_player_.player.html#clantag",
@@ -85133,7 +85237,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10418,
+      id: 10430,
       kind: 262144,
       name: "isSpotted",
       url: "classes/_entities_player_.player.html#isspotted",
@@ -85141,7 +85245,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10419,
+      id: 10431,
       kind: 2048,
       name: "isSpottedBy",
       url: "classes/_entities_player_.player.html#isspottedby",
@@ -85149,7 +85253,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10420,
+      id: 10432,
       kind: 262144,
       name: "allSpotters",
       url: "classes/_entities_player_.player.html#allspotters",
@@ -85157,7 +85261,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10421,
+      id: 10433,
       kind: 2048,
       name: "hasSpotted",
       url: "classes/_entities_player_.player.html#hasspotted",
@@ -85165,7 +85269,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10422,
+      id: 10434,
       kind: 262144,
       name: "allSpotted",
       url: "classes/_entities_player_.player.html#allspotted",
@@ -85173,7 +85277,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10423,
+      id: 10435,
       kind: 2048,
       name: "isFriendly",
       url: "classes/_entities_player_.player.html#isfriendly",
@@ -85181,7 +85285,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10424,
+      id: 10436,
       kind: 262144,
       name: "isScoped",
       url: "classes/_entities_player_.player.html#isscoped",
@@ -85189,7 +85293,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10425,
+      id: 10437,
       kind: 262144,
       name: "isWalking",
       url: "classes/_entities_player_.player.html#iswalking",
@@ -85197,7 +85301,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10426,
+      id: 10438,
       kind: 262144,
       name: "isDucking",
       url: "classes/_entities_player_.player.html#isducking",
@@ -85205,7 +85309,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10427,
+      id: 10439,
       kind: 262144,
       name: "isDucked",
       url: "classes/_entities_player_.player.html#isducked",
@@ -85213,7 +85317,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10428,
+      id: 10440,
       kind: 262144,
       name: "flashDuration",
       url: "classes/_entities_player_.player.html#flashduration",
@@ -85221,7 +85325,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10429,
+      id: 10441,
       kind: 262144,
       name: "currentEquipmentValue",
       url: "classes/_entities_player_.player.html#currentequipmentvalue",
@@ -85229,7 +85333,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10430,
+      id: 10442,
       kind: 262144,
       name: "roundStartEquipmentValue",
       url: "classes/_entities_player_.player.html#roundstartequipmentvalue",
@@ -85237,7 +85341,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10431,
+      id: 10443,
       kind: 262144,
       name: "freezeTimeEndEquipmentValue",
       url: "classes/_entities_player_.player.html#freezetimeendequipmentvalue",
@@ -85245,7 +85349,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10432,
+      id: 10444,
       kind: 262144,
       name: "matchStats",
       url: "classes/_entities_player_.player.html#matchstats",
@@ -85253,7 +85357,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10433,
+      id: 10445,
       kind: 262144,
       name: "moveParent",
       url: "classes/_entities_player_.player.html#moveparent",
@@ -85261,7 +85365,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10434,
+      id: 10446,
       kind: 262144,
       name: "owner",
       url: "classes/_entities_player_.player.html#owner",
@@ -85269,7 +85373,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10435,
+      id: 10447,
       kind: 262144,
       name: "teamNumber",
       url: "classes/_entities_player_.player.html#teamnumber",
@@ -85277,7 +85381,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10436,
+      id: 10448,
       kind: 262144,
       name: "team",
       url: "classes/_entities_player_.player.html#team",
@@ -85285,7 +85389,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10437,
+      id: 10449,
       kind: 262144,
       name: "modelName",
       url: "classes/_entities_player_.player.html#modelname",
@@ -85293,7 +85397,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10438,
+      id: 10450,
       kind: 262144,
       name: "serverClass",
       url: "classes/_entities_player_.player.html#serverclass",
@@ -85301,7 +85405,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10439,
+      id: 10451,
       kind: 262144,
       name: "handle",
       url: "classes/_entities_player_.player.html#handle",
@@ -85309,7 +85413,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10440,
+      id: 10452,
       kind: 1024,
       name: "index",
       url: "classes/_entities_player_.player.html#index",
@@ -85317,7 +85421,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10441,
+      id: 10453,
       kind: 1024,
       name: "classId",
       url: "classes/_entities_player_.player.html#classid",
@@ -85325,7 +85429,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10442,
+      id: 10454,
       kind: 1024,
       name: "serialNum",
       url: "classes/_entities_player_.player.html#serialnum",
@@ -85333,7 +85437,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10443,
+      id: 10455,
       kind: 1024,
       name: "props",
       url: "classes/_entities_player_.player.html#props",
@@ -85341,7 +85445,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10444,
+      id: 10456,
       kind: 1024,
       name: "deleting",
       url: "classes/_entities_player_.player.html#deleting",
@@ -85349,7 +85453,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10445,
+      id: 10457,
       kind: 1024,
       name: "_demo",
       url: "classes/_entities_player_.player.html#_demo",
@@ -85358,7 +85462,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10446,
+      id: 10458,
       kind: 2048,
       name: "getProp",
       url: "classes/_entities_player_.player.html#getprop",
@@ -85367,7 +85471,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10447,
+      id: 10459,
       kind: 2048,
       name: "getIndexedProps",
       url: "classes/_entities_player_.player.html#getindexedprops",
@@ -85376,7 +85480,7 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10448,
+      id: 10460,
       kind: 2048,
       name: "updateProp",
       url: "classes/_entities_player_.player.html#updateprop",
@@ -85385,14 +85489,14 @@ typedoc.search.data = {
       parent: '"entities/player".Player'
     },
     {
-      id: 10449,
+      id: 10461,
       kind: 1,
       name: '"entities/team"',
       url: "modules/_entities_team_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10450,
+      id: 10462,
       kind: 4,
       name: "TeamNumber",
       url: "enums/_entities_team_.teamnumber.html",
@@ -85400,7 +85504,7 @@ typedoc.search.data = {
       parent: '"entities/team"'
     },
     {
-      id: 10451,
+      id: 10463,
       kind: 16,
       name: "Unassigned",
       url: "enums/_entities_team_.teamnumber.html#unassigned",
@@ -85408,7 +85512,7 @@ typedoc.search.data = {
       parent: '"entities/team".TeamNumber'
     },
     {
-      id: 10452,
+      id: 10464,
       kind: 16,
       name: "Spectator",
       url: "enums/_entities_team_.teamnumber.html#spectator",
@@ -85416,7 +85520,7 @@ typedoc.search.data = {
       parent: '"entities/team".TeamNumber'
     },
     {
-      id: 10453,
+      id: 10465,
       kind: 16,
       name: "Terrorists",
       url: "enums/_entities_team_.teamnumber.html#terrorists",
@@ -85424,7 +85528,7 @@ typedoc.search.data = {
       parent: '"entities/team".TeamNumber'
     },
     {
-      id: 10454,
+      id: 10466,
       kind: 16,
       name: "CounterTerrorists",
       url: "enums/_entities_team_.teamnumber.html#counterterrorists",
@@ -85432,7 +85536,7 @@ typedoc.search.data = {
       parent: '"entities/team".TeamNumber'
     },
     {
-      id: 10455,
+      id: 10467,
       kind: 128,
       name: "Team",
       url: "classes/_entities_team_.team.html",
@@ -85440,7 +85544,7 @@ typedoc.search.data = {
       parent: '"entities/team"'
     },
     {
-      id: 10456,
+      id: 10468,
       kind: 262144,
       name: "members",
       url: "classes/_entities_team_.team.html#members",
@@ -85448,7 +85552,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10457,
+      id: 10469,
       kind: 262144,
       name: "teamNumber",
       url: "classes/_entities_team_.team.html#teamnumber",
@@ -85456,7 +85560,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10458,
+      id: 10470,
       kind: 262144,
       name: "clanName",
       url: "classes/_entities_team_.team.html#clanname",
@@ -85464,7 +85568,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10459,
+      id: 10471,
       kind: 262144,
       name: "teamName",
       url: "classes/_entities_team_.team.html#teamname",
@@ -85472,7 +85576,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10460,
+      id: 10472,
       kind: 262144,
       name: "score",
       url: "classes/_entities_team_.team.html#score",
@@ -85480,7 +85584,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10461,
+      id: 10473,
       kind: 262144,
       name: "scoreFirstHalf",
       url: "classes/_entities_team_.team.html#scorefirsthalf",
@@ -85488,7 +85592,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10462,
+      id: 10474,
       kind: 262144,
       name: "scoreSecondHalf",
       url: "classes/_entities_team_.team.html#scoresecondhalf",
@@ -85496,7 +85600,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10463,
+      id: 10475,
       kind: 262144,
       name: "flagImage",
       url: "classes/_entities_team_.team.html#flagimage",
@@ -85504,7 +85608,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10464,
+      id: 10476,
       kind: 262144,
       name: "logoImage",
       url: "classes/_entities_team_.team.html#logoimage",
@@ -85512,7 +85616,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10465,
+      id: 10477,
       kind: 262144,
       name: "serverClass",
       url: "classes/_entities_team_.team.html#serverclass",
@@ -85520,7 +85624,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10466,
+      id: 10478,
       kind: 262144,
       name: "handle",
       url: "classes/_entities_team_.team.html#handle",
@@ -85528,7 +85632,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10467,
+      id: 10479,
       kind: 1024,
       name: "index",
       url: "classes/_entities_team_.team.html#index",
@@ -85536,7 +85640,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10468,
+      id: 10480,
       kind: 1024,
       name: "classId",
       url: "classes/_entities_team_.team.html#classid",
@@ -85544,7 +85648,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10469,
+      id: 10481,
       kind: 1024,
       name: "serialNum",
       url: "classes/_entities_team_.team.html#serialnum",
@@ -85552,7 +85656,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10470,
+      id: 10482,
       kind: 1024,
       name: "props",
       url: "classes/_entities_team_.team.html#props",
@@ -85560,7 +85664,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10471,
+      id: 10483,
       kind: 1024,
       name: "deleting",
       url: "classes/_entities_team_.team.html#deleting",
@@ -85568,7 +85672,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10472,
+      id: 10484,
       kind: 1024,
       name: "_demo",
       url: "classes/_entities_team_.team.html#_demo",
@@ -85577,7 +85681,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10473,
+      id: 10485,
       kind: 512,
       name: "constructor",
       url: "classes/_entities_team_.team.html#constructor",
@@ -85585,7 +85689,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10474,
+      id: 10486,
       kind: 2048,
       name: "getProp",
       url: "classes/_entities_team_.team.html#getprop",
@@ -85594,7 +85698,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10475,
+      id: 10487,
       kind: 2048,
       name: "getIndexedProps",
       url: "classes/_entities_team_.team.html#getindexedprops",
@@ -85603,7 +85707,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10476,
+      id: 10488,
       kind: 2048,
       name: "updateProp",
       url: "classes/_entities_team_.team.html#updateprop",
@@ -85612,7 +85716,7 @@ typedoc.search.data = {
       parent: '"entities/team".Team'
     },
     {
-      id: 10477,
+      id: 10489,
       kind: 4194304,
       name: "TeamName",
       url: "modules/_entities_team_.html#teamname",
@@ -85620,14 +85724,14 @@ typedoc.search.data = {
       parent: '"entities/team"'
     },
     {
-      id: 10478,
+      id: 10490,
       kind: 1,
       name: '"entities/baseentity"',
       url: "modules/_entities_baseentity_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10479,
+      id: 10491,
       kind: 128,
       name: "BaseEntity",
       url: "classes/_entities_baseentity_.baseentity.html",
@@ -85636,7 +85740,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity"'
     },
     {
-      id: 10480,
+      id: 10492,
       kind: 262144,
       name: "position",
       url: "classes/_entities_baseentity_.baseentity.html#position",
@@ -85644,7 +85748,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10481,
+      id: 10493,
       kind: 262144,
       name: "moveParent",
       url: "classes/_entities_baseentity_.baseentity.html#moveparent",
@@ -85652,7 +85756,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10482,
+      id: 10494,
       kind: 262144,
       name: "owner",
       url: "classes/_entities_baseentity_.baseentity.html#owner",
@@ -85660,7 +85764,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10483,
+      id: 10495,
       kind: 262144,
       name: "teamNumber",
       url: "classes/_entities_baseentity_.baseentity.html#teamnumber",
@@ -85668,7 +85772,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10484,
+      id: 10496,
       kind: 262144,
       name: "team",
       url: "classes/_entities_baseentity_.baseentity.html#team",
@@ -85676,7 +85780,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10485,
+      id: 10497,
       kind: 262144,
       name: "modelName",
       url: "classes/_entities_baseentity_.baseentity.html#modelname",
@@ -85684,7 +85788,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10486,
+      id: 10498,
       kind: 262144,
       name: "serverClass",
       url: "classes/_entities_baseentity_.baseentity.html#serverclass",
@@ -85692,7 +85796,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10487,
+      id: 10499,
       kind: 262144,
       name: "handle",
       url: "classes/_entities_baseentity_.baseentity.html#handle",
@@ -85700,7 +85804,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10488,
+      id: 10500,
       kind: 1024,
       name: "index",
       url: "classes/_entities_baseentity_.baseentity.html#index",
@@ -85708,7 +85812,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10489,
+      id: 10501,
       kind: 1024,
       name: "classId",
       url: "classes/_entities_baseentity_.baseentity.html#classid",
@@ -85716,7 +85820,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10490,
+      id: 10502,
       kind: 1024,
       name: "serialNum",
       url: "classes/_entities_baseentity_.baseentity.html#serialnum",
@@ -85724,7 +85828,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10491,
+      id: 10503,
       kind: 1024,
       name: "props",
       url: "classes/_entities_baseentity_.baseentity.html#props",
@@ -85732,7 +85836,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10492,
+      id: 10504,
       kind: 1024,
       name: "deleting",
       url: "classes/_entities_baseentity_.baseentity.html#deleting",
@@ -85740,7 +85844,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10493,
+      id: 10505,
       kind: 1024,
       name: "_demo",
       url: "classes/_entities_baseentity_.baseentity.html#_demo",
@@ -85749,7 +85853,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10494,
+      id: 10506,
       kind: 512,
       name: "constructor",
       url: "classes/_entities_baseentity_.baseentity.html#constructor",
@@ -85757,7 +85861,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10495,
+      id: 10507,
       kind: 2048,
       name: "getProp",
       url: "classes/_entities_baseentity_.baseentity.html#getprop",
@@ -85766,7 +85870,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10496,
+      id: 10508,
       kind: 2048,
       name: "getIndexedProps",
       url: "classes/_entities_baseentity_.baseentity.html#getindexedprops",
@@ -85775,7 +85879,7 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10497,
+      id: 10509,
       kind: 2048,
       name: "updateProp",
       url: "classes/_entities_baseentity_.baseentity.html#updateprop",
@@ -85784,14 +85888,14 @@ typedoc.search.data = {
       parent: '"entities/baseentity".BaseEntity'
     },
     {
-      id: 10498,
+      id: 10510,
       kind: 1,
       name: '"entities/gamerules"',
       url: "modules/_entities_gamerules_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10499,
+      id: 10511,
       kind: 128,
       name: "GameRules",
       url: "classes/_entities_gamerules_.gamerules.html",
@@ -85799,7 +85903,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules"'
     },
     {
-      id: 10500,
+      id: 10512,
       kind: 262144,
       name: "isWarmup",
       url: "classes/_entities_gamerules_.gamerules.html#iswarmup",
@@ -85807,7 +85911,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10501,
+      id: 10513,
       kind: 262144,
       name: "roundNumber",
       url: "classes/_entities_gamerules_.gamerules.html#roundnumber",
@@ -85815,7 +85919,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10502,
+      id: 10514,
       kind: 262144,
       name: "roundsPlayed",
       url: "classes/_entities_gamerules_.gamerules.html#roundsplayed",
@@ -85823,7 +85927,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10503,
+      id: 10515,
       kind: 262144,
       name: "phase",
       url: "classes/_entities_gamerules_.gamerules.html#phase",
@@ -85831,7 +85935,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10504,
+      id: 10516,
       kind: 262144,
       name: "serverClass",
       url: "classes/_entities_gamerules_.gamerules.html#serverclass",
@@ -85839,7 +85943,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10505,
+      id: 10517,
       kind: 262144,
       name: "handle",
       url: "classes/_entities_gamerules_.gamerules.html#handle",
@@ -85847,7 +85951,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10506,
+      id: 10518,
       kind: 1024,
       name: "index",
       url: "classes/_entities_gamerules_.gamerules.html#index",
@@ -85855,7 +85959,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10507,
+      id: 10519,
       kind: 1024,
       name: "classId",
       url: "classes/_entities_gamerules_.gamerules.html#classid",
@@ -85863,7 +85967,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10508,
+      id: 10520,
       kind: 1024,
       name: "serialNum",
       url: "classes/_entities_gamerules_.gamerules.html#serialnum",
@@ -85871,7 +85975,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10509,
+      id: 10521,
       kind: 1024,
       name: "props",
       url: "classes/_entities_gamerules_.gamerules.html#props",
@@ -85879,7 +85983,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10510,
+      id: 10522,
       kind: 1024,
       name: "deleting",
       url: "classes/_entities_gamerules_.gamerules.html#deleting",
@@ -85887,7 +85991,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10511,
+      id: 10523,
       kind: 1024,
       name: "_demo",
       url: "classes/_entities_gamerules_.gamerules.html#_demo",
@@ -85896,7 +86000,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10512,
+      id: 10524,
       kind: 512,
       name: "constructor",
       url: "classes/_entities_gamerules_.gamerules.html#constructor",
@@ -85904,7 +86008,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10513,
+      id: 10525,
       kind: 2048,
       name: "getProp",
       url: "classes/_entities_gamerules_.gamerules.html#getprop",
@@ -85913,7 +86017,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10514,
+      id: 10526,
       kind: 2048,
       name: "getIndexedProps",
       url: "classes/_entities_gamerules_.gamerules.html#getindexedprops",
@@ -85922,7 +86026,7 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10515,
+      id: 10527,
       kind: 2048,
       name: "updateProp",
       url: "classes/_entities_gamerules_.gamerules.html#updateprop",
@@ -85931,14 +86035,14 @@ typedoc.search.data = {
       parent: '"entities/gamerules".GameRules'
     },
     {
-      id: 10516,
+      id: 10528,
       kind: 1,
       name: '"props"',
       url: "modules/_props_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10517,
+      id: 10529,
       kind: 4,
       name: "PropType",
       url: "enums/_props_.proptype.html",
@@ -85946,7 +86050,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10518,
+      id: 10530,
       kind: 16,
       name: "Int",
       url: "enums/_props_.proptype.html#int",
@@ -85954,7 +86058,7 @@ typedoc.search.data = {
       parent: '"props".PropType'
     },
     {
-      id: 10519,
+      id: 10531,
       kind: 16,
       name: "Float",
       url: "enums/_props_.proptype.html#float",
@@ -85962,7 +86066,7 @@ typedoc.search.data = {
       parent: '"props".PropType'
     },
     {
-      id: 10520,
+      id: 10532,
       kind: 16,
       name: "Vector",
       url: "enums/_props_.proptype.html#vector",
@@ -85970,7 +86074,7 @@ typedoc.search.data = {
       parent: '"props".PropType'
     },
     {
-      id: 10521,
+      id: 10533,
       kind: 16,
       name: "VectorXY",
       url: "enums/_props_.proptype.html#vectorxy",
@@ -85978,7 +86082,7 @@ typedoc.search.data = {
       parent: '"props".PropType'
     },
     {
-      id: 10522,
+      id: 10534,
       kind: 16,
       name: "String",
       url: "enums/_props_.proptype.html#string",
@@ -85986,7 +86090,7 @@ typedoc.search.data = {
       parent: '"props".PropType'
     },
     {
-      id: 10523,
+      id: 10535,
       kind: 16,
       name: "Array",
       url: "enums/_props_.proptype.html#array",
@@ -85994,7 +86098,7 @@ typedoc.search.data = {
       parent: '"props".PropType'
     },
     {
-      id: 10524,
+      id: 10536,
       kind: 16,
       name: "DataTable",
       url: "enums/_props_.proptype.html#datatable",
@@ -86002,7 +86106,7 @@ typedoc.search.data = {
       parent: '"props".PropType'
     },
     {
-      id: 10525,
+      id: 10537,
       kind: 16,
       name: "Int64",
       url: "enums/_props_.proptype.html#int64",
@@ -86010,7 +86114,7 @@ typedoc.search.data = {
       parent: '"props".PropType'
     },
     {
-      id: 10526,
+      id: 10538,
       kind: 32,
       name: "SPROP_UNSIGNED",
       url: "modules/_props_.html#sprop_unsigned",
@@ -86018,7 +86122,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10527,
+      id: 10539,
       kind: 32,
       name: "SPROP_COORD",
       url: "modules/_props_.html#sprop_coord",
@@ -86026,7 +86130,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10528,
+      id: 10540,
       kind: 32,
       name: "SPROP_NOSCALE",
       url: "modules/_props_.html#sprop_noscale",
@@ -86034,7 +86138,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10529,
+      id: 10541,
       kind: 32,
       name: "SPROP_ROUNDDOWN",
       url: "modules/_props_.html#sprop_rounddown",
@@ -86042,7 +86146,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10530,
+      id: 10542,
       kind: 32,
       name: "SPROP_ROUNDUP",
       url: "modules/_props_.html#sprop_roundup",
@@ -86050,7 +86154,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10531,
+      id: 10543,
       kind: 32,
       name: "SPROP_NORMAL",
       url: "modules/_props_.html#sprop_normal",
@@ -86058,7 +86162,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10532,
+      id: 10544,
       kind: 32,
       name: "SPROP_EXCLUDE",
       url: "modules/_props_.html#sprop_exclude",
@@ -86066,7 +86170,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10533,
+      id: 10545,
       kind: 32,
       name: "SPROP_XYZE",
       url: "modules/_props_.html#sprop_xyze",
@@ -86074,7 +86178,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10534,
+      id: 10546,
       kind: 32,
       name: "SPROP_INSIDEARRAY",
       url: "modules/_props_.html#sprop_insidearray",
@@ -86082,7 +86186,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10535,
+      id: 10547,
       kind: 32,
       name: "SPROP_PROXY_ALWAYS_YES",
       url: "modules/_props_.html#sprop_proxy_always_yes",
@@ -86090,7 +86194,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10536,
+      id: 10548,
       kind: 32,
       name: "SPROP_IS_A_VECTOR_ELEM",
       url: "modules/_props_.html#sprop_is_a_vector_elem",
@@ -86098,7 +86202,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10537,
+      id: 10549,
       kind: 32,
       name: "SPROP_COLLAPSIBLE",
       url: "modules/_props_.html#sprop_collapsible",
@@ -86106,7 +86210,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10538,
+      id: 10550,
       kind: 32,
       name: "SPROP_COORD_MP",
       url: "modules/_props_.html#sprop_coord_mp",
@@ -86114,7 +86218,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10539,
+      id: 10551,
       kind: 32,
       name: "SPROP_COORD_MP_LOWPRECISION",
       url: "modules/_props_.html#sprop_coord_mp_lowprecision",
@@ -86122,7 +86226,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10540,
+      id: 10552,
       kind: 32,
       name: "SPROP_COORD_MP_INTEGRAL",
       url: "modules/_props_.html#sprop_coord_mp_integral",
@@ -86130,7 +86234,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10541,
+      id: 10553,
       kind: 32,
       name: "SPROP_CELL_COORD",
       url: "modules/_props_.html#sprop_cell_coord",
@@ -86138,7 +86242,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10542,
+      id: 10554,
       kind: 32,
       name: "SPROP_CELL_COORD_LOWPRECISION",
       url: "modules/_props_.html#sprop_cell_coord_lowprecision",
@@ -86146,7 +86250,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10543,
+      id: 10555,
       kind: 32,
       name: "SPROP_CELL_COORD_INTEGRAL",
       url: "modules/_props_.html#sprop_cell_coord_integral",
@@ -86154,7 +86258,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10544,
+      id: 10556,
       kind: 32,
       name: "SPROP_CHANGES_OFTEN",
       url: "modules/_props_.html#sprop_changes_often",
@@ -86162,7 +86266,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10545,
+      id: 10557,
       kind: 32,
       name: "SPROP_VARINT",
       url: "modules/_props_.html#sprop_varint",
@@ -86170,7 +86274,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10546,
+      id: 10558,
       kind: 32,
       name: "DT_MAX_STRING_BITS",
       url: "modules/_props_.html#dt_max_string_bits",
@@ -86179,7 +86283,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10547,
+      id: 10559,
       kind: 4194304,
       name: "PropPrimitive",
       url: "modules/_props_.html#propprimitive",
@@ -86187,7 +86291,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10548,
+      id: 10560,
       kind: 4194304,
       name: "PropValue",
       url: "modules/_props_.html#propvalue",
@@ -86195,7 +86299,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10549,
+      id: 10561,
       kind: 64,
       name: "makeDecoder",
       url: "modules/_props_.html#makedecoder",
@@ -86203,7 +86307,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10550,
+      id: 10562,
       kind: 64,
       name: "makeValueDecoder",
       url: "modules/_props_.html#makevaluedecoder",
@@ -86212,7 +86316,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10551,
+      id: 10563,
       kind: 64,
       name: "makeIntDecoder",
       url: "modules/_props_.html#makeintdecoder",
@@ -86221,7 +86325,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10552,
+      id: 10564,
       kind: 64,
       name: "makeSpecialFloatDecoder",
       url: "modules/_props_.html#makespecialfloatdecoder",
@@ -86230,7 +86334,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10553,
+      id: 10565,
       kind: 64,
       name: "makeFloatDecoder",
       url: "modules/_props_.html#makefloatdecoder",
@@ -86239,7 +86343,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10554,
+      id: 10566,
       kind: 64,
       name: "makeVectorDecoder",
       url: "modules/_props_.html#makevectordecoder",
@@ -86248,7 +86352,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10555,
+      id: 10567,
       kind: 64,
       name: "makeVectorXYDecoder",
       url: "modules/_props_.html#makevectorxydecoder",
@@ -86257,7 +86361,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10556,
+      id: 10568,
       kind: 64,
       name: "makeStringDecoder",
       url: "modules/_props_.html#makestringdecoder",
@@ -86266,7 +86370,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10557,
+      id: 10569,
       kind: 64,
       name: "makeInt64Decoder",
       url: "modules/_props_.html#makeint64decoder",
@@ -86275,7 +86379,7 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10558,
+      id: 10570,
       kind: 64,
       name: "makeArrayDecoder",
       url: "modules/_props_.html#makearraydecoder",
@@ -86284,14 +86388,14 @@ typedoc.search.data = {
       parent: '"props"'
     },
     {
-      id: 10559,
+      id: 10571,
       kind: 1,
       name: '"entities"',
       url: "modules/_entities_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10560,
+      id: 10572,
       kind: 256,
       name: "NetworkableConstructor",
       url: "interfaces/_entities_.networkableconstructor.html",
@@ -86300,7 +86404,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10561,
+      id: 10573,
       kind: 512,
       name: "constructor",
       url: "interfaces/_entities_.networkableconstructor.html#constructor",
@@ -86308,7 +86412,7 @@ typedoc.search.data = {
       parent: '"entities".NetworkableConstructor'
     },
     {
-      id: 10562,
+      id: 10574,
       kind: 256,
       name: "UnknownEntityProps",
       url: "interfaces/_entities_.unknownentityprops.html",
@@ -86316,7 +86420,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10563,
+      id: 10575,
       kind: 256,
       name: "IFlattenedSendProp",
       url: "interfaces/_entities_.iflattenedsendprop.html",
@@ -86324,7 +86428,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10564,
+      id: 10576,
       kind: 1024,
       name: "prop",
       url: "interfaces/_entities_.iflattenedsendprop.html#prop",
@@ -86332,7 +86436,7 @@ typedoc.search.data = {
       parent: '"entities".IFlattenedSendProp'
     },
     {
-      id: 10565,
+      id: 10577,
       kind: 1024,
       name: "decode",
       url: "interfaces/_entities_.iflattenedsendprop.html#decode",
@@ -86340,7 +86444,7 @@ typedoc.search.data = {
       parent: '"entities".IFlattenedSendProp'
     },
     {
-      id: 10566,
+      id: 10578,
       kind: 65536,
       name: "__type",
       url: "interfaces/_entities_.iflattenedsendprop.html#decode.__type",
@@ -86349,7 +86453,7 @@ typedoc.search.data = {
       parent: '"entities".IFlattenedSendProp.decode'
     },
     {
-      id: 10567,
+      id: 10579,
       kind: 1024,
       name: "table",
       url: "interfaces/_entities_.iflattenedsendprop.html#table",
@@ -86357,7 +86461,7 @@ typedoc.search.data = {
       parent: '"entities".IFlattenedSendProp'
     },
     {
-      id: 10568,
+      id: 10580,
       kind: 1024,
       name: "collapsible",
       url: "interfaces/_entities_.iflattenedsendprop.html#collapsible",
@@ -86365,7 +86469,7 @@ typedoc.search.data = {
       parent: '"entities".IFlattenedSendProp'
     },
     {
-      id: 10569,
+      id: 10581,
       kind: 256,
       name: "IServerClass",
       url: "interfaces/_entities_.iserverclass.html",
@@ -86373,7 +86477,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10570,
+      id: 10582,
       kind: 1024,
       name: "name",
       url: "interfaces/_entities_.iserverclass.html#name",
@@ -86381,7 +86485,7 @@ typedoc.search.data = {
       parent: '"entities".IServerClass'
     },
     {
-      id: 10571,
+      id: 10583,
       kind: 1024,
       name: "dtName",
       url: "interfaces/_entities_.iserverclass.html#dtname",
@@ -86389,7 +86493,7 @@ typedoc.search.data = {
       parent: '"entities".IServerClass'
     },
     {
-      id: 10572,
+      id: 10584,
       kind: 1024,
       name: "dataTable",
       url: "interfaces/_entities_.iserverclass.html#datatable",
@@ -86397,7 +86501,7 @@ typedoc.search.data = {
       parent: '"entities".IServerClass'
     },
     {
-      id: 10573,
+      id: 10585,
       kind: 1024,
       name: "flattenedProps",
       url: "interfaces/_entities_.iserverclass.html#flattenedprops",
@@ -86405,7 +86509,7 @@ typedoc.search.data = {
       parent: '"entities".IServerClass'
     },
     {
-      id: 10574,
+      id: 10586,
       kind: 256,
       name: "IPropUpdate",
       url: "interfaces/_entities_.ipropupdate.html",
@@ -86413,7 +86517,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10575,
+      id: 10587,
       kind: 1024,
       name: "prop",
       url: "interfaces/_entities_.ipropupdate.html#prop",
@@ -86421,7 +86525,7 @@ typedoc.search.data = {
       parent: '"entities".IPropUpdate'
     },
     {
-      id: 10576,
+      id: 10588,
       kind: 1024,
       name: "value",
       url: "interfaces/_entities_.ipropupdate.html#value",
@@ -86429,7 +86533,7 @@ typedoc.search.data = {
       parent: '"entities".IPropUpdate'
     },
     {
-      id: 10577,
+      id: 10589,
       kind: 256,
       name: "IBaselineUpdateEvent",
       url: "interfaces/_entities_.ibaselineupdateevent.html",
@@ -86437,7 +86541,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10578,
+      id: 10590,
       kind: 1024,
       name: "classId",
       url: "interfaces/_entities_.ibaselineupdateevent.html#classid",
@@ -86445,7 +86549,7 @@ typedoc.search.data = {
       parent: '"entities".IBaselineUpdateEvent'
     },
     {
-      id: 10579,
+      id: 10591,
       kind: 1024,
       name: "serverClass",
       url: "interfaces/_entities_.ibaselineupdateevent.html#serverclass",
@@ -86453,7 +86557,7 @@ typedoc.search.data = {
       parent: '"entities".IBaselineUpdateEvent'
     },
     {
-      id: 10580,
+      id: 10592,
       kind: 1024,
       name: "baseline",
       url: "interfaces/_entities_.ibaselineupdateevent.html#baseline",
@@ -86461,7 +86565,7 @@ typedoc.search.data = {
       parent: '"entities".IBaselineUpdateEvent'
     },
     {
-      id: 10581,
+      id: 10593,
       kind: 256,
       name: "IEntityCreationEvent",
       url: "interfaces/_entities_.ientitycreationevent.html",
@@ -86469,7 +86573,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10582,
+      id: 10594,
       kind: 1024,
       name: "entity",
       url: "interfaces/_entities_.ientitycreationevent.html#entity",
@@ -86477,7 +86581,7 @@ typedoc.search.data = {
       parent: '"entities".IEntityCreationEvent'
     },
     {
-      id: 10583,
+      id: 10595,
       kind: 256,
       name: "IEntityBeforeRemoveEvent",
       url: "interfaces/_entities_.ientitybeforeremoveevent.html",
@@ -86485,7 +86589,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10584,
+      id: 10596,
       kind: 1024,
       name: "entity",
       url: "interfaces/_entities_.ientitybeforeremoveevent.html#entity",
@@ -86493,7 +86597,7 @@ typedoc.search.data = {
       parent: '"entities".IEntityBeforeRemoveEvent'
     },
     {
-      id: 10585,
+      id: 10597,
       kind: 1024,
       name: "immediate",
       url: "interfaces/_entities_.ientitybeforeremoveevent.html#immediate",
@@ -86501,7 +86605,7 @@ typedoc.search.data = {
       parent: '"entities".IEntityBeforeRemoveEvent'
     },
     {
-      id: 10586,
+      id: 10598,
       kind: 256,
       name: "IEntityRemoveEvent",
       url: "interfaces/_entities_.ientityremoveevent.html",
@@ -86509,7 +86613,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10587,
+      id: 10599,
       kind: 1024,
       name: "index",
       url: "interfaces/_entities_.ientityremoveevent.html#index",
@@ -86517,7 +86621,7 @@ typedoc.search.data = {
       parent: '"entities".IEntityRemoveEvent'
     },
     {
-      id: 10588,
+      id: 10600,
       kind: 256,
       name: "IEntityChangeEvent",
       url: "interfaces/_entities_.ientitychangeevent.html",
@@ -86525,7 +86629,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10589,
+      id: 10601,
       kind: 1024,
       name: "entity",
       url: "interfaces/_entities_.ientitychangeevent.html#entity",
@@ -86533,7 +86637,7 @@ typedoc.search.data = {
       parent: '"entities".IEntityChangeEvent'
     },
     {
-      id: 10590,
+      id: 10602,
       kind: 1024,
       name: "tableName",
       url: "interfaces/_entities_.ientitychangeevent.html#tablename",
@@ -86541,7 +86645,7 @@ typedoc.search.data = {
       parent: '"entities".IEntityChangeEvent'
     },
     {
-      id: 10591,
+      id: 10603,
       kind: 1024,
       name: "varName",
       url: "interfaces/_entities_.ientitychangeevent.html#varname",
@@ -86549,7 +86653,7 @@ typedoc.search.data = {
       parent: '"entities".IEntityChangeEvent'
     },
     {
-      id: 10592,
+      id: 10604,
       kind: 1024,
       name: "oldValue",
       url: "interfaces/_entities_.ientitychangeevent.html#oldvalue",
@@ -86557,7 +86661,7 @@ typedoc.search.data = {
       parent: '"entities".IEntityChangeEvent'
     },
     {
-      id: 10593,
+      id: 10605,
       kind: 1024,
       name: "newValue",
       url: "interfaces/_entities_.ientitychangeevent.html#newvalue",
@@ -86565,7 +86669,7 @@ typedoc.search.data = {
       parent: '"entities".IEntityChangeEvent'
     },
     {
-      id: 10594,
+      id: 10606,
       kind: 256,
       name: "ITempEntEvent",
       url: "interfaces/_entities_.itempentevent.html",
@@ -86573,7 +86677,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10595,
+      id: 10607,
       kind: 1024,
       name: "delay",
       url: "interfaces/_entities_.itempentevent.html#delay",
@@ -86581,7 +86685,7 @@ typedoc.search.data = {
       parent: '"entities".ITempEntEvent'
     },
     {
-      id: 10596,
+      id: 10608,
       kind: 1024,
       name: "classId",
       url: "interfaces/_entities_.itempentevent.html#classid",
@@ -86589,7 +86693,7 @@ typedoc.search.data = {
       parent: '"entities".ITempEntEvent'
     },
     {
-      id: 10597,
+      id: 10609,
       kind: 1024,
       name: "serverClass",
       url: "interfaces/_entities_.itempentevent.html#serverclass",
@@ -86597,7 +86701,7 @@ typedoc.search.data = {
       parent: '"entities".ITempEntEvent'
     },
     {
-      id: 10598,
+      id: 10610,
       kind: 1024,
       name: "props",
       url: "interfaces/_entities_.itempentevent.html#props",
@@ -86605,7 +86709,7 @@ typedoc.search.data = {
       parent: '"entities".ITempEntEvent'
     },
     {
-      id: 10599,
+      id: 10611,
       kind: 128,
       name: "Entities",
       url: "classes/_entities_.entities.html",
@@ -86613,7 +86717,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10600,
+      id: 10612,
       kind: 2048,
       name: "on",
       url: "classes/_entities_.entities.html#on",
@@ -86621,7 +86725,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10601,
+      id: 10613,
       kind: 2048,
       name: "emit",
       url: "classes/_entities_.entities.html#emit",
@@ -86629,7 +86733,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10602,
+      id: 10614,
       kind: 262144,
       name: "playerResource",
       url: "classes/_entities_.entities.html#playerresource",
@@ -86637,7 +86741,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10603,
+      id: 10615,
       kind: 262144,
       name: "gameRules",
       url: "classes/_entities_.entities.html#gamerules",
@@ -86645,7 +86749,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10604,
+      id: 10616,
       kind: 262144,
       name: "teams",
       url: "classes/_entities_.entities.html#teams",
@@ -86653,7 +86757,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10605,
+      id: 10617,
       kind: 262144,
       name: "players",
       url: "classes/_entities_.entities.html#players",
@@ -86661,7 +86765,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10606,
+      id: 10618,
       kind: 262144,
       name: "weapons",
       url: "classes/_entities_.entities.html#weapons",
@@ -86669,7 +86773,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10607,
+      id: 10619,
       kind: 1024,
       name: "dataTables",
       url: "classes/_entities_.entities.html#datatables",
@@ -86677,7 +86781,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10608,
+      id: 10620,
       kind: 1024,
       name: "serverClasses",
       url: "classes/_entities_.entities.html#serverclasses",
@@ -86685,7 +86789,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10609,
+      id: 10621,
       kind: 1024,
       name: "entities",
       url: "classes/_entities_.entities.html#entities",
@@ -86693,7 +86797,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10610,
+      id: 10622,
       kind: 1024,
       name: "markedForDeletion",
       url: "classes/_entities_.entities.html#markedfordeletion",
@@ -86701,7 +86805,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10611,
+      id: 10623,
       kind: 1024,
       name: "instanceBaselines",
       url: "classes/_entities_.entities.html#instancebaselines",
@@ -86709,7 +86813,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10612,
+      id: 10624,
       kind: 65536,
       name: "__type",
       url: "classes/_entities_.entities.html#instancebaselines.__type-1",
@@ -86718,7 +86822,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.instanceBaselines'
     },
     {
-      id: 10613,
+      id: 10625,
       kind: 1024,
       name: "pendingBaselines",
       url: "classes/_entities_.entities.html#pendingbaselines",
@@ -86726,7 +86830,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10614,
+      id: 10626,
       kind: 65536,
       name: "__type",
       url: "classes/_entities_.entities.html#pendingbaselines.__type-2",
@@ -86735,7 +86839,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.pendingBaselines'
     },
     {
-      id: 10615,
+      id: 10627,
       kind: 1024,
       name: "serverClassBits",
       url: "classes/_entities_.entities.html#serverclassbits",
@@ -86743,7 +86847,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10616,
+      id: 10628,
       kind: 2097152,
       name: "tableClassMap",
       url: "classes/_entities_.entities.html#tableclassmap",
@@ -86751,7 +86855,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10617,
+      id: 10629,
       kind: 32,
       name: "DT_CSPlayer",
       url: "classes/_entities_.entities.html#tableclassmap.dt_csplayer",
@@ -86759,7 +86863,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.tableClassMap'
     },
     {
-      id: 10618,
+      id: 10630,
       kind: 32,
       name: "DT_Team",
       url: "classes/_entities_.entities.html#tableclassmap.dt_team",
@@ -86767,7 +86871,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.tableClassMap'
     },
     {
-      id: 10619,
+      id: 10631,
       kind: 32,
       name: "DT_CSGameRules",
       url: "classes/_entities_.entities.html#tableclassmap.dt_csgamerules",
@@ -86775,7 +86879,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.tableClassMap'
     },
     {
-      id: 10620,
+      id: 10632,
       kind: 32,
       name: "DT_WeaponCSBase",
       url: "classes/_entities_.entities.html#tableclassmap.dt_weaponcsbase",
@@ -86783,7 +86887,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.tableClassMap'
     },
     {
-      id: 10621,
+      id: 10633,
       kind: 32,
       name: "DT_BaseEntity",
       url: "classes/_entities_.entities.html#tableclassmap.dt_baseentity",
@@ -86791,7 +86895,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.tableClassMap'
     },
     {
-      id: 10622,
+      id: 10634,
       kind: 1024,
       name: "_demo",
       url: "classes/_entities_.entities.html#_demo",
@@ -86799,7 +86903,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10623,
+      id: 10635,
       kind: 1024,
       name: "_singletonEnts",
       url: "classes/_entities_.entities.html#_singletonents",
@@ -86807,7 +86911,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10624,
+      id: 10636,
       kind: 65536,
       name: "__type",
       url: "classes/_entities_.entities.html#_singletonents.__type",
@@ -86816,7 +86920,7 @@ typedoc.search.data = {
       parent: '"entities".Entities._singletonEnts'
     },
     {
-      id: 10625,
+      id: 10637,
       kind: 1024,
       name: "_currentServerTick",
       url: "classes/_entities_.entities.html#_currentservertick",
@@ -86824,7 +86928,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10626,
+      id: 10638,
       kind: 2048,
       name: "listen",
       url: "classes/_entities_.entities.html#listen",
@@ -86832,7 +86936,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10627,
+      id: 10639,
       kind: 2048,
       name: "isHandleSet",
       url: "classes/_entities_.entities.html#ishandleset",
@@ -86840,7 +86944,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10628,
+      id: 10640,
       kind: 2048,
       name: "getByHandle",
       url: "classes/_entities_.entities.html#getbyhandle",
@@ -86848,7 +86952,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10629,
+      id: 10641,
       kind: 2048,
       name: "getByUserId",
       url: "classes/_entities_.entities.html#getbyuserid",
@@ -86856,7 +86960,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10630,
+      id: 10642,
       kind: 2048,
       name: "getSingleton",
       url: "classes/_entities_.entities.html#getsingleton",
@@ -86864,7 +86968,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10631,
+      id: 10643,
       kind: 2048,
       name: "findAllWithTable",
       url: "classes/_entities_.entities.html#findallwithtable",
@@ -86872,7 +86976,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10632,
+      id: 10644,
       kind: 2048,
       name: "findAllWithClass",
       url: "classes/_entities_.entities.html#findallwithclass",
@@ -86880,7 +86984,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10633,
+      id: 10645,
       kind: 2048,
       name: "handleDataTables",
       url: "classes/_entities_.entities.html#handledatatables",
@@ -86888,7 +86992,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10634,
+      id: 10646,
       kind: 2048,
       name: "_gatherExcludes",
       url: "classes/_entities_.entities.html#_gatherexcludes",
@@ -86896,7 +87000,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10635,
+      id: 10647,
       kind: 2048,
       name: "_gatherProps",
       url: "classes/_entities_.entities.html#_gatherprops",
@@ -86904,7 +87008,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10636,
+      id: 10648,
       kind: 2048,
       name: "_flattenDataTable",
       url: "classes/_entities_.entities.html#_flattendatatable",
@@ -86912,7 +87016,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10637,
+      id: 10649,
       kind: 2048,
       name: "_findTableByName",
       url: "classes/_entities_.entities.html#_findtablebyname",
@@ -86920,7 +87024,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10638,
+      id: 10650,
       kind: 2048,
       name: "_addEntity",
       url: "classes/_entities_.entities.html#_addentity",
@@ -86928,7 +87032,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10639,
+      id: 10651,
       kind: 2048,
       name: "_removeEntity",
       url: "classes/_entities_.entities.html#_removeentity",
@@ -86936,7 +87040,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10640,
+      id: 10652,
       kind: 2048,
       name: "_parseEntityUpdate",
       url: "classes/_entities_.entities.html#_parseentityupdate",
@@ -86944,7 +87048,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10641,
+      id: 10653,
       kind: 2048,
       name: "_readNewEntity",
       url: "classes/_entities_.entities.html#_readnewentity",
@@ -86952,7 +87056,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10642,
+      id: 10654,
       kind: 2048,
       name: "_updatesToPropObject",
       url: "classes/_entities_.entities.html#_updatestopropobject",
@@ -86960,7 +87064,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10643,
+      id: 10655,
       kind: 2048,
       name: "_handleTempEntities",
       url: "classes/_entities_.entities.html#_handletempentities",
@@ -86968,7 +87072,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10644,
+      id: 10656,
       kind: 2048,
       name: "_handlePacketEntities",
       url: "classes/_entities_.entities.html#_handlepacketentities",
@@ -86976,7 +87080,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10645,
+      id: 10657,
       kind: 2048,
       name: "_parseInstanceBaseline",
       url: "classes/_entities_.entities.html#_parseinstancebaseline",
@@ -86984,7 +87088,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10646,
+      id: 10658,
       kind: 2048,
       name: "_handleStringTableUpdate",
       url: "classes/_entities_.entities.html#_handlestringtableupdate",
@@ -86992,7 +87096,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10647,
+      id: 10659,
       kind: 2048,
       name: "addListener",
       url: "classes/_entities_.entities.html#addlistener",
@@ -87000,7 +87104,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10648,
+      id: 10660,
       kind: 2048,
       name: "once",
       url: "classes/_entities_.entities.html#once",
@@ -87008,7 +87112,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10649,
+      id: 10661,
       kind: 2048,
       name: "removeListener",
       url: "classes/_entities_.entities.html#removelistener",
@@ -87016,7 +87120,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10650,
+      id: 10662,
       kind: 2048,
       name: "off",
       url: "classes/_entities_.entities.html#off",
@@ -87024,7 +87128,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10651,
+      id: 10663,
       kind: 2048,
       name: "removeAllListeners",
       url: "classes/_entities_.entities.html#removealllisteners",
@@ -87032,7 +87136,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10652,
+      id: 10664,
       kind: 2048,
       name: "setMaxListeners",
       url: "classes/_entities_.entities.html#setmaxlisteners",
@@ -87040,7 +87144,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10653,
+      id: 10665,
       kind: 2048,
       name: "getMaxListeners",
       url: "classes/_entities_.entities.html#getmaxlisteners",
@@ -87048,7 +87152,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10654,
+      id: 10666,
       kind: 2048,
       name: "listeners",
       url: "classes/_entities_.entities.html#listeners",
@@ -87056,7 +87160,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10655,
+      id: 10667,
       kind: 2048,
       name: "rawListeners",
       url: "classes/_entities_.entities.html#rawlisteners",
@@ -87064,7 +87168,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10656,
+      id: 10668,
       kind: 2048,
       name: "listenerCount",
       url: "classes/_entities_.entities.html#listenercount",
@@ -87072,7 +87176,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10657,
+      id: 10669,
       kind: 2048,
       name: "prependListener",
       url: "classes/_entities_.entities.html#prependlistener",
@@ -87080,7 +87184,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10658,
+      id: 10670,
       kind: 2048,
       name: "prependOnceListener",
       url: "classes/_entities_.entities.html#prependoncelistener",
@@ -87088,7 +87192,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10659,
+      id: 10671,
       kind: 2048,
       name: "eventNames",
       url: "classes/_entities_.entities.html#eventnames",
@@ -87096,7 +87200,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10660,
+      id: 10672,
       kind: 128,
       name: "EventEmitter",
       url: "classes/_entities_.entities.eventemitter.html",
@@ -87104,7 +87208,7 @@ typedoc.search.data = {
       parent: '"entities".Entities'
     },
     {
-      id: 10661,
+      id: 10673,
       kind: 2048,
       name: "listenerCount",
       url: "classes/_entities_.entities.eventemitter.html#listenercount-1",
@@ -87112,7 +87216,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10662,
+      id: 10674,
       kind: 1024,
       name: "defaultMaxListeners",
       url: "classes/_entities_.entities.eventemitter.html#defaultmaxlisteners",
@@ -87120,7 +87224,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10663,
+      id: 10675,
       kind: 2048,
       name: "addListener",
       url: "classes/_entities_.entities.eventemitter.html#addlistener",
@@ -87128,7 +87232,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10664,
+      id: 10676,
       kind: 2048,
       name: "on",
       url: "classes/_entities_.entities.eventemitter.html#on",
@@ -87136,7 +87240,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10665,
+      id: 10677,
       kind: 2048,
       name: "once",
       url: "classes/_entities_.entities.eventemitter.html#once",
@@ -87144,7 +87248,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10666,
+      id: 10678,
       kind: 2048,
       name: "prependListener",
       url: "classes/_entities_.entities.eventemitter.html#prependlistener",
@@ -87152,7 +87256,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10667,
+      id: 10679,
       kind: 2048,
       name: "prependOnceListener",
       url: "classes/_entities_.entities.eventemitter.html#prependoncelistener",
@@ -87160,7 +87264,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10668,
+      id: 10680,
       kind: 2048,
       name: "removeListener",
       url: "classes/_entities_.entities.eventemitter.html#removelistener",
@@ -87168,7 +87272,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10669,
+      id: 10681,
       kind: 2048,
       name: "off",
       url: "classes/_entities_.entities.eventemitter.html#off",
@@ -87176,7 +87280,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10670,
+      id: 10682,
       kind: 2048,
       name: "removeAllListeners",
       url: "classes/_entities_.entities.eventemitter.html#removealllisteners",
@@ -87184,7 +87288,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10671,
+      id: 10683,
       kind: 2048,
       name: "setMaxListeners",
       url: "classes/_entities_.entities.eventemitter.html#setmaxlisteners",
@@ -87192,7 +87296,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10672,
+      id: 10684,
       kind: 2048,
       name: "getMaxListeners",
       url: "classes/_entities_.entities.eventemitter.html#getmaxlisteners",
@@ -87200,7 +87304,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10673,
+      id: 10685,
       kind: 2048,
       name: "listeners",
       url: "classes/_entities_.entities.eventemitter.html#listeners",
@@ -87208,7 +87312,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10674,
+      id: 10686,
       kind: 2048,
       name: "rawListeners",
       url: "classes/_entities_.entities.eventemitter.html#rawlisteners",
@@ -87216,7 +87320,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10675,
+      id: 10687,
       kind: 2048,
       name: "emit",
       url: "classes/_entities_.entities.eventemitter.html#emit",
@@ -87224,7 +87328,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10676,
+      id: 10688,
       kind: 2048,
       name: "eventNames",
       url: "classes/_entities_.entities.eventemitter.html#eventnames",
@@ -87232,7 +87336,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10677,
+      id: 10689,
       kind: 2048,
       name: "listenerCount",
       url: "classes/_entities_.entities.eventemitter.html#listenercount",
@@ -87240,7 +87344,7 @@ typedoc.search.data = {
       parent: '"entities".Entities.EventEmitter'
     },
     {
-      id: 10678,
+      id: 10690,
       kind: 4194304,
       name: "IDataTable",
       url: "modules/_entities_.html#idatatable",
@@ -87248,7 +87352,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10679,
+      id: 10691,
       kind: 4194304,
       name: "ISendProp",
       url: "modules/_entities_.html#isendprop",
@@ -87256,7 +87360,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10680,
+      id: 10692,
       kind: 64,
       name: "isPropExcluded",
       url: "modules/_entities_.html#ispropexcluded",
@@ -87265,7 +87369,7 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10681,
+      id: 10693,
       kind: 64,
       name: "readFieldIndex",
       url: "modules/_entities_.html#readfieldindex",
@@ -87274,14 +87378,14 @@ typedoc.search.data = {
       parent: '"entities"'
     },
     {
-      id: 10682,
+      id: 10694,
       kind: 1,
       name: '"gameevent"',
       url: "modules/_gameevent_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10683,
+      id: 10695,
       kind: 128,
       name: "GameEvent",
       url: "classes/_gameevent_.gameevent.html",
@@ -87289,7 +87393,7 @@ typedoc.search.data = {
       parent: '"gameevent"'
     },
     {
-      id: 10684,
+      id: 10696,
       kind: 1024,
       name: "name",
       url: "classes/_gameevent_.gameevent.html#name",
@@ -87297,7 +87401,7 @@ typedoc.search.data = {
       parent: '"gameevent".GameEvent'
     },
     {
-      id: 10685,
+      id: 10697,
       kind: 1024,
       name: "id",
       url: "classes/_gameevent_.gameevent.html#id",
@@ -87305,7 +87409,7 @@ typedoc.search.data = {
       parent: '"gameevent".GameEvent'
     },
     {
-      id: 10686,
+      id: 10698,
       kind: 1024,
       name: "keyNames",
       url: "classes/_gameevent_.gameevent.html#keynames",
@@ -87313,7 +87417,7 @@ typedoc.search.data = {
       parent: '"gameevent".GameEvent'
     },
     {
-      id: 10687,
+      id: 10699,
       kind: 512,
       name: "constructor",
       url: "classes/_gameevent_.gameevent.html#constructor",
@@ -87321,7 +87425,7 @@ typedoc.search.data = {
       parent: '"gameevent".GameEvent'
     },
     {
-      id: 10688,
+      id: 10700,
       kind: 2048,
       name: "messageToObject",
       url: "classes/_gameevent_.gameevent.html#messagetoobject",
@@ -87329,14 +87433,14 @@ typedoc.search.data = {
       parent: '"gameevent".GameEvent'
     },
     {
-      id: 10689,
+      id: 10701,
       kind: 1,
       name: '"gameevents"',
       url: "modules/_gameevents_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10690,
+      id: 10702,
       kind: 256,
       name: "GameEventEvent",
       url: "interfaces/_gameevents_.gameeventevent.html",
@@ -87345,7 +87449,7 @@ typedoc.search.data = {
       parent: '"gameevents"'
     },
     {
-      id: 10691,
+      id: 10703,
       kind: 1024,
       name: "name",
       url: "interfaces/_gameevents_.gameeventevent.html#name",
@@ -87354,7 +87458,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEventEvent'
     },
     {
-      id: 10692,
+      id: 10704,
       kind: 1024,
       name: "event",
       url: "interfaces/_gameevents_.gameeventevent.html#event",
@@ -87363,7 +87467,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEventEvent'
     },
     {
-      id: 10693,
+      id: 10705,
       kind: 128,
       name: "GameEvents",
       url: "classes/_gameevents_.gameevents.html",
@@ -87371,7 +87475,7 @@ typedoc.search.data = {
       parent: '"gameevents"'
     },
     {
-      id: 10694,
+      id: 10706,
       kind: 1024,
       name: "gameEventList",
       url: "classes/_gameevents_.gameevents.html#gameeventlist",
@@ -87379,7 +87483,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10695,
+      id: 10707,
       kind: 1024,
       name: "_tickEvents",
       url: "classes/_gameevents_.gameevents.html#_tickevents",
@@ -87387,7 +87491,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10696,
+      id: 10708,
       kind: 2048,
       name: "listen",
       url: "classes/_gameevents_.gameevents.html#listen",
@@ -87395,7 +87499,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10697,
+      id: 10709,
       kind: 2048,
       name: "_handleGameEventList",
       url: "classes/_gameevents_.gameevents.html#_handlegameeventlist",
@@ -87403,7 +87507,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10698,
+      id: 10710,
       kind: 2048,
       name: "listenerCount",
       url: "classes/_gameevents_.gameevents.html#listenercount-1",
@@ -87412,7 +87516,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10699,
+      id: 10711,
       kind: 1024,
       name: "defaultMaxListeners",
       url: "classes/_gameevents_.gameevents.html#defaultmaxlisteners",
@@ -87421,7 +87525,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10700,
+      id: 10712,
       kind: 2048,
       name: "addListener",
       url: "classes/_gameevents_.gameevents.html#addlistener",
@@ -87430,7 +87534,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10701,
+      id: 10713,
       kind: 2048,
       name: "on",
       url: "classes/_gameevents_.gameevents.html#on",
@@ -87439,7 +87543,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10702,
+      id: 10714,
       kind: 2048,
       name: "once",
       url: "classes/_gameevents_.gameevents.html#once",
@@ -87448,7 +87552,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10703,
+      id: 10715,
       kind: 2048,
       name: "prependListener",
       url: "classes/_gameevents_.gameevents.html#prependlistener",
@@ -87457,7 +87561,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10704,
+      id: 10716,
       kind: 2048,
       name: "prependOnceListener",
       url: "classes/_gameevents_.gameevents.html#prependoncelistener",
@@ -87466,7 +87570,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10705,
+      id: 10717,
       kind: 2048,
       name: "removeListener",
       url: "classes/_gameevents_.gameevents.html#removelistener",
@@ -87475,7 +87579,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10706,
+      id: 10718,
       kind: 2048,
       name: "off",
       url: "classes/_gameevents_.gameevents.html#off",
@@ -87484,7 +87588,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10707,
+      id: 10719,
       kind: 2048,
       name: "removeAllListeners",
       url: "classes/_gameevents_.gameevents.html#removealllisteners",
@@ -87493,7 +87597,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10708,
+      id: 10720,
       kind: 2048,
       name: "setMaxListeners",
       url: "classes/_gameevents_.gameevents.html#setmaxlisteners",
@@ -87502,7 +87606,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10709,
+      id: 10721,
       kind: 2048,
       name: "getMaxListeners",
       url: "classes/_gameevents_.gameevents.html#getmaxlisteners",
@@ -87511,7 +87615,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10710,
+      id: 10722,
       kind: 2048,
       name: "listeners",
       url: "classes/_gameevents_.gameevents.html#listeners",
@@ -87520,7 +87624,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10711,
+      id: 10723,
       kind: 2048,
       name: "rawListeners",
       url: "classes/_gameevents_.gameevents.html#rawlisteners",
@@ -87529,7 +87633,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10712,
+      id: 10724,
       kind: 2048,
       name: "emit",
       url: "classes/_gameevents_.gameevents.html#emit",
@@ -87538,7 +87642,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10713,
+      id: 10725,
       kind: 2048,
       name: "eventNames",
       url: "classes/_gameevents_.gameevents.html#eventnames",
@@ -87547,7 +87651,7 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10714,
+      id: 10726,
       kind: 2048,
       name: "listenerCount",
       url: "classes/_gameevents_.gameevents.html#listenercount",
@@ -87556,14 +87660,14 @@ typedoc.search.data = {
       parent: '"gameevents".GameEvents'
     },
     {
-      id: 10715,
+      id: 10727,
       kind: 1,
       name: '"usermessages"',
       url: "modules/_usermessages_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10716,
+      id: 10728,
       kind: 256,
       name: "IUserMessageEvent",
       url: "interfaces/_usermessages_.iusermessageevent.html",
@@ -87572,7 +87676,7 @@ typedoc.search.data = {
       parent: '"usermessages"'
     },
     {
-      id: 10717,
+      id: 10729,
       kind: 1024,
       name: "name",
       url: "interfaces/_usermessages_.iusermessageevent.html#name",
@@ -87581,7 +87685,7 @@ typedoc.search.data = {
       parent: '"usermessages".IUserMessageEvent'
     },
     {
-      id: 10718,
+      id: 10730,
       kind: 1024,
       name: "msg",
       url: "interfaces/_usermessages_.iusermessageevent.html#msg",
@@ -87590,7 +87694,7 @@ typedoc.search.data = {
       parent: '"usermessages".IUserMessageEvent'
     },
     {
-      id: 10719,
+      id: 10731,
       kind: 128,
       name: "UserMessages",
       url: "classes/_usermessages_.usermessages.html",
@@ -87598,7 +87702,7 @@ typedoc.search.data = {
       parent: '"usermessages"'
     },
     {
-      id: 10720,
+      id: 10732,
       kind: 2048,
       name: "on",
       url: "classes/_usermessages_.usermessages.html#on",
@@ -87606,7 +87710,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10721,
+      id: 10733,
       kind: 2048,
       name: "emit",
       url: "classes/_usermessages_.usermessages.html#emit",
@@ -87614,7 +87718,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10722,
+      id: 10734,
       kind: 2048,
       name: "listen",
       url: "classes/_usermessages_.usermessages.html#listen",
@@ -87622,7 +87726,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10723,
+      id: 10735,
       kind: 2048,
       name: "_handleUserMessage",
       url: "classes/_usermessages_.usermessages.html#_handleusermessage",
@@ -87630,7 +87734,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10724,
+      id: 10736,
       kind: 2048,
       name: "listenerCount",
       url: "classes/_usermessages_.usermessages.html#listenercount-1",
@@ -87639,7 +87743,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10725,
+      id: 10737,
       kind: 1024,
       name: "defaultMaxListeners",
       url: "classes/_usermessages_.usermessages.html#defaultmaxlisteners",
@@ -87648,7 +87752,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10726,
+      id: 10738,
       kind: 2048,
       name: "addListener",
       url: "classes/_usermessages_.usermessages.html#addlistener",
@@ -87657,7 +87761,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10727,
+      id: 10739,
       kind: 2048,
       name: "once",
       url: "classes/_usermessages_.usermessages.html#once",
@@ -87666,7 +87770,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10728,
+      id: 10740,
       kind: 2048,
       name: "prependListener",
       url: "classes/_usermessages_.usermessages.html#prependlistener",
@@ -87675,7 +87779,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10729,
+      id: 10741,
       kind: 2048,
       name: "prependOnceListener",
       url: "classes/_usermessages_.usermessages.html#prependoncelistener",
@@ -87684,7 +87788,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10730,
+      id: 10742,
       kind: 2048,
       name: "removeListener",
       url: "classes/_usermessages_.usermessages.html#removelistener",
@@ -87693,7 +87797,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10731,
+      id: 10743,
       kind: 2048,
       name: "off",
       url: "classes/_usermessages_.usermessages.html#off",
@@ -87702,7 +87806,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10732,
+      id: 10744,
       kind: 2048,
       name: "removeAllListeners",
       url: "classes/_usermessages_.usermessages.html#removealllisteners",
@@ -87711,7 +87815,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10733,
+      id: 10745,
       kind: 2048,
       name: "setMaxListeners",
       url: "classes/_usermessages_.usermessages.html#setmaxlisteners",
@@ -87720,7 +87824,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10734,
+      id: 10746,
       kind: 2048,
       name: "getMaxListeners",
       url: "classes/_usermessages_.usermessages.html#getmaxlisteners",
@@ -87729,7 +87833,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10735,
+      id: 10747,
       kind: 2048,
       name: "listeners",
       url: "classes/_usermessages_.usermessages.html#listeners",
@@ -87738,7 +87842,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10736,
+      id: 10748,
       kind: 2048,
       name: "rawListeners",
       url: "classes/_usermessages_.usermessages.html#rawlisteners",
@@ -87747,7 +87851,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10737,
+      id: 10749,
       kind: 2048,
       name: "eventNames",
       url: "classes/_usermessages_.usermessages.html#eventnames",
@@ -87756,7 +87860,7 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10738,
+      id: 10750,
       kind: 2048,
       name: "listenerCount",
       url: "classes/_usermessages_.usermessages.html#listenercount",
@@ -87765,14 +87869,14 @@ typedoc.search.data = {
       parent: '"usermessages".UserMessages'
     },
     {
-      id: 10739,
+      id: 10751,
       kind: 1,
       name: '"keyvalues"',
       url: "modules/_keyvalues_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10740,
+      id: 10752,
       kind: 4,
       name: "KeyValueType",
       url: "enums/_keyvalues_.keyvaluetype.html",
@@ -87781,7 +87885,7 @@ typedoc.search.data = {
       parent: '"keyvalues"'
     },
     {
-      id: 10741,
+      id: 10753,
       kind: 16,
       name: "None",
       url: "enums/_keyvalues_.keyvaluetype.html#none",
@@ -87789,7 +87893,7 @@ typedoc.search.data = {
       parent: '"keyvalues".KeyValueType'
     },
     {
-      id: 10742,
+      id: 10754,
       kind: 16,
       name: "String",
       url: "enums/_keyvalues_.keyvaluetype.html#string",
@@ -87797,7 +87901,7 @@ typedoc.search.data = {
       parent: '"keyvalues".KeyValueType'
     },
     {
-      id: 10743,
+      id: 10755,
       kind: 16,
       name: "Int",
       url: "enums/_keyvalues_.keyvaluetype.html#int",
@@ -87805,7 +87909,7 @@ typedoc.search.data = {
       parent: '"keyvalues".KeyValueType'
     },
     {
-      id: 10744,
+      id: 10756,
       kind: 16,
       name: "Float",
       url: "enums/_keyvalues_.keyvaluetype.html#float",
@@ -87813,7 +87917,7 @@ typedoc.search.data = {
       parent: '"keyvalues".KeyValueType'
     },
     {
-      id: 10745,
+      id: 10757,
       kind: 16,
       name: "Ptr",
       url: "enums/_keyvalues_.keyvaluetype.html#ptr",
@@ -87821,7 +87925,7 @@ typedoc.search.data = {
       parent: '"keyvalues".KeyValueType'
     },
     {
-      id: 10746,
+      id: 10758,
       kind: 16,
       name: "WString",
       url: "enums/_keyvalues_.keyvaluetype.html#wstring",
@@ -87829,7 +87933,7 @@ typedoc.search.data = {
       parent: '"keyvalues".KeyValueType'
     },
     {
-      id: 10747,
+      id: 10759,
       kind: 16,
       name: "Color",
       url: "enums/_keyvalues_.keyvaluetype.html#color",
@@ -87837,7 +87941,7 @@ typedoc.search.data = {
       parent: '"keyvalues".KeyValueType'
     },
     {
-      id: 10748,
+      id: 10760,
       kind: 16,
       name: "UInt64",
       url: "enums/_keyvalues_.keyvaluetype.html#uint64",
@@ -87845,7 +87949,7 @@ typedoc.search.data = {
       parent: '"keyvalues".KeyValueType'
     },
     {
-      id: 10749,
+      id: 10761,
       kind: 16,
       name: "CompiledIntByte",
       url: "enums/_keyvalues_.keyvaluetype.html#compiledintbyte",
@@ -87853,7 +87957,7 @@ typedoc.search.data = {
       parent: '"keyvalues".KeyValueType'
     },
     {
-      id: 10750,
+      id: 10762,
       kind: 16,
       name: "CompiledInt0",
       url: "enums/_keyvalues_.keyvaluetype.html#compiledint0",
@@ -87861,7 +87965,7 @@ typedoc.search.data = {
       parent: '"keyvalues".KeyValueType'
     },
     {
-      id: 10751,
+      id: 10763,
       kind: 16,
       name: "CompiledInt1",
       url: "enums/_keyvalues_.keyvaluetype.html#compiledint1",
@@ -87869,7 +87973,7 @@ typedoc.search.data = {
       parent: '"keyvalues".KeyValueType'
     },
     {
-      id: 10752,
+      id: 10764,
       kind: 16,
       name: "NumTypes",
       url: "enums/_keyvalues_.keyvaluetype.html#numtypes",
@@ -87877,7 +87981,7 @@ typedoc.search.data = {
       parent: '"keyvalues".KeyValueType'
     },
     {
-      id: 10753,
+      id: 10765,
       kind: 256,
       name: "Color",
       url: "interfaces/_keyvalues_.color.html",
@@ -87886,7 +87990,7 @@ typedoc.search.data = {
       parent: '"keyvalues"'
     },
     {
-      id: 10754,
+      id: 10766,
       kind: 1024,
       name: "r",
       url: "interfaces/_keyvalues_.color.html#r",
@@ -87895,7 +87999,7 @@ typedoc.search.data = {
       parent: '"keyvalues".Color'
     },
     {
-      id: 10755,
+      id: 10767,
       kind: 1024,
       name: "g",
       url: "interfaces/_keyvalues_.color.html#g",
@@ -87904,7 +88008,7 @@ typedoc.search.data = {
       parent: '"keyvalues".Color'
     },
     {
-      id: 10756,
+      id: 10768,
       kind: 1024,
       name: "b",
       url: "interfaces/_keyvalues_.color.html#b",
@@ -87913,7 +88017,7 @@ typedoc.search.data = {
       parent: '"keyvalues".Color'
     },
     {
-      id: 10757,
+      id: 10769,
       kind: 1024,
       name: "a",
       url: "interfaces/_keyvalues_.color.html#a",
@@ -87922,7 +88026,7 @@ typedoc.search.data = {
       parent: '"keyvalues".Color'
     },
     {
-      id: 10758,
+      id: 10770,
       kind: 4194304,
       name: "KeyValuesPrimitive",
       url: "modules/_keyvalues_.html#keyvaluesprimitive",
@@ -87930,7 +88034,7 @@ typedoc.search.data = {
       parent: '"keyvalues"'
     },
     {
-      id: 10759,
+      id: 10771,
       kind: 4194304,
       name: "KeyValues",
       url: "modules/_keyvalues_.html#keyvalues",
@@ -87938,7 +88042,7 @@ typedoc.search.data = {
       parent: '"keyvalues"'
     },
     {
-      id: 10760,
+      id: 10772,
       kind: 64,
       name: "parseValue",
       url: "modules/_keyvalues_.html#parsevalue",
@@ -87947,7 +88051,7 @@ typedoc.search.data = {
       parent: '"keyvalues"'
     },
     {
-      id: 10761,
+      id: 10773,
       kind: 64,
       name: "parseBinaryKeyValues",
       url: "modules/_keyvalues_.html#parsebinarykeyvalues",
@@ -87955,14 +88059,14 @@ typedoc.search.data = {
       parent: '"keyvalues"'
     },
     {
-      id: 10762,
+      id: 10774,
       kind: 1,
       name: '"demo"',
       url: "modules/_demo_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10763,
+      id: 10775,
       kind: 256,
       name: "IDemoHeader",
       url: "interfaces/_demo_.idemoheader.html",
@@ -87971,7 +88075,7 @@ typedoc.search.data = {
       parent: '"demo"'
     },
     {
-      id: 10764,
+      id: 10776,
       kind: 1024,
       name: "magic",
       url: "interfaces/_demo_.idemoheader.html#magic",
@@ -87980,7 +88084,7 @@ typedoc.search.data = {
       parent: '"demo".IDemoHeader'
     },
     {
-      id: 10765,
+      id: 10777,
       kind: 1024,
       name: "protocol",
       url: "interfaces/_demo_.idemoheader.html#protocol",
@@ -87989,7 +88093,7 @@ typedoc.search.data = {
       parent: '"demo".IDemoHeader'
     },
     {
-      id: 10766,
+      id: 10778,
       kind: 1024,
       name: "networkProtocol",
       url: "interfaces/_demo_.idemoheader.html#networkprotocol",
@@ -87998,7 +88102,7 @@ typedoc.search.data = {
       parent: '"demo".IDemoHeader'
     },
     {
-      id: 10767,
+      id: 10779,
       kind: 1024,
       name: "serverName",
       url: "interfaces/_demo_.idemoheader.html#servername",
@@ -88007,7 +88111,7 @@ typedoc.search.data = {
       parent: '"demo".IDemoHeader'
     },
     {
-      id: 10768,
+      id: 10780,
       kind: 1024,
       name: "clientName",
       url: "interfaces/_demo_.idemoheader.html#clientname",
@@ -88016,7 +88120,7 @@ typedoc.search.data = {
       parent: '"demo".IDemoHeader'
     },
     {
-      id: 10769,
+      id: 10781,
       kind: 1024,
       name: "mapName",
       url: "interfaces/_demo_.idemoheader.html#mapname",
@@ -88025,7 +88129,7 @@ typedoc.search.data = {
       parent: '"demo".IDemoHeader'
     },
     {
-      id: 10770,
+      id: 10782,
       kind: 1024,
       name: "gameDirectory",
       url: "interfaces/_demo_.idemoheader.html#gamedirectory",
@@ -88034,7 +88138,7 @@ typedoc.search.data = {
       parent: '"demo".IDemoHeader'
     },
     {
-      id: 10771,
+      id: 10783,
       kind: 1024,
       name: "playbackTime",
       url: "interfaces/_demo_.idemoheader.html#playbacktime",
@@ -88043,7 +88147,7 @@ typedoc.search.data = {
       parent: '"demo".IDemoHeader'
     },
     {
-      id: 10772,
+      id: 10784,
       kind: 1024,
       name: "playbackTicks",
       url: "interfaces/_demo_.idemoheader.html#playbackticks",
@@ -88052,7 +88156,7 @@ typedoc.search.data = {
       parent: '"demo".IDemoHeader'
     },
     {
-      id: 10773,
+      id: 10785,
       kind: 1024,
       name: "playbackFrames",
       url: "interfaces/_demo_.idemoheader.html#playbackframes",
@@ -88061,7 +88165,7 @@ typedoc.search.data = {
       parent: '"demo".IDemoHeader'
     },
     {
-      id: 10774,
+      id: 10786,
       kind: 1024,
       name: "signonLength",
       url: "interfaces/_demo_.idemoheader.html#signonlength",
@@ -88070,7 +88174,7 @@ typedoc.search.data = {
       parent: '"demo".IDemoHeader'
     },
     {
-      id: 10775,
+      id: 10787,
       kind: 4,
       name: "DemoCommands",
       url: "enums/_demo_.democommands.html",
@@ -88079,7 +88183,7 @@ typedoc.search.data = {
       parent: '"demo"'
     },
     {
-      id: 10776,
+      id: 10788,
       kind: 16,
       name: "Signon",
       url: "enums/_demo_.democommands.html#signon",
@@ -88087,7 +88191,7 @@ typedoc.search.data = {
       parent: '"demo".DemoCommands'
     },
     {
-      id: 10777,
+      id: 10789,
       kind: 16,
       name: "Packet",
       url: "enums/_demo_.democommands.html#packet",
@@ -88095,7 +88199,7 @@ typedoc.search.data = {
       parent: '"demo".DemoCommands'
     },
     {
-      id: 10778,
+      id: 10790,
       kind: 16,
       name: "SyncTick",
       url: "enums/_demo_.democommands.html#synctick",
@@ -88103,7 +88207,7 @@ typedoc.search.data = {
       parent: '"demo".DemoCommands'
     },
     {
-      id: 10779,
+      id: 10791,
       kind: 16,
       name: "ConsoleCmd",
       url: "enums/_demo_.democommands.html#consolecmd",
@@ -88111,7 +88215,7 @@ typedoc.search.data = {
       parent: '"demo".DemoCommands'
     },
     {
-      id: 10780,
+      id: 10792,
       kind: 16,
       name: "UserCmd",
       url: "enums/_demo_.democommands.html#usercmd",
@@ -88119,7 +88223,7 @@ typedoc.search.data = {
       parent: '"demo".DemoCommands'
     },
     {
-      id: 10781,
+      id: 10793,
       kind: 16,
       name: "DataTables",
       url: "enums/_demo_.democommands.html#datatables",
@@ -88127,7 +88231,7 @@ typedoc.search.data = {
       parent: '"demo".DemoCommands'
     },
     {
-      id: 10782,
+      id: 10794,
       kind: 16,
       name: "Stop",
       url: "enums/_demo_.democommands.html#stop",
@@ -88135,7 +88239,7 @@ typedoc.search.data = {
       parent: '"demo".DemoCommands'
     },
     {
-      id: 10783,
+      id: 10795,
       kind: 16,
       name: "CustomData",
       url: "enums/_demo_.democommands.html#customdata",
@@ -88143,7 +88247,7 @@ typedoc.search.data = {
       parent: '"demo".DemoCommands'
     },
     {
-      id: 10784,
+      id: 10796,
       kind: 16,
       name: "StringTables",
       url: "enums/_demo_.democommands.html#stringtables",
@@ -88151,7 +88255,7 @@ typedoc.search.data = {
       parent: '"demo".DemoCommands'
     },
     {
-      id: 10785,
+      id: 10797,
       kind: 256,
       name: "IDemoEndEvent",
       url: "interfaces/_demo_.idemoendevent.html",
@@ -88159,7 +88263,7 @@ typedoc.search.data = {
       parent: '"demo"'
     },
     {
-      id: 10786,
+      id: 10798,
       kind: 1024,
       name: "error",
       url: "interfaces/_demo_.idemoendevent.html#error",
@@ -88167,7 +88271,7 @@ typedoc.search.data = {
       parent: '"demo".IDemoEndEvent'
     },
     {
-      id: 10787,
+      id: 10799,
       kind: 128,
       name: "DemoFile",
       url: "classes/_demo_.demofile.html",
@@ -88175,7 +88279,7 @@ typedoc.search.data = {
       parent: '"demo"'
     },
     {
-      id: 10788,
+      id: 10800,
       kind: 2048,
       name: "on",
       url: "classes/_demo_.demofile.html#on",
@@ -88183,7 +88287,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10789,
+      id: 10801,
       kind: 2048,
       name: "emit",
       url: "classes/_demo_.demofile.html#emit",
@@ -88191,7 +88295,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10790,
+      id: 10802,
       kind: 262144,
       name: "tickRate",
       url: "classes/_demo_.demofile.html#tickrate",
@@ -88199,7 +88303,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10791,
+      id: 10803,
       kind: 262144,
       name: "currentTime",
       url: "classes/_demo_.demofile.html#currenttime",
@@ -88207,7 +88311,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10792,
+      id: 10804,
       kind: 262144,
       name: "players",
       url: "classes/_demo_.demofile.html#players",
@@ -88215,7 +88319,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10793,
+      id: 10805,
       kind: 262144,
       name: "teams",
       url: "classes/_demo_.demofile.html#teams",
@@ -88223,7 +88327,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10794,
+      id: 10806,
       kind: 262144,
       name: "gameRules",
       url: "classes/_demo_.demofile.html#gamerules",
@@ -88231,7 +88335,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10795,
+      id: 10807,
       kind: 1024,
       name: "currentTick",
       url: "classes/_demo_.demofile.html#currenttick",
@@ -88239,7 +88343,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10796,
+      id: 10808,
       kind: 1024,
       name: "tickInterval",
       url: "classes/_demo_.demofile.html#tickinterval",
@@ -88247,7 +88351,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10797,
+      id: 10809,
       kind: 1024,
       name: "header",
       url: "classes/_demo_.demofile.html#header",
@@ -88255,7 +88359,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10798,
+      id: 10810,
       kind: 1024,
       name: "playerSlot",
       url: "classes/_demo_.demofile.html#playerslot",
@@ -88263,7 +88367,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10799,
+      id: 10811,
       kind: 1024,
       name: "entities",
       url: "classes/_demo_.demofile.html#entities",
@@ -88271,7 +88375,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10800,
+      id: 10812,
       kind: 1024,
       name: "gameEvents",
       url: "classes/_demo_.demofile.html#gameevents",
@@ -88279,7 +88383,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10801,
+      id: 10813,
       kind: 1024,
       name: "stringTables",
       url: "classes/_demo_.demofile.html#stringtables",
@@ -88287,7 +88391,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10802,
+      id: 10814,
       kind: 1024,
       name: "userMessages",
       url: "classes/_demo_.demofile.html#usermessages",
@@ -88295,7 +88399,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10803,
+      id: 10815,
       kind: 1024,
       name: "conVars",
       url: "classes/_demo_.demofile.html#convars",
@@ -88303,7 +88407,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10804,
+      id: 10816,
       kind: 1024,
       name: "_bytebuf",
       url: "classes/_demo_.demofile.html#_bytebuf",
@@ -88311,7 +88415,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10805,
+      id: 10817,
       kind: 1024,
       name: "_lastThreadYieldTime",
       url: "classes/_demo_.demofile.html#_lastthreadyieldtime",
@@ -88319,7 +88423,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10806,
+      id: 10818,
       kind: 1024,
       name: "_immediateTimerToken",
       url: "classes/_demo_.demofile.html#_immediatetimertoken",
@@ -88327,7 +88431,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10807,
+      id: 10819,
       kind: 1024,
       name: "_timeoutTimerToken",
       url: "classes/_demo_.demofile.html#_timeouttimertoken",
@@ -88335,7 +88439,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10808,
+      id: 10820,
       kind: 512,
       name: "constructor",
       url: "classes/_demo_.demofile.html#constructor",
@@ -88343,7 +88447,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10809,
+      id: 10821,
       kind: 2048,
       name: "parse",
       url: "classes/_demo_.demofile.html#parse",
@@ -88351,7 +88455,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10810,
+      id: 10822,
       kind: 2048,
       name: "cancel",
       url: "classes/_demo_.demofile.html#cancel",
@@ -88359,7 +88463,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10811,
+      id: 10823,
       kind: 8388608,
       name: "_handleDemoPacket",
       url: "classes/_demo_.demofile.html#_handledemopacket",
@@ -88367,7 +88471,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10812,
+      id: 10824,
       kind: 2048,
       name: "_handleDataChunk",
       url: "classes/_demo_.demofile.html#_handledatachunk",
@@ -88375,7 +88479,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10813,
+      id: 10825,
       kind: 2048,
       name: "_handleDataTables",
       url: "classes/_demo_.demofile.html#_handledatatables",
@@ -88383,7 +88487,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10814,
+      id: 10826,
       kind: 2048,
       name: "_handleUserCmd",
       url: "classes/_demo_.demofile.html#_handleusercmd",
@@ -88391,7 +88495,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10815,
+      id: 10827,
       kind: 2048,
       name: "_handleStringTables",
       url: "classes/_demo_.demofile.html#_handlestringtables",
@@ -88399,7 +88503,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10816,
+      id: 10828,
       kind: 2048,
       name: "_recurse",
       url: "classes/_demo_.demofile.html#_recurse",
@@ -88407,7 +88511,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10817,
+      id: 10829,
       kind: 2048,
       name: "_parseRecurse",
       url: "classes/_demo_.demofile.html#_parserecurse",
@@ -88415,7 +88519,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10818,
+      id: 10830,
       kind: 2048,
       name: "listenerCount",
       url: "classes/_demo_.demofile.html#listenercount-1",
@@ -88424,7 +88528,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10819,
+      id: 10831,
       kind: 1024,
       name: "defaultMaxListeners",
       url: "classes/_demo_.demofile.html#defaultmaxlisteners",
@@ -88433,7 +88537,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10820,
+      id: 10832,
       kind: 2048,
       name: "addListener",
       url: "classes/_demo_.demofile.html#addlistener",
@@ -88442,7 +88546,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10821,
+      id: 10833,
       kind: 2048,
       name: "once",
       url: "classes/_demo_.demofile.html#once",
@@ -88451,7 +88555,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10822,
+      id: 10834,
       kind: 2048,
       name: "prependListener",
       url: "classes/_demo_.demofile.html#prependlistener",
@@ -88460,7 +88564,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10823,
+      id: 10835,
       kind: 2048,
       name: "prependOnceListener",
       url: "classes/_demo_.demofile.html#prependoncelistener",
@@ -88469,7 +88573,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10824,
+      id: 10836,
       kind: 2048,
       name: "removeListener",
       url: "classes/_demo_.demofile.html#removelistener",
@@ -88478,7 +88582,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10825,
+      id: 10837,
       kind: 2048,
       name: "off",
       url: "classes/_demo_.demofile.html#off",
@@ -88487,7 +88591,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10826,
+      id: 10838,
       kind: 2048,
       name: "removeAllListeners",
       url: "classes/_demo_.demofile.html#removealllisteners",
@@ -88496,7 +88600,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10827,
+      id: 10839,
       kind: 2048,
       name: "setMaxListeners",
       url: "classes/_demo_.demofile.html#setmaxlisteners",
@@ -88505,7 +88609,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10828,
+      id: 10840,
       kind: 2048,
       name: "getMaxListeners",
       url: "classes/_demo_.demofile.html#getmaxlisteners",
@@ -88514,7 +88618,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10829,
+      id: 10841,
       kind: 2048,
       name: "listeners",
       url: "classes/_demo_.demofile.html#listeners",
@@ -88523,7 +88627,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10830,
+      id: 10842,
       kind: 2048,
       name: "rawListeners",
       url: "classes/_demo_.demofile.html#rawlisteners",
@@ -88532,7 +88636,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10831,
+      id: 10843,
       kind: 2048,
       name: "eventNames",
       url: "classes/_demo_.demofile.html#eventnames",
@@ -88541,7 +88645,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10832,
+      id: 10844,
       kind: 2048,
       name: "listenerCount",
       url: "classes/_demo_.demofile.html#listenercount",
@@ -88550,7 +88654,7 @@ typedoc.search.data = {
       parent: '"demo".DemoFile'
     },
     {
-      id: 10833,
+      id: 10845,
       kind: 64,
       name: "parseHeader",
       url: "modules/_demo_.html#parseheader",
@@ -88558,7 +88662,7 @@ typedoc.search.data = {
       parent: '"demo"'
     },
     {
-      id: 10834,
+      id: 10846,
       kind: 64,
       name: "readIBytes",
       url: "modules/_demo_.html#readibytes",
@@ -88567,14 +88671,14 @@ typedoc.search.data = {
       parent: '"demo"'
     },
     {
-      id: 10835,
+      id: 10847,
       kind: 1,
       name: '"convars"',
       url: "modules/_convars_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10836,
+      id: 10848,
       kind: 256,
       name: "IConVarChangeEvent",
       url: "interfaces/_convars_.iconvarchangeevent.html",
@@ -88583,7 +88687,7 @@ typedoc.search.data = {
       parent: '"convars"'
     },
     {
-      id: 10837,
+      id: 10849,
       kind: 1024,
       name: "name",
       url: "interfaces/_convars_.iconvarchangeevent.html#name",
@@ -88592,7 +88696,7 @@ typedoc.search.data = {
       parent: '"convars".IConVarChangeEvent'
     },
     {
-      id: 10838,
+      id: 10850,
       kind: 1024,
       name: "value",
       url: "interfaces/_convars_.iconvarchangeevent.html#value",
@@ -88601,7 +88705,7 @@ typedoc.search.data = {
       parent: '"convars".IConVarChangeEvent'
     },
     {
-      id: 10839,
+      id: 10851,
       kind: 1024,
       name: "oldValue",
       url: "interfaces/_convars_.iconvarchangeevent.html#oldvalue",
@@ -88610,7 +88714,7 @@ typedoc.search.data = {
       parent: '"convars".IConVarChangeEvent'
     },
     {
-      id: 10840,
+      id: 10852,
       kind: 128,
       name: "ConVars",
       url: "classes/_convars_.convars.html",
@@ -88618,7 +88722,7 @@ typedoc.search.data = {
       parent: '"convars"'
     },
     {
-      id: 10841,
+      id: 10853,
       kind: 2048,
       name: "on",
       url: "classes/_convars_.convars.html#on",
@@ -88626,7 +88730,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10842,
+      id: 10854,
       kind: 2048,
       name: "emit",
       url: "classes/_convars_.convars.html#emit",
@@ -88634,7 +88738,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10843,
+      id: 10855,
       kind: 1024,
       name: "vars",
       url: "classes/_convars_.convars.html#vars",
@@ -88642,7 +88746,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10844,
+      id: 10856,
       kind: 2048,
       name: "listen",
       url: "classes/_convars_.convars.html#listen",
@@ -88650,7 +88754,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10845,
+      id: 10857,
       kind: 2048,
       name: "listenerCount",
       url: "classes/_convars_.convars.html#listenercount-1",
@@ -88659,7 +88763,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10846,
+      id: 10858,
       kind: 1024,
       name: "defaultMaxListeners",
       url: "classes/_convars_.convars.html#defaultmaxlisteners",
@@ -88668,7 +88772,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10847,
+      id: 10859,
       kind: 2048,
       name: "addListener",
       url: "classes/_convars_.convars.html#addlistener",
@@ -88677,7 +88781,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10848,
+      id: 10860,
       kind: 2048,
       name: "once",
       url: "classes/_convars_.convars.html#once",
@@ -88686,7 +88790,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10849,
+      id: 10861,
       kind: 2048,
       name: "prependListener",
       url: "classes/_convars_.convars.html#prependlistener",
@@ -88695,7 +88799,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10850,
+      id: 10862,
       kind: 2048,
       name: "prependOnceListener",
       url: "classes/_convars_.convars.html#prependoncelistener",
@@ -88704,7 +88808,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10851,
+      id: 10863,
       kind: 2048,
       name: "removeListener",
       url: "classes/_convars_.convars.html#removelistener",
@@ -88713,7 +88817,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10852,
+      id: 10864,
       kind: 2048,
       name: "off",
       url: "classes/_convars_.convars.html#off",
@@ -88722,7 +88826,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10853,
+      id: 10865,
       kind: 2048,
       name: "removeAllListeners",
       url: "classes/_convars_.convars.html#removealllisteners",
@@ -88731,7 +88835,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10854,
+      id: 10866,
       kind: 2048,
       name: "setMaxListeners",
       url: "classes/_convars_.convars.html#setmaxlisteners",
@@ -88740,7 +88844,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10855,
+      id: 10867,
       kind: 2048,
       name: "getMaxListeners",
       url: "classes/_convars_.convars.html#getmaxlisteners",
@@ -88749,7 +88853,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10856,
+      id: 10868,
       kind: 2048,
       name: "listeners",
       url: "classes/_convars_.convars.html#listeners",
@@ -88758,7 +88862,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10857,
+      id: 10869,
       kind: 2048,
       name: "rawListeners",
       url: "classes/_convars_.convars.html#rawlisteners",
@@ -88767,7 +88871,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10858,
+      id: 10870,
       kind: 2048,
       name: "eventNames",
       url: "classes/_convars_.convars.html#eventnames",
@@ -88776,7 +88880,7 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10859,
+      id: 10871,
       kind: 2048,
       name: "listenerCount",
       url: "classes/_convars_.convars.html#listenercount",
@@ -88785,14 +88889,14 @@ typedoc.search.data = {
       parent: '"convars".ConVars'
     },
     {
-      id: 10860,
+      id: 10872,
       kind: 1,
       name: '"eventtypes"',
       url: "modules/_eventtypes_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 10861,
+      id: 10873,
       kind: 256,
       name: "IEventServerSpawn",
       url: "interfaces/_eventtypes_.ieventserverspawn.html",
@@ -88800,7 +88904,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10862,
+      id: 10874,
       kind: 1024,
       name: "hostname",
       url: "interfaces/_eventtypes_.ieventserverspawn.html#hostname",
@@ -88808,7 +88912,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerSpawn'
     },
     {
-      id: 10863,
+      id: 10875,
       kind: 1024,
       name: "address",
       url: "interfaces/_eventtypes_.ieventserverspawn.html#address",
@@ -88816,7 +88920,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerSpawn'
     },
     {
-      id: 10864,
+      id: 10876,
       kind: 1024,
       name: "port",
       url: "interfaces/_eventtypes_.ieventserverspawn.html#port",
@@ -88824,7 +88928,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerSpawn'
     },
     {
-      id: 10865,
+      id: 10877,
       kind: 1024,
       name: "game",
       url: "interfaces/_eventtypes_.ieventserverspawn.html#game",
@@ -88832,7 +88936,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerSpawn'
     },
     {
-      id: 10866,
+      id: 10878,
       kind: 1024,
       name: "mapname",
       url: "interfaces/_eventtypes_.ieventserverspawn.html#mapname",
@@ -88840,7 +88944,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerSpawn'
     },
     {
-      id: 10867,
+      id: 10879,
       kind: 1024,
       name: "maxplayers",
       url: "interfaces/_eventtypes_.ieventserverspawn.html#maxplayers",
@@ -88848,7 +88952,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerSpawn'
     },
     {
-      id: 10868,
+      id: 10880,
       kind: 1024,
       name: "os",
       url: "interfaces/_eventtypes_.ieventserverspawn.html#os",
@@ -88856,7 +88960,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerSpawn'
     },
     {
-      id: 10869,
+      id: 10881,
       kind: 1024,
       name: "dedicated",
       url: "interfaces/_eventtypes_.ieventserverspawn.html#dedicated",
@@ -88864,7 +88968,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerSpawn'
     },
     {
-      id: 10870,
+      id: 10882,
       kind: 1024,
       name: "official",
       url: "interfaces/_eventtypes_.ieventserverspawn.html#official",
@@ -88872,7 +88976,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerSpawn'
     },
     {
-      id: 10871,
+      id: 10883,
       kind: 1024,
       name: "password",
       url: "interfaces/_eventtypes_.ieventserverspawn.html#password",
@@ -88880,7 +88984,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerSpawn'
     },
     {
-      id: 10872,
+      id: 10884,
       kind: 256,
       name: "IEventServerPreShutdown",
       url: "interfaces/_eventtypes_.ieventserverpreshutdown.html",
@@ -88888,7 +88992,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10873,
+      id: 10885,
       kind: 1024,
       name: "reason",
       url: "interfaces/_eventtypes_.ieventserverpreshutdown.html#reason",
@@ -88896,7 +89000,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerPreShutdown'
     },
     {
-      id: 10874,
+      id: 10886,
       kind: 256,
       name: "IEventServerShutdown",
       url: "interfaces/_eventtypes_.ieventservershutdown.html",
@@ -88904,7 +89008,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10875,
+      id: 10887,
       kind: 1024,
       name: "reason",
       url: "interfaces/_eventtypes_.ieventservershutdown.html#reason",
@@ -88912,7 +89016,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerShutdown'
     },
     {
-      id: 10876,
+      id: 10888,
       kind: 256,
       name: "IEventServerCvar",
       url: "interfaces/_eventtypes_.ieventservercvar.html",
@@ -88920,7 +89024,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10877,
+      id: 10889,
       kind: 1024,
       name: "cvarname",
       url: "interfaces/_eventtypes_.ieventservercvar.html#cvarname",
@@ -88928,7 +89032,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerCvar'
     },
     {
-      id: 10878,
+      id: 10890,
       kind: 1024,
       name: "cvarvalue",
       url: "interfaces/_eventtypes_.ieventservercvar.html#cvarvalue",
@@ -88936,7 +89040,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerCvar'
     },
     {
-      id: 10879,
+      id: 10891,
       kind: 256,
       name: "IEventServerMessage",
       url: "interfaces/_eventtypes_.ieventservermessage.html",
@@ -88944,7 +89048,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10880,
+      id: 10892,
       kind: 1024,
       name: "text",
       url: "interfaces/_eventtypes_.ieventservermessage.html#text",
@@ -88952,7 +89056,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerMessage'
     },
     {
-      id: 10881,
+      id: 10893,
       kind: 256,
       name: "IEventServerAddban",
       url: "interfaces/_eventtypes_.ieventserveraddban.html",
@@ -88960,7 +89064,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10882,
+      id: 10894,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.ieventserveraddban.html#name",
@@ -88968,7 +89072,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerAddban'
     },
     {
-      id: 10883,
+      id: 10895,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventserveraddban.html#userid",
@@ -88976,7 +89080,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerAddban'
     },
     {
-      id: 10884,
+      id: 10896,
       kind: 1024,
       name: "networkid",
       url: "interfaces/_eventtypes_.ieventserveraddban.html#networkid",
@@ -88984,7 +89088,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerAddban'
     },
     {
-      id: 10885,
+      id: 10897,
       kind: 1024,
       name: "ip",
       url: "interfaces/_eventtypes_.ieventserveraddban.html#ip",
@@ -88992,7 +89096,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerAddban'
     },
     {
-      id: 10886,
+      id: 10898,
       kind: 1024,
       name: "duration",
       url: "interfaces/_eventtypes_.ieventserveraddban.html#duration",
@@ -89000,7 +89104,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerAddban'
     },
     {
-      id: 10887,
+      id: 10899,
       kind: 1024,
       name: "by",
       url: "interfaces/_eventtypes_.ieventserveraddban.html#by",
@@ -89008,7 +89112,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerAddban'
     },
     {
-      id: 10888,
+      id: 10900,
       kind: 1024,
       name: "kicked",
       url: "interfaces/_eventtypes_.ieventserveraddban.html#kicked",
@@ -89016,7 +89120,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerAddban'
     },
     {
-      id: 10889,
+      id: 10901,
       kind: 256,
       name: "IEventServerRemoveban",
       url: "interfaces/_eventtypes_.ieventserverremoveban.html",
@@ -89024,7 +89128,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10890,
+      id: 10902,
       kind: 1024,
       name: "networkid",
       url: "interfaces/_eventtypes_.ieventserverremoveban.html#networkid",
@@ -89032,7 +89136,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerRemoveban'
     },
     {
-      id: 10891,
+      id: 10903,
       kind: 1024,
       name: "ip",
       url: "interfaces/_eventtypes_.ieventserverremoveban.html#ip",
@@ -89040,7 +89144,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerRemoveban'
     },
     {
-      id: 10892,
+      id: 10904,
       kind: 1024,
       name: "by",
       url: "interfaces/_eventtypes_.ieventserverremoveban.html#by",
@@ -89048,7 +89152,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventServerRemoveban'
     },
     {
-      id: 10893,
+      id: 10905,
       kind: 256,
       name: "IEventPlayerConnect",
       url: "interfaces/_eventtypes_.ieventplayerconnect.html",
@@ -89056,7 +89160,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10894,
+      id: 10906,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.ieventplayerconnect.html#name",
@@ -89064,7 +89168,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerConnect'
     },
     {
-      id: 10895,
+      id: 10907,
       kind: 1024,
       name: "index",
       url: "interfaces/_eventtypes_.ieventplayerconnect.html#index",
@@ -89072,7 +89176,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerConnect'
     },
     {
-      id: 10896,
+      id: 10908,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerconnect.html#userid",
@@ -89080,7 +89184,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerConnect'
     },
     {
-      id: 10897,
+      id: 10909,
       kind: 1024,
       name: "networkid",
       url: "interfaces/_eventtypes_.ieventplayerconnect.html#networkid",
@@ -89088,7 +89192,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerConnect'
     },
     {
-      id: 10898,
+      id: 10910,
       kind: 1024,
       name: "address",
       url: "interfaces/_eventtypes_.ieventplayerconnect.html#address",
@@ -89096,7 +89200,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerConnect'
     },
     {
-      id: 10899,
+      id: 10911,
       kind: 256,
       name: "IEventPlayerInfo",
       url: "interfaces/_eventtypes_.ieventplayerinfo.html",
@@ -89104,7 +89208,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10900,
+      id: 10912,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.ieventplayerinfo.html#name",
@@ -89112,7 +89216,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerInfo'
     },
     {
-      id: 10901,
+      id: 10913,
       kind: 1024,
       name: "index",
       url: "interfaces/_eventtypes_.ieventplayerinfo.html#index",
@@ -89120,7 +89224,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerInfo'
     },
     {
-      id: 10902,
+      id: 10914,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerinfo.html#userid",
@@ -89128,7 +89232,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerInfo'
     },
     {
-      id: 10903,
+      id: 10915,
       kind: 1024,
       name: "networkid",
       url: "interfaces/_eventtypes_.ieventplayerinfo.html#networkid",
@@ -89136,7 +89240,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerInfo'
     },
     {
-      id: 10904,
+      id: 10916,
       kind: 1024,
       name: "bot",
       url: "interfaces/_eventtypes_.ieventplayerinfo.html#bot",
@@ -89144,7 +89248,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerInfo'
     },
     {
-      id: 10905,
+      id: 10917,
       kind: 256,
       name: "IEventPlayerDisconnect",
       url: "interfaces/_eventtypes_.ieventplayerdisconnect.html",
@@ -89152,7 +89256,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10906,
+      id: 10918,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerdisconnect.html#userid",
@@ -89160,7 +89264,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDisconnect'
     },
     {
-      id: 10907,
+      id: 10919,
       kind: 1024,
       name: "reason",
       url: "interfaces/_eventtypes_.ieventplayerdisconnect.html#reason",
@@ -89168,7 +89272,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDisconnect'
     },
     {
-      id: 10908,
+      id: 10920,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.ieventplayerdisconnect.html#name",
@@ -89176,7 +89280,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDisconnect'
     },
     {
-      id: 10909,
+      id: 10921,
       kind: 1024,
       name: "networkid",
       url: "interfaces/_eventtypes_.ieventplayerdisconnect.html#networkid",
@@ -89184,7 +89288,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDisconnect'
     },
     {
-      id: 10910,
+      id: 10922,
       kind: 256,
       name: "IEventPlayerActivate",
       url: "interfaces/_eventtypes_.ieventplayeractivate.html",
@@ -89192,7 +89296,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10911,
+      id: 10923,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayeractivate.html#userid",
@@ -89200,7 +89304,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerActivate'
     },
     {
-      id: 10912,
+      id: 10924,
       kind: 256,
       name: "IEventPlayerConnectFull",
       url: "interfaces/_eventtypes_.ieventplayerconnectfull.html",
@@ -89208,7 +89312,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10913,
+      id: 10925,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerconnectfull.html#userid",
@@ -89216,7 +89320,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerConnectFull'
     },
     {
-      id: 10914,
+      id: 10926,
       kind: 1024,
       name: "index",
       url: "interfaces/_eventtypes_.ieventplayerconnectfull.html#index",
@@ -89224,7 +89328,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerConnectFull'
     },
     {
-      id: 10915,
+      id: 10927,
       kind: 256,
       name: "IEventPlayerSay",
       url: "interfaces/_eventtypes_.ieventplayersay.html",
@@ -89232,7 +89336,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10916,
+      id: 10928,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayersay.html#userid",
@@ -89240,7 +89344,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerSay'
     },
     {
-      id: 10917,
+      id: 10929,
       kind: 1024,
       name: "text",
       url: "interfaces/_eventtypes_.ieventplayersay.html#text",
@@ -89248,7 +89352,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerSay'
     },
     {
-      id: 10918,
+      id: 10930,
       kind: 256,
       name: "IEventCsRoundStartBeep",
       url: "interfaces/_eventtypes_.ieventcsroundstartbeep.html",
@@ -89256,7 +89360,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10919,
+      id: 10931,
       kind: 256,
       name: "IEventCsRoundFinalBeep",
       url: "interfaces/_eventtypes_.ieventcsroundfinalbeep.html",
@@ -89264,7 +89368,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10920,
+      id: 10932,
       kind: 256,
       name: "IEventRoundTimeWarning",
       url: "interfaces/_eventtypes_.ieventroundtimewarning.html",
@@ -89272,7 +89376,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10921,
+      id: 10933,
       kind: 256,
       name: "IEventTeamInfo",
       url: "interfaces/_eventtypes_.ieventteaminfo.html",
@@ -89280,7 +89384,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10922,
+      id: 10934,
       kind: 1024,
       name: "teamid",
       url: "interfaces/_eventtypes_.ieventteaminfo.html#teamid",
@@ -89288,7 +89392,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTeamInfo'
     },
     {
-      id: 10923,
+      id: 10935,
       kind: 1024,
       name: "teamname",
       url: "interfaces/_eventtypes_.ieventteaminfo.html#teamname",
@@ -89296,7 +89400,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTeamInfo'
     },
     {
-      id: 10924,
+      id: 10936,
       kind: 256,
       name: "IEventTeamScore",
       url: "interfaces/_eventtypes_.ieventteamscore.html",
@@ -89304,7 +89408,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10925,
+      id: 10937,
       kind: 1024,
       name: "teamid",
       url: "interfaces/_eventtypes_.ieventteamscore.html#teamid",
@@ -89312,7 +89416,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTeamScore'
     },
     {
-      id: 10926,
+      id: 10938,
       kind: 1024,
       name: "score",
       url: "interfaces/_eventtypes_.ieventteamscore.html#score",
@@ -89320,7 +89424,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTeamScore'
     },
     {
-      id: 10927,
+      id: 10939,
       kind: 256,
       name: "IEventTeamplayBroadcastAudio",
       url: "interfaces/_eventtypes_.ieventteamplaybroadcastaudio.html",
@@ -89328,7 +89432,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10928,
+      id: 10940,
       kind: 1024,
       name: "team",
       url: "interfaces/_eventtypes_.ieventteamplaybroadcastaudio.html#team",
@@ -89336,7 +89440,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTeamplayBroadcastAudio'
     },
     {
-      id: 10929,
+      id: 10941,
       kind: 1024,
       name: "sound",
       url: "interfaces/_eventtypes_.ieventteamplaybroadcastaudio.html#sound",
@@ -89344,7 +89448,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTeamplayBroadcastAudio'
     },
     {
-      id: 10930,
+      id: 10942,
       kind: 256,
       name: "IEventGameuiHidden",
       url: "interfaces/_eventtypes_.ieventgameuihidden.html",
@@ -89352,7 +89456,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10931,
+      id: 10943,
       kind: 256,
       name: "IEventItemsGifted",
       url: "interfaces/_eventtypes_.ieventitemsgifted.html",
@@ -89360,7 +89464,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10932,
+      id: 10944,
       kind: 1024,
       name: "player",
       url: "interfaces/_eventtypes_.ieventitemsgifted.html#player",
@@ -89368,7 +89472,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemsGifted'
     },
     {
-      id: 10933,
+      id: 10945,
       kind: 1024,
       name: "itemdef",
       url: "interfaces/_eventtypes_.ieventitemsgifted.html#itemdef",
@@ -89376,7 +89480,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemsGifted'
     },
     {
-      id: 10934,
+      id: 10946,
       kind: 1024,
       name: "numgifts",
       url: "interfaces/_eventtypes_.ieventitemsgifted.html#numgifts",
@@ -89384,7 +89488,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemsGifted'
     },
     {
-      id: 10935,
+      id: 10947,
       kind: 1024,
       name: "giftidx",
       url: "interfaces/_eventtypes_.ieventitemsgifted.html#giftidx",
@@ -89392,7 +89496,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemsGifted'
     },
     {
-      id: 10936,
+      id: 10948,
       kind: 1024,
       name: "accountid",
       url: "interfaces/_eventtypes_.ieventitemsgifted.html#accountid",
@@ -89400,7 +89504,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemsGifted'
     },
     {
-      id: 10937,
+      id: 10949,
       kind: 256,
       name: "IEventPlayerTeam",
       url: "interfaces/_eventtypes_.ieventplayerteam.html",
@@ -89408,7 +89512,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10938,
+      id: 10950,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerteam.html#userid",
@@ -89416,7 +89520,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerTeam'
     },
     {
-      id: 10939,
+      id: 10951,
       kind: 1024,
       name: "team",
       url: "interfaces/_eventtypes_.ieventplayerteam.html#team",
@@ -89424,7 +89528,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerTeam'
     },
     {
-      id: 10940,
+      id: 10952,
       kind: 1024,
       name: "oldteam",
       url: "interfaces/_eventtypes_.ieventplayerteam.html#oldteam",
@@ -89432,7 +89536,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerTeam'
     },
     {
-      id: 10941,
+      id: 10953,
       kind: 1024,
       name: "disconnect",
       url: "interfaces/_eventtypes_.ieventplayerteam.html#disconnect",
@@ -89440,7 +89544,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerTeam'
     },
     {
-      id: 10942,
+      id: 10954,
       kind: 1024,
       name: "autoteam",
       url: "interfaces/_eventtypes_.ieventplayerteam.html#autoteam",
@@ -89448,7 +89552,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerTeam'
     },
     {
-      id: 10943,
+      id: 10955,
       kind: 1024,
       name: "silent",
       url: "interfaces/_eventtypes_.ieventplayerteam.html#silent",
@@ -89456,7 +89560,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerTeam'
     },
     {
-      id: 10944,
+      id: 10956,
       kind: 1024,
       name: "isbot",
       url: "interfaces/_eventtypes_.ieventplayerteam.html#isbot",
@@ -89464,7 +89568,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerTeam'
     },
     {
-      id: 10945,
+      id: 10957,
       kind: 256,
       name: "IEventPlayerClass",
       url: "interfaces/_eventtypes_.ieventplayerclass.html",
@@ -89472,7 +89576,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10946,
+      id: 10958,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerclass.html#userid",
@@ -89480,7 +89584,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerClass'
     },
     {
-      id: 10947,
+      id: 10959,
       kind: 1024,
       name: "class",
       url: "interfaces/_eventtypes_.ieventplayerclass.html#class",
@@ -89488,7 +89592,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerClass'
     },
     {
-      id: 10948,
+      id: 10960,
       kind: 256,
       name: "IEventPlayerDeath",
       url: "interfaces/_eventtypes_.ieventplayerdeath.html",
@@ -89496,7 +89600,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10949,
+      id: 10961,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerdeath.html#userid",
@@ -89504,7 +89608,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDeath'
     },
     {
-      id: 10950,
+      id: 10962,
       kind: 1024,
       name: "attacker",
       url: "interfaces/_eventtypes_.ieventplayerdeath.html#attacker",
@@ -89512,7 +89616,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDeath'
     },
     {
-      id: 10951,
+      id: 10963,
       kind: 1024,
       name: "assister",
       url: "interfaces/_eventtypes_.ieventplayerdeath.html#assister",
@@ -89520,7 +89624,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDeath'
     },
     {
-      id: 10952,
+      id: 10964,
       kind: 1024,
       name: "assistedflash",
       url: "interfaces/_eventtypes_.ieventplayerdeath.html#assistedflash",
@@ -89528,7 +89632,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDeath'
     },
     {
-      id: 10953,
+      id: 10965,
       kind: 1024,
       name: "weapon",
       url: "interfaces/_eventtypes_.ieventplayerdeath.html#weapon",
@@ -89536,7 +89640,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDeath'
     },
     {
-      id: 10954,
+      id: 10966,
       kind: 1024,
       name: "weapon_itemid",
       url: "interfaces/_eventtypes_.ieventplayerdeath.html#weapon_itemid",
@@ -89544,7 +89648,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDeath'
     },
     {
-      id: 10955,
+      id: 10967,
       kind: 1024,
       name: "weapon_fauxitemid",
       url: "interfaces/_eventtypes_.ieventplayerdeath.html#weapon_fauxitemid",
@@ -89552,7 +89656,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDeath'
     },
     {
-      id: 10956,
+      id: 10968,
       kind: 1024,
       name: "weapon_originalowner_xuid",
       url:
@@ -89561,7 +89665,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDeath'
     },
     {
-      id: 10957,
+      id: 10969,
       kind: 1024,
       name: "headshot",
       url: "interfaces/_eventtypes_.ieventplayerdeath.html#headshot",
@@ -89569,7 +89673,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDeath'
     },
     {
-      id: 10958,
+      id: 10970,
       kind: 1024,
       name: "dominated",
       url: "interfaces/_eventtypes_.ieventplayerdeath.html#dominated",
@@ -89577,7 +89681,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDeath'
     },
     {
-      id: 10959,
+      id: 10971,
       kind: 1024,
       name: "revenge",
       url: "interfaces/_eventtypes_.ieventplayerdeath.html#revenge",
@@ -89585,7 +89689,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDeath'
     },
     {
-      id: 10960,
+      id: 10972,
       kind: 1024,
       name: "penetrated",
       url: "interfaces/_eventtypes_.ieventplayerdeath.html#penetrated",
@@ -89593,7 +89697,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDeath'
     },
     {
-      id: 10961,
+      id: 10973,
       kind: 1024,
       name: "noreplay",
       url: "interfaces/_eventtypes_.ieventplayerdeath.html#noreplay",
@@ -89601,7 +89705,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDeath'
     },
     {
-      id: 10962,
+      id: 10974,
       kind: 256,
       name: "IEventPlayerHurt",
       url: "interfaces/_eventtypes_.ieventplayerhurt.html",
@@ -89609,7 +89713,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10963,
+      id: 10975,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerhurt.html#userid",
@@ -89617,7 +89721,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerHurt'
     },
     {
-      id: 10964,
+      id: 10976,
       kind: 1024,
       name: "attacker",
       url: "interfaces/_eventtypes_.ieventplayerhurt.html#attacker",
@@ -89625,7 +89729,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerHurt'
     },
     {
-      id: 10965,
+      id: 10977,
       kind: 1024,
       name: "health",
       url: "interfaces/_eventtypes_.ieventplayerhurt.html#health",
@@ -89633,7 +89737,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerHurt'
     },
     {
-      id: 10966,
+      id: 10978,
       kind: 1024,
       name: "armor",
       url: "interfaces/_eventtypes_.ieventplayerhurt.html#armor",
@@ -89641,7 +89745,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerHurt'
     },
     {
-      id: 10967,
+      id: 10979,
       kind: 1024,
       name: "weapon",
       url: "interfaces/_eventtypes_.ieventplayerhurt.html#weapon",
@@ -89649,7 +89753,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerHurt'
     },
     {
-      id: 10968,
+      id: 10980,
       kind: 1024,
       name: "dmg_health",
       url: "interfaces/_eventtypes_.ieventplayerhurt.html#dmg_health",
@@ -89657,7 +89761,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerHurt'
     },
     {
-      id: 10969,
+      id: 10981,
       kind: 1024,
       name: "dmg_armor",
       url: "interfaces/_eventtypes_.ieventplayerhurt.html#dmg_armor",
@@ -89665,7 +89769,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerHurt'
     },
     {
-      id: 10970,
+      id: 10982,
       kind: 1024,
       name: "hitgroup",
       url: "interfaces/_eventtypes_.ieventplayerhurt.html#hitgroup",
@@ -89673,7 +89777,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerHurt'
     },
     {
-      id: 10971,
+      id: 10983,
       kind: 256,
       name: "IEventPlayerChat",
       url: "interfaces/_eventtypes_.ieventplayerchat.html",
@@ -89681,7 +89785,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10972,
+      id: 10984,
       kind: 1024,
       name: "teamonly",
       url: "interfaces/_eventtypes_.ieventplayerchat.html#teamonly",
@@ -89689,7 +89793,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerChat'
     },
     {
-      id: 10973,
+      id: 10985,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerchat.html#userid",
@@ -89697,7 +89801,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerChat'
     },
     {
-      id: 10974,
+      id: 10986,
       kind: 1024,
       name: "text",
       url: "interfaces/_eventtypes_.ieventplayerchat.html#text",
@@ -89705,7 +89809,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerChat'
     },
     {
-      id: 10975,
+      id: 10987,
       kind: 256,
       name: "IEventPlayerScore",
       url: "interfaces/_eventtypes_.ieventplayerscore.html",
@@ -89713,7 +89817,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10976,
+      id: 10988,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerscore.html#userid",
@@ -89721,7 +89825,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerScore'
     },
     {
-      id: 10977,
+      id: 10989,
       kind: 1024,
       name: "kills",
       url: "interfaces/_eventtypes_.ieventplayerscore.html#kills",
@@ -89729,7 +89833,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerScore'
     },
     {
-      id: 10978,
+      id: 10990,
       kind: 1024,
       name: "deaths",
       url: "interfaces/_eventtypes_.ieventplayerscore.html#deaths",
@@ -89737,7 +89841,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerScore'
     },
     {
-      id: 10979,
+      id: 10991,
       kind: 1024,
       name: "score",
       url: "interfaces/_eventtypes_.ieventplayerscore.html#score",
@@ -89745,7 +89849,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerScore'
     },
     {
-      id: 10980,
+      id: 10992,
       kind: 256,
       name: "IEventPlayerSpawn",
       url: "interfaces/_eventtypes_.ieventplayerspawn.html",
@@ -89753,7 +89857,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10981,
+      id: 10993,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerspawn.html#userid",
@@ -89761,7 +89865,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerSpawn'
     },
     {
-      id: 10982,
+      id: 10994,
       kind: 1024,
       name: "teamnum",
       url: "interfaces/_eventtypes_.ieventplayerspawn.html#teamnum",
@@ -89769,7 +89873,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerSpawn'
     },
     {
-      id: 10983,
+      id: 10995,
       kind: 256,
       name: "IEventPlayerShoot",
       url: "interfaces/_eventtypes_.ieventplayershoot.html",
@@ -89777,7 +89881,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10984,
+      id: 10996,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayershoot.html#userid",
@@ -89785,7 +89889,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerShoot'
     },
     {
-      id: 10985,
+      id: 10997,
       kind: 1024,
       name: "weapon",
       url: "interfaces/_eventtypes_.ieventplayershoot.html#weapon",
@@ -89793,7 +89897,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerShoot'
     },
     {
-      id: 10986,
+      id: 10998,
       kind: 1024,
       name: "mode",
       url: "interfaces/_eventtypes_.ieventplayershoot.html#mode",
@@ -89801,7 +89905,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerShoot'
     },
     {
-      id: 10987,
+      id: 10999,
       kind: 256,
       name: "IEventPlayerUse",
       url: "interfaces/_eventtypes_.ieventplayeruse.html",
@@ -89809,7 +89913,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10988,
+      id: 11000,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayeruse.html#userid",
@@ -89817,7 +89921,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerUse'
     },
     {
-      id: 10989,
+      id: 11001,
       kind: 1024,
       name: "entity",
       url: "interfaces/_eventtypes_.ieventplayeruse.html#entity",
@@ -89825,7 +89929,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerUse'
     },
     {
-      id: 10990,
+      id: 11002,
       kind: 256,
       name: "IEventPlayerChangename",
       url: "interfaces/_eventtypes_.ieventplayerchangename.html",
@@ -89833,7 +89937,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10991,
+      id: 11003,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerchangename.html#userid",
@@ -89841,7 +89945,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerChangename'
     },
     {
-      id: 10992,
+      id: 11004,
       kind: 1024,
       name: "oldname",
       url: "interfaces/_eventtypes_.ieventplayerchangename.html#oldname",
@@ -89849,7 +89953,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerChangename'
     },
     {
-      id: 10993,
+      id: 11005,
       kind: 1024,
       name: "newname",
       url: "interfaces/_eventtypes_.ieventplayerchangename.html#newname",
@@ -89857,7 +89961,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerChangename'
     },
     {
-      id: 10994,
+      id: 11006,
       kind: 256,
       name: "IEventPlayerHintmessage",
       url: "interfaces/_eventtypes_.ieventplayerhintmessage.html",
@@ -89865,7 +89969,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10995,
+      id: 11007,
       kind: 1024,
       name: "hintmessage",
       url: "interfaces/_eventtypes_.ieventplayerhintmessage.html#hintmessage",
@@ -89873,7 +89977,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerHintmessage'
     },
     {
-      id: 10996,
+      id: 11008,
       kind: 256,
       name: "IEventGameInit",
       url: "interfaces/_eventtypes_.ieventgameinit.html",
@@ -89881,7 +89985,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10997,
+      id: 11009,
       kind: 256,
       name: "IEventGameNewmap",
       url: "interfaces/_eventtypes_.ieventgamenewmap.html",
@@ -89889,7 +89993,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 10998,
+      id: 11010,
       kind: 1024,
       name: "mapname",
       url: "interfaces/_eventtypes_.ieventgamenewmap.html#mapname",
@@ -89897,7 +90001,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGameNewmap'
     },
     {
-      id: 10999,
+      id: 11011,
       kind: 256,
       name: "IEventGameStart",
       url: "interfaces/_eventtypes_.ieventgamestart.html",
@@ -89905,7 +90009,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11000,
+      id: 11012,
       kind: 1024,
       name: "roundslimit",
       url: "interfaces/_eventtypes_.ieventgamestart.html#roundslimit",
@@ -89913,7 +90017,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGameStart'
     },
     {
-      id: 11001,
+      id: 11013,
       kind: 1024,
       name: "timelimit",
       url: "interfaces/_eventtypes_.ieventgamestart.html#timelimit",
@@ -89921,7 +90025,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGameStart'
     },
     {
-      id: 11002,
+      id: 11014,
       kind: 1024,
       name: "fraglimit",
       url: "interfaces/_eventtypes_.ieventgamestart.html#fraglimit",
@@ -89929,7 +90033,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGameStart'
     },
     {
-      id: 11003,
+      id: 11015,
       kind: 1024,
       name: "objective",
       url: "interfaces/_eventtypes_.ieventgamestart.html#objective",
@@ -89937,7 +90041,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGameStart'
     },
     {
-      id: 11004,
+      id: 11016,
       kind: 256,
       name: "IEventGameEnd",
       url: "interfaces/_eventtypes_.ieventgameend.html",
@@ -89945,7 +90049,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11005,
+      id: 11017,
       kind: 1024,
       name: "winner",
       url: "interfaces/_eventtypes_.ieventgameend.html#winner",
@@ -89953,7 +90057,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGameEnd'
     },
     {
-      id: 11006,
+      id: 11018,
       kind: 256,
       name: "IEventRoundStart",
       url: "interfaces/_eventtypes_.ieventroundstart.html",
@@ -89961,7 +90065,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11007,
+      id: 11019,
       kind: 1024,
       name: "timelimit",
       url: "interfaces/_eventtypes_.ieventroundstart.html#timelimit",
@@ -89969,7 +90073,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventRoundStart'
     },
     {
-      id: 11008,
+      id: 11020,
       kind: 1024,
       name: "fraglimit",
       url: "interfaces/_eventtypes_.ieventroundstart.html#fraglimit",
@@ -89977,7 +90081,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventRoundStart'
     },
     {
-      id: 11009,
+      id: 11021,
       kind: 1024,
       name: "objective",
       url: "interfaces/_eventtypes_.ieventroundstart.html#objective",
@@ -89985,7 +90089,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventRoundStart'
     },
     {
-      id: 11010,
+      id: 11022,
       kind: 256,
       name: "IEventRoundAnnounceMatchPoint",
       url: "interfaces/_eventtypes_.ieventroundannouncematchpoint.html",
@@ -89993,7 +90097,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11011,
+      id: 11023,
       kind: 256,
       name: "IEventRoundAnnounceFinal",
       url: "interfaces/_eventtypes_.ieventroundannouncefinal.html",
@@ -90001,7 +90105,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11012,
+      id: 11024,
       kind: 256,
       name: "IEventRoundAnnounceLastRoundHalf",
       url: "interfaces/_eventtypes_.ieventroundannouncelastroundhalf.html",
@@ -90009,7 +90113,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11013,
+      id: 11025,
       kind: 256,
       name: "IEventRoundAnnounceMatchStart",
       url: "interfaces/_eventtypes_.ieventroundannouncematchstart.html",
@@ -90017,7 +90121,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11014,
+      id: 11026,
       kind: 256,
       name: "IEventRoundAnnounceWarmup",
       url: "interfaces/_eventtypes_.ieventroundannouncewarmup.html",
@@ -90025,7 +90129,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11015,
+      id: 11027,
       kind: 256,
       name: "IEventRoundEnd",
       url: "interfaces/_eventtypes_.ieventroundend.html",
@@ -90033,7 +90137,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11016,
+      id: 11028,
       kind: 1024,
       name: "winner",
       url: "interfaces/_eventtypes_.ieventroundend.html#winner",
@@ -90041,7 +90145,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventRoundEnd'
     },
     {
-      id: 11017,
+      id: 11029,
       kind: 1024,
       name: "reason",
       url: "interfaces/_eventtypes_.ieventroundend.html#reason",
@@ -90049,7 +90153,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventRoundEnd'
     },
     {
-      id: 11018,
+      id: 11030,
       kind: 1024,
       name: "message",
       url: "interfaces/_eventtypes_.ieventroundend.html#message",
@@ -90057,7 +90161,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventRoundEnd'
     },
     {
-      id: 11019,
+      id: 11031,
       kind: 1024,
       name: "legacy",
       url: "interfaces/_eventtypes_.ieventroundend.html#legacy",
@@ -90065,7 +90169,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventRoundEnd'
     },
     {
-      id: 11020,
+      id: 11032,
       kind: 1024,
       name: "player_count",
       url: "interfaces/_eventtypes_.ieventroundend.html#player_count",
@@ -90073,7 +90177,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventRoundEnd'
     },
     {
-      id: 11021,
+      id: 11033,
       kind: 256,
       name: "IEventRoundEndUploadStats",
       url: "interfaces/_eventtypes_.ieventroundenduploadstats.html",
@@ -90081,7 +90185,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11022,
+      id: 11034,
       kind: 256,
       name: "IEventRoundOfficiallyEnded",
       url: "interfaces/_eventtypes_.ieventroundofficiallyended.html",
@@ -90089,7 +90193,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11023,
+      id: 11035,
       kind: 256,
       name: "IEventUgcMapInfoReceived",
       url: "interfaces/_eventtypes_.ieventugcmapinforeceived.html",
@@ -90097,7 +90201,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11024,
+      id: 11036,
       kind: 1024,
       name: "published_file_id",
       url:
@@ -90106,7 +90210,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventUgcMapInfoReceived'
     },
     {
-      id: 11025,
+      id: 11037,
       kind: 256,
       name: "IEventUgcMapUnsubscribed",
       url: "interfaces/_eventtypes_.ieventugcmapunsubscribed.html",
@@ -90114,7 +90218,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11026,
+      id: 11038,
       kind: 1024,
       name: "published_file_id",
       url:
@@ -90123,7 +90227,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventUgcMapUnsubscribed'
     },
     {
-      id: 11027,
+      id: 11039,
       kind: 256,
       name: "IEventUgcMapDownloadError",
       url: "interfaces/_eventtypes_.ieventugcmapdownloaderror.html",
@@ -90131,7 +90235,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11028,
+      id: 11040,
       kind: 1024,
       name: "published_file_id",
       url:
@@ -90140,7 +90244,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventUgcMapDownloadError'
     },
     {
-      id: 11029,
+      id: 11041,
       kind: 1024,
       name: "error_code",
       url: "interfaces/_eventtypes_.ieventugcmapdownloaderror.html#error_code",
@@ -90148,7 +90252,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventUgcMapDownloadError'
     },
     {
-      id: 11030,
+      id: 11042,
       kind: 256,
       name: "IEventUgcFileDownloadFinished",
       url: "interfaces/_eventtypes_.ieventugcfiledownloadfinished.html",
@@ -90156,7 +90260,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11031,
+      id: 11043,
       kind: 1024,
       name: "hcontent",
       url:
@@ -90165,7 +90269,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventUgcFileDownloadFinished'
     },
     {
-      id: 11032,
+      id: 11044,
       kind: 256,
       name: "IEventUgcFileDownloadStart",
       url: "interfaces/_eventtypes_.ieventugcfiledownloadstart.html",
@@ -90173,7 +90277,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11033,
+      id: 11045,
       kind: 1024,
       name: "hcontent",
       url: "interfaces/_eventtypes_.ieventugcfiledownloadstart.html#hcontent",
@@ -90181,7 +90285,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventUgcFileDownloadStart'
     },
     {
-      id: 11034,
+      id: 11046,
       kind: 1024,
       name: "published_file_id",
       url:
@@ -90190,7 +90294,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventUgcFileDownloadStart'
     },
     {
-      id: 11035,
+      id: 11047,
       kind: 256,
       name: "IEventBeginNewMatch",
       url: "interfaces/_eventtypes_.ieventbeginnewmatch.html",
@@ -90198,7 +90302,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11036,
+      id: 11048,
       kind: 256,
       name: "IEventRoundStartPreEntity",
       url: "interfaces/_eventtypes_.ieventroundstartpreentity.html",
@@ -90206,7 +90310,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11037,
+      id: 11049,
       kind: 256,
       name: "IEventTeamplayRoundStart",
       url: "interfaces/_eventtypes_.ieventteamplayroundstart.html",
@@ -90214,7 +90318,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11038,
+      id: 11050,
       kind: 1024,
       name: "full_reset",
       url: "interfaces/_eventtypes_.ieventteamplayroundstart.html#full_reset",
@@ -90222,7 +90326,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTeamplayRoundStart'
     },
     {
-      id: 11039,
+      id: 11051,
       kind: 256,
       name: "IEventHostnameChanged",
       url: "interfaces/_eventtypes_.ieventhostnamechanged.html",
@@ -90230,7 +90334,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11040,
+      id: 11052,
       kind: 1024,
       name: "hostname",
       url: "interfaces/_eventtypes_.ieventhostnamechanged.html#hostname",
@@ -90238,7 +90342,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHostnameChanged'
     },
     {
-      id: 11041,
+      id: 11053,
       kind: 256,
       name: "IEventDifficultyChanged",
       url: "interfaces/_eventtypes_.ieventdifficultychanged.html",
@@ -90246,7 +90350,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11042,
+      id: 11054,
       kind: 1024,
       name: "newDifficulty",
       url: "interfaces/_eventtypes_.ieventdifficultychanged.html#newdifficulty",
@@ -90254,7 +90358,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDifficultyChanged'
     },
     {
-      id: 11043,
+      id: 11055,
       kind: 1024,
       name: "oldDifficulty",
       url: "interfaces/_eventtypes_.ieventdifficultychanged.html#olddifficulty",
@@ -90262,7 +90366,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDifficultyChanged'
     },
     {
-      id: 11044,
+      id: 11056,
       kind: 1024,
       name: "strDifficulty",
       url: "interfaces/_eventtypes_.ieventdifficultychanged.html#strdifficulty",
@@ -90270,7 +90374,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDifficultyChanged'
     },
     {
-      id: 11045,
+      id: 11057,
       kind: 256,
       name: "IEventFinaleStart",
       url: "interfaces/_eventtypes_.ieventfinalestart.html",
@@ -90278,7 +90382,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11046,
+      id: 11058,
       kind: 1024,
       name: "rushes",
       url: "interfaces/_eventtypes_.ieventfinalestart.html#rushes",
@@ -90286,7 +90390,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventFinaleStart'
     },
     {
-      id: 11047,
+      id: 11059,
       kind: 256,
       name: "IEventGameMessage",
       url: "interfaces/_eventtypes_.ieventgamemessage.html",
@@ -90294,7 +90398,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11048,
+      id: 11060,
       kind: 1024,
       name: "target",
       url: "interfaces/_eventtypes_.ieventgamemessage.html#target",
@@ -90302,7 +90406,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGameMessage'
     },
     {
-      id: 11049,
+      id: 11061,
       kind: 1024,
       name: "text",
       url: "interfaces/_eventtypes_.ieventgamemessage.html#text",
@@ -90310,7 +90414,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGameMessage'
     },
     {
-      id: 11050,
+      id: 11062,
       kind: 256,
       name: "IEventDmBonusWeaponStart",
       url: "interfaces/_eventtypes_.ieventdmbonusweaponstart.html",
@@ -90318,7 +90422,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11051,
+      id: 11063,
       kind: 1024,
       name: "time",
       url: "interfaces/_eventtypes_.ieventdmbonusweaponstart.html#time",
@@ -90326,7 +90430,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDmBonusWeaponStart'
     },
     {
-      id: 11052,
+      id: 11064,
       kind: 1024,
       name: "Pos",
       url: "interfaces/_eventtypes_.ieventdmbonusweaponstart.html#pos",
@@ -90334,7 +90438,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDmBonusWeaponStart'
     },
     {
-      id: 11053,
+      id: 11065,
       kind: 256,
       name: "IEventSurvivalAnnouncePhase",
       url: "interfaces/_eventtypes_.ieventsurvivalannouncephase.html",
@@ -90342,7 +90446,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11054,
+      id: 11066,
       kind: 1024,
       name: "phase",
       url: "interfaces/_eventtypes_.ieventsurvivalannouncephase.html#phase",
@@ -90350,7 +90454,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSurvivalAnnouncePhase'
     },
     {
-      id: 11055,
+      id: 11067,
       kind: 256,
       name: "IEventBreakBreakable",
       url: "interfaces/_eventtypes_.ieventbreakbreakable.html",
@@ -90358,7 +90462,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11056,
+      id: 11068,
       kind: 1024,
       name: "entindex",
       url: "interfaces/_eventtypes_.ieventbreakbreakable.html#entindex",
@@ -90366,7 +90470,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBreakBreakable'
     },
     {
-      id: 11057,
+      id: 11069,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbreakbreakable.html#userid",
@@ -90374,7 +90478,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBreakBreakable'
     },
     {
-      id: 11058,
+      id: 11070,
       kind: 1024,
       name: "material",
       url: "interfaces/_eventtypes_.ieventbreakbreakable.html#material",
@@ -90382,7 +90486,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBreakBreakable'
     },
     {
-      id: 11059,
+      id: 11071,
       kind: 256,
       name: "IEventBreakProp",
       url: "interfaces/_eventtypes_.ieventbreakprop.html",
@@ -90390,7 +90494,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11060,
+      id: 11072,
       kind: 1024,
       name: "entindex",
       url: "interfaces/_eventtypes_.ieventbreakprop.html#entindex",
@@ -90398,7 +90502,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBreakProp'
     },
     {
-      id: 11061,
+      id: 11073,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbreakprop.html#userid",
@@ -90406,7 +90510,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBreakProp'
     },
     {
-      id: 11062,
+      id: 11074,
       kind: 256,
       name: "IEventPlayerDecal",
       url: "interfaces/_eventtypes_.ieventplayerdecal.html",
@@ -90414,7 +90518,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11063,
+      id: 11075,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerdecal.html#userid",
@@ -90422,7 +90526,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerDecal'
     },
     {
-      id: 11064,
+      id: 11076,
       kind: 256,
       name: "IEventEntityKilled",
       url: "interfaces/_eventtypes_.ievententitykilled.html",
@@ -90430,7 +90534,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11065,
+      id: 11077,
       kind: 1024,
       name: "entindex_killed",
       url: "interfaces/_eventtypes_.ievententitykilled.html#entindex_killed",
@@ -90438,7 +90542,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEntityKilled'
     },
     {
-      id: 11066,
+      id: 11078,
       kind: 1024,
       name: "entindex_attacker",
       url: "interfaces/_eventtypes_.ievententitykilled.html#entindex_attacker",
@@ -90446,7 +90550,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEntityKilled'
     },
     {
-      id: 11067,
+      id: 11079,
       kind: 1024,
       name: "entindex_inflictor",
       url: "interfaces/_eventtypes_.ievententitykilled.html#entindex_inflictor",
@@ -90454,7 +90558,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEntityKilled'
     },
     {
-      id: 11068,
+      id: 11080,
       kind: 1024,
       name: "damagebits",
       url: "interfaces/_eventtypes_.ievententitykilled.html#damagebits",
@@ -90462,7 +90566,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEntityKilled'
     },
     {
-      id: 11069,
+      id: 11081,
       kind: 256,
       name: "IEventBonusUpdated",
       url: "interfaces/_eventtypes_.ieventbonusupdated.html",
@@ -90470,7 +90574,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11070,
+      id: 11082,
       kind: 1024,
       name: "numadvanced",
       url: "interfaces/_eventtypes_.ieventbonusupdated.html#numadvanced",
@@ -90478,7 +90582,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBonusUpdated'
     },
     {
-      id: 11071,
+      id: 11083,
       kind: 1024,
       name: "numbronze",
       url: "interfaces/_eventtypes_.ieventbonusupdated.html#numbronze",
@@ -90486,7 +90590,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBonusUpdated'
     },
     {
-      id: 11072,
+      id: 11084,
       kind: 1024,
       name: "numsilver",
       url: "interfaces/_eventtypes_.ieventbonusupdated.html#numsilver",
@@ -90494,7 +90598,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBonusUpdated'
     },
     {
-      id: 11073,
+      id: 11085,
       kind: 1024,
       name: "numgold",
       url: "interfaces/_eventtypes_.ieventbonusupdated.html#numgold",
@@ -90502,7 +90606,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBonusUpdated'
     },
     {
-      id: 11074,
+      id: 11086,
       kind: 256,
       name: "IEventPlayerStatsUpdated",
       url: "interfaces/_eventtypes_.ieventplayerstatsupdated.html",
@@ -90510,7 +90614,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11075,
+      id: 11087,
       kind: 1024,
       name: "forceupload",
       url: "interfaces/_eventtypes_.ieventplayerstatsupdated.html#forceupload",
@@ -90518,7 +90622,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerStatsUpdated'
     },
     {
-      id: 11076,
+      id: 11088,
       kind: 256,
       name: "IEventAchievementEvent",
       url: "interfaces/_eventtypes_.ieventachievementevent.html",
@@ -90526,7 +90630,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11077,
+      id: 11089,
       kind: 1024,
       name: "achievement_name",
       url:
@@ -90535,7 +90639,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAchievementEvent'
     },
     {
-      id: 11078,
+      id: 11090,
       kind: 1024,
       name: "cur_val",
       url: "interfaces/_eventtypes_.ieventachievementevent.html#cur_val",
@@ -90543,7 +90647,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAchievementEvent'
     },
     {
-      id: 11079,
+      id: 11091,
       kind: 1024,
       name: "max_val",
       url: "interfaces/_eventtypes_.ieventachievementevent.html#max_val",
@@ -90551,7 +90655,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAchievementEvent'
     },
     {
-      id: 11080,
+      id: 11092,
       kind: 256,
       name: "IEventAchievementIncrement",
       url: "interfaces/_eventtypes_.ieventachievementincrement.html",
@@ -90559,7 +90663,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11081,
+      id: 11093,
       kind: 1024,
       name: "achievement_id",
       url:
@@ -90568,7 +90672,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAchievementIncrement'
     },
     {
-      id: 11082,
+      id: 11094,
       kind: 1024,
       name: "cur_val",
       url: "interfaces/_eventtypes_.ieventachievementincrement.html#cur_val",
@@ -90576,7 +90680,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAchievementIncrement'
     },
     {
-      id: 11083,
+      id: 11095,
       kind: 1024,
       name: "max_val",
       url: "interfaces/_eventtypes_.ieventachievementincrement.html#max_val",
@@ -90584,7 +90688,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAchievementIncrement'
     },
     {
-      id: 11084,
+      id: 11096,
       kind: 256,
       name: "IEventAchievementEarned",
       url: "interfaces/_eventtypes_.ieventachievementearned.html",
@@ -90592,7 +90696,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11085,
+      id: 11097,
       kind: 1024,
       name: "player",
       url: "interfaces/_eventtypes_.ieventachievementearned.html#player",
@@ -90600,7 +90704,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAchievementEarned'
     },
     {
-      id: 11086,
+      id: 11098,
       kind: 1024,
       name: "achievement",
       url: "interfaces/_eventtypes_.ieventachievementearned.html#achievement",
@@ -90608,7 +90712,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAchievementEarned'
     },
     {
-      id: 11087,
+      id: 11099,
       kind: 256,
       name: "IEventAchievementWriteFailed",
       url: "interfaces/_eventtypes_.ieventachievementwritefailed.html",
@@ -90616,7 +90720,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11088,
+      id: 11100,
       kind: 256,
       name: "IEventPhysgunPickup",
       url: "interfaces/_eventtypes_.ieventphysgunpickup.html",
@@ -90624,7 +90728,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11089,
+      id: 11101,
       kind: 1024,
       name: "entindex",
       url: "interfaces/_eventtypes_.ieventphysgunpickup.html#entindex",
@@ -90632,7 +90736,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPhysgunPickup'
     },
     {
-      id: 11090,
+      id: 11102,
       kind: 256,
       name: "IEventFlareIgniteNpc",
       url: "interfaces/_eventtypes_.ieventflareignitenpc.html",
@@ -90640,7 +90744,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11091,
+      id: 11103,
       kind: 1024,
       name: "entindex",
       url: "interfaces/_eventtypes_.ieventflareignitenpc.html#entindex",
@@ -90648,7 +90752,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventFlareIgniteNpc'
     },
     {
-      id: 11092,
+      id: 11104,
       kind: 256,
       name: "IEventHelicopterGrenadePuntMiss",
       url: "interfaces/_eventtypes_.ieventhelicoptergrenadepuntmiss.html",
@@ -90656,7 +90760,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11093,
+      id: 11105,
       kind: 256,
       name: "IEventUserDataDownloaded",
       url: "interfaces/_eventtypes_.ieventuserdatadownloaded.html",
@@ -90664,7 +90768,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11094,
+      id: 11106,
       kind: 256,
       name: "IEventRagdollDissolved",
       url: "interfaces/_eventtypes_.ieventragdolldissolved.html",
@@ -90672,7 +90776,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11095,
+      id: 11107,
       kind: 1024,
       name: "entindex",
       url: "interfaces/_eventtypes_.ieventragdolldissolved.html#entindex",
@@ -90680,7 +90784,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventRagdollDissolved'
     },
     {
-      id: 11096,
+      id: 11108,
       kind: 256,
       name: "IEventGameinstructorDraw",
       url: "interfaces/_eventtypes_.ieventgameinstructordraw.html",
@@ -90688,7 +90792,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11097,
+      id: 11109,
       kind: 256,
       name: "IEventGameinstructorNodraw",
       url: "interfaces/_eventtypes_.ieventgameinstructornodraw.html",
@@ -90696,7 +90800,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11098,
+      id: 11110,
       kind: 256,
       name: "IEventMapTransition",
       url: "interfaces/_eventtypes_.ieventmaptransition.html",
@@ -90704,7 +90808,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11099,
+      id: 11111,
       kind: 256,
       name: "IEventEntityVisible",
       url: "interfaces/_eventtypes_.ievententityvisible.html",
@@ -90712,7 +90816,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11100,
+      id: 11112,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ievententityvisible.html#userid",
@@ -90720,7 +90824,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEntityVisible'
     },
     {
-      id: 11101,
+      id: 11113,
       kind: 1024,
       name: "subject",
       url: "interfaces/_eventtypes_.ievententityvisible.html#subject",
@@ -90728,7 +90832,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEntityVisible'
     },
     {
-      id: 11102,
+      id: 11114,
       kind: 1024,
       name: "classname",
       url: "interfaces/_eventtypes_.ievententityvisible.html#classname",
@@ -90736,7 +90840,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEntityVisible'
     },
     {
-      id: 11103,
+      id: 11115,
       kind: 1024,
       name: "entityname",
       url: "interfaces/_eventtypes_.ievententityvisible.html#entityname",
@@ -90744,7 +90848,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEntityVisible'
     },
     {
-      id: 11104,
+      id: 11116,
       kind: 256,
       name: "IEventSetInstructorGroupEnabled",
       url: "interfaces/_eventtypes_.ieventsetinstructorgroupenabled.html",
@@ -90752,7 +90856,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11105,
+      id: 11117,
       kind: 1024,
       name: "group",
       url: "interfaces/_eventtypes_.ieventsetinstructorgroupenabled.html#group",
@@ -90760,7 +90864,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSetInstructorGroupEnabled'
     },
     {
-      id: 11106,
+      id: 11118,
       kind: 1024,
       name: "enabled",
       url:
@@ -90769,7 +90873,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSetInstructorGroupEnabled'
     },
     {
-      id: 11107,
+      id: 11119,
       kind: 256,
       name: "IEventInstructorServerHintCreate",
       url: "interfaces/_eventtypes_.ieventinstructorserverhintcreate.html",
@@ -90777,7 +90881,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11108,
+      id: 11120,
       kind: 1024,
       name: "hint_name",
       url:
@@ -90786,7 +90890,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11109,
+      id: 11121,
       kind: 1024,
       name: "hint_replace_key",
       url:
@@ -90795,7 +90899,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11110,
+      id: 11122,
       kind: 1024,
       name: "hint_target",
       url:
@@ -90804,7 +90908,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11111,
+      id: 11123,
       kind: 1024,
       name: "hint_activator_userid",
       url:
@@ -90813,7 +90917,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11112,
+      id: 11124,
       kind: 1024,
       name: "hint_timeout",
       url:
@@ -90822,7 +90926,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11113,
+      id: 11125,
       kind: 1024,
       name: "hint_icon_onscreen",
       url:
@@ -90831,7 +90935,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11114,
+      id: 11126,
       kind: 1024,
       name: "hint_icon_offscreen",
       url:
@@ -90840,7 +90944,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11115,
+      id: 11127,
       kind: 1024,
       name: "hint_caption",
       url:
@@ -90849,7 +90953,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11116,
+      id: 11128,
       kind: 1024,
       name: "hint_activator_caption",
       url:
@@ -90858,7 +90962,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11117,
+      id: 11129,
       kind: 1024,
       name: "hint_color",
       url:
@@ -90867,7 +90971,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11118,
+      id: 11130,
       kind: 1024,
       name: "hint_icon_offset",
       url:
@@ -90876,7 +90980,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11119,
+      id: 11131,
       kind: 1024,
       name: "hint_range",
       url:
@@ -90885,7 +90989,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11120,
+      id: 11132,
       kind: 1024,
       name: "hint_flags",
       url:
@@ -90894,7 +90998,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11121,
+      id: 11133,
       kind: 1024,
       name: "hint_binding",
       url:
@@ -90903,7 +91007,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11122,
+      id: 11134,
       kind: 1024,
       name: "hint_gamepad_binding",
       url:
@@ -90912,7 +91016,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11123,
+      id: 11135,
       kind: 1024,
       name: "hint_allow_nodraw_target",
       url:
@@ -90921,7 +91025,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11124,
+      id: 11136,
       kind: 1024,
       name: "hint_nooffscreen",
       url:
@@ -90930,7 +91034,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11125,
+      id: 11137,
       kind: 1024,
       name: "hint_forcecaption",
       url:
@@ -90939,7 +91043,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11126,
+      id: 11138,
       kind: 1024,
       name: "hint_local_player_only",
       url:
@@ -90948,7 +91052,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintCreate'
     },
     {
-      id: 11127,
+      id: 11139,
       kind: 256,
       name: "IEventInstructorServerHintStop",
       url: "interfaces/_eventtypes_.ieventinstructorserverhintstop.html",
@@ -90956,7 +91060,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11128,
+      id: 11140,
       kind: 1024,
       name: "hint_name",
       url:
@@ -90965,7 +91069,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInstructorServerHintStop'
     },
     {
-      id: 11129,
+      id: 11141,
       kind: 256,
       name: "IEventReadGameTitledata",
       url: "interfaces/_eventtypes_.ieventreadgametitledata.html",
@@ -90973,7 +91077,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11130,
+      id: 11142,
       kind: 1024,
       name: "controllerId",
       url: "interfaces/_eventtypes_.ieventreadgametitledata.html#controllerid",
@@ -90981,7 +91085,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventReadGameTitledata'
     },
     {
-      id: 11131,
+      id: 11143,
       kind: 256,
       name: "IEventWriteGameTitledata",
       url: "interfaces/_eventtypes_.ieventwritegametitledata.html",
@@ -90989,7 +91093,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11132,
+      id: 11144,
       kind: 1024,
       name: "controllerId",
       url: "interfaces/_eventtypes_.ieventwritegametitledata.html#controllerid",
@@ -90997,7 +91101,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventWriteGameTitledata'
     },
     {
-      id: 11133,
+      id: 11145,
       kind: 256,
       name: "IEventResetGameTitledata",
       url: "interfaces/_eventtypes_.ieventresetgametitledata.html",
@@ -91005,7 +91109,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11134,
+      id: 11146,
       kind: 1024,
       name: "controllerId",
       url: "interfaces/_eventtypes_.ieventresetgametitledata.html#controllerid",
@@ -91013,7 +91117,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventResetGameTitledata'
     },
     {
-      id: 11135,
+      id: 11147,
       kind: 256,
       name: "IEventWeaponhudSelection",
       url: "interfaces/_eventtypes_.ieventweaponhudselection.html",
@@ -91021,7 +91125,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11136,
+      id: 11148,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventweaponhudselection.html#userid",
@@ -91029,7 +91133,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventWeaponhudSelection'
     },
     {
-      id: 11137,
+      id: 11149,
       kind: 1024,
       name: "mode",
       url: "interfaces/_eventtypes_.ieventweaponhudselection.html#mode",
@@ -91037,7 +91141,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventWeaponhudSelection'
     },
     {
-      id: 11138,
+      id: 11150,
       kind: 1024,
       name: "entindex",
       url: "interfaces/_eventtypes_.ieventweaponhudselection.html#entindex",
@@ -91045,7 +91149,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventWeaponhudSelection'
     },
     {
-      id: 11139,
+      id: 11151,
       kind: 256,
       name: "IEventVoteEnded",
       url: "interfaces/_eventtypes_.ieventvoteended.html",
@@ -91053,7 +91157,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11140,
+      id: 11152,
       kind: 256,
       name: "IEventVoteStarted",
       url: "interfaces/_eventtypes_.ieventvotestarted.html",
@@ -91061,7 +91165,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11141,
+      id: 11153,
       kind: 1024,
       name: "issue",
       url: "interfaces/_eventtypes_.ieventvotestarted.html#issue",
@@ -91069,7 +91173,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteStarted'
     },
     {
-      id: 11142,
+      id: 11154,
       kind: 1024,
       name: "param1",
       url: "interfaces/_eventtypes_.ieventvotestarted.html#param1",
@@ -91077,7 +91181,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteStarted'
     },
     {
-      id: 11143,
+      id: 11155,
       kind: 1024,
       name: "team",
       url: "interfaces/_eventtypes_.ieventvotestarted.html#team",
@@ -91085,7 +91189,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteStarted'
     },
     {
-      id: 11144,
+      id: 11156,
       kind: 1024,
       name: "initiator",
       url: "interfaces/_eventtypes_.ieventvotestarted.html#initiator",
@@ -91093,7 +91197,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteStarted'
     },
     {
-      id: 11145,
+      id: 11157,
       kind: 256,
       name: "IEventVoteChanged",
       url: "interfaces/_eventtypes_.ieventvotechanged.html",
@@ -91101,7 +91205,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11146,
+      id: 11158,
       kind: 1024,
       name: "vote_option1",
       url: "interfaces/_eventtypes_.ieventvotechanged.html#vote_option1",
@@ -91109,7 +91213,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteChanged'
     },
     {
-      id: 11147,
+      id: 11159,
       kind: 1024,
       name: "vote_option2",
       url: "interfaces/_eventtypes_.ieventvotechanged.html#vote_option2",
@@ -91117,7 +91221,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteChanged'
     },
     {
-      id: 11148,
+      id: 11160,
       kind: 1024,
       name: "vote_option3",
       url: "interfaces/_eventtypes_.ieventvotechanged.html#vote_option3",
@@ -91125,7 +91229,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteChanged'
     },
     {
-      id: 11149,
+      id: 11161,
       kind: 1024,
       name: "vote_option4",
       url: "interfaces/_eventtypes_.ieventvotechanged.html#vote_option4",
@@ -91133,7 +91237,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteChanged'
     },
     {
-      id: 11150,
+      id: 11162,
       kind: 1024,
       name: "vote_option5",
       url: "interfaces/_eventtypes_.ieventvotechanged.html#vote_option5",
@@ -91141,7 +91245,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteChanged'
     },
     {
-      id: 11151,
+      id: 11163,
       kind: 1024,
       name: "potentialVotes",
       url: "interfaces/_eventtypes_.ieventvotechanged.html#potentialvotes",
@@ -91149,7 +91253,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteChanged'
     },
     {
-      id: 11152,
+      id: 11164,
       kind: 256,
       name: "IEventVotePassed",
       url: "interfaces/_eventtypes_.ieventvotepassed.html",
@@ -91157,7 +91261,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11153,
+      id: 11165,
       kind: 1024,
       name: "details",
       url: "interfaces/_eventtypes_.ieventvotepassed.html#details",
@@ -91165,7 +91269,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVotePassed'
     },
     {
-      id: 11154,
+      id: 11166,
       kind: 1024,
       name: "param1",
       url: "interfaces/_eventtypes_.ieventvotepassed.html#param1",
@@ -91173,7 +91277,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVotePassed'
     },
     {
-      id: 11155,
+      id: 11167,
       kind: 1024,
       name: "team",
       url: "interfaces/_eventtypes_.ieventvotepassed.html#team",
@@ -91181,7 +91285,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVotePassed'
     },
     {
-      id: 11156,
+      id: 11168,
       kind: 256,
       name: "IEventVoteFailed",
       url: "interfaces/_eventtypes_.ieventvotefailed.html",
@@ -91189,7 +91293,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11157,
+      id: 11169,
       kind: 1024,
       name: "team",
       url: "interfaces/_eventtypes_.ieventvotefailed.html#team",
@@ -91197,7 +91301,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteFailed'
     },
     {
-      id: 11158,
+      id: 11170,
       kind: 256,
       name: "IEventVoteCast",
       url: "interfaces/_eventtypes_.ieventvotecast.html",
@@ -91205,7 +91309,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11159,
+      id: 11171,
       kind: 1024,
       name: "vote_option",
       url: "interfaces/_eventtypes_.ieventvotecast.html#vote_option",
@@ -91213,7 +91317,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteCast'
     },
     {
-      id: 11160,
+      id: 11172,
       kind: 1024,
       name: "team",
       url: "interfaces/_eventtypes_.ieventvotecast.html#team",
@@ -91221,7 +91325,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteCast'
     },
     {
-      id: 11161,
+      id: 11173,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventvotecast.html#entityid",
@@ -91229,7 +91333,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteCast'
     },
     {
-      id: 11162,
+      id: 11174,
       kind: 256,
       name: "IEventVoteOptions",
       url: "interfaces/_eventtypes_.ieventvoteoptions.html",
@@ -91237,7 +91341,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11163,
+      id: 11175,
       kind: 1024,
       name: "count",
       url: "interfaces/_eventtypes_.ieventvoteoptions.html#count",
@@ -91245,7 +91349,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteOptions'
     },
     {
-      id: 11164,
+      id: 11176,
       kind: 1024,
       name: "option1",
       url: "interfaces/_eventtypes_.ieventvoteoptions.html#option1",
@@ -91253,7 +91357,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteOptions'
     },
     {
-      id: 11165,
+      id: 11177,
       kind: 1024,
       name: "option2",
       url: "interfaces/_eventtypes_.ieventvoteoptions.html#option2",
@@ -91261,7 +91365,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteOptions'
     },
     {
-      id: 11166,
+      id: 11178,
       kind: 1024,
       name: "option3",
       url: "interfaces/_eventtypes_.ieventvoteoptions.html#option3",
@@ -91269,7 +91373,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteOptions'
     },
     {
-      id: 11167,
+      id: 11179,
       kind: 1024,
       name: "option4",
       url: "interfaces/_eventtypes_.ieventvoteoptions.html#option4",
@@ -91277,7 +91381,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteOptions'
     },
     {
-      id: 11168,
+      id: 11180,
       kind: 1024,
       name: "option5",
       url: "interfaces/_eventtypes_.ieventvoteoptions.html#option5",
@@ -91285,7 +91389,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVoteOptions'
     },
     {
-      id: 11169,
+      id: 11181,
       kind: 256,
       name: "IEventEndmatchMapvoteSelectingMap",
       url: "interfaces/_eventtypes_.ieventendmatchmapvoteselectingmap.html",
@@ -91293,7 +91397,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11170,
+      id: 11182,
       kind: 1024,
       name: "count",
       url:
@@ -91302,7 +91406,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEndmatchMapvoteSelectingMap'
     },
     {
-      id: 11171,
+      id: 11183,
       kind: 1024,
       name: "slot1",
       url:
@@ -91311,7 +91415,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEndmatchMapvoteSelectingMap'
     },
     {
-      id: 11172,
+      id: 11184,
       kind: 1024,
       name: "slot2",
       url:
@@ -91320,7 +91424,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEndmatchMapvoteSelectingMap'
     },
     {
-      id: 11173,
+      id: 11185,
       kind: 1024,
       name: "slot3",
       url:
@@ -91329,7 +91433,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEndmatchMapvoteSelectingMap'
     },
     {
-      id: 11174,
+      id: 11186,
       kind: 1024,
       name: "slot4",
       url:
@@ -91338,7 +91442,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEndmatchMapvoteSelectingMap'
     },
     {
-      id: 11175,
+      id: 11187,
       kind: 1024,
       name: "slot5",
       url:
@@ -91347,7 +91451,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEndmatchMapvoteSelectingMap'
     },
     {
-      id: 11176,
+      id: 11188,
       kind: 1024,
       name: "slot6",
       url:
@@ -91356,7 +91460,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEndmatchMapvoteSelectingMap'
     },
     {
-      id: 11177,
+      id: 11189,
       kind: 1024,
       name: "slot7",
       url:
@@ -91365,7 +91469,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEndmatchMapvoteSelectingMap'
     },
     {
-      id: 11178,
+      id: 11190,
       kind: 1024,
       name: "slot8",
       url:
@@ -91374,7 +91478,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEndmatchMapvoteSelectingMap'
     },
     {
-      id: 11179,
+      id: 11191,
       kind: 1024,
       name: "slot9",
       url:
@@ -91383,7 +91487,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEndmatchMapvoteSelectingMap'
     },
     {
-      id: 11180,
+      id: 11192,
       kind: 1024,
       name: "slot10",
       url:
@@ -91392,7 +91496,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEndmatchMapvoteSelectingMap'
     },
     {
-      id: 11181,
+      id: 11193,
       kind: 256,
       name: "IEventEndmatchCmmStartRevealItems",
       url: "interfaces/_eventtypes_.ieventendmatchcmmstartrevealitems.html",
@@ -91400,7 +91504,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11182,
+      id: 11194,
       kind: 256,
       name: "IEventInventoryUpdated",
       url: "interfaces/_eventtypes_.ieventinventoryupdated.html",
@@ -91408,7 +91512,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11183,
+      id: 11195,
       kind: 256,
       name: "IEventCartUpdated",
       url: "interfaces/_eventtypes_.ieventcartupdated.html",
@@ -91416,7 +91520,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11184,
+      id: 11196,
       kind: 256,
       name: "IEventStorePricesheetUpdated",
       url: "interfaces/_eventtypes_.ieventstorepricesheetupdated.html",
@@ -91424,7 +91528,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11185,
+      id: 11197,
       kind: 256,
       name: "IEventGcConnected",
       url: "interfaces/_eventtypes_.ieventgcconnected.html",
@@ -91432,7 +91536,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11186,
+      id: 11198,
       kind: 256,
       name: "IEventItemSchemaInitialized",
       url: "interfaces/_eventtypes_.ieventitemschemainitialized.html",
@@ -91440,7 +91544,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11187,
+      id: 11199,
       kind: 256,
       name: "IEventClientLoadoutChanged",
       url: "interfaces/_eventtypes_.ieventclientloadoutchanged.html",
@@ -91448,7 +91552,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11188,
+      id: 11200,
       kind: 256,
       name: "IEventAddPlayerSonarIcon",
       url: "interfaces/_eventtypes_.ieventaddplayersonaricon.html",
@@ -91456,7 +91560,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11189,
+      id: 11201,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventaddplayersonaricon.html#userid",
@@ -91464,7 +91568,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddPlayerSonarIcon'
     },
     {
-      id: 11190,
+      id: 11202,
       kind: 1024,
       name: "pos_x",
       url: "interfaces/_eventtypes_.ieventaddplayersonaricon.html#pos_x",
@@ -91472,7 +91576,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddPlayerSonarIcon'
     },
     {
-      id: 11191,
+      id: 11203,
       kind: 1024,
       name: "pos_y",
       url: "interfaces/_eventtypes_.ieventaddplayersonaricon.html#pos_y",
@@ -91480,7 +91584,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddPlayerSonarIcon'
     },
     {
-      id: 11192,
+      id: 11204,
       kind: 1024,
       name: "pos_z",
       url: "interfaces/_eventtypes_.ieventaddplayersonaricon.html#pos_z",
@@ -91488,7 +91592,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddPlayerSonarIcon'
     },
     {
-      id: 11193,
+      id: 11205,
       kind: 256,
       name: "IEventAddBulletHitMarker",
       url: "interfaces/_eventtypes_.ieventaddbullethitmarker.html",
@@ -91496,7 +91600,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11194,
+      id: 11206,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventaddbullethitmarker.html#userid",
@@ -91504,7 +91608,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddBulletHitMarker'
     },
     {
-      id: 11195,
+      id: 11207,
       kind: 1024,
       name: "bone",
       url: "interfaces/_eventtypes_.ieventaddbullethitmarker.html#bone",
@@ -91512,7 +91616,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddBulletHitMarker'
     },
     {
-      id: 11196,
+      id: 11208,
       kind: 1024,
       name: "pos_x",
       url: "interfaces/_eventtypes_.ieventaddbullethitmarker.html#pos_x",
@@ -91520,7 +91624,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddBulletHitMarker'
     },
     {
-      id: 11197,
+      id: 11209,
       kind: 1024,
       name: "pos_y",
       url: "interfaces/_eventtypes_.ieventaddbullethitmarker.html#pos_y",
@@ -91528,7 +91632,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddBulletHitMarker'
     },
     {
-      id: 11198,
+      id: 11210,
       kind: 1024,
       name: "pos_z",
       url: "interfaces/_eventtypes_.ieventaddbullethitmarker.html#pos_z",
@@ -91536,7 +91640,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddBulletHitMarker'
     },
     {
-      id: 11199,
+      id: 11211,
       kind: 1024,
       name: "ang_x",
       url: "interfaces/_eventtypes_.ieventaddbullethitmarker.html#ang_x",
@@ -91544,7 +91648,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddBulletHitMarker'
     },
     {
-      id: 11200,
+      id: 11212,
       kind: 1024,
       name: "ang_y",
       url: "interfaces/_eventtypes_.ieventaddbullethitmarker.html#ang_y",
@@ -91552,7 +91656,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddBulletHitMarker'
     },
     {
-      id: 11201,
+      id: 11213,
       kind: 1024,
       name: "ang_z",
       url: "interfaces/_eventtypes_.ieventaddbullethitmarker.html#ang_z",
@@ -91560,7 +91664,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddBulletHitMarker'
     },
     {
-      id: 11202,
+      id: 11214,
       kind: 1024,
       name: "start_x",
       url: "interfaces/_eventtypes_.ieventaddbullethitmarker.html#start_x",
@@ -91568,7 +91672,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddBulletHitMarker'
     },
     {
-      id: 11203,
+      id: 11215,
       kind: 1024,
       name: "start_y",
       url: "interfaces/_eventtypes_.ieventaddbullethitmarker.html#start_y",
@@ -91576,7 +91680,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddBulletHitMarker'
     },
     {
-      id: 11204,
+      id: 11216,
       kind: 1024,
       name: "start_z",
       url: "interfaces/_eventtypes_.ieventaddbullethitmarker.html#start_z",
@@ -91584,7 +91688,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddBulletHitMarker'
     },
     {
-      id: 11205,
+      id: 11217,
       kind: 1024,
       name: "hit",
       url: "interfaces/_eventtypes_.ieventaddbullethitmarker.html#hit",
@@ -91592,7 +91696,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAddBulletHitMarker'
     },
     {
-      id: 11206,
+      id: 11218,
       kind: 256,
       name: "IEventVerifyClientHit",
       url: "interfaces/_eventtypes_.ieventverifyclienthit.html",
@@ -91600,7 +91704,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11207,
+      id: 11219,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventverifyclienthit.html#userid",
@@ -91608,7 +91712,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVerifyClientHit'
     },
     {
-      id: 11208,
+      id: 11220,
       kind: 1024,
       name: "pos_x",
       url: "interfaces/_eventtypes_.ieventverifyclienthit.html#pos_x",
@@ -91616,7 +91720,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVerifyClientHit'
     },
     {
-      id: 11209,
+      id: 11221,
       kind: 1024,
       name: "pos_y",
       url: "interfaces/_eventtypes_.ieventverifyclienthit.html#pos_y",
@@ -91624,7 +91728,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVerifyClientHit'
     },
     {
-      id: 11210,
+      id: 11222,
       kind: 1024,
       name: "pos_z",
       url: "interfaces/_eventtypes_.ieventverifyclienthit.html#pos_z",
@@ -91632,7 +91736,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVerifyClientHit'
     },
     {
-      id: 11211,
+      id: 11223,
       kind: 1024,
       name: "timestamp",
       url: "interfaces/_eventtypes_.ieventverifyclienthit.html#timestamp",
@@ -91640,7 +91744,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVerifyClientHit'
     },
     {
-      id: 11212,
+      id: 11224,
       kind: 256,
       name: "IEventOtherDeath",
       url: "interfaces/_eventtypes_.ieventotherdeath.html",
@@ -91648,7 +91752,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11213,
+      id: 11225,
       kind: 1024,
       name: "otherid",
       url: "interfaces/_eventtypes_.ieventotherdeath.html#otherid",
@@ -91656,7 +91760,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventOtherDeath'
     },
     {
-      id: 11214,
+      id: 11226,
       kind: 1024,
       name: "othertype",
       url: "interfaces/_eventtypes_.ieventotherdeath.html#othertype",
@@ -91664,7 +91768,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventOtherDeath'
     },
     {
-      id: 11215,
+      id: 11227,
       kind: 1024,
       name: "attacker",
       url: "interfaces/_eventtypes_.ieventotherdeath.html#attacker",
@@ -91672,7 +91776,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventOtherDeath'
     },
     {
-      id: 11216,
+      id: 11228,
       kind: 1024,
       name: "weapon",
       url: "interfaces/_eventtypes_.ieventotherdeath.html#weapon",
@@ -91680,7 +91784,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventOtherDeath'
     },
     {
-      id: 11217,
+      id: 11229,
       kind: 1024,
       name: "weapon_itemid",
       url: "interfaces/_eventtypes_.ieventotherdeath.html#weapon_itemid",
@@ -91688,7 +91792,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventOtherDeath'
     },
     {
-      id: 11218,
+      id: 11230,
       kind: 1024,
       name: "weapon_fauxitemid",
       url: "interfaces/_eventtypes_.ieventotherdeath.html#weapon_fauxitemid",
@@ -91696,7 +91800,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventOtherDeath'
     },
     {
-      id: 11219,
+      id: 11231,
       kind: 1024,
       name: "weapon_originalowner_xuid",
       url:
@@ -91705,7 +91809,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventOtherDeath'
     },
     {
-      id: 11220,
+      id: 11232,
       kind: 1024,
       name: "headshot",
       url: "interfaces/_eventtypes_.ieventotherdeath.html#headshot",
@@ -91713,7 +91817,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventOtherDeath'
     },
     {
-      id: 11221,
+      id: 11233,
       kind: 1024,
       name: "penetrated",
       url: "interfaces/_eventtypes_.ieventotherdeath.html#penetrated",
@@ -91721,7 +91825,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventOtherDeath'
     },
     {
-      id: 11222,
+      id: 11234,
       kind: 256,
       name: "IEventItemPurchase",
       url: "interfaces/_eventtypes_.ieventitempurchase.html",
@@ -91729,7 +91833,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11223,
+      id: 11235,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventitempurchase.html#userid",
@@ -91737,7 +91841,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemPurchase'
     },
     {
-      id: 11224,
+      id: 11236,
       kind: 1024,
       name: "team",
       url: "interfaces/_eventtypes_.ieventitempurchase.html#team",
@@ -91745,7 +91849,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemPurchase'
     },
     {
-      id: 11225,
+      id: 11237,
       kind: 1024,
       name: "loadout",
       url: "interfaces/_eventtypes_.ieventitempurchase.html#loadout",
@@ -91753,7 +91857,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemPurchase'
     },
     {
-      id: 11226,
+      id: 11238,
       kind: 1024,
       name: "weapon",
       url: "interfaces/_eventtypes_.ieventitempurchase.html#weapon",
@@ -91761,7 +91865,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemPurchase'
     },
     {
-      id: 11227,
+      id: 11239,
       kind: 256,
       name: "IEventBombBeginplant",
       url: "interfaces/_eventtypes_.ieventbombbeginplant.html",
@@ -91769,7 +91873,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11228,
+      id: 11240,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbombbeginplant.html#userid",
@@ -91777,7 +91881,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombBeginplant'
     },
     {
-      id: 11229,
+      id: 11241,
       kind: 1024,
       name: "site",
       url: "interfaces/_eventtypes_.ieventbombbeginplant.html#site",
@@ -91785,7 +91889,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombBeginplant'
     },
     {
-      id: 11230,
+      id: 11242,
       kind: 256,
       name: "IEventBombAbortplant",
       url: "interfaces/_eventtypes_.ieventbombabortplant.html",
@@ -91793,7 +91897,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11231,
+      id: 11243,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbombabortplant.html#userid",
@@ -91801,7 +91905,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombAbortplant'
     },
     {
-      id: 11232,
+      id: 11244,
       kind: 1024,
       name: "site",
       url: "interfaces/_eventtypes_.ieventbombabortplant.html#site",
@@ -91809,7 +91913,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombAbortplant'
     },
     {
-      id: 11233,
+      id: 11245,
       kind: 256,
       name: "IEventBombPlanted",
       url: "interfaces/_eventtypes_.ieventbombplanted.html",
@@ -91817,7 +91921,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11234,
+      id: 11246,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbombplanted.html#userid",
@@ -91825,7 +91929,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombPlanted'
     },
     {
-      id: 11235,
+      id: 11247,
       kind: 1024,
       name: "site",
       url: "interfaces/_eventtypes_.ieventbombplanted.html#site",
@@ -91833,7 +91937,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombPlanted'
     },
     {
-      id: 11236,
+      id: 11248,
       kind: 256,
       name: "IEventBombDefused",
       url: "interfaces/_eventtypes_.ieventbombdefused.html",
@@ -91841,7 +91945,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11237,
+      id: 11249,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbombdefused.html#userid",
@@ -91849,7 +91953,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombDefused'
     },
     {
-      id: 11238,
+      id: 11250,
       kind: 1024,
       name: "site",
       url: "interfaces/_eventtypes_.ieventbombdefused.html#site",
@@ -91857,7 +91961,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombDefused'
     },
     {
-      id: 11239,
+      id: 11251,
       kind: 256,
       name: "IEventBombExploded",
       url: "interfaces/_eventtypes_.ieventbombexploded.html",
@@ -91865,7 +91969,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11240,
+      id: 11252,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbombexploded.html#userid",
@@ -91873,7 +91977,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombExploded'
     },
     {
-      id: 11241,
+      id: 11253,
       kind: 1024,
       name: "site",
       url: "interfaces/_eventtypes_.ieventbombexploded.html#site",
@@ -91881,7 +91985,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombExploded'
     },
     {
-      id: 11242,
+      id: 11254,
       kind: 256,
       name: "IEventBombDropped",
       url: "interfaces/_eventtypes_.ieventbombdropped.html",
@@ -91889,7 +91993,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11243,
+      id: 11255,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbombdropped.html#userid",
@@ -91897,7 +92001,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombDropped'
     },
     {
-      id: 11244,
+      id: 11256,
       kind: 1024,
       name: "entindex",
       url: "interfaces/_eventtypes_.ieventbombdropped.html#entindex",
@@ -91905,7 +92009,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombDropped'
     },
     {
-      id: 11245,
+      id: 11257,
       kind: 256,
       name: "IEventBombPickup",
       url: "interfaces/_eventtypes_.ieventbombpickup.html",
@@ -91913,7 +92017,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11246,
+      id: 11258,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbombpickup.html#userid",
@@ -91921,7 +92025,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombPickup'
     },
     {
-      id: 11247,
+      id: 11259,
       kind: 256,
       name: "IEventDefuserDropped",
       url: "interfaces/_eventtypes_.ieventdefuserdropped.html",
@@ -91929,7 +92033,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11248,
+      id: 11260,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventdefuserdropped.html#entityid",
@@ -91937,7 +92041,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDefuserDropped'
     },
     {
-      id: 11249,
+      id: 11261,
       kind: 256,
       name: "IEventDefuserPickup",
       url: "interfaces/_eventtypes_.ieventdefuserpickup.html",
@@ -91945,7 +92049,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11250,
+      id: 11262,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventdefuserpickup.html#entityid",
@@ -91953,7 +92057,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDefuserPickup'
     },
     {
-      id: 11251,
+      id: 11263,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventdefuserpickup.html#userid",
@@ -91961,7 +92065,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDefuserPickup'
     },
     {
-      id: 11252,
+      id: 11264,
       kind: 256,
       name: "IEventAnnouncePhaseEnd",
       url: "interfaces/_eventtypes_.ieventannouncephaseend.html",
@@ -91969,7 +92073,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11253,
+      id: 11265,
       kind: 256,
       name: "IEventCsIntermission",
       url: "interfaces/_eventtypes_.ieventcsintermission.html",
@@ -91977,7 +92081,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11254,
+      id: 11266,
       kind: 256,
       name: "IEventBombBegindefuse",
       url: "interfaces/_eventtypes_.ieventbombbegindefuse.html",
@@ -91985,7 +92089,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11255,
+      id: 11267,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbombbegindefuse.html#userid",
@@ -91993,7 +92097,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombBegindefuse'
     },
     {
-      id: 11256,
+      id: 11268,
       kind: 1024,
       name: "haskit",
       url: "interfaces/_eventtypes_.ieventbombbegindefuse.html#haskit",
@@ -92001,7 +92105,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombBegindefuse'
     },
     {
-      id: 11257,
+      id: 11269,
       kind: 256,
       name: "IEventBombAbortdefuse",
       url: "interfaces/_eventtypes_.ieventbombabortdefuse.html",
@@ -92009,7 +92113,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11258,
+      id: 11270,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbombabortdefuse.html#userid",
@@ -92017,7 +92121,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombAbortdefuse'
     },
     {
-      id: 11259,
+      id: 11271,
       kind: 256,
       name: "IEventHostageFollows",
       url: "interfaces/_eventtypes_.ieventhostagefollows.html",
@@ -92025,7 +92129,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11260,
+      id: 11272,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventhostagefollows.html#userid",
@@ -92033,7 +92137,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHostageFollows'
     },
     {
-      id: 11261,
+      id: 11273,
       kind: 1024,
       name: "hostage",
       url: "interfaces/_eventtypes_.ieventhostagefollows.html#hostage",
@@ -92041,7 +92145,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHostageFollows'
     },
     {
-      id: 11262,
+      id: 11274,
       kind: 256,
       name: "IEventHostageHurt",
       url: "interfaces/_eventtypes_.ieventhostagehurt.html",
@@ -92049,7 +92153,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11263,
+      id: 11275,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventhostagehurt.html#userid",
@@ -92057,7 +92161,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHostageHurt'
     },
     {
-      id: 11264,
+      id: 11276,
       kind: 1024,
       name: "hostage",
       url: "interfaces/_eventtypes_.ieventhostagehurt.html#hostage",
@@ -92065,7 +92169,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHostageHurt'
     },
     {
-      id: 11265,
+      id: 11277,
       kind: 256,
       name: "IEventHostageKilled",
       url: "interfaces/_eventtypes_.ieventhostagekilled.html",
@@ -92073,7 +92177,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11266,
+      id: 11278,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventhostagekilled.html#userid",
@@ -92081,7 +92185,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHostageKilled'
     },
     {
-      id: 11267,
+      id: 11279,
       kind: 1024,
       name: "hostage",
       url: "interfaces/_eventtypes_.ieventhostagekilled.html#hostage",
@@ -92089,7 +92193,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHostageKilled'
     },
     {
-      id: 11268,
+      id: 11280,
       kind: 256,
       name: "IEventHostageRescued",
       url: "interfaces/_eventtypes_.ieventhostagerescued.html",
@@ -92097,7 +92201,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11269,
+      id: 11281,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventhostagerescued.html#userid",
@@ -92105,7 +92209,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHostageRescued'
     },
     {
-      id: 11270,
+      id: 11282,
       kind: 1024,
       name: "hostage",
       url: "interfaces/_eventtypes_.ieventhostagerescued.html#hostage",
@@ -92113,7 +92217,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHostageRescued'
     },
     {
-      id: 11271,
+      id: 11283,
       kind: 1024,
       name: "site",
       url: "interfaces/_eventtypes_.ieventhostagerescued.html#site",
@@ -92121,7 +92225,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHostageRescued'
     },
     {
-      id: 11272,
+      id: 11284,
       kind: 256,
       name: "IEventHostageStopsFollowing",
       url: "interfaces/_eventtypes_.ieventhostagestopsfollowing.html",
@@ -92129,7 +92233,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11273,
+      id: 11285,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventhostagestopsfollowing.html#userid",
@@ -92137,7 +92241,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHostageStopsFollowing'
     },
     {
-      id: 11274,
+      id: 11286,
       kind: 1024,
       name: "hostage",
       url: "interfaces/_eventtypes_.ieventhostagestopsfollowing.html#hostage",
@@ -92145,7 +92249,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHostageStopsFollowing'
     },
     {
-      id: 11275,
+      id: 11287,
       kind: 256,
       name: "IEventHostageRescuedAll",
       url: "interfaces/_eventtypes_.ieventhostagerescuedall.html",
@@ -92153,7 +92257,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11276,
+      id: 11288,
       kind: 256,
       name: "IEventHostageCallForHelp",
       url: "interfaces/_eventtypes_.ieventhostagecallforhelp.html",
@@ -92161,7 +92265,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11277,
+      id: 11289,
       kind: 1024,
       name: "hostage",
       url: "interfaces/_eventtypes_.ieventhostagecallforhelp.html#hostage",
@@ -92169,7 +92273,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHostageCallForHelp'
     },
     {
-      id: 11278,
+      id: 11290,
       kind: 256,
       name: "IEventVipEscaped",
       url: "interfaces/_eventtypes_.ieventvipescaped.html",
@@ -92177,7 +92281,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11279,
+      id: 11291,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventvipescaped.html#userid",
@@ -92185,7 +92289,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVipEscaped'
     },
     {
-      id: 11280,
+      id: 11292,
       kind: 256,
       name: "IEventVipKilled",
       url: "interfaces/_eventtypes_.ieventvipkilled.html",
@@ -92193,7 +92297,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11281,
+      id: 11293,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventvipkilled.html#userid",
@@ -92201,7 +92305,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVipKilled'
     },
     {
-      id: 11282,
+      id: 11294,
       kind: 1024,
       name: "attacker",
       url: "interfaces/_eventtypes_.ieventvipkilled.html#attacker",
@@ -92209,7 +92313,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventVipKilled'
     },
     {
-      id: 11283,
+      id: 11295,
       kind: 256,
       name: "IEventPlayerRadio",
       url: "interfaces/_eventtypes_.ieventplayerradio.html",
@@ -92217,7 +92321,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11284,
+      id: 11296,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerradio.html#userid",
@@ -92225,7 +92329,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerRadio'
     },
     {
-      id: 11285,
+      id: 11297,
       kind: 1024,
       name: "slot",
       url: "interfaces/_eventtypes_.ieventplayerradio.html#slot",
@@ -92233,7 +92337,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerRadio'
     },
     {
-      id: 11286,
+      id: 11298,
       kind: 256,
       name: "IEventBombBeep",
       url: "interfaces/_eventtypes_.ieventbombbeep.html",
@@ -92241,7 +92345,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11287,
+      id: 11299,
       kind: 1024,
       name: "entindex",
       url: "interfaces/_eventtypes_.ieventbombbeep.html#entindex",
@@ -92249,7 +92353,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBombBeep'
     },
     {
-      id: 11288,
+      id: 11300,
       kind: 256,
       name: "IEventWeaponFire",
       url: "interfaces/_eventtypes_.ieventweaponfire.html",
@@ -92257,7 +92361,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11289,
+      id: 11301,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventweaponfire.html#userid",
@@ -92265,7 +92369,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventWeaponFire'
     },
     {
-      id: 11290,
+      id: 11302,
       kind: 1024,
       name: "weapon",
       url: "interfaces/_eventtypes_.ieventweaponfire.html#weapon",
@@ -92273,7 +92377,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventWeaponFire'
     },
     {
-      id: 11291,
+      id: 11303,
       kind: 1024,
       name: "silenced",
       url: "interfaces/_eventtypes_.ieventweaponfire.html#silenced",
@@ -92281,7 +92385,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventWeaponFire'
     },
     {
-      id: 11292,
+      id: 11304,
       kind: 256,
       name: "IEventWeaponFireOnEmpty",
       url: "interfaces/_eventtypes_.ieventweaponfireonempty.html",
@@ -92289,7 +92393,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11293,
+      id: 11305,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventweaponfireonempty.html#userid",
@@ -92297,7 +92401,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventWeaponFireOnEmpty'
     },
     {
-      id: 11294,
+      id: 11306,
       kind: 1024,
       name: "weapon",
       url: "interfaces/_eventtypes_.ieventweaponfireonempty.html#weapon",
@@ -92305,7 +92409,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventWeaponFireOnEmpty'
     },
     {
-      id: 11295,
+      id: 11307,
       kind: 256,
       name: "IEventGrenadeThrown",
       url: "interfaces/_eventtypes_.ieventgrenadethrown.html",
@@ -92313,7 +92417,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11296,
+      id: 11308,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventgrenadethrown.html#userid",
@@ -92321,7 +92425,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGrenadeThrown'
     },
     {
-      id: 11297,
+      id: 11309,
       kind: 1024,
       name: "weapon",
       url: "interfaces/_eventtypes_.ieventgrenadethrown.html#weapon",
@@ -92329,7 +92433,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGrenadeThrown'
     },
     {
-      id: 11298,
+      id: 11310,
       kind: 256,
       name: "IEventWeaponOutofammo",
       url: "interfaces/_eventtypes_.ieventweaponoutofammo.html",
@@ -92337,7 +92441,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11299,
+      id: 11311,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventweaponoutofammo.html#userid",
@@ -92345,7 +92449,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventWeaponOutofammo'
     },
     {
-      id: 11300,
+      id: 11312,
       kind: 256,
       name: "IEventWeaponReload",
       url: "interfaces/_eventtypes_.ieventweaponreload.html",
@@ -92353,7 +92457,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11301,
+      id: 11313,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventweaponreload.html#userid",
@@ -92361,7 +92465,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventWeaponReload'
     },
     {
-      id: 11302,
+      id: 11314,
       kind: 256,
       name: "IEventWeaponZoom",
       url: "interfaces/_eventtypes_.ieventweaponzoom.html",
@@ -92369,7 +92473,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11303,
+      id: 11315,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventweaponzoom.html#userid",
@@ -92377,7 +92481,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventWeaponZoom'
     },
     {
-      id: 11304,
+      id: 11316,
       kind: 256,
       name: "IEventSilencerDetach",
       url: "interfaces/_eventtypes_.ieventsilencerdetach.html",
@@ -92385,7 +92489,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11305,
+      id: 11317,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventsilencerdetach.html#userid",
@@ -92393,7 +92497,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSilencerDetach'
     },
     {
-      id: 11306,
+      id: 11318,
       kind: 256,
       name: "IEventInspectWeapon",
       url: "interfaces/_eventtypes_.ieventinspectweapon.html",
@@ -92401,7 +92505,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11307,
+      id: 11319,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventinspectweapon.html#userid",
@@ -92409,7 +92513,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInspectWeapon'
     },
     {
-      id: 11308,
+      id: 11320,
       kind: 256,
       name: "IEventWeaponZoomRifle",
       url: "interfaces/_eventtypes_.ieventweaponzoomrifle.html",
@@ -92417,7 +92521,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11309,
+      id: 11321,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventweaponzoomrifle.html#userid",
@@ -92425,7 +92529,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventWeaponZoomRifle'
     },
     {
-      id: 11310,
+      id: 11322,
       kind: 256,
       name: "IEventPlayerSpawned",
       url: "interfaces/_eventtypes_.ieventplayerspawned.html",
@@ -92433,7 +92537,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11311,
+      id: 11323,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerspawned.html#userid",
@@ -92441,7 +92545,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerSpawned'
     },
     {
-      id: 11312,
+      id: 11324,
       kind: 1024,
       name: "inrestart",
       url: "interfaces/_eventtypes_.ieventplayerspawned.html#inrestart",
@@ -92449,7 +92553,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerSpawned'
     },
     {
-      id: 11313,
+      id: 11325,
       kind: 256,
       name: "IEventItemPickup",
       url: "interfaces/_eventtypes_.ieventitempickup.html",
@@ -92457,7 +92561,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11314,
+      id: 11326,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventitempickup.html#userid",
@@ -92465,7 +92569,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemPickup'
     },
     {
-      id: 11315,
+      id: 11327,
       kind: 1024,
       name: "item",
       url: "interfaces/_eventtypes_.ieventitempickup.html#item",
@@ -92473,7 +92577,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemPickup'
     },
     {
-      id: 11316,
+      id: 11328,
       kind: 1024,
       name: "silent",
       url: "interfaces/_eventtypes_.ieventitempickup.html#silent",
@@ -92481,7 +92585,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemPickup'
     },
     {
-      id: 11317,
+      id: 11329,
       kind: 1024,
       name: "defindex",
       url: "interfaces/_eventtypes_.ieventitempickup.html#defindex",
@@ -92489,7 +92593,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemPickup'
     },
     {
-      id: 11318,
+      id: 11330,
       kind: 256,
       name: "IEventItemRemove",
       url: "interfaces/_eventtypes_.ieventitemremove.html",
@@ -92497,7 +92601,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11319,
+      id: 11331,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventitemremove.html#userid",
@@ -92505,7 +92609,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemRemove'
     },
     {
-      id: 11320,
+      id: 11332,
       kind: 1024,
       name: "item",
       url: "interfaces/_eventtypes_.ieventitemremove.html#item",
@@ -92513,7 +92617,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemRemove'
     },
     {
-      id: 11321,
+      id: 11333,
       kind: 1024,
       name: "defindex",
       url: "interfaces/_eventtypes_.ieventitemremove.html#defindex",
@@ -92521,7 +92625,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemRemove'
     },
     {
-      id: 11322,
+      id: 11334,
       kind: 256,
       name: "IEventAmmoPickup",
       url: "interfaces/_eventtypes_.ieventammopickup.html",
@@ -92529,7 +92633,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11323,
+      id: 11335,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventammopickup.html#userid",
@@ -92537,7 +92641,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAmmoPickup'
     },
     {
-      id: 11324,
+      id: 11336,
       kind: 1024,
       name: "item",
       url: "interfaces/_eventtypes_.ieventammopickup.html#item",
@@ -92545,7 +92649,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAmmoPickup'
     },
     {
-      id: 11325,
+      id: 11337,
       kind: 1024,
       name: "index",
       url: "interfaces/_eventtypes_.ieventammopickup.html#index",
@@ -92553,7 +92657,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAmmoPickup'
     },
     {
-      id: 11326,
+      id: 11338,
       kind: 256,
       name: "IEventItemEquip",
       url: "interfaces/_eventtypes_.ieventitemequip.html",
@@ -92561,7 +92665,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11327,
+      id: 11339,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventitemequip.html#userid",
@@ -92569,7 +92673,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemEquip'
     },
     {
-      id: 11328,
+      id: 11340,
       kind: 1024,
       name: "item",
       url: "interfaces/_eventtypes_.ieventitemequip.html#item",
@@ -92577,7 +92681,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemEquip'
     },
     {
-      id: 11329,
+      id: 11341,
       kind: 1024,
       name: "defindex",
       url: "interfaces/_eventtypes_.ieventitemequip.html#defindex",
@@ -92585,7 +92689,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemEquip'
     },
     {
-      id: 11330,
+      id: 11342,
       kind: 1024,
       name: "canzoom",
       url: "interfaces/_eventtypes_.ieventitemequip.html#canzoom",
@@ -92593,7 +92697,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemEquip'
     },
     {
-      id: 11331,
+      id: 11343,
       kind: 1024,
       name: "hassilencer",
       url: "interfaces/_eventtypes_.ieventitemequip.html#hassilencer",
@@ -92601,7 +92705,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemEquip'
     },
     {
-      id: 11332,
+      id: 11344,
       kind: 1024,
       name: "issilenced",
       url: "interfaces/_eventtypes_.ieventitemequip.html#issilenced",
@@ -92609,7 +92713,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemEquip'
     },
     {
-      id: 11333,
+      id: 11345,
       kind: 1024,
       name: "hastracers",
       url: "interfaces/_eventtypes_.ieventitemequip.html#hastracers",
@@ -92617,7 +92721,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemEquip'
     },
     {
-      id: 11334,
+      id: 11346,
       kind: 1024,
       name: "weptype",
       url: "interfaces/_eventtypes_.ieventitemequip.html#weptype",
@@ -92625,7 +92729,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemEquip'
     },
     {
-      id: 11335,
+      id: 11347,
       kind: 1024,
       name: "ispainted",
       url: "interfaces/_eventtypes_.ieventitemequip.html#ispainted",
@@ -92633,7 +92737,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemEquip'
     },
     {
-      id: 11336,
+      id: 11348,
       kind: 256,
       name: "IEventEnterBuyzone",
       url: "interfaces/_eventtypes_.ievententerbuyzone.html",
@@ -92641,7 +92745,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11337,
+      id: 11349,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ievententerbuyzone.html#userid",
@@ -92649,7 +92753,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEnterBuyzone'
     },
     {
-      id: 11338,
+      id: 11350,
       kind: 1024,
       name: "canbuy",
       url: "interfaces/_eventtypes_.ievententerbuyzone.html#canbuy",
@@ -92657,7 +92761,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEnterBuyzone'
     },
     {
-      id: 11339,
+      id: 11351,
       kind: 256,
       name: "IEventExitBuyzone",
       url: "interfaces/_eventtypes_.ieventexitbuyzone.html",
@@ -92665,7 +92769,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11340,
+      id: 11352,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventexitbuyzone.html#userid",
@@ -92673,7 +92777,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventExitBuyzone'
     },
     {
-      id: 11341,
+      id: 11353,
       kind: 1024,
       name: "canbuy",
       url: "interfaces/_eventtypes_.ieventexitbuyzone.html#canbuy",
@@ -92681,7 +92785,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventExitBuyzone'
     },
     {
-      id: 11342,
+      id: 11354,
       kind: 256,
       name: "IEventBuytimeEnded",
       url: "interfaces/_eventtypes_.ieventbuytimeended.html",
@@ -92689,7 +92793,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11343,
+      id: 11355,
       kind: 256,
       name: "IEventEnterBombzone",
       url: "interfaces/_eventtypes_.ievententerbombzone.html",
@@ -92697,7 +92801,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11344,
+      id: 11356,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ievententerbombzone.html#userid",
@@ -92705,7 +92809,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEnterBombzone'
     },
     {
-      id: 11345,
+      id: 11357,
       kind: 1024,
       name: "hasbomb",
       url: "interfaces/_eventtypes_.ievententerbombzone.html#hasbomb",
@@ -92713,7 +92817,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEnterBombzone'
     },
     {
-      id: 11346,
+      id: 11358,
       kind: 1024,
       name: "isplanted",
       url: "interfaces/_eventtypes_.ievententerbombzone.html#isplanted",
@@ -92721,7 +92825,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEnterBombzone'
     },
     {
-      id: 11347,
+      id: 11359,
       kind: 256,
       name: "IEventExitBombzone",
       url: "interfaces/_eventtypes_.ieventexitbombzone.html",
@@ -92729,7 +92833,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11348,
+      id: 11360,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventexitbombzone.html#userid",
@@ -92737,7 +92841,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventExitBombzone'
     },
     {
-      id: 11349,
+      id: 11361,
       kind: 1024,
       name: "hasbomb",
       url: "interfaces/_eventtypes_.ieventexitbombzone.html#hasbomb",
@@ -92745,7 +92849,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventExitBombzone'
     },
     {
-      id: 11350,
+      id: 11362,
       kind: 1024,
       name: "isplanted",
       url: "interfaces/_eventtypes_.ieventexitbombzone.html#isplanted",
@@ -92753,7 +92857,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventExitBombzone'
     },
     {
-      id: 11351,
+      id: 11363,
       kind: 256,
       name: "IEventEnterRescueZone",
       url: "interfaces/_eventtypes_.ievententerrescuezone.html",
@@ -92761,7 +92865,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11352,
+      id: 11364,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ievententerrescuezone.html#userid",
@@ -92769,7 +92873,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEnterRescueZone'
     },
     {
-      id: 11353,
+      id: 11365,
       kind: 256,
       name: "IEventExitRescueZone",
       url: "interfaces/_eventtypes_.ieventexitrescuezone.html",
@@ -92777,7 +92881,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11354,
+      id: 11366,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventexitrescuezone.html#userid",
@@ -92785,7 +92889,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventExitRescueZone'
     },
     {
-      id: 11355,
+      id: 11367,
       kind: 256,
       name: "IEventSilencerOff",
       url: "interfaces/_eventtypes_.ieventsilenceroff.html",
@@ -92793,7 +92897,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11356,
+      id: 11368,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventsilenceroff.html#userid",
@@ -92801,7 +92905,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSilencerOff'
     },
     {
-      id: 11357,
+      id: 11369,
       kind: 256,
       name: "IEventSilencerOn",
       url: "interfaces/_eventtypes_.ieventsilenceron.html",
@@ -92809,7 +92913,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11358,
+      id: 11370,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventsilenceron.html#userid",
@@ -92817,7 +92921,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSilencerOn'
     },
     {
-      id: 11359,
+      id: 11371,
       kind: 256,
       name: "IEventBuymenuOpen",
       url: "interfaces/_eventtypes_.ieventbuymenuopen.html",
@@ -92825,7 +92929,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11360,
+      id: 11372,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbuymenuopen.html#userid",
@@ -92833,7 +92937,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBuymenuOpen'
     },
     {
-      id: 11361,
+      id: 11373,
       kind: 256,
       name: "IEventBuymenuClose",
       url: "interfaces/_eventtypes_.ieventbuymenuclose.html",
@@ -92841,7 +92945,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11362,
+      id: 11374,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbuymenuclose.html#userid",
@@ -92849,7 +92953,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBuymenuClose'
     },
     {
-      id: 11363,
+      id: 11375,
       kind: 256,
       name: "IEventRoundPrestart",
       url: "interfaces/_eventtypes_.ieventroundprestart.html",
@@ -92857,7 +92961,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11364,
+      id: 11376,
       kind: 256,
       name: "IEventRoundPoststart",
       url: "interfaces/_eventtypes_.ieventroundpoststart.html",
@@ -92865,7 +92969,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11365,
+      id: 11377,
       kind: 256,
       name: "IEventGrenadeBounce",
       url: "interfaces/_eventtypes_.ieventgrenadebounce.html",
@@ -92873,7 +92977,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11366,
+      id: 11378,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventgrenadebounce.html#userid",
@@ -92881,7 +92985,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGrenadeBounce'
     },
     {
-      id: 11367,
+      id: 11379,
       kind: 256,
       name: "IEventHegrenadeDetonate",
       url: "interfaces/_eventtypes_.ieventhegrenadedetonate.html",
@@ -92889,7 +92993,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11368,
+      id: 11380,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventhegrenadedetonate.html#userid",
@@ -92897,7 +93001,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHegrenadeDetonate'
     },
     {
-      id: 11369,
+      id: 11381,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventhegrenadedetonate.html#entityid",
@@ -92905,7 +93009,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHegrenadeDetonate'
     },
     {
-      id: 11370,
+      id: 11382,
       kind: 1024,
       name: "x",
       url: "interfaces/_eventtypes_.ieventhegrenadedetonate.html#x",
@@ -92913,7 +93017,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHegrenadeDetonate'
     },
     {
-      id: 11371,
+      id: 11383,
       kind: 1024,
       name: "y",
       url: "interfaces/_eventtypes_.ieventhegrenadedetonate.html#y",
@@ -92921,7 +93025,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHegrenadeDetonate'
     },
     {
-      id: 11372,
+      id: 11384,
       kind: 1024,
       name: "z",
       url: "interfaces/_eventtypes_.ieventhegrenadedetonate.html#z",
@@ -92929,7 +93033,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHegrenadeDetonate'
     },
     {
-      id: 11373,
+      id: 11385,
       kind: 256,
       name: "IEventFlashbangDetonate",
       url: "interfaces/_eventtypes_.ieventflashbangdetonate.html",
@@ -92937,7 +93041,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11374,
+      id: 11386,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventflashbangdetonate.html#userid",
@@ -92945,7 +93049,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventFlashbangDetonate'
     },
     {
-      id: 11375,
+      id: 11387,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventflashbangdetonate.html#entityid",
@@ -92953,7 +93057,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventFlashbangDetonate'
     },
     {
-      id: 11376,
+      id: 11388,
       kind: 1024,
       name: "x",
       url: "interfaces/_eventtypes_.ieventflashbangdetonate.html#x",
@@ -92961,7 +93065,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventFlashbangDetonate'
     },
     {
-      id: 11377,
+      id: 11389,
       kind: 1024,
       name: "y",
       url: "interfaces/_eventtypes_.ieventflashbangdetonate.html#y",
@@ -92969,7 +93073,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventFlashbangDetonate'
     },
     {
-      id: 11378,
+      id: 11390,
       kind: 1024,
       name: "z",
       url: "interfaces/_eventtypes_.ieventflashbangdetonate.html#z",
@@ -92977,7 +93081,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventFlashbangDetonate'
     },
     {
-      id: 11379,
+      id: 11391,
       kind: 256,
       name: "IEventSmokegrenadeDetonate",
       url: "interfaces/_eventtypes_.ieventsmokegrenadedetonate.html",
@@ -92985,7 +93089,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11380,
+      id: 11392,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventsmokegrenadedetonate.html#userid",
@@ -92993,7 +93097,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSmokegrenadeDetonate'
     },
     {
-      id: 11381,
+      id: 11393,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventsmokegrenadedetonate.html#entityid",
@@ -93001,7 +93105,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSmokegrenadeDetonate'
     },
     {
-      id: 11382,
+      id: 11394,
       kind: 1024,
       name: "x",
       url: "interfaces/_eventtypes_.ieventsmokegrenadedetonate.html#x",
@@ -93009,7 +93113,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSmokegrenadeDetonate'
     },
     {
-      id: 11383,
+      id: 11395,
       kind: 1024,
       name: "y",
       url: "interfaces/_eventtypes_.ieventsmokegrenadedetonate.html#y",
@@ -93017,7 +93121,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSmokegrenadeDetonate'
     },
     {
-      id: 11384,
+      id: 11396,
       kind: 1024,
       name: "z",
       url: "interfaces/_eventtypes_.ieventsmokegrenadedetonate.html#z",
@@ -93025,7 +93129,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSmokegrenadeDetonate'
     },
     {
-      id: 11385,
+      id: 11397,
       kind: 256,
       name: "IEventSmokegrenadeExpired",
       url: "interfaces/_eventtypes_.ieventsmokegrenadeexpired.html",
@@ -93033,7 +93137,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11386,
+      id: 11398,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventsmokegrenadeexpired.html#userid",
@@ -93041,7 +93145,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSmokegrenadeExpired'
     },
     {
-      id: 11387,
+      id: 11399,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventsmokegrenadeexpired.html#entityid",
@@ -93049,7 +93153,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSmokegrenadeExpired'
     },
     {
-      id: 11388,
+      id: 11400,
       kind: 1024,
       name: "x",
       url: "interfaces/_eventtypes_.ieventsmokegrenadeexpired.html#x",
@@ -93057,7 +93161,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSmokegrenadeExpired'
     },
     {
-      id: 11389,
+      id: 11401,
       kind: 1024,
       name: "y",
       url: "interfaces/_eventtypes_.ieventsmokegrenadeexpired.html#y",
@@ -93065,7 +93169,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSmokegrenadeExpired'
     },
     {
-      id: 11390,
+      id: 11402,
       kind: 1024,
       name: "z",
       url: "interfaces/_eventtypes_.ieventsmokegrenadeexpired.html#z",
@@ -93073,7 +93177,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSmokegrenadeExpired'
     },
     {
-      id: 11391,
+      id: 11403,
       kind: 256,
       name: "IEventMolotovDetonate",
       url: "interfaces/_eventtypes_.ieventmolotovdetonate.html",
@@ -93081,7 +93185,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11392,
+      id: 11404,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventmolotovdetonate.html#userid",
@@ -93089,7 +93193,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventMolotovDetonate'
     },
     {
-      id: 11393,
+      id: 11405,
       kind: 1024,
       name: "x",
       url: "interfaces/_eventtypes_.ieventmolotovdetonate.html#x",
@@ -93097,7 +93201,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventMolotovDetonate'
     },
     {
-      id: 11394,
+      id: 11406,
       kind: 1024,
       name: "y",
       url: "interfaces/_eventtypes_.ieventmolotovdetonate.html#y",
@@ -93105,7 +93209,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventMolotovDetonate'
     },
     {
-      id: 11395,
+      id: 11407,
       kind: 1024,
       name: "z",
       url: "interfaces/_eventtypes_.ieventmolotovdetonate.html#z",
@@ -93113,7 +93217,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventMolotovDetonate'
     },
     {
-      id: 11396,
+      id: 11408,
       kind: 256,
       name: "IEventDecoyDetonate",
       url: "interfaces/_eventtypes_.ieventdecoydetonate.html",
@@ -93121,7 +93225,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11397,
+      id: 11409,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventdecoydetonate.html#userid",
@@ -93129,7 +93233,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyDetonate'
     },
     {
-      id: 11398,
+      id: 11410,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventdecoydetonate.html#entityid",
@@ -93137,7 +93241,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyDetonate'
     },
     {
-      id: 11399,
+      id: 11411,
       kind: 1024,
       name: "x",
       url: "interfaces/_eventtypes_.ieventdecoydetonate.html#x",
@@ -93145,7 +93249,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyDetonate'
     },
     {
-      id: 11400,
+      id: 11412,
       kind: 1024,
       name: "y",
       url: "interfaces/_eventtypes_.ieventdecoydetonate.html#y",
@@ -93153,7 +93257,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyDetonate'
     },
     {
-      id: 11401,
+      id: 11413,
       kind: 1024,
       name: "z",
       url: "interfaces/_eventtypes_.ieventdecoydetonate.html#z",
@@ -93161,7 +93265,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyDetonate'
     },
     {
-      id: 11402,
+      id: 11414,
       kind: 256,
       name: "IEventDecoyStarted",
       url: "interfaces/_eventtypes_.ieventdecoystarted.html",
@@ -93169,7 +93273,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11403,
+      id: 11415,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventdecoystarted.html#userid",
@@ -93177,7 +93281,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyStarted'
     },
     {
-      id: 11404,
+      id: 11416,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventdecoystarted.html#entityid",
@@ -93185,7 +93289,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyStarted'
     },
     {
-      id: 11405,
+      id: 11417,
       kind: 1024,
       name: "x",
       url: "interfaces/_eventtypes_.ieventdecoystarted.html#x",
@@ -93193,7 +93297,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyStarted'
     },
     {
-      id: 11406,
+      id: 11418,
       kind: 1024,
       name: "y",
       url: "interfaces/_eventtypes_.ieventdecoystarted.html#y",
@@ -93201,7 +93305,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyStarted'
     },
     {
-      id: 11407,
+      id: 11419,
       kind: 1024,
       name: "z",
       url: "interfaces/_eventtypes_.ieventdecoystarted.html#z",
@@ -93209,7 +93313,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyStarted'
     },
     {
-      id: 11408,
+      id: 11420,
       kind: 256,
       name: "IEventTagrenadeDetonate",
       url: "interfaces/_eventtypes_.ieventtagrenadedetonate.html",
@@ -93217,7 +93321,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11409,
+      id: 11421,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventtagrenadedetonate.html#userid",
@@ -93225,7 +93329,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTagrenadeDetonate'
     },
     {
-      id: 11410,
+      id: 11422,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventtagrenadedetonate.html#entityid",
@@ -93233,7 +93337,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTagrenadeDetonate'
     },
     {
-      id: 11411,
+      id: 11423,
       kind: 1024,
       name: "x",
       url: "interfaces/_eventtypes_.ieventtagrenadedetonate.html#x",
@@ -93241,7 +93345,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTagrenadeDetonate'
     },
     {
-      id: 11412,
+      id: 11424,
       kind: 1024,
       name: "y",
       url: "interfaces/_eventtypes_.ieventtagrenadedetonate.html#y",
@@ -93249,7 +93353,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTagrenadeDetonate'
     },
     {
-      id: 11413,
+      id: 11425,
       kind: 1024,
       name: "z",
       url: "interfaces/_eventtypes_.ieventtagrenadedetonate.html#z",
@@ -93257,7 +93361,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTagrenadeDetonate'
     },
     {
-      id: 11414,
+      id: 11426,
       kind: 256,
       name: "IEventInfernoStartburn",
       url: "interfaces/_eventtypes_.ieventinfernostartburn.html",
@@ -93265,7 +93369,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11415,
+      id: 11427,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventinfernostartburn.html#entityid",
@@ -93273,7 +93377,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInfernoStartburn'
     },
     {
-      id: 11416,
+      id: 11428,
       kind: 1024,
       name: "x",
       url: "interfaces/_eventtypes_.ieventinfernostartburn.html#x",
@@ -93281,7 +93385,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInfernoStartburn'
     },
     {
-      id: 11417,
+      id: 11429,
       kind: 1024,
       name: "y",
       url: "interfaces/_eventtypes_.ieventinfernostartburn.html#y",
@@ -93289,7 +93393,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInfernoStartburn'
     },
     {
-      id: 11418,
+      id: 11430,
       kind: 1024,
       name: "z",
       url: "interfaces/_eventtypes_.ieventinfernostartburn.html#z",
@@ -93297,7 +93401,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInfernoStartburn'
     },
     {
-      id: 11419,
+      id: 11431,
       kind: 256,
       name: "IEventInfernoExpire",
       url: "interfaces/_eventtypes_.ieventinfernoexpire.html",
@@ -93305,7 +93409,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11420,
+      id: 11432,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventinfernoexpire.html#entityid",
@@ -93313,7 +93417,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInfernoExpire'
     },
     {
-      id: 11421,
+      id: 11433,
       kind: 1024,
       name: "x",
       url: "interfaces/_eventtypes_.ieventinfernoexpire.html#x",
@@ -93321,7 +93425,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInfernoExpire'
     },
     {
-      id: 11422,
+      id: 11434,
       kind: 1024,
       name: "y",
       url: "interfaces/_eventtypes_.ieventinfernoexpire.html#y",
@@ -93329,7 +93433,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInfernoExpire'
     },
     {
-      id: 11423,
+      id: 11435,
       kind: 1024,
       name: "z",
       url: "interfaces/_eventtypes_.ieventinfernoexpire.html#z",
@@ -93337,7 +93441,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInfernoExpire'
     },
     {
-      id: 11424,
+      id: 11436,
       kind: 256,
       name: "IEventInfernoExtinguish",
       url: "interfaces/_eventtypes_.ieventinfernoextinguish.html",
@@ -93345,7 +93449,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11425,
+      id: 11437,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventinfernoextinguish.html#entityid",
@@ -93353,7 +93457,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInfernoExtinguish'
     },
     {
-      id: 11426,
+      id: 11438,
       kind: 1024,
       name: "x",
       url: "interfaces/_eventtypes_.ieventinfernoextinguish.html#x",
@@ -93361,7 +93465,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInfernoExtinguish'
     },
     {
-      id: 11427,
+      id: 11439,
       kind: 1024,
       name: "y",
       url: "interfaces/_eventtypes_.ieventinfernoextinguish.html#y",
@@ -93369,7 +93473,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInfernoExtinguish'
     },
     {
-      id: 11428,
+      id: 11440,
       kind: 1024,
       name: "z",
       url: "interfaces/_eventtypes_.ieventinfernoextinguish.html#z",
@@ -93377,7 +93481,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventInfernoExtinguish'
     },
     {
-      id: 11429,
+      id: 11441,
       kind: 256,
       name: "IEventDecoyFiring",
       url: "interfaces/_eventtypes_.ieventdecoyfiring.html",
@@ -93385,7 +93489,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11430,
+      id: 11442,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventdecoyfiring.html#userid",
@@ -93393,7 +93497,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyFiring'
     },
     {
-      id: 11431,
+      id: 11443,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventdecoyfiring.html#entityid",
@@ -93401,7 +93505,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyFiring'
     },
     {
-      id: 11432,
+      id: 11444,
       kind: 1024,
       name: "x",
       url: "interfaces/_eventtypes_.ieventdecoyfiring.html#x",
@@ -93409,7 +93513,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyFiring'
     },
     {
-      id: 11433,
+      id: 11445,
       kind: 1024,
       name: "y",
       url: "interfaces/_eventtypes_.ieventdecoyfiring.html#y",
@@ -93417,7 +93521,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyFiring'
     },
     {
-      id: 11434,
+      id: 11446,
       kind: 1024,
       name: "z",
       url: "interfaces/_eventtypes_.ieventdecoyfiring.html#z",
@@ -93425,7 +93529,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDecoyFiring'
     },
     {
-      id: 11435,
+      id: 11447,
       kind: 256,
       name: "IEventBulletImpact",
       url: "interfaces/_eventtypes_.ieventbulletimpact.html",
@@ -93433,7 +93537,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11436,
+      id: 11448,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbulletimpact.html#userid",
@@ -93441,7 +93545,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBulletImpact'
     },
     {
-      id: 11437,
+      id: 11449,
       kind: 1024,
       name: "x",
       url: "interfaces/_eventtypes_.ieventbulletimpact.html#x",
@@ -93449,7 +93553,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBulletImpact'
     },
     {
-      id: 11438,
+      id: 11450,
       kind: 1024,
       name: "y",
       url: "interfaces/_eventtypes_.ieventbulletimpact.html#y",
@@ -93457,7 +93561,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBulletImpact'
     },
     {
-      id: 11439,
+      id: 11451,
       kind: 1024,
       name: "z",
       url: "interfaces/_eventtypes_.ieventbulletimpact.html#z",
@@ -93465,7 +93569,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBulletImpact'
     },
     {
-      id: 11440,
+      id: 11452,
       kind: 256,
       name: "IEventPlayerFootstep",
       url: "interfaces/_eventtypes_.ieventplayerfootstep.html",
@@ -93473,7 +93577,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11441,
+      id: 11453,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerfootstep.html#userid",
@@ -93481,7 +93585,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerFootstep'
     },
     {
-      id: 11442,
+      id: 11454,
       kind: 256,
       name: "IEventPlayerJump",
       url: "interfaces/_eventtypes_.ieventplayerjump.html",
@@ -93489,7 +93593,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11443,
+      id: 11455,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerjump.html#userid",
@@ -93497,7 +93601,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerJump'
     },
     {
-      id: 11444,
+      id: 11456,
       kind: 256,
       name: "IEventPlayerBlind",
       url: "interfaces/_eventtypes_.ieventplayerblind.html",
@@ -93505,7 +93609,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11445,
+      id: 11457,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerblind.html#userid",
@@ -93513,7 +93617,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerBlind'
     },
     {
-      id: 11446,
+      id: 11458,
       kind: 1024,
       name: "attacker",
       url: "interfaces/_eventtypes_.ieventplayerblind.html#attacker",
@@ -93521,7 +93625,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerBlind'
     },
     {
-      id: 11447,
+      id: 11459,
       kind: 1024,
       name: "entityid",
       url: "interfaces/_eventtypes_.ieventplayerblind.html#entityid",
@@ -93529,7 +93633,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerBlind'
     },
     {
-      id: 11448,
+      id: 11460,
       kind: 1024,
       name: "blind_duration",
       url: "interfaces/_eventtypes_.ieventplayerblind.html#blind_duration",
@@ -93537,7 +93641,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerBlind'
     },
     {
-      id: 11449,
+      id: 11461,
       kind: 256,
       name: "IEventPlayerFalldamage",
       url: "interfaces/_eventtypes_.ieventplayerfalldamage.html",
@@ -93545,7 +93649,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11450,
+      id: 11462,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerfalldamage.html#userid",
@@ -93553,7 +93657,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerFalldamage'
     },
     {
-      id: 11451,
+      id: 11463,
       kind: 1024,
       name: "damage",
       url: "interfaces/_eventtypes_.ieventplayerfalldamage.html#damage",
@@ -93561,7 +93665,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerFalldamage'
     },
     {
-      id: 11452,
+      id: 11464,
       kind: 256,
       name: "IEventDoorMoving",
       url: "interfaces/_eventtypes_.ieventdoormoving.html",
@@ -93569,7 +93673,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11453,
+      id: 11465,
       kind: 1024,
       name: "entindex",
       url: "interfaces/_eventtypes_.ieventdoormoving.html#entindex",
@@ -93577,7 +93681,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDoorMoving'
     },
     {
-      id: 11454,
+      id: 11466,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventdoormoving.html#userid",
@@ -93585,7 +93689,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventDoorMoving'
     },
     {
-      id: 11455,
+      id: 11467,
       kind: 256,
       name: "IEventRoundFreezeEnd",
       url: "interfaces/_eventtypes_.ieventroundfreezeend.html",
@@ -93593,7 +93697,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11456,
+      id: 11468,
       kind: 256,
       name: "IEventMbInputLockSuccess",
       url: "interfaces/_eventtypes_.ieventmbinputlocksuccess.html",
@@ -93601,7 +93705,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11457,
+      id: 11469,
       kind: 256,
       name: "IEventMbInputLockCancel",
       url: "interfaces/_eventtypes_.ieventmbinputlockcancel.html",
@@ -93609,7 +93713,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11458,
+      id: 11470,
       kind: 256,
       name: "IEventNavBlocked",
       url: "interfaces/_eventtypes_.ieventnavblocked.html",
@@ -93617,7 +93721,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11459,
+      id: 11471,
       kind: 1024,
       name: "area",
       url: "interfaces/_eventtypes_.ieventnavblocked.html#area",
@@ -93625,7 +93729,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventNavBlocked'
     },
     {
-      id: 11460,
+      id: 11472,
       kind: 1024,
       name: "blocked",
       url: "interfaces/_eventtypes_.ieventnavblocked.html#blocked",
@@ -93633,7 +93737,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventNavBlocked'
     },
     {
-      id: 11461,
+      id: 11473,
       kind: 256,
       name: "IEventNavGenerate",
       url: "interfaces/_eventtypes_.ieventnavgenerate.html",
@@ -93641,7 +93745,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11462,
+      id: 11474,
       kind: 256,
       name: "IEventAchievementInfoLoaded",
       url: "interfaces/_eventtypes_.ieventachievementinfoloaded.html",
@@ -93649,7 +93753,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11463,
+      id: 11475,
       kind: 256,
       name: "IEventSpecTargetUpdated",
       url: "interfaces/_eventtypes_.ieventspectargetupdated.html",
@@ -93657,7 +93761,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11464,
+      id: 11476,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventspectargetupdated.html#userid",
@@ -93665,7 +93769,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSpecTargetUpdated'
     },
     {
-      id: 11465,
+      id: 11477,
       kind: 256,
       name: "IEventSpecModeUpdated",
       url: "interfaces/_eventtypes_.ieventspecmodeupdated.html",
@@ -93673,7 +93777,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11466,
+      id: 11478,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventspecmodeupdated.html#userid",
@@ -93681,7 +93785,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSpecModeUpdated'
     },
     {
-      id: 11467,
+      id: 11479,
       kind: 256,
       name: "IEventHltvChangedMode",
       url: "interfaces/_eventtypes_.ieventhltvchangedmode.html",
@@ -93689,7 +93793,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11468,
+      id: 11480,
       kind: 1024,
       name: "oldmode",
       url: "interfaces/_eventtypes_.ieventhltvchangedmode.html#oldmode",
@@ -93697,7 +93801,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChangedMode'
     },
     {
-      id: 11469,
+      id: 11481,
       kind: 1024,
       name: "newmode",
       url: "interfaces/_eventtypes_.ieventhltvchangedmode.html#newmode",
@@ -93705,7 +93809,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChangedMode'
     },
     {
-      id: 11470,
+      id: 11482,
       kind: 1024,
       name: "obs_target",
       url: "interfaces/_eventtypes_.ieventhltvchangedmode.html#obs_target",
@@ -93713,7 +93817,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChangedMode'
     },
     {
-      id: 11471,
+      id: 11483,
       kind: 256,
       name: "IEventCsGameDisconnected",
       url: "interfaces/_eventtypes_.ieventcsgamedisconnected.html",
@@ -93721,7 +93825,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11472,
+      id: 11484,
       kind: 256,
       name: "IEventCsWinPanelRound",
       url: "interfaces/_eventtypes_.ieventcswinpanelround.html",
@@ -93729,7 +93833,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11473,
+      id: 11485,
       kind: 1024,
       name: "show_timer_defend",
       url:
@@ -93738,7 +93842,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventCsWinPanelRound'
     },
     {
-      id: 11474,
+      id: 11486,
       kind: 1024,
       name: "show_timer_attack",
       url:
@@ -93747,7 +93851,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventCsWinPanelRound'
     },
     {
-      id: 11475,
+      id: 11487,
       kind: 1024,
       name: "timer_time",
       url: "interfaces/_eventtypes_.ieventcswinpanelround.html#timer_time",
@@ -93755,7 +93859,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventCsWinPanelRound'
     },
     {
-      id: 11476,
+      id: 11488,
       kind: 1024,
       name: "final_event",
       url: "interfaces/_eventtypes_.ieventcswinpanelround.html#final_event",
@@ -93763,7 +93867,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventCsWinPanelRound'
     },
     {
-      id: 11477,
+      id: 11489,
       kind: 1024,
       name: "funfact_token",
       url: "interfaces/_eventtypes_.ieventcswinpanelround.html#funfact_token",
@@ -93771,7 +93875,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventCsWinPanelRound'
     },
     {
-      id: 11478,
+      id: 11490,
       kind: 1024,
       name: "funfact_player",
       url: "interfaces/_eventtypes_.ieventcswinpanelround.html#funfact_player",
@@ -93779,7 +93883,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventCsWinPanelRound'
     },
     {
-      id: 11479,
+      id: 11491,
       kind: 1024,
       name: "funfact_data1",
       url: "interfaces/_eventtypes_.ieventcswinpanelround.html#funfact_data1",
@@ -93787,7 +93891,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventCsWinPanelRound'
     },
     {
-      id: 11480,
+      id: 11492,
       kind: 1024,
       name: "funfact_data2",
       url: "interfaces/_eventtypes_.ieventcswinpanelround.html#funfact_data2",
@@ -93795,7 +93899,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventCsWinPanelRound'
     },
     {
-      id: 11481,
+      id: 11493,
       kind: 1024,
       name: "funfact_data3",
       url: "interfaces/_eventtypes_.ieventcswinpanelround.html#funfact_data3",
@@ -93803,7 +93907,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventCsWinPanelRound'
     },
     {
-      id: 11482,
+      id: 11494,
       kind: 256,
       name: "IEventCsWinPanelMatch",
       url: "interfaces/_eventtypes_.ieventcswinpanelmatch.html",
@@ -93811,7 +93915,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11483,
+      id: 11495,
       kind: 256,
       name: "IEventCsMatchEndRestart",
       url: "interfaces/_eventtypes_.ieventcsmatchendrestart.html",
@@ -93819,7 +93923,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11484,
+      id: 11496,
       kind: 256,
       name: "IEventCsPreRestart",
       url: "interfaces/_eventtypes_.ieventcsprerestart.html",
@@ -93827,7 +93931,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11485,
+      id: 11497,
       kind: 256,
       name: "IEventShowFreezepanel",
       url: "interfaces/_eventtypes_.ieventshowfreezepanel.html",
@@ -93835,7 +93939,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11486,
+      id: 11498,
       kind: 1024,
       name: "victim",
       url: "interfaces/_eventtypes_.ieventshowfreezepanel.html#victim",
@@ -93843,7 +93947,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventShowFreezepanel'
     },
     {
-      id: 11487,
+      id: 11499,
       kind: 1024,
       name: "killer",
       url: "interfaces/_eventtypes_.ieventshowfreezepanel.html#killer",
@@ -93851,7 +93955,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventShowFreezepanel'
     },
     {
-      id: 11488,
+      id: 11500,
       kind: 1024,
       name: "hits_taken",
       url: "interfaces/_eventtypes_.ieventshowfreezepanel.html#hits_taken",
@@ -93859,7 +93963,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventShowFreezepanel'
     },
     {
-      id: 11489,
+      id: 11501,
       kind: 1024,
       name: "damage_taken",
       url: "interfaces/_eventtypes_.ieventshowfreezepanel.html#damage_taken",
@@ -93867,7 +93971,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventShowFreezepanel'
     },
     {
-      id: 11490,
+      id: 11502,
       kind: 1024,
       name: "hits_given",
       url: "interfaces/_eventtypes_.ieventshowfreezepanel.html#hits_given",
@@ -93875,7 +93979,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventShowFreezepanel'
     },
     {
-      id: 11491,
+      id: 11503,
       kind: 1024,
       name: "damage_given",
       url: "interfaces/_eventtypes_.ieventshowfreezepanel.html#damage_given",
@@ -93883,7 +93987,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventShowFreezepanel'
     },
     {
-      id: 11492,
+      id: 11504,
       kind: 256,
       name: "IEventHideFreezepanel",
       url: "interfaces/_eventtypes_.ieventhidefreezepanel.html",
@@ -93891,7 +93995,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11493,
+      id: 11505,
       kind: 256,
       name: "IEventFreezecamStarted",
       url: "interfaces/_eventtypes_.ieventfreezecamstarted.html",
@@ -93899,7 +94003,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11494,
+      id: 11506,
       kind: 256,
       name: "IEventPlayerAvengedTeammate",
       url: "interfaces/_eventtypes_.ieventplayeravengedteammate.html",
@@ -93907,7 +94011,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11495,
+      id: 11507,
       kind: 1024,
       name: "avenger_id",
       url:
@@ -93916,7 +94020,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerAvengedTeammate'
     },
     {
-      id: 11496,
+      id: 11508,
       kind: 1024,
       name: "avenged_player_id",
       url:
@@ -93925,7 +94029,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerAvengedTeammate'
     },
     {
-      id: 11497,
+      id: 11509,
       kind: 256,
       name: "IEventAchievementEarnedLocal",
       url: "interfaces/_eventtypes_.ieventachievementearnedlocal.html",
@@ -93933,7 +94037,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11498,
+      id: 11510,
       kind: 1024,
       name: "achievement",
       url:
@@ -93942,7 +94046,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAchievementEarnedLocal'
     },
     {
-      id: 11499,
+      id: 11511,
       kind: 1024,
       name: "splitscreenplayer",
       url:
@@ -93951,7 +94055,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAchievementEarnedLocal'
     },
     {
-      id: 11500,
+      id: 11512,
       kind: 256,
       name: "IEventItemFound",
       url: "interfaces/_eventtypes_.ieventitemfound.html",
@@ -93959,7 +94063,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11501,
+      id: 11513,
       kind: 1024,
       name: "player",
       url: "interfaces/_eventtypes_.ieventitemfound.html#player",
@@ -93967,7 +94071,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemFound'
     },
     {
-      id: 11502,
+      id: 11514,
       kind: 1024,
       name: "quality",
       url: "interfaces/_eventtypes_.ieventitemfound.html#quality",
@@ -93975,7 +94079,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemFound'
     },
     {
-      id: 11503,
+      id: 11515,
       kind: 1024,
       name: "method",
       url: "interfaces/_eventtypes_.ieventitemfound.html#method",
@@ -93983,7 +94087,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemFound'
     },
     {
-      id: 11504,
+      id: 11516,
       kind: 1024,
       name: "itemdef",
       url: "interfaces/_eventtypes_.ieventitemfound.html#itemdef",
@@ -93991,7 +94095,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemFound'
     },
     {
-      id: 11505,
+      id: 11517,
       kind: 1024,
       name: "itemid",
       url: "interfaces/_eventtypes_.ieventitemfound.html#itemid",
@@ -93999,7 +94103,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventItemFound'
     },
     {
-      id: 11506,
+      id: 11518,
       kind: 256,
       name: "IEventRepostXboxAchievements",
       url: "interfaces/_eventtypes_.ieventrepostxboxachievements.html",
@@ -94007,7 +94111,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11507,
+      id: 11519,
       kind: 1024,
       name: "splitscreenplayer",
       url:
@@ -94016,7 +94120,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventRepostXboxAchievements'
     },
     {
-      id: 11508,
+      id: 11520,
       kind: 256,
       name: "IEventMatchEndConditions",
       url: "interfaces/_eventtypes_.ieventmatchendconditions.html",
@@ -94024,7 +94128,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11509,
+      id: 11521,
       kind: 1024,
       name: "frags",
       url: "interfaces/_eventtypes_.ieventmatchendconditions.html#frags",
@@ -94032,7 +94136,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventMatchEndConditions'
     },
     {
-      id: 11510,
+      id: 11522,
       kind: 1024,
       name: "max_rounds",
       url: "interfaces/_eventtypes_.ieventmatchendconditions.html#max_rounds",
@@ -94040,7 +94144,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventMatchEndConditions'
     },
     {
-      id: 11511,
+      id: 11523,
       kind: 1024,
       name: "win_rounds",
       url: "interfaces/_eventtypes_.ieventmatchendconditions.html#win_rounds",
@@ -94048,7 +94152,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventMatchEndConditions'
     },
     {
-      id: 11512,
+      id: 11524,
       kind: 1024,
       name: "time",
       url: "interfaces/_eventtypes_.ieventmatchendconditions.html#time",
@@ -94056,7 +94160,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventMatchEndConditions'
     },
     {
-      id: 11513,
+      id: 11525,
       kind: 256,
       name: "IEventRoundMvp",
       url: "interfaces/_eventtypes_.ieventroundmvp.html",
@@ -94064,7 +94168,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11514,
+      id: 11526,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventroundmvp.html#userid",
@@ -94072,7 +94176,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventRoundMvp'
     },
     {
-      id: 11515,
+      id: 11527,
       kind: 1024,
       name: "reason",
       url: "interfaces/_eventtypes_.ieventroundmvp.html#reason",
@@ -94080,7 +94184,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventRoundMvp'
     },
     {
-      id: 11516,
+      id: 11528,
       kind: 1024,
       name: "musickitmvps",
       url: "interfaces/_eventtypes_.ieventroundmvp.html#musickitmvps",
@@ -94088,7 +94192,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventRoundMvp'
     },
     {
-      id: 11517,
+      id: 11529,
       kind: 256,
       name: "IEventClientDisconnect",
       url: "interfaces/_eventtypes_.ieventclientdisconnect.html",
@@ -94096,7 +94200,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11518,
+      id: 11530,
       kind: 256,
       name: "IEventGgPlayerLevelup",
       url: "interfaces/_eventtypes_.ieventggplayerlevelup.html",
@@ -94104,7 +94208,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11519,
+      id: 11531,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventggplayerlevelup.html#userid",
@@ -94112,7 +94216,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgPlayerLevelup'
     },
     {
-      id: 11520,
+      id: 11532,
       kind: 1024,
       name: "weaponrank",
       url: "interfaces/_eventtypes_.ieventggplayerlevelup.html#weaponrank",
@@ -94120,7 +94224,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgPlayerLevelup'
     },
     {
-      id: 11521,
+      id: 11533,
       kind: 1024,
       name: "weaponname",
       url: "interfaces/_eventtypes_.ieventggplayerlevelup.html#weaponname",
@@ -94128,7 +94232,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgPlayerLevelup'
     },
     {
-      id: 11522,
+      id: 11534,
       kind: 256,
       name: "IEventGgtrPlayerLevelup",
       url: "interfaces/_eventtypes_.ieventggtrplayerlevelup.html",
@@ -94136,7 +94240,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11523,
+      id: 11535,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventggtrplayerlevelup.html#userid",
@@ -94144,7 +94248,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgtrPlayerLevelup'
     },
     {
-      id: 11524,
+      id: 11536,
       kind: 1024,
       name: "weaponrank",
       url: "interfaces/_eventtypes_.ieventggtrplayerlevelup.html#weaponrank",
@@ -94152,7 +94256,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgtrPlayerLevelup'
     },
     {
-      id: 11525,
+      id: 11537,
       kind: 1024,
       name: "weaponname",
       url: "interfaces/_eventtypes_.ieventggtrplayerlevelup.html#weaponname",
@@ -94160,7 +94264,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgtrPlayerLevelup'
     },
     {
-      id: 11526,
+      id: 11538,
       kind: 256,
       name: "IEventAssassinationTargetKilled",
       url: "interfaces/_eventtypes_.ieventassassinationtargetkilled.html",
@@ -94168,7 +94272,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11527,
+      id: 11539,
       kind: 1024,
       name: "target",
       url:
@@ -94177,7 +94281,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAssassinationTargetKilled'
     },
     {
-      id: 11528,
+      id: 11540,
       kind: 1024,
       name: "killer",
       url:
@@ -94186,7 +94290,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventAssassinationTargetKilled'
     },
     {
-      id: 11529,
+      id: 11541,
       kind: 256,
       name: "IEventGgprogressivePlayerLevelup",
       url: "interfaces/_eventtypes_.ieventggprogressiveplayerlevelup.html",
@@ -94194,7 +94298,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11530,
+      id: 11542,
       kind: 1024,
       name: "userid",
       url:
@@ -94203,7 +94307,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgprogressivePlayerLevelup'
     },
     {
-      id: 11531,
+      id: 11543,
       kind: 1024,
       name: "weaponrank",
       url:
@@ -94212,7 +94316,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgprogressivePlayerLevelup'
     },
     {
-      id: 11532,
+      id: 11544,
       kind: 1024,
       name: "weaponname",
       url:
@@ -94221,7 +94325,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgprogressivePlayerLevelup'
     },
     {
-      id: 11533,
+      id: 11545,
       kind: 256,
       name: "IEventGgKilledEnemy",
       url: "interfaces/_eventtypes_.ieventggkilledenemy.html",
@@ -94229,7 +94333,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11534,
+      id: 11546,
       kind: 1024,
       name: "victimid",
       url: "interfaces/_eventtypes_.ieventggkilledenemy.html#victimid",
@@ -94237,7 +94341,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgKilledEnemy'
     },
     {
-      id: 11535,
+      id: 11547,
       kind: 1024,
       name: "attackerid",
       url: "interfaces/_eventtypes_.ieventggkilledenemy.html#attackerid",
@@ -94245,7 +94349,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgKilledEnemy'
     },
     {
-      id: 11536,
+      id: 11548,
       kind: 1024,
       name: "dominated",
       url: "interfaces/_eventtypes_.ieventggkilledenemy.html#dominated",
@@ -94253,7 +94357,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgKilledEnemy'
     },
     {
-      id: 11537,
+      id: 11549,
       kind: 1024,
       name: "revenge",
       url: "interfaces/_eventtypes_.ieventggkilledenemy.html#revenge",
@@ -94261,7 +94365,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgKilledEnemy'
     },
     {
-      id: 11538,
+      id: 11550,
       kind: 1024,
       name: "bonus",
       url: "interfaces/_eventtypes_.ieventggkilledenemy.html#bonus",
@@ -94269,7 +94373,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgKilledEnemy'
     },
     {
-      id: 11539,
+      id: 11551,
       kind: 256,
       name: "IEventGgFinalWeaponAchieved",
       url: "interfaces/_eventtypes_.ieventggfinalweaponachieved.html",
@@ -94277,7 +94381,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11540,
+      id: 11552,
       kind: 1024,
       name: "playerid",
       url: "interfaces/_eventtypes_.ieventggfinalweaponachieved.html#playerid",
@@ -94285,7 +94389,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgFinalWeaponAchieved'
     },
     {
-      id: 11541,
+      id: 11553,
       kind: 256,
       name: "IEventGgBonusGrenadeAchieved",
       url: "interfaces/_eventtypes_.ieventggbonusgrenadeachieved.html",
@@ -94293,7 +94397,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11542,
+      id: 11554,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventggbonusgrenadeachieved.html#userid",
@@ -94301,7 +94405,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgBonusGrenadeAchieved'
     },
     {
-      id: 11543,
+      id: 11555,
       kind: 256,
       name: "IEventSwitchTeam",
       url: "interfaces/_eventtypes_.ieventswitchteam.html",
@@ -94309,7 +94413,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11544,
+      id: 11556,
       kind: 1024,
       name: "numPlayers",
       url: "interfaces/_eventtypes_.ieventswitchteam.html#numplayers",
@@ -94317,7 +94421,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSwitchTeam'
     },
     {
-      id: 11545,
+      id: 11557,
       kind: 1024,
       name: "numSpectators",
       url: "interfaces/_eventtypes_.ieventswitchteam.html#numspectators",
@@ -94325,7 +94429,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSwitchTeam'
     },
     {
-      id: 11546,
+      id: 11558,
       kind: 1024,
       name: "avg_rank",
       url: "interfaces/_eventtypes_.ieventswitchteam.html#avg_rank",
@@ -94333,7 +94437,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSwitchTeam'
     },
     {
-      id: 11547,
+      id: 11559,
       kind: 1024,
       name: "numTSlotsFree",
       url: "interfaces/_eventtypes_.ieventswitchteam.html#numtslotsfree",
@@ -94341,7 +94445,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSwitchTeam'
     },
     {
-      id: 11548,
+      id: 11560,
       kind: 1024,
       name: "numCTSlotsFree",
       url: "interfaces/_eventtypes_.ieventswitchteam.html#numctslotsfree",
@@ -94349,7 +94453,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSwitchTeam'
     },
     {
-      id: 11549,
+      id: 11561,
       kind: 256,
       name: "IEventGgLeader",
       url: "interfaces/_eventtypes_.ieventggleader.html",
@@ -94357,7 +94461,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11550,
+      id: 11562,
       kind: 1024,
       name: "playerid",
       url: "interfaces/_eventtypes_.ieventggleader.html#playerid",
@@ -94365,7 +94469,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgLeader'
     },
     {
-      id: 11551,
+      id: 11563,
       kind: 256,
       name: "IEventGgTeamLeader",
       url: "interfaces/_eventtypes_.ieventggteamleader.html",
@@ -94373,7 +94477,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11552,
+      id: 11564,
       kind: 1024,
       name: "playerid",
       url: "interfaces/_eventtypes_.ieventggteamleader.html#playerid",
@@ -94381,7 +94485,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgTeamLeader'
     },
     {
-      id: 11553,
+      id: 11565,
       kind: 256,
       name: "IEventGgPlayerImpendingUpgrade",
       url: "interfaces/_eventtypes_.ieventggplayerimpendingupgrade.html",
@@ -94389,7 +94493,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11554,
+      id: 11566,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventggplayerimpendingupgrade.html#userid",
@@ -94397,7 +94501,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgPlayerImpendingUpgrade'
     },
     {
-      id: 11555,
+      id: 11567,
       kind: 256,
       name: "IEventWriteProfileData",
       url: "interfaces/_eventtypes_.ieventwriteprofiledata.html",
@@ -94405,7 +94509,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11556,
+      id: 11568,
       kind: 256,
       name: "IEventTrialTimeExpired",
       url: "interfaces/_eventtypes_.ieventtrialtimeexpired.html",
@@ -94413,7 +94517,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11557,
+      id: 11569,
       kind: 1024,
       name: "slot",
       url: "interfaces/_eventtypes_.ieventtrialtimeexpired.html#slot",
@@ -94421,7 +94525,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTrialTimeExpired'
     },
     {
-      id: 11558,
+      id: 11570,
       kind: 256,
       name: "IEventUpdateMatchmakingStats",
       url: "interfaces/_eventtypes_.ieventupdatematchmakingstats.html",
@@ -94429,7 +94533,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11559,
+      id: 11571,
       kind: 256,
       name: "IEventPlayerResetVote",
       url: "interfaces/_eventtypes_.ieventplayerresetvote.html",
@@ -94437,7 +94541,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11560,
+      id: 11572,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayerresetvote.html#userid",
@@ -94445,7 +94549,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerResetVote'
     },
     {
-      id: 11561,
+      id: 11573,
       kind: 1024,
       name: "vote",
       url: "interfaces/_eventtypes_.ieventplayerresetvote.html#vote",
@@ -94453,7 +94557,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerResetVote'
     },
     {
-      id: 11562,
+      id: 11574,
       kind: 256,
       name: "IEventEnableRestartVoting",
       url: "interfaces/_eventtypes_.ieventenablerestartvoting.html",
@@ -94461,7 +94565,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11563,
+      id: 11575,
       kind: 1024,
       name: "enable",
       url: "interfaces/_eventtypes_.ieventenablerestartvoting.html#enable",
@@ -94469,7 +94573,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventEnableRestartVoting'
     },
     {
-      id: 11564,
+      id: 11576,
       kind: 256,
       name: "IEventSfuievent",
       url: "interfaces/_eventtypes_.ieventsfuievent.html",
@@ -94477,7 +94581,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11565,
+      id: 11577,
       kind: 1024,
       name: "action",
       url: "interfaces/_eventtypes_.ieventsfuievent.html#action",
@@ -94485,7 +94589,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSfuievent'
     },
     {
-      id: 11566,
+      id: 11578,
       kind: 1024,
       name: "data",
       url: "interfaces/_eventtypes_.ieventsfuievent.html#data",
@@ -94493,7 +94597,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSfuievent'
     },
     {
-      id: 11567,
+      id: 11579,
       kind: 1024,
       name: "slot",
       url: "interfaces/_eventtypes_.ieventsfuievent.html#slot",
@@ -94501,7 +94605,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSfuievent'
     },
     {
-      id: 11568,
+      id: 11580,
       kind: 256,
       name: "IEventStartVote",
       url: "interfaces/_eventtypes_.ieventstartvote.html",
@@ -94509,7 +94613,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11569,
+      id: 11581,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventstartvote.html#userid",
@@ -94517,7 +94621,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventStartVote'
     },
     {
-      id: 11570,
+      id: 11582,
       kind: 1024,
       name: "type",
       url: "interfaces/_eventtypes_.ieventstartvote.html#type",
@@ -94525,7 +94629,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventStartVote'
     },
     {
-      id: 11571,
+      id: 11583,
       kind: 1024,
       name: "vote_parameter",
       url: "interfaces/_eventtypes_.ieventstartvote.html#vote_parameter",
@@ -94533,7 +94637,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventStartVote'
     },
     {
-      id: 11572,
+      id: 11584,
       kind: 256,
       name: "IEventPlayerGivenC4",
       url: "interfaces/_eventtypes_.ieventplayergivenc4.html",
@@ -94541,7 +94645,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11573,
+      id: 11585,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventplayergivenc4.html#userid",
@@ -94549,7 +94653,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventPlayerGivenC4'
     },
     {
-      id: 11574,
+      id: 11586,
       kind: 256,
       name: "IEventGgResetRoundStartSounds",
       url: "interfaces/_eventtypes_.ieventggresetroundstartsounds.html",
@@ -94557,7 +94661,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11575,
+      id: 11587,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventggresetroundstartsounds.html#userid",
@@ -94565,7 +94669,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventGgResetRoundStartSounds'
     },
     {
-      id: 11576,
+      id: 11588,
       kind: 256,
       name: "IEventTrPlayerFlashbanged",
       url: "interfaces/_eventtypes_.ieventtrplayerflashbanged.html",
@@ -94573,7 +94677,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11577,
+      id: 11589,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventtrplayerflashbanged.html#userid",
@@ -94581,7 +94685,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTrPlayerFlashbanged'
     },
     {
-      id: 11578,
+      id: 11590,
       kind: 256,
       name: "IEventTrMarkComplete",
       url: "interfaces/_eventtypes_.ieventtrmarkcomplete.html",
@@ -94589,7 +94693,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11579,
+      id: 11591,
       kind: 1024,
       name: "complete",
       url: "interfaces/_eventtypes_.ieventtrmarkcomplete.html#complete",
@@ -94597,7 +94701,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTrMarkComplete'
     },
     {
-      id: 11580,
+      id: 11592,
       kind: 256,
       name: "IEventTrMarkBestTime",
       url: "interfaces/_eventtypes_.ieventtrmarkbesttime.html",
@@ -94605,7 +94709,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11581,
+      id: 11593,
       kind: 1024,
       name: "time",
       url: "interfaces/_eventtypes_.ieventtrmarkbesttime.html#time",
@@ -94613,7 +94717,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTrMarkBestTime'
     },
     {
-      id: 11582,
+      id: 11594,
       kind: 256,
       name: "IEventTrExitHintTrigger",
       url: "interfaces/_eventtypes_.ieventtrexithinttrigger.html",
@@ -94621,7 +94725,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11583,
+      id: 11595,
       kind: 256,
       name: "IEventBotTakeover",
       url: "interfaces/_eventtypes_.ieventbottakeover.html",
@@ -94629,7 +94733,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11584,
+      id: 11596,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventbottakeover.html#userid",
@@ -94637,7 +94741,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBotTakeover'
     },
     {
-      id: 11585,
+      id: 11597,
       kind: 1024,
       name: "botid",
       url: "interfaces/_eventtypes_.ieventbottakeover.html#botid",
@@ -94645,7 +94749,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBotTakeover'
     },
     {
-      id: 11586,
+      id: 11598,
       kind: 1024,
       name: "index",
       url: "interfaces/_eventtypes_.ieventbottakeover.html#index",
@@ -94653,7 +94757,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventBotTakeover'
     },
     {
-      id: 11587,
+      id: 11599,
       kind: 256,
       name: "IEventTrShowFinishMsgbox",
       url: "interfaces/_eventtypes_.ieventtrshowfinishmsgbox.html",
@@ -94661,7 +94765,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11588,
+      id: 11600,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventtrshowfinishmsgbox.html#userid",
@@ -94669,7 +94773,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTrShowFinishMsgbox'
     },
     {
-      id: 11589,
+      id: 11601,
       kind: 256,
       name: "IEventTrShowExitMsgbox",
       url: "interfaces/_eventtypes_.ieventtrshowexitmsgbox.html",
@@ -94677,7 +94781,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11590,
+      id: 11602,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventtrshowexitmsgbox.html#userid",
@@ -94685,7 +94789,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTrShowExitMsgbox'
     },
     {
-      id: 11591,
+      id: 11603,
       kind: 256,
       name: "IEventResetPlayerControls",
       url: "interfaces/_eventtypes_.ieventresetplayercontrols.html",
@@ -94693,7 +94797,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11592,
+      id: 11604,
       kind: 256,
       name: "IEventJointeamFailed",
       url: "interfaces/_eventtypes_.ieventjointeamfailed.html",
@@ -94701,7 +94805,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11593,
+      id: 11605,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventjointeamfailed.html#userid",
@@ -94709,7 +94813,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventJointeamFailed'
     },
     {
-      id: 11594,
+      id: 11606,
       kind: 1024,
       name: "reason",
       url: "interfaces/_eventtypes_.ieventjointeamfailed.html#reason",
@@ -94717,7 +94821,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventJointeamFailed'
     },
     {
-      id: 11595,
+      id: 11607,
       kind: 256,
       name: "IEventTeamchangePending",
       url: "interfaces/_eventtypes_.ieventteamchangepending.html",
@@ -94725,7 +94829,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11596,
+      id: 11608,
       kind: 1024,
       name: "userid",
       url: "interfaces/_eventtypes_.ieventteamchangepending.html#userid",
@@ -94733,7 +94837,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTeamchangePending'
     },
     {
-      id: 11597,
+      id: 11609,
       kind: 1024,
       name: "toteam",
       url: "interfaces/_eventtypes_.ieventteamchangepending.html#toteam",
@@ -94741,7 +94845,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTeamchangePending'
     },
     {
-      id: 11598,
+      id: 11610,
       kind: 256,
       name: "IEventMaterialDefaultComplete",
       url: "interfaces/_eventtypes_.ieventmaterialdefaultcomplete.html",
@@ -94749,7 +94853,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11599,
+      id: 11611,
       kind: 256,
       name: "IEventCsPrevNextSpectator",
       url: "interfaces/_eventtypes_.ieventcsprevnextspectator.html",
@@ -94757,7 +94861,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11600,
+      id: 11612,
       kind: 1024,
       name: "next",
       url: "interfaces/_eventtypes_.ieventcsprevnextspectator.html#next",
@@ -94765,7 +94869,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventCsPrevNextSpectator'
     },
     {
-      id: 11601,
+      id: 11613,
       kind: 256,
       name: "IEventNextlevelChanged",
       url: "interfaces/_eventtypes_.ieventnextlevelchanged.html",
@@ -94773,7 +94877,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11602,
+      id: 11614,
       kind: 1024,
       name: "nextlevel",
       url: "interfaces/_eventtypes_.ieventnextlevelchanged.html#nextlevel",
@@ -94781,7 +94885,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventNextlevelChanged'
     },
     {
-      id: 11603,
+      id: 11615,
       kind: 256,
       name: "IEventSeasoncoinLevelup",
       url: "interfaces/_eventtypes_.ieventseasoncoinlevelup.html",
@@ -94789,7 +94893,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11604,
+      id: 11616,
       kind: 1024,
       name: "player",
       url: "interfaces/_eventtypes_.ieventseasoncoinlevelup.html#player",
@@ -94797,7 +94901,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSeasoncoinLevelup'
     },
     {
-      id: 11605,
+      id: 11617,
       kind: 1024,
       name: "category",
       url: "interfaces/_eventtypes_.ieventseasoncoinlevelup.html#category",
@@ -94805,7 +94909,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSeasoncoinLevelup'
     },
     {
-      id: 11606,
+      id: 11618,
       kind: 1024,
       name: "rank",
       url: "interfaces/_eventtypes_.ieventseasoncoinlevelup.html#rank",
@@ -94813,7 +94917,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventSeasoncoinLevelup'
     },
     {
-      id: 11607,
+      id: 11619,
       kind: 256,
       name: "IEventTournamentReward",
       url: "interfaces/_eventtypes_.ieventtournamentreward.html",
@@ -94821,7 +94925,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11608,
+      id: 11620,
       kind: 1024,
       name: "defindex",
       url: "interfaces/_eventtypes_.ieventtournamentreward.html#defindex",
@@ -94829,7 +94933,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTournamentReward'
     },
     {
-      id: 11609,
+      id: 11621,
       kind: 1024,
       name: "totalrewards",
       url: "interfaces/_eventtypes_.ieventtournamentreward.html#totalrewards",
@@ -94837,7 +94941,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTournamentReward'
     },
     {
-      id: 11610,
+      id: 11622,
       kind: 1024,
       name: "accountid",
       url: "interfaces/_eventtypes_.ieventtournamentreward.html#accountid",
@@ -94845,7 +94949,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventTournamentReward'
     },
     {
-      id: 11611,
+      id: 11623,
       kind: 256,
       name: "IEventStartHalftime",
       url: "interfaces/_eventtypes_.ieventstarthalftime.html",
@@ -94853,7 +94957,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11612,
+      id: 11624,
       kind: 256,
       name: "IEventHltvStatus",
       url: "interfaces/_eventtypes_.ieventhltvstatus.html",
@@ -94861,7 +94965,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11613,
+      id: 11625,
       kind: 1024,
       name: "clients",
       url: "interfaces/_eventtypes_.ieventhltvstatus.html#clients",
@@ -94869,7 +94973,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvStatus'
     },
     {
-      id: 11614,
+      id: 11626,
       kind: 1024,
       name: "slots",
       url: "interfaces/_eventtypes_.ieventhltvstatus.html#slots",
@@ -94877,7 +94981,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvStatus'
     },
     {
-      id: 11615,
+      id: 11627,
       kind: 1024,
       name: "proxies",
       url: "interfaces/_eventtypes_.ieventhltvstatus.html#proxies",
@@ -94885,7 +94989,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvStatus'
     },
     {
-      id: 11616,
+      id: 11628,
       kind: 1024,
       name: "master",
       url: "interfaces/_eventtypes_.ieventhltvstatus.html#master",
@@ -94893,7 +94997,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvStatus'
     },
     {
-      id: 11617,
+      id: 11629,
       kind: 1024,
       name: "externaltotal",
       url: "interfaces/_eventtypes_.ieventhltvstatus.html#externaltotal",
@@ -94901,7 +95005,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvStatus'
     },
     {
-      id: 11618,
+      id: 11630,
       kind: 1024,
       name: "externallinked",
       url: "interfaces/_eventtypes_.ieventhltvstatus.html#externallinked",
@@ -94909,7 +95013,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvStatus'
     },
     {
-      id: 11619,
+      id: 11631,
       kind: 256,
       name: "IEventHltvCameraman",
       url: "interfaces/_eventtypes_.ieventhltvcameraman.html",
@@ -94917,7 +95021,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11620,
+      id: 11632,
       kind: 1024,
       name: "index",
       url: "interfaces/_eventtypes_.ieventhltvcameraman.html#index",
@@ -94925,7 +95029,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvCameraman'
     },
     {
-      id: 11621,
+      id: 11633,
       kind: 256,
       name: "IEventHltvRankCamera",
       url: "interfaces/_eventtypes_.ieventhltvrankcamera.html",
@@ -94933,7 +95037,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11622,
+      id: 11634,
       kind: 1024,
       name: "index",
       url: "interfaces/_eventtypes_.ieventhltvrankcamera.html#index",
@@ -94941,7 +95045,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvRankCamera'
     },
     {
-      id: 11623,
+      id: 11635,
       kind: 1024,
       name: "rank",
       url: "interfaces/_eventtypes_.ieventhltvrankcamera.html#rank",
@@ -94949,7 +95053,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvRankCamera'
     },
     {
-      id: 11624,
+      id: 11636,
       kind: 1024,
       name: "target",
       url: "interfaces/_eventtypes_.ieventhltvrankcamera.html#target",
@@ -94957,7 +95061,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvRankCamera'
     },
     {
-      id: 11625,
+      id: 11637,
       kind: 256,
       name: "IEventHltvRankEntity",
       url: "interfaces/_eventtypes_.ieventhltvrankentity.html",
@@ -94965,7 +95069,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11626,
+      id: 11638,
       kind: 1024,
       name: "index",
       url: "interfaces/_eventtypes_.ieventhltvrankentity.html#index",
@@ -94973,7 +95077,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvRankEntity'
     },
     {
-      id: 11627,
+      id: 11639,
       kind: 1024,
       name: "rank",
       url: "interfaces/_eventtypes_.ieventhltvrankentity.html#rank",
@@ -94981,7 +95085,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvRankEntity'
     },
     {
-      id: 11628,
+      id: 11640,
       kind: 1024,
       name: "target",
       url: "interfaces/_eventtypes_.ieventhltvrankentity.html#target",
@@ -94989,7 +95093,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvRankEntity'
     },
     {
-      id: 11629,
+      id: 11641,
       kind: 256,
       name: "IEventHltvFixed",
       url: "interfaces/_eventtypes_.ieventhltvfixed.html",
@@ -94997,7 +95101,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11630,
+      id: 11642,
       kind: 1024,
       name: "posx",
       url: "interfaces/_eventtypes_.ieventhltvfixed.html#posx",
@@ -95005,7 +95109,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvFixed'
     },
     {
-      id: 11631,
+      id: 11643,
       kind: 1024,
       name: "posy",
       url: "interfaces/_eventtypes_.ieventhltvfixed.html#posy",
@@ -95013,7 +95117,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvFixed'
     },
     {
-      id: 11632,
+      id: 11644,
       kind: 1024,
       name: "posz",
       url: "interfaces/_eventtypes_.ieventhltvfixed.html#posz",
@@ -95021,7 +95125,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvFixed'
     },
     {
-      id: 11633,
+      id: 11645,
       kind: 1024,
       name: "theta",
       url: "interfaces/_eventtypes_.ieventhltvfixed.html#theta",
@@ -95029,7 +95133,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvFixed'
     },
     {
-      id: 11634,
+      id: 11646,
       kind: 1024,
       name: "phi",
       url: "interfaces/_eventtypes_.ieventhltvfixed.html#phi",
@@ -95037,7 +95141,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvFixed'
     },
     {
-      id: 11635,
+      id: 11647,
       kind: 1024,
       name: "offset",
       url: "interfaces/_eventtypes_.ieventhltvfixed.html#offset",
@@ -95045,7 +95149,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvFixed'
     },
     {
-      id: 11636,
+      id: 11648,
       kind: 1024,
       name: "fov",
       url: "interfaces/_eventtypes_.ieventhltvfixed.html#fov",
@@ -95053,7 +95157,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvFixed'
     },
     {
-      id: 11637,
+      id: 11649,
       kind: 1024,
       name: "target",
       url: "interfaces/_eventtypes_.ieventhltvfixed.html#target",
@@ -95061,7 +95165,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvFixed'
     },
     {
-      id: 11638,
+      id: 11650,
       kind: 256,
       name: "IEventHltvChase",
       url: "interfaces/_eventtypes_.ieventhltvchase.html",
@@ -95069,7 +95173,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11639,
+      id: 11651,
       kind: 1024,
       name: "target1",
       url: "interfaces/_eventtypes_.ieventhltvchase.html#target1",
@@ -95077,7 +95181,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChase'
     },
     {
-      id: 11640,
+      id: 11652,
       kind: 1024,
       name: "target2",
       url: "interfaces/_eventtypes_.ieventhltvchase.html#target2",
@@ -95085,7 +95189,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChase'
     },
     {
-      id: 11641,
+      id: 11653,
       kind: 1024,
       name: "distance",
       url: "interfaces/_eventtypes_.ieventhltvchase.html#distance",
@@ -95093,7 +95197,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChase'
     },
     {
-      id: 11642,
+      id: 11654,
       kind: 1024,
       name: "theta",
       url: "interfaces/_eventtypes_.ieventhltvchase.html#theta",
@@ -95101,7 +95205,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChase'
     },
     {
-      id: 11643,
+      id: 11655,
       kind: 1024,
       name: "phi",
       url: "interfaces/_eventtypes_.ieventhltvchase.html#phi",
@@ -95109,7 +95213,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChase'
     },
     {
-      id: 11644,
+      id: 11656,
       kind: 1024,
       name: "inertia",
       url: "interfaces/_eventtypes_.ieventhltvchase.html#inertia",
@@ -95117,7 +95221,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChase'
     },
     {
-      id: 11645,
+      id: 11657,
       kind: 1024,
       name: "ineye",
       url: "interfaces/_eventtypes_.ieventhltvchase.html#ineye",
@@ -95125,7 +95229,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChase'
     },
     {
-      id: 11646,
+      id: 11658,
       kind: 256,
       name: "IEventHltvMessage",
       url: "interfaces/_eventtypes_.ieventhltvmessage.html",
@@ -95133,7 +95237,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11647,
+      id: 11659,
       kind: 1024,
       name: "text",
       url: "interfaces/_eventtypes_.ieventhltvmessage.html#text",
@@ -95141,7 +95245,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvMessage'
     },
     {
-      id: 11648,
+      id: 11660,
       kind: 256,
       name: "IEventHltvTitle",
       url: "interfaces/_eventtypes_.ieventhltvtitle.html",
@@ -95149,7 +95253,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11649,
+      id: 11661,
       kind: 1024,
       name: "text",
       url: "interfaces/_eventtypes_.ieventhltvtitle.html#text",
@@ -95157,7 +95261,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvTitle'
     },
     {
-      id: 11650,
+      id: 11662,
       kind: 256,
       name: "IEventHltvChat",
       url: "interfaces/_eventtypes_.ieventhltvchat.html",
@@ -95165,7 +95269,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11651,
+      id: 11663,
       kind: 1024,
       name: "text",
       url: "interfaces/_eventtypes_.ieventhltvchat.html#text",
@@ -95173,7 +95277,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChat'
     },
     {
-      id: 11652,
+      id: 11664,
       kind: 256,
       name: "IEventHltvChangedTarget",
       url: "interfaces/_eventtypes_.ieventhltvchangedtarget.html",
@@ -95181,7 +95285,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11653,
+      id: 11665,
       kind: 1024,
       name: "mode",
       url: "interfaces/_eventtypes_.ieventhltvchangedtarget.html#mode",
@@ -95189,7 +95293,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChangedTarget'
     },
     {
-      id: 11654,
+      id: 11666,
       kind: 1024,
       name: "old_target",
       url: "interfaces/_eventtypes_.ieventhltvchangedtarget.html#old_target",
@@ -95197,7 +95301,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChangedTarget'
     },
     {
-      id: 11655,
+      id: 11667,
       kind: 1024,
       name: "obs_target",
       url: "interfaces/_eventtypes_.ieventhltvchangedtarget.html#obs_target",
@@ -95205,7 +95309,7 @@ typedoc.search.data = {
       parent: '"eventtypes".IEventHltvChangedTarget'
     },
     {
-      id: 11656,
+      id: 11668,
       kind: 256,
       name: "INonSpecificGameEventServerSpawn",
       url: "interfaces/_eventtypes_.inonspecificgameeventserverspawn.html",
@@ -95213,7 +95317,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11657,
+      id: 11669,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventserverspawn.html#name",
@@ -95221,7 +95325,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventServerSpawn'
     },
     {
-      id: 11658,
+      id: 11670,
       kind: 1024,
       name: "event",
       url:
@@ -95230,7 +95334,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventServerSpawn'
     },
     {
-      id: 11659,
+      id: 11671,
       kind: 256,
       name: "INonSpecificGameEventServerPreShutdown",
       url:
@@ -95239,7 +95343,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11660,
+      id: 11672,
       kind: 1024,
       name: "name",
       url:
@@ -95248,7 +95352,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventServerPreShutdown'
     },
     {
-      id: 11661,
+      id: 11673,
       kind: 1024,
       name: "event",
       url:
@@ -95257,112 +95361,10 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventServerPreShutdown'
     },
     {
-      id: 11662,
+      id: 11674,
       kind: 256,
       name: "INonSpecificGameEventServerShutdown",
       url: "interfaces/_eventtypes_.inonspecificgameeventservershutdown.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 11663,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventservershutdown.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventServerShutdown'
-    },
-    {
-      id: 11664,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventservershutdown.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventServerShutdown'
-    },
-    {
-      id: 11665,
-      kind: 256,
-      name: "INonSpecificGameEventServerCvar",
-      url: "interfaces/_eventtypes_.inonspecificgameeventservercvar.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 11666,
-      kind: 1024,
-      name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventservercvar.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventServerCvar'
-    },
-    {
-      id: 11667,
-      kind: 1024,
-      name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventservercvar.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventServerCvar'
-    },
-    {
-      id: 11668,
-      kind: 256,
-      name: "INonSpecificGameEventServerMessage",
-      url: "interfaces/_eventtypes_.inonspecificgameeventservermessage.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 11669,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventservermessage.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventServerMessage'
-    },
-    {
-      id: 11670,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventservermessage.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventServerMessage'
-    },
-    {
-      id: 11671,
-      kind: 256,
-      name: "INonSpecificGameEventServerAddban",
-      url: "interfaces/_eventtypes_.inonspecificgameeventserveraddban.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 11672,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventserveraddban.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventServerAddban'
-    },
-    {
-      id: 11673,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventserveraddban.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventServerAddban'
-    },
-    {
-      id: 11674,
-      kind: 256,
-      name: "INonSpecificGameEventServerRemoveban",
-      url: "interfaces/_eventtypes_.inonspecificgameeventserverremoveban.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95371,24 +95373,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventserverremoveban.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventservershutdown.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventServerRemoveban'
+      parent: '"eventtypes".INonSpecificGameEventServerShutdown'
     },
     {
       id: 11676,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventserverremoveban.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventservershutdown.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventServerRemoveban'
+      parent: '"eventtypes".INonSpecificGameEventServerShutdown'
     },
     {
       id: 11677,
       kind: 256,
-      name: "INonSpecificGameEventPlayerConnect",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerconnect.html",
+      name: "INonSpecificGameEventServerCvar",
+      url: "interfaces/_eventtypes_.inonspecificgameeventservercvar.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95396,25 +95398,23 @@ typedoc.search.data = {
       id: 11678,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerconnect.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventservercvar.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerConnect'
+      parent: '"eventtypes".INonSpecificGameEventServerCvar'
     },
     {
       id: 11679,
       kind: 1024,
       name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerconnect.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventservercvar.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerConnect'
+      parent: '"eventtypes".INonSpecificGameEventServerCvar'
     },
     {
       id: 11680,
       kind: 256,
-      name: "INonSpecificGameEventPlayerInfo",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerinfo.html",
+      name: "INonSpecificGameEventServerMessage",
+      url: "interfaces/_eventtypes_.inonspecificgameeventservermessage.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95422,23 +95422,25 @@ typedoc.search.data = {
       id: 11681,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerinfo.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventservermessage.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerInfo'
+      parent: '"eventtypes".INonSpecificGameEventServerMessage'
     },
     {
       id: 11682,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerinfo.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventservermessage.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerInfo'
+      parent: '"eventtypes".INonSpecificGameEventServerMessage'
     },
     {
       id: 11683,
       kind: 256,
-      name: "INonSpecificGameEventPlayerDisconnect",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerdisconnect.html",
+      name: "INonSpecificGameEventServerAddban",
+      url: "interfaces/_eventtypes_.inonspecificgameeventserveraddban.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95447,24 +95449,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerdisconnect.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventserveraddban.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerDisconnect'
+      parent: '"eventtypes".INonSpecificGameEventServerAddban'
     },
     {
       id: 11685,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerdisconnect.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventserveraddban.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerDisconnect'
+      parent: '"eventtypes".INonSpecificGameEventServerAddban'
     },
     {
       id: 11686,
       kind: 256,
-      name: "INonSpecificGameEventPlayerActivate",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayeractivate.html",
+      name: "INonSpecificGameEventServerRemoveban",
+      url: "interfaces/_eventtypes_.inonspecificgameeventserverremoveban.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95473,25 +95475,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayeractivate.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventserverremoveban.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerActivate'
+      parent: '"eventtypes".INonSpecificGameEventServerRemoveban'
     },
     {
       id: 11688,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayeractivate.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventserverremoveban.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerActivate'
+      parent: '"eventtypes".INonSpecificGameEventServerRemoveban'
     },
     {
       id: 11689,
       kind: 256,
-      name: "INonSpecificGameEventPlayerConnectFull",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerconnectfull.html",
+      name: "INonSpecificGameEventPlayerConnect",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerconnect.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95500,24 +95501,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerconnectfull.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerconnect.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerConnectFull'
+      parent: '"eventtypes".INonSpecificGameEventPlayerConnect'
     },
     {
       id: 11691,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerconnectfull.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerconnect.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerConnectFull'
+      parent: '"eventtypes".INonSpecificGameEventPlayerConnect'
     },
     {
       id: 11692,
       kind: 256,
-      name: "INonSpecificGameEventPlayerSay",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayersay.html",
+      name: "INonSpecificGameEventPlayerInfo",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerinfo.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95525,23 +95526,23 @@ typedoc.search.data = {
       id: 11693,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayersay.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerinfo.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerSay'
+      parent: '"eventtypes".INonSpecificGameEventPlayerInfo'
     },
     {
       id: 11694,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayersay.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerinfo.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerSay'
+      parent: '"eventtypes".INonSpecificGameEventPlayerInfo'
     },
     {
       id: 11695,
       kind: 256,
-      name: "INonSpecificGameEventCsRoundStartBeep",
-      url: "interfaces/_eventtypes_.inonspecificgameeventcsroundstartbeep.html",
+      name: "INonSpecificGameEventPlayerDisconnect",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerdisconnect.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95550,24 +95551,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsroundstartbeep.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerdisconnect.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsRoundStartBeep'
+      parent: '"eventtypes".INonSpecificGameEventPlayerDisconnect'
     },
     {
       id: 11697,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsroundstartbeep.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerdisconnect.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsRoundStartBeep'
+      parent: '"eventtypes".INonSpecificGameEventPlayerDisconnect'
     },
     {
       id: 11698,
       kind: 256,
-      name: "INonSpecificGameEventCsRoundFinalBeep",
-      url: "interfaces/_eventtypes_.inonspecificgameeventcsroundfinalbeep.html",
+      name: "INonSpecificGameEventPlayerActivate",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayeractivate.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95576,24 +95577,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsroundfinalbeep.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventplayeractivate.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsRoundFinalBeep'
+      parent: '"eventtypes".INonSpecificGameEventPlayerActivate'
     },
     {
       id: 11700,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsroundfinalbeep.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventplayeractivate.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsRoundFinalBeep'
+      parent: '"eventtypes".INonSpecificGameEventPlayerActivate'
     },
     {
       id: 11701,
       kind: 256,
-      name: "INonSpecificGameEventRoundTimeWarning",
-      url: "interfaces/_eventtypes_.inonspecificgameeventroundtimewarning.html",
+      name: "INonSpecificGameEventPlayerConnectFull",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventplayerconnectfull.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95602,24 +95604,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventroundtimewarning.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerconnectfull.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRoundTimeWarning'
+      parent: '"eventtypes".INonSpecificGameEventPlayerConnectFull'
     },
     {
       id: 11703,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventroundtimewarning.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerconnectfull.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRoundTimeWarning'
+      parent: '"eventtypes".INonSpecificGameEventPlayerConnectFull'
     },
     {
       id: 11704,
       kind: 256,
-      name: "INonSpecificGameEventTeamInfo",
-      url: "interfaces/_eventtypes_.inonspecificgameeventteaminfo.html",
+      name: "INonSpecificGameEventPlayerSay",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayersay.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95627,23 +95629,23 @@ typedoc.search.data = {
       id: 11705,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventteaminfo.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayersay.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTeamInfo'
+      parent: '"eventtypes".INonSpecificGameEventPlayerSay'
     },
     {
       id: 11706,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventteaminfo.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayersay.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTeamInfo'
+      parent: '"eventtypes".INonSpecificGameEventPlayerSay'
     },
     {
       id: 11707,
       kind: 256,
-      name: "INonSpecificGameEventTeamScore",
-      url: "interfaces/_eventtypes_.inonspecificgameeventteamscore.html",
+      name: "INonSpecificGameEventCsRoundStartBeep",
+      url: "interfaces/_eventtypes_.inonspecificgameeventcsroundstartbeep.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95651,24 +95653,25 @@ typedoc.search.data = {
       id: 11708,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventteamscore.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventcsroundstartbeep.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTeamScore'
+      parent: '"eventtypes".INonSpecificGameEventCsRoundStartBeep'
     },
     {
       id: 11709,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventteamscore.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventcsroundstartbeep.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTeamScore'
+      parent: '"eventtypes".INonSpecificGameEventCsRoundStartBeep'
     },
     {
       id: 11710,
       kind: 256,
-      name: "INonSpecificGameEventTeamplayBroadcastAudio",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventteamplaybroadcastaudio.html",
+      name: "INonSpecificGameEventCsRoundFinalBeep",
+      url: "interfaces/_eventtypes_.inonspecificgameeventcsroundfinalbeep.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95677,24 +95680,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventteamplaybroadcastaudio.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventcsroundfinalbeep.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTeamplayBroadcastAudio'
+      parent: '"eventtypes".INonSpecificGameEventCsRoundFinalBeep'
     },
     {
       id: 11712,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventteamplaybroadcastaudio.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventcsroundfinalbeep.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTeamplayBroadcastAudio'
+      parent: '"eventtypes".INonSpecificGameEventCsRoundFinalBeep'
     },
     {
       id: 11713,
       kind: 256,
-      name: "INonSpecificGameEventGameuiHidden",
-      url: "interfaces/_eventtypes_.inonspecificgameeventgameuihidden.html",
+      name: "INonSpecificGameEventRoundTimeWarning",
+      url: "interfaces/_eventtypes_.inonspecificgameeventroundtimewarning.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -95703,12 +95706,113 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
+        "interfaces/_eventtypes_.inonspecificgameeventroundtimewarning.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventRoundTimeWarning'
+    },
+    {
+      id: 11715,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventroundtimewarning.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventRoundTimeWarning'
+    },
+    {
+      id: 11716,
+      kind: 256,
+      name: "INonSpecificGameEventTeamInfo",
+      url: "interfaces/_eventtypes_.inonspecificgameeventteaminfo.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 11717,
+      kind: 1024,
+      name: "name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventteaminfo.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventTeamInfo'
+    },
+    {
+      id: 11718,
+      kind: 1024,
+      name: "event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventteaminfo.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventTeamInfo'
+    },
+    {
+      id: 11719,
+      kind: 256,
+      name: "INonSpecificGameEventTeamScore",
+      url: "interfaces/_eventtypes_.inonspecificgameeventteamscore.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 11720,
+      kind: 1024,
+      name: "name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventteamscore.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventTeamScore'
+    },
+    {
+      id: 11721,
+      kind: 1024,
+      name: "event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventteamscore.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventTeamScore'
+    },
+    {
+      id: 11722,
+      kind: 256,
+      name: "INonSpecificGameEventTeamplayBroadcastAudio",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventteamplaybroadcastaudio.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 11723,
+      kind: 1024,
+      name: "name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventteamplaybroadcastaudio.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventTeamplayBroadcastAudio'
+    },
+    {
+      id: 11724,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventteamplaybroadcastaudio.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventTeamplayBroadcastAudio'
+    },
+    {
+      id: 11725,
+      kind: 256,
+      name: "INonSpecificGameEventGameuiHidden",
+      url: "interfaces/_eventtypes_.inonspecificgameeventgameuihidden.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 11726,
+      kind: 1024,
+      name: "name",
+      url:
         "interfaces/_eventtypes_.inonspecificgameeventgameuihidden.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
       parent: '"eventtypes".INonSpecificGameEventGameuiHidden'
     },
     {
-      id: 11715,
+      id: 11727,
       kind: 1024,
       name: "event",
       url:
@@ -95717,7 +95821,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventGameuiHidden'
     },
     {
-      id: 11716,
+      id: 11728,
       kind: 256,
       name: "INonSpecificGameEventItemsGifted",
       url: "interfaces/_eventtypes_.inonspecificgameeventitemsgifted.html",
@@ -95725,7 +95829,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11717,
+      id: 11729,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventitemsgifted.html#name",
@@ -95733,7 +95837,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventItemsGifted'
     },
     {
-      id: 11718,
+      id: 11730,
       kind: 1024,
       name: "event",
       url:
@@ -95742,7 +95846,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventItemsGifted'
     },
     {
-      id: 11719,
+      id: 11731,
       kind: 256,
       name: "INonSpecificGameEventPlayerTeam",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerteam.html",
@@ -95750,7 +95854,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11720,
+      id: 11732,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerteam.html#name",
@@ -95758,7 +95862,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerTeam'
     },
     {
-      id: 11721,
+      id: 11733,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerteam.html#event",
@@ -95766,7 +95870,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerTeam'
     },
     {
-      id: 11722,
+      id: 11734,
       kind: 256,
       name: "INonSpecificGameEventPlayerClass",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerclass.html",
@@ -95774,7 +95878,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11723,
+      id: 11735,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerclass.html#name",
@@ -95782,7 +95886,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerClass'
     },
     {
-      id: 11724,
+      id: 11736,
       kind: 1024,
       name: "event",
       url:
@@ -95791,7 +95895,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerClass'
     },
     {
-      id: 11725,
+      id: 11737,
       kind: 256,
       name: "INonSpecificGameEventPlayerDeath",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerdeath.html",
@@ -95799,7 +95903,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11726,
+      id: 11738,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerdeath.html#name",
@@ -95807,7 +95911,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerDeath'
     },
     {
-      id: 11727,
+      id: 11739,
       kind: 1024,
       name: "event",
       url:
@@ -95816,7 +95920,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerDeath'
     },
     {
-      id: 11728,
+      id: 11740,
       kind: 256,
       name: "INonSpecificGameEventPlayerHurt",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerhurt.html",
@@ -95824,7 +95928,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11729,
+      id: 11741,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerhurt.html#name",
@@ -95832,7 +95936,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerHurt'
     },
     {
-      id: 11730,
+      id: 11742,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerhurt.html#event",
@@ -95840,7 +95944,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerHurt'
     },
     {
-      id: 11731,
+      id: 11743,
       kind: 256,
       name: "INonSpecificGameEventPlayerChat",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerchat.html",
@@ -95848,7 +95952,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11732,
+      id: 11744,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerchat.html#name",
@@ -95856,7 +95960,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerChat'
     },
     {
-      id: 11733,
+      id: 11745,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerchat.html#event",
@@ -95864,7 +95968,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerChat'
     },
     {
-      id: 11734,
+      id: 11746,
       kind: 256,
       name: "INonSpecificGameEventPlayerScore",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerscore.html",
@@ -95872,7 +95976,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11735,
+      id: 11747,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerscore.html#name",
@@ -95880,7 +95984,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerScore'
     },
     {
-      id: 11736,
+      id: 11748,
       kind: 1024,
       name: "event",
       url:
@@ -95889,7 +95993,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerScore'
     },
     {
-      id: 11737,
+      id: 11749,
       kind: 256,
       name: "INonSpecificGameEventPlayerSpawn",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerspawn.html",
@@ -95897,7 +96001,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11738,
+      id: 11750,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerspawn.html#name",
@@ -95905,7 +96009,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerSpawn'
     },
     {
-      id: 11739,
+      id: 11751,
       kind: 1024,
       name: "event",
       url:
@@ -95914,7 +96018,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerSpawn'
     },
     {
-      id: 11740,
+      id: 11752,
       kind: 256,
       name: "INonSpecificGameEventPlayerShoot",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayershoot.html",
@@ -95922,7 +96026,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11741,
+      id: 11753,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayershoot.html#name",
@@ -95930,7 +96034,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerShoot'
     },
     {
-      id: 11742,
+      id: 11754,
       kind: 1024,
       name: "event",
       url:
@@ -95939,7 +96043,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerShoot'
     },
     {
-      id: 11743,
+      id: 11755,
       kind: 256,
       name: "INonSpecificGameEventPlayerUse",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayeruse.html",
@@ -95947,7 +96051,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11744,
+      id: 11756,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayeruse.html#name",
@@ -95955,7 +96059,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerUse'
     },
     {
-      id: 11745,
+      id: 11757,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayeruse.html#event",
@@ -95963,7 +96067,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerUse'
     },
     {
-      id: 11746,
+      id: 11758,
       kind: 256,
       name: "INonSpecificGameEventPlayerChangename",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerchangename.html",
@@ -95971,7 +96075,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11747,
+      id: 11759,
       kind: 1024,
       name: "name",
       url:
@@ -95980,7 +96084,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerChangename'
     },
     {
-      id: 11748,
+      id: 11760,
       kind: 1024,
       name: "event",
       url:
@@ -95989,7 +96093,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerChangename'
     },
     {
-      id: 11749,
+      id: 11761,
       kind: 256,
       name: "INonSpecificGameEventPlayerHintmessage",
       url:
@@ -95998,7 +96102,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11750,
+      id: 11762,
       kind: 1024,
       name: "name",
       url:
@@ -96007,7 +96111,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerHintmessage'
     },
     {
-      id: 11751,
+      id: 11763,
       kind: 1024,
       name: "event",
       url:
@@ -96016,7 +96120,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerHintmessage'
     },
     {
-      id: 11752,
+      id: 11764,
       kind: 256,
       name: "INonSpecificGameEventGameInit",
       url: "interfaces/_eventtypes_.inonspecificgameeventgameinit.html",
@@ -96024,7 +96128,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11753,
+      id: 11765,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventgameinit.html#name",
@@ -96032,7 +96136,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventGameInit'
     },
     {
-      id: 11754,
+      id: 11766,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventgameinit.html#event",
@@ -96040,7 +96144,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventGameInit'
     },
     {
-      id: 11755,
+      id: 11767,
       kind: 256,
       name: "INonSpecificGameEventGameNewmap",
       url: "interfaces/_eventtypes_.inonspecificgameeventgamenewmap.html",
@@ -96048,7 +96152,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11756,
+      id: 11768,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventgamenewmap.html#name",
@@ -96056,7 +96160,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventGameNewmap'
     },
     {
-      id: 11757,
+      id: 11769,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventgamenewmap.html#event",
@@ -96064,7 +96168,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventGameNewmap'
     },
     {
-      id: 11758,
+      id: 11770,
       kind: 256,
       name: "INonSpecificGameEventGameStart",
       url: "interfaces/_eventtypes_.inonspecificgameeventgamestart.html",
@@ -96072,7 +96176,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11759,
+      id: 11771,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventgamestart.html#name",
@@ -96080,7 +96184,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventGameStart'
     },
     {
-      id: 11760,
+      id: 11772,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventgamestart.html#event",
@@ -96088,7 +96192,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventGameStart'
     },
     {
-      id: 11761,
+      id: 11773,
       kind: 256,
       name: "INonSpecificGameEventGameEnd",
       url: "interfaces/_eventtypes_.inonspecificgameeventgameend.html",
@@ -96096,7 +96200,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11762,
+      id: 11774,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventgameend.html#name",
@@ -96104,7 +96208,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventGameEnd'
     },
     {
-      id: 11763,
+      id: 11775,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventgameend.html#event",
@@ -96112,7 +96216,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventGameEnd'
     },
     {
-      id: 11764,
+      id: 11776,
       kind: 256,
       name: "INonSpecificGameEventRoundStart",
       url: "interfaces/_eventtypes_.inonspecificgameeventroundstart.html",
@@ -96120,7 +96224,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11765,
+      id: 11777,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventroundstart.html#name",
@@ -96128,7 +96232,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundStart'
     },
     {
-      id: 11766,
+      id: 11778,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventroundstart.html#event",
@@ -96136,7 +96240,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundStart'
     },
     {
-      id: 11767,
+      id: 11779,
       kind: 256,
       name: "INonSpecificGameEventRoundAnnounceMatchPoint",
       url:
@@ -96145,7 +96249,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11768,
+      id: 11780,
       kind: 1024,
       name: "name",
       url:
@@ -96154,7 +96258,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundAnnounceMatchPoint'
     },
     {
-      id: 11769,
+      id: 11781,
       kind: 1024,
       name: "event",
       url:
@@ -96163,7 +96267,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundAnnounceMatchPoint'
     },
     {
-      id: 11770,
+      id: 11782,
       kind: 256,
       name: "INonSpecificGameEventRoundAnnounceFinal",
       url:
@@ -96172,7 +96276,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11771,
+      id: 11783,
       kind: 1024,
       name: "name",
       url:
@@ -96181,7 +96285,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundAnnounceFinal'
     },
     {
-      id: 11772,
+      id: 11784,
       kind: 1024,
       name: "event",
       url:
@@ -96190,7 +96294,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundAnnounceFinal'
     },
     {
-      id: 11773,
+      id: 11785,
       kind: 256,
       name: "INonSpecificGameEventRoundAnnounceLastRoundHalf",
       url:
@@ -96199,7 +96303,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11774,
+      id: 11786,
       kind: 1024,
       name: "name",
       url:
@@ -96208,7 +96312,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundAnnounceLastRoundHalf'
     },
     {
-      id: 11775,
+      id: 11787,
       kind: 1024,
       name: "event",
       url:
@@ -96217,7 +96321,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundAnnounceLastRoundHalf'
     },
     {
-      id: 11776,
+      id: 11788,
       kind: 256,
       name: "INonSpecificGameEventRoundAnnounceMatchStart",
       url:
@@ -96226,7 +96330,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11777,
+      id: 11789,
       kind: 1024,
       name: "name",
       url:
@@ -96235,7 +96339,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundAnnounceMatchStart'
     },
     {
-      id: 11778,
+      id: 11790,
       kind: 1024,
       name: "event",
       url:
@@ -96244,7 +96348,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundAnnounceMatchStart'
     },
     {
-      id: 11779,
+      id: 11791,
       kind: 256,
       name: "INonSpecificGameEventRoundAnnounceWarmup",
       url:
@@ -96253,7 +96357,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11780,
+      id: 11792,
       kind: 1024,
       name: "name",
       url:
@@ -96262,7 +96366,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundAnnounceWarmup'
     },
     {
-      id: 11781,
+      id: 11793,
       kind: 1024,
       name: "event",
       url:
@@ -96271,7 +96375,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundAnnounceWarmup'
     },
     {
-      id: 11782,
+      id: 11794,
       kind: 256,
       name: "INonSpecificGameEventRoundEnd",
       url: "interfaces/_eventtypes_.inonspecificgameeventroundend.html",
@@ -96279,7 +96383,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11783,
+      id: 11795,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventroundend.html#name",
@@ -96287,7 +96391,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundEnd'
     },
     {
-      id: 11784,
+      id: 11796,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventroundend.html#event",
@@ -96295,7 +96399,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundEnd'
     },
     {
-      id: 11785,
+      id: 11797,
       kind: 256,
       name: "INonSpecificGameEventRoundEndUploadStats",
       url:
@@ -96304,7 +96408,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11786,
+      id: 11798,
       kind: 1024,
       name: "name",
       url:
@@ -96313,7 +96417,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundEndUploadStats'
     },
     {
-      id: 11787,
+      id: 11799,
       kind: 1024,
       name: "event",
       url:
@@ -96322,7 +96426,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundEndUploadStats'
     },
     {
-      id: 11788,
+      id: 11800,
       kind: 256,
       name: "INonSpecificGameEventRoundOfficiallyEnded",
       url:
@@ -96331,7 +96435,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11789,
+      id: 11801,
       kind: 1024,
       name: "name",
       url:
@@ -96340,7 +96444,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundOfficiallyEnded'
     },
     {
-      id: 11790,
+      id: 11802,
       kind: 1024,
       name: "event",
       url:
@@ -96349,7 +96453,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventRoundOfficiallyEnded'
     },
     {
-      id: 11791,
+      id: 11803,
       kind: 256,
       name: "INonSpecificGameEventUgcMapInfoReceived",
       url:
@@ -96358,7 +96462,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11792,
+      id: 11804,
       kind: 1024,
       name: "name",
       url:
@@ -96367,7 +96471,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventUgcMapInfoReceived'
     },
     {
-      id: 11793,
+      id: 11805,
       kind: 1024,
       name: "event",
       url:
@@ -96376,7 +96480,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventUgcMapInfoReceived'
     },
     {
-      id: 11794,
+      id: 11806,
       kind: 256,
       name: "INonSpecificGameEventUgcMapUnsubscribed",
       url:
@@ -96385,7 +96489,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11795,
+      id: 11807,
       kind: 1024,
       name: "name",
       url:
@@ -96394,7 +96498,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventUgcMapUnsubscribed'
     },
     {
-      id: 11796,
+      id: 11808,
       kind: 1024,
       name: "event",
       url:
@@ -96403,7 +96507,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventUgcMapUnsubscribed'
     },
     {
-      id: 11797,
+      id: 11809,
       kind: 256,
       name: "INonSpecificGameEventUgcMapDownloadError",
       url:
@@ -96412,7 +96516,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11798,
+      id: 11810,
       kind: 1024,
       name: "name",
       url:
@@ -96421,7 +96525,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventUgcMapDownloadError'
     },
     {
-      id: 11799,
+      id: 11811,
       kind: 1024,
       name: "event",
       url:
@@ -96430,7 +96534,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventUgcMapDownloadError'
     },
     {
-      id: 11800,
+      id: 11812,
       kind: 256,
       name: "INonSpecificGameEventUgcFileDownloadFinished",
       url:
@@ -96439,7 +96543,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11801,
+      id: 11813,
       kind: 1024,
       name: "name",
       url:
@@ -96448,7 +96552,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventUgcFileDownloadFinished'
     },
     {
-      id: 11802,
+      id: 11814,
       kind: 1024,
       name: "event",
       url:
@@ -96457,7 +96561,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventUgcFileDownloadFinished'
     },
     {
-      id: 11803,
+      id: 11815,
       kind: 256,
       name: "INonSpecificGameEventUgcFileDownloadStart",
       url:
@@ -96466,7 +96570,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11804,
+      id: 11816,
       kind: 1024,
       name: "name",
       url:
@@ -96475,7 +96579,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventUgcFileDownloadStart'
     },
     {
-      id: 11805,
+      id: 11817,
       kind: 1024,
       name: "event",
       url:
@@ -96484,117 +96588,10 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventUgcFileDownloadStart'
     },
     {
-      id: 11806,
+      id: 11818,
       kind: 256,
       name: "INonSpecificGameEventBeginNewMatch",
       url: "interfaces/_eventtypes_.inonspecificgameeventbeginnewmatch.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 11807,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventbeginnewmatch.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBeginNewMatch'
-    },
-    {
-      id: 11808,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventbeginnewmatch.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBeginNewMatch'
-    },
-    {
-      id: 11809,
-      kind: 256,
-      name: "INonSpecificGameEventRoundStartPreEntity",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventroundstartpreentity.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 11810,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventroundstartpreentity.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRoundStartPreEntity'
-    },
-    {
-      id: 11811,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventroundstartpreentity.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRoundStartPreEntity'
-    },
-    {
-      id: 11812,
-      kind: 256,
-      name: "INonSpecificGameEventTeamplayRoundStart",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventteamplayroundstart.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 11813,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventteamplayroundstart.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTeamplayRoundStart'
-    },
-    {
-      id: 11814,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventteamplayroundstart.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTeamplayRoundStart'
-    },
-    {
-      id: 11815,
-      kind: 256,
-      name: "INonSpecificGameEventHostnameChanged",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhostnamechanged.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 11816,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostnamechanged.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostnameChanged'
-    },
-    {
-      id: 11817,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostnamechanged.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostnameChanged'
-    },
-    {
-      id: 11818,
-      kind: 256,
-      name: "INonSpecificGameEventDifficultyChanged",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventdifficultychanged.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96603,24 +96600,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventdifficultychanged.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventbeginnewmatch.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDifficultyChanged'
+      parent: '"eventtypes".INonSpecificGameEventBeginNewMatch'
     },
     {
       id: 11820,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventdifficultychanged.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbeginnewmatch.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDifficultyChanged'
+      parent: '"eventtypes".INonSpecificGameEventBeginNewMatch'
     },
     {
       id: 11821,
       kind: 256,
-      name: "INonSpecificGameEventFinaleStart",
-      url: "interfaces/_eventtypes_.inonspecificgameeventfinalestart.html",
+      name: "INonSpecificGameEventRoundStartPreEntity",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventroundstartpreentity.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96628,24 +96626,26 @@ typedoc.search.data = {
       id: 11822,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventfinalestart.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventroundstartpreentity.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventFinaleStart'
+      parent: '"eventtypes".INonSpecificGameEventRoundStartPreEntity'
     },
     {
       id: 11823,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventfinalestart.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventroundstartpreentity.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventFinaleStart'
+      parent: '"eventtypes".INonSpecificGameEventRoundStartPreEntity'
     },
     {
       id: 11824,
       kind: 256,
-      name: "INonSpecificGameEventGameMessage",
-      url: "interfaces/_eventtypes_.inonspecificgameeventgamemessage.html",
+      name: "INonSpecificGameEventTeamplayRoundStart",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventteamplayroundstart.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96653,25 +96653,25 @@ typedoc.search.data = {
       id: 11825,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventgamemessage.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventteamplayroundstart.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGameMessage'
+      parent: '"eventtypes".INonSpecificGameEventTeamplayRoundStart'
     },
     {
       id: 11826,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventgamemessage.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventteamplayroundstart.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGameMessage'
+      parent: '"eventtypes".INonSpecificGameEventTeamplayRoundStart'
     },
     {
       id: 11827,
       kind: 256,
-      name: "INonSpecificGameEventDmBonusWeaponStart",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventdmbonusweaponstart.html",
+      name: "INonSpecificGameEventHostnameChanged",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhostnamechanged.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96680,25 +96680,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventdmbonusweaponstart.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventhostnamechanged.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDmBonusWeaponStart'
+      parent: '"eventtypes".INonSpecificGameEventHostnameChanged'
     },
     {
       id: 11829,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventdmbonusweaponstart.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventhostnamechanged.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDmBonusWeaponStart'
+      parent: '"eventtypes".INonSpecificGameEventHostnameChanged'
     },
     {
       id: 11830,
       kind: 256,
-      name: "INonSpecificGameEventSurvivalAnnouncePhase",
+      name: "INonSpecificGameEventDifficultyChanged",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventsurvivalannouncephase.html",
+        "interfaces/_eventtypes_.inonspecificgameeventdifficultychanged.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96707,24 +96707,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventsurvivalannouncephase.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventdifficultychanged.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSurvivalAnnouncePhase'
+      parent: '"eventtypes".INonSpecificGameEventDifficultyChanged'
     },
     {
       id: 11832,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventsurvivalannouncephase.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventdifficultychanged.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSurvivalAnnouncePhase'
+      parent: '"eventtypes".INonSpecificGameEventDifficultyChanged'
     },
     {
       id: 11833,
       kind: 256,
-      name: "INonSpecificGameEventBreakBreakable",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbreakbreakable.html",
+      name: "INonSpecificGameEventFinaleStart",
+      url: "interfaces/_eventtypes_.inonspecificgameeventfinalestart.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96732,25 +96732,24 @@ typedoc.search.data = {
       id: 11834,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventbreakbreakable.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventfinalestart.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBreakBreakable'
+      parent: '"eventtypes".INonSpecificGameEventFinaleStart'
     },
     {
       id: 11835,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbreakbreakable.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventfinalestart.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBreakBreakable'
+      parent: '"eventtypes".INonSpecificGameEventFinaleStart'
     },
     {
       id: 11836,
       kind: 256,
-      name: "INonSpecificGameEventBreakProp",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbreakprop.html",
+      name: "INonSpecificGameEventGameMessage",
+      url: "interfaces/_eventtypes_.inonspecificgameeventgamemessage.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96758,23 +96757,25 @@ typedoc.search.data = {
       id: 11837,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbreakprop.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventgamemessage.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBreakProp'
+      parent: '"eventtypes".INonSpecificGameEventGameMessage'
     },
     {
       id: 11838,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbreakprop.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventgamemessage.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBreakProp'
+      parent: '"eventtypes".INonSpecificGameEventGameMessage'
     },
     {
       id: 11839,
       kind: 256,
-      name: "INonSpecificGameEventPlayerDecal",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerdecal.html",
+      name: "INonSpecificGameEventDmBonusWeaponStart",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventdmbonusweaponstart.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96782,24 +96783,26 @@ typedoc.search.data = {
       id: 11840,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerdecal.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventdmbonusweaponstart.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerDecal'
+      parent: '"eventtypes".INonSpecificGameEventDmBonusWeaponStart'
     },
     {
       id: 11841,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerdecal.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventdmbonusweaponstart.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerDecal'
+      parent: '"eventtypes".INonSpecificGameEventDmBonusWeaponStart'
     },
     {
       id: 11842,
       kind: 256,
-      name: "INonSpecificGameEventEntityKilled",
-      url: "interfaces/_eventtypes_.inonspecificgameevententitykilled.html",
+      name: "INonSpecificGameEventSurvivalAnnouncePhase",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventsurvivalannouncephase.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96808,24 +96811,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameevententitykilled.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventsurvivalannouncephase.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventEntityKilled'
+      parent: '"eventtypes".INonSpecificGameEventSurvivalAnnouncePhase'
     },
     {
       id: 11844,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameevententitykilled.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventsurvivalannouncephase.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventEntityKilled'
+      parent: '"eventtypes".INonSpecificGameEventSurvivalAnnouncePhase'
     },
     {
       id: 11845,
       kind: 256,
-      name: "INonSpecificGameEventBonusUpdated",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbonusupdated.html",
+      name: "INonSpecificGameEventBreakBreakable",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbreakbreakable.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96834,25 +96837,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbonusupdated.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventbreakbreakable.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBonusUpdated'
+      parent: '"eventtypes".INonSpecificGameEventBreakBreakable'
     },
     {
       id: 11847,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbonusupdated.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbreakbreakable.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBonusUpdated'
+      parent: '"eventtypes".INonSpecificGameEventBreakBreakable'
     },
     {
       id: 11848,
       kind: 256,
-      name: "INonSpecificGameEventPlayerStatsUpdated",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerstatsupdated.html",
+      name: "INonSpecificGameEventBreakProp",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbreakprop.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96860,25 +96862,23 @@ typedoc.search.data = {
       id: 11849,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerstatsupdated.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbreakprop.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerStatsUpdated'
+      parent: '"eventtypes".INonSpecificGameEventBreakProp'
     },
     {
       id: 11850,
       kind: 1024,
       name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerstatsupdated.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbreakprop.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerStatsUpdated'
+      parent: '"eventtypes".INonSpecificGameEventBreakProp'
     },
     {
       id: 11851,
       kind: 256,
-      name: "INonSpecificGameEventAchievementEvent",
-      url: "interfaces/_eventtypes_.inonspecificgameeventachievementevent.html",
+      name: "INonSpecificGameEventPlayerDecal",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerdecal.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96886,26 +96886,24 @@ typedoc.search.data = {
       id: 11852,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementevent.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerdecal.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAchievementEvent'
+      parent: '"eventtypes".INonSpecificGameEventPlayerDecal'
     },
     {
       id: 11853,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementevent.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerdecal.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAchievementEvent'
+      parent: '"eventtypes".INonSpecificGameEventPlayerDecal'
     },
     {
       id: 11854,
       kind: 256,
-      name: "INonSpecificGameEventAchievementIncrement",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementincrement.html",
+      name: "INonSpecificGameEventEntityKilled",
+      url: "interfaces/_eventtypes_.inonspecificgameevententitykilled.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96914,25 +96912,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementincrement.html#name",
+        "interfaces/_eventtypes_.inonspecificgameevententitykilled.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAchievementIncrement'
+      parent: '"eventtypes".INonSpecificGameEventEntityKilled'
     },
     {
       id: 11856,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementincrement.html#event",
+        "interfaces/_eventtypes_.inonspecificgameevententitykilled.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAchievementIncrement'
+      parent: '"eventtypes".INonSpecificGameEventEntityKilled'
     },
     {
       id: 11857,
       kind: 256,
-      name: "INonSpecificGameEventAchievementEarned",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementearned.html",
+      name: "INonSpecificGameEventBonusUpdated",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbonusupdated.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96941,25 +96938,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementearned.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventbonusupdated.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAchievementEarned'
+      parent: '"eventtypes".INonSpecificGameEventBonusUpdated'
     },
     {
       id: 11859,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementearned.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbonusupdated.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAchievementEarned'
+      parent: '"eventtypes".INonSpecificGameEventBonusUpdated'
     },
     {
       id: 11860,
       kind: 256,
-      name: "INonSpecificGameEventAchievementWriteFailed",
+      name: "INonSpecificGameEventPlayerStatsUpdated",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementwritefailed.html",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerstatsupdated.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96968,24 +96965,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementwritefailed.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerstatsupdated.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAchievementWriteFailed'
+      parent: '"eventtypes".INonSpecificGameEventPlayerStatsUpdated'
     },
     {
       id: 11862,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementwritefailed.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerstatsupdated.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAchievementWriteFailed'
+      parent: '"eventtypes".INonSpecificGameEventPlayerStatsUpdated'
     },
     {
       id: 11863,
       kind: 256,
-      name: "INonSpecificGameEventPhysgunPickup",
-      url: "interfaces/_eventtypes_.inonspecificgameeventphysgunpickup.html",
+      name: "INonSpecificGameEventAchievementEvent",
+      url: "interfaces/_eventtypes_.inonspecificgameeventachievementevent.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -96994,24 +96991,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventphysgunpickup.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventachievementevent.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPhysgunPickup'
+      parent: '"eventtypes".INonSpecificGameEventAchievementEvent'
     },
     {
       id: 11865,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventphysgunpickup.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventachievementevent.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPhysgunPickup'
+      parent: '"eventtypes".INonSpecificGameEventAchievementEvent'
     },
     {
       id: 11866,
       kind: 256,
-      name: "INonSpecificGameEventFlareIgniteNpc",
-      url: "interfaces/_eventtypes_.inonspecificgameeventflareignitenpc.html",
+      name: "INonSpecificGameEventAchievementIncrement",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventachievementincrement.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97020,25 +97018,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventflareignitenpc.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventachievementincrement.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventFlareIgniteNpc'
+      parent: '"eventtypes".INonSpecificGameEventAchievementIncrement'
     },
     {
       id: 11868,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventflareignitenpc.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventachievementincrement.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventFlareIgniteNpc'
+      parent: '"eventtypes".INonSpecificGameEventAchievementIncrement'
     },
     {
       id: 11869,
       kind: 256,
-      name: "INonSpecificGameEventHelicopterGrenadePuntMiss",
+      name: "INonSpecificGameEventAchievementEarned",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhelicoptergrenadepuntmiss.html",
+        "interfaces/_eventtypes_.inonspecificgameeventachievementearned.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97047,25 +97045,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhelicoptergrenadepuntmiss.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventachievementearned.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHelicopterGrenadePuntMiss'
+      parent: '"eventtypes".INonSpecificGameEventAchievementEarned'
     },
     {
       id: 11871,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhelicoptergrenadepuntmiss.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventachievementearned.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHelicopterGrenadePuntMiss'
+      parent: '"eventtypes".INonSpecificGameEventAchievementEarned'
     },
     {
       id: 11872,
       kind: 256,
-      name: "INonSpecificGameEventUserDataDownloaded",
+      name: "INonSpecificGameEventAchievementWriteFailed",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventuserdatadownloaded.html",
+        "interfaces/_eventtypes_.inonspecificgameeventachievementwritefailed.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97074,24 +97072,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventuserdatadownloaded.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventachievementwritefailed.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventUserDataDownloaded'
+      parent: '"eventtypes".INonSpecificGameEventAchievementWriteFailed'
     },
     {
       id: 11874,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventuserdatadownloaded.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventachievementwritefailed.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventUserDataDownloaded'
+      parent: '"eventtypes".INonSpecificGameEventAchievementWriteFailed'
     },
     {
       id: 11875,
       kind: 256,
-      name: "INonSpecificGameEventRagdollDissolved",
-      url: "interfaces/_eventtypes_.inonspecificgameeventragdolldissolved.html",
+      name: "INonSpecificGameEventPhysgunPickup",
+      url: "interfaces/_eventtypes_.inonspecificgameeventphysgunpickup.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97100,25 +97098,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventragdolldissolved.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventphysgunpickup.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRagdollDissolved'
+      parent: '"eventtypes".INonSpecificGameEventPhysgunPickup'
     },
     {
       id: 11877,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventragdolldissolved.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventphysgunpickup.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRagdollDissolved'
+      parent: '"eventtypes".INonSpecificGameEventPhysgunPickup'
     },
     {
       id: 11878,
       kind: 256,
-      name: "INonSpecificGameEventGameinstructorDraw",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventgameinstructordraw.html",
+      name: "INonSpecificGameEventFlareIgniteNpc",
+      url: "interfaces/_eventtypes_.inonspecificgameeventflareignitenpc.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97127,25 +97124,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventgameinstructordraw.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventflareignitenpc.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGameinstructorDraw'
+      parent: '"eventtypes".INonSpecificGameEventFlareIgniteNpc'
     },
     {
       id: 11880,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventgameinstructordraw.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventflareignitenpc.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGameinstructorDraw'
+      parent: '"eventtypes".INonSpecificGameEventFlareIgniteNpc'
     },
     {
       id: 11881,
       kind: 256,
-      name: "INonSpecificGameEventGameinstructorNodraw",
+      name: "INonSpecificGameEventHelicopterGrenadePuntMiss",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventgameinstructornodraw.html",
+        "interfaces/_eventtypes_.inonspecificgameeventhelicoptergrenadepuntmiss.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97154,24 +97151,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventgameinstructornodraw.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventhelicoptergrenadepuntmiss.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGameinstructorNodraw'
+      parent: '"eventtypes".INonSpecificGameEventHelicopterGrenadePuntMiss'
     },
     {
       id: 11883,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventgameinstructornodraw.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventhelicoptergrenadepuntmiss.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGameinstructorNodraw'
+      parent: '"eventtypes".INonSpecificGameEventHelicopterGrenadePuntMiss'
     },
     {
       id: 11884,
       kind: 256,
-      name: "INonSpecificGameEventMapTransition",
-      url: "interfaces/_eventtypes_.inonspecificgameeventmaptransition.html",
+      name: "INonSpecificGameEventUserDataDownloaded",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventuserdatadownloaded.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97180,24 +97178,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventmaptransition.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventuserdatadownloaded.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventMapTransition'
+      parent: '"eventtypes".INonSpecificGameEventUserDataDownloaded'
     },
     {
       id: 11886,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventmaptransition.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventuserdatadownloaded.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventMapTransition'
+      parent: '"eventtypes".INonSpecificGameEventUserDataDownloaded'
     },
     {
       id: 11887,
       kind: 256,
-      name: "INonSpecificGameEventEntityVisible",
-      url: "interfaces/_eventtypes_.inonspecificgameevententityvisible.html",
+      name: "INonSpecificGameEventRagdollDissolved",
+      url: "interfaces/_eventtypes_.inonspecificgameeventragdolldissolved.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97206,25 +97204,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameevententityvisible.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventragdolldissolved.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventEntityVisible'
+      parent: '"eventtypes".INonSpecificGameEventRagdollDissolved'
     },
     {
       id: 11889,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameevententityvisible.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventragdolldissolved.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventEntityVisible'
+      parent: '"eventtypes".INonSpecificGameEventRagdollDissolved'
     },
     {
       id: 11890,
       kind: 256,
-      name: "INonSpecificGameEventSetInstructorGroupEnabled",
+      name: "INonSpecificGameEventGameinstructorDraw",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventsetinstructorgroupenabled.html",
+        "interfaces/_eventtypes_.inonspecificgameeventgameinstructordraw.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97233,25 +97231,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventsetinstructorgroupenabled.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventgameinstructordraw.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSetInstructorGroupEnabled'
+      parent: '"eventtypes".INonSpecificGameEventGameinstructorDraw'
     },
     {
       id: 11892,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventsetinstructorgroupenabled.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventgameinstructordraw.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSetInstructorGroupEnabled'
+      parent: '"eventtypes".INonSpecificGameEventGameinstructorDraw'
     },
     {
       id: 11893,
       kind: 256,
-      name: "INonSpecificGameEventInstructorServerHintCreate",
+      name: "INonSpecificGameEventGameinstructorNodraw",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventinstructorserverhintcreate.html",
+        "interfaces/_eventtypes_.inonspecificgameeventgameinstructornodraw.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97260,25 +97258,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventinstructorserverhintcreate.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventgameinstructornodraw.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInstructorServerHintCreate'
+      parent: '"eventtypes".INonSpecificGameEventGameinstructorNodraw'
     },
     {
       id: 11895,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventinstructorserverhintcreate.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventgameinstructornodraw.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInstructorServerHintCreate'
+      parent: '"eventtypes".INonSpecificGameEventGameinstructorNodraw'
     },
     {
       id: 11896,
       kind: 256,
-      name: "INonSpecificGameEventInstructorServerHintStop",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventinstructorserverhintstop.html",
+      name: "INonSpecificGameEventMapTransition",
+      url: "interfaces/_eventtypes_.inonspecificgameeventmaptransition.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97287,25 +97284,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventinstructorserverhintstop.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventmaptransition.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInstructorServerHintStop'
+      parent: '"eventtypes".INonSpecificGameEventMapTransition'
     },
     {
       id: 11898,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventinstructorserverhintstop.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventmaptransition.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInstructorServerHintStop'
+      parent: '"eventtypes".INonSpecificGameEventMapTransition'
     },
     {
       id: 11899,
       kind: 256,
-      name: "INonSpecificGameEventReadGameTitledata",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventreadgametitledata.html",
+      name: "INonSpecificGameEventEntityVisible",
+      url: "interfaces/_eventtypes_.inonspecificgameevententityvisible.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97314,25 +97310,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventreadgametitledata.html#name",
+        "interfaces/_eventtypes_.inonspecificgameevententityvisible.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventReadGameTitledata'
+      parent: '"eventtypes".INonSpecificGameEventEntityVisible'
     },
     {
       id: 11901,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventreadgametitledata.html#event",
+        "interfaces/_eventtypes_.inonspecificgameevententityvisible.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventReadGameTitledata'
+      parent: '"eventtypes".INonSpecificGameEventEntityVisible'
     },
     {
       id: 11902,
       kind: 256,
-      name: "INonSpecificGameEventWriteGameTitledata",
+      name: "INonSpecificGameEventSetInstructorGroupEnabled",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventwritegametitledata.html",
+        "interfaces/_eventtypes_.inonspecificgameeventsetinstructorgroupenabled.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97341,25 +97337,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventwritegametitledata.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventsetinstructorgroupenabled.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventWriteGameTitledata'
+      parent: '"eventtypes".INonSpecificGameEventSetInstructorGroupEnabled'
     },
     {
       id: 11904,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventwritegametitledata.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventsetinstructorgroupenabled.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventWriteGameTitledata'
+      parent: '"eventtypes".INonSpecificGameEventSetInstructorGroupEnabled'
     },
     {
       id: 11905,
       kind: 256,
-      name: "INonSpecificGameEventResetGameTitledata",
+      name: "INonSpecificGameEventInstructorServerHintCreate",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventresetgametitledata.html",
+        "interfaces/_eventtypes_.inonspecificgameeventinstructorserverhintcreate.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97368,25 +97364,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventresetgametitledata.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventinstructorserverhintcreate.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventResetGameTitledata'
+      parent: '"eventtypes".INonSpecificGameEventInstructorServerHintCreate'
     },
     {
       id: 11907,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventresetgametitledata.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventinstructorserverhintcreate.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventResetGameTitledata'
+      parent: '"eventtypes".INonSpecificGameEventInstructorServerHintCreate'
     },
     {
       id: 11908,
       kind: 256,
-      name: "INonSpecificGameEventWeaponhudSelection",
+      name: "INonSpecificGameEventInstructorServerHintStop",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventweaponhudselection.html",
+        "interfaces/_eventtypes_.inonspecificgameeventinstructorserverhintstop.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97395,12 +97391,120 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
+        "interfaces/_eventtypes_.inonspecificgameeventinstructorserverhintstop.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventInstructorServerHintStop'
+    },
+    {
+      id: 11910,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventinstructorserverhintstop.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventInstructorServerHintStop'
+    },
+    {
+      id: 11911,
+      kind: 256,
+      name: "INonSpecificGameEventReadGameTitledata",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventreadgametitledata.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 11912,
+      kind: 1024,
+      name: "name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventreadgametitledata.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventReadGameTitledata'
+    },
+    {
+      id: 11913,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventreadgametitledata.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventReadGameTitledata'
+    },
+    {
+      id: 11914,
+      kind: 256,
+      name: "INonSpecificGameEventWriteGameTitledata",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventwritegametitledata.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 11915,
+      kind: 1024,
+      name: "name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventwritegametitledata.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventWriteGameTitledata'
+    },
+    {
+      id: 11916,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventwritegametitledata.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventWriteGameTitledata'
+    },
+    {
+      id: 11917,
+      kind: 256,
+      name: "INonSpecificGameEventResetGameTitledata",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventresetgametitledata.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 11918,
+      kind: 1024,
+      name: "name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventresetgametitledata.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventResetGameTitledata'
+    },
+    {
+      id: 11919,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventresetgametitledata.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventResetGameTitledata'
+    },
+    {
+      id: 11920,
+      kind: 256,
+      name: "INonSpecificGameEventWeaponhudSelection",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventweaponhudselection.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 11921,
+      kind: 1024,
+      name: "name",
+      url:
         "interfaces/_eventtypes_.inonspecificgameeventweaponhudselection.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
       parent: '"eventtypes".INonSpecificGameEventWeaponhudSelection'
     },
     {
-      id: 11910,
+      id: 11922,
       kind: 1024,
       name: "event",
       url:
@@ -97409,7 +97513,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventWeaponhudSelection'
     },
     {
-      id: 11911,
+      id: 11923,
       kind: 256,
       name: "INonSpecificGameEventVoteEnded",
       url: "interfaces/_eventtypes_.inonspecificgameeventvoteended.html",
@@ -97417,7 +97521,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11912,
+      id: 11924,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventvoteended.html#name",
@@ -97425,7 +97529,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVoteEnded'
     },
     {
-      id: 11913,
+      id: 11925,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventvoteended.html#event",
@@ -97433,7 +97537,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVoteEnded'
     },
     {
-      id: 11914,
+      id: 11926,
       kind: 256,
       name: "INonSpecificGameEventVoteStarted",
       url: "interfaces/_eventtypes_.inonspecificgameeventvotestarted.html",
@@ -97441,7 +97545,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11915,
+      id: 11927,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventvotestarted.html#name",
@@ -97449,7 +97553,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVoteStarted'
     },
     {
-      id: 11916,
+      id: 11928,
       kind: 1024,
       name: "event",
       url:
@@ -97458,7 +97562,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVoteStarted'
     },
     {
-      id: 11917,
+      id: 11929,
       kind: 256,
       name: "INonSpecificGameEventVoteChanged",
       url: "interfaces/_eventtypes_.inonspecificgameeventvotechanged.html",
@@ -97466,7 +97570,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11918,
+      id: 11930,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventvotechanged.html#name",
@@ -97474,7 +97578,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVoteChanged'
     },
     {
-      id: 11919,
+      id: 11931,
       kind: 1024,
       name: "event",
       url:
@@ -97483,7 +97587,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVoteChanged'
     },
     {
-      id: 11920,
+      id: 11932,
       kind: 256,
       name: "INonSpecificGameEventVotePassed",
       url: "interfaces/_eventtypes_.inonspecificgameeventvotepassed.html",
@@ -97491,7 +97595,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11921,
+      id: 11933,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventvotepassed.html#name",
@@ -97499,7 +97603,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVotePassed'
     },
     {
-      id: 11922,
+      id: 11934,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventvotepassed.html#event",
@@ -97507,7 +97611,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVotePassed'
     },
     {
-      id: 11923,
+      id: 11935,
       kind: 256,
       name: "INonSpecificGameEventVoteFailed",
       url: "interfaces/_eventtypes_.inonspecificgameeventvotefailed.html",
@@ -97515,7 +97619,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11924,
+      id: 11936,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventvotefailed.html#name",
@@ -97523,7 +97627,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVoteFailed'
     },
     {
-      id: 11925,
+      id: 11937,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventvotefailed.html#event",
@@ -97531,7 +97635,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVoteFailed'
     },
     {
-      id: 11926,
+      id: 11938,
       kind: 256,
       name: "INonSpecificGameEventVoteCast",
       url: "interfaces/_eventtypes_.inonspecificgameeventvotecast.html",
@@ -97539,7 +97643,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11927,
+      id: 11939,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventvotecast.html#name",
@@ -97547,7 +97651,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVoteCast'
     },
     {
-      id: 11928,
+      id: 11940,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventvotecast.html#event",
@@ -97555,7 +97659,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVoteCast'
     },
     {
-      id: 11929,
+      id: 11941,
       kind: 256,
       name: "INonSpecificGameEventVoteOptions",
       url: "interfaces/_eventtypes_.inonspecificgameeventvoteoptions.html",
@@ -97563,7 +97667,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11930,
+      id: 11942,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventvoteoptions.html#name",
@@ -97571,7 +97675,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVoteOptions'
     },
     {
-      id: 11931,
+      id: 11943,
       kind: 1024,
       name: "event",
       url:
@@ -97580,7 +97684,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVoteOptions'
     },
     {
-      id: 11932,
+      id: 11944,
       kind: 256,
       name: "INonSpecificGameEventEndmatchMapvoteSelectingMap",
       url:
@@ -97589,7 +97693,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11933,
+      id: 11945,
       kind: 1024,
       name: "name",
       url:
@@ -97598,7 +97702,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventEndmatchMapvoteSelectingMap'
     },
     {
-      id: 11934,
+      id: 11946,
       kind: 1024,
       name: "event",
       url:
@@ -97607,7 +97711,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventEndmatchMapvoteSelectingMap'
     },
     {
-      id: 11935,
+      id: 11947,
       kind: 256,
       name: "INonSpecificGameEventEndmatchCmmStartRevealItems",
       url:
@@ -97616,7 +97720,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 11936,
+      id: 11948,
       kind: 1024,
       name: "name",
       url:
@@ -97625,7 +97729,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventEndmatchCmmStartRevealItems'
     },
     {
-      id: 11937,
+      id: 11949,
       kind: 1024,
       name: "event",
       url:
@@ -97634,114 +97738,10 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventEndmatchCmmStartRevealItems'
     },
     {
-      id: 11938,
+      id: 11950,
       kind: 256,
       name: "INonSpecificGameEventInventoryUpdated",
       url: "interfaces/_eventtypes_.inonspecificgameeventinventoryupdated.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 11939,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventinventoryupdated.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInventoryUpdated'
-    },
-    {
-      id: 11940,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventinventoryupdated.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInventoryUpdated'
-    },
-    {
-      id: 11941,
-      kind: 256,
-      name: "INonSpecificGameEventCartUpdated",
-      url: "interfaces/_eventtypes_.inonspecificgameeventcartupdated.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 11942,
-      kind: 1024,
-      name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventcartupdated.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCartUpdated'
-    },
-    {
-      id: 11943,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventcartupdated.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCartUpdated'
-    },
-    {
-      id: 11944,
-      kind: 256,
-      name: "INonSpecificGameEventStorePricesheetUpdated",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventstorepricesheetupdated.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 11945,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventstorepricesheetupdated.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventStorePricesheetUpdated'
-    },
-    {
-      id: 11946,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventstorepricesheetupdated.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventStorePricesheetUpdated'
-    },
-    {
-      id: 11947,
-      kind: 256,
-      name: "INonSpecificGameEventGcConnected",
-      url: "interfaces/_eventtypes_.inonspecificgameeventgcconnected.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 11948,
-      kind: 1024,
-      name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventgcconnected.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGcConnected'
-    },
-    {
-      id: 11949,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventgcconnected.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGcConnected'
-    },
-    {
-      id: 11950,
-      kind: 256,
-      name: "INonSpecificGameEventItemSchemaInitialized",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventitemschemainitialized.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97750,25 +97750,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventitemschemainitialized.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventinventoryupdated.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventItemSchemaInitialized'
+      parent: '"eventtypes".INonSpecificGameEventInventoryUpdated'
     },
     {
       id: 11952,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventitemschemainitialized.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventinventoryupdated.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventItemSchemaInitialized'
+      parent: '"eventtypes".INonSpecificGameEventInventoryUpdated'
     },
     {
       id: 11953,
       kind: 256,
-      name: "INonSpecificGameEventClientLoadoutChanged",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventclientloadoutchanged.html",
+      name: "INonSpecificGameEventCartUpdated",
+      url: "interfaces/_eventtypes_.inonspecificgameeventcartupdated.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97776,26 +97775,25 @@ typedoc.search.data = {
       id: 11954,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventclientloadoutchanged.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventcartupdated.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventClientLoadoutChanged'
+      parent: '"eventtypes".INonSpecificGameEventCartUpdated'
     },
     {
       id: 11955,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventclientloadoutchanged.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventcartupdated.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventClientLoadoutChanged'
+      parent: '"eventtypes".INonSpecificGameEventCartUpdated'
     },
     {
       id: 11956,
       kind: 256,
-      name: "INonSpecificGameEventAddPlayerSonarIcon",
+      name: "INonSpecificGameEventStorePricesheetUpdated",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventaddplayersonaricon.html",
+        "interfaces/_eventtypes_.inonspecificgameeventstorepricesheetupdated.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97804,25 +97802,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventaddplayersonaricon.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventstorepricesheetupdated.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAddPlayerSonarIcon'
+      parent: '"eventtypes".INonSpecificGameEventStorePricesheetUpdated'
     },
     {
       id: 11958,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventaddplayersonaricon.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventstorepricesheetupdated.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAddPlayerSonarIcon'
+      parent: '"eventtypes".INonSpecificGameEventStorePricesheetUpdated'
     },
     {
       id: 11959,
       kind: 256,
-      name: "INonSpecificGameEventAddBulletHitMarker",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventaddbullethitmarker.html",
+      name: "INonSpecificGameEventGcConnected",
+      url: "interfaces/_eventtypes_.inonspecificgameeventgcconnected.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97830,25 +97827,25 @@ typedoc.search.data = {
       id: 11960,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventaddbullethitmarker.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventgcconnected.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAddBulletHitMarker'
+      parent: '"eventtypes".INonSpecificGameEventGcConnected'
     },
     {
       id: 11961,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventaddbullethitmarker.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventgcconnected.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAddBulletHitMarker'
+      parent: '"eventtypes".INonSpecificGameEventGcConnected'
     },
     {
       id: 11962,
       kind: 256,
-      name: "INonSpecificGameEventVerifyClientHit",
-      url: "interfaces/_eventtypes_.inonspecificgameeventverifyclienthit.html",
+      name: "INonSpecificGameEventItemSchemaInitialized",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventitemschemainitialized.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97857,24 +97854,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventverifyclienthit.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventitemschemainitialized.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventVerifyClientHit'
+      parent: '"eventtypes".INonSpecificGameEventItemSchemaInitialized'
     },
     {
       id: 11964,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventverifyclienthit.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventitemschemainitialized.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventVerifyClientHit'
+      parent: '"eventtypes".INonSpecificGameEventItemSchemaInitialized'
     },
     {
       id: 11965,
       kind: 256,
-      name: "INonSpecificGameEventOtherDeath",
-      url: "interfaces/_eventtypes_.inonspecificgameeventotherdeath.html",
+      name: "INonSpecificGameEventClientLoadoutChanged",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventclientloadoutchanged.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97882,23 +97880,26 @@ typedoc.search.data = {
       id: 11966,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventotherdeath.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventclientloadoutchanged.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventOtherDeath'
+      parent: '"eventtypes".INonSpecificGameEventClientLoadoutChanged'
     },
     {
       id: 11967,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventotherdeath.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventclientloadoutchanged.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventOtherDeath'
+      parent: '"eventtypes".INonSpecificGameEventClientLoadoutChanged'
     },
     {
       id: 11968,
       kind: 256,
-      name: "INonSpecificGameEventItemPurchase",
-      url: "interfaces/_eventtypes_.inonspecificgameeventitempurchase.html",
+      name: "INonSpecificGameEventAddPlayerSonarIcon",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventaddplayersonaricon.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97907,24 +97908,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventitempurchase.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventaddplayersonaricon.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventItemPurchase'
+      parent: '"eventtypes".INonSpecificGameEventAddPlayerSonarIcon'
     },
     {
       id: 11970,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventitempurchase.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventaddplayersonaricon.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventItemPurchase'
+      parent: '"eventtypes".INonSpecificGameEventAddPlayerSonarIcon'
     },
     {
       id: 11971,
       kind: 256,
-      name: "INonSpecificGameEventBombBeginplant",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombbeginplant.html",
+      name: "INonSpecificGameEventAddBulletHitMarker",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventaddbullethitmarker.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97933,24 +97935,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbombbeginplant.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventaddbullethitmarker.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombBeginplant'
+      parent: '"eventtypes".INonSpecificGameEventAddBulletHitMarker'
     },
     {
       id: 11973,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbombbeginplant.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventaddbullethitmarker.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombBeginplant'
+      parent: '"eventtypes".INonSpecificGameEventAddBulletHitMarker'
     },
     {
       id: 11974,
       kind: 256,
-      name: "INonSpecificGameEventBombAbortplant",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombabortplant.html",
+      name: "INonSpecificGameEventVerifyClientHit",
+      url: "interfaces/_eventtypes_.inonspecificgameeventverifyclienthit.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97959,24 +97961,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbombabortplant.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventverifyclienthit.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombAbortplant'
+      parent: '"eventtypes".INonSpecificGameEventVerifyClientHit'
     },
     {
       id: 11976,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbombabortplant.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventverifyclienthit.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombAbortplant'
+      parent: '"eventtypes".INonSpecificGameEventVerifyClientHit'
     },
     {
       id: 11977,
       kind: 256,
-      name: "INonSpecificGameEventBombPlanted",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombplanted.html",
+      name: "INonSpecificGameEventOtherDeath",
+      url: "interfaces/_eventtypes_.inonspecificgameeventotherdeath.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -97984,24 +97986,23 @@ typedoc.search.data = {
       id: 11978,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombplanted.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventotherdeath.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombPlanted'
+      parent: '"eventtypes".INonSpecificGameEventOtherDeath'
     },
     {
       id: 11979,
       kind: 1024,
       name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventbombplanted.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventotherdeath.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombPlanted'
+      parent: '"eventtypes".INonSpecificGameEventOtherDeath'
     },
     {
       id: 11980,
       kind: 256,
-      name: "INonSpecificGameEventBombDefused",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombdefused.html",
+      name: "INonSpecificGameEventItemPurchase",
+      url: "interfaces/_eventtypes_.inonspecificgameeventitempurchase.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98009,24 +98010,25 @@ typedoc.search.data = {
       id: 11981,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombdefused.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventitempurchase.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombDefused'
+      parent: '"eventtypes".INonSpecificGameEventItemPurchase'
     },
     {
       id: 11982,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbombdefused.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventitempurchase.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombDefused'
+      parent: '"eventtypes".INonSpecificGameEventItemPurchase'
     },
     {
       id: 11983,
       kind: 256,
-      name: "INonSpecificGameEventBombExploded",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombexploded.html",
+      name: "INonSpecificGameEventBombBeginplant",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombbeginplant.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98035,24 +98037,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbombexploded.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventbombbeginplant.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombExploded'
+      parent: '"eventtypes".INonSpecificGameEventBombBeginplant'
     },
     {
       id: 11985,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbombexploded.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbombbeginplant.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombExploded'
+      parent: '"eventtypes".INonSpecificGameEventBombBeginplant'
     },
     {
       id: 11986,
       kind: 256,
-      name: "INonSpecificGameEventBombDropped",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombdropped.html",
+      name: "INonSpecificGameEventBombAbortplant",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombabortplant.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98060,24 +98062,25 @@ typedoc.search.data = {
       id: 11987,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombdropped.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventbombabortplant.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombDropped'
+      parent: '"eventtypes".INonSpecificGameEventBombAbortplant'
     },
     {
       id: 11988,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbombdropped.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbombabortplant.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombDropped'
+      parent: '"eventtypes".INonSpecificGameEventBombAbortplant'
     },
     {
       id: 11989,
       kind: 256,
-      name: "INonSpecificGameEventBombPickup",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombpickup.html",
+      name: "INonSpecificGameEventBombPlanted",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombplanted.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98085,23 +98088,24 @@ typedoc.search.data = {
       id: 11990,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombpickup.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombplanted.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombPickup'
+      parent: '"eventtypes".INonSpecificGameEventBombPlanted'
     },
     {
       id: 11991,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombpickup.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventbombplanted.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombPickup'
+      parent: '"eventtypes".INonSpecificGameEventBombPlanted'
     },
     {
       id: 11992,
       kind: 256,
-      name: "INonSpecificGameEventDefuserDropped",
-      url: "interfaces/_eventtypes_.inonspecificgameeventdefuserdropped.html",
+      name: "INonSpecificGameEventBombDefused",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombdefused.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98109,25 +98113,24 @@ typedoc.search.data = {
       id: 11993,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventdefuserdropped.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombdefused.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDefuserDropped'
+      parent: '"eventtypes".INonSpecificGameEventBombDefused'
     },
     {
       id: 11994,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventdefuserdropped.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbombdefused.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDefuserDropped'
+      parent: '"eventtypes".INonSpecificGameEventBombDefused'
     },
     {
       id: 11995,
       kind: 256,
-      name: "INonSpecificGameEventDefuserPickup",
-      url: "interfaces/_eventtypes_.inonspecificgameeventdefuserpickup.html",
+      name: "INonSpecificGameEventBombExploded",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombexploded.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98136,24 +98139,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventdefuserpickup.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventbombexploded.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDefuserPickup'
+      parent: '"eventtypes".INonSpecificGameEventBombExploded'
     },
     {
       id: 11997,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventdefuserpickup.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbombexploded.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDefuserPickup'
+      parent: '"eventtypes".INonSpecificGameEventBombExploded'
     },
     {
       id: 11998,
       kind: 256,
-      name: "INonSpecificGameEventAnnouncePhaseEnd",
-      url: "interfaces/_eventtypes_.inonspecificgameeventannouncephaseend.html",
+      name: "INonSpecificGameEventBombDropped",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombdropped.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98161,25 +98164,24 @@ typedoc.search.data = {
       id: 11999,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventannouncephaseend.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombdropped.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAnnouncePhaseEnd'
+      parent: '"eventtypes".INonSpecificGameEventBombDropped'
     },
     {
       id: 12000,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventannouncephaseend.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbombdropped.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAnnouncePhaseEnd'
+      parent: '"eventtypes".INonSpecificGameEventBombDropped'
     },
     {
       id: 12001,
       kind: 256,
-      name: "INonSpecificGameEventCsIntermission",
-      url: "interfaces/_eventtypes_.inonspecificgameeventcsintermission.html",
+      name: "INonSpecificGameEventBombPickup",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombpickup.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98187,25 +98189,23 @@ typedoc.search.data = {
       id: 12002,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsintermission.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombpickup.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsIntermission'
+      parent: '"eventtypes".INonSpecificGameEventBombPickup'
     },
     {
       id: 12003,
       kind: 1024,
       name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsintermission.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombpickup.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsIntermission'
+      parent: '"eventtypes".INonSpecificGameEventBombPickup'
     },
     {
       id: 12004,
       kind: 256,
-      name: "INonSpecificGameEventBombBegindefuse",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombbegindefuse.html",
+      name: "INonSpecificGameEventDefuserDropped",
+      url: "interfaces/_eventtypes_.inonspecificgameeventdefuserdropped.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98214,24 +98214,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbombbegindefuse.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventdefuserdropped.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombBegindefuse'
+      parent: '"eventtypes".INonSpecificGameEventDefuserDropped'
     },
     {
       id: 12006,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbombbegindefuse.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventdefuserdropped.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombBegindefuse'
+      parent: '"eventtypes".INonSpecificGameEventDefuserDropped'
     },
     {
       id: 12007,
       kind: 256,
-      name: "INonSpecificGameEventBombAbortdefuse",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbombabortdefuse.html",
+      name: "INonSpecificGameEventDefuserPickup",
+      url: "interfaces/_eventtypes_.inonspecificgameeventdefuserpickup.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98240,24 +98240,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbombabortdefuse.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventdefuserpickup.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombAbortdefuse'
+      parent: '"eventtypes".INonSpecificGameEventDefuserPickup'
     },
     {
       id: 12009,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbombabortdefuse.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventdefuserpickup.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBombAbortdefuse'
+      parent: '"eventtypes".INonSpecificGameEventDefuserPickup'
     },
     {
       id: 12010,
       kind: 256,
-      name: "INonSpecificGameEventHostageFollows",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhostagefollows.html",
+      name: "INonSpecificGameEventAnnouncePhaseEnd",
+      url: "interfaces/_eventtypes_.inonspecificgameeventannouncephaseend.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98266,24 +98266,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagefollows.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventannouncephaseend.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostageFollows'
+      parent: '"eventtypes".INonSpecificGameEventAnnouncePhaseEnd'
     },
     {
       id: 12012,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagefollows.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventannouncephaseend.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostageFollows'
+      parent: '"eventtypes".INonSpecificGameEventAnnouncePhaseEnd'
     },
     {
       id: 12013,
       kind: 256,
-      name: "INonSpecificGameEventHostageHurt",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhostagehurt.html",
+      name: "INonSpecificGameEventCsIntermission",
+      url: "interfaces/_eventtypes_.inonspecificgameeventcsintermission.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98291,24 +98291,25 @@ typedoc.search.data = {
       id: 12014,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhostagehurt.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventcsintermission.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostageHurt'
+      parent: '"eventtypes".INonSpecificGameEventCsIntermission'
     },
     {
       id: 12015,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagehurt.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventcsintermission.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostageHurt'
+      parent: '"eventtypes".INonSpecificGameEventCsIntermission'
     },
     {
       id: 12016,
       kind: 256,
-      name: "INonSpecificGameEventHostageKilled",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhostagekilled.html",
+      name: "INonSpecificGameEventBombBegindefuse",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombbegindefuse.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98317,24 +98318,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagekilled.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventbombbegindefuse.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostageKilled'
+      parent: '"eventtypes".INonSpecificGameEventBombBegindefuse'
     },
     {
       id: 12018,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagekilled.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbombbegindefuse.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostageKilled'
+      parent: '"eventtypes".INonSpecificGameEventBombBegindefuse'
     },
     {
       id: 12019,
       kind: 256,
-      name: "INonSpecificGameEventHostageRescued",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhostagerescued.html",
+      name: "INonSpecificGameEventBombAbortdefuse",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbombabortdefuse.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98343,25 +98344,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagerescued.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventbombabortdefuse.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostageRescued'
+      parent: '"eventtypes".INonSpecificGameEventBombAbortdefuse'
     },
     {
       id: 12021,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagerescued.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbombabortdefuse.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostageRescued'
+      parent: '"eventtypes".INonSpecificGameEventBombAbortdefuse'
     },
     {
       id: 12022,
       kind: 256,
-      name: "INonSpecificGameEventHostageStopsFollowing",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagestopsfollowing.html",
+      name: "INonSpecificGameEventHostageFollows",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhostagefollows.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98370,25 +98370,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagestopsfollowing.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventhostagefollows.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostageStopsFollowing'
+      parent: '"eventtypes".INonSpecificGameEventHostageFollows'
     },
     {
       id: 12024,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagestopsfollowing.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventhostagefollows.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostageStopsFollowing'
+      parent: '"eventtypes".INonSpecificGameEventHostageFollows'
     },
     {
       id: 12025,
       kind: 256,
-      name: "INonSpecificGameEventHostageRescuedAll",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagerescuedall.html",
+      name: "INonSpecificGameEventHostageHurt",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhostagehurt.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98396,26 +98395,24 @@ typedoc.search.data = {
       id: 12026,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagerescuedall.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhostagehurt.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostageRescuedAll'
+      parent: '"eventtypes".INonSpecificGameEventHostageHurt'
     },
     {
       id: 12027,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagerescuedall.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventhostagehurt.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHostageRescuedAll'
+      parent: '"eventtypes".INonSpecificGameEventHostageHurt'
     },
     {
       id: 12028,
       kind: 256,
-      name: "INonSpecificGameEventHostageCallForHelp",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventhostagecallforhelp.html",
+      name: "INonSpecificGameEventHostageKilled",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhostagekilled.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98424,12 +98421,119 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
+        "interfaces/_eventtypes_.inonspecificgameeventhostagekilled.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHostageKilled'
+    },
+    {
+      id: 12030,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhostagekilled.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHostageKilled'
+    },
+    {
+      id: 12031,
+      kind: 256,
+      name: "INonSpecificGameEventHostageRescued",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhostagerescued.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 12032,
+      kind: 1024,
+      name: "name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhostagerescued.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHostageRescued'
+    },
+    {
+      id: 12033,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhostagerescued.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHostageRescued'
+    },
+    {
+      id: 12034,
+      kind: 256,
+      name: "INonSpecificGameEventHostageStopsFollowing",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhostagestopsfollowing.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 12035,
+      kind: 1024,
+      name: "name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhostagestopsfollowing.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHostageStopsFollowing'
+    },
+    {
+      id: 12036,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhostagestopsfollowing.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHostageStopsFollowing'
+    },
+    {
+      id: 12037,
+      kind: 256,
+      name: "INonSpecificGameEventHostageRescuedAll",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhostagerescuedall.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 12038,
+      kind: 1024,
+      name: "name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhostagerescuedall.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHostageRescuedAll'
+    },
+    {
+      id: 12039,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhostagerescuedall.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHostageRescuedAll'
+    },
+    {
+      id: 12040,
+      kind: 256,
+      name: "INonSpecificGameEventHostageCallForHelp",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhostagecallforhelp.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 12041,
+      kind: 1024,
+      name: "name",
+      url:
         "interfaces/_eventtypes_.inonspecificgameeventhostagecallforhelp.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
       parent: '"eventtypes".INonSpecificGameEventHostageCallForHelp'
     },
     {
-      id: 12030,
+      id: 12042,
       kind: 1024,
       name: "event",
       url:
@@ -98438,7 +98542,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHostageCallForHelp'
     },
     {
-      id: 12031,
+      id: 12043,
       kind: 256,
       name: "INonSpecificGameEventVipEscaped",
       url: "interfaces/_eventtypes_.inonspecificgameeventvipescaped.html",
@@ -98446,7 +98550,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12032,
+      id: 12044,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventvipescaped.html#name",
@@ -98454,7 +98558,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVipEscaped'
     },
     {
-      id: 12033,
+      id: 12045,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventvipescaped.html#event",
@@ -98462,7 +98566,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVipEscaped'
     },
     {
-      id: 12034,
+      id: 12046,
       kind: 256,
       name: "INonSpecificGameEventVipKilled",
       url: "interfaces/_eventtypes_.inonspecificgameeventvipkilled.html",
@@ -98470,7 +98574,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12035,
+      id: 12047,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventvipkilled.html#name",
@@ -98478,7 +98582,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVipKilled'
     },
     {
-      id: 12036,
+      id: 12048,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventvipkilled.html#event",
@@ -98486,7 +98590,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventVipKilled'
     },
     {
-      id: 12037,
+      id: 12049,
       kind: 256,
       name: "INonSpecificGameEventPlayerRadio",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerradio.html",
@@ -98494,7 +98598,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12038,
+      id: 12050,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerradio.html#name",
@@ -98502,7 +98606,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerRadio'
     },
     {
-      id: 12039,
+      id: 12051,
       kind: 1024,
       name: "event",
       url:
@@ -98511,7 +98615,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerRadio'
     },
     {
-      id: 12040,
+      id: 12052,
       kind: 256,
       name: "INonSpecificGameEventBombBeep",
       url: "interfaces/_eventtypes_.inonspecificgameeventbombbeep.html",
@@ -98519,7 +98623,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12041,
+      id: 12053,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventbombbeep.html#name",
@@ -98527,7 +98631,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventBombBeep'
     },
     {
-      id: 12042,
+      id: 12054,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventbombbeep.html#event",
@@ -98535,7 +98639,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventBombBeep'
     },
     {
-      id: 12043,
+      id: 12055,
       kind: 256,
       name: "INonSpecificGameEventWeaponFire",
       url: "interfaces/_eventtypes_.inonspecificgameeventweaponfire.html",
@@ -98543,7 +98647,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12044,
+      id: 12056,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventweaponfire.html#name",
@@ -98551,7 +98655,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventWeaponFire'
     },
     {
-      id: 12045,
+      id: 12057,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventweaponfire.html#event",
@@ -98559,7 +98663,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventWeaponFire'
     },
     {
-      id: 12046,
+      id: 12058,
       kind: 256,
       name: "INonSpecificGameEventWeaponFireOnEmpty",
       url:
@@ -98568,7 +98672,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12047,
+      id: 12059,
       kind: 1024,
       name: "name",
       url:
@@ -98577,7 +98681,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventWeaponFireOnEmpty'
     },
     {
-      id: 12048,
+      id: 12060,
       kind: 1024,
       name: "event",
       url:
@@ -98586,112 +98690,10 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventWeaponFireOnEmpty'
     },
     {
-      id: 12049,
+      id: 12061,
       kind: 256,
       name: "INonSpecificGameEventGrenadeThrown",
       url: "interfaces/_eventtypes_.inonspecificgameeventgrenadethrown.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 12050,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventgrenadethrown.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGrenadeThrown'
-    },
-    {
-      id: 12051,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventgrenadethrown.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGrenadeThrown'
-    },
-    {
-      id: 12052,
-      kind: 256,
-      name: "INonSpecificGameEventWeaponOutofammo",
-      url: "interfaces/_eventtypes_.inonspecificgameeventweaponoutofammo.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 12053,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventweaponoutofammo.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventWeaponOutofammo'
-    },
-    {
-      id: 12054,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventweaponoutofammo.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventWeaponOutofammo'
-    },
-    {
-      id: 12055,
-      kind: 256,
-      name: "INonSpecificGameEventWeaponReload",
-      url: "interfaces/_eventtypes_.inonspecificgameeventweaponreload.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 12056,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventweaponreload.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventWeaponReload'
-    },
-    {
-      id: 12057,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventweaponreload.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventWeaponReload'
-    },
-    {
-      id: 12058,
-      kind: 256,
-      name: "INonSpecificGameEventWeaponZoom",
-      url: "interfaces/_eventtypes_.inonspecificgameeventweaponzoom.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 12059,
-      kind: 1024,
-      name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventweaponzoom.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventWeaponZoom'
-    },
-    {
-      id: 12060,
-      kind: 1024,
-      name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventweaponzoom.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventWeaponZoom'
-    },
-    {
-      id: 12061,
-      kind: 256,
-      name: "INonSpecificGameEventSilencerDetach",
-      url: "interfaces/_eventtypes_.inonspecificgameeventsilencerdetach.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98700,24 +98702,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventsilencerdetach.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventgrenadethrown.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSilencerDetach'
+      parent: '"eventtypes".INonSpecificGameEventGrenadeThrown'
     },
     {
       id: 12063,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventsilencerdetach.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventgrenadethrown.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSilencerDetach'
+      parent: '"eventtypes".INonSpecificGameEventGrenadeThrown'
     },
     {
       id: 12064,
       kind: 256,
-      name: "INonSpecificGameEventInspectWeapon",
-      url: "interfaces/_eventtypes_.inonspecificgameeventinspectweapon.html",
+      name: "INonSpecificGameEventWeaponOutofammo",
+      url: "interfaces/_eventtypes_.inonspecificgameeventweaponoutofammo.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98726,24 +98728,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventinspectweapon.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventweaponoutofammo.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInspectWeapon'
+      parent: '"eventtypes".INonSpecificGameEventWeaponOutofammo'
     },
     {
       id: 12066,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventinspectweapon.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventweaponoutofammo.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInspectWeapon'
+      parent: '"eventtypes".INonSpecificGameEventWeaponOutofammo'
     },
     {
       id: 12067,
       kind: 256,
-      name: "INonSpecificGameEventWeaponZoomRifle",
-      url: "interfaces/_eventtypes_.inonspecificgameeventweaponzoomrifle.html",
+      name: "INonSpecificGameEventWeaponReload",
+      url: "interfaces/_eventtypes_.inonspecificgameeventweaponreload.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -98752,12 +98754,114 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
+        "interfaces/_eventtypes_.inonspecificgameeventweaponreload.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventWeaponReload'
+    },
+    {
+      id: 12069,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventweaponreload.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventWeaponReload'
+    },
+    {
+      id: 12070,
+      kind: 256,
+      name: "INonSpecificGameEventWeaponZoom",
+      url: "interfaces/_eventtypes_.inonspecificgameeventweaponzoom.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 12071,
+      kind: 1024,
+      name: "name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventweaponzoom.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventWeaponZoom'
+    },
+    {
+      id: 12072,
+      kind: 1024,
+      name: "event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventweaponzoom.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventWeaponZoom'
+    },
+    {
+      id: 12073,
+      kind: 256,
+      name: "INonSpecificGameEventSilencerDetach",
+      url: "interfaces/_eventtypes_.inonspecificgameeventsilencerdetach.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 12074,
+      kind: 1024,
+      name: "name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventsilencerdetach.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventSilencerDetach'
+    },
+    {
+      id: 12075,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventsilencerdetach.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventSilencerDetach'
+    },
+    {
+      id: 12076,
+      kind: 256,
+      name: "INonSpecificGameEventInspectWeapon",
+      url: "interfaces/_eventtypes_.inonspecificgameeventinspectweapon.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 12077,
+      kind: 1024,
+      name: "name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventinspectweapon.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventInspectWeapon'
+    },
+    {
+      id: 12078,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventinspectweapon.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventInspectWeapon'
+    },
+    {
+      id: 12079,
+      kind: 256,
+      name: "INonSpecificGameEventWeaponZoomRifle",
+      url: "interfaces/_eventtypes_.inonspecificgameeventweaponzoomrifle.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 12080,
+      kind: 1024,
+      name: "name",
+      url:
         "interfaces/_eventtypes_.inonspecificgameeventweaponzoomrifle.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
       parent: '"eventtypes".INonSpecificGameEventWeaponZoomRifle'
     },
     {
-      id: 12069,
+      id: 12081,
       kind: 1024,
       name: "event",
       url:
@@ -98766,7 +98870,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventWeaponZoomRifle'
     },
     {
-      id: 12070,
+      id: 12082,
       kind: 256,
       name: "INonSpecificGameEventPlayerSpawned",
       url: "interfaces/_eventtypes_.inonspecificgameeventplayerspawned.html",
@@ -98774,7 +98878,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12071,
+      id: 12083,
       kind: 1024,
       name: "name",
       url:
@@ -98783,7 +98887,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerSpawned'
     },
     {
-      id: 12072,
+      id: 12084,
       kind: 1024,
       name: "event",
       url:
@@ -98792,7 +98896,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventPlayerSpawned'
     },
     {
-      id: 12073,
+      id: 12085,
       kind: 256,
       name: "INonSpecificGameEventItemPickup",
       url: "interfaces/_eventtypes_.inonspecificgameeventitempickup.html",
@@ -98800,7 +98904,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12074,
+      id: 12086,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventitempickup.html#name",
@@ -98808,7 +98912,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventItemPickup'
     },
     {
-      id: 12075,
+      id: 12087,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventitempickup.html#event",
@@ -98816,7 +98920,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventItemPickup'
     },
     {
-      id: 12076,
+      id: 12088,
       kind: 256,
       name: "INonSpecificGameEventItemRemove",
       url: "interfaces/_eventtypes_.inonspecificgameeventitemremove.html",
@@ -98824,7 +98928,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12077,
+      id: 12089,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventitemremove.html#name",
@@ -98832,7 +98936,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventItemRemove'
     },
     {
-      id: 12078,
+      id: 12090,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventitemremove.html#event",
@@ -98840,7 +98944,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventItemRemove'
     },
     {
-      id: 12079,
+      id: 12091,
       kind: 256,
       name: "INonSpecificGameEventAmmoPickup",
       url: "interfaces/_eventtypes_.inonspecificgameeventammopickup.html",
@@ -98848,7 +98952,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12080,
+      id: 12092,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventammopickup.html#name",
@@ -98856,7 +98960,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventAmmoPickup'
     },
     {
-      id: 12081,
+      id: 12093,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventammopickup.html#event",
@@ -98864,7 +98968,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventAmmoPickup'
     },
     {
-      id: 12082,
+      id: 12094,
       kind: 256,
       name: "INonSpecificGameEventItemEquip",
       url: "interfaces/_eventtypes_.inonspecificgameeventitemequip.html",
@@ -98872,7 +98976,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12083,
+      id: 12095,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventitemequip.html#name",
@@ -98880,7 +98984,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventItemEquip'
     },
     {
-      id: 12084,
+      id: 12096,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventitemequip.html#event",
@@ -98888,113 +98992,10 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventItemEquip'
     },
     {
-      id: 12085,
+      id: 12097,
       kind: 256,
       name: "INonSpecificGameEventEnterBuyzone",
       url: "interfaces/_eventtypes_.inonspecificgameevententerbuyzone.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 12086,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameevententerbuyzone.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventEnterBuyzone'
-    },
-    {
-      id: 12087,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameevententerbuyzone.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventEnterBuyzone'
-    },
-    {
-      id: 12088,
-      kind: 256,
-      name: "INonSpecificGameEventExitBuyzone",
-      url: "interfaces/_eventtypes_.inonspecificgameeventexitbuyzone.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 12089,
-      kind: 1024,
-      name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventexitbuyzone.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventExitBuyzone'
-    },
-    {
-      id: 12090,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventexitbuyzone.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventExitBuyzone'
-    },
-    {
-      id: 12091,
-      kind: 256,
-      name: "INonSpecificGameEventBuytimeEnded",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbuytimeended.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 12092,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventbuytimeended.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBuytimeEnded'
-    },
-    {
-      id: 12093,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventbuytimeended.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBuytimeEnded'
-    },
-    {
-      id: 12094,
-      kind: 256,
-      name: "INonSpecificGameEventEnterBombzone",
-      url: "interfaces/_eventtypes_.inonspecificgameevententerbombzone.html",
-      classes: "tsd-kind-interface tsd-parent-kind-external-module",
-      parent: '"eventtypes"'
-    },
-    {
-      id: 12095,
-      kind: 1024,
-      name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameevententerbombzone.html#name",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventEnterBombzone'
-    },
-    {
-      id: 12096,
-      kind: 1024,
-      name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameevententerbombzone.html#event",
-      classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventEnterBombzone'
-    },
-    {
-      id: 12097,
-      kind: 256,
-      name: "INonSpecificGameEventExitBombzone",
-      url: "interfaces/_eventtypes_.inonspecificgameeventexitbombzone.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99003,24 +99004,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventexitbombzone.html#name",
+        "interfaces/_eventtypes_.inonspecificgameevententerbuyzone.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventExitBombzone'
+      parent: '"eventtypes".INonSpecificGameEventEnterBuyzone'
     },
     {
       id: 12099,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventexitbombzone.html#event",
+        "interfaces/_eventtypes_.inonspecificgameevententerbuyzone.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventExitBombzone'
+      parent: '"eventtypes".INonSpecificGameEventEnterBuyzone'
     },
     {
       id: 12100,
       kind: 256,
-      name: "INonSpecificGameEventEnterRescueZone",
-      url: "interfaces/_eventtypes_.inonspecificgameevententerrescuezone.html",
+      name: "INonSpecificGameEventExitBuyzone",
+      url: "interfaces/_eventtypes_.inonspecificgameeventexitbuyzone.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99028,25 +99029,24 @@ typedoc.search.data = {
       id: 12101,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameevententerrescuezone.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventexitbuyzone.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventEnterRescueZone'
+      parent: '"eventtypes".INonSpecificGameEventExitBuyzone'
     },
     {
       id: 12102,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameevententerrescuezone.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventexitbuyzone.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventEnterRescueZone'
+      parent: '"eventtypes".INonSpecificGameEventExitBuyzone'
     },
     {
       id: 12103,
       kind: 256,
-      name: "INonSpecificGameEventExitRescueZone",
-      url: "interfaces/_eventtypes_.inonspecificgameeventexitrescuezone.html",
+      name: "INonSpecificGameEventBuytimeEnded",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbuytimeended.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99055,24 +99055,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventexitrescuezone.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventbuytimeended.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventExitRescueZone'
+      parent: '"eventtypes".INonSpecificGameEventBuytimeEnded'
     },
     {
       id: 12105,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventexitrescuezone.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbuytimeended.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventExitRescueZone'
+      parent: '"eventtypes".INonSpecificGameEventBuytimeEnded'
     },
     {
       id: 12106,
       kind: 256,
-      name: "INonSpecificGameEventSilencerOff",
-      url: "interfaces/_eventtypes_.inonspecificgameeventsilenceroff.html",
+      name: "INonSpecificGameEventEnterBombzone",
+      url: "interfaces/_eventtypes_.inonspecificgameevententerbombzone.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99080,24 +99080,25 @@ typedoc.search.data = {
       id: 12107,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventsilenceroff.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameevententerbombzone.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSilencerOff'
+      parent: '"eventtypes".INonSpecificGameEventEnterBombzone'
     },
     {
       id: 12108,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventsilenceroff.html#event",
+        "interfaces/_eventtypes_.inonspecificgameevententerbombzone.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSilencerOff'
+      parent: '"eventtypes".INonSpecificGameEventEnterBombzone'
     },
     {
       id: 12109,
       kind: 256,
-      name: "INonSpecificGameEventSilencerOn",
-      url: "interfaces/_eventtypes_.inonspecificgameeventsilenceron.html",
+      name: "INonSpecificGameEventExitBombzone",
+      url: "interfaces/_eventtypes_.inonspecificgameeventexitbombzone.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99105,23 +99106,25 @@ typedoc.search.data = {
       id: 12110,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventsilenceron.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventexitbombzone.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSilencerOn'
+      parent: '"eventtypes".INonSpecificGameEventExitBombzone'
     },
     {
       id: 12111,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventsilenceron.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventexitbombzone.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSilencerOn'
+      parent: '"eventtypes".INonSpecificGameEventExitBombzone'
     },
     {
       id: 12112,
       kind: 256,
-      name: "INonSpecificGameEventBuymenuOpen",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbuymenuopen.html",
+      name: "INonSpecificGameEventEnterRescueZone",
+      url: "interfaces/_eventtypes_.inonspecificgameevententerrescuezone.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99129,24 +99132,25 @@ typedoc.search.data = {
       id: 12113,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbuymenuopen.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameevententerrescuezone.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBuymenuOpen'
+      parent: '"eventtypes".INonSpecificGameEventEnterRescueZone'
     },
     {
       id: 12114,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbuymenuopen.html#event",
+        "interfaces/_eventtypes_.inonspecificgameevententerrescuezone.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBuymenuOpen'
+      parent: '"eventtypes".INonSpecificGameEventEnterRescueZone'
     },
     {
       id: 12115,
       kind: 256,
-      name: "INonSpecificGameEventBuymenuClose",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbuymenuclose.html",
+      name: "INonSpecificGameEventExitRescueZone",
+      url: "interfaces/_eventtypes_.inonspecificgameeventexitrescuezone.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99155,24 +99159,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbuymenuclose.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventexitrescuezone.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBuymenuClose'
+      parent: '"eventtypes".INonSpecificGameEventExitRescueZone'
     },
     {
       id: 12117,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbuymenuclose.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventexitrescuezone.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBuymenuClose'
+      parent: '"eventtypes".INonSpecificGameEventExitRescueZone'
     },
     {
       id: 12118,
       kind: 256,
-      name: "INonSpecificGameEventRoundPrestart",
-      url: "interfaces/_eventtypes_.inonspecificgameeventroundprestart.html",
+      name: "INonSpecificGameEventSilencerOff",
+      url: "interfaces/_eventtypes_.inonspecificgameeventsilenceroff.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99180,25 +99184,24 @@ typedoc.search.data = {
       id: 12119,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventroundprestart.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventsilenceroff.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRoundPrestart'
+      parent: '"eventtypes".INonSpecificGameEventSilencerOff'
     },
     {
       id: 12120,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventroundprestart.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventsilenceroff.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRoundPrestart'
+      parent: '"eventtypes".INonSpecificGameEventSilencerOff'
     },
     {
       id: 12121,
       kind: 256,
-      name: "INonSpecificGameEventRoundPoststart",
-      url: "interfaces/_eventtypes_.inonspecificgameeventroundpoststart.html",
+      name: "INonSpecificGameEventSilencerOn",
+      url: "interfaces/_eventtypes_.inonspecificgameeventsilenceron.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99206,25 +99209,23 @@ typedoc.search.data = {
       id: 12122,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventroundpoststart.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventsilenceron.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRoundPoststart'
+      parent: '"eventtypes".INonSpecificGameEventSilencerOn'
     },
     {
       id: 12123,
       kind: 1024,
       name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventroundpoststart.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventsilenceron.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRoundPoststart'
+      parent: '"eventtypes".INonSpecificGameEventSilencerOn'
     },
     {
       id: 12124,
       kind: 256,
-      name: "INonSpecificGameEventGrenadeBounce",
-      url: "interfaces/_eventtypes_.inonspecificgameeventgrenadebounce.html",
+      name: "INonSpecificGameEventBuymenuOpen",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbuymenuopen.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99232,26 +99233,24 @@ typedoc.search.data = {
       id: 12125,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventgrenadebounce.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbuymenuopen.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGrenadeBounce'
+      parent: '"eventtypes".INonSpecificGameEventBuymenuOpen'
     },
     {
       id: 12126,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventgrenadebounce.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbuymenuopen.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGrenadeBounce'
+      parent: '"eventtypes".INonSpecificGameEventBuymenuOpen'
     },
     {
       id: 12127,
       kind: 256,
-      name: "INonSpecificGameEventHegrenadeDetonate",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventhegrenadedetonate.html",
+      name: "INonSpecificGameEventBuymenuClose",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbuymenuclose.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99260,25 +99259,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhegrenadedetonate.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventbuymenuclose.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHegrenadeDetonate'
+      parent: '"eventtypes".INonSpecificGameEventBuymenuClose'
     },
     {
       id: 12129,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhegrenadedetonate.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbuymenuclose.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHegrenadeDetonate'
+      parent: '"eventtypes".INonSpecificGameEventBuymenuClose'
     },
     {
       id: 12130,
       kind: 256,
-      name: "INonSpecificGameEventFlashbangDetonate",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventflashbangdetonate.html",
+      name: "INonSpecificGameEventRoundPrestart",
+      url: "interfaces/_eventtypes_.inonspecificgameeventroundprestart.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99287,25 +99285,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventflashbangdetonate.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventroundprestart.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventFlashbangDetonate'
+      parent: '"eventtypes".INonSpecificGameEventRoundPrestart'
     },
     {
       id: 12132,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventflashbangdetonate.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventroundprestart.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventFlashbangDetonate'
+      parent: '"eventtypes".INonSpecificGameEventRoundPrestart'
     },
     {
       id: 12133,
       kind: 256,
-      name: "INonSpecificGameEventSmokegrenadeDetonate",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventsmokegrenadedetonate.html",
+      name: "INonSpecificGameEventRoundPoststart",
+      url: "interfaces/_eventtypes_.inonspecificgameeventroundpoststart.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99314,25 +99311,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventsmokegrenadedetonate.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventroundpoststart.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSmokegrenadeDetonate'
+      parent: '"eventtypes".INonSpecificGameEventRoundPoststart'
     },
     {
       id: 12135,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventsmokegrenadedetonate.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventroundpoststart.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSmokegrenadeDetonate'
+      parent: '"eventtypes".INonSpecificGameEventRoundPoststart'
     },
     {
       id: 12136,
       kind: 256,
-      name: "INonSpecificGameEventSmokegrenadeExpired",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventsmokegrenadeexpired.html",
+      name: "INonSpecificGameEventGrenadeBounce",
+      url: "interfaces/_eventtypes_.inonspecificgameeventgrenadebounce.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99341,24 +99337,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventsmokegrenadeexpired.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventgrenadebounce.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSmokegrenadeExpired'
+      parent: '"eventtypes".INonSpecificGameEventGrenadeBounce'
     },
     {
       id: 12138,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventsmokegrenadeexpired.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventgrenadebounce.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSmokegrenadeExpired'
+      parent: '"eventtypes".INonSpecificGameEventGrenadeBounce'
     },
     {
       id: 12139,
       kind: 256,
-      name: "INonSpecificGameEventMolotovDetonate",
-      url: "interfaces/_eventtypes_.inonspecificgameeventmolotovdetonate.html",
+      name: "INonSpecificGameEventHegrenadeDetonate",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhegrenadedetonate.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99367,24 +99364,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventmolotovdetonate.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventhegrenadedetonate.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventMolotovDetonate'
+      parent: '"eventtypes".INonSpecificGameEventHegrenadeDetonate'
     },
     {
       id: 12141,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventmolotovdetonate.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventhegrenadedetonate.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventMolotovDetonate'
+      parent: '"eventtypes".INonSpecificGameEventHegrenadeDetonate'
     },
     {
       id: 12142,
       kind: 256,
-      name: "INonSpecificGameEventDecoyDetonate",
-      url: "interfaces/_eventtypes_.inonspecificgameeventdecoydetonate.html",
+      name: "INonSpecificGameEventFlashbangDetonate",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventflashbangdetonate.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99393,24 +99391,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventdecoydetonate.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventflashbangdetonate.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDecoyDetonate'
+      parent: '"eventtypes".INonSpecificGameEventFlashbangDetonate'
     },
     {
       id: 12144,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventdecoydetonate.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventflashbangdetonate.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDecoyDetonate'
+      parent: '"eventtypes".INonSpecificGameEventFlashbangDetonate'
     },
     {
       id: 12145,
       kind: 256,
-      name: "INonSpecificGameEventDecoyStarted",
-      url: "interfaces/_eventtypes_.inonspecificgameeventdecoystarted.html",
+      name: "INonSpecificGameEventSmokegrenadeDetonate",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventsmokegrenadedetonate.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99419,25 +99418,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventdecoystarted.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventsmokegrenadedetonate.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDecoyStarted'
+      parent: '"eventtypes".INonSpecificGameEventSmokegrenadeDetonate'
     },
     {
       id: 12147,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventdecoystarted.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventsmokegrenadedetonate.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDecoyStarted'
+      parent: '"eventtypes".INonSpecificGameEventSmokegrenadeDetonate'
     },
     {
       id: 12148,
       kind: 256,
-      name: "INonSpecificGameEventTagrenadeDetonate",
+      name: "INonSpecificGameEventSmokegrenadeExpired",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtagrenadedetonate.html",
+        "interfaces/_eventtypes_.inonspecificgameeventsmokegrenadeexpired.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99446,24 +99445,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtagrenadedetonate.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventsmokegrenadeexpired.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTagrenadeDetonate'
+      parent: '"eventtypes".INonSpecificGameEventSmokegrenadeExpired'
     },
     {
       id: 12150,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtagrenadedetonate.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventsmokegrenadeexpired.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTagrenadeDetonate'
+      parent: '"eventtypes".INonSpecificGameEventSmokegrenadeExpired'
     },
     {
       id: 12151,
       kind: 256,
-      name: "INonSpecificGameEventInfernoStartburn",
-      url: "interfaces/_eventtypes_.inonspecificgameeventinfernostartburn.html",
+      name: "INonSpecificGameEventMolotovDetonate",
+      url: "interfaces/_eventtypes_.inonspecificgameeventmolotovdetonate.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99472,24 +99471,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventinfernostartburn.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventmolotovdetonate.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInfernoStartburn'
+      parent: '"eventtypes".INonSpecificGameEventMolotovDetonate'
     },
     {
       id: 12153,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventinfernostartburn.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventmolotovdetonate.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInfernoStartburn'
+      parent: '"eventtypes".INonSpecificGameEventMolotovDetonate'
     },
     {
       id: 12154,
       kind: 256,
-      name: "INonSpecificGameEventInfernoExpire",
-      url: "interfaces/_eventtypes_.inonspecificgameeventinfernoexpire.html",
+      name: "INonSpecificGameEventDecoyDetonate",
+      url: "interfaces/_eventtypes_.inonspecificgameeventdecoydetonate.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99498,25 +99497,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventinfernoexpire.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventdecoydetonate.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInfernoExpire'
+      parent: '"eventtypes".INonSpecificGameEventDecoyDetonate'
     },
     {
       id: 12156,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventinfernoexpire.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventdecoydetonate.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInfernoExpire'
+      parent: '"eventtypes".INonSpecificGameEventDecoyDetonate'
     },
     {
       id: 12157,
       kind: 256,
-      name: "INonSpecificGameEventInfernoExtinguish",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventinfernoextinguish.html",
+      name: "INonSpecificGameEventDecoyStarted",
+      url: "interfaces/_eventtypes_.inonspecificgameeventdecoystarted.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99525,24 +99523,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventinfernoextinguish.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventdecoystarted.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInfernoExtinguish'
+      parent: '"eventtypes".INonSpecificGameEventDecoyStarted'
     },
     {
       id: 12159,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventinfernoextinguish.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventdecoystarted.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventInfernoExtinguish'
+      parent: '"eventtypes".INonSpecificGameEventDecoyStarted'
     },
     {
       id: 12160,
       kind: 256,
-      name: "INonSpecificGameEventDecoyFiring",
-      url: "interfaces/_eventtypes_.inonspecificgameeventdecoyfiring.html",
+      name: "INonSpecificGameEventTagrenadeDetonate",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventtagrenadedetonate.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99550,24 +99549,25 @@ typedoc.search.data = {
       id: 12161,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventdecoyfiring.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventtagrenadedetonate.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDecoyFiring'
+      parent: '"eventtypes".INonSpecificGameEventTagrenadeDetonate'
     },
     {
       id: 12162,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventdecoyfiring.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventtagrenadedetonate.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDecoyFiring'
+      parent: '"eventtypes".INonSpecificGameEventTagrenadeDetonate'
     },
     {
       id: 12163,
       kind: 256,
-      name: "INonSpecificGameEventBulletImpact",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbulletimpact.html",
+      name: "INonSpecificGameEventInfernoStartburn",
+      url: "interfaces/_eventtypes_.inonspecificgameeventinfernostartburn.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99576,24 +99576,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbulletimpact.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventinfernostartburn.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBulletImpact'
+      parent: '"eventtypes".INonSpecificGameEventInfernoStartburn'
     },
     {
       id: 12165,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbulletimpact.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventinfernostartburn.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBulletImpact'
+      parent: '"eventtypes".INonSpecificGameEventInfernoStartburn'
     },
     {
       id: 12166,
       kind: 256,
-      name: "INonSpecificGameEventPlayerFootstep",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerfootstep.html",
+      name: "INonSpecificGameEventInfernoExpire",
+      url: "interfaces/_eventtypes_.inonspecificgameeventinfernoexpire.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99602,24 +99602,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerfootstep.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventinfernoexpire.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerFootstep'
+      parent: '"eventtypes".INonSpecificGameEventInfernoExpire'
     },
     {
       id: 12168,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerfootstep.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventinfernoexpire.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerFootstep'
+      parent: '"eventtypes".INonSpecificGameEventInfernoExpire'
     },
     {
       id: 12169,
       kind: 256,
-      name: "INonSpecificGameEventPlayerJump",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerjump.html",
+      name: "INonSpecificGameEventInfernoExtinguish",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventinfernoextinguish.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99627,23 +99628,25 @@ typedoc.search.data = {
       id: 12170,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerjump.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventinfernoextinguish.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerJump'
+      parent: '"eventtypes".INonSpecificGameEventInfernoExtinguish'
     },
     {
       id: 12171,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerjump.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventinfernoextinguish.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerJump'
+      parent: '"eventtypes".INonSpecificGameEventInfernoExtinguish'
     },
     {
       id: 12172,
       kind: 256,
-      name: "INonSpecificGameEventPlayerBlind",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerblind.html",
+      name: "INonSpecificGameEventDecoyFiring",
+      url: "interfaces/_eventtypes_.inonspecificgameeventdecoyfiring.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99651,24 +99654,24 @@ typedoc.search.data = {
       id: 12173,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerblind.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventdecoyfiring.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerBlind'
+      parent: '"eventtypes".INonSpecificGameEventDecoyFiring'
     },
     {
       id: 12174,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerblind.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventdecoyfiring.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerBlind'
+      parent: '"eventtypes".INonSpecificGameEventDecoyFiring'
     },
     {
       id: 12175,
       kind: 256,
-      name: "INonSpecificGameEventPlayerFalldamage",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerfalldamage.html",
+      name: "INonSpecificGameEventBulletImpact",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbulletimpact.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99677,24 +99680,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerfalldamage.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventbulletimpact.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerFalldamage'
+      parent: '"eventtypes".INonSpecificGameEventBulletImpact'
     },
     {
       id: 12177,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerfalldamage.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbulletimpact.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerFalldamage'
+      parent: '"eventtypes".INonSpecificGameEventBulletImpact'
     },
     {
       id: 12178,
       kind: 256,
-      name: "INonSpecificGameEventDoorMoving",
-      url: "interfaces/_eventtypes_.inonspecificgameeventdoormoving.html",
+      name: "INonSpecificGameEventPlayerFootstep",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerfootstep.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99702,23 +99705,25 @@ typedoc.search.data = {
       id: 12179,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventdoormoving.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventplayerfootstep.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDoorMoving'
+      parent: '"eventtypes".INonSpecificGameEventPlayerFootstep'
     },
     {
       id: 12180,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventdoormoving.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventplayerfootstep.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventDoorMoving'
+      parent: '"eventtypes".INonSpecificGameEventPlayerFootstep'
     },
     {
       id: 12181,
       kind: 256,
-      name: "INonSpecificGameEventRoundFreezeEnd",
-      url: "interfaces/_eventtypes_.inonspecificgameeventroundfreezeend.html",
+      name: "INonSpecificGameEventPlayerJump",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerjump.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99726,26 +99731,23 @@ typedoc.search.data = {
       id: 12182,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventroundfreezeend.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerjump.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRoundFreezeEnd'
+      parent: '"eventtypes".INonSpecificGameEventPlayerJump'
     },
     {
       id: 12183,
       kind: 1024,
       name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventroundfreezeend.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerjump.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRoundFreezeEnd'
+      parent: '"eventtypes".INonSpecificGameEventPlayerJump'
     },
     {
       id: 12184,
       kind: 256,
-      name: "INonSpecificGameEventMbInputLockSuccess",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventmbinputlocksuccess.html",
+      name: "INonSpecificGameEventPlayerBlind",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerblind.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99753,26 +99755,24 @@ typedoc.search.data = {
       id: 12185,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventmbinputlocksuccess.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerblind.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventMbInputLockSuccess'
+      parent: '"eventtypes".INonSpecificGameEventPlayerBlind'
     },
     {
       id: 12186,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventmbinputlocksuccess.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerblind.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventMbInputLockSuccess'
+      parent: '"eventtypes".INonSpecificGameEventPlayerBlind'
     },
     {
       id: 12187,
       kind: 256,
-      name: "INonSpecificGameEventMbInputLockCancel",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventmbinputlockcancel.html",
+      name: "INonSpecificGameEventPlayerFalldamage",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerfalldamage.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99781,24 +99781,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventmbinputlockcancel.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerfalldamage.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventMbInputLockCancel'
+      parent: '"eventtypes".INonSpecificGameEventPlayerFalldamage'
     },
     {
       id: 12189,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventmbinputlockcancel.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerfalldamage.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventMbInputLockCancel'
+      parent: '"eventtypes".INonSpecificGameEventPlayerFalldamage'
     },
     {
       id: 12190,
       kind: 256,
-      name: "INonSpecificGameEventNavBlocked",
-      url: "interfaces/_eventtypes_.inonspecificgameeventnavblocked.html",
+      name: "INonSpecificGameEventDoorMoving",
+      url: "interfaces/_eventtypes_.inonspecificgameeventdoormoving.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99806,23 +99806,23 @@ typedoc.search.data = {
       id: 12191,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventnavblocked.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventdoormoving.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventNavBlocked'
+      parent: '"eventtypes".INonSpecificGameEventDoorMoving'
     },
     {
       id: 12192,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventnavblocked.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventdoormoving.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventNavBlocked'
+      parent: '"eventtypes".INonSpecificGameEventDoorMoving'
     },
     {
       id: 12193,
       kind: 256,
-      name: "INonSpecificGameEventNavGenerate",
-      url: "interfaces/_eventtypes_.inonspecificgameeventnavgenerate.html",
+      name: "INonSpecificGameEventRoundFreezeEnd",
+      url: "interfaces/_eventtypes_.inonspecificgameeventroundfreezeend.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99830,25 +99830,26 @@ typedoc.search.data = {
       id: 12194,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventnavgenerate.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventroundfreezeend.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventNavGenerate'
+      parent: '"eventtypes".INonSpecificGameEventRoundFreezeEnd'
     },
     {
       id: 12195,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventnavgenerate.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventroundfreezeend.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventNavGenerate'
+      parent: '"eventtypes".INonSpecificGameEventRoundFreezeEnd'
     },
     {
       id: 12196,
       kind: 256,
-      name: "INonSpecificGameEventAchievementInfoLoaded",
+      name: "INonSpecificGameEventMbInputLockSuccess",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementinfoloaded.html",
+        "interfaces/_eventtypes_.inonspecificgameeventmbinputlocksuccess.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99857,25 +99858,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementinfoloaded.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventmbinputlocksuccess.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAchievementInfoLoaded'
+      parent: '"eventtypes".INonSpecificGameEventMbInputLockSuccess'
     },
     {
       id: 12198,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementinfoloaded.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventmbinputlocksuccess.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAchievementInfoLoaded'
+      parent: '"eventtypes".INonSpecificGameEventMbInputLockSuccess'
     },
     {
       id: 12199,
       kind: 256,
-      name: "INonSpecificGameEventSpecTargetUpdated",
+      name: "INonSpecificGameEventMbInputLockCancel",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventspectargetupdated.html",
+        "interfaces/_eventtypes_.inonspecificgameeventmbinputlockcancel.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99884,24 +99885,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventspectargetupdated.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventmbinputlockcancel.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSpecTargetUpdated'
+      parent: '"eventtypes".INonSpecificGameEventMbInputLockCancel'
     },
     {
       id: 12201,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventspectargetupdated.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventmbinputlockcancel.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSpecTargetUpdated'
+      parent: '"eventtypes".INonSpecificGameEventMbInputLockCancel'
     },
     {
       id: 12202,
       kind: 256,
-      name: "INonSpecificGameEventSpecModeUpdated",
-      url: "interfaces/_eventtypes_.inonspecificgameeventspecmodeupdated.html",
+      name: "INonSpecificGameEventNavBlocked",
+      url: "interfaces/_eventtypes_.inonspecificgameeventnavblocked.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99909,25 +99910,23 @@ typedoc.search.data = {
       id: 12203,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventspecmodeupdated.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventnavblocked.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSpecModeUpdated'
+      parent: '"eventtypes".INonSpecificGameEventNavBlocked'
     },
     {
       id: 12204,
       kind: 1024,
       name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventspecmodeupdated.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventnavblocked.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSpecModeUpdated'
+      parent: '"eventtypes".INonSpecificGameEventNavBlocked'
     },
     {
       id: 12205,
       kind: 256,
-      name: "INonSpecificGameEventHltvChangedMode",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhltvchangedmode.html",
+      name: "INonSpecificGameEventNavGenerate",
+      url: "interfaces/_eventtypes_.inonspecificgameeventnavgenerate.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99935,26 +99934,25 @@ typedoc.search.data = {
       id: 12206,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventhltvchangedmode.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventnavgenerate.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHltvChangedMode'
+      parent: '"eventtypes".INonSpecificGameEventNavGenerate'
     },
     {
       id: 12207,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhltvchangedmode.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventnavgenerate.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHltvChangedMode'
+      parent: '"eventtypes".INonSpecificGameEventNavGenerate'
     },
     {
       id: 12208,
       kind: 256,
-      name: "INonSpecificGameEventCsGameDisconnected",
+      name: "INonSpecificGameEventAchievementInfoLoaded",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsgamedisconnected.html",
+        "interfaces/_eventtypes_.inonspecificgameeventachievementinfoloaded.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99963,24 +99961,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsgamedisconnected.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventachievementinfoloaded.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsGameDisconnected'
+      parent: '"eventtypes".INonSpecificGameEventAchievementInfoLoaded'
     },
     {
       id: 12210,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsgamedisconnected.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventachievementinfoloaded.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsGameDisconnected'
+      parent: '"eventtypes".INonSpecificGameEventAchievementInfoLoaded'
     },
     {
       id: 12211,
       kind: 256,
-      name: "INonSpecificGameEventCsWinPanelRound",
-      url: "interfaces/_eventtypes_.inonspecificgameeventcswinpanelround.html",
+      name: "INonSpecificGameEventSpecTargetUpdated",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventspectargetupdated.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -99989,24 +99988,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcswinpanelround.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventspectargetupdated.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsWinPanelRound'
+      parent: '"eventtypes".INonSpecificGameEventSpecTargetUpdated'
     },
     {
       id: 12213,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcswinpanelround.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventspectargetupdated.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsWinPanelRound'
+      parent: '"eventtypes".INonSpecificGameEventSpecTargetUpdated'
     },
     {
       id: 12214,
       kind: 256,
-      name: "INonSpecificGameEventCsWinPanelMatch",
-      url: "interfaces/_eventtypes_.inonspecificgameeventcswinpanelmatch.html",
+      name: "INonSpecificGameEventSpecModeUpdated",
+      url: "interfaces/_eventtypes_.inonspecificgameeventspecmodeupdated.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100015,25 +100014,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcswinpanelmatch.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventspecmodeupdated.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsWinPanelMatch'
+      parent: '"eventtypes".INonSpecificGameEventSpecModeUpdated'
     },
     {
       id: 12216,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcswinpanelmatch.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventspecmodeupdated.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsWinPanelMatch'
+      parent: '"eventtypes".INonSpecificGameEventSpecModeUpdated'
     },
     {
       id: 12217,
       kind: 256,
-      name: "INonSpecificGameEventCsMatchEndRestart",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsmatchendrestart.html",
+      name: "INonSpecificGameEventHltvChangedMode",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhltvchangedmode.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100042,24 +100040,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsmatchendrestart.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventhltvchangedmode.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsMatchEndRestart'
+      parent: '"eventtypes".INonSpecificGameEventHltvChangedMode'
     },
     {
       id: 12219,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsmatchendrestart.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventhltvchangedmode.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsMatchEndRestart'
+      parent: '"eventtypes".INonSpecificGameEventHltvChangedMode'
     },
     {
       id: 12220,
       kind: 256,
-      name: "INonSpecificGameEventCsPreRestart",
-      url: "interfaces/_eventtypes_.inonspecificgameeventcsprerestart.html",
+      name: "INonSpecificGameEventCsGameDisconnected",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventcsgamedisconnected.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100068,24 +100067,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsprerestart.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventcsgamedisconnected.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsPreRestart'
+      parent: '"eventtypes".INonSpecificGameEventCsGameDisconnected'
     },
     {
       id: 12222,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsprerestart.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventcsgamedisconnected.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsPreRestart'
+      parent: '"eventtypes".INonSpecificGameEventCsGameDisconnected'
     },
     {
       id: 12223,
       kind: 256,
-      name: "INonSpecificGameEventShowFreezepanel",
-      url: "interfaces/_eventtypes_.inonspecificgameeventshowfreezepanel.html",
+      name: "INonSpecificGameEventCsWinPanelRound",
+      url: "interfaces/_eventtypes_.inonspecificgameeventcswinpanelround.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100094,24 +100093,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventshowfreezepanel.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventcswinpanelround.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventShowFreezepanel'
+      parent: '"eventtypes".INonSpecificGameEventCsWinPanelRound'
     },
     {
       id: 12225,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventshowfreezepanel.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventcswinpanelround.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventShowFreezepanel'
+      parent: '"eventtypes".INonSpecificGameEventCsWinPanelRound'
     },
     {
       id: 12226,
       kind: 256,
-      name: "INonSpecificGameEventHideFreezepanel",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhidefreezepanel.html",
+      name: "INonSpecificGameEventCsWinPanelMatch",
+      url: "interfaces/_eventtypes_.inonspecificgameeventcswinpanelmatch.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100120,24 +100119,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhidefreezepanel.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventcswinpanelmatch.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHideFreezepanel'
+      parent: '"eventtypes".INonSpecificGameEventCsWinPanelMatch'
     },
     {
       id: 12228,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhidefreezepanel.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventcswinpanelmatch.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHideFreezepanel'
+      parent: '"eventtypes".INonSpecificGameEventCsWinPanelMatch'
     },
     {
       id: 12229,
       kind: 256,
-      name: "INonSpecificGameEventFreezecamStarted",
-      url: "interfaces/_eventtypes_.inonspecificgameeventfreezecamstarted.html",
+      name: "INonSpecificGameEventCsMatchEndRestart",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventcsmatchendrestart.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100146,25 +100146,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventfreezecamstarted.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventcsmatchendrestart.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventFreezecamStarted'
+      parent: '"eventtypes".INonSpecificGameEventCsMatchEndRestart'
     },
     {
       id: 12231,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventfreezecamstarted.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventcsmatchendrestart.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventFreezecamStarted'
+      parent: '"eventtypes".INonSpecificGameEventCsMatchEndRestart'
     },
     {
       id: 12232,
       kind: 256,
-      name: "INonSpecificGameEventPlayerAvengedTeammate",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayeravengedteammate.html",
+      name: "INonSpecificGameEventCsPreRestart",
+      url: "interfaces/_eventtypes_.inonspecificgameeventcsprerestart.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100173,25 +100172,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayeravengedteammate.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventcsprerestart.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerAvengedTeammate'
+      parent: '"eventtypes".INonSpecificGameEventCsPreRestart'
     },
     {
       id: 12234,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayeravengedteammate.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventcsprerestart.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerAvengedTeammate'
+      parent: '"eventtypes".INonSpecificGameEventCsPreRestart'
     },
     {
       id: 12235,
       kind: 256,
-      name: "INonSpecificGameEventAchievementEarnedLocal",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementearnedlocal.html",
+      name: "INonSpecificGameEventShowFreezepanel",
+      url: "interfaces/_eventtypes_.inonspecificgameeventshowfreezepanel.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100200,24 +100198,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementearnedlocal.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventshowfreezepanel.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAchievementEarnedLocal'
+      parent: '"eventtypes".INonSpecificGameEventShowFreezepanel'
     },
     {
       id: 12237,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventachievementearnedlocal.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventshowfreezepanel.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAchievementEarnedLocal'
+      parent: '"eventtypes".INonSpecificGameEventShowFreezepanel'
     },
     {
       id: 12238,
       kind: 256,
-      name: "INonSpecificGameEventItemFound",
-      url: "interfaces/_eventtypes_.inonspecificgameeventitemfound.html",
+      name: "INonSpecificGameEventHideFreezepanel",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhidefreezepanel.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100225,24 +100223,25 @@ typedoc.search.data = {
       id: 12239,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventitemfound.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhidefreezepanel.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventItemFound'
+      parent: '"eventtypes".INonSpecificGameEventHideFreezepanel'
     },
     {
       id: 12240,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventitemfound.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhidefreezepanel.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventItemFound'
+      parent: '"eventtypes".INonSpecificGameEventHideFreezepanel'
     },
     {
       id: 12241,
       kind: 256,
-      name: "INonSpecificGameEventRepostXboxAchievements",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventrepostxboxachievements.html",
+      name: "INonSpecificGameEventFreezecamStarted",
+      url: "interfaces/_eventtypes_.inonspecificgameeventfreezecamstarted.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100251,25 +100250,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventrepostxboxachievements.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventfreezecamstarted.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRepostXboxAchievements'
+      parent: '"eventtypes".INonSpecificGameEventFreezecamStarted'
     },
     {
       id: 12243,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventrepostxboxachievements.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventfreezecamstarted.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRepostXboxAchievements'
+      parent: '"eventtypes".INonSpecificGameEventFreezecamStarted'
     },
     {
       id: 12244,
       kind: 256,
-      name: "INonSpecificGameEventMatchEndConditions",
+      name: "INonSpecificGameEventPlayerAvengedTeammate",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventmatchendconditions.html",
+        "interfaces/_eventtypes_.inonspecificgameeventplayeravengedteammate.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100278,24 +100277,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventmatchendconditions.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventplayeravengedteammate.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventMatchEndConditions'
+      parent: '"eventtypes".INonSpecificGameEventPlayerAvengedTeammate'
     },
     {
       id: 12246,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventmatchendconditions.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventplayeravengedteammate.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventMatchEndConditions'
+      parent: '"eventtypes".INonSpecificGameEventPlayerAvengedTeammate'
     },
     {
       id: 12247,
       kind: 256,
-      name: "INonSpecificGameEventRoundMvp",
-      url: "interfaces/_eventtypes_.inonspecificgameeventroundmvp.html",
+      name: "INonSpecificGameEventAchievementEarnedLocal",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventachievementearnedlocal.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100303,23 +100303,25 @@ typedoc.search.data = {
       id: 12248,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventroundmvp.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventachievementearnedlocal.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRoundMvp'
+      parent: '"eventtypes".INonSpecificGameEventAchievementEarnedLocal'
     },
     {
       id: 12249,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventroundmvp.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventachievementearnedlocal.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventRoundMvp'
+      parent: '"eventtypes".INonSpecificGameEventAchievementEarnedLocal'
     },
     {
       id: 12250,
       kind: 256,
-      name: "INonSpecificGameEventClientDisconnect",
-      url: "interfaces/_eventtypes_.inonspecificgameeventclientdisconnect.html",
+      name: "INonSpecificGameEventItemFound",
+      url: "interfaces/_eventtypes_.inonspecificgameeventitemfound.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100327,25 +100329,24 @@ typedoc.search.data = {
       id: 12251,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventclientdisconnect.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventitemfound.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventClientDisconnect'
+      parent: '"eventtypes".INonSpecificGameEventItemFound'
     },
     {
       id: 12252,
       kind: 1024,
       name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventclientdisconnect.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventitemfound.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventClientDisconnect'
+      parent: '"eventtypes".INonSpecificGameEventItemFound'
     },
     {
       id: 12253,
       kind: 256,
-      name: "INonSpecificGameEventGgPlayerLevelup",
-      url: "interfaces/_eventtypes_.inonspecificgameeventggplayerlevelup.html",
+      name: "INonSpecificGameEventRepostXboxAchievements",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventrepostxboxachievements.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100354,25 +100355,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggplayerlevelup.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventrepostxboxachievements.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgPlayerLevelup'
+      parent: '"eventtypes".INonSpecificGameEventRepostXboxAchievements'
     },
     {
       id: 12255,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggplayerlevelup.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventrepostxboxachievements.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgPlayerLevelup'
+      parent: '"eventtypes".INonSpecificGameEventRepostXboxAchievements'
     },
     {
       id: 12256,
       kind: 256,
-      name: "INonSpecificGameEventGgtrPlayerLevelup",
+      name: "INonSpecificGameEventMatchEndConditions",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggtrplayerlevelup.html",
+        "interfaces/_eventtypes_.inonspecificgameeventmatchendconditions.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100381,25 +100382,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggtrplayerlevelup.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventmatchendconditions.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgtrPlayerLevelup'
+      parent: '"eventtypes".INonSpecificGameEventMatchEndConditions'
     },
     {
       id: 12258,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggtrplayerlevelup.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventmatchendconditions.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgtrPlayerLevelup'
+      parent: '"eventtypes".INonSpecificGameEventMatchEndConditions'
     },
     {
       id: 12259,
       kind: 256,
-      name: "INonSpecificGameEventAssassinationTargetKilled",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventassassinationtargetkilled.html",
+      name: "INonSpecificGameEventRoundMvp",
+      url: "interfaces/_eventtypes_.inonspecificgameeventroundmvp.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100407,26 +100407,23 @@ typedoc.search.data = {
       id: 12260,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventassassinationtargetkilled.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventroundmvp.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAssassinationTargetKilled'
+      parent: '"eventtypes".INonSpecificGameEventRoundMvp'
     },
     {
       id: 12261,
       kind: 1024,
       name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventassassinationtargetkilled.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventroundmvp.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventAssassinationTargetKilled'
+      parent: '"eventtypes".INonSpecificGameEventRoundMvp'
     },
     {
       id: 12262,
       kind: 256,
-      name: "INonSpecificGameEventGgprogressivePlayerLevelup",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventggprogressiveplayerlevelup.html",
+      name: "INonSpecificGameEventClientDisconnect",
+      url: "interfaces/_eventtypes_.inonspecificgameeventclientdisconnect.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100435,24 +100432,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggprogressiveplayerlevelup.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventclientdisconnect.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgprogressivePlayerLevelup'
+      parent: '"eventtypes".INonSpecificGameEventClientDisconnect'
     },
     {
       id: 12264,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggprogressiveplayerlevelup.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventclientdisconnect.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgprogressivePlayerLevelup'
+      parent: '"eventtypes".INonSpecificGameEventClientDisconnect'
     },
     {
       id: 12265,
       kind: 256,
-      name: "INonSpecificGameEventGgKilledEnemy",
-      url: "interfaces/_eventtypes_.inonspecificgameeventggkilledenemy.html",
+      name: "INonSpecificGameEventGgPlayerLevelup",
+      url: "interfaces/_eventtypes_.inonspecificgameeventggplayerlevelup.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100461,25 +100458,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggkilledenemy.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventggplayerlevelup.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgKilledEnemy'
+      parent: '"eventtypes".INonSpecificGameEventGgPlayerLevelup'
     },
     {
       id: 12267,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggkilledenemy.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventggplayerlevelup.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgKilledEnemy'
+      parent: '"eventtypes".INonSpecificGameEventGgPlayerLevelup'
     },
     {
       id: 12268,
       kind: 256,
-      name: "INonSpecificGameEventGgFinalWeaponAchieved",
+      name: "INonSpecificGameEventGgtrPlayerLevelup",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggfinalweaponachieved.html",
+        "interfaces/_eventtypes_.inonspecificgameeventggtrplayerlevelup.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100488,25 +100485,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggfinalweaponachieved.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventggtrplayerlevelup.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgFinalWeaponAchieved'
+      parent: '"eventtypes".INonSpecificGameEventGgtrPlayerLevelup'
     },
     {
       id: 12270,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggfinalweaponachieved.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventggtrplayerlevelup.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgFinalWeaponAchieved'
+      parent: '"eventtypes".INonSpecificGameEventGgtrPlayerLevelup'
     },
     {
       id: 12271,
       kind: 256,
-      name: "INonSpecificGameEventGgBonusGrenadeAchieved",
+      name: "INonSpecificGameEventAssassinationTargetKilled",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggbonusgrenadeachieved.html",
+        "interfaces/_eventtypes_.inonspecificgameeventassassinationtargetkilled.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100515,24 +100512,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggbonusgrenadeachieved.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventassassinationtargetkilled.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgBonusGrenadeAchieved'
+      parent: '"eventtypes".INonSpecificGameEventAssassinationTargetKilled'
     },
     {
       id: 12273,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggbonusgrenadeachieved.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventassassinationtargetkilled.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgBonusGrenadeAchieved'
+      parent: '"eventtypes".INonSpecificGameEventAssassinationTargetKilled'
     },
     {
       id: 12274,
       kind: 256,
-      name: "INonSpecificGameEventSwitchTeam",
-      url: "interfaces/_eventtypes_.inonspecificgameeventswitchteam.html",
+      name: "INonSpecificGameEventGgprogressivePlayerLevelup",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventggprogressiveplayerlevelup.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100540,23 +100538,25 @@ typedoc.search.data = {
       id: 12275,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventswitchteam.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventggprogressiveplayerlevelup.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSwitchTeam'
+      parent: '"eventtypes".INonSpecificGameEventGgprogressivePlayerLevelup'
     },
     {
       id: 12276,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventswitchteam.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventggprogressiveplayerlevelup.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSwitchTeam'
+      parent: '"eventtypes".INonSpecificGameEventGgprogressivePlayerLevelup'
     },
     {
       id: 12277,
       kind: 256,
-      name: "INonSpecificGameEventGgLeader",
-      url: "interfaces/_eventtypes_.inonspecificgameeventggleader.html",
+      name: "INonSpecificGameEventGgKilledEnemy",
+      url: "interfaces/_eventtypes_.inonspecificgameeventggkilledenemy.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100564,23 +100564,26 @@ typedoc.search.data = {
       id: 12278,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventggleader.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventggkilledenemy.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgLeader'
+      parent: '"eventtypes".INonSpecificGameEventGgKilledEnemy'
     },
     {
       id: 12279,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventggleader.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventggkilledenemy.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgLeader'
+      parent: '"eventtypes".INonSpecificGameEventGgKilledEnemy'
     },
     {
       id: 12280,
       kind: 256,
-      name: "INonSpecificGameEventGgTeamLeader",
-      url: "interfaces/_eventtypes_.inonspecificgameeventggteamleader.html",
+      name: "INonSpecificGameEventGgFinalWeaponAchieved",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventggfinalweaponachieved.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100589,25 +100592,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggteamleader.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventggfinalweaponachieved.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgTeamLeader'
+      parent: '"eventtypes".INonSpecificGameEventGgFinalWeaponAchieved'
     },
     {
       id: 12282,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggteamleader.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventggfinalweaponachieved.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgTeamLeader'
+      parent: '"eventtypes".INonSpecificGameEventGgFinalWeaponAchieved'
     },
     {
       id: 12283,
       kind: 256,
-      name: "INonSpecificGameEventGgPlayerImpendingUpgrade",
+      name: "INonSpecificGameEventGgBonusGrenadeAchieved",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggplayerimpendingupgrade.html",
+        "interfaces/_eventtypes_.inonspecificgameeventggbonusgrenadeachieved.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100616,24 +100619,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggplayerimpendingupgrade.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventggbonusgrenadeachieved.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgPlayerImpendingUpgrade'
+      parent: '"eventtypes".INonSpecificGameEventGgBonusGrenadeAchieved'
     },
     {
       id: 12285,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggplayerimpendingupgrade.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventggbonusgrenadeachieved.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgPlayerImpendingUpgrade'
+      parent: '"eventtypes".INonSpecificGameEventGgBonusGrenadeAchieved'
     },
     {
       id: 12286,
       kind: 256,
-      name: "INonSpecificGameEventWriteProfileData",
-      url: "interfaces/_eventtypes_.inonspecificgameeventwriteprofiledata.html",
+      name: "INonSpecificGameEventSwitchTeam",
+      url: "interfaces/_eventtypes_.inonspecificgameeventswitchteam.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100641,25 +100644,23 @@ typedoc.search.data = {
       id: 12287,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventwriteprofiledata.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventswitchteam.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventWriteProfileData'
+      parent: '"eventtypes".INonSpecificGameEventSwitchTeam'
     },
     {
       id: 12288,
       kind: 1024,
       name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventwriteprofiledata.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventswitchteam.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventWriteProfileData'
+      parent: '"eventtypes".INonSpecificGameEventSwitchTeam'
     },
     {
       id: 12289,
       kind: 256,
-      name: "INonSpecificGameEventTrialTimeExpired",
-      url: "interfaces/_eventtypes_.inonspecificgameeventtrialtimeexpired.html",
+      name: "INonSpecificGameEventGgLeader",
+      url: "interfaces/_eventtypes_.inonspecificgameeventggleader.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100667,26 +100668,23 @@ typedoc.search.data = {
       id: 12290,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrialtimeexpired.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventggleader.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrialTimeExpired'
+      parent: '"eventtypes".INonSpecificGameEventGgLeader'
     },
     {
       id: 12291,
       kind: 1024,
       name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrialtimeexpired.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventggleader.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrialTimeExpired'
+      parent: '"eventtypes".INonSpecificGameEventGgLeader'
     },
     {
       id: 12292,
       kind: 256,
-      name: "INonSpecificGameEventUpdateMatchmakingStats",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventupdatematchmakingstats.html",
+      name: "INonSpecificGameEventGgTeamLeader",
+      url: "interfaces/_eventtypes_.inonspecificgameeventggteamleader.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100695,24 +100693,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventupdatematchmakingstats.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventggteamleader.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventUpdateMatchmakingStats'
+      parent: '"eventtypes".INonSpecificGameEventGgTeamLeader'
     },
     {
       id: 12294,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventupdatematchmakingstats.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventggteamleader.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventUpdateMatchmakingStats'
+      parent: '"eventtypes".INonSpecificGameEventGgTeamLeader'
     },
     {
       id: 12295,
       kind: 256,
-      name: "INonSpecificGameEventPlayerResetVote",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayerresetvote.html",
+      name: "INonSpecificGameEventGgPlayerImpendingUpgrade",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventggplayerimpendingupgrade.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100721,25 +100720,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerresetvote.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventggplayerimpendingupgrade.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerResetVote'
+      parent: '"eventtypes".INonSpecificGameEventGgPlayerImpendingUpgrade'
     },
     {
       id: 12297,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayerresetvote.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventggplayerimpendingupgrade.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerResetVote'
+      parent: '"eventtypes".INonSpecificGameEventGgPlayerImpendingUpgrade'
     },
     {
       id: 12298,
       kind: 256,
-      name: "INonSpecificGameEventEnableRestartVoting",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventenablerestartvoting.html",
+      name: "INonSpecificGameEventWriteProfileData",
+      url: "interfaces/_eventtypes_.inonspecificgameeventwriteprofiledata.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100748,24 +100746,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventenablerestartvoting.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventwriteprofiledata.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventEnableRestartVoting'
+      parent: '"eventtypes".INonSpecificGameEventWriteProfileData'
     },
     {
       id: 12300,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventenablerestartvoting.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventwriteprofiledata.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventEnableRestartVoting'
+      parent: '"eventtypes".INonSpecificGameEventWriteProfileData'
     },
     {
       id: 12301,
       kind: 256,
-      name: "INonSpecificGameEventSfuievent",
-      url: "interfaces/_eventtypes_.inonspecificgameeventsfuievent.html",
+      name: "INonSpecificGameEventTrialTimeExpired",
+      url: "interfaces/_eventtypes_.inonspecificgameeventtrialtimeexpired.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100773,23 +100771,26 @@ typedoc.search.data = {
       id: 12302,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventsfuievent.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventtrialtimeexpired.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSfuievent'
+      parent: '"eventtypes".INonSpecificGameEventTrialTimeExpired'
     },
     {
       id: 12303,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventsfuievent.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventtrialtimeexpired.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSfuievent'
+      parent: '"eventtypes".INonSpecificGameEventTrialTimeExpired'
     },
     {
       id: 12304,
       kind: 256,
-      name: "INonSpecificGameEventStartVote",
-      url: "interfaces/_eventtypes_.inonspecificgameeventstartvote.html",
+      name: "INonSpecificGameEventUpdateMatchmakingStats",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventupdatematchmakingstats.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100797,23 +100798,25 @@ typedoc.search.data = {
       id: 12305,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventstartvote.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventupdatematchmakingstats.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventStartVote'
+      parent: '"eventtypes".INonSpecificGameEventUpdateMatchmakingStats'
     },
     {
       id: 12306,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventstartvote.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventupdatematchmakingstats.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventStartVote'
+      parent: '"eventtypes".INonSpecificGameEventUpdateMatchmakingStats'
     },
     {
       id: 12307,
       kind: 256,
-      name: "INonSpecificGameEventPlayerGivenC4",
-      url: "interfaces/_eventtypes_.inonspecificgameeventplayergivenc4.html",
+      name: "INonSpecificGameEventPlayerResetVote",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayerresetvote.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100822,25 +100825,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayergivenc4.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerresetvote.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerGivenC4'
+      parent: '"eventtypes".INonSpecificGameEventPlayerResetVote'
     },
     {
       id: 12309,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventplayergivenc4.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventplayerresetvote.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventPlayerGivenC4'
+      parent: '"eventtypes".INonSpecificGameEventPlayerResetVote'
     },
     {
       id: 12310,
       kind: 256,
-      name: "INonSpecificGameEventGgResetRoundStartSounds",
+      name: "INonSpecificGameEventEnableRestartVoting",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggresetroundstartsounds.html",
+        "interfaces/_eventtypes_.inonspecificgameeventenablerestartvoting.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100849,25 +100852,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggresetroundstartsounds.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventenablerestartvoting.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgResetRoundStartSounds'
+      parent: '"eventtypes".INonSpecificGameEventEnableRestartVoting'
     },
     {
       id: 12312,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventggresetroundstartsounds.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventenablerestartvoting.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventGgResetRoundStartSounds'
+      parent: '"eventtypes".INonSpecificGameEventEnableRestartVoting'
     },
     {
       id: 12313,
       kind: 256,
-      name: "INonSpecificGameEventTrPlayerFlashbanged",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrplayerflashbanged.html",
+      name: "INonSpecificGameEventSfuievent",
+      url: "interfaces/_eventtypes_.inonspecificgameeventsfuievent.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100875,25 +100877,23 @@ typedoc.search.data = {
       id: 12314,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrplayerflashbanged.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventsfuievent.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrPlayerFlashbanged'
+      parent: '"eventtypes".INonSpecificGameEventSfuievent'
     },
     {
       id: 12315,
       kind: 1024,
       name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrplayerflashbanged.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventsfuievent.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrPlayerFlashbanged'
+      parent: '"eventtypes".INonSpecificGameEventSfuievent'
     },
     {
       id: 12316,
       kind: 256,
-      name: "INonSpecificGameEventTrMarkComplete",
-      url: "interfaces/_eventtypes_.inonspecificgameeventtrmarkcomplete.html",
+      name: "INonSpecificGameEventStartVote",
+      url: "interfaces/_eventtypes_.inonspecificgameeventstartvote.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100901,25 +100901,23 @@ typedoc.search.data = {
       id: 12317,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrmarkcomplete.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventstartvote.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrMarkComplete'
+      parent: '"eventtypes".INonSpecificGameEventStartVote'
     },
     {
       id: 12318,
       kind: 1024,
       name: "event",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrmarkcomplete.html#event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventstartvote.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrMarkComplete'
+      parent: '"eventtypes".INonSpecificGameEventStartVote'
     },
     {
       id: 12319,
       kind: 256,
-      name: "INonSpecificGameEventTrMarkBestTime",
-      url: "interfaces/_eventtypes_.inonspecificgameeventtrmarkbesttime.html",
+      name: "INonSpecificGameEventPlayerGivenC4",
+      url: "interfaces/_eventtypes_.inonspecificgameeventplayergivenc4.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100928,25 +100926,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrmarkbesttime.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventplayergivenc4.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrMarkBestTime'
+      parent: '"eventtypes".INonSpecificGameEventPlayerGivenC4'
     },
     {
       id: 12321,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrmarkbesttime.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventplayergivenc4.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrMarkBestTime'
+      parent: '"eventtypes".INonSpecificGameEventPlayerGivenC4'
     },
     {
       id: 12322,
       kind: 256,
-      name: "INonSpecificGameEventTrExitHintTrigger",
+      name: "INonSpecificGameEventGgResetRoundStartSounds",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrexithinttrigger.html",
+        "interfaces/_eventtypes_.inonspecificgameeventggresetroundstartsounds.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100955,24 +100953,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrexithinttrigger.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventggresetroundstartsounds.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrExitHintTrigger'
+      parent: '"eventtypes".INonSpecificGameEventGgResetRoundStartSounds'
     },
     {
       id: 12324,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrexithinttrigger.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventggresetroundstartsounds.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrExitHintTrigger'
+      parent: '"eventtypes".INonSpecificGameEventGgResetRoundStartSounds'
     },
     {
       id: 12325,
       kind: 256,
-      name: "INonSpecificGameEventBotTakeover",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbottakeover.html",
+      name: "INonSpecificGameEventTrPlayerFlashbanged",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventtrplayerflashbanged.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -100980,25 +100979,25 @@ typedoc.search.data = {
       id: 12326,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventbottakeover.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventtrplayerflashbanged.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBotTakeover'
+      parent: '"eventtypes".INonSpecificGameEventTrPlayerFlashbanged'
     },
     {
       id: 12327,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventbottakeover.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventtrplayerflashbanged.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventBotTakeover'
+      parent: '"eventtypes".INonSpecificGameEventTrPlayerFlashbanged'
     },
     {
       id: 12328,
       kind: 256,
-      name: "INonSpecificGameEventTrShowFinishMsgbox",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrshowfinishmsgbox.html",
+      name: "INonSpecificGameEventTrMarkComplete",
+      url: "interfaces/_eventtypes_.inonspecificgameeventtrmarkcomplete.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101007,24 +101006,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrshowfinishmsgbox.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventtrmarkcomplete.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrShowFinishMsgbox'
+      parent: '"eventtypes".INonSpecificGameEventTrMarkComplete'
     },
     {
       id: 12330,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrshowfinishmsgbox.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventtrmarkcomplete.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrShowFinishMsgbox'
+      parent: '"eventtypes".INonSpecificGameEventTrMarkComplete'
     },
     {
       id: 12331,
       kind: 256,
-      name: "INonSpecificGameEventTrShowExitMsgbox",
-      url: "interfaces/_eventtypes_.inonspecificgameeventtrshowexitmsgbox.html",
+      name: "INonSpecificGameEventTrMarkBestTime",
+      url: "interfaces/_eventtypes_.inonspecificgameeventtrmarkbesttime.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101033,25 +101032,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrshowexitmsgbox.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventtrmarkbesttime.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrShowExitMsgbox'
+      parent: '"eventtypes".INonSpecificGameEventTrMarkBestTime'
     },
     {
       id: 12333,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtrshowexitmsgbox.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventtrmarkbesttime.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTrShowExitMsgbox'
+      parent: '"eventtypes".INonSpecificGameEventTrMarkBestTime'
     },
     {
       id: 12334,
       kind: 256,
-      name: "INonSpecificGameEventResetPlayerControls",
+      name: "INonSpecificGameEventTrExitHintTrigger",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventresetplayercontrols.html",
+        "interfaces/_eventtypes_.inonspecificgameeventtrexithinttrigger.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101060,24 +101059,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventresetplayercontrols.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventtrexithinttrigger.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventResetPlayerControls'
+      parent: '"eventtypes".INonSpecificGameEventTrExitHintTrigger'
     },
     {
       id: 12336,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventresetplayercontrols.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventtrexithinttrigger.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventResetPlayerControls'
+      parent: '"eventtypes".INonSpecificGameEventTrExitHintTrigger'
     },
     {
       id: 12337,
       kind: 256,
-      name: "INonSpecificGameEventJointeamFailed",
-      url: "interfaces/_eventtypes_.inonspecificgameeventjointeamfailed.html",
+      name: "INonSpecificGameEventBotTakeover",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbottakeover.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101085,26 +101084,25 @@ typedoc.search.data = {
       id: 12338,
       kind: 1024,
       name: "name",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventjointeamfailed.html#name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventbottakeover.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventJointeamFailed'
+      parent: '"eventtypes".INonSpecificGameEventBotTakeover'
     },
     {
       id: 12339,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventjointeamfailed.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventbottakeover.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventJointeamFailed'
+      parent: '"eventtypes".INonSpecificGameEventBotTakeover'
     },
     {
       id: 12340,
       kind: 256,
-      name: "INonSpecificGameEventTeamchangePending",
+      name: "INonSpecificGameEventTrShowFinishMsgbox",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventteamchangepending.html",
+        "interfaces/_eventtypes_.inonspecificgameeventtrshowfinishmsgbox.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101113,25 +101111,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventteamchangepending.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventtrshowfinishmsgbox.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTeamchangePending'
+      parent: '"eventtypes".INonSpecificGameEventTrShowFinishMsgbox'
     },
     {
       id: 12342,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventteamchangepending.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventtrshowfinishmsgbox.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTeamchangePending'
+      parent: '"eventtypes".INonSpecificGameEventTrShowFinishMsgbox'
     },
     {
       id: 12343,
       kind: 256,
-      name: "INonSpecificGameEventMaterialDefaultComplete",
-      url:
-        "interfaces/_eventtypes_.inonspecificgameeventmaterialdefaultcomplete.html",
+      name: "INonSpecificGameEventTrShowExitMsgbox",
+      url: "interfaces/_eventtypes_.inonspecificgameeventtrshowexitmsgbox.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101140,25 +101137,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventmaterialdefaultcomplete.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventtrshowexitmsgbox.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventMaterialDefaultComplete'
+      parent: '"eventtypes".INonSpecificGameEventTrShowExitMsgbox'
     },
     {
       id: 12345,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventmaterialdefaultcomplete.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventtrshowexitmsgbox.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventMaterialDefaultComplete'
+      parent: '"eventtypes".INonSpecificGameEventTrShowExitMsgbox'
     },
     {
       id: 12346,
       kind: 256,
-      name: "INonSpecificGameEventCsPrevNextSpectator",
+      name: "INonSpecificGameEventResetPlayerControls",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsprevnextspectator.html",
+        "interfaces/_eventtypes_.inonspecificgameeventresetplayercontrols.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101167,24 +101164,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsprevnextspectator.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventresetplayercontrols.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsPrevNextSpectator'
+      parent: '"eventtypes".INonSpecificGameEventResetPlayerControls'
     },
     {
       id: 12348,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventcsprevnextspectator.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventresetplayercontrols.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventCsPrevNextSpectator'
+      parent: '"eventtypes".INonSpecificGameEventResetPlayerControls'
     },
     {
       id: 12349,
       kind: 256,
-      name: "INonSpecificGameEventNextlevelChanged",
-      url: "interfaces/_eventtypes_.inonspecificgameeventnextlevelchanged.html",
+      name: "INonSpecificGameEventJointeamFailed",
+      url: "interfaces/_eventtypes_.inonspecificgameeventjointeamfailed.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101193,25 +101190,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventnextlevelchanged.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventjointeamfailed.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventNextlevelChanged'
+      parent: '"eventtypes".INonSpecificGameEventJointeamFailed'
     },
     {
       id: 12351,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventnextlevelchanged.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventjointeamfailed.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventNextlevelChanged'
+      parent: '"eventtypes".INonSpecificGameEventJointeamFailed'
     },
     {
       id: 12352,
       kind: 256,
-      name: "INonSpecificGameEventSeasoncoinLevelup",
+      name: "INonSpecificGameEventTeamchangePending",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventseasoncoinlevelup.html",
+        "interfaces/_eventtypes_.inonspecificgameeventteamchangepending.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101220,24 +101217,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventseasoncoinlevelup.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventteamchangepending.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSeasoncoinLevelup'
+      parent: '"eventtypes".INonSpecificGameEventTeamchangePending'
     },
     {
       id: 12354,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventseasoncoinlevelup.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventteamchangepending.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventSeasoncoinLevelup'
+      parent: '"eventtypes".INonSpecificGameEventTeamchangePending'
     },
     {
       id: 12355,
       kind: 256,
-      name: "INonSpecificGameEventTournamentReward",
-      url: "interfaces/_eventtypes_.inonspecificgameeventtournamentreward.html",
+      name: "INonSpecificGameEventMaterialDefaultComplete",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventmaterialdefaultcomplete.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101246,24 +101244,25 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtournamentreward.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventmaterialdefaultcomplete.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTournamentReward'
+      parent: '"eventtypes".INonSpecificGameEventMaterialDefaultComplete'
     },
     {
       id: 12357,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventtournamentreward.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventmaterialdefaultcomplete.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventTournamentReward'
+      parent: '"eventtypes".INonSpecificGameEventMaterialDefaultComplete'
     },
     {
       id: 12358,
       kind: 256,
-      name: "INonSpecificGameEventStartHalftime",
-      url: "interfaces/_eventtypes_.inonspecificgameeventstarthalftime.html",
+      name: "INonSpecificGameEventCsPrevNextSpectator",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventcsprevnextspectator.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101272,24 +101271,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventstarthalftime.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventcsprevnextspectator.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventStartHalftime'
+      parent: '"eventtypes".INonSpecificGameEventCsPrevNextSpectator'
     },
     {
       id: 12360,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventstarthalftime.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventcsprevnextspectator.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventStartHalftime'
+      parent: '"eventtypes".INonSpecificGameEventCsPrevNextSpectator'
     },
     {
       id: 12361,
       kind: 256,
-      name: "INonSpecificGameEventHltvStatus",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhltvstatus.html",
+      name: "INonSpecificGameEventNextlevelChanged",
+      url: "interfaces/_eventtypes_.inonspecificgameeventnextlevelchanged.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101297,23 +101296,26 @@ typedoc.search.data = {
       id: 12362,
       kind: 1024,
       name: "name",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhltvstatus.html#name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventnextlevelchanged.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHltvStatus'
+      parent: '"eventtypes".INonSpecificGameEventNextlevelChanged'
     },
     {
       id: 12363,
       kind: 1024,
       name: "event",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhltvstatus.html#event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventnextlevelchanged.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHltvStatus'
+      parent: '"eventtypes".INonSpecificGameEventNextlevelChanged'
     },
     {
       id: 12364,
       kind: 256,
-      name: "INonSpecificGameEventHltvCameraman",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhltvcameraman.html",
+      name: "INonSpecificGameEventSeasoncoinLevelup",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventseasoncoinlevelup.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101322,24 +101324,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhltvcameraman.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventseasoncoinlevelup.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHltvCameraman'
+      parent: '"eventtypes".INonSpecificGameEventSeasoncoinLevelup'
     },
     {
       id: 12366,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhltvcameraman.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventseasoncoinlevelup.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHltvCameraman'
+      parent: '"eventtypes".INonSpecificGameEventSeasoncoinLevelup'
     },
     {
       id: 12367,
       kind: 256,
-      name: "INonSpecificGameEventHltvRankCamera",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhltvrankcamera.html",
+      name: "INonSpecificGameEventTournamentReward",
+      url: "interfaces/_eventtypes_.inonspecificgameeventtournamentreward.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101348,24 +101350,24 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhltvrankcamera.html#name",
+        "interfaces/_eventtypes_.inonspecificgameeventtournamentreward.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHltvRankCamera'
+      parent: '"eventtypes".INonSpecificGameEventTournamentReward'
     },
     {
       id: 12369,
       kind: 1024,
       name: "event",
       url:
-        "interfaces/_eventtypes_.inonspecificgameeventhltvrankcamera.html#event",
+        "interfaces/_eventtypes_.inonspecificgameeventtournamentreward.html#event",
       classes: "tsd-kind-property tsd-parent-kind-interface",
-      parent: '"eventtypes".INonSpecificGameEventHltvRankCamera'
+      parent: '"eventtypes".INonSpecificGameEventTournamentReward'
     },
     {
       id: 12370,
       kind: 256,
-      name: "INonSpecificGameEventHltvRankEntity",
-      url: "interfaces/_eventtypes_.inonspecificgameeventhltvrankentity.html",
+      name: "INonSpecificGameEventStartHalftime",
+      url: "interfaces/_eventtypes_.inonspecificgameeventstarthalftime.html",
       classes: "tsd-kind-interface tsd-parent-kind-external-module",
       parent: '"eventtypes"'
     },
@@ -101374,12 +101376,114 @@ typedoc.search.data = {
       kind: 1024,
       name: "name",
       url:
+        "interfaces/_eventtypes_.inonspecificgameeventstarthalftime.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventStartHalftime'
+    },
+    {
+      id: 12372,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventstarthalftime.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventStartHalftime'
+    },
+    {
+      id: 12373,
+      kind: 256,
+      name: "INonSpecificGameEventHltvStatus",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhltvstatus.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 12374,
+      kind: 1024,
+      name: "name",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhltvstatus.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHltvStatus'
+    },
+    {
+      id: 12375,
+      kind: 1024,
+      name: "event",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhltvstatus.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHltvStatus'
+    },
+    {
+      id: 12376,
+      kind: 256,
+      name: "INonSpecificGameEventHltvCameraman",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhltvcameraman.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 12377,
+      kind: 1024,
+      name: "name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhltvcameraman.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHltvCameraman'
+    },
+    {
+      id: 12378,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhltvcameraman.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHltvCameraman'
+    },
+    {
+      id: 12379,
+      kind: 256,
+      name: "INonSpecificGameEventHltvRankCamera",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhltvrankcamera.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 12380,
+      kind: 1024,
+      name: "name",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhltvrankcamera.html#name",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHltvRankCamera'
+    },
+    {
+      id: 12381,
+      kind: 1024,
+      name: "event",
+      url:
+        "interfaces/_eventtypes_.inonspecificgameeventhltvrankcamera.html#event",
+      classes: "tsd-kind-property tsd-parent-kind-interface",
+      parent: '"eventtypes".INonSpecificGameEventHltvRankCamera'
+    },
+    {
+      id: 12382,
+      kind: 256,
+      name: "INonSpecificGameEventHltvRankEntity",
+      url: "interfaces/_eventtypes_.inonspecificgameeventhltvrankentity.html",
+      classes: "tsd-kind-interface tsd-parent-kind-external-module",
+      parent: '"eventtypes"'
+    },
+    {
+      id: 12383,
+      kind: 1024,
+      name: "name",
+      url:
         "interfaces/_eventtypes_.inonspecificgameeventhltvrankentity.html#name",
       classes: "tsd-kind-property tsd-parent-kind-interface",
       parent: '"eventtypes".INonSpecificGameEventHltvRankEntity'
     },
     {
-      id: 12372,
+      id: 12384,
       kind: 1024,
       name: "event",
       url:
@@ -101388,7 +101492,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHltvRankEntity'
     },
     {
-      id: 12373,
+      id: 12385,
       kind: 256,
       name: "INonSpecificGameEventHltvFixed",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvfixed.html",
@@ -101396,7 +101500,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12374,
+      id: 12386,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvfixed.html#name",
@@ -101404,7 +101508,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHltvFixed'
     },
     {
-      id: 12375,
+      id: 12387,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvfixed.html#event",
@@ -101412,7 +101516,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHltvFixed'
     },
     {
-      id: 12376,
+      id: 12388,
       kind: 256,
       name: "INonSpecificGameEventHltvChase",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvchase.html",
@@ -101420,7 +101524,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12377,
+      id: 12389,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvchase.html#name",
@@ -101428,7 +101532,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHltvChase'
     },
     {
-      id: 12378,
+      id: 12390,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvchase.html#event",
@@ -101436,7 +101540,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHltvChase'
     },
     {
-      id: 12379,
+      id: 12391,
       kind: 256,
       name: "INonSpecificGameEventHltvMessage",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvmessage.html",
@@ -101444,7 +101548,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12380,
+      id: 12392,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvmessage.html#name",
@@ -101452,7 +101556,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHltvMessage'
     },
     {
-      id: 12381,
+      id: 12393,
       kind: 1024,
       name: "event",
       url:
@@ -101461,7 +101565,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHltvMessage'
     },
     {
-      id: 12382,
+      id: 12394,
       kind: 256,
       name: "INonSpecificGameEventHltvTitle",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvtitle.html",
@@ -101469,7 +101573,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12383,
+      id: 12395,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvtitle.html#name",
@@ -101477,7 +101581,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHltvTitle'
     },
     {
-      id: 12384,
+      id: 12396,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvtitle.html#event",
@@ -101485,7 +101589,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHltvTitle'
     },
     {
-      id: 12385,
+      id: 12397,
       kind: 256,
       name: "INonSpecificGameEventHltvChat",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvchat.html",
@@ -101493,7 +101597,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12386,
+      id: 12398,
       kind: 1024,
       name: "name",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvchat.html#name",
@@ -101501,7 +101605,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHltvChat'
     },
     {
-      id: 12387,
+      id: 12399,
       kind: 1024,
       name: "event",
       url: "interfaces/_eventtypes_.inonspecificgameeventhltvchat.html#event",
@@ -101509,7 +101613,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHltvChat'
     },
     {
-      id: 12388,
+      id: 12400,
       kind: 256,
       name: "INonSpecificGameEventHltvChangedTarget",
       url:
@@ -101518,7 +101622,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12389,
+      id: 12401,
       kind: 1024,
       name: "name",
       url:
@@ -101527,7 +101631,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHltvChangedTarget'
     },
     {
-      id: 12390,
+      id: 12402,
       kind: 1024,
       name: "event",
       url:
@@ -101536,7 +101640,7 @@ typedoc.search.data = {
       parent: '"eventtypes".INonSpecificGameEventHltvChangedTarget'
     },
     {
-      id: 12391,
+      id: 12403,
       kind: 4194304,
       name: "INonSpecificGameEvent",
       url: "modules/_eventtypes_.html#inonspecificgameevent",
@@ -101544,7 +101648,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12392,
+      id: 12404,
       kind: 2,
       name: '"./gameevents"',
       url: "modules/_eventtypes_.___gameevents_.html",
@@ -101553,7 +101657,7 @@ typedoc.search.data = {
       parent: '"eventtypes"'
     },
     {
-      id: 12393,
+      id: 12405,
       kind: 256,
       name: "GameEvents",
       url: "interfaces/_eventtypes_.___gameevents_.gameevents.html",
@@ -101561,7 +101665,7 @@ typedoc.search.data = {
       parent: '"eventtypes"."./gameevents"'
     },
     {
-      id: 12394,
+      id: 12406,
       kind: 2048,
       name: "on",
       url: "interfaces/_eventtypes_.___gameevents_.gameevents.html#on",
@@ -101569,21 +101673,21 @@ typedoc.search.data = {
       parent: '"eventtypes"."./gameevents".GameEvents'
     },
     {
-      id: 12395,
+      id: 12407,
       kind: 1,
       name: '"index"',
       url: "modules/_index_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 12396,
+      id: 12408,
       kind: 1,
       name: '"examples/dumpfile"',
       url: "modules/_examples_dumpfile_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 12397,
+      id: 12409,
       kind: 32,
       name: "colourReplacements",
       url: "modules/_examples_dumpfile_.html#colourreplacements",
@@ -101592,7 +101696,7 @@ typedoc.search.data = {
       parent: '"examples/dumpfile"'
     },
     {
-      id: 12398,
+      id: 12410,
       kind: 2097152,
       name: "standardMessages",
       url: "modules/_examples_dumpfile_.html#standardmessages",
@@ -101601,7 +101705,7 @@ typedoc.search.data = {
       parent: '"examples/dumpfile"'
     },
     {
-      id: 12399,
+      id: 12411,
       kind: 32,
       name: "Cstrike_Chat_All",
       url: "modules/_examples_dumpfile_.html#standardmessages.cstrike_chat_all",
@@ -101610,7 +101714,7 @@ typedoc.search.data = {
       parent: '"examples/dumpfile".standardMessages'
     },
     {
-      id: 12400,
+      id: 12412,
       kind: 32,
       name: "Cstrike_Chat_AllDead",
       url:
@@ -101620,7 +101724,7 @@ typedoc.search.data = {
       parent: '"examples/dumpfile".standardMessages'
     },
     {
-      id: 12401,
+      id: 12413,
       kind: 32,
       name: "Game_connected",
       url: "modules/_examples_dumpfile_.html#standardmessages.game_connected",
@@ -101629,7 +101733,7 @@ typedoc.search.data = {
       parent: '"examples/dumpfile".standardMessages'
     },
     {
-      id: 12402,
+      id: 12414,
       kind: 64,
       name: "teamNumberToAnsi",
       url: "modules/_examples_dumpfile_.html#teamnumbertoansi",
@@ -101638,7 +101742,7 @@ typedoc.search.data = {
       parent: '"examples/dumpfile"'
     },
     {
-      id: 12403,
+      id: 12415,
       kind: 64,
       name: "parseDemoFile",
       url: "modules/_examples_dumpfile_.html#parsedemofile",
@@ -101647,14 +101751,14 @@ typedoc.search.data = {
       parent: '"examples/dumpfile"'
     },
     {
-      id: 12404,
+      id: 12416,
       kind: 1,
       name: '"generators/eventtypes"',
       url: "modules/_generators_eventtypes_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 12405,
+      id: 12417,
       kind: 64,
       name: "parseDemoFile",
       url: "modules/_generators_eventtypes_.html#parsedemofile",
@@ -101663,14 +101767,14 @@ typedoc.search.data = {
       parent: '"generators/eventtypes"'
     },
     {
-      id: 12406,
+      id: 12418,
       kind: 1,
       name: '"generators/itemdefs"',
       url: "modules/_generators_itemdefs_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 12407,
+      id: 12419,
       kind: 32,
       name: "readFileAsync",
       url: "modules/_generators_itemdefs_.html#readfileasync",
@@ -101679,7 +101783,7 @@ typedoc.search.data = {
       parent: '"generators/itemdefs"'
     },
     {
-      id: 12408,
+      id: 12420,
       kind: 64,
       name: "fromEntries",
       url: "modules/_generators_itemdefs_.html#fromentries",
@@ -101688,7 +101792,7 @@ typedoc.search.data = {
       parent: '"generators/itemdefs"'
     },
     {
-      id: 12409,
+      id: 12421,
       kind: 64,
       name: "parseItems",
       url: "modules/_generators_itemdefs_.html#parseitems",
@@ -101697,14 +101801,14 @@ typedoc.search.data = {
       parent: '"generators/itemdefs"'
     },
     {
-      id: 12410,
+      id: 12422,
       kind: 1,
       name: '"generators/sendtabletypes"',
       url: "modules/_generators_sendtabletypes_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 12411,
+      id: 12423,
       kind: 64,
       name: "parseDemoFile",
       url: "modules/_generators_sendtabletypes_.html#parsedemofile",
@@ -101713,14 +101817,14 @@ typedoc.search.data = {
       parent: '"generators/sendtabletypes"'
     },
     {
-      id: 12412,
+      id: 12424,
       kind: 1,
       name: '"protobufs/cstrike15_usermessages"',
       url: "modules/_protobufs_cstrike15_usermessages_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 12413,
+      id: 12425,
       kind: 32,
       name: "$Reader",
       url: "modules/_protobufs_cstrike15_usermessages_.html#_reader",
@@ -101729,7 +101833,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12414,
+      id: 12426,
       kind: 32,
       name: "$util",
       url: "modules/_protobufs_cstrike15_usermessages_.html#_util",
@@ -101738,7 +101842,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12415,
+      id: 12427,
       kind: 32,
       name: "$root",
       url: "modules/_protobufs_cstrike15_usermessages_.html#_root",
@@ -101747,7 +101851,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12416,
+      id: 12428,
       kind: 32,
       name: "ECstrike15UserMessages",
       url:
@@ -101756,7 +101860,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12417,
+      id: 12429,
       kind: 32,
       name: "CCSUsrMsg_VGUIMenu",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_vguimenu",
@@ -101764,7 +101868,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12418,
+      id: 12430,
       kind: 32,
       name: "CCSUsrMsg_Geiger",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_geiger",
@@ -101772,7 +101876,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12419,
+      id: 12431,
       kind: 32,
       name: "CCSUsrMsg_Train",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_train",
@@ -101780,7 +101884,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12420,
+      id: 12432,
       kind: 32,
       name: "CCSUsrMsg_HudText",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_hudtext",
@@ -101788,7 +101892,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12421,
+      id: 12433,
       kind: 32,
       name: "CCSUsrMsg_SayText",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_saytext",
@@ -101796,7 +101900,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12422,
+      id: 12434,
       kind: 32,
       name: "CCSUsrMsg_SayText2",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_saytext2",
@@ -101804,7 +101908,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12423,
+      id: 12435,
       kind: 32,
       name: "CCSUsrMsg_TextMsg",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_textmsg",
@@ -101812,7 +101916,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12424,
+      id: 12436,
       kind: 32,
       name: "CCSUsrMsg_HudMsg",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_hudmsg",
@@ -101820,7 +101924,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12425,
+      id: 12437,
       kind: 32,
       name: "CCSUsrMsg_Shake",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_shake",
@@ -101828,7 +101932,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12426,
+      id: 12438,
       kind: 32,
       name: "CCSUsrMsg_Fade",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_fade",
@@ -101836,7 +101940,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12427,
+      id: 12439,
       kind: 32,
       name: "CCSUsrMsg_Rumble",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_rumble",
@@ -101844,7 +101948,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12428,
+      id: 12440,
       kind: 32,
       name: "CCSUsrMsg_CloseCaption",
       url:
@@ -101853,7 +101957,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12429,
+      id: 12441,
       kind: 32,
       name: "CCSUsrMsg_CloseCaptionDirect",
       url:
@@ -101862,7 +101966,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12430,
+      id: 12442,
       kind: 32,
       name: "CCSUsrMsg_SendAudio",
       url:
@@ -101871,7 +101975,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12431,
+      id: 12443,
       kind: 32,
       name: "CCSUsrMsg_RawAudio",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_rawaudio",
@@ -101879,7 +101983,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12432,
+      id: 12444,
       kind: 32,
       name: "CCSUsrMsg_VoiceMask",
       url:
@@ -101888,7 +101992,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12433,
+      id: 12445,
       kind: 32,
       name: "CCSUsrMsg_Damage",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_damage",
@@ -101896,7 +102000,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12434,
+      id: 12446,
       kind: 32,
       name: "CCSUsrMsg_RadioText",
       url:
@@ -101905,7 +102009,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12435,
+      id: 12447,
       kind: 32,
       name: "CCSUsrMsg_HintText",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_hinttext",
@@ -101913,7 +102017,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12436,
+      id: 12448,
       kind: 32,
       name: "CCSUsrMsg_KeyHintText",
       url:
@@ -101922,7 +102026,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12437,
+      id: 12449,
       kind: 32,
       name: "CCSUsrMsg_ProcessSpottedEntityUpdate",
       url:
@@ -101931,7 +102035,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12438,
+      id: 12450,
       kind: 32,
       name: "CCSUsrMsg_SendPlayerItemDrops",
       url:
@@ -101940,7 +102044,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12439,
+      id: 12451,
       kind: 32,
       name: "CCSUsrMsg_SendPlayerItemFound",
       url:
@@ -101949,7 +102053,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12440,
+      id: 12452,
       kind: 32,
       name: "CCSUsrMsg_ReloadEffect",
       url:
@@ -101958,7 +102062,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12441,
+      id: 12453,
       kind: 32,
       name: "CCSUsrMsg_AdjustMoney",
       url:
@@ -101967,7 +102071,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12442,
+      id: 12454,
       kind: 32,
       name: "CCSUsrMsg_ReportHit",
       url:
@@ -101976,7 +102080,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12443,
+      id: 12455,
       kind: 32,
       name: "CCSUsrMsg_KillCam",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_killcam",
@@ -101984,7 +102088,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12444,
+      id: 12456,
       kind: 32,
       name: "CCSUsrMsg_DesiredTimescale",
       url:
@@ -101993,7 +102097,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12445,
+      id: 12457,
       kind: 32,
       name: "CCSUsrMsg_CurrentTimescale",
       url:
@@ -102002,7 +102106,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12446,
+      id: 12458,
       kind: 32,
       name: "CCSUsrMsg_AchievementEvent",
       url:
@@ -102011,7 +102115,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12447,
+      id: 12459,
       kind: 32,
       name: "CCSUsrMsg_MatchEndConditions",
       url:
@@ -102020,7 +102124,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12448,
+      id: 12460,
       kind: 32,
       name: "CCSUsrMsg_PlayerStatsUpdate",
       url:
@@ -102029,7 +102133,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12449,
+      id: 12461,
       kind: 32,
       name: "CCSUsrMsg_DisplayInventory",
       url:
@@ -102038,7 +102142,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12450,
+      id: 12462,
       kind: 32,
       name: "CCSUsrMsg_QuestProgress",
       url:
@@ -102047,7 +102151,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12451,
+      id: 12463,
       kind: 32,
       name: "CCSUsrMsg_XRankGet",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_xrankget",
@@ -102055,7 +102159,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12452,
+      id: 12464,
       kind: 32,
       name: "CCSUsrMsg_XRankUpd",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_xrankupd",
@@ -102063,7 +102167,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12453,
+      id: 12465,
       kind: 32,
       name: "CCSUsrMsg_CallVoteFailed",
       url:
@@ -102072,7 +102176,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12454,
+      id: 12466,
       kind: 32,
       name: "CCSUsrMsg_VoteStart",
       url:
@@ -102081,7 +102185,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12455,
+      id: 12467,
       kind: 32,
       name: "CCSUsrMsg_VotePass",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_votepass",
@@ -102089,7 +102193,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12456,
+      id: 12468,
       kind: 32,
       name: "CCSUsrMsg_VoteFailed",
       url:
@@ -102098,7 +102202,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12457,
+      id: 12469,
       kind: 32,
       name: "CCSUsrMsg_VoteSetup",
       url:
@@ -102107,7 +102211,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12458,
+      id: 12470,
       kind: 32,
       name: "CCSUsrMsg_SendLastKillerDamageToClient",
       url:
@@ -102116,7 +102220,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12459,
+      id: 12471,
       kind: 32,
       name: "CCSUsrMsg_ServerRankUpdate",
       url:
@@ -102125,7 +102229,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12460,
+      id: 12472,
       kind: 32,
       name: "CCSUsrMsg_XpUpdate",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_xpupdate",
@@ -102133,7 +102237,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12461,
+      id: 12473,
       kind: 32,
       name: "CCSUsrMsg_ItemPickup",
       url:
@@ -102142,7 +102246,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12462,
+      id: 12474,
       kind: 32,
       name: "CCSUsrMsg_ShowMenu",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_showmenu",
@@ -102150,7 +102254,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12463,
+      id: 12475,
       kind: 32,
       name: "CCSUsrMsg_BarTime",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_bartime",
@@ -102158,7 +102262,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12464,
+      id: 12476,
       kind: 32,
       name: "CCSUsrMsg_AmmoDenied",
       url:
@@ -102167,7 +102271,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12465,
+      id: 12477,
       kind: 32,
       name: "CCSUsrMsg_MarkAchievement",
       url:
@@ -102176,7 +102280,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12466,
+      id: 12478,
       kind: 32,
       name: "CCSUsrMsg_MatchStatsUpdate",
       url:
@@ -102185,7 +102289,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12467,
+      id: 12479,
       kind: 32,
       name: "CCSUsrMsg_ItemDrop",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_itemdrop",
@@ -102193,7 +102297,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12468,
+      id: 12480,
       kind: 32,
       name: "CCSUsrMsg_GlowPropTurnOff",
       url:
@@ -102202,7 +102306,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12469,
+      id: 12481,
       kind: 32,
       name: "CCSUsrMsg_RoundBackupFilenames",
       url:
@@ -102211,7 +102315,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12470,
+      id: 12482,
       kind: 32,
       name: "CCSUsrMsg_ResetHud",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ccsusrmsg_resethud",
@@ -102219,7 +102323,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12471,
+      id: 12483,
       kind: 32,
       name: "CCSUsrMsg_GameTitle",
       url:
@@ -102228,7 +102332,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12472,
+      id: 12484,
       kind: 32,
       name: "CCSUsrMsg_RequestState",
       url:
@@ -102237,7 +102341,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12473,
+      id: 12485,
       kind: 32,
       name: "CCSUsrMsg_StopSpectatorMode",
       url:
@@ -102246,7 +102350,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12474,
+      id: 12486,
       kind: 32,
       name: "CCSUsrMsg_DisconnectToLobby",
       url:
@@ -102255,7 +102359,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12475,
+      id: 12487,
       kind: 32,
       name: "CCSUsrMsg_WarmupHasEnded",
       url:
@@ -102264,7 +102368,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12476,
+      id: 12488,
       kind: 32,
       name: "CCSUsrMsg_ClientInfo",
       url:
@@ -102273,7 +102377,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12477,
+      id: 12489,
       kind: 32,
       name: "CCSUsrMsg_ServerRankRevealAll",
       url:
@@ -102282,7 +102386,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12478,
+      id: 12490,
       kind: 32,
       name: "google",
       url: "modules/_protobufs_cstrike15_usermessages_.html#google",
@@ -102290,7 +102394,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12479,
+      id: 12491,
       kind: 32,
       name: "CMsgVector",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsgvector",
@@ -102298,7 +102402,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12480,
+      id: 12492,
       kind: 32,
       name: "CMsgVector2D",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsgvector2d",
@@ -102306,7 +102410,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12481,
+      id: 12493,
       kind: 32,
       name: "CMsgQAngle",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsgqangle",
@@ -102314,7 +102418,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12482,
+      id: 12494,
       kind: 32,
       name: "CMsgRGBA",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsgrgba",
@@ -102322,7 +102426,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12483,
+      id: 12495,
       kind: 32,
       name: "CNETMsg_Tick",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cnetmsg_tick",
@@ -102330,7 +102434,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12484,
+      id: 12496,
       kind: 32,
       name: "CNETMsg_StringCmd",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cnetmsg_stringcmd",
@@ -102338,7 +102442,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12485,
+      id: 12497,
       kind: 32,
       name: "CNETMsg_SignonState",
       url:
@@ -102347,7 +102451,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12486,
+      id: 12498,
       kind: 32,
       name: "CMsg_CVars",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsg_cvars",
@@ -102355,7 +102459,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12487,
+      id: 12499,
       kind: 32,
       name: "CNETMsg_SetConVar",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cnetmsg_setconvar",
@@ -102363,7 +102467,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12488,
+      id: 12500,
       kind: 32,
       name: "CNETMsg_NOP",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cnetmsg_nop",
@@ -102371,7 +102475,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12489,
+      id: 12501,
       kind: 32,
       name: "CNETMsg_Disconnect",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cnetmsg_disconnect",
@@ -102379,7 +102483,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12490,
+      id: 12502,
       kind: 32,
       name: "CNETMsg_File",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cnetmsg_file",
@@ -102387,7 +102491,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12491,
+      id: 12503,
       kind: 32,
       name: "CNETMsg_SplitScreenUser",
       url:
@@ -102396,7 +102500,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12492,
+      id: 12504,
       kind: 32,
       name: "CNETMsg_PlayerAvatarData",
       url:
@@ -102405,7 +102509,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12493,
+      id: 12505,
       kind: 32,
       name: "CCLCMsg_ClientInfo",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cclcmsg_clientinfo",
@@ -102413,7 +102517,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12494,
+      id: 12506,
       kind: 32,
       name: "CCLCMsg_Move",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cclcmsg_move",
@@ -102421,7 +102525,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12495,
+      id: 12507,
       kind: 32,
       name: "CCLCMsg_VoiceData",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cclcmsg_voicedata",
@@ -102429,7 +102533,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12496,
+      id: 12508,
       kind: 32,
       name: "CCLCMsg_BaselineAck",
       url:
@@ -102438,7 +102542,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12497,
+      id: 12509,
       kind: 32,
       name: "CCLCMsg_ListenEvents",
       url:
@@ -102447,7 +102551,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12498,
+      id: 12510,
       kind: 32,
       name: "CCLCMsg_RespondCvarValue",
       url:
@@ -102456,7 +102560,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12499,
+      id: 12511,
       kind: 32,
       name: "CCLCMsg_FileCRCCheck",
       url:
@@ -102465,7 +102569,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12500,
+      id: 12512,
       kind: 32,
       name: "CCLCMsg_LoadingProgress",
       url:
@@ -102474,7 +102578,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12501,
+      id: 12513,
       kind: 32,
       name: "CCLCMsg_SplitPlayerConnect",
       url:
@@ -102483,7 +102587,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12502,
+      id: 12514,
       kind: 32,
       name: "CCLCMsg_CmdKeyValues",
       url:
@@ -102492,7 +102596,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12503,
+      id: 12515,
       kind: 32,
       name: "CSVCMsg_ServerInfo",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_serverinfo",
@@ -102500,7 +102604,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12504,
+      id: 12516,
       kind: 32,
       name: "CSVCMsg_ClassInfo",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_classinfo",
@@ -102508,7 +102612,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12505,
+      id: 12517,
       kind: 32,
       name: "CSVCMsg_SendTable",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_sendtable",
@@ -102516,7 +102620,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12506,
+      id: 12518,
       kind: 32,
       name: "CSVCMsg_Print",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_print",
@@ -102524,7 +102628,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12507,
+      id: 12519,
       kind: 32,
       name: "CSVCMsg_SetPause",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_setpause",
@@ -102532,7 +102636,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12508,
+      id: 12520,
       kind: 32,
       name: "CSVCMsg_SetView",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_setview",
@@ -102540,7 +102644,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12509,
+      id: 12521,
       kind: 32,
       name: "CSVCMsg_CreateStringTable",
       url:
@@ -102549,7 +102653,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12510,
+      id: 12522,
       kind: 32,
       name: "CSVCMsg_UpdateStringTable",
       url:
@@ -102558,7 +102662,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12511,
+      id: 12523,
       kind: 32,
       name: "CSVCMsg_VoiceInit",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_voiceinit",
@@ -102566,7 +102670,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12512,
+      id: 12524,
       kind: 32,
       name: "CSVCMsg_VoiceData",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_voicedata",
@@ -102574,7 +102678,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12513,
+      id: 12525,
       kind: 32,
       name: "CSVCMsg_FixAngle",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_fixangle",
@@ -102582,7 +102686,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12514,
+      id: 12526,
       kind: 32,
       name: "CSVCMsg_CrosshairAngle",
       url:
@@ -102591,7 +102695,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12515,
+      id: 12527,
       kind: 32,
       name: "CSVCMsg_Prefetch",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_prefetch",
@@ -102599,7 +102703,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12516,
+      id: 12528,
       kind: 32,
       name: "CSVCMsg_BSPDecal",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_bspdecal",
@@ -102607,7 +102711,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12517,
+      id: 12529,
       kind: 32,
       name: "CSVCMsg_SplitScreen",
       url:
@@ -102616,7 +102720,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12518,
+      id: 12530,
       kind: 32,
       name: "CSVCMsg_GetCvarValue",
       url:
@@ -102625,7 +102729,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12519,
+      id: 12531,
       kind: 32,
       name: "CSVCMsg_Menu",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_menu",
@@ -102633,7 +102737,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12520,
+      id: 12532,
       kind: 32,
       name: "CSVCMsg_UserMessage",
       url:
@@ -102642,7 +102746,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12521,
+      id: 12533,
       kind: 32,
       name: "CSVCMsg_PaintmapData",
       url:
@@ -102651,7 +102755,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12522,
+      id: 12534,
       kind: 32,
       name: "CSVCMsg_GameEvent",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_gameevent",
@@ -102659,7 +102763,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12523,
+      id: 12535,
       kind: 32,
       name: "CSVCMsg_GameEventList",
       url:
@@ -102668,7 +102772,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12524,
+      id: 12536,
       kind: 32,
       name: "CSVCMsg_TempEntities",
       url:
@@ -102677,7 +102781,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12525,
+      id: 12537,
       kind: 32,
       name: "CSVCMsg_PacketEntities",
       url:
@@ -102686,7 +102790,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12526,
+      id: 12538,
       kind: 32,
       name: "CSVCMsg_Sounds",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_sounds",
@@ -102694,7 +102798,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12527,
+      id: 12539,
       kind: 32,
       name: "CSVCMsg_EntityMsg",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_entitymsg",
@@ -102702,7 +102806,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12528,
+      id: 12540,
       kind: 32,
       name: "CSVCMsg_CmdKeyValues",
       url:
@@ -102711,7 +102815,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12529,
+      id: 12541,
       kind: 32,
       name: "CSVCMsg_EncryptedData",
       url:
@@ -102720,7 +102824,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12530,
+      id: 12542,
       kind: 32,
       name: "CSVCMsg_HltvReplay",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csvcmsg_hltvreplay",
@@ -102728,7 +102832,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12531,
+      id: 12543,
       kind: 32,
       name: "CCLCMsg_HltvReplay",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cclcmsg_hltvreplay",
@@ -102736,7 +102840,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12532,
+      id: 12544,
       kind: 32,
       name: "GameServerPing",
       url: "modules/_protobufs_cstrike15_usermessages_.html#gameserverping",
@@ -102744,7 +102848,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12533,
+      id: 12545,
       kind: 32,
       name: "DetailedSearchStatistic",
       url:
@@ -102753,7 +102857,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12534,
+      id: 12546,
       kind: 32,
       name: "TournamentPlayer",
       url: "modules/_protobufs_cstrike15_usermessages_.html#tournamentplayer",
@@ -102761,7 +102865,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12535,
+      id: 12547,
       kind: 32,
       name: "TournamentTeam",
       url: "modules/_protobufs_cstrike15_usermessages_.html#tournamentteam",
@@ -102769,7 +102873,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12536,
+      id: 12548,
       kind: 32,
       name: "TournamentEvent",
       url: "modules/_protobufs_cstrike15_usermessages_.html#tournamentevent",
@@ -102777,7 +102881,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12537,
+      id: 12549,
       kind: 32,
       name: "GlobalStatistics",
       url: "modules/_protobufs_cstrike15_usermessages_.html#globalstatistics",
@@ -102785,7 +102889,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12538,
+      id: 12550,
       kind: 32,
       name: "OperationalStatisticDescription",
       url:
@@ -102794,7 +102898,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12539,
+      id: 12551,
       kind: 32,
       name: "OperationalStatisticElement",
       url:
@@ -102803,7 +102907,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12540,
+      id: 12552,
       kind: 32,
       name: "OperationalStatisticsPacket",
       url:
@@ -102812,7 +102916,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12541,
+      id: 12553,
       kind: 32,
       name: "PlayerRankingInfo",
       url: "modules/_protobufs_cstrike15_usermessages_.html#playerrankinginfo",
@@ -102820,7 +102924,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12542,
+      id: 12554,
       kind: 32,
       name: "PlayerCommendationInfo",
       url:
@@ -102829,7 +102933,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12543,
+      id: 12555,
       kind: 32,
       name: "PlayerMedalsInfo",
       url: "modules/_protobufs_cstrike15_usermessages_.html#playermedalsinfo",
@@ -102837,7 +102941,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12544,
+      id: 12556,
       kind: 32,
       name: "AccountActivity",
       url: "modules/_protobufs_cstrike15_usermessages_.html#accountactivity",
@@ -102845,7 +102949,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12545,
+      id: 12557,
       kind: 32,
       name: "TournamentMatchSetup",
       url:
@@ -102854,7 +102958,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12546,
+      id: 12558,
       kind: 32,
       name: "ServerHltvInfo",
       url: "modules/_protobufs_cstrike15_usermessages_.html#serverhltvinfo",
@@ -102862,7 +102966,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12547,
+      id: 12559,
       kind: 32,
       name: "IpAddressMask",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ipaddressmask",
@@ -102870,7 +102974,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12548,
+      id: 12560,
       kind: 32,
       name: "XpProgressData",
       url: "modules/_protobufs_cstrike15_usermessages_.html#xpprogressdata",
@@ -102878,7 +102982,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12549,
+      id: 12561,
       kind: 32,
       name: "MatchEndItemUpdates",
       url:
@@ -102887,7 +102991,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12550,
+      id: 12562,
       kind: 32,
       name: "PlayerQuestData",
       url: "modules/_protobufs_cstrike15_usermessages_.html#playerquestdata",
@@ -102895,7 +102999,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12551,
+      id: 12563,
       kind: 32,
       name: "CMsgGC_ServerQuestUpdateData",
       url:
@@ -102904,7 +103008,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12552,
+      id: 12564,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingGCOperationalStats",
       url:
@@ -102913,7 +103017,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12553,
+      id: 12565,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm",
       url:
@@ -102922,7 +103026,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12554,
+      id: 12566,
       kind: 32,
       name: "CMsgGCCStrike15_v2_GC2ServerReservationUpdate",
       url:
@@ -102931,7 +103035,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12555,
+      id: 12567,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingStart",
       url:
@@ -102940,7 +103044,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12556,
+      id: 12568,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingStop",
       url:
@@ -102949,7 +103053,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12557,
+      id: 12569,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingClient2ServerPing",
       url:
@@ -102958,7 +103062,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12558,
+      id: 12570,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate",
       url:
@@ -102967,7 +103071,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12559,
+      id: 12571,
       kind: 32,
       name: "CDataGCCStrike15_v2_TournamentMatchDraft",
       url:
@@ -102976,7 +103080,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12560,
+      id: 12572,
       kind: 32,
       name: "CPreMatchInfoData",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cprematchinfodata",
@@ -102984,7 +103088,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12561,
+      id: 12573,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve",
       url:
@@ -102993,7 +103097,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12562,
+      id: 12574,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingServerReservationResponse",
       url:
@@ -103002,7 +103106,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12563,
+      id: 12575,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve",
       url:
@@ -103011,7 +103115,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12564,
+      id: 12576,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingServerRoundStats",
       url:
@@ -103020,7 +103124,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12565,
+      id: 12577,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingServerMatchEnd",
       url:
@@ -103029,7 +103133,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12566,
+      id: 12578,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingClient2GCHello",
       url:
@@ -103038,7 +103142,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12567,
+      id: 12579,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingGC2ClientHello",
       url:
@@ -103047,7 +103151,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12568,
+      id: 12580,
       kind: 32,
       name: "CMsgGCCStrike15_v2_AccountPrivacySettings",
       url:
@@ -103056,7 +103160,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12569,
+      id: 12581,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon",
       url:
@@ -103065,7 +103169,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12570,
+      id: 12582,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingServer2GCKick",
       url:
@@ -103074,7 +103178,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12571,
+      id: 12583,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate",
       url:
@@ -103083,7 +103187,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12572,
+      id: 12584,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate",
       url:
@@ -103092,7 +103196,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12573,
+      id: 12585,
       kind: 32,
       name: "CMsgGCCStrike15_v2_ServerNotificationForUserPenalty",
       url:
@@ -103101,7 +103205,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12574,
+      id: 12586,
       kind: 32,
       name: "CMsgGCCStrike15_v2_ClientReportPlayer",
       url:
@@ -103110,7 +103214,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12575,
+      id: 12587,
       kind: 32,
       name: "CMsgGCCStrike15_v2_ClientCommendPlayer",
       url:
@@ -103119,7 +103223,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12576,
+      id: 12588,
       kind: 32,
       name: "CMsgGCCStrike15_v2_ClientReportServer",
       url:
@@ -103128,7 +103232,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12577,
+      id: 12589,
       kind: 32,
       name: "CMsgGCCStrike15_v2_ClientReportResponse",
       url:
@@ -103137,7 +103241,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12578,
+      id: 12590,
       kind: 32,
       name: "CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends",
       url:
@@ -103146,7 +103250,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12579,
+      id: 12591,
       kind: 32,
       name: "WatchableMatchInfo",
       url: "modules/_protobufs_cstrike15_usermessages_.html#watchablematchinfo",
@@ -103154,7 +103258,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12580,
+      id: 12592,
       kind: 32,
       name: "CMsgGCCStrike15_v2_ClientRequestJoinFriendData",
       url:
@@ -103163,7 +103267,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12581,
+      id: 12593,
       kind: 32,
       name: "CMsgGCCStrike15_v2_ClientRequestJoinServerData",
       url:
@@ -103172,7 +103276,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12582,
+      id: 12594,
       kind: 32,
       name: "CMsgGCCstrike15_v2_ClientRequestNewMission",
       url:
@@ -103181,7 +103285,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12583,
+      id: 12595,
       kind: 32,
       name: "CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded",
       url:
@@ -103190,7 +103294,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12584,
+      id: 12596,
       kind: 32,
       name: "CMsgGCCStrike15_v2_WatchInfoUsers",
       url:
@@ -103199,7 +103303,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12585,
+      id: 12597,
       kind: 32,
       name: "CMsgGCCStrike15_v2_ClientRequestPlayersProfile",
       url:
@@ -103208,7 +103312,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12586,
+      id: 12598,
       kind: 32,
       name: "CMsgGCCStrike15_v2_PlayersProfile",
       url:
@@ -103217,7 +103321,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12587,
+      id: 12599,
       kind: 32,
       name: "CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate",
       url:
@@ -103226,7 +103330,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12588,
+      id: 12600,
       kind: 32,
       name: "CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment",
       url:
@@ -103235,7 +103339,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12589,
+      id: 12601,
       kind: 32,
       name: "CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus",
       url:
@@ -103244,7 +103348,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12590,
+      id: 12602,
       kind: 32,
       name: "CClientHeaderOverwatchEvidence",
       url:
@@ -103253,7 +103357,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12591,
+      id: 12603,
       kind: 32,
       name: "CMsgGCCStrike15_v2_GC2ClientTextMsg",
       url:
@@ -103262,7 +103366,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12592,
+      id: 12604,
       kind: 32,
       name: "CMsgGCCStrike15_v2_Client2GCTextMsg",
       url:
@@ -103271,7 +103375,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12593,
+      id: 12605,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchEndRunRewardDrops",
       url:
@@ -103280,7 +103384,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12594,
+      id: 12606,
       kind: 32,
       name: "CEconItemPreviewDataBlock",
       url:
@@ -103289,7 +103393,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12595,
+      id: 12607,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchEndRewardDropsNotification",
       url:
@@ -103298,7 +103402,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12596,
+      id: 12608,
       kind: 32,
       name: "CMsgItemAcknowledged",
       url:
@@ -103307,7 +103411,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12597,
+      id: 12609,
       kind: 32,
       name: "CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest",
       url:
@@ -103316,7 +103420,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12598,
+      id: 12610,
       kind: 32,
       name: "CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse",
       url:
@@ -103325,7 +103429,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12599,
+      id: 12611,
       kind: 32,
       name: "CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification",
       url:
@@ -103334,7 +103438,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12600,
+      id: 12612,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames",
       url:
@@ -103343,7 +103447,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12601,
+      id: 12613,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser",
       url:
@@ -103352,7 +103456,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12602,
+      id: 12614,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchListRequestRecentUserGames",
       url:
@@ -103361,7 +103465,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12603,
+      id: 12615,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchListRequestTournamentGames",
       url:
@@ -103370,7 +103474,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12604,
+      id: 12616,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchListRequestFullGameInfo",
       url:
@@ -103379,7 +103483,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12605,
+      id: 12617,
       kind: 32,
       name: "CDataGCCStrike15_v2_MatchInfo",
       url:
@@ -103388,7 +103492,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12606,
+      id: 12618,
       kind: 32,
       name: "CDataGCCStrike15_v2_TournamentGroupTeam",
       url:
@@ -103397,7 +103501,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12607,
+      id: 12619,
       kind: 32,
       name: "CDataGCCStrike15_v2_TournamentGroup",
       url:
@@ -103406,7 +103510,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12608,
+      id: 12620,
       kind: 32,
       name: "CDataGCCStrike15_v2_TournamentSection",
       url:
@@ -103415,7 +103519,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12609,
+      id: 12621,
       kind: 32,
       name: "CDataGCCStrike15_v2_TournamentInfo",
       url:
@@ -103424,7 +103528,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12610,
+      id: 12622,
       kind: 32,
       name: "CMsgGCCStrike15_v2_MatchList",
       url:
@@ -103433,7 +103537,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12611,
+      id: 12623,
       kind: 32,
       name: "CMsgGCCStrike15_v2_Predictions",
       url:
@@ -103442,7 +103546,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12612,
+      id: 12624,
       kind: 32,
       name: "CMsgGCCStrike15_v2_Fantasy",
       url:
@@ -103451,7 +103555,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12613,
+      id: 12625,
       kind: 32,
       name: "CAttribute_String",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cattribute_string",
@@ -103459,7 +103563,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12614,
+      id: 12626,
       kind: 32,
       name: "CMsgGCToGCReloadVersions",
       url:
@@ -103468,7 +103572,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12615,
+      id: 12627,
       kind: 32,
       name: "CMsgCStrike15Welcome",
       url:
@@ -103477,7 +103581,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12616,
+      id: 12628,
       kind: 32,
       name: "CMsgGCCStrike15_v2_ClientVarValueNotificationInfo",
       url:
@@ -103486,7 +103590,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12617,
+      id: 12629,
       kind: 32,
       name: "CMsgGCCStrike15_v2_ServerVarValueNotificationInfo",
       url:
@@ -103495,7 +103599,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12618,
+      id: 12630,
       kind: 32,
       name: "CMsgGCCStrike15_v2_GiftsLeaderboardRequest",
       url:
@@ -103504,7 +103608,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12619,
+      id: 12631,
       kind: 32,
       name: "CMsgGCCStrike15_v2_GiftsLeaderboardResponse",
       url:
@@ -103513,7 +103617,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12620,
+      id: 12632,
       kind: 32,
       name: "CMsgGCCStrike15_v2_ClientSubmitSurveyVote",
       url:
@@ -103522,7 +103626,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12621,
+      id: 12633,
       kind: 32,
       name: "CMsgGCCStrike15_v2_Server2GCClientValidate",
       url:
@@ -103531,7 +103635,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12622,
+      id: 12634,
       kind: 32,
       name: "CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure",
       url:
@@ -103540,7 +103644,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12623,
+      id: 12635,
       kind: 32,
       name: "CMsgGCCStrike15_v2_GC2ClientTournamentInfo",
       url:
@@ -103549,7 +103653,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12624,
+      id: 12636,
       kind: 32,
       name: "CSOEconCoupon",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csoeconcoupon",
@@ -103557,7 +103661,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12625,
+      id: 12637,
       kind: 32,
       name: "CSOQuestProgress",
       url: "modules/_protobufs_cstrike15_usermessages_.html#csoquestprogress",
@@ -103565,7 +103669,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12626,
+      id: 12638,
       kind: 32,
       name: "CSOPersonaDataPublic",
       url:
@@ -103574,7 +103678,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12627,
+      id: 12639,
       kind: 32,
       name: "CMsgGC_GlobalGame_Subscribe",
       url:
@@ -103583,7 +103687,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12628,
+      id: 12640,
       kind: 32,
       name: "CMsgGC_GlobalGame_Unsubscribe",
       url:
@@ -103592,7 +103696,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12629,
+      id: 12641,
       kind: 32,
       name: "CMsgGC_GlobalGame_Play",
       url:
@@ -103601,7 +103705,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12630,
+      id: 12642,
       kind: 32,
       name: "CMsgGCCStrike15_v2_AcknowledgePenalty",
       url:
@@ -103610,7 +103714,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12631,
+      id: 12643,
       kind: 32,
       name: "CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin",
       url:
@@ -103619,7 +103723,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12632,
+      id: 12644,
       kind: 32,
       name: "CMsgGCCStrike15_v2_Client2GCStreamUnlock",
       url:
@@ -103628,7 +103732,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12633,
+      id: 12645,
       kind: 32,
       name: "CMsgProtoBufHeader",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsgprotobufheader",
@@ -103636,7 +103740,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12634,
+      id: 12646,
       kind: 32,
       name: "CMsgWebAPIKey",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsgwebapikey",
@@ -103644,7 +103748,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12635,
+      id: 12647,
       kind: 32,
       name: "CMsgHttpRequest",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsghttprequest",
@@ -103652,7 +103756,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12636,
+      id: 12648,
       kind: 32,
       name: "CMsgWebAPIRequest",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsgwebapirequest",
@@ -103660,7 +103764,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12637,
+      id: 12649,
       kind: 32,
       name: "CMsgHttpResponse",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsghttpresponse",
@@ -103668,7 +103772,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12638,
+      id: 12650,
       kind: 32,
       name: "CMsgAMFindAccounts",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsgamfindaccounts",
@@ -103676,7 +103780,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12639,
+      id: 12651,
       kind: 32,
       name: "CMsgAMFindAccountsResponse",
       url:
@@ -103685,7 +103789,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12640,
+      id: 12652,
       kind: 32,
       name: "CMsgNotifyWatchdog",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsgnotifywatchdog",
@@ -103693,7 +103797,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12641,
+      id: 12653,
       kind: 32,
       name: "CMsgAMGetLicenses",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsgamgetlicenses",
@@ -103701,7 +103805,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12642,
+      id: 12654,
       kind: 32,
       name: "CMsgPackageLicense",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsgpackagelicense",
@@ -103709,7 +103813,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12643,
+      id: 12655,
       kind: 32,
       name: "CMsgAMGetLicensesResponse",
       url:
@@ -103718,7 +103822,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12644,
+      id: 12656,
       kind: 32,
       name: "CMsgAMGetUserGameStats",
       url:
@@ -103727,7 +103831,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12645,
+      id: 12657,
       kind: 32,
       name: "CMsgAMGetUserGameStatsResponse",
       url:
@@ -103736,7 +103840,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12646,
+      id: 12658,
       kind: 32,
       name: "CMsgGCGetCommandList",
       url:
@@ -103745,7 +103849,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12647,
+      id: 12659,
       kind: 32,
       name: "CMsgGCGetCommandListResponse",
       url:
@@ -103754,7 +103858,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12648,
+      id: 12660,
       kind: 32,
       name: "CGCMsgMemCachedGet",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cgcmsgmemcachedget",
@@ -103762,7 +103866,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12649,
+      id: 12661,
       kind: 32,
       name: "CGCMsgMemCachedGetResponse",
       url:
@@ -103771,7 +103875,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12650,
+      id: 12662,
       kind: 32,
       name: "CGCMsgMemCachedSet",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cgcmsgmemcachedset",
@@ -103779,7 +103883,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12651,
+      id: 12663,
       kind: 32,
       name: "CGCMsgMemCachedDelete",
       url:
@@ -103788,7 +103892,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12652,
+      id: 12664,
       kind: 32,
       name: "CGCMsgMemCachedStats",
       url:
@@ -103797,7 +103901,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12653,
+      id: 12665,
       kind: 32,
       name: "CGCMsgMemCachedStatsResponse",
       url:
@@ -103806,7 +103910,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12654,
+      id: 12666,
       kind: 32,
       name: "CGCMsgSQLStats",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cgcmsgsqlstats",
@@ -103814,7 +103918,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12655,
+      id: 12667,
       kind: 32,
       name: "CGCMsgSQLStatsResponse",
       url:
@@ -103823,7 +103927,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12656,
+      id: 12668,
       kind: 32,
       name: "CMsgAMAddFreeLicense",
       url:
@@ -103832,7 +103936,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12657,
+      id: 12669,
       kind: 32,
       name: "CMsgAMAddFreeLicenseResponse",
       url:
@@ -103841,7 +103945,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12658,
+      id: 12670,
       kind: 32,
       name: "CGCMsgGetIPLocation",
       url:
@@ -103850,7 +103954,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12659,
+      id: 12671,
       kind: 32,
       name: "CIPLocationInfo",
       url: "modules/_protobufs_cstrike15_usermessages_.html#ciplocationinfo",
@@ -103858,7 +103962,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12660,
+      id: 12672,
       kind: 32,
       name: "CGCMsgGetIPLocationResponse",
       url:
@@ -103867,7 +103971,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12661,
+      id: 12673,
       kind: 32,
       name: "CGCMsgSystemStatsSchema",
       url:
@@ -103876,7 +103980,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12662,
+      id: 12674,
       kind: 32,
       name: "CGCMsgGetSystemStats",
       url:
@@ -103885,7 +103989,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12663,
+      id: 12675,
       kind: 32,
       name: "CGCMsgGetSystemStatsResponse",
       url:
@@ -103894,7 +103998,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12664,
+      id: 12676,
       kind: 32,
       name: "CMsgAMSendEmail",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsgamsendemail",
@@ -103902,7 +104006,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12665,
+      id: 12677,
       kind: 32,
       name: "CMsgAMSendEmailResponse",
       url:
@@ -103911,7 +104015,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12666,
+      id: 12678,
       kind: 32,
       name: "CMsgGCGetEmailTemplate",
       url:
@@ -103920,7 +104024,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12667,
+      id: 12679,
       kind: 32,
       name: "CMsgGCGetEmailTemplateResponse",
       url:
@@ -103929,7 +104033,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12668,
+      id: 12680,
       kind: 32,
       name: "CMsgAMGrantGuestPasses2",
       url:
@@ -103938,7 +104042,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12669,
+      id: 12681,
       kind: 32,
       name: "CMsgAMGrantGuestPasses2Response",
       url:
@@ -103947,7 +104051,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12670,
+      id: 12682,
       kind: 32,
       name: "CGCSystemMsg_GetAccountDetails",
       url:
@@ -103956,7 +104060,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12671,
+      id: 12683,
       kind: 32,
       name: "CGCSystemMsg_GetAccountDetails_Response",
       url:
@@ -103965,7 +104069,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12672,
+      id: 12684,
       kind: 32,
       name: "CMsgGCGetPersonaNames",
       url:
@@ -103974,7 +104078,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12673,
+      id: 12685,
       kind: 32,
       name: "CMsgGCGetPersonaNames_Response",
       url:
@@ -103983,7 +104087,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12674,
+      id: 12686,
       kind: 32,
       name: "CMsgGCCheckFriendship",
       url:
@@ -103992,7 +104096,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12675,
+      id: 12687,
       kind: 32,
       name: "CMsgGCCheckFriendship_Response",
       url:
@@ -104001,7 +104105,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12676,
+      id: 12688,
       kind: 32,
       name: "CMsgGCMsgMasterSetDirectory",
       url:
@@ -104010,7 +104114,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12677,
+      id: 12689,
       kind: 32,
       name: "CMsgGCMsgMasterSetDirectory_Response",
       url:
@@ -104019,7 +104123,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12678,
+      id: 12690,
       kind: 32,
       name: "CMsgGCMsgWebAPIJobRequestForwardResponse",
       url:
@@ -104028,7 +104132,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12679,
+      id: 12691,
       kind: 32,
       name: "CGCSystemMsg_GetPurchaseTrust_Request",
       url:
@@ -104037,7 +104141,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12680,
+      id: 12692,
       kind: 32,
       name: "CGCSystemMsg_GetPurchaseTrust_Response",
       url:
@@ -104046,7 +104150,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12681,
+      id: 12693,
       kind: 32,
       name: "CMsgGCHAccountVacStatusChange",
       url:
@@ -104055,7 +104159,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12682,
+      id: 12694,
       kind: 32,
       name: "CMsgGCGetPartnerAccountLink",
       url:
@@ -104064,7 +104168,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12683,
+      id: 12695,
       kind: 32,
       name: "CMsgGCGetPartnerAccountLink_Response",
       url:
@@ -104073,7 +104177,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12684,
+      id: 12696,
       kind: 32,
       name: "CMsgGCRoutingInfo",
       url: "modules/_protobufs_cstrike15_usermessages_.html#cmsggcroutinginfo",
@@ -104081,7 +104185,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12685,
+      id: 12697,
       kind: 32,
       name: "CMsgGCMsgMasterSetWebAPIRouting",
       url:
@@ -104090,7 +104194,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12686,
+      id: 12698,
       kind: 32,
       name: "CMsgGCMsgMasterSetClientMsgRouting",
       url:
@@ -104099,7 +104203,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12687,
+      id: 12699,
       kind: 32,
       name: "CMsgGCMsgMasterSetWebAPIRouting_Response",
       url:
@@ -104108,7 +104212,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12688,
+      id: 12700,
       kind: 32,
       name: "CMsgGCMsgMasterSetClientMsgRouting_Response",
       url:
@@ -104117,7 +104221,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12689,
+      id: 12701,
       kind: 32,
       name: "CMsgGCMsgSetOptions",
       url:
@@ -104126,7 +104230,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12690,
+      id: 12702,
       kind: 32,
       name: "CMsgGCHUpdateSession",
       url:
@@ -104135,7 +104239,7 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12691,
+      id: 12703,
       kind: 32,
       name: "CMsgNotificationOfSuspiciousActivity",
       url:
@@ -104144,14 +104248,14 @@ typedoc.search.data = {
       parent: '"protobufs/cstrike15_usermessages"'
     },
     {
-      id: 12692,
+      id: 12704,
       kind: 1,
       name: '"protobufs/netmessages"',
       url: "modules/_protobufs_netmessages_.html",
       classes: "tsd-kind-external-module"
     },
     {
-      id: 12693,
+      id: 12705,
       kind: 32,
       name: "$Reader",
       url: "modules/_protobufs_netmessages_.html#_reader",
@@ -104160,7 +104264,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12694,
+      id: 12706,
       kind: 32,
       name: "$util",
       url: "modules/_protobufs_netmessages_.html#_util",
@@ -104169,7 +104273,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12695,
+      id: 12707,
       kind: 32,
       name: "$root",
       url: "modules/_protobufs_netmessages_.html#_root",
@@ -104178,7 +104282,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12696,
+      id: 12708,
       kind: 32,
       name: "NET_Messages",
       url: "modules/_protobufs_netmessages_.html#net_messages",
@@ -104186,7 +104290,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12697,
+      id: 12709,
       kind: 32,
       name: "SVC_Messages",
       url: "modules/_protobufs_netmessages_.html#svc_messages",
@@ -104194,7 +104298,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12698,
+      id: 12710,
       kind: 32,
       name: "CMsgVector",
       url: "modules/_protobufs_netmessages_.html#cmsgvector",
@@ -104202,7 +104306,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12699,
+      id: 12711,
       kind: 32,
       name: "CMsgVector2D",
       url: "modules/_protobufs_netmessages_.html#cmsgvector2d",
@@ -104210,7 +104314,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12700,
+      id: 12712,
       kind: 32,
       name: "CMsgQAngle",
       url: "modules/_protobufs_netmessages_.html#cmsgqangle",
@@ -104218,7 +104322,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12701,
+      id: 12713,
       kind: 32,
       name: "CMsgRGBA",
       url: "modules/_protobufs_netmessages_.html#cmsgrgba",
@@ -104226,7 +104330,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12702,
+      id: 12714,
       kind: 32,
       name: "CNETMsg_Tick",
       url: "modules/_protobufs_netmessages_.html#cnetmsg_tick",
@@ -104234,7 +104338,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12703,
+      id: 12715,
       kind: 32,
       name: "CNETMsg_StringCmd",
       url: "modules/_protobufs_netmessages_.html#cnetmsg_stringcmd",
@@ -104242,7 +104346,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12704,
+      id: 12716,
       kind: 32,
       name: "CNETMsg_SignonState",
       url: "modules/_protobufs_netmessages_.html#cnetmsg_signonstate",
@@ -104250,7 +104354,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12705,
+      id: 12717,
       kind: 32,
       name: "CMsg_CVars",
       url: "modules/_protobufs_netmessages_.html#cmsg_cvars",
@@ -104258,7 +104362,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12706,
+      id: 12718,
       kind: 32,
       name: "CNETMsg_SetConVar",
       url: "modules/_protobufs_netmessages_.html#cnetmsg_setconvar",
@@ -104266,7 +104370,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12707,
+      id: 12719,
       kind: 32,
       name: "CNETMsg_NOP",
       url: "modules/_protobufs_netmessages_.html#cnetmsg_nop",
@@ -104274,7 +104378,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12708,
+      id: 12720,
       kind: 32,
       name: "CNETMsg_Disconnect",
       url: "modules/_protobufs_netmessages_.html#cnetmsg_disconnect",
@@ -104282,7 +104386,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12709,
+      id: 12721,
       kind: 32,
       name: "CNETMsg_File",
       url: "modules/_protobufs_netmessages_.html#cnetmsg_file",
@@ -104290,7 +104394,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12710,
+      id: 12722,
       kind: 32,
       name: "CNETMsg_SplitScreenUser",
       url: "modules/_protobufs_netmessages_.html#cnetmsg_splitscreenuser",
@@ -104298,7 +104402,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12711,
+      id: 12723,
       kind: 32,
       name: "CNETMsg_PlayerAvatarData",
       url: "modules/_protobufs_netmessages_.html#cnetmsg_playeravatardata",
@@ -104306,7 +104410,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12712,
+      id: 12724,
       kind: 32,
       name: "CCLCMsg_ClientInfo",
       url: "modules/_protobufs_netmessages_.html#cclcmsg_clientinfo",
@@ -104314,7 +104418,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12713,
+      id: 12725,
       kind: 32,
       name: "CCLCMsg_Move",
       url: "modules/_protobufs_netmessages_.html#cclcmsg_move",
@@ -104322,7 +104426,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12714,
+      id: 12726,
       kind: 32,
       name: "CCLCMsg_VoiceData",
       url: "modules/_protobufs_netmessages_.html#cclcmsg_voicedata",
@@ -104330,7 +104434,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12715,
+      id: 12727,
       kind: 32,
       name: "CCLCMsg_BaselineAck",
       url: "modules/_protobufs_netmessages_.html#cclcmsg_baselineack",
@@ -104338,7 +104442,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12716,
+      id: 12728,
       kind: 32,
       name: "CCLCMsg_ListenEvents",
       url: "modules/_protobufs_netmessages_.html#cclcmsg_listenevents",
@@ -104346,7 +104450,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12717,
+      id: 12729,
       kind: 32,
       name: "CCLCMsg_RespondCvarValue",
       url: "modules/_protobufs_netmessages_.html#cclcmsg_respondcvarvalue",
@@ -104354,7 +104458,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12718,
+      id: 12730,
       kind: 32,
       name: "CCLCMsg_FileCRCCheck",
       url: "modules/_protobufs_netmessages_.html#cclcmsg_filecrccheck",
@@ -104362,7 +104466,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12719,
+      id: 12731,
       kind: 32,
       name: "CCLCMsg_LoadingProgress",
       url: "modules/_protobufs_netmessages_.html#cclcmsg_loadingprogress",
@@ -104370,7 +104474,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12720,
+      id: 12732,
       kind: 32,
       name: "CCLCMsg_SplitPlayerConnect",
       url: "modules/_protobufs_netmessages_.html#cclcmsg_splitplayerconnect",
@@ -104378,7 +104482,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12721,
+      id: 12733,
       kind: 32,
       name: "CCLCMsg_CmdKeyValues",
       url: "modules/_protobufs_netmessages_.html#cclcmsg_cmdkeyvalues",
@@ -104386,7 +104490,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12722,
+      id: 12734,
       kind: 32,
       name: "CSVCMsg_ServerInfo",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_serverinfo",
@@ -104394,7 +104498,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12723,
+      id: 12735,
       kind: 32,
       name: "CSVCMsg_ClassInfo",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_classinfo",
@@ -104402,7 +104506,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12724,
+      id: 12736,
       kind: 32,
       name: "CSVCMsg_SendTable",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_sendtable",
@@ -104410,7 +104514,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12725,
+      id: 12737,
       kind: 32,
       name: "CSVCMsg_Print",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_print",
@@ -104418,7 +104522,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12726,
+      id: 12738,
       kind: 32,
       name: "CSVCMsg_SetPause",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_setpause",
@@ -104426,7 +104530,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12727,
+      id: 12739,
       kind: 32,
       name: "CSVCMsg_SetView",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_setview",
@@ -104434,7 +104538,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12728,
+      id: 12740,
       kind: 32,
       name: "CSVCMsg_CreateStringTable",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_createstringtable",
@@ -104442,7 +104546,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12729,
+      id: 12741,
       kind: 32,
       name: "CSVCMsg_UpdateStringTable",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_updatestringtable",
@@ -104450,7 +104554,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12730,
+      id: 12742,
       kind: 32,
       name: "CSVCMsg_VoiceInit",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_voiceinit",
@@ -104458,7 +104562,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12731,
+      id: 12743,
       kind: 32,
       name: "CSVCMsg_VoiceData",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_voicedata",
@@ -104466,7 +104570,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12732,
+      id: 12744,
       kind: 32,
       name: "CSVCMsg_FixAngle",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_fixangle",
@@ -104474,7 +104578,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12733,
+      id: 12745,
       kind: 32,
       name: "CSVCMsg_CrosshairAngle",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_crosshairangle",
@@ -104482,7 +104586,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12734,
+      id: 12746,
       kind: 32,
       name: "CSVCMsg_Prefetch",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_prefetch",
@@ -104490,7 +104594,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12735,
+      id: 12747,
       kind: 32,
       name: "CSVCMsg_BSPDecal",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_bspdecal",
@@ -104498,7 +104602,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12736,
+      id: 12748,
       kind: 32,
       name: "CSVCMsg_SplitScreen",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_splitscreen",
@@ -104506,7 +104610,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12737,
+      id: 12749,
       kind: 32,
       name: "CSVCMsg_GetCvarValue",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_getcvarvalue",
@@ -104514,7 +104618,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12738,
+      id: 12750,
       kind: 32,
       name: "CSVCMsg_Menu",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_menu",
@@ -104522,7 +104626,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12739,
+      id: 12751,
       kind: 32,
       name: "CSVCMsg_UserMessage",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_usermessage",
@@ -104530,7 +104634,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12740,
+      id: 12752,
       kind: 32,
       name: "CSVCMsg_PaintmapData",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_paintmapdata",
@@ -104538,7 +104642,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12741,
+      id: 12753,
       kind: 32,
       name: "CSVCMsg_GameEvent",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_gameevent",
@@ -104546,7 +104650,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12742,
+      id: 12754,
       kind: 32,
       name: "CSVCMsg_GameEventList",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_gameeventlist",
@@ -104554,7 +104658,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12743,
+      id: 12755,
       kind: 32,
       name: "CSVCMsg_TempEntities",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_tempentities",
@@ -104562,7 +104666,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12744,
+      id: 12756,
       kind: 32,
       name: "CSVCMsg_PacketEntities",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_packetentities",
@@ -104570,7 +104674,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12745,
+      id: 12757,
       kind: 32,
       name: "CSVCMsg_Sounds",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_sounds",
@@ -104578,7 +104682,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12746,
+      id: 12758,
       kind: 32,
       name: "CSVCMsg_EntityMsg",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_entitymsg",
@@ -104586,7 +104690,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12747,
+      id: 12759,
       kind: 32,
       name: "CSVCMsg_CmdKeyValues",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_cmdkeyvalues",
@@ -104594,7 +104698,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12748,
+      id: 12760,
       kind: 32,
       name: "CSVCMsg_EncryptedData",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_encrypteddata",
@@ -104602,7 +104706,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12749,
+      id: 12761,
       kind: 32,
       name: "CSVCMsg_HltvReplay",
       url: "modules/_protobufs_netmessages_.html#csvcmsg_hltvreplay",
@@ -104610,7 +104714,7 @@ typedoc.search.data = {
       parent: '"protobufs/netmessages"'
     },
     {
-      id: 12750,
+      id: 12762,
       kind: 32,
       name: "CCLCMsg_HltvReplay",
       url: "modules/_protobufs_netmessages_.html#cclcmsg_hltvreplay",
