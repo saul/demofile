@@ -293,6 +293,14 @@ export const itemDefinitionIndexMap: {
     className: "weapon_knife_push",
     itemName: "Shadow Daggers"
   },
+  "517": {
+    className: "weapon_knife_cord",
+    itemName: "Paracord Knife"
+  },
+  "518": {
+    className: "weapon_knife_canis",
+    itemName: "Survival Knife"
+  },
   "519": {
     className: "weapon_knife_ursus",
     itemName: "Ursus Knife"
@@ -301,6 +309,10 @@ export const itemDefinitionIndexMap: {
     className: "weapon_knife_gypsy_jackknife",
     itemName: "Navaja Knife"
   },
+  "521": {
+    className: "weapon_knife_outdoor",
+    itemName: "Nomad Knife"
+  },
   "522": {
     className: "weapon_knife_stiletto",
     itemName: "Stiletto Knife"
@@ -308,5 +320,9 @@ export const itemDefinitionIndexMap: {
   "523": {
     className: "weapon_knife_widowmaker",
     itemName: "Talon Knife"
+  },
+  "525": {
+    className: "weapon_knife_skeleton",
+    itemName: "Skeleton Knife"
   }
 };
