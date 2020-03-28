@@ -24,6 +24,8 @@ const NORMAL_FRACTIONAL_BITS = 11;
 const NORMAL_DENOMINATOR = (1 << NORMAL_FRACTIONAL_BITS) - 1;
 const NORMAL_RESOLUTION = 1.0 / NORMAL_DENOMINATOR;
 
+const MAX_VAR_INT32_BYTES = 5;
+
 declare module "bit-buffer" {
   interface BitView {
     silentOverflow: boolean;
@@ -47,6 +49,8 @@ declare module "bit-buffer" {
     readUInt8(): number;
     readUInt16(): number;
     readUInt32(): number;
+    readUVarInt32(): number;
+    readVarInt32(): number;
     writeUInt8(value: number): void;
     writeUInt16(value: number): void;
     writeUInt32(value: number): void;
@@ -146,6 +150,28 @@ BitStream.prototype.readBitCoord = function(this: BitStream) {
   }
 
   return value;
+};
+
+BitStream.prototype.readUVarInt32 = function(this: BitStream) {
+  let result = 0;
+  let count = 0;
+  let bytes: number;
+
+  do {
+    if (count === MAX_VAR_INT32_BYTES) {
+      return result;
+    }
+    bytes = this.readUInt8();
+    result |= (bytes & 0x7f) << (7 * count);
+    ++count;
+  } while (bytes & 0x80);
+
+  return result;
+};
+
+BitStream.prototype.readVarInt32 = function(this: BitStream) {
+  const result = this.readUVarInt32();
+  return (result >> 1) ^ -(result & 1);
 };
 
 BitStream.prototype.readBitCoordMP = function(
