@@ -155,42 +155,66 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @returns User ID
    */
   get userId(): number {
-    return this.userInfo!.userId;
+    if (this.userInfo === null) {
+      return 0;
+    }
+
+    return this.userInfo.userId;
   }
 
   /**
    * @returns Steam ID
    */
   get steamId(): string {
-    return this.userInfo!.guid;
+    if (this.userInfo === null) {
+      return "";
+    }
+
+    return this.userInfo.guid;
   }
 
   /**
    * @returns Steam 64 ID
    */
   get steam64Id(): string {
-    return this.userInfo!.xuid.toString();
+    if (this.userInfo === null) {
+      return "";
+    }
+
+    return this.userInfo.xuid.toString();
   }
 
   /**
    * @returns Player name
    */
   get name() {
-    return this.userInfo!.name;
+    if (this.userInfo === null) {
+      return "";
+    }
+
+    return this.userInfo.name;
   }
 
   /**
    * @returns Is this player fake (i.e. a bot)
    */
   get isFakePlayer(): boolean {
-    return this.userInfo!.fakePlayer;
+    if (this.userInfo === null) {
+      return false;
+    }
+
+    return this.userInfo.fakePlayer;
   }
 
   /**
    * @returns Is this player a HLTV relay
    */
   get isHltv(): boolean {
-    return this.userInfo!.isHltv;
+    if (this.userInfo === null) {
+      return false;
+    }
+
+    return this.userInfo.isHltv;
   }
 
   /**
