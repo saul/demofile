@@ -119,6 +119,10 @@ export interface IEventPlayerDeath {
   revenge: number;
   penetrated: number;
   noreplay: boolean;
+  wipe: number;
+  noscope: boolean;
+  thrusmoke: boolean;
+  attackerblind: boolean;
 }
 export interface IEventPlayerHurt {
   userid: number;
