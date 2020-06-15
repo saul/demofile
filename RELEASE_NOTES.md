@@ -6,6 +6,11 @@
 - Unreleased release notes here
 -->
 
+### 1.4.0 (2020-06-15)
+
+- :sparkles: #152: Updated event definitions
+- :bug: #154: Fix `EventEmitter` TypeScript compilation error
+
 ### 1.3.1 (2020-03-03)
 
 - :sparkles: Update item definitions

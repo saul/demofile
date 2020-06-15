@@ -1,6 +1,6 @@
 /// <reference types="bytebuffer" />
 /// <reference types="node" />
-import EventEmitter = require("events");
+import { EventEmitter } from "events";
 import { BitStream } from "./ext/bitbuffer";
 import { DemoFile } from "./demo";
 import { GameRules } from "./entities/gamerules";

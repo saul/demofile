@@ -90,6 +90,10 @@ export interface IEventCsRoundFinalBeep {}
 
 export interface IEventRoundTimeWarning {}
 
+export interface IEventHltvReplay {
+  delay: number;
+}
+
 export interface IEventTeamInfo {
   teamid: number;
   teamname: string;
@@ -142,8 +146,12 @@ export interface IEventPlayerDeath {
   headshot: boolean;
   dominated: number;
   revenge: number;
+  wipe: number;
   penetrated: number;
   noreplay: boolean;
+  noscope: boolean;
+  thrusmoke: boolean;
+  attackerblind: boolean;
 }
 
 export interface IEventPlayerHurt {
@@ -235,6 +243,7 @@ export interface IEventRoundEnd {
   message: string;
   legacy: number;
   player_count: number;
+  nomusic: number;
 }
 
 export interface IEventRoundEndUploadStats {}
@@ -540,6 +549,9 @@ export interface IEventOtherDeath {
   weapon_originalowner_xuid: string;
   headshot: boolean;
   penetrated: number;
+  noscope: boolean;
+  thrusmoke: boolean;
+  attackerblind: boolean;
 }
 
 export interface IEventItemPurchase {
@@ -705,6 +717,19 @@ export interface IEventItemPickup {
   item: string;
   silent: boolean;
   defindex: number;
+}
+
+export interface IEventItemPickupSlerp {
+  userid: number;
+  index: number;
+  behavior: number;
+}
+
+export interface IEventItemPickupFailed {
+  userid: number;
+  item: string;
+  reason: number;
+  limit: number;
 }
 
 export interface IEventItemRemove {
@@ -1006,6 +1031,13 @@ export interface IEventRoundMvp {
   userid: number;
   reason: number;
   musickitmvps: number;
+  nomusic: number;
+}
+
+export interface IEventShowSurvivalRespawnStatus {
+  loc_token: string;
+  duration: number;
+  userid: number;
 }
 
 export interface IEventClientDisconnect {}
@@ -1102,6 +1134,10 @@ export interface IEventPlayerGivenC4 {
   userid: number;
 }
 
+export interface IEventPlayerBecomeGhost {
+  userid: number;
+}
+
 export interface IEventGgResetRoundStartSounds {
   userid: number;
 }
@@ -1154,6 +1190,8 @@ export interface IEventCsPrevNextSpectator {
 
 export interface IEventNextlevelChanged {
   nextlevel: string;
+  mapgroup: string;
+  skirmishmode: string;
 }
 
 export interface IEventSeasoncoinLevelup {
@@ -1169,6 +1207,114 @@ export interface IEventTournamentReward {
 }
 
 export interface IEventStartHalftime {}
+
+export interface IEventAmmoRefill {
+  userid: number;
+  success: boolean;
+}
+
+export interface IEventParachutePickup {
+  userid: number;
+}
+
+export interface IEventParachuteDeploy {
+  userid: number;
+}
+
+export interface IEventDronegunAttack {
+  userid: number;
+}
+
+export interface IEventDroneDispatched {
+  userid: number;
+  priority: number;
+  drone_dispatched: number;
+}
+
+export interface IEventLootCrateVisible {
+  userid: number;
+  subject: number;
+  type: string;
+}
+
+export interface IEventLootCrateOpened {
+  userid: number;
+  type: string;
+}
+
+export interface IEventOpenCrateInstr {
+  userid: number;
+  subject: number;
+  type: string;
+}
+
+export interface IEventSmokeBeaconParadrop {
+  userid: number;
+  paradrop: number;
+}
+
+export interface IEventSurvivalParadropSpawn {
+  entityid: number;
+}
+
+export interface IEventSurvivalParadropBreak {
+  entityid: number;
+}
+
+export interface IEventDroneCargoDetached {
+  userid: number;
+  cargo: number;
+  delivered: boolean;
+}
+
+export interface IEventDroneAboveRoof {
+  userid: number;
+  cargo: number;
+}
+
+export interface IEventChoppersIncomingWarning {
+  global: boolean;
+}
+
+export interface IEventFirstbombsIncomingWarning {
+  global: boolean;
+}
+
+export interface IEventDzItemInteraction {
+  userid: number;
+  subject: number;
+  type: string;
+}
+
+export interface IEventSnowballHitPlayerFace {
+  userid: number;
+}
+
+export interface IEventSurvivalTeammateRespawn {
+  userid: number;
+}
+
+export interface IEventSurvivalNoRespawnsWarning {
+  userid: number;
+}
+
+export interface IEventSurvivalNoRespawnsFinal {
+  userid: number;
+}
+
+export interface IEventPlayerPing {
+  userid: number;
+  entityid: number;
+  x: number;
+  y: number;
+  z: number;
+}
+
+export interface IEventPlayerPingStop {
+  entityid: number;
+}
+
+export interface IEventGuardianWaveRestart {}
 
 export interface IEventHltvStatus {
   clients: number;
@@ -1312,6 +1458,11 @@ export interface INonSpecificGameEventCsRoundFinalBeep {
 export interface INonSpecificGameEventRoundTimeWarning {
   name: "round_time_warning";
   event: IEventRoundTimeWarning;
+}
+
+export interface INonSpecificGameEventHltvReplay {
+  name: "hltv_replay";
+  event: IEventHltvReplay;
 }
 
 export interface INonSpecificGameEventTeamInfo {
@@ -1934,6 +2085,16 @@ export interface INonSpecificGameEventItemPickup {
   event: IEventItemPickup;
 }
 
+export interface INonSpecificGameEventItemPickupSlerp {
+  name: "item_pickup_slerp";
+  event: IEventItemPickupSlerp;
+}
+
+export interface INonSpecificGameEventItemPickupFailed {
+  name: "item_pickup_failed";
+  event: IEventItemPickupFailed;
+}
+
 export interface INonSpecificGameEventItemRemove {
   name: "item_remove";
   event: IEventItemRemove;
@@ -2224,6 +2385,11 @@ export interface INonSpecificGameEventRoundMvp {
   event: IEventRoundMvp;
 }
 
+export interface INonSpecificGameEventShowSurvivalRespawnStatus {
+  name: "show_survival_respawn_status";
+  event: IEventShowSurvivalRespawnStatus;
+}
+
 export interface INonSpecificGameEventClientDisconnect {
   name: "client_disconnect";
   event: IEventClientDisconnect;
@@ -2324,6 +2490,11 @@ export interface INonSpecificGameEventPlayerGivenC4 {
   event: IEventPlayerGivenC4;
 }
 
+export interface INonSpecificGameEventPlayerBecomeGhost {
+  name: "player_become_ghost";
+  event: IEventPlayerBecomeGhost;
+}
+
 export interface INonSpecificGameEventGgResetRoundStartSounds {
   name: "gg_reset_round_start_sounds";
   event: IEventGgResetRoundStartSounds;
@@ -2409,6 +2580,121 @@ export interface INonSpecificGameEventStartHalftime {
   event: IEventStartHalftime;
 }
 
+export interface INonSpecificGameEventAmmoRefill {
+  name: "ammo_refill";
+  event: IEventAmmoRefill;
+}
+
+export interface INonSpecificGameEventParachutePickup {
+  name: "parachute_pickup";
+  event: IEventParachutePickup;
+}
+
+export interface INonSpecificGameEventParachuteDeploy {
+  name: "parachute_deploy";
+  event: IEventParachuteDeploy;
+}
+
+export interface INonSpecificGameEventDronegunAttack {
+  name: "dronegun_attack";
+  event: IEventDronegunAttack;
+}
+
+export interface INonSpecificGameEventDroneDispatched {
+  name: "drone_dispatched";
+  event: IEventDroneDispatched;
+}
+
+export interface INonSpecificGameEventLootCrateVisible {
+  name: "loot_crate_visible";
+  event: IEventLootCrateVisible;
+}
+
+export interface INonSpecificGameEventLootCrateOpened {
+  name: "loot_crate_opened";
+  event: IEventLootCrateOpened;
+}
+
+export interface INonSpecificGameEventOpenCrateInstr {
+  name: "open_crate_instr";
+  event: IEventOpenCrateInstr;
+}
+
+export interface INonSpecificGameEventSmokeBeaconParadrop {
+  name: "smoke_beacon_paradrop";
+  event: IEventSmokeBeaconParadrop;
+}
+
+export interface INonSpecificGameEventSurvivalParadropSpawn {
+  name: "survival_paradrop_spawn";
+  event: IEventSurvivalParadropSpawn;
+}
+
+export interface INonSpecificGameEventSurvivalParadropBreak {
+  name: "survival_paradrop_break";
+  event: IEventSurvivalParadropBreak;
+}
+
+export interface INonSpecificGameEventDroneCargoDetached {
+  name: "drone_cargo_detached";
+  event: IEventDroneCargoDetached;
+}
+
+export interface INonSpecificGameEventDroneAboveRoof {
+  name: "drone_above_roof";
+  event: IEventDroneAboveRoof;
+}
+
+export interface INonSpecificGameEventChoppersIncomingWarning {
+  name: "choppers_incoming_warning";
+  event: IEventChoppersIncomingWarning;
+}
+
+export interface INonSpecificGameEventFirstbombsIncomingWarning {
+  name: "firstbombs_incoming_warning";
+  event: IEventFirstbombsIncomingWarning;
+}
+
+export interface INonSpecificGameEventDzItemInteraction {
+  name: "dz_item_interaction";
+  event: IEventDzItemInteraction;
+}
+
+export interface INonSpecificGameEventSnowballHitPlayerFace {
+  name: "snowball_hit_player_face";
+  event: IEventSnowballHitPlayerFace;
+}
+
+export interface INonSpecificGameEventSurvivalTeammateRespawn {
+  name: "survival_teammate_respawn";
+  event: IEventSurvivalTeammateRespawn;
+}
+
+export interface INonSpecificGameEventSurvivalNoRespawnsWarning {
+  name: "survival_no_respawns_warning";
+  event: IEventSurvivalNoRespawnsWarning;
+}
+
+export interface INonSpecificGameEventSurvivalNoRespawnsFinal {
+  name: "survival_no_respawns_final";
+  event: IEventSurvivalNoRespawnsFinal;
+}
+
+export interface INonSpecificGameEventPlayerPing {
+  name: "player_ping";
+  event: IEventPlayerPing;
+}
+
+export interface INonSpecificGameEventPlayerPingStop {
+  name: "player_ping_stop";
+  event: IEventPlayerPingStop;
+}
+
+export interface INonSpecificGameEventGuardianWaveRestart {
+  name: "guardian_wave_restart";
+  event: IEventGuardianWaveRestart;
+}
+
 export interface INonSpecificGameEventHltvStatus {
   name: "hltv_status";
   event: IEventHltvStatus;
@@ -2476,6 +2762,7 @@ export type INonSpecificGameEvent =
   | INonSpecificGameEventCsRoundStartBeep
   | INonSpecificGameEventCsRoundFinalBeep
   | INonSpecificGameEventRoundTimeWarning
+  | INonSpecificGameEventHltvReplay
   | INonSpecificGameEventTeamInfo
   | INonSpecificGameEventTeamScore
   | INonSpecificGameEventTeamplayBroadcastAudio
@@ -2600,6 +2887,8 @@ export type INonSpecificGameEvent =
   | INonSpecificGameEventWeaponZoomRifle
   | INonSpecificGameEventPlayerSpawned
   | INonSpecificGameEventItemPickup
+  | INonSpecificGameEventItemPickupSlerp
+  | INonSpecificGameEventItemPickupFailed
   | INonSpecificGameEventItemRemove
   | INonSpecificGameEventAmmoPickup
   | INonSpecificGameEventItemEquip
@@ -2658,6 +2947,7 @@ export type INonSpecificGameEvent =
   | INonSpecificGameEventRepostXboxAchievements
   | INonSpecificGameEventMatchEndConditions
   | INonSpecificGameEventRoundMvp
+  | INonSpecificGameEventShowSurvivalRespawnStatus
   | INonSpecificGameEventClientDisconnect
   | INonSpecificGameEventGgPlayerLevelup
   | INonSpecificGameEventGgtrPlayerLevelup
@@ -2678,6 +2968,7 @@ export type INonSpecificGameEvent =
   | INonSpecificGameEventSfuievent
   | INonSpecificGameEventStartVote
   | INonSpecificGameEventPlayerGivenC4
+  | INonSpecificGameEventPlayerBecomeGhost
   | INonSpecificGameEventGgResetRoundStartSounds
   | INonSpecificGameEventTrPlayerFlashbanged
   | INonSpecificGameEventTrMarkComplete
@@ -2695,6 +2986,29 @@ export type INonSpecificGameEvent =
   | INonSpecificGameEventSeasoncoinLevelup
   | INonSpecificGameEventTournamentReward
   | INonSpecificGameEventStartHalftime
+  | INonSpecificGameEventAmmoRefill
+  | INonSpecificGameEventParachutePickup
+  | INonSpecificGameEventParachuteDeploy
+  | INonSpecificGameEventDronegunAttack
+  | INonSpecificGameEventDroneDispatched
+  | INonSpecificGameEventLootCrateVisible
+  | INonSpecificGameEventLootCrateOpened
+  | INonSpecificGameEventOpenCrateInstr
+  | INonSpecificGameEventSmokeBeaconParadrop
+  | INonSpecificGameEventSurvivalParadropSpawn
+  | INonSpecificGameEventSurvivalParadropBreak
+  | INonSpecificGameEventDroneCargoDetached
+  | INonSpecificGameEventDroneAboveRoof
+  | INonSpecificGameEventChoppersIncomingWarning
+  | INonSpecificGameEventFirstbombsIncomingWarning
+  | INonSpecificGameEventDzItemInteraction
+  | INonSpecificGameEventSnowballHitPlayerFace
+  | INonSpecificGameEventSurvivalTeammateRespawn
+  | INonSpecificGameEventSurvivalNoRespawnsWarning
+  | INonSpecificGameEventSurvivalNoRespawnsFinal
+  | INonSpecificGameEventPlayerPing
+  | INonSpecificGameEventPlayerPingStop
+  | INonSpecificGameEventGuardianWaveRestart
   | INonSpecificGameEventHltvStatus
   | INonSpecificGameEventHltvCameraman
   | INonSpecificGameEventHltvRankCamera
@@ -2764,6 +3078,7 @@ declare module "./gameevents" {
       event: "round_time_warning",
       listener: (event: IEventRoundTimeWarning) => void
     ): this;
+    on(event: "hltv_replay", listener: (event: IEventHltvReplay) => void): this;
     on(event: "team_info", listener: (event: IEventTeamInfo) => void): this;
     on(event: "team_score", listener: (event: IEventTeamScore) => void): this;
     on(
@@ -3185,6 +3500,14 @@ declare module "./gameevents" {
       listener: (event: IEventPlayerSpawned) => void
     ): this;
     on(event: "item_pickup", listener: (event: IEventItemPickup) => void): this;
+    on(
+      event: "item_pickup_slerp",
+      listener: (event: IEventItemPickupSlerp) => void
+    ): this;
+    on(
+      event: "item_pickup_failed",
+      listener: (event: IEventItemPickupFailed) => void
+    ): this;
     on(event: "item_remove", listener: (event: IEventItemRemove) => void): this;
     on(event: "ammo_pickup", listener: (event: IEventAmmoPickup) => void): this;
     on(event: "item_equip", listener: (event: IEventItemEquip) => void): this;
@@ -3391,6 +3714,10 @@ declare module "./gameevents" {
     ): this;
     on(event: "round_mvp", listener: (event: IEventRoundMvp) => void): this;
     on(
+      event: "show_survival_respawn_status",
+      listener: (event: IEventShowSurvivalRespawnStatus) => void
+    ): this;
+    on(
       event: "client_disconnect",
       listener: (event: IEventClientDisconnect) => void
     ): this;
@@ -3459,6 +3786,10 @@ declare module "./gameevents" {
       listener: (event: IEventPlayerGivenC4) => void
     ): this;
     on(
+      event: "player_become_ghost",
+      listener: (event: IEventPlayerBecomeGhost) => void
+    ): this;
+    on(
       event: "gg_reset_round_start_sounds",
       listener: (event: IEventGgResetRoundStartSounds) => void
     ): this;
@@ -3525,6 +3856,92 @@ declare module "./gameevents" {
     on(
       event: "start_halftime",
       listener: (event: IEventStartHalftime) => void
+    ): this;
+    on(event: "ammo_refill", listener: (event: IEventAmmoRefill) => void): this;
+    on(
+      event: "parachute_pickup",
+      listener: (event: IEventParachutePickup) => void
+    ): this;
+    on(
+      event: "parachute_deploy",
+      listener: (event: IEventParachuteDeploy) => void
+    ): this;
+    on(
+      event: "dronegun_attack",
+      listener: (event: IEventDronegunAttack) => void
+    ): this;
+    on(
+      event: "drone_dispatched",
+      listener: (event: IEventDroneDispatched) => void
+    ): this;
+    on(
+      event: "loot_crate_visible",
+      listener: (event: IEventLootCrateVisible) => void
+    ): this;
+    on(
+      event: "loot_crate_opened",
+      listener: (event: IEventLootCrateOpened) => void
+    ): this;
+    on(
+      event: "open_crate_instr",
+      listener: (event: IEventOpenCrateInstr) => void
+    ): this;
+    on(
+      event: "smoke_beacon_paradrop",
+      listener: (event: IEventSmokeBeaconParadrop) => void
+    ): this;
+    on(
+      event: "survival_paradrop_spawn",
+      listener: (event: IEventSurvivalParadropSpawn) => void
+    ): this;
+    on(
+      event: "survival_paradrop_break",
+      listener: (event: IEventSurvivalParadropBreak) => void
+    ): this;
+    on(
+      event: "drone_cargo_detached",
+      listener: (event: IEventDroneCargoDetached) => void
+    ): this;
+    on(
+      event: "drone_above_roof",
+      listener: (event: IEventDroneAboveRoof) => void
+    ): this;
+    on(
+      event: "choppers_incoming_warning",
+      listener: (event: IEventChoppersIncomingWarning) => void
+    ): this;
+    on(
+      event: "firstbombs_incoming_warning",
+      listener: (event: IEventFirstbombsIncomingWarning) => void
+    ): this;
+    on(
+      event: "dz_item_interaction",
+      listener: (event: IEventDzItemInteraction) => void
+    ): this;
+    on(
+      event: "snowball_hit_player_face",
+      listener: (event: IEventSnowballHitPlayerFace) => void
+    ): this;
+    on(
+      event: "survival_teammate_respawn",
+      listener: (event: IEventSurvivalTeammateRespawn) => void
+    ): this;
+    on(
+      event: "survival_no_respawns_warning",
+      listener: (event: IEventSurvivalNoRespawnsWarning) => void
+    ): this;
+    on(
+      event: "survival_no_respawns_final",
+      listener: (event: IEventSurvivalNoRespawnsFinal) => void
+    ): this;
+    on(event: "player_ping", listener: (event: IEventPlayerPing) => void): this;
+    on(
+      event: "player_ping_stop",
+      listener: (event: IEventPlayerPingStop) => void
+    ): this;
+    on(
+      event: "guardian_wave_restart",
+      listener: (event: IEventGuardianWaveRestart) => void
     ): this;
     on(event: "hltv_status", listener: (event: IEventHltvStatus) => void): this;
     on(
