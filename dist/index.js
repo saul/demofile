@@ -4,7 +4,7 @@
 /// <reference path="./protobufs/cstrike15_usermessages.d.ts" />
 /// <reference path="./protobufs/netmessages.d.ts" />
 function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+  for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./entities/baseentity"));

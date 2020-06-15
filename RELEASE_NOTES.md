@@ -3,7 +3,8 @@
 <!--
 ### Unreleased
 
-- Unreleased release notes here
+- :bug: #154: Fixed `@types` dependencies for `lodash` and `bytebuffer`
+- :bug: #154: Audited npm dependencies to fix vulnerabilities
 -->
 
 ### 1.4.0 (2020-06-15)
