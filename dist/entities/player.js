@@ -167,6 +167,12 @@ class Player extends baseentity_1.BaseEntity {
     return this.getProp("DT_CSPlayer", "m_bHasHelmet");
   }
   /**
+   * @returns Does the player is controlling a BOT?
+   */
+  get isControllingBot() {
+    return this.getProp("DT_CSPlayer", "m_bIsControllingBot");
+  }
+  /**
    * Retrieves the value of an array property on the singleton entity DT_CSPlayerResource.
    * @param {string} propName - Name of the property on DT_CSPlayerResource to retrieve
    * @returns {*} Property value

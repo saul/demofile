@@ -26,6 +26,8 @@ declare module "bit-buffer" {
     readUInt8(): number;
     readUInt16(): number;
     readUInt32(): number;
+    readUVarInt32(): number;
+    readVarInt32(): number;
     writeUInt8(value: number): void;
     writeUInt16(value: number): void;
     writeUInt32(value: number): void;
