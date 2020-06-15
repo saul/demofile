@@ -93,13 +93,11 @@ function makeIntDecoder(
   sendProp: ISendProp
 ): (bitbuf: BitStream) => number | EntityHandle | boolean {
   if ((sendProp.flags & SPROP_VARINT) !== 0) {
-    /*eslint-disable no-unreachable*/
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
-      throw new Error("32-bit unsigned varints not implemented"); // TODO
+      return bitbuf => bitbuf.readUVarInt32();
     } else {
-      throw new Error("32-bit signed varints not implemented"); // TODO
+      return bitbuf => bitbuf.readVarInt32();
     }
-    /*eslint-enable no-unreachable*/
   } else {
     const numBits = sendProp.numBits;
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
