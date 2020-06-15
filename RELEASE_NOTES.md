@@ -9,6 +9,8 @@
 ### 1.4.0 (2020-06-15)
 
 - :sparkles: #152: Updated event definitions
+- :sparkles: #148: Added `Player#isControllingBot` (thanks @akiver)
+- :bug: #147: Fix `Team#members` returning null players (thanks @akiver)
 - :bug: #154: Fix `EventEmitter` TypeScript compilation error
 
 ### 1.3.1 (2020-03-03)
