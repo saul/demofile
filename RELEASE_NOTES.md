@@ -6,6 +6,11 @@
 - Unreleased release notes here
 -->
 
+### 1.5.0 (2020-06-18)
+
+- :zap: #156: Added `error` event to demofile when parsing fails
+- :zap: #156: Don't emit `tickend` on error
+
 ### 1.4.0 (2020-06-15)
 
 - :sparkles: #152: Updated event definitions

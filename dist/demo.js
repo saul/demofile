@@ -266,7 +266,7 @@ class DemoFile extends events_1.EventEmitter {
     } catch (e) {
       // Always cancel if we have an error - we've already scheduled the next tick
       this.cancel();
-      this.emit("tickend", this.currentTick);
+      this.emit("error", e);
       this.emit("end", { error: e });
     }
   }

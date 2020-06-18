@@ -188,6 +188,12 @@ export declare interface DemoFile {
   emit(name: "start"): boolean;
 
   /**
+   * Fired when parsing failed.
+   */
+  on(event: "error", listener: (error: Error) => void): this;
+  emit(name: "error", error: Error): boolean;
+
+  /**
    * Fired when parsing has finished, successfully or otherwise.
    */
   on(event: "end", listener: (event: IDemoEndEvent) => void): this;
@@ -624,7 +630,7 @@ export class DemoFile extends EventEmitter {
       // Always cancel if we have an error - we've already scheduled the next tick
       this.cancel();
 
-      this.emit("tickend", this.currentTick);
+      this.emit("error", e);
       this.emit("end", { error: e });
     }
   }

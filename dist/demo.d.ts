@@ -117,6 +117,11 @@ export declare interface DemoFile {
   on(event: "start", listener: () => void): this;
   emit(name: "start"): boolean;
   /**
+   * Fired when parsing failed.
+   */
+  on(event: "error", listener: (error: Error) => void): this;
+  emit(name: "error", error: Error): boolean;
+  /**
    * Fired when parsing has finished, successfully or otherwise.
    */
   on(event: "end", listener: (event: IDemoEndEvent) => void): this;
