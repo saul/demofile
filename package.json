@@ -27,7 +27,7 @@
   "dependencies": {
     "bit-buffer": "0.0.3",
     "bytebuffer": "^5.0.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "long": "^3.0.3",
     "protobufjs": "^6.8.8"
   },
