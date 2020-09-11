@@ -23,6 +23,10 @@
     "version": "npm run generate-docs && git add -A docs",
     "postversion": "git push && git push --tags && npm publish"
   },
+  "files": [
+    "dist",
+    "browser"
+  ],
   "main": "dist/demo.js",
   "dependencies": {
     "bit-buffer": "0.0.3",
