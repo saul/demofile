@@ -439,6 +439,8 @@ export class DemoFile extends EventEmitter {
   private _immediateTimerToken: NodeJS.Immediate | null = null;
   private _timeoutTimerToken: NodeJS.Timer | null = null;
 
+  private paused = false;
+
   /**
    * Starts parsing buffer as a demo file.
    *
@@ -501,6 +503,21 @@ export class DemoFile extends EventEmitter {
       timers.clearTimeout(this._timeoutTimerToken);
       this._timeoutTimerToken = null;
     }
+  }
+
+  /**
+   * Pause parsing
+   */
+  public pause() {
+    this.paused = true;
+  }
+
+
+  /**
+   * Resume parsing
+   */
+  public resume() {
+    this.paused = false;
   }
 
   /**
@@ -583,6 +600,8 @@ export class DemoFile extends EventEmitter {
 
   private _parseRecurse() {
     this._recurse();
+
+    if (this.paused) return;
 
     try {
       this.emit("progress", this._bytebuf.offset / this._bytebuf.limit);
