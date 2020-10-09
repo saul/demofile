@@ -55,6 +55,7 @@ export interface IPlayerRoundStats {
  */
 export declare class Player extends BaseEntity<CCSPlayer> {
   clientSlot: number;
+  private _steam64IdCache;
   constructor(
     demo: DemoFile,
     index: number,

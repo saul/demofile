@@ -88,7 +88,9 @@ class Player extends baseentity_1.BaseEntity {
    * @returns Steam 64 ID
    */
   get steam64Id() {
-    return this.userInfo.xuid.toString();
+    if (this._steam64IdCache === undefined)
+      this._steam64IdCache = this.userInfo.xuid.toString();
+    return this._steam64IdCache;
   }
   /**
    * @returns Player name
