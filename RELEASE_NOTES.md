@@ -6,6 +6,10 @@
 - Unreleased release notes here
 -->
 
+### 1.5.1 (2020-10-09)
+
+- :zap: #170: Cache `Player#steamId64` result (thanks @thecatontheflat)
+
 ### 1.5.0 (2020-06-18)
 
 - :zap: #156: Added `error` event to demofile when parsing fails
