@@ -68,7 +68,7 @@ export interface IPlayerRoundStats {
 export class Player extends BaseEntity<CCSPlayer> {
   public clientSlot: number;
 
-  private steam64IdCache: string;
+  private _steam64IdCache: string | undefined;
 
   constructor(
     demo: DemoFile,
@@ -171,9 +171,10 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @returns Steam 64 ID
    */
   get steam64Id(): string {
-    if (!this.steam64IdCache) this.steam64IdCache = this.userInfo!.xuid.toString();
+    if (this._steam64IdCache === undefined)
+      this._steam64IdCache = this.userInfo!.xuid.toString();
 
-    return this.steam64IdCache;
+    return this._steam64IdCache;
   }
 
   /**
