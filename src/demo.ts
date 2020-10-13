@@ -178,6 +178,11 @@ export interface IDemoEndEvent {
    * Error that caused the premature end of parsing.
    */
   error?: Error;
+
+  /**
+   * Did parsing finish prematurely because the demo was incomplete?
+   */
+  incomplete: boolean;
 }
 
 export declare interface DemoFile {
@@ -617,7 +622,7 @@ export class DemoFile extends EventEmitter {
         case DemoCommands.Stop:
           this.cancel();
           this.emit("tickend", this.currentTick);
-          this.emit("end", {});
+          this.emit("end", { incomplete: false });
           return;
         case DemoCommands.CustomData:
           throw new Error("Custom data not supported");
@@ -630,8 +635,19 @@ export class DemoFile extends EventEmitter {
       // Always cancel if we have an error - we've already scheduled the next tick
       this.cancel();
 
-      this.emit("error", e);
-      this.emit("end", { error: e });
+      // #11, #172: Some demos have been written incompletely.
+      // Don't throw an error when we run out of bytes to read.
+      if (
+        e instanceof RangeError &&
+        this.header.playbackTicks === 0 &&
+        this.header.playbackTime === 0 &&
+        this.header.playbackFrames === 0
+      ) {
+        this.emit("end", { incomplete: true });
+      } else {
+        this.emit("error", e);
+        this.emit("end", { error: e, incomplete: false });
+      }
     }
   }
 }

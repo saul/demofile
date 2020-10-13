@@ -6,6 +6,10 @@
 - Unreleased release notes here
 -->
 
+### 1.6.0 (2020-10-13)
+
+- :bug: #172: Don't report `RangeError` exceptions as errors when demo file has not been recorded completely
+
 ### 1.5.1 (2020-10-09)
 
 - :zap: #170: Cache `Player#steamId64` result (thanks @thecatontheflat)

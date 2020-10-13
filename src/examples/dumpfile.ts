@@ -177,6 +177,8 @@ function parseDemoFile(path: string) {
         return;
       }
 
+      e.entity.getProp("DT_CSPlayer", "m_flLowerBodyYawTarget");
+
       console.log("%s (%s) joined the game", e.entity.name, e.entity.steamId);
     });
 

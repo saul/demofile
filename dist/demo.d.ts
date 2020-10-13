@@ -109,6 +109,10 @@ export interface IDemoEndEvent {
    * Error that caused the premature end of parsing.
    */
   error?: Error;
+  /**
+   * Did parsing finish prematurely because the demo was incomplete?
+   */
+  incomplete: boolean;
 }
 export declare interface DemoFile {
   /**

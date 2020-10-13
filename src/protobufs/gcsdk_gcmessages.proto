@@ -3,6 +3,11 @@ import "steammessages.proto";
 option optimize_for = SPEED;
 option cc_generic_services = false;
 
+enum GCClientLauncherType {
+	GCClientLauncherType_DEFAULT = 0;
+	GCClientLauncherType_PERFECTWORLD = 1;
+}
+
 enum GCConnectionStatus {
 	GCConnectionStatus_HAVE_SESSION = 0;
 	GCConnectionStatus_GC_GOING_DOWN = 1;
@@ -27,14 +32,13 @@ message CMsgSOMultipleObjects {
 	message SingleObject {
 		option (msgpool_soft_limit) = 256;
 		option (msgpool_hard_limit) = 1024;
+
 		optional int32 type_id = 1;
 		optional bytes object_data = 2;
 	}
 
 	repeated .CMsgSOMultipleObjects.SingleObject objects_modified = 2;
 	optional fixed64 version = 3;
-	repeated .CMsgSOMultipleObjects.SingleObject objects_added = 4;
-	repeated .CMsgSOMultipleObjects.SingleObject objects_removed = 5;
 	optional .CMsgSOIDOwner owner_soid = 6;
 }
 
@@ -114,6 +118,7 @@ message CGCToGCMsgRouted {
 	optional uint32 msg_type = 1;
 	optional fixed64 sender_id = 2;
 	optional bytes net_message = 3;
+	optional uint32 ip = 4;
 }
 
 message CGCToGCMsgRoutedReply {
@@ -144,14 +149,21 @@ message CMsgClientHello {
 	repeated .CMsgSOCacheHaveVersion socache_have_versions = 2;
 	optional uint32 client_session_need = 3;
 	optional uint32 client_launcher = 4;
+	optional uint32 partner_srcid = 5;
+	optional uint32 partner_accountid = 6;
+	optional uint32 partner_accountflags = 7;
+	optional uint32 partner_accountbalance = 8;
+	optional uint32 steam_launcher = 9;
 }
 
 message CMsgServerHello {
 	optional uint32 version = 1;
 	repeated .CMsgSOCacheHaveVersion socache_have_versions = 2;
 	optional uint32 legacy_client_session_need = 3;
-	optional uint32 legacy_client_launcher = 4;
-	optional uint32 steamdatagram_port = 5;
+	optional uint32 client_launcher = 4;
+	optional bytes legacy_steamdatagram_routing = 6;
+	optional uint32 required_internal_addr = 7;
+	optional bytes steamdatagram_login = 8;
 }
 
 message CMsgClientWelcome {
@@ -169,6 +181,9 @@ message CMsgClientWelcome {
 	optional bytes game_data2 = 6;
 	optional uint32 rtime32_gc_welcome_timestamp = 7;
 	optional uint32 currency = 8;
+	optional uint32 balance = 9;
+	optional string balance_url = 10;
+	optional string txn_country_code = 11;
 }
 
 message CMsgConnectionStatus {
@@ -210,6 +225,12 @@ message CWorkshop_SetItemPaymentRules_Request {
 		optional uint64 workshop_file_id = 1;
 		optional float revenue_percentage = 2;
 		optional string rule_description = 3;
+		optional uint32 rule_type = 4 [default = 1];
+	}
+
+	message WorkshopDirectPaymentRule {
+		optional uint64 workshop_file_id = 1;
+		optional string rule_description = 2;
 	}
 
 	message PartnerItemPaymentRule {
@@ -222,8 +243,59 @@ message CWorkshop_SetItemPaymentRules_Request {
 	optional uint32 gameitemid = 2;
 	repeated .CWorkshop_SetItemPaymentRules_Request.WorkshopItemPaymentRule associated_workshop_files = 3;
 	repeated .CWorkshop_SetItemPaymentRules_Request.PartnerItemPaymentRule partner_accounts = 4;
+	optional bool validate_only = 5;
+	optional bool make_workshop_files_subscribable = 6;
+	optional .CWorkshop_SetItemPaymentRules_Request.WorkshopDirectPaymentRule associated_workshop_file_for_direct_payments = 7;
 }
 
 message CWorkshop_SetItemPaymentRules_Response {
 }
 
+message CGameServers_AggregationQuery_Request {
+	optional string filter = 1;
+	repeated string group_fields = 3;
+}
+
+message CGameServers_AggregationQuery_Response {
+	message Group {
+		repeated string group_values = 1;
+		optional uint32 servers_empty = 2;
+		optional uint32 servers_full = 3;
+		optional uint32 servers_total = 4;
+		optional uint32 players_humans = 5;
+		optional uint32 players_bots = 6;
+		optional uint32 player_capacity = 7;
+	}
+
+	repeated .CGameServers_AggregationQuery_Response.Group groups = 1;
+}
+
+message CWorkshop_AddSpecialPayment_Request {
+	optional uint32 appid = 1;
+	optional uint32 gameitemid = 2;
+	optional string date = 3;
+	optional uint64 payment_us_usd = 4;
+	optional uint64 payment_row_usd = 5;
+}
+
+message CWorkshop_AddSpecialPayment_Response {
+}
+
+message CProductInfo_SetRichPresenceLocalization_Request {
+	message Token {
+		optional string token = 1;
+		optional string value = 2;
+	}
+
+	message LanguageSection {
+		optional string language = 1;
+		repeated .CProductInfo_SetRichPresenceLocalization_Request.Token tokens = 2;
+	}
+
+	optional uint32 appid = 1;
+	repeated .CProductInfo_SetRichPresenceLocalization_Request.LanguageSection languages = 2;
+	optional uint64 steamid = 3;
+}
+
+message CProductInfo_SetRichPresenceLocalization_Response {
+}

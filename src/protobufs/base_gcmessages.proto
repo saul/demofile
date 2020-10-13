@@ -48,6 +48,8 @@ message CMsgGCStorePurchaseInit {
 message CMsgGCStorePurchaseInitResponse {
 	optional int32 result = 1;
 	optional uint64 txn_id = 2;
+	optional string url = 3;
+	repeated uint64 item_ids = 4;
 }
 
 message CSOPartyInvite {
@@ -102,6 +104,8 @@ message CSOEconGameAccountClient {
 	optional uint32 additional_backpack_slots = 1 [default = 0];
 	optional fixed32 bonus_xp_timestamp_refresh = 12;
 	optional uint32 bonus_xp_usedflags = 13;
+	optional uint32 elevated_state = 14;
+	optional uint32 elevated_timestamp = 15;
 }
 
 message CSOItemCriteriaCondition {
@@ -166,6 +170,13 @@ message CMsgApplySticker {
 	optional uint64 item_item_id = 2;
 	optional uint32 sticker_slot = 3;
 	optional uint32 baseitem_defidx = 4;
+	optional float sticker_wear = 5;
+}
+
+message CMsgModifyItemAttribute {
+	optional uint64 item_id = 1;
+	optional uint32 attr_defidx = 2;
+	optional uint32 attr_value = 3;
 }
 
 message CMsgApplyStatTrakSwap {
@@ -226,6 +237,12 @@ message CMsgAdjustItemEquippedState {
 	optional uint32 new_class = 2;
 	optional uint32 new_slot = 3;
 	optional bool swap = 4;
+}
+
+message CMsgAdjustItemEquippedStateMulti {
+	repeated uint64 t_equips = 1;
+	repeated uint64 ct_equips = 2;
+	repeated uint64 noteam_equips = 3;
 }
 
 message CMsgSortItems {
@@ -303,13 +320,6 @@ message CMsgItemAcknowledged__DEPRECATED {
 	optional uint64 item_id = 7;
 }
 
-message CMsgSetPresetItemPosition {
-	optional uint32 class_id = 1;
-	optional uint32 preset_id = 2;
-	optional uint32 slot_id = 3;
-	optional uint64 item_id = 4;
-}
-
 message CMsgSetItemPositions {
 	message ItemPosition {
 		optional uint32 legacy_item_id = 1;
@@ -318,28 +328,6 @@ message CMsgSetItemPositions {
 	}
 
 	repeated .CMsgSetItemPositions.ItemPosition item_positions = 1;
-}
-
-message CSOEconItemPresetInstance {
-	optional uint32 class_id = 2 [(key_field) = true];
-	optional uint32 preset_id = 3 [(key_field) = true];
-	optional uint32 slot_id = 4 [(key_field) = true];
-	optional uint64 item_id = 5;
-}
-
-message CMsgSelectItemPresetForClass {
-	optional uint32 class_id = 1;
-	optional uint32 preset_id = 2;
-}
-
-message CMsgSelectItemPresetForClassReply {
-	optional bool success = 1;
-}
-
-message CSOSelectedItemPreset {
-	optional uint32 account_id = 1 [(key_field) = true];
-	optional uint32 class_id = 2 [(key_field) = true];
-	optional uint32 preset_id = 3;
 }
 
 message CMsgGCReportAbuse {
@@ -543,4 +531,3 @@ message CMsgGameServerInfo {
 	optional uint32 parent_relay_count = 17;
 	optional fixed64 tv_secret_code = 18;
 }
-
