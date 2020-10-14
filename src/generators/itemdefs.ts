@@ -55,17 +55,15 @@ async function parseItems(root: string) {
             .filter(([key, item]: [string, any]) =>
               item.name.startsWith("weapon_")
             )
-            .map(
-              ([key, item]: [string, any]): [number, any] => [
-                parseInt(key, 10),
-                {
-                  className: item.name,
-                  itemName: translate(
-                    items.prefabs[item.prefab].item_name || item.item_name
-                  )
-                }
-              ]
-            )
+            .map(([key, item]: [string, any]): [number, any] => [
+              parseInt(key, 10),
+              {
+                className: item.name,
+                itemName: translate(
+                  items.prefabs[item.prefab].item_name || item.item_name
+                )
+              }
+            ])
             .filter(([key, x]: [number, any]) => x.itemName)
         ),
         null,
