@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.UserMessages = void 0;
 const assert = require("assert");
 const events_1 = require("events");
 const net = require("./net");

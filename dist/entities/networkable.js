@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Networkable = void 0;
 const consts_1 = require("../consts");
 /**
  * Represents an in-game entity.

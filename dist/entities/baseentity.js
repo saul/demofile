@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.BaseEntity = void 0;
 const networkable_1 = require("./networkable");
 /**
  * Represents an in-game entity.

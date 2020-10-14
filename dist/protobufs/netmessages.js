@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = exports.CCLCMsg_HltvReplay = exports.CSVCMsg_HltvReplay = exports.CSVCMsg_EncryptedData = exports.CSVCMsg_CmdKeyValues = exports.CSVCMsg_EntityMsg = exports.CSVCMsg_Sounds = exports.CSVCMsg_PacketEntities = exports.CSVCMsg_TempEntities = exports.CSVCMsg_GameEventList = exports.CSVCMsg_GameEvent = exports.CSVCMsg_PaintmapData = exports.CSVCMsg_UserMessage = exports.CSVCMsg_Menu = exports.CSVCMsg_GetCvarValue = exports.CSVCMsg_SplitScreen = exports.CSVCMsg_BSPDecal = exports.CSVCMsg_Prefetch = exports.CSVCMsg_CrosshairAngle = exports.CSVCMsg_FixAngle = exports.CSVCMsg_VoiceData = exports.CSVCMsg_VoiceInit = exports.CSVCMsg_UpdateStringTable = exports.CSVCMsg_CreateStringTable = exports.CSVCMsg_SetView = exports.CSVCMsg_SetPause = exports.CSVCMsg_Print = exports.CSVCMsg_SendTable = exports.CSVCMsg_ClassInfo = exports.CSVCMsg_ServerInfo = exports.CCLCMsg_CmdKeyValues = exports.CCLCMsg_SplitPlayerConnect = exports.CCLCMsg_LoadingProgress = exports.CCLCMsg_FileCRCCheck = exports.CCLCMsg_RespondCvarValue = exports.CCLCMsg_ListenEvents = exports.CCLCMsg_BaselineAck = exports.CCLCMsg_VoiceData = exports.CCLCMsg_Move = exports.CCLCMsg_ClientInfo = exports.CNETMsg_PlayerAvatarData = exports.CNETMsg_SplitScreenUser = exports.CNETMsg_File = exports.CNETMsg_Disconnect = exports.CNETMsg_NOP = exports.CNETMsg_SetConVar = exports.CMsg_CVars = exports.CNETMsg_SignonState = exports.CNETMsg_StringCmd = exports.CNETMsg_Tick = exports.CMsgRGBA = exports.CMsgQAngle = exports.CMsgVector2D = exports.CMsgVector = exports.SVC_Messages = exports.NET_Messages = void 0;
 /* tslint:disable */
 const $protobuf = require("protobufjs/minimal");
 // Common aliases
@@ -21,19 +22,19 @@ exports.default = $root;
  * @property {number} net_SignonState=7 net_SignonState value
  * @property {number} net_PlayerAvatarData=100 net_PlayerAvatarData value
  */
-exports.NET_Messages = $root.NET_Messages = (function () {
+exports.NET_Messages = ($root.NET_Messages = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "net_NOP"] = 0;
-    values[valuesById[1] = "net_Disconnect"] = 1;
-    values[valuesById[2] = "net_File"] = 2;
-    values[valuesById[3] = "net_SplitScreenUser"] = 3;
-    values[valuesById[4] = "net_Tick"] = 4;
-    values[valuesById[5] = "net_StringCmd"] = 5;
-    values[valuesById[6] = "net_SetConVar"] = 6;
-    values[valuesById[7] = "net_SignonState"] = 7;
-    values[valuesById[100] = "net_PlayerAvatarData"] = 100;
+    values[(valuesById[0] = "net_NOP")] = 0;
+    values[(valuesById[1] = "net_Disconnect")] = 1;
+    values[(valuesById[2] = "net_File")] = 2;
+    values[(valuesById[3] = "net_SplitScreenUser")] = 3;
+    values[(valuesById[4] = "net_Tick")] = 4;
+    values[(valuesById[5] = "net_StringCmd")] = 5;
+    values[(valuesById[6] = "net_SetConVar")] = 6;
+    values[(valuesById[7] = "net_SignonState")] = 7;
+    values[(valuesById[100] = "net_PlayerAvatarData")] = 100;
     return values;
-})();
+})());
 /**
  * CLC_Messages enum.
  * @exports CLC_Messages
@@ -53,18 +54,18 @@ exports.NET_Messages = $root.NET_Messages = (function () {
  */
 $root.CLC_Messages = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[8] = "clc_ClientInfo"] = 8;
-    values[valuesById[9] = "clc_Move"] = 9;
-    values[valuesById[10] = "clc_VoiceData"] = 10;
-    values[valuesById[11] = "clc_BaselineAck"] = 11;
-    values[valuesById[12] = "clc_ListenEvents"] = 12;
-    values[valuesById[13] = "clc_RespondCvarValue"] = 13;
-    values[valuesById[14] = "clc_FileCRCCheck"] = 14;
-    values[valuesById[15] = "clc_LoadingProgress"] = 15;
-    values[valuesById[16] = "clc_SplitPlayerConnect"] = 16;
-    values[valuesById[17] = "clc_ClientMessage"] = 17;
-    values[valuesById[18] = "clc_CmdKeyValues"] = 18;
-    values[valuesById[20] = "clc_HltvReplay"] = 20;
+    values[(valuesById[8] = "clc_ClientInfo")] = 8;
+    values[(valuesById[9] = "clc_Move")] = 9;
+    values[(valuesById[10] = "clc_VoiceData")] = 10;
+    values[(valuesById[11] = "clc_BaselineAck")] = 11;
+    values[(valuesById[12] = "clc_ListenEvents")] = 12;
+    values[(valuesById[13] = "clc_RespondCvarValue")] = 13;
+    values[(valuesById[14] = "clc_FileCRCCheck")] = 14;
+    values[(valuesById[15] = "clc_LoadingProgress")] = 15;
+    values[(valuesById[16] = "clc_SplitPlayerConnect")] = 16;
+    values[(valuesById[17] = "clc_ClientMessage")] = 17;
+    values[(valuesById[18] = "clc_CmdKeyValues")] = 18;
+    values[(valuesById[20] = "clc_HltvReplay")] = 20;
     return values;
 })();
 /**
@@ -76,8 +77,8 @@ $root.CLC_Messages = (function () {
  */
 $root.VoiceDataFormat_t = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "VOICEDATA_FORMAT_STEAM"] = 0;
-    values[valuesById[1] = "VOICEDATA_FORMAT_ENGINE"] = 1;
+    values[(valuesById[0] = "VOICEDATA_FORMAT_STEAM")] = 0;
+    values[(valuesById[1] = "VOICEDATA_FORMAT_ENGINE")] = 1;
     return values;
 })();
 /**
@@ -90,8 +91,8 @@ $root.VoiceDataFormat_t = (function () {
  */
 $root.ESplitScreenMessageType = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "MSG_SPLITSCREEN_ADDUSER"] = 0;
-    values[valuesById[1] = "MSG_SPLITSCREEN_REMOVEUSER"] = 1;
+    values[(valuesById[0] = "MSG_SPLITSCREEN_ADDUSER")] = 0;
+    values[(valuesById[1] = "MSG_SPLITSCREEN_REMOVEUSER")] = 1;
     values["MSG_SPLITSCREEN_TYPE_BITS"] = 1;
     return values;
 })();
@@ -128,38 +129,38 @@ $root.ESplitScreenMessageType = (function () {
  * @property {number} svc_EncryptedData=35 svc_EncryptedData value
  * @property {number} svc_HltvReplay=36 svc_HltvReplay value
  */
-exports.SVC_Messages = $root.SVC_Messages = (function () {
+exports.SVC_Messages = ($root.SVC_Messages = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[8] = "svc_ServerInfo"] = 8;
-    values[valuesById[9] = "svc_SendTable"] = 9;
-    values[valuesById[10] = "svc_ClassInfo"] = 10;
-    values[valuesById[11] = "svc_SetPause"] = 11;
-    values[valuesById[12] = "svc_CreateStringTable"] = 12;
-    values[valuesById[13] = "svc_UpdateStringTable"] = 13;
-    values[valuesById[14] = "svc_VoiceInit"] = 14;
-    values[valuesById[15] = "svc_VoiceData"] = 15;
-    values[valuesById[16] = "svc_Print"] = 16;
-    values[valuesById[17] = "svc_Sounds"] = 17;
-    values[valuesById[18] = "svc_SetView"] = 18;
-    values[valuesById[19] = "svc_FixAngle"] = 19;
-    values[valuesById[20] = "svc_CrosshairAngle"] = 20;
-    values[valuesById[21] = "svc_BSPDecal"] = 21;
-    values[valuesById[22] = "svc_SplitScreen"] = 22;
-    values[valuesById[23] = "svc_UserMessage"] = 23;
-    values[valuesById[24] = "svc_EntityMessage"] = 24;
-    values[valuesById[25] = "svc_GameEvent"] = 25;
-    values[valuesById[26] = "svc_PacketEntities"] = 26;
-    values[valuesById[27] = "svc_TempEntities"] = 27;
-    values[valuesById[28] = "svc_Prefetch"] = 28;
-    values[valuesById[29] = "svc_Menu"] = 29;
-    values[valuesById[30] = "svc_GameEventList"] = 30;
-    values[valuesById[31] = "svc_GetCvarValue"] = 31;
-    values[valuesById[33] = "svc_PaintmapData"] = 33;
-    values[valuesById[34] = "svc_CmdKeyValues"] = 34;
-    values[valuesById[35] = "svc_EncryptedData"] = 35;
-    values[valuesById[36] = "svc_HltvReplay"] = 36;
+    values[(valuesById[8] = "svc_ServerInfo")] = 8;
+    values[(valuesById[9] = "svc_SendTable")] = 9;
+    values[(valuesById[10] = "svc_ClassInfo")] = 10;
+    values[(valuesById[11] = "svc_SetPause")] = 11;
+    values[(valuesById[12] = "svc_CreateStringTable")] = 12;
+    values[(valuesById[13] = "svc_UpdateStringTable")] = 13;
+    values[(valuesById[14] = "svc_VoiceInit")] = 14;
+    values[(valuesById[15] = "svc_VoiceData")] = 15;
+    values[(valuesById[16] = "svc_Print")] = 16;
+    values[(valuesById[17] = "svc_Sounds")] = 17;
+    values[(valuesById[18] = "svc_SetView")] = 18;
+    values[(valuesById[19] = "svc_FixAngle")] = 19;
+    values[(valuesById[20] = "svc_CrosshairAngle")] = 20;
+    values[(valuesById[21] = "svc_BSPDecal")] = 21;
+    values[(valuesById[22] = "svc_SplitScreen")] = 22;
+    values[(valuesById[23] = "svc_UserMessage")] = 23;
+    values[(valuesById[24] = "svc_EntityMessage")] = 24;
+    values[(valuesById[25] = "svc_GameEvent")] = 25;
+    values[(valuesById[26] = "svc_PacketEntities")] = 26;
+    values[(valuesById[27] = "svc_TempEntities")] = 27;
+    values[(valuesById[28] = "svc_Prefetch")] = 28;
+    values[(valuesById[29] = "svc_Menu")] = 29;
+    values[(valuesById[30] = "svc_GameEventList")] = 30;
+    values[(valuesById[31] = "svc_GetCvarValue")] = 31;
+    values[(valuesById[33] = "svc_PaintmapData")] = 33;
+    values[(valuesById[34] = "svc_CmdKeyValues")] = 34;
+    values[(valuesById[35] = "svc_EncryptedData")] = 35;
+    values[(valuesById[36] = "svc_HltvReplay")] = 36;
     return values;
-})();
+})());
 /**
  * ReplayEventType_t enum.
  * @exports ReplayEventType_t
@@ -170,12 +171,12 @@ exports.SVC_Messages = $root.SVC_Messages = (function () {
  */
 $root.ReplayEventType_t = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "REPLAY_EVENT_CANCEL"] = 0;
-    values[valuesById[1] = "REPLAY_EVENT_DEATH"] = 1;
-    values[valuesById[2] = "REPLAY_EVENT_GENERIC"] = 2;
+    values[(valuesById[0] = "REPLAY_EVENT_CANCEL")] = 0;
+    values[(valuesById[1] = "REPLAY_EVENT_DEATH")] = 1;
+    values[(valuesById[2] = "REPLAY_EVENT_GENERIC")] = 2;
     return values;
 })();
-exports.CMsgVector = $root.CMsgVector = (() => {
+exports.CMsgVector = ($root.CMsgVector = (() => {
     /**
      * Properties of a CMsgVector.
      * @exports ICMsgVector
@@ -254,8 +255,8 @@ exports.CMsgVector = $root.CMsgVector = (() => {
         return message;
     };
     return CMsgVector;
-})();
-exports.CMsgVector2D = $root.CMsgVector2D = (() => {
+})());
+exports.CMsgVector2D = ($root.CMsgVector2D = (() => {
     /**
      * Properties of a CMsgVector2D.
      * @exports ICMsgVector2D
@@ -323,8 +324,8 @@ exports.CMsgVector2D = $root.CMsgVector2D = (() => {
         return message;
     };
     return CMsgVector2D;
-})();
-exports.CMsgQAngle = $root.CMsgQAngle = (() => {
+})());
+exports.CMsgQAngle = ($root.CMsgQAngle = (() => {
     /**
      * Properties of a CMsgQAngle.
      * @exports ICMsgQAngle
@@ -403,8 +404,8 @@ exports.CMsgQAngle = $root.CMsgQAngle = (() => {
         return message;
     };
     return CMsgQAngle;
-})();
-exports.CMsgRGBA = $root.CMsgRGBA = (() => {
+})());
+exports.CMsgRGBA = ($root.CMsgRGBA = (() => {
     /**
      * Properties of a CMsgRGBA.
      * @exports ICMsgRGBA
@@ -494,8 +495,8 @@ exports.CMsgRGBA = $root.CMsgRGBA = (() => {
         return message;
     };
     return CMsgRGBA;
-})();
-exports.CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
+})());
+exports.CNETMsg_Tick = ($root.CNETMsg_Tick = (() => {
     /**
      * Properties of a CNETMsg_Tick.
      * @exports ICNETMsg_Tick
@@ -596,8 +597,8 @@ exports.CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
         return message;
     };
     return CNETMsg_Tick;
-})();
-exports.CNETMsg_StringCmd = $root.CNETMsg_StringCmd = (() => {
+})());
+exports.CNETMsg_StringCmd = ($root.CNETMsg_StringCmd = (() => {
     /**
      * Properties of a CNETMsg_StringCmd.
      * @exports ICNETMsg_StringCmd
@@ -654,8 +655,8 @@ exports.CNETMsg_StringCmd = $root.CNETMsg_StringCmd = (() => {
         return message;
     };
     return CNETMsg_StringCmd;
-})();
-exports.CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
+})());
+exports.CNETMsg_SignonState = ($root.CNETMsg_SignonState = (() => {
     /**
      * Properties of a CNETMsg_SignonState.
      * @exports ICNETMsg_SignonState
@@ -759,8 +760,8 @@ exports.CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
         return message;
     };
     return CNETMsg_SignonState;
-})();
-exports.CMsg_CVars = $root.CMsg_CVars = (() => {
+})());
+exports.CMsg_CVars = ($root.CMsg_CVars = (() => {
     /**
      * Properties of a CMsg_CVars.
      * @exports ICMsg_CVars
@@ -900,8 +901,8 @@ exports.CMsg_CVars = $root.CMsg_CVars = (() => {
         return CVar;
     })();
     return CMsg_CVars;
-})();
-exports.CNETMsg_SetConVar = $root.CNETMsg_SetConVar = (() => {
+})());
+exports.CNETMsg_SetConVar = ($root.CNETMsg_SetConVar = (() => {
     /**
      * Properties of a CNETMsg_SetConVar.
      * @exports ICNETMsg_SetConVar
@@ -958,8 +959,8 @@ exports.CNETMsg_SetConVar = $root.CNETMsg_SetConVar = (() => {
         return message;
     };
     return CNETMsg_SetConVar;
-})();
-exports.CNETMsg_NOP = $root.CNETMsg_NOP = (() => {
+})());
+exports.CNETMsg_NOP = ($root.CNETMsg_NOP = (() => {
     /**
      * Properties of a CNETMsg_NOP.
      * @exports ICNETMsg_NOP
@@ -1005,8 +1006,8 @@ exports.CNETMsg_NOP = $root.CNETMsg_NOP = (() => {
         return message;
     };
     return CNETMsg_NOP;
-})();
-exports.CNETMsg_Disconnect = $root.CNETMsg_Disconnect = (() => {
+})());
+exports.CNETMsg_Disconnect = ($root.CNETMsg_Disconnect = (() => {
     /**
      * Properties of a CNETMsg_Disconnect.
      * @exports ICNETMsg_Disconnect
@@ -1063,8 +1064,8 @@ exports.CNETMsg_Disconnect = $root.CNETMsg_Disconnect = (() => {
         return message;
     };
     return CNETMsg_Disconnect;
-})();
-exports.CNETMsg_File = $root.CNETMsg_File = (() => {
+})());
+exports.CNETMsg_File = ($root.CNETMsg_File = (() => {
     /**
      * Properties of a CNETMsg_File.
      * @exports ICNETMsg_File
@@ -1154,8 +1155,8 @@ exports.CNETMsg_File = $root.CNETMsg_File = (() => {
         return message;
     };
     return CNETMsg_File;
-})();
-exports.CNETMsg_SplitScreenUser = $root.CNETMsg_SplitScreenUser = (() => {
+})());
+exports.CNETMsg_SplitScreenUser = ($root.CNETMsg_SplitScreenUser = (() => {
     /**
      * Properties of a CNETMsg_SplitScreenUser.
      * @exports ICNETMsg_SplitScreenUser
@@ -1212,8 +1213,8 @@ exports.CNETMsg_SplitScreenUser = $root.CNETMsg_SplitScreenUser = (() => {
         return message;
     };
     return CNETMsg_SplitScreenUser;
-})();
-exports.CNETMsg_PlayerAvatarData = $root.CNETMsg_PlayerAvatarData = (() => {
+})());
+exports.CNETMsg_PlayerAvatarData = ($root.CNETMsg_PlayerAvatarData = (() => {
     /**
      * Properties of a CNETMsg_PlayerAvatarData.
      * @exports ICNETMsg_PlayerAvatarData
@@ -1281,8 +1282,8 @@ exports.CNETMsg_PlayerAvatarData = $root.CNETMsg_PlayerAvatarData = (() => {
         return message;
     };
     return CNETMsg_PlayerAvatarData;
-})();
-exports.CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
+})());
+exports.CCLCMsg_ClientInfo = ($root.CCLCMsg_ClientInfo = (() => {
     /**
      * Properties of a CCLCMsg_ClientInfo.
      * @exports ICCLCMsg_ClientInfo
@@ -1414,8 +1415,8 @@ exports.CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
         return message;
     };
     return CCLCMsg_ClientInfo;
-})();
-exports.CCLCMsg_Move = $root.CCLCMsg_Move = (() => {
+})());
+exports.CCLCMsg_Move = ($root.CCLCMsg_Move = (() => {
     /**
      * Properties of a CCLCMsg_Move.
      * @exports ICCLCMsg_Move
@@ -1494,8 +1495,8 @@ exports.CCLCMsg_Move = $root.CCLCMsg_Move = (() => {
         return message;
     };
     return CCLCMsg_Move;
-})();
-exports.CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
+})());
+exports.CCLCMsg_VoiceData = ($root.CCLCMsg_VoiceData = (() => {
     /**
      * Properties of a CCLCMsg_VoiceData.
      * @exports ICCLCMsg_VoiceData
@@ -1534,7 +1535,9 @@ exports.CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
      * @memberof CCLCMsg_VoiceData
      * @instance
      */
-    CCLCMsg_VoiceData.prototype.xuid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CCLCMsg_VoiceData.prototype.xuid = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CCLCMsg_VoiceData format.
      * @member {VoiceDataFormat_t} format
@@ -1607,8 +1610,8 @@ exports.CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
         return message;
     };
     return CCLCMsg_VoiceData;
-})();
-exports.CCLCMsg_BaselineAck = $root.CCLCMsg_BaselineAck = (() => {
+})());
+exports.CCLCMsg_BaselineAck = ($root.CCLCMsg_BaselineAck = (() => {
     /**
      * Properties of a CCLCMsg_BaselineAck.
      * @exports ICCLCMsg_BaselineAck
@@ -1676,8 +1679,8 @@ exports.CCLCMsg_BaselineAck = $root.CCLCMsg_BaselineAck = (() => {
         return message;
     };
     return CCLCMsg_BaselineAck;
-})();
-exports.CCLCMsg_ListenEvents = $root.CCLCMsg_ListenEvents = (() => {
+})());
+exports.CCLCMsg_ListenEvents = ($root.CCLCMsg_ListenEvents = (() => {
     /**
      * Properties of a CCLCMsg_ListenEvents.
      * @exports ICCLCMsg_ListenEvents
@@ -1743,8 +1746,8 @@ exports.CCLCMsg_ListenEvents = $root.CCLCMsg_ListenEvents = (() => {
         return message;
     };
     return CCLCMsg_ListenEvents;
-})();
-exports.CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (() => {
+})());
+exports.CCLCMsg_RespondCvarValue = ($root.CCLCMsg_RespondCvarValue = (() => {
     /**
      * Properties of a CCLCMsg_RespondCvarValue.
      * @exports ICCLCMsg_RespondCvarValue
@@ -1834,8 +1837,8 @@ exports.CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (() => {
         return message;
     };
     return CCLCMsg_RespondCvarValue;
-})();
-exports.CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
+})());
+exports.CCLCMsg_FileCRCCheck = ($root.CCLCMsg_FileCRCCheck = (() => {
     /**
      * Properties of a CCLCMsg_FileCRCCheck.
      * @exports ICCLCMsg_FileCRCCheck
@@ -2002,8 +2005,8 @@ exports.CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
         return message;
     };
     return CCLCMsg_FileCRCCheck;
-})();
-exports.CCLCMsg_LoadingProgress = $root.CCLCMsg_LoadingProgress = (() => {
+})());
+exports.CCLCMsg_LoadingProgress = ($root.CCLCMsg_LoadingProgress = (() => {
     /**
      * Properties of a CCLCMsg_LoadingProgress.
      * @exports ICCLCMsg_LoadingProgress
@@ -2060,8 +2063,8 @@ exports.CCLCMsg_LoadingProgress = $root.CCLCMsg_LoadingProgress = (() => {
         return message;
     };
     return CCLCMsg_LoadingProgress;
-})();
-exports.CCLCMsg_SplitPlayerConnect = $root.CCLCMsg_SplitPlayerConnect = (() => {
+})());
+exports.CCLCMsg_SplitPlayerConnect = ($root.CCLCMsg_SplitPlayerConnect = (() => {
     /**
      * Properties of a CCLCMsg_SplitPlayerConnect.
      * @exports ICCLCMsg_SplitPlayerConnect
@@ -2118,8 +2121,8 @@ exports.CCLCMsg_SplitPlayerConnect = $root.CCLCMsg_SplitPlayerConnect = (() => {
         return message;
     };
     return CCLCMsg_SplitPlayerConnect;
-})();
-exports.CCLCMsg_CmdKeyValues = $root.CCLCMsg_CmdKeyValues = (() => {
+})());
+exports.CCLCMsg_CmdKeyValues = ($root.CCLCMsg_CmdKeyValues = (() => {
     /**
      * Properties of a CCLCMsg_CmdKeyValues.
      * @exports ICCLCMsg_CmdKeyValues
@@ -2176,8 +2179,8 @@ exports.CCLCMsg_CmdKeyValues = $root.CCLCMsg_CmdKeyValues = (() => {
         return message;
     };
     return CCLCMsg_CmdKeyValues;
-})();
-exports.CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
+})());
+exports.CSVCMsg_ServerInfo = ($root.CSVCMsg_ServerInfo = (() => {
     /**
      * Properties of a CSVCMsg_ServerInfo.
      * @exports ICSVCMsg_ServerInfo
@@ -2372,7 +2375,9 @@ exports.CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @memberof CSVCMsg_ServerInfo
      * @instance
      */
-    CSVCMsg_ServerInfo.prototype.ugcMapId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CSVCMsg_ServerInfo.prototype.ugcMapId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a CSVCMsg_ServerInfo message from the specified reader or buffer.
      * @function decode
@@ -2465,8 +2470,8 @@ exports.CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
         return message;
     };
     return CSVCMsg_ServerInfo;
-})();
-exports.CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
+})());
+exports.CSVCMsg_ClassInfo = ($root.CSVCMsg_ClassInfo = (() => {
     /**
      * Properties of a CSVCMsg_ClassInfo.
      * @exports ICSVCMsg_ClassInfo
@@ -2617,8 +2622,8 @@ exports.CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
         return class_t;
     })();
     return CSVCMsg_ClassInfo;
-})();
-exports.CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
+})());
+exports.CSVCMsg_SendTable = ($root.CSVCMsg_SendTable = (() => {
     /**
      * Properties of a CSVCMsg_SendTable.
      * @exports ICSVCMsg_SendTable
@@ -2857,8 +2862,8 @@ exports.CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
         return sendprop_t;
     })();
     return CSVCMsg_SendTable;
-})();
-exports.CSVCMsg_Print = $root.CSVCMsg_Print = (() => {
+})());
+exports.CSVCMsg_Print = ($root.CSVCMsg_Print = (() => {
     /**
      * Properties of a CSVCMsg_Print.
      * @exports ICSVCMsg_Print
@@ -2915,8 +2920,8 @@ exports.CSVCMsg_Print = $root.CSVCMsg_Print = (() => {
         return message;
     };
     return CSVCMsg_Print;
-})();
-exports.CSVCMsg_SetPause = $root.CSVCMsg_SetPause = (() => {
+})());
+exports.CSVCMsg_SetPause = ($root.CSVCMsg_SetPause = (() => {
     /**
      * Properties of a CSVCMsg_SetPause.
      * @exports ICSVCMsg_SetPause
@@ -2973,8 +2978,8 @@ exports.CSVCMsg_SetPause = $root.CSVCMsg_SetPause = (() => {
         return message;
     };
     return CSVCMsg_SetPause;
-})();
-exports.CSVCMsg_SetView = $root.CSVCMsg_SetView = (() => {
+})());
+exports.CSVCMsg_SetView = ($root.CSVCMsg_SetView = (() => {
     /**
      * Properties of a CSVCMsg_SetView.
      * @exports ICSVCMsg_SetView
@@ -3031,8 +3036,8 @@ exports.CSVCMsg_SetView = $root.CSVCMsg_SetView = (() => {
         return message;
     };
     return CSVCMsg_SetView;
-})();
-exports.CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() => {
+})());
+exports.CSVCMsg_CreateStringTable = ($root.CSVCMsg_CreateStringTable = (() => {
     /**
      * Properties of a CSVCMsg_CreateStringTable.
      * @exports ICSVCMsg_CreateStringTable
@@ -3166,8 +3171,8 @@ exports.CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() => {
         return message;
     };
     return CSVCMsg_CreateStringTable;
-})();
-exports.CSVCMsg_UpdateStringTable = $root.CSVCMsg_UpdateStringTable = (() => {
+})());
+exports.CSVCMsg_UpdateStringTable = ($root.CSVCMsg_UpdateStringTable = (() => {
     /**
      * Properties of a CSVCMsg_UpdateStringTable.
      * @exports ICSVCMsg_UpdateStringTable
@@ -3246,8 +3251,8 @@ exports.CSVCMsg_UpdateStringTable = $root.CSVCMsg_UpdateStringTable = (() => {
         return message;
     };
     return CSVCMsg_UpdateStringTable;
-})();
-exports.CSVCMsg_VoiceInit = $root.CSVCMsg_VoiceInit = (() => {
+})());
+exports.CSVCMsg_VoiceInit = ($root.CSVCMsg_VoiceInit = (() => {
     /**
      * Properties of a CSVCMsg_VoiceInit.
      * @exports ICSVCMsg_VoiceInit
@@ -3326,8 +3331,8 @@ exports.CSVCMsg_VoiceInit = $root.CSVCMsg_VoiceInit = (() => {
         return message;
     };
     return CSVCMsg_VoiceInit;
-})();
-exports.CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
+})());
+exports.CSVCMsg_VoiceData = ($root.CSVCMsg_VoiceData = (() => {
     /**
      * Properties of a CSVCMsg_VoiceData.
      * @exports ICSVCMsg_VoiceData
@@ -3377,7 +3382,9 @@ exports.CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      * @memberof CSVCMsg_VoiceData
      * @instance
      */
-    CSVCMsg_VoiceData.prototype.xuid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CSVCMsg_VoiceData.prototype.xuid = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CSVCMsg_VoiceData audibleMask.
      * @member {number} audibleMask
@@ -3483,8 +3490,8 @@ exports.CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
         return message;
     };
     return CSVCMsg_VoiceData;
-})();
-exports.CSVCMsg_FixAngle = $root.CSVCMsg_FixAngle = (() => {
+})());
+exports.CSVCMsg_FixAngle = ($root.CSVCMsg_FixAngle = (() => {
     /**
      * Properties of a CSVCMsg_FixAngle.
      * @exports ICSVCMsg_FixAngle
@@ -3552,8 +3559,8 @@ exports.CSVCMsg_FixAngle = $root.CSVCMsg_FixAngle = (() => {
         return message;
     };
     return CSVCMsg_FixAngle;
-})();
-exports.CSVCMsg_CrosshairAngle = $root.CSVCMsg_CrosshairAngle = (() => {
+})());
+exports.CSVCMsg_CrosshairAngle = ($root.CSVCMsg_CrosshairAngle = (() => {
     /**
      * Properties of a CSVCMsg_CrosshairAngle.
      * @exports ICSVCMsg_CrosshairAngle
@@ -3610,8 +3617,8 @@ exports.CSVCMsg_CrosshairAngle = $root.CSVCMsg_CrosshairAngle = (() => {
         return message;
     };
     return CSVCMsg_CrosshairAngle;
-})();
-exports.CSVCMsg_Prefetch = $root.CSVCMsg_Prefetch = (() => {
+})());
+exports.CSVCMsg_Prefetch = ($root.CSVCMsg_Prefetch = (() => {
     /**
      * Properties of a CSVCMsg_Prefetch.
      * @exports ICSVCMsg_Prefetch
@@ -3668,8 +3675,8 @@ exports.CSVCMsg_Prefetch = $root.CSVCMsg_Prefetch = (() => {
         return message;
     };
     return CSVCMsg_Prefetch;
-})();
-exports.CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
+})());
+exports.CSVCMsg_BSPDecal = ($root.CSVCMsg_BSPDecal = (() => {
     /**
      * Properties of a CSVCMsg_BSPDecal.
      * @exports ICSVCMsg_BSPDecal
@@ -3770,8 +3777,8 @@ exports.CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
         return message;
     };
     return CSVCMsg_BSPDecal;
-})();
-exports.CSVCMsg_SplitScreen = $root.CSVCMsg_SplitScreen = (() => {
+})());
+exports.CSVCMsg_SplitScreen = ($root.CSVCMsg_SplitScreen = (() => {
     /**
      * Properties of a CSVCMsg_SplitScreen.
      * @exports ICSVCMsg_SplitScreen
@@ -3850,8 +3857,8 @@ exports.CSVCMsg_SplitScreen = $root.CSVCMsg_SplitScreen = (() => {
         return message;
     };
     return CSVCMsg_SplitScreen;
-})();
-exports.CSVCMsg_GetCvarValue = $root.CSVCMsg_GetCvarValue = (() => {
+})());
+exports.CSVCMsg_GetCvarValue = ($root.CSVCMsg_GetCvarValue = (() => {
     /**
      * Properties of a CSVCMsg_GetCvarValue.
      * @exports ICSVCMsg_GetCvarValue
@@ -3919,8 +3926,8 @@ exports.CSVCMsg_GetCvarValue = $root.CSVCMsg_GetCvarValue = (() => {
         return message;
     };
     return CSVCMsg_GetCvarValue;
-})();
-exports.CSVCMsg_Menu = $root.CSVCMsg_Menu = (() => {
+})());
+exports.CSVCMsg_Menu = ($root.CSVCMsg_Menu = (() => {
     /**
      * Properties of a CSVCMsg_Menu.
      * @exports ICSVCMsg_Menu
@@ -3988,8 +3995,8 @@ exports.CSVCMsg_Menu = $root.CSVCMsg_Menu = (() => {
         return message;
     };
     return CSVCMsg_Menu;
-})();
-exports.CSVCMsg_UserMessage = $root.CSVCMsg_UserMessage = (() => {
+})());
+exports.CSVCMsg_UserMessage = ($root.CSVCMsg_UserMessage = (() => {
     /**
      * Properties of a CSVCMsg_UserMessage.
      * @exports ICSVCMsg_UserMessage
@@ -4068,8 +4075,8 @@ exports.CSVCMsg_UserMessage = $root.CSVCMsg_UserMessage = (() => {
         return message;
     };
     return CSVCMsg_UserMessage;
-})();
-exports.CSVCMsg_PaintmapData = $root.CSVCMsg_PaintmapData = (() => {
+})());
+exports.CSVCMsg_PaintmapData = ($root.CSVCMsg_PaintmapData = (() => {
     /**
      * Properties of a CSVCMsg_PaintmapData.
      * @exports ICSVCMsg_PaintmapData
@@ -4126,8 +4133,8 @@ exports.CSVCMsg_PaintmapData = $root.CSVCMsg_PaintmapData = (() => {
         return message;
     };
     return CSVCMsg_PaintmapData;
-})();
-exports.CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
+})());
+exports.CSVCMsg_GameEvent = ($root.CSVCMsg_GameEvent = (() => {
     /**
      * Properties of a CSVCMsg_GameEvent.
      * @exports ICSVCMsg_GameEvent
@@ -4303,7 +4310,9 @@ exports.CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
          * @memberof CSVCMsg_GameEvent.key_t
          * @instance
          */
-        key_t.prototype.valUint64 = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+        key_t.prototype.valUint64 = $util.Long
+            ? $util.Long.fromBits(0, 0, true)
+            : 0;
         /**
          * key_t valWstring.
          * @member {Uint8Array} valWstring
@@ -4366,8 +4375,8 @@ exports.CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
         return key_t;
     })();
     return CSVCMsg_GameEvent;
-})();
-exports.CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
+})());
+exports.CSVCMsg_GameEventList = ($root.CSVCMsg_GameEventList = (() => {
     /**
      * Properties of a CSVCMsg_GameEventList.
      * @exports ICSVCMsg_GameEventList
@@ -4579,8 +4588,8 @@ exports.CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
         return descriptor_t;
     })();
     return CSVCMsg_GameEventList;
-})();
-exports.CSVCMsg_TempEntities = $root.CSVCMsg_TempEntities = (() => {
+})());
+exports.CSVCMsg_TempEntities = ($root.CSVCMsg_TempEntities = (() => {
     /**
      * Properties of a CSVCMsg_TempEntities.
      * @exports ICSVCMsg_TempEntities
@@ -4659,8 +4668,8 @@ exports.CSVCMsg_TempEntities = $root.CSVCMsg_TempEntities = (() => {
         return message;
     };
     return CSVCMsg_TempEntities;
-})();
-exports.CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
+})());
+exports.CSVCMsg_PacketEntities = ($root.CSVCMsg_PacketEntities = (() => {
     /**
      * Properties of a CSVCMsg_PacketEntities.
      * @exports ICSVCMsg_PacketEntities
@@ -4783,8 +4792,8 @@ exports.CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
         return message;
     };
     return CSVCMsg_PacketEntities;
-})();
-exports.CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
+})());
+exports.CSVCMsg_Sounds = ($root.CSVCMsg_Sounds = (() => {
     /**
      * Properties of a CSVCMsg_Sounds.
      * @exports ICSVCMsg_Sounds
@@ -5089,8 +5098,8 @@ exports.CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
         return sounddata_t;
     })();
     return CSVCMsg_Sounds;
-})();
-exports.CSVCMsg_EntityMsg = $root.CSVCMsg_EntityMsg = (() => {
+})());
+exports.CSVCMsg_EntityMsg = ($root.CSVCMsg_EntityMsg = (() => {
     /**
      * Properties of a CSVCMsg_EntityMsg.
      * @exports ICSVCMsg_EntityMsg
@@ -5169,8 +5178,8 @@ exports.CSVCMsg_EntityMsg = $root.CSVCMsg_EntityMsg = (() => {
         return message;
     };
     return CSVCMsg_EntityMsg;
-})();
-exports.CSVCMsg_CmdKeyValues = $root.CSVCMsg_CmdKeyValues = (() => {
+})());
+exports.CSVCMsg_CmdKeyValues = ($root.CSVCMsg_CmdKeyValues = (() => {
     /**
      * Properties of a CSVCMsg_CmdKeyValues.
      * @exports ICSVCMsg_CmdKeyValues
@@ -5227,8 +5236,8 @@ exports.CSVCMsg_CmdKeyValues = $root.CSVCMsg_CmdKeyValues = (() => {
         return message;
     };
     return CSVCMsg_CmdKeyValues;
-})();
-exports.CSVCMsg_EncryptedData = $root.CSVCMsg_EncryptedData = (() => {
+})());
+exports.CSVCMsg_EncryptedData = ($root.CSVCMsg_EncryptedData = (() => {
     /**
      * Properties of a CSVCMsg_EncryptedData.
      * @exports ICSVCMsg_EncryptedData
@@ -5296,8 +5305,8 @@ exports.CSVCMsg_EncryptedData = $root.CSVCMsg_EncryptedData = (() => {
         return message;
     };
     return CSVCMsg_EncryptedData;
-})();
-exports.CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
+})());
+exports.CSVCMsg_HltvReplay = ($root.CSVCMsg_HltvReplay = (() => {
     /**
      * Properties of a CSVCMsg_HltvReplay.
      * @exports ICSVCMsg_HltvReplay
@@ -5420,8 +5429,8 @@ exports.CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
         return message;
     };
     return CSVCMsg_HltvReplay;
-})();
-exports.CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
+})());
+exports.CCLCMsg_HltvReplay = ($root.CCLCMsg_HltvReplay = (() => {
     /**
      * Properties of a CCLCMsg_HltvReplay.
      * @exports ICCLCMsg_HltvReplay
@@ -5522,5 +5531,5 @@ exports.CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
         return message;
     };
     return CCLCMsg_HltvReplay;
-})();
+})());
 //# sourceMappingURL=netmessages.js.map

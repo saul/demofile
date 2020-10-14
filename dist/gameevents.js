@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.GameEvents = void 0;
 const events_1 = require("events");
 const gameevent_1 = require("./gameevent");
 /**

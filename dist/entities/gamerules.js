@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.GameRules = void 0;
 const networkable_1 = require("./networkable");
 /**
  * Represents the game rules.

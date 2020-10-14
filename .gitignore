@@ -1,4 +1,5 @@
-node_modules
+.vscode/
+coverage/
+demos/
+node_modules/
 *.log
-.vscode
-demos

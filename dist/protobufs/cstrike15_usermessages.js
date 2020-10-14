@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = exports.CMsgNotificationOfSuspiciousActivity = exports.CMsgGCHUpdateSession = exports.CMsgGCMsgSetOptions = exports.CMsgGCMsgMasterSetClientMsgRouting_Response = exports.CMsgGCMsgMasterSetWebAPIRouting_Response = exports.CMsgGCMsgMasterSetClientMsgRouting = exports.CMsgGCMsgMasterSetWebAPIRouting = exports.CMsgGCRoutingInfo = exports.CMsgGCGetPartnerAccountLink_Response = exports.CMsgGCGetPartnerAccountLink = exports.CMsgGCHAccountVacStatusChange = exports.CGCSystemMsg_GetPurchaseTrust_Response = exports.CGCSystemMsg_GetPurchaseTrust_Request = exports.CMsgGCMsgWebAPIJobRequestForwardResponse = exports.CMsgGCMsgMasterSetDirectory_Response = exports.CMsgGCMsgMasterSetDirectory = exports.CMsgGCCheckFriendship_Response = exports.CMsgGCCheckFriendship = exports.CMsgGCGetPersonaNames_Response = exports.CMsgGCGetPersonaNames = exports.CGCSystemMsg_GetAccountDetails_Response = exports.CGCSystemMsg_GetAccountDetails = exports.CMsgAMGrantGuestPasses2Response = exports.CMsgAMGrantGuestPasses2 = exports.CMsgGCGetEmailTemplateResponse = exports.CMsgGCGetEmailTemplate = exports.CMsgAMSendEmailResponse = exports.CMsgAMSendEmail = exports.CGCMsgGetSystemStatsResponse = exports.CGCMsgGetSystemStats = exports.CGCMsgSystemStatsSchema = exports.CGCMsgGetIPLocationResponse = exports.CIPLocationInfo = exports.CGCMsgGetIPLocation = exports.CMsgAMAddFreeLicenseResponse = exports.CMsgAMAddFreeLicense = exports.CGCMsgSQLStatsResponse = exports.CGCMsgSQLStats = exports.CGCMsgMemCachedStatsResponse = exports.CGCMsgMemCachedStats = exports.CGCMsgMemCachedDelete = exports.CGCMsgMemCachedSet = exports.CGCMsgMemCachedGetResponse = exports.CGCMsgMemCachedGet = exports.CMsgGCGetCommandListResponse = exports.CMsgGCGetCommandList = exports.CMsgAMGetUserGameStatsResponse = exports.CMsgAMGetUserGameStats = exports.CMsgAMGetLicensesResponse = exports.CMsgPackageLicense = exports.CMsgAMGetLicenses = exports.CMsgNotifyWatchdog = exports.CMsgAMFindAccountsResponse = exports.CMsgAMFindAccounts = exports.CMsgHttpResponse = exports.CMsgWebAPIRequest = exports.CMsgHttpRequest = exports.CMsgWebAPIKey = exports.CMsgProtoBufHeader = exports.CMsgGCCStrike15_v2_Client2GCStreamUnlock = exports.CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin = exports.CMsgGCCStrike15_v2_AcknowledgePenalty = exports.CMsgGC_GlobalGame_Play = exports.CMsgGC_GlobalGame_Unsubscribe = exports.CMsgGC_GlobalGame_Subscribe = exports.CSOPersonaDataPublic = exports.CSOQuestProgress = exports.CSOEconCoupon = exports.CMsgGCCStrike15_v2_GC2ClientTournamentInfo = exports.CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure = exports.CMsgGCCStrike15_v2_Server2GCClientValidate = exports.CMsgGCCStrike15_v2_ClientSubmitSurveyVote = exports.CMsgGCCStrike15_v2_GiftsLeaderboardResponse = exports.CMsgGCCStrike15_v2_GiftsLeaderboardRequest = exports.CMsgGCCStrike15_v2_ServerVarValueNotificationInfo = exports.CMsgGCCStrike15_v2_ClientVarValueNotificationInfo = exports.CMsgCStrike15Welcome = exports.CMsgGCToGCReloadVersions = exports.CAttribute_String = exports.CMsgGCCStrike15_v2_Fantasy = exports.CMsgGCCStrike15_v2_Predictions = exports.CMsgGCCStrike15_v2_MatchList = exports.CDataGCCStrike15_v2_TournamentInfo = exports.CDataGCCStrike15_v2_TournamentSection = exports.CDataGCCStrike15_v2_TournamentGroup = exports.CDataGCCStrike15_v2_TournamentGroupTeam = exports.CDataGCCStrike15_v2_MatchInfo = exports.CMsgGCCStrike15_v2_MatchListRequestFullGameInfo = exports.CMsgGCCStrike15_v2_MatchListRequestTournamentGames = exports.CMsgGCCStrike15_v2_MatchListRequestRecentUserGames = exports.CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser = exports.CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames = exports.CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification = exports.CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse = exports.CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest = exports.CMsgItemAcknowledged = exports.CMsgGCCStrike15_v2_MatchEndRewardDropsNotification = exports.CEconItemPreviewDataBlock = exports.CMsgGCCStrike15_v2_MatchEndRunRewardDrops = exports.CMsgGCCStrike15_v2_Client2GCTextMsg = exports.CMsgGCCStrike15_v2_GC2ClientTextMsg = exports.CClientHeaderOverwatchEvidence = exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus = exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment = exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate = exports.CMsgGCCStrike15_v2_PlayersProfile = exports.CMsgGCCStrike15_v2_ClientRequestPlayersProfile = exports.CMsgGCCStrike15_v2_WatchInfoUsers = exports.CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded = exports.CMsgGCCstrike15_v2_ClientRequestNewMission = exports.CMsgGCCStrike15_v2_ClientRequestJoinServerData = exports.CMsgGCCStrike15_v2_ClientRequestJoinFriendData = exports.WatchableMatchInfo = exports.CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends = exports.CMsgGCCStrike15_v2_ClientReportResponse = exports.CMsgGCCStrike15_v2_ClientReportServer = exports.CMsgGCCStrike15_v2_ClientCommendPlayer = exports.CMsgGCCStrike15_v2_ClientReportPlayer = exports.CMsgGCCStrike15_v2_ServerNotificationForUserPenalty = exports.CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate = exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate = exports.CMsgGCCStrike15_v2_MatchmakingServer2GCKick = exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon = exports.CMsgGCCStrike15_v2_AccountPrivacySettings = exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientHello = exports.CMsgGCCStrike15_v2_MatchmakingClient2GCHello = exports.CMsgGCCStrike15_v2_MatchmakingServerMatchEnd = exports.CMsgGCCStrike15_v2_MatchmakingServerRoundStats = exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve = exports.CMsgGCCStrike15_v2_MatchmakingServerReservationResponse = exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve = exports.CPreMatchInfoData = exports.CDataGCCStrike15_v2_TournamentMatchDraft = exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = exports.CMsgGCCStrike15_v2_MatchmakingClient2ServerPing = exports.CMsgGCCStrike15_v2_MatchmakingStop = exports.CMsgGCCStrike15_v2_MatchmakingStart = exports.CMsgGCCStrike15_v2_GC2ServerReservationUpdate = exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm = exports.CMsgGCCStrike15_v2_MatchmakingGCOperationalStats = exports.CMsgGC_ServerQuestUpdateData = exports.PlayerQuestData = exports.MatchEndItemUpdates = exports.XpProgressData = exports.IpAddressMask = exports.ServerHltvInfo = exports.TournamentMatchSetup = exports.AccountActivity = exports.PlayerMedalsInfo = exports.PlayerCommendationInfo = exports.PlayerRankingInfo = exports.OperationalStatisticsPacket = exports.OperationalStatisticElement = exports.OperationalStatisticDescription = exports.GlobalStatistics = exports.TournamentEvent = exports.TournamentTeam = exports.TournamentPlayer = exports.DetailedSearchStatistic = exports.GameServerPing = exports.CCLCMsg_HltvReplay = exports.CSVCMsg_HltvReplay = exports.CSVCMsg_EncryptedData = exports.CSVCMsg_CmdKeyValues = exports.CSVCMsg_EntityMsg = exports.CSVCMsg_Sounds = exports.CSVCMsg_PacketEntities = exports.CSVCMsg_TempEntities = exports.CSVCMsg_GameEventList = exports.CSVCMsg_GameEvent = exports.CSVCMsg_PaintmapData = exports.CSVCMsg_UserMessage = exports.CSVCMsg_Menu = exports.CSVCMsg_GetCvarValue = exports.CSVCMsg_SplitScreen = exports.CSVCMsg_BSPDecal = exports.CSVCMsg_Prefetch = exports.CSVCMsg_CrosshairAngle = exports.CSVCMsg_FixAngle = exports.CSVCMsg_VoiceData = exports.CSVCMsg_VoiceInit = exports.CSVCMsg_UpdateStringTable = exports.CSVCMsg_CreateStringTable = exports.CSVCMsg_SetView = exports.CSVCMsg_SetPause = exports.CSVCMsg_Print = exports.CSVCMsg_SendTable = exports.CSVCMsg_ClassInfo = exports.CSVCMsg_ServerInfo = exports.CCLCMsg_CmdKeyValues = exports.CCLCMsg_SplitPlayerConnect = exports.CCLCMsg_LoadingProgress = exports.CCLCMsg_FileCRCCheck = exports.CCLCMsg_RespondCvarValue = exports.CCLCMsg_ListenEvents = exports.CCLCMsg_BaselineAck = exports.CCLCMsg_VoiceData = exports.CCLCMsg_Move = exports.CCLCMsg_ClientInfo = exports.CNETMsg_PlayerAvatarData = exports.CNETMsg_SplitScreenUser = exports.CNETMsg_File = exports.CNETMsg_Disconnect = exports.CNETMsg_NOP = exports.CNETMsg_SetConVar = exports.CMsg_CVars = exports.CNETMsg_SignonState = exports.CNETMsg_StringCmd = exports.CNETMsg_Tick = exports.CMsgRGBA = exports.CMsgQAngle = exports.CMsgVector2D = exports.CMsgVector = exports.google = exports.CCSUsrMsg_ServerRankRevealAll = exports.CCSUsrMsg_ClientInfo = exports.CCSUsrMsg_WarmupHasEnded = exports.CCSUsrMsg_DisconnectToLobby = exports.CCSUsrMsg_StopSpectatorMode = exports.CCSUsrMsg_RequestState = exports.CCSUsrMsg_GameTitle = exports.CCSUsrMsg_ResetHud = exports.CCSUsrMsg_RoundBackupFilenames = exports.CCSUsrMsg_GlowPropTurnOff = exports.CCSUsrMsg_ItemDrop = exports.CCSUsrMsg_MatchStatsUpdate = exports.CCSUsrMsg_MarkAchievement = exports.CCSUsrMsg_AmmoDenied = exports.CCSUsrMsg_BarTime = exports.CCSUsrMsg_ShowMenu = exports.CCSUsrMsg_ItemPickup = exports.CCSUsrMsg_XpUpdate = exports.CCSUsrMsg_ServerRankUpdate = exports.CCSUsrMsg_SendLastKillerDamageToClient = exports.CCSUsrMsg_VoteSetup = exports.CCSUsrMsg_VoteFailed = exports.CCSUsrMsg_VotePass = exports.CCSUsrMsg_VoteStart = exports.CCSUsrMsg_CallVoteFailed = exports.CCSUsrMsg_XRankUpd = exports.CCSUsrMsg_XRankGet = exports.CCSUsrMsg_QuestProgress = exports.CCSUsrMsg_DisplayInventory = exports.CCSUsrMsg_PlayerStatsUpdate = exports.CCSUsrMsg_MatchEndConditions = exports.CCSUsrMsg_AchievementEvent = exports.CCSUsrMsg_CurrentTimescale = exports.CCSUsrMsg_DesiredTimescale = exports.CCSUsrMsg_KillCam = exports.CCSUsrMsg_ReportHit = exports.CCSUsrMsg_AdjustMoney = exports.CCSUsrMsg_ReloadEffect = exports.CCSUsrMsg_SendPlayerItemFound = exports.CCSUsrMsg_SendPlayerItemDrops = exports.CCSUsrMsg_ProcessSpottedEntityUpdate = exports.CCSUsrMsg_KeyHintText = exports.CCSUsrMsg_HintText = exports.CCSUsrMsg_RadioText = exports.CCSUsrMsg_Damage = exports.CCSUsrMsg_VoiceMask = exports.CCSUsrMsg_RawAudio = exports.CCSUsrMsg_SendAudio = exports.CCSUsrMsg_CloseCaptionDirect = exports.CCSUsrMsg_CloseCaption = exports.CCSUsrMsg_Rumble = exports.CCSUsrMsg_Fade = exports.CCSUsrMsg_Shake = exports.CCSUsrMsg_HudMsg = exports.CCSUsrMsg_TextMsg = exports.CCSUsrMsg_SayText2 = exports.CCSUsrMsg_SayText = exports.CCSUsrMsg_HudText = exports.CCSUsrMsg_Train = exports.CCSUsrMsg_Geiger = exports.CCSUsrMsg_VGUIMenu = exports.ECstrike15UserMessages = void 0;
 /* tslint:disable */
 const $protobuf = require("protobufjs/minimal");
 // Common aliases
@@ -74,73 +75,73 @@ exports.default = $root;
  * @property {number} CS_UM_XpUpdate=65 CS_UM_XpUpdate value
  * @property {number} CS_UM_QuestProgress=66 CS_UM_QuestProgress value
  */
-exports.ECstrike15UserMessages = $root.ECstrike15UserMessages = (function () {
+exports.ECstrike15UserMessages = ($root.ECstrike15UserMessages = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[1] = "CS_UM_VGUIMenu"] = 1;
-    values[valuesById[2] = "CS_UM_Geiger"] = 2;
-    values[valuesById[3] = "CS_UM_Train"] = 3;
-    values[valuesById[4] = "CS_UM_HudText"] = 4;
-    values[valuesById[5] = "CS_UM_SayText"] = 5;
-    values[valuesById[6] = "CS_UM_SayText2"] = 6;
-    values[valuesById[7] = "CS_UM_TextMsg"] = 7;
-    values[valuesById[8] = "CS_UM_HudMsg"] = 8;
-    values[valuesById[9] = "CS_UM_ResetHud"] = 9;
-    values[valuesById[10] = "CS_UM_GameTitle"] = 10;
-    values[valuesById[12] = "CS_UM_Shake"] = 12;
-    values[valuesById[13] = "CS_UM_Fade"] = 13;
-    values[valuesById[14] = "CS_UM_Rumble"] = 14;
-    values[valuesById[15] = "CS_UM_CloseCaption"] = 15;
-    values[valuesById[16] = "CS_UM_CloseCaptionDirect"] = 16;
-    values[valuesById[17] = "CS_UM_SendAudio"] = 17;
-    values[valuesById[18] = "CS_UM_RawAudio"] = 18;
-    values[valuesById[19] = "CS_UM_VoiceMask"] = 19;
-    values[valuesById[20] = "CS_UM_RequestState"] = 20;
-    values[valuesById[21] = "CS_UM_Damage"] = 21;
-    values[valuesById[22] = "CS_UM_RadioText"] = 22;
-    values[valuesById[23] = "CS_UM_HintText"] = 23;
-    values[valuesById[24] = "CS_UM_KeyHintText"] = 24;
-    values[valuesById[25] = "CS_UM_ProcessSpottedEntityUpdate"] = 25;
-    values[valuesById[26] = "CS_UM_ReloadEffect"] = 26;
-    values[valuesById[27] = "CS_UM_AdjustMoney"] = 27;
-    values[valuesById[28] = "CS_UM_UpdateTeamMoney"] = 28;
-    values[valuesById[29] = "CS_UM_StopSpectatorMode"] = 29;
-    values[valuesById[30] = "CS_UM_KillCam"] = 30;
-    values[valuesById[31] = "CS_UM_DesiredTimescale"] = 31;
-    values[valuesById[32] = "CS_UM_CurrentTimescale"] = 32;
-    values[valuesById[33] = "CS_UM_AchievementEvent"] = 33;
-    values[valuesById[34] = "CS_UM_MatchEndConditions"] = 34;
-    values[valuesById[35] = "CS_UM_DisconnectToLobby"] = 35;
-    values[valuesById[36] = "CS_UM_PlayerStatsUpdate"] = 36;
-    values[valuesById[37] = "CS_UM_DisplayInventory"] = 37;
-    values[valuesById[38] = "CS_UM_WarmupHasEnded"] = 38;
-    values[valuesById[39] = "CS_UM_ClientInfo"] = 39;
-    values[valuesById[40] = "CS_UM_XRankGet"] = 40;
-    values[valuesById[41] = "CS_UM_XRankUpd"] = 41;
-    values[valuesById[45] = "CS_UM_CallVoteFailed"] = 45;
-    values[valuesById[46] = "CS_UM_VoteStart"] = 46;
-    values[valuesById[47] = "CS_UM_VotePass"] = 47;
-    values[valuesById[48] = "CS_UM_VoteFailed"] = 48;
-    values[valuesById[49] = "CS_UM_VoteSetup"] = 49;
-    values[valuesById[50] = "CS_UM_ServerRankRevealAll"] = 50;
-    values[valuesById[51] = "CS_UM_SendLastKillerDamageToClient"] = 51;
-    values[valuesById[52] = "CS_UM_ServerRankUpdate"] = 52;
-    values[valuesById[53] = "CS_UM_ItemPickup"] = 53;
-    values[valuesById[54] = "CS_UM_ShowMenu"] = 54;
-    values[valuesById[55] = "CS_UM_BarTime"] = 55;
-    values[valuesById[56] = "CS_UM_AmmoDenied"] = 56;
-    values[valuesById[57] = "CS_UM_MarkAchievement"] = 57;
-    values[valuesById[58] = "CS_UM_MatchStatsUpdate"] = 58;
-    values[valuesById[59] = "CS_UM_ItemDrop"] = 59;
-    values[valuesById[60] = "CS_UM_GlowPropTurnOff"] = 60;
-    values[valuesById[61] = "CS_UM_SendPlayerItemDrops"] = 61;
-    values[valuesById[62] = "CS_UM_RoundBackupFilenames"] = 62;
-    values[valuesById[63] = "CS_UM_SendPlayerItemFound"] = 63;
-    values[valuesById[64] = "CS_UM_ReportHit"] = 64;
-    values[valuesById[65] = "CS_UM_XpUpdate"] = 65;
-    values[valuesById[66] = "CS_UM_QuestProgress"] = 66;
+    values[(valuesById[1] = "CS_UM_VGUIMenu")] = 1;
+    values[(valuesById[2] = "CS_UM_Geiger")] = 2;
+    values[(valuesById[3] = "CS_UM_Train")] = 3;
+    values[(valuesById[4] = "CS_UM_HudText")] = 4;
+    values[(valuesById[5] = "CS_UM_SayText")] = 5;
+    values[(valuesById[6] = "CS_UM_SayText2")] = 6;
+    values[(valuesById[7] = "CS_UM_TextMsg")] = 7;
+    values[(valuesById[8] = "CS_UM_HudMsg")] = 8;
+    values[(valuesById[9] = "CS_UM_ResetHud")] = 9;
+    values[(valuesById[10] = "CS_UM_GameTitle")] = 10;
+    values[(valuesById[12] = "CS_UM_Shake")] = 12;
+    values[(valuesById[13] = "CS_UM_Fade")] = 13;
+    values[(valuesById[14] = "CS_UM_Rumble")] = 14;
+    values[(valuesById[15] = "CS_UM_CloseCaption")] = 15;
+    values[(valuesById[16] = "CS_UM_CloseCaptionDirect")] = 16;
+    values[(valuesById[17] = "CS_UM_SendAudio")] = 17;
+    values[(valuesById[18] = "CS_UM_RawAudio")] = 18;
+    values[(valuesById[19] = "CS_UM_VoiceMask")] = 19;
+    values[(valuesById[20] = "CS_UM_RequestState")] = 20;
+    values[(valuesById[21] = "CS_UM_Damage")] = 21;
+    values[(valuesById[22] = "CS_UM_RadioText")] = 22;
+    values[(valuesById[23] = "CS_UM_HintText")] = 23;
+    values[(valuesById[24] = "CS_UM_KeyHintText")] = 24;
+    values[(valuesById[25] = "CS_UM_ProcessSpottedEntityUpdate")] = 25;
+    values[(valuesById[26] = "CS_UM_ReloadEffect")] = 26;
+    values[(valuesById[27] = "CS_UM_AdjustMoney")] = 27;
+    values[(valuesById[28] = "CS_UM_UpdateTeamMoney")] = 28;
+    values[(valuesById[29] = "CS_UM_StopSpectatorMode")] = 29;
+    values[(valuesById[30] = "CS_UM_KillCam")] = 30;
+    values[(valuesById[31] = "CS_UM_DesiredTimescale")] = 31;
+    values[(valuesById[32] = "CS_UM_CurrentTimescale")] = 32;
+    values[(valuesById[33] = "CS_UM_AchievementEvent")] = 33;
+    values[(valuesById[34] = "CS_UM_MatchEndConditions")] = 34;
+    values[(valuesById[35] = "CS_UM_DisconnectToLobby")] = 35;
+    values[(valuesById[36] = "CS_UM_PlayerStatsUpdate")] = 36;
+    values[(valuesById[37] = "CS_UM_DisplayInventory")] = 37;
+    values[(valuesById[38] = "CS_UM_WarmupHasEnded")] = 38;
+    values[(valuesById[39] = "CS_UM_ClientInfo")] = 39;
+    values[(valuesById[40] = "CS_UM_XRankGet")] = 40;
+    values[(valuesById[41] = "CS_UM_XRankUpd")] = 41;
+    values[(valuesById[45] = "CS_UM_CallVoteFailed")] = 45;
+    values[(valuesById[46] = "CS_UM_VoteStart")] = 46;
+    values[(valuesById[47] = "CS_UM_VotePass")] = 47;
+    values[(valuesById[48] = "CS_UM_VoteFailed")] = 48;
+    values[(valuesById[49] = "CS_UM_VoteSetup")] = 49;
+    values[(valuesById[50] = "CS_UM_ServerRankRevealAll")] = 50;
+    values[(valuesById[51] = "CS_UM_SendLastKillerDamageToClient")] = 51;
+    values[(valuesById[52] = "CS_UM_ServerRankUpdate")] = 52;
+    values[(valuesById[53] = "CS_UM_ItemPickup")] = 53;
+    values[(valuesById[54] = "CS_UM_ShowMenu")] = 54;
+    values[(valuesById[55] = "CS_UM_BarTime")] = 55;
+    values[(valuesById[56] = "CS_UM_AmmoDenied")] = 56;
+    values[(valuesById[57] = "CS_UM_MarkAchievement")] = 57;
+    values[(valuesById[58] = "CS_UM_MatchStatsUpdate")] = 58;
+    values[(valuesById[59] = "CS_UM_ItemDrop")] = 59;
+    values[(valuesById[60] = "CS_UM_GlowPropTurnOff")] = 60;
+    values[(valuesById[61] = "CS_UM_SendPlayerItemDrops")] = 61;
+    values[(valuesById[62] = "CS_UM_RoundBackupFilenames")] = 62;
+    values[(valuesById[63] = "CS_UM_SendPlayerItemFound")] = 63;
+    values[(valuesById[64] = "CS_UM_ReportHit")] = 64;
+    values[(valuesById[65] = "CS_UM_XpUpdate")] = 65;
+    values[(valuesById[66] = "CS_UM_QuestProgress")] = 66;
     return values;
-})();
-exports.CCSUsrMsg_VGUIMenu = $root.CCSUsrMsg_VGUIMenu = (() => {
+})());
+exports.CCSUsrMsg_VGUIMenu = ($root.CCSUsrMsg_VGUIMenu = (() => {
     /**
      * Properties of a CCSUsrMsg_VGUIMenu.
      * @exports ICCSUsrMsg_VGUIMenu
@@ -291,8 +292,8 @@ exports.CCSUsrMsg_VGUIMenu = $root.CCSUsrMsg_VGUIMenu = (() => {
         return Subkey;
     })();
     return CCSUsrMsg_VGUIMenu;
-})();
-exports.CCSUsrMsg_Geiger = $root.CCSUsrMsg_Geiger = (() => {
+})());
+exports.CCSUsrMsg_Geiger = ($root.CCSUsrMsg_Geiger = (() => {
     /**
      * Properties of a CCSUsrMsg_Geiger.
      * @exports ICCSUsrMsg_Geiger
@@ -349,8 +350,8 @@ exports.CCSUsrMsg_Geiger = $root.CCSUsrMsg_Geiger = (() => {
         return message;
     };
     return CCSUsrMsg_Geiger;
-})();
-exports.CCSUsrMsg_Train = $root.CCSUsrMsg_Train = (() => {
+})());
+exports.CCSUsrMsg_Train = ($root.CCSUsrMsg_Train = (() => {
     /**
      * Properties of a CCSUsrMsg_Train.
      * @exports ICCSUsrMsg_Train
@@ -407,8 +408,8 @@ exports.CCSUsrMsg_Train = $root.CCSUsrMsg_Train = (() => {
         return message;
     };
     return CCSUsrMsg_Train;
-})();
-exports.CCSUsrMsg_HudText = $root.CCSUsrMsg_HudText = (() => {
+})());
+exports.CCSUsrMsg_HudText = ($root.CCSUsrMsg_HudText = (() => {
     /**
      * Properties of a CCSUsrMsg_HudText.
      * @exports ICCSUsrMsg_HudText
@@ -465,8 +466,8 @@ exports.CCSUsrMsg_HudText = $root.CCSUsrMsg_HudText = (() => {
         return message;
     };
     return CCSUsrMsg_HudText;
-})();
-exports.CCSUsrMsg_SayText = $root.CCSUsrMsg_SayText = (() => {
+})());
+exports.CCSUsrMsg_SayText = ($root.CCSUsrMsg_SayText = (() => {
     /**
      * Properties of a CCSUsrMsg_SayText.
      * @exports ICCSUsrMsg_SayText
@@ -556,8 +557,8 @@ exports.CCSUsrMsg_SayText = $root.CCSUsrMsg_SayText = (() => {
         return message;
     };
     return CCSUsrMsg_SayText;
-})();
-exports.CCSUsrMsg_SayText2 = $root.CCSUsrMsg_SayText2 = (() => {
+})());
+exports.CCSUsrMsg_SayText2 = ($root.CCSUsrMsg_SayText2 = (() => {
     /**
      * Properties of a CCSUsrMsg_SayText2.
      * @exports ICCSUsrMsg_SayText2
@@ -661,8 +662,8 @@ exports.CCSUsrMsg_SayText2 = $root.CCSUsrMsg_SayText2 = (() => {
         return message;
     };
     return CCSUsrMsg_SayText2;
-})();
-exports.CCSUsrMsg_TextMsg = $root.CCSUsrMsg_TextMsg = (() => {
+})());
+exports.CCSUsrMsg_TextMsg = ($root.CCSUsrMsg_TextMsg = (() => {
     /**
      * Properties of a CCSUsrMsg_TextMsg.
      * @exports ICCSUsrMsg_TextMsg
@@ -733,8 +734,8 @@ exports.CCSUsrMsg_TextMsg = $root.CCSUsrMsg_TextMsg = (() => {
         return message;
     };
     return CCSUsrMsg_TextMsg;
-})();
-exports.CCSUsrMsg_HudMsg = $root.CCSUsrMsg_HudMsg = (() => {
+})());
+exports.CCSUsrMsg_HudMsg = ($root.CCSUsrMsg_HudMsg = (() => {
     /**
      * Properties of a CCSUsrMsg_HudMsg.
      * @exports ICCSUsrMsg_HudMsg
@@ -890,8 +891,8 @@ exports.CCSUsrMsg_HudMsg = $root.CCSUsrMsg_HudMsg = (() => {
         return message;
     };
     return CCSUsrMsg_HudMsg;
-})();
-exports.CCSUsrMsg_Shake = $root.CCSUsrMsg_Shake = (() => {
+})());
+exports.CCSUsrMsg_Shake = ($root.CCSUsrMsg_Shake = (() => {
     /**
      * Properties of a CCSUsrMsg_Shake.
      * @exports ICCSUsrMsg_Shake
@@ -981,8 +982,8 @@ exports.CCSUsrMsg_Shake = $root.CCSUsrMsg_Shake = (() => {
         return message;
     };
     return CCSUsrMsg_Shake;
-})();
-exports.CCSUsrMsg_Fade = $root.CCSUsrMsg_Fade = (() => {
+})());
+exports.CCSUsrMsg_Fade = ($root.CCSUsrMsg_Fade = (() => {
     /**
      * Properties of a CCSUsrMsg_Fade.
      * @exports ICCSUsrMsg_Fade
@@ -1072,8 +1073,8 @@ exports.CCSUsrMsg_Fade = $root.CCSUsrMsg_Fade = (() => {
         return message;
     };
     return CCSUsrMsg_Fade;
-})();
-exports.CCSUsrMsg_Rumble = $root.CCSUsrMsg_Rumble = (() => {
+})());
+exports.CCSUsrMsg_Rumble = ($root.CCSUsrMsg_Rumble = (() => {
     /**
      * Properties of a CCSUsrMsg_Rumble.
      * @exports ICCSUsrMsg_Rumble
@@ -1152,8 +1153,8 @@ exports.CCSUsrMsg_Rumble = $root.CCSUsrMsg_Rumble = (() => {
         return message;
     };
     return CCSUsrMsg_Rumble;
-})();
-exports.CCSUsrMsg_CloseCaption = $root.CCSUsrMsg_CloseCaption = (() => {
+})());
+exports.CCSUsrMsg_CloseCaption = ($root.CCSUsrMsg_CloseCaption = (() => {
     /**
      * Properties of a CCSUsrMsg_CloseCaption.
      * @exports ICCSUsrMsg_CloseCaption
@@ -1232,8 +1233,8 @@ exports.CCSUsrMsg_CloseCaption = $root.CCSUsrMsg_CloseCaption = (() => {
         return message;
     };
     return CCSUsrMsg_CloseCaption;
-})();
-exports.CCSUsrMsg_CloseCaptionDirect = $root.CCSUsrMsg_CloseCaptionDirect = (() => {
+})());
+exports.CCSUsrMsg_CloseCaptionDirect = ($root.CCSUsrMsg_CloseCaptionDirect = (() => {
     /**
      * Properties of a CCSUsrMsg_CloseCaptionDirect.
      * @exports ICCSUsrMsg_CloseCaptionDirect
@@ -1312,8 +1313,8 @@ exports.CCSUsrMsg_CloseCaptionDirect = $root.CCSUsrMsg_CloseCaptionDirect = (() 
         return message;
     };
     return CCSUsrMsg_CloseCaptionDirect;
-})();
-exports.CCSUsrMsg_SendAudio = $root.CCSUsrMsg_SendAudio = (() => {
+})());
+exports.CCSUsrMsg_SendAudio = ($root.CCSUsrMsg_SendAudio = (() => {
     /**
      * Properties of a CCSUsrMsg_SendAudio.
      * @exports ICCSUsrMsg_SendAudio
@@ -1370,8 +1371,8 @@ exports.CCSUsrMsg_SendAudio = $root.CCSUsrMsg_SendAudio = (() => {
         return message;
     };
     return CCSUsrMsg_SendAudio;
-})();
-exports.CCSUsrMsg_RawAudio = $root.CCSUsrMsg_RawAudio = (() => {
+})());
+exports.CCSUsrMsg_RawAudio = ($root.CCSUsrMsg_RawAudio = (() => {
     /**
      * Properties of a CCSUsrMsg_RawAudio.
      * @exports ICCSUsrMsg_RawAudio
@@ -1461,8 +1462,8 @@ exports.CCSUsrMsg_RawAudio = $root.CCSUsrMsg_RawAudio = (() => {
         return message;
     };
     return CCSUsrMsg_RawAudio;
-})();
-exports.CCSUsrMsg_VoiceMask = $root.CCSUsrMsg_VoiceMask = (() => {
+})());
+exports.CCSUsrMsg_VoiceMask = ($root.CCSUsrMsg_VoiceMask = (() => {
     /**
      * Properties of a CCSUsrMsg_VoiceMask.
      * @exports ICCSUsrMsg_VoiceMask
@@ -1602,8 +1603,8 @@ exports.CCSUsrMsg_VoiceMask = $root.CCSUsrMsg_VoiceMask = (() => {
         return PlayerMask;
     })();
     return CCSUsrMsg_VoiceMask;
-})();
-exports.CCSUsrMsg_Damage = $root.CCSUsrMsg_Damage = (() => {
+})());
+exports.CCSUsrMsg_Damage = ($root.CCSUsrMsg_Damage = (() => {
     /**
      * Properties of a CCSUsrMsg_Damage.
      * @exports ICCSUsrMsg_Damage
@@ -1682,8 +1683,8 @@ exports.CCSUsrMsg_Damage = $root.CCSUsrMsg_Damage = (() => {
         return message;
     };
     return CCSUsrMsg_Damage;
-})();
-exports.CCSUsrMsg_RadioText = $root.CCSUsrMsg_RadioText = (() => {
+})());
+exports.CCSUsrMsg_RadioText = ($root.CCSUsrMsg_RadioText = (() => {
     /**
      * Properties of a CCSUsrMsg_RadioText.
      * @exports ICCSUsrMsg_RadioText
@@ -1776,8 +1777,8 @@ exports.CCSUsrMsg_RadioText = $root.CCSUsrMsg_RadioText = (() => {
         return message;
     };
     return CCSUsrMsg_RadioText;
-})();
-exports.CCSUsrMsg_HintText = $root.CCSUsrMsg_HintText = (() => {
+})());
+exports.CCSUsrMsg_HintText = ($root.CCSUsrMsg_HintText = (() => {
     /**
      * Properties of a CCSUsrMsg_HintText.
      * @exports ICCSUsrMsg_HintText
@@ -1834,8 +1835,8 @@ exports.CCSUsrMsg_HintText = $root.CCSUsrMsg_HintText = (() => {
         return message;
     };
     return CCSUsrMsg_HintText;
-})();
-exports.CCSUsrMsg_KeyHintText = $root.CCSUsrMsg_KeyHintText = (() => {
+})());
+exports.CCSUsrMsg_KeyHintText = ($root.CCSUsrMsg_KeyHintText = (() => {
     /**
      * Properties of a CCSUsrMsg_KeyHintText.
      * @exports ICCSUsrMsg_KeyHintText
@@ -1895,8 +1896,8 @@ exports.CCSUsrMsg_KeyHintText = $root.CCSUsrMsg_KeyHintText = (() => {
         return message;
     };
     return CCSUsrMsg_KeyHintText;
-})();
-exports.CCSUsrMsg_ProcessSpottedEntityUpdate = $root.CCSUsrMsg_ProcessSpottedEntityUpdate = (() => {
+})());
+exports.CCSUsrMsg_ProcessSpottedEntityUpdate = ($root.CCSUsrMsg_ProcessSpottedEntityUpdate = (() => {
     /**
      * Properties of a CCSUsrMsg_ProcessSpottedEntityUpdate.
      * @exports ICCSUsrMsg_ProcessSpottedEntityUpdate
@@ -1932,7 +1933,8 @@ exports.CCSUsrMsg_ProcessSpottedEntityUpdate = $root.CCSUsrMsg_ProcessSpottedEnt
      * @memberof CCSUsrMsg_ProcessSpottedEntityUpdate
      * @instance
      */
-    CCSUsrMsg_ProcessSpottedEntityUpdate.prototype.entityUpdates = $util.emptyArray;
+    CCSUsrMsg_ProcessSpottedEntityUpdate.prototype.entityUpdates =
+        $util.emptyArray;
     /**
      * Decodes a CCSUsrMsg_ProcessSpottedEntityUpdate message from the specified reader or buffer.
      * @function decode
@@ -2113,8 +2115,8 @@ exports.CCSUsrMsg_ProcessSpottedEntityUpdate = $root.CCSUsrMsg_ProcessSpottedEnt
         return SpottedEntityUpdate;
     })();
     return CCSUsrMsg_ProcessSpottedEntityUpdate;
-})();
-exports.CCSUsrMsg_SendPlayerItemDrops = $root.CCSUsrMsg_SendPlayerItemDrops = (() => {
+})());
+exports.CCSUsrMsg_SendPlayerItemDrops = ($root.CCSUsrMsg_SendPlayerItemDrops = (() => {
     /**
      * Properties of a CCSUsrMsg_SendPlayerItemDrops.
      * @exports ICCSUsrMsg_SendPlayerItemDrops
@@ -2174,8 +2176,8 @@ exports.CCSUsrMsg_SendPlayerItemDrops = $root.CCSUsrMsg_SendPlayerItemDrops = ((
         return message;
     };
     return CCSUsrMsg_SendPlayerItemDrops;
-})();
-exports.CCSUsrMsg_SendPlayerItemFound = $root.CCSUsrMsg_SendPlayerItemFound = (() => {
+})());
+exports.CCSUsrMsg_SendPlayerItemFound = ($root.CCSUsrMsg_SendPlayerItemFound = (() => {
     /**
      * Properties of a CCSUsrMsg_SendPlayerItemFound.
      * @exports ICCSUsrMsg_SendPlayerItemFound
@@ -2243,8 +2245,8 @@ exports.CCSUsrMsg_SendPlayerItemFound = $root.CCSUsrMsg_SendPlayerItemFound = ((
         return message;
     };
     return CCSUsrMsg_SendPlayerItemFound;
-})();
-exports.CCSUsrMsg_ReloadEffect = $root.CCSUsrMsg_ReloadEffect = (() => {
+})());
+exports.CCSUsrMsg_ReloadEffect = ($root.CCSUsrMsg_ReloadEffect = (() => {
     /**
      * Properties of a CCSUsrMsg_ReloadEffect.
      * @exports ICCSUsrMsg_ReloadEffect
@@ -2345,8 +2347,8 @@ exports.CCSUsrMsg_ReloadEffect = $root.CCSUsrMsg_ReloadEffect = (() => {
         return message;
     };
     return CCSUsrMsg_ReloadEffect;
-})();
-exports.CCSUsrMsg_AdjustMoney = $root.CCSUsrMsg_AdjustMoney = (() => {
+})());
+exports.CCSUsrMsg_AdjustMoney = ($root.CCSUsrMsg_AdjustMoney = (() => {
     /**
      * Properties of a CCSUsrMsg_AdjustMoney.
      * @exports ICCSUsrMsg_AdjustMoney
@@ -2403,8 +2405,8 @@ exports.CCSUsrMsg_AdjustMoney = $root.CCSUsrMsg_AdjustMoney = (() => {
         return message;
     };
     return CCSUsrMsg_AdjustMoney;
-})();
-exports.CCSUsrMsg_ReportHit = $root.CCSUsrMsg_ReportHit = (() => {
+})());
+exports.CCSUsrMsg_ReportHit = ($root.CCSUsrMsg_ReportHit = (() => {
     /**
      * Properties of a CCSUsrMsg_ReportHit.
      * @exports ICCSUsrMsg_ReportHit
@@ -2494,8 +2496,8 @@ exports.CCSUsrMsg_ReportHit = $root.CCSUsrMsg_ReportHit = (() => {
         return message;
     };
     return CCSUsrMsg_ReportHit;
-})();
-exports.CCSUsrMsg_KillCam = $root.CCSUsrMsg_KillCam = (() => {
+})());
+exports.CCSUsrMsg_KillCam = ($root.CCSUsrMsg_KillCam = (() => {
     /**
      * Properties of a CCSUsrMsg_KillCam.
      * @exports ICCSUsrMsg_KillCam
@@ -2574,8 +2576,8 @@ exports.CCSUsrMsg_KillCam = $root.CCSUsrMsg_KillCam = (() => {
         return message;
     };
     return CCSUsrMsg_KillCam;
-})();
-exports.CCSUsrMsg_DesiredTimescale = $root.CCSUsrMsg_DesiredTimescale = (() => {
+})());
+exports.CCSUsrMsg_DesiredTimescale = ($root.CCSUsrMsg_DesiredTimescale = (() => {
     /**
      * Properties of a CCSUsrMsg_DesiredTimescale.
      * @exports ICCSUsrMsg_DesiredTimescale
@@ -2665,8 +2667,8 @@ exports.CCSUsrMsg_DesiredTimescale = $root.CCSUsrMsg_DesiredTimescale = (() => {
         return message;
     };
     return CCSUsrMsg_DesiredTimescale;
-})();
-exports.CCSUsrMsg_CurrentTimescale = $root.CCSUsrMsg_CurrentTimescale = (() => {
+})());
+exports.CCSUsrMsg_CurrentTimescale = ($root.CCSUsrMsg_CurrentTimescale = (() => {
     /**
      * Properties of a CCSUsrMsg_CurrentTimescale.
      * @exports ICCSUsrMsg_CurrentTimescale
@@ -2723,8 +2725,8 @@ exports.CCSUsrMsg_CurrentTimescale = $root.CCSUsrMsg_CurrentTimescale = (() => {
         return message;
     };
     return CCSUsrMsg_CurrentTimescale;
-})();
-exports.CCSUsrMsg_AchievementEvent = $root.CCSUsrMsg_AchievementEvent = (() => {
+})());
+exports.CCSUsrMsg_AchievementEvent = ($root.CCSUsrMsg_AchievementEvent = (() => {
     /**
      * Properties of a CCSUsrMsg_AchievementEvent.
      * @exports ICCSUsrMsg_AchievementEvent
@@ -2803,8 +2805,8 @@ exports.CCSUsrMsg_AchievementEvent = $root.CCSUsrMsg_AchievementEvent = (() => {
         return message;
     };
     return CCSUsrMsg_AchievementEvent;
-})();
-exports.CCSUsrMsg_MatchEndConditions = $root.CCSUsrMsg_MatchEndConditions = (() => {
+})());
+exports.CCSUsrMsg_MatchEndConditions = ($root.CCSUsrMsg_MatchEndConditions = (() => {
     /**
      * Properties of a CCSUsrMsg_MatchEndConditions.
      * @exports ICCSUsrMsg_MatchEndConditions
@@ -2894,8 +2896,8 @@ exports.CCSUsrMsg_MatchEndConditions = $root.CCSUsrMsg_MatchEndConditions = (() 
         return message;
     };
     return CCSUsrMsg_MatchEndConditions;
-})();
-exports.CCSUsrMsg_PlayerStatsUpdate = $root.CCSUsrMsg_PlayerStatsUpdate = (() => {
+})());
+exports.CCSUsrMsg_PlayerStatsUpdate = ($root.CCSUsrMsg_PlayerStatsUpdate = (() => {
     /**
      * Properties of a CCSUsrMsg_PlayerStatsUpdate.
      * @exports ICCSUsrMsg_PlayerStatsUpdate
@@ -3057,8 +3059,8 @@ exports.CCSUsrMsg_PlayerStatsUpdate = $root.CCSUsrMsg_PlayerStatsUpdate = (() =>
         return Stat;
     })();
     return CCSUsrMsg_PlayerStatsUpdate;
-})();
-exports.CCSUsrMsg_DisplayInventory = $root.CCSUsrMsg_DisplayInventory = (() => {
+})());
+exports.CCSUsrMsg_DisplayInventory = ($root.CCSUsrMsg_DisplayInventory = (() => {
     /**
      * Properties of a CCSUsrMsg_DisplayInventory.
      * @exports ICCSUsrMsg_DisplayInventory
@@ -3126,8 +3128,8 @@ exports.CCSUsrMsg_DisplayInventory = $root.CCSUsrMsg_DisplayInventory = (() => {
         return message;
     };
     return CCSUsrMsg_DisplayInventory;
-})();
-exports.CCSUsrMsg_QuestProgress = $root.CCSUsrMsg_QuestProgress = (() => {
+})());
+exports.CCSUsrMsg_QuestProgress = ($root.CCSUsrMsg_QuestProgress = (() => {
     /**
      * Properties of a CCSUsrMsg_QuestProgress.
      * @exports ICCSUsrMsg_QuestProgress
@@ -3206,8 +3208,8 @@ exports.CCSUsrMsg_QuestProgress = $root.CCSUsrMsg_QuestProgress = (() => {
         return message;
     };
     return CCSUsrMsg_QuestProgress;
-})();
-exports.CCSUsrMsg_XRankGet = $root.CCSUsrMsg_XRankGet = (() => {
+})());
+exports.CCSUsrMsg_XRankGet = ($root.CCSUsrMsg_XRankGet = (() => {
     /**
      * Properties of a CCSUsrMsg_XRankGet.
      * @exports ICCSUsrMsg_XRankGet
@@ -3275,8 +3277,8 @@ exports.CCSUsrMsg_XRankGet = $root.CCSUsrMsg_XRankGet = (() => {
         return message;
     };
     return CCSUsrMsg_XRankGet;
-})();
-exports.CCSUsrMsg_XRankUpd = $root.CCSUsrMsg_XRankUpd = (() => {
+})());
+exports.CCSUsrMsg_XRankUpd = ($root.CCSUsrMsg_XRankUpd = (() => {
     /**
      * Properties of a CCSUsrMsg_XRankUpd.
      * @exports ICCSUsrMsg_XRankUpd
@@ -3355,8 +3357,8 @@ exports.CCSUsrMsg_XRankUpd = $root.CCSUsrMsg_XRankUpd = (() => {
         return message;
     };
     return CCSUsrMsg_XRankUpd;
-})();
-exports.CCSUsrMsg_CallVoteFailed = $root.CCSUsrMsg_CallVoteFailed = (() => {
+})());
+exports.CCSUsrMsg_CallVoteFailed = ($root.CCSUsrMsg_CallVoteFailed = (() => {
     /**
      * Properties of a CCSUsrMsg_CallVoteFailed.
      * @exports ICCSUsrMsg_CallVoteFailed
@@ -3424,8 +3426,8 @@ exports.CCSUsrMsg_CallVoteFailed = $root.CCSUsrMsg_CallVoteFailed = (() => {
         return message;
     };
     return CCSUsrMsg_CallVoteFailed;
-})();
-exports.CCSUsrMsg_VoteStart = $root.CCSUsrMsg_VoteStart = (() => {
+})());
+exports.CCSUsrMsg_VoteStart = ($root.CCSUsrMsg_VoteStart = (() => {
     /**
      * Properties of a CCSUsrMsg_VoteStart.
      * @exports ICCSUsrMsg_VoteStart
@@ -3548,8 +3550,8 @@ exports.CCSUsrMsg_VoteStart = $root.CCSUsrMsg_VoteStart = (() => {
         return message;
     };
     return CCSUsrMsg_VoteStart;
-})();
-exports.CCSUsrMsg_VotePass = $root.CCSUsrMsg_VotePass = (() => {
+})());
+exports.CCSUsrMsg_VotePass = ($root.CCSUsrMsg_VotePass = (() => {
     /**
      * Properties of a CCSUsrMsg_VotePass.
      * @exports ICCSUsrMsg_VotePass
@@ -3639,8 +3641,8 @@ exports.CCSUsrMsg_VotePass = $root.CCSUsrMsg_VotePass = (() => {
         return message;
     };
     return CCSUsrMsg_VotePass;
-})();
-exports.CCSUsrMsg_VoteFailed = $root.CCSUsrMsg_VoteFailed = (() => {
+})());
+exports.CCSUsrMsg_VoteFailed = ($root.CCSUsrMsg_VoteFailed = (() => {
     /**
      * Properties of a CCSUsrMsg_VoteFailed.
      * @exports ICCSUsrMsg_VoteFailed
@@ -3708,8 +3710,8 @@ exports.CCSUsrMsg_VoteFailed = $root.CCSUsrMsg_VoteFailed = (() => {
         return message;
     };
     return CCSUsrMsg_VoteFailed;
-})();
-exports.CCSUsrMsg_VoteSetup = $root.CCSUsrMsg_VoteSetup = (() => {
+})());
+exports.CCSUsrMsg_VoteSetup = ($root.CCSUsrMsg_VoteSetup = (() => {
     /**
      * Properties of a CCSUsrMsg_VoteSetup.
      * @exports ICCSUsrMsg_VoteSetup
@@ -3769,8 +3771,8 @@ exports.CCSUsrMsg_VoteSetup = $root.CCSUsrMsg_VoteSetup = (() => {
         return message;
     };
     return CCSUsrMsg_VoteSetup;
-})();
-exports.CCSUsrMsg_SendLastKillerDamageToClient = $root.CCSUsrMsg_SendLastKillerDamageToClient = (() => {
+})());
+exports.CCSUsrMsg_SendLastKillerDamageToClient = ($root.CCSUsrMsg_SendLastKillerDamageToClient = (() => {
     /**
      * Properties of a CCSUsrMsg_SendLastKillerDamageToClient.
      * @exports ICCSUsrMsg_SendLastKillerDamageToClient
@@ -3860,8 +3862,8 @@ exports.CCSUsrMsg_SendLastKillerDamageToClient = $root.CCSUsrMsg_SendLastKillerD
         return message;
     };
     return CCSUsrMsg_SendLastKillerDamageToClient;
-})();
-exports.CCSUsrMsg_ServerRankUpdate = $root.CCSUsrMsg_ServerRankUpdate = (() => {
+})());
+exports.CCSUsrMsg_ServerRankUpdate = ($root.CCSUsrMsg_ServerRankUpdate = (() => {
     /**
      * Properties of a CCSUsrMsg_ServerRankUpdate.
      * @exports ICCSUsrMsg_ServerRankUpdate
@@ -4023,8 +4025,8 @@ exports.CCSUsrMsg_ServerRankUpdate = $root.CCSUsrMsg_ServerRankUpdate = (() => {
         return RankUpdate;
     })();
     return CCSUsrMsg_ServerRankUpdate;
-})();
-exports.CCSUsrMsg_XpUpdate = $root.CCSUsrMsg_XpUpdate = (() => {
+})());
+exports.CCSUsrMsg_XpUpdate = ($root.CCSUsrMsg_XpUpdate = (() => {
     /**
      * Properties of a CCSUsrMsg_XpUpdate.
      * @exports ICCSUsrMsg_XpUpdate
@@ -4081,8 +4083,8 @@ exports.CCSUsrMsg_XpUpdate = $root.CCSUsrMsg_XpUpdate = (() => {
         return message;
     };
     return CCSUsrMsg_XpUpdate;
-})();
-exports.CCSUsrMsg_ItemPickup = $root.CCSUsrMsg_ItemPickup = (() => {
+})());
+exports.CCSUsrMsg_ItemPickup = ($root.CCSUsrMsg_ItemPickup = (() => {
     /**
      * Properties of a CCSUsrMsg_ItemPickup.
      * @exports ICCSUsrMsg_ItemPickup
@@ -4139,8 +4141,8 @@ exports.CCSUsrMsg_ItemPickup = $root.CCSUsrMsg_ItemPickup = (() => {
         return message;
     };
     return CCSUsrMsg_ItemPickup;
-})();
-exports.CCSUsrMsg_ShowMenu = $root.CCSUsrMsg_ShowMenu = (() => {
+})());
+exports.CCSUsrMsg_ShowMenu = ($root.CCSUsrMsg_ShowMenu = (() => {
     /**
      * Properties of a CCSUsrMsg_ShowMenu.
      * @exports ICCSUsrMsg_ShowMenu
@@ -4219,8 +4221,8 @@ exports.CCSUsrMsg_ShowMenu = $root.CCSUsrMsg_ShowMenu = (() => {
         return message;
     };
     return CCSUsrMsg_ShowMenu;
-})();
-exports.CCSUsrMsg_BarTime = $root.CCSUsrMsg_BarTime = (() => {
+})());
+exports.CCSUsrMsg_BarTime = ($root.CCSUsrMsg_BarTime = (() => {
     /**
      * Properties of a CCSUsrMsg_BarTime.
      * @exports ICCSUsrMsg_BarTime
@@ -4277,8 +4279,8 @@ exports.CCSUsrMsg_BarTime = $root.CCSUsrMsg_BarTime = (() => {
         return message;
     };
     return CCSUsrMsg_BarTime;
-})();
-exports.CCSUsrMsg_AmmoDenied = $root.CCSUsrMsg_AmmoDenied = (() => {
+})());
+exports.CCSUsrMsg_AmmoDenied = ($root.CCSUsrMsg_AmmoDenied = (() => {
     /**
      * Properties of a CCSUsrMsg_AmmoDenied.
      * @exports ICCSUsrMsg_AmmoDenied
@@ -4335,8 +4337,8 @@ exports.CCSUsrMsg_AmmoDenied = $root.CCSUsrMsg_AmmoDenied = (() => {
         return message;
     };
     return CCSUsrMsg_AmmoDenied;
-})();
-exports.CCSUsrMsg_MarkAchievement = $root.CCSUsrMsg_MarkAchievement = (() => {
+})());
+exports.CCSUsrMsg_MarkAchievement = ($root.CCSUsrMsg_MarkAchievement = (() => {
     /**
      * Properties of a CCSUsrMsg_MarkAchievement.
      * @exports ICCSUsrMsg_MarkAchievement
@@ -4393,8 +4395,8 @@ exports.CCSUsrMsg_MarkAchievement = $root.CCSUsrMsg_MarkAchievement = (() => {
         return message;
     };
     return CCSUsrMsg_MarkAchievement;
-})();
-exports.CCSUsrMsg_MatchStatsUpdate = $root.CCSUsrMsg_MatchStatsUpdate = (() => {
+})());
+exports.CCSUsrMsg_MatchStatsUpdate = ($root.CCSUsrMsg_MatchStatsUpdate = (() => {
     /**
      * Properties of a CCSUsrMsg_MatchStatsUpdate.
      * @exports ICCSUsrMsg_MatchStatsUpdate
@@ -4451,8 +4453,8 @@ exports.CCSUsrMsg_MatchStatsUpdate = $root.CCSUsrMsg_MatchStatsUpdate = (() => {
         return message;
     };
     return CCSUsrMsg_MatchStatsUpdate;
-})();
-exports.CCSUsrMsg_ItemDrop = $root.CCSUsrMsg_ItemDrop = (() => {
+})());
+exports.CCSUsrMsg_ItemDrop = ($root.CCSUsrMsg_ItemDrop = (() => {
     /**
      * Properties of a CCSUsrMsg_ItemDrop.
      * @exports ICCSUsrMsg_ItemDrop
@@ -4480,7 +4482,9 @@ exports.CCSUsrMsg_ItemDrop = $root.CCSUsrMsg_ItemDrop = (() => {
      * @memberof CCSUsrMsg_ItemDrop
      * @instance
      */
-    CCSUsrMsg_ItemDrop.prototype.itemid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CCSUsrMsg_ItemDrop.prototype.itemid = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CCSUsrMsg_ItemDrop death.
      * @member {boolean} death
@@ -4520,8 +4524,8 @@ exports.CCSUsrMsg_ItemDrop = $root.CCSUsrMsg_ItemDrop = (() => {
         return message;
     };
     return CCSUsrMsg_ItemDrop;
-})();
-exports.CCSUsrMsg_GlowPropTurnOff = $root.CCSUsrMsg_GlowPropTurnOff = (() => {
+})());
+exports.CCSUsrMsg_GlowPropTurnOff = ($root.CCSUsrMsg_GlowPropTurnOff = (() => {
     /**
      * Properties of a CCSUsrMsg_GlowPropTurnOff.
      * @exports ICCSUsrMsg_GlowPropTurnOff
@@ -4578,8 +4582,8 @@ exports.CCSUsrMsg_GlowPropTurnOff = $root.CCSUsrMsg_GlowPropTurnOff = (() => {
         return message;
     };
     return CCSUsrMsg_GlowPropTurnOff;
-})();
-exports.CCSUsrMsg_RoundBackupFilenames = $root.CCSUsrMsg_RoundBackupFilenames = (() => {
+})());
+exports.CCSUsrMsg_RoundBackupFilenames = ($root.CCSUsrMsg_RoundBackupFilenames = (() => {
     /**
      * Properties of a CCSUsrMsg_RoundBackupFilenames.
      * @exports ICCSUsrMsg_RoundBackupFilenames
@@ -4669,8 +4673,8 @@ exports.CCSUsrMsg_RoundBackupFilenames = $root.CCSUsrMsg_RoundBackupFilenames = 
         return message;
     };
     return CCSUsrMsg_RoundBackupFilenames;
-})();
-exports.CCSUsrMsg_ResetHud = $root.CCSUsrMsg_ResetHud = (() => {
+})());
+exports.CCSUsrMsg_ResetHud = ($root.CCSUsrMsg_ResetHud = (() => {
     /**
      * Properties of a CCSUsrMsg_ResetHud.
      * @exports ICCSUsrMsg_ResetHud
@@ -4727,8 +4731,8 @@ exports.CCSUsrMsg_ResetHud = $root.CCSUsrMsg_ResetHud = (() => {
         return message;
     };
     return CCSUsrMsg_ResetHud;
-})();
-exports.CCSUsrMsg_GameTitle = $root.CCSUsrMsg_GameTitle = (() => {
+})());
+exports.CCSUsrMsg_GameTitle = ($root.CCSUsrMsg_GameTitle = (() => {
     /**
      * Properties of a CCSUsrMsg_GameTitle.
      * @exports ICCSUsrMsg_GameTitle
@@ -4785,8 +4789,8 @@ exports.CCSUsrMsg_GameTitle = $root.CCSUsrMsg_GameTitle = (() => {
         return message;
     };
     return CCSUsrMsg_GameTitle;
-})();
-exports.CCSUsrMsg_RequestState = $root.CCSUsrMsg_RequestState = (() => {
+})());
+exports.CCSUsrMsg_RequestState = ($root.CCSUsrMsg_RequestState = (() => {
     /**
      * Properties of a CCSUsrMsg_RequestState.
      * @exports ICCSUsrMsg_RequestState
@@ -4843,8 +4847,8 @@ exports.CCSUsrMsg_RequestState = $root.CCSUsrMsg_RequestState = (() => {
         return message;
     };
     return CCSUsrMsg_RequestState;
-})();
-exports.CCSUsrMsg_StopSpectatorMode = $root.CCSUsrMsg_StopSpectatorMode = (() => {
+})());
+exports.CCSUsrMsg_StopSpectatorMode = ($root.CCSUsrMsg_StopSpectatorMode = (() => {
     /**
      * Properties of a CCSUsrMsg_StopSpectatorMode.
      * @exports ICCSUsrMsg_StopSpectatorMode
@@ -4901,8 +4905,8 @@ exports.CCSUsrMsg_StopSpectatorMode = $root.CCSUsrMsg_StopSpectatorMode = (() =>
         return message;
     };
     return CCSUsrMsg_StopSpectatorMode;
-})();
-exports.CCSUsrMsg_DisconnectToLobby = $root.CCSUsrMsg_DisconnectToLobby = (() => {
+})());
+exports.CCSUsrMsg_DisconnectToLobby = ($root.CCSUsrMsg_DisconnectToLobby = (() => {
     /**
      * Properties of a CCSUsrMsg_DisconnectToLobby.
      * @exports ICCSUsrMsg_DisconnectToLobby
@@ -4959,8 +4963,8 @@ exports.CCSUsrMsg_DisconnectToLobby = $root.CCSUsrMsg_DisconnectToLobby = (() =>
         return message;
     };
     return CCSUsrMsg_DisconnectToLobby;
-})();
-exports.CCSUsrMsg_WarmupHasEnded = $root.CCSUsrMsg_WarmupHasEnded = (() => {
+})());
+exports.CCSUsrMsg_WarmupHasEnded = ($root.CCSUsrMsg_WarmupHasEnded = (() => {
     /**
      * Properties of a CCSUsrMsg_WarmupHasEnded.
      * @exports ICCSUsrMsg_WarmupHasEnded
@@ -5017,8 +5021,8 @@ exports.CCSUsrMsg_WarmupHasEnded = $root.CCSUsrMsg_WarmupHasEnded = (() => {
         return message;
     };
     return CCSUsrMsg_WarmupHasEnded;
-})();
-exports.CCSUsrMsg_ClientInfo = $root.CCSUsrMsg_ClientInfo = (() => {
+})());
+exports.CCSUsrMsg_ClientInfo = ($root.CCSUsrMsg_ClientInfo = (() => {
     /**
      * Properties of a CCSUsrMsg_ClientInfo.
      * @exports ICCSUsrMsg_ClientInfo
@@ -5075,8 +5079,8 @@ exports.CCSUsrMsg_ClientInfo = $root.CCSUsrMsg_ClientInfo = (() => {
         return message;
     };
     return CCSUsrMsg_ClientInfo;
-})();
-exports.CCSUsrMsg_ServerRankRevealAll = $root.CCSUsrMsg_ServerRankRevealAll = (() => {
+})());
+exports.CCSUsrMsg_ServerRankRevealAll = ($root.CCSUsrMsg_ServerRankRevealAll = (() => {
     /**
      * Properties of a CCSUsrMsg_ServerRankRevealAll.
      * @exports ICCSUsrMsg_ServerRankRevealAll
@@ -5133,8 +5137,8 @@ exports.CCSUsrMsg_ServerRankRevealAll = $root.CCSUsrMsg_ServerRankRevealAll = ((
         return message;
     };
     return CCSUsrMsg_ServerRankRevealAll;
-})();
-exports.google = $root.google = (() => {
+})());
+exports.google = ($root.google = (() => {
     /**
      * Namespace google.
      * @exports google
@@ -5920,24 +5924,24 @@ exports.google = $root.google = (() => {
              */
             FieldDescriptorProto.Type = (function () {
                 const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[1] = "TYPE_DOUBLE"] = 1;
-                values[valuesById[2] = "TYPE_FLOAT"] = 2;
-                values[valuesById[3] = "TYPE_INT64"] = 3;
-                values[valuesById[4] = "TYPE_UINT64"] = 4;
-                values[valuesById[5] = "TYPE_INT32"] = 5;
-                values[valuesById[6] = "TYPE_FIXED64"] = 6;
-                values[valuesById[7] = "TYPE_FIXED32"] = 7;
-                values[valuesById[8] = "TYPE_BOOL"] = 8;
-                values[valuesById[9] = "TYPE_STRING"] = 9;
-                values[valuesById[10] = "TYPE_GROUP"] = 10;
-                values[valuesById[11] = "TYPE_MESSAGE"] = 11;
-                values[valuesById[12] = "TYPE_BYTES"] = 12;
-                values[valuesById[13] = "TYPE_UINT32"] = 13;
-                values[valuesById[14] = "TYPE_ENUM"] = 14;
-                values[valuesById[15] = "TYPE_SFIXED32"] = 15;
-                values[valuesById[16] = "TYPE_SFIXED64"] = 16;
-                values[valuesById[17] = "TYPE_SINT32"] = 17;
-                values[valuesById[18] = "TYPE_SINT64"] = 18;
+                values[(valuesById[1] = "TYPE_DOUBLE")] = 1;
+                values[(valuesById[2] = "TYPE_FLOAT")] = 2;
+                values[(valuesById[3] = "TYPE_INT64")] = 3;
+                values[(valuesById[4] = "TYPE_UINT64")] = 4;
+                values[(valuesById[5] = "TYPE_INT32")] = 5;
+                values[(valuesById[6] = "TYPE_FIXED64")] = 6;
+                values[(valuesById[7] = "TYPE_FIXED32")] = 7;
+                values[(valuesById[8] = "TYPE_BOOL")] = 8;
+                values[(valuesById[9] = "TYPE_STRING")] = 9;
+                values[(valuesById[10] = "TYPE_GROUP")] = 10;
+                values[(valuesById[11] = "TYPE_MESSAGE")] = 11;
+                values[(valuesById[12] = "TYPE_BYTES")] = 12;
+                values[(valuesById[13] = "TYPE_UINT32")] = 13;
+                values[(valuesById[14] = "TYPE_ENUM")] = 14;
+                values[(valuesById[15] = "TYPE_SFIXED32")] = 15;
+                values[(valuesById[16] = "TYPE_SFIXED64")] = 16;
+                values[(valuesById[17] = "TYPE_SINT32")] = 17;
+                values[(valuesById[18] = "TYPE_SINT64")] = 18;
                 return values;
             })();
             /**
@@ -5950,9 +5954,9 @@ exports.google = $root.google = (() => {
              */
             FieldDescriptorProto.Label = (function () {
                 const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[1] = "LABEL_OPTIONAL"] = 1;
-                values[valuesById[2] = "LABEL_REQUIRED"] = 2;
-                values[valuesById[3] = "LABEL_REPEATED"] = 3;
+                values[(valuesById[1] = "LABEL_OPTIONAL")] = 1;
+                values[(valuesById[2] = "LABEL_REQUIRED")] = 2;
+                values[(valuesById[3] = "LABEL_REPEATED")] = 3;
                 return values;
             })();
             return FieldDescriptorProto;
@@ -6587,7 +6591,8 @@ exports.google = $root.google = (() => {
                             message.csharpNamespace = reader.string();
                             break;
                         case 999:
-                            if (!(message.uninterpretedOption && message.uninterpretedOption.length))
+                            if (!(message.uninterpretedOption &&
+                                message.uninterpretedOption.length))
                                 message.uninterpretedOption = [];
                             message.uninterpretedOption.push($root.google.protobuf.UninterpretedOption.decode(reader, reader.uint32()));
                             break;
@@ -6608,9 +6613,9 @@ exports.google = $root.google = (() => {
              */
             FileOptions.OptimizeMode = (function () {
                 const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[1] = "SPEED"] = 1;
-                values[valuesById[2] = "CODE_SIZE"] = 2;
-                values[valuesById[3] = "LITE_RUNTIME"] = 3;
+                values[(valuesById[1] = "SPEED")] = 1;
+                values[(valuesById[2] = "CODE_SIZE")] = 2;
+                values[(valuesById[3] = "LITE_RUNTIME")] = 3;
                 return values;
             })();
             return FileOptions;
@@ -6723,7 +6728,8 @@ exports.google = $root.google = (() => {
                             message.mapEntry = reader.bool();
                             break;
                         case 999:
-                            if (!(message.uninterpretedOption && message.uninterpretedOption.length))
+                            if (!(message.uninterpretedOption &&
+                                message.uninterpretedOption.length))
                                 message.uninterpretedOption = [];
                             message.uninterpretedOption.push($root.google.protobuf.UninterpretedOption.decode(reader, reader.uint32()));
                             break;
@@ -6864,7 +6870,8 @@ exports.google = $root.google = (() => {
                             message.weak = reader.bool();
                             break;
                         case 999:
-                            if (!(message.uninterpretedOption && message.uninterpretedOption.length))
+                            if (!(message.uninterpretedOption &&
+                                message.uninterpretedOption.length))
                                 message.uninterpretedOption = [];
                             message.uninterpretedOption.push($root.google.protobuf.UninterpretedOption.decode(reader, reader.uint32()));
                             break;
@@ -6888,9 +6895,9 @@ exports.google = $root.google = (() => {
              */
             FieldOptions.CType = (function () {
                 const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "STRING"] = 0;
-                values[valuesById[1] = "CORD"] = 1;
-                values[valuesById[2] = "STRING_PIECE"] = 2;
+                values[(valuesById[0] = "STRING")] = 0;
+                values[(valuesById[1] = "CORD")] = 1;
+                values[(valuesById[2] = "STRING_PIECE")] = 2;
                 return values;
             })();
             /**
@@ -6903,9 +6910,9 @@ exports.google = $root.google = (() => {
              */
             FieldOptions.JSType = (function () {
                 const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "JS_NORMAL"] = 0;
-                values[valuesById[1] = "JS_STRING"] = 1;
-                values[valuesById[2] = "JS_NUMBER"] = 2;
+                values[(valuesById[0] = "JS_NORMAL")] = 0;
+                values[(valuesById[1] = "JS_STRING")] = 1;
+                values[(valuesById[2] = "JS_NUMBER")] = 2;
                 return values;
             })();
             return FieldOptions;
@@ -6958,7 +6965,8 @@ exports.google = $root.google = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                         case 999:
-                            if (!(message.uninterpretedOption && message.uninterpretedOption.length))
+                            if (!(message.uninterpretedOption &&
+                                message.uninterpretedOption.length))
                                 message.uninterpretedOption = [];
                             message.uninterpretedOption.push($root.google.protobuf.UninterpretedOption.decode(reader, reader.uint32()));
                             break;
@@ -7041,7 +7049,8 @@ exports.google = $root.google = (() => {
                             message.deprecated = reader.bool();
                             break;
                         case 999:
-                            if (!(message.uninterpretedOption && message.uninterpretedOption.length))
+                            if (!(message.uninterpretedOption &&
+                                message.uninterpretedOption.length))
                                 message.uninterpretedOption = [];
                             message.uninterpretedOption.push($root.google.protobuf.UninterpretedOption.decode(reader, reader.uint32()));
                             break;
@@ -7113,7 +7122,8 @@ exports.google = $root.google = (() => {
                             message.deprecated = reader.bool();
                             break;
                         case 999:
-                            if (!(message.uninterpretedOption && message.uninterpretedOption.length))
+                            if (!(message.uninterpretedOption &&
+                                message.uninterpretedOption.length))
                                 message.uninterpretedOption = [];
                             message.uninterpretedOption.push($root.google.protobuf.UninterpretedOption.decode(reader, reader.uint32()));
                             break;
@@ -7185,7 +7195,8 @@ exports.google = $root.google = (() => {
                             message.deprecated = reader.bool();
                             break;
                         case 999:
-                            if (!(message.uninterpretedOption && message.uninterpretedOption.length))
+                            if (!(message.uninterpretedOption &&
+                                message.uninterpretedOption.length))
                                 message.uninterpretedOption = [];
                             message.uninterpretedOption.push($root.google.protobuf.UninterpretedOption.decode(reader, reader.uint32()));
                             break;
@@ -7257,7 +7268,8 @@ exports.google = $root.google = (() => {
                             message.deprecated = reader.bool();
                             break;
                         case 999:
-                            if (!(message.uninterpretedOption && message.uninterpretedOption.length))
+                            if (!(message.uninterpretedOption &&
+                                message.uninterpretedOption.length))
                                 message.uninterpretedOption = [];
                             message.uninterpretedOption.push($root.google.protobuf.UninterpretedOption.decode(reader, reader.uint32()));
                             break;
@@ -7318,14 +7330,18 @@ exports.google = $root.google = (() => {
              * @memberof google.protobuf.UninterpretedOption
              * @instance
              */
-            UninterpretedOption.prototype.positiveIntValue = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+            UninterpretedOption.prototype.positiveIntValue = $util.Long
+                ? $util.Long.fromBits(0, 0, true)
+                : 0;
             /**
              * UninterpretedOption negativeIntValue.
              * @member {number|Long} negativeIntValue
              * @memberof google.protobuf.UninterpretedOption
              * @instance
              */
-            UninterpretedOption.prototype.negativeIntValue = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+            UninterpretedOption.prototype.negativeIntValue = $util.Long
+                ? $util.Long.fromBits(0, 0, false)
+                : 0;
             /**
              * UninterpretedOption doubleValue.
              * @member {number} doubleValue
@@ -7461,9 +7477,13 @@ exports.google = $root.google = (() => {
                         }
                     }
                     if (!message.hasOwnProperty("namePart"))
-                        throw $util.ProtocolError("missing required 'namePart'", { instance: message });
+                        throw $util.ProtocolError("missing required 'namePart'", {
+                            instance: message
+                        });
                     if (!message.hasOwnProperty("isExtension"))
-                        throw $util.ProtocolError("missing required 'isExtension'", { instance: message });
+                        throw $util.ProtocolError("missing required 'isExtension'", {
+                            instance: message
+                        });
                     return message;
                 };
                 return NamePart;
@@ -7639,7 +7659,8 @@ exports.google = $root.google = (() => {
                                 message.trailingComments = reader.string();
                                 break;
                             case 6:
-                                if (!(message.leadingDetachedComments && message.leadingDetachedComments.length))
+                                if (!(message.leadingDetachedComments &&
+                                    message.leadingDetachedComments.length))
                                     message.leadingDetachedComments = [];
                                 message.leadingDetachedComments.push(reader.string());
                                 break;
@@ -7818,7 +7839,7 @@ exports.google = $root.google = (() => {
         return protobuf;
     })();
     return google;
-})();
+})());
 /**
  * NET_Messages enum.
  * @exports NET_Messages
@@ -7835,15 +7856,15 @@ exports.google = $root.google = (() => {
  */
 $root.NET_Messages = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "net_NOP"] = 0;
-    values[valuesById[1] = "net_Disconnect"] = 1;
-    values[valuesById[2] = "net_File"] = 2;
-    values[valuesById[3] = "net_SplitScreenUser"] = 3;
-    values[valuesById[4] = "net_Tick"] = 4;
-    values[valuesById[5] = "net_StringCmd"] = 5;
-    values[valuesById[6] = "net_SetConVar"] = 6;
-    values[valuesById[7] = "net_SignonState"] = 7;
-    values[valuesById[100] = "net_PlayerAvatarData"] = 100;
+    values[(valuesById[0] = "net_NOP")] = 0;
+    values[(valuesById[1] = "net_Disconnect")] = 1;
+    values[(valuesById[2] = "net_File")] = 2;
+    values[(valuesById[3] = "net_SplitScreenUser")] = 3;
+    values[(valuesById[4] = "net_Tick")] = 4;
+    values[(valuesById[5] = "net_StringCmd")] = 5;
+    values[(valuesById[6] = "net_SetConVar")] = 6;
+    values[(valuesById[7] = "net_SignonState")] = 7;
+    values[(valuesById[100] = "net_PlayerAvatarData")] = 100;
     return values;
 })();
 /**
@@ -7865,18 +7886,18 @@ $root.NET_Messages = (function () {
  */
 $root.CLC_Messages = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[8] = "clc_ClientInfo"] = 8;
-    values[valuesById[9] = "clc_Move"] = 9;
-    values[valuesById[10] = "clc_VoiceData"] = 10;
-    values[valuesById[11] = "clc_BaselineAck"] = 11;
-    values[valuesById[12] = "clc_ListenEvents"] = 12;
-    values[valuesById[13] = "clc_RespondCvarValue"] = 13;
-    values[valuesById[14] = "clc_FileCRCCheck"] = 14;
-    values[valuesById[15] = "clc_LoadingProgress"] = 15;
-    values[valuesById[16] = "clc_SplitPlayerConnect"] = 16;
-    values[valuesById[17] = "clc_ClientMessage"] = 17;
-    values[valuesById[18] = "clc_CmdKeyValues"] = 18;
-    values[valuesById[20] = "clc_HltvReplay"] = 20;
+    values[(valuesById[8] = "clc_ClientInfo")] = 8;
+    values[(valuesById[9] = "clc_Move")] = 9;
+    values[(valuesById[10] = "clc_VoiceData")] = 10;
+    values[(valuesById[11] = "clc_BaselineAck")] = 11;
+    values[(valuesById[12] = "clc_ListenEvents")] = 12;
+    values[(valuesById[13] = "clc_RespondCvarValue")] = 13;
+    values[(valuesById[14] = "clc_FileCRCCheck")] = 14;
+    values[(valuesById[15] = "clc_LoadingProgress")] = 15;
+    values[(valuesById[16] = "clc_SplitPlayerConnect")] = 16;
+    values[(valuesById[17] = "clc_ClientMessage")] = 17;
+    values[(valuesById[18] = "clc_CmdKeyValues")] = 18;
+    values[(valuesById[20] = "clc_HltvReplay")] = 20;
     return values;
 })();
 /**
@@ -7888,8 +7909,8 @@ $root.CLC_Messages = (function () {
  */
 $root.VoiceDataFormat_t = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "VOICEDATA_FORMAT_STEAM"] = 0;
-    values[valuesById[1] = "VOICEDATA_FORMAT_ENGINE"] = 1;
+    values[(valuesById[0] = "VOICEDATA_FORMAT_STEAM")] = 0;
+    values[(valuesById[1] = "VOICEDATA_FORMAT_ENGINE")] = 1;
     return values;
 })();
 /**
@@ -7902,8 +7923,8 @@ $root.VoiceDataFormat_t = (function () {
  */
 $root.ESplitScreenMessageType = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "MSG_SPLITSCREEN_ADDUSER"] = 0;
-    values[valuesById[1] = "MSG_SPLITSCREEN_REMOVEUSER"] = 1;
+    values[(valuesById[0] = "MSG_SPLITSCREEN_ADDUSER")] = 0;
+    values[(valuesById[1] = "MSG_SPLITSCREEN_REMOVEUSER")] = 1;
     values["MSG_SPLITSCREEN_TYPE_BITS"] = 1;
     return values;
 })();
@@ -7942,34 +7963,34 @@ $root.ESplitScreenMessageType = (function () {
  */
 $root.SVC_Messages = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[8] = "svc_ServerInfo"] = 8;
-    values[valuesById[9] = "svc_SendTable"] = 9;
-    values[valuesById[10] = "svc_ClassInfo"] = 10;
-    values[valuesById[11] = "svc_SetPause"] = 11;
-    values[valuesById[12] = "svc_CreateStringTable"] = 12;
-    values[valuesById[13] = "svc_UpdateStringTable"] = 13;
-    values[valuesById[14] = "svc_VoiceInit"] = 14;
-    values[valuesById[15] = "svc_VoiceData"] = 15;
-    values[valuesById[16] = "svc_Print"] = 16;
-    values[valuesById[17] = "svc_Sounds"] = 17;
-    values[valuesById[18] = "svc_SetView"] = 18;
-    values[valuesById[19] = "svc_FixAngle"] = 19;
-    values[valuesById[20] = "svc_CrosshairAngle"] = 20;
-    values[valuesById[21] = "svc_BSPDecal"] = 21;
-    values[valuesById[22] = "svc_SplitScreen"] = 22;
-    values[valuesById[23] = "svc_UserMessage"] = 23;
-    values[valuesById[24] = "svc_EntityMessage"] = 24;
-    values[valuesById[25] = "svc_GameEvent"] = 25;
-    values[valuesById[26] = "svc_PacketEntities"] = 26;
-    values[valuesById[27] = "svc_TempEntities"] = 27;
-    values[valuesById[28] = "svc_Prefetch"] = 28;
-    values[valuesById[29] = "svc_Menu"] = 29;
-    values[valuesById[30] = "svc_GameEventList"] = 30;
-    values[valuesById[31] = "svc_GetCvarValue"] = 31;
-    values[valuesById[33] = "svc_PaintmapData"] = 33;
-    values[valuesById[34] = "svc_CmdKeyValues"] = 34;
-    values[valuesById[35] = "svc_EncryptedData"] = 35;
-    values[valuesById[36] = "svc_HltvReplay"] = 36;
+    values[(valuesById[8] = "svc_ServerInfo")] = 8;
+    values[(valuesById[9] = "svc_SendTable")] = 9;
+    values[(valuesById[10] = "svc_ClassInfo")] = 10;
+    values[(valuesById[11] = "svc_SetPause")] = 11;
+    values[(valuesById[12] = "svc_CreateStringTable")] = 12;
+    values[(valuesById[13] = "svc_UpdateStringTable")] = 13;
+    values[(valuesById[14] = "svc_VoiceInit")] = 14;
+    values[(valuesById[15] = "svc_VoiceData")] = 15;
+    values[(valuesById[16] = "svc_Print")] = 16;
+    values[(valuesById[17] = "svc_Sounds")] = 17;
+    values[(valuesById[18] = "svc_SetView")] = 18;
+    values[(valuesById[19] = "svc_FixAngle")] = 19;
+    values[(valuesById[20] = "svc_CrosshairAngle")] = 20;
+    values[(valuesById[21] = "svc_BSPDecal")] = 21;
+    values[(valuesById[22] = "svc_SplitScreen")] = 22;
+    values[(valuesById[23] = "svc_UserMessage")] = 23;
+    values[(valuesById[24] = "svc_EntityMessage")] = 24;
+    values[(valuesById[25] = "svc_GameEvent")] = 25;
+    values[(valuesById[26] = "svc_PacketEntities")] = 26;
+    values[(valuesById[27] = "svc_TempEntities")] = 27;
+    values[(valuesById[28] = "svc_Prefetch")] = 28;
+    values[(valuesById[29] = "svc_Menu")] = 29;
+    values[(valuesById[30] = "svc_GameEventList")] = 30;
+    values[(valuesById[31] = "svc_GetCvarValue")] = 31;
+    values[(valuesById[33] = "svc_PaintmapData")] = 33;
+    values[(valuesById[34] = "svc_CmdKeyValues")] = 34;
+    values[(valuesById[35] = "svc_EncryptedData")] = 35;
+    values[(valuesById[36] = "svc_HltvReplay")] = 36;
     return values;
 })();
 /**
@@ -7982,12 +8003,12 @@ $root.SVC_Messages = (function () {
  */
 $root.ReplayEventType_t = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "REPLAY_EVENT_CANCEL"] = 0;
-    values[valuesById[1] = "REPLAY_EVENT_DEATH"] = 1;
-    values[valuesById[2] = "REPLAY_EVENT_GENERIC"] = 2;
+    values[(valuesById[0] = "REPLAY_EVENT_CANCEL")] = 0;
+    values[(valuesById[1] = "REPLAY_EVENT_DEATH")] = 1;
+    values[(valuesById[2] = "REPLAY_EVENT_GENERIC")] = 2;
     return values;
 })();
-exports.CMsgVector = $root.CMsgVector = (() => {
+exports.CMsgVector = ($root.CMsgVector = (() => {
     /**
      * Properties of a CMsgVector.
      * @exports ICMsgVector
@@ -8066,8 +8087,8 @@ exports.CMsgVector = $root.CMsgVector = (() => {
         return message;
     };
     return CMsgVector;
-})();
-exports.CMsgVector2D = $root.CMsgVector2D = (() => {
+})());
+exports.CMsgVector2D = ($root.CMsgVector2D = (() => {
     /**
      * Properties of a CMsgVector2D.
      * @exports ICMsgVector2D
@@ -8135,8 +8156,8 @@ exports.CMsgVector2D = $root.CMsgVector2D = (() => {
         return message;
     };
     return CMsgVector2D;
-})();
-exports.CMsgQAngle = $root.CMsgQAngle = (() => {
+})());
+exports.CMsgQAngle = ($root.CMsgQAngle = (() => {
     /**
      * Properties of a CMsgQAngle.
      * @exports ICMsgQAngle
@@ -8215,8 +8236,8 @@ exports.CMsgQAngle = $root.CMsgQAngle = (() => {
         return message;
     };
     return CMsgQAngle;
-})();
-exports.CMsgRGBA = $root.CMsgRGBA = (() => {
+})());
+exports.CMsgRGBA = ($root.CMsgRGBA = (() => {
     /**
      * Properties of a CMsgRGBA.
      * @exports ICMsgRGBA
@@ -8306,8 +8327,8 @@ exports.CMsgRGBA = $root.CMsgRGBA = (() => {
         return message;
     };
     return CMsgRGBA;
-})();
-exports.CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
+})());
+exports.CNETMsg_Tick = ($root.CNETMsg_Tick = (() => {
     /**
      * Properties of a CNETMsg_Tick.
      * @exports ICNETMsg_Tick
@@ -8408,8 +8429,8 @@ exports.CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
         return message;
     };
     return CNETMsg_Tick;
-})();
-exports.CNETMsg_StringCmd = $root.CNETMsg_StringCmd = (() => {
+})());
+exports.CNETMsg_StringCmd = ($root.CNETMsg_StringCmd = (() => {
     /**
      * Properties of a CNETMsg_StringCmd.
      * @exports ICNETMsg_StringCmd
@@ -8466,8 +8487,8 @@ exports.CNETMsg_StringCmd = $root.CNETMsg_StringCmd = (() => {
         return message;
     };
     return CNETMsg_StringCmd;
-})();
-exports.CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
+})());
+exports.CNETMsg_SignonState = ($root.CNETMsg_SignonState = (() => {
     /**
      * Properties of a CNETMsg_SignonState.
      * @exports ICNETMsg_SignonState
@@ -8571,8 +8592,8 @@ exports.CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
         return message;
     };
     return CNETMsg_SignonState;
-})();
-exports.CMsg_CVars = $root.CMsg_CVars = (() => {
+})());
+exports.CMsg_CVars = ($root.CMsg_CVars = (() => {
     /**
      * Properties of a CMsg_CVars.
      * @exports ICMsg_CVars
@@ -8712,8 +8733,8 @@ exports.CMsg_CVars = $root.CMsg_CVars = (() => {
         return CVar;
     })();
     return CMsg_CVars;
-})();
-exports.CNETMsg_SetConVar = $root.CNETMsg_SetConVar = (() => {
+})());
+exports.CNETMsg_SetConVar = ($root.CNETMsg_SetConVar = (() => {
     /**
      * Properties of a CNETMsg_SetConVar.
      * @exports ICNETMsg_SetConVar
@@ -8770,8 +8791,8 @@ exports.CNETMsg_SetConVar = $root.CNETMsg_SetConVar = (() => {
         return message;
     };
     return CNETMsg_SetConVar;
-})();
-exports.CNETMsg_NOP = $root.CNETMsg_NOP = (() => {
+})());
+exports.CNETMsg_NOP = ($root.CNETMsg_NOP = (() => {
     /**
      * Properties of a CNETMsg_NOP.
      * @exports ICNETMsg_NOP
@@ -8817,8 +8838,8 @@ exports.CNETMsg_NOP = $root.CNETMsg_NOP = (() => {
         return message;
     };
     return CNETMsg_NOP;
-})();
-exports.CNETMsg_Disconnect = $root.CNETMsg_Disconnect = (() => {
+})());
+exports.CNETMsg_Disconnect = ($root.CNETMsg_Disconnect = (() => {
     /**
      * Properties of a CNETMsg_Disconnect.
      * @exports ICNETMsg_Disconnect
@@ -8875,8 +8896,8 @@ exports.CNETMsg_Disconnect = $root.CNETMsg_Disconnect = (() => {
         return message;
     };
     return CNETMsg_Disconnect;
-})();
-exports.CNETMsg_File = $root.CNETMsg_File = (() => {
+})());
+exports.CNETMsg_File = ($root.CNETMsg_File = (() => {
     /**
      * Properties of a CNETMsg_File.
      * @exports ICNETMsg_File
@@ -8966,8 +8987,8 @@ exports.CNETMsg_File = $root.CNETMsg_File = (() => {
         return message;
     };
     return CNETMsg_File;
-})();
-exports.CNETMsg_SplitScreenUser = $root.CNETMsg_SplitScreenUser = (() => {
+})());
+exports.CNETMsg_SplitScreenUser = ($root.CNETMsg_SplitScreenUser = (() => {
     /**
      * Properties of a CNETMsg_SplitScreenUser.
      * @exports ICNETMsg_SplitScreenUser
@@ -9024,8 +9045,8 @@ exports.CNETMsg_SplitScreenUser = $root.CNETMsg_SplitScreenUser = (() => {
         return message;
     };
     return CNETMsg_SplitScreenUser;
-})();
-exports.CNETMsg_PlayerAvatarData = $root.CNETMsg_PlayerAvatarData = (() => {
+})());
+exports.CNETMsg_PlayerAvatarData = ($root.CNETMsg_PlayerAvatarData = (() => {
     /**
      * Properties of a CNETMsg_PlayerAvatarData.
      * @exports ICNETMsg_PlayerAvatarData
@@ -9093,8 +9114,8 @@ exports.CNETMsg_PlayerAvatarData = $root.CNETMsg_PlayerAvatarData = (() => {
         return message;
     };
     return CNETMsg_PlayerAvatarData;
-})();
-exports.CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
+})());
+exports.CCLCMsg_ClientInfo = ($root.CCLCMsg_ClientInfo = (() => {
     /**
      * Properties of a CCLCMsg_ClientInfo.
      * @exports ICCLCMsg_ClientInfo
@@ -9226,8 +9247,8 @@ exports.CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
         return message;
     };
     return CCLCMsg_ClientInfo;
-})();
-exports.CCLCMsg_Move = $root.CCLCMsg_Move = (() => {
+})());
+exports.CCLCMsg_Move = ($root.CCLCMsg_Move = (() => {
     /**
      * Properties of a CCLCMsg_Move.
      * @exports ICCLCMsg_Move
@@ -9306,8 +9327,8 @@ exports.CCLCMsg_Move = $root.CCLCMsg_Move = (() => {
         return message;
     };
     return CCLCMsg_Move;
-})();
-exports.CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
+})());
+exports.CCLCMsg_VoiceData = ($root.CCLCMsg_VoiceData = (() => {
     /**
      * Properties of a CCLCMsg_VoiceData.
      * @exports ICCLCMsg_VoiceData
@@ -9346,7 +9367,9 @@ exports.CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
      * @memberof CCLCMsg_VoiceData
      * @instance
      */
-    CCLCMsg_VoiceData.prototype.xuid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CCLCMsg_VoiceData.prototype.xuid = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CCLCMsg_VoiceData format.
      * @member {VoiceDataFormat_t} format
@@ -9419,8 +9442,8 @@ exports.CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
         return message;
     };
     return CCLCMsg_VoiceData;
-})();
-exports.CCLCMsg_BaselineAck = $root.CCLCMsg_BaselineAck = (() => {
+})());
+exports.CCLCMsg_BaselineAck = ($root.CCLCMsg_BaselineAck = (() => {
     /**
      * Properties of a CCLCMsg_BaselineAck.
      * @exports ICCLCMsg_BaselineAck
@@ -9488,8 +9511,8 @@ exports.CCLCMsg_BaselineAck = $root.CCLCMsg_BaselineAck = (() => {
         return message;
     };
     return CCLCMsg_BaselineAck;
-})();
-exports.CCLCMsg_ListenEvents = $root.CCLCMsg_ListenEvents = (() => {
+})());
+exports.CCLCMsg_ListenEvents = ($root.CCLCMsg_ListenEvents = (() => {
     /**
      * Properties of a CCLCMsg_ListenEvents.
      * @exports ICCLCMsg_ListenEvents
@@ -9555,8 +9578,8 @@ exports.CCLCMsg_ListenEvents = $root.CCLCMsg_ListenEvents = (() => {
         return message;
     };
     return CCLCMsg_ListenEvents;
-})();
-exports.CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (() => {
+})());
+exports.CCLCMsg_RespondCvarValue = ($root.CCLCMsg_RespondCvarValue = (() => {
     /**
      * Properties of a CCLCMsg_RespondCvarValue.
      * @exports ICCLCMsg_RespondCvarValue
@@ -9646,8 +9669,8 @@ exports.CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (() => {
         return message;
     };
     return CCLCMsg_RespondCvarValue;
-})();
-exports.CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
+})());
+exports.CCLCMsg_FileCRCCheck = ($root.CCLCMsg_FileCRCCheck = (() => {
     /**
      * Properties of a CCLCMsg_FileCRCCheck.
      * @exports ICCLCMsg_FileCRCCheck
@@ -9814,8 +9837,8 @@ exports.CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
         return message;
     };
     return CCLCMsg_FileCRCCheck;
-})();
-exports.CCLCMsg_LoadingProgress = $root.CCLCMsg_LoadingProgress = (() => {
+})());
+exports.CCLCMsg_LoadingProgress = ($root.CCLCMsg_LoadingProgress = (() => {
     /**
      * Properties of a CCLCMsg_LoadingProgress.
      * @exports ICCLCMsg_LoadingProgress
@@ -9872,8 +9895,8 @@ exports.CCLCMsg_LoadingProgress = $root.CCLCMsg_LoadingProgress = (() => {
         return message;
     };
     return CCLCMsg_LoadingProgress;
-})();
-exports.CCLCMsg_SplitPlayerConnect = $root.CCLCMsg_SplitPlayerConnect = (() => {
+})());
+exports.CCLCMsg_SplitPlayerConnect = ($root.CCLCMsg_SplitPlayerConnect = (() => {
     /**
      * Properties of a CCLCMsg_SplitPlayerConnect.
      * @exports ICCLCMsg_SplitPlayerConnect
@@ -9930,8 +9953,8 @@ exports.CCLCMsg_SplitPlayerConnect = $root.CCLCMsg_SplitPlayerConnect = (() => {
         return message;
     };
     return CCLCMsg_SplitPlayerConnect;
-})();
-exports.CCLCMsg_CmdKeyValues = $root.CCLCMsg_CmdKeyValues = (() => {
+})());
+exports.CCLCMsg_CmdKeyValues = ($root.CCLCMsg_CmdKeyValues = (() => {
     /**
      * Properties of a CCLCMsg_CmdKeyValues.
      * @exports ICCLCMsg_CmdKeyValues
@@ -9988,8 +10011,8 @@ exports.CCLCMsg_CmdKeyValues = $root.CCLCMsg_CmdKeyValues = (() => {
         return message;
     };
     return CCLCMsg_CmdKeyValues;
-})();
-exports.CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
+})());
+exports.CSVCMsg_ServerInfo = ($root.CSVCMsg_ServerInfo = (() => {
     /**
      * Properties of a CSVCMsg_ServerInfo.
      * @exports ICSVCMsg_ServerInfo
@@ -10184,7 +10207,9 @@ exports.CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @memberof CSVCMsg_ServerInfo
      * @instance
      */
-    CSVCMsg_ServerInfo.prototype.ugcMapId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CSVCMsg_ServerInfo.prototype.ugcMapId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a CSVCMsg_ServerInfo message from the specified reader or buffer.
      * @function decode
@@ -10277,8 +10302,8 @@ exports.CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
         return message;
     };
     return CSVCMsg_ServerInfo;
-})();
-exports.CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
+})());
+exports.CSVCMsg_ClassInfo = ($root.CSVCMsg_ClassInfo = (() => {
     /**
      * Properties of a CSVCMsg_ClassInfo.
      * @exports ICSVCMsg_ClassInfo
@@ -10429,8 +10454,8 @@ exports.CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
         return class_t;
     })();
     return CSVCMsg_ClassInfo;
-})();
-exports.CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
+})());
+exports.CSVCMsg_SendTable = ($root.CSVCMsg_SendTable = (() => {
     /**
      * Properties of a CSVCMsg_SendTable.
      * @exports ICSVCMsg_SendTable
@@ -10669,8 +10694,8 @@ exports.CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
         return sendprop_t;
     })();
     return CSVCMsg_SendTable;
-})();
-exports.CSVCMsg_Print = $root.CSVCMsg_Print = (() => {
+})());
+exports.CSVCMsg_Print = ($root.CSVCMsg_Print = (() => {
     /**
      * Properties of a CSVCMsg_Print.
      * @exports ICSVCMsg_Print
@@ -10727,8 +10752,8 @@ exports.CSVCMsg_Print = $root.CSVCMsg_Print = (() => {
         return message;
     };
     return CSVCMsg_Print;
-})();
-exports.CSVCMsg_SetPause = $root.CSVCMsg_SetPause = (() => {
+})());
+exports.CSVCMsg_SetPause = ($root.CSVCMsg_SetPause = (() => {
     /**
      * Properties of a CSVCMsg_SetPause.
      * @exports ICSVCMsg_SetPause
@@ -10785,8 +10810,8 @@ exports.CSVCMsg_SetPause = $root.CSVCMsg_SetPause = (() => {
         return message;
     };
     return CSVCMsg_SetPause;
-})();
-exports.CSVCMsg_SetView = $root.CSVCMsg_SetView = (() => {
+})());
+exports.CSVCMsg_SetView = ($root.CSVCMsg_SetView = (() => {
     /**
      * Properties of a CSVCMsg_SetView.
      * @exports ICSVCMsg_SetView
@@ -10843,8 +10868,8 @@ exports.CSVCMsg_SetView = $root.CSVCMsg_SetView = (() => {
         return message;
     };
     return CSVCMsg_SetView;
-})();
-exports.CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() => {
+})());
+exports.CSVCMsg_CreateStringTable = ($root.CSVCMsg_CreateStringTable = (() => {
     /**
      * Properties of a CSVCMsg_CreateStringTable.
      * @exports ICSVCMsg_CreateStringTable
@@ -10978,8 +11003,8 @@ exports.CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() => {
         return message;
     };
     return CSVCMsg_CreateStringTable;
-})();
-exports.CSVCMsg_UpdateStringTable = $root.CSVCMsg_UpdateStringTable = (() => {
+})());
+exports.CSVCMsg_UpdateStringTable = ($root.CSVCMsg_UpdateStringTable = (() => {
     /**
      * Properties of a CSVCMsg_UpdateStringTable.
      * @exports ICSVCMsg_UpdateStringTable
@@ -11058,8 +11083,8 @@ exports.CSVCMsg_UpdateStringTable = $root.CSVCMsg_UpdateStringTable = (() => {
         return message;
     };
     return CSVCMsg_UpdateStringTable;
-})();
-exports.CSVCMsg_VoiceInit = $root.CSVCMsg_VoiceInit = (() => {
+})());
+exports.CSVCMsg_VoiceInit = ($root.CSVCMsg_VoiceInit = (() => {
     /**
      * Properties of a CSVCMsg_VoiceInit.
      * @exports ICSVCMsg_VoiceInit
@@ -11138,8 +11163,8 @@ exports.CSVCMsg_VoiceInit = $root.CSVCMsg_VoiceInit = (() => {
         return message;
     };
     return CSVCMsg_VoiceInit;
-})();
-exports.CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
+})());
+exports.CSVCMsg_VoiceData = ($root.CSVCMsg_VoiceData = (() => {
     /**
      * Properties of a CSVCMsg_VoiceData.
      * @exports ICSVCMsg_VoiceData
@@ -11189,7 +11214,9 @@ exports.CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      * @memberof CSVCMsg_VoiceData
      * @instance
      */
-    CSVCMsg_VoiceData.prototype.xuid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CSVCMsg_VoiceData.prototype.xuid = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CSVCMsg_VoiceData audibleMask.
      * @member {number} audibleMask
@@ -11295,8 +11322,8 @@ exports.CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
         return message;
     };
     return CSVCMsg_VoiceData;
-})();
-exports.CSVCMsg_FixAngle = $root.CSVCMsg_FixAngle = (() => {
+})());
+exports.CSVCMsg_FixAngle = ($root.CSVCMsg_FixAngle = (() => {
     /**
      * Properties of a CSVCMsg_FixAngle.
      * @exports ICSVCMsg_FixAngle
@@ -11364,8 +11391,8 @@ exports.CSVCMsg_FixAngle = $root.CSVCMsg_FixAngle = (() => {
         return message;
     };
     return CSVCMsg_FixAngle;
-})();
-exports.CSVCMsg_CrosshairAngle = $root.CSVCMsg_CrosshairAngle = (() => {
+})());
+exports.CSVCMsg_CrosshairAngle = ($root.CSVCMsg_CrosshairAngle = (() => {
     /**
      * Properties of a CSVCMsg_CrosshairAngle.
      * @exports ICSVCMsg_CrosshairAngle
@@ -11422,8 +11449,8 @@ exports.CSVCMsg_CrosshairAngle = $root.CSVCMsg_CrosshairAngle = (() => {
         return message;
     };
     return CSVCMsg_CrosshairAngle;
-})();
-exports.CSVCMsg_Prefetch = $root.CSVCMsg_Prefetch = (() => {
+})());
+exports.CSVCMsg_Prefetch = ($root.CSVCMsg_Prefetch = (() => {
     /**
      * Properties of a CSVCMsg_Prefetch.
      * @exports ICSVCMsg_Prefetch
@@ -11480,8 +11507,8 @@ exports.CSVCMsg_Prefetch = $root.CSVCMsg_Prefetch = (() => {
         return message;
     };
     return CSVCMsg_Prefetch;
-})();
-exports.CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
+})());
+exports.CSVCMsg_BSPDecal = ($root.CSVCMsg_BSPDecal = (() => {
     /**
      * Properties of a CSVCMsg_BSPDecal.
      * @exports ICSVCMsg_BSPDecal
@@ -11582,8 +11609,8 @@ exports.CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
         return message;
     };
     return CSVCMsg_BSPDecal;
-})();
-exports.CSVCMsg_SplitScreen = $root.CSVCMsg_SplitScreen = (() => {
+})());
+exports.CSVCMsg_SplitScreen = ($root.CSVCMsg_SplitScreen = (() => {
     /**
      * Properties of a CSVCMsg_SplitScreen.
      * @exports ICSVCMsg_SplitScreen
@@ -11662,8 +11689,8 @@ exports.CSVCMsg_SplitScreen = $root.CSVCMsg_SplitScreen = (() => {
         return message;
     };
     return CSVCMsg_SplitScreen;
-})();
-exports.CSVCMsg_GetCvarValue = $root.CSVCMsg_GetCvarValue = (() => {
+})());
+exports.CSVCMsg_GetCvarValue = ($root.CSVCMsg_GetCvarValue = (() => {
     /**
      * Properties of a CSVCMsg_GetCvarValue.
      * @exports ICSVCMsg_GetCvarValue
@@ -11731,8 +11758,8 @@ exports.CSVCMsg_GetCvarValue = $root.CSVCMsg_GetCvarValue = (() => {
         return message;
     };
     return CSVCMsg_GetCvarValue;
-})();
-exports.CSVCMsg_Menu = $root.CSVCMsg_Menu = (() => {
+})());
+exports.CSVCMsg_Menu = ($root.CSVCMsg_Menu = (() => {
     /**
      * Properties of a CSVCMsg_Menu.
      * @exports ICSVCMsg_Menu
@@ -11800,8 +11827,8 @@ exports.CSVCMsg_Menu = $root.CSVCMsg_Menu = (() => {
         return message;
     };
     return CSVCMsg_Menu;
-})();
-exports.CSVCMsg_UserMessage = $root.CSVCMsg_UserMessage = (() => {
+})());
+exports.CSVCMsg_UserMessage = ($root.CSVCMsg_UserMessage = (() => {
     /**
      * Properties of a CSVCMsg_UserMessage.
      * @exports ICSVCMsg_UserMessage
@@ -11880,8 +11907,8 @@ exports.CSVCMsg_UserMessage = $root.CSVCMsg_UserMessage = (() => {
         return message;
     };
     return CSVCMsg_UserMessage;
-})();
-exports.CSVCMsg_PaintmapData = $root.CSVCMsg_PaintmapData = (() => {
+})());
+exports.CSVCMsg_PaintmapData = ($root.CSVCMsg_PaintmapData = (() => {
     /**
      * Properties of a CSVCMsg_PaintmapData.
      * @exports ICSVCMsg_PaintmapData
@@ -11938,8 +11965,8 @@ exports.CSVCMsg_PaintmapData = $root.CSVCMsg_PaintmapData = (() => {
         return message;
     };
     return CSVCMsg_PaintmapData;
-})();
-exports.CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
+})());
+exports.CSVCMsg_GameEvent = ($root.CSVCMsg_GameEvent = (() => {
     /**
      * Properties of a CSVCMsg_GameEvent.
      * @exports ICSVCMsg_GameEvent
@@ -12115,7 +12142,9 @@ exports.CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
          * @memberof CSVCMsg_GameEvent.key_t
          * @instance
          */
-        key_t.prototype.valUint64 = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+        key_t.prototype.valUint64 = $util.Long
+            ? $util.Long.fromBits(0, 0, true)
+            : 0;
         /**
          * key_t valWstring.
          * @member {Uint8Array} valWstring
@@ -12178,8 +12207,8 @@ exports.CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
         return key_t;
     })();
     return CSVCMsg_GameEvent;
-})();
-exports.CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
+})());
+exports.CSVCMsg_GameEventList = ($root.CSVCMsg_GameEventList = (() => {
     /**
      * Properties of a CSVCMsg_GameEventList.
      * @exports ICSVCMsg_GameEventList
@@ -12391,8 +12420,8 @@ exports.CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
         return descriptor_t;
     })();
     return CSVCMsg_GameEventList;
-})();
-exports.CSVCMsg_TempEntities = $root.CSVCMsg_TempEntities = (() => {
+})());
+exports.CSVCMsg_TempEntities = ($root.CSVCMsg_TempEntities = (() => {
     /**
      * Properties of a CSVCMsg_TempEntities.
      * @exports ICSVCMsg_TempEntities
@@ -12471,8 +12500,8 @@ exports.CSVCMsg_TempEntities = $root.CSVCMsg_TempEntities = (() => {
         return message;
     };
     return CSVCMsg_TempEntities;
-})();
-exports.CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
+})());
+exports.CSVCMsg_PacketEntities = ($root.CSVCMsg_PacketEntities = (() => {
     /**
      * Properties of a CSVCMsg_PacketEntities.
      * @exports ICSVCMsg_PacketEntities
@@ -12595,8 +12624,8 @@ exports.CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
         return message;
     };
     return CSVCMsg_PacketEntities;
-})();
-exports.CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
+})());
+exports.CSVCMsg_Sounds = ($root.CSVCMsg_Sounds = (() => {
     /**
      * Properties of a CSVCMsg_Sounds.
      * @exports ICSVCMsg_Sounds
@@ -12901,8 +12930,8 @@ exports.CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
         return sounddata_t;
     })();
     return CSVCMsg_Sounds;
-})();
-exports.CSVCMsg_EntityMsg = $root.CSVCMsg_EntityMsg = (() => {
+})());
+exports.CSVCMsg_EntityMsg = ($root.CSVCMsg_EntityMsg = (() => {
     /**
      * Properties of a CSVCMsg_EntityMsg.
      * @exports ICSVCMsg_EntityMsg
@@ -12981,8 +13010,8 @@ exports.CSVCMsg_EntityMsg = $root.CSVCMsg_EntityMsg = (() => {
         return message;
     };
     return CSVCMsg_EntityMsg;
-})();
-exports.CSVCMsg_CmdKeyValues = $root.CSVCMsg_CmdKeyValues = (() => {
+})());
+exports.CSVCMsg_CmdKeyValues = ($root.CSVCMsg_CmdKeyValues = (() => {
     /**
      * Properties of a CSVCMsg_CmdKeyValues.
      * @exports ICSVCMsg_CmdKeyValues
@@ -13039,8 +13068,8 @@ exports.CSVCMsg_CmdKeyValues = $root.CSVCMsg_CmdKeyValues = (() => {
         return message;
     };
     return CSVCMsg_CmdKeyValues;
-})();
-exports.CSVCMsg_EncryptedData = $root.CSVCMsg_EncryptedData = (() => {
+})());
+exports.CSVCMsg_EncryptedData = ($root.CSVCMsg_EncryptedData = (() => {
     /**
      * Properties of a CSVCMsg_EncryptedData.
      * @exports ICSVCMsg_EncryptedData
@@ -13108,8 +13137,8 @@ exports.CSVCMsg_EncryptedData = $root.CSVCMsg_EncryptedData = (() => {
         return message;
     };
     return CSVCMsg_EncryptedData;
-})();
-exports.CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
+})());
+exports.CSVCMsg_HltvReplay = ($root.CSVCMsg_HltvReplay = (() => {
     /**
      * Properties of a CSVCMsg_HltvReplay.
      * @exports ICSVCMsg_HltvReplay
@@ -13232,8 +13261,8 @@ exports.CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
         return message;
     };
     return CSVCMsg_HltvReplay;
-})();
-exports.CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
+})());
+exports.CCLCMsg_HltvReplay = ($root.CCLCMsg_HltvReplay = (() => {
     /**
      * Properties of a CCLCMsg_HltvReplay.
      * @exports ICCLCMsg_HltvReplay
@@ -13334,7 +13363,7 @@ exports.CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
         return message;
     };
     return CCLCMsg_HltvReplay;
-})();
+})());
 /**
  * ECsgoGCMsg enum.
  * @exports ECsgoGCMsg
@@ -13416,83 +13445,90 @@ exports.CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
  */
 $root.ECsgoGCMsg = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[9100] = "k_EMsgGCCStrike15_v2_Base"] = 9100;
-    values[valuesById[9101] = "k_EMsgGCCStrike15_v2_MatchmakingStart"] = 9101;
-    values[valuesById[9102] = "k_EMsgGCCStrike15_v2_MatchmakingStop"] = 9102;
-    values[valuesById[9103] = "k_EMsgGCCStrike15_v2_MatchmakingClient2ServerPing"] = 9103;
-    values[valuesById[9104] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate"] = 9104;
-    values[valuesById[9105] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ServerReserve"] = 9105;
-    values[valuesById[9106] = "k_EMsgGCCStrike15_v2_MatchmakingServerReservationResponse"] = 9106;
-    values[valuesById[9107] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ClientReserve"] = 9107;
-    values[valuesById[9108] = "k_EMsgGCCStrike15_v2_MatchmakingServerRoundStats"] = 9108;
-    values[valuesById[9109] = "k_EMsgGCCStrike15_v2_MatchmakingClient2GCHello"] = 9109;
-    values[valuesById[9110] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ClientHello"] = 9110;
-    values[valuesById[9111] = "k_EMsgGCCStrike15_v2_MatchmakingServerMatchEnd"] = 9111;
-    values[valuesById[9112] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon"] = 9112;
-    values[valuesById[9113] = "k_EMsgGCCStrike15_v2_MatchmakingServer2GCKick"] = 9113;
-    values[valuesById[9114] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm"] = 9114;
-    values[valuesById[9115] = "k_EMsgGCCStrike15_v2_MatchmakingGCOperationalStats"] = 9115;
-    values[valuesById[9116] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate"] = 9116;
-    values[valuesById[9117] = "k_EMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate"] = 9117;
-    values[valuesById[9118] = "k_EMsgGCCStrike15_v2_ServerNotificationForUserPenalty"] = 9118;
-    values[valuesById[9119] = "k_EMsgGCCStrike15_v2_ClientReportPlayer"] = 9119;
-    values[valuesById[9120] = "k_EMsgGCCStrike15_v2_ClientReportServer"] = 9120;
-    values[valuesById[9121] = "k_EMsgGCCStrike15_v2_ClientCommendPlayer"] = 9121;
-    values[valuesById[9122] = "k_EMsgGCCStrike15_v2_ClientReportResponse"] = 9122;
-    values[valuesById[9123] = "k_EMsgGCCStrike15_v2_ClientCommendPlayerQuery"] = 9123;
-    values[valuesById[9124] = "k_EMsgGCCStrike15_v2_ClientCommendPlayerQueryResponse"] = 9124;
-    values[valuesById[9126] = "k_EMsgGCCStrike15_v2_WatchInfoUsers"] = 9126;
-    values[valuesById[9127] = "k_EMsgGCCStrike15_v2_ClientRequestPlayersProfile"] = 9127;
-    values[valuesById[9128] = "k_EMsgGCCStrike15_v2_PlayersProfile"] = 9128;
-    values[valuesById[9129] = "k_EMsgGCCStrike15_v2_SetMyMedalsInfo"] = 9129;
-    values[valuesById[9131] = "k_EMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate"] = 9131;
-    values[valuesById[9132] = "k_EMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment"] = 9132;
-    values[valuesById[9133] = "k_EMsgGCCStrike15_v2_PlayerOverwatchCaseStatus"] = 9133;
-    values[valuesById[9134] = "k_EMsgGCCStrike15_v2_GC2ClientTextMsg"] = 9134;
-    values[valuesById[9135] = "k_EMsgGCCStrike15_v2_Client2GCTextMsg"] = 9135;
-    values[valuesById[9136] = "k_EMsgGCCStrike15_v2_MatchEndRunRewardDrops"] = 9136;
-    values[valuesById[9137] = "k_EMsgGCCStrike15_v2_MatchEndRewardDropsNotification"] = 9137;
-    values[valuesById[9138] = "k_EMsgGCCStrike15_v2_ClientRequestWatchInfoFriends2"] = 9138;
-    values[valuesById[9139] = "k_EMsgGCCStrike15_v2_MatchList"] = 9139;
-    values[valuesById[9140] = "k_EMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames"] = 9140;
-    values[valuesById[9141] = "k_EMsgGCCStrike15_v2_MatchListRequestRecentUserGames"] = 9141;
-    values[valuesById[9142] = "k_EMsgGCCStrike15_v2_GC2ServerReservationUpdate"] = 9142;
-    values[valuesById[9144] = "k_EMsgGCCStrike15_v2_ClientVarValueNotificationInfo"] = 9144;
-    values[valuesById[9145] = "k_EMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification"] = 9145;
-    values[valuesById[9146] = "k_EMsgGCCStrike15_v2_MatchListRequestTournamentGames"] = 9146;
-    values[valuesById[9147] = "k_EMsgGCCStrike15_v2_MatchListRequestFullGameInfo"] = 9147;
-    values[valuesById[9148] = "k_EMsgGCCStrike15_v2_GiftsLeaderboardRequest"] = 9148;
-    values[valuesById[9149] = "k_EMsgGCCStrike15_v2_GiftsLeaderboardResponse"] = 9149;
-    values[valuesById[9150] = "k_EMsgGCCStrike15_v2_ServerVarValueNotificationInfo"] = 9150;
-    values[valuesById[9151] = "k_EMsgGCToGCReloadVersions"] = 9151;
-    values[valuesById[9152] = "k_EMsgGCCStrike15_v2_ClientSubmitSurveyVote"] = 9152;
-    values[valuesById[9153] = "k_EMsgGCCStrike15_v2_Server2GCClientValidate"] = 9153;
-    values[valuesById[9154] = "k_EMsgGCCStrike15_v2_MatchListRequestLiveGameForUser"] = 9154;
-    values[valuesById[9155] = "k_EMsgGCCStrike15_v2_Server2GCPureServerValidationFailure"] = 9155;
-    values[valuesById[9156] = "k_EMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest"] = 9156;
-    values[valuesById[9157] = "k_EMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse"] = 9157;
-    values[valuesById[9158] = "k_EMsgGCCStrike15_v2_AccountPrivacySettings"] = 9158;
-    values[valuesById[9159] = "k_EMsgGCCStrike15_v2_SetMyActivityInfo"] = 9159;
-    values[valuesById[9160] = "k_EMsgGCCStrike15_v2_MatchListRequestTournamentPredictions"] = 9160;
-    values[valuesById[9161] = "k_EMsgGCCStrike15_v2_MatchListUploadTournamentPredictions"] = 9161;
-    values[valuesById[9162] = "k_EMsgGCCStrike15_v2_DraftSummary"] = 9162;
-    values[valuesById[9163] = "k_EMsgGCCStrike15_v2_ClientRequestJoinFriendData"] = 9163;
-    values[valuesById[9164] = "k_EMsgGCCStrike15_v2_ClientRequestJoinServerData"] = 9164;
-    values[valuesById[9165] = "k_EMsgGCCStrike15_v2_ClientRequestNewMission"] = 9165;
-    values[valuesById[9166] = "k_EMsgGCCStrike15_v2_GC2ServerNotifyXPRewarded"] = 9166;
-    values[valuesById[9167] = "k_EMsgGCCStrike15_v2_GC2ClientTournamentInfo"] = 9167;
-    values[valuesById[9168] = "k_EMsgGC_GlobalGame_Subscribe"] = 9168;
-    values[valuesById[9169] = "k_EMsgGC_GlobalGame_Unsubscribe"] = 9169;
-    values[valuesById[9170] = "k_EMsgGC_GlobalGame_Play"] = 9170;
-    values[valuesById[9171] = "k_EMsgGCCStrike15_v2_AcknowledgePenalty"] = 9171;
-    values[valuesById[9172] = "k_EMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin"] = 9172;
-    values[valuesById[9173] = "k_EMsgGCCStrike15_v2_GC2ClientGlobalStats"] = 9173;
-    values[valuesById[9174] = "k_EMsgGCCStrike15_v2_Client2GCStreamUnlock"] = 9174;
-    values[valuesById[9175] = "k_EMsgGCCStrike15_v2_FantasyRequestClientData"] = 9175;
-    values[valuesById[9176] = "k_EMsgGCCStrike15_v2_FantasyUpdateClientData"] = 9176;
+    values[(valuesById[9100] = "k_EMsgGCCStrike15_v2_Base")] = 9100;
+    values[(valuesById[9101] = "k_EMsgGCCStrike15_v2_MatchmakingStart")] = 9101;
+    values[(valuesById[9102] = "k_EMsgGCCStrike15_v2_MatchmakingStop")] = 9102;
+    values[(valuesById[9103] = "k_EMsgGCCStrike15_v2_MatchmakingClient2ServerPing")] = 9103;
+    values[(valuesById[9104] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate")] = 9104;
+    values[(valuesById[9105] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ServerReserve")] = 9105;
+    values[(valuesById[9106] =
+        "k_EMsgGCCStrike15_v2_MatchmakingServerReservationResponse")] = 9106;
+    values[(valuesById[9107] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ClientReserve")] = 9107;
+    values[(valuesById[9108] = "k_EMsgGCCStrike15_v2_MatchmakingServerRoundStats")] = 9108;
+    values[(valuesById[9109] = "k_EMsgGCCStrike15_v2_MatchmakingClient2GCHello")] = 9109;
+    values[(valuesById[9110] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ClientHello")] = 9110;
+    values[(valuesById[9111] = "k_EMsgGCCStrike15_v2_MatchmakingServerMatchEnd")] = 9111;
+    values[(valuesById[9112] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon")] = 9112;
+    values[(valuesById[9113] = "k_EMsgGCCStrike15_v2_MatchmakingServer2GCKick")] = 9113;
+    values[(valuesById[9114] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm")] = 9114;
+    values[(valuesById[9115] = "k_EMsgGCCStrike15_v2_MatchmakingGCOperationalStats")] = 9115;
+    values[(valuesById[9116] = "k_EMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate")] = 9116;
+    values[(valuesById[9117] = "k_EMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate")] = 9117;
+    values[(valuesById[9118] = "k_EMsgGCCStrike15_v2_ServerNotificationForUserPenalty")] = 9118;
+    values[(valuesById[9119] = "k_EMsgGCCStrike15_v2_ClientReportPlayer")] = 9119;
+    values[(valuesById[9120] = "k_EMsgGCCStrike15_v2_ClientReportServer")] = 9120;
+    values[(valuesById[9121] = "k_EMsgGCCStrike15_v2_ClientCommendPlayer")] = 9121;
+    values[(valuesById[9122] = "k_EMsgGCCStrike15_v2_ClientReportResponse")] = 9122;
+    values[(valuesById[9123] = "k_EMsgGCCStrike15_v2_ClientCommendPlayerQuery")] = 9123;
+    values[(valuesById[9124] = "k_EMsgGCCStrike15_v2_ClientCommendPlayerQueryResponse")] = 9124;
+    values[(valuesById[9126] = "k_EMsgGCCStrike15_v2_WatchInfoUsers")] = 9126;
+    values[(valuesById[9127] = "k_EMsgGCCStrike15_v2_ClientRequestPlayersProfile")] = 9127;
+    values[(valuesById[9128] = "k_EMsgGCCStrike15_v2_PlayersProfile")] = 9128;
+    values[(valuesById[9129] = "k_EMsgGCCStrike15_v2_SetMyMedalsInfo")] = 9129;
+    values[(valuesById[9131] = "k_EMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate")] = 9131;
+    values[(valuesById[9132] = "k_EMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment")] = 9132;
+    values[(valuesById[9133] = "k_EMsgGCCStrike15_v2_PlayerOverwatchCaseStatus")] = 9133;
+    values[(valuesById[9134] = "k_EMsgGCCStrike15_v2_GC2ClientTextMsg")] = 9134;
+    values[(valuesById[9135] = "k_EMsgGCCStrike15_v2_Client2GCTextMsg")] = 9135;
+    values[(valuesById[9136] = "k_EMsgGCCStrike15_v2_MatchEndRunRewardDrops")] = 9136;
+    values[(valuesById[9137] = "k_EMsgGCCStrike15_v2_MatchEndRewardDropsNotification")] = 9137;
+    values[(valuesById[9138] = "k_EMsgGCCStrike15_v2_ClientRequestWatchInfoFriends2")] = 9138;
+    values[(valuesById[9139] = "k_EMsgGCCStrike15_v2_MatchList")] = 9139;
+    values[(valuesById[9140] = "k_EMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames")] = 9140;
+    values[(valuesById[9141] = "k_EMsgGCCStrike15_v2_MatchListRequestRecentUserGames")] = 9141;
+    values[(valuesById[9142] = "k_EMsgGCCStrike15_v2_GC2ServerReservationUpdate")] = 9142;
+    values[(valuesById[9144] = "k_EMsgGCCStrike15_v2_ClientVarValueNotificationInfo")] = 9144;
+    values[(valuesById[9145] =
+        "k_EMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification")] = 9145;
+    values[(valuesById[9146] = "k_EMsgGCCStrike15_v2_MatchListRequestTournamentGames")] = 9146;
+    values[(valuesById[9147] = "k_EMsgGCCStrike15_v2_MatchListRequestFullGameInfo")] = 9147;
+    values[(valuesById[9148] = "k_EMsgGCCStrike15_v2_GiftsLeaderboardRequest")] = 9148;
+    values[(valuesById[9149] = "k_EMsgGCCStrike15_v2_GiftsLeaderboardResponse")] = 9149;
+    values[(valuesById[9150] = "k_EMsgGCCStrike15_v2_ServerVarValueNotificationInfo")] = 9150;
+    values[(valuesById[9151] = "k_EMsgGCToGCReloadVersions")] = 9151;
+    values[(valuesById[9152] = "k_EMsgGCCStrike15_v2_ClientSubmitSurveyVote")] = 9152;
+    values[(valuesById[9153] = "k_EMsgGCCStrike15_v2_Server2GCClientValidate")] = 9153;
+    values[(valuesById[9154] = "k_EMsgGCCStrike15_v2_MatchListRequestLiveGameForUser")] = 9154;
+    values[(valuesById[9155] =
+        "k_EMsgGCCStrike15_v2_Server2GCPureServerValidationFailure")] = 9155;
+    values[(valuesById[9156] =
+        "k_EMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest")] = 9156;
+    values[(valuesById[9157] =
+        "k_EMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse")] = 9157;
+    values[(valuesById[9158] = "k_EMsgGCCStrike15_v2_AccountPrivacySettings")] = 9158;
+    values[(valuesById[9159] = "k_EMsgGCCStrike15_v2_SetMyActivityInfo")] = 9159;
+    values[(valuesById[9160] =
+        "k_EMsgGCCStrike15_v2_MatchListRequestTournamentPredictions")] = 9160;
+    values[(valuesById[9161] =
+        "k_EMsgGCCStrike15_v2_MatchListUploadTournamentPredictions")] = 9161;
+    values[(valuesById[9162] = "k_EMsgGCCStrike15_v2_DraftSummary")] = 9162;
+    values[(valuesById[9163] = "k_EMsgGCCStrike15_v2_ClientRequestJoinFriendData")] = 9163;
+    values[(valuesById[9164] = "k_EMsgGCCStrike15_v2_ClientRequestJoinServerData")] = 9164;
+    values[(valuesById[9165] = "k_EMsgGCCStrike15_v2_ClientRequestNewMission")] = 9165;
+    values[(valuesById[9166] = "k_EMsgGCCStrike15_v2_GC2ServerNotifyXPRewarded")] = 9166;
+    values[(valuesById[9167] = "k_EMsgGCCStrike15_v2_GC2ClientTournamentInfo")] = 9167;
+    values[(valuesById[9168] = "k_EMsgGC_GlobalGame_Subscribe")] = 9168;
+    values[(valuesById[9169] = "k_EMsgGC_GlobalGame_Unsubscribe")] = 9169;
+    values[(valuesById[9170] = "k_EMsgGC_GlobalGame_Play")] = 9170;
+    values[(valuesById[9171] = "k_EMsgGCCStrike15_v2_AcknowledgePenalty")] = 9171;
+    values[(valuesById[9172] = "k_EMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin")] = 9172;
+    values[(valuesById[9173] = "k_EMsgGCCStrike15_v2_GC2ClientGlobalStats")] = 9173;
+    values[(valuesById[9174] = "k_EMsgGCCStrike15_v2_Client2GCStreamUnlock")] = 9174;
+    values[(valuesById[9175] = "k_EMsgGCCStrike15_v2_FantasyRequestClientData")] = 9175;
+    values[(valuesById[9176] = "k_EMsgGCCStrike15_v2_FantasyUpdateClientData")] = 9176;
     return values;
 })();
-exports.GameServerPing = $root.GameServerPing = (() => {
+exports.GameServerPing = ($root.GameServerPing = (() => {
     /**
      * Properties of a GameServerPing.
      * @exports IGameServerPing
@@ -13523,7 +13559,9 @@ exports.GameServerPing = $root.GameServerPing = (() => {
      * @memberof GameServerPing
      * @instance
      */
-    GameServerPing.prototype.gameserverId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    GameServerPing.prototype.gameserverId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * GameServerPing ping.
      * @member {number} ping
@@ -13593,8 +13631,8 @@ exports.GameServerPing = $root.GameServerPing = (() => {
         return message;
     };
     return GameServerPing;
-})();
-exports.DetailedSearchStatistic = $root.DetailedSearchStatistic = (() => {
+})());
+exports.DetailedSearchStatistic = ($root.DetailedSearchStatistic = (() => {
     /**
      * Properties of a DetailedSearchStatistic.
      * @exports IDetailedSearchStatistic
@@ -13673,8 +13711,8 @@ exports.DetailedSearchStatistic = $root.DetailedSearchStatistic = (() => {
         return message;
     };
     return DetailedSearchStatistic;
-})();
-exports.TournamentPlayer = $root.TournamentPlayer = (() => {
+})());
+exports.TournamentPlayer = ($root.TournamentPlayer = (() => {
     /**
      * Properties of a TournamentPlayer.
      * @exports ITournamentPlayer
@@ -13797,8 +13835,8 @@ exports.TournamentPlayer = $root.TournamentPlayer = (() => {
         return message;
     };
     return TournamentPlayer;
-})();
-exports.TournamentTeam = $root.TournamentTeam = (() => {
+})());
+exports.TournamentTeam = ($root.TournamentTeam = (() => {
     /**
      * Properties of a TournamentTeam.
      * @exports ITournamentTeam
@@ -13902,8 +13940,8 @@ exports.TournamentTeam = $root.TournamentTeam = (() => {
         return message;
     };
     return TournamentTeam;
-})();
-exports.TournamentEvent = $root.TournamentEvent = (() => {
+})());
+exports.TournamentEvent = ($root.TournamentEvent = (() => {
     /**
      * Properties of a TournamentEvent.
      * @exports ITournamentEvent
@@ -14048,8 +14086,8 @@ exports.TournamentEvent = $root.TournamentEvent = (() => {
         return message;
     };
     return TournamentEvent;
-})();
-exports.GlobalStatistics = $root.GlobalStatistics = (() => {
+})());
+exports.GlobalStatistics = ($root.GlobalStatistics = (() => {
     /**
      * Properties of a GlobalStatistics.
      * @exports IGlobalStatistics
@@ -14241,8 +14279,8 @@ exports.GlobalStatistics = $root.GlobalStatistics = (() => {
         return message;
     };
     return GlobalStatistics;
-})();
-exports.OperationalStatisticDescription = $root.OperationalStatisticDescription = (() => {
+})());
+exports.OperationalStatisticDescription = ($root.OperationalStatisticDescription = (() => {
     /**
      * Properties of an OperationalStatisticDescription.
      * @exports IOperationalStatisticDescription
@@ -14310,8 +14348,8 @@ exports.OperationalStatisticDescription = $root.OperationalStatisticDescription 
         return message;
     };
     return OperationalStatisticDescription;
-})();
-exports.OperationalStatisticElement = $root.OperationalStatisticElement = (() => {
+})());
+exports.OperationalStatisticElement = ($root.OperationalStatisticElement = (() => {
     /**
      * Properties of an OperationalStatisticElement.
      * @exports IOperationalStatisticElement
@@ -14388,8 +14426,8 @@ exports.OperationalStatisticElement = $root.OperationalStatisticElement = (() =>
         return message;
     };
     return OperationalStatisticElement;
-})();
-exports.OperationalStatisticsPacket = $root.OperationalStatisticsPacket = (() => {
+})());
+exports.OperationalStatisticsPacket = ($root.OperationalStatisticsPacket = (() => {
     /**
      * Properties of an OperationalStatisticsPacket.
      * @exports IOperationalStatisticsPacket
@@ -14471,8 +14509,8 @@ exports.OperationalStatisticsPacket = $root.OperationalStatisticsPacket = (() =>
         return message;
     };
     return OperationalStatisticsPacket;
-})();
-exports.PlayerRankingInfo = $root.PlayerRankingInfo = (() => {
+})());
+exports.PlayerRankingInfo = ($root.PlayerRankingInfo = (() => {
     /**
      * Properties of a PlayerRankingInfo.
      * @exports IPlayerRankingInfo
@@ -14562,8 +14600,8 @@ exports.PlayerRankingInfo = $root.PlayerRankingInfo = (() => {
         return message;
     };
     return PlayerRankingInfo;
-})();
-exports.PlayerCommendationInfo = $root.PlayerCommendationInfo = (() => {
+})());
+exports.PlayerCommendationInfo = ($root.PlayerCommendationInfo = (() => {
     /**
      * Properties of a PlayerCommendationInfo.
      * @exports IPlayerCommendationInfo
@@ -14642,8 +14680,8 @@ exports.PlayerCommendationInfo = $root.PlayerCommendationInfo = (() => {
         return message;
     };
     return PlayerCommendationInfo;
-})();
-exports.PlayerMedalsInfo = $root.PlayerMedalsInfo = (() => {
+})());
+exports.PlayerMedalsInfo = ($root.PlayerMedalsInfo = (() => {
     /**
      * Properties of a PlayerMedalsInfo.
      * @exports IPlayerMedalsInfo
@@ -14775,8 +14813,8 @@ exports.PlayerMedalsInfo = $root.PlayerMedalsInfo = (() => {
         return message;
     };
     return PlayerMedalsInfo;
-})();
-exports.AccountActivity = $root.AccountActivity = (() => {
+})());
+exports.AccountActivity = ($root.AccountActivity = (() => {
     /**
      * Properties of an AccountActivity.
      * @exports IAccountActivity
@@ -14855,8 +14893,8 @@ exports.AccountActivity = $root.AccountActivity = (() => {
         return message;
     };
     return AccountActivity;
-})();
-exports.TournamentMatchSetup = $root.TournamentMatchSetup = (() => {
+})());
+exports.TournamentMatchSetup = ($root.TournamentMatchSetup = (() => {
     /**
      * Properties of a TournamentMatchSetup.
      * @exports ITournamentMatchSetup
@@ -14946,8 +14984,8 @@ exports.TournamentMatchSetup = $root.TournamentMatchSetup = (() => {
         return message;
     };
     return TournamentMatchSetup;
-})();
-exports.ServerHltvInfo = $root.ServerHltvInfo = (() => {
+})());
+exports.ServerHltvInfo = ($root.ServerHltvInfo = (() => {
     /**
      * Properties of a ServerHltvInfo.
      * @exports IServerHltvInfo
@@ -14999,7 +15037,9 @@ exports.ServerHltvInfo = $root.ServerHltvInfo = (() => {
      * @memberof ServerHltvInfo
      * @instance
      */
-    ServerHltvInfo.prototype.tvWatchKey = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    ServerHltvInfo.prototype.tvWatchKey = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * ServerHltvInfo tvSlots.
      * @member {number} tvSlots
@@ -15055,7 +15095,9 @@ exports.ServerHltvInfo = $root.ServerHltvInfo = (() => {
      * @memberof ServerHltvInfo
      * @instance
      */
-    ServerHltvInfo.prototype.tvMasterSteamid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    ServerHltvInfo.prototype.tvMasterSteamid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * ServerHltvInfo tvLocalSlots.
      * @member {number} tvLocalSlots
@@ -15118,7 +15160,9 @@ exports.ServerHltvInfo = $root.ServerHltvInfo = (() => {
      * @memberof ServerHltvInfo
      * @instance
      */
-    ServerHltvInfo.prototype.tvRelaySteamid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    ServerHltvInfo.prototype.tvRelaySteamid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a ServerHltvInfo message from the specified reader or buffer.
      * @function decode
@@ -15202,8 +15246,8 @@ exports.ServerHltvInfo = $root.ServerHltvInfo = (() => {
         return message;
     };
     return ServerHltvInfo;
-})();
-exports.IpAddressMask = $root.IpAddressMask = (() => {
+})());
+exports.IpAddressMask = ($root.IpAddressMask = (() => {
     /**
      * Properties of an IpAddressMask.
      * @exports IIpAddressMask
@@ -15315,8 +15359,8 @@ exports.IpAddressMask = $root.IpAddressMask = (() => {
         return message;
     };
     return IpAddressMask;
-})();
-exports.XpProgressData = $root.XpProgressData = (() => {
+})());
+exports.XpProgressData = ($root.XpProgressData = (() => {
     /**
      * Properties of a XpProgressData.
      * @exports IXpProgressData
@@ -15384,8 +15428,8 @@ exports.XpProgressData = $root.XpProgressData = (() => {
         return message;
     };
     return XpProgressData;
-})();
-exports.MatchEndItemUpdates = $root.MatchEndItemUpdates = (() => {
+})());
+exports.MatchEndItemUpdates = ($root.MatchEndItemUpdates = (() => {
     /**
      * Properties of a MatchEndItemUpdates.
      * @exports IMatchEndItemUpdates
@@ -15414,7 +15458,9 @@ exports.MatchEndItemUpdates = $root.MatchEndItemUpdates = (() => {
      * @memberof MatchEndItemUpdates
      * @instance
      */
-    MatchEndItemUpdates.prototype.itemId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    MatchEndItemUpdates.prototype.itemId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * MatchEndItemUpdates itemAttrDefidx.
      * @member {number} itemAttrDefidx
@@ -15464,8 +15510,8 @@ exports.MatchEndItemUpdates = $root.MatchEndItemUpdates = (() => {
         return message;
     };
     return MatchEndItemUpdates;
-})();
-exports.PlayerQuestData = $root.PlayerQuestData = (() => {
+})());
+exports.PlayerQuestData = ($root.PlayerQuestData = (() => {
     /**
      * Properties of a PlayerQuestData.
      * @exports IPlayerQuestData
@@ -15614,7 +15660,9 @@ exports.PlayerQuestData = $root.PlayerQuestData = (() => {
          * @memberof PlayerQuestData.QuestItemData
          * @instance
          */
-        QuestItemData.prototype.questId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+        QuestItemData.prototype.questId = $util.Long
+            ? $util.Long.fromBits(0, 0, true)
+            : 0;
         /**
          * QuestItemData questNormalPointsEarned.
          * @member {number} questNormalPointsEarned
@@ -15666,8 +15714,8 @@ exports.PlayerQuestData = $root.PlayerQuestData = (() => {
         return QuestItemData;
     })();
     return PlayerQuestData;
-})();
-exports.CMsgGC_ServerQuestUpdateData = $root.CMsgGC_ServerQuestUpdateData = (() => {
+})());
+exports.CMsgGC_ServerQuestUpdateData = ($root.CMsgGC_ServerQuestUpdateData = (() => {
     /**
      * Properties of a CMsgGC_ServerQuestUpdateData.
      * @exports ICMsgGC_ServerQuestUpdateData
@@ -15727,8 +15775,8 @@ exports.CMsgGC_ServerQuestUpdateData = $root.CMsgGC_ServerQuestUpdateData = (() 
         return message;
     };
     return CMsgGC_ServerQuestUpdateData;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingGCOperationalStats = $root.CMsgGCCStrike15_v2_MatchmakingGCOperationalStats = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingGCOperationalStats = ($root.CMsgGCCStrike15_v2_MatchmakingGCOperationalStats = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingGCOperationalStats.
      * @exports ICMsgGCCStrike15_v2_MatchmakingGCOperationalStats
@@ -15766,14 +15814,16 @@ exports.CMsgGCCStrike15_v2_MatchmakingGCOperationalStats = $root.CMsgGCCStrike15
      * @memberof CMsgGCCStrike15_v2_MatchmakingGCOperationalStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGCOperationalStats.prototype.namekeys = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGCOperationalStats.prototype.namekeys =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGCOperationalStats packets.
      * @member {Array.<IOperationalStatisticsPacket>} packets
      * @memberof CMsgGCCStrike15_v2_MatchmakingGCOperationalStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGCOperationalStats.prototype.packets = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGCOperationalStats.prototype.packets =
+        $util.emptyArray;
     /**
      * Decodes a CMsgGCCStrike15_v2_MatchmakingGCOperationalStats message from the specified reader or buffer.
      * @function decode
@@ -15813,8 +15863,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGCOperationalStats = $root.CMsgGCCStrike15
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingGCOperationalStats;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm = $root.CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm = ($root.CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm.
      * @exports ICMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm
@@ -15857,7 +15907,9 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm.prototype.exchange = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm.prototype.exchange = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm message from the specified reader or buffer.
      * @function decode
@@ -15893,8 +15945,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm = $root.CMsgGCCStrike15_v
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm;
-})();
-exports.CMsgGCCStrike15_v2_GC2ServerReservationUpdate = $root.CMsgGCCStrike15_v2_GC2ServerReservationUpdate = (() => {
+})());
+exports.CMsgGCCStrike15_v2_GC2ServerReservationUpdate = ($root.CMsgGCCStrike15_v2_GC2ServerReservationUpdate = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_GC2ServerReservationUpdate.
      * @exports ICMsgGCCStrike15_v2_GC2ServerReservationUpdate
@@ -15962,8 +16014,8 @@ exports.CMsgGCCStrike15_v2_GC2ServerReservationUpdate = $root.CMsgGCCStrike15_v2
         return message;
     };
     return CMsgGCCStrike15_v2_GC2ServerReservationUpdate;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingStart = $root.CMsgGCCStrike15_v2_MatchmakingStart = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingStart = ($root.CMsgGCCStrike15_v2_MatchmakingStart = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingStart.
      * @exports ICMsgGCCStrike15_v2_MatchmakingStart
@@ -16073,8 +16125,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingStart = $root.CMsgGCCStrike15_v2_Matchmaki
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingStart;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingStop = $root.CMsgGCCStrike15_v2_MatchmakingStop = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingStop = ($root.CMsgGCCStrike15_v2_MatchmakingStop = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingStop.
      * @exports ICMsgGCCStrike15_v2_MatchmakingStop
@@ -16131,8 +16183,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingStop = $root.CMsgGCCStrike15_v2_Matchmakin
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingStop;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingClient2ServerPing = $root.CMsgGCCStrike15_v2_MatchmakingClient2ServerPing = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingClient2ServerPing = ($root.CMsgGCCStrike15_v2_MatchmakingClient2ServerPing = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingClient2ServerPing.
      * @exports ICMsgGCCStrike15_v2_MatchmakingClient2ServerPing
@@ -16162,7 +16214,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingClient2ServerPing = $root.CMsgGCCStrike15_
      * @memberof CMsgGCCStrike15_v2_MatchmakingClient2ServerPing
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingClient2ServerPing.prototype.gameserverpings = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingClient2ServerPing.prototype.gameserverpings =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingClient2ServerPing offsetIndex.
      * @member {number} offsetIndex
@@ -16214,8 +16267,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingClient2ServerPing = $root.CMsgGCCStrike15_
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingClient2ServerPing;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = ($root.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.
      * @exports ICMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
@@ -16270,7 +16323,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.waitingAccountIdSessions = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.waitingAccountIdSessions =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate error.
      * @member {string} error
@@ -16284,7 +16338,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.ongoingmatchAccountIdSessions = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.ongoingmatchAccountIdSessions =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate globalStats.
      * @member {IGlobalStatistics|null|undefined} globalStats
@@ -16298,28 +16353,32 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.failpingAccountIdSessions = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.failpingAccountIdSessions =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate penaltyAccountIdSessions.
      * @member {Array.<number>} penaltyAccountIdSessions
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.penaltyAccountIdSessions = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.penaltyAccountIdSessions =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate failreadyAccountIdSessions.
      * @member {Array.<number>} failreadyAccountIdSessions
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.failreadyAccountIdSessions = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.failreadyAccountIdSessions =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate vacbannedAccountIdSessions.
      * @member {Array.<number>} vacbannedAccountIdSessions
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.vacbannedAccountIdSessions = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.vacbannedAccountIdSessions =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate serverIpaddressMask.
      * @member {IIpAddressMask|null|undefined} serverIpaddressMask
@@ -16333,21 +16392,24 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.notes = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.notes =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate penaltyAccountIdSessionsGreen.
      * @member {Array.<number>} penaltyAccountIdSessionsGreen
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.penaltyAccountIdSessionsGreen = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.penaltyAccountIdSessionsGreen =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate insufficientlevelSessions.
      * @member {Array.<number>} insufficientlevelSessions
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.insufficientlevelSessions = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.prototype.insufficientlevelSessions =
+        $util.emptyArray;
     /**
      * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate message from the specified reader or buffer.
      * @function decode
@@ -16370,7 +16432,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2
                     message.matchmaking = reader.int32();
                     break;
                 case 2:
-                    if (!(message.waitingAccountIdSessions && message.waitingAccountIdSessions.length))
+                    if (!(message.waitingAccountIdSessions &&
+                        message.waitingAccountIdSessions.length))
                         message.waitingAccountIdSessions = [];
                     if ((tag & 7) === 2) {
                         let end2 = reader.uint32() + reader.pos;
@@ -16384,7 +16447,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2
                     message.error = reader.string();
                     break;
                 case 6:
-                    if (!(message.ongoingmatchAccountIdSessions && message.ongoingmatchAccountIdSessions.length))
+                    if (!(message.ongoingmatchAccountIdSessions &&
+                        message.ongoingmatchAccountIdSessions.length))
                         message.ongoingmatchAccountIdSessions = [];
                     if ((tag & 7) === 2) {
                         let end2 = reader.uint32() + reader.pos;
@@ -16398,7 +16462,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2
                     message.globalStats = $root.GlobalStatistics.decode(reader, reader.uint32());
                     break;
                 case 8:
-                    if (!(message.failpingAccountIdSessions && message.failpingAccountIdSessions.length))
+                    if (!(message.failpingAccountIdSessions &&
+                        message.failpingAccountIdSessions.length))
                         message.failpingAccountIdSessions = [];
                     if ((tag & 7) === 2) {
                         let end2 = reader.uint32() + reader.pos;
@@ -16409,7 +16474,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2
                         message.failpingAccountIdSessions.push(reader.uint32());
                     break;
                 case 9:
-                    if (!(message.penaltyAccountIdSessions && message.penaltyAccountIdSessions.length))
+                    if (!(message.penaltyAccountIdSessions &&
+                        message.penaltyAccountIdSessions.length))
                         message.penaltyAccountIdSessions = [];
                     if ((tag & 7) === 2) {
                         let end2 = reader.uint32() + reader.pos;
@@ -16420,7 +16486,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2
                         message.penaltyAccountIdSessions.push(reader.uint32());
                     break;
                 case 10:
-                    if (!(message.failreadyAccountIdSessions && message.failreadyAccountIdSessions.length))
+                    if (!(message.failreadyAccountIdSessions &&
+                        message.failreadyAccountIdSessions.length))
                         message.failreadyAccountIdSessions = [];
                     if ((tag & 7) === 2) {
                         let end2 = reader.uint32() + reader.pos;
@@ -16431,7 +16498,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2
                         message.failreadyAccountIdSessions.push(reader.uint32());
                     break;
                 case 11:
-                    if (!(message.vacbannedAccountIdSessions && message.vacbannedAccountIdSessions.length))
+                    if (!(message.vacbannedAccountIdSessions &&
+                        message.vacbannedAccountIdSessions.length))
                         message.vacbannedAccountIdSessions = [];
                     if ((tag & 7) === 2) {
                         let end2 = reader.uint32() + reader.pos;
@@ -16450,7 +16518,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2
                     message.notes.push($root.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.Note.decode(reader, reader.uint32()));
                     break;
                 case 14:
-                    if (!(message.penaltyAccountIdSessionsGreen && message.penaltyAccountIdSessionsGreen.length))
+                    if (!(message.penaltyAccountIdSessionsGreen &&
+                        message.penaltyAccountIdSessionsGreen.length))
                         message.penaltyAccountIdSessionsGreen = [];
                     if ((tag & 7) === 2) {
                         let end2 = reader.uint32() + reader.pos;
@@ -16461,7 +16530,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2
                         message.penaltyAccountIdSessionsGreen.push(reader.uint32());
                     break;
                 case 15:
-                    if (!(message.insufficientlevelSessions && message.insufficientlevelSessions.length))
+                    if (!(message.insufficientlevelSessions &&
+                        message.insufficientlevelSessions.length))
                         message.insufficientlevelSessions = [];
                     if ((tag & 7) === 2) {
                         let end2 = reader.uint32() + reader.pos;
@@ -16570,8 +16640,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = $root.CMsgGCCStrike15_v2
         return Note;
     })();
     return CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate;
-})();
-exports.CDataGCCStrike15_v2_TournamentMatchDraft = $root.CDataGCCStrike15_v2_TournamentMatchDraft = (() => {
+})());
+exports.CDataGCCStrike15_v2_TournamentMatchDraft = ($root.CDataGCCStrike15_v2_TournamentMatchDraft = (() => {
     /**
      * Properties of a CDataGCCStrike15_v2_TournamentMatchDraft.
      * @exports ICDataGCCStrike15_v2_TournamentMatchDraft
@@ -16799,8 +16869,8 @@ exports.CDataGCCStrike15_v2_TournamentMatchDraft = $root.CDataGCCStrike15_v2_Tou
         return Entry;
     })();
     return CDataGCCStrike15_v2_TournamentMatchDraft;
-})();
-exports.CPreMatchInfoData = $root.CPreMatchInfoData = (() => {
+})());
+exports.CPreMatchInfoData = ($root.CPreMatchInfoData = (() => {
     /**
      * Properties of a CPreMatchInfoData.
      * @exports ICPreMatchInfoData
@@ -16965,8 +17035,8 @@ exports.CPreMatchInfoData = $root.CPreMatchInfoData = (() => {
         return TeamStats;
     })();
     return CPreMatchInfoData;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve = $root.CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve = ($root.CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.
      * @exports ICMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
@@ -17013,7 +17083,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.accountIds = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.accountIds =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve gameType.
      * @member {number} gameType
@@ -17027,7 +17098,9 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.matchId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.matchId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve serverVersion.
      * @member {number} serverVersion
@@ -17041,42 +17114,51 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.rankings = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.rankings =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve encryptionKey.
      * @member {number|Long} encryptionKey
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.encryptionKey = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.encryptionKey = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve encryptionKeyPub.
      * @member {number|Long} encryptionKeyPub
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.encryptionKeyPub = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.encryptionKeyPub = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve partyIds.
      * @member {Array.<number>} partyIds
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.partyIds = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.partyIds =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve whitelist.
      * @member {Array.<IIpAddressMask>} whitelist
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.whitelist = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.whitelist =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve tvMasterSteamid.
      * @member {number|Long} tvMasterSteamid
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.tvMasterSteamid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.tvMasterSteamid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve tournamentEvent.
      * @member {ITournamentEvent|null|undefined} tournamentEvent
@@ -17090,21 +17172,25 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.tournamentTeams = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.tournamentTeams =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve tournamentCastersAccountIds.
      * @member {Array.<number>} tournamentCastersAccountIds
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.tournamentCastersAccountIds = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.tournamentCastersAccountIds =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve tvRelaySteamid.
      * @member {number|Long} tvRelaySteamid
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.tvRelaySteamid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve.prototype.tvRelaySteamid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve preMatchData.
      * @member {ICPreMatchInfoData|null|undefined} preMatchData
@@ -17189,7 +17275,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve = $root.CMsgGCCStrike15_v
                     message.tournamentTeams.push($root.TournamentTeam.decode(reader, reader.uint32()));
                     break;
                 case 13:
-                    if (!(message.tournamentCastersAccountIds && message.tournamentCastersAccountIds.length))
+                    if (!(message.tournamentCastersAccountIds &&
+                        message.tournamentCastersAccountIds.length))
                         message.tournamentCastersAccountIds = [];
                     if ((tag & 7) === 2) {
                         let end2 = reader.uint32() + reader.pos;
@@ -17213,8 +17300,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve = $root.CMsgGCCStrike15_v
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingServerReservationResponse = $root.CMsgGCCStrike15_v2_MatchmakingServerReservationResponse = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingServerReservationResponse = ($root.CMsgGCCStrike15_v2_MatchmakingServerReservationResponse = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingServerReservationResponse.
      * @exports ICMsgGCCStrike15_v2_MatchmakingServerReservationResponse
@@ -17256,7 +17343,9 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerReservationResponse = $root.CMsgGCCS
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerReservationResponse
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerReservationResponse.prototype.reservationid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchmakingServerReservationResponse.prototype.reservationid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerReservationResponse reservation.
      * @member {ICMsgGCCStrike15_v2_MatchmakingGC2ServerReserve|null|undefined} reservation
@@ -17277,7 +17366,9 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerReservationResponse = $root.CMsgGCCS
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerReservationResponse
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerReservationResponse.prototype.gcReservationSent = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchmakingServerReservationResponse.prototype.gcReservationSent = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerReservationResponse serverVersion.
      * @member {number} serverVersion
@@ -17298,14 +17389,16 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerReservationResponse = $root.CMsgGCCS
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerReservationResponse
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerReservationResponse.prototype.rewardPlayerAccounts = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerReservationResponse.prototype.rewardPlayerAccounts =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerReservationResponse idlePlayerAccounts.
      * @member {Array.<number>} idlePlayerAccounts
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerReservationResponse
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerReservationResponse.prototype.idlePlayerAccounts = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerReservationResponse.prototype.idlePlayerAccounts =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerReservationResponse rewardItemAttrDefIdx.
      * @member {number} rewardItemAttrDefIdx
@@ -17340,7 +17433,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerReservationResponse = $root.CMsgGCCS
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerReservationResponse
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerReservationResponse.prototype.tournamentTag = "";
+    CMsgGCCStrike15_v2_MatchmakingServerReservationResponse.prototype.tournamentTag =
+        "";
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerReservationResponse steamdatagramPort.
      * @member {number} steamdatagramPort
@@ -17385,7 +17479,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerReservationResponse = $root.CMsgGCCS
                     message.tvInfo = $root.ServerHltvInfo.decode(reader, reader.uint32());
                     break;
                 case 7:
-                    if (!(message.rewardPlayerAccounts && message.rewardPlayerAccounts.length))
+                    if (!(message.rewardPlayerAccounts &&
+                        message.rewardPlayerAccounts.length))
                         message.rewardPlayerAccounts = [];
                     if ((tag & 7) === 2) {
                         let end2 = reader.uint32() + reader.pos;
@@ -17432,8 +17527,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerReservationResponse = $root.CMsgGCCS
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingServerReservationResponse;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve = $root.CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve = ($root.CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve.
      * @exports ICMsgGCCStrike15_v2_MatchmakingGC2ClientReserve
@@ -17466,7 +17561,9 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve.prototype.serverid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve.prototype.serverid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve serverAddress.
      * @member {string} serverAddress
@@ -17494,7 +17591,9 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve.prototype.reservationid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve.prototype.reservationid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve reservation.
      * @member {ICMsgGCCStrike15_v2_MatchmakingGC2ServerReserve|null|undefined} reservation
@@ -17556,8 +17655,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve = $root.CMsgGCCStrike15_v
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingServerRoundStats = $root.CMsgGCCStrike15_v2_MatchmakingServerRoundStats = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingServerRoundStats = ($root.CMsgGCCStrike15_v2_MatchmakingServerRoundStats = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingServerRoundStats.
      * @exports ICMsgGCCStrike15_v2_MatchmakingServerRoundStats
@@ -17622,7 +17721,9 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerRoundStats = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.reservationid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.reservationid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats reservation.
      * @member {ICMsgGCCStrike15_v2_MatchmakingGC2ServerReserve|null|undefined} reservation
@@ -17650,35 +17751,40 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerRoundStats = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.kills = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.kills =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats assists.
      * @member {Array.<number>} assists
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.assists = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.assists =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats deaths.
      * @member {Array.<number>} deaths
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.deaths = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.deaths =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats scores.
      * @member {Array.<number>} scores
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.scores = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.scores =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats pings.
      * @member {Array.<number>} pings
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.pings = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.pings =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats roundResult.
      * @member {number} roundResult
@@ -17699,7 +17805,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerRoundStats = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.teamScores = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.teamScores =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats confirm.
      * @member {ICMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm|null|undefined} confirm
@@ -17727,42 +17834,48 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerRoundStats = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.enemyKills = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.enemyKills =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats enemyHeadshots.
      * @member {Array.<number>} enemyHeadshots
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.enemyHeadshots = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.enemyHeadshots =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats enemy_3ks.
      * @member {Array.<number>} enemy_3ks
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.enemy_3ks = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.enemy_3ks =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats enemy_4ks.
      * @member {Array.<number>} enemy_4ks
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.enemy_4ks = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.enemy_4ks =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats enemy_5ks.
      * @member {Array.<number>} enemy_5ks
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.enemy_5ks = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.enemy_5ks =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats mvps.
      * @member {Array.<number>} mvps
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.mvps = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.mvps =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats spectatorsCount.
      * @member {number} spectatorsCount
@@ -17790,7 +17903,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerRoundStats = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.enemyKillsAgg = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingServerRoundStats.prototype.enemyKillsAgg =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerRoundStats dropInfo.
      * @member {CMsgGCCStrike15_v2_MatchmakingServerRoundStats.IDropInfo|null|undefined} dropInfo
@@ -18064,8 +18178,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerRoundStats = $root.CMsgGCCStrike15_v
         return DropInfo;
     })();
     return CMsgGCCStrike15_v2_MatchmakingServerRoundStats;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingServerMatchEnd = $root.CMsgGCCStrike15_v2_MatchmakingServerMatchEnd = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingServerMatchEnd = ($root.CMsgGCCStrike15_v2_MatchmakingServerMatchEnd = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingServerMatchEnd.
      * @exports ICMsgGCCStrike15_v2_MatchmakingServerMatchEnd
@@ -18112,7 +18226,9 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerMatchEnd = $root.CMsgGCCStrike15_v2_
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerMatchEnd
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingServerMatchEnd.prototype.rematch = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchmakingServerMatchEnd.prototype.rematch = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_MatchmakingServerMatchEnd replayToken.
      * @member {number} replayToken
@@ -18188,8 +18304,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingServerMatchEnd = $root.CMsgGCCStrike15_v2_
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingServerMatchEnd;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingClient2GCHello = $root.CMsgGCCStrike15_v2_MatchmakingClient2GCHello = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingClient2GCHello = ($root.CMsgGCCStrike15_v2_MatchmakingClient2GCHello = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingClient2GCHello.
      * @exports ICMsgGCCStrike15_v2_MatchmakingClient2GCHello
@@ -18235,8 +18351,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingClient2GCHello = $root.CMsgGCCStrike15_v2_
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingClient2GCHello;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientHello = $root.CMsgGCCStrike15_v2_MatchmakingGC2ClientHello = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientHello = ($root.CMsgGCCStrike15_v2_MatchmakingGC2ClientHello = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingGC2ClientHello.
      * @exports ICMsgGCCStrike15_v2_MatchmakingGC2ClientHello
@@ -18352,7 +18468,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientHello = $root.CMsgGCCStrike15_v2_
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientHello
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ClientHello.prototype.myCurrentEventTeams = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ClientHello.prototype.myCurrentEventTeams =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ClientHello myCurrentTeam.
      * @member {ITournamentTeam|null|undefined} myCurrentTeam
@@ -18366,7 +18483,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientHello = $root.CMsgGCCStrike15_v2_
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientHello
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ClientHello.prototype.myCurrentEventStages = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ClientHello.prototype.myCurrentEventStages =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ClientHello surveyVote.
      * @member {number} surveyVote
@@ -18459,7 +18577,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientHello = $root.CMsgGCCStrike15_v2_
                     message.myCurrentTeam = $root.TournamentTeam.decode(reader, reader.uint32());
                     break;
                 case 13:
-                    if (!(message.myCurrentEventStages && message.myCurrentEventStages.length))
+                    if (!(message.myCurrentEventStages &&
+                        message.myCurrentEventStages.length))
                         message.myCurrentEventStages = [];
                     message.myCurrentEventStages.push($root.TournamentEvent.decode(reader, reader.uint32()));
                     break;
@@ -18486,8 +18605,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientHello = $root.CMsgGCCStrike15_v2_
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingGC2ClientHello;
-})();
-exports.CMsgGCCStrike15_v2_AccountPrivacySettings = $root.CMsgGCCStrike15_v2_AccountPrivacySettings = (() => {
+})());
+exports.CMsgGCCStrike15_v2_AccountPrivacySettings = ($root.CMsgGCCStrike15_v2_AccountPrivacySettings = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_AccountPrivacySettings.
      * @exports ICMsgGCCStrike15_v2_AccountPrivacySettings
@@ -18515,7 +18634,8 @@ exports.CMsgGCCStrike15_v2_AccountPrivacySettings = $root.CMsgGCCStrike15_v2_Acc
      * @memberof CMsgGCCStrike15_v2_AccountPrivacySettings
      * @instance
      */
-    CMsgGCCStrike15_v2_AccountPrivacySettings.prototype.settings = $util.emptyArray;
+    CMsgGCCStrike15_v2_AccountPrivacySettings.prototype.settings =
+        $util.emptyArray;
     /**
      * Decodes a CMsgGCCStrike15_v2_AccountPrivacySettings message from the specified reader or buffer.
      * @function decode
@@ -18616,8 +18736,8 @@ exports.CMsgGCCStrike15_v2_AccountPrivacySettings = $root.CMsgGCCStrike15_v2_Acc
         return Setting;
     })();
     return CMsgGCCStrike15_v2_AccountPrivacySettings;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon = $root.CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon = ($root.CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon.
      * @exports ICMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon
@@ -18707,8 +18827,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon = $root.CMsgGCCStrike15_v
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingServer2GCKick = $root.CMsgGCCStrike15_v2_MatchmakingServer2GCKick = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingServer2GCKick = ($root.CMsgGCCStrike15_v2_MatchmakingServer2GCKick = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingServer2GCKick.
      * @exports ICMsgGCCStrike15_v2_MatchmakingServer2GCKick
@@ -18787,8 +18907,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingServer2GCKick = $root.CMsgGCCStrike15_v2_M
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingServer2GCKick;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate = $root.CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate = ($root.CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate.
      * @exports ICMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate
@@ -18817,14 +18937,17 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate = $root.CMsgGCCStrike1
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate.prototype.rankings = $util.emptyArray;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate.prototype.rankings =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate matchId.
      * @member {number|Long} matchId
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate.prototype.matchId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate.prototype.matchId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate message from the specified reader or buffer.
      * @function decode
@@ -18859,8 +18982,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate = $root.CMsgGCCStrike1
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate;
-})();
-exports.CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate = $root.CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate = ($root.CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate.
      * @exports ICMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate
@@ -18887,7 +19010,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate = $root.CMsgGCCStrik
      * @memberof CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate.prototype.mainPostUrl = "";
+    CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate.prototype.mainPostUrl =
+        "";
     /**
      * Decodes a CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate message from the specified reader or buffer.
      * @function decode
@@ -18917,8 +19041,8 @@ exports.CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate = $root.CMsgGCCStrik
         return message;
     };
     return CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate;
-})();
-exports.CMsgGCCStrike15_v2_ServerNotificationForUserPenalty = $root.CMsgGCCStrike15_v2_ServerNotificationForUserPenalty = (() => {
+})());
+exports.CMsgGCCStrike15_v2_ServerNotificationForUserPenalty = ($root.CMsgGCCStrike15_v2_ServerNotificationForUserPenalty = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_ServerNotificationForUserPenalty.
      * @exports ICMsgGCCStrike15_v2_ServerNotificationForUserPenalty
@@ -18997,8 +19121,8 @@ exports.CMsgGCCStrike15_v2_ServerNotificationForUserPenalty = $root.CMsgGCCStrik
         return message;
     };
     return CMsgGCCStrike15_v2_ServerNotificationForUserPenalty;
-})();
-exports.CMsgGCCStrike15_v2_ClientReportPlayer = $root.CMsgGCCStrike15_v2_ClientReportPlayer = (() => {
+})());
+exports.CMsgGCCStrike15_v2_ClientReportPlayer = ($root.CMsgGCCStrike15_v2_ClientReportPlayer = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_ClientReportPlayer.
      * @exports ICMsgGCCStrike15_v2_ClientReportPlayer
@@ -19081,7 +19205,9 @@ exports.CMsgGCCStrike15_v2_ClientReportPlayer = $root.CMsgGCCStrike15_v2_ClientR
      * @memberof CMsgGCCStrike15_v2_ClientReportPlayer
      * @instance
      */
-    CMsgGCCStrike15_v2_ClientReportPlayer.prototype.matchId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_ClientReportPlayer.prototype.matchId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a CMsgGCCStrike15_v2_ClientReportPlayer message from the specified reader or buffer.
      * @function decode
@@ -19132,8 +19258,8 @@ exports.CMsgGCCStrike15_v2_ClientReportPlayer = $root.CMsgGCCStrike15_v2_ClientR
         return message;
     };
     return CMsgGCCStrike15_v2_ClientReportPlayer;
-})();
-exports.CMsgGCCStrike15_v2_ClientCommendPlayer = $root.CMsgGCCStrike15_v2_ClientCommendPlayer = (() => {
+})());
+exports.CMsgGCCStrike15_v2_ClientCommendPlayer = ($root.CMsgGCCStrike15_v2_ClientCommendPlayer = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_ClientCommendPlayer.
      * @exports ICMsgGCCStrike15_v2_ClientCommendPlayer
@@ -19170,7 +19296,9 @@ exports.CMsgGCCStrike15_v2_ClientCommendPlayer = $root.CMsgGCCStrike15_v2_Client
      * @memberof CMsgGCCStrike15_v2_ClientCommendPlayer
      * @instance
      */
-    CMsgGCCStrike15_v2_ClientCommendPlayer.prototype.matchId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_ClientCommendPlayer.prototype.matchId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_ClientCommendPlayer commendation.
      * @member {IPlayerCommendationInfo|null|undefined} commendation
@@ -19223,8 +19351,8 @@ exports.CMsgGCCStrike15_v2_ClientCommendPlayer = $root.CMsgGCCStrike15_v2_Client
         return message;
     };
     return CMsgGCCStrike15_v2_ClientCommendPlayer;
-})();
-exports.CMsgGCCStrike15_v2_ClientReportServer = $root.CMsgGCCStrike15_v2_ClientReportServer = (() => {
+})());
+exports.CMsgGCCStrike15_v2_ClientReportServer = ($root.CMsgGCCStrike15_v2_ClientReportServer = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_ClientReportServer.
      * @exports ICMsgGCCStrike15_v2_ClientReportServer
@@ -19291,7 +19419,9 @@ exports.CMsgGCCStrike15_v2_ClientReportServer = $root.CMsgGCCStrike15_v2_ClientR
      * @memberof CMsgGCCStrike15_v2_ClientReportServer
      * @instance
      */
-    CMsgGCCStrike15_v2_ClientReportServer.prototype.matchId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_ClientReportServer.prototype.matchId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a CMsgGCCStrike15_v2_ClientReportServer message from the specified reader or buffer.
      * @function decode
@@ -19336,8 +19466,8 @@ exports.CMsgGCCStrike15_v2_ClientReportServer = $root.CMsgGCCStrike15_v2_ClientR
         return message;
     };
     return CMsgGCCStrike15_v2_ClientReportServer;
-})();
-exports.CMsgGCCStrike15_v2_ClientReportResponse = $root.CMsgGCCStrike15_v2_ClientReportResponse = (() => {
+})());
+exports.CMsgGCCStrike15_v2_ClientReportResponse = ($root.CMsgGCCStrike15_v2_ClientReportResponse = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_ClientReportResponse.
      * @exports ICMsgGCCStrike15_v2_ClientReportResponse
@@ -19369,7 +19499,9 @@ exports.CMsgGCCStrike15_v2_ClientReportResponse = $root.CMsgGCCStrike15_v2_Clien
      * @memberof CMsgGCCStrike15_v2_ClientReportResponse
      * @instance
      */
-    CMsgGCCStrike15_v2_ClientReportResponse.prototype.confirmationId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_ClientReportResponse.prototype.confirmationId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_ClientReportResponse accountId.
      * @member {number} accountId
@@ -19449,8 +19581,8 @@ exports.CMsgGCCStrike15_v2_ClientReportResponse = $root.CMsgGCCStrike15_v2_Clien
         return message;
     };
     return CMsgGCCStrike15_v2_ClientReportResponse;
-})();
-exports.CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends = $root.CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends = (() => {
+})());
+exports.CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends = ($root.CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends.
      * @exports ICMsgGCCStrike15_v2_ClientRequestWatchInfoFriends
@@ -19488,21 +19620,26 @@ exports.CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends = $root.CMsgGCCStrike15
      * @memberof CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends
      * @instance
      */
-    CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends.prototype.accountIds = $util.emptyArray;
+    CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends.prototype.accountIds =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends serverid.
      * @member {number|Long} serverid
      * @memberof CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends
      * @instance
      */
-    CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends.prototype.serverid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends.prototype.serverid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends matchid.
      * @member {number|Long} matchid
      * @memberof CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends
      * @instance
      */
-    CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends.prototype.matchid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends.prototype.matchid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends message from the specified reader or buffer.
      * @function decode
@@ -19549,8 +19686,8 @@ exports.CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends = $root.CMsgGCCStrike15
         return message;
     };
     return CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends;
-})();
-exports.WatchableMatchInfo = $root.WatchableMatchInfo = (() => {
+})());
+exports.WatchableMatchInfo = ($root.WatchableMatchInfo = (() => {
     /**
      * Properties of a WatchableMatchInfo.
      * @exports IWatchableMatchInfo
@@ -19624,14 +19761,18 @@ exports.WatchableMatchInfo = $root.WatchableMatchInfo = (() => {
      * @memberof WatchableMatchInfo
      * @instance
      */
-    WatchableMatchInfo.prototype.clDecryptdataKey = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    WatchableMatchInfo.prototype.clDecryptdataKey = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * WatchableMatchInfo clDecryptdataKeyPub.
      * @member {number|Long} clDecryptdataKeyPub
      * @memberof WatchableMatchInfo
      * @instance
      */
-    WatchableMatchInfo.prototype.clDecryptdataKeyPub = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    WatchableMatchInfo.prototype.clDecryptdataKeyPub = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * WatchableMatchInfo gameType.
      * @member {number} gameType
@@ -19659,21 +19800,27 @@ exports.WatchableMatchInfo = $root.WatchableMatchInfo = (() => {
      * @memberof WatchableMatchInfo
      * @instance
      */
-    WatchableMatchInfo.prototype.serverId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    WatchableMatchInfo.prototype.serverId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * WatchableMatchInfo matchId.
      * @member {number|Long} matchId
      * @memberof WatchableMatchInfo
      * @instance
      */
-    WatchableMatchInfo.prototype.matchId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    WatchableMatchInfo.prototype.matchId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * WatchableMatchInfo reservationId.
      * @member {number|Long} reservationId
      * @memberof WatchableMatchInfo
      * @instance
      */
-    WatchableMatchInfo.prototype.reservationId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    WatchableMatchInfo.prototype.reservationId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a WatchableMatchInfo message from the specified reader or buffer.
      * @function decode
@@ -19739,8 +19886,8 @@ exports.WatchableMatchInfo = $root.WatchableMatchInfo = (() => {
         return message;
     };
     return WatchableMatchInfo;
-})();
-exports.CMsgGCCStrike15_v2_ClientRequestJoinFriendData = $root.CMsgGCCStrike15_v2_ClientRequestJoinFriendData = (() => {
+})());
+exports.CMsgGCCStrike15_v2_ClientRequestJoinFriendData = ($root.CMsgGCCStrike15_v2_ClientRequestJoinFriendData = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_ClientRequestJoinFriendData.
      * @exports ICMsgGCCStrike15_v2_ClientRequestJoinFriendData
@@ -19852,8 +19999,8 @@ exports.CMsgGCCStrike15_v2_ClientRequestJoinFriendData = $root.CMsgGCCStrike15_v
         return message;
     };
     return CMsgGCCStrike15_v2_ClientRequestJoinFriendData;
-})();
-exports.CMsgGCCStrike15_v2_ClientRequestJoinServerData = $root.CMsgGCCStrike15_v2_ClientRequestJoinServerData = (() => {
+})());
+exports.CMsgGCCStrike15_v2_ClientRequestJoinServerData = ($root.CMsgGCCStrike15_v2_ClientRequestJoinServerData = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_ClientRequestJoinServerData.
      * @exports ICMsgGCCStrike15_v2_ClientRequestJoinServerData
@@ -19899,7 +20046,9 @@ exports.CMsgGCCStrike15_v2_ClientRequestJoinServerData = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_ClientRequestJoinServerData
      * @instance
      */
-    CMsgGCCStrike15_v2_ClientRequestJoinServerData.prototype.serverid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_ClientRequestJoinServerData.prototype.serverid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_ClientRequestJoinServerData serverIp.
      * @member {number} serverIp
@@ -19965,8 +20114,8 @@ exports.CMsgGCCStrike15_v2_ClientRequestJoinServerData = $root.CMsgGCCStrike15_v
         return message;
     };
     return CMsgGCCStrike15_v2_ClientRequestJoinServerData;
-})();
-exports.CMsgGCCstrike15_v2_ClientRequestNewMission = $root.CMsgGCCstrike15_v2_ClientRequestNewMission = (() => {
+})());
+exports.CMsgGCCstrike15_v2_ClientRequestNewMission = ($root.CMsgGCCstrike15_v2_ClientRequestNewMission = (() => {
     /**
      * Properties of a CMsgGCCstrike15_v2_ClientRequestNewMission.
      * @exports ICMsgGCCstrike15_v2_ClientRequestNewMission
@@ -20034,8 +20183,8 @@ exports.CMsgGCCstrike15_v2_ClientRequestNewMission = $root.CMsgGCCstrike15_v2_Cl
         return message;
     };
     return CMsgGCCstrike15_v2_ClientRequestNewMission;
-})();
-exports.CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded = $root.CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded = (() => {
+})());
+exports.CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded = ($root.CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded = (() => {
     /**
      * Properties of a CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded.
      * @exports ICMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded
@@ -20067,7 +20216,8 @@ exports.CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded = $root.CMsgGCCstrike15_v2_
      * @memberof CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded
      * @instance
      */
-    CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded.prototype.xpProgressData = $util.emptyArray;
+    CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded.prototype.xpProgressData =
+        $util.emptyArray;
     /**
      * CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded accountId.
      * @member {number} accountId
@@ -20139,8 +20289,8 @@ exports.CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded = $root.CMsgGCCstrike15_v2_
         return message;
     };
     return CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded;
-})();
-exports.CMsgGCCStrike15_v2_WatchInfoUsers = $root.CMsgGCCStrike15_v2_WatchInfoUsers = (() => {
+})());
+exports.CMsgGCCStrike15_v2_WatchInfoUsers = ($root.CMsgGCCStrike15_v2_WatchInfoUsers = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_WatchInfoUsers.
      * @exports ICMsgGCCStrike15_v2_WatchInfoUsers
@@ -20186,7 +20336,8 @@ exports.CMsgGCCStrike15_v2_WatchInfoUsers = $root.CMsgGCCStrike15_v2_WatchInfoUs
      * @memberof CMsgGCCStrike15_v2_WatchInfoUsers
      * @instance
      */
-    CMsgGCCStrike15_v2_WatchInfoUsers.prototype.watchableMatchInfos = $util.emptyArray;
+    CMsgGCCStrike15_v2_WatchInfoUsers.prototype.watchableMatchInfos =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_WatchInfoUsers extendedTimeout.
      * @member {number} extendedTimeout
@@ -20242,8 +20393,8 @@ exports.CMsgGCCStrike15_v2_WatchInfoUsers = $root.CMsgGCCStrike15_v2_WatchInfoUs
         return message;
     };
     return CMsgGCCStrike15_v2_WatchInfoUsers;
-})();
-exports.CMsgGCCStrike15_v2_ClientRequestPlayersProfile = $root.CMsgGCCStrike15_v2_ClientRequestPlayersProfile = (() => {
+})());
+exports.CMsgGCCStrike15_v2_ClientRequestPlayersProfile = ($root.CMsgGCCStrike15_v2_ClientRequestPlayersProfile = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_ClientRequestPlayersProfile.
      * @exports ICMsgGCCStrike15_v2_ClientRequestPlayersProfile
@@ -20281,7 +20432,8 @@ exports.CMsgGCCStrike15_v2_ClientRequestPlayersProfile = $root.CMsgGCCStrike15_v
      * @memberof CMsgGCCStrike15_v2_ClientRequestPlayersProfile
      * @instance
      */
-    CMsgGCCStrike15_v2_ClientRequestPlayersProfile.prototype.accountIds_Deprecated = $util.emptyArray;
+    CMsgGCCStrike15_v2_ClientRequestPlayersProfile.prototype.accountIds_Deprecated =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_ClientRequestPlayersProfile accountId.
      * @member {number} accountId
@@ -20318,7 +20470,8 @@ exports.CMsgGCCStrike15_v2_ClientRequestPlayersProfile = $root.CMsgGCCStrike15_v
                     message.requestId_Deprecated = reader.uint32();
                     break;
                 case 2:
-                    if (!(message.accountIds_Deprecated && message.accountIds_Deprecated.length))
+                    if (!(message.accountIds_Deprecated &&
+                        message.accountIds_Deprecated.length))
                         message.accountIds_Deprecated = [];
                     if ((tag & 7) === 2) {
                         let end2 = reader.uint32() + reader.pos;
@@ -20342,8 +20495,8 @@ exports.CMsgGCCStrike15_v2_ClientRequestPlayersProfile = $root.CMsgGCCStrike15_v
         return message;
     };
     return CMsgGCCStrike15_v2_ClientRequestPlayersProfile;
-})();
-exports.CMsgGCCStrike15_v2_PlayersProfile = $root.CMsgGCCStrike15_v2_PlayersProfile = (() => {
+})());
+exports.CMsgGCCStrike15_v2_PlayersProfile = ($root.CMsgGCCStrike15_v2_PlayersProfile = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_PlayersProfile.
      * @exports ICMsgGCCStrike15_v2_PlayersProfile
@@ -20379,7 +20532,8 @@ exports.CMsgGCCStrike15_v2_PlayersProfile = $root.CMsgGCCStrike15_v2_PlayersProf
      * @memberof CMsgGCCStrike15_v2_PlayersProfile
      * @instance
      */
-    CMsgGCCStrike15_v2_PlayersProfile.prototype.accountProfiles = $util.emptyArray;
+    CMsgGCCStrike15_v2_PlayersProfile.prototype.accountProfiles =
+        $util.emptyArray;
     /**
      * Decodes a CMsgGCCStrike15_v2_PlayersProfile message from the specified reader or buffer.
      * @function decode
@@ -20414,8 +20568,8 @@ exports.CMsgGCCStrike15_v2_PlayersProfile = $root.CMsgGCCStrike15_v2_PlayersProf
         return message;
     };
     return CMsgGCCStrike15_v2_PlayersProfile;
-})();
-exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate = $root.CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate = (() => {
+})());
+exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate = ($root.CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate.
      * @exports ICMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate
@@ -20449,7 +20603,9 @@ exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate = $root.CMsgGCCStrike15_v2_
      * @memberof CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate
      * @instance
      */
-    CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate.prototype.caseid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate.prototype.caseid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate suspectid.
      * @member {number} suspectid
@@ -20549,8 +20705,8 @@ exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate = $root.CMsgGCCStrike15_v2_
         return message;
     };
     return CMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate;
-})();
-exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment = $root.CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment = (() => {
+})());
+exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment = ($root.CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment.
      * @exports ICMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment
@@ -20587,7 +20743,9 @@ exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment = $root.CMsgGCCStrike15
      * @memberof CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment
      * @instance
      */
-    CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment.prototype.caseid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment.prototype.caseid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment caseurl.
      * @member {string} caseurl
@@ -20717,8 +20875,8 @@ exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment = $root.CMsgGCCStrike15
         return message;
     };
     return CMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment;
-})();
-exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus = $root.CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus = (() => {
+})());
+exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus = ($root.CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus.
      * @exports ICMsgGCCStrike15_v2_PlayerOverwatchCaseStatus
@@ -20746,7 +20904,9 @@ exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus = $root.CMsgGCCStrike15_v2_
      * @memberof CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus
      * @instance
      */
-    CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus.prototype.caseid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus.prototype.caseid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus statusid.
      * @member {number} statusid
@@ -20786,8 +20946,8 @@ exports.CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus = $root.CMsgGCCStrike15_v2_
         return message;
     };
     return CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus;
-})();
-exports.CClientHeaderOverwatchEvidence = $root.CClientHeaderOverwatchEvidence = (() => {
+})());
+exports.CClientHeaderOverwatchEvidence = ($root.CClientHeaderOverwatchEvidence = (() => {
     /**
      * Properties of a CClientHeaderOverwatchEvidence.
      * @exports ICClientHeaderOverwatchEvidence
@@ -20822,7 +20982,9 @@ exports.CClientHeaderOverwatchEvidence = $root.CClientHeaderOverwatchEvidence = 
      * @memberof CClientHeaderOverwatchEvidence
      * @instance
      */
-    CClientHeaderOverwatchEvidence.prototype.caseid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CClientHeaderOverwatchEvidence.prototype.caseid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a CClientHeaderOverwatchEvidence message from the specified reader or buffer.
      * @function decode
@@ -20855,8 +21017,8 @@ exports.CClientHeaderOverwatchEvidence = $root.CClientHeaderOverwatchEvidence = 
         return message;
     };
     return CClientHeaderOverwatchEvidence;
-})();
-exports.CMsgGCCStrike15_v2_GC2ClientTextMsg = $root.CMsgGCCStrike15_v2_GC2ClientTextMsg = (() => {
+})());
+exports.CMsgGCCStrike15_v2_GC2ClientTextMsg = ($root.CMsgGCCStrike15_v2_GC2ClientTextMsg = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_GC2ClientTextMsg.
      * @exports ICMsgGCCStrike15_v2_GC2ClientTextMsg
@@ -20935,8 +21097,8 @@ exports.CMsgGCCStrike15_v2_GC2ClientTextMsg = $root.CMsgGCCStrike15_v2_GC2Client
         return message;
     };
     return CMsgGCCStrike15_v2_GC2ClientTextMsg;
-})();
-exports.CMsgGCCStrike15_v2_Client2GCTextMsg = $root.CMsgGCCStrike15_v2_Client2GCTextMsg = (() => {
+})());
+exports.CMsgGCCStrike15_v2_Client2GCTextMsg = ($root.CMsgGCCStrike15_v2_Client2GCTextMsg = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_Client2GCTextMsg.
      * @exports ICMsgGCCStrike15_v2_Client2GCTextMsg
@@ -21007,8 +21169,8 @@ exports.CMsgGCCStrike15_v2_Client2GCTextMsg = $root.CMsgGCCStrike15_v2_Client2GC
         return message;
     };
     return CMsgGCCStrike15_v2_Client2GCTextMsg;
-})();
-exports.CMsgGCCStrike15_v2_MatchEndRunRewardDrops = $root.CMsgGCCStrike15_v2_MatchEndRunRewardDrops = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchEndRunRewardDrops = ($root.CMsgGCCStrike15_v2_MatchEndRunRewardDrops = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchEndRunRewardDrops.
      * @exports ICMsgGCCStrike15_v2_MatchEndRunRewardDrops
@@ -21076,8 +21238,8 @@ exports.CMsgGCCStrike15_v2_MatchEndRunRewardDrops = $root.CMsgGCCStrike15_v2_Mat
         return message;
     };
     return CMsgGCCStrike15_v2_MatchEndRunRewardDrops;
-})();
-exports.CEconItemPreviewDataBlock = $root.CEconItemPreviewDataBlock = (() => {
+})());
+exports.CEconItemPreviewDataBlock = ($root.CEconItemPreviewDataBlock = (() => {
     /**
      * Properties of a CEconItemPreviewDataBlock.
      * @exports ICEconItemPreviewDataBlock
@@ -21127,7 +21289,9 @@ exports.CEconItemPreviewDataBlock = $root.CEconItemPreviewDataBlock = (() => {
      * @memberof CEconItemPreviewDataBlock
      * @instance
      */
-    CEconItemPreviewDataBlock.prototype.itemid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CEconItemPreviewDataBlock.prototype.itemid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CEconItemPreviewDataBlock defindex.
      * @member {number} defindex
@@ -21404,8 +21568,8 @@ exports.CEconItemPreviewDataBlock = $root.CEconItemPreviewDataBlock = (() => {
         return Sticker;
     })();
     return CEconItemPreviewDataBlock;
-})();
-exports.CMsgGCCStrike15_v2_MatchEndRewardDropsNotification = $root.CMsgGCCStrike15_v2_MatchEndRewardDropsNotification = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchEndRewardDropsNotification = ($root.CMsgGCCStrike15_v2_MatchEndRewardDropsNotification = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchEndRewardDropsNotification.
      * @exports ICMsgGCCStrike15_v2_MatchEndRewardDropsNotification
@@ -21462,8 +21626,8 @@ exports.CMsgGCCStrike15_v2_MatchEndRewardDropsNotification = $root.CMsgGCCStrike
         return message;
     };
     return CMsgGCCStrike15_v2_MatchEndRewardDropsNotification;
-})();
-exports.CMsgItemAcknowledged = $root.CMsgItemAcknowledged = (() => {
+})());
+exports.CMsgItemAcknowledged = ($root.CMsgItemAcknowledged = (() => {
     /**
      * Properties of a CMsgItemAcknowledged.
      * @exports ICMsgItemAcknowledged
@@ -21520,8 +21684,8 @@ exports.CMsgItemAcknowledged = $root.CMsgItemAcknowledged = (() => {
         return message;
     };
     return CMsgItemAcknowledged;
-})();
-exports.CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest = $root.CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest = (() => {
+})());
+exports.CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest = ($root.CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest.
      * @exports ICMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest
@@ -21551,28 +21715,36 @@ exports.CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest = $root.CMsgGCCS
      * @memberof CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest
      * @instance
      */
-    CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest.prototype.paramS = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest.prototype.paramS = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest paramA.
      * @member {number|Long} paramA
      * @memberof CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest
      * @instance
      */
-    CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest.prototype.paramA = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest.prototype.paramA = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest paramD.
      * @member {number|Long} paramD
      * @memberof CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest
      * @instance
      */
-    CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest.prototype.paramD = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest.prototype.paramD = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest paramM.
      * @member {number|Long} paramM
      * @memberof CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest
      * @instance
      */
-    CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest.prototype.paramM = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest.prototype.paramM = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest message from the specified reader or buffer.
      * @function decode
@@ -21611,8 +21783,8 @@ exports.CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest = $root.CMsgGCCS
         return message;
     };
     return CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest;
-})();
-exports.CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse = $root.CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse = (() => {
+})());
+exports.CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse = ($root.CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse.
      * @exports ICMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse
@@ -21669,8 +21841,8 @@ exports.CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse = $root.CMsgGCC
         return message;
     };
     return CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse;
-})();
-exports.CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification = $root.CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification = (() => {
+})());
+exports.CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification = ($root.CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification.
      * @exports ICMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification
@@ -21700,7 +21872,9 @@ exports.CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification = $root.CMsgGC
      * @memberof CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification
      * @instance
      */
-    CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification.prototype.matchId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification.prototype.matchId = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification defindex.
      * @member {number} defindex
@@ -21714,7 +21888,8 @@ exports.CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification = $root.CMsgGC
      * @memberof CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification
      * @instance
      */
-    CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification.prototype.accountids = $util.emptyArray;
+    CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification.prototype.accountids =
+        $util.emptyArray;
     /**
      * Decodes a CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification message from the specified reader or buffer.
      * @function decode
@@ -21758,8 +21933,8 @@ exports.CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification = $root.CMsgGC
         return message;
     };
     return CMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification;
-})();
-exports.CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames = $root.CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames = ($root.CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames.
      * @exports ICMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames
@@ -21805,8 +21980,8 @@ exports.CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames = $root.CMsgGCCStrik
         return message;
     };
     return CMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames;
-})();
-exports.CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser = $root.CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser = ($root.CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser.
      * @exports ICMsgGCCStrike15_v2_MatchListRequestLiveGameForUser
@@ -21863,8 +22038,8 @@ exports.CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser = $root.CMsgGCCStrike
         return message;
     };
     return CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser;
-})();
-exports.CMsgGCCStrike15_v2_MatchListRequestRecentUserGames = $root.CMsgGCCStrike15_v2_MatchListRequestRecentUserGames = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchListRequestRecentUserGames = ($root.CMsgGCCStrike15_v2_MatchListRequestRecentUserGames = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchListRequestRecentUserGames.
      * @exports ICMsgGCCStrike15_v2_MatchListRequestRecentUserGames
@@ -21921,8 +22096,8 @@ exports.CMsgGCCStrike15_v2_MatchListRequestRecentUserGames = $root.CMsgGCCStrike
         return message;
     };
     return CMsgGCCStrike15_v2_MatchListRequestRecentUserGames;
-})();
-exports.CMsgGCCStrike15_v2_MatchListRequestTournamentGames = $root.CMsgGCCStrike15_v2_MatchListRequestTournamentGames = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchListRequestTournamentGames = ($root.CMsgGCCStrike15_v2_MatchListRequestTournamentGames = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchListRequestTournamentGames.
      * @exports ICMsgGCCStrike15_v2_MatchListRequestTournamentGames
@@ -21979,8 +22154,8 @@ exports.CMsgGCCStrike15_v2_MatchListRequestTournamentGames = $root.CMsgGCCStrike
         return message;
     };
     return CMsgGCCStrike15_v2_MatchListRequestTournamentGames;
-})();
-exports.CMsgGCCStrike15_v2_MatchListRequestFullGameInfo = $root.CMsgGCCStrike15_v2_MatchListRequestFullGameInfo = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchListRequestFullGameInfo = ($root.CMsgGCCStrike15_v2_MatchListRequestFullGameInfo = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchListRequestFullGameInfo.
      * @exports ICMsgGCCStrike15_v2_MatchListRequestFullGameInfo
@@ -22009,14 +22184,18 @@ exports.CMsgGCCStrike15_v2_MatchListRequestFullGameInfo = $root.CMsgGCCStrike15_
      * @memberof CMsgGCCStrike15_v2_MatchListRequestFullGameInfo
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchListRequestFullGameInfo.prototype.matchid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchListRequestFullGameInfo.prototype.matchid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_MatchListRequestFullGameInfo outcomeid.
      * @member {number|Long} outcomeid
      * @memberof CMsgGCCStrike15_v2_MatchListRequestFullGameInfo
      * @instance
      */
-    CMsgGCCStrike15_v2_MatchListRequestFullGameInfo.prototype.outcomeid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_MatchListRequestFullGameInfo.prototype.outcomeid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_MatchListRequestFullGameInfo token.
      * @member {number} token
@@ -22059,8 +22238,8 @@ exports.CMsgGCCStrike15_v2_MatchListRequestFullGameInfo = $root.CMsgGCCStrike15_
         return message;
     };
     return CMsgGCCStrike15_v2_MatchListRequestFullGameInfo;
-})();
-exports.CDataGCCStrike15_v2_MatchInfo = $root.CDataGCCStrike15_v2_MatchInfo = (() => {
+})());
+exports.CDataGCCStrike15_v2_MatchInfo = ($root.CDataGCCStrike15_v2_MatchInfo = (() => {
     /**
      * Properties of a CDataGCCStrike15_v2_MatchInfo.
      * @exports ICDataGCCStrike15_v2_MatchInfo
@@ -22092,7 +22271,9 @@ exports.CDataGCCStrike15_v2_MatchInfo = $root.CDataGCCStrike15_v2_MatchInfo = ((
      * @memberof CDataGCCStrike15_v2_MatchInfo
      * @instance
      */
-    CDataGCCStrike15_v2_MatchInfo.prototype.matchid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CDataGCCStrike15_v2_MatchInfo.prototype.matchid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CDataGCCStrike15_v2_MatchInfo matchtime.
      * @member {number} matchtime
@@ -22164,8 +22345,8 @@ exports.CDataGCCStrike15_v2_MatchInfo = $root.CDataGCCStrike15_v2_MatchInfo = ((
         return message;
     };
     return CDataGCCStrike15_v2_MatchInfo;
-})();
-exports.CDataGCCStrike15_v2_TournamentGroupTeam = $root.CDataGCCStrike15_v2_TournamentGroupTeam = (() => {
+})());
+exports.CDataGCCStrike15_v2_TournamentGroupTeam = ($root.CDataGCCStrike15_v2_TournamentGroupTeam = (() => {
     /**
      * Properties of a CDataGCCStrike15_v2_TournamentGroupTeam.
      * @exports ICDataGCCStrike15_v2_TournamentGroupTeam
@@ -22244,8 +22425,8 @@ exports.CDataGCCStrike15_v2_TournamentGroupTeam = $root.CDataGCCStrike15_v2_Tour
         return message;
     };
     return CDataGCCStrike15_v2_TournamentGroupTeam;
-})();
-exports.CDataGCCStrike15_v2_TournamentGroup = $root.CDataGCCStrike15_v2_TournamentGroup = (() => {
+})());
+exports.CDataGCCStrike15_v2_TournamentGroup = ($root.CDataGCCStrike15_v2_TournamentGroup = (() => {
     /**
      * Properties of a CDataGCCStrike15_v2_TournamentGroup.
      * @exports ICDataGCCStrike15_v2_TournamentGroup
@@ -22483,8 +22664,8 @@ exports.CDataGCCStrike15_v2_TournamentGroup = $root.CDataGCCStrike15_v2_Tourname
         return Picks;
     })();
     return CDataGCCStrike15_v2_TournamentGroup;
-})();
-exports.CDataGCCStrike15_v2_TournamentSection = $root.CDataGCCStrike15_v2_TournamentSection = (() => {
+})());
+exports.CDataGCCStrike15_v2_TournamentSection = ($root.CDataGCCStrike15_v2_TournamentSection = (() => {
     /**
      * Properties of a CDataGCCStrike15_v2_TournamentSection.
      * @exports ICDataGCCStrike15_v2_TournamentSection
@@ -22577,8 +22758,8 @@ exports.CDataGCCStrike15_v2_TournamentSection = $root.CDataGCCStrike15_v2_Tourna
         return message;
     };
     return CDataGCCStrike15_v2_TournamentSection;
-})();
-exports.CDataGCCStrike15_v2_TournamentInfo = $root.CDataGCCStrike15_v2_TournamentInfo = (() => {
+})());
+exports.CDataGCCStrike15_v2_TournamentInfo = ($root.CDataGCCStrike15_v2_TournamentInfo = (() => {
     /**
      * Properties of a CDataGCCStrike15_v2_TournamentInfo.
      * @exports ICDataGCCStrike15_v2_TournamentInfo
@@ -22623,7 +22804,8 @@ exports.CDataGCCStrike15_v2_TournamentInfo = $root.CDataGCCStrike15_v2_Tournamen
      * @memberof CDataGCCStrike15_v2_TournamentInfo
      * @instance
      */
-    CDataGCCStrike15_v2_TournamentInfo.prototype.tournamentTeams = $util.emptyArray;
+    CDataGCCStrike15_v2_TournamentInfo.prototype.tournamentTeams =
+        $util.emptyArray;
     /**
      * Decodes a CDataGCCStrike15_v2_TournamentInfo message from the specified reader or buffer.
      * @function decode
@@ -22663,8 +22845,8 @@ exports.CDataGCCStrike15_v2_TournamentInfo = $root.CDataGCCStrike15_v2_Tournamen
         return message;
     };
     return CDataGCCStrike15_v2_TournamentInfo;
-})();
-exports.CMsgGCCStrike15_v2_MatchList = $root.CMsgGCCStrike15_v2_MatchList = (() => {
+})());
+exports.CMsgGCCStrike15_v2_MatchList = ($root.CMsgGCCStrike15_v2_MatchList = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_MatchList.
      * @exports ICMsgGCCStrike15_v2_MatchList
@@ -22782,8 +22964,8 @@ exports.CMsgGCCStrike15_v2_MatchList = $root.CMsgGCCStrike15_v2_MatchList = (() 
         return message;
     };
     return CMsgGCCStrike15_v2_MatchList;
-})();
-exports.CMsgGCCStrike15_v2_Predictions = $root.CMsgGCCStrike15_v2_Predictions = (() => {
+})());
+exports.CMsgGCCStrike15_v2_Predictions = ($root.CMsgGCCStrike15_v2_Predictions = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_Predictions.
      * @exports ICMsgGCCStrike15_v2_Predictions
@@ -22819,7 +23001,8 @@ exports.CMsgGCCStrike15_v2_Predictions = $root.CMsgGCCStrike15_v2_Predictions = 
      * @memberof CMsgGCCStrike15_v2_Predictions
      * @instance
      */
-    CMsgGCCStrike15_v2_Predictions.prototype.groupMatchTeamPicks = $util.emptyArray;
+    CMsgGCCStrike15_v2_Predictions.prototype.groupMatchTeamPicks =
+        $util.emptyArray;
     /**
      * Decodes a CMsgGCCStrike15_v2_Predictions message from the specified reader or buffer.
      * @function decode
@@ -22912,7 +23095,9 @@ exports.CMsgGCCStrike15_v2_Predictions = $root.CMsgGCCStrike15_v2_Predictions = 
          * @memberof CMsgGCCStrike15_v2_Predictions.GroupMatchTeamPick
          * @instance
          */
-        GroupMatchTeamPick.prototype.itemid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+        GroupMatchTeamPick.prototype.itemid = $util.Long
+            ? $util.Long.fromBits(0, 0, true)
+            : 0;
         /**
          * Decodes a GroupMatchTeamPick message from the specified reader or buffer.
          * @function decode
@@ -22956,8 +23141,8 @@ exports.CMsgGCCStrike15_v2_Predictions = $root.CMsgGCCStrike15_v2_Predictions = 
         return GroupMatchTeamPick;
     })();
     return CMsgGCCStrike15_v2_Predictions;
-})();
-exports.CMsgGCCStrike15_v2_Fantasy = $root.CMsgGCCStrike15_v2_Fantasy = (() => {
+})());
+exports.CMsgGCCStrike15_v2_Fantasy = ($root.CMsgGCCStrike15_v2_Fantasy = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_Fantasy.
      * @exports ICMsgGCCStrike15_v2_Fantasy
@@ -23070,7 +23255,9 @@ exports.CMsgGCCStrike15_v2_Fantasy = $root.CMsgGCCStrike15_v2_Fantasy = (() => {
          * @memberof CMsgGCCStrike15_v2_Fantasy.FantasySlot
          * @instance
          */
-        FantasySlot.prototype.itemid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+        FantasySlot.prototype.itemid = $util.Long
+            ? $util.Long.fromBits(0, 0, true)
+            : 0;
         /**
          * Decodes a FantasySlot message from the specified reader or buffer.
          * @function decode
@@ -23180,8 +23367,8 @@ exports.CMsgGCCStrike15_v2_Fantasy = $root.CMsgGCCStrike15_v2_Fantasy = (() => {
         return FantasyTeam;
     })();
     return CMsgGCCStrike15_v2_Fantasy;
-})();
-exports.CAttribute_String = $root.CAttribute_String = (() => {
+})());
+exports.CAttribute_String = ($root.CAttribute_String = (() => {
     /**
      * Properties of a CAttribute_String.
      * @exports ICAttribute_String
@@ -23238,8 +23425,8 @@ exports.CAttribute_String = $root.CAttribute_String = (() => {
         return message;
     };
     return CAttribute_String;
-})();
-exports.CMsgGCToGCReloadVersions = $root.CMsgGCToGCReloadVersions = (() => {
+})());
+exports.CMsgGCToGCReloadVersions = ($root.CMsgGCToGCReloadVersions = (() => {
     /**
      * Properties of a CMsgGCToGCReloadVersions.
      * @exports ICMsgGCToGCReloadVersions
@@ -23285,8 +23472,8 @@ exports.CMsgGCToGCReloadVersions = $root.CMsgGCToGCReloadVersions = (() => {
         return message;
     };
     return CMsgGCToGCReloadVersions;
-})();
-exports.CMsgCStrike15Welcome = $root.CMsgCStrike15Welcome = (() => {
+})());
+exports.CMsgCStrike15Welcome = ($root.CMsgCStrike15Welcome = (() => {
     /**
      * Properties of a CMsgCStrike15Welcome.
      * @exports ICMsgCStrike15Welcome
@@ -23354,14 +23541,18 @@ exports.CMsgCStrike15Welcome = $root.CMsgCStrike15Welcome = (() => {
      * @memberof CMsgCStrike15Welcome
      * @instance
      */
-    CMsgCStrike15Welcome.prototype.gscookieid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgCStrike15Welcome.prototype.gscookieid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgCStrike15Welcome uniqueid.
      * @member {number|Long} uniqueid
      * @memberof CMsgCStrike15Welcome
      * @instance
      */
-    CMsgCStrike15Welcome.prototype.uniqueid = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgCStrike15Welcome.prototype.uniqueid = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a CMsgCStrike15Welcome message from the specified reader or buffer.
      * @function decode
@@ -23409,8 +23600,8 @@ exports.CMsgCStrike15Welcome = $root.CMsgCStrike15Welcome = (() => {
         return message;
     };
     return CMsgCStrike15Welcome;
-})();
-exports.CMsgGCCStrike15_v2_ClientVarValueNotificationInfo = $root.CMsgGCCStrike15_v2_ClientVarValueNotificationInfo = (() => {
+})());
+exports.CMsgGCCStrike15_v2_ClientVarValueNotificationInfo = ($root.CMsgGCCStrike15_v2_ClientVarValueNotificationInfo = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_ClientVarValueNotificationInfo.
      * @exports ICMsgGCCStrike15_v2_ClientVarValueNotificationInfo
@@ -23470,7 +23661,8 @@ exports.CMsgGCCStrike15_v2_ClientVarValueNotificationInfo = $root.CMsgGCCStrike1
      * @memberof CMsgGCCStrike15_v2_ClientVarValueNotificationInfo
      * @instance
      */
-    CMsgGCCStrike15_v2_ClientVarValueNotificationInfo.prototype.chokedBlocks = $util.emptyArray;
+    CMsgGCCStrike15_v2_ClientVarValueNotificationInfo.prototype.chokedBlocks =
+        $util.emptyArray;
     /**
      * Decodes a CMsgGCCStrike15_v2_ClientVarValueNotificationInfo message from the specified reader or buffer.
      * @function decode
@@ -23514,8 +23706,8 @@ exports.CMsgGCCStrike15_v2_ClientVarValueNotificationInfo = $root.CMsgGCCStrike1
         return message;
     };
     return CMsgGCCStrike15_v2_ClientVarValueNotificationInfo;
-})();
-exports.CMsgGCCStrike15_v2_ServerVarValueNotificationInfo = $root.CMsgGCCStrike15_v2_ServerVarValueNotificationInfo = (() => {
+})());
+exports.CMsgGCCStrike15_v2_ServerVarValueNotificationInfo = ($root.CMsgGCCStrike15_v2_ServerVarValueNotificationInfo = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_ServerVarValueNotificationInfo.
      * @exports ICMsgGCCStrike15_v2_ServerVarValueNotificationInfo
@@ -23552,7 +23744,8 @@ exports.CMsgGCCStrike15_v2_ServerVarValueNotificationInfo = $root.CMsgGCCStrike1
      * @memberof CMsgGCCStrike15_v2_ServerVarValueNotificationInfo
      * @instance
      */
-    CMsgGCCStrike15_v2_ServerVarValueNotificationInfo.prototype.viewangles = $util.emptyArray;
+    CMsgGCCStrike15_v2_ServerVarValueNotificationInfo.prototype.viewangles =
+        $util.emptyArray;
     /**
      * CMsgGCCStrike15_v2_ServerVarValueNotificationInfo type.
      * @member {number} type
@@ -23603,8 +23796,8 @@ exports.CMsgGCCStrike15_v2_ServerVarValueNotificationInfo = $root.CMsgGCCStrike1
         return message;
     };
     return CMsgGCCStrike15_v2_ServerVarValueNotificationInfo;
-})();
-exports.CMsgGCCStrike15_v2_GiftsLeaderboardRequest = $root.CMsgGCCStrike15_v2_GiftsLeaderboardRequest = (() => {
+})());
+exports.CMsgGCCStrike15_v2_GiftsLeaderboardRequest = ($root.CMsgGCCStrike15_v2_GiftsLeaderboardRequest = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_GiftsLeaderboardRequest.
      * @exports ICMsgGCCStrike15_v2_GiftsLeaderboardRequest
@@ -23650,8 +23843,8 @@ exports.CMsgGCCStrike15_v2_GiftsLeaderboardRequest = $root.CMsgGCCStrike15_v2_Gi
         return message;
     };
     return CMsgGCCStrike15_v2_GiftsLeaderboardRequest;
-})();
-exports.CMsgGCCStrike15_v2_GiftsLeaderboardResponse = $root.CMsgGCCStrike15_v2_GiftsLeaderboardResponse = (() => {
+})());
+exports.CMsgGCCStrike15_v2_GiftsLeaderboardResponse = ($root.CMsgGCCStrike15_v2_GiftsLeaderboardResponse = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_GiftsLeaderboardResponse.
      * @exports ICMsgGCCStrike15_v2_GiftsLeaderboardResponse
@@ -23711,7 +23904,8 @@ exports.CMsgGCCStrike15_v2_GiftsLeaderboardResponse = $root.CMsgGCCStrike15_v2_G
      * @memberof CMsgGCCStrike15_v2_GiftsLeaderboardResponse
      * @instance
      */
-    CMsgGCCStrike15_v2_GiftsLeaderboardResponse.prototype.entries = $util.emptyArray;
+    CMsgGCCStrike15_v2_GiftsLeaderboardResponse.prototype.entries =
+        $util.emptyArray;
     /**
      * Decodes a CMsgGCCStrike15_v2_GiftsLeaderboardResponse message from the specified reader or buffer.
      * @function decode
@@ -23824,8 +24018,8 @@ exports.CMsgGCCStrike15_v2_GiftsLeaderboardResponse = $root.CMsgGCCStrike15_v2_G
         return GiftLeaderboardEntry;
     })();
     return CMsgGCCStrike15_v2_GiftsLeaderboardResponse;
-})();
-exports.CMsgGCCStrike15_v2_ClientSubmitSurveyVote = $root.CMsgGCCStrike15_v2_ClientSubmitSurveyVote = (() => {
+})());
+exports.CMsgGCCStrike15_v2_ClientSubmitSurveyVote = ($root.CMsgGCCStrike15_v2_ClientSubmitSurveyVote = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_ClientSubmitSurveyVote.
      * @exports ICMsgGCCStrike15_v2_ClientSubmitSurveyVote
@@ -23893,8 +24087,8 @@ exports.CMsgGCCStrike15_v2_ClientSubmitSurveyVote = $root.CMsgGCCStrike15_v2_Cli
         return message;
     };
     return CMsgGCCStrike15_v2_ClientSubmitSurveyVote;
-})();
-exports.CMsgGCCStrike15_v2_Server2GCClientValidate = $root.CMsgGCCStrike15_v2_Server2GCClientValidate = (() => {
+})());
+exports.CMsgGCCStrike15_v2_Server2GCClientValidate = ($root.CMsgGCCStrike15_v2_Server2GCClientValidate = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_Server2GCClientValidate.
      * @exports ICMsgGCCStrike15_v2_Server2GCClientValidate
@@ -23951,8 +24145,8 @@ exports.CMsgGCCStrike15_v2_Server2GCClientValidate = $root.CMsgGCCStrike15_v2_Se
         return message;
     };
     return CMsgGCCStrike15_v2_Server2GCClientValidate;
-})();
-exports.CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure = $root.CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure = (() => {
+})());
+exports.CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure = ($root.CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure.
      * @exports ICMsgGCCStrike15_v2_Server2GCPureServerValidationFailure
@@ -24086,8 +24280,8 @@ exports.CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure = $root.CMsgGCCS
         return message;
     };
     return CMsgGCCStrike15_v2_Server2GCPureServerValidationFailure;
-})();
-exports.CMsgGCCStrike15_v2_GC2ClientTournamentInfo = $root.CMsgGCCStrike15_v2_GC2ClientTournamentInfo = (() => {
+})());
+exports.CMsgGCCStrike15_v2_GC2ClientTournamentInfo = ($root.CMsgGCCStrike15_v2_GC2ClientTournamentInfo = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_GC2ClientTournamentInfo.
      * @exports ICMsgGCCStrike15_v2_GC2ClientTournamentInfo
@@ -24139,7 +24333,8 @@ exports.CMsgGCCStrike15_v2_GC2ClientTournamentInfo = $root.CMsgGCCStrike15_v2_GC
      * @memberof CMsgGCCStrike15_v2_GC2ClientTournamentInfo
      * @instance
      */
-    CMsgGCCStrike15_v2_GC2ClientTournamentInfo.prototype.teamids = $util.emptyArray;
+    CMsgGCCStrike15_v2_GC2ClientTournamentInfo.prototype.teamids =
+        $util.emptyArray;
     /**
      * Decodes a CMsgGCCStrike15_v2_GC2ClientTournamentInfo message from the specified reader or buffer.
      * @function decode
@@ -24186,8 +24381,8 @@ exports.CMsgGCCStrike15_v2_GC2ClientTournamentInfo = $root.CMsgGCCStrike15_v2_GC
         return message;
     };
     return CMsgGCCStrike15_v2_GC2ClientTournamentInfo;
-})();
-exports.CSOEconCoupon = $root.CSOEconCoupon = (() => {
+})());
+exports.CSOEconCoupon = ($root.CSOEconCoupon = (() => {
     /**
      * Properties of a CSOEconCoupon.
      * @exports ICSOEconCoupon
@@ -24266,8 +24461,8 @@ exports.CSOEconCoupon = $root.CSOEconCoupon = (() => {
         return message;
     };
     return CSOEconCoupon;
-})();
-exports.CSOQuestProgress = $root.CSOQuestProgress = (() => {
+})());
+exports.CSOQuestProgress = ($root.CSOQuestProgress = (() => {
     /**
      * Properties of a CSOQuestProgress.
      * @exports ICSOQuestProgress
@@ -24346,8 +24541,8 @@ exports.CSOQuestProgress = $root.CSOQuestProgress = (() => {
         return message;
     };
     return CSOQuestProgress;
-})();
-exports.CSOPersonaDataPublic = $root.CSOPersonaDataPublic = (() => {
+})());
+exports.CSOPersonaDataPublic = ($root.CSOPersonaDataPublic = (() => {
     /**
      * Properties of a CSOPersonaDataPublic.
      * @exports ICSOPersonaDataPublic
@@ -24415,8 +24610,8 @@ exports.CSOPersonaDataPublic = $root.CSOPersonaDataPublic = (() => {
         return message;
     };
     return CSOPersonaDataPublic;
-})();
-exports.CMsgGC_GlobalGame_Subscribe = $root.CMsgGC_GlobalGame_Subscribe = (() => {
+})());
+exports.CMsgGC_GlobalGame_Subscribe = ($root.CMsgGC_GlobalGame_Subscribe = (() => {
     /**
      * Properties of a CMsgGC_GlobalGame_Subscribe.
      * @exports ICMsgGC_GlobalGame_Subscribe
@@ -24443,7 +24638,9 @@ exports.CMsgGC_GlobalGame_Subscribe = $root.CMsgGC_GlobalGame_Subscribe = (() =>
      * @memberof CMsgGC_GlobalGame_Subscribe
      * @instance
      */
-    CMsgGC_GlobalGame_Subscribe.prototype.ticket = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGC_GlobalGame_Subscribe.prototype.ticket = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a CMsgGC_GlobalGame_Subscribe message from the specified reader or buffer.
      * @function decode
@@ -24473,8 +24670,8 @@ exports.CMsgGC_GlobalGame_Subscribe = $root.CMsgGC_GlobalGame_Subscribe = (() =>
         return message;
     };
     return CMsgGC_GlobalGame_Subscribe;
-})();
-exports.CMsgGC_GlobalGame_Unsubscribe = $root.CMsgGC_GlobalGame_Unsubscribe = (() => {
+})());
+exports.CMsgGC_GlobalGame_Unsubscribe = ($root.CMsgGC_GlobalGame_Unsubscribe = (() => {
     /**
      * Properties of a CMsgGC_GlobalGame_Unsubscribe.
      * @exports ICMsgGC_GlobalGame_Unsubscribe
@@ -24531,8 +24728,8 @@ exports.CMsgGC_GlobalGame_Unsubscribe = $root.CMsgGC_GlobalGame_Unsubscribe = ((
         return message;
     };
     return CMsgGC_GlobalGame_Unsubscribe;
-})();
-exports.CMsgGC_GlobalGame_Play = $root.CMsgGC_GlobalGame_Play = (() => {
+})());
+exports.CMsgGC_GlobalGame_Play = ($root.CMsgGC_GlobalGame_Play = (() => {
     /**
      * Properties of a CMsgGC_GlobalGame_Play.
      * @exports ICMsgGC_GlobalGame_Play
@@ -24561,7 +24758,9 @@ exports.CMsgGC_GlobalGame_Play = $root.CMsgGC_GlobalGame_Play = (() => {
      * @memberof CMsgGC_GlobalGame_Play
      * @instance
      */
-    CMsgGC_GlobalGame_Play.prototype.ticket = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGC_GlobalGame_Play.prototype.ticket = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGC_GlobalGame_Play gametimems.
      * @member {number} gametimems
@@ -24611,8 +24810,8 @@ exports.CMsgGC_GlobalGame_Play = $root.CMsgGC_GlobalGame_Play = (() => {
         return message;
     };
     return CMsgGC_GlobalGame_Play;
-})();
-exports.CMsgGCCStrike15_v2_AcknowledgePenalty = $root.CMsgGCCStrike15_v2_AcknowledgePenalty = (() => {
+})());
+exports.CMsgGCCStrike15_v2_AcknowledgePenalty = ($root.CMsgGCCStrike15_v2_AcknowledgePenalty = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_AcknowledgePenalty.
      * @exports ICMsgGCCStrike15_v2_AcknowledgePenalty
@@ -24669,8 +24868,8 @@ exports.CMsgGCCStrike15_v2_AcknowledgePenalty = $root.CMsgGCCStrike15_v2_Acknowl
         return message;
     };
     return CMsgGCCStrike15_v2_AcknowledgePenalty;
-})();
-exports.CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin = $root.CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin = (() => {
+})());
+exports.CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin = ($root.CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin.
      * @exports ICMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin
@@ -24716,8 +24915,8 @@ exports.CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin = $root.CMsgGCCStrike15_
         return message;
     };
     return CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin;
-})();
-exports.CMsgGCCStrike15_v2_Client2GCStreamUnlock = $root.CMsgGCCStrike15_v2_Client2GCStreamUnlock = (() => {
+})());
+exports.CMsgGCCStrike15_v2_Client2GCStreamUnlock = ($root.CMsgGCCStrike15_v2_Client2GCStreamUnlock = (() => {
     /**
      * Properties of a CMsgGCCStrike15_v2_Client2GCStreamUnlock.
      * @exports ICMsgGCCStrike15_v2_Client2GCStreamUnlock
@@ -24745,7 +24944,9 @@ exports.CMsgGCCStrike15_v2_Client2GCStreamUnlock = $root.CMsgGCCStrike15_v2_Clie
      * @memberof CMsgGCCStrike15_v2_Client2GCStreamUnlock
      * @instance
      */
-    CMsgGCCStrike15_v2_Client2GCStreamUnlock.prototype.ticket = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CMsgGCCStrike15_v2_Client2GCStreamUnlock.prototype.ticket = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CMsgGCCStrike15_v2_Client2GCStreamUnlock os.
      * @member {number} os
@@ -24785,7 +24986,7 @@ exports.CMsgGCCStrike15_v2_Client2GCStreamUnlock = $root.CMsgGCCStrike15_v2_Clie
         return message;
     };
     return CMsgGCCStrike15_v2_Client2GCStreamUnlock;
-})();
+})());
 /**
  * GCProtoBufMsgSrc enum.
  * @exports GCProtoBufMsgSrc
@@ -24798,14 +24999,14 @@ exports.CMsgGCCStrike15_v2_Client2GCStreamUnlock = $root.CMsgGCCStrike15_v2_Clie
  */
 $root.GCProtoBufMsgSrc = (function () {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "GCProtoBufMsgSrc_Unspecified"] = 0;
-    values[valuesById[1] = "GCProtoBufMsgSrc_FromSystem"] = 1;
-    values[valuesById[2] = "GCProtoBufMsgSrc_FromSteamID"] = 2;
-    values[valuesById[3] = "GCProtoBufMsgSrc_FromGC"] = 3;
-    values[valuesById[4] = "GCProtoBufMsgSrc_ReplySystem"] = 4;
+    values[(valuesById[0] = "GCProtoBufMsgSrc_Unspecified")] = 0;
+    values[(valuesById[1] = "GCProtoBufMsgSrc_FromSystem")] = 1;
+    values[(valuesById[2] = "GCProtoBufMsgSrc_FromSteamID")] = 2;
+    values[(valuesById[3] = "GCProtoBufMsgSrc_FromGC")] = 3;
+    values[(valuesById[4] = "GCProtoBufMsgSrc_ReplySystem")] = 4;
     return values;
 })();
-exports.CMsgProtoBufHeader = $root.CMsgProtoBufHeader = (() => {
+exports.CMsgProtoBufHeader = ($root.CMsgProtoBufHeader = (() => {
     /**
      * Properties of a CMsgProtoBufHeader.
      * @exports ICMsgProtoBufHeader
@@ -24841,7 +25042,9 @@ exports.CMsgProtoBufHeader = $root.CMsgProtoBufHeader = (() => {
      * @memberof CMsgProtoBufHeader
      * @instance
      */
-    CMsgProtoBufHeader.prototype.clientSteamId = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgProtoBufHeader.prototype.clientSteamId = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CMsgProtoBufHeader clientSessionId.
      * @member {number} clientSessionId
@@ -24862,14 +25065,18 @@ exports.CMsgProtoBufHeader = $root.CMsgProtoBufHeader = (() => {
      * @memberof CMsgProtoBufHeader
      * @instance
      */
-    CMsgProtoBufHeader.prototype.jobIdSource = $util.Long ? $util.Long.fromBits(-1, 2147483647, false) : 9223372036854776000;
+    CMsgProtoBufHeader.prototype.jobIdSource = $util.Long
+        ? $util.Long.fromBits(-1, 2147483647, false)
+        : 9223372036854776000;
     /**
      * CMsgProtoBufHeader jobIdTarget.
      * @member {number|Long} jobIdTarget
      * @memberof CMsgProtoBufHeader
      * @instance
      */
-    CMsgProtoBufHeader.prototype.jobIdTarget = $util.Long ? $util.Long.fromBits(-1, 2147483647, false) : 9223372036854776000;
+    CMsgProtoBufHeader.prototype.jobIdTarget = $util.Long
+        ? $util.Long.fromBits(-1, 2147483647, false)
+        : 9223372036854776000;
     /**
      * CMsgProtoBufHeader targetJobName.
      * @member {string} targetJobName
@@ -24961,8 +25168,8 @@ exports.CMsgProtoBufHeader = $root.CMsgProtoBufHeader = (() => {
         return message;
     };
     return CMsgProtoBufHeader;
-})();
-exports.CMsgWebAPIKey = $root.CMsgWebAPIKey = (() => {
+})());
+exports.CMsgWebAPIKey = ($root.CMsgWebAPIKey = (() => {
     /**
      * Properties of a CMsgWebAPIKey.
      * @exports ICMsgWebAPIKey
@@ -25063,8 +25270,8 @@ exports.CMsgWebAPIKey = $root.CMsgWebAPIKey = (() => {
         return message;
     };
     return CMsgWebAPIKey;
-})();
-exports.CMsgHttpRequest = $root.CMsgHttpRequest = (() => {
+})());
+exports.CMsgHttpRequest = ($root.CMsgHttpRequest = (() => {
     /**
      * Properties of a CMsgHttpRequest.
      * @exports ICMsgHttpRequest
@@ -25345,8 +25552,8 @@ exports.CMsgHttpRequest = $root.CMsgHttpRequest = (() => {
         return QueryParam;
     })();
     return CMsgHttpRequest;
-})();
-exports.CMsgWebAPIRequest = $root.CMsgWebAPIRequest = (() => {
+})());
+exports.CMsgWebAPIRequest = ($root.CMsgWebAPIRequest = (() => {
     /**
      * Properties of a CMsgWebAPIRequest.
      * @exports ICMsgWebAPIRequest
@@ -25469,8 +25676,8 @@ exports.CMsgWebAPIRequest = $root.CMsgWebAPIRequest = (() => {
         return message;
     };
     return CMsgWebAPIRequest;
-})();
-exports.CMsgHttpResponse = $root.CMsgHttpResponse = (() => {
+})());
+exports.CMsgHttpResponse = ($root.CMsgHttpResponse = (() => {
     /**
      * Properties of a CMsgHttpResponse.
      * @exports ICMsgHttpResponse
@@ -25621,8 +25828,8 @@ exports.CMsgHttpResponse = $root.CMsgHttpResponse = (() => {
         return ResponseHeader;
     })();
     return CMsgHttpResponse;
-})();
-exports.CMsgAMFindAccounts = $root.CMsgAMFindAccounts = (() => {
+})());
+exports.CMsgAMFindAccounts = ($root.CMsgAMFindAccounts = (() => {
     /**
      * Properties of a CMsgAMFindAccounts.
      * @exports ICMsgAMFindAccounts
@@ -25690,8 +25897,8 @@ exports.CMsgAMFindAccounts = $root.CMsgAMFindAccounts = (() => {
         return message;
     };
     return CMsgAMFindAccounts;
-})();
-exports.CMsgAMFindAccountsResponse = $root.CMsgAMFindAccountsResponse = (() => {
+})());
+exports.CMsgAMFindAccountsResponse = ($root.CMsgAMFindAccountsResponse = (() => {
     /**
      * Properties of a CMsgAMFindAccountsResponse.
      * @exports ICMsgAMFindAccountsResponse
@@ -25757,8 +25964,8 @@ exports.CMsgAMFindAccountsResponse = $root.CMsgAMFindAccountsResponse = (() => {
         return message;
     };
     return CMsgAMFindAccountsResponse;
-})();
-exports.CMsgNotifyWatchdog = $root.CMsgNotifyWatchdog = (() => {
+})());
+exports.CMsgNotifyWatchdog = ($root.CMsgNotifyWatchdog = (() => {
     /**
      * Properties of a CMsgNotifyWatchdog.
      * @exports ICMsgNotifyWatchdog
@@ -25881,8 +26088,8 @@ exports.CMsgNotifyWatchdog = $root.CMsgNotifyWatchdog = (() => {
         return message;
     };
     return CMsgNotifyWatchdog;
-})();
-exports.CMsgAMGetLicenses = $root.CMsgAMGetLicenses = (() => {
+})());
+exports.CMsgAMGetLicenses = ($root.CMsgAMGetLicenses = (() => {
     /**
      * Properties of a CMsgAMGetLicenses.
      * @exports ICMsgAMGetLicenses
@@ -25909,7 +26116,9 @@ exports.CMsgAMGetLicenses = $root.CMsgAMGetLicenses = (() => {
      * @memberof CMsgAMGetLicenses
      * @instance
      */
-    CMsgAMGetLicenses.prototype.steamid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgAMGetLicenses.prototype.steamid = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * Decodes a CMsgAMGetLicenses message from the specified reader or buffer.
      * @function decode
@@ -25939,8 +26148,8 @@ exports.CMsgAMGetLicenses = $root.CMsgAMGetLicenses = (() => {
         return message;
     };
     return CMsgAMGetLicenses;
-})();
-exports.CMsgPackageLicense = $root.CMsgPackageLicense = (() => {
+})());
+exports.CMsgPackageLicense = ($root.CMsgPackageLicense = (() => {
     /**
      * Properties of a CMsgPackageLicense.
      * @exports ICMsgPackageLicense
@@ -26019,8 +26228,8 @@ exports.CMsgPackageLicense = $root.CMsgPackageLicense = (() => {
         return message;
     };
     return CMsgPackageLicense;
-})();
-exports.CMsgAMGetLicensesResponse = $root.CMsgAMGetLicensesResponse = (() => {
+})());
+exports.CMsgAMGetLicensesResponse = ($root.CMsgAMGetLicensesResponse = (() => {
     /**
      * Properties of a CMsgAMGetLicensesResponse.
      * @exports ICMsgAMGetLicensesResponse
@@ -26091,8 +26300,8 @@ exports.CMsgAMGetLicensesResponse = $root.CMsgAMGetLicensesResponse = (() => {
         return message;
     };
     return CMsgAMGetLicensesResponse;
-})();
-exports.CMsgAMGetUserGameStats = $root.CMsgAMGetUserGameStats = (() => {
+})());
+exports.CMsgAMGetUserGameStats = ($root.CMsgAMGetUserGameStats = (() => {
     /**
      * Properties of a CMsgAMGetUserGameStats.
      * @exports ICMsgAMGetUserGameStats
@@ -26122,14 +26331,18 @@ exports.CMsgAMGetUserGameStats = $root.CMsgAMGetUserGameStats = (() => {
      * @memberof CMsgAMGetUserGameStats
      * @instance
      */
-    CMsgAMGetUserGameStats.prototype.steamId = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgAMGetUserGameStats.prototype.steamId = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CMsgAMGetUserGameStats gameId.
      * @member {number|Long} gameId
      * @memberof CMsgAMGetUserGameStats
      * @instance
      */
-    CMsgAMGetUserGameStats.prototype.gameId = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgAMGetUserGameStats.prototype.gameId = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CMsgAMGetUserGameStats stats.
      * @member {Array.<number>} stats
@@ -26180,8 +26393,8 @@ exports.CMsgAMGetUserGameStats = $root.CMsgAMGetUserGameStats = (() => {
         return message;
     };
     return CMsgAMGetUserGameStats;
-})();
-exports.CMsgAMGetUserGameStatsResponse = $root.CMsgAMGetUserGameStatsResponse = (() => {
+})());
+exports.CMsgAMGetUserGameStatsResponse = ($root.CMsgAMGetUserGameStatsResponse = (() => {
     /**
      * Properties of a CMsgAMGetUserGameStatsResponse.
      * @exports ICMsgAMGetUserGameStatsResponse
@@ -26214,14 +26427,18 @@ exports.CMsgAMGetUserGameStatsResponse = $root.CMsgAMGetUserGameStatsResponse = 
      * @memberof CMsgAMGetUserGameStatsResponse
      * @instance
      */
-    CMsgAMGetUserGameStatsResponse.prototype.steamId = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgAMGetUserGameStatsResponse.prototype.steamId = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CMsgAMGetUserGameStatsResponse gameId.
      * @member {number|Long} gameId
      * @memberof CMsgAMGetUserGameStatsResponse
      * @instance
      */
-    CMsgAMGetUserGameStatsResponse.prototype.gameId = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgAMGetUserGameStatsResponse.prototype.gameId = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CMsgAMGetUserGameStatsResponse eresult.
      * @member {number} eresult
@@ -26437,8 +26654,8 @@ exports.CMsgAMGetUserGameStatsResponse = $root.CMsgAMGetUserGameStatsResponse = 
         return Achievement_Blocks;
     })();
     return CMsgAMGetUserGameStatsResponse;
-})();
-exports.CMsgGCGetCommandList = $root.CMsgGCGetCommandList = (() => {
+})());
+exports.CMsgGCGetCommandList = ($root.CMsgGCGetCommandList = (() => {
     /**
      * Properties of a CMsgGCGetCommandList.
      * @exports ICMsgGCGetCommandList
@@ -26506,8 +26723,8 @@ exports.CMsgGCGetCommandList = $root.CMsgGCGetCommandList = (() => {
         return message;
     };
     return CMsgGCGetCommandList;
-})();
-exports.CMsgGCGetCommandListResponse = $root.CMsgGCGetCommandListResponse = (() => {
+})());
+exports.CMsgGCGetCommandListResponse = ($root.CMsgGCGetCommandListResponse = (() => {
     /**
      * Properties of a CMsgGCGetCommandListResponse.
      * @exports ICMsgGCGetCommandListResponse
@@ -26567,8 +26784,8 @@ exports.CMsgGCGetCommandListResponse = $root.CMsgGCGetCommandListResponse = (() 
         return message;
     };
     return CMsgGCGetCommandListResponse;
-})();
-exports.CGCMsgMemCachedGet = $root.CGCMsgMemCachedGet = (() => {
+})());
+exports.CGCMsgMemCachedGet = ($root.CGCMsgMemCachedGet = (() => {
     /**
      * Properties of a CGCMsgMemCachedGet.
      * @exports ICGCMsgMemCachedGet
@@ -26628,8 +26845,8 @@ exports.CGCMsgMemCachedGet = $root.CGCMsgMemCachedGet = (() => {
         return message;
     };
     return CGCMsgMemCachedGet;
-})();
-exports.CGCMsgMemCachedGetResponse = $root.CGCMsgMemCachedGetResponse = (() => {
+})());
+exports.CGCMsgMemCachedGetResponse = ($root.CGCMsgMemCachedGetResponse = (() => {
     /**
      * Properties of a CGCMsgMemCachedGetResponse.
      * @exports ICGCMsgMemCachedGetResponse
@@ -26758,8 +26975,8 @@ exports.CGCMsgMemCachedGetResponse = $root.CGCMsgMemCachedGetResponse = (() => {
         return ValueTag;
     })();
     return CGCMsgMemCachedGetResponse;
-})();
-exports.CGCMsgMemCachedSet = $root.CGCMsgMemCachedSet = (() => {
+})());
+exports.CGCMsgMemCachedSet = ($root.CGCMsgMemCachedSet = (() => {
     /**
      * Properties of a CGCMsgMemCachedSet.
      * @exports ICGCMsgMemCachedSet
@@ -26888,8 +27105,8 @@ exports.CGCMsgMemCachedSet = $root.CGCMsgMemCachedSet = (() => {
         return KeyPair;
     })();
     return CGCMsgMemCachedSet;
-})();
-exports.CGCMsgMemCachedDelete = $root.CGCMsgMemCachedDelete = (() => {
+})());
+exports.CGCMsgMemCachedDelete = ($root.CGCMsgMemCachedDelete = (() => {
     /**
      * Properties of a CGCMsgMemCachedDelete.
      * @exports ICGCMsgMemCachedDelete
@@ -26949,8 +27166,8 @@ exports.CGCMsgMemCachedDelete = $root.CGCMsgMemCachedDelete = (() => {
         return message;
     };
     return CGCMsgMemCachedDelete;
-})();
-exports.CGCMsgMemCachedStats = $root.CGCMsgMemCachedStats = (() => {
+})());
+exports.CGCMsgMemCachedStats = ($root.CGCMsgMemCachedStats = (() => {
     /**
      * Properties of a CGCMsgMemCachedStats.
      * @exports ICGCMsgMemCachedStats
@@ -26996,8 +27213,8 @@ exports.CGCMsgMemCachedStats = $root.CGCMsgMemCachedStats = (() => {
         return message;
     };
     return CGCMsgMemCachedStats;
-})();
-exports.CGCMsgMemCachedStatsResponse = $root.CGCMsgMemCachedStatsResponse = (() => {
+})());
+exports.CGCMsgMemCachedStatsResponse = ($root.CGCMsgMemCachedStatsResponse = (() => {
     /**
      * Properties of a CGCMsgMemCachedStatsResponse.
      * @exports ICGCMsgMemCachedStatsResponse
@@ -27037,98 +27254,126 @@ exports.CGCMsgMemCachedStatsResponse = $root.CGCMsgMemCachedStatsResponse = (() 
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.currConnections = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.currConnections = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CGCMsgMemCachedStatsResponse cmdGet.
      * @member {number|Long} cmdGet
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.cmdGet = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.cmdGet = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CGCMsgMemCachedStatsResponse cmdSet.
      * @member {number|Long} cmdSet
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.cmdSet = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.cmdSet = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CGCMsgMemCachedStatsResponse cmdFlush.
      * @member {number|Long} cmdFlush
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.cmdFlush = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.cmdFlush = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CGCMsgMemCachedStatsResponse getHits.
      * @member {number|Long} getHits
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.getHits = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.getHits = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CGCMsgMemCachedStatsResponse getMisses.
      * @member {number|Long} getMisses
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.getMisses = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.getMisses = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CGCMsgMemCachedStatsResponse deleteHits.
      * @member {number|Long} deleteHits
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.deleteHits = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.deleteHits = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CGCMsgMemCachedStatsResponse deleteMisses.
      * @member {number|Long} deleteMisses
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.deleteMisses = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.deleteMisses = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CGCMsgMemCachedStatsResponse bytesRead.
      * @member {number|Long} bytesRead
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.bytesRead = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.bytesRead = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CGCMsgMemCachedStatsResponse bytesWritten.
      * @member {number|Long} bytesWritten
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.bytesWritten = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.bytesWritten = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CGCMsgMemCachedStatsResponse limitMaxbytes.
      * @member {number|Long} limitMaxbytes
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.limitMaxbytes = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.limitMaxbytes = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CGCMsgMemCachedStatsResponse currItems.
      * @member {number|Long} currItems
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.currItems = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.currItems = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CGCMsgMemCachedStatsResponse evictions.
      * @member {number|Long} evictions
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.evictions = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.evictions = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * CGCMsgMemCachedStatsResponse bytes.
      * @member {number|Long} bytes
      * @memberof CGCMsgMemCachedStatsResponse
      * @instance
      */
-    CGCMsgMemCachedStatsResponse.prototype.bytes = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
+    CGCMsgMemCachedStatsResponse.prototype.bytes = $util.Long
+        ? $util.Long.fromBits(0, 0, true)
+        : 0;
     /**
      * Decodes a CGCMsgMemCachedStatsResponse message from the specified reader or buffer.
      * @function decode
@@ -27197,8 +27442,8 @@ exports.CGCMsgMemCachedStatsResponse = $root.CGCMsgMemCachedStatsResponse = (() 
         return message;
     };
     return CGCMsgMemCachedStatsResponse;
-})();
-exports.CGCMsgSQLStats = $root.CGCMsgSQLStats = (() => {
+})());
+exports.CGCMsgSQLStats = ($root.CGCMsgSQLStats = (() => {
     /**
      * Properties of a CGCMsgSQLStats.
      * @exports ICGCMsgSQLStats
@@ -27255,8 +27500,8 @@ exports.CGCMsgSQLStats = $root.CGCMsgSQLStats = (() => {
         return message;
     };
     return CGCMsgSQLStats;
-})();
-exports.CGCMsgSQLStatsResponse = $root.CGCMsgSQLStatsResponse = (() => {
+})());
+exports.CGCMsgSQLStatsResponse = ($root.CGCMsgSQLStatsResponse = (() => {
     /**
      * Properties of a CGCMsgSQLStatsResponse.
      * @exports ICGCMsgSQLStatsResponse
@@ -27401,8 +27646,8 @@ exports.CGCMsgSQLStatsResponse = $root.CGCMsgSQLStatsResponse = (() => {
         return message;
     };
     return CGCMsgSQLStatsResponse;
-})();
-exports.CMsgAMAddFreeLicense = $root.CMsgAMAddFreeLicense = (() => {
+})());
+exports.CMsgAMAddFreeLicense = ($root.CMsgAMAddFreeLicense = (() => {
     /**
      * Properties of a CMsgAMAddFreeLicense.
      * @exports ICMsgAMAddFreeLicense
@@ -27432,7 +27677,9 @@ exports.CMsgAMAddFreeLicense = $root.CMsgAMAddFreeLicense = (() => {
      * @memberof CMsgAMAddFreeLicense
      * @instance
      */
-    CMsgAMAddFreeLicense.prototype.steamid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgAMAddFreeLicense.prototype.steamid = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CMsgAMAddFreeLicense ipPublic.
      * @member {number} ipPublic
@@ -27492,8 +27739,8 @@ exports.CMsgAMAddFreeLicense = $root.CMsgAMAddFreeLicense = (() => {
         return message;
     };
     return CMsgAMAddFreeLicense;
-})();
-exports.CMsgAMAddFreeLicenseResponse = $root.CMsgAMAddFreeLicenseResponse = (() => {
+})());
+exports.CMsgAMAddFreeLicenseResponse = ($root.CMsgAMAddFreeLicenseResponse = (() => {
     /**
      * Properties of a CMsgAMAddFreeLicenseResponse.
      * @exports ICMsgAMAddFreeLicenseResponse
@@ -27536,7 +27783,9 @@ exports.CMsgAMAddFreeLicenseResponse = $root.CMsgAMAddFreeLicenseResponse = (() 
      * @memberof CMsgAMAddFreeLicenseResponse
      * @instance
      */
-    CMsgAMAddFreeLicenseResponse.prototype.transid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgAMAddFreeLicenseResponse.prototype.transid = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * Decodes a CMsgAMAddFreeLicenseResponse message from the specified reader or buffer.
      * @function decode
@@ -27572,8 +27821,8 @@ exports.CMsgAMAddFreeLicenseResponse = $root.CMsgAMAddFreeLicenseResponse = (() 
         return message;
     };
     return CMsgAMAddFreeLicenseResponse;
-})();
-exports.CGCMsgGetIPLocation = $root.CGCMsgGetIPLocation = (() => {
+})());
+exports.CGCMsgGetIPLocation = ($root.CGCMsgGetIPLocation = (() => {
     /**
      * Properties of a CGCMsgGetIPLocation.
      * @exports ICGCMsgGetIPLocation
@@ -27639,8 +27888,8 @@ exports.CGCMsgGetIPLocation = $root.CGCMsgGetIPLocation = (() => {
         return message;
     };
     return CGCMsgGetIPLocation;
-})();
-exports.CIPLocationInfo = $root.CIPLocationInfo = (() => {
+})());
+exports.CIPLocationInfo = ($root.CIPLocationInfo = (() => {
     /**
      * Properties of a CIPLocationInfo.
      * @exports ICIPLocationInfo
@@ -27752,8 +28001,8 @@ exports.CIPLocationInfo = $root.CIPLocationInfo = (() => {
         return message;
     };
     return CIPLocationInfo;
-})();
-exports.CGCMsgGetIPLocationResponse = $root.CGCMsgGetIPLocationResponse = (() => {
+})());
+exports.CGCMsgGetIPLocationResponse = ($root.CGCMsgGetIPLocationResponse = (() => {
     /**
      * Properties of a CGCMsgGetIPLocationResponse.
      * @exports ICGCMsgGetIPLocationResponse
@@ -27813,8 +28062,8 @@ exports.CGCMsgGetIPLocationResponse = $root.CGCMsgGetIPLocationResponse = (() =>
         return message;
     };
     return CGCMsgGetIPLocationResponse;
-})();
-exports.CGCMsgSystemStatsSchema = $root.CGCMsgSystemStatsSchema = (() => {
+})());
+exports.CGCMsgSystemStatsSchema = ($root.CGCMsgSystemStatsSchema = (() => {
     /**
      * Properties of a CGCMsgSystemStatsSchema.
      * @exports ICGCMsgSystemStatsSchema
@@ -27882,8 +28131,8 @@ exports.CGCMsgSystemStatsSchema = $root.CGCMsgSystemStatsSchema = (() => {
         return message;
     };
     return CGCMsgSystemStatsSchema;
-})();
-exports.CGCMsgGetSystemStats = $root.CGCMsgGetSystemStats = (() => {
+})());
+exports.CGCMsgGetSystemStats = ($root.CGCMsgGetSystemStats = (() => {
     /**
      * Properties of a CGCMsgGetSystemStats.
      * @exports ICGCMsgGetSystemStats
@@ -27929,8 +28178,8 @@ exports.CGCMsgGetSystemStats = $root.CGCMsgGetSystemStats = (() => {
         return message;
     };
     return CGCMsgGetSystemStats;
-})();
-exports.CGCMsgGetSystemStatsResponse = $root.CGCMsgGetSystemStatsResponse = (() => {
+})());
+exports.CGCMsgGetSystemStatsResponse = ($root.CGCMsgGetSystemStatsResponse = (() => {
     /**
      * Properties of a CGCMsgGetSystemStatsResponse.
      * @exports ICGCMsgGetSystemStatsResponse
@@ -28119,8 +28368,8 @@ exports.CGCMsgGetSystemStatsResponse = $root.CGCMsgGetSystemStatsResponse = (() 
         return message;
     };
     return CGCMsgGetSystemStatsResponse;
-})();
-exports.CMsgAMSendEmail = $root.CMsgAMSendEmail = (() => {
+})());
+exports.CMsgAMSendEmail = ($root.CMsgAMSendEmail = (() => {
     /**
      * Properties of a CMsgAMSendEmail.
      * @exports ICMsgAMSendEmail
@@ -28154,7 +28403,9 @@ exports.CMsgAMSendEmail = $root.CMsgAMSendEmail = (() => {
      * @memberof CMsgAMSendEmail
      * @instance
      */
-    CMsgAMSendEmail.prototype.steamid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgAMSendEmail.prototype.steamid = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CMsgAMSendEmail emailMsgType.
      * @member {number} emailMsgType
@@ -28334,7 +28585,9 @@ exports.CMsgAMSendEmail = $root.CMsgAMSendEmail = (() => {
          * @memberof CMsgAMSendEmail.PersonaNameReplacementToken
          * @instance
          */
-        PersonaNameReplacementToken.prototype.steamid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+        PersonaNameReplacementToken.prototype.steamid = $util.Long
+            ? $util.Long.fromBits(0, 0, false)
+            : 0;
         /**
          * PersonaNameReplacementToken tokenName.
          * @member {string} tokenName
@@ -28376,8 +28629,8 @@ exports.CMsgAMSendEmail = $root.CMsgAMSendEmail = (() => {
         return PersonaNameReplacementToken;
     })();
     return CMsgAMSendEmail;
-})();
-exports.CMsgAMSendEmailResponse = $root.CMsgAMSendEmailResponse = (() => {
+})());
+exports.CMsgAMSendEmailResponse = ($root.CMsgAMSendEmailResponse = (() => {
     /**
      * Properties of a CMsgAMSendEmailResponse.
      * @exports ICMsgAMSendEmailResponse
@@ -28434,8 +28687,8 @@ exports.CMsgAMSendEmailResponse = $root.CMsgAMSendEmailResponse = (() => {
         return message;
     };
     return CMsgAMSendEmailResponse;
-})();
-exports.CMsgGCGetEmailTemplate = $root.CMsgGCGetEmailTemplate = (() => {
+})());
+exports.CMsgGCGetEmailTemplate = ($root.CMsgGCGetEmailTemplate = (() => {
     /**
      * Properties of a CMsgGCGetEmailTemplate.
      * @exports ICMsgGCGetEmailTemplate
@@ -28525,8 +28778,8 @@ exports.CMsgGCGetEmailTemplate = $root.CMsgGCGetEmailTemplate = (() => {
         return message;
     };
     return CMsgGCGetEmailTemplate;
-})();
-exports.CMsgGCGetEmailTemplateResponse = $root.CMsgGCGetEmailTemplateResponse = (() => {
+})());
+exports.CMsgGCGetEmailTemplateResponse = ($root.CMsgGCGetEmailTemplateResponse = (() => {
     /**
      * Properties of a CMsgGCGetEmailTemplateResponse.
      * @exports ICMsgGCGetEmailTemplateResponse
@@ -28605,8 +28858,8 @@ exports.CMsgGCGetEmailTemplateResponse = $root.CMsgGCGetEmailTemplateResponse = 
         return message;
     };
     return CMsgGCGetEmailTemplateResponse;
-})();
-exports.CMsgAMGrantGuestPasses2 = $root.CMsgAMGrantGuestPasses2 = (() => {
+})());
+exports.CMsgAMGrantGuestPasses2 = ($root.CMsgAMGrantGuestPasses2 = (() => {
     /**
      * Properties of a CMsgAMGrantGuestPasses2.
      * @exports ICMsgAMGrantGuestPasses2
@@ -28637,7 +28890,9 @@ exports.CMsgAMGrantGuestPasses2 = $root.CMsgAMGrantGuestPasses2 = (() => {
      * @memberof CMsgAMGrantGuestPasses2
      * @instance
      */
-    CMsgAMGrantGuestPasses2.prototype.steamId = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgAMGrantGuestPasses2.prototype.steamId = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CMsgAMGrantGuestPasses2 packageId.
      * @member {number} packageId
@@ -28707,8 +28962,8 @@ exports.CMsgAMGrantGuestPasses2 = $root.CMsgAMGrantGuestPasses2 = (() => {
         return message;
     };
     return CMsgAMGrantGuestPasses2;
-})();
-exports.CMsgAMGrantGuestPasses2Response = $root.CMsgAMGrantGuestPasses2Response = (() => {
+})());
+exports.CMsgAMGrantGuestPasses2Response = ($root.CMsgAMGrantGuestPasses2Response = (() => {
     /**
      * Properties of a CMsgAMGrantGuestPasses2Response.
      * @exports ICMsgAMGrantGuestPasses2Response
@@ -28776,8 +29031,8 @@ exports.CMsgAMGrantGuestPasses2Response = $root.CMsgAMGrantGuestPasses2Response 
         return message;
     };
     return CMsgAMGrantGuestPasses2Response;
-})();
-exports.CGCSystemMsg_GetAccountDetails = $root.CGCSystemMsg_GetAccountDetails = (() => {
+})());
+exports.CGCSystemMsg_GetAccountDetails = ($root.CGCSystemMsg_GetAccountDetails = (() => {
     /**
      * Properties of a CGCSystemMsg_GetAccountDetails.
      * @exports ICGCSystemMsg_GetAccountDetails
@@ -28805,7 +29060,9 @@ exports.CGCSystemMsg_GetAccountDetails = $root.CGCSystemMsg_GetAccountDetails = 
      * @memberof CGCSystemMsg_GetAccountDetails
      * @instance
      */
-    CGCSystemMsg_GetAccountDetails.prototype.steamid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CGCSystemMsg_GetAccountDetails.prototype.steamid = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CGCSystemMsg_GetAccountDetails appid.
      * @member {number} appid
@@ -28845,8 +29102,8 @@ exports.CGCSystemMsg_GetAccountDetails = $root.CGCSystemMsg_GetAccountDetails = 
         return message;
     };
     return CGCSystemMsg_GetAccountDetails;
-})();
-exports.CGCSystemMsg_GetAccountDetails_Response = $root.CGCSystemMsg_GetAccountDetails_Response = (() => {
+})());
+exports.CGCSystemMsg_GetAccountDetails_Response = ($root.CGCSystemMsg_GetAccountDetails_Response = (() => {
     /**
      * Properties of a CGCSystemMsg_GetAccountDetails_Response.
      * @exports ICGCSystemMsg_GetAccountDetails_Response
@@ -29134,8 +29391,8 @@ exports.CGCSystemMsg_GetAccountDetails_Response = $root.CGCSystemMsg_GetAccountD
         return message;
     };
     return CGCSystemMsg_GetAccountDetails_Response;
-})();
-exports.CMsgGCGetPersonaNames = $root.CMsgGCGetPersonaNames = (() => {
+})());
+exports.CMsgGCGetPersonaNames = ($root.CMsgGCGetPersonaNames = (() => {
     /**
      * Properties of a CMsgGCGetPersonaNames.
      * @exports ICMsgGCGetPersonaNames
@@ -29201,8 +29458,8 @@ exports.CMsgGCGetPersonaNames = $root.CMsgGCGetPersonaNames = (() => {
         return message;
     };
     return CMsgGCGetPersonaNames;
-})();
-exports.CMsgGCGetPersonaNames_Response = $root.CMsgGCGetPersonaNames_Response = (() => {
+})());
+exports.CMsgGCGetPersonaNames_Response = ($root.CMsgGCGetPersonaNames_Response = (() => {
     /**
      * Properties of a CMsgGCGetPersonaNames_Response.
      * @exports ICMsgGCGetPersonaNames_Response
@@ -29239,7 +29496,8 @@ exports.CMsgGCGetPersonaNames_Response = $root.CMsgGCGetPersonaNames_Response = 
      * @memberof CMsgGCGetPersonaNames_Response
      * @instance
      */
-    CMsgGCGetPersonaNames_Response.prototype.failedLookupSteamids = $util.emptyArray;
+    CMsgGCGetPersonaNames_Response.prototype.failedLookupSteamids =
+        $util.emptyArray;
     /**
      * Decodes a CMsgGCGetPersonaNames_Response message from the specified reader or buffer.
      * @function decode
@@ -29264,7 +29522,8 @@ exports.CMsgGCGetPersonaNames_Response = $root.CMsgGCGetPersonaNames_Response = 
                     message.succeededLookups.push($root.CMsgGCGetPersonaNames_Response.PersonaName.decode(reader, reader.uint32()));
                     break;
                 case 2:
-                    if (!(message.failedLookupSteamids && message.failedLookupSteamids.length))
+                    if (!(message.failedLookupSteamids &&
+                        message.failedLookupSteamids.length))
                         message.failedLookupSteamids = [];
                     if ((tag & 7) === 2) {
                         let end2 = reader.uint32() + reader.pos;
@@ -29309,7 +29568,9 @@ exports.CMsgGCGetPersonaNames_Response = $root.CMsgGCGetPersonaNames_Response = 
          * @memberof CMsgGCGetPersonaNames_Response.PersonaName
          * @instance
          */
-        PersonaName.prototype.steamid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+        PersonaName.prototype.steamid = $util.Long
+            ? $util.Long.fromBits(0, 0, false)
+            : 0;
         /**
          * PersonaName personaName.
          * @member {string} personaName
@@ -29351,8 +29612,8 @@ exports.CMsgGCGetPersonaNames_Response = $root.CMsgGCGetPersonaNames_Response = 
         return PersonaName;
     })();
     return CMsgGCGetPersonaNames_Response;
-})();
-exports.CMsgGCCheckFriendship = $root.CMsgGCCheckFriendship = (() => {
+})());
+exports.CMsgGCCheckFriendship = ($root.CMsgGCCheckFriendship = (() => {
     /**
      * Properties of a CMsgGCCheckFriendship.
      * @exports ICMsgGCCheckFriendship
@@ -29380,14 +29641,18 @@ exports.CMsgGCCheckFriendship = $root.CMsgGCCheckFriendship = (() => {
      * @memberof CMsgGCCheckFriendship
      * @instance
      */
-    CMsgGCCheckFriendship.prototype.steamidLeft = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgGCCheckFriendship.prototype.steamidLeft = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CMsgGCCheckFriendship steamidRight.
      * @member {number|Long} steamidRight
      * @memberof CMsgGCCheckFriendship
      * @instance
      */
-    CMsgGCCheckFriendship.prototype.steamidRight = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgGCCheckFriendship.prototype.steamidRight = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * Decodes a CMsgGCCheckFriendship message from the specified reader or buffer.
      * @function decode
@@ -29420,8 +29685,8 @@ exports.CMsgGCCheckFriendship = $root.CMsgGCCheckFriendship = (() => {
         return message;
     };
     return CMsgGCCheckFriendship;
-})();
-exports.CMsgGCCheckFriendship_Response = $root.CMsgGCCheckFriendship_Response = (() => {
+})());
+exports.CMsgGCCheckFriendship_Response = ($root.CMsgGCCheckFriendship_Response = (() => {
     /**
      * Properties of a CMsgGCCheckFriendship_Response.
      * @exports ICMsgGCCheckFriendship_Response
@@ -29489,8 +29754,8 @@ exports.CMsgGCCheckFriendship_Response = $root.CMsgGCCheckFriendship_Response = 
         return message;
     };
     return CMsgGCCheckFriendship_Response;
-})();
-exports.CMsgGCMsgMasterSetDirectory = $root.CMsgGCMsgMasterSetDirectory = (() => {
+})());
+exports.CMsgGCMsgMasterSetDirectory = ($root.CMsgGCMsgMasterSetDirectory = (() => {
     /**
      * Properties of a CMsgGCMsgMasterSetDirectory.
      * @exports ICMsgGCMsgMasterSetDirectory
@@ -29663,8 +29928,8 @@ exports.CMsgGCMsgMasterSetDirectory = $root.CMsgGCMsgMasterSetDirectory = (() =>
         return SubGC;
     })();
     return CMsgGCMsgMasterSetDirectory;
-})();
-exports.CMsgGCMsgMasterSetDirectory_Response = $root.CMsgGCMsgMasterSetDirectory_Response = (() => {
+})());
+exports.CMsgGCMsgMasterSetDirectory_Response = ($root.CMsgGCMsgMasterSetDirectory_Response = (() => {
     /**
      * Properties of a CMsgGCMsgMasterSetDirectory_Response.
      * @exports ICMsgGCMsgMasterSetDirectory_Response
@@ -29721,8 +29986,8 @@ exports.CMsgGCMsgMasterSetDirectory_Response = $root.CMsgGCMsgMasterSetDirectory
         return message;
     };
     return CMsgGCMsgMasterSetDirectory_Response;
-})();
-exports.CMsgGCMsgWebAPIJobRequestForwardResponse = $root.CMsgGCMsgWebAPIJobRequestForwardResponse = (() => {
+})());
+exports.CMsgGCMsgWebAPIJobRequestForwardResponse = ($root.CMsgGCMsgWebAPIJobRequestForwardResponse = (() => {
     /**
      * Properties of a CMsgGCMsgWebAPIJobRequestForwardResponse.
      * @exports ICMsgGCMsgWebAPIJobRequestForwardResponse
@@ -29779,8 +30044,8 @@ exports.CMsgGCMsgWebAPIJobRequestForwardResponse = $root.CMsgGCMsgWebAPIJobReque
         return message;
     };
     return CMsgGCMsgWebAPIJobRequestForwardResponse;
-})();
-exports.CGCSystemMsg_GetPurchaseTrust_Request = $root.CGCSystemMsg_GetPurchaseTrust_Request = (() => {
+})());
+exports.CGCSystemMsg_GetPurchaseTrust_Request = ($root.CGCSystemMsg_GetPurchaseTrust_Request = (() => {
     /**
      * Properties of a CGCSystemMsg_GetPurchaseTrust_Request.
      * @exports ICGCSystemMsg_GetPurchaseTrust_Request
@@ -29807,7 +30072,9 @@ exports.CGCSystemMsg_GetPurchaseTrust_Request = $root.CGCSystemMsg_GetPurchaseTr
      * @memberof CGCSystemMsg_GetPurchaseTrust_Request
      * @instance
      */
-    CGCSystemMsg_GetPurchaseTrust_Request.prototype.steamid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CGCSystemMsg_GetPurchaseTrust_Request.prototype.steamid = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * Decodes a CGCSystemMsg_GetPurchaseTrust_Request message from the specified reader or buffer.
      * @function decode
@@ -29837,8 +30104,8 @@ exports.CGCSystemMsg_GetPurchaseTrust_Request = $root.CGCSystemMsg_GetPurchaseTr
         return message;
     };
     return CGCSystemMsg_GetPurchaseTrust_Request;
-})();
-exports.CGCSystemMsg_GetPurchaseTrust_Response = $root.CGCSystemMsg_GetPurchaseTrust_Response = (() => {
+})());
+exports.CGCSystemMsg_GetPurchaseTrust_Response = ($root.CGCSystemMsg_GetPurchaseTrust_Response = (() => {
     /**
      * Properties of a CGCSystemMsg_GetPurchaseTrust_Response.
      * @exports ICGCSystemMsg_GetPurchaseTrust_Response
@@ -29928,8 +30195,8 @@ exports.CGCSystemMsg_GetPurchaseTrust_Response = $root.CGCSystemMsg_GetPurchaseT
         return message;
     };
     return CGCSystemMsg_GetPurchaseTrust_Response;
-})();
-exports.CMsgGCHAccountVacStatusChange = $root.CMsgGCHAccountVacStatusChange = (() => {
+})());
+exports.CMsgGCHAccountVacStatusChange = ($root.CMsgGCHAccountVacStatusChange = (() => {
     /**
      * Properties of a CMsgGCHAccountVacStatusChange.
      * @exports ICMsgGCHAccountVacStatusChange
@@ -29960,7 +30227,9 @@ exports.CMsgGCHAccountVacStatusChange = $root.CMsgGCHAccountVacStatusChange = ((
      * @memberof CMsgGCHAccountVacStatusChange
      * @instance
      */
-    CMsgGCHAccountVacStatusChange.prototype.steamId = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgGCHAccountVacStatusChange.prototype.steamId = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CMsgGCHAccountVacStatusChange appId.
      * @member {number} appId
@@ -30030,8 +30299,8 @@ exports.CMsgGCHAccountVacStatusChange = $root.CMsgGCHAccountVacStatusChange = ((
         return message;
     };
     return CMsgGCHAccountVacStatusChange;
-})();
-exports.CMsgGCGetPartnerAccountLink = $root.CMsgGCGetPartnerAccountLink = (() => {
+})());
+exports.CMsgGCGetPartnerAccountLink = ($root.CMsgGCGetPartnerAccountLink = (() => {
     /**
      * Properties of a CMsgGCGetPartnerAccountLink.
      * @exports ICMsgGCGetPartnerAccountLink
@@ -30058,7 +30327,9 @@ exports.CMsgGCGetPartnerAccountLink = $root.CMsgGCGetPartnerAccountLink = (() =>
      * @memberof CMsgGCGetPartnerAccountLink
      * @instance
      */
-    CMsgGCGetPartnerAccountLink.prototype.steamid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgGCGetPartnerAccountLink.prototype.steamid = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * Decodes a CMsgGCGetPartnerAccountLink message from the specified reader or buffer.
      * @function decode
@@ -30088,8 +30359,8 @@ exports.CMsgGCGetPartnerAccountLink = $root.CMsgGCGetPartnerAccountLink = (() =>
         return message;
     };
     return CMsgGCGetPartnerAccountLink;
-})();
-exports.CMsgGCGetPartnerAccountLink_Response = $root.CMsgGCGetPartnerAccountLink_Response = (() => {
+})());
+exports.CMsgGCGetPartnerAccountLink_Response = ($root.CMsgGCGetPartnerAccountLink_Response = (() => {
     /**
      * Properties of a CMsgGCGetPartnerAccountLink_Response.
      * @exports ICMsgGCGetPartnerAccountLink_Response
@@ -30157,8 +30428,8 @@ exports.CMsgGCGetPartnerAccountLink_Response = $root.CMsgGCGetPartnerAccountLink
         return message;
     };
     return CMsgGCGetPartnerAccountLink_Response;
-})();
-exports.CMsgGCRoutingInfo = $root.CMsgGCRoutingInfo = (() => {
+})());
+exports.CMsgGCRoutingInfo = ($root.CMsgGCRoutingInfo = (() => {
     /**
      * Properties of a CMsgGCRoutingInfo.
      * @exports ICMsgGCRoutingInfo
@@ -30279,16 +30550,16 @@ exports.CMsgGCRoutingInfo = $root.CMsgGCRoutingInfo = (() => {
      */
     CMsgGCRoutingInfo.RoutingMethod = (function () {
         const valuesById = {}, values = Object.create(valuesById);
-        values[valuesById[0] = "RANDOM"] = 0;
-        values[valuesById[1] = "DISCARD"] = 1;
-        values[valuesById[2] = "CLIENT_STEAMID"] = 2;
-        values[valuesById[3] = "PROTOBUF_FIELD_UINT64"] = 3;
-        values[valuesById[4] = "WEBAPI_PARAM_UINT64"] = 4;
+        values[(valuesById[0] = "RANDOM")] = 0;
+        values[(valuesById[1] = "DISCARD")] = 1;
+        values[(valuesById[2] = "CLIENT_STEAMID")] = 2;
+        values[(valuesById[3] = "PROTOBUF_FIELD_UINT64")] = 3;
+        values[(valuesById[4] = "WEBAPI_PARAM_UINT64")] = 4;
         return values;
     })();
     return CMsgGCRoutingInfo;
-})();
-exports.CMsgGCMsgMasterSetWebAPIRouting = $root.CMsgGCMsgMasterSetWebAPIRouting = (() => {
+})());
+exports.CMsgGCMsgMasterSetWebAPIRouting = ($root.CMsgGCMsgMasterSetWebAPIRouting = (() => {
     /**
      * Properties of a CMsgGCMsgMasterSetWebAPIRouting.
      * @exports ICMsgGCMsgMasterSetWebAPIRouting
@@ -30428,8 +30699,8 @@ exports.CMsgGCMsgMasterSetWebAPIRouting = $root.CMsgGCMsgMasterSetWebAPIRouting 
         return Entry;
     })();
     return CMsgGCMsgMasterSetWebAPIRouting;
-})();
-exports.CMsgGCMsgMasterSetClientMsgRouting = $root.CMsgGCMsgMasterSetClientMsgRouting = (() => {
+})());
+exports.CMsgGCMsgMasterSetClientMsgRouting = ($root.CMsgGCMsgMasterSetClientMsgRouting = (() => {
     /**
      * Properties of a CMsgGCMsgMasterSetClientMsgRouting.
      * @exports ICMsgGCMsgMasterSetClientMsgRouting
@@ -30558,8 +30829,8 @@ exports.CMsgGCMsgMasterSetClientMsgRouting = $root.CMsgGCMsgMasterSetClientMsgRo
         return Entry;
     })();
     return CMsgGCMsgMasterSetClientMsgRouting;
-})();
-exports.CMsgGCMsgMasterSetWebAPIRouting_Response = $root.CMsgGCMsgMasterSetWebAPIRouting_Response = (() => {
+})());
+exports.CMsgGCMsgMasterSetWebAPIRouting_Response = ($root.CMsgGCMsgMasterSetWebAPIRouting_Response = (() => {
     /**
      * Properties of a CMsgGCMsgMasterSetWebAPIRouting_Response.
      * @exports ICMsgGCMsgMasterSetWebAPIRouting_Response
@@ -30616,8 +30887,8 @@ exports.CMsgGCMsgMasterSetWebAPIRouting_Response = $root.CMsgGCMsgMasterSetWebAP
         return message;
     };
     return CMsgGCMsgMasterSetWebAPIRouting_Response;
-})();
-exports.CMsgGCMsgMasterSetClientMsgRouting_Response = $root.CMsgGCMsgMasterSetClientMsgRouting_Response = (() => {
+})());
+exports.CMsgGCMsgMasterSetClientMsgRouting_Response = ($root.CMsgGCMsgMasterSetClientMsgRouting_Response = (() => {
     /**
      * Properties of a CMsgGCMsgMasterSetClientMsgRouting_Response.
      * @exports ICMsgGCMsgMasterSetClientMsgRouting_Response
@@ -30674,8 +30945,8 @@ exports.CMsgGCMsgMasterSetClientMsgRouting_Response = $root.CMsgGCMsgMasterSetCl
         return message;
     };
     return CMsgGCMsgMasterSetClientMsgRouting_Response;
-})();
-exports.CMsgGCMsgSetOptions = $root.CMsgGCMsgSetOptions = (() => {
+})());
+exports.CMsgGCMsgSetOptions = ($root.CMsgGCMsgSetOptions = (() => {
     /**
      * Properties of a CMsgGCMsgSetOptions.
      * @exports ICMsgGCMsgSetOptions
@@ -30820,9 +31091,13 @@ exports.CMsgGCMsgSetOptions = $root.CMsgGCMsgSetOptions = (() => {
                 }
             }
             if (!message.hasOwnProperty("low"))
-                throw $util.ProtocolError("missing required 'low'", { instance: message });
+                throw $util.ProtocolError("missing required 'low'", {
+                    instance: message
+                });
             if (!message.hasOwnProperty("high"))
-                throw $util.ProtocolError("missing required 'high'", { instance: message });
+                throw $util.ProtocolError("missing required 'high'", {
+                    instance: message
+                });
             return message;
         };
         return MessageRange;
@@ -30838,15 +31113,15 @@ exports.CMsgGCMsgSetOptions = $root.CMsgGCMsgSetOptions = (() => {
      */
     CMsgGCMsgSetOptions.Option = (function () {
         const valuesById = {}, values = Object.create(valuesById);
-        values[valuesById[0] = "NOTIFY_USER_SESSIONS"] = 0;
-        values[valuesById[1] = "NOTIFY_SERVER_SESSIONS"] = 1;
-        values[valuesById[2] = "NOTIFY_ACHIEVEMENTS"] = 2;
-        values[valuesById[3] = "NOTIFY_VAC_ACTION"] = 3;
+        values[(valuesById[0] = "NOTIFY_USER_SESSIONS")] = 0;
+        values[(valuesById[1] = "NOTIFY_SERVER_SESSIONS")] = 1;
+        values[(valuesById[2] = "NOTIFY_ACHIEVEMENTS")] = 2;
+        values[(valuesById[3] = "NOTIFY_VAC_ACTION")] = 3;
         return values;
     })();
     return CMsgGCMsgSetOptions;
-})();
-exports.CMsgGCHUpdateSession = $root.CMsgGCHUpdateSession = (() => {
+})());
+exports.CMsgGCHUpdateSession = ($root.CMsgGCHUpdateSession = (() => {
     /**
      * Properties of a CMsgGCHUpdateSession.
      * @exports ICMsgGCHUpdateSession
@@ -30882,7 +31157,9 @@ exports.CMsgGCHUpdateSession = $root.CMsgGCHUpdateSession = (() => {
      * @memberof CMsgGCHUpdateSession
      * @instance
      */
-    CMsgGCHUpdateSession.prototype.steamId = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgGCHUpdateSession.prototype.steamId = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CMsgGCHUpdateSession appId.
      * @member {number} appId
@@ -30903,7 +31180,9 @@ exports.CMsgGCHUpdateSession = $root.CMsgGCHUpdateSession = (() => {
      * @memberof CMsgGCHUpdateSession
      * @instance
      */
-    CMsgGCHUpdateSession.prototype.serverSteamId = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgGCHUpdateSession.prototype.serverSteamId = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CMsgGCHUpdateSession serverAddr.
      * @member {number} serverAddr
@@ -31063,8 +31342,8 @@ exports.CMsgGCHUpdateSession = $root.CMsgGCHUpdateSession = (() => {
         return ExtraField;
     })();
     return CMsgGCHUpdateSession;
-})();
-exports.CMsgNotificationOfSuspiciousActivity = $root.CMsgNotificationOfSuspiciousActivity = (() => {
+})());
+exports.CMsgNotificationOfSuspiciousActivity = ($root.CMsgNotificationOfSuspiciousActivity = (() => {
     /**
      * Properties of a CMsgNotificationOfSuspiciousActivity.
      * @exports ICMsgNotificationOfSuspiciousActivity
@@ -31093,7 +31372,9 @@ exports.CMsgNotificationOfSuspiciousActivity = $root.CMsgNotificationOfSuspiciou
      * @memberof CMsgNotificationOfSuspiciousActivity
      * @instance
      */
-    CMsgNotificationOfSuspiciousActivity.prototype.steamid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+    CMsgNotificationOfSuspiciousActivity.prototype.steamid = $util.Long
+        ? $util.Long.fromBits(0, 0, false)
+        : 0;
     /**
      * CMsgNotificationOfSuspiciousActivity appid.
      * @member {number} appid
@@ -31221,5 +31502,5 @@ exports.CMsgNotificationOfSuspiciousActivity = $root.CMsgNotificationOfSuspiciou
         return MultipleGameInstances;
     })();
     return CMsgNotificationOfSuspiciousActivity;
-})();
+})());
 //# sourceMappingURL=cstrike15_usermessages.js.map

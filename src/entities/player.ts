@@ -227,8 +227,8 @@ export class Player extends BaseEntity<CCSPlayer> {
   get weapons(): Weapon[] {
     return (this.getIndexedProps("m_hMyWeapons")
       .map(handle => this._demo.entities.getByHandle(handle))
-      .filter(
-        ent => (ent ? ent instanceof Weapon : false)
+      .filter(ent =>
+        ent ? ent instanceof Weapon : false
       ) as unknown) as Weapon[];
   }
 
