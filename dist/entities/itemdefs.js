@@ -59,6 +59,10 @@ exports.itemDefinitionIndexMap = {
     className: "weapon_p90",
     itemName: "P90"
   },
+  "20": {
+    className: "weapon_zone_repulsor",
+    itemName: "Repulsor Device"
+  },
   "23": {
     className: "weapon_mp5sd",
     itemName: "MP5-SD"
