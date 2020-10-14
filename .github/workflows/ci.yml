@@ -1,4 +1,4 @@
-name: Build and Test
+name: CI
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build and Test
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,13 +21,23 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install packages (npm ci)
+      - name: Install packages
         run: npm ci
       - name: Build TypeScript
         run: npm run build
-      - name: Check code style
-        run: npm run format:check
-      - name: Lint code
-        run: npm run lint
       - name: Run tests
-        run: npm test
+        run: npm test -- --coverage
+
+  lint:
+    name: Linting
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: npm ci
+      - run: npm run build
+      - run: npm run format:check
+      - run: npm run lint
