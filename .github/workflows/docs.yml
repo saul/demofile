@@ -15,6 +15,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+      - name: Install packages
+        run: npm ci
       - name: Generate documentation
         run: npm run generate-docs
       - name: Push back to GitHub
