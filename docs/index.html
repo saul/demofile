@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>demofile</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for demofile">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> demofile</h1>
+			<h1>demofile</h1>
 		</div>
 	</div>
 </header>
@@ -168,7 +168,7 @@
 				<a href="#browser" id="browser" style="color: inherit; text-decoration: none;">
 					<h3>Browser</h3>
 				</a>
-				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"browser/bundle.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;browser/bundle.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 				<p>The <code>DemoFile</code> module will be available as <code>window.demofile</code>.</p>
 				<a href="#node" id="node" style="color: inherit; text-decoration: none;">
 					<h3>Node</h3>
@@ -201,15 +201,15 @@
 				<a href="#print-player-information-when-it-changes" id="print-player-information-when-it-changes" style="color: inherit; text-decoration: none;">
 					<h3>Print player information when it changes</h3>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
-<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"demofile"</span>);
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
 
-fs.readFile(<span class="hljs-string">"test.dem"</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
+fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
   <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.stringTables.on(<span class="hljs-string">"update"</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
-    <span class="hljs-keyword">if</span> (e.table.name === <span class="hljs-string">"userinfo"</span> &amp;&amp; e.userData != <span class="hljs-literal">null</span>) {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"\nPlayer info updated:"</span>);
+  demoFile.stringTables.on(<span class="hljs-string">&quot;update&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (e.table.name === <span class="hljs-string">&quot;userinfo&quot;</span> &amp;&amp; e.userData != <span class="hljs-literal">null</span>) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;\nPlayer info updated:&quot;</span>);
       <span class="hljs-built_in">console</span>.log(e.entryIndex, e.userData);
     }
   });
@@ -224,11 +224,11 @@ Player info updated:
   unknown_hi: 4294963202,
   xuid_lo: 17825793,
   xuid_hi: 3417033,
-  name: 'HS',
+  name: &#x27;HS&#x27;,
   userId: 20,
-  guid: 'STEAM_1:1:1708516',
+  guid: &#x27;STEAM_1:1:1708516&#x27;,
   friendsId: 3417033,
-  friendsName: '',
+  friendsName: &#x27;&#x27;,
   fakePlayer: false,
   isHltv: false,
   customFiles: [ 0, 0, 0, 0 ],
@@ -239,23 +239,23 @@ Player info updated:
 				<a href="#print-kills" id="print-kills" style="color: inherit; text-decoration: none;">
 					<h3>Print kills</h3>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
-<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"demofile"</span>);
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
 
-fs.readFile(<span class="hljs-string">"test.dem"</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
+fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
   <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.gameEvents.on(<span class="hljs-string">"player_death"</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+  demoFile.gameEvents.on(<span class="hljs-string">&quot;player_death&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
     <span class="hljs-keyword">const</span> victim = demoFile.entities.getByUserId(e.userid);
-    <span class="hljs-keyword">const</span> victimName = victim ? victim.name : <span class="hljs-string">"unnamed"</span>;
+    <span class="hljs-keyword">const</span> victimName = victim ? victim.name : <span class="hljs-string">&quot;unnamed&quot;</span>;
 
     <span class="hljs-comment">// Attacker may have disconnected so be aware.</span>
     <span class="hljs-comment">// e.g. attacker could have thrown a grenade, disconnected, then that grenade</span>
     <span class="hljs-comment">// killed another player.</span>
     <span class="hljs-keyword">const</span> attacker = demoFile.entities.getByUserId(e.attacker);
-    <span class="hljs-keyword">const</span> attackerName = attacker ? attacker.name : <span class="hljs-string">"unnamed"</span>;
+    <span class="hljs-keyword">const</span> attackerName = attacker ? attacker.name : <span class="hljs-string">&quot;unnamed&quot;</span>;
 
-    <span class="hljs-keyword">const</span> headshotText = e.headshot ? <span class="hljs-string">" HS"</span> : <span class="hljs-string">""</span>;
+    <span class="hljs-keyword">const</span> headshotText = e.headshot ? <span class="hljs-string">&quot; HS&quot;</span> : <span class="hljs-string">&quot;&quot;</span>;
 
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${attackerName}</span> [<span class="hljs-subst">${e.weapon}</span><span class="hljs-subst">${headshotText}</span>] <span class="hljs-subst">${victimName}</span>`</span>);
   });
@@ -276,32 +276,32 @@ JW [mac10 HS] Magisk
 				<a href="#print-round-changes" id="print-round-changes" style="color: inherit; text-decoration: none;">
 					<h3>Print round changes</h3>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
-<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"demofile"</span>);
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
 
-fs.readFile(<span class="hljs-string">"test.dem"</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
+fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
   <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.gameEvents.on(<span class="hljs-string">"round_end"</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+  demoFile.gameEvents.on(<span class="hljs-string">&quot;round_end&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
     <span class="hljs-built_in">console</span>.log(
-      <span class="hljs-string">"*** Round ended '%s' (reason: %s, time: %d seconds)"</span>,
+      <span class="hljs-string">&quot;*** Round ended &#x27;%s&#x27; (reason: %s, time: %d seconds)&quot;</span>,
       demoFile.gameRules.phase,
       e.reason,
       demoFile.currentTime
     );
 
-    <span class="hljs-comment">// We can't print the team scores here as they haven't been updated yet.</span>
+    <span class="hljs-comment">// We can&#x27;t print the team scores here as they haven&#x27;t been updated yet.</span>
     <span class="hljs-comment">// See round_officially_ended below.</span>
   });
 
-  demoFile.gameEvents.on(<span class="hljs-string">"round_officially_ended"</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+  demoFile.gameEvents.on(<span class="hljs-string">&quot;round_officially_ended&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
     <span class="hljs-keyword">const</span> teams = demoFile.teams;
 
     <span class="hljs-keyword">const</span> terrorists = teams[<span class="hljs-number">2</span>];
     <span class="hljs-keyword">const</span> cts = teams[<span class="hljs-number">3</span>];
 
     <span class="hljs-built_in">console</span>.log(
-      <span class="hljs-string">"\tTerrorists: %s score %d\n\tCTs: %s score %d"</span>,
+      <span class="hljs-string">&quot;\tTerrorists: %s score %d\n\tCTs: %s score %d&quot;</span>,
       terrorists.clanName,
       terrorists.score,
       cts.clanName,
@@ -314,13 +314,13 @@ fs.readFile(<span class="hljs-string">"test.dem"</span>, <span class="hljs-funct
 
 <span class="hljs-comment">/* Outputs:
 
-*** Round ended 'first' (reason: 7, time: 74.3828125 seconds)
+*** Round ended &#x27;first&#x27; (reason: 7, time: 74.3828125 seconds)
         Terrorists: fnatic score 0
         CTs: OpTic Gaming score 1
-*** Round ended 'first' (reason: 8, time: 134.203125 seconds)
+*** Round ended &#x27;first&#x27; (reason: 8, time: 134.203125 seconds)
         Terrorists: fnatic score 0
         CTs: OpTic Gaming score 2
-*** Round ended 'first' (reason: 9, time: 217.609375 seconds)
+*** Round ended &#x27;first&#x27; (reason: 9, time: 217.609375 seconds)
         Terrorists: fnatic score 1
         CTs: OpTic Gaming score 2
 
@@ -328,33 +328,33 @@ fs.readFile(<span class="hljs-string">"test.dem"</span>, <span class="hljs-funct
 				<a href="#print-player-joiningleaving" id="print-player-joiningleaving" style="color: inherit; text-decoration: none;">
 					<h3>Print player joining/leaving</h3>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
-<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"demofile"</span>);
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
 
-fs.readFile(<span class="hljs-string">"test.dem"</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
+fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
   <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.entities.on(<span class="hljs-string">"create"</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
-    <span class="hljs-comment">// We're only interested in player entities being created.</span>
+  demoFile.entities.on(<span class="hljs-string">&quot;create&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-comment">// We&#x27;re only interested in player entities being created.</span>
     <span class="hljs-keyword">if</span> (!(e.entity <span class="hljs-keyword">instanceof</span> demofile.Player)) {
       <span class="hljs-keyword">return</span>;
     }
 
     <span class="hljs-built_in">console</span>.log(
-      <span class="hljs-string">"[Time: %d] %s (%s) joined the game"</span>,
+      <span class="hljs-string">&quot;[Time: %d] %s (%s) joined the game&quot;</span>,
       demoFile.currentTime,
       e.entity.name,
       e.entity.steamId
     );
   });
 
-  demoFile.entities.on(<span class="hljs-string">"beforeremove"</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+  demoFile.entities.on(<span class="hljs-string">&quot;beforeremove&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
     <span class="hljs-keyword">if</span> (!(e.entity <span class="hljs-keyword">instanceof</span> demofile.Player)) {
       <span class="hljs-keyword">return</span>;
     }
 
     <span class="hljs-built_in">console</span>.log(
-      <span class="hljs-string">"[Time: %d] %s left the game"</span>,
+      <span class="hljs-string">&quot;[Time: %d] %s left the game&quot;</span>,
       demoFile.currentTime,
       e.entity.name
     );
@@ -374,17 +374,17 @@ fs.readFile(<span class="hljs-string">"test.dem"</span>, <span class="hljs-funct
 				<a href="#print-demo-information-eg-tick-rate" id="print-demo-information-eg-tick-rate" style="color: inherit; text-decoration: none;">
 					<h3>Print demo information (e.g. tick rate)</h3>
 				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
-<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"demofile"</span>);
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
 
-fs.readFile(<span class="hljs-string">"test.dem"</span>, (err, buffer) =&gt; {
+fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
   <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.on(<span class="hljs-string">"start"</span>, () =&gt; {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Demo header:"</span>, demoFile.header);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Tick rate:"</span>, demoFile.tickRate);
+  demoFile.on(<span class="hljs-string">&quot;start&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Demo header:&quot;</span>, demoFile.header);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Tick rate:&quot;</span>, demoFile.tickRate);
 
-    <span class="hljs-comment">// Stop parsing - we're finished</span>
+    <span class="hljs-comment">// Stop parsing - we&#x27;re finished</span>
     demoFile.cancel();
   });
 
@@ -393,13 +393,13 @@ fs.readFile(<span class="hljs-string">"test.dem"</span>, (err, buffer) =&gt; {
 
 <span class="hljs-comment">/* Outputs:
 
-Demo header: { magic: 'HL2DEMO',
+Demo header: { magic: &#x27;HL2DEMO&#x27;,
   protocol: 4,
   networkProtocol: 13637,
-  serverName: '--== CSGO.PGLARENA.RO # Competitive ==--',
-  clientName: 'GOTV Demo',
-  mapName: 'de_inferno',
-  gameDirectory: 'csgo',
+  serverName: &#x27;--== CSGO.PGLARENA.RO # Competitive ==--&#x27;,
+  clientName: &#x27;GOTV Demo&#x27;,
+  mapName: &#x27;de_inferno&#x27;,
+  gameDirectory: &#x27;csgo&#x27;,
   playbackTime: 3001.1875,
   playbackTicks: 192076,
   playbackFrames: 95995,
@@ -415,98 +415,98 @@ Tick rate: 64
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_assert_exists_.html">"assert-<wbr>exists"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_assert_exists_.html">&quot;assert-<wbr>exists&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_consts_.html">"consts"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_consts_.html">&quot;consts&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_convars_.html">"convars"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_convars_.html">&quot;convars&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_demo_.html">"demo"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_demo_.html">&quot;demo&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_entities_.html">"entities"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_entities_.html">&quot;entities&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_entities_baseentity_.html">"entities/baseentity"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_entities_baseentity_.html">&quot;entities/baseentity&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_entities_gamerules_.html">"entities/gamerules"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_entities_gamerules_.html">&quot;entities/gamerules&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_entities_itemdefs_.html">"entities/itemdefs"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_entities_itemdefs_.html">&quot;entities/itemdefs&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_entities_networkable_.html">"entities/networkable"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_entities_networkable_.html">&quot;entities/networkable&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_entities_player_.html">"entities/player"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_entities_player_.html">&quot;entities/player&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_entities_team_.html">"entities/team"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_entities_team_.html">&quot;entities/team&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_entities_weapon_.html">"entities/weapon"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_entities_weapon_.html">&quot;entities/weapon&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_entityhandle_.html">"entityhandle"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_entityhandle_.html">&quot;entityhandle&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_eventtypes_.html">"eventtypes"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_eventtypes_.html">&quot;eventtypes&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_examples_dumpfile_.html">"examples/dumpfile"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_examples_dumpfile_.html">&quot;examples/dumpfile&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_ext_bitbuffer_.html">"ext/bitbuffer"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_ext_bitbuffer_.html">&quot;ext/bitbuffer&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_functional_.html">"functional"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_functional_.html">&quot;functional&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_gameevent_.html">"gameevent"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_gameevent_.html">&quot;gameevent&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_gameevents_.html">"gameevents"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_gameevents_.html">&quot;gameevents&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_generators_eventtypes_.html">"generators/eventtypes"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_generators_eventtypes_.html">&quot;generators/eventtypes&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_generators_itemdefs_.html">"generators/itemdefs"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_generators_itemdefs_.html">&quot;generators/itemdefs&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_generators_sendtabletypes_.html">"generators/sendtabletypes"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_generators_sendtabletypes_.html">&quot;generators/sendtabletypes&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">"index"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_index_.html">&quot;index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_keyvalues_.html">"keyvalues"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_keyvalues_.html">&quot;keyvalues&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_net_.html">"net"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_net_.html">&quot;net&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_props_.html">"props"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_props_.html">&quot;props&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_protobufs_cstrike15_usermessages_.html">"protobufs/cstrike15_<wbr>usermessages"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_protobufs_cstrike15_usermessages_.html">&quot;protobufs/cstrike15_<wbr>usermessages&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_protobufs_netmessages_.html">"protobufs/netmessages"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_protobufs_netmessages_.html">&quot;protobufs/netmessages&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_sendtabletypes_.html">"sendtabletypes"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_sendtabletypes_.html">&quot;sendtabletypes&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_stringtables_.html">"stringtables"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_stringtables_.html">&quot;stringtables&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_usermessages_.html">"usermessages"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_usermessages_.html">&quot;usermessages&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -522,57 +522,22 @@ Tick rate: 64
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 		</div>
 	</div>
@@ -582,6 +547,5 @@ Tick rate: 64
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
