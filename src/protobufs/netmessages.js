@@ -22,7 +22,7 @@ const $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
  * @property {number} net_SignonState=7 net_SignonState value
  * @property {number} net_PlayerAvatarData=100 net_PlayerAvatarData value
  */
-export const NET_Messages = ($root.NET_Messages = (function() {
+export const NET_Messages = ($root.NET_Messages = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[0] = "net_NOP")] = 0;
@@ -54,7 +54,7 @@ export const NET_Messages = ($root.NET_Messages = (function() {
  * @property {number} clc_CmdKeyValues=18 clc_CmdKeyValues value
  * @property {number} clc_HltvReplay=20 clc_HltvReplay value
  */
-$root.CLC_Messages = (function() {
+$root.CLC_Messages = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[8] = "clc_ClientInfo")] = 8;
@@ -79,7 +79,7 @@ $root.CLC_Messages = (function() {
  * @property {number} VOICEDATA_FORMAT_STEAM=0 VOICEDATA_FORMAT_STEAM value
  * @property {number} VOICEDATA_FORMAT_ENGINE=1 VOICEDATA_FORMAT_ENGINE value
  */
-$root.VoiceDataFormat_t = (function() {
+$root.VoiceDataFormat_t = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[0] = "VOICEDATA_FORMAT_STEAM")] = 0;
@@ -95,7 +95,7 @@ $root.VoiceDataFormat_t = (function() {
  * @property {number} MSG_SPLITSCREEN_REMOVEUSER=1 MSG_SPLITSCREEN_REMOVEUSER value
  * @property {number} MSG_SPLITSCREEN_TYPE_BITS=1 MSG_SPLITSCREEN_TYPE_BITS value
  */
-$root.ESplitScreenMessageType = (function() {
+$root.ESplitScreenMessageType = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[0] = "MSG_SPLITSCREEN_ADDUSER")] = 0;
@@ -137,7 +137,7 @@ $root.ESplitScreenMessageType = (function() {
  * @property {number} svc_EncryptedData=35 svc_EncryptedData value
  * @property {number} svc_HltvReplay=36 svc_HltvReplay value
  */
-export const SVC_Messages = ($root.SVC_Messages = (function() {
+export const SVC_Messages = ($root.SVC_Messages = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[8] = "svc_ServerInfo")] = 8;
@@ -179,7 +179,7 @@ export const SVC_Messages = ($root.SVC_Messages = (function() {
  * @property {number} REPLAY_EVENT_DEATH=1 REPLAY_EVENT_DEATH value
  * @property {number} REPLAY_EVENT_GENERIC=2 REPLAY_EVENT_GENERIC value
  */
-$root.ReplayEventType_t = (function() {
+$root.ReplayEventType_t = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[0] = "REPLAY_EVENT_CANCEL")] = 0;
@@ -880,7 +880,7 @@ export const CMsg_CVars = ($root.CMsg_CVars = (() => {
     return message;
   };
 
-  CMsg_CVars.CVar = (function() {
+  CMsg_CVars.CVar = (function () {
     /**
      * Properties of a CVar.
      * @memberof CMsg_CVars
@@ -2728,7 +2728,7 @@ export const CSVCMsg_ClassInfo = ($root.CSVCMsg_ClassInfo = (() => {
     return message;
   };
 
-  CSVCMsg_ClassInfo.class_t = (function() {
+  CSVCMsg_ClassInfo.class_t = (function () {
     /**
      * Properties of a class_t.
      * @memberof CSVCMsg_ClassInfo
@@ -2916,7 +2916,7 @@ export const CSVCMsg_SendTable = ($root.CSVCMsg_SendTable = (() => {
     return message;
   };
 
-  CSVCMsg_SendTable.sendprop_t = (function() {
+  CSVCMsg_SendTable.sendprop_t = (function () {
     /**
      * Properties of a sendprop_t.
      * @memberof CSVCMsg_SendTable
@@ -4542,7 +4542,7 @@ export const CSVCMsg_GameEvent = ($root.CSVCMsg_GameEvent = (() => {
     return message;
   };
 
-  CSVCMsg_GameEvent.key_t = (function() {
+  CSVCMsg_GameEvent.key_t = (function () {
     /**
      * Properties of a key_t.
      * @memberof CSVCMsg_GameEvent
@@ -4772,7 +4772,7 @@ export const CSVCMsg_GameEventList = ($root.CSVCMsg_GameEventList = (() => {
     return message;
   };
 
-  CSVCMsg_GameEventList.key_t = (function() {
+  CSVCMsg_GameEventList.key_t = (function () {
     /**
      * Properties of a key_t.
      * @memberof CSVCMsg_GameEventList
@@ -4846,7 +4846,7 @@ export const CSVCMsg_GameEventList = ($root.CSVCMsg_GameEventList = (() => {
     return key_t;
   })();
 
-  CSVCMsg_GameEventList.descriptor_t = (function() {
+  CSVCMsg_GameEventList.descriptor_t = (function () {
     /**
      * Properties of a descriptor_t.
      * @memberof CSVCMsg_GameEventList
@@ -5234,7 +5234,7 @@ export const CSVCMsg_Sounds = ($root.CSVCMsg_Sounds = (() => {
     return message;
   };
 
-  CSVCMsg_Sounds.sounddata_t = (function() {
+  CSVCMsg_Sounds.sounddata_t = (function () {
     /**
      * Properties of a sounddata_t.
      * @memberof CSVCMsg_Sounds

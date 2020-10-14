@@ -18,6 +18,6 @@ it("demo can be read without error", done => {
 });
 */
 it("dummy test", () => {
-  expect(true).toBeTruthy();
+    expect(true).toBeTruthy();
 });
 //# sourceMappingURL=end-to-end.js.map

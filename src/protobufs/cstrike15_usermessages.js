@@ -75,7 +75,7 @@ const $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
  * @property {number} CS_UM_XpUpdate=65 CS_UM_XpUpdate value
  * @property {number} CS_UM_QuestProgress=66 CS_UM_QuestProgress value
  */
-export const ECstrike15UserMessages = ($root.ECstrike15UserMessages = (function() {
+export const ECstrike15UserMessages = ($root.ECstrike15UserMessages = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[1] = "CS_UM_VGUIMenu")] = 1;
@@ -231,7 +231,7 @@ export const CCSUsrMsg_VGUIMenu = ($root.CCSUsrMsg_VGUIMenu = (() => {
     return message;
   };
 
-  CCSUsrMsg_VGUIMenu.Subkey = (function() {
+  CCSUsrMsg_VGUIMenu.Subkey = (function () {
     /**
      * Properties of a Subkey.
      * @memberof CCSUsrMsg_VGUIMenu
@@ -1640,7 +1640,7 @@ export const CCSUsrMsg_VoiceMask = ($root.CCSUsrMsg_VoiceMask = (() => {
     return message;
   };
 
-  CCSUsrMsg_VoiceMask.PlayerMask = (function() {
+  CCSUsrMsg_VoiceMask.PlayerMask = (function () {
     /**
      * Properties of a PlayerMask.
      * @memberof CCSUsrMsg_VoiceMask
@@ -2115,7 +2115,7 @@ export const CCSUsrMsg_ProcessSpottedEntityUpdate = ($root.CCSUsrMsg_ProcessSpot
     return message;
   };
 
-  CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate = (function() {
+  CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate = (function () {
     /**
      * Properties of a SpottedEntityUpdate.
      * @memberof CCSUsrMsg_ProcessSpottedEntityUpdate
@@ -3222,7 +3222,7 @@ export const CCSUsrMsg_PlayerStatsUpdate = ($root.CCSUsrMsg_PlayerStatsUpdate = 
     return message;
   };
 
-  CCSUsrMsg_PlayerStatsUpdate.Stat = (function() {
+  CCSUsrMsg_PlayerStatsUpdate.Stat = (function () {
     /**
      * Properties of a Stat.
      * @memberof CCSUsrMsg_PlayerStatsUpdate
@@ -4232,7 +4232,7 @@ export const CCSUsrMsg_ServerRankUpdate = ($root.CCSUsrMsg_ServerRankUpdate = ((
     return message;
   };
 
-  CCSUsrMsg_ServerRankUpdate.RankUpdate = (function() {
+  CCSUsrMsg_ServerRankUpdate.RankUpdate = (function () {
     /**
      * Properties of a RankUpdate.
      * @memberof CCSUsrMsg_ServerRankUpdate
@@ -5546,7 +5546,7 @@ export const google = ($root.google = (() => {
    */
   const google = {};
 
-  google.protobuf = (function() {
+  google.protobuf = (function () {
     /**
      * Namespace protobuf.
      * @memberof google
@@ -5554,7 +5554,7 @@ export const google = ($root.google = (() => {
      */
     const protobuf = {};
 
-    protobuf.FileDescriptorSet = (function() {
+    protobuf.FileDescriptorSet = (function () {
       /**
        * Properties of a FileDescriptorSet.
        * @memberof google.protobuf
@@ -5624,7 +5624,7 @@ export const google = ($root.google = (() => {
       return FileDescriptorSet;
     })();
 
-    protobuf.FileDescriptorProto = (function() {
+    protobuf.FileDescriptorProto = (function () {
       /**
        * Properties of a FileDescriptorProto.
        * @memberof google.protobuf
@@ -5876,7 +5876,7 @@ export const google = ($root.google = (() => {
       return FileDescriptorProto;
     })();
 
-    protobuf.DescriptorProto = (function() {
+    protobuf.DescriptorProto = (function () {
       /**
        * Properties of a DescriptorProto.
        * @memberof google.protobuf
@@ -6105,7 +6105,7 @@ export const google = ($root.google = (() => {
         return message;
       };
 
-      DescriptorProto.ExtensionRange = (function() {
+      DescriptorProto.ExtensionRange = (function () {
         /**
          * Properties of an ExtensionRange.
          * @memberof google.protobuf.DescriptorProto
@@ -6184,7 +6184,7 @@ export const google = ($root.google = (() => {
         return ExtensionRange;
       })();
 
-      DescriptorProto.ReservedRange = (function() {
+      DescriptorProto.ReservedRange = (function () {
         /**
          * Properties of a ReservedRange.
          * @memberof google.protobuf.DescriptorProto
@@ -6266,7 +6266,7 @@ export const google = ($root.google = (() => {
       return DescriptorProto;
     })();
 
-    protobuf.FieldDescriptorProto = (function() {
+    protobuf.FieldDescriptorProto = (function () {
       /**
        * Properties of a FieldDescriptorProto.
        * @memberof google.protobuf
@@ -6460,7 +6460,7 @@ export const google = ($root.google = (() => {
        * @property {number} TYPE_SINT32=17 TYPE_SINT32 value
        * @property {number} TYPE_SINT64=18 TYPE_SINT64 value
        */
-      FieldDescriptorProto.Type = (function() {
+      FieldDescriptorProto.Type = (function () {
         const valuesById = {},
           values = Object.create(valuesById);
         values[(valuesById[1] = "TYPE_DOUBLE")] = 1;
@@ -6492,7 +6492,7 @@ export const google = ($root.google = (() => {
        * @property {number} LABEL_REQUIRED=2 LABEL_REQUIRED value
        * @property {number} LABEL_REPEATED=3 LABEL_REPEATED value
        */
-      FieldDescriptorProto.Label = (function() {
+      FieldDescriptorProto.Label = (function () {
         const valuesById = {},
           values = Object.create(valuesById);
         values[(valuesById[1] = "LABEL_OPTIONAL")] = 1;
@@ -6504,7 +6504,7 @@ export const google = ($root.google = (() => {
       return FieldDescriptorProto;
     })();
 
-    protobuf.OneofDescriptorProto = (function() {
+    protobuf.OneofDescriptorProto = (function () {
       /**
        * Properties of an OneofDescriptorProto.
        * @memberof google.protobuf
@@ -6582,7 +6582,7 @@ export const google = ($root.google = (() => {
       return OneofDescriptorProto;
     })();
 
-    protobuf.EnumDescriptorProto = (function() {
+    protobuf.EnumDescriptorProto = (function () {
       /**
        * Properties of an EnumDescriptorProto.
        * @memberof google.protobuf
@@ -6679,7 +6679,7 @@ export const google = ($root.google = (() => {
       return EnumDescriptorProto;
     })();
 
-    protobuf.EnumValueDescriptorProto = (function() {
+    protobuf.EnumValueDescriptorProto = (function () {
       /**
        * Properties of an EnumValueDescriptorProto.
        * @memberof google.protobuf
@@ -6769,7 +6769,7 @@ export const google = ($root.google = (() => {
       return EnumValueDescriptorProto;
     })();
 
-    protobuf.ServiceDescriptorProto = (function() {
+    protobuf.ServiceDescriptorProto = (function () {
       /**
        * Properties of a ServiceDescriptorProto.
        * @memberof google.protobuf
@@ -6867,7 +6867,7 @@ export const google = ($root.google = (() => {
       return ServiceDescriptorProto;
     })();
 
-    protobuf.MethodDescriptorProto = (function() {
+    protobuf.MethodDescriptorProto = (function () {
       /**
        * Properties of a MethodDescriptorProto.
        * @memberof google.protobuf
@@ -6993,7 +6993,7 @@ export const google = ($root.google = (() => {
       return MethodDescriptorProto;
     })();
 
-    protobuf.FileOptions = (function() {
+    protobuf.FileOptions = (function () {
       /**
        * Properties of a FileOptions.
        * @memberof google.protobuf
@@ -7242,7 +7242,7 @@ export const google = ($root.google = (() => {
        * @property {number} CODE_SIZE=2 CODE_SIZE value
        * @property {number} LITE_RUNTIME=3 LITE_RUNTIME value
        */
-      FileOptions.OptimizeMode = (function() {
+      FileOptions.OptimizeMode = (function () {
         const valuesById = {},
           values = Object.create(valuesById);
         values[(valuesById[1] = "SPEED")] = 1;
@@ -7254,7 +7254,7 @@ export const google = ($root.google = (() => {
       return FileOptions;
     })();
 
-    protobuf.MessageOptions = (function() {
+    protobuf.MessageOptions = (function () {
       /**
        * Properties of a MessageOptions.
        * @memberof google.protobuf
@@ -7402,7 +7402,7 @@ export const google = ($root.google = (() => {
       return MessageOptions;
     })();
 
-    protobuf.FieldOptions = (function() {
+    protobuf.FieldOptions = (function () {
       /**
        * Properties of a FieldOptions.
        * @memberof google.protobuf
@@ -7567,7 +7567,7 @@ export const google = ($root.google = (() => {
        * @property {number} CORD=1 CORD value
        * @property {number} STRING_PIECE=2 STRING_PIECE value
        */
-      FieldOptions.CType = (function() {
+      FieldOptions.CType = (function () {
         const valuesById = {},
           values = Object.create(valuesById);
         values[(valuesById[0] = "STRING")] = 0;
@@ -7584,7 +7584,7 @@ export const google = ($root.google = (() => {
        * @property {number} JS_STRING=1 JS_STRING value
        * @property {number} JS_NUMBER=2 JS_NUMBER value
        */
-      FieldOptions.JSType = (function() {
+      FieldOptions.JSType = (function () {
         const valuesById = {},
           values = Object.create(valuesById);
         values[(valuesById[0] = "JS_NORMAL")] = 0;
@@ -7596,7 +7596,7 @@ export const google = ($root.google = (() => {
       return FieldOptions;
     })();
 
-    protobuf.OneofOptions = (function() {
+    protobuf.OneofOptions = (function () {
       /**
        * Properties of an OneofOptions.
        * @memberof google.protobuf
@@ -7672,7 +7672,7 @@ export const google = ($root.google = (() => {
       return OneofOptions;
     })();
 
-    protobuf.EnumOptions = (function() {
+    protobuf.EnumOptions = (function () {
       /**
        * Properties of an EnumOptions.
        * @memberof google.protobuf
@@ -7772,7 +7772,7 @@ export const google = ($root.google = (() => {
       return EnumOptions;
     })();
 
-    protobuf.EnumValueOptions = (function() {
+    protobuf.EnumValueOptions = (function () {
       /**
        * Properties of an EnumValueOptions.
        * @memberof google.protobuf
@@ -7860,7 +7860,7 @@ export const google = ($root.google = (() => {
       return EnumValueOptions;
     })();
 
-    protobuf.ServiceOptions = (function() {
+    protobuf.ServiceOptions = (function () {
       /**
        * Properties of a ServiceOptions.
        * @memberof google.protobuf
@@ -7948,7 +7948,7 @@ export const google = ($root.google = (() => {
       return ServiceOptions;
     })();
 
-    protobuf.MethodOptions = (function() {
+    protobuf.MethodOptions = (function () {
       /**
        * Properties of a MethodOptions.
        * @memberof google.protobuf
@@ -8036,7 +8036,7 @@ export const google = ($root.google = (() => {
       return MethodOptions;
     })();
 
-    protobuf.UninterpretedOption = (function() {
+    protobuf.UninterpretedOption = (function () {
       /**
        * Properties of an UninterpretedOption.
        * @memberof google.protobuf
@@ -8179,7 +8179,7 @@ export const google = ($root.google = (() => {
         return message;
       };
 
-      UninterpretedOption.NamePart = (function() {
+      UninterpretedOption.NamePart = (function () {
         /**
          * Properties of a NamePart.
          * @memberof google.protobuf.UninterpretedOption
@@ -8269,7 +8269,7 @@ export const google = ($root.google = (() => {
       return UninterpretedOption;
     })();
 
-    protobuf.SourceCodeInfo = (function() {
+    protobuf.SourceCodeInfo = (function () {
       /**
        * Properties of a SourceCodeInfo.
        * @memberof google.protobuf
@@ -8337,7 +8337,7 @@ export const google = ($root.google = (() => {
         return message;
       };
 
-      SourceCodeInfo.Location = (function() {
+      SourceCodeInfo.Location = (function () {
         /**
          * Properties of a Location.
          * @memberof google.protobuf.SourceCodeInfo
@@ -8473,7 +8473,7 @@ export const google = ($root.google = (() => {
       return SourceCodeInfo;
     })();
 
-    protobuf.GeneratedCodeInfo = (function() {
+    protobuf.GeneratedCodeInfo = (function () {
       /**
        * Properties of a GeneratedCodeInfo.
        * @memberof google.protobuf
@@ -8541,7 +8541,7 @@ export const google = ($root.google = (() => {
         return message;
       };
 
-      GeneratedCodeInfo.Annotation = (function() {
+      GeneratedCodeInfo.Annotation = (function () {
         /**
          * Properties of an Annotation.
          * @memberof google.protobuf.GeneratedCodeInfo
@@ -8672,7 +8672,7 @@ export const google = ($root.google = (() => {
  * @property {number} net_SignonState=7 net_SignonState value
  * @property {number} net_PlayerAvatarData=100 net_PlayerAvatarData value
  */
-$root.NET_Messages = (function() {
+$root.NET_Messages = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[0] = "net_NOP")] = 0;
@@ -8704,7 +8704,7 @@ $root.NET_Messages = (function() {
  * @property {number} clc_CmdKeyValues=18 clc_CmdKeyValues value
  * @property {number} clc_HltvReplay=20 clc_HltvReplay value
  */
-$root.CLC_Messages = (function() {
+$root.CLC_Messages = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[8] = "clc_ClientInfo")] = 8;
@@ -8729,7 +8729,7 @@ $root.CLC_Messages = (function() {
  * @property {number} VOICEDATA_FORMAT_STEAM=0 VOICEDATA_FORMAT_STEAM value
  * @property {number} VOICEDATA_FORMAT_ENGINE=1 VOICEDATA_FORMAT_ENGINE value
  */
-$root.VoiceDataFormat_t = (function() {
+$root.VoiceDataFormat_t = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[0] = "VOICEDATA_FORMAT_STEAM")] = 0;
@@ -8745,7 +8745,7 @@ $root.VoiceDataFormat_t = (function() {
  * @property {number} MSG_SPLITSCREEN_REMOVEUSER=1 MSG_SPLITSCREEN_REMOVEUSER value
  * @property {number} MSG_SPLITSCREEN_TYPE_BITS=1 MSG_SPLITSCREEN_TYPE_BITS value
  */
-$root.ESplitScreenMessageType = (function() {
+$root.ESplitScreenMessageType = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[0] = "MSG_SPLITSCREEN_ADDUSER")] = 0;
@@ -8787,7 +8787,7 @@ $root.ESplitScreenMessageType = (function() {
  * @property {number} svc_EncryptedData=35 svc_EncryptedData value
  * @property {number} svc_HltvReplay=36 svc_HltvReplay value
  */
-$root.SVC_Messages = (function() {
+$root.SVC_Messages = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[8] = "svc_ServerInfo")] = 8;
@@ -8829,7 +8829,7 @@ $root.SVC_Messages = (function() {
  * @property {number} REPLAY_EVENT_DEATH=1 REPLAY_EVENT_DEATH value
  * @property {number} REPLAY_EVENT_GENERIC=2 REPLAY_EVENT_GENERIC value
  */
-$root.ReplayEventType_t = (function() {
+$root.ReplayEventType_t = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[0] = "REPLAY_EVENT_CANCEL")] = 0;
@@ -9530,7 +9530,7 @@ export const CMsg_CVars = ($root.CMsg_CVars = (() => {
     return message;
   };
 
-  CMsg_CVars.CVar = (function() {
+  CMsg_CVars.CVar = (function () {
     /**
      * Properties of a CVar.
      * @memberof CMsg_CVars
@@ -11378,7 +11378,7 @@ export const CSVCMsg_ClassInfo = ($root.CSVCMsg_ClassInfo = (() => {
     return message;
   };
 
-  CSVCMsg_ClassInfo.class_t = (function() {
+  CSVCMsg_ClassInfo.class_t = (function () {
     /**
      * Properties of a class_t.
      * @memberof CSVCMsg_ClassInfo
@@ -11566,7 +11566,7 @@ export const CSVCMsg_SendTable = ($root.CSVCMsg_SendTable = (() => {
     return message;
   };
 
-  CSVCMsg_SendTable.sendprop_t = (function() {
+  CSVCMsg_SendTable.sendprop_t = (function () {
     /**
      * Properties of a sendprop_t.
      * @memberof CSVCMsg_SendTable
@@ -13192,7 +13192,7 @@ export const CSVCMsg_GameEvent = ($root.CSVCMsg_GameEvent = (() => {
     return message;
   };
 
-  CSVCMsg_GameEvent.key_t = (function() {
+  CSVCMsg_GameEvent.key_t = (function () {
     /**
      * Properties of a key_t.
      * @memberof CSVCMsg_GameEvent
@@ -13422,7 +13422,7 @@ export const CSVCMsg_GameEventList = ($root.CSVCMsg_GameEventList = (() => {
     return message;
   };
 
-  CSVCMsg_GameEventList.key_t = (function() {
+  CSVCMsg_GameEventList.key_t = (function () {
     /**
      * Properties of a key_t.
      * @memberof CSVCMsg_GameEventList
@@ -13496,7 +13496,7 @@ export const CSVCMsg_GameEventList = ($root.CSVCMsg_GameEventList = (() => {
     return key_t;
   })();
 
-  CSVCMsg_GameEventList.descriptor_t = (function() {
+  CSVCMsg_GameEventList.descriptor_t = (function () {
     /**
      * Properties of a descriptor_t.
      * @memberof CSVCMsg_GameEventList
@@ -13884,7 +13884,7 @@ export const CSVCMsg_Sounds = ($root.CSVCMsg_Sounds = (() => {
     return message;
   };
 
-  CSVCMsg_Sounds.sounddata_t = (function() {
+  CSVCMsg_Sounds.sounddata_t = (function () {
     /**
      * Properties of a sounddata_t.
      * @memberof CSVCMsg_Sounds
@@ -14686,7 +14686,7 @@ export const CCLCMsg_HltvReplay = ($root.CCLCMsg_HltvReplay = (() => {
  * @property {number} k_EMsgGCCStrike15_v2_FantasyRequestClientData=9175 k_EMsgGCCStrike15_v2_FantasyRequestClientData value
  * @property {number} k_EMsgGCCStrike15_v2_FantasyUpdateClientData=9176 k_EMsgGCCStrike15_v2_FantasyUpdateClientData value
  */
-$root.ECsgoGCMsg = (function() {
+$root.ECsgoGCMsg = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[9100] = "k_EMsgGCCStrike15_v2_Base")] = 9100;
@@ -17157,7 +17157,7 @@ export const PlayerQuestData = ($root.PlayerQuestData = (() => {
     return message;
   };
 
-  PlayerQuestData.QuestItemData = (function() {
+  PlayerQuestData.QuestItemData = (function () {
     /**
      * Properties of a QuestItemData.
      * @memberof PlayerQuestData
@@ -18187,7 +18187,7 @@ export const CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate = ($root.CMsgGCCStrik
     return message;
   };
 
-  CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.Note = (function() {
+  CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.Note = (function () {
     /**
      * Properties of a Note.
      * @memberof CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
@@ -18465,7 +18465,7 @@ export const CDataGCCStrike15_v2_TournamentMatchDraft = ($root.CDataGCCStrike15_
     return message;
   };
 
-  CDataGCCStrike15_v2_TournamentMatchDraft.Entry = (function() {
+  CDataGCCStrike15_v2_TournamentMatchDraft.Entry = (function () {
     /**
      * Properties of an Entry.
      * @memberof CDataGCCStrike15_v2_TournamentMatchDraft
@@ -18632,7 +18632,7 @@ export const CPreMatchInfoData = ($root.CPreMatchInfoData = (() => {
     return message;
   };
 
-  CPreMatchInfoData.TeamStats = (function() {
+  CPreMatchInfoData.TeamStats = (function () {
     /**
      * Properties of a TeamStats.
      * @memberof CPreMatchInfoData
@@ -19875,7 +19875,7 @@ export const CMsgGCCStrike15_v2_MatchmakingServerRoundStats = ($root.CMsgGCCStri
     return message;
   };
 
-  CMsgGCCStrike15_v2_MatchmakingServerRoundStats.DropInfo = (function() {
+  CMsgGCCStrike15_v2_MatchmakingServerRoundStats.DropInfo = (function () {
     /**
      * Properties of a DropInfo.
      * @memberof CMsgGCCStrike15_v2_MatchmakingServerRoundStats
@@ -20524,7 +20524,7 @@ export const CMsgGCCStrike15_v2_AccountPrivacySettings = ($root.CMsgGCCStrike15_
     return message;
   };
 
-  CMsgGCCStrike15_v2_AccountPrivacySettings.Setting = (function() {
+  CMsgGCCStrike15_v2_AccountPrivacySettings.Setting = (function () {
     /**
      * Properties of a Setting.
      * @memberof CMsgGCCStrike15_v2_AccountPrivacySettings
@@ -23626,7 +23626,7 @@ export const CEconItemPreviewDataBlock = ($root.CEconItemPreviewDataBlock = (() 
     return message;
   };
 
-  CEconItemPreviewDataBlock.Sticker = (function() {
+  CEconItemPreviewDataBlock.Sticker = (function () {
     /**
      * Properties of a Sticker.
      * @memberof CEconItemPreviewDataBlock
@@ -24894,7 +24894,7 @@ export const CDataGCCStrike15_v2_TournamentGroup = ($root.CDataGCCStrike15_v2_To
     return message;
   };
 
-  CDataGCCStrike15_v2_TournamentGroup.Picks = (function() {
+  CDataGCCStrike15_v2_TournamentGroup.Picks = (function () {
     /**
      * Properties of a Picks.
      * @memberof CDataGCCStrike15_v2_TournamentGroup
@@ -25393,7 +25393,7 @@ export const CMsgGCCStrike15_v2_Predictions = ($root.CMsgGCCStrike15_v2_Predicti
     return message;
   };
 
-  CMsgGCCStrike15_v2_Predictions.GroupMatchTeamPick = (function() {
+  CMsgGCCStrike15_v2_Predictions.GroupMatchTeamPick = (function () {
     /**
      * Properties of a GroupMatchTeamPick.
      * @memberof CMsgGCCStrike15_v2_Predictions
@@ -25586,7 +25586,7 @@ export const CMsgGCCStrike15_v2_Fantasy = ($root.CMsgGCCStrike15_v2_Fantasy = ((
     return message;
   };
 
-  CMsgGCCStrike15_v2_Fantasy.FantasySlot = (function() {
+  CMsgGCCStrike15_v2_Fantasy.FantasySlot = (function () {
     /**
      * Properties of a FantasySlot.
      * @memberof CMsgGCCStrike15_v2_Fantasy
@@ -25674,7 +25674,7 @@ export const CMsgGCCStrike15_v2_Fantasy = ($root.CMsgGCCStrike15_v2_Fantasy = ((
     return FantasySlot;
   })();
 
-  CMsgGCCStrike15_v2_Fantasy.FantasyTeam = (function() {
+  CMsgGCCStrike15_v2_Fantasy.FantasyTeam = (function () {
     /**
      * Properties of a FantasyTeam.
      * @memberof CMsgGCCStrike15_v2_Fantasy
@@ -26393,7 +26393,7 @@ export const CMsgGCCStrike15_v2_GiftsLeaderboardResponse = ($root.CMsgGCCStrike1
     return message;
   };
 
-  CMsgGCCStrike15_v2_GiftsLeaderboardResponse.GiftLeaderboardEntry = (function() {
+  CMsgGCCStrike15_v2_GiftsLeaderboardResponse.GiftLeaderboardEntry = (function () {
     /**
      * Properties of a GiftLeaderboardEntry.
      * @memberof CMsgGCCStrike15_v2_GiftsLeaderboardResponse
@@ -27539,7 +27539,7 @@ export const CMsgGCCStrike15_v2_Client2GCStreamUnlock = ($root.CMsgGCCStrike15_v
  * @property {number} GCProtoBufMsgSrc_FromGC=3 GCProtoBufMsgSrc_FromGC value
  * @property {number} GCProtoBufMsgSrc_ReplySystem=4 GCProtoBufMsgSrc_ReplySystem value
  */
-$root.GCProtoBufMsgSrc = (function() {
+$root.GCProtoBufMsgSrc = (function () {
   const valuesById = {},
     values = Object.create(valuesById);
   values[(valuesById[0] = "GCProtoBufMsgSrc_Unspecified")] = 0;
@@ -27994,7 +27994,7 @@ export const CMsgHttpRequest = ($root.CMsgHttpRequest = (() => {
     return message;
   };
 
-  CMsgHttpRequest.RequestHeader = (function() {
+  CMsgHttpRequest.RequestHeader = (function () {
     /**
      * Properties of a RequestHeader.
      * @memberof CMsgHttpRequest
@@ -28068,7 +28068,7 @@ export const CMsgHttpRequest = ($root.CMsgHttpRequest = (() => {
     return RequestHeader;
   })();
 
-  CMsgHttpRequest.QueryParam = (function() {
+  CMsgHttpRequest.QueryParam = (function () {
     /**
      * Properties of a QueryParam.
      * @memberof CMsgHttpRequest
@@ -28373,7 +28373,7 @@ export const CMsgHttpResponse = ($root.CMsgHttpResponse = (() => {
     return message;
   };
 
-  CMsgHttpResponse.ResponseHeader = (function() {
+  CMsgHttpResponse.ResponseHeader = (function () {
     /**
      * Properties of a ResponseHeader.
      * @memberof CMsgHttpResponse
@@ -29176,7 +29176,7 @@ export const CMsgAMGetUserGameStatsResponse = ($root.CMsgAMGetUserGameStatsRespo
     return message;
   };
 
-  CMsgAMGetUserGameStatsResponse.Stats = (function() {
+  CMsgAMGetUserGameStatsResponse.Stats = (function () {
     /**
      * Properties of a Stats.
      * @memberof CMsgAMGetUserGameStatsResponse
@@ -29250,7 +29250,7 @@ export const CMsgAMGetUserGameStatsResponse = ($root.CMsgAMGetUserGameStatsRespo
     return Stats;
   })();
 
-  CMsgAMGetUserGameStatsResponse.Achievement_Blocks = (function() {
+  CMsgAMGetUserGameStatsResponse.Achievement_Blocks = (function () {
     /**
      * Properties of an Achievement_Blocks.
      * @memberof CMsgAMGetUserGameStatsResponse
@@ -29608,7 +29608,7 @@ export const CGCMsgMemCachedGetResponse = ($root.CGCMsgMemCachedGetResponse = ((
     return message;
   };
 
-  CGCMsgMemCachedGetResponse.ValueTag = (function() {
+  CGCMsgMemCachedGetResponse.ValueTag = (function () {
     /**
      * Properties of a ValueTag.
      * @memberof CGCMsgMemCachedGetResponse
@@ -29748,7 +29748,7 @@ export const CGCMsgMemCachedSet = ($root.CGCMsgMemCachedSet = (() => {
     return message;
   };
 
-  CGCMsgMemCachedSet.KeyPair = (function() {
+  CGCMsgMemCachedSet.KeyPair = (function () {
     /**
      * Properties of a KeyPair.
      * @memberof CGCMsgMemCachedSet
@@ -31314,7 +31314,7 @@ export const CMsgAMSendEmail = ($root.CMsgAMSendEmail = (() => {
     return message;
   };
 
-  CMsgAMSendEmail.ReplacementToken = (function() {
+  CMsgAMSendEmail.ReplacementToken = (function () {
     /**
      * Properties of a ReplacementToken.
      * @memberof CMsgAMSendEmail
@@ -31388,7 +31388,7 @@ export const CMsgAMSendEmail = ($root.CMsgAMSendEmail = (() => {
     return ReplacementToken;
   })();
 
-  CMsgAMSendEmail.PersonaNameReplacementToken = (function() {
+  CMsgAMSendEmail.PersonaNameReplacementToken = (function () {
     /**
      * Properties of a PersonaNameReplacementToken.
      * @memberof CMsgAMSendEmail
@@ -32452,7 +32452,7 @@ export const CMsgGCGetPersonaNames_Response = ($root.CMsgGCGetPersonaNames_Respo
     return message;
   };
 
-  CMsgGCGetPersonaNames_Response.PersonaName = (function() {
+  CMsgGCGetPersonaNames_Response.PersonaName = (function () {
     /**
      * Properties of a PersonaName.
      * @memberof CMsgGCGetPersonaNames_Response
@@ -32761,7 +32761,7 @@ export const CMsgGCMsgMasterSetDirectory = ($root.CMsgGCMsgMasterSetDirectory = 
     return message;
   };
 
-  CMsgGCMsgMasterSetDirectory.SubGC = (function() {
+  CMsgGCMsgMasterSetDirectory.SubGC = (function () {
     /**
      * Properties of a SubGC.
      * @memberof CMsgGCMsgMasterSetDirectory
@@ -33548,7 +33548,7 @@ export const CMsgGCRoutingInfo = ($root.CMsgGCRoutingInfo = (() => {
    * @property {number} PROTOBUF_FIELD_UINT64=3 PROTOBUF_FIELD_UINT64 value
    * @property {number} WEBAPI_PARAM_UINT64=4 WEBAPI_PARAM_UINT64 value
    */
-  CMsgGCRoutingInfo.RoutingMethod = (function() {
+  CMsgGCRoutingInfo.RoutingMethod = (function () {
     const valuesById = {},
       values = Object.create(valuesById);
     values[(valuesById[0] = "RANDOM")] = 0;
@@ -33629,7 +33629,7 @@ export const CMsgGCMsgMasterSetWebAPIRouting = ($root.CMsgGCMsgMasterSetWebAPIRo
     return message;
   };
 
-  CMsgGCMsgMasterSetWebAPIRouting.Entry = (function() {
+  CMsgGCMsgMasterSetWebAPIRouting.Entry = (function () {
     /**
      * Properties of an Entry.
      * @memberof CMsgGCMsgMasterSetWebAPIRouting
@@ -33788,7 +33788,7 @@ export const CMsgGCMsgMasterSetClientMsgRouting = ($root.CMsgGCMsgMasterSetClien
     return message;
   };
 
-  CMsgGCMsgMasterSetClientMsgRouting.Entry = (function() {
+  CMsgGCMsgMasterSetClientMsgRouting.Entry = (function () {
     /**
      * Properties of an Entry.
      * @memberof CMsgGCMsgMasterSetClientMsgRouting
@@ -34083,7 +34083,7 @@ export const CMsgGCMsgSetOptions = ($root.CMsgGCMsgSetOptions = (() => {
     return message;
   };
 
-  CMsgGCMsgSetOptions.MessageRange = (function() {
+  CMsgGCMsgSetOptions.MessageRange = (function () {
     /**
      * Properties of a MessageRange.
      * @memberof CMsgGCMsgSetOptions
@@ -34174,7 +34174,7 @@ export const CMsgGCMsgSetOptions = ($root.CMsgGCMsgSetOptions = (() => {
    * @property {number} NOTIFY_ACHIEVEMENTS=2 NOTIFY_ACHIEVEMENTS value
    * @property {number} NOTIFY_VAC_ACTION=3 NOTIFY_VAC_ACTION value
    */
-  CMsgGCMsgSetOptions.Option = (function() {
+  CMsgGCMsgSetOptions.Option = (function () {
     const valuesById = {},
       values = Object.create(valuesById);
     values[(valuesById[0] = "NOTIFY_USER_SESSIONS")] = 0;
@@ -34354,7 +34354,7 @@ export const CMsgGCHUpdateSession = ($root.CMsgGCHUpdateSession = (() => {
     return message;
   };
 
-  CMsgGCHUpdateSession.ExtraField = (function() {
+  CMsgGCHUpdateSession.ExtraField = (function () {
     /**
      * Properties of an ExtraField.
      * @memberof CMsgGCHUpdateSession
@@ -34522,7 +34522,7 @@ export const CMsgNotificationOfSuspiciousActivity = ($root.CMsgNotificationOfSus
     return message;
   };
 
-  CMsgNotificationOfSuspiciousActivity.MultipleGameInstances = (function() {
+  CMsgNotificationOfSuspiciousActivity.MultipleGameInstances = (function () {
     /**
      * Properties of a MultipleGameInstances.
      * @memberof CMsgNotificationOfSuspiciousActivity

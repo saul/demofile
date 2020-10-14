@@ -59,7 +59,7 @@ declare module "bit-buffer" {
 
 const originalGetBits = BitView.prototype.getBits;
 
-BitView.prototype.getBits = function(this: BitView, offset, bits, signed) {
+BitView.prototype.getBits = function (this: BitView, offset, bits, signed) {
   if (this.silentOverflow === true) {
     const available = this._view.length * 8 - offset;
 
@@ -79,30 +79,30 @@ BitStream.from = function from(array: Uint8Array) {
   );
 };
 
-BitStream.prototype.readString = function(this: BitStream, bytes: number) {
+BitStream.prototype.readString = function (this: BitStream, bytes: number) {
   return new Array(bytes)
     .fill(0)
     .map(() => String.fromCharCode(this.readUInt8()))
     .join("");
 };
 
-BitStream.prototype.readBytes = function(this: BitStream, bytes: number) {
+BitStream.prototype.readBytes = function (this: BitStream, bytes: number) {
   return Buffer.from(new Array(bytes).fill(0).map(() => this.readUInt8()));
 };
 
-BitStream.prototype.readOneBit = function(this: BitStream) {
+BitStream.prototype.readOneBit = function (this: BitStream) {
   return this.readBits(1, false) === 1;
 };
 
-BitStream.prototype.readUBits = function(this: BitStream, bits: number) {
+BitStream.prototype.readUBits = function (this: BitStream, bits: number) {
   return this.readBits(bits, false);
 };
 
-BitStream.prototype.readSBits = function(this: BitStream, bits: number) {
+BitStream.prototype.readSBits = function (this: BitStream, bits: number) {
   return this.readBits(bits, true);
 };
 
-BitStream.prototype.readUBitVar = function(this: BitStream) {
+BitStream.prototype.readUBitVar = function (this: BitStream) {
   let ret = this.readUBits(6);
 
   switch (ret & (16 | 32)) {
@@ -125,7 +125,7 @@ BitStream.prototype.readUBitVar = function(this: BitStream) {
   return ret;
 };
 
-BitStream.prototype.readBitCoord = function(this: BitStream) {
+BitStream.prototype.readBitCoord = function (this: BitStream) {
   let intval = Number(this.readOneBit());
   let fractval = Number(this.readOneBit());
 
@@ -152,7 +152,7 @@ BitStream.prototype.readBitCoord = function(this: BitStream) {
   return value;
 };
 
-BitStream.prototype.readUVarInt32 = function(this: BitStream) {
+BitStream.prototype.readUVarInt32 = function (this: BitStream) {
   let result = 0;
   let count = 0;
   let bytes: number;
@@ -169,12 +169,12 @@ BitStream.prototype.readUVarInt32 = function(this: BitStream) {
   return result;
 };
 
-BitStream.prototype.readVarInt32 = function(this: BitStream) {
+BitStream.prototype.readVarInt32 = function (this: BitStream) {
   const result = this.readUVarInt32();
   return (result >> 1) ^ -(result & 1);
 };
 
-BitStream.prototype.readBitCoordMP = function(
+BitStream.prototype.readBitCoordMP = function (
   this: BitStream,
   coordType: CoordType
 ) {
@@ -226,7 +226,7 @@ BitStream.prototype.readBitCoordMP = function(
   return value;
 };
 
-BitStream.prototype.readBitNormal = function(this: BitStream) {
+BitStream.prototype.readBitNormal = function (this: BitStream) {
   const signbit = this.readOneBit();
 
   const fractval = this.readUBits(NORMAL_FRACTIONAL_BITS);
@@ -240,11 +240,11 @@ BitStream.prototype.readBitNormal = function(this: BitStream) {
   return value;
 };
 
-BitStream.prototype.readBitFloat = function(this: BitStream) {
+BitStream.prototype.readBitFloat = function (this: BitStream) {
   return this.readFloat32();
 };
 
-BitStream.prototype.readBitCellCoord = function(
+BitStream.prototype.readBitCellCoord = function (
   this: BitStream,
   bits,
   coordType

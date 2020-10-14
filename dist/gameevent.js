@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.GameEvent = void 0;
 const assert = require("assert");
 const _ = require("lodash");
 class GameEvent {

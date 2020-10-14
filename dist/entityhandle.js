@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.EntityHandle = void 0;
 const consts_1 = require("./consts");
 class EntityHandle {
     constructor(value) {

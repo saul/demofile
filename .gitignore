@@ -1,5 +1,5 @@
-node_modules/
-coverage/
-*.log
 .vscode/
+coverage/
 demos/
+node_modules/
+*.log
