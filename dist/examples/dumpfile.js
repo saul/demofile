@@ -101,18 +101,15 @@ function parseDemoFile(path) {
       const attackerName = attacker ? attacker.name : "unnamed";
       const headshotText = e.headshot ? " HS" : "";
       console.log(
-        `${attackerColour}${attackerName}${ansiStyles.reset.open} [${
-          e.weapon
-        }${headshotText}] ${victimColour}${victimName}${ansiStyles.reset.open}`
+        `${attackerColour}${attackerName}${ansiStyles.reset.open} [${e.weapon}${headshotText}] ${victimColour}${victimName}${ansiStyles.reset.open}`
       );
     });
     demoFile.userMessages.on("TextMsg", e => {
       const params = e.params
-        .map(
-          param =>
-            param[0] === "#"
-              ? standardMessages[param.substring(1)] || param
-              : param
+        .map(param =>
+          param[0] === "#"
+            ? standardMessages[param.substring(1)] || param
+            : param
         )
         .filter(s => s.length);
       const formatted = util.format.apply(null, params);
@@ -146,7 +143,6 @@ function parseDemoFile(path) {
       if (!(e.entity instanceof player_1.Player)) {
         return;
       }
-      e.entity.getProp("DT_CSPlayer", "m_flLowerBodyYawTarget");
       console.log("%s (%s) joined the game", e.entity.name, e.entity.steamId);
     });
     demoFile.entities.on("beforeremove", e => {

@@ -3,7 +3,7 @@ import { ISendProp } from "./entities";
 import { EntityHandle } from "./entityhandle";
 import { BitStream } from "./ext/bitbuffer";
 import { Vector } from "./sendtabletypes";
-export const enum PropType {
+export declare const enum PropType {
   Int = 0,
   Float = 1,
   Vector = 2,

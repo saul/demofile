@@ -3,7 +3,7 @@ import { CCSPlayer, CCSPlayerResource, Vector } from "../sendtabletypes";
 import { IPlayerInfo } from "../stringtables";
 import { BaseEntity } from "./baseentity";
 import { Weapon } from "./weapon";
-export const enum LifeState {
+export declare const enum LifeState {
   Alive = 0,
   Dying = 1,
   Dead = 2

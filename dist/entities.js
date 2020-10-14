@@ -161,8 +161,8 @@ class Entities extends events_1.EventEmitter {
     if (existing) {
       return existing;
     }
-    const entity = this.entities.find(
-      ent => (ent ? ent.serverClass.name === serverClass : false)
+    const entity = this.entities.find(ent =>
+      ent ? ent.serverClass.name === serverClass : false
     );
     if (!entity) {
       throw new Error(`Missing singleton ${serverClass}`);
@@ -171,8 +171,8 @@ class Entities extends events_1.EventEmitter {
     return entity;
   }
   findAllWithTable(table) {
-    return this.entities.filter(
-      ent => (ent != null ? table in ent.props : false)
+    return this.entities.filter(ent =>
+      ent != null ? table in ent.props : false
     );
   }
   findAllWithClass(klass) {

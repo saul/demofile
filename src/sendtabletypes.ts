@@ -52,6 +52,9 @@ export interface DT_BaseAnimating {
   m_flFrozen: number;
   m_ScaleType: number;
   m_bSuppressAnimSounds: boolean;
+  m_nHighlightColorR: number;
+  m_nHighlightColorG: number;
+  m_nHighlightColorB: number;
 }
 
 export interface DT_BaseAnimatingOverlay {
@@ -117,6 +120,9 @@ export interface DT_BaseCSGrenadeProjectile {
   // baseclass: DataTable;
   m_vInitialVelocity: Vector;
   m_nBounces: number;
+  m_nExplodeEffectIndex: number;
+  m_nExplodeEffectTickBegin: number;
+  m_vecExplodeEffectOrigin: Vector;
 }
 
 export interface DT_BaseDoor {
@@ -167,6 +173,8 @@ export interface DT_BaseEntity {
   m_nMaxGPULevel: number;
   m_flUseLookAtAngle: number;
   m_flLastMadeNoiseTime: number;
+  m_flMaxFallVelocity: number;
+  m_bEligibleForScreenHighlight: boolean;
 }
 
 export interface DT_BaseFlex {
@@ -300,7 +308,7 @@ export interface DT_BaseViewModel {
   m_nBody: number;
   m_nSkin: number;
   m_nSequence: number;
-  m_nViewModelIndex: boolean;
+  m_nViewModelIndex: number;
   m_flPlaybackRate: number;
   m_fEffects: number;
   m_nAnimationParity: number;
@@ -368,6 +376,24 @@ export interface DT_BoneFollower {
   m_solidIndex: number;
 }
 
+export interface DT_BRC4Target {
+  // baseclass: DataTable;
+  m_bBrokenOpen: boolean;
+  m_flRadius: number;
+}
+
+export interface DT_WeaponBreachCharge {
+  // baseclass: DataTable;
+}
+
+export interface DT_BreachChargeProjectile {
+  // baseclass: DataTable;
+  m_bShouldExplode: boolean;
+  m_weaponThatThrewMe: EntityHandle;
+  m_nParentBoneIndex: number;
+  m_vecParentBonePos: Vector;
+}
+
 export interface DT_BreakableProp {
   // baseclass: DataTable;
   m_qPreferredPlayerCarryAngles: Vector;
@@ -385,6 +411,17 @@ export interface DT_BreakableSurface {
   m_bIsBroken: boolean;
   m_nSurfaceType: number;
   // m_RawPanelBitVec: DataTable;
+}
+
+export interface DT_WeaponBumpMine {
+  // baseclass: DataTable;
+}
+
+export interface DT_BumpMineProjectile {
+  // baseclass: DataTable;
+  m_nParentBoneIndex: number;
+  m_vecParentBonePos: Vector;
+  m_bArmed: boolean;
 }
 
 export interface DT_WeaponC4 {
@@ -481,8 +518,10 @@ export interface DT_CSPlayer {
   m_bInHostageRescueZone: boolean;
   m_bIsDefusing: boolean;
   m_bIsGrabbingHostage: boolean;
+  m_iBlockingUseActionInProgress: number;
   m_bIsScoped: boolean;
   m_bIsWalking: boolean;
+  m_nIsAutoMounting: number;
   m_bResumeZoom: boolean;
   m_fImmuneToGunGameDamageTime: number;
   m_bGunGameImmunity: boolean;
@@ -505,7 +544,9 @@ export interface DT_CSPlayer {
   m_isCurrentGunGameLeader: boolean;
   m_isCurrentGunGameTeamLeader: boolean;
   // m_rank: DataTable;
+  // m_passiveItems: DataTable;
   m_unMusicID: number;
+  m_bIsPlayerGhost: boolean;
   m_bHasHelmet: boolean;
   m_bHasHeavyArmor: boolean;
   m_nHeavyAssaultSuitCooldownRemaining: number;
@@ -514,6 +555,7 @@ export interface DT_CSPlayer {
   m_iProgressBarDuration: number;
   m_flProgressBarStartTime: number;
   m_hRagdoll: EntityHandle;
+  m_hPlayerPing: EntityHandle;
   m_cycleLatch: number;
   m_unCurrentEquipmentValue: number;
   m_unRoundStartEquipmentValue: number;
@@ -547,6 +589,17 @@ export interface DT_CSPlayer {
   m_flLowerBodyYawTarget: number;
   m_bStrafing: boolean;
   m_flThirdpersonRecoil: number;
+  m_bHideTargetID: boolean;
+  m_bIsSpawnRappelling: boolean;
+  m_vecSpawnRappellingRopeOrigin: Vector;
+  m_nSurvivalTeam: number;
+  m_hSurvivalAssassinationTarget: EntityHandle;
+  m_vecAutomoveTargetEnd: Vector;
+  m_flAutoMoveStartTime: number;
+  m_flAutoMoveTargetTime: number;
+  m_flHealthShotBoostExpirationTime: number;
+  m_flLastExoJumpTime: number;
+  // m_vecPlayerPatchEconIndices: DataTable;
 }
 
 export interface DT_CSPlayerResource {
@@ -570,11 +623,14 @@ export interface DT_CSPlayerResource {
   // m_iCompetitiveWins: DataTable;
   // m_iCompetitiveRankType: DataTable;
   // m_iCompTeammateColor: DataTable;
+  // m_iLifetimeStart: DataTable;
+  // m_iLifetimeEnd: DataTable;
   // m_bControllingBot: DataTable;
   // m_iControlledPlayer: DataTable;
   // m_iControlledByPlayer: DataTable;
   // m_iBotDifficulty: DataTable;
   // m_szClan: DataTable;
+  // m_nCharacterDefIndex: DataTable;
   // m_iTotalCashSpent: DataTable;
   // m_iGunGameLevel: DataTable;
   // m_iCashSpentThisRound: DataTable;
@@ -586,6 +642,23 @@ export interface DT_CSPlayerResource {
   // m_nPersonaDataPublicCommendsLeader: DataTable;
   // m_nPersonaDataPublicCommendsTeacher: DataTable;
   // m_nPersonaDataPublicCommendsFriendly: DataTable;
+  // m_bHasCommunicationAbuseMute: DataTable;
+  // m_szCrosshairCodes: DataTable;
+  // m_iMatchStats_Kills_Total: DataTable;
+  // m_iMatchStats_5k_Total: DataTable;
+  // m_iMatchStats_4k_Total: DataTable;
+  // m_iMatchStats_3k_Total: DataTable;
+  // m_iMatchStats_Damage_Total: DataTable;
+  // m_iMatchStats_EquipmentValue_Total: DataTable;
+  // m_iMatchStats_KillReward_Total: DataTable;
+  // m_iMatchStats_LiveTime_Total: DataTable;
+  // m_iMatchStats_Deaths_Total: DataTable;
+  // m_iMatchStats_Assists_Total: DataTable;
+  // m_iMatchStats_HeadShotKills_Total: DataTable;
+  // m_iMatchStats_Objective_Total: DataTable;
+  // m_iMatchStats_CashEarned_Total: DataTable;
+  // m_iMatchStats_UtilityDamage_Total: DataTable;
+  // m_iMatchStats_EnemiesFlashed_Total: DataTable;
 }
 
 export interface DT_CSRagdoll {
@@ -608,6 +681,30 @@ export interface DT_CSTeam {
   // baseclass: DataTable;
 }
 
+export interface DT_DangerZone {
+  // baseclass: DataTable;
+  m_vecDangerZoneOriginStartedAt: Vector;
+  m_flBombLaunchTime: number;
+  m_flExtraRadius: number;
+  m_flExtraRadiusStartTime: number;
+  m_flExtraRadiusTotalLerpTime: number;
+  m_nDropOrder: number;
+  m_iWave: number;
+}
+
+export interface DT_DangerZoneController {
+  // baseclass: DataTable;
+  m_bDangerZoneControllerEnabled: boolean;
+  m_bMissionControlledExplosions: boolean;
+  m_flStartTime: number;
+  m_flFinalExpansionTime: number;
+  m_vecEndGameCircleStart: Vector;
+  m_vecEndGameCircleEnd: Vector;
+  // m_DangerZones: DataTable;
+  // m_flWaveEndTimes: DataTable;
+  m_hTheFinalZone: EntityHandle;
+}
+
 export interface DT_WeaponDEagle {
   // baseclass: DataTable;
 }
@@ -618,6 +715,27 @@ export interface DT_DecoyGrenade {
 
 export interface DT_DecoyProjectile {
   // baseclass: DataTable;
+}
+
+export interface DT_Drone {
+  // baseclass: DataTable;
+  m_hMoveToThisEntity: EntityHandle;
+  m_hDeliveryCargo: EntityHandle;
+  m_bPilotTakeoverAllowed: boolean;
+  m_hPotentialCargo: EntityHandle;
+  m_hCurrentPilot: EntityHandle;
+  // m_vecTagPositions: Vector - InsideArray;
+  m_vecTagPositions: Vector[];
+  // m_vecTagIncrements: number - InsideArray;
+  m_vecTagIncrements: number[];
+}
+
+export interface DT_Dronegun {
+  // baseclass: DataTable;
+  m_vecAttentionTarget: Vector;
+  m_vecTargetOffset: Vector;
+  m_iHealth: number;
+  m_bHasTarget: boolean;
 }
 
 export interface DT_DynamicLight {
@@ -717,6 +835,38 @@ export interface DT_EnvDOFController {
   m_flFarBlurDepth: number;
   m_flNearBlurRadius: number;
   m_flFarBlurRadius: number;
+}
+
+export interface DT_EnvGasCanister {
+  // baseclass: DataTable;
+  m_flFlightSpeed: number;
+  m_flLaunchTime: number;
+  m_vecParabolaDirection: Vector;
+  m_flFlightTime: number;
+  m_flWorldEnterTime: number;
+  m_flInitialZSpeed: number;
+  m_flZAcceleration: number;
+  m_flHorizSpeed: number;
+  m_bLaunchedFromWithinWorld: boolean;
+  m_vecImpactPosition: Vector;
+  m_vecStartPosition: Vector;
+  m_vecEnterWorldPosition: Vector;
+  m_vecDirection: Vector;
+  m_vecStartAngles: Vector;
+  m_vecSkyboxOrigin: Vector;
+  m_flSkyboxScale: number;
+  m_bInSkybox: boolean;
+  m_bDoImpactEffects: boolean;
+  m_bLanded: boolean;
+  m_hSkyboxCopy: EntityHandle;
+  m_nMyZoneIndex: number;
+  // DT_BaseEntity.m_vecOrigin - excluded
+  // DT_BaseEntity.m_cellbits - excluded
+  // DT_BaseEntity.m_cellX - excluded
+  // DT_BaseEntity.m_cellY - excluded
+  // DT_BaseEntity.m_cellZ - excluded
+  m_vecOrigin: Vector;
+  ["m_vecOrigin[2]"]: number;
 }
 
 export interface DT_EnvParticleScript {
@@ -843,6 +993,11 @@ export interface DT_CFish {
   m_nModelIndex: number;
   m_lifeState: number;
   m_waterLevel: number;
+}
+
+export interface DT_WeaponFists {
+  // baseclass: DataTable;
+  m_bPlayingUninterruptableAct: boolean;
 }
 
 export interface DT_Flashbang {
@@ -975,6 +1130,11 @@ export interface DT_FuncTrackTrain {
 
 export interface DT_GameRulesProxy {}
 
+export interface DT_GrassBurn {
+  // baseclass: DataTable;
+  m_flGrassBurnClearTime: number;
+}
+
 export interface DT_HandleTest {
   // baseclass: DataTable;
   m_Handle: EntityHandle;
@@ -1024,10 +1184,17 @@ export interface DT_Inferno {
   // m_fireZDelta: DataTable;
   // m_bFireIsBurning: DataTable;
   m_fireCount: number;
+  m_nFireEffectTickBegin: number;
 }
 
 export interface DT_InfoLadderDismount {
   // baseclass: DataTable;
+}
+
+export interface DT_InfoMapRegion {
+  // baseclass: DataTable;
+  m_flRadius: number;
+  m_szLocToken: string;
 }
 
 export interface DT_InfoOverlayAccessor {
@@ -1036,6 +1203,10 @@ export interface DT_InfoOverlayAccessor {
 }
 
 export interface DT_Item_Healthshot {
+  // baseclass: DataTable;
+}
+
+export interface DT_ItemCash {
   // baseclass: DataTable;
 }
 
@@ -1084,6 +1255,11 @@ export interface DT_MaterialModifyControl {
   m_nModifyMode: number;
 }
 
+export interface DT_WeaponMelee {
+  // baseclass: DataTable;
+  m_flThrowAt: number;
+}
+
 export interface DT_MolotovGrenade {
   // baseclass: DataTable;
 }
@@ -1106,6 +1282,18 @@ export interface DT_MovieDisplay {
   m_flUMax: number;
   m_flVMin: number;
   m_flVMax: number;
+}
+
+export interface DT_ParadropChopper {
+  // baseclass: DataTable;
+  // DT_BaseEntity.m_vecOrigin - excluded
+  // DT_BaseEntity.m_cellbits - excluded
+  // DT_BaseEntity.m_cellX - excluded
+  // DT_BaseEntity.m_cellY - excluded
+  // DT_BaseEntity.m_cellZ - excluded
+  m_vecOrigin: Vector;
+  ["m_vecOrigin[2]"]: number;
+  m_hCallingPlayer: EntityHandle;
 }
 
 export interface DT_ParticleFire {
@@ -1170,6 +1358,26 @@ export interface DT_PhysMagnet {
   // baseclass: DataTable;
 }
 
+export interface DT_PhysPropAmmoBox {
+  // baseclass: DataTable;
+}
+
+export interface DT_PhysPropLootCrate {
+  // baseclass: DataTable;
+  m_bRenderInPSPM: boolean;
+  m_bRenderInTablet: boolean;
+  m_iHealth: number;
+  m_iMaxHealth: number;
+}
+
+export interface DT_PhysPropRadarJammer {
+  // baseclass: DataTable;
+}
+
+export interface DT_PhysPropWeaponUpgrade {
+  // baseclass: DataTable;
+}
+
 export interface DT_PlantedC4 {
   // baseclass: DataTable;
   m_bBombTicking: boolean;
@@ -1190,6 +1398,13 @@ export interface DT_Plasma {
   m_nPlasmaModelIndex: number;
   m_nPlasmaModelIndex2: number;
   m_nGlowModelIndex: number;
+}
+
+export interface DT_PlayerPing {
+  // baseclass: DataTable;
+  m_hPlayer: EntityHandle;
+  m_hPingedEntity: EntityHandle;
+  m_iType: number;
 }
 
 export interface DT_PlayerResource {
@@ -1276,6 +1491,11 @@ export interface DT_Prop_Hallucination {
   m_bEnabled: boolean;
   m_fVisibleTime: number;
   m_fRechargeTime: number;
+}
+
+export interface DT_PropCounter {
+  // baseclass: DataTable;
+  m_flDisplayValue: number;
 }
 
 export interface DT_PropDoorRotating {
@@ -1428,6 +1648,18 @@ export interface DT_SmokeStack {
   m_iMaterialModel: number;
 }
 
+export interface DT_Snowball {
+  // baseclass: DataTable;
+}
+
+export interface DT_SnowballPile {
+  // baseclass: DataTable;
+}
+
+export interface DT_SnowballProjectile {
+  // baseclass: DataTable;
+}
+
 export interface DT_SpatialEntity {
   m_vecOrigin: Vector;
   m_MinFalloff: number;
@@ -1521,6 +1753,39 @@ export interface DT_SunlightShadowControl {
   m_flNearZ: number;
   m_flNorthOffset: number;
   m_bEnableShadows: boolean;
+}
+
+export interface DT_SurvivalSpawnChopper {
+  // baseclass: DataTable;
+  // DT_BaseEntity.m_vecOrigin - excluded
+  // DT_BaseEntity.m_cellbits - excluded
+  // DT_BaseEntity.m_cellX - excluded
+  // DT_BaseEntity.m_cellY - excluded
+  // DT_BaseEntity.m_cellZ - excluded
+  m_vecOrigin: Vector;
+  ["m_vecOrigin[2]"]: number;
+}
+
+export interface DT_WeaponTablet {
+  // baseclass: DataTable;
+  // m_flUpgradeExpirationTime: number - InsideArray;
+  m_flUpgradeExpirationTime: number[];
+  // m_vecLocalHexFlags: number - InsideArray;
+  m_vecLocalHexFlags: number[];
+  m_nContractKillGridIndex: number;
+  m_nContractKillGridHighResIndex: number;
+  m_bTabletReceptionIsBlocked: boolean;
+  m_flScanProgress: number;
+  m_flBootTime: number;
+  m_flShowMapTime: number;
+  // m_vecNotificationIds: number - InsideArray;
+  m_vecNotificationIds: number[];
+  // m_vecNotificationTimestamps: number - InsideArray;
+  m_vecNotificationTimestamps: number[];
+  // m_vecPlayerPositionHistory: Vector - InsideArray;
+  m_vecPlayerPositionHistory: Vector[];
+  m_nLastPurchaseIndex: number;
+  m_vecNearestMetalCratePos: Vector;
 }
 
 export interface DT_Team {
@@ -2159,6 +2424,10 @@ export interface DT_WeaponSG556 {
   // baseclass: DataTable;
 }
 
+export interface DT_WeaponShield {
+  // baseclass: DataTable;
+}
+
 export interface DT_WeaponSSG08 {
   // baseclass: DataTable;
 }
@@ -2187,6 +2456,10 @@ export interface DT_WeaponUSP {
 export interface DT_WeaponXM1014 {
   // baseclass: DataTable;
   m_reloadState: number;
+}
+
+export interface DT_WeaponZoneRepulsor {
+  // baseclass: DataTable;
 }
 
 export interface DT_WORLD {
@@ -2649,7 +2922,7 @@ export interface DT_ScriptCreatedAttribute {
 export interface DT_LocalWeaponData {
   m_iPrimaryAmmoType: number;
   m_iSecondaryAmmoType: number;
-  m_nViewModelIndex: boolean;
+  m_nViewModelIndex: number;
   m_bFlipViewModel: number;
   m_iWeaponOrigin: number;
   m_iWeaponModule: number;
@@ -3969,6 +4242,9 @@ export interface DT_CSGameRules {
   // m_arrProhibitedItemIndices: DataTable;
   m_numBestOfMaps: number;
   // m_arrTournamentActiveCasterAccounts: DataTable;
+  m_iNumConsecutiveCTLoses: number;
+  m_iNumConsecutiveTerroristLoses: number;
+  // m_SurvivalRules: DataTable;
 }
 
 export interface m_iMatchStats_RoundResults {
@@ -4542,6 +4818,562 @@ export interface m_arrTournamentActiveCasterAccounts {
   ["003"]: number;
 }
 
+export interface DT_SurvivalGameRules {
+  m_vecPlayAreaMins: Vector;
+  m_vecPlayAreaMaxs: Vector;
+  // m_iPlayerSpawnHexIndices: DataTable;
+  // m_SpawnTileState: DataTable;
+  m_flSpawnSelectionTimeStart: number;
+  m_flSpawnSelectionTimeEnd: number;
+  m_flSpawnSelectionTimeLoadout: number;
+  m_spawnStage: number;
+  m_flTabletHexOriginX: number;
+  m_flTabletHexOriginY: number;
+  m_flTabletHexSize: number;
+  // m_roundData_playerXuids: DataTable;
+  // m_roundData_playerPositions: DataTable;
+  // m_roundData_playerTeams: DataTable;
+  // m_SurvivalGameRuleDecisionTypes: DataTable;
+  // m_SurvivalGameRuleDecisionValues: DataTable;
+  m_flSurvivalStartTime: number;
+}
+
+export interface m_iPlayerSpawnHexIndices {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+}
+
+export interface m_SpawnTileState {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+  ["065"]: number;
+  ["066"]: number;
+  ["067"]: number;
+  ["068"]: number;
+  ["069"]: number;
+  ["070"]: number;
+  ["071"]: number;
+  ["072"]: number;
+  ["073"]: number;
+  ["074"]: number;
+  ["075"]: number;
+  ["076"]: number;
+  ["077"]: number;
+  ["078"]: number;
+  ["079"]: number;
+  ["080"]: number;
+  ["081"]: number;
+  ["082"]: number;
+  ["083"]: number;
+  ["084"]: number;
+  ["085"]: number;
+  ["086"]: number;
+  ["087"]: number;
+  ["088"]: number;
+  ["089"]: number;
+  ["090"]: number;
+  ["091"]: number;
+  ["092"]: number;
+  ["093"]: number;
+  ["094"]: number;
+  ["095"]: number;
+  ["096"]: number;
+  ["097"]: number;
+  ["098"]: number;
+  ["099"]: number;
+  ["100"]: number;
+  ["101"]: number;
+  ["102"]: number;
+  ["103"]: number;
+  ["104"]: number;
+  ["105"]: number;
+  ["106"]: number;
+  ["107"]: number;
+  ["108"]: number;
+  ["109"]: number;
+  ["110"]: number;
+  ["111"]: number;
+  ["112"]: number;
+  ["113"]: number;
+  ["114"]: number;
+  ["115"]: number;
+  ["116"]: number;
+  ["117"]: number;
+  ["118"]: number;
+  ["119"]: number;
+  ["120"]: number;
+  ["121"]: number;
+  ["122"]: number;
+  ["123"]: number;
+  ["124"]: number;
+  ["125"]: number;
+  ["126"]: number;
+  ["127"]: number;
+  ["128"]: number;
+  ["129"]: number;
+  ["130"]: number;
+  ["131"]: number;
+  ["132"]: number;
+  ["133"]: number;
+  ["134"]: number;
+  ["135"]: number;
+  ["136"]: number;
+  ["137"]: number;
+  ["138"]: number;
+  ["139"]: number;
+  ["140"]: number;
+  ["141"]: number;
+  ["142"]: number;
+  ["143"]: number;
+  ["144"]: number;
+  ["145"]: number;
+  ["146"]: number;
+  ["147"]: number;
+  ["148"]: number;
+  ["149"]: number;
+  ["150"]: number;
+  ["151"]: number;
+  ["152"]: number;
+  ["153"]: number;
+  ["154"]: number;
+  ["155"]: number;
+  ["156"]: number;
+  ["157"]: number;
+  ["158"]: number;
+  ["159"]: number;
+  ["160"]: number;
+  ["161"]: number;
+  ["162"]: number;
+  ["163"]: number;
+  ["164"]: number;
+  ["165"]: number;
+  ["166"]: number;
+  ["167"]: number;
+  ["168"]: number;
+  ["169"]: number;
+  ["170"]: number;
+  ["171"]: number;
+  ["172"]: number;
+  ["173"]: number;
+  ["174"]: number;
+  ["175"]: number;
+  ["176"]: number;
+  ["177"]: number;
+  ["178"]: number;
+  ["179"]: number;
+  ["180"]: number;
+  ["181"]: number;
+  ["182"]: number;
+  ["183"]: number;
+  ["184"]: number;
+  ["185"]: number;
+  ["186"]: number;
+  ["187"]: number;
+  ["188"]: number;
+  ["189"]: number;
+  ["190"]: number;
+  ["191"]: number;
+  ["192"]: number;
+  ["193"]: number;
+  ["194"]: number;
+  ["195"]: number;
+  ["196"]: number;
+  ["197"]: number;
+  ["198"]: number;
+  ["199"]: number;
+  ["200"]: number;
+  ["201"]: number;
+  ["202"]: number;
+  ["203"]: number;
+  ["204"]: number;
+  ["205"]: number;
+  ["206"]: number;
+  ["207"]: number;
+  ["208"]: number;
+  ["209"]: number;
+  ["210"]: number;
+  ["211"]: number;
+  ["212"]: number;
+  ["213"]: number;
+  ["214"]: number;
+  ["215"]: number;
+  ["216"]: number;
+  ["217"]: number;
+  ["218"]: number;
+  ["219"]: number;
+  ["220"]: number;
+  ["221"]: number;
+  ["222"]: number;
+  ["223"]: number;
+}
+
+export interface m_roundData_playerXuids {
+  ["000"]: Long;
+  ["001"]: Long;
+  ["002"]: Long;
+  ["003"]: Long;
+  ["004"]: Long;
+  ["005"]: Long;
+  ["006"]: Long;
+  ["007"]: Long;
+  ["008"]: Long;
+  ["009"]: Long;
+  ["010"]: Long;
+  ["011"]: Long;
+  ["012"]: Long;
+  ["013"]: Long;
+  ["014"]: Long;
+  ["015"]: Long;
+  ["016"]: Long;
+  ["017"]: Long;
+  ["018"]: Long;
+  ["019"]: Long;
+  ["020"]: Long;
+  ["021"]: Long;
+  ["022"]: Long;
+  ["023"]: Long;
+  ["024"]: Long;
+  ["025"]: Long;
+  ["026"]: Long;
+  ["027"]: Long;
+  ["028"]: Long;
+  ["029"]: Long;
+  ["030"]: Long;
+  ["031"]: Long;
+  ["032"]: Long;
+  ["033"]: Long;
+  ["034"]: Long;
+  ["035"]: Long;
+  ["036"]: Long;
+  ["037"]: Long;
+  ["038"]: Long;
+  ["039"]: Long;
+  ["040"]: Long;
+  ["041"]: Long;
+  ["042"]: Long;
+  ["043"]: Long;
+  ["044"]: Long;
+  ["045"]: Long;
+  ["046"]: Long;
+  ["047"]: Long;
+  ["048"]: Long;
+  ["049"]: Long;
+  ["050"]: Long;
+  ["051"]: Long;
+  ["052"]: Long;
+  ["053"]: Long;
+  ["054"]: Long;
+  ["055"]: Long;
+  ["056"]: Long;
+  ["057"]: Long;
+  ["058"]: Long;
+  ["059"]: Long;
+  ["060"]: Long;
+  ["061"]: Long;
+  ["062"]: Long;
+  ["063"]: Long;
+  ["064"]: Long;
+}
+
+export interface m_roundData_playerPositions {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_roundData_playerTeams {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_SurvivalGameRuleDecisionTypes {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+}
+
+export interface m_SurvivalGameRuleDecisionValues {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+}
+
 export interface DT_CSLocalPlayerExclusive {
   m_vecOrigin: Vector;
   ["m_vecOrigin[2]"]: number;
@@ -4554,6 +5386,7 @@ export interface DT_CSLocalPlayerExclusive {
   // m_bPlayerDominated: DataTable;
   // m_bPlayerDominatingMe: DataTable;
   // m_iWeaponPurchasesThisRound: DataTable;
+  m_unActiveQuestId: number;
   m_nQuestProgressReason: number;
 }
 
@@ -5290,6 +6123,13 @@ export interface m_rank {
   ["005"]: number;
 }
 
+export interface m_passiveItems {
+  ["000"]: boolean;
+  ["001"]: boolean;
+  ["002"]: boolean;
+  ["003"]: boolean;
+}
+
 export interface m_iMatchStats_Kills {
   ["000"]: number;
   ["001"]: number;
@@ -5717,6 +6557,14 @@ export interface m_iMatchStats_EnemiesFlashed {
   ["027"]: number;
   ["028"]: number;
   ["029"]: number;
+}
+
+export interface m_vecPlayerPatchEconIndices {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
 }
 
 export interface m_iPing {
@@ -7077,6 +7925,142 @@ export interface m_iCompTeammateColor {
   ["064"]: number;
 }
 
+export interface m_iLifetimeStart {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iLifetimeEnd {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
 export interface m_bControllingBot {
   ["000"]: boolean;
   ["001"]: boolean;
@@ -7415,6 +8399,74 @@ export interface m_szClan {
   ["062"]: string;
   ["063"]: string;
   ["064"]: string;
+}
+
+export interface m_nCharacterDefIndex {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
 }
 
 export interface m_iTotalCashSpent {
@@ -8095,6 +9147,1215 @@ export interface m_nPersonaDataPublicCommendsFriendly {
   ["062"]: number;
   ["063"]: number;
   ["064"]: number;
+}
+
+export interface m_bHasCommunicationAbuseMute {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_szCrosshairCodes {
+  ["000"]: string;
+  ["001"]: string;
+  ["002"]: string;
+  ["003"]: string;
+  ["004"]: string;
+  ["005"]: string;
+  ["006"]: string;
+  ["007"]: string;
+  ["008"]: string;
+  ["009"]: string;
+  ["010"]: string;
+  ["011"]: string;
+  ["012"]: string;
+  ["013"]: string;
+  ["014"]: string;
+  ["015"]: string;
+  ["016"]: string;
+  ["017"]: string;
+  ["018"]: string;
+  ["019"]: string;
+  ["020"]: string;
+  ["021"]: string;
+  ["022"]: string;
+  ["023"]: string;
+  ["024"]: string;
+  ["025"]: string;
+  ["026"]: string;
+  ["027"]: string;
+  ["028"]: string;
+  ["029"]: string;
+  ["030"]: string;
+  ["031"]: string;
+  ["032"]: string;
+  ["033"]: string;
+  ["034"]: string;
+  ["035"]: string;
+  ["036"]: string;
+  ["037"]: string;
+  ["038"]: string;
+  ["039"]: string;
+  ["040"]: string;
+  ["041"]: string;
+  ["042"]: string;
+  ["043"]: string;
+  ["044"]: string;
+  ["045"]: string;
+  ["046"]: string;
+  ["047"]: string;
+  ["048"]: string;
+  ["049"]: string;
+  ["050"]: string;
+  ["051"]: string;
+  ["052"]: string;
+  ["053"]: string;
+  ["054"]: string;
+  ["055"]: string;
+  ["056"]: string;
+  ["057"]: string;
+  ["058"]: string;
+  ["059"]: string;
+  ["060"]: string;
+  ["061"]: string;
+  ["062"]: string;
+  ["063"]: string;
+  ["064"]: string;
+}
+
+export interface m_iMatchStats_Kills_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_5k_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_4k_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_3k_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_Damage_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_EquipmentValue_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_KillReward_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_LiveTime_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_Deaths_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_Assists_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_HeadShotKills_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_Objective_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_CashEarned_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_UtilityDamage_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_iMatchStats_EnemiesFlashed_Total {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
+  ["005"]: number;
+  ["006"]: number;
+  ["007"]: number;
+  ["008"]: number;
+  ["009"]: number;
+  ["010"]: number;
+  ["011"]: number;
+  ["012"]: number;
+  ["013"]: number;
+  ["014"]: number;
+  ["015"]: number;
+  ["016"]: number;
+  ["017"]: number;
+  ["018"]: number;
+  ["019"]: number;
+  ["020"]: number;
+  ["021"]: number;
+  ["022"]: number;
+  ["023"]: number;
+  ["024"]: number;
+  ["025"]: number;
+  ["026"]: number;
+  ["027"]: number;
+  ["028"]: number;
+  ["029"]: number;
+  ["030"]: number;
+  ["031"]: number;
+  ["032"]: number;
+  ["033"]: number;
+  ["034"]: number;
+  ["035"]: number;
+  ["036"]: number;
+  ["037"]: number;
+  ["038"]: number;
+  ["039"]: number;
+  ["040"]: number;
+  ["041"]: number;
+  ["042"]: number;
+  ["043"]: number;
+  ["044"]: number;
+  ["045"]: number;
+  ["046"]: number;
+  ["047"]: number;
+  ["048"]: number;
+  ["049"]: number;
+  ["050"]: number;
+  ["051"]: number;
+  ["052"]: number;
+  ["053"]: number;
+  ["054"]: number;
+  ["055"]: number;
+  ["056"]: number;
+  ["057"]: number;
+  ["058"]: number;
+  ["059"]: number;
+  ["060"]: number;
+  ["061"]: number;
+  ["062"]: number;
+  ["063"]: number;
+  ["064"]: number;
+}
+
+export interface m_DangerZones {
+  ["000"]: EntityHandle;
+  ["001"]: EntityHandle;
+  ["002"]: EntityHandle;
+  ["003"]: EntityHandle;
+  ["004"]: EntityHandle;
+  ["005"]: EntityHandle;
+  ["006"]: EntityHandle;
+  ["007"]: EntityHandle;
+  ["008"]: EntityHandle;
+  ["009"]: EntityHandle;
+  ["010"]: EntityHandle;
+  ["011"]: EntityHandle;
+  ["012"]: EntityHandle;
+  ["013"]: EntityHandle;
+  ["014"]: EntityHandle;
+  ["015"]: EntityHandle;
+  ["016"]: EntityHandle;
+  ["017"]: EntityHandle;
+  ["018"]: EntityHandle;
+  ["019"]: EntityHandle;
+  ["020"]: EntityHandle;
+  ["021"]: EntityHandle;
+  ["022"]: EntityHandle;
+  ["023"]: EntityHandle;
+  ["024"]: EntityHandle;
+  ["025"]: EntityHandle;
+  ["026"]: EntityHandle;
+  ["027"]: EntityHandle;
+  ["028"]: EntityHandle;
+  ["029"]: EntityHandle;
+  ["030"]: EntityHandle;
+  ["031"]: EntityHandle;
+  ["032"]: EntityHandle;
+  ["033"]: EntityHandle;
+  ["034"]: EntityHandle;
+  ["035"]: EntityHandle;
+  ["036"]: EntityHandle;
+  ["037"]: EntityHandle;
+  ["038"]: EntityHandle;
+  ["039"]: EntityHandle;
+  ["040"]: EntityHandle;
+  ["041"]: EntityHandle;
+}
+
+export interface m_flWaveEndTimes {
+  ["000"]: number;
+  ["001"]: number;
+  ["002"]: number;
+  ["003"]: number;
+  ["004"]: number;
 }
 
 export interface m_flFrozenPerHitbox {
@@ -9262,6 +11523,52 @@ export interface CBoneFollower {
   DT_BoneFollower: DT_BoneFollower;
 }
 
+export interface CBRC4Target {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BRC4Target: DT_BRC4Target;
+}
+
+export interface CBreachCharge {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  DT_WeaponCSBase: DT_WeaponCSBase;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  _LPT_m_AnimOverlay_15: _LPT_m_AnimOverlay_15;
+  DT_Animationlayer: DT_Animationlayer;
+  m_flexWeight: m_flexWeight;
+  _LPT_m_Attributes_32: _LPT_m_Attributes_32;
+  DT_ScriptCreatedAttribute: DT_ScriptCreatedAttribute;
+  DT_ScriptCreatedItem: DT_ScriptCreatedItem;
+  DT_AttributeContainer: DT_AttributeContainer;
+  DT_LocalWeaponData: DT_LocalWeaponData;
+  DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseFlex: DT_BaseFlex;
+  DT_EconEntity: DT_EconEntity;
+  DT_BaseCombatWeapon: DT_BaseCombatWeapon;
+}
+
+export interface CBreachChargeProjectile {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseGrenade: DT_BaseGrenade;
+  DT_BreachChargeProjectile: DT_BreachChargeProjectile;
+}
+
 export interface CBreakableProp {
   DT_BaseEntity: DT_BaseEntity;
   DT_ServerAnimationData: DT_ServerAnimationData;
@@ -9279,6 +11586,41 @@ export interface CBreakableSurface {
   m_bSpottedByMask: m_bSpottedByMask;
   m_RawPanelBitVec: m_RawPanelBitVec;
   DT_BreakableSurface: DT_BreakableSurface;
+}
+
+export interface CBumpMine {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  DT_WeaponCSBase: DT_WeaponCSBase;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  _LPT_m_AnimOverlay_15: _LPT_m_AnimOverlay_15;
+  DT_Animationlayer: DT_Animationlayer;
+  m_flexWeight: m_flexWeight;
+  _LPT_m_Attributes_32: _LPT_m_Attributes_32;
+  DT_ScriptCreatedAttribute: DT_ScriptCreatedAttribute;
+  DT_ScriptCreatedItem: DT_ScriptCreatedItem;
+  DT_AttributeContainer: DT_AttributeContainer;
+  DT_LocalWeaponData: DT_LocalWeaponData;
+  DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseFlex: DT_BaseFlex;
+  DT_EconEntity: DT_EconEntity;
+  DT_BaseCombatWeapon: DT_BaseCombatWeapon;
+}
+
+export interface CBumpMineProjectile {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseGrenade: DT_BaseGrenade;
+  DT_BumpMineProjectile: DT_BumpMineProjectile;
 }
 
 export interface CC4 {
@@ -9346,6 +11688,14 @@ export interface CCSGameRulesProxy {
   m_arrFeaturedGiftersGifts: m_arrFeaturedGiftersGifts;
   m_arrProhibitedItemIndices: m_arrProhibitedItemIndices;
   m_arrTournamentActiveCasterAccounts: m_arrTournamentActiveCasterAccounts;
+  m_iPlayerSpawnHexIndices: m_iPlayerSpawnHexIndices;
+  m_SpawnTileState: m_SpawnTileState;
+  m_roundData_playerXuids: m_roundData_playerXuids;
+  m_roundData_playerPositions: m_roundData_playerPositions;
+  m_roundData_playerTeams: m_roundData_playerTeams;
+  m_SurvivalGameRuleDecisionTypes: m_SurvivalGameRuleDecisionTypes;
+  m_SurvivalGameRuleDecisionValues: m_SurvivalGameRuleDecisionValues;
+  DT_SurvivalGameRules: DT_SurvivalGameRules;
   DT_CSGameRules: DT_CSGameRules;
 }
 
@@ -9376,10 +11726,11 @@ export interface CCSPlayer {
   m_iWeaponPurchasesThisMatch: m_iWeaponPurchasesThisMatch;
   m_EquippedLoadoutItemDefIndices: m_EquippedLoadoutItemDefIndices;
   m_rank: m_rank;
+  m_passiveItems: m_passiveItems;
+  m_vecPlayerPatchEconIndices: m_vecPlayerPatchEconIndices;
   DT_BaseAnimating: DT_BaseAnimating;
   DT_BaseFlex: DT_BaseFlex;
   DT_BaseCombatCharacter: DT_BaseCombatCharacter;
-  m_iMatchStats_LiveTime: m_iMatchStats_LiveTime;
   m_iMatchStats_Deaths: m_iMatchStats_Deaths;
   m_iMatchStats_Assists: m_iMatchStats_Assists;
   m_iMatchStats_HeadShotKills: m_iMatchStats_HeadShotKills;
@@ -9392,6 +11743,7 @@ export interface CCSPlayer {
   m_iMatchStats_EquipmentValue: m_iMatchStats_EquipmentValue;
   m_iMatchStats_MoneySaved: m_iMatchStats_MoneySaved;
   m_iMatchStats_KillReward: m_iMatchStats_KillReward;
+  m_iMatchStats_LiveTime: m_iMatchStats_LiveTime;
 }
 
 export interface CCSPlayerResource {
@@ -9420,11 +11772,14 @@ export interface CCSPlayerResource {
   m_iCompetitiveWins: m_iCompetitiveWins;
   m_iCompetitiveRankType: m_iCompetitiveRankType;
   m_iCompTeammateColor: m_iCompTeammateColor;
+  m_iLifetimeStart: m_iLifetimeStart;
+  m_iLifetimeEnd: m_iLifetimeEnd;
   m_bControllingBot: m_bControllingBot;
   m_iControlledPlayer: m_iControlledPlayer;
   m_iControlledByPlayer: m_iControlledByPlayer;
   m_iBotDifficulty: m_iBotDifficulty;
   m_szClan: m_szClan;
+  m_nCharacterDefIndex: m_nCharacterDefIndex;
   m_iTotalCashSpent: m_iTotalCashSpent;
   m_iGunGameLevel: m_iGunGameLevel;
   m_iCashSpentThisRound: m_iCashSpentThisRound;
@@ -9435,6 +11790,23 @@ export interface CCSPlayerResource {
   m_nPersonaDataPublicCommendsLeader: m_nPersonaDataPublicCommendsLeader;
   m_nPersonaDataPublicCommendsTeacher: m_nPersonaDataPublicCommendsTeacher;
   m_nPersonaDataPublicCommendsFriendly: m_nPersonaDataPublicCommendsFriendly;
+  m_bHasCommunicationAbuseMute: m_bHasCommunicationAbuseMute;
+  m_szCrosshairCodes: m_szCrosshairCodes;
+  m_iMatchStats_Kills_Total: m_iMatchStats_Kills_Total;
+  m_iMatchStats_5k_Total: m_iMatchStats_5k_Total;
+  m_iMatchStats_4k_Total: m_iMatchStats_4k_Total;
+  m_iMatchStats_3k_Total: m_iMatchStats_3k_Total;
+  m_iMatchStats_Damage_Total: m_iMatchStats_Damage_Total;
+  m_iMatchStats_EquipmentValue_Total: m_iMatchStats_EquipmentValue_Total;
+  m_iMatchStats_KillReward_Total: m_iMatchStats_KillReward_Total;
+  m_iMatchStats_LiveTime_Total: m_iMatchStats_LiveTime_Total;
+  m_iMatchStats_Deaths_Total: m_iMatchStats_Deaths_Total;
+  m_iMatchStats_Assists_Total: m_iMatchStats_Assists_Total;
+  m_iMatchStats_HeadShotKills_Total: m_iMatchStats_HeadShotKills_Total;
+  m_iMatchStats_Objective_Total: m_iMatchStats_Objective_Total;
+  m_iMatchStats_CashEarned_Total: m_iMatchStats_CashEarned_Total;
+  m_iMatchStats_UtilityDamage_Total: m_iMatchStats_UtilityDamage_Total;
+  m_iMatchStats_EnemiesFlashed_Total: m_iMatchStats_EnemiesFlashed_Total;
   DT_CSPlayerResource: DT_CSPlayerResource;
 }
 
@@ -9444,6 +11816,22 @@ export interface CCSRagdoll {
 
 export interface CCSTeam {
   DT_Team: DT_Team;
+}
+
+export interface CDangerZone {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_CollisionProperty: DT_CollisionProperty;
+  m_bSpottedByMask: m_bSpottedByMask;
+  DT_DangerZone: DT_DangerZone;
+}
+
+export interface CDangerZoneController {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_CollisionProperty: DT_CollisionProperty;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_DangerZones: m_DangerZones;
+  m_flWaveEndTimes: m_flWaveEndTimes;
+  DT_DangerZoneController: DT_DangerZoneController;
 }
 
 export interface CDEagle {
@@ -9504,6 +11892,29 @@ export interface CDecoyProjectile {
   DT_BaseAnimating: DT_BaseAnimating;
   DT_BaseGrenade: DT_BaseGrenade;
   DT_BaseCSGrenadeProjectile: DT_BaseCSGrenadeProjectile;
+}
+
+export interface CDrone {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BreakableProp: DT_BreakableProp;
+  DT_PhysicsProp: DT_PhysicsProp;
+  DT_Drone: DT_Drone;
+}
+
+export interface CDronegun {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_Dronegun: DT_Dronegun;
 }
 
 export interface CDynamicLight {
@@ -9616,6 +12027,17 @@ export interface CEnvDOFController {
   DT_EnvDOFController: DT_EnvDOFController;
 }
 
+export interface CEnvGasCanister {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  DT_EnvGasCanister: DT_EnvGasCanister;
+  DT_CollisionProperty: DT_CollisionProperty;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_BaseAnimating: DT_BaseAnimating;
+}
+
 export interface CEnvParticleScript {
   DT_BaseEntity: DT_BaseEntity;
   DT_ServerAnimationData: DT_ServerAnimationData;
@@ -9701,6 +12123,30 @@ export interface CFireTrail {
 
 export interface CFish {
   DT_CFish: DT_CFish;
+}
+
+export interface CFists {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  DT_WeaponCSBase: DT_WeaponCSBase;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  _LPT_m_AnimOverlay_15: _LPT_m_AnimOverlay_15;
+  DT_Animationlayer: DT_Animationlayer;
+  m_flexWeight: m_flexWeight;
+  _LPT_m_Attributes_32: _LPT_m_Attributes_32;
+  DT_ScriptCreatedAttribute: DT_ScriptCreatedAttribute;
+  DT_ScriptCreatedItem: DT_ScriptCreatedItem;
+  DT_AttributeContainer: DT_AttributeContainer;
+  DT_LocalWeaponData: DT_LocalWeaponData;
+  DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseFlex: DT_BaseFlex;
+  DT_EconEntity: DT_EconEntity;
+  DT_BaseCombatWeapon: DT_BaseCombatWeapon;
+  DT_WeaponFists: DT_WeaponFists;
 }
 
 export interface CFlashbang {
@@ -9825,6 +12271,13 @@ export interface CFuncTrackTrain {
 
 export interface CGameRulesProxy {}
 
+export interface CGrassBurn {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_CollisionProperty: DT_CollisionProperty;
+  m_bSpottedByMask: m_bSpottedByMask;
+  DT_GrassBurn: DT_GrassBurn;
+}
+
 export interface CHandleTest {
   DT_BaseEntity: DT_BaseEntity;
   DT_CollisionProperty: DT_CollisionProperty;
@@ -9922,6 +12375,13 @@ export interface CInfoLadderDismount {
   m_bSpottedByMask: m_bSpottedByMask;
 }
 
+export interface CInfoMapRegion {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_CollisionProperty: DT_CollisionProperty;
+  m_bSpottedByMask: m_bSpottedByMask;
+  DT_InfoMapRegion: DT_InfoMapRegion;
+}
+
 export interface CInfoOverlayAccessor {
   DT_InfoOverlayAccessor: DT_InfoOverlayAccessor;
 }
@@ -9948,6 +12408,25 @@ export interface CItem_Healthshot {
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
   DT_WeaponBaseItem: DT_WeaponBaseItem;
+}
+
+export interface CItemCash {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  _LPT_m_AnimOverlay_15: _LPT_m_AnimOverlay_15;
+  DT_Animationlayer: DT_Animationlayer;
+  m_flexWeight: m_flexWeight;
+  _LPT_m_Attributes_32: _LPT_m_Attributes_32;
+  DT_ScriptCreatedAttribute: DT_ScriptCreatedAttribute;
+  DT_ScriptCreatedItem: DT_ScriptCreatedItem;
+  DT_AttributeContainer: DT_AttributeContainer;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseFlex: DT_BaseFlex;
+  DT_EconEntity: DT_EconEntity;
 }
 
 export interface CItemDogtags {
@@ -10027,6 +12506,30 @@ export interface CMaterialModifyControl {
   DT_MaterialModifyControl: DT_MaterialModifyControl;
 }
 
+export interface CMelee {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  DT_WeaponCSBase: DT_WeaponCSBase;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  _LPT_m_AnimOverlay_15: _LPT_m_AnimOverlay_15;
+  DT_Animationlayer: DT_Animationlayer;
+  m_flexWeight: m_flexWeight;
+  _LPT_m_Attributes_32: _LPT_m_Attributes_32;
+  DT_ScriptCreatedAttribute: DT_ScriptCreatedAttribute;
+  DT_ScriptCreatedItem: DT_ScriptCreatedItem;
+  DT_AttributeContainer: DT_AttributeContainer;
+  DT_LocalWeaponData: DT_LocalWeaponData;
+  DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseFlex: DT_BaseFlex;
+  DT_EconEntity: DT_EconEntity;
+  DT_BaseCombatWeapon: DT_BaseCombatWeapon;
+  DT_WeaponMelee: DT_WeaponMelee;
+}
+
 export interface CMolotovGrenade {
   DT_BaseEntity: DT_BaseEntity;
   DT_ServerAnimationData: DT_ServerAnimationData;
@@ -10069,6 +12572,17 @@ export interface CMovieDisplay {
   DT_CollisionProperty: DT_CollisionProperty;
   m_bSpottedByMask: m_bSpottedByMask;
   DT_MovieDisplay: DT_MovieDisplay;
+}
+
+export interface CParadropChopper {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  DT_ParadropChopper: DT_ParadropChopper;
+  DT_CollisionProperty: DT_CollisionProperty;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_BaseAnimating: DT_BaseAnimating;
 }
 
 export interface CParticleFire {
@@ -10136,6 +12650,55 @@ export interface CPhysMagnet {
   DT_BaseAnimating: DT_BaseAnimating;
 }
 
+export interface CPhysPropAmmoBox {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BreakableProp: DT_BreakableProp;
+  DT_PhysicsProp: DT_PhysicsProp;
+  DT_PhysicsPropMultiplayer: DT_PhysicsPropMultiplayer;
+}
+
+export interface CPhysPropLootCrate {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BreakableProp: DT_BreakableProp;
+  DT_PhysicsProp: DT_PhysicsProp;
+  DT_PhysicsPropMultiplayer: DT_PhysicsPropMultiplayer;
+  DT_PhysPropLootCrate: DT_PhysPropLootCrate;
+}
+
+export interface CPhysPropRadarJammer {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BreakableProp: DT_BreakableProp;
+  DT_PhysicsProp: DT_PhysicsProp;
+  DT_PhysicsPropMultiplayer: DT_PhysicsPropMultiplayer;
+}
+
+export interface CPhysPropWeaponUpgrade {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BreakableProp: DT_BreakableProp;
+  DT_PhysicsProp: DT_PhysicsProp;
+  DT_PhysicsPropMultiplayer: DT_PhysicsPropMultiplayer;
+}
+
 export interface CPlantedC4 {
   DT_BaseEntity: DT_BaseEntity;
   DT_ServerAnimationData: DT_ServerAnimationData;
@@ -10152,6 +12715,13 @@ export interface CPlasma {
   DT_CollisionProperty: DT_CollisionProperty;
   m_bSpottedByMask: m_bSpottedByMask;
   DT_Plasma: DT_Plasma;
+}
+
+export interface CPlayerPing {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_CollisionProperty: DT_CollisionProperty;
+  m_bSpottedByMask: m_bSpottedByMask;
+  DT_PlayerPing: DT_PlayerPing;
 }
 
 export interface CPlayerResource {
@@ -10235,6 +12805,17 @@ export interface CProp_Hallucination {
   DT_CollisionProperty: DT_CollisionProperty;
   DT_BaseAnimating: DT_BaseAnimating;
   DT_Prop_Hallucination: DT_Prop_Hallucination;
+}
+
+export interface CPropCounter {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_PropCounter: DT_PropCounter;
 }
 
 export interface CPropDoorRotating {
@@ -10424,6 +13005,52 @@ export interface CSmokeStack {
   DT_SmokeStack: DT_SmokeStack;
 }
 
+export interface CSnowball {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  DT_WeaponCSBase: DT_WeaponCSBase;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  _LPT_m_AnimOverlay_15: _LPT_m_AnimOverlay_15;
+  DT_Animationlayer: DT_Animationlayer;
+  m_flexWeight: m_flexWeight;
+  _LPT_m_Attributes_32: _LPT_m_Attributes_32;
+  DT_ScriptCreatedAttribute: DT_ScriptCreatedAttribute;
+  DT_ScriptCreatedItem: DT_ScriptCreatedItem;
+  DT_AttributeContainer: DT_AttributeContainer;
+  DT_LocalWeaponData: DT_LocalWeaponData;
+  DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseFlex: DT_BaseFlex;
+  DT_EconEntity: DT_EconEntity;
+  DT_BaseCombatWeapon: DT_BaseCombatWeapon;
+  DT_BaseCSGrenade: DT_BaseCSGrenade;
+}
+
+export interface CSnowballPile {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  DT_BaseAnimating: DT_BaseAnimating;
+}
+
+export interface CSnowballProjectile {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseGrenade: DT_BaseGrenade;
+  DT_BaseCSGrenadeProjectile: DT_BaseCSGrenadeProjectile;
+}
+
 export interface CSpatialEntity {
   DT_SpatialEntity: DT_SpatialEntity;
 }
@@ -10482,6 +13109,41 @@ export interface CSun {
 
 export interface CSunlightShadowControl {
   DT_SunlightShadowControl: DT_SunlightShadowControl;
+}
+
+export interface CSurvivalSpawnChopper {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  DT_SurvivalSpawnChopper: DT_SurvivalSpawnChopper;
+  DT_CollisionProperty: DT_CollisionProperty;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_BaseAnimating: DT_BaseAnimating;
+}
+
+export interface CTablet {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  DT_WeaponCSBase: DT_WeaponCSBase;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  _LPT_m_AnimOverlay_15: _LPT_m_AnimOverlay_15;
+  DT_Animationlayer: DT_Animationlayer;
+  m_flexWeight: m_flexWeight;
+  _LPT_m_Attributes_32: _LPT_m_Attributes_32;
+  DT_ScriptCreatedAttribute: DT_ScriptCreatedAttribute;
+  DT_ScriptCreatedItem: DT_ScriptCreatedItem;
+  DT_AttributeContainer: DT_AttributeContainer;
+  DT_LocalWeaponData: DT_LocalWeaponData;
+  DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseFlex: DT_BaseFlex;
+  DT_EconEntity: DT_EconEntity;
+  DT_BaseCombatWeapon: DT_BaseCombatWeapon;
+  DT_WeaponTablet: DT_WeaponTablet;
 }
 
 export interface CTeam {
@@ -11578,6 +14240,30 @@ export interface CWeaponSG556 {
   DT_WeaponCSBaseGun: DT_WeaponCSBaseGun;
 }
 
+export interface CWeaponShield {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  DT_WeaponCSBase: DT_WeaponCSBase;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  _LPT_m_AnimOverlay_15: _LPT_m_AnimOverlay_15;
+  DT_Animationlayer: DT_Animationlayer;
+  m_flexWeight: m_flexWeight;
+  _LPT_m_Attributes_32: _LPT_m_Attributes_32;
+  DT_ScriptCreatedAttribute: DT_ScriptCreatedAttribute;
+  DT_ScriptCreatedItem: DT_ScriptCreatedItem;
+  DT_AttributeContainer: DT_AttributeContainer;
+  DT_LocalWeaponData: DT_LocalWeaponData;
+  DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseFlex: DT_BaseFlex;
+  DT_EconEntity: DT_EconEntity;
+  DT_BaseCombatWeapon: DT_BaseCombatWeapon;
+  DT_WeaponCSBaseGun: DT_WeaponCSBaseGun;
+}
+
 export interface CWeaponSSG08 {
   DT_BaseEntity: DT_BaseEntity;
   DT_ServerAnimationData: DT_ServerAnimationData;
@@ -11745,6 +14431,30 @@ export interface CWeaponXM1014 {
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
   DT_WeaponXM1014: DT_WeaponXM1014;
+}
+
+export interface CWeaponZoneRepulsor {
+  DT_BaseEntity: DT_BaseEntity;
+  DT_ServerAnimationData: DT_ServerAnimationData;
+  DT_WeaponCSBase: DT_WeaponCSBase;
+  m_bSpottedByMask: m_bSpottedByMask;
+  m_flPoseParameter: m_flPoseParameter;
+  m_flEncodedController: m_flEncodedController;
+  DT_CollisionProperty: DT_CollisionProperty;
+  _LPT_m_AnimOverlay_15: _LPT_m_AnimOverlay_15;
+  DT_Animationlayer: DT_Animationlayer;
+  m_flexWeight: m_flexWeight;
+  _LPT_m_Attributes_32: _LPT_m_Attributes_32;
+  DT_ScriptCreatedAttribute: DT_ScriptCreatedAttribute;
+  DT_ScriptCreatedItem: DT_ScriptCreatedItem;
+  DT_AttributeContainer: DT_AttributeContainer;
+  DT_LocalWeaponData: DT_LocalWeaponData;
+  DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
+  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseFlex: DT_BaseFlex;
+  DT_EconEntity: DT_EconEntity;
+  DT_BaseCombatWeapon: DT_BaseCombatWeapon;
+  DT_WeaponCSBaseGun: DT_WeaponCSBaseGun;
 }
 
 export interface CWorld {
