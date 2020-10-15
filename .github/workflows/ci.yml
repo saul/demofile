@@ -48,7 +48,7 @@ jobs:
 
   deploy:
     needs: [build, lint]
-    if: github.ref == 'refs/heads/master'
+    #if: github.ref == 'refs/heads/master'
     name: Deploy
     runs-on: ubuntu-latest
 
@@ -79,3 +79,5 @@ jobs:
       - name: Publish to npm
         if: ${{ env.PUBLISH_PROCEED == 'true' }}
         run: npm version --allow-same-version $VERSION
+        #env:
+        #NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
