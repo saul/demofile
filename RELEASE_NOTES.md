@@ -6,7 +6,7 @@
 - Unreleased release notes here
 -->
 
-### 1.7.1 (2020-10-15)
+### 1.7.2 (2020-10-15)
 
 - :zap: Upgrade to TypeScript 3.9.7
 - :zap: Setup continuous delivery pipeline

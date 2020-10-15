@@ -81,7 +81,7 @@ jobs:
           git config --global user.email 'github-actions@users.noreply.github.com'
           npm version --allow-same-version $VERSION
       - name: Publish to registry
+        uses: JS-DevTools/npm-publish@v1
         if: ${{ steps.checkTag.outputs.exists == 'false' }}
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
