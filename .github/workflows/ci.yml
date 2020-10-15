@@ -45,3 +45,40 @@ jobs:
       - run: npm run build
       - run: npm run format:check
       - run: npm run lint
+
+  deploy:
+    needs: [build, lint]
+    if: github.ref == 'refs/heads/master'
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install packages
+        run: npm ci
+      - name: Pull version from package.json
+        run: |
+          VERSION=$(jq -r '.version' package.json)
+          echo "Current package version: $VERSION"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "TAG=v$VERSION" >> $GITHUB_ENV
+      - uses: mukunku/tag-exists-action@v1.0.0
+        id: checkTag
+        with:
+          tag: ${{ env.TAG }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Ensure release notes are available
+        run: grep -Fxq "### $VERSION (`date -u '+%Y-%m-%d'`)" RELEASE_NOTES.md || exit 1
+      - name: Publish to npm
+        if: ${{ steps.checkTag.outputs.exists == 'false' }}
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'github-actions@users.noreply.github.com'
+          npm version --allow-same-version $VERSION
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
