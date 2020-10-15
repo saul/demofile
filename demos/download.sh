@@ -12,3 +12,6 @@ curl 'http://demos.hltv.org//demo/demofiles/demosection//IEM-New-York-2020-Europ
 sha256sum -c SHA256SUMS
 
 unrar x -y "*.rar"
+
+# Clean up to reduce the size of the 'demos' directory
+rm "*.rar"

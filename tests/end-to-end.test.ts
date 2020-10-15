@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import { join } from "path";
-import { DemoFile } from "../src/index";
+import { DemoFile, TeamNumber, Team, Player } from "../src/index";
 
 // Some headroom to parse large demo files
 jest.setTimeout(5 * 60 * 1000);
@@ -64,9 +64,53 @@ test.concurrent(
         log("start", demo.header);
       });
 
+      demo.conVars.on("change", e => {
+        log("cvar_change", e);
+      });
+
       demo.gameEvents.on("event", e => {
         if (e.name === "player_footstep") return;
         log("game_event", e);
+      });
+
+      demo.gameEvents.on("round_end", e => {
+        log("round_end", {
+          ...e,
+          phase: demo.gameRules.phase,
+          time: demo.currentTime
+        });
+      });
+
+      demo.entities.on("create", e => {
+        // We're only interested in player entities being created.
+        if (!(e.entity instanceof Player)) {
+          return;
+        }
+
+        log("player_activate", {
+          name: e.entity.name,
+          steamId: e.entity.steamId,
+          steam64Id: e.entity.steam64Id,
+          userInfo: e.entity.userInfo
+        });
+      });
+
+      demo.gameEvents.on("round_officially_ended", e => {
+        const teams = demo.teams;
+
+        const terrorists = teams[TeamNumber.Terrorists];
+        const cts = teams[TeamNumber.CounterTerrorists];
+
+        const getTeamData = (team: Team) => ({
+          name: team.teamName,
+          clanName: team.clanName,
+          score: team.score
+        });
+
+        log("team_scores", {
+          t: getTeamData(terrorists),
+          ct: getTeamData(cts)
+        });
       });
 
       demo.userMessages.on("message", e => {
@@ -75,7 +119,7 @@ test.concurrent(
 
       demo.on("end", e => {
         expect(e.error).toBeFalsy();
-        //expect(timeline).toMatchSnapshot();
+        expect(timeline).toMatchSnapshot();
         resolve();
       });
 
