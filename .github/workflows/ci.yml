@@ -25,6 +25,16 @@ jobs:
         run: npm ci
       - name: Build TypeScript
         run: npm run build
+      - name: Cache demos
+        id: cache-demos
+        uses: actions/cache@v2
+        with:
+          path: demos
+          key: demos
+      - name: Download demos for integration test
+        if: steps.cache-demos.outputs.cache-hit != 'true'
+        working-directory: ./demos
+        run: ./download.sh
       - name: Run tests
         run: npm test -- --coverage
       - uses: actions/upload-artifact@v2
