@@ -14,4 +14,4 @@ sha256sum -c SHA256SUMS
 unrar x -y "*.rar"
 
 # Clean up to reduce the size of the 'demos' directory
-rm "*.rar"
+rm *.rar
