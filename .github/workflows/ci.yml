@@ -64,11 +64,12 @@ jobs:
         run: |
           VERSION=$(jq -r '.version' package.json)
           echo "Current package version: $VERSION"
-          echo "VERSION_TAG=v$VERSION" >> $GITHUB_ENV
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "TAG=v$VERSION" >> $GITHUB_ENV
       - uses: mukunku/tag-exists-action@v1.0.0
         id: checkTag
         with:
-          tag: ${{ env.VERSION_TAG }}
+          tag: ${{ env.TAG }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to npm
