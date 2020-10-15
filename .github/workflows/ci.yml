@@ -71,8 +71,9 @@ jobs:
           tag: ${{ env.VERSION_TAG }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo ${{ steps.checkTag.outputs.exists }}
       - name: Publish to npm
-        if: "!steps.checkTag.outputs.exists"
+        if: ${{ steps.checkTag.outputs.exists == false }}
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'github-actions@users.noreply.github.com'
