@@ -58,26 +58,24 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: Setup Git config
-        run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'github-actions@users.noreply.github.com'
       - name: Install packages
         run: npm ci
       - name: Pull version from package.json
         run: |
           VERSION=$(jq -r '.version' package.json)
           echo "Current package version: $VERSION"
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-
-          if git rev-parse "v$VERSION"; then
-            # If this version is already tagged, don't publish it
-            echo "PUBLISH_PROCEED=false" >> $GITHUB_ENV
-          else
-            echo "PUBLISH_PROCEED=true" >> $GITHUB_ENV
-          fi
+          echo "VERSION_TAG=v$VERSION" >> $GITHUB_ENV
+      - uses: mukunku/tag-exists-action@v1.0.0
+        id: checkTag
+        with:
+          tag: ${{ env.VERSION_TAG }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to npm
-        if: ${{ env.PUBLISH_PROCEED == 'true' }}
-        run: npm version --allow-same-version $VERSION
-        #env:
-        #NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        if: ${{ !steps.checkTag.outputs.exists }}
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'github-actions@users.noreply.github.com'
+          npm version --allow-same-version $VERSION
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
