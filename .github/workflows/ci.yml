@@ -48,7 +48,7 @@ jobs:
 
   deploy:
     needs: [build, lint]
-    #if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     name: Deploy
     runs-on: ubuntu-latest
 
@@ -72,6 +72,8 @@ jobs:
           tag: ${{ env.TAG }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Ensure release notes are available
+        run: grep -Fxq "### $VERSION (`date -u '+%Y-%m-%d'`)" RELEASE_NOTES.md || exit 1
       - name: Publish to npm
         if: ${{ steps.checkTag.outputs.exists == 'false' }}
         run: |

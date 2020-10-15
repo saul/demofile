@@ -6,6 +6,11 @@
 - Unreleased release notes here
 -->
 
+### 1.7.0 (2020-10-15)
+
+- :zap: Upgrade to TypeScript 3.9.7
+- :zap: Setup continuous delivery pipeline
+
 ### 1.6.0 (2020-10-13)
 
 - :bug: #172: Don't report `RangeError` exceptions as errors when demo file has not been recorded completely
