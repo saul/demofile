@@ -74,11 +74,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Ensure release notes are available
         run: grep -Fxq "### $VERSION (`date -u '+%Y-%m-%d'`)" RELEASE_NOTES.md || exit 1
-      - name: Publish to npm
+      - name: Version package and tag
         if: ${{ steps.checkTag.outputs.exists == 'false' }}
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'github-actions@users.noreply.github.com'
           npm version --allow-same-version $VERSION
+      - name: Publish to registry
+        if: ${{ steps.checkTag.outputs.exists == 'false' }}
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
