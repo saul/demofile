@@ -1805,7 +1805,7 @@ export interface DT_Team {
   m_nGGLeaderEntIndex_T: number;
   m_numMapVictories: number;
   // player_array_element: number - InsideArray;
-  ['"player_array"']: number[];
+  [`"player_array"`]: number[];
 }
 
 export interface DT_TeamplayRoundBasedRulesProxy {
