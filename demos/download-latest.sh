@@ -5,7 +5,7 @@ set -e
 
 sudo apt install unrar
 
-#npx ts-node latest-demo.ts
+npx ts-node latest-demo.ts
 
 unrar x -y "latest.rar"
 
@@ -13,4 +13,4 @@ unrar x -y "latest.rar"
 LATEST_FILE=$(unrar lb latest.rar | head -n1)
 mv $LATEST_FILE latest.dem
 
-#rm latest.rar
+rm latest.rar
