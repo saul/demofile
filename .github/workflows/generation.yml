@@ -1,0 +1,40 @@
+name: Generation
+
+on:
+  schedule:
+    # Run once a week (Sunday 00:00)
+    - cron: "0 0 * * 0"
+
+jobs:
+  gen:
+    name: Regenerating types
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install packages
+        run: npm ci
+      - name: Build TypeScript
+        run: npm run build
+      - name: Download recent demo from HLTV
+        working-directory: ./demos
+        run: ./download-latest.sh
+      - name: Cloning SteamDatabase/GameTracking-CSGO
+        run: git clone --depth=1 https://github.com/SteamDatabase/GameTracking-CSGO
+      - name: Generating eventtypes.ts
+        run: node dist/generators/eventtypes.js demos/latest.dem > src/eventtypes.ts
+      - name: Generating sendtabletypes.ts
+        run: node dist/generators/sendtabletypes.js demos/latest.dem > src/sendtabletypes.ts
+      - name: Generating itemdefs.ts
+        run: node dist/generators/itemdefs.js GameTracking-CSGO/csgo > src/entities/itemdefs.ts
+      - name: Commit changes to master
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'github-actions@users.noreply.github.com'
+          git add -A src
+          git commit -m "Regenerating types off latest CSGO"
+          git push
