@@ -13,6 +13,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Cloning SteamDatabase/GameTracking-CSGO
+        uses: actions/checkout@v2
+        with:
+          repository: SteamDatabase/GameTracking-CSGO
+          path: GameTracking-CSGO
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
@@ -24,8 +29,6 @@ jobs:
       - name: Download recent demo from HLTV
         working-directory: ./demos
         run: ./download-latest.sh
-      - name: Cloning SteamDatabase/GameTracking-CSGO
-        run: git clone --depth=1 https://github.com/SteamDatabase/GameTracking-CSGO
       - name: Generating eventtypes.ts
         run: node dist/generators/eventtypes.js demos/latest.dem > src/eventtypes.ts
       - name: Generating sendtabletypes.ts
