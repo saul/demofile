@@ -5,9 +5,21 @@ import * as fs from "fs";
 import { join } from "path";
 import * as request from "request";
 import { Builder, By } from "selenium-webdriver";
+import { Options } from "selenium-webdriver/chrome";
 
 (async () => {
-  const driver = await new Builder().forBrowser("chrome").build();
+  const options = new Options().addArguments(
+    "headless",
+    "disable-gpu",
+    "no-sandbox",
+    "disable-dev-shm-usage"
+  );
+
+  const driver = await new Builder()
+    .forBrowser("chrome")
+    .withCapabilities(options)
+    .build();
+
   try {
     console.log("Navigating to hltv.org...");
     await driver.get("https://www.hltv.org/results?content=demo&gameType=CSGO");
