@@ -287,8 +287,7 @@ export interface DT_BaseTeamObjectiveResource {
   m_pszCapLayoutInHUD: string;
 }
 
-export interface DT_BaseTempEntity {
-}
+export interface DT_BaseTempEntity {}
 
 export interface DT_BaseToggle {
   // baseclass: DataTable;
@@ -1129,8 +1128,7 @@ export interface DT_FuncTrackTrain {
   // baseclass: DataTable;
 }
 
-export interface DT_GameRulesProxy {
-}
+export interface DT_GameRulesProxy {}
 
 export interface DT_GrassBurn {
   // baseclass: DataTable;
@@ -1807,7 +1805,7 @@ export interface DT_Team {
   m_nGGLeaderEntIndex_T: number;
   m_numMapVictories: number;
   // player_array_element: number - InsideArray;
-  [`"player_array"`]: number[];
+  ['"player_array"']: number[];
 }
 
 export interface DT_TeamplayRoundBasedRulesProxy {
@@ -2777,8 +2775,7 @@ export interface DT_BCCLocalPlayerExclusive {
   m_flNextAttack: number;
 }
 
-export interface DT_BCCNonLocalPlayerExclusive {
-}
+export interface DT_BCCNonLocalPlayerExclusive {}
 
 export interface m_hMyWeapons {
   ["000"]: EntityHandle;
@@ -11475,8 +11472,7 @@ export interface CBaseTeamObjectiveResource {
   DT_BaseTeamObjectiveResource: DT_BaseTeamObjectiveResource;
 }
 
-export interface CBaseTempEntity {
-}
+export interface CBaseTempEntity {}
 
 export interface CBaseToggle {
   DT_BaseEntity: DT_BaseEntity;
@@ -12273,8 +12269,7 @@ export interface CFuncTrackTrain {
   m_bSpottedByMask: m_bSpottedByMask;
 }
 
-export interface CGameRulesProxy {
-}
+export interface CGameRulesProxy {}
 
 export interface CGrassBurn {
   DT_BaseEntity: DT_BaseEntity;
@@ -14523,4 +14518,3 @@ export interface SporeTrail {
   m_bSpottedByMask: m_bSpottedByMask;
   DT_SporeTrail: DT_SporeTrail;
 }
-
