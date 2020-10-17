@@ -35,6 +35,10 @@ jobs:
         run: node dist/generators/sendtabletypes.js demos/latest.dem > src/sendtabletypes.ts
       - name: Generating itemdefs.ts
         run: node dist/generators/itemdefs.js GameTracking-CSGO/csgo > src/entities/itemdefs.ts
+      - name: Reformat and lint
+        run: |
+          npm run lint --fix
+          npm run format
       - name: Commit changes to master
         run: |
           git config --global user.name 'GitHub Actions'
