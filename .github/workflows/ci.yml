@@ -83,6 +83,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Ensure release notes are available
+        if: ${{ steps.checkTag.outputs.exists == 'false' }}
         run: grep -Fxq "### $VERSION (`date -u '+%Y-%m-%d'`)" RELEASE_NOTES.md || exit 1
       - name: Version package and tag
         if: ${{ steps.checkTag.outputs.exists == 'false' }}
