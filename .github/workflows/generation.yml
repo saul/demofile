@@ -3,7 +3,7 @@ name: Generation
 on:
   schedule:
     # Run once a week (Sunday 00:00)
-    cron: "0 0 * * 0"
+    - cron: "0 0 * * 0"
 
 jobs:
   gen:
