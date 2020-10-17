@@ -77,9 +77,14 @@ function parseDemoFile(path) {
                         continue;
                     }
                     let name = prop.varName;
-                    if (name.charCodeAt(0) < 65 ||
+                    if (name.indexOf(`"`) !== -1) {
+                        // Wrap in [`foo`]
+                        name = "[`" + name + "`]";
+                    }
+                    else if (name.charCodeAt(0) < 65 ||
                         name.indexOf(".") !== -1 ||
                         name.indexOf("[") !== -1) {
+                        // Wrap in ["foo"]
                         name = `["${name}"]`;
                     }
                     console.log(`  ${name}: ${typeStr};`);

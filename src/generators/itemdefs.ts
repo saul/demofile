@@ -19,7 +19,7 @@ async function parseItems(root: string) {
 
   const englishData = await readFileAsync(
     path.join(root, "resource", "csgo_english.txt"),
-    "utf16le"
+    "utf-8"
   );
   const { lang } = parse(englishData);
   const tokens = new Map(
@@ -72,5 +72,6 @@ async function parseItems(root: string) {
   );
 }
 
-// argument should be path to "C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo"
+// argument should be path to csgo mod directory, e.g.:
+// ./GameTracking-CSGO/csgo
 parseItems(process.argv[2]).catch(err => console.error(err));

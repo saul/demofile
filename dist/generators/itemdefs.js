@@ -10,7 +10,7 @@ const fromEntries = (arr) => Object.assign({}, ...Array.from(arr, ([k, v]) => ({
 async function parseItems(root) {
     const itemData = await readFileAsync(path.join(root, "scripts", "items", "items_game.txt"), "utf-8");
     const { items_game: items } = vdf_1.parse(itemData);
-    const englishData = await readFileAsync(path.join(root, "resource", "csgo_english.txt"), "utf16le");
+    const englishData = await readFileAsync(path.join(root, "resource", "csgo_english.txt"), "utf-8");
     const { lang } = vdf_1.parse(englishData);
     const tokens = new Map(Object.entries(lang.Tokens).map(([token, value]) => [
         token.toLowerCase(),
@@ -41,6 +41,7 @@ async function parseItems(root) {
         ])
             .filter(([key, x]) => x.itemName)), null, 2));
 }
-// argument should be path to "C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo"
+// argument should be path to csgo mod directory, e.g.:
+// ./GameTracking-CSGO/csgo
 parseItems(process.argv[2]).catch(err => console.error(err));
 //# sourceMappingURL=itemdefs.js.map

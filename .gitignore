@@ -1,5 +1,6 @@
 .vscode/
 coverage/
 demos/
+GameTracking-CSGO/
 node_modules/
 *.log

@@ -88,11 +88,15 @@ function parseDemoFile(path: string) {
           }
 
           let name = prop.varName;
-          if (
+          if (name.indexOf(`"`) !== -1) {
+            // Wrap in [`foo`]
+            name = "[`" + name + "`]";
+          } else if (
             name.charCodeAt(0) < 65 ||
             name.indexOf(".") !== -1 ||
             name.indexOf("[") !== -1
           ) {
+            // Wrap in ["foo"]
             name = `["${name}"]`;
           }
 
