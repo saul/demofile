@@ -1,6 +1,7 @@
 name: Generation
 
 on:
+  workflow_dispatch:
   schedule:
     # Run once a week (Sunday 00:00)
     - cron: "0 0 * * 0"
