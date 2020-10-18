@@ -46,10 +46,10 @@ jobs:
           git add -A src
 
           echo "=== Status output ==="
-          git status --porcelain --untracked-files=no
+          git diff --name-only --cached --exit-code && echo "exit code = 0"
           echo "==="
 
-          if [ -z "$(git status --porcelain --untracked-files=no)" ]; then 
+          if git diff --name-only --cached --exit-code; then 
             echo "No changes to commit"
           else 
             git commit -m "Regenerating types off latest CSGO"
