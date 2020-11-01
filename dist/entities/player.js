@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Player = void 0;
+const crosshair_1 = require("../crosshair");
 const baseentity_1 = require("./baseentity");
 const weapon_1 = require("./weapon");
 /**
@@ -374,6 +375,12 @@ class Player extends baseentity_1.BaseEntity {
             });
         }
         return rounds;
+    }
+    /**
+     * @returns Object representing user-customisable crosshair settings.
+     */
+    get crosshairInfo() {
+        return crosshair_1.decodeCrosshairCode(this.resourceProp("m_szCrosshairCodes"));
     }
 }
 exports.Player = Player;

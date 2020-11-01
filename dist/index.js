@@ -30,4 +30,6 @@ __exportStar(require("./gameevents"), exports);
 __exportStar(require("./sendtabletypes"), exports);
 __exportStar(require("./stringtables"), exports);
 __exportStar(require("./usermessages"), exports);
+__exportStar(require("./sharecode"), exports);
+__exportStar(require("./crosshair"), exports);
 //# sourceMappingURL=index.js.map

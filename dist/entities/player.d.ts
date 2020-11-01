@@ -1,3 +1,4 @@
+import { ICrosshairInfo } from "../crosshair";
 import { DemoFile } from "../demo";
 import { CCSPlayer, CCSPlayerResource, Vector } from "../sendtabletypes";
 import { IPlayerInfo } from "../stringtables";
@@ -259,4 +260,8 @@ export declare class Player extends BaseEntity<CCSPlayer> {
      * @returns Object representing the player's performance per round
      */
     get matchStats(): IPlayerRoundStats[];
+    /**
+     * @returns Object representing user-customisable crosshair settings.
+     */
+    get crosshairInfo(): ICrosshairInfo;
 }
