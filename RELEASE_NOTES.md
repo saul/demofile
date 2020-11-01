@@ -6,6 +6,11 @@
 - Unreleased release notes here
 -->
 
+### 1.8.0 (2020-11-01)
+
+- :sparkles: #187: Add `Player#crosshairInfo` for grabbing player crosshair settings
+- :zap: Only generate type definitions for events that are logged to GOTV demos
+
 ### 1.7.2 (2020-10-15)
 
 - :zap: Upgrade to TypeScript 3.9.7
