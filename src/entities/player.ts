@@ -1,3 +1,4 @@
+import { decodeCrosshairCode, ICrosshairInfo } from "../crosshair";
 import { DemoFile } from "../demo";
 import { CCSPlayer, CCSPlayerResource, Vector } from "../sendtabletypes";
 import { IPlayerInfo } from "../stringtables";
@@ -516,5 +517,12 @@ export class Player extends BaseEntity<CCSPlayer> {
     }
 
     return rounds;
+  }
+
+  /**
+   * @returns Object representing user-customisable crosshair settings.
+   */
+  get crosshairInfo(): ICrosshairInfo {
+    return decodeCrosshairCode(this.resourceProp("m_szCrosshairCodes"));
   }
 }

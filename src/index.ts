@@ -19,3 +19,5 @@ export * from "./gameevents";
 export * from "./sendtabletypes";
 export * from "./stringtables";
 export * from "./usermessages";
+export * from "./sharecode";
+export * from "./crosshair";
