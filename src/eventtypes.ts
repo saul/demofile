@@ -381,6 +381,7 @@ export interface IEventRoundFreezeEnd {}
 export interface IEventRoundMvp {
   userid: number;
   reason: number;
+  value: number;
   musickitmvps: number;
   nomusic: number;
 }
