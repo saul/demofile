@@ -2,6 +2,7 @@
 
 # Bail if any command fails
 set -e
+pushd `dirname "$0"`
 
 sudo apt install unrar
 
@@ -18,3 +19,5 @@ unrar x -y "*.rar"
 
 # Clean up to reduce the size of the 'demos' directory
 rm *.rar
+
+popd
