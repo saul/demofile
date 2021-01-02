@@ -1,8 +1,5 @@
 "use strict";
-/// <reference path="./pervasive.d.ts" />
-/// <reference path="./bit-buffer.d.ts" />
-/// <reference path="./protobufs/cstrike15_usermessages.d.ts" />
-/// <reference path="./protobufs/netmessages.d.ts" />
+/// <reference path="../typings/bit-buffer.d.ts" />
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });

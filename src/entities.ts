@@ -1,13 +1,13 @@
-import assert = require("assert");
+import * as assert from "assert";
 import { EventEmitter } from "events";
-import _ = require("lodash");
+import * as _ from "lodash";
 
 import assertExists from "./assert-exists";
 import { BitStream } from "./ext/bitbuffer";
 
-import consts = require("./consts");
-import functional = require("./functional");
-import net = require("./net");
+import * as consts from "./consts";
+import * as functional from "./functional";
+import * as net from "./net";
 
 import { DemoFile } from "./demo";
 import { BaseEntity } from "./entities/baseentity";
@@ -17,6 +17,7 @@ import { Player } from "./entities/player";
 import { Team } from "./entities/team";
 import { Weapon } from "./entities/weapon";
 import { EntityHandle } from "./entityhandle";
+import { RequiredNonNullable } from "./pervasive";
 import {
   makeDecoder,
   PropType,

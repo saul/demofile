@@ -1,5 +1,6 @@
 /// <reference types="long" />
-import _ = require("lodash");
+import * as _ from "lodash";
+import { RequiredNonNullable } from "./pervasive";
 import { CSVCMsg_GameEventList, ICSVCMsg_GameEvent } from "./protobufs/netmessages";
 export declare class GameEvent {
     name: string;

@@ -1,4 +1,4 @@
-import Long = require("long");
+import * as Long from "long";
 import { ISendProp } from "./entities";
 import { EntityHandle } from "./entityhandle";
 import { BitStream } from "./ext/bitbuffer";

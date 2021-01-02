@@ -1,8 +1,8 @@
 // tslint:disable:no-console
 
 import { parse } from "@node-steam/vdf";
-import fs = require("fs");
-import path = require("path");
+import * as fs from "fs";
+import * as path from "path";
 import { promisify } from "util";
 
 const readFileAsync = promisify(fs.readFile);

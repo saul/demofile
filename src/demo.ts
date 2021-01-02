@@ -4,7 +4,7 @@ import * as timers from "timers";
 import * as ByteBuffer from "bytebuffer";
 import { BitStream } from "./ext/bitbuffer";
 
-import assert = require("assert");
+import * as assert from "assert";
 import { MAX_OSPATH } from "./consts";
 import { ConVars } from "./convars";
 import { Entities } from "./entities";
@@ -17,6 +17,7 @@ import { Team } from "./entities/team";
 import { GameEvents } from "./gameevents";
 import * as net from "./net";
 import { NetMessageName } from "./net";
+import { RequiredNonNullable } from "./pervasive";
 import {
   ICNETMsg_Disconnect,
   ICNETMsg_File,

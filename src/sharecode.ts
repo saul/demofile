@@ -4,7 +4,7 @@ const DICTIONARY = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefhijkmnopqrstuvwxyz23456789";
 
 export function decodeShareCode(shareCode: string): ReadonlyArray<number> {
   if (!shareCode.match(/^CSGO(-[\w]{5}){5}$/))
-    throw new Error("invalid share code");
+    throw new Error(`invalid share code: ${shareCode}`);
 
   const code = shareCode.substr(5).replace(/\-/g, "");
 

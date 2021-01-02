@@ -8,6 +8,7 @@ import * as consts from "./consts";
 import { MAX_PLAYER_NAME_LENGTH, SIGNED_GUID_LEN } from "./consts";
 import { DemoFile } from "./demo";
 import { BitStream } from "./ext/bitbuffer";
+import { RequiredNonNullable } from "./pervasive";
 import {
   ICSVCMsg_CreateStringTable,
   ICSVCMsg_UpdateStringTable

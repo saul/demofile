@@ -10,6 +10,7 @@ import { Player } from "./entities/player";
 import { Team } from "./entities/team";
 import { GameEvents } from "./gameevents";
 import { NetMessageName } from "./net";
+import { RequiredNonNullable } from "./pervasive";
 import { ICNETMsg_Disconnect, ICNETMsg_File, ICNETMsg_NOP, ICNETMsg_PlayerAvatarData, ICNETMsg_SetConVar, ICNETMsg_SignonState, ICNETMsg_SplitScreenUser, ICNETMsg_StringCmd, ICNETMsg_Tick, ICSVCMsg_BSPDecal, ICSVCMsg_ClassInfo, ICSVCMsg_CmdKeyValues, ICSVCMsg_CreateStringTable, ICSVCMsg_CrosshairAngle, ICSVCMsg_EncryptedData, ICSVCMsg_EntityMsg, ICSVCMsg_FixAngle, ICSVCMsg_GameEvent, ICSVCMsg_GameEventList, ICSVCMsg_GetCvarValue, ICSVCMsg_HltvReplay, ICSVCMsg_Menu, ICSVCMsg_PacketEntities, ICSVCMsg_PaintmapData, ICSVCMsg_Prefetch, ICSVCMsg_Print, ICSVCMsg_SendTable, ICSVCMsg_ServerInfo, ICSVCMsg_SetPause, ICSVCMsg_SetView, ICSVCMsg_Sounds, ICSVCMsg_SplitScreen, ICSVCMsg_TempEntities, ICSVCMsg_UpdateStringTable, ICSVCMsg_UserMessage, ICSVCMsg_VoiceData, ICSVCMsg_VoiceInit } from "./protobufs/netmessages";
 import { StringTables } from "./stringtables";
 import { UserMessages } from "./usermessages";

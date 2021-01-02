@@ -3,6 +3,7 @@ import { EventEmitter } from "events";
 import { DemoFile } from "./demo";
 import * as net from "./net";
 import { UserMessageName } from "./net";
+import { RequiredNonNullable } from "./pervasive";
 import {
   ICCSUsrMsg_AchievementEvent,
   ICCSUsrMsg_AdjustMoney,

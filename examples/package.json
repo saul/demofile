@@ -1,0 +1,12 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "demofile": "file:..",
+    "typescript": "^4.1.3"
+  }
+}
