@@ -30,7 +30,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: demos
-          key: demos-${{ hashFiles('demos/SHA256SUMS') }}
+          key: demos-${{ hashFiles('demos/download.sh', 'demos/SHA256SUMS') }}
       - name: Download demos for integration test
         if: steps.cache-demos.outputs.cache-hit != 'true'
         working-directory: ./demos
