@@ -29,4 +29,6 @@ __exportStar(require("./stringtables"), exports);
 __exportStar(require("./usermessages"), exports);
 __exportStar(require("./sharecode"), exports);
 __exportStar(require("./crosshair"), exports);
+var keyvalues_1 = require("./keyvalues");
+Object.defineProperty(exports, "parseBinaryKeyValues", { enumerable: true, get: function () { return keyvalues_1.parseBinaryKeyValues; } });
 //# sourceMappingURL=index.js.map

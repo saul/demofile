@@ -8,9 +8,6 @@ import * as assert from "assert";
 import { MAX_OSPATH } from "./consts";
 import { ConVars } from "./convars";
 import { Entities } from "./entities";
-export { GameRules } from "./entities/gamerules";
-export { Player } from "./entities/player";
-export { Team } from "./entities/team";
 import { GameRules } from "./entities/gamerules";
 import { Player } from "./entities/player";
 import { Team } from "./entities/team";
@@ -59,7 +56,6 @@ import {
 } from "./protobufs/netmessages";
 import { StringTables } from "./stringtables";
 import { UserMessages } from "./usermessages";
-export { parseBinaryKeyValues } from "./keyvalues";
 
 interface IDemoHeader {
   /**
