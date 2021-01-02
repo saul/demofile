@@ -1,5 +1,5 @@
 {
   "name": "demofile dev",
   "extensions": ["esbenp.prettier-vscode"],
-  "postCreateCommand": ".devcontainer/setup.sh"
+  "postCreateCommand": "npm install && bash demos/download.sh"
 }

@@ -2,6 +2,7 @@
 
 # Bail if any command fails
 set -e
+pushd `dirname "$0"`
 
 sudo apt install unrar
 
@@ -14,3 +15,5 @@ LATEST_FILE=$(unrar lb latest.rar | head -n1)
 mv $LATEST_FILE latest.dem
 
 rm latest.rar
+
+popd
