@@ -1,6 +1,4 @@
-/// <reference path="./bit-buffer.d.ts" />
-/// <reference path="./protobufs/cstrike15_usermessages.d.ts" />
-/// <reference path="./protobufs/netmessages.d.ts" />
+/// <reference path="../typings/bit-buffer.d.ts" />
 
 export * from "./entities/baseentity";
 export * from "./entities/gamerules";

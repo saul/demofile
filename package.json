@@ -18,7 +18,7 @@
     "lint": "tslint -p . --exclude 'src/**/*.d.ts'",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "build": "shx rm -rf dist && tsc && tsc -p tsconfig.decl.json && shx cp src/*.d.ts dist && shx cp src/protobufs/*.d.ts dist/protobufs",
+    "build": "shx rm -rf dist && tsc && tsc -p tsconfig.protobufs.json && shx cp src/protobufs/*.d.ts dist/protobufs",
     "watch": "tsc -w",
     "generate-docs": "shx rm -rf docs && typedoc --out docs/ && shx touch docs/.nojekyll",
     "bundle": "npm run build && browserify browser/app.js -d -o browser/bundle.js",
@@ -28,9 +28,10 @@
   },
   "files": [
     "dist",
-    "browser"
+    "browser",
+    "typings"
   ],
-  "main": "dist/demo.js",
+  "main": "dist/index.js",
   "dependencies": {
     "@types/bytebuffer": "^5.0.37",
     "@types/lodash": "^4.14.116",

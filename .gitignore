@@ -5,3 +5,4 @@ GameTracking-CSGO/
 node_modules/
 *.log
 *.ignore
+*.tgz
