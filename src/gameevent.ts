@@ -1,5 +1,6 @@
-import assert = require("assert");
-import _ = require("lodash");
+import * as assert from "assert";
+import * as _ from "lodash";
+import { RequiredNonNullable } from "./pervasive";
 import {
   CSVCMsg_GameEventList,
   ICSVCMsg_GameEvent

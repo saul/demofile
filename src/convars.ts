@@ -1,5 +1,6 @@
 import { EventEmitter } from "events";
 import { DemoFile } from "./demo";
+import { RequiredNonNullable } from "./pervasive";
 import { ICMsg_CVars } from "./protobufs/cstrike15_usermessages";
 import { ICNETMsg_SetConVar } from "./protobufs/netmessages";
 

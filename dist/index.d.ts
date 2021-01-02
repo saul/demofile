@@ -1,4 +1,3 @@
-/// <reference path="../src/pervasive.d.ts" />
 /// <reference path="../src/bit-buffer.d.ts" />
 /// <reference path="../src/protobufs/cstrike15_usermessages.d.ts" />
 /// <reference path="../src/protobufs/netmessages.d.ts" />

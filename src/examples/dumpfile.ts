@@ -3,13 +3,13 @@
 // This file is an thorough example of how to log player kills,
 // team scores, chat text and server cvar changes from a demo file.
 
-import ansiStyles = require("ansi-styles");
-import assert = require("assert");
-import fs = require("fs");
-import util = require("util");
-import demo = require("../demo");
+import * as ansiStyles from "ansi-styles";
+import * as assert from "assert";
+import * as fs from "fs";
+import * as util from "util";
 import { Player } from "../entities/player";
 import { TeamNumber } from "../entities/team";
+import * as demo from "../index";
 
 const colourReplacements = [
   { pattern: /\x01/g, ansi: ansiStyles.whiteBright.open }, // Default

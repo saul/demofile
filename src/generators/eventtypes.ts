@@ -1,7 +1,7 @@
 // tslint:disable:no-console
 
-import assert = require("assert");
-import fs = require("fs");
+import * as assert from "assert";
+import * as fs from "fs";
 import { DemoFile } from "../demo";
 
 // Pulled from IHLTVDirector::GetModEvents

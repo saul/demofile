@@ -9,6 +9,7 @@ import { Player } from "./entities/player";
 import { Team } from "./entities/team";
 import { Weapon } from "./entities/weapon";
 import { EntityHandle } from "./entityhandle";
+import { RequiredNonNullable } from "./pervasive";
 import { PropValue } from "./props";
 import { CSVCMsg_SendTable, ICSVCMsg_SendTable } from "./protobufs/netmessages";
 import { CCSPlayerResource } from "./sendtabletypes";

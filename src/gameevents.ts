@@ -2,6 +2,7 @@ import { EventEmitter } from "events";
 import * as _ from "lodash";
 import { DemoFile } from "./demo";
 import { GameEvent } from "./gameevent";
+import { RequiredNonNullable } from "./pervasive";
 import { ICSVCMsg_GameEventList } from "./protobufs/netmessages";
 
 interface GameEventEvent<T> {

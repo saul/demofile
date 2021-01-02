@@ -7,8 +7,8 @@ const ansiStyles = require("ansi-styles");
 const assert = require("assert");
 const fs = require("fs");
 const util = require("util");
-const demo = require("../demo");
 const player_1 = require("../entities/player");
+const demo = require("../index");
 const colourReplacements = [
     { pattern: /\x01/g, ansi: ansiStyles.whiteBright.open },
     { pattern: /\x02/g, ansi: ansiStyles.red.open },
