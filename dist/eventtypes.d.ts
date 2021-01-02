@@ -259,6 +259,7 @@ export interface IEventPlayerDeath {
     noscope: boolean;
     thrusmoke: boolean;
     attackerblind: boolean;
+    distance: number;
 }
 export interface IEventPlayerDisconnect {
     userid: number;
@@ -329,6 +330,7 @@ export interface IEventRoundFreezeEnd {
 export interface IEventRoundMvp {
     userid: number;
     reason: number;
+    value: number;
     musickitmvps: number;
     nomusic: number;
 }
