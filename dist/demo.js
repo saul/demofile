@@ -9,18 +9,10 @@ const assert = require("assert");
 const consts_1 = require("./consts");
 const convars_1 = require("./convars");
 const entities_1 = require("./entities");
-var gamerules_1 = require("./entities/gamerules");
-Object.defineProperty(exports, "GameRules", { enumerable: true, get: function () { return gamerules_1.GameRules; } });
-var player_1 = require("./entities/player");
-Object.defineProperty(exports, "Player", { enumerable: true, get: function () { return player_1.Player; } });
-var team_1 = require("./entities/team");
-Object.defineProperty(exports, "Team", { enumerable: true, get: function () { return team_1.Team; } });
 const gameevents_1 = require("./gameevents");
 const net = require("./net");
 const stringtables_1 = require("./stringtables");
 const usermessages_1 = require("./usermessages");
-var keyvalues_1 = require("./keyvalues");
-Object.defineProperty(exports, "parseBinaryKeyValues", { enumerable: true, get: function () { return keyvalues_1.parseBinaryKeyValues; } });
 /**
  * Parses a demo file header from the buffer.
  * @param {ArrayBuffer} buffer - Buffer of the demo header

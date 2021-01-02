@@ -1,8 +1,9 @@
 {
   "name": "demofile",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "author": "Saul Rennison <saul.rennison@gmail.com>",
   "typings": "dist/index.d.ts",
+  "main": "dist/index.js",
   "license": "MIT",
   "keywords": [
     "demo",
@@ -31,7 +32,6 @@
     "browser",
     "typings"
   ],
-  "main": "dist/index.js",
   "dependencies": {
     "@types/bytebuffer": "^5.0.37",
     "@types/lodash": "^4.14.116",

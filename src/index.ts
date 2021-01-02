@@ -18,3 +18,4 @@ export * from "./stringtables";
 export * from "./usermessages";
 export * from "./sharecode";
 export * from "./crosshair";
+export { parseBinaryKeyValues } from "./keyvalues";

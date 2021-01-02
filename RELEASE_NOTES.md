@@ -6,6 +6,11 @@
 - Unreleased release notes here
 -->
 
+### 1.9.0 (2021-01-02)
+
+- :bug: #154: Fixed TypeScript compilation errors
+- :zap: Updated type definitions
+
 ### 1.8.0 (2020-11-01)
 
 - :sparkles: #187: Add `Player#crosshairInfo` for grabbing player crosshair settings
