@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build and Test
+    name: Build and test
     runs-on: ubuntu-latest
 
     strategy:
@@ -41,6 +41,18 @@ jobs:
         with:
           name: coverage
           path: coverage/
+      - name: Create package tarball
+        run: npm pack
+      - uses: actions/upload-artifact@v2
+        with:
+          name: package
+          path: "*.tgz"
+      - name: Test package tarball with an example demo file
+        working-directory: examples
+        run: |
+          npm uninstall demofile
+          npm install ../demofile-*.tgz
+          npx ts-node scores.ts ../demos/pc419-vs-chiefs-mirage.dem
 
   lint:
     name: Linting

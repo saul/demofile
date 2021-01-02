@@ -7,9 +7,7 @@ import * as ansiStyles from "ansi-styles";
 import * as assert from "assert";
 import * as fs from "fs";
 import * as util from "util";
-import { Player } from "../entities/player";
-import { TeamNumber } from "../entities/team";
-import * as demo from "../index";
+import { DemoFile, Player, TeamNumber } from "demofile";
 
 const colourReplacements = [
   { pattern: /\x01/g, ansi: ansiStyles.whiteBright.open }, // Default
@@ -50,7 +48,7 @@ function parseDemoFile(path: string) {
   fs.readFile(path, (err, buffer) => {
     assert.ifError(err);
 
-    const demoFile = new demo.DemoFile();
+    const demoFile = new DemoFile();
 
     function logTeamScores() {
       const teams = demoFile.teams;

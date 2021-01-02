@@ -6,3 +6,4 @@ node_modules/
 *.log
 *.ignore
 *.tgz
+examples/*.js
