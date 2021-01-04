@@ -74,6 +74,21 @@ test.concurrent(
       });
 
       demo.gameEvents.on("round_end", e => {
+        for (const player of demo.players) {
+          log(`player:${player.userId}`, {
+            name: player.name,
+            lifeState: player.lifeState,
+            type: player.isFakePlayer
+              ? "bot"
+              : player.isHltv
+              ? "gotv"
+              : "human",
+            position: player.position,
+            velocity: player.velocity,
+            weapon: player.weapon?.itemName
+          });
+        }
+
         log("round_end", {
           ...e,
           phase: demo.gameRules.phase,
@@ -114,6 +129,10 @@ test.concurrent(
       });
 
       demo.userMessages.on("message", e => {
+        // Skip particularly noisy user messages
+        if (e.name === "HudMsg" || e.name === "ProcessSpottedEntityUpdate")
+          return;
+
         log("user_message", e);
       });
 
