@@ -7,8 +7,9 @@ const _ = require("lodash");
 const assert_exists_1 = require("./assert-exists");
 const bitbuffer_1 = require("./ext/bitbuffer");
 const consts = require("./consts");
-const functional = require("./functional");
 const net = require("./net");
+const immutable = require("immutable");
+const iter_tools_1 = require("iter-tools");
 const baseentity_1 = require("./entities/baseentity");
 const gamerules_1 = require("./entities/gamerules");
 const networkable_1 = require("./entities/networkable");
@@ -51,6 +52,14 @@ function readFieldIndex(entityBitBuffer, lastIndex, newWay) {
     }
     return lastIndex + 1 + ret;
 }
+function cloneProps(props) {
+    const root = Object.assign({}, props);
+    // tslint:disable-next-line:forin
+    for (const key in root) {
+        root[key] = Object.assign({}, root[key]);
+    }
+    return root;
+}
 /**
  * Represents entities and networked properties within a demo.
  */
@@ -60,11 +69,11 @@ class Entities extends events_1.EventEmitter {
         this.dataTables = [];
         this.serverClasses = [];
         /**
-         * Array of all entities in game.
+         * Map of entity index => networkable instance
          */
-        this.entities = new Array(1 << consts.MAX_EDICT_BITS).fill(null);
+        this.entities = new Map();
         this.markedForDeletion = [];
-        this.instanceBaselines = {};
+        this.staticBaselines = {};
         this.pendingBaselines = {};
         this.serverClassBits = 0;
         this.tableClassMap = {
@@ -74,6 +83,15 @@ class Entities extends events_1.EventEmitter {
             DT_WeaponCSBase: weapon_1.Weapon,
             DT_BaseEntity: baseentity_1.BaseEntity
         };
+        /**
+         * Set of which entities were active in the most recent tick.
+         */
+        this.transmitEntities = null;
+        this._entityBaselines = [
+            new Map(),
+            new Map()
+        ];
+        this._frames = immutable.Map();
         this._demo = null;
         this._singletonEnts = {};
         this._currentServerTick = -1;
@@ -85,13 +103,13 @@ class Entities extends events_1.EventEmitter {
         return this.getSingleton("CCSGameRulesProxy");
     }
     get teams() {
-        return this.findAllWithClass(team_1.Team);
+        return Array.from(this.findAllWithClass(team_1.Team));
     }
     get players() {
-        return this.findAllWithClass(player_1.Player);
+        return Array.from(this.findAllWithClass(player_1.Player));
     }
     get weapons() {
-        return this.findAllWithClass(weapon_1.Weapon);
+        return Array.from(this.findAllWithClass(weapon_1.Weapon));
     }
     listen(demo) {
         this._demo = demo;
@@ -104,7 +122,7 @@ class Entities extends events_1.EventEmitter {
         demo.on("tickend", () => {
             if (this.markedForDeletion.length > 0) {
                 for (const index of this.markedForDeletion) {
-                    this.entities[index] = null;
+                    this.entities.delete(index);
                     this.emit("remove", { index });
                 }
                 this.markedForDeletion.length = 0;
@@ -129,7 +147,7 @@ class Entities extends events_1.EventEmitter {
         if (!handle.isValid) {
             return null;
         }
-        const ent = this.entities[handle.index];
+        const ent = this.entities.get(handle.index);
         if (ent == null || ent.serialNum !== handle.serialNum) {
             return null;
         }
@@ -146,11 +164,11 @@ class Entities extends events_1.EventEmitter {
             return null;
         }
         const userInfos = userInfoTable.entries;
-        for (let i = 0; i < userInfos.length; ++i) {
-            const userEntry = userInfos[i];
+        for (let clientSlot = 0; clientSlot < userInfos.length; ++clientSlot) {
+            const userEntry = userInfos[clientSlot];
             if (userEntry.userData && userEntry.userData.userId === userId) {
                 // UNSAFE: if we have 'userinfo' for this entity, it's definitely a player
-                return this.entities[i + 1];
+                return this.entities.get(clientSlot + 1);
             }
         }
         return null;
@@ -160,18 +178,27 @@ class Entities extends events_1.EventEmitter {
         if (existing) {
             return existing;
         }
-        const entity = this.entities.find(ent => ent ? ent.serverClass.name === serverClass : false);
-        if (!entity) {
+        const result = iter_tools_1.find(([, ent]) => (ent ? ent.serverClass.name === serverClass : false), this.entities);
+        if (!result) {
             throw new Error(`Missing singleton ${serverClass}`);
         }
+        const [, entity] = result;
         this._singletonEnts[serverClass] = entity;
         return entity;
     }
-    findAllWithTable(table) {
-        return this.entities.filter((ent) => ent != null ? table in ent.props : false);
+    *findAllWithTable(table) {
+        for (const ent of this.entities.values()) {
+            if (table in ent.props) {
+                yield ent;
+            }
+        }
     }
-    findAllWithClass(klass) {
-        return this.entities.filter(ent => ent ? ent instanceof klass : false);
+    *findAllWithClass(klass) {
+        for (const ent of this.entities.values()) {
+            if (ent instanceof klass) {
+                yield ent;
+            }
+        }
     }
     handleDataTables(chunk) {
         while (true) {
@@ -203,11 +230,11 @@ class Entities extends events_1.EventEmitter {
             // parse any pending baseline
             const pendingBaseline = this.pendingBaselines[classId];
             if (pendingBaseline) {
-                this.instanceBaselines[classId] = this._parseInstanceBaseline(pendingBaseline, classId);
+                this.staticBaselines[classId] = this._parseInstanceBaseline(pendingBaseline, classId);
                 this.emit("baselineupdate", {
                     classId,
                     serverClass,
-                    baseline: this.instanceBaselines[classId]
+                    baseline: this.staticBaselines[classId]
                 });
                 delete this.pendingBaselines[classId];
             }
@@ -293,35 +320,50 @@ class Entities extends events_1.EventEmitter {
     _findTableByName(name) {
         return this.dataTables.find(table => table.netTableName === name);
     }
-    _addEntity(index, classId, serialNum) {
-        if (this.entities[index]) {
-            this._removeEntity(index, true);
+    _addEntity(index, classId, serialNum, entityBaseline) {
+        const baseline = entityBaseline || this.staticBaselines[classId];
+        if (!baseline) {
+            throw new Error(`no baseline for entity ${index} (class ID ${classId})`);
         }
-        const baseline = this.instanceBaselines[classId];
-        let klass = networkable_1.Networkable;
         // Try to find a suitable class for this entity
-        if (baseline !== undefined) {
-            for (const tableName in this.tableClassMap) {
-                if (baseline[tableName]) {
-                    klass = this.tableClassMap[tableName];
-                    break;
-                }
+        let klass = networkable_1.Networkable;
+        for (const tableName in this.tableClassMap) {
+            if (baseline[tableName]) {
+                klass = this.tableClassMap[tableName];
+                break;
             }
         }
-        const entity = new klass(this._demo, index, classId, serialNum, _.cloneDeep(baseline));
-        this.entities[index] = entity;
+        const existingEntity = this.entities.get(index);
+        // Use the old entity if the serial numbers match
+        if ((existingEntity === null || existingEntity === void 0 ? void 0 : existingEntity.serialNum) === serialNum) {
+            return existingEntity;
+        }
+        // Otherwise delete the entity if the serial numbers mismatch
+        if (existingEntity) {
+            this._removeEntity(index, true);
+        }
+        const entity = new klass(this._demo, index, classId, serialNum, cloneProps(baseline));
+        this.entities.set(index, entity);
         this.emit("create", { entity });
         return entity;
     }
     _removeEntity(index, immediate) {
-        const entity = assert_exists_1.default(this.entities[index], "cannot remove non-existent entity");
+        const entity = this.entities.get(index);
+        if (!entity) {
+            return;
+        }
+        // It's possible that the entity is already marked for deletion.
+        // This is because entities are deleted at the end of the dem_packet,
+        // after the game events fire.
+        if (!immediate && entity.deleting) {
+            return;
+        }
         this.emit("beforeremove", { entity, immediate });
         if (immediate) {
-            this.entities[index] = null;
+            this.entities.delete(index);
             this.emit("remove", { index });
         }
         else {
-            assert(!entity.deleting, "cannot delete an entity already marked for deletion");
             entity.deleting = true;
             this.markedForDeletion.push(index);
         }
@@ -329,32 +371,53 @@ class Entities extends events_1.EventEmitter {
     _parseEntityUpdate(entityBitBuffer, classId) {
         const serverClass = this.serverClasses[classId];
         const newWay = entityBitBuffer.readOneBit();
-        const fieldIndices = functional.fillUntil(-1, lastIndex => readFieldIndex(entityBitBuffer, lastIndex, newWay), -1);
-        const updatedProps = [];
-        for (const index of fieldIndices) {
-            const flattenedProp = serverClass.flattenedProps[index];
+        let lastIndex = -1;
+        const fieldIndices = [];
+        while (true) {
+            // eslint-disable-line no-constant-condition
+            lastIndex = readFieldIndex(entityBitBuffer, lastIndex, newWay);
+            if (lastIndex === -1) {
+                break;
+            }
+            fieldIndices.push(lastIndex);
+        }
+        const updatedProps = new Array(fieldIndices.length);
+        for (let i = 0; i < fieldIndices.length; ++i) {
+            const propIndex = fieldIndices[i];
+            const flattenedProp = serverClass.flattenedProps[propIndex];
             assert(flattenedProp);
-            updatedProps.push({
+            updatedProps[i] = {
                 prop: flattenedProp,
                 value: flattenedProp.decode(entityBitBuffer)
-            });
+            };
         }
         return updatedProps;
     }
     _readNewEntity(entityBitBuffer, entity) {
         const updates = this._parseEntityUpdate(entityBitBuffer, entity.classId);
-        for (const update of updates) {
+        // TODO: what's the perf impact of always recording changes - is it worth the extra complexity?
+        const recordChanges = this.listenerCount("change") > 0;
+        const changes = recordChanges ? new Array(updates.length) : [];
+        for (let i = 0; i < updates.length; ++i) {
+            const update = updates[i];
             const tableName = update.prop.table.netTableName;
             const varName = update.prop.prop.varName;
             const table = entity.props[tableName];
             const oldValue = table && varName in table ? table[varName] : undefined;
             entity.updateProp(tableName, varName, update.value);
+            if (recordChanges) {
+                changes[i] = {
+                    tableName,
+                    varName,
+                    oldValue,
+                    newValue: update.value
+                };
+            }
+        }
+        if (recordChanges) {
             this.emit("change", {
                 entity,
-                tableName,
-                varName,
-                oldValue,
-                newValue: update.value
+                changes
             });
         }
     }
@@ -378,7 +441,6 @@ class Entities extends events_1.EventEmitter {
                 fireDelay = entityBitBuffer.readSBits(8) / 100.0;
             }
             if (entityBitBuffer.readOneBit()) {
-                // TODO: figure out why this is the server class - 1
                 lastClassId = entityBitBuffer.readUBits(this.serverClassBits) - 1;
                 const updates = this._parseEntityUpdate(entityBitBuffer, lastClassId);
                 lastProps = this._updatesToPropObject({}, updates);
@@ -387,7 +449,7 @@ class Entities extends events_1.EventEmitter {
                 // delta against last temp entity
                 assert(lastClassId !== -1, "Delta with no baseline");
                 const updates = this._parseEntityUpdate(entityBitBuffer, lastClassId);
-                lastProps = this._updatesToPropObject(_.cloneDeep(assert_exists_1.default(lastProps)), updates);
+                lastProps = this._updatesToPropObject(cloneProps(assert_exists_1.default(lastProps)), updates);
             }
             this.emit("tempent", {
                 delay: fireDelay,
@@ -398,40 +460,91 @@ class Entities extends events_1.EventEmitter {
         }
     }
     _handlePacketEntities(msg) {
+        // Take a copy of the transmitted entities from the delta frame
+        // Otherwise start with a blank slate
+        const baseTransmitEntities = assert_exists_1.default(msg.isDelta
+            ? this._frames.get(msg.deltaFrom)
+            : immutable.Set(), `delta from unknown frame ${msg.deltaFrom}`);
+        if (!msg.isDelta) {
+            // Clear out old entities - this is a full update
+            for (const entityIndex of Array.from(this.entities.keys())) {
+                this._removeEntity(entityIndex, true);
+            }
+            // Remove all frames - we won't be using them
+            // TODO: is this correct? will we ever try to delta from an old frame after a full update?
+            this._frames = immutable.Map();
+            // Clear all entity baselines
+            for (const baseline of this._entityBaselines) {
+                baseline.clear();
+            }
+        }
+        const newFrame = baseTransmitEntities.withMutations(mutableFrame => this._readPacketEntities(msg, mutableFrame));
+        this._frames = this._frames.set(this._currentServerTick, newFrame);
+        this.transmitEntities = newFrame;
+        // Delete old frames that we no longer need to reference
+        if (msg.isDelta) {
+            const oldFrames = iter_tools_1.filter(tick => tick < msg.deltaFrom, this._frames.keys());
+            this._frames = this._frames.removeAll(oldFrames);
+        }
+    }
+    _readPacketEntities(msg, frame) {
         const entityBitBuffer = bitbuffer_1.BitStream.from(msg.entityData);
         let entityIndex = -1;
-        // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/cl_ents_parse.cpp#L297-L431
-        // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/cl_ents_parse.cpp#L544-L648
-        // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/baseclientstate.cpp#L1245-L1312
         for (let i = 0; i < msg.updatedEntries; ++i) {
             entityIndex += 1 + entityBitBuffer.readUBitVar();
-            assert(entityIndex < this.entities.length, "newEntity >= MAX_EDICTS");
+            assert(entityIndex < consts.MAX_EDICTS, "newEntity >= MAX_EDICTS");
             if (entityBitBuffer.readOneBit()) {
+                assert(msg.isDelta, "entity leaving PVS on full update");
+                frame.remove(entityIndex);
                 if (entityBitBuffer.readOneBit()) {
-                    assert(msg.isDelta, "deleting entity on full update");
+                    // 0b11: FHDR_LEAVEPVS | FHDR_DELETE
                     this._removeEntity(entityIndex, false);
                 }
                 else {
-                    assert(msg.isDelta, "entity leaving PVS on full update");
-                    // Maybe set a flag on the entity indicating that it is out of PVS?
+                    // 0b10: FHDR_LEAVEPVS
                 }
                 // tslint:disable-next-line:no-identical-conditions
             }
             else if (entityBitBuffer.readOneBit()) {
+                // 0b01: FHDR_ENTERPVS
+                frame.add(entityIndex);
                 const classId = entityBitBuffer.readUBits(this.serverClassBits);
                 const serialNum = entityBitBuffer.readUBits(consts.NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS);
-                const newEnt = this._addEntity(entityIndex, classId, serialNum);
-                this._readNewEntity(entityBitBuffer, newEnt);
+                const existingBaseline = this._entityBaselines[msg.baseline].get(entityIndex);
+                const entityBaselineProps = msg.isDelta && (existingBaseline === null || existingBaseline === void 0 ? void 0 : existingBaseline.classId) === classId
+                    ? existingBaseline.props
+                    : undefined;
+                const entity = this._addEntity(entityIndex, classId, serialNum, entityBaselineProps);
+                this._readNewEntity(entityBitBuffer, entity);
                 this.emit("postcreate", {
-                    entity: newEnt
+                    entity
                 });
+                // Update the OTHER baseline with the merged result of `old baseline + new props`
+                if (msg.updateBaseline) {
+                    this._entityBaselines[msg.baseline ? 0 : 1].set(entityIndex, {
+                        classId,
+                        props: cloneProps(entity.props)
+                    });
+                }
             }
             else {
-                const entity = assert_exists_1.default(this.entities[entityIndex], "delta on deleted entity");
+                // 0b00: DeltaEnt
+                const entity = assert_exists_1.default(this.entities.get(entityIndex), `missing client entity ${entityIndex}`);
+                assert(frame.contains(entityIndex), `delta on dormant entity ${entityIndex}`);
                 this._readNewEntity(entityBitBuffer, entity);
             }
         }
-        // TODO: Delete old frames that we no longer need to reference
+        // Read deletions
+        if (msg.isDelta) {
+            entityIndex = -1;
+            const deletions = entityBitBuffer.readUBitVar();
+            for (let i = 0; i < deletions; ++i) {
+                entityIndex += entityBitBuffer.readUBitVar();
+                // Entity wasn't dealt with in packet, but has been deleted
+                frame.remove(entityIndex);
+                this._removeEntity(entityIndex, false);
+            }
+        }
     }
     _parseInstanceBaseline(baselineBuf, classId) {
         const classBaseline = {};
@@ -459,7 +572,7 @@ class Entities extends events_1.EventEmitter {
             return;
         }
         const baseline = this._parseInstanceBaseline(baselineBuf, classId);
-        this.instanceBaselines[classId] = baseline;
+        this.staticBaselines[classId] = baseline;
         this.emit("baselineupdate", {
             classId,
             serverClass: this.serverClasses[classId],

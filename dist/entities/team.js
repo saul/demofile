@@ -13,7 +13,7 @@ class Team extends networkable_1.Networkable {
     get members() {
         // UNSAFE: cast here as members will always be players
         return this.getProp("DT_Team", '"player_array"')
-            .map(index => this._demo.entities.entities[index])
+            .map(index => this._demo.entities.entities.get(index))
             .filter(player => player instanceof player_1.Player);
     }
     /**

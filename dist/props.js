@@ -156,12 +156,12 @@ function makeVectorDecoder(sendProp) {
         else {
             v.z = floatDecode(bitbuf);
         }
-        return Object.freeze(v);
+        return v;
     };
 }
 function makeVectorXYDecoder(sendProp) {
     const floatDecode = makeFloatDecoder(sendProp);
-    return bitbuf => Object.freeze({
+    return bitbuf => ({
         x: floatDecode(bitbuf),
         y: floatDecode(bitbuf),
         z: 0.0

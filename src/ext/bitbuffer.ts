@@ -273,7 +273,23 @@ BitStream.prototype.readBitCellCoord = function (
   return value;
 };
 
-BitStream.prototype.readCString = BitStream.prototype.readASCIIString;
+BitStream.prototype.readCString = function (this: BitStream) {
+  let s = "";
+
+  while (true) {
+    const c = this.readUint8();
+
+    // Stop appending chars once we hit 0x00
+    if (c === 0x00) {
+      break;
+    }
+
+    s += String.fromCharCode(c);
+  }
+
+  return s;
+};
+
 BitStream.prototype.readUInt8 = BitStream.prototype.readUint8;
 BitStream.prototype.readUInt16 = BitStream.prototype.readUint16;
 BitStream.prototype.readUInt32 = BitStream.prototype.readUint32;

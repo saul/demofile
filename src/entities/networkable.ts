@@ -57,10 +57,6 @@ export class Networkable<Props = UnknownEntityProps> {
     this.classId = classId;
     this.serialNum = serialNum;
     this.props = props || ({} as Props);
-
-    if (this.classId === 84 && "DT_CChicken" in this.props) {
-      debugger;
-    }
   }
 
   /**
@@ -74,10 +70,6 @@ export class Networkable<Props = UnknownEntityProps> {
     tableName: Table,
     varName: VarName
   ): Props[Table][VarName] {
-    if (!(tableName in this.props)) {
-      debugger;
-    }
-
     return this.props[tableName][varName];
   }
 
@@ -126,6 +118,6 @@ export class Networkable<Props = UnknownEntityProps> {
    * Always false on GOTV demos as all entities are always in the PVS.
    */
   public get isDormant(): boolean {
-    throw new Error(`not implemented`);
+    return !this._demo.entities.transmitEntities.has(this.index);
   }
 }

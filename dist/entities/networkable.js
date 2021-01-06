@@ -67,6 +67,13 @@ class Networkable {
             table[varName] = newValue;
         }
     }
+    /**
+     * True if this entity is out of the PVS.
+     * Always false on GOTV demos as all entities are always in the PVS.
+     */
+    get isDormant() {
+        return !this._demo.entities.transmitEntities.has(this.index);
+    }
 }
 exports.Networkable = Networkable;
 //# sourceMappingURL=networkable.js.map

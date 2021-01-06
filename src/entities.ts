@@ -350,6 +350,11 @@ export class Entities extends EventEmitter {
     DT_BaseEntity: BaseEntity
   };
 
+  /**
+   * Set of which entities were active in the most recent tick.
+   */
+  public transmitEntities: TransmitEntities = null!;
+
   private _entityBaselines: ReadonlyArray<Map<number, IEntityBaseline>> = [
     new Map(),
     new Map()
@@ -359,6 +364,7 @@ export class Entities extends EventEmitter {
     TickNumber,
     TransmitEntities
   > = immutable.Map();
+
   private _demo: DemoFile = null!;
   private _singletonEnts: { [table: string]: Networkable | undefined } = {};
   private _currentServerTick: TickNumber = -1 as TickNumber;
@@ -876,16 +882,19 @@ export class Entities extends EventEmitter {
       }
     }
 
-    // TODO: perf test this against using mutable maps
     const newFrame = baseTransmitEntities.withMutations(mutableFrame =>
       this._readPacketEntities(msg, mutableFrame as MutableTransmitEntities)
     );
 
     this._frames = this._frames.set(this._currentServerTick, newFrame);
+    this.transmitEntities = newFrame;
 
+    // Delete old frames that we no longer need to reference
     if (msg.isDelta) {
-      // Delete old frames that we no longer need to reference
-      const oldFrames = filter(i => i < msg.deltaFrom, this._frames.keys());
+      const oldFrames = filter(
+        tick => tick < msg.deltaFrom,
+        this._frames.keys()
+      );
       this._frames = this._frames.removeAll(oldFrames);
     }
   }

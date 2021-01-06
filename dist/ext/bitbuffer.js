@@ -181,7 +181,18 @@ bit_buffer_1.BitStream.prototype.readBitCellCoord = function (bits, coordType) {
     }
     return value;
 };
-bit_buffer_1.BitStream.prototype.readCString = bit_buffer_1.BitStream.prototype.readASCIIString;
+bit_buffer_1.BitStream.prototype.readCString = function () {
+    let s = "";
+    while (true) {
+        const c = this.readUint8();
+        // Stop appending chars once we hit 0x00
+        if (c === 0x00) {
+            break;
+        }
+        s += String.fromCharCode(c);
+    }
+    return s;
+};
 bit_buffer_1.BitStream.prototype.readUInt8 = bit_buffer_1.BitStream.prototype.readUint8;
 bit_buffer_1.BitStream.prototype.readUInt16 = bit_buffer_1.BitStream.prototype.readUint16;
 bit_buffer_1.BitStream.prototype.readUInt32 = bit_buffer_1.BitStream.prototype.readUint32;

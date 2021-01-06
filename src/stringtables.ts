@@ -254,9 +254,6 @@ export class StringTables extends EventEmitter {
     table: IStringTable<any>,
     entries: number
   ) {
-    // overflow silently. this is how the official parser handles overflows...
-    bitbuf.view.silentOverflow = true;
-
     const history: Array<string | null> = [];
 
     const entryBits = Math.ceil(Math.log2(table.maxEntries));
@@ -265,89 +262,84 @@ export class StringTables extends EventEmitter {
 
     assert(!bitbuf.readOneBit(), "dictionary encoding unsupported");
 
-    _.reduce(
-      _.range(entries),
-      lastEntry => {
-        let entryIndex = lastEntry + 1;
+    let entryIndex = -1;
+    for (let i = 0; i < entries; ++i) {
+      entryIndex += 1;
 
-        if (!bitbuf.readOneBit()) {
-          entryIndex = bitbuf.readUBits(entryBits);
-        }
+      if (!bitbuf.readOneBit()) {
+        entryIndex = bitbuf.readUBits(entryBits);
+      }
 
-        assert(
-          entryIndex >= 0 && entryIndex < table.maxEntries,
-          "bogus string index"
-        );
+      assert(
+        entryIndex >= 0 && entryIndex < table.maxEntries,
+        "bogus string index"
+      );
 
-        const existingEntry = table.entries[entryIndex];
-        let entry = null;
+      const existingEntry = table.entries[entryIndex];
+      let entry = null;
 
-        // has the entry changed?
+      // has the entry changed?
+      if (bitbuf.readOneBit()) {
+        // substring check
         if (bitbuf.readOneBit()) {
-          // substring check
-          if (bitbuf.readOneBit()) {
-            const index = bitbuf.readUBits(5);
-            const bytesToCopy = bitbuf.readUBits(consts.SUBSTRING_BITS);
+          const index = bitbuf.readUBits(5);
+          const bytesToCopy = bitbuf.readUBits(consts.SUBSTRING_BITS);
 
-            const last = history[index];
-            if (last == null) {
-              throw new Error(
-                "string table entry is delta from non existent entry"
-              );
-            }
-
-            const subStr = last.slice(0, bytesToCopy);
-            const suffix = bitbuf.readCString();
-
-            entry = subStr + suffix;
-          } else {
-            entry = bitbuf.readCString();
+          const last = history[index];
+          if (last == null) {
+            throw new Error(
+              "string table entry is delta from non existent entry"
+            );
           }
+
+          const subStr = last.slice(0, bytesToCopy);
+          const suffix = bitbuf.readCString();
+
+          entry = subStr + suffix;
         } else {
-          // If the string itself hasn't changed, this entry must already exist
-          entry = assertExists(existingEntry).entry;
+          entry = bitbuf.readCString();
         }
+      } else {
+        // If the string itself hasn't changed, this entry must already exist
+        entry = assertExists(existingEntry).entry;
+      }
 
-        // read in the user data
-        let userData = null;
+      // read in the user data
+      let userData = null;
 
-        if (bitbuf.readOneBit()) {
-          // don't read the length, it's fixed length and the length was networked down already
-          if (table.userDataFixedSize) {
-            const userDataArray = [bitbuf.readUBits(table.userDataSizeBits)];
-            userData = Buffer.from(userDataArray);
-          } else {
-            const bytes = bitbuf.readUBits(consts.MAX_USERDATA_BITS);
-            userData = bitbuf.readBytes(bytes);
-          }
-
-          if (userDataCallback !== undefined) {
-            userData = userDataCallback(userData);
-          }
+      if (bitbuf.readOneBit()) {
+        // don't read the length, it's fixed length and the length was networked down already
+        if (table.userDataFixedSize) {
+          const userDataArray = [bitbuf.readUBits(table.userDataSizeBits)];
+          userData = Buffer.from(userDataArray);
         } else {
-          userData = existingEntry ? existingEntry.userData : null;
+          const bytes = bitbuf.readUBits(consts.MAX_USERDATA_BITS);
+          userData = bitbuf.readBytes(bytes);
         }
 
-        table.entries[entryIndex] = { entry, userData };
-
-        // add to history
-        if (history.length > 31) {
-          history.shift();
+        if (userDataCallback !== undefined) {
+          userData = userDataCallback(userData);
         }
+      } else {
+        userData = existingEntry ? existingEntry.userData : null;
+      }
 
-        history.push(entry);
+      table.entries[entryIndex] = { entry, userData };
 
-        this.emit("update", {
-          table,
-          entryIndex,
-          entry,
-          userData
-        });
+      // add to history
+      if (history.length > 31) {
+        history.shift();
+      }
 
-        return entryIndex;
-      },
-      -1
-    );
+      history.push(entry);
+
+      this.emit("update", {
+        table,
+        entryIndex,
+        entry,
+        userData
+      });
+    }
   }
 
   private _handleCreateStringTable(
