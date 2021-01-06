@@ -156,12 +156,12 @@ function makeVectorDecoder(sendProp) {
         else {
             v.z = floatDecode(bitbuf);
         }
-        return v;
+        return Object.freeze(v);
     };
 }
 function makeVectorXYDecoder(sendProp) {
     const floatDecode = makeFloatDecoder(sendProp);
-    return bitbuf => ({
+    return bitbuf => Object.freeze({
         x: floatDecode(bitbuf),
         y: floatDecode(bitbuf),
         z: 0.0
@@ -205,11 +205,15 @@ function makeInt64Decoder(sendProp) {
 }
 function makeArrayDecoder(sendProp, arrayElementProp) {
     const maxElements = sendProp.numElements;
-    const numBits = Math.floor(Math.log2(maxElements)) + 1;
+    const numBits = (Math.log2(maxElements) | 0) + 1;
     const elementDecoder = makeValueDecoder(arrayElementProp);
     return bitbuf => {
         const numElements = bitbuf.readUBits(numBits);
-        return new Array(numElements).fill(0).map(() => elementDecoder(bitbuf));
+        const array = new Array(numElements);
+        for (let i = 0; i < numElements; ++i) {
+            array[i] = elementDecoder(bitbuf);
+        }
+        return array;
     };
 }
 //# sourceMappingURL=props.js.map

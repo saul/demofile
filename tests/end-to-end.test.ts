@@ -78,10 +78,10 @@ test.concurrent(
           log(`player:${player.userId}`, {
             name: player.name,
             lifeState: player.lifeState,
-            type: player.isFakePlayer
-              ? "bot"
-              : player.isHltv
+            type: player.isHltv
               ? "gotv"
+              : player.isFakePlayer
+              ? "bot"
               : "human",
             position: player.position,
             velocity: player.velocity,
@@ -157,6 +157,59 @@ test.concurrent(
       demo.on("end", e => {
         expect(e.error).toBeFalsy();
         expect(e.incomplete).toStrictEqual(true);
+        resolve();
+      });
+
+      startParsing(demoFileName, demo);
+    })
+);
+
+test.concurrent(
+  "in eye demos can be parsed",
+  () =>
+    new Promise(resolve => {
+      const demoFileName = "testgamedeouf.dem";
+      const demo = new DemoFile();
+      monitorProgress(demoFileName, demo);
+
+      const timeline: string[] = [];
+
+      function log(name: string, data: any) {
+        const line = `[${demo.currentTick}] ${name}: ${JSON.stringify(data)}`;
+        timeline[timeline.length] = line;
+      }
+
+      demo.on("start", () => {
+        log("start", demo.header);
+      });
+
+      demo.gameEvents.on("round_end", e => {
+        for (const player of demo.players) {
+          log(`player:${player.userId}`, {
+            name: player.name,
+            lifeState: player.lifeState,
+            type: player.isHltv
+              ? "gotv"
+              : player.isFakePlayer
+              ? "bot"
+              : "human",
+            position: player.position,
+            velocity: player.velocity,
+            weapon: player.weapon?.itemName
+          });
+        }
+
+        log("round_end", {
+          ...e,
+          phase: demo.gameRules.phase,
+          time: demo.currentTime
+        });
+      });
+
+      demo.on("end", e => {
+        expect(e.error).toBeFalsy();
+        expect(timeline).toMatchSnapshot();
+
         resolve();
       });
 

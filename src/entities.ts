@@ -9,6 +9,8 @@ import * as consts from "./consts";
 import * as functional from "./functional";
 import * as net from "./net";
 
+import * as immutable from "immutable";
+import { filter, find } from "iter-tools";
 import { DemoFile } from "./demo";
 import { BaseEntity } from "./entities/baseentity";
 import { GameRules } from "./entities/gamerules";
@@ -153,12 +155,7 @@ export interface IEntityRemoveEvent {
   index: number;
 }
 
-export interface IEntityChangeEvent {
-  /**
-   * Updated entity
-   */
-  entity: Networkable;
-
+export interface IEntityPropChange {
   /**
    * Table containing updated property
    */
@@ -178,6 +175,18 @@ export interface IEntityChangeEvent {
    * New value of the property
    */
   newValue: PropValue;
+}
+
+export interface IEntityChangeEvent {
+  /**
+   * Updated entity
+   */
+  entity: Networkable;
+
+  /**
+   * Prop changes. At least one element in the array.
+   */
+  changes: ReadonlyArray<IEntityPropChange>;
 }
 
 export interface ITempEntEvent {
@@ -265,6 +274,30 @@ export declare interface Entities {
   emit(name: "tempent", event: ITempEntEvent): boolean;
 }
 
+type TickNumber = number & { readonly __tag: unique symbol };
+
+/**
+ * Represents all entities that are transmitting (i.e. within PVS) in a given frame.
+ */
+export type TransmitEntities = immutable.Set<number>;
+type MutableTransmitEntities = TransmitEntities & {
+  readonly __tag: unique symbol;
+};
+
+function cloneProps(props: UnknownEntityProps): UnknownEntityProps {
+  const root = Object.assign({}, props);
+  // tslint:disable-next-line:forin
+  for (const key in root) {
+    root[key] = Object.assign({}, root[key]);
+  }
+  return root;
+}
+
+interface IEntityBaseline {
+  readonly classId: number;
+  readonly props: UnknownEntityProps;
+}
+
 /**
  * Represents entities and networked properties within a demo.
  */
@@ -280,31 +313,29 @@ export class Entities extends EventEmitter {
     return this.getSingleton<CCSGameRulesProxy, GameRules>("CCSGameRulesProxy");
   }
 
-  get teams(): Team[] {
-    return this.findAllWithClass(Team);
+  get teams(): ReadonlyArray<Team> {
+    return Array.from(this.findAllWithClass(Team));
   }
 
-  get players(): Player[] {
-    return this.findAllWithClass(Player);
+  get players(): ReadonlyArray<Player> {
+    return Array.from(this.findAllWithClass(Player));
   }
 
-  get weapons(): Weapon[] {
-    return this.findAllWithClass(Weapon);
+  get weapons(): ReadonlyArray<Weapon> {
+    return Array.from(this.findAllWithClass(Weapon));
   }
 
   public dataTables: IDataTable[] = [];
   public serverClasses: IServerClass[] = [];
 
   /**
-   * Array of all entities in game.
+   * Map of entity index => networkable instance
    */
-  public entities: Array<Networkable | null> = new Array(
-    1 << consts.MAX_EDICT_BITS
-  ).fill(null);
+  public entities: Map<number, Networkable> = new Map();
 
   public markedForDeletion: number[] = [];
 
-  public instanceBaselines: {
+  public staticBaselines: {
     [classId: number]: UnknownEntityProps | undefined;
   } = {};
   public pendingBaselines: { [classId: number]: BitStream | undefined } = {};
@@ -318,23 +349,33 @@ export class Entities extends EventEmitter {
     DT_WeaponCSBase: Weapon,
     DT_BaseEntity: BaseEntity
   };
+
+  private _entityBaselines: ReadonlyArray<Map<number, IEntityBaseline>> = [
+    new Map(),
+    new Map()
+  ];
+
+  private _frames: immutable.Map<
+    TickNumber,
+    TransmitEntities
+  > = immutable.Map();
   private _demo: DemoFile = null!;
   private _singletonEnts: { [table: string]: Networkable | undefined } = {};
-  private _currentServerTick: number = -1;
+  private _currentServerTick: TickNumber = -1 as TickNumber;
 
   public listen(demo: DemoFile) {
     this._demo = demo;
     demo.on("svc_PacketEntities", e => this._handlePacketEntities(e));
     demo.on("svc_TempEntities", e => this._handleTempEntities(e));
     demo.on("net_Tick", e => {
-      this._currentServerTick = e.tick;
+      this._currentServerTick = e.tick as TickNumber;
     });
     demo.stringTables.on("update", e => this._handleStringTableUpdate(e));
 
     demo.on("tickend", () => {
       if (this.markedForDeletion.length > 0) {
         for (const index of this.markedForDeletion) {
-          this.entities[index] = null;
+          this.entities.delete(index);
           this.emit("remove", { index });
         }
 
@@ -363,7 +404,7 @@ export class Entities extends EventEmitter {
       return null;
     }
 
-    const ent = this.entities[handle.index];
+    const ent = this.entities.get(handle.index);
     if (ent == null || ent.serialNum !== handle.serialNum) {
       return null;
     }
@@ -384,12 +425,12 @@ export class Entities extends EventEmitter {
 
     const userInfos = userInfoTable.entries;
 
-    for (let i = 0; i < userInfos.length; ++i) {
-      const userEntry = userInfos[i];
+    for (let clientSlot = 0; clientSlot < userInfos.length; ++clientSlot) {
+      const userEntry = userInfos[clientSlot];
 
       if (userEntry.userData && userEntry.userData.userId === userId) {
         // UNSAFE: if we have 'userinfo' for this entity, it's definitely a player
-        return (this.entities[i + 1] as unknown) as Player;
+        return (this.entities.get(clientSlot + 1) as unknown) as Player;
       }
     }
 
@@ -405,27 +446,33 @@ export class Entities extends EventEmitter {
       return (existing as unknown) as TEntityClass;
     }
 
-    const entity = this.entities.find(ent =>
-      ent ? ent.serverClass.name === serverClass : false
+    const result = find(
+      ([, ent]) => (ent ? ent.serverClass.name === serverClass : false),
+      this.entities
     );
-    if (!entity) {
+    if (!result) {
       throw new Error(`Missing singleton ${serverClass}`);
     }
 
+    const [, entity] = result;
     this._singletonEnts[serverClass] = entity;
     return (entity as unknown) as TEntityClass;
   }
 
-  public findAllWithTable(table: string): Networkable[] {
-    return this.entities.filter((ent): ent is Networkable =>
-      ent != null ? table in ent.props : false
-    );
+  public *findAllWithTable(table: string): Generator<Networkable> {
+    for (const ent of this.entities.values()) {
+      if (table in ent.props) {
+        yield ent;
+      }
+    }
   }
 
-  public findAllWithClass<T>(klass: NetworkableConstructor<T>): T[] {
-    return (this.entities.filter(ent =>
-      ent ? ent instanceof klass : false
-    ) as unknown) as T[];
+  public *findAllWithClass<T>(klass: NetworkableConstructor<T>): Generator<T> {
+    for (const ent of this.entities.values()) {
+      if (ent instanceof klass) {
+        yield ent;
+      }
+    }
   }
 
   public handleDataTables(chunk: ByteBuffer) {
@@ -474,14 +521,14 @@ export class Entities extends EventEmitter {
       // parse any pending baseline
       const pendingBaseline = this.pendingBaselines[classId];
       if (pendingBaseline) {
-        this.instanceBaselines[classId] = this._parseInstanceBaseline(
+        this.staticBaselines[classId] = this._parseInstanceBaseline(
           pendingBaseline,
           classId
         );
         this.emit("baselineupdate", {
           classId,
           serverClass,
-          baseline: this.instanceBaselines[classId]!
+          baseline: this.staticBaselines[classId]!
         });
         delete this.pendingBaselines[classId];
       }
@@ -612,23 +659,36 @@ export class Entities extends EventEmitter {
     return this.dataTables.find(table => table.netTableName === name);
   }
 
-  private _addEntity(index: number, classId: number, serialNum: number) {
-    if (this.entities[index]) {
-      this._removeEntity(index, true);
+  private _addEntity(
+    index: number,
+    classId: number,
+    serialNum: number,
+    entityBaseline: UnknownEntityProps | undefined
+  ) {
+    const baseline = entityBaseline || this.staticBaselines[classId];
+    if (!baseline) {
+      throw new Error(`no baseline for entity ${index} (class ID ${classId})`);
     }
 
-    const baseline = this.instanceBaselines[classId];
-
-    let klass: NetworkableConstructor = Networkable;
-
     // Try to find a suitable class for this entity
-    if (baseline !== undefined) {
-      for (const tableName in this.tableClassMap) {
-        if (baseline[tableName]) {
-          klass = this.tableClassMap[tableName];
-          break;
-        }
+    let klass: NetworkableConstructor = Networkable;
+    for (const tableName in this.tableClassMap) {
+      if (baseline[tableName]) {
+        klass = this.tableClassMap[tableName];
+        break;
       }
+    }
+
+    const existingEntity = this.entities.get(index);
+
+    // Use the old entity if the serial numbers match
+    if (existingEntity?.serialNum === serialNum) {
+      return existingEntity;
+    }
+
+    // Otherwise delete the entity if the serial numbers mismatch
+    if (existingEntity) {
+      this._removeEntity(index, true);
     }
 
     const entity = new klass(
@@ -636,9 +696,9 @@ export class Entities extends EventEmitter {
       index,
       classId,
       serialNum,
-      _.cloneDeep(baseline)
+      cloneProps(baseline)
     );
-    this.entities[index] = entity;
+    this.entities.set(index, entity);
 
     this.emit("create", { entity });
 
@@ -646,21 +706,24 @@ export class Entities extends EventEmitter {
   }
 
   private _removeEntity(index: number, immediate: boolean) {
-    const entity = assertExists(
-      this.entities[index],
-      "cannot remove non-existent entity"
-    );
+    const entity = this.entities.get(index);
+    if (!entity) {
+      return;
+    }
+
+    // It's possible that the entity is already marked for deletion.
+    // This is because entities are deleted at the end of the dem_packet,
+    // after the game events fire.
+    if (!immediate && entity.deleting) {
+      return;
+    }
 
     this.emit("beforeremove", { entity, immediate });
 
     if (immediate) {
-      this.entities[index] = null;
+      this.entities.delete(index);
       this.emit("remove", { index });
     } else {
-      assert(
-        !entity.deleting,
-        "cannot delete an entity already marked for deletion"
-      );
       entity.deleting = true;
       this.markedForDeletion.push(index);
     }
@@ -673,21 +736,28 @@ export class Entities extends EventEmitter {
     const serverClass = this.serverClasses[classId];
 
     const newWay = entityBitBuffer.readOneBit();
-    const fieldIndices = functional.fillUntil(
-      -1,
-      lastIndex => readFieldIndex(entityBitBuffer, lastIndex, newWay),
-      -1
-    );
 
-    const updatedProps = [];
+    let lastIndex = -1;
+    const fieldIndices: number[] = [];
+    while (true) {
+      // eslint-disable-line no-constant-condition
+      lastIndex = readFieldIndex(entityBitBuffer, lastIndex, newWay);
+      if (lastIndex === -1) {
+        break;
+      }
 
-    for (const index of fieldIndices) {
-      const flattenedProp = serverClass.flattenedProps[index];
+      fieldIndices.push(lastIndex);
+    }
+
+    const updatedProps = new Array(fieldIndices.length);
+    for (let i = 0; i < fieldIndices.length; ++i) {
+      const propIndex = fieldIndices[i];
+      const flattenedProp = serverClass.flattenedProps[propIndex];
       assert(flattenedProp);
-      updatedProps.push({
+      updatedProps[i] = {
         prop: flattenedProp,
         value: flattenedProp.decode(entityBitBuffer)
-      });
+      };
     }
 
     return updatedProps;
@@ -696,7 +766,13 @@ export class Entities extends EventEmitter {
   private _readNewEntity(entityBitBuffer: BitStream, entity: Networkable<any>) {
     const updates = this._parseEntityUpdate(entityBitBuffer, entity.classId);
 
-    for (const update of updates) {
+    // TODO: what's the perf impact of always recording changes - is it worth the extra complexity?
+    const recordChanges = this.listenerCount("change") > 0;
+
+    const changes = recordChanges ? new Array(updates.length) : [];
+
+    for (let i = 0; i < updates.length; ++i) {
+      const update = updates[i];
       const tableName = update.prop.table.netTableName;
       const varName = update.prop.prop.varName;
 
@@ -705,12 +781,20 @@ export class Entities extends EventEmitter {
 
       entity.updateProp(tableName, varName, update.value);
 
+      if (recordChanges) {
+        changes[i] = {
+          tableName,
+          varName,
+          oldValue,
+          newValue: update.value
+        };
+      }
+    }
+
+    if (recordChanges) {
       this.emit("change", {
         entity,
-        tableName,
-        varName,
-        oldValue,
-        newValue: update.value
+        changes
       });
     }
   }
@@ -741,7 +825,6 @@ export class Entities extends EventEmitter {
       }
 
       if (entityBitBuffer.readOneBit()) {
-        // TODO: figure out why this is the server class - 1
         lastClassId = entityBitBuffer.readUBits(this.serverClassBits) - 1;
 
         const updates = this._parseEntityUpdate(entityBitBuffer, lastClassId);
@@ -751,7 +834,7 @@ export class Entities extends EventEmitter {
         assert(lastClassId !== -1, "Delta with no baseline");
         const updates = this._parseEntityUpdate(entityBitBuffer, lastClassId);
         lastProps = this._updatesToPropObject(
-          _.cloneDeep(assertExists(lastProps)),
+          cloneProps(assertExists(lastProps)),
           updates
         );
       }
@@ -768,49 +851,133 @@ export class Entities extends EventEmitter {
   private _handlePacketEntities(
     msg: RequiredNonNullable<ICSVCMsg_PacketEntities>
   ) {
+    // Take a copy of the transmitted entities from the delta frame
+    // Otherwise start with a blank slate
+    const baseTransmitEntities = assertExists(
+      msg.isDelta
+        ? this._frames.get(msg.deltaFrom as TickNumber)
+        : (immutable.Set() as TransmitEntities),
+      `delta from unknown frame ${msg.deltaFrom}`
+    );
+
+    if (!msg.isDelta) {
+      // Clear out old entities - this is a full update
+      for (const entityIndex of Array.from(this.entities.keys())) {
+        this._removeEntity(entityIndex, true);
+      }
+
+      // Remove all frames - we won't be using them
+      // TODO: is this correct? will we ever try to delta from an old frame after a full update?
+      this._frames = immutable.Map();
+
+      // Clear all entity baselines
+      for (const baseline of this._entityBaselines) {
+        baseline.clear();
+      }
+    }
+
+    // TODO: perf test this against using mutable maps
+    const newFrame = baseTransmitEntities.withMutations(mutableFrame =>
+      this._readPacketEntities(msg, mutableFrame as MutableTransmitEntities)
+    );
+
+    this._frames = this._frames.set(this._currentServerTick, newFrame);
+
+    if (msg.isDelta) {
+      // Delete old frames that we no longer need to reference
+      const oldFrames = filter(i => i < msg.deltaFrom, this._frames.keys());
+      this._frames = this._frames.removeAll(oldFrames);
+    }
+  }
+
+  private _readPacketEntities(
+    msg: RequiredNonNullable<ICSVCMsg_PacketEntities>,
+    frame: MutableTransmitEntities
+  ): void {
     const entityBitBuffer = BitStream.from(msg.entityData as Uint8Array);
 
     let entityIndex = -1;
 
-    // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/cl_ents_parse.cpp#L297-L431
-    // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/cl_ents_parse.cpp#L544-L648
-    // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/baseclientstate.cpp#L1245-L1312
-
     for (let i = 0; i < msg.updatedEntries; ++i) {
       entityIndex += 1 + entityBitBuffer.readUBitVar();
 
-      assert(entityIndex < this.entities.length, "newEntity >= MAX_EDICTS");
+      assert(entityIndex < consts.MAX_EDICTS, "newEntity >= MAX_EDICTS");
 
       if (entityBitBuffer.readOneBit()) {
+        assert(msg.isDelta, "entity leaving PVS on full update");
+        frame.remove(entityIndex);
+
         if (entityBitBuffer.readOneBit()) {
-          assert(msg.isDelta, "deleting entity on full update");
+          // 0b11: FHDR_LEAVEPVS | FHDR_DELETE
           this._removeEntity(entityIndex, false);
         } else {
-          assert(msg.isDelta, "entity leaving PVS on full update");
-          // Maybe set a flag on the entity indicating that it is out of PVS?
+          // 0b10: FHDR_LEAVEPVS
         }
         // tslint:disable-next-line:no-identical-conditions
       } else if (entityBitBuffer.readOneBit()) {
+        // 0b01: FHDR_ENTERPVS
+        frame.add(entityIndex);
+
         const classId = entityBitBuffer.readUBits(this.serverClassBits);
         const serialNum = entityBitBuffer.readUBits(
           consts.NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS
         );
 
-        const newEnt = this._addEntity(entityIndex, classId, serialNum);
-        this._readNewEntity(entityBitBuffer, newEnt);
+        const existingBaseline = this._entityBaselines[msg.baseline].get(
+          entityIndex
+        );
+
+        const entityBaselineProps =
+          msg.isDelta && existingBaseline?.classId === classId
+            ? existingBaseline.props
+            : undefined;
+
+        const entity = this._addEntity(
+          entityIndex,
+          classId,
+          serialNum,
+          entityBaselineProps
+        );
+        this._readNewEntity(entityBitBuffer, entity);
+
         this.emit("postcreate", {
-          entity: newEnt
+          entity
         });
+
+        // Update the OTHER baseline with the merged result of `old baseline + new props`
+        if (msg.updateBaseline) {
+          this._entityBaselines[msg.baseline ? 0 : 1].set(entityIndex, {
+            classId,
+            props: cloneProps(entity.props)
+          });
+        }
       } else {
+        // 0b00: DeltaEnt
         const entity = assertExists(
-          this.entities[entityIndex],
-          "delta on deleted entity"
+          this.entities.get(entityIndex),
+          `missing client entity ${entityIndex}`
+        );
+        assert(
+          frame.contains(entityIndex),
+          `delta on dormant entity ${entityIndex}`
         );
         this._readNewEntity(entityBitBuffer, entity);
       }
     }
 
-    // TODO: Delete old frames that we no longer need to reference
+    // Read deletions
+    if (msg.isDelta) {
+      entityIndex = -1;
+
+      const deletions = entityBitBuffer.readUBitVar();
+      for (let i = 0; i < deletions; ++i) {
+        entityIndex += entityBitBuffer.readUBitVar();
+
+        // Entity wasn't dealt with in packet, but has been deleted
+        frame.remove(entityIndex);
+        this._removeEntity(entityIndex, false);
+      }
+    }
   }
 
   private _parseInstanceBaseline(baselineBuf: BitStream, classId: number) {
@@ -842,7 +1009,7 @@ export class Entities extends EventEmitter {
     }
 
     const baseline = this._parseInstanceBaseline(baselineBuf, classId);
-    this.instanceBaselines[classId] = baseline;
+    this.staticBaselines[classId] = baseline;
 
     this.emit("baselineupdate", {
       classId,

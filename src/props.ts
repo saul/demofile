@@ -49,7 +49,7 @@ export type PropPrimitive =
   | Long
   | Vector
   | EntityHandle;
-export type PropValue = PropPrimitive | PropPrimitive[];
+export type PropValue = PropPrimitive | ReadonlyArray<PropPrimitive>;
 
 export function makeDecoder(
   sendProp: ISendProp,
@@ -191,7 +191,7 @@ function makeVectorDecoder(sendProp: ISendProp): (bitbuf: BitStream) => Vector {
       v.z = floatDecode(bitbuf);
     }
 
-    return v;
+    return Object.freeze(v);
   };
 }
 
@@ -200,11 +200,12 @@ function makeVectorXYDecoder(
 ): (bitbuf: BitStream) => Vector {
   const floatDecode = makeFloatDecoder(sendProp);
 
-  return bitbuf => ({
-    x: floatDecode(bitbuf),
-    y: floatDecode(bitbuf),
-    z: 0.0
-  });
+  return bitbuf =>
+    Object.freeze({
+      x: floatDecode(bitbuf),
+      y: floatDecode(bitbuf),
+      z: 0.0
+    });
 }
 
 function makeStringDecoder(
@@ -248,13 +249,17 @@ function makeInt64Decoder(sendProp: ISendProp): (bitbuf: BitStream) => Long {
 function makeArrayDecoder(
   sendProp: ISendProp,
   arrayElementProp: ISendProp
-): (bitbuf: BitStream) => PropPrimitive[] {
+): (bitbuf: BitStream) => ReadonlyArray<PropPrimitive> {
   const maxElements = sendProp.numElements;
-  const numBits = Math.floor(Math.log2(maxElements)) + 1;
+  const numBits = (Math.log2(maxElements) | 0) + 1;
   const elementDecoder = makeValueDecoder(arrayElementProp);
 
   return bitbuf => {
     const numElements = bitbuf.readUBits(numBits);
-    return new Array(numElements).fill(0).map(() => elementDecoder(bitbuf));
+    const array = new Array(numElements);
+    for (let i = 0; i < numElements; ++i) {
+      array[i] = elementDecoder(bitbuf);
+    }
+    return array;
   };
 }

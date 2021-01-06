@@ -5,9 +5,9 @@
 import { EntityHandle } from "./entityhandle";
 
 export interface Vector {
-  x: number;
-  y: number;
-  z: number;
+  readonly x: number;
+  readonly y: number;
+  readonly z: number;
 }
 
 export interface DT_AI_BaseNPC {
@@ -227,7 +227,7 @@ export interface DT_BasePlayer {
   m_iDefaultFOV: number;
   m_hZoomOwner: EntityHandle;
   // m_hViewModel: EntityHandle - InsideArray;
-  m_hViewModel: EntityHandle[];
+  m_hViewModel: ReadonlyArray<EntityHandle>;
   m_szLastPlaceName: string;
   m_vecLadderNormal: Vector;
   m_ladderSurfaceProps: number;
@@ -263,7 +263,7 @@ export interface DT_BaseTeamObjectiveResource {
   m_bControlPointsReset: boolean;
   m_iUpdateCapHudParity: number;
   // m_vCPPositions: Vector - InsideArray;
-  m_vCPPositions: Vector[];
+  m_vCPPositions: ReadonlyArray<Vector>;
   // m_bCPIsVisible: DataTable;
   // m_flLazyCapPerc: DataTable;
   // m_iTeamIcons: DataTable;
@@ -277,7 +277,7 @@ export interface DT_BaseTeamObjectiveResource {
   // m_bInMiniRound: DataTable;
   // m_iWarnOnCap: DataTable;
   // m_iszWarnSound: string - InsideArray;
-  m_iszWarnSound: string[];
+  m_iszWarnSound: ReadonlyArray<string>;
   // m_flPathDistance: DataTable;
   // m_iNumTeamMembers: DataTable;
   // m_iCappingTeam: DataTable;
@@ -725,9 +725,9 @@ export interface DT_Drone {
   m_hPotentialCargo: EntityHandle;
   m_hCurrentPilot: EntityHandle;
   // m_vecTagPositions: Vector - InsideArray;
-  m_vecTagPositions: Vector[];
+  m_vecTagPositions: ReadonlyArray<Vector>;
   // m_vecTagIncrements: number - InsideArray;
-  m_vecTagIncrements: number[];
+  m_vecTagIncrements: ReadonlyArray<number>;
 }
 
 export interface DT_Dronegun {
@@ -916,9 +916,9 @@ export interface DT_EnvScreenEffect {
 export interface DT_EnvScreenOverlay {
   // baseclass: DataTable;
   // m_iszOverlayNames: string - InsideArray;
-  m_iszOverlayNames: string[];
+  m_iszOverlayNames: ReadonlyArray<string>;
   // m_flOverlayTimes: number - InsideArray;
-  m_flOverlayTimes: number[];
+  m_flOverlayTimes: ReadonlyArray<number>;
   m_flStartTime: number;
   m_iDesiredOverlay: number;
   m_bIsActive: boolean;
@@ -1239,25 +1239,6 @@ export interface DT_LightGlow {
   HDRColorScale: number;
 }
 
-export interface DT_MapVetoPickController {
-  // baseclass: DataTable;
-  m_nDraftType: number;
-  m_nTeamWinningCoinToss: number;
-  // m_nTeamWithFirstChoice: DataTable;
-  // m_nVoteMapIdsList: DataTable;
-  // m_nAccountIDs: DataTable;
-  // m_nMapId0: DataTable;
-  // m_nMapId1: DataTable;
-  // m_nMapId2: DataTable;
-  // m_nMapId3: DataTable;
-  // m_nMapId4: DataTable;
-  // m_nMapId5: DataTable;
-  // m_nStartingSide0: DataTable;
-  m_nCurrentPhase: number;
-  m_nPhaseStartTick: number;
-  m_nPhaseDurationTicks: number;
-}
-
 export interface DT_MaterialModifyControl {
   // baseclass: DataTable;
   m_szMaterialName: string;
@@ -1424,7 +1405,6 @@ export interface DT_PlayerPing {
   m_hPlayer: EntityHandle;
   m_hPingedEntity: EntityHandle;
   m_iType: number;
-  m_bUrgent: boolean;
 }
 
 export interface DT_PlayerResource {
@@ -1552,9 +1532,9 @@ export interface DT_RagdollManager {
 export interface DT_Ragdoll {
   // baseclass: DataTable;
   // m_ragAngles: Vector - InsideArray;
-  m_ragAngles: Vector[];
+  m_ragAngles: ReadonlyArray<Vector>;
   // m_ragPos: Vector - InsideArray;
-  m_ragPos: Vector[];
+  m_ragPos: ReadonlyArray<Vector>;
   m_hUnragdoll: EntityHandle;
   m_flBlendWeight: number;
   m_nOverlaySequence: number;
@@ -1789,9 +1769,9 @@ export interface DT_SurvivalSpawnChopper {
 export interface DT_WeaponTablet {
   // baseclass: DataTable;
   // m_flUpgradeExpirationTime: number - InsideArray;
-  m_flUpgradeExpirationTime: number[];
+  m_flUpgradeExpirationTime: ReadonlyArray<number>;
   // m_vecLocalHexFlags: number - InsideArray;
-  m_vecLocalHexFlags: number[];
+  m_vecLocalHexFlags: ReadonlyArray<number>;
   m_nContractKillGridIndex: number;
   m_nContractKillGridHighResIndex: number;
   m_bTabletReceptionIsBlocked: boolean;
@@ -1799,11 +1779,11 @@ export interface DT_WeaponTablet {
   m_flBootTime: number;
   m_flShowMapTime: number;
   // m_vecNotificationIds: number - InsideArray;
-  m_vecNotificationIds: number[];
+  m_vecNotificationIds: ReadonlyArray<number>;
   // m_vecNotificationTimestamps: number - InsideArray;
-  m_vecNotificationTimestamps: number[];
+  m_vecNotificationTimestamps: ReadonlyArray<number>;
   // m_vecPlayerPositionHistory: Vector - InsideArray;
-  m_vecPlayerPositionHistory: Vector[];
+  m_vecPlayerPositionHistory: ReadonlyArray<Vector>;
   m_nLastPurchaseIndex: number;
   m_vecNearestMetalCratePos: Vector;
 }
@@ -1825,7 +1805,7 @@ export interface DT_Team {
   m_nGGLeaderEntIndex_T: number;
   m_numMapVictories: number;
   // player_array_element: number - InsideArray;
-  [`"player_array"`]: number[];
+  [`"player_array"`]: ReadonlyArray<number>;
 }
 
 export interface DT_TeamplayRoundBasedRulesProxy {
@@ -1902,7 +1882,7 @@ export interface DT_TEBeamRingPoint {
 export interface DT_TEBeamSpline {
   m_nPoints: number;
   // m_vecPoints: Vector - InsideArray;
-  m_vecPoints: Vector[];
+  m_vecPoints: ReadonlyArray<Vector>;
 }
 
 export interface DT_TEBloodSprite {
@@ -4209,7 +4189,6 @@ export interface DT_CSGameRules {
   m_bMapHasRescueZone: boolean;
   m_bMapHasBuyZone: boolean;
   m_bIsQueuedMatchmaking: boolean;
-  m_nQueuedMatchmakingMode: number;
   m_bIsValveDS: boolean;
   m_bIsQuestEligible: boolean;
   m_bLogoMap: boolean;
@@ -4266,7 +4245,6 @@ export interface DT_CSGameRules {
   m_iNumConsecutiveCTLoses: number;
   m_iNumConsecutiveTerroristLoses: number;
   // m_SurvivalRules: DataTable;
-  // m_RetakeRules: DataTable;
 }
 
 export interface m_iMatchStats_RoundResults {
@@ -5394,13 +5372,6 @@ export interface m_SurvivalGameRuleDecisionValues {
   ["013"]: number;
   ["014"]: number;
   ["015"]: number;
-}
-
-export interface DT_RetakeGameRules {
-  m_bBlockersPresent: boolean;
-  m_bRoundInProgress: boolean;
-  m_iFirstSecondHalfRound: number;
-  m_iBombSite: number;
 }
 
 export interface DT_CSLocalPlayerExclusive {
@@ -10860,619 +10831,6 @@ export interface m_bFireIsBurning {
   ["063"]: boolean;
 }
 
-export interface m_nTeamWithFirstChoice {
-  ["000"]: number;
-  ["001"]: number;
-  ["002"]: number;
-  ["003"]: number;
-  ["004"]: number;
-  ["005"]: number;
-  ["006"]: number;
-  ["007"]: number;
-  ["008"]: number;
-  ["009"]: number;
-  ["010"]: number;
-  ["011"]: number;
-  ["012"]: number;
-  ["013"]: number;
-  ["014"]: number;
-  ["015"]: number;
-  ["016"]: number;
-  ["017"]: number;
-  ["018"]: number;
-  ["019"]: number;
-  ["020"]: number;
-  ["021"]: number;
-  ["022"]: number;
-  ["023"]: number;
-  ["024"]: number;
-  ["025"]: number;
-  ["026"]: number;
-  ["027"]: number;
-  ["028"]: number;
-  ["029"]: number;
-  ["030"]: number;
-  ["031"]: number;
-  ["032"]: number;
-  ["033"]: number;
-  ["034"]: number;
-  ["035"]: number;
-  ["036"]: number;
-  ["037"]: number;
-  ["038"]: number;
-  ["039"]: number;
-  ["040"]: number;
-  ["041"]: number;
-  ["042"]: number;
-  ["043"]: number;
-  ["044"]: number;
-  ["045"]: number;
-  ["046"]: number;
-  ["047"]: number;
-  ["048"]: number;
-  ["049"]: number;
-  ["050"]: number;
-  ["051"]: number;
-  ["052"]: number;
-  ["053"]: number;
-  ["054"]: number;
-  ["055"]: number;
-  ["056"]: number;
-  ["057"]: number;
-  ["058"]: number;
-  ["059"]: number;
-  ["060"]: number;
-  ["061"]: number;
-  ["062"]: number;
-  ["063"]: number;
-}
-
-export interface m_nVoteMapIdsList {
-  ["000"]: number;
-  ["001"]: number;
-  ["002"]: number;
-  ["003"]: number;
-  ["004"]: number;
-  ["005"]: number;
-  ["006"]: number;
-}
-
-export interface m_nAccountIDs {
-  ["000"]: number;
-  ["001"]: number;
-  ["002"]: number;
-  ["003"]: number;
-  ["004"]: number;
-  ["005"]: number;
-  ["006"]: number;
-  ["007"]: number;
-  ["008"]: number;
-  ["009"]: number;
-  ["010"]: number;
-  ["011"]: number;
-  ["012"]: number;
-  ["013"]: number;
-  ["014"]: number;
-  ["015"]: number;
-  ["016"]: number;
-  ["017"]: number;
-  ["018"]: number;
-  ["019"]: number;
-  ["020"]: number;
-  ["021"]: number;
-  ["022"]: number;
-  ["023"]: number;
-  ["024"]: number;
-  ["025"]: number;
-  ["026"]: number;
-  ["027"]: number;
-  ["028"]: number;
-  ["029"]: number;
-  ["030"]: number;
-  ["031"]: number;
-  ["032"]: number;
-  ["033"]: number;
-  ["034"]: number;
-  ["035"]: number;
-  ["036"]: number;
-  ["037"]: number;
-  ["038"]: number;
-  ["039"]: number;
-  ["040"]: number;
-  ["041"]: number;
-  ["042"]: number;
-  ["043"]: number;
-  ["044"]: number;
-  ["045"]: number;
-  ["046"]: number;
-  ["047"]: number;
-  ["048"]: number;
-  ["049"]: number;
-  ["050"]: number;
-  ["051"]: number;
-  ["052"]: number;
-  ["053"]: number;
-  ["054"]: number;
-  ["055"]: number;
-  ["056"]: number;
-  ["057"]: number;
-  ["058"]: number;
-  ["059"]: number;
-  ["060"]: number;
-  ["061"]: number;
-  ["062"]: number;
-  ["063"]: number;
-}
-
-export interface m_nMapId0 {
-  ["000"]: number;
-  ["001"]: number;
-  ["002"]: number;
-  ["003"]: number;
-  ["004"]: number;
-  ["005"]: number;
-  ["006"]: number;
-  ["007"]: number;
-  ["008"]: number;
-  ["009"]: number;
-  ["010"]: number;
-  ["011"]: number;
-  ["012"]: number;
-  ["013"]: number;
-  ["014"]: number;
-  ["015"]: number;
-  ["016"]: number;
-  ["017"]: number;
-  ["018"]: number;
-  ["019"]: number;
-  ["020"]: number;
-  ["021"]: number;
-  ["022"]: number;
-  ["023"]: number;
-  ["024"]: number;
-  ["025"]: number;
-  ["026"]: number;
-  ["027"]: number;
-  ["028"]: number;
-  ["029"]: number;
-  ["030"]: number;
-  ["031"]: number;
-  ["032"]: number;
-  ["033"]: number;
-  ["034"]: number;
-  ["035"]: number;
-  ["036"]: number;
-  ["037"]: number;
-  ["038"]: number;
-  ["039"]: number;
-  ["040"]: number;
-  ["041"]: number;
-  ["042"]: number;
-  ["043"]: number;
-  ["044"]: number;
-  ["045"]: number;
-  ["046"]: number;
-  ["047"]: number;
-  ["048"]: number;
-  ["049"]: number;
-  ["050"]: number;
-  ["051"]: number;
-  ["052"]: number;
-  ["053"]: number;
-  ["054"]: number;
-  ["055"]: number;
-  ["056"]: number;
-  ["057"]: number;
-  ["058"]: number;
-  ["059"]: number;
-  ["060"]: number;
-  ["061"]: number;
-  ["062"]: number;
-  ["063"]: number;
-}
-
-export interface m_nMapId1 {
-  ["000"]: number;
-  ["001"]: number;
-  ["002"]: number;
-  ["003"]: number;
-  ["004"]: number;
-  ["005"]: number;
-  ["006"]: number;
-  ["007"]: number;
-  ["008"]: number;
-  ["009"]: number;
-  ["010"]: number;
-  ["011"]: number;
-  ["012"]: number;
-  ["013"]: number;
-  ["014"]: number;
-  ["015"]: number;
-  ["016"]: number;
-  ["017"]: number;
-  ["018"]: number;
-  ["019"]: number;
-  ["020"]: number;
-  ["021"]: number;
-  ["022"]: number;
-  ["023"]: number;
-  ["024"]: number;
-  ["025"]: number;
-  ["026"]: number;
-  ["027"]: number;
-  ["028"]: number;
-  ["029"]: number;
-  ["030"]: number;
-  ["031"]: number;
-  ["032"]: number;
-  ["033"]: number;
-  ["034"]: number;
-  ["035"]: number;
-  ["036"]: number;
-  ["037"]: number;
-  ["038"]: number;
-  ["039"]: number;
-  ["040"]: number;
-  ["041"]: number;
-  ["042"]: number;
-  ["043"]: number;
-  ["044"]: number;
-  ["045"]: number;
-  ["046"]: number;
-  ["047"]: number;
-  ["048"]: number;
-  ["049"]: number;
-  ["050"]: number;
-  ["051"]: number;
-  ["052"]: number;
-  ["053"]: number;
-  ["054"]: number;
-  ["055"]: number;
-  ["056"]: number;
-  ["057"]: number;
-  ["058"]: number;
-  ["059"]: number;
-  ["060"]: number;
-  ["061"]: number;
-  ["062"]: number;
-  ["063"]: number;
-}
-
-export interface m_nMapId2 {
-  ["000"]: number;
-  ["001"]: number;
-  ["002"]: number;
-  ["003"]: number;
-  ["004"]: number;
-  ["005"]: number;
-  ["006"]: number;
-  ["007"]: number;
-  ["008"]: number;
-  ["009"]: number;
-  ["010"]: number;
-  ["011"]: number;
-  ["012"]: number;
-  ["013"]: number;
-  ["014"]: number;
-  ["015"]: number;
-  ["016"]: number;
-  ["017"]: number;
-  ["018"]: number;
-  ["019"]: number;
-  ["020"]: number;
-  ["021"]: number;
-  ["022"]: number;
-  ["023"]: number;
-  ["024"]: number;
-  ["025"]: number;
-  ["026"]: number;
-  ["027"]: number;
-  ["028"]: number;
-  ["029"]: number;
-  ["030"]: number;
-  ["031"]: number;
-  ["032"]: number;
-  ["033"]: number;
-  ["034"]: number;
-  ["035"]: number;
-  ["036"]: number;
-  ["037"]: number;
-  ["038"]: number;
-  ["039"]: number;
-  ["040"]: number;
-  ["041"]: number;
-  ["042"]: number;
-  ["043"]: number;
-  ["044"]: number;
-  ["045"]: number;
-  ["046"]: number;
-  ["047"]: number;
-  ["048"]: number;
-  ["049"]: number;
-  ["050"]: number;
-  ["051"]: number;
-  ["052"]: number;
-  ["053"]: number;
-  ["054"]: number;
-  ["055"]: number;
-  ["056"]: number;
-  ["057"]: number;
-  ["058"]: number;
-  ["059"]: number;
-  ["060"]: number;
-  ["061"]: number;
-  ["062"]: number;
-  ["063"]: number;
-}
-
-export interface m_nMapId3 {
-  ["000"]: number;
-  ["001"]: number;
-  ["002"]: number;
-  ["003"]: number;
-  ["004"]: number;
-  ["005"]: number;
-  ["006"]: number;
-  ["007"]: number;
-  ["008"]: number;
-  ["009"]: number;
-  ["010"]: number;
-  ["011"]: number;
-  ["012"]: number;
-  ["013"]: number;
-  ["014"]: number;
-  ["015"]: number;
-  ["016"]: number;
-  ["017"]: number;
-  ["018"]: number;
-  ["019"]: number;
-  ["020"]: number;
-  ["021"]: number;
-  ["022"]: number;
-  ["023"]: number;
-  ["024"]: number;
-  ["025"]: number;
-  ["026"]: number;
-  ["027"]: number;
-  ["028"]: number;
-  ["029"]: number;
-  ["030"]: number;
-  ["031"]: number;
-  ["032"]: number;
-  ["033"]: number;
-  ["034"]: number;
-  ["035"]: number;
-  ["036"]: number;
-  ["037"]: number;
-  ["038"]: number;
-  ["039"]: number;
-  ["040"]: number;
-  ["041"]: number;
-  ["042"]: number;
-  ["043"]: number;
-  ["044"]: number;
-  ["045"]: number;
-  ["046"]: number;
-  ["047"]: number;
-  ["048"]: number;
-  ["049"]: number;
-  ["050"]: number;
-  ["051"]: number;
-  ["052"]: number;
-  ["053"]: number;
-  ["054"]: number;
-  ["055"]: number;
-  ["056"]: number;
-  ["057"]: number;
-  ["058"]: number;
-  ["059"]: number;
-  ["060"]: number;
-  ["061"]: number;
-  ["062"]: number;
-  ["063"]: number;
-}
-
-export interface m_nMapId4 {
-  ["000"]: number;
-  ["001"]: number;
-  ["002"]: number;
-  ["003"]: number;
-  ["004"]: number;
-  ["005"]: number;
-  ["006"]: number;
-  ["007"]: number;
-  ["008"]: number;
-  ["009"]: number;
-  ["010"]: number;
-  ["011"]: number;
-  ["012"]: number;
-  ["013"]: number;
-  ["014"]: number;
-  ["015"]: number;
-  ["016"]: number;
-  ["017"]: number;
-  ["018"]: number;
-  ["019"]: number;
-  ["020"]: number;
-  ["021"]: number;
-  ["022"]: number;
-  ["023"]: number;
-  ["024"]: number;
-  ["025"]: number;
-  ["026"]: number;
-  ["027"]: number;
-  ["028"]: number;
-  ["029"]: number;
-  ["030"]: number;
-  ["031"]: number;
-  ["032"]: number;
-  ["033"]: number;
-  ["034"]: number;
-  ["035"]: number;
-  ["036"]: number;
-  ["037"]: number;
-  ["038"]: number;
-  ["039"]: number;
-  ["040"]: number;
-  ["041"]: number;
-  ["042"]: number;
-  ["043"]: number;
-  ["044"]: number;
-  ["045"]: number;
-  ["046"]: number;
-  ["047"]: number;
-  ["048"]: number;
-  ["049"]: number;
-  ["050"]: number;
-  ["051"]: number;
-  ["052"]: number;
-  ["053"]: number;
-  ["054"]: number;
-  ["055"]: number;
-  ["056"]: number;
-  ["057"]: number;
-  ["058"]: number;
-  ["059"]: number;
-  ["060"]: number;
-  ["061"]: number;
-  ["062"]: number;
-  ["063"]: number;
-}
-
-export interface m_nMapId5 {
-  ["000"]: number;
-  ["001"]: number;
-  ["002"]: number;
-  ["003"]: number;
-  ["004"]: number;
-  ["005"]: number;
-  ["006"]: number;
-  ["007"]: number;
-  ["008"]: number;
-  ["009"]: number;
-  ["010"]: number;
-  ["011"]: number;
-  ["012"]: number;
-  ["013"]: number;
-  ["014"]: number;
-  ["015"]: number;
-  ["016"]: number;
-  ["017"]: number;
-  ["018"]: number;
-  ["019"]: number;
-  ["020"]: number;
-  ["021"]: number;
-  ["022"]: number;
-  ["023"]: number;
-  ["024"]: number;
-  ["025"]: number;
-  ["026"]: number;
-  ["027"]: number;
-  ["028"]: number;
-  ["029"]: number;
-  ["030"]: number;
-  ["031"]: number;
-  ["032"]: number;
-  ["033"]: number;
-  ["034"]: number;
-  ["035"]: number;
-  ["036"]: number;
-  ["037"]: number;
-  ["038"]: number;
-  ["039"]: number;
-  ["040"]: number;
-  ["041"]: number;
-  ["042"]: number;
-  ["043"]: number;
-  ["044"]: number;
-  ["045"]: number;
-  ["046"]: number;
-  ["047"]: number;
-  ["048"]: number;
-  ["049"]: number;
-  ["050"]: number;
-  ["051"]: number;
-  ["052"]: number;
-  ["053"]: number;
-  ["054"]: number;
-  ["055"]: number;
-  ["056"]: number;
-  ["057"]: number;
-  ["058"]: number;
-  ["059"]: number;
-  ["060"]: number;
-  ["061"]: number;
-  ["062"]: number;
-  ["063"]: number;
-}
-
-export interface m_nStartingSide0 {
-  ["000"]: number;
-  ["001"]: number;
-  ["002"]: number;
-  ["003"]: number;
-  ["004"]: number;
-  ["005"]: number;
-  ["006"]: number;
-  ["007"]: number;
-  ["008"]: number;
-  ["009"]: number;
-  ["010"]: number;
-  ["011"]: number;
-  ["012"]: number;
-  ["013"]: number;
-  ["014"]: number;
-  ["015"]: number;
-  ["016"]: number;
-  ["017"]: number;
-  ["018"]: number;
-  ["019"]: number;
-  ["020"]: number;
-  ["021"]: number;
-  ["022"]: number;
-  ["023"]: number;
-  ["024"]: number;
-  ["025"]: number;
-  ["026"]: number;
-  ["027"]: number;
-  ["028"]: number;
-  ["029"]: number;
-  ["030"]: number;
-  ["031"]: number;
-  ["032"]: number;
-  ["033"]: number;
-  ["034"]: number;
-  ["035"]: number;
-  ["036"]: number;
-  ["037"]: number;
-  ["038"]: number;
-  ["039"]: number;
-  ["040"]: number;
-  ["041"]: number;
-  ["042"]: number;
-  ["043"]: number;
-  ["044"]: number;
-  ["045"]: number;
-  ["046"]: number;
-  ["047"]: number;
-  ["048"]: number;
-  ["049"]: number;
-  ["050"]: number;
-  ["051"]: number;
-  ["052"]: number;
-  ["053"]: number;
-  ["054"]: number;
-  ["055"]: number;
-  ["056"]: number;
-  ["057"]: number;
-  ["058"]: number;
-  ["059"]: number;
-  ["060"]: number;
-  ["061"]: number;
-  ["062"]: number;
-  ["063"]: number;
-}
-
 export interface m_vServerControlPoints {
   ["000"]: Vector;
   ["001"]: Vector;
@@ -12338,7 +11696,6 @@ export interface CCSGameRulesProxy {
   m_SurvivalGameRuleDecisionTypes: m_SurvivalGameRuleDecisionTypes;
   m_SurvivalGameRuleDecisionValues: m_SurvivalGameRuleDecisionValues;
   DT_SurvivalGameRules: DT_SurvivalGameRules;
-  DT_RetakeGameRules: DT_RetakeGameRules;
   DT_CSGameRules: DT_CSGameRules;
 }
 
@@ -13140,23 +12497,6 @@ export interface CKnifeGG {
 
 export interface CLightGlow {
   DT_LightGlow: DT_LightGlow;
-}
-
-export interface CMapVetoPickController {
-  DT_BaseEntity: DT_BaseEntity;
-  DT_CollisionProperty: DT_CollisionProperty;
-  m_bSpottedByMask: m_bSpottedByMask;
-  m_nTeamWithFirstChoice: m_nTeamWithFirstChoice;
-  m_nVoteMapIdsList: m_nVoteMapIdsList;
-  m_nAccountIDs: m_nAccountIDs;
-  m_nMapId0: m_nMapId0;
-  m_nMapId1: m_nMapId1;
-  m_nMapId2: m_nMapId2;
-  m_nMapId3: m_nMapId3;
-  m_nMapId4: m_nMapId4;
-  m_nMapId5: m_nMapId5;
-  m_nStartingSide0: m_nStartingSide0;
-  DT_MapVetoPickController: DT_MapVetoPickController;
 }
 
 export interface CMaterialModifyControl {

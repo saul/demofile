@@ -42,6 +42,7 @@ export class Networkable<Props = UnknownEntityProps> {
    * Entity is scheduled for removal this tick.
    */
   public deleting: boolean = false;
+
   protected _demo: DemoFile;
 
   constructor(
@@ -56,6 +57,10 @@ export class Networkable<Props = UnknownEntityProps> {
     this.classId = classId;
     this.serialNum = serialNum;
     this.props = props || ({} as Props);
+
+    if (this.classId === 84 && "DT_CChicken" in this.props) {
+      debugger;
+    }
   }
 
   /**
@@ -69,6 +74,10 @@ export class Networkable<Props = UnknownEntityProps> {
     tableName: Table,
     varName: VarName
   ): Props[Table][VarName] {
+    if (!(tableName in this.props)) {
+      debugger;
+    }
+
     return this.props[tableName][varName];
   }
 
@@ -80,13 +89,15 @@ export class Networkable<Props = UnknownEntityProps> {
     TableName extends keyof Props,
     TableKeys extends keyof Props[TableName],
     ArrayType extends "000" extends TableKeys
-      ? Array<Props[TableName][TableKeys]>
+      ? ReadonlyArray<Props[TableName][TableKeys]>
       : undefined
   >(tableName: TableName): ArrayType {
     if (!("000" in this.props[tableName])) {
       return undefined as ArrayType;
     }
-    return Object.values(this.props[tableName]) as ArrayType;
+    return (Object.values(this.props[tableName]) as ReadonlyArray<
+      any
+    >) as ArrayType;
   }
 
   /**
@@ -108,5 +119,13 @@ export class Networkable<Props = UnknownEntityProps> {
     } else {
       table[varName] = newValue;
     }
+  }
+
+  /**
+   * True if this entity is out of the PVS.
+   * Always false on GOTV demos as all entities are always in the PVS.
+   */
+  public get isDormant(): boolean {
+    throw new Error(`not implemented`);
   }
 }

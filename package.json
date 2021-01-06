@@ -1,6 +1,6 @@
 {
   "name": "demofile",
-  "version": "1.9.0",
+  "version": "2.0.0-beta.1",
   "author": "Saul Rennison <saul.rennison@gmail.com>",
   "typings": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -38,6 +38,8 @@
     "big-integer": "^1.6.48",
     "bit-buffer": "0.0.3",
     "bytebuffer": "^5.0.0",
+    "immutable": "^4.0.0-rc.12",
+    "iter-tools": "^7.0.2",
     "lodash": "^4.17.11",
     "long": "^3.0.3",
     "protobufjs": "^6.8.8"

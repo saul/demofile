@@ -27,7 +27,7 @@ function parseDemoFile(path: string) {
       console.log('import { EntityHandle } from "./entityhandle";');
       console.log();
       console.log(
-        "export interface Vector {\n  x: number;\n  y: number;\n  z: number;\n}"
+        "export interface Vector {\n  readonly x: number;\n  readonly y: number;\n  readonly z: number;\n}"
       );
       console.log();
 
@@ -69,7 +69,7 @@ function parseDemoFile(path: string) {
                 "Array prop type was not preceded by SPROP_INSIDEARRAY"
               );
 
-            typeStr = lastElemType + "[]";
+            typeStr = `ReadonlyArray<${lastElemType}>`;
           } else if (prop.type === PropType.DataTable) {
             console.log(`  // ${prop.varName}: DataTable;`);
             continue;
