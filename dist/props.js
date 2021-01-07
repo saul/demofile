@@ -6,7 +6,6 @@ const Long = require("long");
 const assert_exists_1 = require("./assert-exists");
 const consts_1 = require("./consts");
 const entityhandle_1 = require("./entityhandle");
-const bitbuffer_1 = require("./ext/bitbuffer");
 exports.SPROP_UNSIGNED = 1 << 0; // Unsigned integer data.
 exports.SPROP_COORD = 1 << 1; // If this is set, the float/vector is treated like a world coordinate. Note that the bit count is ignored in this case.
 exports.SPROP_NOSCALE = 1 << 2; // For floating point, don't scale into range, just take value as is.
@@ -90,28 +89,28 @@ function makeSpecialFloatDecoder(sendProp) {
         return bitbuf => bitbuf.readBitCoord();
     }
     else if ((sendProp.flags & exports.SPROP_COORD_MP) !== 0) {
-        return bitbuf => bitbuf.readBitCoordMP(bitbuffer_1.CoordType.None);
+        return bitbuf => bitbuf.readBitCoordMPNone();
     }
     else if ((sendProp.flags & exports.SPROP_COORD_MP_LOWPRECISION) !== 0) {
-        return bitbuf => bitbuf.readBitCoordMP(bitbuffer_1.CoordType.LowPrecision);
+        return bitbuf => bitbuf.readBitCoordMPLowPrecision();
     }
     else if ((sendProp.flags & exports.SPROP_COORD_MP_INTEGRAL) !== 0) {
-        return bitbuf => bitbuf.readBitCoordMP(bitbuffer_1.CoordType.Integral);
+        return bitbuf => bitbuf.readBitCoordMPIntegral();
     }
     else if ((sendProp.flags & exports.SPROP_NOSCALE) !== 0) {
-        return bitbuf => bitbuf.readBitFloat();
+        return bitbuf => bitbuf.readFloat32();
     }
     else if ((sendProp.flags & exports.SPROP_NORMAL) !== 0) {
         return bitbuf => bitbuf.readBitNormal();
     }
     else if ((sendProp.flags & exports.SPROP_CELL_COORD) !== 0) {
-        return bitbuf => bitbuf.readBitCellCoord(sendProp.numBits, bitbuffer_1.CoordType.None);
+        return bitbuf => bitbuf.readBitCellCoordNone(sendProp.numBits);
     }
     else if ((sendProp.flags & exports.SPROP_CELL_COORD_LOWPRECISION) !== 0) {
-        return bitbuf => bitbuf.readBitCellCoord(sendProp.numBits, bitbuffer_1.CoordType.LowPrecision);
+        return bitbuf => bitbuf.readBitCellCoordLowPrecision(sendProp.numBits);
     }
     else if ((sendProp.flags & exports.SPROP_CELL_COORD_INTEGRAL) !== 0) {
-        return bitbuf => bitbuf.readBitCellCoord(sendProp.numBits, bitbuffer_1.CoordType.Integral);
+        return bitbuf => bitbuf.readUBits(sendProp.numBits);
     }
     else {
         return undefined;
@@ -123,24 +122,25 @@ function makeFloatDecoder(sendProp) {
         return special;
     }
     const numBits = sendProp.numBits;
+    const maxValue = (1 << numBits) - 1;
     const lowValue = sendProp.lowValue;
-    const highValue = sendProp.lowValue;
+    const highValue = sendProp.highValue;
     return bitbuf => {
         const interp = bitbuf.readUBits(numBits);
-        const fVal = interp / ((1 << numBits) - 1);
+        const fVal = interp / maxValue;
         return lowValue + (highValue - lowValue) * fVal;
     };
 }
 function makeVectorDecoder(sendProp) {
     const floatDecode = makeFloatDecoder(sendProp);
     const isNormal = (sendProp.flags & exports.SPROP_NORMAL) !== 0;
-    return bitbuf => {
-        const v = {
-            x: floatDecode(bitbuf),
-            y: floatDecode(bitbuf),
-            z: 0.0
-        };
-        if (isNormal) {
+    if (isNormal) {
+        return bitbuf => {
+            const v = {
+                x: floatDecode(bitbuf),
+                y: floatDecode(bitbuf),
+                z: 0.0
+            };
             const signBit = bitbuf.readOneBit();
             const v0v0v1v1 = v.x * v.x + v.y * v.y;
             if (v0v0v1v1 < 1.0) {
@@ -152,12 +152,16 @@ function makeVectorDecoder(sendProp) {
             if (signBit) {
                 v.z *= -1.0;
             }
-        }
-        else {
-            v.z = floatDecode(bitbuf);
-        }
-        return v;
-    };
+            return v;
+        };
+    }
+    else {
+        return bitbuf => ({
+            x: floatDecode(bitbuf),
+            y: floatDecode(bitbuf),
+            z: floatDecode(bitbuf)
+        });
+    }
 }
 function makeVectorXYDecoder(sendProp) {
     const floatDecode = makeFloatDecoder(sendProp);

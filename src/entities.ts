@@ -285,12 +285,18 @@ type MutableTransmitEntities = TransmitEntities & {
 };
 
 function cloneProps(props: UnknownEntityProps): UnknownEntityProps {
-  const root = Object.assign({}, props);
+  const result = {} as UnknownEntityProps;
   // tslint:disable-next-line:forin
-  for (const key in root) {
-    root[key] = Object.assign({}, root[key]);
+  for (const tableName in props) {
+    const oldTable = props[tableName];
+    const newTable = {} as Record<string, any>;
+    // tslint:disable-next-line:forin
+    for (const prop in oldTable) {
+      newTable[prop] = oldTable[prop];
+    }
+    result[tableName] = newTable;
   }
-  return root;
+  return result;
 }
 
 interface IEntityBaseline {

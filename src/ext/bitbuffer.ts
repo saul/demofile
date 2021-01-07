@@ -2,12 +2,6 @@ import * as assert from "assert";
 import { BitStream, BitView } from "bit-buffer";
 import * as _ from "lodash";
 
-export enum CoordType {
-  None = 0,
-  LowPrecision = 1,
-  Integral = 2
-}
-
 const COORD_INTEGER_BITS = 14;
 const COORD_FRACTIONAL_BITS = 5;
 const COORD_DENOMINATOR = 1 << COORD_FRACTIONAL_BITS;
@@ -27,11 +21,6 @@ const NORMAL_RESOLUTION = 1.0 / NORMAL_DENOMINATOR;
 const MAX_VAR_INT32_BYTES = 5;
 
 declare module "bit-buffer" {
-  interface BitView {
-    silentOverflow: boolean;
-    _view: Uint8Array;
-  }
-
   interface BitStream {
     readString(bytes: number): string;
     readBytes(bytes: number): Buffer;
@@ -40,10 +29,13 @@ declare module "bit-buffer" {
     readSBits(bits: number): number;
     readUBitVar(): number;
     readBitCoord(): number;
-    readBitCoordMP(coordType: CoordType): number;
+    readBitCoordMPNone(): number;
+    readBitCoordMPLowPrecision(): number;
+    readBitCoordMPIntegral(): number;
     readBitNormal(): number;
-    readBitFloat(): number;
-    readBitCellCoord(bits: number, coordType: CoordType): number;
+    readBitCellCoordNone(bits: number): number;
+    readBitCellCoordLowPrecision(bits: number): number;
+    readBitCellCoordIntegral(bits: number): number;
 
     readCString(): string;
     readUInt8(): number;
@@ -56,20 +48,6 @@ declare module "bit-buffer" {
     writeUInt32(value: number): void;
   }
 }
-
-const originalGetBits = BitView.prototype.getBits;
-
-BitView.prototype.getBits = function (this: BitView, offset, bits, signed) {
-  if (this.silentOverflow === true) {
-    const available = this._view.length * 8 - offset;
-
-    if (bits > available) {
-      return 0;
-    }
-  }
-
-  return originalGetBits.call(this, offset, bits, signed);
-};
 
 BitStream.from = function from(array: Uint8Array) {
   return new BitStream(
@@ -87,16 +65,20 @@ BitStream.prototype.readString = function (this: BitStream, bytes: number) {
 };
 
 BitStream.prototype.readBytes = function (this: BitStream, bytes: number) {
-  return Buffer.from(new Array(bytes).fill(0).map(() => this.readUInt8()));
+  const arr = new Array(bytes);
+  for (let i = 0; i < bytes; ++i) {
+    arr[i] = this.readUInt8();
+  }
+  return Buffer.from(arr);
 };
 
 BitStream.prototype.readOneBit = function (this: BitStream) {
   return this.readBits(1, false) === 1;
 };
 
-BitStream.prototype.readUBits = function (this: BitStream, bits: number) {
-  return this.readBits(bits, false);
-};
+BitStream.prototype.readUBits = BitStream.prototype.readBits as (
+  bits: number
+) => number;
 
 BitStream.prototype.readSBits = function (this: BitStream, bits: number) {
   return this.readBits(bits, true);
@@ -108,17 +90,14 @@ BitStream.prototype.readUBitVar = function (this: BitStream) {
   switch (ret & (16 | 32)) {
     case 16:
       ret = (ret & 15) | (this.readUBits(4) << 4);
-      assert(ret >= 16);
       break;
 
     case 32:
       ret = (ret & 15) | (this.readUBits(8) << 4);
-      assert(ret >= 256);
       break;
 
     case 48:
       ret = (ret & 15) | (this.readUBits(32 - 4) << 4);
-      assert(ret >= 4096);
       break;
   }
 
@@ -126,8 +105,8 @@ BitStream.prototype.readUBitVar = function (this: BitStream) {
 };
 
 BitStream.prototype.readBitCoord = function (this: BitStream) {
-  let intval = Number(this.readOneBit());
-  let fractval = Number(this.readOneBit());
+  let intval = this.readOneBit() ? 1 : 0;
+  let fractval = this.readOneBit() ? 1 : 0;
 
   if (!intval && !fractval) {
     return 0.0;
@@ -174,49 +153,67 @@ BitStream.prototype.readVarInt32 = function (this: BitStream) {
   return (result >> 1) ^ -(result & 1);
 };
 
-BitStream.prototype.readBitCoordMP = function (
-  this: BitStream,
-  coordType: CoordType
-) {
+BitStream.prototype.readBitCoordMPNone = function (this: BitStream) {
   const inBounds = this.readOneBit();
-  let value = 0.0;
-  let signbit = false;
-  const lowPrecision = coordType === CoordType.LowPrecision;
+  let intval = this.readOneBit() ? 1 : 0;
+  const signbit = this.readOneBit();
 
-  if (coordType === CoordType.Integral) {
-    const intval = this.readOneBit();
-
-    if (intval) {
-      signbit = this.readOneBit();
-
-      if (inBounds) {
-        value = this.readUBits(COORD_INTEGER_BITS_MP) + 1;
-      } else {
-        value = this.readUBits(COORD_INTEGER_BITS) + 1;
-      }
+  if (intval) {
+    if (inBounds) {
+      intval = this.readUBits(COORD_INTEGER_BITS_MP) + 1;
+    } else {
+      intval = this.readUBits(COORD_INTEGER_BITS) + 1;
     }
+  }
+
+  const fractval = this.readUBits(COORD_FRACTIONAL_BITS);
+
+  let value = intval + fractval * COORD_RESOLUTION;
+
+  if (signbit) {
+    value = -value;
+  }
+
+  return value;
+};
+
+BitStream.prototype.readBitCoordMPLowPrecision = function (this: BitStream) {
+  const inBounds = this.readOneBit();
+  let intval = this.readOneBit() ? 1 : 0;
+  const signbit = this.readOneBit();
+
+  if (intval) {
+    if (inBounds) {
+      intval = this.readUBits(COORD_INTEGER_BITS_MP) + 1;
+    } else {
+      intval = this.readUBits(COORD_INTEGER_BITS) + 1;
+    }
+  }
+
+  const fractval = this.readUBits(COORD_FRACTIONAL_BITS_MP_LOWPRECISION);
+
+  let value = intval + fractval * COORD_RESOLUTION_LOWPRECISION;
+
+  if (signbit) {
+    value = -value;
+  }
+
+  return value;
+};
+
+BitStream.prototype.readBitCoordMPIntegral = function (this: BitStream) {
+  const inBounds = this.readOneBit();
+  if (!this.readOneBit()) {
+    return 0.0;
+  }
+
+  const signbit = this.readOneBit();
+
+  let value;
+  if (inBounds) {
+    value = this.readUBits(COORD_INTEGER_BITS_MP) + 1;
   } else {
-    let intval = Number(this.readOneBit());
-    signbit = this.readOneBit();
-
-    if (intval) {
-      if (inBounds) {
-        intval = this.readUBits(COORD_INTEGER_BITS_MP) + 1;
-      } else {
-        intval = this.readUBits(COORD_INTEGER_BITS) + 1;
-      }
-    }
-
-    const fractval = this.readUBits(
-      lowPrecision
-        ? COORD_FRACTIONAL_BITS_MP_LOWPRECISION
-        : COORD_FRACTIONAL_BITS
-    );
-
-    value =
-      intval +
-      fractval *
-        (lowPrecision ? COORD_RESOLUTION_LOWPRECISION : COORD_RESOLUTION);
+    value = this.readUBits(COORD_INTEGER_BITS) + 1;
   }
 
   if (signbit) {
@@ -240,37 +237,26 @@ BitStream.prototype.readBitNormal = function (this: BitStream) {
   return value;
 };
 
-BitStream.prototype.readBitFloat = function (this: BitStream) {
-  return this.readFloat32();
+BitStream.prototype.readBitCellCoordNone = function (this: BitStream, bits) {
+  const intval = this.readUBits(bits);
+  const fractval = this.readUBits(COORD_FRACTIONAL_BITS);
+  return intval + fractval * COORD_RESOLUTION;
 };
 
-BitStream.prototype.readBitCellCoord = function (
+BitStream.prototype.readBitCellCoordLowPrecision = function (
   this: BitStream,
-  bits,
-  coordType
+  bits
 ) {
-  const lowPrecision = coordType === CoordType.LowPrecision;
+  const intval = this.readUBits(bits);
+  const fractval = this.readUBits(COORD_FRACTIONAL_BITS_MP_LOWPRECISION);
+  return intval + fractval * COORD_RESOLUTION_LOWPRECISION;
+};
 
-  let value;
-
-  if (coordType === CoordType.Integral) {
-    value = this.readUBits(bits);
-  } else {
-    const intval = this.readUBits(bits);
-
-    const fractval = this.readUBits(
-      lowPrecision
-        ? COORD_FRACTIONAL_BITS_MP_LOWPRECISION
-        : COORD_FRACTIONAL_BITS
-    );
-
-    value =
-      intval +
-      fractval *
-        (lowPrecision ? COORD_RESOLUTION_LOWPRECISION : COORD_RESOLUTION);
-  }
-
-  return value;
+BitStream.prototype.readBitCellCoordIntegral = function (
+  this: BitStream,
+  bits
+) {
+  return this.readUBits(bits);
 };
 
 BitStream.prototype.readCString = function (this: BitStream) {

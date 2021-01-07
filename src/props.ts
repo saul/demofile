@@ -5,7 +5,7 @@ import assertExists from "./assert-exists";
 import { NUM_NETWORKED_EHANDLE_BITS } from "./consts";
 import { ISendProp } from "./entities";
 import { EntityHandle } from "./entityhandle";
-import { BitStream, CoordType } from "./ext/bitbuffer";
+import { BitStream } from "./ext/bitbuffer";
 import { Vector } from "./sendtabletypes";
 
 export const enum PropType {
@@ -123,23 +123,21 @@ function makeSpecialFloatDecoder(
   if ((sendProp.flags & SPROP_COORD) !== 0) {
     return bitbuf => bitbuf.readBitCoord();
   } else if ((sendProp.flags & SPROP_COORD_MP) !== 0) {
-    return bitbuf => bitbuf.readBitCoordMP(CoordType.None);
+    return bitbuf => bitbuf.readBitCoordMPNone();
   } else if ((sendProp.flags & SPROP_COORD_MP_LOWPRECISION) !== 0) {
-    return bitbuf => bitbuf.readBitCoordMP(CoordType.LowPrecision);
+    return bitbuf => bitbuf.readBitCoordMPLowPrecision();
   } else if ((sendProp.flags & SPROP_COORD_MP_INTEGRAL) !== 0) {
-    return bitbuf => bitbuf.readBitCoordMP(CoordType.Integral);
+    return bitbuf => bitbuf.readBitCoordMPIntegral();
   } else if ((sendProp.flags & SPROP_NOSCALE) !== 0) {
-    return bitbuf => bitbuf.readBitFloat();
+    return bitbuf => bitbuf.readFloat32();
   } else if ((sendProp.flags & SPROP_NORMAL) !== 0) {
     return bitbuf => bitbuf.readBitNormal();
   } else if ((sendProp.flags & SPROP_CELL_COORD) !== 0) {
-    return bitbuf => bitbuf.readBitCellCoord(sendProp.numBits, CoordType.None);
+    return bitbuf => bitbuf.readBitCellCoordNone(sendProp.numBits);
   } else if ((sendProp.flags & SPROP_CELL_COORD_LOWPRECISION) !== 0) {
-    return bitbuf =>
-      bitbuf.readBitCellCoord(sendProp.numBits, CoordType.LowPrecision);
+    return bitbuf => bitbuf.readBitCellCoordLowPrecision(sendProp.numBits);
   } else if ((sendProp.flags & SPROP_CELL_COORD_INTEGRAL) !== 0) {
-    return bitbuf =>
-      bitbuf.readBitCellCoord(sendProp.numBits, CoordType.Integral);
+    return bitbuf => bitbuf.readUBits(sendProp.numBits);
   } else {
     return undefined;
   }
@@ -153,12 +151,13 @@ function makeFloatDecoder(sendProp: ISendProp): (bitbuf: BitStream) => number {
   }
 
   const numBits = sendProp.numBits;
+  const maxValue = (1 << numBits) - 1;
   const lowValue = sendProp.lowValue;
-  const highValue = sendProp.lowValue;
+  const highValue = sendProp.highValue;
 
   return bitbuf => {
     const interp = bitbuf.readUBits(numBits);
-    const fVal = interp / ((1 << numBits) - 1);
+    const fVal = interp / maxValue;
     return lowValue + (highValue - lowValue) * fVal;
   };
 }
@@ -167,14 +166,14 @@ function makeVectorDecoder(sendProp: ISendProp): (bitbuf: BitStream) => Vector {
   const floatDecode = makeFloatDecoder(sendProp);
   const isNormal = (sendProp.flags & SPROP_NORMAL) !== 0;
 
-  return bitbuf => {
-    const v = {
-      x: floatDecode(bitbuf),
-      y: floatDecode(bitbuf),
-      z: 0.0
-    };
+  if (isNormal) {
+    return bitbuf => {
+      const v = {
+        x: floatDecode(bitbuf),
+        y: floatDecode(bitbuf),
+        z: 0.0
+      };
 
-    if (isNormal) {
       const signBit = bitbuf.readOneBit();
 
       const v0v0v1v1 = v.x * v.x + v.y * v.y;
@@ -187,12 +186,15 @@ function makeVectorDecoder(sendProp: ISendProp): (bitbuf: BitStream) => Vector {
       if (signBit) {
         v.z *= -1.0;
       }
-    } else {
-      v.z = floatDecode(bitbuf);
-    }
-
-    return Object.freeze(v);
-  };
+      return v;
+    };
+  } else {
+    return bitbuf => ({
+      x: floatDecode(bitbuf),
+      y: floatDecode(bitbuf),
+      z: floatDecode(bitbuf)
+    });
+  }
 }
 
 function makeVectorXYDecoder(
@@ -200,12 +202,11 @@ function makeVectorXYDecoder(
 ): (bitbuf: BitStream) => Vector {
   const floatDecode = makeFloatDecoder(sendProp);
 
-  return bitbuf =>
-    Object.freeze({
-      x: floatDecode(bitbuf),
-      y: floatDecode(bitbuf),
-      z: 0.0
-    });
+  return bitbuf => ({
+    x: floatDecode(bitbuf),
+    y: floatDecode(bitbuf),
+    z: 0.0
+  });
 }
 
 function makeStringDecoder(

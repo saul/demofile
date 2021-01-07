@@ -53,12 +53,18 @@ function readFieldIndex(entityBitBuffer, lastIndex, newWay) {
     return lastIndex + 1 + ret;
 }
 function cloneProps(props) {
-    const root = Object.assign({}, props);
+    const result = {};
     // tslint:disable-next-line:forin
-    for (const key in root) {
-        root[key] = Object.assign({}, root[key]);
+    for (const tableName in props) {
+        const oldTable = props[tableName];
+        const newTable = {};
+        // tslint:disable-next-line:forin
+        for (const prop in oldTable) {
+            newTable[prop] = oldTable[prop];
+        }
+        result[tableName] = newTable;
     }
-    return root;
+    return result;
 }
 /**
  * Represents entities and networked properties within a demo.
