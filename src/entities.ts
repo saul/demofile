@@ -691,25 +691,21 @@ export class Entities extends EventEmitter {
       }
     }
 
+    const props = cloneProps(baseline);
     const existingEntity = this.entities.get(index);
 
-    // Use the old entity if the serial numbers match
+    // If we already have this entity, start fresh with baseline props
     if (existingEntity?.serialNum === serialNum) {
+      existingEntity.props = props;
       return existingEntity;
     }
 
-    // Otherwise delete the entity if the serial numbers mismatch
+    // Delete the entity if the serial numbers mismatch
     if (existingEntity) {
       this._removeEntity(index, true);
     }
 
-    const entity = new klass(
-      this._demo,
-      index,
-      classId,
-      serialNum,
-      cloneProps(baseline)
-    );
+    const entity = new klass(this._demo, index, classId, serialNum, props);
     this.entities.set(index, entity);
 
     this.emit("create", { entity });
