@@ -879,7 +879,6 @@ export class Entities extends EventEmitter {
       }
 
       // Remove all frames - we won't be using them
-      // TODO: is this correct? will we ever try to delta from an old frame after a full update?
       this._frames = immutable.Map();
 
       // Clear all entity baselines
