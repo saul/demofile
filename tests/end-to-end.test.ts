@@ -147,6 +147,59 @@ test.concurrent(
 );
 
 test.concurrent(
+  "entity events on GOTV demo",
+  () =>
+    new Promise(resolve => {
+      const demoFileName = "pc419-vs-chiefs-mirage.dem";
+      const demo = new DemoFile();
+      monitorProgress(demoFileName, demo);
+
+      const timeline: string[] = [];
+
+      function log(name: string, data: any) {
+        const line = `[${demo.currentTick}] ${name}: ${JSON.stringify(data)}`;
+        timeline[timeline.length] = line;
+      }
+
+      demo.gameEvents.on("round_end", e => {
+        log("round_end", {
+          ...e,
+          phase: demo.gameRules.phase,
+          time: demo.currentTime
+        });
+      });
+
+      demo.entities.on("create", ({ entity }) => {
+        log("entities.create", {
+          index: entity.index,
+          serialNum: entity.serialNum,
+          serverClass: entity.serverClass.name
+        });
+      });
+
+      demo.entities.on("beforeremove", e => {
+        log("entities.before_remove", {
+          index: e.entity.index,
+          serverClass: e.entity.serverClass.name,
+          immediate: e.immediate
+        });
+      });
+
+      demo.entities.on("remove", index => {
+        log("entities.remove", { index });
+      });
+
+      demo.on("end", e => {
+        expect(e.error).toBeFalsy();
+        expect(timeline).toMatchSnapshot();
+        resolve();
+      });
+
+      startParsing(demoFileName, demo);
+    })
+);
+
+test.concurrent(
   "incomplete demos can be fully parsed",
   () =>
     new Promise(resolve => {
