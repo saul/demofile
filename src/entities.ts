@@ -6,7 +6,6 @@ import assertExists from "./assert-exists";
 import { BitStream } from "./ext/bitbuffer";
 
 import * as consts from "./consts";
-import * as functional from "./functional";
 import * as net from "./net";
 
 import * as immutable from "immutable";
