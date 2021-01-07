@@ -28,11 +28,12 @@ test("entity events on GOTV demo", done => {
     });
   });
 
-  demo.entities.on("beforeremove", e => {
+  demo.entities.on("beforeremove", ({ entity, immediate }) => {
     timeline.log("entities.before_remove", {
-      index: e.entity.index,
-      serverClass: e.entity.serverClass.name,
-      immediate: e.immediate
+      index: entity.index,
+      serialNum: entity.serialNum,
+      serverClass: entity.serverClass.name,
+      immediate
     });
   });
 
