@@ -404,7 +404,6 @@ class Entities extends events_1.EventEmitter {
     }
     _readNewEntity(entityBitBuffer, entity) {
         const updates = this._parseEntityUpdate(entityBitBuffer, entity.classId);
-        // TODO: what's the perf impact of always recording changes - is it worth the extra complexity?
         const recordChanges = this.listenerCount("change") > 0;
         const changes = recordChanges ? new Array(updates.length) : [];
         for (let i = 0; i < updates.length; ++i) {
