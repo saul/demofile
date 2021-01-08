@@ -56,10 +56,21 @@ BitStream.from = function from(array: Uint8Array) {
 };
 
 BitStream.prototype.readString = function (this: BitStream, bytes: number) {
-  return new Array(bytes)
-    .fill(0)
-    .map(() => String.fromCharCode(this.readUInt8()))
-    .join("");
+  let s = "";
+  let record = true;
+
+  for (let i = 0; i < bytes; ++i) {
+    const c = this.readUint8();
+
+    // Stop appending chars once we hit 0x00
+    if (c === 0x00) {
+      record = false;
+    } else if (record) {
+      s += String.fromCharCode(c);
+    }
+  }
+
+  return s;
 };
 
 BitStream.prototype.readBytes = function (this: BitStream, bytes: number) {
