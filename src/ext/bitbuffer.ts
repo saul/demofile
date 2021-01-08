@@ -1,6 +1,4 @@
-import * as assert from "assert";
 import { BitStream, BitView } from "bit-buffer";
-import * as _ from "lodash";
 
 const COORD_INTEGER_BITS = 14;
 const COORD_FRACTIONAL_BITS = 5;

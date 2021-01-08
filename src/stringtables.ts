@@ -1,7 +1,6 @@
 import * as assert from "assert";
 import * as ByteBuffer from "bytebuffer";
 import { EventEmitter } from "events";
-import * as _ from "lodash";
 import * as Long from "long";
 import assertExists from "./assert-exists";
 import * as consts from "./consts";

@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Entities = void 0;
 const assert = require("assert");
 const events_1 = require("events");
-const _ = require("lodash");
 const assert_exists_1 = require("./assert-exists");
 const bitbuffer_1 = require("./ext/bitbuffer");
 const consts = require("./consts");
@@ -290,15 +289,17 @@ class Entities extends events_1.EventEmitter {
             }
         }
         // collapsible props should come after non-collapsible
-        return _.sortBy(flattened, fp => (fp.collapsible === false ? 0 : 1));
+        return flattened.sort(({ collapsible: a }, { collapsible: b }) => (a ? 1 : 0) - (b ? 1 : 0));
     }
     _flattenDataTable(table) {
-        const flattenedProps = this._gatherProps(table, this._gatherExcludes(table)).slice();
+        const flattenedProps = this._gatherProps(table, this._gatherExcludes(table));
         const prioritySet = new Set(flattenedProps.map(fp => fp.prop.priority));
         prioritySet.add(64);
-        const priorities = _.sortBy(Array.from(prioritySet));
+        const priorities = Array.from(prioritySet).sort((a, b) => a - b);
         let start = 0;
-        // sort flattenedProps by priority
+        // On this surface this looks like a sort by priority (or min(64, priority)
+        // for CHANGES_OFTEN props). It's not a stable sort so it can't just be
+        // replaced with JS Array#sort
         for (const priority of priorities) {
             while (true) {
                 // eslint-disable-line no-constant-condition
@@ -339,16 +340,18 @@ class Entities extends events_1.EventEmitter {
                 break;
             }
         }
+        const props = cloneProps(baseline);
         const existingEntity = this.entities.get(index);
-        // Use the old entity if the serial numbers match
+        // If we already have this entity, start fresh with baseline props
         if ((existingEntity === null || existingEntity === void 0 ? void 0 : existingEntity.serialNum) === serialNum) {
+            existingEntity.props = props;
             return existingEntity;
         }
-        // Otherwise delete the entity if the serial numbers mismatch
+        // Delete the entity if the serial numbers mismatch
         if (existingEntity) {
             this._removeEntity(index, true);
         }
-        const entity = new klass(this._demo, index, classId, serialNum, cloneProps(baseline));
+        const entity = new klass(this._demo, index, classId, serialNum, props);
         this.entities.set(index, entity);
         this.emit("create", { entity });
         return entity;
@@ -477,7 +480,6 @@ class Entities extends events_1.EventEmitter {
                 this._removeEntity(entityIndex, true);
             }
             // Remove all frames - we won't be using them
-            // TODO: is this correct? will we ever try to delta from an old frame after a full update?
             this._frames = immutable.Map();
             // Clear all entity baselines
             for (const baseline of this._entityBaselines) {

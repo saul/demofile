@@ -72,7 +72,7 @@ function parseDemoFile(path: string) {
 
       // If we have an entity index set, colour 0x03 in that entity's team colour
       if (entityIndex > 0) {
-        const ent = demoFile.entities.entities[entityIndex];
+        const ent = demoFile.entities.entities.get(entityIndex);
         if (ent instanceof Player) {
           text = text.replace(/\x03/g, teamNumberToAnsi(ent.teamNumber));
         }

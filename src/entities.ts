@@ -1,6 +1,5 @@
 import * as assert from "assert";
 import { EventEmitter } from "events";
-import * as _ from "lodash";
 
 import assertExists from "./assert-exists";
 import { BitStream } from "./ext/bitbuffer";
@@ -68,7 +67,7 @@ export interface IServerClass {
   name: string;
   dtName: string;
   dataTable: IDataTable;
-  flattenedProps: IFlattenedSendProp[];
+  flattenedProps: ReadonlyArray<IFlattenedSendProp>;
 }
 
 export interface IPropUpdate {
@@ -520,7 +519,7 @@ export class Entities extends EventEmitter {
         "no data table for server class"
       );
 
-      const serverClass = {
+      const serverClass: IServerClass = {
         name,
         dtName,
         dataTable,
@@ -573,7 +572,7 @@ export class Entities extends EventEmitter {
   private _gatherProps(
     table: IDataTable,
     excludes: ReadonlyArray<ISendProp>
-  ): ReadonlyArray<IFlattenedSendProp> {
+  ): IFlattenedSendProp[] {
     const flattened: IFlattenedSendProp[] = [];
 
     for (let index = 0; index < table.props.length; ++index) {
@@ -597,7 +596,7 @@ export class Entities extends EventEmitter {
           }
         }
 
-        flattened.push.apply(flattened, childProps as IFlattenedSendProp[]);
+        flattened.push.apply(flattened, childProps);
       } else {
         flattened.push({
           prop,
@@ -612,24 +611,30 @@ export class Entities extends EventEmitter {
     }
 
     // collapsible props should come after non-collapsible
-    return _.sortBy(flattened, fp => (fp.collapsible === false ? 0 : 1));
+    return flattened.sort(
+      ({ collapsible: a }, { collapsible: b }) => (a ? 1 : 0) - (b ? 1 : 0)
+    );
   }
 
-  private _flattenDataTable(table: IDataTable) {
+  private _flattenDataTable(
+    table: IDataTable
+  ): ReadonlyArray<IFlattenedSendProp> {
     const flattenedProps = this._gatherProps(
       table,
       this._gatherExcludes(table)
-    ).slice();
+    );
 
     const prioritySet = new Set(flattenedProps.map(fp => fp.prop.priority));
 
     prioritySet.add(64);
 
-    const priorities = _.sortBy(Array.from(prioritySet));
+    const priorities = Array.from(prioritySet).sort((a, b) => a - b);
 
     let start = 0;
 
-    // sort flattenedProps by priority
+    // On this surface this looks like a sort by priority (or min(64, priority)
+    // for CHANGES_OFTEN props). It's not a stable sort so it can't just be
+    // replaced with JS Array#sort
     for (const priority of priorities) {
       while (true) {
         // eslint-disable-line no-constant-condition

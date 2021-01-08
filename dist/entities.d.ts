@@ -34,7 +34,7 @@ export interface IServerClass {
     name: string;
     dtName: string;
     dataTable: IDataTable;
-    flattenedProps: IFlattenedSendProp[];
+    flattenedProps: ReadonlyArray<IFlattenedSendProp>;
 }
 export interface IPropUpdate {
     prop: IFlattenedSendProp;

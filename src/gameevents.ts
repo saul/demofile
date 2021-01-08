@@ -1,5 +1,4 @@
 import { EventEmitter } from "events";
-import * as _ from "lodash";
 import { DemoFile } from "./demo";
 import { GameEvent } from "./gameevent";
 import { RequiredNonNullable } from "./pervasive";

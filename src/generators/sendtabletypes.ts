@@ -2,7 +2,6 @@
 
 import * as assert from "assert";
 import * as fs from "fs";
-import * as _ from "lodash";
 import { NUM_NETWORKED_EHANDLE_BITS } from "../consts";
 import { DemoFile } from "../demo";
 import {
@@ -108,8 +107,14 @@ function parseDemoFile(path: string) {
       }
 
       for (const serverClass of demoFile.entities.serverClasses) {
-        const dataTableNames = _.keys(
-          _.groupBy(serverClass.flattenedProps, flat => flat.table.netTableName)
+        const dataTableNames = serverClass.flattenedProps.reduce(
+          (names: string[], fp) => {
+            if (names.indexOf(fp.table.netTableName) === -1) {
+              names.push(fp.table.netTableName);
+            }
+            return names;
+          },
+          []
         );
 
         console.log(`export interface ${serverClass.name} {`);

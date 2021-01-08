@@ -1,10 +1,20 @@
 import * as assert from "assert";
-import * as _ from "lodash";
 import { RequiredNonNullable } from "./pervasive";
 import {
   CSVCMsg_GameEventList,
   ICSVCMsg_GameEvent
 } from "./protobufs/netmessages";
+
+enum EventKeyType {
+  TYPE_STRING = 1,
+  TYPE_FLOAT,
+  TYPE_LONG,
+  TYPE_SHORT,
+  TYPE_BYTE,
+  TYPE_BOOL,
+  TYPE_UINT64,
+  TYPE_WSTRING
+}
 
 export class GameEvent {
   public name: string;
@@ -21,7 +31,8 @@ export class GameEvent {
 
   public messageToObject(
     eventMsg: RequiredNonNullable<ICSVCMsg_GameEvent>
-  ): _.Dictionary<
+  ): Record<
+    string,
     | string
     | number
     | boolean
@@ -31,11 +42,39 @@ export class GameEvent {
   > {
     assert(eventMsg.eventid === this.id);
 
-    return _.zipObject(
-      this.keyNames,
-      eventMsg.keys.map(key => {
-        return _.find(key, (value, name) => value !== null && name !== "type");
-      })
-    );
+    const event: any = {};
+    for (let i = 0; i < this.keyNames.length; ++i) {
+      const keyName = this.keyNames[i];
+      const value = eventMsg.keys[i];
+
+      switch (value.type as EventKeyType) {
+        case EventKeyType.TYPE_STRING:
+          event[keyName] = value.valString;
+          break;
+        case EventKeyType.TYPE_FLOAT:
+          event[keyName] = value.valFloat;
+          break;
+        case EventKeyType.TYPE_LONG:
+          event[keyName] = value.valLong;
+          break;
+        case EventKeyType.TYPE_SHORT:
+          event[keyName] = value.valShort;
+          break;
+        case EventKeyType.TYPE_BYTE:
+          event[keyName] = value.valByte;
+          break;
+        case EventKeyType.TYPE_BOOL:
+          event[keyName] = value.valBool;
+          break;
+        case EventKeyType.TYPE_UINT64:
+          event[keyName] = value.valUint64;
+          break;
+        case EventKeyType.TYPE_WSTRING:
+          event[keyName] = value.valWstring;
+          break;
+      }
+    }
+
+    return event;
   }
 }
