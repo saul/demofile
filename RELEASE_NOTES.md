@@ -6,6 +6,17 @@
 - Unreleased release notes here
 -->
 
+### 2.0.0-beta.1 (2021-01-09)
+
+-
+- :sparkles: #72: Added full support for in-eye/perspective demos
+- :sparkles: Added `Networkable#isDormant`: `true` if entity is outside of PVS (and so is not updated)
+- :bug: Fixed unnecessary entity deletion/recreation events
+- :zap: `Entities#change` now batches all changes for a given entity into a single event
+- :zap: `Entities#entities` is now a `Map<entity index, Networkable>` instead of a sparse array
+- :zap: `Entities#instanceBaselines` renamed to `Entities#staticBaselines`
+- :zap: Removed dependency on `lodash`
+
 ### 1.9.0 (2021-01-02)
 
 - :bug: #154: Fixed TypeScript compilation errors

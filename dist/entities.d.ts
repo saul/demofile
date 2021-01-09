@@ -2,6 +2,7 @@
 /// <reference types="node" />
 import { EventEmitter } from "events";
 import { BitStream } from "./ext/bitbuffer";
+import * as immutable from "immutable";
 import { DemoFile } from "./demo";
 import { GameRules } from "./entities/gamerules";
 import { Networkable } from "./entities/networkable";
@@ -33,7 +34,7 @@ export interface IServerClass {
     name: string;
     dtName: string;
     dataTable: IDataTable;
-    flattenedProps: IFlattenedSendProp[];
+    flattenedProps: ReadonlyArray<IFlattenedSendProp>;
 }
 export interface IPropUpdate {
     prop: IFlattenedSendProp;
@@ -60,11 +61,7 @@ export interface IEntityBeforeRemoveEvent {
 export interface IEntityRemoveEvent {
     index: number;
 }
-export interface IEntityChangeEvent {
-    /**
-     * Updated entity
-     */
-    entity: Networkable;
+export interface IEntityPropChange {
     /**
      * Table containing updated property
      */
@@ -81,6 +78,16 @@ export interface IEntityChangeEvent {
      * New value of the property
      */
     newValue: PropValue;
+}
+export interface IEntityChangeEvent {
+    /**
+     * Updated entity
+     */
+    entity: Networkable;
+    /**
+     * Prop changes. At least one element in the array.
+     */
+    changes: ReadonlyArray<IEntityPropChange>;
 }
 export interface ITempEntEvent {
     /**
@@ -147,22 +154,26 @@ export declare interface Entities {
     emit(name: "tempent", event: ITempEntEvent): boolean;
 }
 /**
+ * Represents all entities that are transmitting (i.e. within PVS) in a given frame.
+ */
+export declare type TransmitEntities = immutable.Set<number>;
+/**
  * Represents entities and networked properties within a demo.
  */
 export declare class Entities extends EventEmitter {
     get playerResource(): Networkable<CCSPlayerResource>;
     get gameRules(): GameRules;
-    get teams(): Team[];
-    get players(): Player[];
-    get weapons(): Weapon[];
+    get teams(): ReadonlyArray<Team>;
+    get players(): ReadonlyArray<Player>;
+    get weapons(): ReadonlyArray<Weapon>;
     dataTables: IDataTable[];
     serverClasses: IServerClass[];
     /**
-     * Array of all entities in game.
+     * Map of entity index => networkable instance
      */
-    entities: Array<Networkable | null>;
+    entities: Map<number, Networkable>;
     markedForDeletion: number[];
-    instanceBaselines: {
+    staticBaselines: {
         [classId: number]: UnknownEntityProps | undefined;
     };
     pendingBaselines: {
@@ -172,6 +183,12 @@ export declare class Entities extends EventEmitter {
     tableClassMap: {
         [tableName: string]: NetworkableConstructor;
     };
+    /**
+     * Set of which entities were active in the most recent tick.
+     */
+    transmitEntities: TransmitEntities;
+    private _entityBaselines;
+    private _frames;
     private _demo;
     private _singletonEnts;
     private _currentServerTick;
@@ -196,8 +213,8 @@ export declare class Entities extends EventEmitter {
      */
     getByUserId(userId: number): Player | null;
     getSingleton<TServerClass, TEntityClass extends Networkable<TServerClass>>(serverClass: string): TEntityClass;
-    findAllWithTable(table: string): Networkable[];
-    findAllWithClass<T>(klass: NetworkableConstructor<T>): T[];
+    findAllWithTable(table: string): Generator<Networkable>;
+    findAllWithClass<T>(klass: NetworkableConstructor<T>): Generator<T>;
     handleDataTables(chunk: ByteBuffer): void;
     private _gatherExcludes;
     private _gatherProps;
@@ -210,6 +227,7 @@ export declare class Entities extends EventEmitter {
     private _updatesToPropObject;
     private _handleTempEntities;
     private _handlePacketEntities;
+    private _readPacketEntities;
     private _parseInstanceBaseline;
     private _handleStringTableUpdate;
 }

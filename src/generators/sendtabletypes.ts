@@ -2,7 +2,6 @@
 
 import * as assert from "assert";
 import * as fs from "fs";
-import * as _ from "lodash";
 import { NUM_NETWORKED_EHANDLE_BITS } from "../consts";
 import { DemoFile } from "../demo";
 import {
@@ -27,7 +26,7 @@ function parseDemoFile(path: string) {
       console.log('import { EntityHandle } from "./entityhandle";');
       console.log();
       console.log(
-        "export interface Vector {\n  x: number;\n  y: number;\n  z: number;\n}"
+        "export interface Vector {\n  readonly x: number;\n  readonly y: number;\n  readonly z: number;\n}"
       );
       console.log();
 
@@ -69,7 +68,7 @@ function parseDemoFile(path: string) {
                 "Array prop type was not preceded by SPROP_INSIDEARRAY"
               );
 
-            typeStr = lastElemType + "[]";
+            typeStr = `ReadonlyArray<${lastElemType}>`;
           } else if (prop.type === PropType.DataTable) {
             console.log(`  // ${prop.varName}: DataTable;`);
             continue;
@@ -108,8 +107,14 @@ function parseDemoFile(path: string) {
       }
 
       for (const serverClass of demoFile.entities.serverClasses) {
-        const dataTableNames = _.keys(
-          _.groupBy(serverClass.flattenedProps, flat => flat.table.netTableName)
+        const dataTableNames = serverClass.flattenedProps.reduce(
+          (names: string[], fp) => {
+            if (names.indexOf(fp.table.netTableName) === -1) {
+              names.push(fp.table.netTableName);
+            }
+            return names;
+          },
+          []
         );
 
         console.log(`export interface ${serverClass.name} {`);

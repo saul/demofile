@@ -4,20 +4,27 @@
 set -e
 pushd `dirname "$0"`
 
-sudo apt install unrar
+sudo apt-get install unzip
 
-# Originally from https://demos.hltv.org//demo/demofiles/demosection//ESEA-MDL-Season34-Australia-pc419-vs-chiefs-mirage.rar
-curl 'https://demofiledemos.blob.core.windows.net/demoblobs/ESEA-MDL-Season34-Australia-pc419-vs-chiefs-mirage.rar' --output ESEA-MDL-Season34-Australia-pc419-vs-chiefs-mirage.rar
+# Sources:
+# 
+# pc419-vs-chiefs-mirage.dem
+# => from https://demos.hltv.org//demo/demofiles/demosection//ESEA-MDL-Season34-Australia-pc419-vs-chiefs-mirage.rar
+#
+# vitality-vs-faze-m1-mirage.dem
+# => from https://demos.hltv.org//demo/demofiles/demosection//IEM-New-York-2020-Europe-vitality-vs-faze-bo3.rar
+#
+# testgamedeouf.dem
+# => from https://drive.google.com/file/d/1KJkFq9vzIH-lBzVHaL6TQdk0Q9IJep_R/view?usp=sharing
 
-# Originally from https://demos.hltv.org//demo/demofiles/demosection//IEM-New-York-2020-Europe-vitality-vs-faze-bo3.rar
-curl 'https://demofiledemos.blob.core.windows.net/demoblobs/IEM-New-York-2020-Europe-vitality-vs-faze-bo3.rar' --output IEM-New-York-2020-Europe-vitality-vs-faze-bo3.rar
+curl 'https://demofiledemos.blob.core.windows.net/demoblobs/test-demos.zip' --output test-demos.zip
 
 # Downloaded over insecure http, so validate hashes
 sha256sum -c SHA256SUMS
 
-unrar x -y "*.rar"
+unzip test-demos.zip
 
 # Clean up to reduce the size of the 'demos' directory
-rm *.rar
+rm test-demos.zip
 
 popd

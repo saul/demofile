@@ -393,7 +393,7 @@ export class DemoFile extends EventEmitter {
    * Shortcut for `this.entities.players`
    * @returns All connected player entities
    */
-  get players(): Player[] {
+  get players(): ReadonlyArray<Player> {
     return this.entities.players;
   }
 
@@ -401,7 +401,7 @@ export class DemoFile extends EventEmitter {
    * Shortcut for `this.entities.teams`
    * @returns All team entities
    */
-  get teams(): Team[] {
+  get teams(): ReadonlyArray<Team> {
     return this.entities.teams;
   }
 

@@ -21,7 +21,7 @@ export class Team extends Networkable<CTeam> {
   get members(): Player[] {
     // UNSAFE: cast here as members will always be players
     return this.getProp("DT_Team", '"player_array"')
-      .map(index => this._demo.entities.entities[index] as unknown)
+      .map(index => this._demo.entities.entities.get(index) as unknown)
       .filter(player => player instanceof Player) as Player[];
   }
 

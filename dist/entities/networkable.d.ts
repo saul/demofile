@@ -44,7 +44,7 @@ export declare class Networkable<Props = UnknownEntityProps> {
      * Interpret an array-like data table (e.g., m_iAmmo) as an array
      * @param tableName Name of the data table
      */
-    getIndexedProps<TableName extends keyof Props, TableKeys extends keyof Props[TableName], ArrayType extends "000" extends TableKeys ? Array<Props[TableName][TableKeys]> : undefined>(tableName: TableName): ArrayType;
+    getIndexedProps<TableName extends keyof Props, TableKeys extends keyof Props[TableName], ArrayType extends "000" extends TableKeys ? ReadonlyArray<Props[TableName][TableKeys]> : undefined>(tableName: TableName): ArrayType;
     /**
      * Update the value of a prop
      * @param tableName Name of the data table
@@ -52,4 +52,9 @@ export declare class Networkable<Props = UnknownEntityProps> {
      * @param newValue New prop value
      */
     updateProp<Table extends keyof Props, VarName extends keyof Props[Table], PropType extends Props[Table][VarName]>(tableName: Table, varName: VarName, newValue: PropType): void;
+    /**
+     * True if this entity is out of the PVS.
+     * Always false on GOTV demos as all entities are always in the PVS.
+     */
+    get isDormant(): boolean;
 }

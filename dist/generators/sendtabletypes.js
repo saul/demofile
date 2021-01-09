@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const assert = require("assert");
 const fs = require("fs");
-const _ = require("lodash");
 const consts_1 = require("../consts");
 const demo_1 = require("../demo");
 const props_1 = require("../props");
@@ -18,7 +17,7 @@ function parseDemoFile(path) {
             console.log("");
             console.log('import { EntityHandle } from "./entityhandle";');
             console.log();
-            console.log("export interface Vector {\n  x: number;\n  y: number;\n  z: number;\n}");
+            console.log("export interface Vector {\n  readonly x: number;\n  readonly y: number;\n  readonly z: number;\n}");
             console.log();
             for (const dt of demoFile.entities.dataTables) {
                 console.log(`export interface ${dt.netTableName} {`);
@@ -57,7 +56,7 @@ function parseDemoFile(path) {
                     else if (prop.type === 5 /* Array */) {
                         if (typeof lastElemType === "undefined")
                             throw new Error("Array prop type was not preceded by SPROP_INSIDEARRAY");
-                        typeStr = lastElemType + "[]";
+                        typeStr = `ReadonlyArray<${lastElemType}>`;
                     }
                     else if (prop.type === 6 /* DataTable */) {
                         console.log(`  // ${prop.varName}: DataTable;`);
@@ -93,7 +92,12 @@ function parseDemoFile(path) {
                 console.log();
             }
             for (const serverClass of demoFile.entities.serverClasses) {
-                const dataTableNames = _.keys(_.groupBy(serverClass.flattenedProps, flat => flat.table.netTableName));
+                const dataTableNames = serverClass.flattenedProps.reduce((names, fp) => {
+                    if (names.indexOf(fp.table.netTableName) === -1) {
+                        names.push(fp.table.netTableName);
+                    }
+                    return names;
+                }, []);
                 console.log(`export interface ${serverClass.name} {`);
                 for (const dataTable of dataTableNames) {
                     if (dataTable === "DT_AnimTimeMustBeFirst") {

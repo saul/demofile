@@ -1,4 +1,5 @@
 export declare const MAX_EDICT_BITS = 11;
+export declare const MAX_EDICTS: number;
 export declare const NETWORKED_EHANDLE_ENT_ENTRY_MASK: number;
 export declare const NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS = 10;
 export declare const NUM_NETWORKED_EHANDLE_BITS: number;

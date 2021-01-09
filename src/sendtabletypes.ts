@@ -5,9 +5,9 @@
 import { EntityHandle } from "./entityhandle";
 
 export interface Vector {
-  x: number;
-  y: number;
-  z: number;
+  readonly x: number;
+  readonly y: number;
+  readonly z: number;
 }
 
 export interface DT_AI_BaseNPC {
@@ -227,7 +227,7 @@ export interface DT_BasePlayer {
   m_iDefaultFOV: number;
   m_hZoomOwner: EntityHandle;
   // m_hViewModel: EntityHandle - InsideArray;
-  m_hViewModel: EntityHandle[];
+  m_hViewModel: ReadonlyArray<EntityHandle>;
   m_szLastPlaceName: string;
   m_vecLadderNormal: Vector;
   m_ladderSurfaceProps: number;
@@ -263,7 +263,7 @@ export interface DT_BaseTeamObjectiveResource {
   m_bControlPointsReset: boolean;
   m_iUpdateCapHudParity: number;
   // m_vCPPositions: Vector - InsideArray;
-  m_vCPPositions: Vector[];
+  m_vCPPositions: ReadonlyArray<Vector>;
   // m_bCPIsVisible: DataTable;
   // m_flLazyCapPerc: DataTable;
   // m_iTeamIcons: DataTable;
@@ -277,7 +277,7 @@ export interface DT_BaseTeamObjectiveResource {
   // m_bInMiniRound: DataTable;
   // m_iWarnOnCap: DataTable;
   // m_iszWarnSound: string - InsideArray;
-  m_iszWarnSound: string[];
+  m_iszWarnSound: ReadonlyArray<string>;
   // m_flPathDistance: DataTable;
   // m_iNumTeamMembers: DataTable;
   // m_iCappingTeam: DataTable;
@@ -725,9 +725,9 @@ export interface DT_Drone {
   m_hPotentialCargo: EntityHandle;
   m_hCurrentPilot: EntityHandle;
   // m_vecTagPositions: Vector - InsideArray;
-  m_vecTagPositions: Vector[];
+  m_vecTagPositions: ReadonlyArray<Vector>;
   // m_vecTagIncrements: number - InsideArray;
-  m_vecTagIncrements: number[];
+  m_vecTagIncrements: ReadonlyArray<number>;
 }
 
 export interface DT_Dronegun {
@@ -916,9 +916,9 @@ export interface DT_EnvScreenEffect {
 export interface DT_EnvScreenOverlay {
   // baseclass: DataTable;
   // m_iszOverlayNames: string - InsideArray;
-  m_iszOverlayNames: string[];
+  m_iszOverlayNames: ReadonlyArray<string>;
   // m_flOverlayTimes: number - InsideArray;
-  m_flOverlayTimes: number[];
+  m_flOverlayTimes: ReadonlyArray<number>;
   m_flStartTime: number;
   m_iDesiredOverlay: number;
   m_bIsActive: boolean;
@@ -1552,9 +1552,9 @@ export interface DT_RagdollManager {
 export interface DT_Ragdoll {
   // baseclass: DataTable;
   // m_ragAngles: Vector - InsideArray;
-  m_ragAngles: Vector[];
+  m_ragAngles: ReadonlyArray<Vector>;
   // m_ragPos: Vector - InsideArray;
-  m_ragPos: Vector[];
+  m_ragPos: ReadonlyArray<Vector>;
   m_hUnragdoll: EntityHandle;
   m_flBlendWeight: number;
   m_nOverlaySequence: number;
@@ -1789,9 +1789,9 @@ export interface DT_SurvivalSpawnChopper {
 export interface DT_WeaponTablet {
   // baseclass: DataTable;
   // m_flUpgradeExpirationTime: number - InsideArray;
-  m_flUpgradeExpirationTime: number[];
+  m_flUpgradeExpirationTime: ReadonlyArray<number>;
   // m_vecLocalHexFlags: number - InsideArray;
-  m_vecLocalHexFlags: number[];
+  m_vecLocalHexFlags: ReadonlyArray<number>;
   m_nContractKillGridIndex: number;
   m_nContractKillGridHighResIndex: number;
   m_bTabletReceptionIsBlocked: boolean;
@@ -1799,11 +1799,11 @@ export interface DT_WeaponTablet {
   m_flBootTime: number;
   m_flShowMapTime: number;
   // m_vecNotificationIds: number - InsideArray;
-  m_vecNotificationIds: number[];
+  m_vecNotificationIds: ReadonlyArray<number>;
   // m_vecNotificationTimestamps: number - InsideArray;
-  m_vecNotificationTimestamps: number[];
+  m_vecNotificationTimestamps: ReadonlyArray<number>;
   // m_vecPlayerPositionHistory: Vector - InsideArray;
-  m_vecPlayerPositionHistory: Vector[];
+  m_vecPlayerPositionHistory: ReadonlyArray<Vector>;
   m_nLastPurchaseIndex: number;
   m_vecNearestMetalCratePos: Vector;
 }
@@ -1825,7 +1825,7 @@ export interface DT_Team {
   m_nGGLeaderEntIndex_T: number;
   m_numMapVictories: number;
   // player_array_element: number - InsideArray;
-  [`"player_array"`]: number[];
+  [`"player_array"`]: ReadonlyArray<number>;
 }
 
 export interface DT_TeamplayRoundBasedRulesProxy {
@@ -1902,7 +1902,7 @@ export interface DT_TEBeamRingPoint {
 export interface DT_TEBeamSpline {
   m_nPoints: number;
   // m_vecPoints: Vector - InsideArray;
-  m_vecPoints: Vector[];
+  m_vecPoints: ReadonlyArray<Vector>;
 }
 
 export interface DT_TEBloodSprite {

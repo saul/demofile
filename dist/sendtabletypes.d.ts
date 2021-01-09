@@ -1,9 +1,9 @@
 /// <reference types="long" />
 import { EntityHandle } from "./entityhandle";
 export interface Vector {
-    x: number;
-    y: number;
-    z: number;
+    readonly x: number;
+    readonly y: number;
+    readonly z: number;
 }
 export interface DT_AI_BaseNPC {
     m_lifeState: number;
@@ -173,7 +173,7 @@ export interface DT_BasePlayer {
     m_flFOVTime: number;
     m_iDefaultFOV: number;
     m_hZoomOwner: EntityHandle;
-    m_hViewModel: EntityHandle[];
+    m_hViewModel: ReadonlyArray<EntityHandle>;
     m_szLastPlaceName: string;
     m_vecLadderNormal: Vector;
     m_ladderSurfaceProps: number;
@@ -198,8 +198,8 @@ export interface DT_BaseTeamObjectiveResource {
     m_bPlayingMiniRounds: boolean;
     m_bControlPointsReset: boolean;
     m_iUpdateCapHudParity: number;
-    m_vCPPositions: Vector[];
-    m_iszWarnSound: string[];
+    m_vCPPositions: ReadonlyArray<Vector>;
+    m_iszWarnSound: ReadonlyArray<string>;
     m_pszCapLayoutInHUD: string;
 }
 export interface DT_BaseTempEntity {
@@ -496,8 +496,8 @@ export interface DT_Drone {
     m_bPilotTakeoverAllowed: boolean;
     m_hPotentialCargo: EntityHandle;
     m_hCurrentPilot: EntityHandle;
-    m_vecTagPositions: Vector[];
-    m_vecTagIncrements: number[];
+    m_vecTagPositions: ReadonlyArray<Vector>;
+    m_vecTagIncrements: ReadonlyArray<number>;
 }
 export interface DT_Dronegun {
     m_vecAttentionTarget: Vector;
@@ -640,8 +640,8 @@ export interface DT_EnvScreenEffect {
     m_nType: number;
 }
 export interface DT_EnvScreenOverlay {
-    m_iszOverlayNames: string[];
-    m_flOverlayTimes: number[];
+    m_iszOverlayNames: ReadonlyArray<string>;
+    m_flOverlayTimes: ReadonlyArray<number>;
     m_flStartTime: number;
     m_iDesiredOverlay: number;
     m_bIsActive: boolean;
@@ -1073,8 +1073,8 @@ export interface DT_RagdollManager {
     m_iCurrentMaxRagdollCount: number;
 }
 export interface DT_Ragdoll {
-    m_ragAngles: Vector[];
-    m_ragPos: Vector[];
+    m_ragAngles: ReadonlyArray<Vector>;
+    m_ragPos: ReadonlyArray<Vector>;
     m_hUnragdoll: EntityHandle;
     m_flBlendWeight: number;
     m_nOverlaySequence: number;
@@ -1257,17 +1257,17 @@ export interface DT_SurvivalSpawnChopper {
     ["m_vecOrigin[2]"]: number;
 }
 export interface DT_WeaponTablet {
-    m_flUpgradeExpirationTime: number[];
-    m_vecLocalHexFlags: number[];
+    m_flUpgradeExpirationTime: ReadonlyArray<number>;
+    m_vecLocalHexFlags: ReadonlyArray<number>;
     m_nContractKillGridIndex: number;
     m_nContractKillGridHighResIndex: number;
     m_bTabletReceptionIsBlocked: boolean;
     m_flScanProgress: number;
     m_flBootTime: number;
     m_flShowMapTime: number;
-    m_vecNotificationIds: number[];
-    m_vecNotificationTimestamps: number[];
-    m_vecPlayerPositionHistory: Vector[];
+    m_vecNotificationIds: ReadonlyArray<number>;
+    m_vecNotificationTimestamps: ReadonlyArray<number>;
+    m_vecPlayerPositionHistory: ReadonlyArray<Vector>;
     m_nLastPurchaseIndex: number;
     m_vecNearestMetalCratePos: Vector;
 }
@@ -1287,7 +1287,7 @@ export interface DT_Team {
     m_nGGLeaderEntIndex_CT: number;
     m_nGGLeaderEntIndex_T: number;
     m_numMapVictories: number;
-    [`"player_array"`]: number[];
+    [`"player_array"`]: ReadonlyArray<number>;
 }
 export interface DT_TeamplayRoundBasedRulesProxy {
 }
@@ -1342,7 +1342,7 @@ export interface DT_TEBeamRingPoint {
 }
 export interface DT_TEBeamSpline {
     m_nPoints: number;
-    m_vecPoints: Vector[];
+    m_vecPoints: ReadonlyArray<Vector>;
 }
 export interface DT_TEBloodSprite {
     m_vecOrigin: Vector;

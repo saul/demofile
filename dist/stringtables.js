@@ -4,7 +4,6 @@ exports.StringTables = void 0;
 const assert = require("assert");
 const ByteBuffer = require("bytebuffer");
 const events_1 = require("events");
-const _ = require("lodash");
 const Long = require("long");
 const assert_exists_1 = require("./assert-exists");
 const consts = require("./consts");
@@ -119,14 +118,13 @@ class StringTables extends events_1.EventEmitter {
         this.emit("postcreate", table);
     }
     _parseStringTableUpdate(bitbuf, table, entries) {
-        // overflow silently. this is how the official parser handles overflows...
-        bitbuf.view.silentOverflow = true;
         const history = [];
         const entryBits = Math.ceil(Math.log2(table.maxEntries));
         const userDataCallback = this.userDataCallbacks[table.name];
         assert(!bitbuf.readOneBit(), "dictionary encoding unsupported");
-        _.reduce(_.range(entries), lastEntry => {
-            let entryIndex = lastEntry + 1;
+        let entryIndex = -1;
+        for (let i = 0; i < entries; ++i) {
+            entryIndex += 1;
             if (!bitbuf.readOneBit()) {
                 entryIndex = bitbuf.readUBits(entryBits);
             }
@@ -186,8 +184,7 @@ class StringTables extends events_1.EventEmitter {
                 entry,
                 userData
             });
-            return entryIndex;
-        }, -1);
+        }
     }
     _handleCreateStringTable(msg) {
         const bitbuf = bitbuffer_1.BitStream.from(msg.stringData);

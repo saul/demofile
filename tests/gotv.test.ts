@@ -25,6 +25,7 @@ test("parses real world GOTV demo", done => {
     for (const player of demo.players) {
       timeline.log(`player:${player.userId}`, {
         name: player.name,
+        location: player.placeName,
         lifeState: player.lifeState,
         type: player.isFakePlayer ? "bot" : player.isHltv ? "gotv" : "human",
         position: player.position,

@@ -34,5 +34,5 @@ export declare const SPROP_CELL_COORD_INTEGRAL: number;
 export declare const SPROP_CHANGES_OFTEN: number;
 export declare const SPROP_VARINT: number;
 export declare type PropPrimitive = string | number | boolean | Long | Vector | EntityHandle;
-export declare type PropValue = PropPrimitive | PropPrimitive[];
+export declare type PropValue = PropPrimitive | ReadonlyArray<PropPrimitive>;
 export declare function makeDecoder(sendProp: ISendProp, arrayElementProp: ISendProp | undefined): (bitbuf: BitStream) => PropValue;
