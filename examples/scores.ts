@@ -1,4 +1,26 @@
-// tslint:disable:no-console
+/*
+Example output:
+
+*** Round ended 'first' (reason: 12)
+        TERRORIST: Heroic score 0
+        CT: BIG score 1
+*** Round ended 'first' (reason: 7)
+        TERRORIST: Heroic score 0
+        CT: BIG score 1
+...
+*** Round ended 'second' (reason: 1)
+        TERRORIST: BIG score 14
+        CT: Heroic score 14
+*** Round ended 'second' (reason: 1)
+        TERRORIST: BIG score 15
+        CT: Heroic score 14
+*** Round ended 'postgame' (reason: 9)
+        TERRORIST: BIG score 16
+        CT: Heroic score 14
+        TERRORIST: Heroic score 0
+        CT: BIG score 0
+Finished.
+*/
 
 import * as assert from "assert";
 import { DemoFile, TeamNumber } from "demofile";
@@ -26,10 +48,6 @@ function parseDemoFile(path: string) {
         cts.score
       );
     }
-
-    demoFile.on("start", () => {
-      console.log("Demo header:", demoFile.header);
-    });
 
     demoFile.gameEvents.on("round_end", e => {
       console.log(
