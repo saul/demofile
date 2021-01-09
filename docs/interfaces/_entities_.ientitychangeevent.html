@@ -84,11 +84,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_entities_.ientitychangeevent.html#changes" class="tsd-kind-icon">changes</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_entities_.ientitychangeevent.html#entity" class="tsd-kind-icon">entity</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_entities_.ientitychangeevent.html#newvalue" class="tsd-kind-icon">new<wbr>Value</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_entities_.ientitychangeevent.html#oldvalue" class="tsd-kind-icon">old<wbr>Value</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_entities_.ientitychangeevent.html#tablename" class="tsd-kind-icon">table<wbr>Name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_entities_.ientitychangeevent.html#varname" class="tsd-kind-icon">var<wbr>Name</a></li>
 							</ul>
 						</section>
 					</div>
@@ -97,77 +94,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="changes" class="tsd-anchor"></a>
+					<h3>changes</h3>
+					<div class="tsd-signature tsd-kind-icon">changes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="_entities_.ientitypropchange.html" class="tsd-signature-type">IEntityPropChange</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L187">src/entities.ts:187</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Prop changes. At least one element in the array.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="entity" class="tsd-anchor"></a>
 					<h3>entity</h3>
 					<div class="tsd-signature tsd-kind-icon">entity<span class="tsd-signature-symbol">:</span> <a href="../classes/_entities_networkable_.networkable.html" class="tsd-signature-type">Networkable</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L160">src/entities.ts:160</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L182">src/entities.ts:182</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Updated entity</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="newvalue" class="tsd-anchor"></a>
-					<h3>new<wbr>Value</h3>
-					<div class="tsd-signature tsd-kind-icon">new<wbr>Value<span class="tsd-signature-symbol">:</span> <a href="../modules/_props_.html#propvalue" class="tsd-signature-type">PropValue</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L180">src/entities.ts:180</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>New value of the property</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="oldvalue" class="tsd-anchor"></a>
-					<h3>old<wbr>Value</h3>
-					<div class="tsd-signature tsd-kind-icon">old<wbr>Value<span class="tsd-signature-symbol">:</span> <a href="../modules/_props_.html#propvalue" class="tsd-signature-type">PropValue</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L175">src/entities.ts:175</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Old variable value</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="tablename" class="tsd-anchor"></a>
-					<h3>table<wbr>Name</h3>
-					<div class="tsd-signature tsd-kind-icon">table<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L165">src/entities.ts:165</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Table containing updated property</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="varname" class="tsd-anchor"></a>
-					<h3>var<wbr>Name</h3>
-					<div class="tsd-signature tsd-kind-icon">var<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L170">src/entities.ts:170</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Network variable name</p>
 						</div>
 					</div>
 				</section>
@@ -192,6 +144,9 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_entities_.ibaselineupdateevent.html" class="tsd-kind-icon">IBaseline<wbr>Update<wbr>Event</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_entities_.ientitybaseline.html" class="tsd-kind-icon">IEntity<wbr>Baseline</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_entities_.ientitybeforeremoveevent.html" class="tsd-kind-icon">IEntity<wbr>Before<wbr>Remove<wbr>Event</a>
 					</li>
@@ -201,19 +156,10 @@
 						<a href="_entities_.ientitychangeevent.html" class="tsd-kind-icon">IEntity<wbr>Change<wbr>Event</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_entities_.ientitychangeevent.html#changes" class="tsd-kind-icon">changes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_entities_.ientitychangeevent.html#entity" class="tsd-kind-icon">entity</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_entities_.ientitychangeevent.html#newvalue" class="tsd-kind-icon">new<wbr>Value</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_entities_.ientitychangeevent.html#oldvalue" class="tsd-kind-icon">old<wbr>Value</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_entities_.ientitychangeevent.html#tablename" class="tsd-kind-icon">table<wbr>Name</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_entities_.ientitychangeevent.html#varname" class="tsd-kind-icon">var<wbr>Name</a>
 							</li>
 						</ul>
 					</li>
@@ -221,6 +167,9 @@
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_entities_.ientitycreationevent.html" class="tsd-kind-icon">IEntity<wbr>Creation<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_entities_.ientitypropchange.html" class="tsd-kind-icon">IEntity<wbr>Prop<wbr>Change</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_entities_.ientityremoveevent.html" class="tsd-kind-icon">IEntity<wbr>Remove<wbr>Event</a>
@@ -248,6 +197,18 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="../modules/_entities_.html#isendprop" class="tsd-kind-icon">ISend<wbr>Prop</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_entities_.html#mutabletransmitentities" class="tsd-kind-icon">Mutable<wbr>Transmit<wbr>Entities</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_entities_.html#ticknumber" class="tsd-kind-icon">Tick<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/_entities_.html#transmitentities" class="tsd-kind-icon">Transmit<wbr>Entities</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_entities_.html#cloneprops" class="tsd-kind-icon">clone<wbr>Props</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="../modules/_entities_.html#ispropexcluded" class="tsd-kind-icon">is<wbr>Prop<wbr>Excluded</a>

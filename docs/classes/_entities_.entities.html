@@ -98,14 +98,17 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_entities_.entities.html#_currentservertick" class="tsd-kind-icon">_current<wbr>Server<wbr>Tick</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_entities_.entities.html#_demo" class="tsd-kind-icon">_demo</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_entities_.entities.html#_entitybaselines" class="tsd-kind-icon">_entity<wbr>Baselines</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_entities_.entities.html#_frames" class="tsd-kind-icon">_frames</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_entities_.entities.html#_singletonents" class="tsd-kind-icon">_singleton<wbr>Ents</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_entities_.entities.html#datatables" class="tsd-kind-icon">data<wbr>Tables</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_entities_.entities.html#entities" class="tsd-kind-icon">entities</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_entities_.entities.html#instancebaselines" class="tsd-kind-icon">instance<wbr>Baselines</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_entities_.entities.html#markedfordeletion" class="tsd-kind-icon">marked<wbr>For<wbr>Deletion</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_entities_.entities.html#pendingbaselines" class="tsd-kind-icon">pending<wbr>Baselines</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_entities_.entities.html#serverclassbits" class="tsd-kind-icon">server<wbr>Class<wbr>Bits</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_entities_.entities.html#serverclasses" class="tsd-kind-icon">server<wbr>Classes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_entities_.entities.html#staticbaselines" class="tsd-kind-icon">static<wbr>Baselines</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_entities_.entities.html#transmitentities" class="tsd-kind-icon">transmit<wbr>Entities</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_entities_.entities.html#defaultmaxlisteners" class="tsd-kind-icon">default<wbr>Max<wbr>Listeners</a></li>
 							</ul>
 						</section>
@@ -133,6 +136,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_entities_.entities.html#_parseentityupdate" class="tsd-kind-icon">_parse<wbr>Entity<wbr>Update</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_entities_.entities.html#_parseinstancebaseline" class="tsd-kind-icon">_parse<wbr>Instance<wbr>Baseline</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_entities_.entities.html#_readnewentity" class="tsd-kind-icon">_read<wbr>New<wbr>Entity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_entities_.entities.html#_readpacketentities" class="tsd-kind-icon">_read<wbr>Packet<wbr>Entities</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_entities_.entities.html#_removeentity" class="tsd-kind-icon">_remove<wbr>Entity</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_entities_.entities.html#_updatestopropobject" class="tsd-kind-icon">_updates<wbr>ToProp<wbr>Object</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_entities_.entities.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a></li>
@@ -175,10 +179,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="_currentservertick" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _current<wbr>Server<wbr>Tick</h3>
-					<div class="tsd-signature tsd-kind-icon">_current<wbr>Server<wbr>Tick<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = -1</span></div>
+					<div class="tsd-signature tsd-kind-icon">_current<wbr>Server<wbr>Tick<span class="tsd-signature-symbol">:</span> <a href="../modules/_entities_.html#ticknumber" class="tsd-signature-type">TickNumber</a><span class="tsd-signature-symbol"> = -1 as TickNumber</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L323">src/entities.ts:323</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L374">src/entities.ts:374</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -188,7 +192,27 @@
 					<div class="tsd-signature tsd-kind-icon">_demo<span class="tsd-signature-symbol">:</span> <a href="_demo_.demofile.html" class="tsd-signature-type">DemoFile</a><span class="tsd-signature-symbol"> = null!</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L321">src/entities.ts:321</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L372">src/entities.ts:372</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_entitybaselines" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _entity<wbr>Baselines</h3>
+					<div class="tsd-signature tsd-kind-icon">_entity<wbr>Baselines<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_entities_.ientitybaseline.html" class="tsd-signature-type">IEntityBaseline</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = [new Map(),new Map()]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L362">src/entities.ts:362</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_frames" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _frames</h3>
+					<div class="tsd-signature tsd-kind-icon">_frames<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_entities_.html#ticknumber" class="tsd-signature-type">TickNumber</a><span class="tsd-signature-symbol">, </span><a href="../modules/_entities_.html#transmitentities" class="tsd-signature-type">TransmitEntities</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = immutable.Map()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L367">src/entities.ts:367</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -198,7 +222,7 @@
 					<div class="tsd-signature tsd-kind-icon">_singleton<wbr>Ents<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L322">src/entities.ts:322</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L373">src/entities.ts:373</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -216,41 +240,23 @@
 					<div class="tsd-signature tsd-kind-icon">data<wbr>Tables<span class="tsd-signature-symbol">:</span> <a href="../modules/_entities_.html#idatatable" class="tsd-signature-type">IDataTable</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L295">src/entities.ts:295</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L332">src/entities.ts:332</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="entities" class="tsd-anchor"></a>
 					<h3>entities</h3>
-					<div class="tsd-signature tsd-kind-icon">entities<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_entities_networkable_.networkable.html" class="tsd-signature-type">Networkable</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Array(1 &lt;&lt; consts.MAX_EDICT_BITS).fill(null)</span></div>
+					<div class="tsd-signature tsd-kind-icon">entities<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><a href="_entities_networkable_.networkable.html" class="tsd-signature-type">Networkable</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Map()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L301">src/entities.ts:301</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L338">src/entities.ts:338</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Array of all entities in game.</p>
+							<p>Map of entity index =&gt; networkable instance</p>
 						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="instancebaselines" class="tsd-anchor"></a>
-					<h3>instance<wbr>Baselines</h3>
-					<div class="tsd-signature tsd-kind-icon">instance<wbr>Baselines<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L307">src/entities.ts:307</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>classId: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><a href="../interfaces/_entities_.unknownentityprops.html" class="tsd-signature-type">UnknownEntityProps</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
-							</li>
-						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
@@ -259,7 +265,7 @@
 					<div class="tsd-signature tsd-kind-icon">marked<wbr>For<wbr>Deletion<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L305">src/entities.ts:305</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L340">src/entities.ts:340</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -269,7 +275,7 @@
 					<div class="tsd-signature tsd-kind-icon">pending<wbr>Baselines<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L310">src/entities.ts:310</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L345">src/entities.ts:345</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -287,7 +293,7 @@
 					<div class="tsd-signature tsd-kind-icon">server<wbr>Class<wbr>Bits<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L312">src/entities.ts:312</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L347">src/entities.ts:347</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -297,9 +303,42 @@
 					<div class="tsd-signature tsd-kind-icon">server<wbr>Classes<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_entities_.iserverclass.html" class="tsd-signature-type">IServerClass</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L296">src/entities.ts:296</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L333">src/entities.ts:333</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="staticbaselines" class="tsd-anchor"></a>
+					<h3>static<wbr>Baselines</h3>
+					<div class="tsd-signature tsd-kind-icon">static<wbr>Baselines<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L342">src/entities.ts:342</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>classId: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><a href="../interfaces/_entities_.unknownentityprops.html" class="tsd-signature-type">UnknownEntityProps</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="transmitentities" class="tsd-anchor"></a>
+					<h3>transmit<wbr>Entities</h3>
+					<div class="tsd-signature tsd-kind-icon">transmit<wbr>Entities<span class="tsd-signature-symbol">:</span> <a href="../modules/_entities_.html#transmitentities" class="tsd-signature-type">TransmitEntities</a><span class="tsd-signature-symbol"> = null!</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L360">src/entities.ts:360</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Set of which entities were active in the most recent tick.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 					<a name="defaultmaxlisteners" class="tsd-anchor"></a>
@@ -325,7 +364,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L279">src/entities.ts:279</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L316">src/entities.ts:316</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_entities_gamerules_.gamerules.html" class="tsd-signature-type">GameRules</a></h4>
@@ -342,7 +381,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L272">src/entities.ts:272</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L309">src/entities.ts:309</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_entities_networkable_.networkable.html" class="tsd-signature-type">Networkable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sendtabletypes_.ccsplayerresource.html" class="tsd-signature-type">CCSPlayerResource</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -353,16 +392,16 @@
 					<a name="players" class="tsd-anchor"></a>
 					<h3>players</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> players<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_entities_player_.player.html" class="tsd-signature-type">Player</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> players<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="_entities_player_.player.html" class="tsd-signature-type">Player</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L287">src/entities.ts:287</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L324">src/entities.ts:324</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="_entities_player_.player.html" class="tsd-signature-type">Player</a><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="_entities_player_.player.html" class="tsd-signature-type">Player</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -370,16 +409,16 @@
 					<a name="teams" class="tsd-anchor"></a>
 					<h3>teams</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> teams<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_entities_team_.team.html" class="tsd-signature-type">Team</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> teams<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="_entities_team_.team.html" class="tsd-signature-type">Team</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L283">src/entities.ts:283</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L320">src/entities.ts:320</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="_entities_team_.team.html" class="tsd-signature-type">Team</a><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="_entities_team_.team.html" class="tsd-signature-type">Team</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -387,16 +426,16 @@
 					<a name="weapons" class="tsd-anchor"></a>
 					<h3>weapons</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> weapons<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_entities_weapon_.weapon.html" class="tsd-signature-type">Weapon</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> weapons<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="_entities_weapon_.weapon.html" class="tsd-signature-type">Weapon</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L291">src/entities.ts:291</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L328">src/entities.ts:328</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="_entities_weapon_.weapon.html" class="tsd-signature-type">Weapon</a><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="_entities_weapon_.weapon.html" class="tsd-signature-type">Weapon</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -407,13 +446,13 @@
 					<a name="_addentity" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _add<wbr>Entity</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">_add<wbr>Entity<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, classId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, serialNum<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_entities_networkable_.networkable.html" class="tsd-signature-type">Networkable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">_add<wbr>Entity<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, classId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, serialNum<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, entityBaseline<span class="tsd-signature-symbol">: </span><a href="../interfaces/_entities_.unknownentityprops.html" class="tsd-signature-type">UnknownEntityProps</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_entities_networkable_.networkable.html" class="tsd-signature-type">Networkable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L615">src/entities.ts:615</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L678">src/entities.ts:678</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -426,6 +465,9 @@
 								</li>
 								<li>
 									<h5>serialNum: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>entityBaseline: <a href="../interfaces/_entities_.unknownentityprops.html" class="tsd-signature-type">UnknownEntityProps</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_entities_networkable_.networkable.html" class="tsd-signature-type">Networkable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -442,7 +484,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L611">src/entities.ts:611</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L674">src/entities.ts:674</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -459,13 +501,13 @@
 					<a name="_flattendatatable" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _flatten<wbr>Data<wbr>Table</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">_flatten<wbr>Data<wbr>Table<span class="tsd-signature-symbol">(</span>table<span class="tsd-signature-symbol">: </span><a href="../modules/_entities_.html#idatatable" class="tsd-signature-type">IDataTable</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_entities_.iflattenedsendprop.html" class="tsd-signature-type">IFlattenedSendProp</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">_flatten<wbr>Data<wbr>Table<span class="tsd-signature-symbol">(</span>table<span class="tsd-signature-symbol">: </span><a href="../modules/_entities_.html#idatatable" class="tsd-signature-type">IDataTable</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_entities_.iflattenedsendprop.html" class="tsd-signature-type">IFlattenedSendProp</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L560">src/entities.ts:560</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L619">src/entities.ts:619</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -474,7 +516,7 @@
 									<h5>table: <a href="../modules/_entities_.html#idatatable" class="tsd-signature-type">IDataTable</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_entities_.iflattenedsendprop.html" class="tsd-signature-type">IFlattenedSendProp</a><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_entities_.iflattenedsendprop.html" class="tsd-signature-type">IFlattenedSendProp</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -488,7 +530,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L495">src/entities.ts:495</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L552">src/entities.ts:552</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -505,13 +547,13 @@
 					<a name="_gatherprops" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _gather<wbr>Props</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">_gather<wbr>Props<span class="tsd-signature-symbol">(</span>table<span class="tsd-signature-symbol">: </span><a href="../modules/_entities_.html#idatatable" class="tsd-signature-type">IDataTable</a>, excludes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_entities_.html#isendprop" class="tsd-signature-type">ISendProp</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_entities_.iflattenedsendprop.html" class="tsd-signature-type">IFlattenedSendProp</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">_gather<wbr>Props<span class="tsd-signature-symbol">(</span>table<span class="tsd-signature-symbol">: </span><a href="../modules/_entities_.html#idatatable" class="tsd-signature-type">IDataTable</a>, excludes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_entities_.html#isendprop" class="tsd-signature-type">ISendProp</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_entities_.iflattenedsendprop.html" class="tsd-signature-type">IFlattenedSendProp</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L515">src/entities.ts:515</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L572">src/entities.ts:572</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -523,7 +565,7 @@
 									<h5>excludes: <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_entities_.html#isendprop" class="tsd-signature-type">ISendProp</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_entities_.iflattenedsendprop.html" class="tsd-signature-type">IFlattenedSendProp</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_entities_.iflattenedsendprop.html" class="tsd-signature-type">IFlattenedSendProp</a><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -537,7 +579,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L768">src/entities.ts:768</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L862">src/entities.ts:862</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -560,7 +602,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L831">src/entities.ts:831</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L1011">src/entities.ts:1011</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -583,7 +625,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L732">src/entities.ts:732</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L827">src/entities.ts:827</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -606,7 +648,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L669">src/entities.ts:669</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L744">src/entities.ts:744</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -632,7 +674,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L816">src/entities.ts:816</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L996">src/entities.ts:996</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -658,7 +700,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L696">src/entities.ts:696</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L778">src/entities.ts:778</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -675,6 +717,32 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_readpacketentities" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _read<wbr>Packet<wbr>Entities</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_read<wbr>Packet<wbr>Entities<span class="tsd-signature-symbol">(</span>msg<span class="tsd-signature-symbol">: </span><a href="../modules/_pervasive_.html#requirednonnullable" class="tsd-signature-type">RequiredNonNullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ICSVCMsg_PacketEntities</span><span class="tsd-signature-symbol">&gt;</span>, frame<span class="tsd-signature-symbol">: </span><a href="../modules/_entities_.html#mutabletransmitentities" class="tsd-signature-type">MutableTransmitEntities</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L906">src/entities.ts:906</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>msg: <a href="../modules/_pervasive_.html#requirednonnullable" class="tsd-signature-type">RequiredNonNullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ICSVCMsg_PacketEntities</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>frame: <a href="../modules/_entities_.html#mutabletransmitentities" class="tsd-signature-type">MutableTransmitEntities</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
 					<a name="_removeentity" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _remove<wbr>Entity</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
@@ -684,7 +752,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L648">src/entities.ts:648</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L720">src/entities.ts:720</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -710,7 +778,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L718">src/entities.ts:718</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L813">src/entities.ts:813</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -790,7 +858,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L211">src/entities.ts:211</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L218">src/entities.ts:218</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -805,7 +873,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L220">src/entities.ts:220</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L227">src/entities.ts:227</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -823,7 +891,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L228">src/entities.ts:228</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L235">src/entities.ts:235</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -841,7 +909,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L238">src/entities.ts:238</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L245">src/entities.ts:245</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -859,7 +927,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L247">src/entities.ts:247</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L254">src/entities.ts:254</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -877,7 +945,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L253">src/entities.ts:253</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L260">src/entities.ts:260</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -895,7 +963,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L259">src/entities.ts:259</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L266">src/entities.ts:266</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -913,7 +981,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L265">src/entities.ts:265</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L272">src/entities.ts:272</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -952,13 +1020,13 @@
 					<a name="findallwithclass" class="tsd-anchor"></a>
 					<h3>find<wbr>All<wbr>With<wbr>Class</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>All<wbr>With<wbr>Class&lt;T&gt;<span class="tsd-signature-symbol">(</span>klass<span class="tsd-signature-symbol">: </span><a href="../interfaces/_entities_.networkableconstructor.html" class="tsd-signature-type">NetworkableConstructor</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">find<wbr>All<wbr>With<wbr>Class&lt;T&gt;<span class="tsd-signature-symbol">(</span>klass<span class="tsd-signature-symbol">: </span><a href="../interfaces/_entities_.networkableconstructor.html" class="tsd-signature-type">NetworkableConstructor</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L425">src/entities.ts:425</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L480">src/entities.ts:480</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -973,7 +1041,7 @@
 									<h5>klass: <a href="../interfaces/_entities_.networkableconstructor.html" class="tsd-signature-type">NetworkableConstructor</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -981,13 +1049,13 @@
 					<a name="findallwithtable" class="tsd-anchor"></a>
 					<h3>find<wbr>All<wbr>With<wbr>Table</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>All<wbr>With<wbr>Table<span class="tsd-signature-symbol">(</span>table<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_entities_networkable_.networkable.html" class="tsd-signature-type">Networkable</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">find<wbr>All<wbr>With<wbr>Table<span class="tsd-signature-symbol">(</span>table<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><a href="_entities_networkable_.networkable.html" class="tsd-signature-type">Networkable</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L419">src/entities.ts:419</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L472">src/entities.ts:472</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -996,7 +1064,7 @@
 									<h5>table: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_entities_networkable_.networkable.html" class="tsd-signature-type">Networkable</a><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Generator</span><span class="tsd-signature-symbol">&lt;</span><a href="_entities_networkable_.networkable.html" class="tsd-signature-type">Networkable</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1010,7 +1078,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L361">src/entities.ts:361</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L412">src/entities.ts:412</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1042,7 +1110,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L379">src/entities.ts:379</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L430">src/entities.ts:430</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1093,7 +1161,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L399">src/entities.ts:399</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L450">src/entities.ts:450</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1125,7 +1193,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L431">src/entities.ts:431</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L488">src/entities.ts:488</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1148,7 +1216,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L352">src/entities.ts:352</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L403">src/entities.ts:403</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1181,7 +1249,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L325">src/entities.ts:325</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L376">src/entities.ts:376</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1308,7 +1376,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L210">src/entities.ts:210</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L217">src/entities.ts:217</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1344,7 +1412,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L216">src/entities.ts:216</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L223">src/entities.ts:223</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1385,7 +1453,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L227">src/entities.ts:227</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L234">src/entities.ts:234</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1428,7 +1496,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L234">src/entities.ts:234</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L241">src/entities.ts:241</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1470,7 +1538,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L243">src/entities.ts:243</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L250">src/entities.ts:250</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1511,7 +1579,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L252">src/entities.ts:252</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L259">src/entities.ts:259</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1552,7 +1620,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L258">src/entities.ts:258</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L265">src/entities.ts:265</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1593,7 +1661,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L264">src/entities.ts:264</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L271">src/entities.ts:271</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1934,7 +2002,7 @@
 					<div class="tsd-signature tsd-kind-icon">table<wbr>Class<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L314">src/entities.ts:314</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L349">src/entities.ts:349</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1943,7 +2011,7 @@
 						<div class="tsd-signature tsd-kind-icon">DT_<wbr><wbr>Base<wbr>Entity<span class="tsd-signature-symbol">:</span> <a href="_entities_baseentity_.baseentity.html" class="tsd-signature-type">BaseEntity</a><span class="tsd-signature-symbol"> = BaseEntity</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L319">src/entities.ts:319</a></li>
+								<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L354">src/entities.ts:354</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1953,7 +2021,7 @@
 						<div class="tsd-signature tsd-kind-icon">DT_<wbr>CSGame<wbr>Rules<span class="tsd-signature-symbol">:</span> <a href="_entities_gamerules_.gamerules.html" class="tsd-signature-type">GameRules</a><span class="tsd-signature-symbol"> = GameRules</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L317">src/entities.ts:317</a></li>
+								<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L352">src/entities.ts:352</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1963,7 +2031,7 @@
 						<div class="tsd-signature tsd-kind-icon">DT_<wbr>CSPlayer<span class="tsd-signature-symbol">:</span> <a href="_entities_player_.player.html" class="tsd-signature-type">Player</a><span class="tsd-signature-symbol"> = Player</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L315">src/entities.ts:315</a></li>
+								<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L350">src/entities.ts:350</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1973,7 +2041,7 @@
 						<div class="tsd-signature tsd-kind-icon">DT_<wbr><wbr>Team<span class="tsd-signature-symbol">:</span> <a href="_entities_team_.team.html" class="tsd-signature-type">Team</a><span class="tsd-signature-symbol"> = Team</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L316">src/entities.ts:316</a></li>
+								<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L351">src/entities.ts:351</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1983,7 +2051,7 @@
 						<div class="tsd-signature tsd-kind-icon">DT_<wbr><wbr>WeaponCSBase<span class="tsd-signature-symbol">:</span> <a href="_entities_weapon_.weapon.html" class="tsd-signature-type">Weapon</a><span class="tsd-signature-symbol"> = Weapon</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L318">src/entities.ts:318</a></li>
+								<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L353">src/entities.ts:353</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2015,6 +2083,12 @@
 								<a href="_entities_.entities.html#_demo" class="tsd-kind-icon">_demo</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_entities_.entities.html#_entitybaselines" class="tsd-kind-icon">_entity<wbr>Baselines</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_entities_.entities.html#_frames" class="tsd-kind-icon">_frames</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_entities_.entities.html#_singletonents" class="tsd-kind-icon">_singleton<wbr>Ents</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -2022,9 +2096,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_entities_.entities.html#entities" class="tsd-kind-icon">entities</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_entities_.entities.html#instancebaselines" class="tsd-kind-icon">instance<wbr>Baselines</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_entities_.entities.html#markedfordeletion" class="tsd-kind-icon">marked<wbr>For<wbr>Deletion</a>
@@ -2037,6 +2108,12 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_entities_.entities.html#serverclasses" class="tsd-kind-icon">server<wbr>Classes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_entities_.entities.html#staticbaselines" class="tsd-kind-icon">static<wbr>Baselines</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_entities_.entities.html#transmitentities" class="tsd-kind-icon">transmit<wbr>Entities</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="_entities_.entities.html#defaultmaxlisteners" class="tsd-kind-icon">default<wbr>Max<wbr>Listeners</a>
@@ -2088,6 +2165,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="_entities_.entities.html#_readnewentity" class="tsd-kind-icon">_read<wbr>New<wbr>Entity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_entities_.entities.html#_readpacketentities" class="tsd-kind-icon">_read<wbr>Packet<wbr>Entities</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="_entities_.entities.html#_removeentity" class="tsd-kind-icon">_remove<wbr>Entity</a>
@@ -2177,6 +2257,9 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_entities_.ibaselineupdateevent.html" class="tsd-kind-icon">IBaseline<wbr>Update<wbr>Event</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_entities_.ientitybaseline.html" class="tsd-kind-icon">IEntity<wbr>Baseline</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_entities_.ientitybeforeremoveevent.html" class="tsd-kind-icon">IEntity<wbr>Before<wbr>Remove<wbr>Event</a>
 					</li>
@@ -2185,6 +2268,9 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_entities_.ientitycreationevent.html" class="tsd-kind-icon">IEntity<wbr>Creation<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_entities_.ientitypropchange.html" class="tsd-kind-icon">IEntity<wbr>Prop<wbr>Change</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_entities_.ientityremoveevent.html" class="tsd-kind-icon">IEntity<wbr>Remove<wbr>Event</a>
@@ -2212,6 +2298,18 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="../modules/_entities_.html#isendprop" class="tsd-kind-icon">ISend<wbr>Prop</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_entities_.html#mutabletransmitentities" class="tsd-kind-icon">Mutable<wbr>Transmit<wbr>Entities</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_entities_.html#ticknumber" class="tsd-kind-icon">Tick<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/_entities_.html#transmitentities" class="tsd-kind-icon">Transmit<wbr>Entities</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_entities_.html#cloneprops" class="tsd-kind-icon">clone<wbr>Props</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="../modules/_entities_.html#ispropexcluded" class="tsd-kind-icon">is<wbr>Prop<wbr>Excluded</a>

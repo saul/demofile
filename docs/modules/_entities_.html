@@ -80,9 +80,11 @@
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_entities_.ibaselineupdateevent.html" class="tsd-kind-icon">IBaseline<wbr>Update<wbr>Event</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_entities_.ientitybaseline.html" class="tsd-kind-icon">IEntity<wbr>Baseline</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_entities_.ientitybeforeremoveevent.html" class="tsd-kind-icon">IEntity<wbr>Before<wbr>Remove<wbr>Event</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_entities_.ientitychangeevent.html" class="tsd-kind-icon">IEntity<wbr>Change<wbr>Event</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_entities_.ientitycreationevent.html" class="tsd-kind-icon">IEntity<wbr>Creation<wbr>Event</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_entities_.ientitypropchange.html" class="tsd-kind-icon">IEntity<wbr>Prop<wbr>Change</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_entities_.ientityremoveevent.html" class="tsd-kind-icon">IEntity<wbr>Remove<wbr>Event</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_entities_.iflattenedsendprop.html" class="tsd-kind-icon">IFlattened<wbr>Send<wbr>Prop</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_entities_.ipropupdate.html" class="tsd-kind-icon">IProp<wbr>Update</a></li>
@@ -97,11 +99,15 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_entities_.html#idatatable" class="tsd-kind-icon">IData<wbr>Table</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_entities_.html#isendprop" class="tsd-kind-icon">ISend<wbr>Prop</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported"><a href="_entities_.html#mutabletransmitentities" class="tsd-kind-icon">Mutable<wbr>Transmit<wbr>Entities</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported"><a href="_entities_.html#ticknumber" class="tsd-kind-icon">Tick<wbr>Number</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_entities_.html#transmitentities" class="tsd-kind-icon">Transmit<wbr>Entities</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_entities_.html#cloneprops" class="tsd-kind-icon">clone<wbr>Props</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_entities_.html#ispropexcluded" class="tsd-kind-icon">is<wbr>Prop<wbr>Excluded</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_entities_.html#readfieldindex" class="tsd-kind-icon">read<wbr>Field<wbr>Index</a></li>
 							</ul>
@@ -117,7 +123,7 @@
 					<div class="tsd-signature tsd-kind-icon">IData<wbr>Table<span class="tsd-signature-symbol">:</span> <a href="_pervasive_.html#requirednonnullable" class="tsd-signature-type">RequiredNonNullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ICSVCMsg_SendTable</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L49">src/entities.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L49">src/entities.ts:49</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -127,13 +133,71 @@
 					<div class="tsd-signature tsd-kind-icon">ISend<wbr>Prop<span class="tsd-signature-symbol">:</span> <a href="_pervasive_.html#requirednonnullable" class="tsd-signature-type">RequiredNonNullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Isendprop_t</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L57">src/entities.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L57">src/entities.ts:57</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+					<a name="mutabletransmitentities" class="tsd-anchor"></a>
+					<h3>Mutable<wbr>Transmit<wbr>Entities</h3>
+					<div class="tsd-signature tsd-kind-icon">Mutable<wbr>Transmit<wbr>Entities<span class="tsd-signature-symbol">:</span> <a href="_entities_.html#transmitentities" class="tsd-signature-type">TransmitEntities</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>__tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">unique </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L281">src/entities.ts:281</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+					<a name="ticknumber" class="tsd-anchor"></a>
+					<h3>Tick<wbr>Number</h3>
+					<div class="tsd-signature tsd-kind-icon">Tick<wbr>Number<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>__tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">unique </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L275">src/entities.ts:275</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="transmitentities" class="tsd-anchor"></a>
+					<h3>Transmit<wbr>Entities</h3>
+					<div class="tsd-signature tsd-kind-icon">Transmit<wbr>Entities<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L280">src/entities.ts:280</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Represents all entities that are transmitting (i.e. within PVS) in a given frame.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="cloneprops" class="tsd-anchor"></a>
+					<h3>clone<wbr>Props</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">clone<wbr>Props<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../interfaces/_entities_.unknownentityprops.html" class="tsd-signature-type">UnknownEntityProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_entities_.unknownentityprops.html" class="tsd-signature-type">UnknownEntityProps</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L285">src/entities.ts:285</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <a href="../interfaces/_entities_.unknownentityprops.html" class="tsd-signature-type">UnknownEntityProps</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_entities_.unknownentityprops.html" class="tsd-signature-type">UnknownEntityProps</a></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="ispropexcluded" class="tsd-anchor"></a>
 					<h3>is<wbr>Prop<wbr>Excluded</h3>
@@ -144,7 +208,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L78">src/entities.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L78">src/entities.ts:78</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -173,7 +237,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/entities.ts#L90">src/entities.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/entities.ts#L90">src/entities.ts:90</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -213,6 +277,9 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_entities_.ibaselineupdateevent.html" class="tsd-kind-icon">IBaseline<wbr>Update<wbr>Event</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_entities_.ientitybaseline.html" class="tsd-kind-icon">IEntity<wbr>Baseline</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_entities_.ientitybeforeremoveevent.html" class="tsd-kind-icon">IEntity<wbr>Before<wbr>Remove<wbr>Event</a>
 					</li>
@@ -221,6 +288,9 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_entities_.ientitycreationevent.html" class="tsd-kind-icon">IEntity<wbr>Creation<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_entities_.ientitypropchange.html" class="tsd-kind-icon">IEntity<wbr>Prop<wbr>Change</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_entities_.ientityremoveevent.html" class="tsd-kind-icon">IEntity<wbr>Remove<wbr>Event</a>
@@ -248,6 +318,18 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="_entities_.html#isendprop" class="tsd-kind-icon">ISend<wbr>Prop</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_entities_.html#mutabletransmitentities" class="tsd-kind-icon">Mutable<wbr>Transmit<wbr>Entities</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_entities_.html#ticknumber" class="tsd-kind-icon">Tick<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_entities_.html#transmitentities" class="tsd-kind-icon">Transmit<wbr>Entities</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_entities_.html#cloneprops" class="tsd-kind-icon">clone<wbr>Props</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_entities_.html#ispropexcluded" class="tsd-kind-icon">is<wbr>Prop<wbr>Excluded</a>

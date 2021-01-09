@@ -21,10 +21,19 @@ bit_buffer_1.BitStream.from = function from(array) {
     return new bit_buffer_1.BitStream(array.buffer, array.byteOffset, array.byteLength);
 };
 bit_buffer_1.BitStream.prototype.readString = function (bytes) {
-    return new Array(bytes)
-        .fill(0)
-        .map(() => String.fromCharCode(this.readUInt8()))
-        .join("");
+    let s = "";
+    let record = true;
+    for (let i = 0; i < bytes; ++i) {
+        const c = this.readUint8();
+        // Stop appending chars once we hit 0x00
+        if (c === 0x00) {
+            record = false;
+        }
+        else if (record) {
+            s += String.fromCharCode(c);
+        }
+    }
+    return s;
 };
 bit_buffer_1.BitStream.prototype.readBytes = function (bytes) {
     const arr = new Array(bytes);

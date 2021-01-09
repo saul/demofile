@@ -87,10 +87,13 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcellcoord" class="tsd-kind-icon">read<wbr>Bit<wbr>Cell<wbr>Coord</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcellcoordintegral" class="tsd-kind-icon">read<wbr>Bit<wbr>Cell<wbr>Coord<wbr>Integral</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcellcoordlowprecision" class="tsd-kind-icon">read<wbr>Bit<wbr>Cell<wbr>Coord<wbr>Low<wbr>Precision</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcellcoordnone" class="tsd-kind-icon">read<wbr>Bit<wbr>Cell<wbr>Coord<wbr>None</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcoord" class="tsd-kind-icon">read<wbr>Bit<wbr>Coord</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcoordmp" class="tsd-kind-icon">read<wbr>Bit<wbr>CoordMP</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitfloat" class="tsd-kind-icon">read<wbr>Bit<wbr>Float</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcoordmpintegral" class="tsd-kind-icon">read<wbr>Bit<wbr>CoordMPIntegral</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcoordmplowprecision" class="tsd-kind-icon">read<wbr>Bit<wbr>CoordMPLow<wbr>Precision</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcoordmpnone" class="tsd-kind-icon">read<wbr>Bit<wbr>CoordMPNone</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitnormal" class="tsd-kind-icon">read<wbr>Bit<wbr>Normal</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbytes" class="tsd-kind-icon">read<wbr>Bytes</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readcstring" class="tsd-kind-icon">readCString</a></li>
@@ -115,16 +118,16 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="readbitcellcoord" class="tsd-anchor"></a>
-					<h3>read<wbr>Bit<wbr>Cell<wbr>Coord</h3>
+					<a name="readbitcellcoordintegral" class="tsd-anchor"></a>
+					<h3>read<wbr>Bit<wbr>Cell<wbr>Coord<wbr>Integral</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">read<wbr>Bit<wbr>Cell<wbr>Coord<span class="tsd-signature-symbol">(</span>bits<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, coordType<span class="tsd-signature-symbol">: </span><a href="../enums/_ext_bitbuffer_.coordtype.html" class="tsd-signature-type">CoordType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Bit<wbr>Cell<wbr>Coord<wbr>Integral<span class="tsd-signature-symbol">(</span>bits<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L46">src/ext/bitbuffer.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L36">src/ext/bitbuffer.ts:36</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -132,8 +135,51 @@
 								<li>
 									<h5>bits: <span class="tsd-signature-type">number</span></h5>
 								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="readbitcellcoordlowprecision" class="tsd-anchor"></a>
+					<h3>read<wbr>Bit<wbr>Cell<wbr>Coord<wbr>Low<wbr>Precision</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Bit<wbr>Cell<wbr>Coord<wbr>Low<wbr>Precision<span class="tsd-signature-symbol">(</span>bits<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L35">src/ext/bitbuffer.ts:35</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
 								<li>
-									<h5>coordType: <a href="../enums/_ext_bitbuffer_.coordtype.html" class="tsd-signature-type">CoordType</a></h5>
+									<h5>bits: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="readbitcellcoordnone" class="tsd-anchor"></a>
+					<h3>read<wbr>Bit<wbr>Cell<wbr>Coord<wbr>None</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Bit<wbr>Cell<wbr>Coord<wbr>None<span class="tsd-signature-symbol">(</span>bits<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L34">src/ext/bitbuffer.ts:34</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>bits: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -150,7 +196,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L42">src/ext/bitbuffer.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L29">src/ext/bitbuffer.ts:29</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -158,39 +204,50 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="readbitcoordmp" class="tsd-anchor"></a>
-					<h3>read<wbr>Bit<wbr>CoordMP</h3>
+					<a name="readbitcoordmpintegral" class="tsd-anchor"></a>
+					<h3>read<wbr>Bit<wbr>CoordMPIntegral</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">read<wbr>Bit<wbr>CoordMP<span class="tsd-signature-symbol">(</span>coordType<span class="tsd-signature-symbol">: </span><a href="../enums/_ext_bitbuffer_.coordtype.html" class="tsd-signature-type">CoordType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Bit<wbr>CoordMPIntegral<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L43">src/ext/bitbuffer.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L32">src/ext/bitbuffer.ts:32</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>coordType: <a href="../enums/_ext_bitbuffer_.coordtype.html" class="tsd-signature-type">CoordType</a></h5>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="readbitfloat" class="tsd-anchor"></a>
-					<h3>read<wbr>Bit<wbr>Float</h3>
+					<a name="readbitcoordmplowprecision" class="tsd-anchor"></a>
+					<h3>read<wbr>Bit<wbr>CoordMPLow<wbr>Precision</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">read<wbr>Bit<wbr>Float<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Bit<wbr>CoordMPLow<wbr>Precision<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L45">src/ext/bitbuffer.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L31">src/ext/bitbuffer.ts:31</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="readbitcoordmpnone" class="tsd-anchor"></a>
+					<h3>read<wbr>Bit<wbr>CoordMPNone</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Bit<wbr>CoordMPNone<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L30">src/ext/bitbuffer.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -207,7 +264,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L44">src/ext/bitbuffer.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L33">src/ext/bitbuffer.ts:33</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -224,7 +281,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L37">src/ext/bitbuffer.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L24">src/ext/bitbuffer.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -247,7 +304,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L48">src/ext/bitbuffer.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L38">src/ext/bitbuffer.ts:38</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -264,7 +321,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L38">src/ext/bitbuffer.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L25">src/ext/bitbuffer.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -281,7 +338,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L40">src/ext/bitbuffer.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L27">src/ext/bitbuffer.ts:27</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -304,7 +361,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L36">src/ext/bitbuffer.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L23">src/ext/bitbuffer.ts:23</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -327,7 +384,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L41">src/ext/bitbuffer.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L28">src/ext/bitbuffer.ts:28</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -344,7 +401,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L39">src/ext/bitbuffer.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L26">src/ext/bitbuffer.ts:26</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -367,7 +424,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L50">src/ext/bitbuffer.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L40">src/ext/bitbuffer.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -384,7 +441,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L51">src/ext/bitbuffer.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L41">src/ext/bitbuffer.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -401,7 +458,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L49">src/ext/bitbuffer.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L39">src/ext/bitbuffer.ts:39</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -418,7 +475,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L52">src/ext/bitbuffer.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L42">src/ext/bitbuffer.ts:42</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -435,7 +492,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L53">src/ext/bitbuffer.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L43">src/ext/bitbuffer.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -452,7 +509,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L55">src/ext/bitbuffer.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L45">src/ext/bitbuffer.ts:45</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -475,7 +532,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L56">src/ext/bitbuffer.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L46">src/ext/bitbuffer.ts:46</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -498,7 +555,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/0e5a481/src/ext/bitbuffer.ts#L54">src/ext/bitbuffer.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/3d239ba/src/ext/bitbuffer.ts#L44">src/ext/bitbuffer.ts:44</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -537,16 +594,25 @@
 						<a href="_ext_bitbuffer_._bit_buffer_.bitstream.html" class="tsd-kind-icon">Bit<wbr>Stream</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcellcoord" class="tsd-kind-icon">read<wbr>Bit<wbr>Cell<wbr>Coord</a>
+								<a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcellcoordintegral" class="tsd-kind-icon">read<wbr>Bit<wbr>Cell<wbr>Coord<wbr>Integral</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcellcoordlowprecision" class="tsd-kind-icon">read<wbr>Bit<wbr>Cell<wbr>Coord<wbr>Low<wbr>Precision</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcellcoordnone" class="tsd-kind-icon">read<wbr>Bit<wbr>Cell<wbr>Coord<wbr>None</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcoord" class="tsd-kind-icon">read<wbr>Bit<wbr>Coord</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcoordmp" class="tsd-kind-icon">read<wbr>Bit<wbr>CoordMP</a>
+								<a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcoordmpintegral" class="tsd-kind-icon">read<wbr>Bit<wbr>CoordMPIntegral</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitfloat" class="tsd-kind-icon">read<wbr>Bit<wbr>Float</a>
+								<a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcoordmplowprecision" class="tsd-kind-icon">read<wbr>Bit<wbr>CoordMPLow<wbr>Precision</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitcoordmpnone" class="tsd-kind-icon">read<wbr>Bit<wbr>CoordMPNone</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="_ext_bitbuffer_._bit_buffer_.bitstream.html#readbitnormal" class="tsd-kind-icon">read<wbr>Bit<wbr>Normal</a>
@@ -600,9 +666,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_ext_bitbuffer_._bit_buffer_.bitview.html" class="tsd-kind-icon">Bit<wbr>View</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
