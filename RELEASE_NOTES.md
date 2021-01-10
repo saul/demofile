@@ -6,6 +6,10 @@
 - Unreleased release notes here
 -->
 
+### 2.0.0-beta.3 (2021-01-10)
+
+- :sparkles: #164: Add CUserCmd parsing on in-eye/perspective demos
+
 ### 2.0.0-beta.2 (2021-01-10)
 
 - :sparkles: Updated protobuf definitions
