@@ -201,6 +201,54 @@ export interface PlayerQuestData_QuestItemData {
   questBonusPointsEarned: number;
 }
 
+export interface DeepPlayerStatsEntry {
+  accountid: number;
+  matchId: Long;
+  mmGameMode: number;
+  mapid: number;
+  bStartingCt: boolean;
+  matchOutcome: number;
+  roundsWon: number;
+  roundsLost: number;
+  statScore: number;
+  statDeaths: number;
+  statMvps: number;
+  enemyKills: number;
+  enemyHeadshots: number;
+  enemy2ks: number;
+  enemy3ks: number;
+  enemy4ks: number;
+  totalDamage: number;
+  engagementsEntryCount: number;
+  engagementsEntryWins: number;
+  engagements1v1Count: number;
+  engagements1v1Wins: number;
+  engagements1v2Count: number;
+  engagements1v2Wins: number;
+  utilityCount: number;
+  utilitySuccess: number;
+  flashCount: number;
+  flashSuccess: number;
+  mates: number[];
+}
+
+export interface DeepPlayerMatchEvent {
+  accountid: number;
+  matchId: Long;
+  eventId: number;
+  eventType: number;
+  bPlayingCt: boolean;
+  userPosX: number;
+  userPosY: number;
+  userPosZ: number;
+  userDefidx: number;
+  otherPosX: number;
+  otherPosY: number;
+  otherPosZ: number;
+  otherDefidx: number;
+  eventData: number;
+}
+
 export interface CMsgGCServerQuestUpdateData {
   playerQuestData: PlayerQuestData[];
   binaryData: Uint8Array;
@@ -531,6 +579,13 @@ export interface CMsgGCCstrike15V2ClientRequestNewMission {
   campaignId: number;
 }
 
+export interface CMsgGCCstrike15V2ClientRedeemMissionReward {
+  campaignId: number;
+  redeemId: number;
+  redeemableBalance: number;
+  expectedCost: number;
+}
+
 export interface CMsgGCCstrike15V2GC2ServerNotifyXPRewarded {
   xpProgressData: XpProgressData[];
   accountId: number;
@@ -538,6 +593,23 @@ export interface CMsgGCCstrike15V2GC2ServerNotifyXPRewarded {
   currentLevel: number;
   upgradedDefidx: number;
   operationPointsAwarded: number;
+}
+
+export interface CMsgGCCStrike15ClientDeepStats {
+  accountId: number;
+  range: CMsgGCCStrike15ClientDeepStats_DeepStatsRange | undefined;
+  matches: CMsgGCCStrike15ClientDeepStats_DeepStatsMatch[];
+}
+
+export interface CMsgGCCStrike15ClientDeepStats_DeepStatsRange {
+  begin: number;
+  end: number;
+  frozen: boolean;
+}
+
+export interface CMsgGCCStrike15ClientDeepStats_DeepStatsMatch {
+  player: DeepPlayerStatsEntry | undefined;
+  events: DeepPlayerMatchEvent[];
 }
 
 export interface CMsgGCCStrike15V2WatchInfoUsers {
@@ -838,6 +910,8 @@ export interface CSOAccountSeasonalOperation {
   premiumTiers: number;
   missionId: number;
   missionsCompleted: number;
+  redeemableBalance: number;
+  seasonPassTime: number;
 }
 
 export interface CSOPersonaDataPublic {
@@ -1282,6 +1356,54 @@ const basePlayerQuestData_QuestItemData: object = {
   questBonusPointsEarned: 0
 };
 
+const baseDeepPlayerStatsEntry: object = {
+  accountid: 0,
+  matchId: Long.UZERO,
+  mmGameMode: 0,
+  mapid: 0,
+  bStartingCt: false,
+  matchOutcome: 0,
+  roundsWon: 0,
+  roundsLost: 0,
+  statScore: 0,
+  statDeaths: 0,
+  statMvps: 0,
+  enemyKills: 0,
+  enemyHeadshots: 0,
+  enemy2ks: 0,
+  enemy3ks: 0,
+  enemy4ks: 0,
+  totalDamage: 0,
+  engagementsEntryCount: 0,
+  engagementsEntryWins: 0,
+  engagements1v1Count: 0,
+  engagements1v1Wins: 0,
+  engagements1v2Count: 0,
+  engagements1v2Wins: 0,
+  utilityCount: 0,
+  utilitySuccess: 0,
+  flashCount: 0,
+  flashSuccess: 0,
+  mates: 0
+};
+
+const baseDeepPlayerMatchEvent: object = {
+  accountid: 0,
+  matchId: Long.UZERO,
+  eventId: 0,
+  eventType: 0,
+  bPlayingCt: false,
+  userPosX: 0,
+  userPosY: 0,
+  userPosZ: 0,
+  userDefidx: 0,
+  otherPosX: 0,
+  otherPosY: 0,
+  otherPosZ: 0,
+  otherDefidx: 0,
+  eventData: 0
+};
+
 const baseCMsgGCServerQuestUpdateData: object = {
   mmGameMode: 0
 };
@@ -1566,6 +1688,13 @@ const baseCMsgGCCstrike15V2ClientRequestNewMission: object = {
   campaignId: 0
 };
 
+const baseCMsgGCCstrike15V2ClientRedeemMissionReward: object = {
+  campaignId: 0,
+  redeemId: 0,
+  redeemableBalance: 0,
+  expectedCost: 0
+};
+
 const baseCMsgGCCstrike15V2GC2ServerNotifyXPRewarded: object = {
   accountId: 0,
   currentXp: 0,
@@ -1573,6 +1702,18 @@ const baseCMsgGCCstrike15V2GC2ServerNotifyXPRewarded: object = {
   upgradedDefidx: 0,
   operationPointsAwarded: 0
 };
+
+const baseCMsgGCCStrike15ClientDeepStats: object = {
+  accountId: 0
+};
+
+const baseCMsgGCCStrike15ClientDeepStats_DeepStatsRange: object = {
+  begin: 0,
+  end: 0,
+  frozen: false
+};
+
+const baseCMsgGCCStrike15ClientDeepStats_DeepStatsMatch: object = {};
 
 const baseCMsgGCCStrike15V2WatchInfoUsers: object = {
   requestId: 0,
@@ -1840,7 +1981,9 @@ const baseCSOAccountSeasonalOperation: object = {
   tierUnlocked: 0,
   premiumTiers: 0,
   missionId: 0,
-  missionsCompleted: 0
+  missionsCompleted: 0,
+  redeemableBalance: 0,
+  seasonPassTime: 0
 };
 
 const baseCSOPersonaDataPublic: object = {
@@ -2174,7 +2317,10 @@ export enum ECsgoGCMsg {
   k_EMsgGCCStrike15_v2_ClientRequestSouvenir = 9204,
   k_EMsgGCCStrike15_v2_ClientReportValidation = 9205,
   k_EMsgGCCStrike15_v2_GC2ClientRefuseSecureMode = 9206,
-  k_EMsgGCCStrike15_v2_GC2ClientRequestValidation = 9207
+  k_EMsgGCCStrike15_v2_GC2ClientRequestValidation = 9207,
+  k_EMsgGCCStrike15_v2_ClientRedeemMissionReward = 9209,
+  k_EMsgGCCStrike15_ClientDeepStats = 9210,
+  k_EMsgGCCStrike15_StartAgreementSessionInGame = 9211
 }
 
 export enum ECsgoSteamUserStat {
@@ -3324,6 +3470,232 @@ export const PlayerQuestData_QuestItemData = {
           break;
         case 3:
           message.questBonusPointsEarned = reader.int32();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const DeepPlayerStatsEntry = {
+  encode(
+    message: DeepPlayerStatsEntry,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).uint32(message.accountid);
+    writer.uint32(16).uint64(message.matchId);
+    writer.uint32(24).uint32(message.mmGameMode);
+    writer.uint32(32).uint32(message.mapid);
+    writer.uint32(40).bool(message.bStartingCt);
+    writer.uint32(48).uint32(message.matchOutcome);
+    writer.uint32(56).uint32(message.roundsWon);
+    writer.uint32(64).uint32(message.roundsLost);
+    writer.uint32(72).uint32(message.statScore);
+    writer.uint32(96).uint32(message.statDeaths);
+    writer.uint32(104).uint32(message.statMvps);
+    writer.uint32(112).uint32(message.enemyKills);
+    writer.uint32(120).uint32(message.enemyHeadshots);
+    writer.uint32(128).uint32(message.enemy2ks);
+    writer.uint32(136).uint32(message.enemy3ks);
+    writer.uint32(144).uint32(message.enemy4ks);
+    writer.uint32(152).uint32(message.totalDamage);
+    writer.uint32(184).uint32(message.engagementsEntryCount);
+    writer.uint32(192).uint32(message.engagementsEntryWins);
+    writer.uint32(200).uint32(message.engagements1v1Count);
+    writer.uint32(208).uint32(message.engagements1v1Wins);
+    writer.uint32(216).uint32(message.engagements1v2Count);
+    writer.uint32(224).uint32(message.engagements1v2Wins);
+    writer.uint32(232).uint32(message.utilityCount);
+    writer.uint32(240).uint32(message.utilitySuccess);
+    writer.uint32(256).uint32(message.flashCount);
+    writer.uint32(264).uint32(message.flashSuccess);
+    writer.uint32(274).fork();
+    for (const v of message.mates) {
+      writer.uint32(v);
+    }
+    writer.ldelim();
+    return writer;
+  },
+  decode(input: Uint8Array | Reader, length?: number): DeepPlayerStatsEntry {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = { ...baseDeepPlayerStatsEntry } as DeepPlayerStatsEntry;
+    message.mates = [];
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.accountid = reader.uint32();
+          break;
+        case 2:
+          message.matchId = reader.uint64() as Long;
+          break;
+        case 3:
+          message.mmGameMode = reader.uint32();
+          break;
+        case 4:
+          message.mapid = reader.uint32();
+          break;
+        case 5:
+          message.bStartingCt = reader.bool();
+          break;
+        case 6:
+          message.matchOutcome = reader.uint32();
+          break;
+        case 7:
+          message.roundsWon = reader.uint32();
+          break;
+        case 8:
+          message.roundsLost = reader.uint32();
+          break;
+        case 9:
+          message.statScore = reader.uint32();
+          break;
+        case 12:
+          message.statDeaths = reader.uint32();
+          break;
+        case 13:
+          message.statMvps = reader.uint32();
+          break;
+        case 14:
+          message.enemyKills = reader.uint32();
+          break;
+        case 15:
+          message.enemyHeadshots = reader.uint32();
+          break;
+        case 16:
+          message.enemy2ks = reader.uint32();
+          break;
+        case 17:
+          message.enemy3ks = reader.uint32();
+          break;
+        case 18:
+          message.enemy4ks = reader.uint32();
+          break;
+        case 19:
+          message.totalDamage = reader.uint32();
+          break;
+        case 23:
+          message.engagementsEntryCount = reader.uint32();
+          break;
+        case 24:
+          message.engagementsEntryWins = reader.uint32();
+          break;
+        case 25:
+          message.engagements1v1Count = reader.uint32();
+          break;
+        case 26:
+          message.engagements1v1Wins = reader.uint32();
+          break;
+        case 27:
+          message.engagements1v2Count = reader.uint32();
+          break;
+        case 28:
+          message.engagements1v2Wins = reader.uint32();
+          break;
+        case 29:
+          message.utilityCount = reader.uint32();
+          break;
+        case 30:
+          message.utilitySuccess = reader.uint32();
+          break;
+        case 32:
+          message.flashCount = reader.uint32();
+          break;
+        case 33:
+          message.flashSuccess = reader.uint32();
+          break;
+        case 34:
+          if ((tag & 7) === 2) {
+            const end2 = reader.uint32() + reader.pos;
+            while (reader.pos < end2) {
+              message.mates.push(reader.uint32());
+            }
+          } else {
+            message.mates.push(reader.uint32());
+          }
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const DeepPlayerMatchEvent = {
+  encode(
+    message: DeepPlayerMatchEvent,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).uint32(message.accountid);
+    writer.uint32(16).uint64(message.matchId);
+    writer.uint32(24).uint32(message.eventId);
+    writer.uint32(32).uint32(message.eventType);
+    writer.uint32(40).bool(message.bPlayingCt);
+    writer.uint32(48).int32(message.userPosX);
+    writer.uint32(56).int32(message.userPosY);
+    writer.uint32(96).int32(message.userPosZ);
+    writer.uint32(64).uint32(message.userDefidx);
+    writer.uint32(72).int32(message.otherPosX);
+    writer.uint32(80).int32(message.otherPosY);
+    writer.uint32(104).int32(message.otherPosZ);
+    writer.uint32(88).uint32(message.otherDefidx);
+    writer.uint32(112).int32(message.eventData);
+    return writer;
+  },
+  decode(input: Uint8Array | Reader, length?: number): DeepPlayerMatchEvent {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = { ...baseDeepPlayerMatchEvent } as DeepPlayerMatchEvent;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.accountid = reader.uint32();
+          break;
+        case 2:
+          message.matchId = reader.uint64() as Long;
+          break;
+        case 3:
+          message.eventId = reader.uint32();
+          break;
+        case 4:
+          message.eventType = reader.uint32();
+          break;
+        case 5:
+          message.bPlayingCt = reader.bool();
+          break;
+        case 6:
+          message.userPosX = reader.int32();
+          break;
+        case 7:
+          message.userPosY = reader.int32();
+          break;
+        case 12:
+          message.userPosZ = reader.int32();
+          break;
+        case 8:
+          message.userDefidx = reader.uint32();
+          break;
+        case 9:
+          message.otherPosX = reader.int32();
+          break;
+        case 10:
+          message.otherPosY = reader.int32();
+          break;
+        case 13:
+          message.otherPosZ = reader.int32();
+          break;
+        case 11:
+          message.otherDefidx = reader.uint32();
+          break;
+        case 14:
+          message.eventData = reader.int32();
           break;
         default:
           reader.skipType(tag & 7);
@@ -5941,6 +6313,50 @@ export const CMsgGCCstrike15V2ClientRequestNewMission = {
   }
 };
 
+export const CMsgGCCstrike15V2ClientRedeemMissionReward = {
+  encode(
+    message: CMsgGCCstrike15V2ClientRedeemMissionReward,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).uint32(message.campaignId);
+    writer.uint32(16).uint32(message.redeemId);
+    writer.uint32(24).uint32(message.redeemableBalance);
+    writer.uint32(32).uint32(message.expectedCost);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CMsgGCCstrike15V2ClientRedeemMissionReward {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCMsgGCCstrike15V2ClientRedeemMissionReward
+    } as CMsgGCCstrike15V2ClientRedeemMissionReward;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.campaignId = reader.uint32();
+          break;
+        case 2:
+          message.redeemId = reader.uint32();
+          break;
+        case 3:
+          message.redeemableBalance = reader.uint32();
+          break;
+        case 4:
+          message.expectedCost = reader.uint32();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
 export const CMsgGCCstrike15V2GC2ServerNotifyXPRewarded = {
   encode(
     message: CMsgGCCstrike15V2GC2ServerNotifyXPRewarded,
@@ -5988,6 +6404,151 @@ export const CMsgGCCstrike15V2GC2ServerNotifyXPRewarded = {
           break;
         case 6:
           message.operationPointsAwarded = reader.uint32();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CMsgGCCStrike15ClientDeepStats = {
+  encode(
+    message: CMsgGCCStrike15ClientDeepStats,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).uint32(message.accountId);
+    if (message.range !== undefined && message.range !== undefined) {
+      CMsgGCCStrike15ClientDeepStats_DeepStatsRange.encode(
+        message.range,
+        writer.uint32(18).fork()
+      ).ldelim();
+    }
+    for (const v of message.matches) {
+      CMsgGCCStrike15ClientDeepStats_DeepStatsMatch.encode(
+        v!,
+        writer.uint32(26).fork()
+      ).ldelim();
+    }
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CMsgGCCStrike15ClientDeepStats {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCMsgGCCStrike15ClientDeepStats
+    } as CMsgGCCStrike15ClientDeepStats;
+    message.matches = [];
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.accountId = reader.uint32();
+          break;
+        case 2:
+          message.range = CMsgGCCStrike15ClientDeepStats_DeepStatsRange.decode(
+            reader,
+            reader.uint32()
+          );
+          break;
+        case 3:
+          message.matches.push(
+            CMsgGCCStrike15ClientDeepStats_DeepStatsMatch.decode(
+              reader,
+              reader.uint32()
+            )
+          );
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CMsgGCCStrike15ClientDeepStats_DeepStatsRange = {
+  encode(
+    message: CMsgGCCStrike15ClientDeepStats_DeepStatsRange,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).uint32(message.begin);
+    writer.uint32(16).uint32(message.end);
+    writer.uint32(24).bool(message.frozen);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CMsgGCCStrike15ClientDeepStats_DeepStatsRange {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCMsgGCCStrike15ClientDeepStats_DeepStatsRange
+    } as CMsgGCCStrike15ClientDeepStats_DeepStatsRange;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.begin = reader.uint32();
+          break;
+        case 2:
+          message.end = reader.uint32();
+          break;
+        case 3:
+          message.frozen = reader.bool();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CMsgGCCStrike15ClientDeepStats_DeepStatsMatch = {
+  encode(
+    message: CMsgGCCStrike15ClientDeepStats_DeepStatsMatch,
+    writer: Writer = Writer.create()
+  ): Writer {
+    if (message.player !== undefined && message.player !== undefined) {
+      DeepPlayerStatsEntry.encode(
+        message.player,
+        writer.uint32(10).fork()
+      ).ldelim();
+    }
+    for (const v of message.events) {
+      DeepPlayerMatchEvent.encode(v!, writer.uint32(18).fork()).ldelim();
+    }
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CMsgGCCStrike15ClientDeepStats_DeepStatsMatch {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCMsgGCCStrike15ClientDeepStats_DeepStatsMatch
+    } as CMsgGCCStrike15ClientDeepStats_DeepStatsMatch;
+    message.events = [];
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.player = DeepPlayerStatsEntry.decode(reader, reader.uint32());
+          break;
+        case 2:
+          message.events.push(
+            DeepPlayerMatchEvent.decode(reader, reader.uint32())
+          );
           break;
         default:
           reader.skipType(tag & 7);
@@ -8159,6 +8720,8 @@ export const CSOAccountSeasonalOperation = {
     writer.uint32(24).uint32(message.premiumTiers);
     writer.uint32(32).uint32(message.missionId);
     writer.uint32(40).uint32(message.missionsCompleted);
+    writer.uint32(48).uint32(message.redeemableBalance);
+    writer.uint32(56).uint32(message.seasonPassTime);
     return writer;
   },
   decode(
@@ -8187,6 +8750,12 @@ export const CSOAccountSeasonalOperation = {
           break;
         case 5:
           message.missionsCompleted = reader.uint32();
+          break;
+        case 6:
+          message.redeemableBalance = reader.uint32();
+          break;
+        case 7:
+          message.seasonPassTime = reader.uint32();
           break;
         default:
           reader.skipType(tag & 7);

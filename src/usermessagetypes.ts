@@ -71,7 +71,12 @@ export type UserMessageName =
   | "EntityOutlineHighlight"
   | "SSUI"
   | "SurvivalStats"
-  | "EndOfMatchAllPlayersData";
+  | "EndOfMatchAllPlayersData"
+  | "RetakeUpdatePlayerCardList"
+  | "RetakeUpdatePlayerCardSelection"
+  | "RoundImpactScoreData"
+  | "CurrentRoundOdds"
+  | "DeepStats";
 
 interface IUserMessageDescriptor {
   name: UserMessageName;
@@ -355,6 +360,28 @@ userMessages[um.ECstrike15UserMessages.CS_UM_EndOfMatchAllPlayersData] = {
   name: "EndOfMatchAllPlayersData",
   class: um.CCSUsrMsgEndOfMatchAllPlayersData
 };
+userMessages[um.ECstrike15UserMessages.CS_UM_RetakeUpdatePlayerCardList] = {
+  name: "RetakeUpdatePlayerCardList",
+  class: um.CCSUsrMsgRetakeUpdatePlayerCardList
+};
+userMessages[
+  um.ECstrike15UserMessages.CS_UM_RetakeUpdatePlayerCardSelection
+] = {
+  name: "RetakeUpdatePlayerCardSelection",
+  class: um.CCSUsrMsgRetakeUpdatePlayerCardSelection
+};
+userMessages[um.ECstrike15UserMessages.CS_UM_RoundImpactScoreData] = {
+  name: "RoundImpactScoreData",
+  class: um.CCSUsrMsgRoundImpactScoreData
+};
+userMessages[um.ECstrike15UserMessages.CS_UM_CurrentRoundOdds] = {
+  name: "CurrentRoundOdds",
+  class: um.CCSUsrMsgCurrentRoundOdds
+};
+userMessages[um.ECstrike15UserMessages.CS_UM_DeepStats] = {
+  name: "DeepStats",
+  class: um.CCSUsrMsgDeepStats
+};
 
 interface IUserMessageEvent {
   name: string;
@@ -608,6 +635,26 @@ declare module "./usermessages" {
     on(
       message: "EndOfMatchAllPlayersData",
       listener: (msg: um.CCSUsrMsgEndOfMatchAllPlayersData) => void
+    ): this;
+    on(
+      message: "RetakeUpdatePlayerCardList",
+      listener: (msg: um.CCSUsrMsgRetakeUpdatePlayerCardList) => void
+    ): this;
+    on(
+      message: "RetakeUpdatePlayerCardSelection",
+      listener: (msg: um.CCSUsrMsgRetakeUpdatePlayerCardSelection) => void
+    ): this;
+    on(
+      message: "RoundImpactScoreData",
+      listener: (msg: um.CCSUsrMsgRoundImpactScoreData) => void
+    ): this;
+    on(
+      message: "CurrentRoundOdds",
+      listener: (msg: um.CCSUsrMsgCurrentRoundOdds) => void
+    ): this;
+    on(
+      message: "DeepStats",
+      listener: (msg: um.CCSUsrMsgDeepStats) => void
     ): this;
   }
 }
