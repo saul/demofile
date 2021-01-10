@@ -1,6 +1,6 @@
 ---
 name: ❓ Question
-about: Suggest an idea for this project
+about: Get an answer to your question
 title: ""
 labels: question
 assignees: ""
