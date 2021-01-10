@@ -13,6 +13,8 @@ class ConVars extends events_1.EventEmitter {
     listen(demo) {
         demo.on("net_SetConVar", (msg) => {
             const convars = msg.convars;
+            if (!convars)
+                return;
             for (const cvar of convars.cvars) {
                 if (cvar.name == null || cvar.value == null) {
                     continue;

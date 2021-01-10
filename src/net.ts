@@ -1,147 +1,49 @@
 import {
-  CCSUsrMsg_AchievementEvent,
-  CCSUsrMsg_AdjustMoney,
-  CCSUsrMsg_AmmoDenied,
-  CCSUsrMsg_BarTime,
-  CCSUsrMsg_CallVoteFailed,
-  CCSUsrMsg_ClientInfo,
-  CCSUsrMsg_CloseCaption,
-  CCSUsrMsg_CloseCaptionDirect,
-  CCSUsrMsg_CurrentTimescale,
-  CCSUsrMsg_Damage,
-  CCSUsrMsg_DesiredTimescale,
-  CCSUsrMsg_DisconnectToLobby,
-  CCSUsrMsg_DisplayInventory,
-  CCSUsrMsg_Fade,
-  CCSUsrMsg_GameTitle,
-  CCSUsrMsg_Geiger,
-  CCSUsrMsg_GlowPropTurnOff,
-  CCSUsrMsg_HintText,
-  CCSUsrMsg_HudMsg,
-  CCSUsrMsg_HudText,
-  CCSUsrMsg_ItemDrop,
-  CCSUsrMsg_ItemPickup,
-  CCSUsrMsg_KeyHintText,
-  CCSUsrMsg_KillCam,
-  CCSUsrMsg_MarkAchievement,
-  CCSUsrMsg_MatchEndConditions,
-  CCSUsrMsg_MatchStatsUpdate,
-  CCSUsrMsg_PlayerStatsUpdate,
-  CCSUsrMsg_ProcessSpottedEntityUpdate,
-  CCSUsrMsg_QuestProgress,
-  CCSUsrMsg_RadioText,
-  CCSUsrMsg_RawAudio,
-  CCSUsrMsg_ReloadEffect,
-  CCSUsrMsg_ReportHit,
-  CCSUsrMsg_RequestState,
-  CCSUsrMsg_ResetHud,
-  CCSUsrMsg_RoundBackupFilenames,
-  CCSUsrMsg_Rumble,
-  CCSUsrMsg_SayText,
-  CCSUsrMsg_SayText2,
-  CCSUsrMsg_SendAudio,
-  CCSUsrMsg_SendLastKillerDamageToClient,
-  CCSUsrMsg_SendPlayerItemDrops,
-  CCSUsrMsg_SendPlayerItemFound,
-  CCSUsrMsg_ServerRankRevealAll,
-  CCSUsrMsg_ServerRankUpdate,
-  CCSUsrMsg_Shake,
-  CCSUsrMsg_ShowMenu,
-  CCSUsrMsg_StopSpectatorMode,
-  CCSUsrMsg_TextMsg,
-  CCSUsrMsg_Train,
-  CCSUsrMsg_VGUIMenu,
-  CCSUsrMsg_VoiceMask,
-  CCSUsrMsg_VoteFailed,
-  CCSUsrMsg_VotePass,
-  CCSUsrMsg_VoteSetup,
-  CCSUsrMsg_VoteStart,
-  CCSUsrMsg_WarmupHasEnded,
-  CCSUsrMsg_XpUpdate,
-  CCSUsrMsg_XRankGet,
-  CCSUsrMsg_XRankUpd,
-  ECstrike15UserMessages
-} from "./protobufs/cstrike15_usermessages";
-import {
-  CNETMsg_Disconnect,
-  CNETMsg_File,
-  CNETMsg_NOP,
-  CNETMsg_PlayerAvatarData,
-  CNETMsg_SetConVar,
-  CNETMsg_SignonState,
-  CNETMsg_SplitScreenUser,
-  CNETMsg_StringCmd,
-  CNETMsg_Tick,
-  CSVCMsg_BSPDecal,
-  CSVCMsg_ClassInfo,
-  CSVCMsg_CmdKeyValues,
-  CSVCMsg_CreateStringTable,
-  CSVCMsg_CrosshairAngle,
-  CSVCMsg_EncryptedData,
-  CSVCMsg_EntityMsg,
-  CSVCMsg_FixAngle,
-  CSVCMsg_GameEvent,
-  CSVCMsg_GameEventList,
-  CSVCMsg_GetCvarValue,
-  CSVCMsg_HltvReplay,
-  CSVCMsg_Menu,
-  CSVCMsg_PacketEntities,
-  CSVCMsg_PaintmapData,
-  CSVCMsg_Prefetch,
-  CSVCMsg_Print,
-  CSVCMsg_SendTable,
-  CSVCMsg_ServerInfo,
-  CSVCMsg_SetPause,
-  CSVCMsg_SetView,
-  CSVCMsg_Sounds,
-  CSVCMsg_SplitScreen,
-  CSVCMsg_TempEntities,
-  CSVCMsg_UpdateStringTable,
-  CSVCMsg_UserMessage,
-  CSVCMsg_VoiceData,
-  CSVCMsg_VoiceInit,
-  NET_Messages,
-  SVC_Messages
+  CNETMsgDisconnect,
+  CNETMsgFile,
+  CNETMsgNOP,
+  CNETMsgPlayerAvatarData,
+  CNETMsgSetConVar,
+  CNETMsgSignonState,
+  CNETMsgSplitScreenUser,
+  CNETMsgStringCmd,
+  CNETMsgTick,
+  CSVCMsgBroadcastCommand,
+  CSVCMsgBSPDecal,
+  CSVCMsgClassInfo,
+  CSVCMsgCmdKeyValues,
+  CSVCMsgCreateStringTable,
+  CSVCMsgCrosshairAngle,
+  CSVCMsgEncryptedData,
+  CSVCMsgEntityMsg,
+  CSVCMsgFixAngle,
+  CSVCMsgGameEvent,
+  CSVCMsgGameEventList,
+  CSVCMsgGetCvarValue,
+  CSVCMsgHltvReplay,
+  CSVCMsgMenu,
+  CSVCMsgPacketEntities,
+  CSVCMsgPaintmapData,
+  CSVCMsgPrefetch,
+  CSVCMsgPrint,
+  CSVCMsgSendTable,
+  CSVCMsgServerInfo,
+  CSVCMsgSetPause,
+  CSVCMsgSetView,
+  CSVCMsgSounds,
+  CSVCMsgSplitScreen,
+  CSVCMsgTempEntities,
+  CSVCMsgUpdateStringTable,
+  CSVCMsgUserMessage,
+  CSVCMsgVoiceData,
+  CSVCMsgVoiceInit,
+  NETMessages,
+  SVCMessages
 } from "./protobufs/netmessages";
 
 export type NetMessageName =
-  | "net_NOP"
-  | "net_Disconnect"
-  | "net_File"
-  | "net_SplitScreenUser"
-  | "net_Tick"
-  | "net_StringCmd"
-  | "net_SetConVar"
-  | "net_SignonState"
-  | "net_PlayerAvatarData"
-  | "svc_ServerInfo"
-  | "svc_SendTable"
-  | "svc_ClassInfo"
-  | "svc_SetPause"
-  | "svc_CreateStringTable"
-  | "svc_UpdateStringTable"
-  | "svc_VoiceInit"
-  | "svc_VoiceData"
-  | "svc_Print"
-  | "svc_Sounds"
-  | "svc_SetView"
-  | "svc_FixAngle"
-  | "svc_CrosshairAngle"
-  | "svc_BSPDecal"
-  | "svc_SplitScreen"
-  | "svc_UserMessage"
-  | "svc_EntityMessage"
-  | "svc_GameEvent"
-  | "svc_PacketEntities"
-  | "svc_TempEntities"
-  | "svc_Prefetch"
-  | "svc_Menu"
-  | "svc_GameEventList"
-  | "svc_GetCvarValue"
-  | "svc_PaintmapData"
-  | "svc_CmdKeyValues"
-  | "svc_EncryptedData"
-  | "svc_HltvReplay";
+  | keyof typeof NETMessages
+  | keyof typeof SVCMessages;
 
 interface NetMessage {
   decode(buf: Uint8Array): any;
@@ -153,138 +55,139 @@ interface INetMessageDescriptor {
 }
 
 export let messages: INetMessageDescriptor[] = [];
-messages[NET_Messages.net_NOP] = { name: "net_NOP", class: CNETMsg_NOP };
-messages[NET_Messages.net_Disconnect] = {
+messages[NETMessages.net_NOP] = { name: "net_NOP", class: CNETMsgNOP };
+messages[NETMessages.net_Disconnect] = {
   name: "net_Disconnect",
-  class: CNETMsg_Disconnect
+  class: CNETMsgDisconnect
 };
-messages[NET_Messages.net_File] = { name: "net_File", class: CNETMsg_File };
-messages[NET_Messages.net_SplitScreenUser] = {
+messages[NETMessages.net_File] = { name: "net_File", class: CNETMsgFile };
+messages[NETMessages.net_SplitScreenUser] = {
   name: "net_SplitScreenUser",
-  class: CNETMsg_SplitScreenUser
+  class: CNETMsgSplitScreenUser
 };
-messages[NET_Messages.net_Tick] = { name: "net_Tick", class: CNETMsg_Tick };
-messages[NET_Messages.net_StringCmd] = {
+messages[NETMessages.net_Tick] = { name: "net_Tick", class: CNETMsgTick };
+messages[NETMessages.net_StringCmd] = {
   name: "net_StringCmd",
-  class: CNETMsg_StringCmd
+  class: CNETMsgStringCmd
 };
-messages[NET_Messages.net_SetConVar] = {
+messages[NETMessages.net_SetConVar] = {
   name: "net_SetConVar",
-  class: CNETMsg_SetConVar
+  class: CNETMsgSetConVar
 };
-messages[NET_Messages.net_SignonState] = {
+messages[NETMessages.net_SignonState] = {
   name: "net_SignonState",
-  class: CNETMsg_SignonState
+  class: CNETMsgSignonState
 };
-messages[NET_Messages.net_PlayerAvatarData] = {
+messages[NETMessages.net_PlayerAvatarData] = {
   name: "net_PlayerAvatarData",
-  class: CNETMsg_PlayerAvatarData
+  class: CNETMsgPlayerAvatarData
 };
-messages[SVC_Messages.svc_ServerInfo] = {
+messages[SVCMessages.svc_ServerInfo] = {
   name: "svc_ServerInfo",
-  class: CSVCMsg_ServerInfo
+  class: CSVCMsgServerInfo
 };
-messages[SVC_Messages.svc_SendTable] = {
+messages[SVCMessages.svc_SendTable] = {
   name: "svc_SendTable",
-  class: CSVCMsg_SendTable
+  class: CSVCMsgSendTable
 };
-messages[SVC_Messages.svc_ClassInfo] = {
+messages[SVCMessages.svc_ClassInfo] = {
   name: "svc_ClassInfo",
-  class: CSVCMsg_ClassInfo
+  class: CSVCMsgClassInfo
 };
-messages[SVC_Messages.svc_SetPause] = {
+messages[SVCMessages.svc_SetPause] = {
   name: "svc_SetPause",
-  class: CSVCMsg_SetPause
+  class: CSVCMsgSetPause
 };
-messages[SVC_Messages.svc_CreateStringTable] = {
+messages[SVCMessages.svc_CreateStringTable] = {
   name: "svc_CreateStringTable",
-  class: CSVCMsg_CreateStringTable
+  class: CSVCMsgCreateStringTable
 };
-messages[SVC_Messages.svc_UpdateStringTable] = {
+messages[SVCMessages.svc_UpdateStringTable] = {
   name: "svc_UpdateStringTable",
-  class: CSVCMsg_UpdateStringTable
+  class: CSVCMsgUpdateStringTable
 };
-messages[SVC_Messages.svc_VoiceInit] = {
+messages[SVCMessages.svc_VoiceInit] = {
   name: "svc_VoiceInit",
-  class: CSVCMsg_VoiceInit
+  class: CSVCMsgVoiceInit
 };
-messages[SVC_Messages.svc_VoiceData] = {
+messages[SVCMessages.svc_VoiceData] = {
   name: "svc_VoiceData",
-  class: CSVCMsg_VoiceData
+  class: CSVCMsgVoiceData
 };
-messages[SVC_Messages.svc_Print] = { name: "svc_Print", class: CSVCMsg_Print };
-messages[SVC_Messages.svc_Sounds] = {
-  name: "svc_Sounds",
-  class: CSVCMsg_Sounds
-};
-messages[SVC_Messages.svc_SetView] = {
+messages[SVCMessages.svc_Print] = { name: "svc_Print", class: CSVCMsgPrint };
+messages[SVCMessages.svc_Sounds] = { name: "svc_Sounds", class: CSVCMsgSounds };
+messages[SVCMessages.svc_SetView] = {
   name: "svc_SetView",
-  class: CSVCMsg_SetView
+  class: CSVCMsgSetView
 };
-messages[SVC_Messages.svc_FixAngle] = {
+messages[SVCMessages.svc_FixAngle] = {
   name: "svc_FixAngle",
-  class: CSVCMsg_FixAngle
+  class: CSVCMsgFixAngle
 };
-messages[SVC_Messages.svc_CrosshairAngle] = {
+messages[SVCMessages.svc_CrosshairAngle] = {
   name: "svc_CrosshairAngle",
-  class: CSVCMsg_CrosshairAngle
+  class: CSVCMsgCrosshairAngle
 };
-messages[SVC_Messages.svc_BSPDecal] = {
+messages[SVCMessages.svc_BSPDecal] = {
   name: "svc_BSPDecal",
-  class: CSVCMsg_BSPDecal
+  class: CSVCMsgBSPDecal
 };
-messages[SVC_Messages.svc_SplitScreen] = {
+messages[SVCMessages.svc_SplitScreen] = {
   name: "svc_SplitScreen",
-  class: CSVCMsg_SplitScreen
+  class: CSVCMsgSplitScreen
 };
-messages[SVC_Messages.svc_UserMessage] = {
+messages[SVCMessages.svc_UserMessage] = {
   name: "svc_UserMessage",
-  class: CSVCMsg_UserMessage
+  class: CSVCMsgUserMessage
 };
-messages[SVC_Messages.svc_EntityMessage] = {
+messages[SVCMessages.svc_EntityMessage] = {
   name: "svc_EntityMessage",
-  class: CSVCMsg_EntityMsg
+  class: CSVCMsgEntityMsg
 };
-messages[SVC_Messages.svc_GameEvent] = {
+messages[SVCMessages.svc_GameEvent] = {
   name: "svc_GameEvent",
-  class: CSVCMsg_GameEvent
+  class: CSVCMsgGameEvent
 };
-messages[SVC_Messages.svc_PacketEntities] = {
+messages[SVCMessages.svc_PacketEntities] = {
   name: "svc_PacketEntities",
-  class: CSVCMsg_PacketEntities
+  class: CSVCMsgPacketEntities
 };
-messages[SVC_Messages.svc_TempEntities] = {
+messages[SVCMessages.svc_TempEntities] = {
   name: "svc_TempEntities",
-  class: CSVCMsg_TempEntities
+  class: CSVCMsgTempEntities
 };
-messages[SVC_Messages.svc_Prefetch] = {
+messages[SVCMessages.svc_Prefetch] = {
   name: "svc_Prefetch",
-  class: CSVCMsg_Prefetch
+  class: CSVCMsgPrefetch
 };
-messages[SVC_Messages.svc_Menu] = { name: "svc_Menu", class: CSVCMsg_Menu };
-messages[SVC_Messages.svc_GameEventList] = {
+messages[SVCMessages.svc_Menu] = { name: "svc_Menu", class: CSVCMsgMenu };
+messages[SVCMessages.svc_GameEventList] = {
   name: "svc_GameEventList",
-  class: CSVCMsg_GameEventList
+  class: CSVCMsgGameEventList
 };
-messages[SVC_Messages.svc_GetCvarValue] = {
+messages[SVCMessages.svc_GetCvarValue] = {
   name: "svc_GetCvarValue",
-  class: CSVCMsg_GetCvarValue
+  class: CSVCMsgGetCvarValue
 };
-messages[SVC_Messages.svc_PaintmapData] = {
+messages[SVCMessages.svc_PaintmapData] = {
   name: "svc_PaintmapData",
-  class: CSVCMsg_PaintmapData
+  class: CSVCMsgPaintmapData
 };
-messages[SVC_Messages.svc_CmdKeyValues] = {
+messages[SVCMessages.svc_CmdKeyValues] = {
   name: "svc_CmdKeyValues",
-  class: CSVCMsg_CmdKeyValues
+  class: CSVCMsgCmdKeyValues
 };
-messages[SVC_Messages.svc_EncryptedData] = {
+messages[SVCMessages.svc_EncryptedData] = {
   name: "svc_EncryptedData",
-  class: CSVCMsg_EncryptedData
+  class: CSVCMsgEncryptedData
 };
-messages[SVC_Messages.svc_HltvReplay] = {
+messages[SVCMessages.svc_HltvReplay] = {
   name: "svc_HltvReplay",
-  class: CSVCMsg_HltvReplay
+  class: CSVCMsgHltvReplay
+};
+messages[SVCMessages.svc_Broadcast_Command] = {
+  name: "svc_Broadcast_Command",
+  class: CSVCMsgBroadcastCommand
 };
 
 export function findByName(name: NetMessageName) {
@@ -293,330 +196,6 @@ export function findByName(name: NetMessageName) {
   ) as INetMessageDescriptor;
 }
 
-export function findByType(type: NET_Messages | SVC_Messages) {
+export function findByType(type: NETMessages | SVCMessages) {
   return messages[type];
-}
-
-export type UserMessageName =
-  | "VGUIMenu"
-  | "Geiger"
-  | "Train"
-  | "HudText"
-  | "SayText"
-  | "SayText2"
-  | "TextMsg"
-  | "HudMsg"
-  | "ResetHud"
-  | "GameTitle"
-  | "Shake"
-  | "Fade"
-  | "Rumble"
-  | "CloseCaption"
-  | "CloseCaptionDirect"
-  | "SendAudio"
-  | "RawAudio"
-  | "VoiceMask"
-  | "RequestState"
-  | "Damage"
-  | "RadioText"
-  | "HintText"
-  | "KeyHintText"
-  | "ProcessSpottedEntityUpdate"
-  | "ReloadEffect"
-  | "AdjustMoney"
-  | "StopSpectatorMode"
-  | "KillCam"
-  | "DesiredTimescale"
-  | "CurrentTimescale"
-  | "AchievementEvent"
-  | "MatchEndConditions"
-  | "DisconnectToLobby"
-  | "PlayerStatsUpdate"
-  | "DisplayInventory"
-  | "WarmupHasEnded"
-  | "ClientInfo"
-  | "XRankGet"
-  | "XRankUpd"
-  | "CallVoteFailed"
-  | "VoteStart"
-  | "VotePass"
-  | "VoteFailed"
-  | "VoteSetup"
-  | "ServerRankRevealAll"
-  | "SendLastKillerDamageToClient"
-  | "ServerRankUpdate"
-  | "ItemPickup"
-  | "ShowMenu"
-  | "BarTime"
-  | "AmmoDenied"
-  | "MarkAchievement"
-  | "MatchStatsUpdate"
-  | "ItemDrop"
-  | "GlowPropTurnOff"
-  | "SendPlayerItemDrops"
-  | "RoundBackupFilenames"
-  | "SendPlayerItemFound"
-  | "ReportHit"
-  | "XpUpdate"
-  | "QuestProgress";
-
-interface IUserMessageDescriptor {
-  name: UserMessageName;
-  class: any;
-}
-
-export let userMessages: IUserMessageDescriptor[] = [];
-userMessages[ECstrike15UserMessages.CS_UM_VGUIMenu] = {
-  name: "VGUIMenu",
-  class: CCSUsrMsg_VGUIMenu
-};
-userMessages[ECstrike15UserMessages.CS_UM_Geiger] = {
-  name: "Geiger",
-  class: CCSUsrMsg_Geiger
-};
-userMessages[ECstrike15UserMessages.CS_UM_Train] = {
-  name: "Train",
-  class: CCSUsrMsg_Train
-};
-userMessages[ECstrike15UserMessages.CS_UM_HudText] = {
-  name: "HudText",
-  class: CCSUsrMsg_HudText
-};
-userMessages[ECstrike15UserMessages.CS_UM_SayText] = {
-  name: "SayText",
-  class: CCSUsrMsg_SayText
-};
-userMessages[ECstrike15UserMessages.CS_UM_SayText2] = {
-  name: "SayText2",
-  class: CCSUsrMsg_SayText2
-};
-userMessages[ECstrike15UserMessages.CS_UM_TextMsg] = {
-  name: "TextMsg",
-  class: CCSUsrMsg_TextMsg
-};
-userMessages[ECstrike15UserMessages.CS_UM_HudMsg] = {
-  name: "HudMsg",
-  class: CCSUsrMsg_HudMsg
-};
-userMessages[ECstrike15UserMessages.CS_UM_ResetHud] = {
-  name: "ResetHud",
-  class: CCSUsrMsg_ResetHud
-};
-userMessages[ECstrike15UserMessages.CS_UM_GameTitle] = {
-  name: "GameTitle",
-  class: CCSUsrMsg_GameTitle
-};
-userMessages[ECstrike15UserMessages.CS_UM_Shake] = {
-  name: "Shake",
-  class: CCSUsrMsg_Shake
-};
-userMessages[ECstrike15UserMessages.CS_UM_Fade] = {
-  name: "Fade",
-  class: CCSUsrMsg_Fade
-};
-userMessages[ECstrike15UserMessages.CS_UM_Rumble] = {
-  name: "Rumble",
-  class: CCSUsrMsg_Rumble
-};
-userMessages[ECstrike15UserMessages.CS_UM_CloseCaption] = {
-  name: "CloseCaption",
-  class: CCSUsrMsg_CloseCaption
-};
-userMessages[ECstrike15UserMessages.CS_UM_CloseCaptionDirect] = {
-  name: "CloseCaptionDirect",
-  class: CCSUsrMsg_CloseCaptionDirect
-};
-userMessages[ECstrike15UserMessages.CS_UM_SendAudio] = {
-  name: "SendAudio",
-  class: CCSUsrMsg_SendAudio
-};
-userMessages[ECstrike15UserMessages.CS_UM_RawAudio] = {
-  name: "RawAudio",
-  class: CCSUsrMsg_RawAudio
-};
-userMessages[ECstrike15UserMessages.CS_UM_VoiceMask] = {
-  name: "VoiceMask",
-  class: CCSUsrMsg_VoiceMask
-};
-userMessages[ECstrike15UserMessages.CS_UM_RequestState] = {
-  name: "RequestState",
-  class: CCSUsrMsg_RequestState
-};
-userMessages[ECstrike15UserMessages.CS_UM_Damage] = {
-  name: "Damage",
-  class: CCSUsrMsg_Damage
-};
-userMessages[ECstrike15UserMessages.CS_UM_RadioText] = {
-  name: "RadioText",
-  class: CCSUsrMsg_RadioText
-};
-userMessages[ECstrike15UserMessages.CS_UM_HintText] = {
-  name: "HintText",
-  class: CCSUsrMsg_HintText
-};
-userMessages[ECstrike15UserMessages.CS_UM_KeyHintText] = {
-  name: "KeyHintText",
-  class: CCSUsrMsg_KeyHintText
-};
-userMessages[ECstrike15UserMessages.CS_UM_ProcessSpottedEntityUpdate] = {
-  name: "ProcessSpottedEntityUpdate",
-  class: CCSUsrMsg_ProcessSpottedEntityUpdate
-};
-userMessages[ECstrike15UserMessages.CS_UM_ReloadEffect] = {
-  name: "ReloadEffect",
-  class: CCSUsrMsg_ReloadEffect
-};
-userMessages[ECstrike15UserMessages.CS_UM_AdjustMoney] = {
-  name: "AdjustMoney",
-  class: CCSUsrMsg_AdjustMoney
-};
-userMessages[ECstrike15UserMessages.CS_UM_StopSpectatorMode] = {
-  name: "StopSpectatorMode",
-  class: CCSUsrMsg_StopSpectatorMode
-};
-userMessages[ECstrike15UserMessages.CS_UM_KillCam] = {
-  name: "KillCam",
-  class: CCSUsrMsg_KillCam
-};
-userMessages[ECstrike15UserMessages.CS_UM_DesiredTimescale] = {
-  name: "DesiredTimescale",
-  class: CCSUsrMsg_DesiredTimescale
-};
-userMessages[ECstrike15UserMessages.CS_UM_CurrentTimescale] = {
-  name: "CurrentTimescale",
-  class: CCSUsrMsg_CurrentTimescale
-};
-userMessages[ECstrike15UserMessages.CS_UM_AchievementEvent] = {
-  name: "AchievementEvent",
-  class: CCSUsrMsg_AchievementEvent
-};
-userMessages[ECstrike15UserMessages.CS_UM_MatchEndConditions] = {
-  name: "MatchEndConditions",
-  class: CCSUsrMsg_MatchEndConditions
-};
-userMessages[ECstrike15UserMessages.CS_UM_DisconnectToLobby] = {
-  name: "DisconnectToLobby",
-  class: CCSUsrMsg_DisconnectToLobby
-};
-userMessages[ECstrike15UserMessages.CS_UM_PlayerStatsUpdate] = {
-  name: "PlayerStatsUpdate",
-  class: CCSUsrMsg_PlayerStatsUpdate
-};
-userMessages[ECstrike15UserMessages.CS_UM_DisplayInventory] = {
-  name: "DisplayInventory",
-  class: CCSUsrMsg_DisplayInventory
-};
-userMessages[ECstrike15UserMessages.CS_UM_WarmupHasEnded] = {
-  name: "WarmupHasEnded",
-  class: CCSUsrMsg_WarmupHasEnded
-};
-userMessages[ECstrike15UserMessages.CS_UM_ClientInfo] = {
-  name: "ClientInfo",
-  class: CCSUsrMsg_ClientInfo
-};
-userMessages[ECstrike15UserMessages.CS_UM_XRankGet] = {
-  name: "XRankGet",
-  class: CCSUsrMsg_XRankGet
-};
-userMessages[ECstrike15UserMessages.CS_UM_XRankUpd] = {
-  name: "XRankUpd",
-  class: CCSUsrMsg_XRankUpd
-};
-userMessages[ECstrike15UserMessages.CS_UM_CallVoteFailed] = {
-  name: "CallVoteFailed",
-  class: CCSUsrMsg_CallVoteFailed
-};
-userMessages[ECstrike15UserMessages.CS_UM_VoteStart] = {
-  name: "VoteStart",
-  class: CCSUsrMsg_VoteStart
-};
-userMessages[ECstrike15UserMessages.CS_UM_VotePass] = {
-  name: "VotePass",
-  class: CCSUsrMsg_VotePass
-};
-userMessages[ECstrike15UserMessages.CS_UM_VoteFailed] = {
-  name: "VoteFailed",
-  class: CCSUsrMsg_VoteFailed
-};
-userMessages[ECstrike15UserMessages.CS_UM_VoteSetup] = {
-  name: "VoteSetup",
-  class: CCSUsrMsg_VoteSetup
-};
-userMessages[ECstrike15UserMessages.CS_UM_ServerRankRevealAll] = {
-  name: "ServerRankRevealAll",
-  class: CCSUsrMsg_ServerRankRevealAll
-};
-userMessages[ECstrike15UserMessages.CS_UM_SendLastKillerDamageToClient] = {
-  name: "SendLastKillerDamageToClient",
-  class: CCSUsrMsg_SendLastKillerDamageToClient
-};
-userMessages[ECstrike15UserMessages.CS_UM_ServerRankUpdate] = {
-  name: "ServerRankUpdate",
-  class: CCSUsrMsg_ServerRankUpdate
-};
-userMessages[ECstrike15UserMessages.CS_UM_ItemPickup] = {
-  name: "ItemPickup",
-  class: CCSUsrMsg_ItemPickup
-};
-userMessages[ECstrike15UserMessages.CS_UM_ShowMenu] = {
-  name: "ShowMenu",
-  class: CCSUsrMsg_ShowMenu
-};
-userMessages[ECstrike15UserMessages.CS_UM_BarTime] = {
-  name: "BarTime",
-  class: CCSUsrMsg_BarTime
-};
-userMessages[ECstrike15UserMessages.CS_UM_AmmoDenied] = {
-  name: "AmmoDenied",
-  class: CCSUsrMsg_AmmoDenied
-};
-userMessages[ECstrike15UserMessages.CS_UM_MarkAchievement] = {
-  name: "MarkAchievement",
-  class: CCSUsrMsg_MarkAchievement
-};
-userMessages[ECstrike15UserMessages.CS_UM_MatchStatsUpdate] = {
-  name: "MatchStatsUpdate",
-  class: CCSUsrMsg_MatchStatsUpdate
-};
-userMessages[ECstrike15UserMessages.CS_UM_ItemDrop] = {
-  name: "ItemDrop",
-  class: CCSUsrMsg_ItemDrop
-};
-userMessages[ECstrike15UserMessages.CS_UM_GlowPropTurnOff] = {
-  name: "GlowPropTurnOff",
-  class: CCSUsrMsg_GlowPropTurnOff
-};
-userMessages[ECstrike15UserMessages.CS_UM_SendPlayerItemDrops] = {
-  name: "SendPlayerItemDrops",
-  class: CCSUsrMsg_SendPlayerItemDrops
-};
-userMessages[ECstrike15UserMessages.CS_UM_RoundBackupFilenames] = {
-  name: "RoundBackupFilenames",
-  class: CCSUsrMsg_RoundBackupFilenames
-};
-userMessages[ECstrike15UserMessages.CS_UM_SendPlayerItemFound] = {
-  name: "SendPlayerItemFound",
-  class: CCSUsrMsg_SendPlayerItemFound
-};
-userMessages[ECstrike15UserMessages.CS_UM_ReportHit] = {
-  name: "ReportHit",
-  class: CCSUsrMsg_ReportHit
-};
-userMessages[ECstrike15UserMessages.CS_UM_XpUpdate] = {
-  name: "XpUpdate",
-  class: CCSUsrMsg_XpUpdate
-};
-userMessages[ECstrike15UserMessages.CS_UM_QuestProgress] = {
-  name: "QuestProgress",
-  class: CCSUsrMsg_QuestProgress
-};
-
-export function findUserMessageByName(name: UserMessageName) {
-  return userMessages.find(
-    descriptor => descriptor.name === name
-  ) as IUserMessageDescriptor;
-}
-
-export function findUserMessageByType(type: ECstrike15UserMessages) {
-  return userMessages[type];
 }

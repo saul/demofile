@@ -271,7 +271,3 @@ Major update
 ### 0.1.0 (2016-01-18)
 
 - :tada: Initial release.
-
-## Acknowledgements
-
-- [CS:GO Protobuf sources copied from SteamKit](https://github.com/SteamRE/SteamKit)
