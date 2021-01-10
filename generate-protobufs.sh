@@ -4,7 +4,7 @@
 set -e
 pushd `dirname "$0"`
 
-rm -r .protoc
+rm -r .protoc || true
 mkdir .protoc
 curl -L https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/protoc-3.14.0-linux-x86_64.zip -o .protoc/protoc.zip
 unzip .protoc/protoc.zip -d .protoc
