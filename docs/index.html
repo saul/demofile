@@ -182,24 +182,87 @@
 					<h2>API</h2>
 				</a>
 				<p>This library provides full access to the data available in CSGO demo files. Unlike some other libraries, <code>demofile</code> is feature complete and supports the latest demos. As well as providing high-level APIs to access the state of the game, low-level access is available and is not discouraged.</p>
-				<p>Take a look at the <code>examples/dumpfile.js</code> file for an indication as to how the library can be used to introspect demo files. This example is by no means exhaustive -- see the &#39;docs&#39; folder for documentation on all public classes and methods.</p>
+				<p>❓ <strong>Need help?</strong> <a href="https://github.com/saul/demofile/issues/new/choose">Raise an issue</a> or ask in the <a href="https://gitter.im/saul/demofile">Gitter community</a>.</p>
 				<p>Note: It is important to note that events are fired at the end of a tick, after all entity props and string tables have been updated.</p>
-				<a href="#useful-links" id="useful-links" style="color: inherit; text-decoration: none;">
-					<h3>Useful links</h3>
-				</a>
-				<ul>
-					<li><a href="https://wiki.alliedmods.net/Counter-Strike:_Global_Offensive_Events">CS:GO Game Events - AlliedModders Wiki</a></li>
-					<li><a href="https://gitter.im/saul/demofile">Gitter community</a></li>
-				</ul>
-				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
-					<h2>Contributing</h2>
-				</a>
-				<p>Please read the <a href="./CONTRIBUTING.md">Contributing Guidelines</a> to learn how you can help out on the project.</p>
 				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
-					<h2>Examples</h2>
+					<h3>Examples</h3>
 				</a>
+				<p>Various examples are available in the <code>examples</code> folder:</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Example</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td><a href="./examples/join-leave.ts"><code>join-leave.ts</code></a></td>
+							<td>Print all players that join and leave the game during the course of the demo.</td>
+						</tr>
+						<tr>
+							<td><a href="./examples/plant-site.ts"><code>plant-site.ts</code></a></td>
+							<td>Prints which player planted the bomb and at which site.</td>
+						</tr>
+						<tr>
+							<td><a href="./examples/purchases.ts"><code>purchases.ts</code></a></td>
+							<td>Prints which items are purchased by each player.</td>
+						</tr>
+						<tr>
+							<td><a href="./examples/rank.ts"><code>rank.ts</code></a></td>
+							<td>At the end of the game, prints all player ranks.</td>
+						</tr>
+						<tr>
+							<td><a href="./examples/scores.ts"><code>scores.ts</code></a></td>
+							<td>Prints team scores after each round.</td>
+						</tr>
+						<tr>
+							<td><a href="./examples/tickrate.ts"><code>tickrate.ts</code></a></td>
+							<td>Prints demo tick rate and duration in seconds.</td>
+						</tr>
+						<tr>
+							<td><a href="./examples/dumpfile.ts"><code>dumpfile.ts</code></a></td>
+							<td>Advanced example of recreating coloured chat messages, round scores and the kill feed.</td>
+						</tr>
+				</tbody></table>
+				<a href="#print-kills" id="print-kills" style="color: inherit; text-decoration: none;">
+					<h4>Print kills</h4>
+				</a>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
+
+fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
+
+  demoFile.gameEvents.on(<span class="hljs-string">&quot;player_death&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> victim = demoFile.entities.getByUserId(e.userid);
+    <span class="hljs-keyword">const</span> victimName = victim ? victim.name : <span class="hljs-string">&quot;unnamed&quot;</span>;
+
+    <span class="hljs-comment">// Attacker may have disconnected so be aware.</span>
+    <span class="hljs-comment">// e.g. attacker could have thrown a grenade, disconnected, then that grenade</span>
+    <span class="hljs-comment">// killed another player.</span>
+    <span class="hljs-keyword">const</span> attacker = demoFile.entities.getByUserId(e.attacker);
+    <span class="hljs-keyword">const</span> attackerName = attacker ? attacker.name : <span class="hljs-string">&quot;unnamed&quot;</span>;
+
+    <span class="hljs-keyword">const</span> headshotText = e.headshot ? <span class="hljs-string">&quot; HS&quot;</span> : <span class="hljs-string">&quot;&quot;</span>;
+
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${attackerName}</span> [<span class="hljs-subst">${e.weapon}</span><span class="hljs-subst">${headshotText}</span>] <span class="hljs-subst">${victimName}</span>`</span>);
+  });
+
+  demoFile.parse(buffer);
+});
+
+<span class="hljs-comment">/* Outputs:
+
+HS [cz75a HS] flusha
+Lekr0 [ak47 HS] friberg
+KRIMZ [ak47] HS
+JW [mac10 HS] Mixwell
+JW [hegrenade] HS
+JW [mac10 HS] Magisk
+
+*/</span></code></pre>
 				<a href="#print-player-information-when-it-changes" id="print-player-information-when-it-changes" style="color: inherit; text-decoration: none;">
-					<h3>Print player information when it changes</h3>
+					<h4>Print player information when it changes</h4>
 				</a>
 				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
 <span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
@@ -236,177 +299,17 @@ Player info updated:
 
 [repeated for other players]
 */</span></code></pre>
-				<a href="#print-kills" id="print-kills" style="color: inherit; text-decoration: none;">
-					<h3>Print kills</h3>
+				<a href="#useful-links" id="useful-links" style="color: inherit; text-decoration: none;">
+					<h3>Useful links</h3>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
-<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
-
-fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
-  <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
-
-  demoFile.gameEvents.on(<span class="hljs-string">&quot;player_death&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
-    <span class="hljs-keyword">const</span> victim = demoFile.entities.getByUserId(e.userid);
-    <span class="hljs-keyword">const</span> victimName = victim ? victim.name : <span class="hljs-string">&quot;unnamed&quot;</span>;
-
-    <span class="hljs-comment">// Attacker may have disconnected so be aware.</span>
-    <span class="hljs-comment">// e.g. attacker could have thrown a grenade, disconnected, then that grenade</span>
-    <span class="hljs-comment">// killed another player.</span>
-    <span class="hljs-keyword">const</span> attacker = demoFile.entities.getByUserId(e.attacker);
-    <span class="hljs-keyword">const</span> attackerName = attacker ? attacker.name : <span class="hljs-string">&quot;unnamed&quot;</span>;
-
-    <span class="hljs-keyword">const</span> headshotText = e.headshot ? <span class="hljs-string">&quot; HS&quot;</span> : <span class="hljs-string">&quot;&quot;</span>;
-
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${attackerName}</span> [<span class="hljs-subst">${e.weapon}</span><span class="hljs-subst">${headshotText}</span>] <span class="hljs-subst">${victimName}</span>`</span>);
-  });
-
-  demoFile.parse(buffer);
-});
-
-<span class="hljs-comment">/* Outputs:
-
-HS [cz75a HS] flusha
-Lekr0 [ak47 HS] friberg
-KRIMZ [ak47] HS
-JW [mac10 HS] Mixwell
-JW [hegrenade] HS
-JW [mac10 HS] Magisk
-
-*/</span></code></pre>
-				<a href="#print-round-changes" id="print-round-changes" style="color: inherit; text-decoration: none;">
-					<h3>Print round changes</h3>
+				<ul>
+					<li><a href="https://wiki.alliedmods.net/Counter-Strike:_Global_Offensive_Events">CS:GO Game Events - AlliedModders Wiki</a></li>
+					<li><a href="https://gitter.im/saul/demofile">Gitter community</a></li>
+				</ul>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h2>Contributing</h2>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
-<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
-
-fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
-  <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
-
-  demoFile.gameEvents.on(<span class="hljs-string">&quot;round_end&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(
-      <span class="hljs-string">&quot;*** Round ended &#x27;%s&#x27; (reason: %s, time: %d seconds)&quot;</span>,
-      demoFile.gameRules.phase,
-      e.reason,
-      demoFile.currentTime
-    );
-
-    <span class="hljs-comment">// We can&#x27;t print the team scores here as they haven&#x27;t been updated yet.</span>
-    <span class="hljs-comment">// See round_officially_ended below.</span>
-  });
-
-  demoFile.gameEvents.on(<span class="hljs-string">&quot;round_officially_ended&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
-    <span class="hljs-keyword">const</span> teams = demoFile.teams;
-
-    <span class="hljs-keyword">const</span> terrorists = teams[<span class="hljs-number">2</span>];
-    <span class="hljs-keyword">const</span> cts = teams[<span class="hljs-number">3</span>];
-
-    <span class="hljs-built_in">console</span>.log(
-      <span class="hljs-string">&quot;\tTerrorists: %s score %d\n\tCTs: %s score %d&quot;</span>,
-      terrorists.clanName,
-      terrorists.score,
-      cts.clanName,
-      cts.score
-    );
-  });
-
-  demoFile.parse(buffer);
-});
-
-<span class="hljs-comment">/* Outputs:
-
-*** Round ended &#x27;first&#x27; (reason: 7, time: 74.3828125 seconds)
-        Terrorists: fnatic score 0
-        CTs: OpTic Gaming score 1
-*** Round ended &#x27;first&#x27; (reason: 8, time: 134.203125 seconds)
-        Terrorists: fnatic score 0
-        CTs: OpTic Gaming score 2
-*** Round ended &#x27;first&#x27; (reason: 9, time: 217.609375 seconds)
-        Terrorists: fnatic score 1
-        CTs: OpTic Gaming score 2
-
-*/</span></code></pre>
-				<a href="#print-player-joiningleaving" id="print-player-joiningleaving" style="color: inherit; text-decoration: none;">
-					<h3>Print player joining/leaving</h3>
-				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
-<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
-
-fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
-  <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
-
-  demoFile.entities.on(<span class="hljs-string">&quot;create&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
-    <span class="hljs-comment">// We&#x27;re only interested in player entities being created.</span>
-    <span class="hljs-keyword">if</span> (!(e.entity <span class="hljs-keyword">instanceof</span> demofile.Player)) {
-      <span class="hljs-keyword">return</span>;
-    }
-
-    <span class="hljs-built_in">console</span>.log(
-      <span class="hljs-string">&quot;[Time: %d] %s (%s) joined the game&quot;</span>,
-      demoFile.currentTime,
-      e.entity.name,
-      e.entity.steamId
-    );
-  });
-
-  demoFile.entities.on(<span class="hljs-string">&quot;beforeremove&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
-    <span class="hljs-keyword">if</span> (!(e.entity <span class="hljs-keyword">instanceof</span> demofile.Player)) {
-      <span class="hljs-keyword">return</span>;
-    }
-
-    <span class="hljs-built_in">console</span>.log(
-      <span class="hljs-string">&quot;[Time: %d] %s left the game&quot;</span>,
-      demoFile.currentTime,
-      e.entity.name
-    );
-  });
-
-  demoFile.parse(buffer);
-});
-
-<span class="hljs-comment">/* Outputs:
-
-[Time: 51.3125] btx`akatro (STEAM_1:0:2143797827) joined the game
-[Time: 60.78125] Nabeegh (STEAM_1:0:427524390) joined the game
-[Time: 65.71875] TAURUS left the game
-[Time: 76.65625] drragster (STEAM_1:0:2144425259) joined the game
-
-*/</span></code></pre>
-				<a href="#print-demo-information-eg-tick-rate" id="print-demo-information-eg-tick-rate" style="color: inherit; text-decoration: none;">
-					<h3>Print demo information (e.g. tick rate)</h3>
-				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
-<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
-
-fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
-  <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
-
-  demoFile.on(<span class="hljs-string">&quot;start&quot;</span>, <span class="hljs-function">() =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Demo header:&quot;</span>, demoFile.header);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Tick rate:&quot;</span>, demoFile.tickRate);
-
-    <span class="hljs-comment">// Stop parsing - we&#x27;re finished</span>
-    demoFile.cancel();
-  });
-
-  demoFile.parse(buffer);
-});
-
-<span class="hljs-comment">/* Outputs:
-
-Demo header: { magic: &#x27;HL2DEMO&#x27;,
-  protocol: 4,
-  networkProtocol: 13637,
-  serverName: &#x27;--== CSGO.PGLARENA.RO # Competitive ==--&#x27;,
-  clientName: &#x27;GOTV Demo&#x27;,
-  mapName: &#x27;de_inferno&#x27;,
-  gameDirectory: &#x27;csgo&#x27;,
-  playbackTime: 3001.1875,
-  playbackTicks: 192076,
-  playbackFrames: 95995,
-  signonLength: 325854 }
-Tick rate: 64
-
-*/</span></code></pre>
+				<p>Please read the <a href="./CONTRIBUTING.md">Contributing Guidelines</a> to learn how you can help out on the project.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

@@ -63,6 +63,12 @@ interface IDemoHeader {
  * @returns {IDemoHeader} Header object
  */
 export declare function parseHeader(buffer: Buffer): IDemoHeader;
+export interface IDemoStartEvent {
+    /**
+     * Cancel parsing the demo.
+     */
+    cancel: () => void;
+}
 export interface IDemoEndEvent {
     /**
      * Error that caused the premature end of parsing.
@@ -77,8 +83,8 @@ export declare interface DemoFile {
     /**
      * Fired when parsing begins.
      */
-    on(event: "start", listener: () => void): this;
-    emit(name: "start"): boolean;
+    on(event: "start", listener: (event: IDemoStartEvent) => void): this;
+    emit(name: "start", event: IDemoStartEvent): boolean;
     /**
      * Fired when parsing failed.
      */

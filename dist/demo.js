@@ -135,8 +135,14 @@ class DemoFile extends events_1.EventEmitter {
             this.tickInterval = this.header.playbackTime / this.header.playbackTicks;
         }
         this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
-        this.emit("start");
-        timers.setTimeout(this._parseRecurse.bind(this), 0);
+        let cancelled = false;
+        this.emit("start", {
+            cancel: () => {
+                cancelled = true;
+            }
+        });
+        if (!cancelled)
+            timers.setTimeout(this._parseRecurse.bind(this), 0);
     }
     /**
      * Cancel the current parse operation.

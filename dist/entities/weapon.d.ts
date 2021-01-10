@@ -1,6 +1,8 @@
 import { CWeaponCSBase } from "../sendtabletypes";
 import { BaseEntity } from "./baseentity";
 import { Player } from "./player";
+declare const qualities: readonly ["normal", "genuine", "vintage", "unusual", "unique", "community", "developer", "selfmade", "customized", "strange", "completed", "haunted", "tournament", "favored"];
+export declare type ItemQuality = typeof qualities[number];
 /**
  * Represents an in-game weapon (guns, grenades, knifes).
  */
@@ -37,4 +39,9 @@ export declare class Weapon extends BaseEntity<CWeaponCSBase> {
      * @returns The amount of ammo the owner holds for this weapon. Null if no owner.
      */
     get ownerAmmo(): number | null;
+    /**
+     * @returns Quality of the item.
+     */
+    get quality(): ItemQuality;
 }
+export {};
