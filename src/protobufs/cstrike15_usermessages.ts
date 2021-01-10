@@ -5,6 +5,7 @@ import {
   ScoreLeaderboardData,
   PlayerDecalDigitalSignature,
   CMsgGCCstrike15V2GC2ServerNotifyXPRewarded,
+  CMsgGCCStrike15ClientDeepStats,
   CMsgGCCStrike15V2MatchmakingGC2ServerReserve
 } from "./cstrike15_gcmessages";
 import * as Long from "long";
@@ -165,6 +166,25 @@ export interface CCSUsrMsgSendPlayerItemDrops {
 export interface CCSUsrMsgSendPlayerItemFound {
   iteminfo: CEconItemPreviewDataBlock | undefined;
   entindex: number;
+}
+
+export interface CCSUsrMsgRetakeUpdatePlayerCardList {
+  defuseKit: boolean;
+  roundIdx: number[];
+  loadoutIdx: number[];
+  cardIdx: number[];
+  typeIdx: number[];
+  mvpBoostRoundIdx: number;
+  mvpBoostLoadoutIdx: number;
+  mvpBoostCardIdx: number;
+  mvpBoostExtraUtility: number;
+}
+
+export interface CCSUsrMsgRetakeUpdatePlayerCardSelection {
+  roundIdx: number;
+  loadoutIdx: number;
+  cardIdx: number;
+  typeIdx: number;
 }
 
 export interface CCSUsrMsgReloadEffect {
@@ -435,6 +455,57 @@ export interface CCSUsrMsgEndOfMatchAllPlayersData_PlayerData {
   isbot: boolean;
 }
 
+export interface CCSUsrMsgRoundImpactScoreData {
+  initConditions: CCSUsrMsgRoundImpactScoreData_InitialConditions | undefined;
+  allRisEventData: CCSUsrMsgRoundImpactScoreData_RisEvent[];
+}
+
+export interface CCSUsrMsgRoundImpactScoreData_RisEvent {
+  timestamp: number;
+  terroristOdds: number;
+  ctAlive: number;
+  tAlive: number;
+  victimData: CCSUsrMsgRoundImpactScoreData_RisEvent_Victim | undefined;
+  objectiveData: CCSUsrMsgRoundImpactScoreData_RisEvent_Objective | undefined;
+  allDamageData: CCSUsrMsgRoundImpactScoreData_RisEvent_Damage[];
+}
+
+export interface CCSUsrMsgRoundImpactScoreData_RisEvent_Victim {
+  teamNumber: number;
+  entindex: number;
+  xuid: Long;
+  color: number;
+  isBot: boolean;
+  isDead: boolean;
+}
+
+export interface CCSUsrMsgRoundImpactScoreData_RisEvent_Objective {
+  type: number;
+}
+
+export interface CCSUsrMsgRoundImpactScoreData_RisEvent_Damage {
+  targetEntindex: number;
+  targetXuid: Long;
+  healthRemoved: number;
+  numHits: number;
+  returnHealthRemoved: number;
+  numReturnHits: number;
+}
+
+export interface CCSUsrMsgRoundImpactScoreData_InitialConditions {
+  ctEquipValue: number;
+  tEquipValue: number;
+  terroristOdds: number;
+}
+
+export interface CCSUsrMsgCurrentRoundOdds {
+  odds: number;
+}
+
+export interface CCSUsrMsgDeepStats {
+  stats: CMsgGCCStrike15ClientDeepStats | undefined;
+}
+
 export interface CCSUsrMsgResetHud {
   reset: boolean;
 }
@@ -612,6 +683,25 @@ const baseCCSUsrMsgSendPlayerItemDrops: object = {};
 
 const baseCCSUsrMsgSendPlayerItemFound: object = {
   entindex: 0
+};
+
+const baseCCSUsrMsgRetakeUpdatePlayerCardList: object = {
+  defuseKit: false,
+  roundIdx: 0,
+  loadoutIdx: 0,
+  cardIdx: 0,
+  typeIdx: 0,
+  mvpBoostRoundIdx: 0,
+  mvpBoostLoadoutIdx: 0,
+  mvpBoostCardIdx: 0,
+  mvpBoostExtraUtility: 0
+};
+
+const baseCCSUsrMsgRetakeUpdatePlayerCardSelection: object = {
+  roundIdx: 0,
+  loadoutIdx: 0,
+  cardIdx: 0,
+  typeIdx: 0
 };
 
 const baseCCSUsrMsgReloadEffect: object = {
@@ -867,6 +957,49 @@ const baseCCSUsrMsgEndOfMatchAllPlayersData_PlayerData: object = {
   isbot: false
 };
 
+const baseCCSUsrMsgRoundImpactScoreData: object = {};
+
+const baseCCSUsrMsgRoundImpactScoreData_RisEvent: object = {
+  timestamp: 0,
+  terroristOdds: 0,
+  ctAlive: 0,
+  tAlive: 0
+};
+
+const baseCCSUsrMsgRoundImpactScoreData_RisEvent_Victim: object = {
+  teamNumber: 0,
+  entindex: 0,
+  xuid: Long.UZERO,
+  color: 0,
+  isBot: false,
+  isDead: false
+};
+
+const baseCCSUsrMsgRoundImpactScoreData_RisEvent_Objective: object = {
+  type: 0
+};
+
+const baseCCSUsrMsgRoundImpactScoreData_RisEvent_Damage: object = {
+  targetEntindex: 0,
+  targetXuid: Long.UZERO,
+  healthRemoved: 0,
+  numHits: 0,
+  returnHealthRemoved: 0,
+  numReturnHits: 0
+};
+
+const baseCCSUsrMsgRoundImpactScoreData_InitialConditions: object = {
+  ctEquipValue: 0,
+  tEquipValue: 0,
+  terroristOdds: 0
+};
+
+const baseCCSUsrMsgCurrentRoundOdds: object = {
+  odds: 0
+};
+
+const baseCCSUsrMsgDeepStats: object = {};
+
 const baseCCSUsrMsgResetHud: object = {
   reset: false
 };
@@ -972,7 +1105,12 @@ export enum ECstrike15UserMessages {
   CS_UM_SSUI = 72,
   CS_UM_SurvivalStats = 73,
   CS_UM_DisconnectToLobby2 = 74,
-  CS_UM_EndOfMatchAllPlayersData = 75
+  CS_UM_EndOfMatchAllPlayersData = 75,
+  CS_UM_RetakeUpdatePlayerCardList = 77,
+  CS_UM_RetakeUpdatePlayerCardSelection = 78,
+  CS_UM_RoundImpactScoreData = 79,
+  CS_UM_CurrentRoundOdds = 80,
+  CS_UM_DeepStats = 81
 }
 
 export enum ECSUsrMsgDisconnectToLobbyAction {
@@ -1945,6 +2083,162 @@ export const CCSUsrMsgSendPlayerItemFound = {
           break;
         case 2:
           message.entindex = reader.int32();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CCSUsrMsgRetakeUpdatePlayerCardList = {
+  encode(
+    message: CCSUsrMsgRetakeUpdatePlayerCardList,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).bool(message.defuseKit);
+    writer.uint32(18).fork();
+    for (const v of message.roundIdx) {
+      writer.int32(v);
+    }
+    writer.ldelim();
+    writer.uint32(26).fork();
+    for (const v of message.loadoutIdx) {
+      writer.int32(v);
+    }
+    writer.ldelim();
+    writer.uint32(34).fork();
+    for (const v of message.cardIdx) {
+      writer.int32(v);
+    }
+    writer.ldelim();
+    writer.uint32(42).fork();
+    for (const v of message.typeIdx) {
+      writer.int32(v);
+    }
+    writer.ldelim();
+    writer.uint32(48).int32(message.mvpBoostRoundIdx);
+    writer.uint32(56).int32(message.mvpBoostLoadoutIdx);
+    writer.uint32(64).int32(message.mvpBoostCardIdx);
+    writer.uint32(72).int32(message.mvpBoostExtraUtility);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CCSUsrMsgRetakeUpdatePlayerCardList {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCCSUsrMsgRetakeUpdatePlayerCardList
+    } as CCSUsrMsgRetakeUpdatePlayerCardList;
+    message.roundIdx = [];
+    message.loadoutIdx = [];
+    message.cardIdx = [];
+    message.typeIdx = [];
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.defuseKit = reader.bool();
+          break;
+        case 2:
+          if ((tag & 7) === 2) {
+            const end2 = reader.uint32() + reader.pos;
+            while (reader.pos < end2) {
+              message.roundIdx.push(reader.int32());
+            }
+          } else {
+            message.roundIdx.push(reader.int32());
+          }
+          break;
+        case 3:
+          if ((tag & 7) === 2) {
+            const end2 = reader.uint32() + reader.pos;
+            while (reader.pos < end2) {
+              message.loadoutIdx.push(reader.int32());
+            }
+          } else {
+            message.loadoutIdx.push(reader.int32());
+          }
+          break;
+        case 4:
+          if ((tag & 7) === 2) {
+            const end2 = reader.uint32() + reader.pos;
+            while (reader.pos < end2) {
+              message.cardIdx.push(reader.int32());
+            }
+          } else {
+            message.cardIdx.push(reader.int32());
+          }
+          break;
+        case 5:
+          if ((tag & 7) === 2) {
+            const end2 = reader.uint32() + reader.pos;
+            while (reader.pos < end2) {
+              message.typeIdx.push(reader.int32());
+            }
+          } else {
+            message.typeIdx.push(reader.int32());
+          }
+          break;
+        case 6:
+          message.mvpBoostRoundIdx = reader.int32();
+          break;
+        case 7:
+          message.mvpBoostLoadoutIdx = reader.int32();
+          break;
+        case 8:
+          message.mvpBoostCardIdx = reader.int32();
+          break;
+        case 9:
+          message.mvpBoostExtraUtility = reader.int32();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CCSUsrMsgRetakeUpdatePlayerCardSelection = {
+  encode(
+    message: CCSUsrMsgRetakeUpdatePlayerCardSelection,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).int32(message.roundIdx);
+    writer.uint32(16).int32(message.loadoutIdx);
+    writer.uint32(24).int32(message.cardIdx);
+    writer.uint32(32).int32(message.typeIdx);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CCSUsrMsgRetakeUpdatePlayerCardSelection {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCCSUsrMsgRetakeUpdatePlayerCardSelection
+    } as CCSUsrMsgRetakeUpdatePlayerCardSelection;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.roundIdx = reader.int32();
+          break;
+        case 2:
+          message.loadoutIdx = reader.int32();
+          break;
+        case 3:
+          message.cardIdx = reader.int32();
+          break;
+        case 4:
+          message.typeIdx = reader.int32();
           break;
         default:
           reader.skipType(tag & 7);
@@ -3692,6 +3986,393 @@ export const CCSUsrMsgEndOfMatchAllPlayersData_PlayerData = {
           break;
         case 8:
           message.isbot = reader.bool();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CCSUsrMsgRoundImpactScoreData = {
+  encode(
+    message: CCSUsrMsgRoundImpactScoreData,
+    writer: Writer = Writer.create()
+  ): Writer {
+    if (
+      message.initConditions !== undefined &&
+      message.initConditions !== undefined
+    ) {
+      CCSUsrMsgRoundImpactScoreData_InitialConditions.encode(
+        message.initConditions,
+        writer.uint32(10).fork()
+      ).ldelim();
+    }
+    for (const v of message.allRisEventData) {
+      CCSUsrMsgRoundImpactScoreData_RisEvent.encode(
+        v!,
+        writer.uint32(18).fork()
+      ).ldelim();
+    }
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CCSUsrMsgRoundImpactScoreData {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCCSUsrMsgRoundImpactScoreData
+    } as CCSUsrMsgRoundImpactScoreData;
+    message.allRisEventData = [];
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.initConditions = CCSUsrMsgRoundImpactScoreData_InitialConditions.decode(
+            reader,
+            reader.uint32()
+          );
+          break;
+        case 2:
+          message.allRisEventData.push(
+            CCSUsrMsgRoundImpactScoreData_RisEvent.decode(
+              reader,
+              reader.uint32()
+            )
+          );
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CCSUsrMsgRoundImpactScoreData_RisEvent = {
+  encode(
+    message: CCSUsrMsgRoundImpactScoreData_RisEvent,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(13).float(message.timestamp);
+    writer.uint32(16).int32(message.terroristOdds);
+    writer.uint32(24).int32(message.ctAlive);
+    writer.uint32(32).int32(message.tAlive);
+    if (message.victimData !== undefined && message.victimData !== undefined) {
+      CCSUsrMsgRoundImpactScoreData_RisEvent_Victim.encode(
+        message.victimData,
+        writer.uint32(42).fork()
+      ).ldelim();
+    }
+    if (
+      message.objectiveData !== undefined &&
+      message.objectiveData !== undefined
+    ) {
+      CCSUsrMsgRoundImpactScoreData_RisEvent_Objective.encode(
+        message.objectiveData,
+        writer.uint32(50).fork()
+      ).ldelim();
+    }
+    for (const v of message.allDamageData) {
+      CCSUsrMsgRoundImpactScoreData_RisEvent_Damage.encode(
+        v!,
+        writer.uint32(58).fork()
+      ).ldelim();
+    }
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CCSUsrMsgRoundImpactScoreData_RisEvent {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCCSUsrMsgRoundImpactScoreData_RisEvent
+    } as CCSUsrMsgRoundImpactScoreData_RisEvent;
+    message.allDamageData = [];
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.timestamp = reader.float();
+          break;
+        case 2:
+          message.terroristOdds = reader.int32();
+          break;
+        case 3:
+          message.ctAlive = reader.int32();
+          break;
+        case 4:
+          message.tAlive = reader.int32();
+          break;
+        case 5:
+          message.victimData = CCSUsrMsgRoundImpactScoreData_RisEvent_Victim.decode(
+            reader,
+            reader.uint32()
+          );
+          break;
+        case 6:
+          message.objectiveData = CCSUsrMsgRoundImpactScoreData_RisEvent_Objective.decode(
+            reader,
+            reader.uint32()
+          );
+          break;
+        case 7:
+          message.allDamageData.push(
+            CCSUsrMsgRoundImpactScoreData_RisEvent_Damage.decode(
+              reader,
+              reader.uint32()
+            )
+          );
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CCSUsrMsgRoundImpactScoreData_RisEvent_Victim = {
+  encode(
+    message: CCSUsrMsgRoundImpactScoreData_RisEvent_Victim,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).int32(message.teamNumber);
+    writer.uint32(16).int32(message.entindex);
+    writer.uint32(24).uint64(message.xuid);
+    writer.uint32(32).int32(message.color);
+    writer.uint32(40).bool(message.isBot);
+    writer.uint32(48).bool(message.isDead);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CCSUsrMsgRoundImpactScoreData_RisEvent_Victim {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCCSUsrMsgRoundImpactScoreData_RisEvent_Victim
+    } as CCSUsrMsgRoundImpactScoreData_RisEvent_Victim;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.teamNumber = reader.int32();
+          break;
+        case 2:
+          message.entindex = reader.int32();
+          break;
+        case 3:
+          message.xuid = reader.uint64() as Long;
+          break;
+        case 4:
+          message.color = reader.int32();
+          break;
+        case 5:
+          message.isBot = reader.bool();
+          break;
+        case 6:
+          message.isDead = reader.bool();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CCSUsrMsgRoundImpactScoreData_RisEvent_Objective = {
+  encode(
+    message: CCSUsrMsgRoundImpactScoreData_RisEvent_Objective,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).int32(message.type);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CCSUsrMsgRoundImpactScoreData_RisEvent_Objective {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCCSUsrMsgRoundImpactScoreData_RisEvent_Objective
+    } as CCSUsrMsgRoundImpactScoreData_RisEvent_Objective;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.type = reader.int32();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CCSUsrMsgRoundImpactScoreData_RisEvent_Damage = {
+  encode(
+    message: CCSUsrMsgRoundImpactScoreData_RisEvent_Damage,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).int32(message.targetEntindex);
+    writer.uint32(16).uint64(message.targetXuid);
+    writer.uint32(24).int32(message.healthRemoved);
+    writer.uint32(32).int32(message.numHits);
+    writer.uint32(40).int32(message.returnHealthRemoved);
+    writer.uint32(48).int32(message.numReturnHits);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CCSUsrMsgRoundImpactScoreData_RisEvent_Damage {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCCSUsrMsgRoundImpactScoreData_RisEvent_Damage
+    } as CCSUsrMsgRoundImpactScoreData_RisEvent_Damage;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.targetEntindex = reader.int32();
+          break;
+        case 2:
+          message.targetXuid = reader.uint64() as Long;
+          break;
+        case 3:
+          message.healthRemoved = reader.int32();
+          break;
+        case 4:
+          message.numHits = reader.int32();
+          break;
+        case 5:
+          message.returnHealthRemoved = reader.int32();
+          break;
+        case 6:
+          message.numReturnHits = reader.int32();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CCSUsrMsgRoundImpactScoreData_InitialConditions = {
+  encode(
+    message: CCSUsrMsgRoundImpactScoreData_InitialConditions,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).int32(message.ctEquipValue);
+    writer.uint32(16).int32(message.tEquipValue);
+    writer.uint32(24).int32(message.terroristOdds);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CCSUsrMsgRoundImpactScoreData_InitialConditions {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCCSUsrMsgRoundImpactScoreData_InitialConditions
+    } as CCSUsrMsgRoundImpactScoreData_InitialConditions;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.ctEquipValue = reader.int32();
+          break;
+        case 2:
+          message.tEquipValue = reader.int32();
+          break;
+        case 3:
+          message.terroristOdds = reader.int32();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CCSUsrMsgCurrentRoundOdds = {
+  encode(
+    message: CCSUsrMsgCurrentRoundOdds,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).int32(message.odds);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CCSUsrMsgCurrentRoundOdds {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCCSUsrMsgCurrentRoundOdds
+    } as CCSUsrMsgCurrentRoundOdds;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.odds = reader.int32();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CCSUsrMsgDeepStats = {
+  encode(
+    message: CCSUsrMsgDeepStats,
+    writer: Writer = Writer.create()
+  ): Writer {
+    if (message.stats !== undefined && message.stats !== undefined) {
+      CMsgGCCStrike15ClientDeepStats.encode(
+        message.stats,
+        writer.uint32(10).fork()
+      ).ldelim();
+    }
+    return writer;
+  },
+  decode(input: Uint8Array | Reader, length?: number): CCSUsrMsgDeepStats {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = { ...baseCCSUsrMsgDeepStats } as CCSUsrMsgDeepStats;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.stats = CMsgGCCStrike15ClientDeepStats.decode(
+            reader,
+            reader.uint32()
+          );
           break;
         default:
           reader.skipType(tag & 7);
