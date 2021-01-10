@@ -10,20 +10,19 @@ import { Player } from "./entities/player";
 import { Team } from "./entities/team";
 import { Weapon } from "./entities/weapon";
 import { EntityHandle } from "./entityhandle";
-import { RequiredNonNullable } from "./pervasive";
 import { PropValue } from "./props";
-import { CSVCMsg_SendTable, ICSVCMsg_SendTable } from "./protobufs/netmessages";
+import { CSVCMsgSendTable, CSVCMsgSendTable_sendpropT } from "./protobufs/netmessages";
 import { CCSPlayerResource } from "./sendtabletypes";
 export interface NetworkableConstructor<T = Networkable<any>> {
     new (demo: DemoFile, index: number, classId: number, serialNum: number, props: any | undefined): T;
 }
-export declare type IDataTable = RequiredNonNullable<ICSVCMsg_SendTable>;
+export declare type IDataTable = CSVCMsgSendTable;
 export interface UnknownEntityProps {
     [tableName: string]: {
         [propName: string]: PropValue | undefined;
     } | undefined;
 }
-export declare type ISendProp = RequiredNonNullable<CSVCMsg_SendTable.Isendprop_t>;
+export declare type ISendProp = CSVCMsgSendTable_sendpropT;
 export interface IFlattenedSendProp {
     prop: ISendProp;
     decode: (bitbuf: BitStream) => PropValue;

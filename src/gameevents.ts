@@ -1,8 +1,7 @@
 import { EventEmitter } from "events";
 import { DemoFile } from "./demo";
 import { GameEvent } from "./gameevent";
-import { RequiredNonNullable } from "./pervasive";
-import { ICSVCMsg_GameEventList } from "./protobufs/netmessages";
+import { CSVCMsgGameEventList } from "./protobufs/netmessages";
 
 interface GameEventEvent<T> {
   name: string;
@@ -48,9 +47,7 @@ export class GameEvents extends EventEmitter {
     });
   }
 
-  private _handleGameEventList(
-    msg: RequiredNonNullable<ICSVCMsg_GameEventList>
-  ) {
+  private _handleGameEventList(msg: CSVCMsgGameEventList) {
     for (const descriptor of msg.descriptors) {
       this.gameEventList[descriptor.eventid] = new GameEvent(descriptor);
     }

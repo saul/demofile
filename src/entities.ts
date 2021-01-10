@@ -17,7 +17,6 @@ import { Player } from "./entities/player";
 import { Team } from "./entities/team";
 import { Weapon } from "./entities/weapon";
 import { EntityHandle } from "./entityhandle";
-import { RequiredNonNullable } from "./pervasive";
 import {
   makeDecoder,
   PropType,
@@ -28,10 +27,10 @@ import {
   SPROP_INSIDEARRAY
 } from "./props";
 import {
-  CSVCMsg_SendTable,
-  ICSVCMsg_PacketEntities,
-  ICSVCMsg_SendTable,
-  ICSVCMsg_TempEntities
+  CSVCMsgPacketEntities,
+  CSVCMsgSendTable,
+  CSVCMsgSendTable_sendpropT,
+  CSVCMsgTempEntities
 } from "./protobufs/netmessages";
 import { CCSGameRulesProxy, CCSPlayerResource } from "./sendtabletypes";
 import { IStringTableUpdateEvent } from "./stringtables";
@@ -46,7 +45,7 @@ export interface NetworkableConstructor<T = Networkable<any>> {
   ): T;
 }
 
-export type IDataTable = RequiredNonNullable<ICSVCMsg_SendTable>;
+export type IDataTable = CSVCMsgSendTable;
 
 export interface UnknownEntityProps {
   [tableName: string]:
@@ -54,7 +53,7 @@ export interface UnknownEntityProps {
     | undefined;
 }
 
-export type ISendProp = RequiredNonNullable<CSVCMsg_SendTable.Isendprop_t>;
+export type ISendProp = CSVCMsgSendTable_sendpropT;
 
 export interface IFlattenedSendProp {
   prop: ISendProp;
@@ -493,7 +492,7 @@ export class Entities extends EventEmitter {
 
       const length = chunk.readVarint32();
 
-      const msg: RequiredNonNullable<ICSVCMsg_SendTable> = descriptor.class.decode(
+      const msg: CSVCMsgSendTable = descriptor.class.decode(
         new Uint8Array(chunk.readBytes(length).toBuffer())
       );
       if (msg.isEnd) {
@@ -824,8 +823,8 @@ export class Entities extends EventEmitter {
     return target;
   }
 
-  private _handleTempEntities(msg: RequiredNonNullable<ICSVCMsg_TempEntities>) {
-    const entityBitBuffer = BitStream.from(msg.entityData as Uint8Array);
+  private _handleTempEntities(msg: CSVCMsgTempEntities) {
+    const entityBitBuffer = BitStream.from(msg.entityData);
     let lastClassId = -1;
     let lastProps: UnknownEntityProps | null = null;
 
@@ -859,9 +858,7 @@ export class Entities extends EventEmitter {
     }
   }
 
-  private _handlePacketEntities(
-    msg: RequiredNonNullable<ICSVCMsg_PacketEntities>
-  ) {
+  private _handlePacketEntities(msg: CSVCMsgPacketEntities) {
     // Take a copy of the transmitted entities from the delta frame
     // Otherwise start with a blank slate
     const baseTransmitEntities = assertExists(
@@ -904,10 +901,10 @@ export class Entities extends EventEmitter {
   }
 
   private _readPacketEntities(
-    msg: RequiredNonNullable<ICSVCMsg_PacketEntities>,
+    msg: CSVCMsgPacketEntities,
     frame: MutableTransmitEntities
   ): void {
-    const entityBitBuffer = BitStream.from(msg.entityData as Uint8Array);
+    const entityBitBuffer = BitStream.from(msg.entityData);
 
     let entityIndex = -1;
 

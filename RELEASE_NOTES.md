@@ -6,9 +6,14 @@
 - Unreleased release notes here
 -->
 
+### 2.0.0-beta.2 (2021-01-10)
+
+- :sparkles: Updated protobuf definitions
+- :zap: Setup protobufs to automatically regenerate every week
+- :zap: Migrated to use [ts-proto](https://github.com/stephenh/ts-proto)
+
 ### 2.0.0-beta.1 (2021-01-09)
 
--
 - :sparkles: #72: Added full support for in-eye/perspective demos
 - :sparkles: Added `Networkable#isDormant`: `true` if entity is outside of PVS (and so is not updated)
 - :bug: Fixed unnecessary entity deletion/recreation events
@@ -271,7 +276,3 @@ Major update
 ### 0.1.0 (2016-01-18)
 
 - :tada: Initial release.
-
-## Acknowledgements
-
-- [CS:GO Protobuf sources copied from SteamKit](https://github.com/SteamRE/SteamKit)

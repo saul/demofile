@@ -35,6 +35,10 @@ jobs:
         run: node dist/generators/sendtabletypes.js demos/latest.dem > src/sendtabletypes.ts
       - name: Generating itemdefs.ts
         run: node dist/generators/itemdefs.js GameTracking-CSGO/csgo > src/entities/itemdefs.ts
+      - name: Compile protobufs to TypeScript
+        run: |
+          ./generate-protobufs.sh
+          node dist/generators/usermessagetypes.js src/protobufs/cstrike15_usermessages.proto > src/usermessagetypes.ts
       - name: Reformat, lint and build
         run: |
           npm run lint --fix

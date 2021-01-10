@@ -1,8 +1,6 @@
 import { EventEmitter } from "events";
 import { DemoFile } from "./demo";
-import { RequiredNonNullable } from "./pervasive";
-import { ICMsg_CVars } from "./protobufs/cstrike15_usermessages";
-import { ICNETMsg_SetConVar } from "./protobufs/netmessages";
+import { CNETMsgSetConVar } from "./protobufs/netmessages";
 
 interface IConVarChangeEvent {
   name: string;
@@ -28,8 +26,9 @@ export class ConVars extends EventEmitter {
   public vars: Map<string, string> = new Map();
 
   public listen(demo: DemoFile) {
-    demo.on("net_SetConVar", (msg: RequiredNonNullable<ICNETMsg_SetConVar>) => {
-      const convars = msg.convars as RequiredNonNullable<ICMsg_CVars>;
+    demo.on("net_SetConVar", (msg: CNETMsgSetConVar) => {
+      const convars = msg.convars;
+      if (!convars) return;
       for (const cvar of convars.cvars) {
         if (cvar.name == null || cvar.value == null) {
           continue;

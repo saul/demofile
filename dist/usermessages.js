@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserMessages = void 0;
 const assert = require("assert");
 const events_1 = require("events");
-const net = require("./net");
+const usermessagetypes_1 = require("./usermessagetypes");
 /**
  * Handles user messages for a demo file.
  */
@@ -12,7 +12,7 @@ class UserMessages extends events_1.EventEmitter {
         demo.on("svc_UserMessage", this._handleUserMessage.bind(this));
     }
     _handleUserMessage(msg) {
-        const um = net.findUserMessageByType(msg.msgType);
+        const um = usermessagetypes_1.userMessages[msg.msgType];
         if (!um) {
             return;
         }
