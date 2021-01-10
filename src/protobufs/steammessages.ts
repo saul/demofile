@@ -533,6 +533,15 @@ export interface CMsgDPPartnerMicroTxnsResponse {
   eerrorcode: CMsgDPPartnerMicroTxnsResponse_EErrorCode;
 }
 
+export interface CChinaAgreementSessionsStartAgreementSessionInGameRequest {
+  appid: number;
+  steamid: Long;
+}
+
+export interface CChinaAgreementSessionsStartAgreementSessionInGameResponse {
+  agreementUrl: string;
+}
+
 const baseCMsgProtoBufHeader: object = {
   clientSteamId: Long.UZERO,
   clientSessionId: 0,
@@ -1023,6 +1032,15 @@ const baseCMsgDPPartnerMicroTxns_PartnerInfo: object = {
 const baseCMsgDPPartnerMicroTxnsResponse: object = {
   eresult: 0,
   eerrorcode: 0
+};
+
+const baseCChinaAgreementSessionsStartAgreementSessionInGameRequest: object = {
+  appid: 0,
+  steamid: Long.UZERO
+};
+
+const baseCChinaAgreementSessionsStartAgreementSessionInGameResponse: object = {
+  agreementUrl: ""
 };
 
 export const protobufPackage = "";
@@ -4559,6 +4577,74 @@ export const CMsgDPPartnerMicroTxnsResponse = {
           break;
         case 2:
           message.eerrorcode = reader.int32() as any;
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CChinaAgreementSessionsStartAgreementSessionInGameRequest = {
+  encode(
+    message: CChinaAgreementSessionsStartAgreementSessionInGameRequest,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).uint32(message.appid);
+    writer.uint32(17).fixed64(message.steamid);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CChinaAgreementSessionsStartAgreementSessionInGameRequest {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCChinaAgreementSessionsStartAgreementSessionInGameRequest
+    } as CChinaAgreementSessionsStartAgreementSessionInGameRequest;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.appid = reader.uint32();
+          break;
+        case 2:
+          message.steamid = reader.fixed64() as Long;
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CChinaAgreementSessionsStartAgreementSessionInGameResponse = {
+  encode(
+    message: CChinaAgreementSessionsStartAgreementSessionInGameResponse,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(10).string(message.agreementUrl);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CChinaAgreementSessionsStartAgreementSessionInGameResponse {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCChinaAgreementSessionsStartAgreementSessionInGameResponse
+    } as CChinaAgreementSessionsStartAgreementSessionInGameResponse;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.agreementUrl = reader.string();
           break;
         default:
           reader.skipType(tag & 7);
