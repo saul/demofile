@@ -5,7 +5,7 @@ import * as ByteBuffer from "bytebuffer";
 import { BitStream } from "./ext/bitbuffer";
 
 import * as assert from "assert";
-import { MAX_OSPATH, MAX_EDICT_BITS } from "./consts";
+import { MAX_EDICT_BITS, MAX_OSPATH } from "./consts";
 import { ConVars } from "./convars";
 import { Entities } from "./entities";
 import { GameRules } from "./entities/gamerules";
@@ -54,9 +54,9 @@ import {
   CSVCMsgVoiceData,
   CSVCMsgVoiceInit
 } from "./protobufs/netmessages";
+import { Vector } from "./sendtabletypes";
 import { StringTables } from "./stringtables";
 import { UserMessages } from "./usermessages";
-import { Vector } from "./sendtabletypes";
 
 interface IDemoHeader {
   /**
