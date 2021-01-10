@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CMsgDPPartnerMicroTxnsResponse = exports.CMsgDPPartnerMicroTxns_PartnerInfo = exports.CMsgDPPartnerMicroTxns_PartnerMicroTxn = exports.CMsgDPPartnerMicroTxns = exports.CMsgNotificationOfSuspiciousActivity_MultipleGameInstances = exports.CMsgNotificationOfSuspiciousActivity = exports.CMsgGCHUpdateSession_ExtraField = exports.CMsgGCHUpdateSession = exports.CMsgGCMsgSetOptions_MessageRange = exports.CMsgGCMsgSetOptions = exports.CMsgGCMsgMasterSetClientMsgRoutingResponse = exports.CMsgGCMsgMasterSetWebAPIRoutingResponse = exports.CMsgGCMsgMasterSetClientMsgRouting_Entry = exports.CMsgGCMsgMasterSetClientMsgRouting = exports.CMsgGCMsgMasterSetWebAPIRouting_Entry = exports.CMsgGCMsgMasterSetWebAPIRouting = exports.CMsgGCRoutingInfo = exports.CMsgGCGetPartnerAccountLinkResponse = exports.CMsgGCGetPartnerAccountLink = exports.CMsgGCHAccountVacStatusChange = exports.CGCSystemMsgGetPurchaseTrustResponse = exports.CGCSystemMsgGetPurchaseTrustRequest = exports.CMsgGCMsgWebAPIJobRequestForwardResponse = exports.CMsgGCMsgMasterSetDirectoryResponse = exports.CMsgGCMsgMasterSetDirectory_SubGC = exports.CMsgGCMsgMasterSetDirectory = exports.CMsgGCCheckFriendshipResponse = exports.CMsgGCCheckFriendship = exports.CMsgGCGetPersonaNamesResponse_PersonaName = exports.CMsgGCGetPersonaNamesResponse = exports.CMsgGCGetPersonaNames = exports.CGCSystemMsgGetAccountDetailsResponse = exports.CGCSystemMsgGetAccountDetails = exports.CMsgAMGrantGuestPasses2Response = exports.CMsgAMGrantGuestPasses2 = exports.CMsgGCGetEmailTemplateResponse = exports.CMsgGCGetEmailTemplate = exports.CMsgAMSendEmailResponse = exports.CMsgAMSendEmail_PersonaNameReplacementToken = exports.CMsgAMSendEmail_ReplacementToken = exports.CMsgAMSendEmail = exports.CGCMsgGetSystemStatsResponse = exports.CGCMsgGetSystemStats = exports.CGCMsgSystemStatsSchema = exports.CGCMsgGetIPLocationResponse = exports.CIPLocationInfo = exports.CGCMsgGetIPLocation = exports.CMsgAMAddFreeLicenseResponse = exports.CMsgAMAddFreeLicense = exports.CGCMsgSQLStatsResponse = exports.CGCMsgSQLStats = exports.CGCMsgMemCachedStatsResponse = exports.CGCMsgMemCachedStats = exports.CGCMsgMemCachedDelete = exports.CGCMsgMemCachedSet_KeyPair = exports.CGCMsgMemCachedSet = exports.CGCMsgMemCachedGetResponse_ValueTag = exports.CGCMsgMemCachedGetResponse = exports.CGCMsgMemCachedGet = exports.CMsgGCGetCommandListResponse = exports.CMsgGCGetCommandList = exports.CMsgAMGetUserGameStatsResponse_AchievementBlocks = exports.CMsgAMGetUserGameStatsResponse_Stats = exports.CMsgAMGetUserGameStatsResponse = exports.CMsgAMGetUserGameStats = exports.CMsgAMGetLicensesResponse = exports.CMsgPackageLicense = exports.CMsgAMGetLicenses = exports.CMsgNotifyWatchdog = exports.CMsgAMFindAccountsResponse = exports.CMsgAMFindAccounts = exports.CMsgHttpResponse_ResponseHeader = exports.CMsgHttpResponse = exports.CMsgWebAPIRequest = exports.CMsgHttpRequest_QueryParam = exports.CMsgHttpRequest_RequestHeader = exports.CMsgHttpRequest = exports.CMsgWebAPIKey = exports.CMsgProtoBufHeader = exports.CMsgDPPartnerMicroTxnsResponse_EErrorCode = exports.CMsgGCMsgSetOptions_Option = exports.CMsgGCRoutingInfo_RoutingMethod = exports.GCProtoBufMsgSrc = exports.protobufPackage = void 0;
+exports.CChinaAgreementSessionsStartAgreementSessionInGameResponse = exports.CChinaAgreementSessionsStartAgreementSessionInGameRequest = exports.CMsgDPPartnerMicroTxnsResponse = exports.CMsgDPPartnerMicroTxns_PartnerInfo = exports.CMsgDPPartnerMicroTxns_PartnerMicroTxn = exports.CMsgDPPartnerMicroTxns = exports.CMsgNotificationOfSuspiciousActivity_MultipleGameInstances = exports.CMsgNotificationOfSuspiciousActivity = exports.CMsgGCHUpdateSession_ExtraField = exports.CMsgGCHUpdateSession = exports.CMsgGCMsgSetOptions_MessageRange = exports.CMsgGCMsgSetOptions = exports.CMsgGCMsgMasterSetClientMsgRoutingResponse = exports.CMsgGCMsgMasterSetWebAPIRoutingResponse = exports.CMsgGCMsgMasterSetClientMsgRouting_Entry = exports.CMsgGCMsgMasterSetClientMsgRouting = exports.CMsgGCMsgMasterSetWebAPIRouting_Entry = exports.CMsgGCMsgMasterSetWebAPIRouting = exports.CMsgGCRoutingInfo = exports.CMsgGCGetPartnerAccountLinkResponse = exports.CMsgGCGetPartnerAccountLink = exports.CMsgGCHAccountVacStatusChange = exports.CGCSystemMsgGetPurchaseTrustResponse = exports.CGCSystemMsgGetPurchaseTrustRequest = exports.CMsgGCMsgWebAPIJobRequestForwardResponse = exports.CMsgGCMsgMasterSetDirectoryResponse = exports.CMsgGCMsgMasterSetDirectory_SubGC = exports.CMsgGCMsgMasterSetDirectory = exports.CMsgGCCheckFriendshipResponse = exports.CMsgGCCheckFriendship = exports.CMsgGCGetPersonaNamesResponse_PersonaName = exports.CMsgGCGetPersonaNamesResponse = exports.CMsgGCGetPersonaNames = exports.CGCSystemMsgGetAccountDetailsResponse = exports.CGCSystemMsgGetAccountDetails = exports.CMsgAMGrantGuestPasses2Response = exports.CMsgAMGrantGuestPasses2 = exports.CMsgGCGetEmailTemplateResponse = exports.CMsgGCGetEmailTemplate = exports.CMsgAMSendEmailResponse = exports.CMsgAMSendEmail_PersonaNameReplacementToken = exports.CMsgAMSendEmail_ReplacementToken = exports.CMsgAMSendEmail = exports.CGCMsgGetSystemStatsResponse = exports.CGCMsgGetSystemStats = exports.CGCMsgSystemStatsSchema = exports.CGCMsgGetIPLocationResponse = exports.CIPLocationInfo = exports.CGCMsgGetIPLocation = exports.CMsgAMAddFreeLicenseResponse = exports.CMsgAMAddFreeLicense = exports.CGCMsgSQLStatsResponse = exports.CGCMsgSQLStats = exports.CGCMsgMemCachedStatsResponse = exports.CGCMsgMemCachedStats = exports.CGCMsgMemCachedDelete = exports.CGCMsgMemCachedSet_KeyPair = exports.CGCMsgMemCachedSet = exports.CGCMsgMemCachedGetResponse_ValueTag = exports.CGCMsgMemCachedGetResponse = exports.CGCMsgMemCachedGet = exports.CMsgGCGetCommandListResponse = exports.CMsgGCGetCommandList = exports.CMsgAMGetUserGameStatsResponse_AchievementBlocks = exports.CMsgAMGetUserGameStatsResponse_Stats = exports.CMsgAMGetUserGameStatsResponse = exports.CMsgAMGetUserGameStats = exports.CMsgAMGetLicensesResponse = exports.CMsgPackageLicense = exports.CMsgAMGetLicenses = exports.CMsgNotifyWatchdog = exports.CMsgAMFindAccountsResponse = exports.CMsgAMFindAccounts = exports.CMsgHttpResponse_ResponseHeader = exports.CMsgHttpResponse = exports.CMsgWebAPIRequest = exports.CMsgHttpRequest_QueryParam = exports.CMsgHttpRequest_RequestHeader = exports.CMsgHttpRequest = exports.CMsgWebAPIKey = exports.CMsgProtoBufHeader = exports.CMsgDPPartnerMicroTxnsResponse_EErrorCode = exports.CMsgGCMsgSetOptions_Option = exports.CMsgGCRoutingInfo_RoutingMethod = exports.GCProtoBufMsgSrc = exports.protobufPackage = void 0;
 /* tslint:disable */
 const Long = require("long");
 const minimal_1 = require("protobufjs/minimal");
@@ -416,6 +416,13 @@ const baseCMsgDPPartnerMicroTxns_PartnerInfo = {
 const baseCMsgDPPartnerMicroTxnsResponse = {
     eresult: 0,
     eerrorcode: 0
+};
+const baseCChinaAgreementSessionsStartAgreementSessionInGameRequest = {
+    appid: 0,
+    steamid: Long.UZERO
+};
+const baseCChinaAgreementSessionsStartAgreementSessionInGameResponse = {
+    agreementUrl: ""
 };
 exports.protobufPackage = "";
 var GCProtoBufMsgSrc;
@@ -3417,6 +3424,60 @@ exports.CMsgDPPartnerMicroTxnsResponse = {
                     break;
                 case 2:
                     message.eerrorcode = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CChinaAgreementSessionsStartAgreementSessionInGameRequest = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).uint32(message.appid);
+        writer.uint32(17).fixed64(message.steamid);
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCChinaAgreementSessionsStartAgreementSessionInGameRequest
+        };
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.appid = reader.uint32();
+                    break;
+                case 2:
+                    message.steamid = reader.fixed64();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CChinaAgreementSessionsStartAgreementSessionInGameResponse = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(10).string(message.agreementUrl);
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCChinaAgreementSessionsStartAgreementSessionInGameResponse
+        };
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.agreementUrl = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);

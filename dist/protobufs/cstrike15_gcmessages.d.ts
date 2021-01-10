@@ -174,6 +174,52 @@ export interface PlayerQuestData_QuestItemData {
     questNormalPointsEarned: number;
     questBonusPointsEarned: number;
 }
+export interface DeepPlayerStatsEntry {
+    accountid: number;
+    matchId: Long;
+    mmGameMode: number;
+    mapid: number;
+    bStartingCt: boolean;
+    matchOutcome: number;
+    roundsWon: number;
+    roundsLost: number;
+    statScore: number;
+    statDeaths: number;
+    statMvps: number;
+    enemyKills: number;
+    enemyHeadshots: number;
+    enemy2ks: number;
+    enemy3ks: number;
+    enemy4ks: number;
+    totalDamage: number;
+    engagementsEntryCount: number;
+    engagementsEntryWins: number;
+    engagements1v1Count: number;
+    engagements1v1Wins: number;
+    engagements1v2Count: number;
+    engagements1v2Wins: number;
+    utilityCount: number;
+    utilitySuccess: number;
+    flashCount: number;
+    flashSuccess: number;
+    mates: number[];
+}
+export interface DeepPlayerMatchEvent {
+    accountid: number;
+    matchId: Long;
+    eventId: number;
+    eventType: number;
+    bPlayingCt: boolean;
+    userPosX: number;
+    userPosY: number;
+    userPosZ: number;
+    userDefidx: number;
+    otherPosX: number;
+    otherPosY: number;
+    otherPosZ: number;
+    otherDefidx: number;
+    eventData: number;
+}
 export interface CMsgGCServerQuestUpdateData {
     playerQuestData: PlayerQuestData[];
     binaryData: Uint8Array;
@@ -470,6 +516,12 @@ export interface CMsgGCCstrike15V2ClientRequestNewMission {
     missionId: number;
     campaignId: number;
 }
+export interface CMsgGCCstrike15V2ClientRedeemMissionReward {
+    campaignId: number;
+    redeemId: number;
+    redeemableBalance: number;
+    expectedCost: number;
+}
 export interface CMsgGCCstrike15V2GC2ServerNotifyXPRewarded {
     xpProgressData: XpProgressData[];
     accountId: number;
@@ -477,6 +529,20 @@ export interface CMsgGCCstrike15V2GC2ServerNotifyXPRewarded {
     currentLevel: number;
     upgradedDefidx: number;
     operationPointsAwarded: number;
+}
+export interface CMsgGCCStrike15ClientDeepStats {
+    accountId: number;
+    range: CMsgGCCStrike15ClientDeepStats_DeepStatsRange | undefined;
+    matches: CMsgGCCStrike15ClientDeepStats_DeepStatsMatch[];
+}
+export interface CMsgGCCStrike15ClientDeepStats_DeepStatsRange {
+    begin: number;
+    end: number;
+    frozen: boolean;
+}
+export interface CMsgGCCStrike15ClientDeepStats_DeepStatsMatch {
+    player: DeepPlayerStatsEntry | undefined;
+    events: DeepPlayerMatchEvent[];
 }
 export interface CMsgGCCStrike15V2WatchInfoUsers {
     requestId: number;
@@ -733,6 +799,8 @@ export interface CSOAccountSeasonalOperation {
     premiumTiers: number;
     missionId: number;
     missionsCompleted: number;
+    redeemableBalance: number;
+    seasonPassTime: number;
 }
 export interface CSOPersonaDataPublic {
     playerLevel: number;
@@ -1042,7 +1110,10 @@ export declare enum ECsgoGCMsg {
     k_EMsgGCCStrike15_v2_ClientRequestSouvenir = 9204,
     k_EMsgGCCStrike15_v2_ClientReportValidation = 9205,
     k_EMsgGCCStrike15_v2_GC2ClientRefuseSecureMode = 9206,
-    k_EMsgGCCStrike15_v2_GC2ClientRequestValidation = 9207
+    k_EMsgGCCStrike15_v2_GC2ClientRequestValidation = 9207,
+    k_EMsgGCCStrike15_v2_ClientRedeemMissionReward = 9209,
+    k_EMsgGCCStrike15_ClientDeepStats = 9210,
+    k_EMsgGCCStrike15_StartAgreementSessionInGame = 9211
 }
 export declare enum ECsgoSteamUserStat {
     k_ECsgoSteamUserStat_XpEarnedGames = 1,
@@ -1153,6 +1224,14 @@ export declare const PlayerQuestData: {
 export declare const PlayerQuestData_QuestItemData: {
     encode(message: PlayerQuestData_QuestItemData, writer?: Writer): Writer;
     decode(input: Uint8Array | Reader, length?: number | undefined): PlayerQuestData_QuestItemData;
+};
+export declare const DeepPlayerStatsEntry: {
+    encode(message: DeepPlayerStatsEntry, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): DeepPlayerStatsEntry;
+};
+export declare const DeepPlayerMatchEvent: {
+    encode(message: DeepPlayerMatchEvent, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): DeepPlayerMatchEvent;
 };
 export declare const CMsgGCServerQuestUpdateData: {
     encode(message: CMsgGCServerQuestUpdateData, writer?: Writer): Writer;
@@ -1294,9 +1373,25 @@ export declare const CMsgGCCstrike15V2ClientRequestNewMission: {
     encode(message: CMsgGCCstrike15V2ClientRequestNewMission, writer?: Writer): Writer;
     decode(input: Uint8Array | Reader, length?: number | undefined): CMsgGCCstrike15V2ClientRequestNewMission;
 };
+export declare const CMsgGCCstrike15V2ClientRedeemMissionReward: {
+    encode(message: CMsgGCCstrike15V2ClientRedeemMissionReward, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CMsgGCCstrike15V2ClientRedeemMissionReward;
+};
 export declare const CMsgGCCstrike15V2GC2ServerNotifyXPRewarded: {
     encode(message: CMsgGCCstrike15V2GC2ServerNotifyXPRewarded, writer?: Writer): Writer;
     decode(input: Uint8Array | Reader, length?: number | undefined): CMsgGCCstrike15V2GC2ServerNotifyXPRewarded;
+};
+export declare const CMsgGCCStrike15ClientDeepStats: {
+    encode(message: CMsgGCCStrike15ClientDeepStats, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CMsgGCCStrike15ClientDeepStats;
+};
+export declare const CMsgGCCStrike15ClientDeepStats_DeepStatsRange: {
+    encode(message: CMsgGCCStrike15ClientDeepStats_DeepStatsRange, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CMsgGCCStrike15ClientDeepStats_DeepStatsRange;
+};
+export declare const CMsgGCCStrike15ClientDeepStats_DeepStatsMatch: {
+    encode(message: CMsgGCCStrike15ClientDeepStats_DeepStatsMatch, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CMsgGCCStrike15ClientDeepStats_DeepStatsMatch;
 };
 export declare const CMsgGCCStrike15V2WatchInfoUsers: {
     encode(message: CMsgGCCStrike15V2WatchInfoUsers, writer?: Writer): Writer;

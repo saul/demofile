@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CCSUsrMsgServerRankRevealAll = exports.CCSUsrMsgClientInfo = exports.CCSUsrMsgWarmupHasEnded = exports.CCSUsrMsgDisconnectToLobby = exports.CCSUsrMsgStopSpectatorMode = exports.CCSUsrMsgRequestState = exports.CCSUsrMsgGameTitle = exports.CCSUsrMsgResetHud = exports.CCSUsrMsgEndOfMatchAllPlayersData_PlayerData = exports.CCSUsrMsgEndOfMatchAllPlayersData_Accolade = exports.CCSUsrMsgEndOfMatchAllPlayersData = exports.CCSUsrMsgSurvivalStats_Damage = exports.CCSUsrMsgSurvivalStats_Placement = exports.CCSUsrMsgSurvivalStats_Fact = exports.CCSUsrMsgSurvivalStats = exports.CCSUsrMsgSSUI = exports.CCSUsrMsgRoundBackupFilenames = exports.CCSUsrMsgGlowPropTurnOff = exports.CCSUsrMsgItemDrop = exports.CCSUsrMsgMatchStatsUpdate = exports.CCSUsrMsgMarkAchievement = exports.CCSUsrMsgAmmoDenied = exports.CCSUsrMsgBarTime = exports.CCSUsrMsgShowMenu = exports.CCSUsrMsgItemPickup = exports.CCSUsrMsgXpUpdate = exports.CCSUsrMsgServerRankUpdate_RankUpdate = exports.CCSUsrMsgServerRankUpdate = exports.CCSUsrMsgSendLastKillerDamageToClient = exports.CCSUsrMsgVoteSetup = exports.CCSUsrMsgVoteFailed = exports.CCSUsrMsgVotePass = exports.CCSUsrMsgVoteStart = exports.CCSUsrMsgCallVoteFailed = exports.CCSUsrMsgXRankUpd = exports.CCSUsrMsgXRankGet = exports.CCSUsrMsgPlayerDecalDigitalSignature = exports.CCSUsrMsgScoreLeaderboardData = exports.CCSUsrMsgQuestProgress = exports.CCSUsrMsgDisplayInventory = exports.CCSUsrMsgPlayerStatsUpdate_Stat = exports.CCSUsrMsgPlayerStatsUpdate = exports.CCSUsrMsgMatchEndConditions = exports.CCSUsrMsgAchievementEvent = exports.CCSUsrMsgCurrentTimescale = exports.CCSUsrMsgDesiredTimescale = exports.CCSUsrMsgKillCam = exports.CCSUsrMsgReportHit = exports.CCSUsrMsgAdjustMoney = exports.CCSUsrMsgEntityOutlineHighlight = exports.CCSUsrMsgUpdateScreenHealthBar = exports.CCSUsrMsgWeaponSound = exports.CCSUsrMsgReloadEffect = exports.CCSUsrMsgSendPlayerItemFound = exports.CCSUsrMsgSendPlayerItemDrops = exports.CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate = exports.CCSUsrMsgProcessSpottedEntityUpdate = exports.CCSUsrMsgKeyHintText = exports.CCSUsrMsgHintText = exports.CCSUsrMsgRadioText = exports.CCSUsrMsgDamage = exports.CCSUsrMsgVoiceMask_PlayerMask = exports.CCSUsrMsgVoiceMask = exports.CCSUsrMsgRawAudio = exports.CCSUsrMsgSendAudio = exports.CCSUsrMsgCloseCaptionDirect = exports.CCSUsrMsgCloseCaption = exports.CCSUsrMsgRumble = exports.CCSUsrMsgFade = exports.CCSUsrMsgShake = exports.CCSUsrMsgHudMsg = exports.CCSUsrMsgTextMsg = exports.CCSUsrMsgSayText2 = exports.CCSUsrMsgSayText = exports.CCSUsrMsgHudText = exports.CCSUsrMsgTrain = exports.CCSUsrMsgGeiger = exports.CCSUsrMsgVGUIMenu_Subkey = exports.CCSUsrMsgVGUIMenu = exports.ECSUsrMsgDisconnectToLobbyAction = exports.ECstrike15UserMessages = exports.protobufPackage = void 0;
+exports.CCSUsrMsgServerRankRevealAll = exports.CCSUsrMsgClientInfo = exports.CCSUsrMsgWarmupHasEnded = exports.CCSUsrMsgDisconnectToLobby = exports.CCSUsrMsgStopSpectatorMode = exports.CCSUsrMsgRequestState = exports.CCSUsrMsgGameTitle = exports.CCSUsrMsgResetHud = exports.CCSUsrMsgDeepStats = exports.CCSUsrMsgCurrentRoundOdds = exports.CCSUsrMsgRoundImpactScoreData_InitialConditions = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Damage = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Objective = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Victim = exports.CCSUsrMsgRoundImpactScoreData_RisEvent = exports.CCSUsrMsgRoundImpactScoreData = exports.CCSUsrMsgEndOfMatchAllPlayersData_PlayerData = exports.CCSUsrMsgEndOfMatchAllPlayersData_Accolade = exports.CCSUsrMsgEndOfMatchAllPlayersData = exports.CCSUsrMsgSurvivalStats_Damage = exports.CCSUsrMsgSurvivalStats_Placement = exports.CCSUsrMsgSurvivalStats_Fact = exports.CCSUsrMsgSurvivalStats = exports.CCSUsrMsgSSUI = exports.CCSUsrMsgRoundBackupFilenames = exports.CCSUsrMsgGlowPropTurnOff = exports.CCSUsrMsgItemDrop = exports.CCSUsrMsgMatchStatsUpdate = exports.CCSUsrMsgMarkAchievement = exports.CCSUsrMsgAmmoDenied = exports.CCSUsrMsgBarTime = exports.CCSUsrMsgShowMenu = exports.CCSUsrMsgItemPickup = exports.CCSUsrMsgXpUpdate = exports.CCSUsrMsgServerRankUpdate_RankUpdate = exports.CCSUsrMsgServerRankUpdate = exports.CCSUsrMsgSendLastKillerDamageToClient = exports.CCSUsrMsgVoteSetup = exports.CCSUsrMsgVoteFailed = exports.CCSUsrMsgVotePass = exports.CCSUsrMsgVoteStart = exports.CCSUsrMsgCallVoteFailed = exports.CCSUsrMsgXRankUpd = exports.CCSUsrMsgXRankGet = exports.CCSUsrMsgPlayerDecalDigitalSignature = exports.CCSUsrMsgScoreLeaderboardData = exports.CCSUsrMsgQuestProgress = exports.CCSUsrMsgDisplayInventory = exports.CCSUsrMsgPlayerStatsUpdate_Stat = exports.CCSUsrMsgPlayerStatsUpdate = exports.CCSUsrMsgMatchEndConditions = exports.CCSUsrMsgAchievementEvent = exports.CCSUsrMsgCurrentTimescale = exports.CCSUsrMsgDesiredTimescale = exports.CCSUsrMsgKillCam = exports.CCSUsrMsgReportHit = exports.CCSUsrMsgAdjustMoney = exports.CCSUsrMsgEntityOutlineHighlight = exports.CCSUsrMsgUpdateScreenHealthBar = exports.CCSUsrMsgWeaponSound = exports.CCSUsrMsgReloadEffect = exports.CCSUsrMsgRetakeUpdatePlayerCardSelection = exports.CCSUsrMsgRetakeUpdatePlayerCardList = exports.CCSUsrMsgSendPlayerItemFound = exports.CCSUsrMsgSendPlayerItemDrops = exports.CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate = exports.CCSUsrMsgProcessSpottedEntityUpdate = exports.CCSUsrMsgKeyHintText = exports.CCSUsrMsgHintText = exports.CCSUsrMsgRadioText = exports.CCSUsrMsgDamage = exports.CCSUsrMsgVoiceMask_PlayerMask = exports.CCSUsrMsgVoiceMask = exports.CCSUsrMsgRawAudio = exports.CCSUsrMsgSendAudio = exports.CCSUsrMsgCloseCaptionDirect = exports.CCSUsrMsgCloseCaption = exports.CCSUsrMsgRumble = exports.CCSUsrMsgFade = exports.CCSUsrMsgShake = exports.CCSUsrMsgHudMsg = exports.CCSUsrMsgTextMsg = exports.CCSUsrMsgSayText2 = exports.CCSUsrMsgSayText = exports.CCSUsrMsgHudText = exports.CCSUsrMsgTrain = exports.CCSUsrMsgGeiger = exports.CCSUsrMsgVGUIMenu_Subkey = exports.CCSUsrMsgVGUIMenu = exports.ECSUsrMsgDisconnectToLobbyAction = exports.ECstrike15UserMessages = exports.protobufPackage = void 0;
 /* tslint:disable */
 const netmessages_1 = require("./netmessages");
 const cstrike15_gcmessages_1 = require("./cstrike15_gcmessages");
@@ -125,6 +125,23 @@ const baseCCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate = {
 const baseCCSUsrMsgSendPlayerItemDrops = {};
 const baseCCSUsrMsgSendPlayerItemFound = {
     entindex: 0
+};
+const baseCCSUsrMsgRetakeUpdatePlayerCardList = {
+    defuseKit: false,
+    roundIdx: 0,
+    loadoutIdx: 0,
+    cardIdx: 0,
+    typeIdx: 0,
+    mvpBoostRoundIdx: 0,
+    mvpBoostLoadoutIdx: 0,
+    mvpBoostCardIdx: 0,
+    mvpBoostExtraUtility: 0
+};
+const baseCCSUsrMsgRetakeUpdatePlayerCardSelection = {
+    roundIdx: 0,
+    loadoutIdx: 0,
+    cardIdx: 0,
+    typeIdx: 0
 };
 const baseCCSUsrMsgReloadEffect = {
     entidx: 0,
@@ -334,6 +351,41 @@ const baseCCSUsrMsgEndOfMatchAllPlayersData_PlayerData = {
     playercolor: 0,
     isbot: false
 };
+const baseCCSUsrMsgRoundImpactScoreData = {};
+const baseCCSUsrMsgRoundImpactScoreData_RisEvent = {
+    timestamp: 0,
+    terroristOdds: 0,
+    ctAlive: 0,
+    tAlive: 0
+};
+const baseCCSUsrMsgRoundImpactScoreData_RisEvent_Victim = {
+    teamNumber: 0,
+    entindex: 0,
+    xuid: Long.UZERO,
+    color: 0,
+    isBot: false,
+    isDead: false
+};
+const baseCCSUsrMsgRoundImpactScoreData_RisEvent_Objective = {
+    type: 0
+};
+const baseCCSUsrMsgRoundImpactScoreData_RisEvent_Damage = {
+    targetEntindex: 0,
+    targetXuid: Long.UZERO,
+    healthRemoved: 0,
+    numHits: 0,
+    returnHealthRemoved: 0,
+    numReturnHits: 0
+};
+const baseCCSUsrMsgRoundImpactScoreData_InitialConditions = {
+    ctEquipValue: 0,
+    tEquipValue: 0,
+    terroristOdds: 0
+};
+const baseCCSUsrMsgCurrentRoundOdds = {
+    odds: 0
+};
+const baseCCSUsrMsgDeepStats = {};
 const baseCCSUsrMsgResetHud = {
     reset: false
 };
@@ -432,6 +484,11 @@ var ECstrike15UserMessages;
     ECstrike15UserMessages[ECstrike15UserMessages["CS_UM_SurvivalStats"] = 73] = "CS_UM_SurvivalStats";
     ECstrike15UserMessages[ECstrike15UserMessages["CS_UM_DisconnectToLobby2"] = 74] = "CS_UM_DisconnectToLobby2";
     ECstrike15UserMessages[ECstrike15UserMessages["CS_UM_EndOfMatchAllPlayersData"] = 75] = "CS_UM_EndOfMatchAllPlayersData";
+    ECstrike15UserMessages[ECstrike15UserMessages["CS_UM_RetakeUpdatePlayerCardList"] = 77] = "CS_UM_RetakeUpdatePlayerCardList";
+    ECstrike15UserMessages[ECstrike15UserMessages["CS_UM_RetakeUpdatePlayerCardSelection"] = 78] = "CS_UM_RetakeUpdatePlayerCardSelection";
+    ECstrike15UserMessages[ECstrike15UserMessages["CS_UM_RoundImpactScoreData"] = 79] = "CS_UM_RoundImpactScoreData";
+    ECstrike15UserMessages[ECstrike15UserMessages["CS_UM_CurrentRoundOdds"] = 80] = "CS_UM_CurrentRoundOdds";
+    ECstrike15UserMessages[ECstrike15UserMessages["CS_UM_DeepStats"] = 81] = "CS_UM_DeepStats";
 })(ECstrike15UserMessages = exports.ECstrike15UserMessages || (exports.ECstrike15UserMessages = {}));
 var ECSUsrMsgDisconnectToLobbyAction;
 (function (ECSUsrMsgDisconnectToLobbyAction) {
@@ -1290,6 +1347,152 @@ exports.CCSUsrMsgSendPlayerItemFound = {
                     break;
                 case 2:
                     message.entindex = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CCSUsrMsgRetakeUpdatePlayerCardList = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).bool(message.defuseKit);
+        writer.uint32(18).fork();
+        for (const v of message.roundIdx) {
+            writer.int32(v);
+        }
+        writer.ldelim();
+        writer.uint32(26).fork();
+        for (const v of message.loadoutIdx) {
+            writer.int32(v);
+        }
+        writer.ldelim();
+        writer.uint32(34).fork();
+        for (const v of message.cardIdx) {
+            writer.int32(v);
+        }
+        writer.ldelim();
+        writer.uint32(42).fork();
+        for (const v of message.typeIdx) {
+            writer.int32(v);
+        }
+        writer.ldelim();
+        writer.uint32(48).int32(message.mvpBoostRoundIdx);
+        writer.uint32(56).int32(message.mvpBoostLoadoutIdx);
+        writer.uint32(64).int32(message.mvpBoostCardIdx);
+        writer.uint32(72).int32(message.mvpBoostExtraUtility);
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCCSUsrMsgRetakeUpdatePlayerCardList
+        };
+        message.roundIdx = [];
+        message.loadoutIdx = [];
+        message.cardIdx = [];
+        message.typeIdx = [];
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.defuseKit = reader.bool();
+                    break;
+                case 2:
+                    if ((tag & 7) === 2) {
+                        const end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2) {
+                            message.roundIdx.push(reader.int32());
+                        }
+                    }
+                    else {
+                        message.roundIdx.push(reader.int32());
+                    }
+                    break;
+                case 3:
+                    if ((tag & 7) === 2) {
+                        const end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2) {
+                            message.loadoutIdx.push(reader.int32());
+                        }
+                    }
+                    else {
+                        message.loadoutIdx.push(reader.int32());
+                    }
+                    break;
+                case 4:
+                    if ((tag & 7) === 2) {
+                        const end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2) {
+                            message.cardIdx.push(reader.int32());
+                        }
+                    }
+                    else {
+                        message.cardIdx.push(reader.int32());
+                    }
+                    break;
+                case 5:
+                    if ((tag & 7) === 2) {
+                        const end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2) {
+                            message.typeIdx.push(reader.int32());
+                        }
+                    }
+                    else {
+                        message.typeIdx.push(reader.int32());
+                    }
+                    break;
+                case 6:
+                    message.mvpBoostRoundIdx = reader.int32();
+                    break;
+                case 7:
+                    message.mvpBoostLoadoutIdx = reader.int32();
+                    break;
+                case 8:
+                    message.mvpBoostCardIdx = reader.int32();
+                    break;
+                case 9:
+                    message.mvpBoostExtraUtility = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CCSUsrMsgRetakeUpdatePlayerCardSelection = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).int32(message.roundIdx);
+        writer.uint32(16).int32(message.loadoutIdx);
+        writer.uint32(24).int32(message.cardIdx);
+        writer.uint32(32).int32(message.typeIdx);
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCCSUsrMsgRetakeUpdatePlayerCardSelection
+        };
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.roundIdx = reader.int32();
+                    break;
+                case 2:
+                    message.loadoutIdx = reader.int32();
+                    break;
+                case 3:
+                    message.cardIdx = reader.int32();
+                    break;
+                case 4:
+                    message.typeIdx = reader.int32();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -2759,6 +2962,296 @@ exports.CCSUsrMsgEndOfMatchAllPlayersData_PlayerData = {
                     break;
                 case 8:
                     message.isbot = reader.bool();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CCSUsrMsgRoundImpactScoreData = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        if (message.initConditions !== undefined &&
+            message.initConditions !== undefined) {
+            exports.CCSUsrMsgRoundImpactScoreData_InitialConditions.encode(message.initConditions, writer.uint32(10).fork()).ldelim();
+        }
+        for (const v of message.allRisEventData) {
+            exports.CCSUsrMsgRoundImpactScoreData_RisEvent.encode(v, writer.uint32(18).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCCSUsrMsgRoundImpactScoreData
+        };
+        message.allRisEventData = [];
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.initConditions = exports.CCSUsrMsgRoundImpactScoreData_InitialConditions.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    message.allRisEventData.push(exports.CCSUsrMsgRoundImpactScoreData_RisEvent.decode(reader, reader.uint32()));
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CCSUsrMsgRoundImpactScoreData_RisEvent = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(13).float(message.timestamp);
+        writer.uint32(16).int32(message.terroristOdds);
+        writer.uint32(24).int32(message.ctAlive);
+        writer.uint32(32).int32(message.tAlive);
+        if (message.victimData !== undefined && message.victimData !== undefined) {
+            exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Victim.encode(message.victimData, writer.uint32(42).fork()).ldelim();
+        }
+        if (message.objectiveData !== undefined &&
+            message.objectiveData !== undefined) {
+            exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Objective.encode(message.objectiveData, writer.uint32(50).fork()).ldelim();
+        }
+        for (const v of message.allDamageData) {
+            exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Damage.encode(v, writer.uint32(58).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCCSUsrMsgRoundImpactScoreData_RisEvent
+        };
+        message.allDamageData = [];
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.timestamp = reader.float();
+                    break;
+                case 2:
+                    message.terroristOdds = reader.int32();
+                    break;
+                case 3:
+                    message.ctAlive = reader.int32();
+                    break;
+                case 4:
+                    message.tAlive = reader.int32();
+                    break;
+                case 5:
+                    message.victimData = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Victim.decode(reader, reader.uint32());
+                    break;
+                case 6:
+                    message.objectiveData = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Objective.decode(reader, reader.uint32());
+                    break;
+                case 7:
+                    message.allDamageData.push(exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Damage.decode(reader, reader.uint32()));
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Victim = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).int32(message.teamNumber);
+        writer.uint32(16).int32(message.entindex);
+        writer.uint32(24).uint64(message.xuid);
+        writer.uint32(32).int32(message.color);
+        writer.uint32(40).bool(message.isBot);
+        writer.uint32(48).bool(message.isDead);
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCCSUsrMsgRoundImpactScoreData_RisEvent_Victim
+        };
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.teamNumber = reader.int32();
+                    break;
+                case 2:
+                    message.entindex = reader.int32();
+                    break;
+                case 3:
+                    message.xuid = reader.uint64();
+                    break;
+                case 4:
+                    message.color = reader.int32();
+                    break;
+                case 5:
+                    message.isBot = reader.bool();
+                    break;
+                case 6:
+                    message.isDead = reader.bool();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Objective = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).int32(message.type);
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCCSUsrMsgRoundImpactScoreData_RisEvent_Objective
+        };
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.type = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Damage = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).int32(message.targetEntindex);
+        writer.uint32(16).uint64(message.targetXuid);
+        writer.uint32(24).int32(message.healthRemoved);
+        writer.uint32(32).int32(message.numHits);
+        writer.uint32(40).int32(message.returnHealthRemoved);
+        writer.uint32(48).int32(message.numReturnHits);
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCCSUsrMsgRoundImpactScoreData_RisEvent_Damage
+        };
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.targetEntindex = reader.int32();
+                    break;
+                case 2:
+                    message.targetXuid = reader.uint64();
+                    break;
+                case 3:
+                    message.healthRemoved = reader.int32();
+                    break;
+                case 4:
+                    message.numHits = reader.int32();
+                    break;
+                case 5:
+                    message.returnHealthRemoved = reader.int32();
+                    break;
+                case 6:
+                    message.numReturnHits = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CCSUsrMsgRoundImpactScoreData_InitialConditions = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).int32(message.ctEquipValue);
+        writer.uint32(16).int32(message.tEquipValue);
+        writer.uint32(24).int32(message.terroristOdds);
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCCSUsrMsgRoundImpactScoreData_InitialConditions
+        };
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.ctEquipValue = reader.int32();
+                    break;
+                case 2:
+                    message.tEquipValue = reader.int32();
+                    break;
+                case 3:
+                    message.terroristOdds = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CCSUsrMsgCurrentRoundOdds = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).int32(message.odds);
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCCSUsrMsgCurrentRoundOdds
+        };
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.odds = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CCSUsrMsgDeepStats = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        if (message.stats !== undefined && message.stats !== undefined) {
+            cstrike15_gcmessages_1.CMsgGCCStrike15ClientDeepStats.encode(message.stats, writer.uint32(10).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = { ...baseCCSUsrMsgDeepStats };
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.stats = cstrike15_gcmessages_1.CMsgGCCStrike15ClientDeepStats.decode(reader, reader.uint32());
                     break;
                 default:
                     reader.skipType(tag & 7);

@@ -191,7 +191,127 @@ class DemoFile extends events_1.EventEmitter {
     }
     _handleUserCmd() {
         this._bytebuf.readInt32(); // outgoing sequence
-        this._handleDataChunk(); // TODO: parse user command
+        const chunk = readIBytes(this._bytebuf);
+        // If nobody's listening, don't waste cycles decoding it
+        if (!this.listenerCount("usercmd"))
+            return;
+        const bitbuf = bitbuffer_1.BitStream.from(chunk.buffer.slice(chunk.offset, chunk.limit));
+        const move = {
+            commandNumber: 0,
+            tickCount: 0,
+            viewAngles: { x: 0, y: 0, z: 0 },
+            aimDirection: { x: 0, y: 0, z: 0 },
+            forwardMove: 0,
+            sideMove: 0,
+            upMove: 0,
+            buttons: new Array(),
+            impulse: 0,
+            weaponSelect: 0,
+            weaponSubType: 0,
+            randomSeed: 0,
+            mouseDeltaX: 0,
+            mouseDeltaY: 0
+        };
+        if (bitbuf.readOneBit()) {
+            move.commandNumber = bitbuf.readUInt32();
+        }
+        else {
+            move.commandNumber = 1;
+        }
+        if (bitbuf.readOneBit()) {
+            move.tickCount = bitbuf.readUInt32();
+        }
+        else {
+            move.tickCount = 1;
+        }
+        // Read direction
+        if (bitbuf.readOneBit())
+            move.viewAngles.x = bitbuf.readFloat32();
+        if (bitbuf.readOneBit())
+            move.viewAngles.y = bitbuf.readFloat32();
+        if (bitbuf.readOneBit())
+            move.viewAngles.z = bitbuf.readFloat32();
+        // Read aim direction
+        if (bitbuf.readOneBit())
+            move.aimDirection.x = bitbuf.readFloat32();
+        if (bitbuf.readOneBit())
+            move.aimDirection.y = bitbuf.readFloat32();
+        if (bitbuf.readOneBit())
+            move.aimDirection.z = bitbuf.readFloat32();
+        // Read movement
+        if (bitbuf.readOneBit())
+            move.forwardMove = bitbuf.readFloat32();
+        if (bitbuf.readOneBit())
+            move.sideMove = bitbuf.readFloat32();
+        if (bitbuf.readOneBit())
+            move.upMove = bitbuf.readFloat32();
+        if (bitbuf.readOneBit()) {
+            const buttons = bitbuf.readUInt32();
+            if (buttons & (1 << 0))
+                move.buttons.push("attack");
+            if (buttons & (1 << 1))
+                move.buttons.push("jump");
+            if (buttons & (1 << 2))
+                move.buttons.push("duck");
+            if (buttons & (1 << 3))
+                move.buttons.push("forward");
+            if (buttons & (1 << 4))
+                move.buttons.push("back");
+            if (buttons & (1 << 5))
+                move.buttons.push("use");
+            if (buttons & (1 << 6))
+                move.buttons.push("cancel");
+            if (buttons & (1 << 7))
+                move.buttons.push("left");
+            if (buttons & (1 << 8))
+                move.buttons.push("right");
+            if (buttons & (1 << 9))
+                move.buttons.push("moveleft");
+            if (buttons & (1 << 10))
+                move.buttons.push("moveright");
+            if (buttons & (1 << 11))
+                move.buttons.push("attack2");
+            if (buttons & (1 << 12))
+                move.buttons.push("run");
+            if (buttons & (1 << 13))
+                move.buttons.push("reload");
+            if (buttons & (1 << 14))
+                move.buttons.push("alt1");
+            if (buttons & (1 << 15))
+                move.buttons.push("alt2");
+            if (buttons & (1 << 16))
+                move.buttons.push("score");
+            if (buttons & (1 << 17))
+                move.buttons.push("speed");
+            if (buttons & (1 << 18))
+                move.buttons.push("walk");
+            if (buttons & (1 << 19))
+                move.buttons.push("zoom");
+            if (buttons & (1 << 20))
+                move.buttons.push("weapon1");
+            if (buttons & (1 << 21))
+                move.buttons.push("weapon2");
+            if (buttons & (1 << 22))
+                move.buttons.push("bullrush");
+            if (buttons & (1 << 23))
+                move.buttons.push("grenade1");
+            if (buttons & (1 << 24))
+                move.buttons.push("grenade2");
+            if (buttons & (1 << 25))
+                move.buttons.push("lookspin");
+        }
+        if (bitbuf.readOneBit())
+            move.impulse = bitbuf.readUInt8();
+        if (bitbuf.readOneBit()) {
+            move.weaponSelect = bitbuf.readUBits(consts_1.MAX_EDICT_BITS);
+            if (bitbuf.readOneBit())
+                move.weaponSubType = bitbuf.readUBits(6);
+        }
+        if (bitbuf.readOneBit())
+            move.mouseDeltaX = bitbuf.readInt16();
+        if (bitbuf.readOneBit())
+            move.mouseDeltaY = bitbuf.readInt16();
+        this.emit("usercmd", move);
     }
     _handleStringTables() {
         const chunk = readIBytes(this._bytebuf);

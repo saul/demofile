@@ -452,6 +452,13 @@ export interface CMsgDPPartnerMicroTxnsResponse {
     eresult: number;
     eerrorcode: CMsgDPPartnerMicroTxnsResponse_EErrorCode;
 }
+export interface CChinaAgreementSessionsStartAgreementSessionInGameRequest {
+    appid: number;
+    steamid: Long;
+}
+export interface CChinaAgreementSessionsStartAgreementSessionInGameResponse {
+    agreementUrl: string;
+}
 export declare const protobufPackage = "";
 export declare enum GCProtoBufMsgSrc {
     GCProtoBufMsgSrc_Unspecified = 0,
@@ -799,4 +806,12 @@ export declare const CMsgDPPartnerMicroTxns_PartnerInfo: {
 export declare const CMsgDPPartnerMicroTxnsResponse: {
     encode(message: CMsgDPPartnerMicroTxnsResponse, writer?: Writer): Writer;
     decode(input: Uint8Array | Reader, length?: number | undefined): CMsgDPPartnerMicroTxnsResponse;
+};
+export declare const CChinaAgreementSessionsStartAgreementSessionInGameRequest: {
+    encode(message: CChinaAgreementSessionsStartAgreementSessionInGameRequest, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CChinaAgreementSessionsStartAgreementSessionInGameRequest;
+};
+export declare const CChinaAgreementSessionsStartAgreementSessionInGameResponse: {
+    encode(message: CChinaAgreementSessionsStartAgreementSessionInGameResponse, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CChinaAgreementSessionsStartAgreementSessionInGameResponse;
 };

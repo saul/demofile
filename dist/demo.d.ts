@@ -8,6 +8,7 @@ import { Team } from "./entities/team";
 import { GameEvents } from "./gameevents";
 import { NetMessageName } from "./net";
 import { CNETMsgDisconnect, CNETMsgFile, CNETMsgNOP, CNETMsgPlayerAvatarData, CNETMsgSetConVar, CNETMsgSignonState, CNETMsgSplitScreenUser, CNETMsgStringCmd, CNETMsgTick, CSVCMsgBroadcastCommand, CSVCMsgBSPDecal, CSVCMsgClassInfo, CSVCMsgCmdKeyValues, CSVCMsgCreateStringTable, CSVCMsgCrosshairAngle, CSVCMsgEncryptedData, CSVCMsgEntityMsg, CSVCMsgFixAngle, CSVCMsgGameEvent, CSVCMsgGameEventList, CSVCMsgGetCvarValue, CSVCMsgHltvReplay, CSVCMsgMenu, CSVCMsgPacketEntities, CSVCMsgPaintmapData, CSVCMsgPrefetch, CSVCMsgPrint, CSVCMsgSendTable, CSVCMsgServerInfo, CSVCMsgSetPause, CSVCMsgSetView, CSVCMsgSounds, CSVCMsgSplitScreen, CSVCMsgTempEntities, CSVCMsgUpdateStringTable, CSVCMsgUserMessage, CSVCMsgVoiceData, CSVCMsgVoiceInit } from "./protobufs/netmessages";
+import { Vector } from "./sendtabletypes";
 import { StringTables } from "./stringtables";
 import { UserMessages } from "./usermessages";
 interface IDemoHeader {
@@ -100,6 +101,12 @@ export declare interface DemoFile {
     on(event: "progress", listener: (progressFraction: number) => void): this;
     emit(name: "progress", progressFraction: number): boolean;
     /**
+     * Fired each frame indicating all inputs of the recording player.
+     * Note this is only fired for in-eye/perspective demos.
+     */
+    on(event: "usercmd", listener: (userCmd: IUserCmd) => void): this;
+    emit(name: "usercmd", userCmd: IUserCmd): boolean;
+    /**
      * Fired after all commands are processed for a tick.
      */
     on(event: "tickend", listener: (tick: number) => void): this;
@@ -143,6 +150,23 @@ export declare interface DemoFile {
     on(message: "svc_EncryptedData", listener: (msg: CSVCMsgEncryptedData) => void): this;
     on(message: "svc_HltvReplay", listener: (msg: CSVCMsgHltvReplay) => void): this;
     on(message: "svc_Broadcast_Command", listener: (msg: CSVCMsgBroadcastCommand) => void): this;
+}
+export declare type InputButton = "attack" | "jump" | "duck" | "forward" | "back" | "use" | "cancel" | "left" | "right" | "moveleft" | "moveright" | "attack2" | "run" | "reload" | "alt1" | "alt2" | "score" | "speed" | "walk" | "zoom" | "weapon1" | "weapon2" | "bullrush" | "grenade1" | "grenade2" | "lookspin";
+export interface IUserCmd {
+    commandNumber: number;
+    tickCount: number;
+    viewAngles: Vector;
+    aimDirection: Vector;
+    forwardMove: number;
+    sideMove: number;
+    upMove: number;
+    buttons: ReadonlyArray<InputButton>;
+    impulse: number;
+    weaponSelect: number;
+    weaponSubType: number;
+    randomSeed: number;
+    mouseDeltaX: number;
+    mouseDeltaY: number;
 }
 /**
  * Represents a demo file for parsing.

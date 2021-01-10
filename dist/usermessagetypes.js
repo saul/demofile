@@ -281,4 +281,24 @@ exports.userMessages[um.ECstrike15UserMessages.CS_UM_EndOfMatchAllPlayersData] =
     name: "EndOfMatchAllPlayersData",
     class: um.CCSUsrMsgEndOfMatchAllPlayersData
 };
+exports.userMessages[um.ECstrike15UserMessages.CS_UM_RetakeUpdatePlayerCardList] = {
+    name: "RetakeUpdatePlayerCardList",
+    class: um.CCSUsrMsgRetakeUpdatePlayerCardList
+};
+exports.userMessages[um.ECstrike15UserMessages.CS_UM_RetakeUpdatePlayerCardSelection] = {
+    name: "RetakeUpdatePlayerCardSelection",
+    class: um.CCSUsrMsgRetakeUpdatePlayerCardSelection
+};
+exports.userMessages[um.ECstrike15UserMessages.CS_UM_RoundImpactScoreData] = {
+    name: "RoundImpactScoreData",
+    class: um.CCSUsrMsgRoundImpactScoreData
+};
+exports.userMessages[um.ECstrike15UserMessages.CS_UM_CurrentRoundOdds] = {
+    name: "CurrentRoundOdds",
+    class: um.CCSUsrMsgCurrentRoundOdds
+};
+exports.userMessages[um.ECstrike15UserMessages.CS_UM_DeepStats] = {
+    name: "DeepStats",
+    class: um.CCSUsrMsgDeepStats
+};
 //# sourceMappingURL=usermessagetypes.js.map

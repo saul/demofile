@@ -1,5 +1,5 @@
 import * as um from "./protobufs/cstrike15_usermessages";
-export declare type UserMessageName = "VGUIMenu" | "Geiger" | "Train" | "HudText" | "SayText" | "SayText2" | "TextMsg" | "HudMsg" | "ResetHud" | "GameTitle" | "Shake" | "Fade" | "Rumble" | "CloseCaption" | "CloseCaptionDirect" | "SendAudio" | "RawAudio" | "VoiceMask" | "RequestState" | "Damage" | "RadioText" | "HintText" | "KeyHintText" | "ProcessSpottedEntityUpdate" | "ReloadEffect" | "AdjustMoney" | "StopSpectatorMode" | "KillCam" | "DesiredTimescale" | "CurrentTimescale" | "AchievementEvent" | "MatchEndConditions" | "DisconnectToLobby" | "PlayerStatsUpdate" | "DisplayInventory" | "WarmupHasEnded" | "ClientInfo" | "XRankGet" | "XRankUpd" | "CallVoteFailed" | "VoteStart" | "VotePass" | "VoteFailed" | "VoteSetup" | "ServerRankRevealAll" | "SendLastKillerDamageToClient" | "ServerRankUpdate" | "ItemPickup" | "ShowMenu" | "BarTime" | "AmmoDenied" | "MarkAchievement" | "MatchStatsUpdate" | "ItemDrop" | "GlowPropTurnOff" | "SendPlayerItemDrops" | "RoundBackupFilenames" | "SendPlayerItemFound" | "ReportHit" | "XpUpdate" | "QuestProgress" | "ScoreLeaderboardData" | "PlayerDecalDigitalSignature" | "WeaponSound" | "UpdateScreenHealthBar" | "EntityOutlineHighlight" | "SSUI" | "SurvivalStats" | "EndOfMatchAllPlayersData";
+export declare type UserMessageName = "VGUIMenu" | "Geiger" | "Train" | "HudText" | "SayText" | "SayText2" | "TextMsg" | "HudMsg" | "ResetHud" | "GameTitle" | "Shake" | "Fade" | "Rumble" | "CloseCaption" | "CloseCaptionDirect" | "SendAudio" | "RawAudio" | "VoiceMask" | "RequestState" | "Damage" | "RadioText" | "HintText" | "KeyHintText" | "ProcessSpottedEntityUpdate" | "ReloadEffect" | "AdjustMoney" | "StopSpectatorMode" | "KillCam" | "DesiredTimescale" | "CurrentTimescale" | "AchievementEvent" | "MatchEndConditions" | "DisconnectToLobby" | "PlayerStatsUpdate" | "DisplayInventory" | "WarmupHasEnded" | "ClientInfo" | "XRankGet" | "XRankUpd" | "CallVoteFailed" | "VoteStart" | "VotePass" | "VoteFailed" | "VoteSetup" | "ServerRankRevealAll" | "SendLastKillerDamageToClient" | "ServerRankUpdate" | "ItemPickup" | "ShowMenu" | "BarTime" | "AmmoDenied" | "MarkAchievement" | "MatchStatsUpdate" | "ItemDrop" | "GlowPropTurnOff" | "SendPlayerItemDrops" | "RoundBackupFilenames" | "SendPlayerItemFound" | "ReportHit" | "XpUpdate" | "QuestProgress" | "ScoreLeaderboardData" | "PlayerDecalDigitalSignature" | "WeaponSound" | "UpdateScreenHealthBar" | "EntityOutlineHighlight" | "SSUI" | "SurvivalStats" | "EndOfMatchAllPlayersData" | "RetakeUpdatePlayerCardList" | "RetakeUpdatePlayerCardSelection" | "RoundImpactScoreData" | "CurrentRoundOdds" | "DeepStats";
 interface IUserMessageDescriptor {
     name: UserMessageName;
     class: {
@@ -89,6 +89,11 @@ declare module "./usermessages" {
         on(message: "SSUI", listener: (msg: um.CCSUsrMsgSSUI) => void): this;
         on(message: "SurvivalStats", listener: (msg: um.CCSUsrMsgSurvivalStats) => void): this;
         on(message: "EndOfMatchAllPlayersData", listener: (msg: um.CCSUsrMsgEndOfMatchAllPlayersData) => void): this;
+        on(message: "RetakeUpdatePlayerCardList", listener: (msg: um.CCSUsrMsgRetakeUpdatePlayerCardList) => void): this;
+        on(message: "RetakeUpdatePlayerCardSelection", listener: (msg: um.CCSUsrMsgRetakeUpdatePlayerCardSelection) => void): this;
+        on(message: "RoundImpactScoreData", listener: (msg: um.CCSUsrMsgRoundImpactScoreData) => void): this;
+        on(message: "CurrentRoundOdds", listener: (msg: um.CCSUsrMsgCurrentRoundOdds) => void): this;
+        on(message: "DeepStats", listener: (msg: um.CCSUsrMsgDeepStats) => void): this;
     }
 }
 export {};

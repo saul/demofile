@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CMsgGCCStrike15V2GC2ClientRequestValidation = exports.CMsgGCCStrike15V2GC2ClientRefuseSecureMode = exports.CMsgGCCStrike15V2ClientReportValidation = exports.CVDiagnostic = exports.CMsgGCCStrike15V2ClientPerfReport_Entry = exports.CMsgGCCStrike15V2ClientPerfReport = exports.CMsgGCCStrike15V2GetEventFavoritesResponse = exports.CMsgGCCStrike15V2GetEventFavoritesRequest = exports.CMsgGCCStrike15V2SetEventFavorite = exports.CMsgGCCStrike15V2ClientPartyWarning_Entry = exports.CMsgGCCStrike15V2ClientPartyWarning = exports.CMsgGCCStrike15V2ClientPartyJoinRelay = exports.CMsgGCCStrike15V2ClientAccountBalance = exports.CMsgGCCStrike15V2ClientRequestSouvenir = exports.CMsgGCCStrike15V2ClientRequestOffers = exports.CMsgGCToClientSteamDatagramTicket = exports.CMsgGCCStrike15V2ClientToGCRequestTicket = exports.CMsgGCCStrike15V2AccountRequestCoPlays_Player = exports.CMsgGCCStrike15V2AccountRequestCoPlays = exports.CMsgGCCStrike15V2PartyInvite = exports.CMsgGCCStrike15V2PartySearchResults_Entry = exports.CMsgGCCStrike15V2PartySearchResults = exports.CMsgGCCStrike15V2PartySearch = exports.CMsgGCCStrike15V2PartyRegister = exports.CMsgGCCStrike15V2ClientPollState = exports.CMsgGCCStrike15V2ClientLogonFatalError = exports.CMsgGCCStrike15V2ClientPlayerDecalSign = exports.PlayerDecalDigitalSignature = exports.CMsgGCCStrike15GotvSyncPacket = exports.CMsgGCCStrike15V2ClientAuthKeyCode = exports.CMsgGCCStrike15V2GCToClientChat = exports.CMsgGCCStrike15V2ClientToGCChat = exports.CMsgGCCStrike15V2ClientToGCRequestElevate = exports.CMsgGCCStrike15V2Client2GCStreamUnlock = exports.CMsgGCCStrike15V2Client2GCRequestPrestigeCoin = exports.CMsgGCCStrike15V2AcknowledgePenalty = exports.CMsgGCGlobalGamePlay = exports.CMsgGCGlobalGameUnsubscribe = exports.CMsgGCGlobalGameSubscribe = exports.CSOPersonaDataPublic = exports.CSOAccountSeasonalOperation = exports.CSOQuestProgress = exports.CSOEconCoupon = exports.CMsgGCCStrike15V2GC2ClientTournamentInfo = exports.CMsgGCCStrike15V2Server2GCClientValidate = exports.CMsgGCCStrike15V2ClientSubmitSurveyVote = exports.CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry = exports.CMsgGCCStrike15V2GiftsLeaderboardResponse = exports.CMsgGCCStrike15V2GiftsLeaderboardRequest = exports.CMsgGCCStrike15V2ServerVarValueNotificationInfo = exports.CMsgGCCStrike15V2ClientVarValueNotificationInfo = exports.CMsgCStrike15Welcome = exports.CAttributeString = exports.CMsgGCCStrike15V2Fantasy_FantasyTeam = exports.CMsgGCCStrike15V2Fantasy_FantasySlot = exports.CMsgGCCStrike15V2Fantasy = exports.CMsgGCCStrike15V2Predictions_GroupMatchTeamPick = exports.CMsgGCCStrike15V2Predictions = exports.CMsgGCCStrike15V2MatchList = exports.CDataGCCStrike15V2TournamentInfo = exports.CDataGCCStrike15V2TournamentSection = exports.CDataGCCStrike15V2TournamentGroup_Picks = exports.CDataGCCStrike15V2TournamentGroup = exports.CDataGCCStrike15V2TournamentGroupTeam = exports.CDataGCCStrike15V2MatchInfo = exports.CMsgGCCStrike15V2MatchListRequestFullGameInfo = exports.CMsgGCCStrike15V2MatchListRequestTournamentGames = exports.CMsgGCCStrike15V2MatchListRequestRecentUserGames = exports.CMsgGCCStrike15V2MatchListRequestLiveGameForUser = exports.CMsgGCCStrike15V2MatchListRequestCurrentLiveGames = exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse = exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest = exports.CMsgItemAcknowledged = exports.CMsgGCCStrike15V2MatchEndRewardDropsNotification = exports.CEconItemPreviewDataBlock_Sticker = exports.CEconItemPreviewDataBlock = exports.CMsgGCCStrike15V2MatchEndRunRewardDrops = exports.CMsgGCCStrike15V2Client2GCTextMsg = exports.CMsgGCCStrike15V2GC2ClientTextMsg = exports.CClientHeaderOverwatchEvidence = exports.CMsgGCCStrike15V2PlayerOverwatchCaseStatus = exports.CMsgGCCStrike15V2PlayerOverwatchCaseAssignment = exports.CMsgGCCStrike15V2PlayerOverwatchCaseUpdate = exports.CMsgGCCStrike15V2PlayersProfile = exports.CMsgGCCStrike15V2ClientRequestPlayersProfile = exports.CMsgGCCStrike15V2WatchInfoUsers = exports.CMsgGCCstrike15V2GC2ServerNotifyXPRewarded = exports.CMsgGCCstrike15V2ClientRequestNewMission = exports.CMsgGCCStrike15V2ClientRequestJoinServerData = exports.CMsgGCCStrike15V2ClientRequestJoinFriendData = exports.WatchableMatchInfo = exports.CMsgGCCStrike15V2ClientRequestWatchInfoFriends = exports.CMsgGCCStrike15V2ClientReportResponse = exports.CMsgGCCStrike15V2ClientReportServer = exports.CMsgGCCStrike15V2ClientCommendPlayer = exports.CMsgGCCStrike15V2ClientReportPlayer = exports.CMsgGCCStrike15V2ServerNotificationForUserPenalty = exports.CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate = exports.CMsgGCCStrike15V2ClientGCRankUpdate = exports.CMsgGCCStrike15V2MatchmakingGC2ClientAbandon = exports.CMsgGCCStrike15V2AccountPrivacySettings_Setting = exports.CMsgGCCStrike15V2AccountPrivacySettings = exports.CMsgGCCStrike15V2MatchmakingGC2ClientHello = exports.CMsgGCCStrike15V2MatchmakingClient2GCHello = exports.CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo = exports.CMsgGCCStrike15V2MatchmakingServerRoundStats = exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve = exports.CMsgGCCStrike15V2MatchmakingServerReservationResponse = exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve = exports.CPreMatchInfoData_TeamStats = exports.CPreMatchInfoData = exports.CDataGCCStrike15V2TournamentMatchDraft_Entry = exports.CDataGCCStrike15V2TournamentMatchDraft = exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note = exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate = exports.CMsgGCCStrike15V2MatchmakingClient2ServerPing = exports.CMsgGCCStrike15V2MatchmakingStop = exports.CMsgGCCStrike15V2MatchmakingStart = exports.CMsgGCCStrike15V2GC2ServerReservationUpdate = exports.CMsgGCCStrike15V2MatchmakingGC2ServerConfirm = exports.CMsgGCCStrike15V2MatchmakingGCOperationalStats = exports.CMsgGCServerQuestUpdateData = exports.PlayerQuestData_QuestItemData = exports.PlayerQuestData = exports.ScoreLeaderboardData_AccountEntries = exports.ScoreLeaderboardData_Entry = exports.ScoreLeaderboardData = exports.MatchEndItemUpdates = exports.XpProgressData = exports.CMsgCsgoSteamUserStatChange = exports.IpAddressMask = exports.ServerHltvInfo = exports.TournamentMatchSetup = exports.AccountActivity = exports.PlayerMedalsInfo = exports.PlayerCommendationInfo = exports.PlayerRankingInfo = exports.OperationalStatisticsPacket = exports.OperationalStatisticElement = exports.OperationalStatisticDescription = exports.GlobalStatistics = exports.TournamentEvent = exports.TournamentTeam = exports.TournamentPlayer = exports.DetailedSearchStatistic = exports.DataCenterPing = exports.GameServerPing = exports.EClientReportingVersion = exports.ECsgoSteamUserStat = exports.ECsgoGCMsg = exports.protobufPackage = void 0;
+exports.CMsgGCCStrike15V2GC2ClientRequestValidation = exports.CMsgGCCStrike15V2GC2ClientRefuseSecureMode = exports.CMsgGCCStrike15V2ClientReportValidation = exports.CVDiagnostic = exports.CMsgGCCStrike15V2ClientPerfReport_Entry = exports.CMsgGCCStrike15V2ClientPerfReport = exports.CMsgGCCStrike15V2GetEventFavoritesResponse = exports.CMsgGCCStrike15V2GetEventFavoritesRequest = exports.CMsgGCCStrike15V2SetEventFavorite = exports.CMsgGCCStrike15V2ClientPartyWarning_Entry = exports.CMsgGCCStrike15V2ClientPartyWarning = exports.CMsgGCCStrike15V2ClientPartyJoinRelay = exports.CMsgGCCStrike15V2ClientAccountBalance = exports.CMsgGCCStrike15V2ClientRequestSouvenir = exports.CMsgGCCStrike15V2ClientRequestOffers = exports.CMsgGCToClientSteamDatagramTicket = exports.CMsgGCCStrike15V2ClientToGCRequestTicket = exports.CMsgGCCStrike15V2AccountRequestCoPlays_Player = exports.CMsgGCCStrike15V2AccountRequestCoPlays = exports.CMsgGCCStrike15V2PartyInvite = exports.CMsgGCCStrike15V2PartySearchResults_Entry = exports.CMsgGCCStrike15V2PartySearchResults = exports.CMsgGCCStrike15V2PartySearch = exports.CMsgGCCStrike15V2PartyRegister = exports.CMsgGCCStrike15V2ClientPollState = exports.CMsgGCCStrike15V2ClientLogonFatalError = exports.CMsgGCCStrike15V2ClientPlayerDecalSign = exports.PlayerDecalDigitalSignature = exports.CMsgGCCStrike15GotvSyncPacket = exports.CMsgGCCStrike15V2ClientAuthKeyCode = exports.CMsgGCCStrike15V2GCToClientChat = exports.CMsgGCCStrike15V2ClientToGCChat = exports.CMsgGCCStrike15V2ClientToGCRequestElevate = exports.CMsgGCCStrike15V2Client2GCStreamUnlock = exports.CMsgGCCStrike15V2Client2GCRequestPrestigeCoin = exports.CMsgGCCStrike15V2AcknowledgePenalty = exports.CMsgGCGlobalGamePlay = exports.CMsgGCGlobalGameUnsubscribe = exports.CMsgGCGlobalGameSubscribe = exports.CSOPersonaDataPublic = exports.CSOAccountSeasonalOperation = exports.CSOQuestProgress = exports.CSOEconCoupon = exports.CMsgGCCStrike15V2GC2ClientTournamentInfo = exports.CMsgGCCStrike15V2Server2GCClientValidate = exports.CMsgGCCStrike15V2ClientSubmitSurveyVote = exports.CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry = exports.CMsgGCCStrike15V2GiftsLeaderboardResponse = exports.CMsgGCCStrike15V2GiftsLeaderboardRequest = exports.CMsgGCCStrike15V2ServerVarValueNotificationInfo = exports.CMsgGCCStrike15V2ClientVarValueNotificationInfo = exports.CMsgCStrike15Welcome = exports.CAttributeString = exports.CMsgGCCStrike15V2Fantasy_FantasyTeam = exports.CMsgGCCStrike15V2Fantasy_FantasySlot = exports.CMsgGCCStrike15V2Fantasy = exports.CMsgGCCStrike15V2Predictions_GroupMatchTeamPick = exports.CMsgGCCStrike15V2Predictions = exports.CMsgGCCStrike15V2MatchList = exports.CDataGCCStrike15V2TournamentInfo = exports.CDataGCCStrike15V2TournamentSection = exports.CDataGCCStrike15V2TournamentGroup_Picks = exports.CDataGCCStrike15V2TournamentGroup = exports.CDataGCCStrike15V2TournamentGroupTeam = exports.CDataGCCStrike15V2MatchInfo = exports.CMsgGCCStrike15V2MatchListRequestFullGameInfo = exports.CMsgGCCStrike15V2MatchListRequestTournamentGames = exports.CMsgGCCStrike15V2MatchListRequestRecentUserGames = exports.CMsgGCCStrike15V2MatchListRequestLiveGameForUser = exports.CMsgGCCStrike15V2MatchListRequestCurrentLiveGames = exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse = exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest = exports.CMsgItemAcknowledged = exports.CMsgGCCStrike15V2MatchEndRewardDropsNotification = exports.CEconItemPreviewDataBlock_Sticker = exports.CEconItemPreviewDataBlock = exports.CMsgGCCStrike15V2MatchEndRunRewardDrops = exports.CMsgGCCStrike15V2Client2GCTextMsg = exports.CMsgGCCStrike15V2GC2ClientTextMsg = exports.CClientHeaderOverwatchEvidence = exports.CMsgGCCStrike15V2PlayerOverwatchCaseStatus = exports.CMsgGCCStrike15V2PlayerOverwatchCaseAssignment = exports.CMsgGCCStrike15V2PlayerOverwatchCaseUpdate = exports.CMsgGCCStrike15V2PlayersProfile = exports.CMsgGCCStrike15V2ClientRequestPlayersProfile = exports.CMsgGCCStrike15V2WatchInfoUsers = exports.CMsgGCCStrike15ClientDeepStats_DeepStatsMatch = exports.CMsgGCCStrike15ClientDeepStats_DeepStatsRange = exports.CMsgGCCStrike15ClientDeepStats = exports.CMsgGCCstrike15V2GC2ServerNotifyXPRewarded = exports.CMsgGCCstrike15V2ClientRedeemMissionReward = exports.CMsgGCCstrike15V2ClientRequestNewMission = exports.CMsgGCCStrike15V2ClientRequestJoinServerData = exports.CMsgGCCStrike15V2ClientRequestJoinFriendData = exports.WatchableMatchInfo = exports.CMsgGCCStrike15V2ClientRequestWatchInfoFriends = exports.CMsgGCCStrike15V2ClientReportResponse = exports.CMsgGCCStrike15V2ClientReportServer = exports.CMsgGCCStrike15V2ClientCommendPlayer = exports.CMsgGCCStrike15V2ClientReportPlayer = exports.CMsgGCCStrike15V2ServerNotificationForUserPenalty = exports.CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate = exports.CMsgGCCStrike15V2ClientGCRankUpdate = exports.CMsgGCCStrike15V2MatchmakingGC2ClientAbandon = exports.CMsgGCCStrike15V2AccountPrivacySettings_Setting = exports.CMsgGCCStrike15V2AccountPrivacySettings = exports.CMsgGCCStrike15V2MatchmakingGC2ClientHello = exports.CMsgGCCStrike15V2MatchmakingClient2GCHello = exports.CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo = exports.CMsgGCCStrike15V2MatchmakingServerRoundStats = exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve = exports.CMsgGCCStrike15V2MatchmakingServerReservationResponse = exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve = exports.CPreMatchInfoData_TeamStats = exports.CPreMatchInfoData = exports.CDataGCCStrike15V2TournamentMatchDraft_Entry = exports.CDataGCCStrike15V2TournamentMatchDraft = exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note = exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate = exports.CMsgGCCStrike15V2MatchmakingClient2ServerPing = exports.CMsgGCCStrike15V2MatchmakingStop = exports.CMsgGCCStrike15V2MatchmakingStart = exports.CMsgGCCStrike15V2GC2ServerReservationUpdate = exports.CMsgGCCStrike15V2MatchmakingGC2ServerConfirm = exports.CMsgGCCStrike15V2MatchmakingGCOperationalStats = exports.CMsgGCServerQuestUpdateData = exports.DeepPlayerMatchEvent = exports.DeepPlayerStatsEntry = exports.PlayerQuestData_QuestItemData = exports.PlayerQuestData = exports.ScoreLeaderboardData_AccountEntries = exports.ScoreLeaderboardData_Entry = exports.ScoreLeaderboardData = exports.MatchEndItemUpdates = exports.XpProgressData = exports.CMsgCsgoSteamUserStatChange = exports.IpAddressMask = exports.ServerHltvInfo = exports.TournamentMatchSetup = exports.AccountActivity = exports.PlayerMedalsInfo = exports.PlayerCommendationInfo = exports.PlayerRankingInfo = exports.OperationalStatisticsPacket = exports.OperationalStatisticElement = exports.OperationalStatisticDescription = exports.GlobalStatistics = exports.TournamentEvent = exports.TournamentTeam = exports.TournamentPlayer = exports.DetailedSearchStatistic = exports.DataCenterPing = exports.GameServerPing = exports.EClientReportingVersion = exports.ECsgoSteamUserStat = exports.ECsgoGCMsg = exports.protobufPackage = void 0;
 /* tslint:disable */
 const Long = require("long");
 const engine_gcmessages_1 = require("./engine_gcmessages");
@@ -167,6 +167,52 @@ const basePlayerQuestData_QuestItemData = {
     questId: Long.UZERO,
     questNormalPointsEarned: 0,
     questBonusPointsEarned: 0
+};
+const baseDeepPlayerStatsEntry = {
+    accountid: 0,
+    matchId: Long.UZERO,
+    mmGameMode: 0,
+    mapid: 0,
+    bStartingCt: false,
+    matchOutcome: 0,
+    roundsWon: 0,
+    roundsLost: 0,
+    statScore: 0,
+    statDeaths: 0,
+    statMvps: 0,
+    enemyKills: 0,
+    enemyHeadshots: 0,
+    enemy2ks: 0,
+    enemy3ks: 0,
+    enemy4ks: 0,
+    totalDamage: 0,
+    engagementsEntryCount: 0,
+    engagementsEntryWins: 0,
+    engagements1v1Count: 0,
+    engagements1v1Wins: 0,
+    engagements1v2Count: 0,
+    engagements1v2Wins: 0,
+    utilityCount: 0,
+    utilitySuccess: 0,
+    flashCount: 0,
+    flashSuccess: 0,
+    mates: 0
+};
+const baseDeepPlayerMatchEvent = {
+    accountid: 0,
+    matchId: Long.UZERO,
+    eventId: 0,
+    eventType: 0,
+    bPlayingCt: false,
+    userPosX: 0,
+    userPosY: 0,
+    userPosZ: 0,
+    userDefidx: 0,
+    otherPosX: 0,
+    otherPosY: 0,
+    otherPosZ: 0,
+    otherDefidx: 0,
+    eventData: 0
 };
 const baseCMsgGCServerQuestUpdateData = {
     mmGameMode: 0
@@ -417,6 +463,12 @@ const baseCMsgGCCstrike15V2ClientRequestNewMission = {
     missionId: 0,
     campaignId: 0
 };
+const baseCMsgGCCstrike15V2ClientRedeemMissionReward = {
+    campaignId: 0,
+    redeemId: 0,
+    redeemableBalance: 0,
+    expectedCost: 0
+};
 const baseCMsgGCCstrike15V2GC2ServerNotifyXPRewarded = {
     accountId: 0,
     currentXp: 0,
@@ -424,6 +476,15 @@ const baseCMsgGCCstrike15V2GC2ServerNotifyXPRewarded = {
     upgradedDefidx: 0,
     operationPointsAwarded: 0
 };
+const baseCMsgGCCStrike15ClientDeepStats = {
+    accountId: 0
+};
+const baseCMsgGCCStrike15ClientDeepStats_DeepStatsRange = {
+    begin: 0,
+    end: 0,
+    frozen: false
+};
+const baseCMsgGCCStrike15ClientDeepStats_DeepStatsMatch = {};
 const baseCMsgGCCStrike15V2WatchInfoUsers = {
     requestId: 0,
     accountIds: 0,
@@ -645,7 +706,9 @@ const baseCSOAccountSeasonalOperation = {
     tierUnlocked: 0,
     premiumTiers: 0,
     missionId: 0,
-    missionsCompleted: 0
+    missionsCompleted: 0,
+    redeemableBalance: 0,
+    seasonPassTime: 0
 };
 const baseCSOPersonaDataPublic = {
     playerLevel: 0,
@@ -939,6 +1002,9 @@ var ECsgoGCMsg;
     ECsgoGCMsg[ECsgoGCMsg["k_EMsgGCCStrike15_v2_ClientReportValidation"] = 9205] = "k_EMsgGCCStrike15_v2_ClientReportValidation";
     ECsgoGCMsg[ECsgoGCMsg["k_EMsgGCCStrike15_v2_GC2ClientRefuseSecureMode"] = 9206] = "k_EMsgGCCStrike15_v2_GC2ClientRefuseSecureMode";
     ECsgoGCMsg[ECsgoGCMsg["k_EMsgGCCStrike15_v2_GC2ClientRequestValidation"] = 9207] = "k_EMsgGCCStrike15_v2_GC2ClientRequestValidation";
+    ECsgoGCMsg[ECsgoGCMsg["k_EMsgGCCStrike15_v2_ClientRedeemMissionReward"] = 9209] = "k_EMsgGCCStrike15_v2_ClientRedeemMissionReward";
+    ECsgoGCMsg[ECsgoGCMsg["k_EMsgGCCStrike15_ClientDeepStats"] = 9210] = "k_EMsgGCCStrike15_ClientDeepStats";
+    ECsgoGCMsg[ECsgoGCMsg["k_EMsgGCCStrike15_StartAgreementSessionInGame"] = 9211] = "k_EMsgGCCStrike15_StartAgreementSessionInGame";
 })(ECsgoGCMsg = exports.ECsgoGCMsg || (exports.ECsgoGCMsg = {}));
 var ECsgoSteamUserStat;
 (function (ECsgoSteamUserStat) {
@@ -1982,6 +2048,225 @@ exports.PlayerQuestData_QuestItemData = {
                     break;
                 case 3:
                     message.questBonusPointsEarned = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.DeepPlayerStatsEntry = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).uint32(message.accountid);
+        writer.uint32(16).uint64(message.matchId);
+        writer.uint32(24).uint32(message.mmGameMode);
+        writer.uint32(32).uint32(message.mapid);
+        writer.uint32(40).bool(message.bStartingCt);
+        writer.uint32(48).uint32(message.matchOutcome);
+        writer.uint32(56).uint32(message.roundsWon);
+        writer.uint32(64).uint32(message.roundsLost);
+        writer.uint32(72).uint32(message.statScore);
+        writer.uint32(96).uint32(message.statDeaths);
+        writer.uint32(104).uint32(message.statMvps);
+        writer.uint32(112).uint32(message.enemyKills);
+        writer.uint32(120).uint32(message.enemyHeadshots);
+        writer.uint32(128).uint32(message.enemy2ks);
+        writer.uint32(136).uint32(message.enemy3ks);
+        writer.uint32(144).uint32(message.enemy4ks);
+        writer.uint32(152).uint32(message.totalDamage);
+        writer.uint32(184).uint32(message.engagementsEntryCount);
+        writer.uint32(192).uint32(message.engagementsEntryWins);
+        writer.uint32(200).uint32(message.engagements1v1Count);
+        writer.uint32(208).uint32(message.engagements1v1Wins);
+        writer.uint32(216).uint32(message.engagements1v2Count);
+        writer.uint32(224).uint32(message.engagements1v2Wins);
+        writer.uint32(232).uint32(message.utilityCount);
+        writer.uint32(240).uint32(message.utilitySuccess);
+        writer.uint32(256).uint32(message.flashCount);
+        writer.uint32(264).uint32(message.flashSuccess);
+        writer.uint32(274).fork();
+        for (const v of message.mates) {
+            writer.uint32(v);
+        }
+        writer.ldelim();
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = { ...baseDeepPlayerStatsEntry };
+        message.mates = [];
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.accountid = reader.uint32();
+                    break;
+                case 2:
+                    message.matchId = reader.uint64();
+                    break;
+                case 3:
+                    message.mmGameMode = reader.uint32();
+                    break;
+                case 4:
+                    message.mapid = reader.uint32();
+                    break;
+                case 5:
+                    message.bStartingCt = reader.bool();
+                    break;
+                case 6:
+                    message.matchOutcome = reader.uint32();
+                    break;
+                case 7:
+                    message.roundsWon = reader.uint32();
+                    break;
+                case 8:
+                    message.roundsLost = reader.uint32();
+                    break;
+                case 9:
+                    message.statScore = reader.uint32();
+                    break;
+                case 12:
+                    message.statDeaths = reader.uint32();
+                    break;
+                case 13:
+                    message.statMvps = reader.uint32();
+                    break;
+                case 14:
+                    message.enemyKills = reader.uint32();
+                    break;
+                case 15:
+                    message.enemyHeadshots = reader.uint32();
+                    break;
+                case 16:
+                    message.enemy2ks = reader.uint32();
+                    break;
+                case 17:
+                    message.enemy3ks = reader.uint32();
+                    break;
+                case 18:
+                    message.enemy4ks = reader.uint32();
+                    break;
+                case 19:
+                    message.totalDamage = reader.uint32();
+                    break;
+                case 23:
+                    message.engagementsEntryCount = reader.uint32();
+                    break;
+                case 24:
+                    message.engagementsEntryWins = reader.uint32();
+                    break;
+                case 25:
+                    message.engagements1v1Count = reader.uint32();
+                    break;
+                case 26:
+                    message.engagements1v1Wins = reader.uint32();
+                    break;
+                case 27:
+                    message.engagements1v2Count = reader.uint32();
+                    break;
+                case 28:
+                    message.engagements1v2Wins = reader.uint32();
+                    break;
+                case 29:
+                    message.utilityCount = reader.uint32();
+                    break;
+                case 30:
+                    message.utilitySuccess = reader.uint32();
+                    break;
+                case 32:
+                    message.flashCount = reader.uint32();
+                    break;
+                case 33:
+                    message.flashSuccess = reader.uint32();
+                    break;
+                case 34:
+                    if ((tag & 7) === 2) {
+                        const end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2) {
+                            message.mates.push(reader.uint32());
+                        }
+                    }
+                    else {
+                        message.mates.push(reader.uint32());
+                    }
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.DeepPlayerMatchEvent = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).uint32(message.accountid);
+        writer.uint32(16).uint64(message.matchId);
+        writer.uint32(24).uint32(message.eventId);
+        writer.uint32(32).uint32(message.eventType);
+        writer.uint32(40).bool(message.bPlayingCt);
+        writer.uint32(48).int32(message.userPosX);
+        writer.uint32(56).int32(message.userPosY);
+        writer.uint32(96).int32(message.userPosZ);
+        writer.uint32(64).uint32(message.userDefidx);
+        writer.uint32(72).int32(message.otherPosX);
+        writer.uint32(80).int32(message.otherPosY);
+        writer.uint32(104).int32(message.otherPosZ);
+        writer.uint32(88).uint32(message.otherDefidx);
+        writer.uint32(112).int32(message.eventData);
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = { ...baseDeepPlayerMatchEvent };
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.accountid = reader.uint32();
+                    break;
+                case 2:
+                    message.matchId = reader.uint64();
+                    break;
+                case 3:
+                    message.eventId = reader.uint32();
+                    break;
+                case 4:
+                    message.eventType = reader.uint32();
+                    break;
+                case 5:
+                    message.bPlayingCt = reader.bool();
+                    break;
+                case 6:
+                    message.userPosX = reader.int32();
+                    break;
+                case 7:
+                    message.userPosY = reader.int32();
+                    break;
+                case 12:
+                    message.userPosZ = reader.int32();
+                    break;
+                case 8:
+                    message.userDefidx = reader.uint32();
+                    break;
+                case 9:
+                    message.otherPosX = reader.int32();
+                    break;
+                case 10:
+                    message.otherPosY = reader.int32();
+                    break;
+                case 13:
+                    message.otherPosZ = reader.int32();
+                    break;
+                case 11:
+                    message.otherDefidx = reader.uint32();
+                    break;
+                case 14:
+                    message.eventData = reader.int32();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -4175,6 +4460,43 @@ exports.CMsgGCCstrike15V2ClientRequestNewMission = {
         return message;
     }
 };
+exports.CMsgGCCstrike15V2ClientRedeemMissionReward = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).uint32(message.campaignId);
+        writer.uint32(16).uint32(message.redeemId);
+        writer.uint32(24).uint32(message.redeemableBalance);
+        writer.uint32(32).uint32(message.expectedCost);
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCMsgGCCstrike15V2ClientRedeemMissionReward
+        };
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.campaignId = reader.uint32();
+                    break;
+                case 2:
+                    message.redeemId = reader.uint32();
+                    break;
+                case 3:
+                    message.redeemableBalance = reader.uint32();
+                    break;
+                case 4:
+                    message.expectedCost = reader.uint32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
 exports.CMsgGCCstrike15V2GC2ServerNotifyXPRewarded = {
     encode(message, writer = minimal_1.Writer.create()) {
         for (const v of message.xpProgressData) {
@@ -4214,6 +4536,111 @@ exports.CMsgGCCstrike15V2GC2ServerNotifyXPRewarded = {
                     break;
                 case 6:
                     message.operationPointsAwarded = reader.uint32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CMsgGCCStrike15ClientDeepStats = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).uint32(message.accountId);
+        if (message.range !== undefined && message.range !== undefined) {
+            exports.CMsgGCCStrike15ClientDeepStats_DeepStatsRange.encode(message.range, writer.uint32(18).fork()).ldelim();
+        }
+        for (const v of message.matches) {
+            exports.CMsgGCCStrike15ClientDeepStats_DeepStatsMatch.encode(v, writer.uint32(26).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCMsgGCCStrike15ClientDeepStats
+        };
+        message.matches = [];
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.accountId = reader.uint32();
+                    break;
+                case 2:
+                    message.range = exports.CMsgGCCStrike15ClientDeepStats_DeepStatsRange.decode(reader, reader.uint32());
+                    break;
+                case 3:
+                    message.matches.push(exports.CMsgGCCStrike15ClientDeepStats_DeepStatsMatch.decode(reader, reader.uint32()));
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CMsgGCCStrike15ClientDeepStats_DeepStatsRange = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).uint32(message.begin);
+        writer.uint32(16).uint32(message.end);
+        writer.uint32(24).bool(message.frozen);
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCMsgGCCStrike15ClientDeepStats_DeepStatsRange
+        };
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.begin = reader.uint32();
+                    break;
+                case 2:
+                    message.end = reader.uint32();
+                    break;
+                case 3:
+                    message.frozen = reader.bool();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
+exports.CMsgGCCStrike15ClientDeepStats_DeepStatsMatch = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        if (message.player !== undefined && message.player !== undefined) {
+            exports.DeepPlayerStatsEntry.encode(message.player, writer.uint32(10).fork()).ldelim();
+        }
+        for (const v of message.events) {
+            exports.DeepPlayerMatchEvent.encode(v, writer.uint32(18).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCMsgGCCStrike15ClientDeepStats_DeepStatsMatch
+        };
+        message.events = [];
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.player = exports.DeepPlayerStatsEntry.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    message.events.push(exports.DeepPlayerMatchEvent.decode(reader, reader.uint32()));
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -5953,6 +6380,8 @@ exports.CSOAccountSeasonalOperation = {
         writer.uint32(24).uint32(message.premiumTiers);
         writer.uint32(32).uint32(message.missionId);
         writer.uint32(40).uint32(message.missionsCompleted);
+        writer.uint32(48).uint32(message.redeemableBalance);
+        writer.uint32(56).uint32(message.seasonPassTime);
         return writer;
     },
     decode(input, length) {
@@ -5978,6 +6407,12 @@ exports.CSOAccountSeasonalOperation = {
                     break;
                 case 5:
                     message.missionsCompleted = reader.uint32();
+                    break;
+                case 6:
+                    message.redeemableBalance = reader.uint32();
+                    break;
+                case 7:
+                    message.seasonPassTime = reader.uint32();
                     break;
                 default:
                     reader.skipType(tag & 7);

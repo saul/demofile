@@ -1,5 +1,5 @@
 import { CMsgVector2D, CMsgRGBA, CMsgVector } from "./netmessages";
-import { CEconItemPreviewDataBlock, ScoreLeaderboardData, PlayerDecalDigitalSignature, CMsgGCCstrike15V2GC2ServerNotifyXPRewarded, CMsgGCCStrike15V2MatchmakingGC2ServerReserve } from "./cstrike15_gcmessages";
+import { CEconItemPreviewDataBlock, ScoreLeaderboardData, PlayerDecalDigitalSignature, CMsgGCCstrike15V2GC2ServerNotifyXPRewarded, CMsgGCCStrike15ClientDeepStats, CMsgGCCStrike15V2MatchmakingGC2ServerReserve } from "./cstrike15_gcmessages";
 import * as Long from "long";
 import { Writer, Reader } from "protobufjs/minimal";
 export interface CCSUsrMsgVGUIMenu {
@@ -132,6 +132,23 @@ export interface CCSUsrMsgSendPlayerItemDrops {
 export interface CCSUsrMsgSendPlayerItemFound {
     iteminfo: CEconItemPreviewDataBlock | undefined;
     entindex: number;
+}
+export interface CCSUsrMsgRetakeUpdatePlayerCardList {
+    defuseKit: boolean;
+    roundIdx: number[];
+    loadoutIdx: number[];
+    cardIdx: number[];
+    typeIdx: number[];
+    mvpBoostRoundIdx: number;
+    mvpBoostLoadoutIdx: number;
+    mvpBoostCardIdx: number;
+    mvpBoostExtraUtility: number;
+}
+export interface CCSUsrMsgRetakeUpdatePlayerCardSelection {
+    roundIdx: number;
+    loadoutIdx: number;
+    cardIdx: number;
+    typeIdx: number;
 }
 export interface CCSUsrMsgReloadEffect {
     entidx: number;
@@ -356,6 +373,49 @@ export interface CCSUsrMsgEndOfMatchAllPlayersData_PlayerData {
     playercolor: number;
     isbot: boolean;
 }
+export interface CCSUsrMsgRoundImpactScoreData {
+    initConditions: CCSUsrMsgRoundImpactScoreData_InitialConditions | undefined;
+    allRisEventData: CCSUsrMsgRoundImpactScoreData_RisEvent[];
+}
+export interface CCSUsrMsgRoundImpactScoreData_RisEvent {
+    timestamp: number;
+    terroristOdds: number;
+    ctAlive: number;
+    tAlive: number;
+    victimData: CCSUsrMsgRoundImpactScoreData_RisEvent_Victim | undefined;
+    objectiveData: CCSUsrMsgRoundImpactScoreData_RisEvent_Objective | undefined;
+    allDamageData: CCSUsrMsgRoundImpactScoreData_RisEvent_Damage[];
+}
+export interface CCSUsrMsgRoundImpactScoreData_RisEvent_Victim {
+    teamNumber: number;
+    entindex: number;
+    xuid: Long;
+    color: number;
+    isBot: boolean;
+    isDead: boolean;
+}
+export interface CCSUsrMsgRoundImpactScoreData_RisEvent_Objective {
+    type: number;
+}
+export interface CCSUsrMsgRoundImpactScoreData_RisEvent_Damage {
+    targetEntindex: number;
+    targetXuid: Long;
+    healthRemoved: number;
+    numHits: number;
+    returnHealthRemoved: number;
+    numReturnHits: number;
+}
+export interface CCSUsrMsgRoundImpactScoreData_InitialConditions {
+    ctEquipValue: number;
+    tEquipValue: number;
+    terroristOdds: number;
+}
+export interface CCSUsrMsgCurrentRoundOdds {
+    odds: number;
+}
+export interface CCSUsrMsgDeepStats {
+    stats: CMsgGCCStrike15ClientDeepStats | undefined;
+}
 export interface CCSUsrMsgResetHud {
     reset: boolean;
 }
@@ -453,7 +513,12 @@ export declare enum ECstrike15UserMessages {
     CS_UM_SSUI = 72,
     CS_UM_SurvivalStats = 73,
     CS_UM_DisconnectToLobby2 = 74,
-    CS_UM_EndOfMatchAllPlayersData = 75
+    CS_UM_EndOfMatchAllPlayersData = 75,
+    CS_UM_RetakeUpdatePlayerCardList = 77,
+    CS_UM_RetakeUpdatePlayerCardSelection = 78,
+    CS_UM_RoundImpactScoreData = 79,
+    CS_UM_CurrentRoundOdds = 80,
+    CS_UM_DeepStats = 81
 }
 export declare enum ECSUsrMsgDisconnectToLobbyAction {
     k_ECSUsrMsg_DisconnectToLobby_Action_Default = 0,
@@ -562,6 +627,14 @@ export declare const CCSUsrMsgSendPlayerItemDrops: {
 export declare const CCSUsrMsgSendPlayerItemFound: {
     encode(message: CCSUsrMsgSendPlayerItemFound, writer?: Writer): Writer;
     decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgSendPlayerItemFound;
+};
+export declare const CCSUsrMsgRetakeUpdatePlayerCardList: {
+    encode(message: CCSUsrMsgRetakeUpdatePlayerCardList, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgRetakeUpdatePlayerCardList;
+};
+export declare const CCSUsrMsgRetakeUpdatePlayerCardSelection: {
+    encode(message: CCSUsrMsgRetakeUpdatePlayerCardSelection, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgRetakeUpdatePlayerCardSelection;
 };
 export declare const CCSUsrMsgReloadEffect: {
     encode(message: CCSUsrMsgReloadEffect, writer?: Writer): Writer;
@@ -742,6 +815,38 @@ export declare const CCSUsrMsgEndOfMatchAllPlayersData_Accolade: {
 export declare const CCSUsrMsgEndOfMatchAllPlayersData_PlayerData: {
     encode(message: CCSUsrMsgEndOfMatchAllPlayersData_PlayerData, writer?: Writer): Writer;
     decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgEndOfMatchAllPlayersData_PlayerData;
+};
+export declare const CCSUsrMsgRoundImpactScoreData: {
+    encode(message: CCSUsrMsgRoundImpactScoreData, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgRoundImpactScoreData;
+};
+export declare const CCSUsrMsgRoundImpactScoreData_RisEvent: {
+    encode(message: CCSUsrMsgRoundImpactScoreData_RisEvent, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgRoundImpactScoreData_RisEvent;
+};
+export declare const CCSUsrMsgRoundImpactScoreData_RisEvent_Victim: {
+    encode(message: CCSUsrMsgRoundImpactScoreData_RisEvent_Victim, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgRoundImpactScoreData_RisEvent_Victim;
+};
+export declare const CCSUsrMsgRoundImpactScoreData_RisEvent_Objective: {
+    encode(message: CCSUsrMsgRoundImpactScoreData_RisEvent_Objective, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgRoundImpactScoreData_RisEvent_Objective;
+};
+export declare const CCSUsrMsgRoundImpactScoreData_RisEvent_Damage: {
+    encode(message: CCSUsrMsgRoundImpactScoreData_RisEvent_Damage, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgRoundImpactScoreData_RisEvent_Damage;
+};
+export declare const CCSUsrMsgRoundImpactScoreData_InitialConditions: {
+    encode(message: CCSUsrMsgRoundImpactScoreData_InitialConditions, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgRoundImpactScoreData_InitialConditions;
+};
+export declare const CCSUsrMsgCurrentRoundOdds: {
+    encode(message: CCSUsrMsgCurrentRoundOdds, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgCurrentRoundOdds;
+};
+export declare const CCSUsrMsgDeepStats: {
+    encode(message: CCSUsrMsgDeepStats, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgDeepStats;
 };
 export declare const CCSUsrMsgResetHud: {
     encode(message: CCSUsrMsgResetHud, writer?: Writer): Writer;
