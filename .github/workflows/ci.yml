@@ -80,6 +80,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+          registry-url: "https://registry.npmjs.org"
       - name: Install packages
         run: npm ci
       - name: Pull version from package.json
@@ -104,7 +105,7 @@ jobs:
           git config --global user.email 'github-actions@users.noreply.github.com'
           npm version --allow-same-version $VERSION
       - name: Publish to registry
-        uses: JS-DevTools/npm-publish@v1.4.1
         if: ${{ steps.checkTag.outputs.exists == 'false' }}
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
