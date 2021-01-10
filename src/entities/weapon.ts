@@ -3,6 +3,26 @@ import { BaseEntity } from "./baseentity";
 import { itemDefinitionIndexMap } from "./itemdefs";
 import { Player } from "./player";
 
+// tslint:disable-next-line:no-useless-cast
+const qualities = [
+  "normal",
+  "genuine",
+  "vintage",
+  "unusual",
+  "unique",
+  "community",
+  "developer",
+  "selfmade",
+  "customized",
+  "strange",
+  "completed",
+  "haunted",
+  "tournament",
+  "favored"
+] as const;
+
+export type ItemQuality = typeof qualities[number];
+
 /**
  * Represents an in-game weapon (guns, grenades, knifes).
  */
@@ -69,5 +89,13 @@ export class Weapon extends BaseEntity<CWeaponCSBase> {
     const ammoType = this.getProp("DT_LocalWeaponData", "m_iPrimaryAmmoType");
     if (ammoType === -1) return null;
     return this.owner.getIndexedProps("m_iAmmo")[ammoType];
+  }
+
+  /**
+   * @returns Quality of the item.
+   */
+  get quality(): ItemQuality {
+    const quality = this.getProp("DT_ScriptCreatedItem", "m_iEntityQuality");
+    return qualities[quality];
   }
 }

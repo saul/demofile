@@ -171,6 +171,13 @@ function readIBytes(bytebuf: ByteBuffer) {
   return bytebuf.readBytes(length);
 }
 
+export interface IDemoStartEvent {
+  /**
+   * Cancel parsing the demo.
+   */
+  cancel: () => void;
+}
+
 export interface IDemoEndEvent {
   /**
    * Error that caused the premature end of parsing.
@@ -187,8 +194,8 @@ export declare interface DemoFile {
   /**
    * Fired when parsing begins.
    */
-  on(event: "start", listener: () => void): this;
-  emit(name: "start"): boolean;
+  on(event: "start", listener: (event: IDemoStartEvent) => void): this;
+  emit(name: "start", event: IDemoStartEvent): boolean;
 
   /**
    * Fired when parsing failed.
@@ -489,9 +496,14 @@ export class DemoFile extends EventEmitter {
 
     this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
 
-    this.emit("start");
+    let cancelled = false;
+    this.emit("start", {
+      cancel: () => {
+        cancelled = true;
+      }
+    });
 
-    timers.setTimeout(this._parseRecurse.bind(this), 0);
+    if (!cancelled) timers.setTimeout(this._parseRecurse.bind(this), 0);
   }
 
   /**

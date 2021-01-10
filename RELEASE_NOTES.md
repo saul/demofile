@@ -6,6 +6,11 @@
 - Unreleased release notes here
 -->
 
+### 2.0.0-beta.4 (2021-01-10)
+
+- :sparkles: Add `Weapon#quality` to represent an item's quality
+- :sparkles: Add `cancel` method to `DemoFile#start` event to cancel any further parsing.
+
 ### 2.0.0-beta.3 (2021-01-10)
 
 - :sparkles: #164: Add CUserCmd parsing on in-eye/perspective demos
