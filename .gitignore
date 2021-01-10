@@ -1,5 +1,6 @@
 .clinic/
 .vscode/
+.protoc/
 coverage/
 demos/
 GameTracking-CSGO/

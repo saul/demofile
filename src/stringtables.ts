@@ -7,11 +7,10 @@ import * as consts from "./consts";
 import { MAX_PLAYER_NAME_LENGTH, SIGNED_GUID_LEN } from "./consts";
 import { DemoFile } from "./demo";
 import { BitStream } from "./ext/bitbuffer";
-import { RequiredNonNullable } from "./pervasive";
 import {
-  ICSVCMsg_CreateStringTable,
-  ICSVCMsg_UpdateStringTable
-} from "./protobufs/cstrike15_usermessages";
+  CSVCMsgCreateStringTable,
+  CSVCMsgUpdateStringTable
+} from "./protobufs/netmessages";
 
 /**
  * Player info structure.
@@ -341,10 +340,8 @@ export class StringTables extends EventEmitter {
     }
   }
 
-  private _handleCreateStringTable(
-    msg: RequiredNonNullable<ICSVCMsg_CreateStringTable>
-  ) {
-    const bitbuf = BitStream.from(msg.stringData as Uint8Array);
+  private _handleCreateStringTable(msg: CSVCMsgCreateStringTable) {
+    const bitbuf = BitStream.from(msg.stringData);
 
     // table shouldn't already exist
     assert(
@@ -374,10 +371,8 @@ export class StringTables extends EventEmitter {
     this.tables.push(table);
   }
 
-  private _handleUpdateStringTable(
-    msg: RequiredNonNullable<ICSVCMsg_UpdateStringTable>
-  ) {
-    const bitbuf = BitStream.from(msg.stringData as Uint8Array);
+  private _handleUpdateStringTable(msg: CSVCMsgUpdateStringTable) {
+    const bitbuf = BitStream.from(msg.stringData);
 
     const table = this.tables[msg.tableId];
     assert(table !== undefined, "bad table index");

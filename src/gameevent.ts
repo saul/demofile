@@ -1,8 +1,7 @@
 import * as assert from "assert";
-import { RequiredNonNullable } from "./pervasive";
 import {
-  CSVCMsg_GameEventList,
-  ICSVCMsg_GameEvent
+  CSVCMsgGameEvent,
+  CSVCMsgGameEventList_descriptorT
 } from "./protobufs/netmessages";
 
 enum EventKeyType {
@@ -21,25 +20,15 @@ export class GameEvent {
   public id: number;
   public keyNames: string[];
 
-  constructor(
-    descriptor: RequiredNonNullable<CSVCMsg_GameEventList.Idescriptor_t>
-  ) {
+  constructor(descriptor: CSVCMsgGameEventList_descriptorT) {
     this.name = descriptor.name;
     this.id = descriptor.eventid;
     this.keyNames = descriptor.keys.map(key => key.name);
   }
 
   public messageToObject(
-    eventMsg: RequiredNonNullable<ICSVCMsg_GameEvent>
-  ): Record<
-    string,
-    | string
-    | number
-    | boolean
-    | RequiredNonNullable<Uint8Array>
-    | RequiredNonNullable<Long>
-    | undefined
-  > {
+    eventMsg: CSVCMsgGameEvent
+  ): Record<string, string | number | boolean | Uint8Array | Long | undefined> {
     assert(eventMsg.eventid === this.id);
 
     const event: any = {};
