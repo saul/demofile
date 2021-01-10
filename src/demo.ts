@@ -5,7 +5,7 @@ import * as ByteBuffer from "bytebuffer";
 import { BitStream } from "./ext/bitbuffer";
 
 import * as assert from "assert";
-import { MAX_OSPATH } from "./consts";
+import { MAX_OSPATH, MAX_EDICT_BITS } from "./consts";
 import { ConVars } from "./convars";
 import { Entities } from "./entities";
 import { GameRules } from "./entities/gamerules";
@@ -56,6 +56,7 @@ import {
 } from "./protobufs/netmessages";
 import { StringTables } from "./stringtables";
 import { UserMessages } from "./usermessages";
+import { Vector } from "./sendtabletypes";
 
 interface IDemoHeader {
   /**
@@ -215,6 +216,13 @@ export declare interface DemoFile {
   emit(name: "progress", progressFraction: number): boolean;
 
   /**
+   * Fired each frame indicating all inputs of the recording player.
+   * Note this is only fired for in-eye/perspective demos.
+   */
+  on(event: "usercmd", listener: (userCmd: IUserCmd) => void): this;
+  emit(name: "usercmd", userCmd: IUserCmd): boolean;
+
+  /**
    * Fired after all commands are processed for a tick.
    */
   on(event: "tickend", listener: (tick: number) => void): this;
@@ -319,6 +327,51 @@ export declare interface DemoFile {
     message: "svc_Broadcast_Command",
     listener: (msg: CSVCMsgBroadcastCommand) => void
   ): this;
+}
+
+export type InputButton =
+  | "attack" // = 1 << 0,
+  | "jump" // = 1 << 1,
+  | "duck" // = 1 << 2,
+  | "forward" // = 1 << 3,
+  | "back" // = 1 << 4,
+  | "use" // = 1 << 5,
+  | "cancel" // = 1 << 6,
+  | "left" // = 1 << 7,
+  | "right" // = 1 << 8,
+  | "moveleft" // = 1 << 9,
+  | "moveright" // = 1 << 10,
+  | "attack2" // = 1 << 11,
+  | "run" // = 1 << 12,
+  | "reload" // = 1 << 13,
+  | "alt1" // = 1 << 14,
+  | "alt2" // = 1 << 15,
+  | "score" // = 1 << 16, // Used by client.dll for when scoreboard is held down
+  | "speed" // = 1 << 17, // Player is holding the speed key
+  | "walk" // = 1 << 18, // Player holding walk key
+  | "zoom" // = 1 << 19, // Zoom key for HUD zoom
+  | "weapon1" // = 1 << 20, // weapon defines these bits
+  | "weapon2" // = 1 << 21, // weapon defines these bits
+  | "bullrush" // = 1 << 22,
+  | "grenade1" // = 1 << 23, // grenade 1
+  | "grenade2" // = 1 << 24, // grenade 2
+  | "lookspin"; // = 1 << 25
+
+export interface IUserCmd {
+  commandNumber: number;
+  tickCount: number;
+  viewAngles: Vector;
+  aimDirection: Vector;
+  forwardMove: number;
+  sideMove: number;
+  upMove: number;
+  buttons: ReadonlyArray<InputButton>;
+  impulse: number;
+  weaponSelect: number;
+  weaponSubType: number;
+  randomSeed: number;
+  mouseDeltaX: number;
+  mouseDeltaY: number;
 }
 
 /**
@@ -506,7 +559,99 @@ export class DemoFile extends EventEmitter {
 
   private _handleUserCmd() {
     this._bytebuf.readInt32(); // outgoing sequence
-    this._handleDataChunk(); // TODO: parse user command
+    const chunk = readIBytes(this._bytebuf);
+
+    // If nobody's listening, don't waste cycles decoding it
+    if (!this.listenerCount("usercmd")) return;
+
+    const bitbuf = BitStream.from(
+      chunk.buffer.slice(chunk.offset, chunk.limit)
+    );
+
+    const move = {
+      commandNumber: 0,
+      tickCount: 0,
+      viewAngles: { x: 0, y: 0, z: 0 },
+      aimDirection: { x: 0, y: 0, z: 0 },
+      forwardMove: 0,
+      sideMove: 0,
+      upMove: 0,
+      buttons: new Array<InputButton>(),
+      impulse: 0,
+      weaponSelect: 0,
+      weaponSubType: 0,
+      randomSeed: 0,
+      mouseDeltaX: 0,
+      mouseDeltaY: 0
+    };
+
+    if (bitbuf.readOneBit()) {
+      move.commandNumber = bitbuf.readUInt32();
+    } else {
+      move.commandNumber = 1;
+    }
+
+    if (bitbuf.readOneBit()) {
+      move.tickCount = bitbuf.readUInt32();
+    } else {
+      move.tickCount = 1;
+    }
+
+    // Read direction
+    if (bitbuf.readOneBit()) move.viewAngles.x = bitbuf.readFloat32();
+    if (bitbuf.readOneBit()) move.viewAngles.y = bitbuf.readFloat32();
+    if (bitbuf.readOneBit()) move.viewAngles.z = bitbuf.readFloat32();
+
+    // Read aim direction
+    if (bitbuf.readOneBit()) move.aimDirection.x = bitbuf.readFloat32();
+    if (bitbuf.readOneBit()) move.aimDirection.y = bitbuf.readFloat32();
+    if (bitbuf.readOneBit()) move.aimDirection.z = bitbuf.readFloat32();
+
+    // Read movement
+    if (bitbuf.readOneBit()) move.forwardMove = bitbuf.readFloat32();
+    if (bitbuf.readOneBit()) move.sideMove = bitbuf.readFloat32();
+    if (bitbuf.readOneBit()) move.upMove = bitbuf.readFloat32();
+
+    if (bitbuf.readOneBit()) {
+      const buttons = bitbuf.readUInt32();
+      if (buttons & (1 << 0)) move.buttons.push("attack");
+      if (buttons & (1 << 1)) move.buttons.push("jump");
+      if (buttons & (1 << 2)) move.buttons.push("duck");
+      if (buttons & (1 << 3)) move.buttons.push("forward");
+      if (buttons & (1 << 4)) move.buttons.push("back");
+      if (buttons & (1 << 5)) move.buttons.push("use");
+      if (buttons & (1 << 6)) move.buttons.push("cancel");
+      if (buttons & (1 << 7)) move.buttons.push("left");
+      if (buttons & (1 << 8)) move.buttons.push("right");
+      if (buttons & (1 << 9)) move.buttons.push("moveleft");
+      if (buttons & (1 << 10)) move.buttons.push("moveright");
+      if (buttons & (1 << 11)) move.buttons.push("attack2");
+      if (buttons & (1 << 12)) move.buttons.push("run");
+      if (buttons & (1 << 13)) move.buttons.push("reload");
+      if (buttons & (1 << 14)) move.buttons.push("alt1");
+      if (buttons & (1 << 15)) move.buttons.push("alt2");
+      if (buttons & (1 << 16)) move.buttons.push("score");
+      if (buttons & (1 << 17)) move.buttons.push("speed");
+      if (buttons & (1 << 18)) move.buttons.push("walk");
+      if (buttons & (1 << 19)) move.buttons.push("zoom");
+      if (buttons & (1 << 20)) move.buttons.push("weapon1");
+      if (buttons & (1 << 21)) move.buttons.push("weapon2");
+      if (buttons & (1 << 22)) move.buttons.push("bullrush");
+      if (buttons & (1 << 23)) move.buttons.push("grenade1");
+      if (buttons & (1 << 24)) move.buttons.push("grenade2");
+      if (buttons & (1 << 25)) move.buttons.push("lookspin");
+    }
+    if (bitbuf.readOneBit()) move.impulse = bitbuf.readUInt8();
+
+    if (bitbuf.readOneBit()) {
+      move.weaponSelect = bitbuf.readUBits(MAX_EDICT_BITS);
+      if (bitbuf.readOneBit()) move.weaponSubType = bitbuf.readUBits(6);
+    }
+
+    if (bitbuf.readOneBit()) move.mouseDeltaX = bitbuf.readInt16();
+    if (bitbuf.readOneBit()) move.mouseDeltaY = bitbuf.readInt16();
+
+    this.emit("usercmd", move);
   }
 
   private _handleStringTables() {
