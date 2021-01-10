@@ -14,9 +14,9 @@ const baseCEngineGotvSyncPacket = {
     rtdelay: 0,
     rcvage: 0,
     keyframeInterval: 0,
-    cdndelay: 0,
+    cdndelay: 0
 };
-exports.protobufPackage = '';
+exports.protobufPackage = "";
 exports.CEngineGotvSyncPacket = {
     encode(message, writer = minimal_1.Writer.create()) {
         writer.uint32(8).uint64(message.matchId);
@@ -74,6 +74,6 @@ exports.CEngineGotvSyncPacket = {
             }
         }
         return message;
-    },
+    }
 };
 //# sourceMappingURL=engine_gcmessages.js.map

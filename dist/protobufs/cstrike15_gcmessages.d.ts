@@ -1,6 +1,6 @@
-import * as Long from 'long';
-import { CEngineGotvSyncPacket } from './engine_gcmessages';
-import { Writer, Reader } from 'protobufjs/minimal';
+import * as Long from "long";
+import { CEngineGotvSyncPacket } from "./engine_gcmessages";
+import { Writer, Reader } from "protobufjs/minimal";
 export interface GameServerPing {
     ping: number;
     ip: number;

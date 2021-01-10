@@ -8,16 +8,16 @@ const minimal_1 = require("protobufjs/minimal");
 const baseGameServerPing = {
     ping: 0,
     ip: 0,
-    instances: 0,
+    instances: 0
 };
 const baseDataCenterPing = {
     dataCenterId: 0,
-    ping: 0,
+    ping: 0
 };
 const baseDetailedSearchStatistic = {
     gameType: 0,
     searchTimeAvg: 0,
-    playersSearching: 0,
+    playersSearching: 0
 };
 const baseTournamentPlayer = {
     accountId: 0,
@@ -26,13 +26,13 @@ const baseTournamentPlayer = {
     playerDob: 0,
     playerFlag: "",
     playerLocation: "",
-    playerDesc: "",
+    playerDesc: ""
 };
 const baseTournamentTeam = {
     teamId: 0,
     teamTag: "",
     teamFlag: "",
-    teamName: "",
+    teamName: ""
 };
 const baseTournamentEvent = {
     eventId: 0,
@@ -43,7 +43,7 @@ const baseTournamentEvent = {
     eventPublic: 0,
     eventStageId: 0,
     eventStageName: "",
-    activeSectionId: 0,
+    activeSectionId: 0
 };
 const baseGlobalStatistics = {
     playersOnline: 0,
@@ -59,19 +59,19 @@ const baseGlobalStatistics = {
     activeTournamentEventid: 0,
     activeSurveyId: 0,
     rtime32Cur: 0,
-    rtime32EventStart: 0,
+    rtime32EventStart: 0
 };
 const baseOperationalStatisticDescription = {
     name: "",
-    idkey: 0,
+    idkey: 0
 };
 const baseOperationalStatisticElement = {
     idkey: 0,
-    values: 0,
+    values: 0
 };
 const baseOperationalStatisticsPacket = {
     packetid: 0,
-    mstimestamp: 0,
+    mstimestamp: 0
 };
 const basePlayerRankingInfo = {
     accountId: 0,
@@ -79,28 +79,28 @@ const basePlayerRankingInfo = {
     wins: 0,
     rankChange: 0,
     rankTypeId: 0,
-    tvControl: 0,
+    tvControl: 0
 };
 const basePlayerCommendationInfo = {
     cmdFriendly: 0,
     cmdTeaching: 0,
-    cmdLeader: 0,
+    cmdLeader: 0
 };
 const basePlayerMedalsInfo = {
     displayItemsDefidx: 0,
-    featuredDisplayItemDefidx: 0,
+    featuredDisplayItemDefidx: 0
 };
 const baseAccountActivity = {
     activity: 0,
     mode: 0,
     map: 0,
-    matchid: Long.UZERO,
+    matchid: Long.UZERO
 };
 const baseTournamentMatchSetup = {
     eventId: 0,
     teamIdCt: 0,
     teamIdT: 0,
-    eventStageId: 0,
+    eventStageId: 0
 };
 const baseServerHltvInfo = {
     tvUdpPort: 0,
@@ -122,7 +122,7 @@ const baseServerHltvInfo = {
     tvRelayAddress: 0,
     tvRelayPort: 0,
     tvRelaySteamid: Long.UZERO,
-    flags: 0,
+    flags: 0
 };
 const baseIpAddressMask = {
     a: 0,
@@ -130,74 +130,74 @@ const baseIpAddressMask = {
     c: 0,
     d: 0,
     bits: 0,
-    token: 0,
+    token: 0
 };
 const baseCMsgCsgoSteamUserStatChange = {
     ecsgosteamuserstat: 0,
     delta: 0,
-    absolute: false,
+    absolute: false
 };
 const baseXpProgressData = {
     xpPoints: 0,
-    xpCategory: 0,
+    xpCategory: 0
 };
 const baseMatchEndItemUpdates = {
     itemId: Long.UZERO,
     itemAttrDefidx: 0,
-    itemAttrDeltaValue: 0,
+    itemAttrDeltaValue: 0
 };
 const baseScoreLeaderboardData = {
     questId: Long.UZERO,
-    score: 0,
+    score: 0
 };
 const baseScoreLeaderboardData_Entry = {
     tag: 0,
-    val: 0,
+    val: 0
 };
 const baseScoreLeaderboardData_AccountEntries = {
-    accountid: 0,
+    accountid: 0
 };
 const basePlayerQuestData = {
     questerAccountId: 0,
     timePlayed: 0,
     mmGameMode: 0,
-    operationPointsEligible: false,
+    operationPointsEligible: false
 };
 const basePlayerQuestData_QuestItemData = {
     questId: Long.UZERO,
     questNormalPointsEarned: 0,
-    questBonusPointsEarned: 0,
+    questBonusPointsEarned: 0
 };
 const baseCMsgGCServerQuestUpdateData = {
-    mmGameMode: 0,
+    mmGameMode: 0
 };
 const baseCMsgGCCStrike15V2MatchmakingGCOperationalStats = {
-    packetid: 0,
+    packetid: 0
 };
 const baseCMsgGCCStrike15V2MatchmakingGC2ServerConfirm = {
     token: 0,
     stamp: 0,
-    exchange: Long.UZERO,
+    exchange: Long.UZERO
 };
 const baseCMsgGCCStrike15V2GC2ServerReservationUpdate = {
     viewersExternalTotal: 0,
-    viewersExternalSteam: 0,
+    viewersExternalSteam: 0
 };
 const baseCMsgGCCStrike15V2MatchmakingStart = {
     accountIds: 0,
     gameType: 0,
     ticketData: "",
     clientVersion: 0,
-    primeOnly: false,
+    primeOnly: false
 };
 const baseCMsgGCCStrike15V2MatchmakingStop = {
-    abandon: 0,
+    abandon: 0
 };
 const baseCMsgGCCStrike15V2MatchmakingClient2ServerPing = {
     offsetIndex: 0,
     finalBatch: 0,
     maxPing: 0,
-    testToken: 0,
+    testToken: 0
 };
 const baseCMsgGCCStrike15V2MatchmakingGC2ClientUpdate = {
     matchmaking: 0,
@@ -212,13 +212,13 @@ const baseCMsgGCCStrike15V2MatchmakingGC2ClientUpdate = {
     insufficientlevelSessions: 0,
     vsncheckAccountIdSessions: 0,
     launcherMismatchSessions: 0,
-    insecureAccountIdSessions: 0,
+    insecureAccountIdSessions: 0
 };
 const baseCMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note = {
     type: 0,
     regionId: 0,
     regionR: 0,
-    distance: 0,
+    distance: 0
 };
 const baseCDataGCCStrike15V2TournamentMatchDraft = {
     eventId: 0,
@@ -229,20 +229,20 @@ const baseCDataGCCStrike15V2TournamentMatchDraft = {
     mapsCurrent: 0,
     teamIdStart: 0,
     teamIdVeto1: 0,
-    teamIdPickn: 0,
+    teamIdPickn: 0
 };
 const baseCDataGCCStrike15V2TournamentMatchDraft_Entry = {
     mapid: 0,
-    teamIdCt: 0,
+    teamIdCt: 0
 };
 const baseCPreMatchInfoData = {
     predictionsPct: 0,
-    wins: 0,
+    wins: 0
 };
 const baseCPreMatchInfoData_TeamStats = {
     matchInfoIdxtxt: 0,
     matchInfoTxt: "",
-    matchInfoTeams: "",
+    matchInfoTeams: ""
 };
 const baseCMsgGCCStrike15V2MatchmakingGC2ServerReserve = {
     accountIds: 0,
@@ -257,7 +257,7 @@ const baseCMsgGCCStrike15V2MatchmakingGC2ServerReserve = {
     tournamentCastersAccountIds: 0,
     tvRelaySteamid: Long.UZERO,
     rtime32EventStart: 0,
-    tvControl: 0,
+    tvControl: 0
 };
 const baseCMsgGCCStrike15V2MatchmakingServerReservationResponse = {
     reservationid: Long.UZERO,
@@ -274,7 +274,7 @@ const baseCMsgGCCStrike15V2MatchmakingServerReservationResponse = {
     legacySteamdatagramPort: 0,
     steamdatagramRouting: 0,
     testToken: 0,
-    flags: 0,
+    flags: 0
 };
 const baseCMsgGCCStrike15V2MatchmakingGC2ClientReserve = {
     serverid: Long.UZERO,
@@ -282,7 +282,7 @@ const baseCMsgGCCStrike15V2MatchmakingGC2ClientReserve = {
     directUdpPort: 0,
     reservationid: Long.UZERO,
     map: "",
-    serverAddress: "",
+    serverAddress: ""
 };
 const baseCMsgGCCStrike15V2MatchmakingServerRoundStats = {
     reservationid: Long.UZERO,
@@ -309,10 +309,10 @@ const baseCMsgGCCStrike15V2MatchmakingServerRoundStats = {
     spectatorsCountLnk: 0,
     enemyKillsAgg: 0,
     bSwitchedTeams: false,
-    enemy2ks: 0,
+    enemy2ks: 0
 };
 const baseCMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo = {
-    accountMvp: 0,
+    accountMvp: 0
 };
 const baseCMsgGCCStrike15V2MatchmakingClient2GCHello = {};
 const baseCMsgGCCStrike15V2MatchmakingGC2ClientHello = {
@@ -323,27 +323,27 @@ const baseCMsgGCCStrike15V2MatchmakingGC2ClientHello = {
     surveyVote: 0,
     playerLevel: 0,
     playerCurXp: 0,
-    playerXpBonusFlags: 0,
+    playerXpBonusFlags: 0
 };
 const baseCMsgGCCStrike15V2AccountPrivacySettings = {};
 const baseCMsgGCCStrike15V2AccountPrivacySettings_Setting = {
     settingType: 0,
-    settingValue: 0,
+    settingValue: 0
 };
 const baseCMsgGCCStrike15V2MatchmakingGC2ClientAbandon = {
     accountId: 0,
     penaltySeconds: 0,
-    penaltyReason: 0,
+    penaltyReason: 0
 };
 const baseCMsgGCCStrike15V2ClientGCRankUpdate = {};
 const baseCMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate = {
-    mainPostUrl: "",
+    mainPostUrl: ""
 };
 const baseCMsgGCCStrike15V2ServerNotificationForUserPenalty = {
     accountId: 0,
     reason: 0,
     seconds: 0,
-    communicationCooldown: false,
+    communicationCooldown: false
 };
 const baseCMsgGCCStrike15V2ClientReportPlayer = {
     accountId: 0,
@@ -354,12 +354,12 @@ const baseCMsgGCCStrike15V2ClientReportPlayer = {
     rptTextabuse: 0,
     rptVoiceabuse: 0,
     matchId: Long.UZERO,
-    reportFromDemo: false,
+    reportFromDemo: false
 };
 const baseCMsgGCCStrike15V2ClientCommendPlayer = {
     accountId: 0,
     matchId: Long.UZERO,
-    tokens: 0,
+    tokens: 0
 };
 const baseCMsgGCCStrike15V2ClientReportServer = {
     rptPoorperf: 0,
@@ -367,7 +367,7 @@ const baseCMsgGCCStrike15V2ClientReportServer = {
     rptBadmotd: 0,
     rptListingabuse: 0,
     rptInventoryabuse: 0,
-    matchId: Long.UZERO,
+    matchId: Long.UZERO
 };
 const baseCMsgGCCStrike15V2ClientReportResponse = {
     confirmationId: Long.UZERO,
@@ -375,14 +375,14 @@ const baseCMsgGCCStrike15V2ClientReportResponse = {
     serverIp: 0,
     responseType: 0,
     responseResult: 0,
-    tokens: 0,
+    tokens: 0
 };
 const baseCMsgGCCStrike15V2ClientRequestWatchInfoFriends = {
     requestId: 0,
     accountIds: 0,
     serverid: Long.UZERO,
     matchid: Long.UZERO,
-    clientLauncher: 0,
+    clientLauncher: 0
 };
 const baseWatchableMatchInfo = {
     serverIp: 0,
@@ -396,14 +396,14 @@ const baseWatchableMatchInfo = {
     gameMap: "",
     serverId: Long.UZERO,
     matchId: Long.UZERO,
-    reservationId: Long.UZERO,
+    reservationId: Long.UZERO
 };
 const baseCMsgGCCStrike15V2ClientRequestJoinFriendData = {
     version: 0,
     accountId: 0,
     joinToken: 0,
     joinIpp: 0,
-    errormsg: "",
+    errormsg: ""
 };
 const baseCMsgGCCStrike15V2ClientRequestJoinServerData = {
     version: 0,
@@ -411,32 +411,32 @@ const baseCMsgGCCStrike15V2ClientRequestJoinServerData = {
     serverid: Long.UZERO,
     serverIp: 0,
     serverPort: 0,
-    errormsg: "",
+    errormsg: ""
 };
 const baseCMsgGCCstrike15V2ClientRequestNewMission = {
     missionId: 0,
-    campaignId: 0,
+    campaignId: 0
 };
 const baseCMsgGCCstrike15V2GC2ServerNotifyXPRewarded = {
     accountId: 0,
     currentXp: 0,
     currentLevel: 0,
     upgradedDefidx: 0,
-    operationPointsAwarded: 0,
+    operationPointsAwarded: 0
 };
 const baseCMsgGCCStrike15V2WatchInfoUsers = {
     requestId: 0,
     accountIds: 0,
-    extendedTimeout: 0,
+    extendedTimeout: 0
 };
 const baseCMsgGCCStrike15V2ClientRequestPlayersProfile = {
     requestId_deprecated: 0,
     accountIds_deprecated: 0,
     accountId: 0,
-    requestLevel: 0,
+    requestLevel: 0
 };
 const baseCMsgGCCStrike15V2PlayersProfile = {
-    requestId: 0,
+    requestId: 0
 };
 const baseCMsgGCCStrike15V2PlayerOverwatchCaseUpdate = {
     caseid: Long.UZERO,
@@ -446,7 +446,7 @@ const baseCMsgGCCStrike15V2PlayerOverwatchCaseUpdate = {
     rptWallhack: 0,
     rptSpeedhack: 0,
     rptTeamharm: 0,
-    reason: 0,
+    reason: 0
 };
 const baseCMsgGCCStrike15V2PlayerOverwatchCaseAssignment = {
     caseid: Long.UZERO,
@@ -459,22 +459,22 @@ const baseCMsgGCCStrike15V2PlayerOverwatchCaseAssignment = {
     numrounds: 0,
     fractionrounds: 0,
     streakconvictions: 0,
-    reason: 0,
+    reason: 0
 };
 const baseCMsgGCCStrike15V2PlayerOverwatchCaseStatus = {
     caseid: Long.UZERO,
-    statusid: 0,
+    statusid: 0
 };
 const baseCClientHeaderOverwatchEvidence = {
     accountid: 0,
-    caseid: Long.UZERO,
+    caseid: Long.UZERO
 };
 const baseCMsgGCCStrike15V2GC2ClientTextMsg = {
     id: 0,
-    type: 0,
+    type: 0
 };
 const baseCMsgGCCStrike15V2Client2GCTextMsg = {
-    id: 0,
+    id: 0
 };
 const baseCMsgGCCStrike15V2MatchEndRunRewardDrops = {};
 const baseCEconItemPreviewDataBlock = {
@@ -494,7 +494,7 @@ const baseCEconItemPreviewDataBlock = {
     questid: 0,
     dropreason: 0,
     musicindex: 0,
-    entindex: 0,
+    entindex: 0
 };
 const baseCEconItemPreviewDataBlock_Sticker = {
     slot: 0,
@@ -502,7 +502,7 @@ const baseCEconItemPreviewDataBlock_Sticker = {
     wear: 0,
     scale: 0,
     rotation: 0,
-    tintId: 0,
+    tintId: 0
 };
 const baseCMsgGCCStrike15V2MatchEndRewardDropsNotification = {};
 const baseCMsgItemAcknowledged = {};
@@ -510,32 +510,32 @@ const baseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest = {
     paramS: Long.UZERO,
     paramA: Long.UZERO,
     paramD: Long.UZERO,
-    paramM: Long.UZERO,
+    paramM: Long.UZERO
 };
 const baseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse = {};
 const baseCMsgGCCStrike15V2MatchListRequestCurrentLiveGames = {};
 const baseCMsgGCCStrike15V2MatchListRequestLiveGameForUser = {
-    accountid: 0,
+    accountid: 0
 };
 const baseCMsgGCCStrike15V2MatchListRequestRecentUserGames = {
-    accountid: 0,
+    accountid: 0
 };
 const baseCMsgGCCStrike15V2MatchListRequestTournamentGames = {
-    eventid: 0,
+    eventid: 0
 };
 const baseCMsgGCCStrike15V2MatchListRequestFullGameInfo = {
     matchid: Long.UZERO,
     outcomeid: Long.UZERO,
-    token: 0,
+    token: 0
 };
 const baseCDataGCCStrike15V2MatchInfo = {
     matchid: Long.UZERO,
-    matchtime: 0,
+    matchtime: 0
 };
 const baseCDataGCCStrike15V2TournamentGroupTeam = {
     teamId: 0,
     score: 0,
-    correctpick: false,
+    correctpick: false
 };
 const baseCDataGCCStrike15V2TournamentGroup = {
     groupid: 0,
@@ -545,45 +545,45 @@ const baseCDataGCCStrike15V2TournamentGroup = {
     stageIds: 0,
     picklockuntiltime: 0,
     pickableteams: 0,
-    pointsPerPick: 0,
+    pointsPerPick: 0
 };
 const baseCDataGCCStrike15V2TournamentGroup_Picks = {
-    pickids: 0,
+    pickids: 0
 };
 const baseCDataGCCStrike15V2TournamentSection = {
     sectionid: 0,
     name: "",
-    desc: "",
+    desc: ""
 };
 const baseCDataGCCStrike15V2TournamentInfo = {};
 const baseCMsgGCCStrike15V2MatchList = {
     msgrequestid: 0,
     accountid: 0,
-    servertime: 0,
+    servertime: 0
 };
 const baseCMsgGCCStrike15V2Predictions = {
-    eventId: 0,
+    eventId: 0
 };
 const baseCMsgGCCStrike15V2Predictions_GroupMatchTeamPick = {
     sectionid: 0,
     groupid: 0,
     index: 0,
     teamid: 0,
-    itemid: Long.UZERO,
+    itemid: Long.UZERO
 };
 const baseCMsgGCCStrike15V2Fantasy = {
-    eventId: 0,
+    eventId: 0
 };
 const baseCMsgGCCStrike15V2Fantasy_FantasySlot = {
     type: 0,
     pick: 0,
-    itemid: Long.UZERO,
+    itemid: Long.UZERO
 };
 const baseCMsgGCCStrike15V2Fantasy_FantasyTeam = {
-    sectionid: 0,
+    sectionid: 0
 };
 const baseCAttributeString = {
-    value: "",
+    value: ""
 };
 const baseCMsgCStrike15Welcome = {
     storeItemHash: 0,
@@ -592,103 +592,103 @@ const baseCMsgCStrike15Welcome = {
     lastTimePlayed: 0,
     lastIpAddress: 0,
     gscookieid: Long.UZERO,
-    uniqueid: Long.UZERO,
+    uniqueid: Long.UZERO
 };
 const baseCMsgGCCStrike15V2ClientVarValueNotificationInfo = {
     valueName: "",
     valueInt: 0,
     serverAddr: 0,
     serverPort: 0,
-    chokedBlocks: "",
+    chokedBlocks: ""
 };
 const baseCMsgGCCStrike15V2ServerVarValueNotificationInfo = {
     accountid: 0,
     viewangles: 0,
-    type: 0,
+    type: 0
 };
 const baseCMsgGCCStrike15V2GiftsLeaderboardRequest = {};
 const baseCMsgGCCStrike15V2GiftsLeaderboardResponse = {
     servertime: 0,
     timePeriodSeconds: 0,
     totalGiftsGiven: 0,
-    totalGivers: 0,
+    totalGivers: 0
 };
 const baseCMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry = {
     accountid: 0,
-    gifts: 0,
+    gifts: 0
 };
 const baseCMsgGCCStrike15V2ClientSubmitSurveyVote = {
     surveyId: 0,
-    vote: 0,
+    vote: 0
 };
 const baseCMsgGCCStrike15V2Server2GCClientValidate = {
-    accountid: 0,
+    accountid: 0
 };
 const baseCMsgGCCStrike15V2GC2ClientTournamentInfo = {
     eventid: 0,
     stageid: 0,
     gameType: 0,
-    teamids: 0,
+    teamids: 0
 };
 const baseCSOEconCoupon = {
     entryid: 0,
     defidx: 0,
-    expirationDate: 0,
+    expirationDate: 0
 };
 const baseCSOQuestProgress = {
     questid: 0,
     pointsRemaining: 0,
-    bonusPoints: 0,
+    bonusPoints: 0
 };
 const baseCSOAccountSeasonalOperation = {
     seasonValue: 0,
     tierUnlocked: 0,
     premiumTiers: 0,
     missionId: 0,
-    missionsCompleted: 0,
+    missionsCompleted: 0
 };
 const baseCSOPersonaDataPublic = {
     playerLevel: 0,
-    elevatedState: false,
+    elevatedState: false
 };
 const baseCMsgGCGlobalGameSubscribe = {
-    ticket: Long.UZERO,
+    ticket: Long.UZERO
 };
 const baseCMsgGCGlobalGameUnsubscribe = {
-    timeleft: 0,
+    timeleft: 0
 };
 const baseCMsgGCGlobalGamePlay = {
     ticket: Long.UZERO,
     gametimems: 0,
-    msperpoint: 0,
+    msperpoint: 0
 };
 const baseCMsgGCCStrike15V2AcknowledgePenalty = {
-    acknowledged: 0,
+    acknowledged: 0
 };
 const baseCMsgGCCStrike15V2Client2GCRequestPrestigeCoin = {
     defindex: 0,
     upgradeid: Long.UZERO,
     hours: 0,
-    prestigetime: 0,
+    prestigetime: 0
 };
 const baseCMsgGCCStrike15V2Client2GCStreamUnlock = {
     ticket: Long.UZERO,
-    os: 0,
+    os: 0
 };
 const baseCMsgGCCStrike15V2ClientToGCRequestElevate = {
-    stage: 0,
+    stage: 0
 };
 const baseCMsgGCCStrike15V2ClientToGCChat = {
     matchId: Long.UZERO,
-    text: "",
+    text: ""
 };
 const baseCMsgGCCStrike15V2GCToClientChat = {
     accountId: 0,
-    text: "",
+    text: ""
 };
 const baseCMsgGCCStrike15V2ClientAuthKeyCode = {
     eventid: 0,
-    code: "",
+    code: ""
 };
 const baseCMsgGCCStrike15GotvSyncPacket = {};
 const basePlayerDecalDigitalSignature = {
@@ -704,20 +704,20 @@ const basePlayerDecalDigitalSignature = {
     equipslot: 0,
     traceId: 0,
     normal: 0,
-    tintId: 0,
+    tintId: 0
 };
 const baseCMsgGCCStrike15V2ClientPlayerDecalSign = {
-    itemid: Long.UZERO,
+    itemid: Long.UZERO
 };
 const baseCMsgGCCStrike15V2ClientLogonFatalError = {
     errorcode: 0,
     message: "",
-    country: "",
+    country: ""
 };
 const baseCMsgGCCStrike15V2ClientPollState = {
     pollid: 0,
     names: "",
-    values: 0,
+    values: 0
 };
 const baseCMsgGCCStrike15V2PartyRegister = {
     id: 0,
@@ -728,7 +728,7 @@ const baseCMsgGCCStrike15V2PartyRegister = {
     grp: 0,
     slots: 0,
     launcher: 0,
-    gameType: 0,
+    gameType: 0
 };
 const baseCMsgGCCStrike15V2PartySearch = {
     ver: 0,
@@ -736,7 +736,7 @@ const baseCMsgGCCStrike15V2PartySearch = {
     ark: 0,
     grps: 0,
     launcher: 0,
-    gameType: 0,
+    gameType: 0
 };
 const baseCMsgGCCStrike15V2PartySearchResults = {};
 const baseCMsgGCCStrike15V2PartySearchResults_Entry = {
@@ -745,70 +745,70 @@ const baseCMsgGCCStrike15V2PartySearchResults_Entry = {
     gameType: 0,
     apr: 0,
     ark: 0,
-    loc: 0,
+    loc: 0
 };
 const baseCMsgGCCStrike15V2PartyInvite = {
     accountid: 0,
-    lobbyid: 0,
+    lobbyid: 0
 };
 const baseCMsgGCCStrike15V2AccountRequestCoPlays = {
-    servertime: 0,
+    servertime: 0
 };
 const baseCMsgGCCStrike15V2AccountRequestCoPlays_Player = {
     accountid: 0,
     rtcoplay: 0,
-    online: false,
+    online: false
 };
 const baseCMsgGCCStrike15V2ClientToGCRequestTicket = {
     authorizedSteamId: Long.UZERO,
     authorizedPublicIp: 0,
     gameserverSteamId: Long.UZERO,
-    gameserverSdrRouting: "",
+    gameserverSdrRouting: ""
 };
 const baseCMsgGCToClientSteamDatagramTicket = {};
 const baseCMsgGCCStrike15V2ClientRequestOffers = {};
 const baseCMsgGCCStrike15V2ClientRequestSouvenir = {
     itemid: Long.UZERO,
     matchid: Long.UZERO,
-    eventid: 0,
+    eventid: 0
 };
 const baseCMsgGCCStrike15V2ClientAccountBalance = {
     amount: Long.UZERO,
-    url: "",
+    url: ""
 };
 const baseCMsgGCCStrike15V2ClientPartyJoinRelay = {
     accountid: 0,
-    lobbyid: Long.UZERO,
+    lobbyid: Long.UZERO
 };
 const baseCMsgGCCStrike15V2ClientPartyWarning = {};
 const baseCMsgGCCStrike15V2ClientPartyWarning_Entry = {
     accountid: 0,
-    warntype: 0,
+    warntype: 0
 };
 const baseCMsgGCCStrike15V2SetEventFavorite = {
     eventid: Long.UZERO,
-    isFavorite: false,
+    isFavorite: false
 };
 const baseCMsgGCCStrike15V2GetEventFavoritesRequest = {
-    allEvents: false,
+    allEvents: false
 };
 const baseCMsgGCCStrike15V2GetEventFavoritesResponse = {
     allEvents: false,
     jsonFavorites: "",
-    jsonFeatured: "",
+    jsonFeatured: ""
 };
 const baseCMsgGCCStrike15V2ClientPerfReport = {};
 const baseCMsgGCCStrike15V2ClientPerfReport_Entry = {
     perfcounter: 0,
     length: 0,
     sourceid: 0,
-    status: 0,
+    status: 0
 };
 const baseCVDiagnostic = {
     id: 0,
     extended: 0,
     value: Long.UZERO,
-    stringValue: "",
+    stringValue: ""
 };
 const baseCMsgGCCStrike15V2ClientReportValidation = {
     fileReport: "",
@@ -829,7 +829,7 @@ const baseCMsgGCCStrike15V2ClientReportValidation = {
     reportCount: 0,
     clientTime: Long.UZERO,
     diagnostic4: Long.UZERO,
-    diagnostic5: Long.UZERO,
+    diagnostic5: Long.UZERO
 };
 const baseCMsgGCCStrike15V2GC2ClientRefuseSecureMode = {
     fileReport: "",
@@ -838,13 +838,13 @@ const baseCMsgGCCStrike15V2GC2ClientRefuseSecureMode = {
     showUnsignedUi: false,
     kickUser: false,
     showTrustedUi: false,
-    showWarningNotTrusted: false,
+    showWarningNotTrusted: false
 };
 const baseCMsgGCCStrike15V2GC2ClientRequestValidation = {
     fullReport: false,
-    module: "",
+    module: ""
 };
-exports.protobufPackage = '';
+exports.protobufPackage = "";
 var ECsgoGCMsg;
 (function (ECsgoGCMsg) {
     ECsgoGCMsg[ECsgoGCMsg["k_EMsgGCCStrike15_v2_Base"] = 9100] = "k_EMsgGCCStrike15_v2_Base";
@@ -981,7 +981,7 @@ exports.GameServerPing = {
             }
         }
         return message;
-    },
+    }
 };
 exports.DataCenterPing = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1008,7 +1008,7 @@ exports.DataCenterPing = {
             }
         }
         return message;
-    },
+    }
 };
 exports.DetailedSearchStatistic = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1020,7 +1020,9 @@ exports.DetailedSearchStatistic = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseDetailedSearchStatistic };
+        const message = {
+            ...baseDetailedSearchStatistic
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1039,7 +1041,7 @@ exports.DetailedSearchStatistic = {
             }
         }
         return message;
-    },
+    }
 };
 exports.TournamentPlayer = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1086,7 +1088,7 @@ exports.TournamentPlayer = {
             }
         }
         return message;
-    },
+    }
 };
 exports.TournamentTeam = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1128,7 +1130,7 @@ exports.TournamentTeam = {
             }
         }
         return message;
-    },
+    }
 };
 exports.TournamentEvent = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1183,7 +1185,7 @@ exports.TournamentEvent = {
             }
         }
         return message;
-    },
+    }
 };
 exports.GlobalStatistics = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1265,7 +1267,7 @@ exports.GlobalStatistics = {
             }
         }
         return message;
-    },
+    }
 };
 exports.OperationalStatisticDescription = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1276,7 +1278,9 @@ exports.OperationalStatisticDescription = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseOperationalStatisticDescription };
+        const message = {
+            ...baseOperationalStatisticDescription
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1292,7 +1296,7 @@ exports.OperationalStatisticDescription = {
             }
         }
         return message;
-    },
+    }
 };
 exports.OperationalStatisticElement = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1307,7 +1311,9 @@ exports.OperationalStatisticElement = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseOperationalStatisticElement };
+        const message = {
+            ...baseOperationalStatisticElement
+        };
         message.values = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -1332,7 +1338,7 @@ exports.OperationalStatisticElement = {
             }
         }
         return message;
-    },
+    }
 };
 exports.OperationalStatisticsPacket = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1346,7 +1352,9 @@ exports.OperationalStatisticsPacket = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseOperationalStatisticsPacket };
+        const message = {
+            ...baseOperationalStatisticsPacket
+        };
         message.values = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -1366,7 +1374,7 @@ exports.OperationalStatisticsPacket = {
             }
         }
         return message;
-    },
+    }
 };
 exports.PlayerRankingInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1409,7 +1417,7 @@ exports.PlayerRankingInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.PlayerCommendationInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1440,7 +1448,7 @@ exports.PlayerCommendationInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.PlayerMedalsInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1480,7 +1488,7 @@ exports.PlayerMedalsInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.AccountActivity = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1515,7 +1523,7 @@ exports.AccountActivity = {
             }
         }
         return message;
-    },
+    }
 };
 exports.TournamentMatchSetup = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1550,7 +1558,7 @@ exports.TournamentMatchSetup = {
             }
         }
         return message;
-    },
+    }
 };
 exports.ServerHltvInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1649,7 +1657,7 @@ exports.ServerHltvInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.IpAddressMask = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1692,7 +1700,7 @@ exports.IpAddressMask = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgCsgoSteamUserStatChange = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1704,7 +1712,9 @@ exports.CMsgCsgoSteamUserStatChange = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgCsgoSteamUserStatChange };
+        const message = {
+            ...baseCMsgCsgoSteamUserStatChange
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1723,7 +1733,7 @@ exports.CMsgCsgoSteamUserStatChange = {
             }
         }
         return message;
-    },
+    }
 };
 exports.XpProgressData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1750,7 +1760,7 @@ exports.XpProgressData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.MatchEndItemUpdates = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1781,7 +1791,7 @@ exports.MatchEndItemUpdates = {
             }
         }
         return message;
-    },
+    }
 };
 exports.ScoreLeaderboardData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1822,7 +1832,7 @@ exports.ScoreLeaderboardData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.ScoreLeaderboardData_Entry = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1833,7 +1843,9 @@ exports.ScoreLeaderboardData_Entry = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseScoreLeaderboardData_Entry };
+        const message = {
+            ...baseScoreLeaderboardData_Entry
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1849,7 +1861,7 @@ exports.ScoreLeaderboardData_Entry = {
             }
         }
         return message;
-    },
+    }
 };
 exports.ScoreLeaderboardData_AccountEntries = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1862,7 +1874,9 @@ exports.ScoreLeaderboardData_AccountEntries = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseScoreLeaderboardData_AccountEntries };
+        const message = {
+            ...baseScoreLeaderboardData_AccountEntries
+        };
         message.entries = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -1879,7 +1893,7 @@ exports.ScoreLeaderboardData_AccountEntries = {
             }
         }
         return message;
-    },
+    }
 };
 exports.PlayerQuestData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1942,7 +1956,7 @@ exports.PlayerQuestData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.PlayerQuestData_QuestItemData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1954,7 +1968,9 @@ exports.PlayerQuestData_QuestItemData = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...basePlayerQuestData_QuestItemData };
+        const message = {
+            ...basePlayerQuestData_QuestItemData
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1973,7 +1989,7 @@ exports.PlayerQuestData_QuestItemData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCServerQuestUpdateData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1982,7 +1998,8 @@ exports.CMsgGCServerQuestUpdateData = {
         }
         writer.uint32(18).bytes(message.binaryData);
         writer.uint32(24).uint32(message.mmGameMode);
-        if (message.missionlbsdata !== undefined && message.missionlbsdata !== undefined) {
+        if (message.missionlbsdata !== undefined &&
+            message.missionlbsdata !== undefined) {
             exports.ScoreLeaderboardData.encode(message.missionlbsdata, writer.uint32(34).fork()).ldelim();
         }
         return writer;
@@ -1990,7 +2007,9 @@ exports.CMsgGCServerQuestUpdateData = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCServerQuestUpdateData };
+        const message = {
+            ...baseCMsgGCServerQuestUpdateData
+        };
         message.playerQuestData = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -2013,7 +2032,7 @@ exports.CMsgGCServerQuestUpdateData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingGCOperationalStats = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2029,7 +2048,9 @@ exports.CMsgGCCStrike15V2MatchmakingGCOperationalStats = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingGCOperationalStats };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingGCOperationalStats
+        };
         message.namekeys = [];
         message.packets = [];
         while (reader.pos < end) {
@@ -2050,7 +2071,7 @@ exports.CMsgGCCStrike15V2MatchmakingGCOperationalStats = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingGC2ServerConfirm = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2062,7 +2083,9 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ServerConfirm = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingGC2ServerConfirm };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingGC2ServerConfirm
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2081,7 +2104,7 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ServerConfirm = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2GC2ServerReservationUpdate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2092,7 +2115,9 @@ exports.CMsgGCCStrike15V2GC2ServerReservationUpdate = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2GC2ServerReservationUpdate };
+        const message = {
+            ...baseCMsgGCCStrike15V2GC2ServerReservationUpdate
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2108,7 +2133,7 @@ exports.CMsgGCCStrike15V2GC2ServerReservationUpdate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingStart = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2120,7 +2145,8 @@ exports.CMsgGCCStrike15V2MatchmakingStart = {
         writer.uint32(16).uint32(message.gameType);
         writer.uint32(26).string(message.ticketData);
         writer.uint32(32).uint32(message.clientVersion);
-        if (message.tournamentMatch !== undefined && message.tournamentMatch !== undefined) {
+        if (message.tournamentMatch !== undefined &&
+            message.tournamentMatch !== undefined) {
             exports.TournamentMatchSetup.encode(message.tournamentMatch, writer.uint32(42).fork()).ldelim();
         }
         writer.uint32(48).bool(message.primeOnly);
@@ -2129,7 +2155,9 @@ exports.CMsgGCCStrike15V2MatchmakingStart = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingStart };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingStart
+        };
         message.accountIds = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -2166,7 +2194,7 @@ exports.CMsgGCCStrike15V2MatchmakingStart = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingStop = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2176,7 +2204,9 @@ exports.CMsgGCCStrike15V2MatchmakingStop = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingStop };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingStop
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2189,7 +2219,7 @@ exports.CMsgGCCStrike15V2MatchmakingStop = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingClient2ServerPing = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2208,7 +2238,9 @@ exports.CMsgGCCStrike15V2MatchmakingClient2ServerPing = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingClient2ServerPing };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingClient2ServerPing
+        };
         message.gameserverpings = [];
         message.dataCenterPings = [];
         while (reader.pos < end) {
@@ -2238,7 +2270,7 @@ exports.CMsgGCCStrike15V2MatchmakingClient2ServerPing = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2254,7 +2286,8 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate = {
             writer.uint32(v);
         }
         writer.ldelim();
-        if (message.globalStats !== undefined && message.globalStats !== undefined) {
+        if (message.globalStats !== undefined &&
+            message.globalStats !== undefined) {
             exports.GlobalStatistics.encode(message.globalStats, writer.uint32(58).fork()).ldelim();
         }
         writer.uint32(66).fork();
@@ -2277,7 +2310,8 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate = {
             writer.uint32(v);
         }
         writer.ldelim();
-        if (message.serverIpaddressMask !== undefined && message.serverIpaddressMask !== undefined) {
+        if (message.serverIpaddressMask !== undefined &&
+            message.serverIpaddressMask !== undefined) {
             exports.IpAddressMask.encode(message.serverIpaddressMask, writer.uint32(98).fork()).ldelim();
         }
         for (const v of message.notes) {
@@ -2313,7 +2347,9 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingGC2ClientUpdate };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingGC2ClientUpdate
+        };
         message.waitingAccountIdSessions = [];
         message.ongoingmatchAccountIdSessions = [];
         message.failpingAccountIdSessions = [];
@@ -2471,7 +2507,7 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2484,7 +2520,9 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2506,7 +2544,7 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CDataGCCStrike15V2TournamentMatchDraft = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2527,7 +2565,9 @@ exports.CDataGCCStrike15V2TournamentMatchDraft = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCDataGCCStrike15V2TournamentMatchDraft };
+        const message = {
+            ...baseCDataGCCStrike15V2TournamentMatchDraft
+        };
         message.drafts = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -2568,7 +2608,7 @@ exports.CDataGCCStrike15V2TournamentMatchDraft = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CDataGCCStrike15V2TournamentMatchDraft_Entry = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2579,7 +2619,9 @@ exports.CDataGCCStrike15V2TournamentMatchDraft_Entry = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCDataGCCStrike15V2TournamentMatchDraft_Entry };
+        const message = {
+            ...baseCDataGCCStrike15V2TournamentMatchDraft_Entry
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2595,7 +2637,7 @@ exports.CDataGCCStrike15V2TournamentMatchDraft_Entry = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CPreMatchInfoData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2648,7 +2690,7 @@ exports.CPreMatchInfoData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CPreMatchInfoData_TeamStats = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2662,7 +2704,9 @@ exports.CPreMatchInfoData_TeamStats = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCPreMatchInfoData_TeamStats };
+        const message = {
+            ...baseCPreMatchInfoData_TeamStats
+        };
         message.matchInfoTeams = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -2682,7 +2726,7 @@ exports.CPreMatchInfoData_TeamStats = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2709,7 +2753,8 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve = {
             exports.IpAddressMask.encode(v, writer.uint32(74).fork()).ldelim();
         }
         writer.uint32(80).uint64(message.tvMasterSteamid);
-        if (message.tournamentEvent !== undefined && message.tournamentEvent !== undefined) {
+        if (message.tournamentEvent !== undefined &&
+            message.tournamentEvent !== undefined) {
             exports.TournamentEvent.encode(message.tournamentEvent, writer.uint32(90).fork()).ldelim();
         }
         for (const v of message.tournamentTeams) {
@@ -2721,7 +2766,8 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve = {
         }
         writer.ldelim();
         writer.uint32(112).uint64(message.tvRelaySteamid);
-        if (message.preMatchData !== undefined && message.preMatchData !== undefined) {
+        if (message.preMatchData !== undefined &&
+            message.preMatchData !== undefined) {
             exports.CPreMatchInfoData.encode(message.preMatchData, writer.uint32(122).fork()).ldelim();
         }
         writer.uint32(128).uint32(message.rtime32EventStart);
@@ -2731,7 +2777,9 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingGC2ServerReserve };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingGC2ServerReserve
+        };
         message.accountIds = [];
         message.rankings = [];
         message.partyIds = [];
@@ -2825,12 +2873,13 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingServerReservationResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
         writer.uint32(8).uint64(message.reservationid);
-        if (message.reservation !== undefined && message.reservation !== undefined) {
+        if (message.reservation !== undefined &&
+            message.reservation !== undefined) {
             exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.encode(message.reservation, writer.uint32(18).fork()).ldelim();
         }
         writer.uint32(26).string(message.map);
@@ -2863,7 +2912,9 @@ exports.CMsgGCCStrike15V2MatchmakingServerReservationResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingServerReservationResponse };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingServerReservationResponse
+        };
         message.rewardPlayerAccounts = [];
         message.idlePlayerAccounts = [];
         while (reader.pos < end) {
@@ -2942,7 +2993,7 @@ exports.CMsgGCCStrike15V2MatchmakingServerReservationResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2950,7 +3001,8 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve = {
         writer.uint32(16).uint32(message.directUdpIp);
         writer.uint32(24).uint32(message.directUdpPort);
         writer.uint32(32).uint64(message.reservationid);
-        if (message.reservation !== undefined && message.reservation !== undefined) {
+        if (message.reservation !== undefined &&
+            message.reservation !== undefined) {
             exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.encode(message.reservation, writer.uint32(42).fork()).ldelim();
         }
         writer.uint32(50).string(message.map);
@@ -2960,7 +3012,9 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingGC2ClientReserve };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingGC2ClientReserve
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2991,12 +3045,13 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingServerRoundStats = {
     encode(message, writer = minimal_1.Writer.create()) {
         writer.uint32(8).uint64(message.reservationid);
-        if (message.reservation !== undefined && message.reservation !== undefined) {
+        if (message.reservation !== undefined &&
+            message.reservation !== undefined) {
             exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.encode(message.reservation, writer.uint32(18).fork()).ldelim();
         }
         writer.uint32(26).string(message.map);
@@ -3090,7 +3145,9 @@ exports.CMsgGCCStrike15V2MatchmakingServerRoundStats = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingServerRoundStats };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingServerRoundStats
+        };
         message.kills = [];
         message.assists = [];
         message.deaths = [];
@@ -3310,7 +3367,7 @@ exports.CMsgGCCStrike15V2MatchmakingServerRoundStats = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3320,7 +3377,9 @@ exports.CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3333,7 +3392,7 @@ exports.CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingClient2GCHello = {
     encode(_, writer = minimal_1.Writer.create()) {
@@ -3342,7 +3401,9 @@ exports.CMsgGCCStrike15V2MatchmakingClient2GCHello = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingClient2GCHello };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingClient2GCHello
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3352,15 +3413,17 @@ exports.CMsgGCCStrike15V2MatchmakingClient2GCHello = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingGC2ClientHello = {
     encode(message, writer = minimal_1.Writer.create()) {
         writer.uint32(8).uint32(message.accountId);
-        if (message.ongoingmatch !== undefined && message.ongoingmatch !== undefined) {
+        if (message.ongoingmatch !== undefined &&
+            message.ongoingmatch !== undefined) {
             exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve.encode(message.ongoingmatch, writer.uint32(18).fork()).ldelim();
         }
-        if (message.globalStats !== undefined && message.globalStats !== undefined) {
+        if (message.globalStats !== undefined &&
+            message.globalStats !== undefined) {
             exports.GlobalStatistics.encode(message.globalStats, writer.uint32(26).fork()).ldelim();
         }
         writer.uint32(32).uint32(message.penaltySeconds);
@@ -3369,19 +3432,22 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientHello = {
         if (message.ranking !== undefined && message.ranking !== undefined) {
             exports.PlayerRankingInfo.encode(message.ranking, writer.uint32(58).fork()).ldelim();
         }
-        if (message.commendation !== undefined && message.commendation !== undefined) {
+        if (message.commendation !== undefined &&
+            message.commendation !== undefined) {
             exports.PlayerCommendationInfo.encode(message.commendation, writer.uint32(66).fork()).ldelim();
         }
         if (message.medals !== undefined && message.medals !== undefined) {
             exports.PlayerMedalsInfo.encode(message.medals, writer.uint32(74).fork()).ldelim();
         }
-        if (message.myCurrentEvent !== undefined && message.myCurrentEvent !== undefined) {
+        if (message.myCurrentEvent !== undefined &&
+            message.myCurrentEvent !== undefined) {
             exports.TournamentEvent.encode(message.myCurrentEvent, writer.uint32(82).fork()).ldelim();
         }
         for (const v of message.myCurrentEventTeams) {
             exports.TournamentTeam.encode(v, writer.uint32(90).fork()).ldelim();
         }
-        if (message.myCurrentTeam !== undefined && message.myCurrentTeam !== undefined) {
+        if (message.myCurrentTeam !== undefined &&
+            message.myCurrentTeam !== undefined) {
             exports.TournamentTeam.encode(message.myCurrentTeam, writer.uint32(98).fork()).ldelim();
         }
         for (const v of message.myCurrentEventStages) {
@@ -3402,7 +3468,9 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientHello = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingGC2ClientHello };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingGC2ClientHello
+        };
         message.myCurrentEventTeams = [];
         message.myCurrentEventStages = [];
         message.rankings = [];
@@ -3472,7 +3540,7 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientHello = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2AccountPrivacySettings = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3484,7 +3552,9 @@ exports.CMsgGCCStrike15V2AccountPrivacySettings = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2AccountPrivacySettings };
+        const message = {
+            ...baseCMsgGCCStrike15V2AccountPrivacySettings
+        };
         message.settings = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -3498,7 +3568,7 @@ exports.CMsgGCCStrike15V2AccountPrivacySettings = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2AccountPrivacySettings_Setting = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3509,7 +3579,9 @@ exports.CMsgGCCStrike15V2AccountPrivacySettings_Setting = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2AccountPrivacySettings_Setting };
+        const message = {
+            ...baseCMsgGCCStrike15V2AccountPrivacySettings_Setting
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3525,12 +3597,13 @@ exports.CMsgGCCStrike15V2AccountPrivacySettings_Setting = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingGC2ClientAbandon = {
     encode(message, writer = minimal_1.Writer.create()) {
         writer.uint32(8).uint32(message.accountId);
-        if (message.abandonedMatch !== undefined && message.abandonedMatch !== undefined) {
+        if (message.abandonedMatch !== undefined &&
+            message.abandonedMatch !== undefined) {
             exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve.encode(message.abandonedMatch, writer.uint32(18).fork()).ldelim();
         }
         writer.uint32(24).uint32(message.penaltySeconds);
@@ -3540,7 +3613,9 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientAbandon = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingGC2ClientAbandon };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingGC2ClientAbandon
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3562,7 +3637,7 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientAbandon = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientGCRankUpdate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3574,7 +3649,9 @@ exports.CMsgGCCStrike15V2ClientGCRankUpdate = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientGCRankUpdate };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientGCRankUpdate
+        };
         message.rankings = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -3588,7 +3665,7 @@ exports.CMsgGCCStrike15V2ClientGCRankUpdate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3598,7 +3675,9 @@ exports.CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3611,7 +3690,7 @@ exports.CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ServerNotificationForUserPenalty = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3624,7 +3703,9 @@ exports.CMsgGCCStrike15V2ServerNotificationForUserPenalty = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ServerNotificationForUserPenalty };
+        const message = {
+            ...baseCMsgGCCStrike15V2ServerNotificationForUserPenalty
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3646,7 +3727,7 @@ exports.CMsgGCCStrike15V2ServerNotificationForUserPenalty = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientReportPlayer = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3664,7 +3745,9 @@ exports.CMsgGCCStrike15V2ClientReportPlayer = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientReportPlayer };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientReportPlayer
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3701,13 +3784,14 @@ exports.CMsgGCCStrike15V2ClientReportPlayer = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientCommendPlayer = {
     encode(message, writer = minimal_1.Writer.create()) {
         writer.uint32(8).uint32(message.accountId);
         writer.uint32(64).uint64(message.matchId);
-        if (message.commendation !== undefined && message.commendation !== undefined) {
+        if (message.commendation !== undefined &&
+            message.commendation !== undefined) {
             exports.PlayerCommendationInfo.encode(message.commendation, writer.uint32(74).fork()).ldelim();
         }
         writer.uint32(80).uint32(message.tokens);
@@ -3716,7 +3800,9 @@ exports.CMsgGCCStrike15V2ClientCommendPlayer = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientCommendPlayer };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientCommendPlayer
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3738,7 +3824,7 @@ exports.CMsgGCCStrike15V2ClientCommendPlayer = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientReportServer = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3753,7 +3839,9 @@ exports.CMsgGCCStrike15V2ClientReportServer = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientReportServer };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientReportServer
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3781,7 +3869,7 @@ exports.CMsgGCCStrike15V2ClientReportServer = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientReportResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3796,7 +3884,9 @@ exports.CMsgGCCStrike15V2ClientReportResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientReportResponse };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientReportResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3824,7 +3914,7 @@ exports.CMsgGCCStrike15V2ClientReportResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientRequestWatchInfoFriends = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3845,7 +3935,9 @@ exports.CMsgGCCStrike15V2ClientRequestWatchInfoFriends = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientRequestWatchInfoFriends };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientRequestWatchInfoFriends
+        };
         message.accountIds = [];
         message.dataCenterPings = [];
         while (reader.pos < end) {
@@ -3883,7 +3975,7 @@ exports.CMsgGCCStrike15V2ClientRequestWatchInfoFriends = {
             }
         }
         return message;
-    },
+    }
 };
 exports.WatchableMatchInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3954,7 +4046,7 @@ exports.WatchableMatchInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientRequestJoinFriendData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3971,7 +4063,9 @@ exports.CMsgGCCStrike15V2ClientRequestJoinFriendData = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientRequestJoinFriendData };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientRequestJoinFriendData
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3999,7 +4093,7 @@ exports.CMsgGCCStrike15V2ClientRequestJoinFriendData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientRequestJoinServerData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4017,7 +4111,9 @@ exports.CMsgGCCStrike15V2ClientRequestJoinServerData = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientRequestJoinServerData };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientRequestJoinServerData
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4048,7 +4144,7 @@ exports.CMsgGCCStrike15V2ClientRequestJoinServerData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCstrike15V2ClientRequestNewMission = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4059,7 +4155,9 @@ exports.CMsgGCCstrike15V2ClientRequestNewMission = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCstrike15V2ClientRequestNewMission };
+        const message = {
+            ...baseCMsgGCCstrike15V2ClientRequestNewMission
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4075,7 +4173,7 @@ exports.CMsgGCCstrike15V2ClientRequestNewMission = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCstrike15V2GC2ServerNotifyXPRewarded = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4092,7 +4190,9 @@ exports.CMsgGCCstrike15V2GC2ServerNotifyXPRewarded = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCstrike15V2GC2ServerNotifyXPRewarded };
+        const message = {
+            ...baseCMsgGCCstrike15V2GC2ServerNotifyXPRewarded
+        };
         message.xpProgressData = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -4121,7 +4221,7 @@ exports.CMsgGCCstrike15V2GC2ServerNotifyXPRewarded = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2WatchInfoUsers = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4140,7 +4240,9 @@ exports.CMsgGCCStrike15V2WatchInfoUsers = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2WatchInfoUsers };
+        const message = {
+            ...baseCMsgGCCStrike15V2WatchInfoUsers
+        };
         message.accountIds = [];
         message.watchableMatchInfos = [];
         while (reader.pos < end) {
@@ -4172,7 +4274,7 @@ exports.CMsgGCCStrike15V2WatchInfoUsers = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientRequestPlayersProfile = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4189,7 +4291,9 @@ exports.CMsgGCCStrike15V2ClientRequestPlayersProfile = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientRequestPlayersProfile };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientRequestPlayersProfile
+        };
         message.accountIds_deprecated = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -4220,7 +4324,7 @@ exports.CMsgGCCStrike15V2ClientRequestPlayersProfile = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2PlayersProfile = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4233,7 +4337,9 @@ exports.CMsgGCCStrike15V2PlayersProfile = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2PlayersProfile };
+        const message = {
+            ...baseCMsgGCCStrike15V2PlayersProfile
+        };
         message.accountProfiles = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -4250,7 +4356,7 @@ exports.CMsgGCCStrike15V2PlayersProfile = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2PlayerOverwatchCaseUpdate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4267,7 +4373,9 @@ exports.CMsgGCCStrike15V2PlayerOverwatchCaseUpdate = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2PlayerOverwatchCaseUpdate };
+        const message = {
+            ...baseCMsgGCCStrike15V2PlayerOverwatchCaseUpdate
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4301,7 +4409,7 @@ exports.CMsgGCCStrike15V2PlayerOverwatchCaseUpdate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2PlayerOverwatchCaseAssignment = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4321,7 +4429,9 @@ exports.CMsgGCCStrike15V2PlayerOverwatchCaseAssignment = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2PlayerOverwatchCaseAssignment };
+        const message = {
+            ...baseCMsgGCCStrike15V2PlayerOverwatchCaseAssignment
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4364,7 +4474,7 @@ exports.CMsgGCCStrike15V2PlayerOverwatchCaseAssignment = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2PlayerOverwatchCaseStatus = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4375,7 +4485,9 @@ exports.CMsgGCCStrike15V2PlayerOverwatchCaseStatus = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2PlayerOverwatchCaseStatus };
+        const message = {
+            ...baseCMsgGCCStrike15V2PlayerOverwatchCaseStatus
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4391,7 +4503,7 @@ exports.CMsgGCCStrike15V2PlayerOverwatchCaseStatus = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CClientHeaderOverwatchEvidence = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4402,7 +4514,9 @@ exports.CClientHeaderOverwatchEvidence = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCClientHeaderOverwatchEvidence };
+        const message = {
+            ...baseCClientHeaderOverwatchEvidence
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4418,7 +4532,7 @@ exports.CClientHeaderOverwatchEvidence = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2GC2ClientTextMsg = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4430,7 +4544,9 @@ exports.CMsgGCCStrike15V2GC2ClientTextMsg = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2GC2ClientTextMsg };
+        const message = {
+            ...baseCMsgGCCStrike15V2GC2ClientTextMsg
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4449,7 +4565,7 @@ exports.CMsgGCCStrike15V2GC2ClientTextMsg = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2Client2GCTextMsg = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4462,7 +4578,9 @@ exports.CMsgGCCStrike15V2Client2GCTextMsg = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2Client2GCTextMsg };
+        const message = {
+            ...baseCMsgGCCStrike15V2Client2GCTextMsg
+        };
         message.args = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -4479,14 +4597,15 @@ exports.CMsgGCCStrike15V2Client2GCTextMsg = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchEndRunRewardDrops = {
     encode(message, writer = minimal_1.Writer.create()) {
         if (message.serverinfo !== undefined && message.serverinfo !== undefined) {
             exports.CMsgGCCStrike15V2MatchmakingServerReservationResponse.encode(message.serverinfo, writer.uint32(26).fork()).ldelim();
         }
-        if (message.matchEndQuestData !== undefined && message.matchEndQuestData !== undefined) {
+        if (message.matchEndQuestData !== undefined &&
+            message.matchEndQuestData !== undefined) {
             exports.CMsgGCServerQuestUpdateData.encode(message.matchEndQuestData, writer.uint32(34).fork()).ldelim();
         }
         return writer;
@@ -4494,7 +4613,9 @@ exports.CMsgGCCStrike15V2MatchEndRunRewardDrops = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchEndRunRewardDrops };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchEndRunRewardDrops
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4510,7 +4631,7 @@ exports.CMsgGCCStrike15V2MatchEndRunRewardDrops = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CEconItemPreviewDataBlock = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4539,7 +4660,9 @@ exports.CEconItemPreviewDataBlock = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCEconItemPreviewDataBlock };
+        const message = {
+            ...baseCEconItemPreviewDataBlock
+        };
         message.stickers = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -4604,7 +4727,7 @@ exports.CEconItemPreviewDataBlock = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CEconItemPreviewDataBlock_Sticker = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4619,7 +4742,9 @@ exports.CEconItemPreviewDataBlock_Sticker = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCEconItemPreviewDataBlock_Sticker };
+        const message = {
+            ...baseCEconItemPreviewDataBlock_Sticker
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4647,7 +4772,7 @@ exports.CEconItemPreviewDataBlock_Sticker = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchEndRewardDropsNotification = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4659,7 +4784,9 @@ exports.CMsgGCCStrike15V2MatchEndRewardDropsNotification = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchEndRewardDropsNotification };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchEndRewardDropsNotification
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4672,7 +4799,7 @@ exports.CMsgGCCStrike15V2MatchEndRewardDropsNotification = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgItemAcknowledged = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4697,7 +4824,7 @@ exports.CMsgItemAcknowledged = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4710,7 +4837,9 @@ exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest };
+        const message = {
+            ...baseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4732,7 +4861,7 @@ exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4744,7 +4873,9 @@ exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse };
+        const message = {
+            ...baseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4757,7 +4888,7 @@ exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchListRequestCurrentLiveGames = {
     encode(_, writer = minimal_1.Writer.create()) {
@@ -4766,7 +4897,9 @@ exports.CMsgGCCStrike15V2MatchListRequestCurrentLiveGames = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchListRequestCurrentLiveGames };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchListRequestCurrentLiveGames
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4776,7 +4909,7 @@ exports.CMsgGCCStrike15V2MatchListRequestCurrentLiveGames = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchListRequestLiveGameForUser = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4786,7 +4919,9 @@ exports.CMsgGCCStrike15V2MatchListRequestLiveGameForUser = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchListRequestLiveGameForUser };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchListRequestLiveGameForUser
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4799,7 +4934,7 @@ exports.CMsgGCCStrike15V2MatchListRequestLiveGameForUser = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchListRequestRecentUserGames = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4809,7 +4944,9 @@ exports.CMsgGCCStrike15V2MatchListRequestRecentUserGames = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchListRequestRecentUserGames };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchListRequestRecentUserGames
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4822,7 +4959,7 @@ exports.CMsgGCCStrike15V2MatchListRequestRecentUserGames = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchListRequestTournamentGames = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4832,7 +4969,9 @@ exports.CMsgGCCStrike15V2MatchListRequestTournamentGames = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchListRequestTournamentGames };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchListRequestTournamentGames
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4845,7 +4984,7 @@ exports.CMsgGCCStrike15V2MatchListRequestTournamentGames = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchListRequestFullGameInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4857,7 +4996,9 @@ exports.CMsgGCCStrike15V2MatchListRequestFullGameInfo = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchListRequestFullGameInfo };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchListRequestFullGameInfo
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4876,16 +5017,18 @@ exports.CMsgGCCStrike15V2MatchListRequestFullGameInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CDataGCCStrike15V2MatchInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
         writer.uint32(8).uint64(message.matchid);
         writer.uint32(16).uint32(message.matchtime);
-        if (message.watchablematchinfo !== undefined && message.watchablematchinfo !== undefined) {
+        if (message.watchablematchinfo !== undefined &&
+            message.watchablematchinfo !== undefined) {
             exports.WatchableMatchInfo.encode(message.watchablematchinfo, writer.uint32(26).fork()).ldelim();
         }
-        if (message.roundstatsLegacy !== undefined && message.roundstatsLegacy !== undefined) {
+        if (message.roundstatsLegacy !== undefined &&
+            message.roundstatsLegacy !== undefined) {
             exports.CMsgGCCStrike15V2MatchmakingServerRoundStats.encode(message.roundstatsLegacy, writer.uint32(34).fork()).ldelim();
         }
         for (const v of message.roundstatsall) {
@@ -4896,7 +5039,9 @@ exports.CDataGCCStrike15V2MatchInfo = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCDataGCCStrike15V2MatchInfo };
+        const message = {
+            ...baseCDataGCCStrike15V2MatchInfo
+        };
         message.roundstatsall = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -4922,7 +5067,7 @@ exports.CDataGCCStrike15V2MatchInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CDataGCCStrike15V2TournamentGroupTeam = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4934,7 +5079,9 @@ exports.CDataGCCStrike15V2TournamentGroupTeam = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCDataGCCStrike15V2TournamentGroupTeam };
+        const message = {
+            ...baseCDataGCCStrike15V2TournamentGroupTeam
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -4953,7 +5100,7 @@ exports.CDataGCCStrike15V2TournamentGroupTeam = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CDataGCCStrike15V2TournamentGroup = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -4980,7 +5127,9 @@ exports.CDataGCCStrike15V2TournamentGroup = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCDataGCCStrike15V2TournamentGroup };
+        const message = {
+            ...baseCDataGCCStrike15V2TournamentGroup
+        };
         message.teams = [];
         message.stageIds = [];
         message.picks = [];
@@ -5031,7 +5180,7 @@ exports.CDataGCCStrike15V2TournamentGroup = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CDataGCCStrike15V2TournamentGroup_Picks = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5045,7 +5194,9 @@ exports.CDataGCCStrike15V2TournamentGroup_Picks = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCDataGCCStrike15V2TournamentGroup_Picks };
+        const message = {
+            ...baseCDataGCCStrike15V2TournamentGroup_Picks
+        };
         message.pickids = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -5067,7 +5218,7 @@ exports.CDataGCCStrike15V2TournamentGroup_Picks = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CDataGCCStrike15V2TournamentSection = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5082,7 +5233,9 @@ exports.CDataGCCStrike15V2TournamentSection = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCDataGCCStrike15V2TournamentSection };
+        const message = {
+            ...baseCDataGCCStrike15V2TournamentSection
+        };
         message.groups = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -5105,14 +5258,15 @@ exports.CDataGCCStrike15V2TournamentSection = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CDataGCCStrike15V2TournamentInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
         for (const v of message.sections) {
             exports.CDataGCCStrike15V2TournamentSection.encode(v, writer.uint32(10).fork()).ldelim();
         }
-        if (message.tournamentEvent !== undefined && message.tournamentEvent !== undefined) {
+        if (message.tournamentEvent !== undefined &&
+            message.tournamentEvent !== undefined) {
             exports.TournamentEvent.encode(message.tournamentEvent, writer.uint32(18).fork()).ldelim();
         }
         for (const v of message.tournamentTeams) {
@@ -5123,7 +5277,9 @@ exports.CDataGCCStrike15V2TournamentInfo = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCDataGCCStrike15V2TournamentInfo };
+        const message = {
+            ...baseCDataGCCStrike15V2TournamentInfo
+        };
         message.sections = [];
         message.tournamentTeams = [];
         while (reader.pos < end) {
@@ -5144,7 +5300,7 @@ exports.CDataGCCStrike15V2TournamentInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2MatchList = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5157,7 +5313,8 @@ exports.CMsgGCCStrike15V2MatchList = {
         for (const v of message.streams) {
             exports.TournamentTeam.encode(v, writer.uint32(42).fork()).ldelim();
         }
-        if (message.tournamentinfo !== undefined && message.tournamentinfo !== undefined) {
+        if (message.tournamentinfo !== undefined &&
+            message.tournamentinfo !== undefined) {
             exports.CDataGCCStrike15V2TournamentInfo.encode(message.tournamentinfo, writer.uint32(50).fork()).ldelim();
         }
         return writer;
@@ -5165,7 +5322,9 @@ exports.CMsgGCCStrike15V2MatchList = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2MatchList };
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchList
+        };
         message.matches = [];
         message.streams = [];
         while (reader.pos < end) {
@@ -5195,7 +5354,7 @@ exports.CMsgGCCStrike15V2MatchList = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2Predictions = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5208,7 +5367,9 @@ exports.CMsgGCCStrike15V2Predictions = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2Predictions };
+        const message = {
+            ...baseCMsgGCCStrike15V2Predictions
+        };
         message.groupMatchTeamPicks = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -5225,7 +5386,7 @@ exports.CMsgGCCStrike15V2Predictions = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2Predictions_GroupMatchTeamPick = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5239,7 +5400,9 @@ exports.CMsgGCCStrike15V2Predictions_GroupMatchTeamPick = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2Predictions_GroupMatchTeamPick };
+        const message = {
+            ...baseCMsgGCCStrike15V2Predictions_GroupMatchTeamPick
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -5264,7 +5427,7 @@ exports.CMsgGCCStrike15V2Predictions_GroupMatchTeamPick = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2Fantasy = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5277,7 +5440,9 @@ exports.CMsgGCCStrike15V2Fantasy = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2Fantasy };
+        const message = {
+            ...baseCMsgGCCStrike15V2Fantasy
+        };
         message.teams = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -5294,7 +5459,7 @@ exports.CMsgGCCStrike15V2Fantasy = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2Fantasy_FantasySlot = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5306,7 +5471,9 @@ exports.CMsgGCCStrike15V2Fantasy_FantasySlot = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2Fantasy_FantasySlot };
+        const message = {
+            ...baseCMsgGCCStrike15V2Fantasy_FantasySlot
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -5325,7 +5492,7 @@ exports.CMsgGCCStrike15V2Fantasy_FantasySlot = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2Fantasy_FantasyTeam = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5338,7 +5505,9 @@ exports.CMsgGCCStrike15V2Fantasy_FantasyTeam = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2Fantasy_FantasyTeam };
+        const message = {
+            ...baseCMsgGCCStrike15V2Fantasy_FantasyTeam
+        };
         message.slots = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -5355,7 +5524,7 @@ exports.CMsgGCCStrike15V2Fantasy_FantasyTeam = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CAttributeString = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5378,7 +5547,7 @@ exports.CAttributeString = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgCStrike15Welcome = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5425,7 +5594,7 @@ exports.CMsgCStrike15Welcome = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientVarValueNotificationInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5441,7 +5610,9 @@ exports.CMsgGCCStrike15V2ClientVarValueNotificationInfo = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientVarValueNotificationInfo };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientVarValueNotificationInfo
+        };
         message.chokedBlocks = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -5467,7 +5638,7 @@ exports.CMsgGCCStrike15V2ClientVarValueNotificationInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ServerVarValueNotificationInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5483,7 +5654,9 @@ exports.CMsgGCCStrike15V2ServerVarValueNotificationInfo = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ServerVarValueNotificationInfo };
+        const message = {
+            ...baseCMsgGCCStrike15V2ServerVarValueNotificationInfo
+        };
         message.viewangles = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -5511,7 +5684,7 @@ exports.CMsgGCCStrike15V2ServerVarValueNotificationInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2GiftsLeaderboardRequest = {
     encode(_, writer = minimal_1.Writer.create()) {
@@ -5520,7 +5693,9 @@ exports.CMsgGCCStrike15V2GiftsLeaderboardRequest = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2GiftsLeaderboardRequest };
+        const message = {
+            ...baseCMsgGCCStrike15V2GiftsLeaderboardRequest
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -5530,7 +5705,7 @@ exports.CMsgGCCStrike15V2GiftsLeaderboardRequest = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2GiftsLeaderboardResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5546,7 +5721,9 @@ exports.CMsgGCCStrike15V2GiftsLeaderboardResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2GiftsLeaderboardResponse };
+        const message = {
+            ...baseCMsgGCCStrike15V2GiftsLeaderboardResponse
+        };
         message.entries = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -5572,7 +5749,7 @@ exports.CMsgGCCStrike15V2GiftsLeaderboardResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5583,7 +5760,9 @@ exports.CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry };
+        const message = {
+            ...baseCMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -5599,7 +5778,7 @@ exports.CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientSubmitSurveyVote = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5610,7 +5789,9 @@ exports.CMsgGCCStrike15V2ClientSubmitSurveyVote = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientSubmitSurveyVote };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientSubmitSurveyVote
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -5626,7 +5807,7 @@ exports.CMsgGCCStrike15V2ClientSubmitSurveyVote = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2Server2GCClientValidate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5636,7 +5817,9 @@ exports.CMsgGCCStrike15V2Server2GCClientValidate = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2Server2GCClientValidate };
+        const message = {
+            ...baseCMsgGCCStrike15V2Server2GCClientValidate
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -5649,7 +5832,7 @@ exports.CMsgGCCStrike15V2Server2GCClientValidate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2GC2ClientTournamentInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5666,7 +5849,9 @@ exports.CMsgGCCStrike15V2GC2ClientTournamentInfo = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2GC2ClientTournamentInfo };
+        const message = {
+            ...baseCMsgGCCStrike15V2GC2ClientTournamentInfo
+        };
         message.teamids = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -5697,7 +5882,7 @@ exports.CMsgGCCStrike15V2GC2ClientTournamentInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSOEconCoupon = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5728,7 +5913,7 @@ exports.CSOEconCoupon = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSOQuestProgress = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5759,7 +5944,7 @@ exports.CSOQuestProgress = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSOAccountSeasonalOperation = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5773,7 +5958,9 @@ exports.CSOAccountSeasonalOperation = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCSOAccountSeasonalOperation };
+        const message = {
+            ...baseCSOAccountSeasonalOperation
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -5798,12 +5985,13 @@ exports.CSOAccountSeasonalOperation = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSOPersonaDataPublic = {
     encode(message, writer = minimal_1.Writer.create()) {
         writer.uint32(8).int32(message.playerLevel);
-        if (message.commendation !== undefined && message.commendation !== undefined) {
+        if (message.commendation !== undefined &&
+            message.commendation !== undefined) {
             exports.PlayerCommendationInfo.encode(message.commendation, writer.uint32(18).fork()).ldelim();
         }
         writer.uint32(24).bool(message.elevatedState);
@@ -5831,7 +6019,7 @@ exports.CSOPersonaDataPublic = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCGlobalGameSubscribe = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5841,7 +6029,9 @@ exports.CMsgGCGlobalGameSubscribe = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCGlobalGameSubscribe };
+        const message = {
+            ...baseCMsgGCGlobalGameSubscribe
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -5854,7 +6044,7 @@ exports.CMsgGCGlobalGameSubscribe = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCGlobalGameUnsubscribe = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5864,7 +6054,9 @@ exports.CMsgGCGlobalGameUnsubscribe = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCGlobalGameUnsubscribe };
+        const message = {
+            ...baseCMsgGCGlobalGameUnsubscribe
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -5877,7 +6069,7 @@ exports.CMsgGCGlobalGameUnsubscribe = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCGlobalGamePlay = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5908,7 +6100,7 @@ exports.CMsgGCGlobalGamePlay = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2AcknowledgePenalty = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5918,7 +6110,9 @@ exports.CMsgGCCStrike15V2AcknowledgePenalty = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2AcknowledgePenalty };
+        const message = {
+            ...baseCMsgGCCStrike15V2AcknowledgePenalty
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -5931,7 +6125,7 @@ exports.CMsgGCCStrike15V2AcknowledgePenalty = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2Client2GCRequestPrestigeCoin = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5944,7 +6138,9 @@ exports.CMsgGCCStrike15V2Client2GCRequestPrestigeCoin = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2Client2GCRequestPrestigeCoin };
+        const message = {
+            ...baseCMsgGCCStrike15V2Client2GCRequestPrestigeCoin
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -5966,7 +6162,7 @@ exports.CMsgGCCStrike15V2Client2GCRequestPrestigeCoin = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2Client2GCStreamUnlock = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -5977,7 +6173,9 @@ exports.CMsgGCCStrike15V2Client2GCStreamUnlock = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2Client2GCStreamUnlock };
+        const message = {
+            ...baseCMsgGCCStrike15V2Client2GCStreamUnlock
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -5993,7 +6191,7 @@ exports.CMsgGCCStrike15V2Client2GCStreamUnlock = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientToGCRequestElevate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6003,7 +6201,9 @@ exports.CMsgGCCStrike15V2ClientToGCRequestElevate = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientToGCRequestElevate };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientToGCRequestElevate
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6016,7 +6216,7 @@ exports.CMsgGCCStrike15V2ClientToGCRequestElevate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientToGCChat = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6027,7 +6227,9 @@ exports.CMsgGCCStrike15V2ClientToGCChat = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientToGCChat };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientToGCChat
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6043,7 +6245,7 @@ exports.CMsgGCCStrike15V2ClientToGCChat = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2GCToClientChat = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6054,7 +6256,9 @@ exports.CMsgGCCStrike15V2GCToClientChat = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2GCToClientChat };
+        const message = {
+            ...baseCMsgGCCStrike15V2GCToClientChat
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6070,7 +6274,7 @@ exports.CMsgGCCStrike15V2GCToClientChat = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientAuthKeyCode = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6081,7 +6285,9 @@ exports.CMsgGCCStrike15V2ClientAuthKeyCode = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientAuthKeyCode };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientAuthKeyCode
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6097,7 +6303,7 @@ exports.CMsgGCCStrike15V2ClientAuthKeyCode = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15GotvSyncPacket = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6109,7 +6315,9 @@ exports.CMsgGCCStrike15GotvSyncPacket = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15GotvSyncPacket };
+        const message = {
+            ...baseCMsgGCCStrike15GotvSyncPacket
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6122,7 +6330,7 @@ exports.CMsgGCCStrike15GotvSyncPacket = {
             }
         }
         return message;
-    },
+    }
 };
 exports.PlayerDecalDigitalSignature = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6161,7 +6369,9 @@ exports.PlayerDecalDigitalSignature = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...basePlayerDecalDigitalSignature };
+        const message = {
+            ...basePlayerDecalDigitalSignature
+        };
         message.endpos = [];
         message.startpos = [];
         message.right = [];
@@ -6249,7 +6459,7 @@ exports.PlayerDecalDigitalSignature = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientPlayerDecalSign = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6262,7 +6472,9 @@ exports.CMsgGCCStrike15V2ClientPlayerDecalSign = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientPlayerDecalSign };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientPlayerDecalSign
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6278,7 +6490,7 @@ exports.CMsgGCCStrike15V2ClientPlayerDecalSign = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientLogonFatalError = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6290,7 +6502,9 @@ exports.CMsgGCCStrike15V2ClientLogonFatalError = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientLogonFatalError };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientLogonFatalError
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6309,7 +6523,7 @@ exports.CMsgGCCStrike15V2ClientLogonFatalError = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientPollState = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6327,7 +6541,9 @@ exports.CMsgGCCStrike15V2ClientPollState = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientPollState };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientPollState
+        };
         message.names = [];
         message.values = [];
         while (reader.pos < end) {
@@ -6356,7 +6572,7 @@ exports.CMsgGCCStrike15V2ClientPollState = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2PartyRegister = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6374,7 +6590,9 @@ exports.CMsgGCCStrike15V2PartyRegister = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2PartyRegister };
+        const message = {
+            ...baseCMsgGCCStrike15V2PartyRegister
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6411,7 +6629,7 @@ exports.CMsgGCCStrike15V2PartyRegister = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2PartySearch = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6430,7 +6648,9 @@ exports.CMsgGCCStrike15V2PartySearch = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2PartySearch };
+        const message = {
+            ...baseCMsgGCCStrike15V2PartySearch
+        };
         message.grps = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -6467,7 +6687,7 @@ exports.CMsgGCCStrike15V2PartySearch = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2PartySearchResults = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6479,7 +6699,9 @@ exports.CMsgGCCStrike15V2PartySearchResults = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2PartySearchResults };
+        const message = {
+            ...baseCMsgGCCStrike15V2PartySearchResults
+        };
         message.entries = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -6493,7 +6715,7 @@ exports.CMsgGCCStrike15V2PartySearchResults = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2PartySearchResults_Entry = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6508,7 +6730,9 @@ exports.CMsgGCCStrike15V2PartySearchResults_Entry = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2PartySearchResults_Entry };
+        const message = {
+            ...baseCMsgGCCStrike15V2PartySearchResults_Entry
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6536,7 +6760,7 @@ exports.CMsgGCCStrike15V2PartySearchResults_Entry = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2PartyInvite = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6547,7 +6771,9 @@ exports.CMsgGCCStrike15V2PartyInvite = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2PartyInvite };
+        const message = {
+            ...baseCMsgGCCStrike15V2PartyInvite
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6563,7 +6789,7 @@ exports.CMsgGCCStrike15V2PartyInvite = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2AccountRequestCoPlays = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6576,7 +6802,9 @@ exports.CMsgGCCStrike15V2AccountRequestCoPlays = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2AccountRequestCoPlays };
+        const message = {
+            ...baseCMsgGCCStrike15V2AccountRequestCoPlays
+        };
         message.players = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -6593,7 +6821,7 @@ exports.CMsgGCCStrike15V2AccountRequestCoPlays = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2AccountRequestCoPlays_Player = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6605,7 +6833,9 @@ exports.CMsgGCCStrike15V2AccountRequestCoPlays_Player = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2AccountRequestCoPlays_Player };
+        const message = {
+            ...baseCMsgGCCStrike15V2AccountRequestCoPlays_Player
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6624,7 +6854,7 @@ exports.CMsgGCCStrike15V2AccountRequestCoPlays_Player = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientToGCRequestTicket = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6637,7 +6867,9 @@ exports.CMsgGCCStrike15V2ClientToGCRequestTicket = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientToGCRequestTicket };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientToGCRequestTicket
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6659,7 +6891,7 @@ exports.CMsgGCCStrike15V2ClientToGCRequestTicket = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCToClientSteamDatagramTicket = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6669,7 +6901,9 @@ exports.CMsgGCToClientSteamDatagramTicket = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCToClientSteamDatagramTicket };
+        const message = {
+            ...baseCMsgGCToClientSteamDatagramTicket
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6682,7 +6916,7 @@ exports.CMsgGCToClientSteamDatagramTicket = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientRequestOffers = {
     encode(_, writer = minimal_1.Writer.create()) {
@@ -6691,7 +6925,9 @@ exports.CMsgGCCStrike15V2ClientRequestOffers = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientRequestOffers };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientRequestOffers
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6701,7 +6937,7 @@ exports.CMsgGCCStrike15V2ClientRequestOffers = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientRequestSouvenir = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6713,7 +6949,9 @@ exports.CMsgGCCStrike15V2ClientRequestSouvenir = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientRequestSouvenir };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientRequestSouvenir
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6732,7 +6970,7 @@ exports.CMsgGCCStrike15V2ClientRequestSouvenir = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientAccountBalance = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6743,7 +6981,9 @@ exports.CMsgGCCStrike15V2ClientAccountBalance = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientAccountBalance };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientAccountBalance
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6759,7 +6999,7 @@ exports.CMsgGCCStrike15V2ClientAccountBalance = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientPartyJoinRelay = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6770,7 +7010,9 @@ exports.CMsgGCCStrike15V2ClientPartyJoinRelay = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientPartyJoinRelay };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientPartyJoinRelay
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6786,7 +7028,7 @@ exports.CMsgGCCStrike15V2ClientPartyJoinRelay = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientPartyWarning = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6798,7 +7040,9 @@ exports.CMsgGCCStrike15V2ClientPartyWarning = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientPartyWarning };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientPartyWarning
+        };
         message.entries = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -6812,7 +7056,7 @@ exports.CMsgGCCStrike15V2ClientPartyWarning = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientPartyWarning_Entry = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6823,7 +7067,9 @@ exports.CMsgGCCStrike15V2ClientPartyWarning_Entry = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientPartyWarning_Entry };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientPartyWarning_Entry
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6839,7 +7085,7 @@ exports.CMsgGCCStrike15V2ClientPartyWarning_Entry = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2SetEventFavorite = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6850,7 +7096,9 @@ exports.CMsgGCCStrike15V2SetEventFavorite = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2SetEventFavorite };
+        const message = {
+            ...baseCMsgGCCStrike15V2SetEventFavorite
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6866,7 +7114,7 @@ exports.CMsgGCCStrike15V2SetEventFavorite = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2GetEventFavoritesRequest = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6876,7 +7124,9 @@ exports.CMsgGCCStrike15V2GetEventFavoritesRequest = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2GetEventFavoritesRequest };
+        const message = {
+            ...baseCMsgGCCStrike15V2GetEventFavoritesRequest
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6889,7 +7139,7 @@ exports.CMsgGCCStrike15V2GetEventFavoritesRequest = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2GetEventFavoritesResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6901,7 +7151,9 @@ exports.CMsgGCCStrike15V2GetEventFavoritesResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2GetEventFavoritesResponse };
+        const message = {
+            ...baseCMsgGCCStrike15V2GetEventFavoritesResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6920,7 +7172,7 @@ exports.CMsgGCCStrike15V2GetEventFavoritesResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientPerfReport = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6932,7 +7184,9 @@ exports.CMsgGCCStrike15V2ClientPerfReport = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientPerfReport };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientPerfReport
+        };
         message.entries = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -6946,7 +7200,7 @@ exports.CMsgGCCStrike15V2ClientPerfReport = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientPerfReport_Entry = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -6961,7 +7215,9 @@ exports.CMsgGCCStrike15V2ClientPerfReport_Entry = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientPerfReport_Entry };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientPerfReport_Entry
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6989,7 +7245,7 @@ exports.CMsgGCCStrike15V2ClientPerfReport_Entry = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CVDiagnostic = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -7024,7 +7280,7 @@ exports.CVDiagnostic = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2ClientReportValidation = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -7055,7 +7311,9 @@ exports.CMsgGCCStrike15V2ClientReportValidation = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2ClientReportValidation };
+        const message = {
+            ...baseCMsgGCCStrike15V2ClientReportValidation
+        };
         message.diagnostics = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -7126,7 +7384,7 @@ exports.CMsgGCCStrike15V2ClientReportValidation = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2GC2ClientRefuseSecureMode = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -7142,7 +7400,9 @@ exports.CMsgGCCStrike15V2GC2ClientRefuseSecureMode = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2GC2ClientRefuseSecureMode };
+        const message = {
+            ...baseCMsgGCCStrike15V2GC2ClientRefuseSecureMode
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -7173,7 +7433,7 @@ exports.CMsgGCCStrike15V2GC2ClientRefuseSecureMode = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCStrike15V2GC2ClientRequestValidation = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -7184,7 +7444,9 @@ exports.CMsgGCCStrike15V2GC2ClientRequestValidation = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCStrike15V2GC2ClientRequestValidation };
+        const message = {
+            ...baseCMsgGCCStrike15V2GC2ClientRequestValidation
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -7200,6 +7462,6 @@ exports.CMsgGCCStrike15V2GC2ClientRequestValidation = {
             }
         }
         return message;
-    },
+    }
 };
 //# sourceMappingURL=cstrike15_gcmessages.js.map

@@ -11,7 +11,7 @@ interface IUserMessageEvent {
     name: string;
     msg: any;
 }
-declare module './usermessages' {
+declare module "./usermessages" {
     interface UserMessages {
         /**
          * Fired when any user message is sent.

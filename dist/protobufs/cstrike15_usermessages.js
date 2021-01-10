@@ -8,37 +8,37 @@ const Long = require("long");
 const minimal_1 = require("protobufjs/minimal");
 const baseCCSUsrMsgVGUIMenu = {
     name: "",
-    show: false,
+    show: false
 };
 const baseCCSUsrMsgVGUIMenu_Subkey = {
     name: "",
-    str: "",
+    str: ""
 };
 const baseCCSUsrMsgGeiger = {
-    range: 0,
+    range: 0
 };
 const baseCCSUsrMsgTrain = {
-    train: 0,
+    train: 0
 };
 const baseCCSUsrMsgHudText = {
-    text: "",
+    text: ""
 };
 const baseCCSUsrMsgSayText = {
     entIdx: 0,
     text: "",
     chat: false,
-    textallchat: false,
+    textallchat: false
 };
 const baseCCSUsrMsgSayText2 = {
     entIdx: 0,
     chat: false,
     msgName: "",
     params: "",
-    textallchat: false,
+    textallchat: false
 };
 const baseCCSUsrMsgTextMsg = {
     msgDst: 0,
-    params: "",
+    params: ""
 };
 const baseCCSUsrMsgHudMsg = {
     channel: 0,
@@ -47,69 +47,69 @@ const baseCCSUsrMsgHudMsg = {
     fadeOutTime: 0,
     holdTime: 0,
     fxTime: 0,
-    text: "",
+    text: ""
 };
 const baseCCSUsrMsgShake = {
     command: 0,
     localAmplitude: 0,
     frequency: 0,
-    duration: 0,
+    duration: 0
 };
 const baseCCSUsrMsgFade = {
     duration: 0,
     holdTime: 0,
-    flags: 0,
+    flags: 0
 };
 const baseCCSUsrMsgRumble = {
     index: 0,
     data: 0,
-    flags: 0,
+    flags: 0
 };
 const baseCCSUsrMsgCloseCaption = {
     hash: 0,
     duration: 0,
     fromPlayer: false,
-    cctoken: "",
+    cctoken: ""
 };
 const baseCCSUsrMsgCloseCaptionDirect = {
     hash: 0,
     duration: 0,
-    fromPlayer: false,
+    fromPlayer: false
 };
 const baseCCSUsrMsgSendAudio = {
-    radioSound: "",
+    radioSound: ""
 };
 const baseCCSUsrMsgRawAudio = {
     pitch: 0,
     entidx: 0,
     duration: 0,
-    voiceFilename: "",
+    voiceFilename: ""
 };
 const baseCCSUsrMsgVoiceMask = {
-    playerModEnable: false,
+    playerModEnable: false
 };
 const baseCCSUsrMsgVoiceMask_PlayerMask = {
     gameRulesMask: 0,
-    banMasks: 0,
+    banMasks: 0
 };
 const baseCCSUsrMsgDamage = {
     amount: 0,
-    victimEntindex: 0,
+    victimEntindex: 0
 };
 const baseCCSUsrMsgRadioText = {
     msgDst: 0,
     client: 0,
     msgName: "",
-    params: "",
+    params: ""
 };
 const baseCCSUsrMsgHintText = {
-    text: "",
+    text: ""
 };
 const baseCCSUsrMsgKeyHintText = {
-    hints: "",
+    hints: ""
 };
 const baseCCSUsrMsgProcessSpottedEntityUpdate = {
-    newUpdate: false,
+    newUpdate: false
 };
 const baseCCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate = {
     entityIdx: 0,
@@ -120,18 +120,18 @@ const baseCCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate = {
     angleY: 0,
     defuser: false,
     playerHasDefuser: false,
-    playerHasC4: false,
+    playerHasC4: false
 };
 const baseCCSUsrMsgSendPlayerItemDrops = {};
 const baseCCSUsrMsgSendPlayerItemFound = {
-    entindex: 0,
+    entindex: 0
 };
 const baseCCSUsrMsgReloadEffect = {
     entidx: 0,
     actanim: 0,
     originX: 0,
     originY: 0,
-    originZ: 0,
+    originZ: 0
 };
 const baseCCSUsrMsgWeaponSound = {
     entidx: 0,
@@ -139,85 +139,85 @@ const baseCCSUsrMsgWeaponSound = {
     originY: 0,
     originZ: 0,
     sound: "",
-    timestamp: 0,
+    timestamp: 0
 };
 const baseCCSUsrMsgUpdateScreenHealthBar = {
     entidx: 0,
     healthratioOld: 0,
     healthratioNew: 0,
-    style: 0,
+    style: 0
 };
 const baseCCSUsrMsgEntityOutlineHighlight = {
     entidx: 0,
-    removehighlight: false,
+    removehighlight: false
 };
 const baseCCSUsrMsgAdjustMoney = {
-    amount: 0,
+    amount: 0
 };
 const baseCCSUsrMsgReportHit = {
     posX: 0,
     posY: 0,
     timestamp: 0,
-    posZ: 0,
+    posZ: 0
 };
 const baseCCSUsrMsgKillCam = {
     obsMode: 0,
     firstTarget: 0,
-    secondTarget: 0,
+    secondTarget: 0
 };
 const baseCCSUsrMsgDesiredTimescale = {
     desiredTimescale: 0,
     durationRealtimeSec: 0,
     interpolatorType: 0,
-    startBlendTime: 0,
+    startBlendTime: 0
 };
 const baseCCSUsrMsgCurrentTimescale = {
-    curTimescale: 0,
+    curTimescale: 0
 };
 const baseCCSUsrMsgAchievementEvent = {
     achievement: 0,
     count: 0,
-    userId: 0,
+    userId: 0
 };
 const baseCCSUsrMsgMatchEndConditions = {
     fraglimit: 0,
     mpMaxrounds: 0,
     mpWinlimit: 0,
-    mpTimelimit: 0,
+    mpTimelimit: 0
 };
 const baseCCSUsrMsgPlayerStatsUpdate = {
     version: 0,
     userId: 0,
-    crc: 0,
+    crc: 0
 };
 const baseCCSUsrMsgPlayerStatsUpdate_Stat = {
     idx: 0,
-    delta: 0,
+    delta: 0
 };
 const baseCCSUsrMsgDisplayInventory = {
     display: false,
-    userId: 0,
+    userId: 0
 };
 const baseCCSUsrMsgQuestProgress = {
     questId: 0,
     normalPoints: 0,
     bonusPoints: 0,
-    isEventQuest: false,
+    isEventQuest: false
 };
 const baseCCSUsrMsgScoreLeaderboardData = {};
 const baseCCSUsrMsgPlayerDecalDigitalSignature = {};
 const baseCCSUsrMsgXRankGet = {
     modeIdx: 0,
-    controller: 0,
+    controller: 0
 };
 const baseCCSUsrMsgXRankUpd = {
     modeIdx: 0,
     controller: 0,
-    ranking: 0,
+    ranking: 0
 };
 const baseCCSUsrMsgCallVoteFailed = {
     reason: 0,
-    time: 0,
+    time: 0
 };
 const baseCCSUsrMsgVoteStart = {
     team: 0,
@@ -227,26 +227,26 @@ const baseCCSUsrMsgVoteStart = {
     detailsStr: "",
     otherTeamStr: "",
     isYesNoVote: false,
-    entidxTarget: 0,
+    entidxTarget: 0
 };
 const baseCCSUsrMsgVotePass = {
     team: 0,
     voteType: 0,
     dispStr: "",
-    detailsStr: "",
+    detailsStr: ""
 };
 const baseCCSUsrMsgVoteFailed = {
     team: 0,
-    reason: 0,
+    reason: 0
 };
 const baseCCSUsrMsgVoteSetup = {
-    potentialIssues: "",
+    potentialIssues: ""
 };
 const baseCCSUsrMsgSendLastKillerDamageToClient = {
     numHitsGiven: 0,
     damageGiven: 0,
     numHitsTaken: 0,
-    damageTaken: 0,
+    damageTaken: 0
 };
 const baseCCSUsrMsgServerRankUpdate = {};
 const baseCCSUsrMsgServerRankUpdate_RankUpdate = {
@@ -255,76 +255,76 @@ const baseCCSUsrMsgServerRankUpdate_RankUpdate = {
     rankNew: 0,
     numWins: 0,
     rankChange: 0,
-    rankTypeId: 0,
+    rankTypeId: 0
 };
 const baseCCSUsrMsgXpUpdate = {};
 const baseCCSUsrMsgItemPickup = {
-    item: "",
+    item: ""
 };
 const baseCCSUsrMsgShowMenu = {
     bitsValidSlots: 0,
     displayTime: 0,
-    menuString: "",
+    menuString: ""
 };
 const baseCCSUsrMsgBarTime = {
-    time: "",
+    time: ""
 };
 const baseCCSUsrMsgAmmoDenied = {
-    ammoIdx: 0,
+    ammoIdx: 0
 };
 const baseCCSUsrMsgMarkAchievement = {
-    achievement: "",
+    achievement: ""
 };
 const baseCCSUsrMsgMatchStatsUpdate = {
-    update: "",
+    update: ""
 };
 const baseCCSUsrMsgItemDrop = {
     itemid: Long.ZERO,
-    death: false,
+    death: false
 };
 const baseCCSUsrMsgGlowPropTurnOff = {
-    entidx: 0,
+    entidx: 0
 };
 const baseCCSUsrMsgRoundBackupFilenames = {
     count: 0,
     index: 0,
     filename: "",
-    nicename: "",
+    nicename: ""
 };
 const baseCCSUsrMsgSSUI = {
     show: false,
     startTime: 0,
-    endTime: 0,
+    endTime: 0
 };
 const baseCCSUsrMsgSurvivalStats = {
     xuid: Long.UZERO,
-    ticknumber: 0,
+    ticknumber: 0
 };
 const baseCCSUsrMsgSurvivalStats_Fact = {
     type: 0,
     display: 0,
     value: 0,
-    interestingness: 0,
+    interestingness: 0
 };
 const baseCCSUsrMsgSurvivalStats_Placement = {
     xuid: Long.UZERO,
     teamnumber: 0,
-    placement: 0,
+    placement: 0
 };
 const baseCCSUsrMsgSurvivalStats_Damage = {
     xuid: Long.UZERO,
     to: 0,
     toHits: 0,
     from: 0,
-    fromHits: 0,
+    fromHits: 0
 };
 const baseCCSUsrMsgEndOfMatchAllPlayersData = {
-    scene: 0,
+    scene: 0
 };
 const baseCCSUsrMsgEndOfMatchAllPlayersData_Accolade = {
     eaccolade: 0,
     value: 0,
-    position: 0,
+    position: 0
 };
 const baseCCSUsrMsgEndOfMatchAllPlayersData_PlayerData = {
     entindex: 0,
@@ -332,33 +332,33 @@ const baseCCSUsrMsgEndOfMatchAllPlayersData_PlayerData = {
     name: "",
     teamnumber: 0,
     playercolor: 0,
-    isbot: false,
+    isbot: false
 };
 const baseCCSUsrMsgResetHud = {
-    reset: false,
+    reset: false
 };
 const baseCCSUsrMsgGameTitle = {
-    dummy: 0,
+    dummy: 0
 };
 const baseCCSUsrMsgRequestState = {
-    dummy: 0,
+    dummy: 0
 };
 const baseCCSUsrMsgStopSpectatorMode = {
-    dummy: 0,
+    dummy: 0
 };
 const baseCCSUsrMsgDisconnectToLobby = {
-    dummy: 0,
+    dummy: 0
 };
 const baseCCSUsrMsgWarmupHasEnded = {
-    dummy: 0,
+    dummy: 0
 };
 const baseCCSUsrMsgClientInfo = {
-    dummy: 0,
+    dummy: 0
 };
 const baseCCSUsrMsgServerRankRevealAll = {
-    secondsTillShutdown: 0,
+    secondsTillShutdown: 0
 };
-exports.protobufPackage = '';
+exports.protobufPackage = "";
 var ECstrike15UserMessages;
 (function (ECstrike15UserMessages) {
     ECstrike15UserMessages[ECstrike15UserMessages["CS_UM_VGUIMenu"] = 1] = "CS_UM_VGUIMenu";
@@ -470,7 +470,7 @@ exports.CCSUsrMsgVGUIMenu = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgVGUIMenu_Subkey = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -481,7 +481,9 @@ exports.CCSUsrMsgVGUIMenu_Subkey = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgVGUIMenu_Subkey };
+        const message = {
+            ...baseCCSUsrMsgVGUIMenu_Subkey
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -497,7 +499,7 @@ exports.CCSUsrMsgVGUIMenu_Subkey = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgGeiger = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -520,7 +522,7 @@ exports.CCSUsrMsgGeiger = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgTrain = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -543,7 +545,7 @@ exports.CCSUsrMsgTrain = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgHudText = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -566,7 +568,7 @@ exports.CCSUsrMsgHudText = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgSayText = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -601,7 +603,7 @@ exports.CCSUsrMsgSayText = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgSayText2 = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -643,7 +645,7 @@ exports.CCSUsrMsgSayText2 = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgTextMsg = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -673,7 +675,7 @@ exports.CCSUsrMsgTextMsg = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgHudMsg = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -738,7 +740,7 @@ exports.CCSUsrMsgHudMsg = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgShake = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -773,7 +775,7 @@ exports.CCSUsrMsgShake = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgFade = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -810,7 +812,7 @@ exports.CCSUsrMsgFade = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgRumble = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -841,7 +843,7 @@ exports.CCSUsrMsgRumble = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgCloseCaption = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -876,7 +878,7 @@ exports.CCSUsrMsgCloseCaption = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgCloseCaptionDirect = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -888,7 +890,9 @@ exports.CCSUsrMsgCloseCaptionDirect = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgCloseCaptionDirect };
+        const message = {
+            ...baseCCSUsrMsgCloseCaptionDirect
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -907,7 +911,7 @@ exports.CCSUsrMsgCloseCaptionDirect = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgSendAudio = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -930,7 +934,7 @@ exports.CCSUsrMsgSendAudio = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgRawAudio = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -965,7 +969,7 @@ exports.CCSUsrMsgRawAudio = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgVoiceMask = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -995,7 +999,7 @@ exports.CCSUsrMsgVoiceMask = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgVoiceMask_PlayerMask = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1006,7 +1010,9 @@ exports.CCSUsrMsgVoiceMask_PlayerMask = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgVoiceMask_PlayerMask };
+        const message = {
+            ...baseCCSUsrMsgVoiceMask_PlayerMask
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1022,12 +1028,13 @@ exports.CCSUsrMsgVoiceMask_PlayerMask = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgDamage = {
     encode(message, writer = minimal_1.Writer.create()) {
         writer.uint32(8).int32(message.amount);
-        if (message.inflictorWorldPos !== undefined && message.inflictorWorldPos !== undefined) {
+        if (message.inflictorWorldPos !== undefined &&
+            message.inflictorWorldPos !== undefined) {
             netmessages_1.CMsgVector.encode(message.inflictorWorldPos, writer.uint32(18).fork()).ldelim();
         }
         writer.uint32(24).int32(message.victimEntindex);
@@ -1055,7 +1062,7 @@ exports.CCSUsrMsgDamage = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgRadioText = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1093,7 +1100,7 @@ exports.CCSUsrMsgRadioText = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgHintText = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1116,7 +1123,7 @@ exports.CCSUsrMsgHintText = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgKeyHintText = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1142,7 +1149,7 @@ exports.CCSUsrMsgKeyHintText = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgProcessSpottedEntityUpdate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1155,7 +1162,9 @@ exports.CCSUsrMsgProcessSpottedEntityUpdate = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgProcessSpottedEntityUpdate };
+        const message = {
+            ...baseCCSUsrMsgProcessSpottedEntityUpdate
+        };
         message.entityUpdates = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -1172,7 +1181,7 @@ exports.CCSUsrMsgProcessSpottedEntityUpdate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1190,7 +1199,9 @@ exports.CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate };
+        const message = {
+            ...baseCCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1227,7 +1238,7 @@ exports.CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgSendPlayerItemDrops = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1239,7 +1250,9 @@ exports.CCSUsrMsgSendPlayerItemDrops = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgSendPlayerItemDrops };
+        const message = {
+            ...baseCCSUsrMsgSendPlayerItemDrops
+        };
         message.entityUpdates = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -1253,7 +1266,7 @@ exports.CCSUsrMsgSendPlayerItemDrops = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgSendPlayerItemFound = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1266,7 +1279,9 @@ exports.CCSUsrMsgSendPlayerItemFound = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgSendPlayerItemFound };
+        const message = {
+            ...baseCCSUsrMsgSendPlayerItemFound
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1282,7 +1297,7 @@ exports.CCSUsrMsgSendPlayerItemFound = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgReloadEffect = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1321,7 +1336,7 @@ exports.CCSUsrMsgReloadEffect = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgWeaponSound = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1364,7 +1379,7 @@ exports.CCSUsrMsgWeaponSound = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgUpdateScreenHealthBar = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1377,7 +1392,9 @@ exports.CCSUsrMsgUpdateScreenHealthBar = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgUpdateScreenHealthBar };
+        const message = {
+            ...baseCCSUsrMsgUpdateScreenHealthBar
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1399,7 +1416,7 @@ exports.CCSUsrMsgUpdateScreenHealthBar = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgEntityOutlineHighlight = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1410,7 +1427,9 @@ exports.CCSUsrMsgEntityOutlineHighlight = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgEntityOutlineHighlight };
+        const message = {
+            ...baseCCSUsrMsgEntityOutlineHighlight
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1426,7 +1445,7 @@ exports.CCSUsrMsgEntityOutlineHighlight = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgAdjustMoney = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1449,7 +1468,7 @@ exports.CCSUsrMsgAdjustMoney = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgReportHit = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1484,7 +1503,7 @@ exports.CCSUsrMsgReportHit = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgKillCam = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1515,7 +1534,7 @@ exports.CCSUsrMsgKillCam = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgDesiredTimescale = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1528,7 +1547,9 @@ exports.CCSUsrMsgDesiredTimescale = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgDesiredTimescale };
+        const message = {
+            ...baseCCSUsrMsgDesiredTimescale
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1550,7 +1571,7 @@ exports.CCSUsrMsgDesiredTimescale = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgCurrentTimescale = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1560,7 +1581,9 @@ exports.CCSUsrMsgCurrentTimescale = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgCurrentTimescale };
+        const message = {
+            ...baseCCSUsrMsgCurrentTimescale
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1573,7 +1596,7 @@ exports.CCSUsrMsgCurrentTimescale = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgAchievementEvent = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1585,7 +1608,9 @@ exports.CCSUsrMsgAchievementEvent = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgAchievementEvent };
+        const message = {
+            ...baseCCSUsrMsgAchievementEvent
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1604,7 +1629,7 @@ exports.CCSUsrMsgAchievementEvent = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgMatchEndConditions = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1617,7 +1642,9 @@ exports.CCSUsrMsgMatchEndConditions = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgMatchEndConditions };
+        const message = {
+            ...baseCCSUsrMsgMatchEndConditions
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1639,7 +1666,7 @@ exports.CCSUsrMsgMatchEndConditions = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgPlayerStatsUpdate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1654,7 +1681,9 @@ exports.CCSUsrMsgPlayerStatsUpdate = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgPlayerStatsUpdate };
+        const message = {
+            ...baseCCSUsrMsgPlayerStatsUpdate
+        };
         message.stats = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -1677,7 +1706,7 @@ exports.CCSUsrMsgPlayerStatsUpdate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgPlayerStatsUpdate_Stat = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1688,7 +1717,9 @@ exports.CCSUsrMsgPlayerStatsUpdate_Stat = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgPlayerStatsUpdate_Stat };
+        const message = {
+            ...baseCCSUsrMsgPlayerStatsUpdate_Stat
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1704,7 +1735,7 @@ exports.CCSUsrMsgPlayerStatsUpdate_Stat = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgDisplayInventory = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1715,7 +1746,9 @@ exports.CCSUsrMsgDisplayInventory = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgDisplayInventory };
+        const message = {
+            ...baseCCSUsrMsgDisplayInventory
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1731,7 +1764,7 @@ exports.CCSUsrMsgDisplayInventory = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgQuestProgress = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1766,7 +1799,7 @@ exports.CCSUsrMsgQuestProgress = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgScoreLeaderboardData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1778,7 +1811,9 @@ exports.CCSUsrMsgScoreLeaderboardData = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgScoreLeaderboardData };
+        const message = {
+            ...baseCCSUsrMsgScoreLeaderboardData
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1791,7 +1826,7 @@ exports.CCSUsrMsgScoreLeaderboardData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgPlayerDecalDigitalSignature = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1803,7 +1838,9 @@ exports.CCSUsrMsgPlayerDecalDigitalSignature = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgPlayerDecalDigitalSignature };
+        const message = {
+            ...baseCCSUsrMsgPlayerDecalDigitalSignature
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1816,7 +1853,7 @@ exports.CCSUsrMsgPlayerDecalDigitalSignature = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgXRankGet = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1843,7 +1880,7 @@ exports.CCSUsrMsgXRankGet = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgXRankUpd = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1874,7 +1911,7 @@ exports.CCSUsrMsgXRankUpd = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgCallVoteFailed = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1885,7 +1922,9 @@ exports.CCSUsrMsgCallVoteFailed = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgCallVoteFailed };
+        const message = {
+            ...baseCCSUsrMsgCallVoteFailed
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1901,7 +1940,7 @@ exports.CCSUsrMsgCallVoteFailed = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgVoteStart = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1952,7 +1991,7 @@ exports.CCSUsrMsgVoteStart = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgVotePass = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1987,7 +2026,7 @@ exports.CCSUsrMsgVotePass = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgVoteFailed = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2014,7 +2053,7 @@ exports.CCSUsrMsgVoteFailed = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgVoteSetup = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2040,7 +2079,7 @@ exports.CCSUsrMsgVoteSetup = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgSendLastKillerDamageToClient = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2053,7 +2092,9 @@ exports.CCSUsrMsgSendLastKillerDamageToClient = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgSendLastKillerDamageToClient };
+        const message = {
+            ...baseCCSUsrMsgSendLastKillerDamageToClient
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2075,7 +2116,7 @@ exports.CCSUsrMsgSendLastKillerDamageToClient = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgServerRankUpdate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2087,7 +2128,9 @@ exports.CCSUsrMsgServerRankUpdate = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgServerRankUpdate };
+        const message = {
+            ...baseCCSUsrMsgServerRankUpdate
+        };
         message.rankUpdate = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -2101,7 +2144,7 @@ exports.CCSUsrMsgServerRankUpdate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgServerRankUpdate_RankUpdate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2116,7 +2159,9 @@ exports.CCSUsrMsgServerRankUpdate_RankUpdate = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgServerRankUpdate_RankUpdate };
+        const message = {
+            ...baseCCSUsrMsgServerRankUpdate_RankUpdate
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2144,7 +2189,7 @@ exports.CCSUsrMsgServerRankUpdate_RankUpdate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgXpUpdate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2169,7 +2214,7 @@ exports.CCSUsrMsgXpUpdate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgItemPickup = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2192,7 +2237,7 @@ exports.CCSUsrMsgItemPickup = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgShowMenu = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2223,7 +2268,7 @@ exports.CCSUsrMsgShowMenu = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgBarTime = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2246,7 +2291,7 @@ exports.CCSUsrMsgBarTime = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgAmmoDenied = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2269,7 +2314,7 @@ exports.CCSUsrMsgAmmoDenied = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgMarkAchievement = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2279,7 +2324,9 @@ exports.CCSUsrMsgMarkAchievement = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgMarkAchievement };
+        const message = {
+            ...baseCCSUsrMsgMarkAchievement
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2292,7 +2339,7 @@ exports.CCSUsrMsgMarkAchievement = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgMatchStatsUpdate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2302,7 +2349,9 @@ exports.CCSUsrMsgMatchStatsUpdate = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgMatchStatsUpdate };
+        const message = {
+            ...baseCCSUsrMsgMatchStatsUpdate
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2315,7 +2364,7 @@ exports.CCSUsrMsgMatchStatsUpdate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgItemDrop = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2342,7 +2391,7 @@ exports.CCSUsrMsgItemDrop = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgGlowPropTurnOff = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2352,7 +2401,9 @@ exports.CCSUsrMsgGlowPropTurnOff = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgGlowPropTurnOff };
+        const message = {
+            ...baseCCSUsrMsgGlowPropTurnOff
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2365,7 +2416,7 @@ exports.CCSUsrMsgGlowPropTurnOff = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgRoundBackupFilenames = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2378,7 +2429,9 @@ exports.CCSUsrMsgRoundBackupFilenames = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgRoundBackupFilenames };
+        const message = {
+            ...baseCCSUsrMsgRoundBackupFilenames
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2400,7 +2453,7 @@ exports.CCSUsrMsgRoundBackupFilenames = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgSSUI = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2431,7 +2484,7 @@ exports.CCSUsrMsgSSUI = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgSurvivalStats = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2479,7 +2532,7 @@ exports.CCSUsrMsgSurvivalStats = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgSurvivalStats_Fact = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2492,7 +2545,9 @@ exports.CCSUsrMsgSurvivalStats_Fact = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgSurvivalStats_Fact };
+        const message = {
+            ...baseCCSUsrMsgSurvivalStats_Fact
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2514,7 +2569,7 @@ exports.CCSUsrMsgSurvivalStats_Fact = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgSurvivalStats_Placement = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2526,7 +2581,9 @@ exports.CCSUsrMsgSurvivalStats_Placement = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgSurvivalStats_Placement };
+        const message = {
+            ...baseCCSUsrMsgSurvivalStats_Placement
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2545,7 +2602,7 @@ exports.CCSUsrMsgSurvivalStats_Placement = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgSurvivalStats_Damage = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2559,7 +2616,9 @@ exports.CCSUsrMsgSurvivalStats_Damage = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgSurvivalStats_Damage };
+        const message = {
+            ...baseCCSUsrMsgSurvivalStats_Damage
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2584,7 +2643,7 @@ exports.CCSUsrMsgSurvivalStats_Damage = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgEndOfMatchAllPlayersData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2597,7 +2656,9 @@ exports.CCSUsrMsgEndOfMatchAllPlayersData = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgEndOfMatchAllPlayersData };
+        const message = {
+            ...baseCCSUsrMsgEndOfMatchAllPlayersData
+        };
         message.allplayerdata = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -2614,7 +2675,7 @@ exports.CCSUsrMsgEndOfMatchAllPlayersData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgEndOfMatchAllPlayersData_Accolade = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2626,7 +2687,9 @@ exports.CCSUsrMsgEndOfMatchAllPlayersData_Accolade = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgEndOfMatchAllPlayersData_Accolade };
+        const message = {
+            ...baseCCSUsrMsgEndOfMatchAllPlayersData_Accolade
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2645,7 +2708,7 @@ exports.CCSUsrMsgEndOfMatchAllPlayersData_Accolade = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgEndOfMatchAllPlayersData_PlayerData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2666,7 +2729,9 @@ exports.CCSUsrMsgEndOfMatchAllPlayersData_PlayerData = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgEndOfMatchAllPlayersData_PlayerData };
+        const message = {
+            ...baseCCSUsrMsgEndOfMatchAllPlayersData_PlayerData
+        };
         message.items = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -2701,7 +2766,7 @@ exports.CCSUsrMsgEndOfMatchAllPlayersData_PlayerData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgResetHud = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2724,7 +2789,7 @@ exports.CCSUsrMsgResetHud = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgGameTitle = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2747,7 +2812,7 @@ exports.CCSUsrMsgGameTitle = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgRequestState = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2770,7 +2835,7 @@ exports.CCSUsrMsgRequestState = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgStopSpectatorMode = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2780,7 +2845,9 @@ exports.CCSUsrMsgStopSpectatorMode = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgStopSpectatorMode };
+        const message = {
+            ...baseCCSUsrMsgStopSpectatorMode
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2793,7 +2860,7 @@ exports.CCSUsrMsgStopSpectatorMode = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgDisconnectToLobby = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2803,7 +2870,9 @@ exports.CCSUsrMsgDisconnectToLobby = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgDisconnectToLobby };
+        const message = {
+            ...baseCCSUsrMsgDisconnectToLobby
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2816,7 +2885,7 @@ exports.CCSUsrMsgDisconnectToLobby = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgWarmupHasEnded = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2826,7 +2895,9 @@ exports.CCSUsrMsgWarmupHasEnded = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgWarmupHasEnded };
+        const message = {
+            ...baseCCSUsrMsgWarmupHasEnded
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2839,7 +2910,7 @@ exports.CCSUsrMsgWarmupHasEnded = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgClientInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2862,12 +2933,13 @@ exports.CCSUsrMsgClientInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCSUsrMsgServerRankRevealAll = {
     encode(message, writer = minimal_1.Writer.create()) {
         writer.uint32(8).int32(message.secondsTillShutdown);
-        if (message.reservation !== undefined && message.reservation !== undefined) {
+        if (message.reservation !== undefined &&
+            message.reservation !== undefined) {
             cstrike15_gcmessages_1.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.encode(message.reservation, writer.uint32(18).fork()).ldelim();
         }
         return writer;
@@ -2875,7 +2947,9 @@ exports.CCSUsrMsgServerRankRevealAll = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCSUsrMsgServerRankRevealAll };
+        const message = {
+            ...baseCCSUsrMsgServerRankRevealAll
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2891,6 +2965,6 @@ exports.CCSUsrMsgServerRankRevealAll = {
             }
         }
         return message;
-    },
+    }
 };
 //# sourceMappingURL=cstrike15_usermessages.js.map

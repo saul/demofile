@@ -1,7 +1,7 @@
-import { CMsgVector2D, CMsgRGBA, CMsgVector } from './netmessages';
-import { CEconItemPreviewDataBlock, ScoreLeaderboardData, PlayerDecalDigitalSignature, CMsgGCCstrike15V2GC2ServerNotifyXPRewarded, CMsgGCCStrike15V2MatchmakingGC2ServerReserve } from './cstrike15_gcmessages';
-import * as Long from 'long';
-import { Writer, Reader } from 'protobufjs/minimal';
+import { CMsgVector2D, CMsgRGBA, CMsgVector } from "./netmessages";
+import { CEconItemPreviewDataBlock, ScoreLeaderboardData, PlayerDecalDigitalSignature, CMsgGCCstrike15V2GC2ServerNotifyXPRewarded, CMsgGCCStrike15V2MatchmakingGC2ServerReserve } from "./cstrike15_gcmessages";
+import * as Long from "long";
+import { Writer, Reader } from "protobufjs/minimal";
 export interface CCSUsrMsgVGUIMenu {
     name: string;
     show: boolean;

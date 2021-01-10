@@ -15,48 +15,48 @@ const baseCMsgProtoBufHeader = {
     errorMessage: "",
     ip: 0,
     gcMsgSrc: 0,
-    gcDirIndexSource: 0,
+    gcDirIndexSource: 0
 };
 const baseCMsgWebAPIKey = {
     status: 0,
     accountId: 0,
     publisherGroupId: 0,
     keyId: 0,
-    domain: "",
+    domain: ""
 };
 const baseCMsgHttpRequest = {
     requestMethod: 0,
     hostname: "",
     url: "",
-    absoluteTimeout: 0,
+    absoluteTimeout: 0
 };
 const baseCMsgHttpRequest_RequestHeader = {
     name: "",
-    value: "",
+    value: ""
 };
 const baseCMsgHttpRequest_QueryParam = {
-    name: "",
+    name: ""
 };
 const baseCMsgWebAPIRequest = {
     UNUSEDJobName: "",
     interfaceName: "",
     methodName: "",
     version: 0,
-    routingAppId: 0,
+    routingAppId: 0
 };
 const baseCMsgHttpResponse = {
-    statusCode: 0,
+    statusCode: 0
 };
 const baseCMsgHttpResponse_ResponseHeader = {
     name: "",
-    value: "",
+    value: ""
 };
 const baseCMsgAMFindAccounts = {
     searchType: 0,
-    searchString: "",
+    searchString: ""
 };
 const baseCMsgAMFindAccountsResponse = {
-    steamId: Long.UZERO,
+    steamId: Long.UZERO
 };
 const baseCMsgNotifyWatchdog = {
     source: 0,
@@ -65,58 +65,58 @@ const baseCMsgNotifyWatchdog = {
     critical: false,
     time: 0,
     appid: 0,
-    text: "",
+    text: ""
 };
 const baseCMsgAMGetLicenses = {
-    steamid: Long.UZERO,
+    steamid: Long.UZERO
 };
 const baseCMsgPackageLicense = {
     packageId: 0,
     timeCreated: 0,
-    ownerId: 0,
+    ownerId: 0
 };
 const baseCMsgAMGetLicensesResponse = {
-    result: 0,
+    result: 0
 };
 const baseCMsgAMGetUserGameStats = {
     steamId: Long.UZERO,
     gameId: Long.UZERO,
-    stats: 0,
+    stats: 0
 };
 const baseCMsgAMGetUserGameStatsResponse = {
     steamId: Long.UZERO,
     gameId: Long.UZERO,
-    eresult: 0,
+    eresult: 0
 };
 const baseCMsgAMGetUserGameStatsResponse_Stats = {
     statId: 0,
-    statValue: 0,
+    statValue: 0
 };
 const baseCMsgAMGetUserGameStatsResponse_AchievementBlocks = {
     achievementId: 0,
     achievementBitId: 0,
-    unlockTime: 0,
+    unlockTime: 0
 };
 const baseCMsgGCGetCommandList = {
     appId: 0,
-    commandPrefix: "",
+    commandPrefix: ""
 };
 const baseCMsgGCGetCommandListResponse = {
-    commandName: "",
+    commandName: ""
 };
 const baseCGCMsgMemCachedGet = {
-    keys: "",
+    keys: ""
 };
 const baseCGCMsgMemCachedGetResponse = {};
 const baseCGCMsgMemCachedGetResponse_ValueTag = {
-    found: false,
+    found: false
 };
 const baseCGCMsgMemCachedSet = {};
 const baseCGCMsgMemCachedSet_KeyPair = {
-    name: "",
+    name: ""
 };
 const baseCGCMsgMemCachedDelete = {
-    keys: "",
+    keys: ""
 };
 const baseCGCMsgMemCachedStats = {};
 const baseCGCMsgMemCachedStatsResponse = {
@@ -133,10 +133,10 @@ const baseCGCMsgMemCachedStatsResponse = {
     limitMaxbytes: Long.UZERO,
     currItems: Long.UZERO,
     evictions: Long.UZERO,
-    bytes: Long.UZERO,
+    bytes: Long.UZERO
 };
 const baseCGCMsgSQLStats = {
-    schemaCatalog: 0,
+    schemaCatalog: 0
 };
 const baseCGCMsgSQLStatsResponse = {
     threads: 0,
@@ -147,21 +147,21 @@ const baseCGCMsgSQLStatsResponse = {
     nonPreparedStatementsExecuted: 0,
     deadlockRetries: 0,
     operationsTimedOutInQueue: 0,
-    errors: 0,
+    errors: 0
 };
 const baseCMsgAMAddFreeLicense = {
     steamid: Long.UZERO,
     ipPublic: 0,
     packageid: 0,
-    storeCountryCode: "",
+    storeCountryCode: ""
 };
 const baseCMsgAMAddFreeLicenseResponse = {
     eresult: 0,
     purchaseResultDetail: 0,
-    transid: Long.UZERO,
+    transid: Long.UZERO
 };
 const baseCGCMsgGetIPLocation = {
-    ips: 0,
+    ips: 0
 };
 const baseCIPLocationInfo = {
     ip: 0,
@@ -169,11 +169,11 @@ const baseCIPLocationInfo = {
     longitude: 0,
     country: "",
     state: "",
-    city: "",
+    city: ""
 };
 const baseCGCMsgGetIPLocationResponse = {};
 const baseCGCMsgSystemStatsSchema = {
-    gcAppId: 0,
+    gcAppId: 0
 };
 const baseCGCMsgGetSystemStats = {};
 const baseCGCMsgGetSystemStatsResponse = {
@@ -188,50 +188,50 @@ const baseCGCMsgGetSystemStatsResponse = {
     writebackQueue: 0,
     steamidLocks: 0,
     logonQueue: 0,
-    logonJobs: 0,
+    logonJobs: 0
 };
 const baseCMsgAMSendEmail = {
     steamid: Long.UZERO,
     emailMsgType: 0,
     emailFormat: 0,
-    sourceGc: 0,
+    sourceGc: 0
 };
 const baseCMsgAMSendEmail_ReplacementToken = {
     tokenName: "",
-    tokenValue: "",
+    tokenValue: ""
 };
 const baseCMsgAMSendEmail_PersonaNameReplacementToken = {
     steamid: Long.UZERO,
-    tokenName: "",
+    tokenName: ""
 };
 const baseCMsgAMSendEmailResponse = {
-    eresult: 0,
+    eresult: 0
 };
 const baseCMsgGCGetEmailTemplate = {
     appId: 0,
     emailMsgType: 0,
     emailLang: 0,
-    emailFormat: 0,
+    emailFormat: 0
 };
 const baseCMsgGCGetEmailTemplateResponse = {
     eresult: 0,
     templateExists: false,
-    template: "",
+    template: ""
 };
 const baseCMsgAMGrantGuestPasses2 = {
     steamId: Long.UZERO,
     packageId: 0,
     passesToGrant: 0,
     daysToExpiration: 0,
-    action: 0,
+    action: 0
 };
 const baseCMsgAMGrantGuestPasses2Response = {
     eresult: 0,
-    passesGranted: 0,
+    passesGranted: 0
 };
 const baseCGCSystemMsgGetAccountDetails = {
     steamid: Long.UZERO,
-    appid: 0,
+    appid: 0
 };
 const baseCGCSystemMsgGetAccountDetailsResponse = {
     eresultDeprecated: 0,
@@ -267,96 +267,96 @@ const baseCGCSystemMsgGetAccountDetailsResponse = {
     isPhoneIdentifying: false,
     rtIdentityLinked: 0,
     rtBirthDate: 0,
-    txnCountryCode: "",
+    txnCountryCode: ""
 };
 const baseCMsgGCGetPersonaNames = {
-    steamids: Long.UZERO,
+    steamids: Long.UZERO
 };
 const baseCMsgGCGetPersonaNamesResponse = {
-    failedLookupSteamids: Long.UZERO,
+    failedLookupSteamids: Long.UZERO
 };
 const baseCMsgGCGetPersonaNamesResponse_PersonaName = {
     steamid: Long.UZERO,
-    personaName: "",
+    personaName: ""
 };
 const baseCMsgGCCheckFriendship = {
     steamidLeft: Long.UZERO,
-    steamidRight: Long.UZERO,
+    steamidRight: Long.UZERO
 };
 const baseCMsgGCCheckFriendshipResponse = {
     success: false,
-    foundFriendship: false,
+    foundFriendship: false
 };
 const baseCMsgGCMsgMasterSetDirectory = {
-    masterDirIndex: 0,
+    masterDirIndex: 0
 };
 const baseCMsgGCMsgMasterSetDirectory_SubGC = {
     dirIndex: 0,
     name: "",
     box: "",
     commandLine: "",
-    gcBinary: "",
+    gcBinary: ""
 };
 const baseCMsgGCMsgMasterSetDirectoryResponse = {
-    eresult: 0,
+    eresult: 0
 };
 const baseCMsgGCMsgWebAPIJobRequestForwardResponse = {
-    dirIndex: 0,
+    dirIndex: 0
 };
 const baseCGCSystemMsgGetPurchaseTrustRequest = {
-    steamid: Long.UZERO,
+    steamid: Long.UZERO
 };
 const baseCGCSystemMsgGetPurchaseTrustResponse = {
     hasPriorPurchaseHistory: false,
     hasNoRecentPasswordResets: false,
     isWalletCashTrusted: false,
-    timeAllTrusted: 0,
+    timeAllTrusted: 0
 };
 const baseCMsgGCHAccountVacStatusChange = {
     steamId: Long.UZERO,
     appId: 0,
     rtimeVacbanStarts: 0,
     isBannedNow: false,
-    isBannedFuture: false,
+    isBannedFuture: false
 };
 const baseCMsgGCGetPartnerAccountLink = {
-    steamid: Long.UZERO,
+    steamid: Long.UZERO
 };
 const baseCMsgGCGetPartnerAccountLinkResponse = {
     pwid: 0,
     nexonid: 0,
     ageclass: 0,
     idVerified: false,
-    isAdult: false,
+    isAdult: false
 };
 const baseCMsgGCRoutingInfo = {
     dirIndex: 0,
     method: 0,
     fallback: 0,
     protobufField: 0,
-    webapiParam: "",
+    webapiParam: ""
 };
 const baseCMsgGCMsgMasterSetWebAPIRouting = {};
 const baseCMsgGCMsgMasterSetWebAPIRouting_Entry = {
     interfaceName: "",
-    methodName: "",
+    methodName: ""
 };
 const baseCMsgGCMsgMasterSetClientMsgRouting = {};
 const baseCMsgGCMsgMasterSetClientMsgRouting_Entry = {
-    msgType: 0,
+    msgType: 0
 };
 const baseCMsgGCMsgMasterSetWebAPIRoutingResponse = {
-    eresult: 0,
+    eresult: 0
 };
 const baseCMsgGCMsgMasterSetClientMsgRoutingResponse = {
-    eresult: 0,
+    eresult: 0
 };
 const baseCMsgGCMsgSetOptions = {
-    options: 0,
+    options: 0
 };
 const baseCMsgGCMsgSetOptions_MessageRange = {
     low: 0,
-    high: 0,
+    high: 0
 };
 const baseCMsgGCHUpdateSession = {
     steamId: Long.UZERO,
@@ -370,23 +370,23 @@ const baseCMsgGCHUpdateSession = {
     ownerId: Long.UZERO,
     cmSessionSysid: 0,
     cmSessionIdentifier: 0,
-    depotIds: 0,
+    depotIds: 0
 };
 const baseCMsgGCHUpdateSession_ExtraField = {
     name: "",
-    value: "",
+    value: ""
 };
 const baseCMsgNotificationOfSuspiciousActivity = {
     steamid: Long.UZERO,
-    appid: 0,
+    appid: 0
 };
 const baseCMsgNotificationOfSuspiciousActivity_MultipleGameInstances = {
     appInstanceCount: 0,
-    otherSteamids: Long.UZERO,
+    otherSteamids: Long.UZERO
 };
 const baseCMsgDPPartnerMicroTxns = {
     appid: 0,
-    gcName: "",
+    gcName: ""
 };
 const baseCMsgDPPartnerMicroTxns_PartnerMicroTxn = {
     initTime: 0,
@@ -405,19 +405,19 @@ const baseCMsgDPPartnerMicroTxns_PartnerMicroTxn = {
     countryCode: "",
     regionCode: "",
     quantity: 0,
-    refTransId: Long.UZERO,
+    refTransId: Long.UZERO
 };
 const baseCMsgDPPartnerMicroTxns_PartnerInfo = {
     partnerId: 0,
     partnerName: "",
     currencyCode: "",
-    currencyName: "",
+    currencyName: ""
 };
 const baseCMsgDPPartnerMicroTxnsResponse = {
     eresult: 0,
-    eerrorcode: 0,
+    eerrorcode: 0
 };
-exports.protobufPackage = '';
+exports.protobufPackage = "";
 var GCProtoBufMsgSrc;
 (function (GCProtoBufMsgSrc) {
     GCProtoBufMsgSrc[GCProtoBufMsgSrc["GCProtoBufMsgSrc_Unspecified"] = 0] = "GCProtoBufMsgSrc_Unspecified";
@@ -514,7 +514,7 @@ exports.CMsgProtoBufHeader = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgWebAPIKey = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -553,7 +553,7 @@ exports.CMsgWebAPIKey = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgHttpRequest = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -613,7 +613,7 @@ exports.CMsgHttpRequest = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgHttpRequest_RequestHeader = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -624,7 +624,9 @@ exports.CMsgHttpRequest_RequestHeader = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgHttpRequest_RequestHeader };
+        const message = {
+            ...baseCMsgHttpRequest_RequestHeader
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -640,7 +642,7 @@ exports.CMsgHttpRequest_RequestHeader = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgHttpRequest_QueryParam = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -651,7 +653,9 @@ exports.CMsgHttpRequest_QueryParam = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgHttpRequest_QueryParam };
+        const message = {
+            ...baseCMsgHttpRequest_QueryParam
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -667,7 +671,7 @@ exports.CMsgHttpRequest_QueryParam = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgWebAPIRequest = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -718,7 +722,7 @@ exports.CMsgWebAPIRequest = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgHttpResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -752,7 +756,7 @@ exports.CMsgHttpResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgHttpResponse_ResponseHeader = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -763,7 +767,9 @@ exports.CMsgHttpResponse_ResponseHeader = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgHttpResponse_ResponseHeader };
+        const message = {
+            ...baseCMsgHttpResponse_ResponseHeader
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -779,7 +785,7 @@ exports.CMsgHttpResponse_ResponseHeader = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMFindAccounts = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -806,7 +812,7 @@ exports.CMsgAMFindAccounts = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMFindAccountsResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -820,7 +826,9 @@ exports.CMsgAMFindAccountsResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgAMFindAccountsResponse };
+        const message = {
+            ...baseCMsgAMFindAccountsResponse
+        };
         message.steamId = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -842,7 +850,7 @@ exports.CMsgAMFindAccountsResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgNotifyWatchdog = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -889,7 +897,7 @@ exports.CMsgNotifyWatchdog = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMGetLicenses = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -912,7 +920,7 @@ exports.CMsgAMGetLicenses = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgPackageLicense = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -943,7 +951,7 @@ exports.CMsgPackageLicense = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMGetLicensesResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -956,7 +964,9 @@ exports.CMsgAMGetLicensesResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgAMGetLicensesResponse };
+        const message = {
+            ...baseCMsgAMGetLicensesResponse
+        };
         message.license = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -973,7 +983,7 @@ exports.CMsgAMGetLicensesResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMGetUserGameStats = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1017,7 +1027,7 @@ exports.CMsgAMGetUserGameStats = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMGetUserGameStatsResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1035,7 +1045,9 @@ exports.CMsgAMGetUserGameStatsResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgAMGetUserGameStatsResponse };
+        const message = {
+            ...baseCMsgAMGetUserGameStatsResponse
+        };
         message.stats = [];
         message.achievementBlocks = [];
         while (reader.pos < end) {
@@ -1062,7 +1074,7 @@ exports.CMsgAMGetUserGameStatsResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMGetUserGameStatsResponse_Stats = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1073,7 +1085,9 @@ exports.CMsgAMGetUserGameStatsResponse_Stats = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgAMGetUserGameStatsResponse_Stats };
+        const message = {
+            ...baseCMsgAMGetUserGameStatsResponse_Stats
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1089,7 +1103,7 @@ exports.CMsgAMGetUserGameStatsResponse_Stats = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMGetUserGameStatsResponse_AchievementBlocks = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1101,7 +1115,9 @@ exports.CMsgAMGetUserGameStatsResponse_AchievementBlocks = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgAMGetUserGameStatsResponse_AchievementBlocks };
+        const message = {
+            ...baseCMsgAMGetUserGameStatsResponse_AchievementBlocks
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1120,7 +1136,7 @@ exports.CMsgAMGetUserGameStatsResponse_AchievementBlocks = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCGetCommandList = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1147,7 +1163,7 @@ exports.CMsgGCGetCommandList = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCGetCommandListResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1159,7 +1175,9 @@ exports.CMsgGCGetCommandListResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCGetCommandListResponse };
+        const message = {
+            ...baseCMsgGCGetCommandListResponse
+        };
         message.commandName = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -1173,7 +1191,7 @@ exports.CMsgGCGetCommandListResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgMemCachedGet = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1199,7 +1217,7 @@ exports.CGCMsgMemCachedGet = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgMemCachedGetResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1211,7 +1229,9 @@ exports.CGCMsgMemCachedGetResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCGCMsgMemCachedGetResponse };
+        const message = {
+            ...baseCGCMsgMemCachedGetResponse
+        };
         message.values = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -1225,7 +1245,7 @@ exports.CGCMsgMemCachedGetResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgMemCachedGetResponse_ValueTag = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1236,7 +1256,9 @@ exports.CGCMsgMemCachedGetResponse_ValueTag = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCGCMsgMemCachedGetResponse_ValueTag };
+        const message = {
+            ...baseCGCMsgMemCachedGetResponse_ValueTag
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1252,7 +1274,7 @@ exports.CGCMsgMemCachedGetResponse_ValueTag = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgMemCachedSet = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1278,7 +1300,7 @@ exports.CGCMsgMemCachedSet = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgMemCachedSet_KeyPair = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1289,7 +1311,9 @@ exports.CGCMsgMemCachedSet_KeyPair = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCGCMsgMemCachedSet_KeyPair };
+        const message = {
+            ...baseCGCMsgMemCachedSet_KeyPair
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1305,7 +1329,7 @@ exports.CGCMsgMemCachedSet_KeyPair = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgMemCachedDelete = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1331,7 +1355,7 @@ exports.CGCMsgMemCachedDelete = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgMemCachedStats = {
     encode(_, writer = minimal_1.Writer.create()) {
@@ -1350,7 +1374,7 @@ exports.CGCMsgMemCachedStats = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgMemCachedStatsResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1373,7 +1397,9 @@ exports.CGCMsgMemCachedStatsResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCGCMsgMemCachedStatsResponse };
+        const message = {
+            ...baseCGCMsgMemCachedStatsResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1425,7 +1451,7 @@ exports.CGCMsgMemCachedStatsResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgSQLStats = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1448,7 +1474,7 @@ exports.CGCMsgSQLStats = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgSQLStatsResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1503,7 +1529,7 @@ exports.CGCMsgSQLStatsResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMAddFreeLicense = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1538,7 +1564,7 @@ exports.CMsgAMAddFreeLicense = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMAddFreeLicenseResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1550,7 +1576,9 @@ exports.CMsgAMAddFreeLicenseResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgAMAddFreeLicenseResponse };
+        const message = {
+            ...baseCMsgAMAddFreeLicenseResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1569,7 +1597,7 @@ exports.CMsgAMAddFreeLicenseResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgGetIPLocation = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1605,7 +1633,7 @@ exports.CGCMsgGetIPLocation = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CIPLocationInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1648,7 +1676,7 @@ exports.CIPLocationInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgGetIPLocationResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1660,7 +1688,9 @@ exports.CGCMsgGetIPLocationResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCGCMsgGetIPLocationResponse };
+        const message = {
+            ...baseCGCMsgGetIPLocationResponse
+        };
         message.infos = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -1674,7 +1704,7 @@ exports.CGCMsgGetIPLocationResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgSystemStatsSchema = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1685,7 +1715,9 @@ exports.CGCMsgSystemStatsSchema = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCGCMsgSystemStatsSchema };
+        const message = {
+            ...baseCGCMsgSystemStatsSchema
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1701,7 +1733,7 @@ exports.CGCMsgSystemStatsSchema = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgGetSystemStats = {
     encode(_, writer = minimal_1.Writer.create()) {
@@ -1720,7 +1752,7 @@ exports.CGCMsgGetSystemStats = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCMsgGetSystemStatsResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1742,7 +1774,9 @@ exports.CGCMsgGetSystemStatsResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCGCMsgGetSystemStatsResponse };
+        const message = {
+            ...baseCGCMsgGetSystemStatsResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1791,7 +1825,7 @@ exports.CGCMsgGetSystemStatsResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMSendEmail = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1840,7 +1874,7 @@ exports.CMsgAMSendEmail = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMSendEmail_ReplacementToken = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1851,7 +1885,9 @@ exports.CMsgAMSendEmail_ReplacementToken = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgAMSendEmail_ReplacementToken };
+        const message = {
+            ...baseCMsgAMSendEmail_ReplacementToken
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1867,7 +1903,7 @@ exports.CMsgAMSendEmail_ReplacementToken = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMSendEmail_PersonaNameReplacementToken = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1878,7 +1914,9 @@ exports.CMsgAMSendEmail_PersonaNameReplacementToken = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgAMSendEmail_PersonaNameReplacementToken };
+        const message = {
+            ...baseCMsgAMSendEmail_PersonaNameReplacementToken
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1894,7 +1932,7 @@ exports.CMsgAMSendEmail_PersonaNameReplacementToken = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMSendEmailResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1904,7 +1942,9 @@ exports.CMsgAMSendEmailResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgAMSendEmailResponse };
+        const message = {
+            ...baseCMsgAMSendEmailResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1917,7 +1957,7 @@ exports.CMsgAMSendEmailResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCGetEmailTemplate = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1952,7 +1992,7 @@ exports.CMsgGCGetEmailTemplate = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCGetEmailTemplateResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1964,7 +2004,9 @@ exports.CMsgGCGetEmailTemplateResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCGetEmailTemplateResponse };
+        const message = {
+            ...baseCMsgGCGetEmailTemplateResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1983,7 +2025,7 @@ exports.CMsgGCGetEmailTemplateResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMGrantGuestPasses2 = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1997,7 +2039,9 @@ exports.CMsgAMGrantGuestPasses2 = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgAMGrantGuestPasses2 };
+        const message = {
+            ...baseCMsgAMGrantGuestPasses2
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2022,7 +2066,7 @@ exports.CMsgAMGrantGuestPasses2 = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgAMGrantGuestPasses2Response = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2033,7 +2077,9 @@ exports.CMsgAMGrantGuestPasses2Response = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgAMGrantGuestPasses2Response };
+        const message = {
+            ...baseCMsgAMGrantGuestPasses2Response
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2049,7 +2095,7 @@ exports.CMsgAMGrantGuestPasses2Response = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCSystemMsgGetAccountDetails = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2060,7 +2106,9 @@ exports.CGCSystemMsgGetAccountDetails = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCGCSystemMsgGetAccountDetails };
+        const message = {
+            ...baseCGCSystemMsgGetAccountDetails
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2076,7 +2124,7 @@ exports.CGCSystemMsgGetAccountDetails = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCSystemMsgGetAccountDetailsResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2119,7 +2167,9 @@ exports.CGCSystemMsgGetAccountDetailsResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCGCSystemMsgGetAccountDetailsResponse };
+        const message = {
+            ...baseCGCSystemMsgGetAccountDetailsResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2231,7 +2281,7 @@ exports.CGCSystemMsgGetAccountDetailsResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCGetPersonaNames = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2267,7 +2317,7 @@ exports.CMsgGCGetPersonaNames = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCGetPersonaNamesResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2284,7 +2334,9 @@ exports.CMsgGCGetPersonaNamesResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCGetPersonaNamesResponse };
+        const message = {
+            ...baseCMsgGCGetPersonaNamesResponse
+        };
         message.succeededLookups = [];
         message.failedLookupSteamids = [];
         while (reader.pos < end) {
@@ -2310,7 +2362,7 @@ exports.CMsgGCGetPersonaNamesResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCGetPersonaNamesResponse_PersonaName = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2321,7 +2373,9 @@ exports.CMsgGCGetPersonaNamesResponse_PersonaName = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCGetPersonaNamesResponse_PersonaName };
+        const message = {
+            ...baseCMsgGCGetPersonaNamesResponse_PersonaName
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2337,7 +2391,7 @@ exports.CMsgGCGetPersonaNamesResponse_PersonaName = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCheckFriendship = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2364,7 +2418,7 @@ exports.CMsgGCCheckFriendship = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCCheckFriendshipResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2375,7 +2429,9 @@ exports.CMsgGCCheckFriendshipResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCCheckFriendshipResponse };
+        const message = {
+            ...baseCMsgGCCheckFriendshipResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2391,7 +2447,7 @@ exports.CMsgGCCheckFriendshipResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCMsgMasterSetDirectory = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2404,7 +2460,9 @@ exports.CMsgGCMsgMasterSetDirectory = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCMsgMasterSetDirectory };
+        const message = {
+            ...baseCMsgGCMsgMasterSetDirectory
+        };
         message.dir = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -2421,7 +2479,7 @@ exports.CMsgGCMsgMasterSetDirectory = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCMsgMasterSetDirectory_SubGC = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2435,7 +2493,9 @@ exports.CMsgGCMsgMasterSetDirectory_SubGC = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCMsgMasterSetDirectory_SubGC };
+        const message = {
+            ...baseCMsgGCMsgMasterSetDirectory_SubGC
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2460,7 +2520,7 @@ exports.CMsgGCMsgMasterSetDirectory_SubGC = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCMsgMasterSetDirectoryResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2470,7 +2530,9 @@ exports.CMsgGCMsgMasterSetDirectoryResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCMsgMasterSetDirectoryResponse };
+        const message = {
+            ...baseCMsgGCMsgMasterSetDirectoryResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2483,7 +2545,7 @@ exports.CMsgGCMsgMasterSetDirectoryResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCMsgWebAPIJobRequestForwardResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2493,7 +2555,9 @@ exports.CMsgGCMsgWebAPIJobRequestForwardResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCMsgWebAPIJobRequestForwardResponse };
+        const message = {
+            ...baseCMsgGCMsgWebAPIJobRequestForwardResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2506,7 +2570,7 @@ exports.CMsgGCMsgWebAPIJobRequestForwardResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCSystemMsgGetPurchaseTrustRequest = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2516,7 +2580,9 @@ exports.CGCSystemMsgGetPurchaseTrustRequest = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCGCSystemMsgGetPurchaseTrustRequest };
+        const message = {
+            ...baseCGCSystemMsgGetPurchaseTrustRequest
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2529,7 +2595,7 @@ exports.CGCSystemMsgGetPurchaseTrustRequest = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CGCSystemMsgGetPurchaseTrustResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2542,7 +2608,9 @@ exports.CGCSystemMsgGetPurchaseTrustResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCGCSystemMsgGetPurchaseTrustResponse };
+        const message = {
+            ...baseCGCSystemMsgGetPurchaseTrustResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2564,7 +2632,7 @@ exports.CGCSystemMsgGetPurchaseTrustResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCHAccountVacStatusChange = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2578,7 +2646,9 @@ exports.CMsgGCHAccountVacStatusChange = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCHAccountVacStatusChange };
+        const message = {
+            ...baseCMsgGCHAccountVacStatusChange
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2603,7 +2673,7 @@ exports.CMsgGCHAccountVacStatusChange = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCGetPartnerAccountLink = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2613,7 +2683,9 @@ exports.CMsgGCGetPartnerAccountLink = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCGetPartnerAccountLink };
+        const message = {
+            ...baseCMsgGCGetPartnerAccountLink
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2626,7 +2698,7 @@ exports.CMsgGCGetPartnerAccountLink = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCGetPartnerAccountLinkResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2640,7 +2712,9 @@ exports.CMsgGCGetPartnerAccountLinkResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCGetPartnerAccountLinkResponse };
+        const message = {
+            ...baseCMsgGCGetPartnerAccountLinkResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2665,7 +2739,7 @@ exports.CMsgGCGetPartnerAccountLinkResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCRoutingInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2717,7 +2791,7 @@ exports.CMsgGCRoutingInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCMsgMasterSetWebAPIRouting = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2729,7 +2803,9 @@ exports.CMsgGCMsgMasterSetWebAPIRouting = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCMsgMasterSetWebAPIRouting };
+        const message = {
+            ...baseCMsgGCMsgMasterSetWebAPIRouting
+        };
         message.entries = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -2743,7 +2819,7 @@ exports.CMsgGCMsgMasterSetWebAPIRouting = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCMsgMasterSetWebAPIRouting_Entry = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2757,7 +2833,9 @@ exports.CMsgGCMsgMasterSetWebAPIRouting_Entry = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCMsgMasterSetWebAPIRouting_Entry };
+        const message = {
+            ...baseCMsgGCMsgMasterSetWebAPIRouting_Entry
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2776,7 +2854,7 @@ exports.CMsgGCMsgMasterSetWebAPIRouting_Entry = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCMsgMasterSetClientMsgRouting = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2788,7 +2866,9 @@ exports.CMsgGCMsgMasterSetClientMsgRouting = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCMsgMasterSetClientMsgRouting };
+        const message = {
+            ...baseCMsgGCMsgMasterSetClientMsgRouting
+        };
         message.entries = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -2802,7 +2882,7 @@ exports.CMsgGCMsgMasterSetClientMsgRouting = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCMsgMasterSetClientMsgRouting_Entry = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2815,7 +2895,9 @@ exports.CMsgGCMsgMasterSetClientMsgRouting_Entry = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCMsgMasterSetClientMsgRouting_Entry };
+        const message = {
+            ...baseCMsgGCMsgMasterSetClientMsgRouting_Entry
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2831,7 +2913,7 @@ exports.CMsgGCMsgMasterSetClientMsgRouting_Entry = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCMsgMasterSetWebAPIRoutingResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2841,7 +2923,9 @@ exports.CMsgGCMsgMasterSetWebAPIRoutingResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCMsgMasterSetWebAPIRoutingResponse };
+        const message = {
+            ...baseCMsgGCMsgMasterSetWebAPIRoutingResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2854,7 +2938,7 @@ exports.CMsgGCMsgMasterSetWebAPIRoutingResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCMsgMasterSetClientMsgRoutingResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2864,7 +2948,9 @@ exports.CMsgGCMsgMasterSetClientMsgRoutingResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCMsgMasterSetClientMsgRoutingResponse };
+        const message = {
+            ...baseCMsgGCMsgMasterSetClientMsgRoutingResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2877,7 +2963,7 @@ exports.CMsgGCMsgMasterSetClientMsgRoutingResponse = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCMsgSetOptions = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2920,7 +3006,7 @@ exports.CMsgGCMsgSetOptions = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCMsgSetOptions_MessageRange = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2931,7 +3017,9 @@ exports.CMsgGCMsgSetOptions_MessageRange = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCMsgSetOptions_MessageRange };
+        const message = {
+            ...baseCMsgGCMsgSetOptions_MessageRange
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2947,7 +3035,7 @@ exports.CMsgGCMsgSetOptions_MessageRange = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCHUpdateSession = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3034,7 +3122,7 @@ exports.CMsgGCHUpdateSession = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgGCHUpdateSession_ExtraField = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3045,7 +3133,9 @@ exports.CMsgGCHUpdateSession_ExtraField = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgGCHUpdateSession_ExtraField };
+        const message = {
+            ...baseCMsgGCHUpdateSession_ExtraField
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3061,13 +3151,14 @@ exports.CMsgGCHUpdateSession_ExtraField = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgNotificationOfSuspiciousActivity = {
     encode(message, writer = minimal_1.Writer.create()) {
         writer.uint32(9).fixed64(message.steamid);
         writer.uint32(16).uint32(message.appid);
-        if (message.multipleInstances !== undefined && message.multipleInstances !== undefined) {
+        if (message.multipleInstances !== undefined &&
+            message.multipleInstances !== undefined) {
             exports.CMsgNotificationOfSuspiciousActivity_MultipleGameInstances.encode(message.multipleInstances, writer.uint32(26).fork()).ldelim();
         }
         return writer;
@@ -3075,7 +3166,9 @@ exports.CMsgNotificationOfSuspiciousActivity = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgNotificationOfSuspiciousActivity };
+        const message = {
+            ...baseCMsgNotificationOfSuspiciousActivity
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3094,7 +3187,7 @@ exports.CMsgNotificationOfSuspiciousActivity = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgNotificationOfSuspiciousActivity_MultipleGameInstances = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3109,7 +3202,9 @@ exports.CMsgNotificationOfSuspiciousActivity_MultipleGameInstances = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgNotificationOfSuspiciousActivity_MultipleGameInstances };
+        const message = {
+            ...baseCMsgNotificationOfSuspiciousActivity_MultipleGameInstances
+        };
         message.otherSteamids = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -3134,7 +3229,7 @@ exports.CMsgNotificationOfSuspiciousActivity_MultipleGameInstances = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgDPPartnerMicroTxns = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3174,7 +3269,7 @@ exports.CMsgDPPartnerMicroTxns = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgDPPartnerMicroTxns_PartnerMicroTxn = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3200,7 +3295,9 @@ exports.CMsgDPPartnerMicroTxns_PartnerMicroTxn = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgDPPartnerMicroTxns_PartnerMicroTxn };
+        const message = {
+            ...baseCMsgDPPartnerMicroTxns_PartnerMicroTxn
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3261,7 +3358,7 @@ exports.CMsgDPPartnerMicroTxns_PartnerMicroTxn = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgDPPartnerMicroTxns_PartnerInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3274,7 +3371,9 @@ exports.CMsgDPPartnerMicroTxns_PartnerInfo = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgDPPartnerMicroTxns_PartnerInfo };
+        const message = {
+            ...baseCMsgDPPartnerMicroTxns_PartnerInfo
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3296,7 +3395,7 @@ exports.CMsgDPPartnerMicroTxns_PartnerInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgDPPartnerMicroTxnsResponse = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -3307,7 +3406,9 @@ exports.CMsgDPPartnerMicroTxnsResponse = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCMsgDPPartnerMicroTxnsResponse };
+        const message = {
+            ...baseCMsgDPPartnerMicroTxnsResponse
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3323,6 +3424,6 @@ exports.CMsgDPPartnerMicroTxnsResponse = {
             }
         }
         return message;
-    },
+    }
 };
 //# sourceMappingURL=steammessages.js.map

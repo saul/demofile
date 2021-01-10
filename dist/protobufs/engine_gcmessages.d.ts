@@ -1,5 +1,5 @@
-import * as Long from 'long';
-import { Writer, Reader } from 'protobufjs/minimal';
+import * as Long from "long";
+import { Writer, Reader } from "protobufjs/minimal";
 export interface CEngineGotvSyncPacket {
     matchId: Long;
     instanceId: number;

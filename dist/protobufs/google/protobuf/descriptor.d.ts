@@ -1,5 +1,5 @@
-import * as Long from 'long';
-import { Writer, Reader } from 'protobufjs/minimal';
+import * as Long from "long";
+import { Writer, Reader } from "protobufjs/minimal";
 /**
  *  The protocol compiler can output a FileDescriptorSet containing the .proto
  *  files it parses.

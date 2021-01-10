@@ -7,62 +7,62 @@ const minimal_1 = require("protobufjs/minimal");
 const baseCMsgVector = {
     x: 0,
     y: 0,
-    z: 0,
+    z: 0
 };
 const baseCMsgVector2D = {
     x: 0,
-    y: 0,
+    y: 0
 };
 const baseCMsgQAngle = {
     x: 0,
     y: 0,
-    z: 0,
+    z: 0
 };
 const baseCMsgRGBA = {
     r: 0,
     g: 0,
     b: 0,
-    a: 0,
+    a: 0
 };
 const baseCNETMsgTick = {
     tick: 0,
     hostComputationtime: 0,
     hostComputationtimeStdDeviation: 0,
     hostFramestarttimeStdDeviation: 0,
-    hltvReplayFlags: 0,
+    hltvReplayFlags: 0
 };
 const baseCNETMsgStringCmd = {
-    command: "",
+    command: ""
 };
 const baseCNETMsgSignonState = {
     signonState: 0,
     spawnCount: 0,
     numServerPlayers: 0,
     playersNetworkids: "",
-    mapName: "",
+    mapName: ""
 };
 const baseCMsgCVars = {};
 const baseCMsgCVars_CVar = {
     name: "",
     value: "",
-    dictionaryName: 0,
+    dictionaryName: 0
 };
 const baseCNETMsgSetConVar = {};
 const baseCNETMsgNOP = {};
 const baseCNETMsgDisconnect = {
-    text: "",
+    text: ""
 };
 const baseCNETMsgFile = {
     transferId: 0,
     fileName: "",
     isReplayDemoFile: false,
-    deny: false,
+    deny: false
 };
 const baseCNETMsgSplitScreenUser = {
-    slot: 0,
+    slot: 0
 };
 const baseCNETMsgPlayerAvatarData = {
-    accountid: 0,
+    accountid: 0
 };
 const baseCCLCMsgClientInfo = {
     sendTableCrc: 0,
@@ -71,31 +71,31 @@ const baseCCLCMsgClientInfo = {
     isReplay: false,
     friendsId: 0,
     friendsName: "",
-    customFiles: 0,
+    customFiles: 0
 };
 const baseCCLCMsgMove = {
     numBackupCommands: 0,
-    numNewCommands: 0,
+    numNewCommands: 0
 };
 const baseCCLCMsgVoiceData = {
     xuid: Long.UZERO,
     format: 0,
     sequenceBytes: 0,
     sectionNumber: 0,
-    uncompressedSampleOffset: 0,
+    uncompressedSampleOffset: 0
 };
 const baseCCLCMsgBaselineAck = {
     baselineTick: 0,
-    baselineNr: 0,
+    baselineNr: 0
 };
 const baseCCLCMsgListenEvents = {
-    eventMask: 0,
+    eventMask: 0
 };
 const baseCCLCMsgRespondCvarValue = {
     cookie: 0,
     statusCode: 0,
     name: "",
-    value: "",
+    value: ""
 };
 const baseCCLCMsgFileCRCCheck = {
     codePath: 0,
@@ -107,10 +107,10 @@ const baseCCLCMsgFileCRCCheck = {
     fileHashType: 0,
     fileLen: 0,
     packFileId: 0,
-    packFileNumber: 0,
+    packFileNumber: 0
 };
 const baseCCLCMsgLoadingProgress = {
-    progress: 0,
+    progress: 0
 };
 const baseCCLCMsgSplitPlayerConnect = {};
 const baseCCLCMsgCmdKeyValues = {};
@@ -136,20 +136,20 @@ const baseCSVCMsgServerInfo = {
     skyName: "",
     hostName: "",
     publicIp: 0,
-    ugcMapId: Long.UZERO,
+    ugcMapId: Long.UZERO
 };
 const baseCSVCMsgClassInfo = {
-    createOnClient: false,
+    createOnClient: false
 };
 const baseCSVCMsgClassInfo_classT = {
     classId: 0,
     dataTableName: "",
-    className: "",
+    className: ""
 };
 const baseCSVCMsgSendTable = {
     isEnd: false,
     netTableName: "",
-    needsDecoder: false,
+    needsDecoder: false
 };
 const baseCSVCMsgSendTable_sendpropT = {
     type: 0,
@@ -160,16 +160,16 @@ const baseCSVCMsgSendTable_sendpropT = {
     numElements: 0,
     lowValue: 0,
     highValue: 0,
-    numBits: 0,
+    numBits: 0
 };
 const baseCSVCMsgPrint = {
-    text: "",
+    text: ""
 };
 const baseCSVCMsgSetPause = {
-    paused: false,
+    paused: false
 };
 const baseCSVCMsgSetView = {
-    entityIndex: 0,
+    entityIndex: 0
 };
 const baseCSVCMsgCreateStringTable = {
     name: "",
@@ -178,16 +178,16 @@ const baseCSVCMsgCreateStringTable = {
     userDataFixedSize: false,
     userDataSize: 0,
     userDataSizeBits: 0,
-    flags: 0,
+    flags: 0
 };
 const baseCSVCMsgUpdateStringTable = {
     tableId: 0,
-    numChangedEntries: 0,
+    numChangedEntries: 0
 };
 const baseCSVCMsgVoiceInit = {
     quality: 0,
     codec: "",
-    version: 0,
+    version: 0
 };
 const baseCSVCMsgVoiceData = {
     client: 0,
@@ -198,42 +198,42 @@ const baseCSVCMsgVoiceData = {
     format: 0,
     sequenceBytes: 0,
     sectionNumber: 0,
-    uncompressedSampleOffset: 0,
+    uncompressedSampleOffset: 0
 };
 const baseCSVCMsgFixAngle = {
-    relative: false,
+    relative: false
 };
 const baseCSVCMsgCrosshairAngle = {};
 const baseCSVCMsgPrefetch = {
-    soundIndex: 0,
+    soundIndex: 0
 };
 const baseCSVCMsgBSPDecal = {
     decalTextureIndex: 0,
     entityIndex: 0,
     modelIndex: 0,
-    lowPriority: false,
+    lowPriority: false
 };
 const baseCSVCMsgSplitScreen = {
     type: 0,
     slot: 0,
-    playerIndex: 0,
+    playerIndex: 0
 };
 const baseCSVCMsgGetCvarValue = {
     cookie: 0,
-    cvarName: "",
+    cvarName: ""
 };
 const baseCSVCMsgMenu = {
-    dialogType: 0,
+    dialogType: 0
 };
 const baseCSVCMsgUserMessage = {
     msgType: 0,
-    passthrough: 0,
+    passthrough: 0
 };
 const baseCSVCMsgPaintmapData = {};
 const baseCSVCMsgGameEvent = {
     eventName: "",
     eventid: 0,
-    passthrough: 0,
+    passthrough: 0
 };
 const baseCSVCMsgGameEvent_keyT = {
     type: 0,
@@ -243,20 +243,20 @@ const baseCSVCMsgGameEvent_keyT = {
     valShort: 0,
     valByte: 0,
     valBool: false,
-    valUint64: Long.UZERO,
+    valUint64: Long.UZERO
 };
 const baseCSVCMsgGameEventList = {};
 const baseCSVCMsgGameEventList_keyT = {
     type: 0,
-    name: "",
+    name: ""
 };
 const baseCSVCMsgGameEventList_descriptorT = {
     eventid: 0,
-    name: "",
+    name: ""
 };
 const baseCSVCMsgTempEntities = {
     reliable: false,
-    numEntries: 0,
+    numEntries: 0
 };
 const baseCSVCMsgPacketEntities = {
     maxEntries: 0,
@@ -264,10 +264,10 @@ const baseCSVCMsgPacketEntities = {
     isDelta: false,
     updateBaseline: false,
     baseline: 0,
-    deltaFrom: 0,
+    deltaFrom: 0
 };
 const baseCSVCMsgSounds = {
-    reliableSound: false,
+    reliableSound: false
 };
 const baseCSVCMsgSounds_sounddataT = {
     originX: 0,
@@ -286,15 +286,15 @@ const baseCSVCMsgSounds_sounddataT = {
     randomSeed: 0,
     soundLevel: 0,
     isSentence: false,
-    isAmbient: false,
+    isAmbient: false
 };
 const baseCSVCMsgEntityMsg = {
     entIndex: 0,
-    classId: 0,
+    classId: 0
 };
 const baseCSVCMsgCmdKeyValues = {};
 const baseCSVCMsgEncryptedData = {
-    keyType: 0,
+    keyType: 0
 };
 const baseCSVCMsgHltvReplay = {
     delay: 0,
@@ -303,19 +303,19 @@ const baseCSVCMsgHltvReplay = {
     replayStartAt: 0,
     replaySlowdownBegin: 0,
     replaySlowdownEnd: 0,
-    replaySlowdownRate: 0,
+    replaySlowdownRate: 0
 };
 const baseCCLCMsgHltvReplay = {
     request: 0,
     slowdownLength: 0,
     slowdownRate: 0,
     primaryTargetEntIndex: 0,
-    eventTime: 0,
+    eventTime: 0
 };
 const baseCSVCMsgBroadcastCommand = {
-    cmd: "",
+    cmd: ""
 };
-exports.protobufPackage = '';
+exports.protobufPackage = "";
 var NETMessages;
 (function (NETMessages) {
     NETMessages[NETMessages["net_NOP"] = 0] = "net_NOP";
@@ -422,7 +422,7 @@ exports.CMsgVector = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgVector2D = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -449,7 +449,7 @@ exports.CMsgVector2D = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgQAngle = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -480,7 +480,7 @@ exports.CMsgQAngle = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgRGBA = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -515,7 +515,7 @@ exports.CMsgRGBA = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CNETMsgTick = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -554,7 +554,7 @@ exports.CNETMsgTick = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CNETMsgStringCmd = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -577,7 +577,7 @@ exports.CNETMsgStringCmd = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CNETMsgSignonState = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -619,7 +619,7 @@ exports.CNETMsgSignonState = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgCVars = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -645,7 +645,7 @@ exports.CMsgCVars = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CMsgCVars_CVar = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -676,7 +676,7 @@ exports.CMsgCVars_CVar = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CNETMsgSetConVar = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -701,7 +701,7 @@ exports.CNETMsgSetConVar = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CNETMsgNOP = {
     encode(_, writer = minimal_1.Writer.create()) {
@@ -720,7 +720,7 @@ exports.CNETMsgNOP = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CNETMsgDisconnect = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -743,7 +743,7 @@ exports.CNETMsgDisconnect = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CNETMsgFile = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -778,7 +778,7 @@ exports.CNETMsgFile = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CNETMsgSplitScreenUser = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -801,7 +801,7 @@ exports.CNETMsgSplitScreenUser = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CNETMsgPlayerAvatarData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -812,7 +812,9 @@ exports.CNETMsgPlayerAvatarData = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCNETMsgPlayerAvatarData };
+        const message = {
+            ...baseCNETMsgPlayerAvatarData
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -828,7 +830,7 @@ exports.CNETMsgPlayerAvatarData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCLCMsgClientInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -888,7 +890,7 @@ exports.CCLCMsgClientInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCLCMsgMove = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -919,7 +921,7 @@ exports.CCLCMsgMove = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCLCMsgVoiceData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -962,7 +964,7 @@ exports.CCLCMsgVoiceData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCLCMsgBaselineAck = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -989,7 +991,7 @@ exports.CCLCMsgBaselineAck = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCLCMsgListenEvents = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1025,7 +1027,7 @@ exports.CCLCMsgListenEvents = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCLCMsgRespondCvarValue = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1038,7 +1040,9 @@ exports.CCLCMsgRespondCvarValue = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCLCMsgRespondCvarValue };
+        const message = {
+            ...baseCCLCMsgRespondCvarValue
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1060,7 +1064,7 @@ exports.CCLCMsgRespondCvarValue = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCLCMsgFileCRCCheck = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1123,7 +1127,7 @@ exports.CCLCMsgFileCRCCheck = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCLCMsgLoadingProgress = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1146,7 +1150,7 @@ exports.CCLCMsgLoadingProgress = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCLCMsgSplitPlayerConnect = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1158,7 +1162,9 @@ exports.CCLCMsgSplitPlayerConnect = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCCLCMsgSplitPlayerConnect };
+        const message = {
+            ...baseCCLCMsgSplitPlayerConnect
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1171,7 +1177,7 @@ exports.CCLCMsgSplitPlayerConnect = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCLCMsgCmdKeyValues = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1194,7 +1200,7 @@ exports.CCLCMsgCmdKeyValues = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgServerInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1301,7 +1307,7 @@ exports.CSVCMsgServerInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgClassInfo = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1331,7 +1337,7 @@ exports.CSVCMsgClassInfo = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgClassInfo_classT = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1343,7 +1349,9 @@ exports.CSVCMsgClassInfo_classT = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCSVCMsgClassInfo_classT };
+        const message = {
+            ...baseCSVCMsgClassInfo_classT
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1362,7 +1370,7 @@ exports.CSVCMsgClassInfo_classT = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgSendTable = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1400,7 +1408,7 @@ exports.CSVCMsgSendTable = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgSendTable_sendpropT = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1418,7 +1426,9 @@ exports.CSVCMsgSendTable_sendpropT = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCSVCMsgSendTable_sendpropT };
+        const message = {
+            ...baseCSVCMsgSendTable_sendpropT
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1455,7 +1465,7 @@ exports.CSVCMsgSendTable_sendpropT = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgPrint = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1478,7 +1488,7 @@ exports.CSVCMsgPrint = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgSetPause = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1501,7 +1511,7 @@ exports.CSVCMsgSetPause = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgSetView = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1524,7 +1534,7 @@ exports.CSVCMsgSetView = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgCreateStringTable = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1541,7 +1551,9 @@ exports.CSVCMsgCreateStringTable = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCSVCMsgCreateStringTable };
+        const message = {
+            ...baseCSVCMsgCreateStringTable
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1575,7 +1587,7 @@ exports.CSVCMsgCreateStringTable = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgUpdateStringTable = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1587,7 +1599,9 @@ exports.CSVCMsgUpdateStringTable = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCSVCMsgUpdateStringTable };
+        const message = {
+            ...baseCSVCMsgUpdateStringTable
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1606,7 +1620,7 @@ exports.CSVCMsgUpdateStringTable = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgVoiceInit = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1637,7 +1651,7 @@ exports.CSVCMsgVoiceInit = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgVoiceData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1696,7 +1710,7 @@ exports.CSVCMsgVoiceData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgFixAngle = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1725,7 +1739,7 @@ exports.CSVCMsgFixAngle = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgCrosshairAngle = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1750,7 +1764,7 @@ exports.CSVCMsgCrosshairAngle = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgPrefetch = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1773,7 +1787,7 @@ exports.CSVCMsgPrefetch = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgBSPDecal = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1814,7 +1828,7 @@ exports.CSVCMsgBSPDecal = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgSplitScreen = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1845,7 +1859,7 @@ exports.CSVCMsgSplitScreen = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgGetCvarValue = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1872,7 +1886,7 @@ exports.CSVCMsgGetCvarValue = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgMenu = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1899,7 +1913,7 @@ exports.CSVCMsgMenu = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgUserMessage = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1930,7 +1944,7 @@ exports.CSVCMsgUserMessage = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgPaintmapData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1953,7 +1967,7 @@ exports.CSVCMsgPaintmapData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgGameEvent = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -1991,7 +2005,7 @@ exports.CSVCMsgGameEvent = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgGameEvent_keyT = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2046,7 +2060,7 @@ exports.CSVCMsgGameEvent_keyT = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgGameEventList = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2072,7 +2086,7 @@ exports.CSVCMsgGameEventList = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgGameEventList_keyT = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2083,7 +2097,9 @@ exports.CSVCMsgGameEventList_keyT = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCSVCMsgGameEventList_keyT };
+        const message = {
+            ...baseCSVCMsgGameEventList_keyT
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2099,7 +2115,7 @@ exports.CSVCMsgGameEventList_keyT = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgGameEventList_descriptorT = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2113,7 +2129,9 @@ exports.CSVCMsgGameEventList_descriptorT = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCSVCMsgGameEventList_descriptorT };
+        const message = {
+            ...baseCSVCMsgGameEventList_descriptorT
+        };
         message.keys = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
@@ -2133,7 +2151,7 @@ exports.CSVCMsgGameEventList_descriptorT = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgTempEntities = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2164,7 +2182,7 @@ exports.CSVCMsgTempEntities = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgPacketEntities = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2211,7 +2229,7 @@ exports.CSVCMsgPacketEntities = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgSounds = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2241,7 +2259,7 @@ exports.CSVCMsgSounds = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgSounds_sounddataT = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2267,7 +2285,9 @@ exports.CSVCMsgSounds_sounddataT = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCSVCMsgSounds_sounddataT };
+        const message = {
+            ...baseCSVCMsgSounds_sounddataT
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2328,7 +2348,7 @@ exports.CSVCMsgSounds_sounddataT = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgEntityMsg = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2359,7 +2379,7 @@ exports.CSVCMsgEntityMsg = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgCmdKeyValues = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2382,7 +2402,7 @@ exports.CSVCMsgCmdKeyValues = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgEncryptedData = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2409,7 +2429,7 @@ exports.CSVCMsgEncryptedData = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgHltvReplay = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2456,7 +2476,7 @@ exports.CSVCMsgHltvReplay = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CCLCMsgHltvReplay = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2495,7 +2515,7 @@ exports.CCLCMsgHltvReplay = {
             }
         }
         return message;
-    },
+    }
 };
 exports.CSVCMsgBroadcastCommand = {
     encode(message, writer = minimal_1.Writer.create()) {
@@ -2505,7 +2525,9 @@ exports.CSVCMsgBroadcastCommand = {
     decode(input, length) {
         const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = { ...baseCSVCMsgBroadcastCommand };
+        const message = {
+            ...baseCSVCMsgBroadcastCommand
+        };
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -2518,6 +2540,6 @@ exports.CSVCMsgBroadcastCommand = {
             }
         }
         return message;
-    },
+    }
 };
 //# sourceMappingURL=netmessages.js.map

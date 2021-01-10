@@ -1,5 +1,5 @@
-import * as Long from 'long';
-import { Writer, Reader } from 'protobufjs/minimal';
+import * as Long from "long";
+import { Writer, Reader } from "protobufjs/minimal";
 export interface CMsgVector {
     x: number;
     y: number;
