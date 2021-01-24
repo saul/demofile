@@ -168,25 +168,6 @@ export interface CCSUsrMsgSendPlayerItemFound {
   entindex: number;
 }
 
-export interface CCSUsrMsgRetakeUpdatePlayerCardList {
-  defuseKit: boolean;
-  roundIdx: number[];
-  loadoutIdx: number[];
-  cardIdx: number[];
-  typeIdx: number[];
-  mvpBoostRoundIdx: number;
-  mvpBoostLoadoutIdx: number;
-  mvpBoostCardIdx: number;
-  mvpBoostExtraUtility: number;
-}
-
-export interface CCSUsrMsgRetakeUpdatePlayerCardSelection {
-  roundIdx: number;
-  loadoutIdx: number;
-  cardIdx: number;
-  typeIdx: number;
-}
-
 export interface CCSUsrMsgReloadEffect {
   entidx: number;
   actanim: number;
@@ -685,25 +666,6 @@ const baseCCSUsrMsgSendPlayerItemFound: object = {
   entindex: 0
 };
 
-const baseCCSUsrMsgRetakeUpdatePlayerCardList: object = {
-  defuseKit: false,
-  roundIdx: 0,
-  loadoutIdx: 0,
-  cardIdx: 0,
-  typeIdx: 0,
-  mvpBoostRoundIdx: 0,
-  mvpBoostLoadoutIdx: 0,
-  mvpBoostCardIdx: 0,
-  mvpBoostExtraUtility: 0
-};
-
-const baseCCSUsrMsgRetakeUpdatePlayerCardSelection: object = {
-  roundIdx: 0,
-  loadoutIdx: 0,
-  cardIdx: 0,
-  typeIdx: 0
-};
-
 const baseCCSUsrMsgReloadEffect: object = {
   entidx: 0,
   actanim: 0,
@@ -1106,8 +1068,6 @@ export enum ECstrike15UserMessages {
   CS_UM_SurvivalStats = 73,
   CS_UM_DisconnectToLobby2 = 74,
   CS_UM_EndOfMatchAllPlayersData = 75,
-  CS_UM_RetakeUpdatePlayerCardList = 77,
-  CS_UM_RetakeUpdatePlayerCardSelection = 78,
   CS_UM_RoundImpactScoreData = 79,
   CS_UM_CurrentRoundOdds = 80,
   CS_UM_DeepStats = 81
@@ -2083,162 +2043,6 @@ export const CCSUsrMsgSendPlayerItemFound = {
           break;
         case 2:
           message.entindex = reader.int32();
-          break;
-        default:
-          reader.skipType(tag & 7);
-          break;
-      }
-    }
-    return message;
-  }
-};
-
-export const CCSUsrMsgRetakeUpdatePlayerCardList = {
-  encode(
-    message: CCSUsrMsgRetakeUpdatePlayerCardList,
-    writer: Writer = Writer.create()
-  ): Writer {
-    writer.uint32(8).bool(message.defuseKit);
-    writer.uint32(18).fork();
-    for (const v of message.roundIdx) {
-      writer.int32(v);
-    }
-    writer.ldelim();
-    writer.uint32(26).fork();
-    for (const v of message.loadoutIdx) {
-      writer.int32(v);
-    }
-    writer.ldelim();
-    writer.uint32(34).fork();
-    for (const v of message.cardIdx) {
-      writer.int32(v);
-    }
-    writer.ldelim();
-    writer.uint32(42).fork();
-    for (const v of message.typeIdx) {
-      writer.int32(v);
-    }
-    writer.ldelim();
-    writer.uint32(48).int32(message.mvpBoostRoundIdx);
-    writer.uint32(56).int32(message.mvpBoostLoadoutIdx);
-    writer.uint32(64).int32(message.mvpBoostCardIdx);
-    writer.uint32(72).int32(message.mvpBoostExtraUtility);
-    return writer;
-  },
-  decode(
-    input: Uint8Array | Reader,
-    length?: number
-  ): CCSUsrMsgRetakeUpdatePlayerCardList {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
-    let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCCSUsrMsgRetakeUpdatePlayerCardList
-    } as CCSUsrMsgRetakeUpdatePlayerCardList;
-    message.roundIdx = [];
-    message.loadoutIdx = [];
-    message.cardIdx = [];
-    message.typeIdx = [];
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1:
-          message.defuseKit = reader.bool();
-          break;
-        case 2:
-          if ((tag & 7) === 2) {
-            const end2 = reader.uint32() + reader.pos;
-            while (reader.pos < end2) {
-              message.roundIdx.push(reader.int32());
-            }
-          } else {
-            message.roundIdx.push(reader.int32());
-          }
-          break;
-        case 3:
-          if ((tag & 7) === 2) {
-            const end2 = reader.uint32() + reader.pos;
-            while (reader.pos < end2) {
-              message.loadoutIdx.push(reader.int32());
-            }
-          } else {
-            message.loadoutIdx.push(reader.int32());
-          }
-          break;
-        case 4:
-          if ((tag & 7) === 2) {
-            const end2 = reader.uint32() + reader.pos;
-            while (reader.pos < end2) {
-              message.cardIdx.push(reader.int32());
-            }
-          } else {
-            message.cardIdx.push(reader.int32());
-          }
-          break;
-        case 5:
-          if ((tag & 7) === 2) {
-            const end2 = reader.uint32() + reader.pos;
-            while (reader.pos < end2) {
-              message.typeIdx.push(reader.int32());
-            }
-          } else {
-            message.typeIdx.push(reader.int32());
-          }
-          break;
-        case 6:
-          message.mvpBoostRoundIdx = reader.int32();
-          break;
-        case 7:
-          message.mvpBoostLoadoutIdx = reader.int32();
-          break;
-        case 8:
-          message.mvpBoostCardIdx = reader.int32();
-          break;
-        case 9:
-          message.mvpBoostExtraUtility = reader.int32();
-          break;
-        default:
-          reader.skipType(tag & 7);
-          break;
-      }
-    }
-    return message;
-  }
-};
-
-export const CCSUsrMsgRetakeUpdatePlayerCardSelection = {
-  encode(
-    message: CCSUsrMsgRetakeUpdatePlayerCardSelection,
-    writer: Writer = Writer.create()
-  ): Writer {
-    writer.uint32(8).int32(message.roundIdx);
-    writer.uint32(16).int32(message.loadoutIdx);
-    writer.uint32(24).int32(message.cardIdx);
-    writer.uint32(32).int32(message.typeIdx);
-    return writer;
-  },
-  decode(
-    input: Uint8Array | Reader,
-    length?: number
-  ): CCSUsrMsgRetakeUpdatePlayerCardSelection {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
-    let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCCSUsrMsgRetakeUpdatePlayerCardSelection
-    } as CCSUsrMsgRetakeUpdatePlayerCardSelection;
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1:
-          message.roundIdx = reader.int32();
-          break;
-        case 2:
-          message.loadoutIdx = reader.int32();
-          break;
-        case 3:
-          message.cardIdx = reader.int32();
-          break;
-        case 4:
-          message.typeIdx = reader.int32();
           break;
         default:
           reader.skipType(tag & 7);

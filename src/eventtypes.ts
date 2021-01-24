@@ -301,7 +301,6 @@ export interface IEventPlayerDeath {
   noscope: boolean;
   thrusmoke: boolean;
   attackerblind: boolean;
-  distance: number;
 }
 
 export interface IEventPlayerDisconnect {

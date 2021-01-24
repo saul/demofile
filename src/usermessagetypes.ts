@@ -72,8 +72,6 @@ export type UserMessageName =
   | "SSUI"
   | "SurvivalStats"
   | "EndOfMatchAllPlayersData"
-  | "RetakeUpdatePlayerCardList"
-  | "RetakeUpdatePlayerCardSelection"
   | "RoundImpactScoreData"
   | "CurrentRoundOdds"
   | "DeepStats";
@@ -360,16 +358,6 @@ userMessages[um.ECstrike15UserMessages.CS_UM_EndOfMatchAllPlayersData] = {
   name: "EndOfMatchAllPlayersData",
   class: um.CCSUsrMsgEndOfMatchAllPlayersData
 };
-userMessages[um.ECstrike15UserMessages.CS_UM_RetakeUpdatePlayerCardList] = {
-  name: "RetakeUpdatePlayerCardList",
-  class: um.CCSUsrMsgRetakeUpdatePlayerCardList
-};
-userMessages[
-  um.ECstrike15UserMessages.CS_UM_RetakeUpdatePlayerCardSelection
-] = {
-  name: "RetakeUpdatePlayerCardSelection",
-  class: um.CCSUsrMsgRetakeUpdatePlayerCardSelection
-};
 userMessages[um.ECstrike15UserMessages.CS_UM_RoundImpactScoreData] = {
   name: "RoundImpactScoreData",
   class: um.CCSUsrMsgRoundImpactScoreData
@@ -635,14 +623,6 @@ declare module "./usermessages" {
     on(
       message: "EndOfMatchAllPlayersData",
       listener: (msg: um.CCSUsrMsgEndOfMatchAllPlayersData) => void
-    ): this;
-    on(
-      message: "RetakeUpdatePlayerCardList",
-      listener: (msg: um.CCSUsrMsgRetakeUpdatePlayerCardList) => void
-    ): this;
-    on(
-      message: "RetakeUpdatePlayerCardSelection",
-      listener: (msg: um.CCSUsrMsgRetakeUpdatePlayerCardSelection) => void
     ): this;
     on(
       message: "RoundImpactScoreData",

@@ -432,6 +432,8 @@ export interface CMsgGCCStrike15V2MatchmakingServerRoundStats {
   dropInfo: CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo | undefined;
   bSwitchedTeams: boolean;
   enemy2ks: number[];
+  playerSpawned: number[];
+  teamSpawnCount: number[];
 }
 
 export interface CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo {
@@ -1561,7 +1563,9 @@ const baseCMsgGCCStrike15V2MatchmakingServerRoundStats: object = {
   spectatorsCountLnk: 0,
   enemyKillsAgg: 0,
   bSwitchedTeams: false,
-  enemy2ks: 0
+  enemy2ks: 0,
+  playerSpawned: 0,
+  teamSpawnCount: 0
 };
 
 const baseCMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo: object = {
@@ -5062,6 +5066,16 @@ export const CMsgGCCStrike15V2MatchmakingServerRoundStats = {
       writer.int32(v);
     }
     writer.ldelim();
+    writer.uint32(234).fork();
+    for (const v of message.playerSpawned) {
+      writer.int32(v);
+    }
+    writer.ldelim();
+    writer.uint32(242).fork();
+    for (const v of message.teamSpawnCount) {
+      writer.int32(v);
+    }
+    writer.ldelim();
     return writer;
   },
   decode(
@@ -5087,6 +5101,8 @@ export const CMsgGCCStrike15V2MatchmakingServerRoundStats = {
     message.mvps = [];
     message.enemyKillsAgg = [];
     message.enemy2ks = [];
+    message.playerSpawned = [];
+    message.teamSpawnCount = [];
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -5279,6 +5295,26 @@ export const CMsgGCCStrike15V2MatchmakingServerRoundStats = {
             }
           } else {
             message.enemy2ks.push(reader.int32());
+          }
+          break;
+        case 29:
+          if ((tag & 7) === 2) {
+            const end2 = reader.uint32() + reader.pos;
+            while (reader.pos < end2) {
+              message.playerSpawned.push(reader.int32());
+            }
+          } else {
+            message.playerSpawned.push(reader.int32());
+          }
+          break;
+        case 30:
+          if ((tag & 7) === 2) {
+            const end2 = reader.uint32() + reader.pos;
+            while (reader.pos < end2) {
+              message.teamSpawnCount.push(reader.int32());
+            }
+          } else {
+            message.teamSpawnCount.push(reader.int32());
           }
           break;
         default:
