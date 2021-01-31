@@ -1425,6 +1425,7 @@ export interface DT_PlayerPing {
   m_hPingedEntity: EntityHandle;
   m_iType: number;
   m_bUrgent: boolean;
+  m_szPlaceName: string;
 }
 
 export interface DT_PlayerResource {
@@ -4192,6 +4193,7 @@ export interface DT_CSGameRules {
   m_flCTTimeOutRemaining: number;
   m_nTerroristTimeOuts: number;
   m_nCTTimeOuts: number;
+  m_bTechnicalTimeOut: boolean;
   m_iRoundTime: number;
   m_gamePhase: number;
   m_totalRoundsPlayed: number;
@@ -5397,6 +5399,7 @@ export interface m_SurvivalGameRuleDecisionValues {
 }
 
 export interface DT_RetakeGameRules {
+  m_nMatchSeed: number;
   m_bBlockersPresent: boolean;
   m_bRoundInProgress: boolean;
   m_iFirstSecondHalfRound: number;
@@ -5417,6 +5420,12 @@ export interface DT_CSLocalPlayerExclusive {
   // m_iWeaponPurchasesThisRound: DataTable;
   m_unActiveQuestId: number;
   m_nQuestProgressReason: number;
+  m_iRetakesOffering: number;
+  m_iRetakesOfferingCard: number;
+  m_bRetakesHasDefuseKit: boolean;
+  m_bRetakesMVPLastRound: boolean;
+  m_iRetakesMVPBoostItem: number;
+  m_RetakesMVPBoostExtraUtility: number;
 }
 
 export interface m_bPlayerDominated {
