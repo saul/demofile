@@ -337,6 +337,8 @@ export interface CGCSystemMsgGetAccountDetailsResponse {
   rtIdentityLinked: number;
   rtBirthDate: number;
   txnCountryCode: string;
+  hasAcceptedChinaSsa: boolean;
+  isBannedSteamChina: boolean;
 }
 
 export interface CMsgGCGetPersonaNames {
@@ -852,7 +854,9 @@ const baseCGCSystemMsgGetAccountDetailsResponse: object = {
   isPhoneIdentifying: false,
   rtIdentityLinked: 0,
   rtBirthDate: 0,
-  txnCountryCode: ""
+  txnCountryCode: "",
+  hasAcceptedChinaSsa: false,
+  isBannedSteamChina: false
 };
 
 const baseCMsgGCGetPersonaNames: object = {
@@ -3062,6 +3066,8 @@ export const CGCSystemMsgGetAccountDetailsResponse = {
     writer.uint32(280).uint32(message.rtIdentityLinked);
     writer.uint32(288).uint32(message.rtBirthDate);
     writer.uint32(298).string(message.txnCountryCode);
+    writer.uint32(304).bool(message.hasAcceptedChinaSsa);
+    writer.uint32(312).bool(message.isBannedSteamChina);
     return writer;
   },
   decode(
@@ -3177,6 +3183,12 @@ export const CGCSystemMsgGetAccountDetailsResponse = {
           break;
         case 37:
           message.txnCountryCode = reader.string();
+          break;
+        case 38:
+          message.hasAcceptedChinaSsa = reader.bool();
+          break;
+        case 39:
+          message.isBannedSteamChina = reader.bool();
           break;
         default:
           reader.skipType(tag & 7);
