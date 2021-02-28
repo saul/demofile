@@ -5,6 +5,12 @@
 A node.js library for parsing Counter-Strike Global Offensive (CSGO) demo files.
 The library is also Browserify-able, and a standalone bundle that you can `<script src="...">` is available in [browser/bundle.js](browser/bundle.js).
 
+### ❓ Need help
+
+- First, search the ['Questions' discussion board](https://github.com/saul/demofile/discussions/categories/questions) - your question has probably already been asked.
+- If not, [start a new 'Questions' discussion](https://github.com/saul/demofile/discussions/new?category=questions).
+- If you think you've found a bug, [raise an issue](https://github.com/saul/demofile/issues/new/choose).
+
 ## Supported demo features
 
 - GOTV and POV perspective fully supported
@@ -68,12 +74,6 @@ There are several classes which allow access to different types of entities (e.g
 This library provides full access to all data available in CSGO demo files. Unlike some other libraries, `demofile` is feature complete and supports the latest demos. As well as providing high-level APIs to access the state of the game, low-level access is available and is not discouraged.
 
 Note that events are fired at the end of a tick, after all entity props and string tables have been updated.
-
-### ❓ Need help
-
-- First, search the ['Questions' discussion board](https://github.com/saul/demofile/discussions/categories/questions) - your question has probably already been asked.
-- If not, [start a new 'Questions' discussion](https://github.com/saul/demofile/discussions/new?category=questions).
-- If you think you've found a bug, [raise an issue](https://github.com/saul/demofile/issues/new/choose).
 
 ### Examples
 
