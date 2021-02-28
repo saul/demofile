@@ -1,6 +1,4 @@
-# demofile
-
-![CI](https://github.com/saul/demofile/workflows/CI/badge.svg)
+# demofile ![CI](https://github.com/saul/demofile/workflows/CI/badge.svg)
 
 A node.js library for parsing Counter-Strike Global Offensive (CSGO) demo files.
 The library is also Browserify-able, and a standalone bundle that you can `<script src="...">` is available in [browser/bundle.js](browser/bundle.js).
