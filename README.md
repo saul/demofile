@@ -1,18 +1,40 @@
 # demofile
 
-![CI](https://github.com/saul/demofile/workflows/CI/badge.svg) [![Join the chat at https://gitter.im/saul/demofile](https://badges.gitter.im/saul/demofile.svg)](https://gitter.im/saul/demofile?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+![CI](https://github.com/saul/demofile/workflows/CI/badge.svg)
 
 A node.js library for parsing Counter-Strike Global Offensive (CSGO) demo files.
 The library is also Browserify-able, and a standalone bundle that you can `<script src="...">` is available in [browser/bundle.js](browser/bundle.js).
 
-## Supported Demo Features
+## Supported demo features
 
-- Entity updates, server classes, data tables (including instance baselines)
-- Both perspectives (GOTV and client-side recorded)
-- User messages
+- GOTV and POV perspective fully supported
+- Game events (e.g. `player_death`)
+- User messages (e.g. chat messages, HUD text)
+- Console variables (cvar/convars)
+- Entity updates, server classes, data tables
 - String tables
-- Game events
-- Console variables
+
+## Installation
+
+### Node
+
+```bash
+npm install --save demofile
+```
+
+### Browser
+
+```html
+<script src="browser/bundle.js"></script>
+```
+
+The `DemoFile` module will be available as `window.demofile`.
+
+## Screenshot
+
+Using the [dumpfile example](./examples/dumpfile.ts):
+
+![Example output](./example.png)
 
 ## Documentation
 
@@ -41,33 +63,17 @@ There are several classes which allow access to different types of entities (e.g
 | [Player](https://saul.github.io/demofile/classes/_entities_player_.player.html)                | `demoFile.entities.players`<br>`demoFile.entities.getByUserId`            | Represents an in-game player.                                                               |
 | [Weapon](https://saul.github.io/demofile/classes/_entities_weapon_.weapon.html)                | `demoFile.entities.weapons`<br>`player.weapon`<br>`player.weapons`        | Represents an in-game weapon (guns, grenades, knifes).                                      |
 
-## Installation
-
-### Browser
-
-```html
-<script src="browser/bundle.js"></script>
-```
-
-The `DemoFile` module will be available as `window.demofile`.
-
-### Node
-
-```bash
-npm install --save demofile
-```
-
-## Screenshot
-
-![Example output](./example.png)
-
 ## API
 
-This library provides full access to the data available in CSGO demo files. Unlike some other libraries, `demofile` is feature complete and supports the latest demos. As well as providing high-level APIs to access the state of the game, low-level access is available and is not discouraged.
+This library provides full access to all data available in CSGO demo files. Unlike some other libraries, `demofile` is feature complete and supports the latest demos. As well as providing high-level APIs to access the state of the game, low-level access is available and is not discouraged.
 
-❓ **Need help?** [Raise an issue](https://github.com/saul/demofile/issues/new/choose) or ask in the [Gitter community](https://gitter.im/saul/demofile).
+Note that events are fired at the end of a tick, after all entity props and string tables have been updated.
 
-Note: It is important to note that events are fired at the end of a tick, after all entity props and string tables have been updated.
+### ❓ Need help
+
+- First, search the ['Questions' discussion board](https://github.com/saul/demofile/discussions/categories/questions) - your question has probably already been asked.
+- If not, [start a new 'Questions' discussion](https://github.com/saul/demofile/discussions/new?category=questions).
+- If you think you've found a bug, [raise an issue](https://github.com/saul/demofile/issues/new/choose).
 
 ### Examples
 
@@ -165,7 +171,6 @@ Player info updated:
 ### Useful links
 
 - [CS:GO Game Events - AlliedModders Wiki](https://wiki.alliedmods.net/Counter-Strike:_Global_Offensive_Events)
-- [Gitter community](https://gitter.im/saul/demofile)
 
 ## Contributing
 
