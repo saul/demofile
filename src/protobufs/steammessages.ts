@@ -538,6 +538,7 @@ export interface CMsgDPPartnerMicroTxnsResponse {
 export interface CChinaAgreementSessionsStartAgreementSessionInGameRequest {
   appid: number;
   steamid: Long;
+  clientIpaddress: string;
 }
 
 export interface CChinaAgreementSessionsStartAgreementSessionInGameResponse {
@@ -1040,7 +1041,8 @@ const baseCMsgDPPartnerMicroTxnsResponse: object = {
 
 const baseCChinaAgreementSessionsStartAgreementSessionInGameRequest: object = {
   appid: 0,
-  steamid: Long.UZERO
+  steamid: Long.UZERO,
+  clientIpaddress: ""
 };
 
 const baseCChinaAgreementSessionsStartAgreementSessionInGameResponse: object = {
@@ -4606,6 +4608,7 @@ export const CChinaAgreementSessionsStartAgreementSessionInGameRequest = {
   ): Writer {
     writer.uint32(8).uint32(message.appid);
     writer.uint32(17).fixed64(message.steamid);
+    writer.uint32(26).string(message.clientIpaddress);
     return writer;
   },
   decode(
@@ -4625,6 +4628,9 @@ export const CChinaAgreementSessionsStartAgreementSessionInGameRequest = {
           break;
         case 2:
           message.steamid = reader.fixed64() as Long;
+          break;
+        case 3:
+          message.clientIpaddress = reader.string();
           break;
         default:
           reader.skipType(tag & 7);
