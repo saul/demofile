@@ -80,6 +80,7 @@ Various examples are available in the `examples` folder:
 | Example                                     | Description                                                                            |
 | ------------------------------------------- | -------------------------------------------------------------------------------------- |
 | [`join-leave.ts`](./examples/join-leave.ts) | Print all players that join and leave the game during the course of the demo.          |
+| [`molotov.ts`](./examples/molotov.ts)       | Prints the location of molotov/incendiary grenade explosions.                          |
 | [`plant-site.ts`](./examples/plant-site.ts) | Prints which player planted the bomb and at which site.                                |
 | [`purchases.ts`](./examples/purchases.ts)   | Prints which items are purchased by each player.                                       |
 | [`rank.ts`](./examples/rank.ts)             | At the end of the game, prints all player ranks.                                       |
