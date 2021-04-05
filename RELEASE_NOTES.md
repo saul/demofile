@@ -6,6 +6,10 @@
 - Unreleased release notes here
 -->
 
+### 2.0.0 (2021-04-05)
+
+- :zap: Incorporate latest CSGO protobufs
+
 ### 2.0.0-beta.4 (2021-01-10)
 
 - :sparkles: Add `Weapon#quality` to represent an item's quality
