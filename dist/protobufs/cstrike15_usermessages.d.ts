@@ -133,23 +133,6 @@ export interface CCSUsrMsgSendPlayerItemFound {
     iteminfo: CEconItemPreviewDataBlock | undefined;
     entindex: number;
 }
-export interface CCSUsrMsgRetakeUpdatePlayerCardList {
-    defuseKit: boolean;
-    roundIdx: number[];
-    loadoutIdx: number[];
-    cardIdx: number[];
-    typeIdx: number[];
-    mvpBoostRoundIdx: number;
-    mvpBoostLoadoutIdx: number;
-    mvpBoostCardIdx: number;
-    mvpBoostExtraUtility: number;
-}
-export interface CCSUsrMsgRetakeUpdatePlayerCardSelection {
-    roundIdx: number;
-    loadoutIdx: number;
-    cardIdx: number;
-    typeIdx: number;
-}
 export interface CCSUsrMsgReloadEffect {
     entidx: number;
     actanim: number;
@@ -514,8 +497,6 @@ export declare enum ECstrike15UserMessages {
     CS_UM_SurvivalStats = 73,
     CS_UM_DisconnectToLobby2 = 74,
     CS_UM_EndOfMatchAllPlayersData = 75,
-    CS_UM_RetakeUpdatePlayerCardList = 77,
-    CS_UM_RetakeUpdatePlayerCardSelection = 78,
     CS_UM_RoundImpactScoreData = 79,
     CS_UM_CurrentRoundOdds = 80,
     CS_UM_DeepStats = 81
@@ -627,14 +608,6 @@ export declare const CCSUsrMsgSendPlayerItemDrops: {
 export declare const CCSUsrMsgSendPlayerItemFound: {
     encode(message: CCSUsrMsgSendPlayerItemFound, writer?: Writer): Writer;
     decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgSendPlayerItemFound;
-};
-export declare const CCSUsrMsgRetakeUpdatePlayerCardList: {
-    encode(message: CCSUsrMsgRetakeUpdatePlayerCardList, writer?: Writer): Writer;
-    decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgRetakeUpdatePlayerCardList;
-};
-export declare const CCSUsrMsgRetakeUpdatePlayerCardSelection: {
-    encode(message: CCSUsrMsgRetakeUpdatePlayerCardSelection, writer?: Writer): Writer;
-    decode(input: Uint8Array | Reader, length?: number | undefined): CCSUsrMsgRetakeUpdatePlayerCardSelection;
 };
 export declare const CCSUsrMsgReloadEffect: {
     encode(message: CCSUsrMsgReloadEffect, writer?: Writer): Writer;

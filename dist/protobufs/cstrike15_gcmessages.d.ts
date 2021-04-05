@@ -387,6 +387,8 @@ export interface CMsgGCCStrike15V2MatchmakingServerRoundStats {
     dropInfo: CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo | undefined;
     bSwitchedTeams: boolean;
     enemy2ks: number[];
+    playerSpawned: number[];
+    teamSpawnCount: number[];
 }
 export interface CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo {
     accountMvp: number;

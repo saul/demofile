@@ -281,14 +281,6 @@ exports.userMessages[um.ECstrike15UserMessages.CS_UM_EndOfMatchAllPlayersData] =
     name: "EndOfMatchAllPlayersData",
     class: um.CCSUsrMsgEndOfMatchAllPlayersData
 };
-exports.userMessages[um.ECstrike15UserMessages.CS_UM_RetakeUpdatePlayerCardList] = {
-    name: "RetakeUpdatePlayerCardList",
-    class: um.CCSUsrMsgRetakeUpdatePlayerCardList
-};
-exports.userMessages[um.ECstrike15UserMessages.CS_UM_RetakeUpdatePlayerCardSelection] = {
-    name: "RetakeUpdatePlayerCardSelection",
-    class: um.CCSUsrMsgRetakeUpdatePlayerCardSelection
-};
 exports.userMessages[um.ECstrike15UserMessages.CS_UM_RoundImpactScoreData] = {
     name: "RoundImpactScoreData",
     class: um.CCSUsrMsgRoundImpactScoreData

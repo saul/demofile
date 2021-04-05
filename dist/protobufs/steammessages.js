@@ -267,7 +267,9 @@ const baseCGCSystemMsgGetAccountDetailsResponse = {
     isPhoneIdentifying: false,
     rtIdentityLinked: 0,
     rtBirthDate: 0,
-    txnCountryCode: ""
+    txnCountryCode: "",
+    hasAcceptedChinaSsa: false,
+    isBannedSteamChina: false
 };
 const baseCMsgGCGetPersonaNames = {
     steamids: Long.UZERO
@@ -419,7 +421,8 @@ const baseCMsgDPPartnerMicroTxnsResponse = {
 };
 const baseCChinaAgreementSessionsStartAgreementSessionInGameRequest = {
     appid: 0,
-    steamid: Long.UZERO
+    steamid: Long.UZERO,
+    clientIpaddress: ""
 };
 const baseCChinaAgreementSessionsStartAgreementSessionInGameResponse = {
     agreementUrl: ""
@@ -2169,6 +2172,8 @@ exports.CGCSystemMsgGetAccountDetailsResponse = {
         writer.uint32(280).uint32(message.rtIdentityLinked);
         writer.uint32(288).uint32(message.rtBirthDate);
         writer.uint32(298).string(message.txnCountryCode);
+        writer.uint32(304).bool(message.hasAcceptedChinaSsa);
+        writer.uint32(312).bool(message.isBannedSteamChina);
         return writer;
     },
     decode(input, length) {
@@ -2281,6 +2286,12 @@ exports.CGCSystemMsgGetAccountDetailsResponse = {
                     break;
                 case 37:
                     message.txnCountryCode = reader.string();
+                    break;
+                case 38:
+                    message.hasAcceptedChinaSsa = reader.bool();
+                    break;
+                case 39:
+                    message.isBannedSteamChina = reader.bool();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -3437,6 +3448,7 @@ exports.CChinaAgreementSessionsStartAgreementSessionInGameRequest = {
     encode(message, writer = minimal_1.Writer.create()) {
         writer.uint32(8).uint32(message.appid);
         writer.uint32(17).fixed64(message.steamid);
+        writer.uint32(26).string(message.clientIpaddress);
         return writer;
     },
     decode(input, length) {
@@ -3453,6 +3465,9 @@ exports.CChinaAgreementSessionsStartAgreementSessionInGameRequest = {
                     break;
                 case 2:
                     message.steamid = reader.fixed64();
+                    break;
+                case 3:
+                    message.clientIpaddress = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);

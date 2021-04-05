@@ -290,6 +290,8 @@ export interface CGCSystemMsgGetAccountDetailsResponse {
     rtIdentityLinked: number;
     rtBirthDate: number;
     txnCountryCode: string;
+    hasAcceptedChinaSsa: boolean;
+    isBannedSteamChina: boolean;
 }
 export interface CMsgGCGetPersonaNames {
     steamids: Long[];
@@ -455,6 +457,7 @@ export interface CMsgDPPartnerMicroTxnsResponse {
 export interface CChinaAgreementSessionsStartAgreementSessionInGameRequest {
     appid: number;
     steamid: Long;
+    clientIpaddress: string;
 }
 export interface CChinaAgreementSessionsStartAgreementSessionInGameResponse {
     agreementUrl: string;
