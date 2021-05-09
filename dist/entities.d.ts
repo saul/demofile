@@ -120,14 +120,13 @@ export declare interface Entities {
     emit(name: "baselineupdate", event: IBaselineUpdateEvent): boolean;
     /**
      * Fired when an entity is created.
-     * Note no entity properties are available yet.
-     * Use {@link Entities#postcreate} if you need access to properties.
      */
     on(event: "create", listener: (event: IEntityCreationEvent) => void): this;
     emit(name: "create", event: IEntityCreationEvent): boolean;
     /**
      * Fired after an entity has been created.
-     * All properties are now available for inspection.
+     * All entity props are available for inspection.
+     * @deprecated Listen to {@link Entities#create} instead
      */
     on(event: "postcreate", listener: (event: IEntityCreationEvent) => void): this;
     emit(name: "postcreate", event: IEntityCreationEvent): boolean;

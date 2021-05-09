@@ -804,6 +804,10 @@ export interface CSOAccountSeasonalOperation {
     redeemableBalance: number;
     seasonPassTime: number;
 }
+export interface CSOAccountRecurringSubscription {
+    timeNextCycle: number;
+    timeInitiated: number;
+}
 export interface CSOPersonaDataPublic {
     playerLevel: number;
     commendation: PlayerCommendationInfo | undefined;
@@ -1578,6 +1582,10 @@ export declare const CSOQuestProgress: {
 export declare const CSOAccountSeasonalOperation: {
     encode(message: CSOAccountSeasonalOperation, writer?: Writer): Writer;
     decode(input: Uint8Array | Reader, length?: number | undefined): CSOAccountSeasonalOperation;
+};
+export declare const CSOAccountRecurringSubscription: {
+    encode(message: CSOAccountRecurringSubscription, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CSOAccountRecurringSubscription;
 };
 export declare const CSOPersonaDataPublic: {
     encode(message: CSOPersonaDataPublic, writer?: Writer): Writer;

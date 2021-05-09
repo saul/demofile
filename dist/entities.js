@@ -327,21 +327,12 @@ class Entities extends events_1.EventEmitter {
     _findTableByName(name) {
         return this.dataTables.find(table => table.netTableName === name);
     }
-    _addEntity(index, classId, serialNum, entityBaseline) {
+    _addEntity(index, classId, serialNum, existingEntity, entityBaseline) {
         const baseline = entityBaseline || this.staticBaselines[classId];
         if (!baseline) {
             throw new Error(`no baseline for entity ${index} (class ID ${classId})`);
         }
-        // Try to find a suitable class for this entity
-        let klass = networkable_1.Networkable;
-        for (const tableName in this.tableClassMap) {
-            if (baseline[tableName]) {
-                klass = this.tableClassMap[tableName];
-                break;
-            }
-        }
         const props = cloneProps(baseline);
-        const existingEntity = this.entities.get(index);
         // If we already have this entity, start fresh with baseline props
         if ((existingEntity === null || existingEntity === void 0 ? void 0 : existingEntity.serialNum) === serialNum) {
             existingEntity.props = props;
@@ -351,9 +342,16 @@ class Entities extends events_1.EventEmitter {
         if (existingEntity) {
             this._removeEntity(index, true);
         }
+        // Try to find a suitable class for this entity
+        let klass = networkable_1.Networkable;
+        for (const tableName in this.tableClassMap) {
+            if (baseline[tableName]) {
+                klass = this.tableClassMap[tableName];
+                break;
+            }
+        }
         const entity = new klass(this._demo, index, classId, serialNum, props);
         this.entities.set(index, entity);
-        this.emit("create", { entity });
         return entity;
     }
     _removeEntity(index, immediate) {
@@ -521,11 +519,15 @@ class Entities extends events_1.EventEmitter {
                 const entityBaselineProps = msg.isDelta && (existingBaseline === null || existingBaseline === void 0 ? void 0 : existingBaseline.classId) === classId
                     ? existingBaseline.props
                     : undefined;
-                const entity = this._addEntity(entityIndex, classId, serialNum, entityBaselineProps);
+                const existingEntity = this.entities.get(entityIndex);
+                const entity = this._addEntity(entityIndex, classId, serialNum, existingEntity, entityBaselineProps);
                 this._readNewEntity(entityBitBuffer, entity);
-                this.emit("postcreate", {
-                    entity
-                });
+                if (entity !== existingEntity) {
+                    const eventVars = { entity };
+                    this.emit("create", eventVars);
+                    // Still emit 'postcreate' for backwards compatibility
+                    this.emit("postcreate", eventVars);
+                }
                 // Update the OTHER baseline with the merged result of `old baseline + new props`
                 if (msg.updateBaseline) {
                     this._entityBaselines[msg.baseline ? 0 : 1].set(entityIndex, {
