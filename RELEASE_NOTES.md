@@ -6,6 +6,10 @@
 - Unreleased release notes here
 -->
 
+### 2.1.0 (2021-05-09)
+
+- :zap: #295: Emit `Entities#create` and `Entities#postcreate` at the same time. (`Entities#postcreate` is now deprecated.)
+
 ### 2.0.0 (2021-04-05)
 
 - :zap: Incorporate latest CSGO protobufs

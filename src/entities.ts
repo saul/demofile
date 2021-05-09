@@ -227,15 +227,14 @@ export declare interface Entities {
 
   /**
    * Fired when an entity is created.
-   * Note no entity properties are available yet.
-   * Use {@link Entities#postcreate} if you need access to properties.
    */
   on(event: "create", listener: (event: IEntityCreationEvent) => void): this;
   emit(name: "create", event: IEntityCreationEvent): boolean;
 
   /**
    * Fired after an entity has been created.
-   * All properties are now available for inspection.
+   * All entity props are available for inspection.
+   * @deprecated Listen to {@link Entities#create} instead
    */
   on(
     event: "postcreate",
@@ -678,6 +677,7 @@ export class Entities extends EventEmitter {
     index: number,
     classId: number,
     serialNum: number,
+    existingEntity: Networkable<UnknownEntityProps> | undefined,
     entityBaseline: UnknownEntityProps | undefined
   ) {
     const baseline = entityBaseline || this.staticBaselines[classId];
@@ -685,17 +685,7 @@ export class Entities extends EventEmitter {
       throw new Error(`no baseline for entity ${index} (class ID ${classId})`);
     }
 
-    // Try to find a suitable class for this entity
-    let klass: NetworkableConstructor = Networkable;
-    for (const tableName in this.tableClassMap) {
-      if (baseline[tableName]) {
-        klass = this.tableClassMap[tableName];
-        break;
-      }
-    }
-
     const props = cloneProps(baseline);
-    const existingEntity = this.entities.get(index);
 
     // If we already have this entity, start fresh with baseline props
     if (existingEntity?.serialNum === serialNum) {
@@ -708,11 +698,17 @@ export class Entities extends EventEmitter {
       this._removeEntity(index, true);
     }
 
+    // Try to find a suitable class for this entity
+    let klass: NetworkableConstructor = Networkable;
+    for (const tableName in this.tableClassMap) {
+      if (baseline[tableName]) {
+        klass = this.tableClassMap[tableName];
+        break;
+      }
+    }
+
     const entity = new klass(this._demo, index, classId, serialNum, props);
     this.entities.set(index, entity);
-
-    this.emit("create", { entity });
-
     return entity;
   }
 
@@ -942,17 +938,23 @@ export class Entities extends EventEmitter {
             ? existingBaseline.props
             : undefined;
 
+        const existingEntity = this.entities.get(entityIndex);
         const entity = this._addEntity(
           entityIndex,
           classId,
           serialNum,
+          existingEntity,
           entityBaselineProps
         );
         this._readNewEntity(entityBitBuffer, entity);
 
-        this.emit("postcreate", {
-          entity
-        });
+        if (entity !== existingEntity) {
+          const eventVars = { entity };
+          this.emit("create", eventVars);
+
+          // Still emit 'postcreate' for backwards compatibility
+          this.emit("postcreate", eventVars);
+        }
 
         // Update the OTHER baseline with the merged result of `old baseline + new props`
         if (msg.updateBaseline) {
