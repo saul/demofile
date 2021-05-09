@@ -5426,6 +5426,7 @@ export interface DT_CSLocalPlayerExclusive {
   m_bRetakesMVPLastRound: boolean;
   m_iRetakesMVPBoostItem: number;
   m_RetakesMVPBoostExtraUtility: number;
+  m_unPlayerTvControlFlags: number;
 }
 
 export interface m_bPlayerDominated {

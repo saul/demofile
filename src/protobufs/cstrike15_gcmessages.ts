@@ -916,6 +916,11 @@ export interface CSOAccountSeasonalOperation {
   seasonPassTime: number;
 }
 
+export interface CSOAccountRecurringSubscription {
+  timeNextCycle: number;
+  timeInitiated: number;
+}
+
 export interface CSOPersonaDataPublic {
   playerLevel: number;
   commendation: PlayerCommendationInfo | undefined;
@@ -1988,6 +1993,11 @@ const baseCSOAccountSeasonalOperation: object = {
   missionsCompleted: 0,
   redeemableBalance: 0,
   seasonPassTime: 0
+};
+
+const baseCSOAccountRecurringSubscription: object = {
+  timeNextCycle: 0,
+  timeInitiated: 0
 };
 
 const baseCSOPersonaDataPublic: object = {
@@ -8792,6 +8802,42 @@ export const CSOAccountSeasonalOperation = {
           break;
         case 7:
           message.seasonPassTime = reader.uint32();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CSOAccountRecurringSubscription = {
+  encode(
+    message: CSOAccountRecurringSubscription,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).uint32(message.timeNextCycle);
+    writer.uint32(16).uint32(message.timeInitiated);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CSOAccountRecurringSubscription {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCSOAccountRecurringSubscription
+    } as CSOAccountRecurringSubscription;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.timeNextCycle = reader.uint32();
+          break;
+        case 2:
+          message.timeInitiated = reader.uint32();
           break;
         default:
           reader.skipType(tag & 7);
