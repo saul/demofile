@@ -57,6 +57,7 @@ import {
 import { Vector } from "./sendtabletypes";
 import { StringTables } from "./stringtables";
 import { UserMessages } from "./usermessages";
+import { Readable } from "stream";
 
 interface IDemoHeader {
   /**
@@ -451,6 +452,12 @@ export class DemoFile extends EventEmitter {
   private _immediateTimerToken: NodeJS.Immediate | null = null;
   private _timeoutTimerToken: NodeJS.Timer | null = null;
 
+  private originalChunks: Buffer[] = [];
+  private totalChunksSize = 0;
+  private minimumBufferThreshold = 1024 * 1024 * 10;
+  private parsingStreamInitiated = false;
+  private parsingStreamCompleted = false;
+
   /**
    * Starts parsing buffer as a demo file.
    *
@@ -484,6 +491,34 @@ export class DemoFile extends EventEmitter {
     this.on("svc_ServerInfo", msg => {
       this.tickInterval = msg.tickInterval;
     });
+  }
+
+  public parseStream(stream: Readable) {
+    stream.on("data", (chunk: Buffer) => {
+      this.originalChunks.push(chunk);
+      this.totalChunksSize += chunk.byteLength;
+
+      if (this.parsingStreamInitiated) {
+        this.replaceBuffer(Buffer.concat(this.originalChunks));
+      }
+
+      // Waiting for enough data to START
+      if (
+        this.totalChunksSize > this.minimumBufferThreshold &&
+        !this.parsingStreamInitiated
+      ) {
+        this.parsingStreamInitiated = true;
+        this.parse(Buffer.concat(this.originalChunks));
+      }
+    });
+
+    stream.on("end", () => (this.parsingStreamCompleted = true));
+  }
+
+  private replaceBuffer(buffer: Buffer) {
+    const lastOffset = this._bytebuf.offset;
+    this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
+    this._bytebuf.offset = lastOffset;
   }
 
   public parse(buffer: Buffer) {
@@ -694,6 +729,16 @@ export class DemoFile extends EventEmitter {
     this._recurse();
 
     try {
+      //@TODO Checking for some arbitrary buffer remainder size 11056 to make sure parsing does not continue with incomplete data when there's more to come
+      if (
+        this.parsingStreamInitiated &&
+        !this.parsingStreamCompleted &&
+        this._bytebuf.limit - this._bytebuf.offset < 11056
+      ) {
+        //@TODO Cancel timeouts instead?
+        return;
+      }
+
       this.emit("progress", this._bytebuf.offset / this._bytebuf.limit);
 
       const command = this._bytebuf.readUint8();
