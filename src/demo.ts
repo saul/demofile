@@ -1,4 +1,5 @@
 import { EventEmitter } from "events";
+import { Readable } from "stream";
 import * as timers from "timers";
 
 import * as ByteBuffer from "bytebuffer";
@@ -57,7 +58,6 @@ import {
 import { Vector } from "./sendtabletypes";
 import { StringTables } from "./stringtables";
 import { UserMessages } from "./usermessages";
-import { Readable } from "stream";
 
 interface IDemoHeader {
   /**
@@ -515,12 +515,6 @@ export class DemoFile extends EventEmitter {
     stream.on("end", () => (this.parsingStreamCompleted = true));
   }
 
-  private replaceBuffer(buffer: Buffer) {
-    const lastOffset = this._bytebuf.offset;
-    this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
-    this._bytebuf.offset = lastOffset;
-  }
-
   public parse(buffer: Buffer) {
     this.header = parseHeader(buffer);
 
@@ -553,6 +547,12 @@ export class DemoFile extends EventEmitter {
       timers.clearTimeout(this._timeoutTimerToken);
       this._timeoutTimerToken = null;
     }
+  }
+
+  private replaceBuffer(buffer: Buffer) {
+    const lastOffset = this._bytebuf.offset;
+    this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
+    this._bytebuf.offset = lastOffset;
   }
 
   /**
@@ -729,13 +729,13 @@ export class DemoFile extends EventEmitter {
     this._recurse();
 
     try {
-      //@TODO Checking for some arbitrary buffer remainder size 11056 to make sure parsing does not continue with incomplete data when there's more to come
+      // @TODO Checking for some arbitrary buffer remainder size 11056 to make sure parsing does not continue with incomplete data when there's more to come
       if (
         this.parsingStreamInitiated &&
         !this.parsingStreamCompleted &&
         this._bytebuf.limit - this._bytebuf.offset < 11056
       ) {
-        //@TODO Cancel timeouts instead?
+        // @TODO Cancel timeouts instead?
         return;
       }
 
