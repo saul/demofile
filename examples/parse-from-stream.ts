@@ -10,9 +10,7 @@ import { DemoFile } from "demofile";
 import * as fs from "fs";
 
 function parseDemoFile(path: string) {
-  const readStream = fs.createReadStream(path, {
-    highWaterMark: 1024 * 1024 * 10
-  });
+  const readStream = fs.createReadStream(path);
 
   assert.ifError(err);
 

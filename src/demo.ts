@@ -453,8 +453,8 @@ export class DemoFile extends EventEmitter {
   private _timeoutTimerToken: NodeJS.Timer | null = null;
 
   private originalChunks: Buffer[] = [];
-  private totalChunksSize = 0;
-  private minimumBufferThreshold = 1024 * 1024 * 10;
+  private minimumBufferThreshold = 1024 * 1024 * 10; // Work with chunks of 10MB
+  private bufferSizeSinceLastReplace = 0;
   private parsingStreamInitiated = false;
   private parsingStreamCompleted = false;
 
@@ -496,23 +496,45 @@ export class DemoFile extends EventEmitter {
   public parseStream(stream: Readable) {
     stream.on("data", (chunk: Buffer) => {
       this.originalChunks.push(chunk);
-      this.totalChunksSize += chunk.byteLength;
+      this.bufferSizeSinceLastReplace += chunk.byteLength;
 
-      if (this.parsingStreamInitiated) {
+      // Replacing buffer is expensive, so we only do it every X MB of the buffer
+      if (
+        this.parsingStreamInitiated &&
+        this.bufferSizeSinceLastReplace >= this.minimumBufferThreshold
+      ) {
         this.replaceBuffer(Buffer.concat(this.originalChunks));
+        this.bufferSizeSinceLastReplace = 0;
       }
 
       // Waiting for enough data to START
       if (
-        this.totalChunksSize > this.minimumBufferThreshold &&
-        !this.parsingStreamInitiated
+        !this.parsingStreamInitiated &&
+        this.bufferSizeSinceLastReplace >= this.minimumBufferThreshold
       ) {
         this.parsingStreamInitiated = true;
+
+        this.bufferSizeSinceLastReplace = 0;
+
         this.parse(Buffer.concat(this.originalChunks));
       }
     });
 
-    stream.on("end", () => (this.parsingStreamCompleted = true));
+    stream.on("end", () => {
+      // Replacing any leftover buffer
+      if (this.bufferSizeSinceLastReplace > 0) {
+        this.replaceBuffer(Buffer.concat(this.originalChunks));
+        this.bufferSizeSinceLastReplace = 0;
+
+        // If the original file was smaller than this.minimumBufferThreshold, the parsing won't be triggered
+        // so we do it here
+        if (!this.parsingStreamInitiated) {
+          this.parse(Buffer.concat(this.originalChunks));
+        }
+      }
+
+      this.parsingStreamCompleted = true;
+    });
   }
 
   public parse(buffer: Buffer) {
@@ -729,11 +751,11 @@ export class DemoFile extends EventEmitter {
     this._recurse();
 
     try {
-      // @TODO Checking for some arbitrary buffer remainder size 11056 to make sure parsing does not continue with incomplete data when there's more to come
+      // Checking for some arbitrary buffer remainder to make sure parsing does not continue with incomplete data when there's more to come
       if (
         this.parsingStreamInitiated &&
         !this.parsingStreamCompleted &&
-        this._bytebuf.limit - this._bytebuf.offset < 11056
+        this.bufferSizeSinceLastReplace < this.minimumBufferThreshold
       ) {
         // @TODO Cancel timeouts instead?
         return;
