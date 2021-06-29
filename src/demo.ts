@@ -457,6 +457,7 @@ export class DemoFile extends EventEmitter {
   private bufferSizeSinceLastReplace = 0;
   private parsingStreamInitiated = false;
   private parsingStreamCompleted = false;
+  private isParsingPaused = false;
 
   /**
    * Starts parsing buffer as a demo file.
@@ -499,7 +500,9 @@ export class DemoFile extends EventEmitter {
       this.bufferSizeSinceLastReplace += chunk.byteLength;
 
       // Replacing buffer is expensive, so we only do it every X MB of the buffer
+      // AND only when the parser has reached the end of the current buffer
       if (
+        this.isParsingPaused &&
         this.parsingStreamInitiated &&
         this.bufferSizeSinceLastReplace >= this.minimumBufferThreshold
       ) {
@@ -757,9 +760,12 @@ export class DemoFile extends EventEmitter {
         !this.parsingStreamCompleted &&
         this.bufferSizeSinceLastReplace < this.minimumBufferThreshold
       ) {
+        this.isParsingPaused = true;
         // @TODO Cancel timeouts instead?
         return;
       }
+
+      this.isParsingPaused = false;
 
       this.emit("progress", this._bytebuf.offset / this._bytebuf.limit);
 
