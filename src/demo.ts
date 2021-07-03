@@ -454,6 +454,7 @@ export class DemoFile extends EventEmitter {
 
   private originalChunks: Buffer[] = [];
   private minimumBufferThreshold = 1024 * 1024 * 10; // Work with chunks of 10MB
+  private arbitraryTickSize = 11000; // Reserved tick size so we don't parse an incomplete tick
   private bufferSizeSinceLastReplace = 0;
   private parsingStreamInitiated = false;
   private parsingStreamCompleted = false;
@@ -758,7 +759,7 @@ export class DemoFile extends EventEmitter {
       if (
         this.parsingStreamInitiated &&
         !this.parsingStreamCompleted &&
-        this.bufferSizeSinceLastReplace < this.minimumBufferThreshold
+        this._bytebuf.limit - this._bytebuf.offset < this.arbitraryTickSize
       ) {
         this.isParsingPaused = true;
         // @TODO Cancel timeouts instead?
