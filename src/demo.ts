@@ -549,7 +549,7 @@ export class DemoFile extends EventEmitter {
       this.tickInterval = this.header.playbackTime / this.header.playbackTicks;
     }
 
-    this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
+    this._bytebuf = this.wrapBufferSlice(buffer);
 
     let cancelled = false;
     this.emit("start", {
@@ -575,9 +575,13 @@ export class DemoFile extends EventEmitter {
     }
   }
 
+  private wrapBufferSlice(buffer: Buffer) {
+    return ByteBuffer.wrap(buffer.slice(1072), true);
+  }
+
   private replaceBuffer(buffer: Buffer) {
     const lastOffset = this._bytebuf.offset;
-    this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
+    this._bytebuf = this.wrapBufferSlice(buffer);
     this._bytebuf.offset = lastOffset;
   }
 
