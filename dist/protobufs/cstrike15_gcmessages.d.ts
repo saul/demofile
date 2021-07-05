@@ -758,6 +758,7 @@ export interface CMsgGCCStrike15V2ServerVarValueNotificationInfo {
     accountid: number;
     viewangles: number[];
     type: number;
+    userdata: number[];
 }
 export interface CMsgGCCStrike15V2GiftsLeaderboardRequest {
 }
@@ -1018,6 +1019,8 @@ export interface CMsgGCCStrike15V2GC2ClientRefuseSecureMode {
     kickUser: boolean;
     showTrustedUi: boolean;
     showWarningNotTrusted: boolean;
+    showWarningNotTrusted2: boolean;
+    filesPreventedTrusted: string;
 }
 export interface CMsgGCCStrike15V2GC2ClientRequestValidation {
     fullReport: boolean;

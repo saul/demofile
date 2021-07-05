@@ -1,5 +1,6 @@
 /// <reference types="node" />
 import { EventEmitter } from "events";
+import { Readable } from "stream";
 import { ConVars } from "./convars";
 import { Entities } from "./entities";
 import { GameRules } from "./entities/gamerules";
@@ -223,6 +224,12 @@ export declare class DemoFile extends EventEmitter {
     private _lastThreadYieldTime;
     private _immediateTimerToken;
     private _timeoutTimerToken;
+    private originalChunks;
+    private minimumBufferThreshold;
+    private bufferSizeSinceLastReplace;
+    private parsingStreamInitiated;
+    private parsingStreamCompleted;
+    private isParsingPaused;
     /**
      * Starts parsing buffer as a demo file.
      *
@@ -233,11 +240,13 @@ export declare class DemoFile extends EventEmitter {
      * @param {ArrayBuffer} buffer - Buffer pointing to start of demo header
      */
     constructor();
+    parseStream(stream: Readable): void;
     parse(buffer: Buffer): void;
     /**
      * Cancel the current parse operation.
      */
     cancel(): void;
+    private replaceBuffer;
     /**
      * Fired when a packet of this type is hit. `svc_MessageName` events are also fired.
      * @public

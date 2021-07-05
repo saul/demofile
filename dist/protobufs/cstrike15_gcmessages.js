@@ -667,7 +667,8 @@ const baseCMsgGCCStrike15V2ClientVarValueNotificationInfo = {
 const baseCMsgGCCStrike15V2ServerVarValueNotificationInfo = {
     accountid: 0,
     viewangles: 0,
-    type: 0
+    type: 0,
+    userdata: 0
 };
 const baseCMsgGCCStrike15V2GiftsLeaderboardRequest = {};
 const baseCMsgGCCStrike15V2GiftsLeaderboardResponse = {
@@ -907,7 +908,9 @@ const baseCMsgGCCStrike15V2GC2ClientRefuseSecureMode = {
     showUnsignedUi: false,
     kickUser: false,
     showTrustedUi: false,
-    showWarningNotTrusted: false
+    showWarningNotTrusted: false,
+    showWarningNotTrusted2: false,
+    filesPreventedTrusted: ""
 };
 const baseCMsgGCCStrike15V2GC2ClientRequestValidation = {
     fullReport: false,
@@ -6116,6 +6119,11 @@ exports.CMsgGCCStrike15V2ServerVarValueNotificationInfo = {
         }
         writer.ldelim();
         writer.uint32(24).uint32(message.type);
+        writer.uint32(34).fork();
+        for (const v of message.userdata) {
+            writer.uint32(v);
+        }
+        writer.ldelim();
         return writer;
     },
     decode(input, length) {
@@ -6125,6 +6133,7 @@ exports.CMsgGCCStrike15V2ServerVarValueNotificationInfo = {
             ...baseCMsgGCCStrike15V2ServerVarValueNotificationInfo
         };
         message.viewangles = [];
+        message.userdata = [];
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6144,6 +6153,17 @@ exports.CMsgGCCStrike15V2ServerVarValueNotificationInfo = {
                     break;
                 case 3:
                     message.type = reader.uint32();
+                    break;
+                case 4:
+                    if ((tag & 7) === 2) {
+                        const end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2) {
+                            message.userdata.push(reader.uint32());
+                        }
+                    }
+                    else {
+                        message.userdata.push(reader.uint32());
+                    }
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -7899,6 +7919,8 @@ exports.CMsgGCCStrike15V2GC2ClientRefuseSecureMode = {
         writer.uint32(40).bool(message.kickUser);
         writer.uint32(48).bool(message.showTrustedUi);
         writer.uint32(56).bool(message.showWarningNotTrusted);
+        writer.uint32(64).bool(message.showWarningNotTrusted2);
+        writer.uint32(74).string(message.filesPreventedTrusted);
         return writer;
     },
     decode(input, length) {
@@ -7930,6 +7952,12 @@ exports.CMsgGCCStrike15V2GC2ClientRefuseSecureMode = {
                     break;
                 case 7:
                     message.showWarningNotTrusted = reader.bool();
+                    break;
+                case 8:
+                    message.showWarningNotTrusted2 = reader.bool();
+                    break;
+                case 9:
+                    message.filesPreventedTrusted = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
