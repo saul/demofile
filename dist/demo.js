@@ -77,6 +77,12 @@ class DemoFile extends events_1.EventEmitter {
         this._lastThreadYieldTime = 0;
         this._immediateTimerToken = null;
         this._timeoutTimerToken = null;
+        this.originalChunks = [];
+        this.minimumBufferThreshold = 1024 * 1024 * 10; // Work with chunks of 10MB
+        this.bufferSizeSinceLastReplace = 0;
+        this.parsingStreamInitiated = false;
+        this.parsingStreamCompleted = false;
+        this.isParsingPaused = false;
         this.entities = new entities_1.Entities();
         this.gameEvents = new gameevents_1.GameEvents();
         this.stringTables = new stringtables_1.StringTables();
@@ -128,6 +134,40 @@ class DemoFile extends events_1.EventEmitter {
     get gameRules() {
         return this.entities.gameRules;
     }
+    parseStream(stream) {
+        stream.on("data", (chunk) => {
+            this.originalChunks.push(chunk);
+            this.bufferSizeSinceLastReplace += chunk.byteLength;
+            // Replacing buffer is expensive, so we only do it every X MB of the buffer
+            // AND only when the parser has reached the end of the current buffer
+            if (this.isParsingPaused &&
+                this.parsingStreamInitiated &&
+                this.bufferSizeSinceLastReplace >= this.minimumBufferThreshold) {
+                this.replaceBuffer(Buffer.concat(this.originalChunks));
+                this.bufferSizeSinceLastReplace = 0;
+            }
+            // Waiting for enough data to START
+            if (!this.parsingStreamInitiated &&
+                this.bufferSizeSinceLastReplace >= this.minimumBufferThreshold) {
+                this.parsingStreamInitiated = true;
+                this.bufferSizeSinceLastReplace = 0;
+                this.parse(Buffer.concat(this.originalChunks));
+            }
+        });
+        stream.on("end", () => {
+            // Replacing any leftover buffer
+            if (this.bufferSizeSinceLastReplace > 0) {
+                this.replaceBuffer(Buffer.concat(this.originalChunks));
+                this.bufferSizeSinceLastReplace = 0;
+                // If the original file was smaller than this.minimumBufferThreshold, the parsing won't be triggered
+                // so we do it here
+                if (!this.parsingStreamInitiated) {
+                    this.parse(Buffer.concat(this.originalChunks));
+                }
+            }
+            this.parsingStreamCompleted = true;
+        });
+    }
     parse(buffer) {
         this.header = parseHeader(buffer);
         // #65: Some demos are missing playbackTicks from the header
@@ -156,6 +196,11 @@ class DemoFile extends events_1.EventEmitter {
             timers.clearTimeout(this._timeoutTimerToken);
             this._timeoutTimerToken = null;
         }
+    }
+    replaceBuffer(buffer) {
+        const lastOffset = this._bytebuf.offset;
+        this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
+        this._bytebuf.offset = lastOffset;
     }
     /**
      * Fired when a packet of this type is hit. `svc_MessageName` events are also fired.
@@ -337,6 +382,15 @@ class DemoFile extends events_1.EventEmitter {
     _parseRecurse() {
         this._recurse();
         try {
+            // Checking for some arbitrary buffer remainder to make sure parsing does not continue with incomplete data when there's more to come
+            if (this.parsingStreamInitiated &&
+                !this.parsingStreamCompleted &&
+                this.bufferSizeSinceLastReplace < this.minimumBufferThreshold) {
+                this.isParsingPaused = true;
+                // @TODO Cancel timeouts instead?
+                return;
+            }
+            this.isParsingPaused = false;
             this.emit("progress", this._bytebuf.offset / this._bytebuf.limit);
             const command = this._bytebuf.readUint8();
             const tick = this._bytebuf.readInt32();
