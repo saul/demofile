@@ -78,7 +78,7 @@ class DemoFile extends events_1.EventEmitter {
         this._immediateTimerToken = null;
         this._timeoutTimerToken = null;
         this.originalChunks = [];
-        this.minimumBufferThreshold = 1024 * 1024 * 2; // Work with chunks of 2MB
+        this.minimumBufferThreshold = 1024 * 1024 * 1; // Work with chunks of 1MB
         this.bufferSizeSinceLastReplace = 0;
         this.parsingStreamInitiated = false;
         this.parsingStreamCompleted = false;
@@ -144,12 +144,14 @@ class DemoFile extends events_1.EventEmitter {
                 this.bufferSizeSinceLastReplace >= this.minimumBufferThreshold) {
                 this.replaceBuffer(Buffer.concat(this.originalChunks));
                 this.bufferSizeSinceLastReplace = 0;
+                this.isParsingPaused = false;
             }
             // Waiting for enough data to START
             if (!this.parsingStreamInitiated &&
                 this.bufferSizeSinceLastReplace >= this.minimumBufferThreshold) {
                 this.parsingStreamInitiated = true;
                 this.bufferSizeSinceLastReplace = 0;
+                this.isParsingPaused = false;
                 this.parse(Buffer.concat(this.originalChunks));
             }
         }, 100);
@@ -386,10 +388,12 @@ class DemoFile extends events_1.EventEmitter {
     _parseRecurse() {
         this._recurse();
         try {
+            if (this.isParsingPaused)
+                return;
             // Checking for some arbitrary buffer remainder to make sure parsing does not continue with incomplete data when there's more to come
             if (this.parsingStreamInitiated &&
                 !this.parsingStreamCompleted &&
-                this.bufferSizeSinceLastReplace < this.minimumBufferThreshold) {
+                this._bytebuf.limit - this._bytebuf.offset > this.minimumBufferThreshold) {
                 this.isParsingPaused = true;
                 // @TODO Cancel timeouts instead?
                 return;

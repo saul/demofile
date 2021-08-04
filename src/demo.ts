@@ -453,7 +453,7 @@ export class DemoFile extends EventEmitter {
   private _timeoutTimerToken: NodeJS.Timer | null = null;
 
   private originalChunks: Buffer[] = [];
-  private minimumBufferThreshold = 1024 * 1024 * 2; // Work with chunks of 2MB
+  private minimumBufferThreshold = 1024 * 1024 * 1; // Work with chunks of 1MB
   private bufferSizeSinceLastReplace = 0;
   private parsingStreamInitiated = false;
   private parsingStreamCompleted = false;
@@ -505,7 +505,9 @@ export class DemoFile extends EventEmitter {
         this.bufferSizeSinceLastReplace >= this.minimumBufferThreshold
       ) {
         this.replaceBuffer(Buffer.concat(this.originalChunks));
+
         this.bufferSizeSinceLastReplace = 0;
+        this.isParsingPaused = false;
       }
 
       // Waiting for enough data to START
@@ -516,6 +518,7 @@ export class DemoFile extends EventEmitter {
         this.parsingStreamInitiated = true;
 
         this.bufferSizeSinceLastReplace = 0;
+        this.isParsingPaused = false;
 
         this.parse(Buffer.concat(this.originalChunks));
       }
@@ -759,11 +762,13 @@ export class DemoFile extends EventEmitter {
     this._recurse();
 
     try {
+      if (this.isParsingPaused) return;
+
       // Checking for some arbitrary buffer remainder to make sure parsing does not continue with incomplete data when there's more to come
       if (
         this.parsingStreamInitiated &&
         !this.parsingStreamCompleted &&
-        this.bufferSizeSinceLastReplace < this.minimumBufferThreshold
+        this._bytebuf.limit - this._bytebuf.offset > this.minimumBufferThreshold
       ) {
         this.isParsingPaused = true;
         // @TODO Cancel timeouts instead?
