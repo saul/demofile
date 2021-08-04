@@ -78,7 +78,7 @@ class DemoFile extends events_1.EventEmitter {
         this._immediateTimerToken = null;
         this._timeoutTimerToken = null;
         this.originalChunks = [];
-        this.minimumBufferThreshold = 1024 * 1024 * 10; // Work with chunks of 10MB
+        this.minimumBufferThreshold = 1024 * 1024 * 2; // Work with chunks of 2MB
         this.bufferSizeSinceLastReplace = 0;
         this.parsingStreamInitiated = false;
         this.parsingStreamCompleted = false;
@@ -135,9 +135,8 @@ class DemoFile extends events_1.EventEmitter {
         return this.entities.gameRules;
     }
     parseStream(stream) {
-        stream.on("data", (chunk) => {
-            this.originalChunks.push(chunk);
-            this.bufferSizeSinceLastReplace += chunk.byteLength;
+        // draining the buffer
+        let i = setInterval(() => {
             // Replacing buffer is expensive, so we only do it every X MB of the buffer
             // AND only when the parser has reached the end of the current buffer
             if (this.isParsingPaused &&
@@ -153,8 +152,13 @@ class DemoFile extends events_1.EventEmitter {
                 this.bufferSizeSinceLastReplace = 0;
                 this.parse(Buffer.concat(this.originalChunks));
             }
+        }, 100);
+        stream.on("data", (chunk) => {
+            this.originalChunks.push(chunk);
+            this.bufferSizeSinceLastReplace += chunk.byteLength;
         });
         stream.on("end", () => {
+            clearInterval(i);
             // Replacing any leftover buffer
             if (this.bufferSizeSinceLastReplace > 0) {
                 this.replaceBuffer(Buffer.concat(this.originalChunks));
