@@ -163,6 +163,7 @@ class DemoFile extends events_1.EventEmitter {
             clearInterval(i);
             // Replacing any leftover buffer
             if (this.bufferSizeSinceLastReplace > 0) {
+                this.isParsingPaused = false;
                 this.replaceBuffer(Buffer.concat(this.originalChunks));
                 this.bufferSizeSinceLastReplace = 0;
                 // If the original file was smaller than this.minimumBufferThreshold, the parsing won't be triggered

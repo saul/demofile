@@ -534,6 +534,7 @@ export class DemoFile extends EventEmitter {
 
       // Replacing any leftover buffer
       if (this.bufferSizeSinceLastReplace > 0) {
+        this.isParsingPaused = false;
         this.replaceBuffer(Buffer.concat(this.originalChunks));
         this.bufferSizeSinceLastReplace = 0;
 
