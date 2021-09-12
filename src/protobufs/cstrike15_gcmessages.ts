@@ -1178,6 +1178,27 @@ export interface CMsgGCCStrike15V2GC2ClientRequestValidation {
   module: string;
 }
 
+export interface CMsgGCCStrike15V2GC2ClientInitSystem {
+  load: boolean;
+  name: string;
+  outputname: string;
+  keyData: Uint8Array;
+  shaHash: Uint8Array;
+  cookie: number;
+  manifest: string;
+}
+
+export interface CMsgGCCStrike15V2GC2ClientInitSystemResponse {
+  success: boolean;
+  diagnostic: string;
+  shaHash: Uint8Array;
+  response: number;
+  errorCode1: number;
+  errorCode2: number;
+  handle: Long;
+  einitResult: EInitSystemResult;
+}
+
 const baseGameServerPing: object = {
   ping: 0,
   ip: 0,
@@ -2243,6 +2264,24 @@ const baseCMsgGCCStrike15V2GC2ClientRequestValidation: object = {
   module: ""
 };
 
+const baseCMsgGCCStrike15V2GC2ClientInitSystem: object = {
+  load: false,
+  name: "",
+  outputname: "",
+  cookie: 0,
+  manifest: ""
+};
+
+const baseCMsgGCCStrike15V2GC2ClientInitSystemResponse: object = {
+  success: false,
+  diagnostic: "",
+  response: 0,
+  errorCode1: 0,
+  errorCode2: 0,
+  handle: Long.ZERO,
+  einitResult: 0
+};
+
 export const protobufPackage = "";
 
 export enum ECsgoGCMsg {
@@ -2340,7 +2379,9 @@ export enum ECsgoGCMsg {
   k_EMsgGCCStrike15_v2_GC2ClientRequestValidation = 9207,
   k_EMsgGCCStrike15_v2_ClientRedeemMissionReward = 9209,
   k_EMsgGCCStrike15_ClientDeepStats = 9210,
-  k_EMsgGCCStrike15_StartAgreementSessionInGame = 9211
+  k_EMsgGCCStrike15_StartAgreementSessionInGame = 9211,
+  k_EMsgGCCStrike15_v2_GC2ClientInitSystem = 9212,
+  k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response = 9213
 }
 
 export enum ECsgoSteamUserStat {
@@ -2353,6 +2394,18 @@ export enum EClientReportingVersion {
   k_EClientReportingVersion_OldVersion = 0,
   k_EClientReportingVersion_BetaVersion = 1,
   k_EClientReportingVersion_SupportsTrustedMode = 2
+}
+
+export enum EInitSystemResult {
+  k_EInitSystemResult_Invalid = 0,
+  k_EInitSystemResult_Success = 1,
+  k_EInitSystemResult_None = 2,
+  k_EInitSystemResult_NotFound = 3,
+  k_EInitSystemResult_Existing = 4,
+  k_EInitSystemResult_FailedOpen = 5,
+  k_EInitSystemResult_Mismatch = 6,
+  k_EInitSystemResult_FailedInit = 7,
+  k_EInitSystemResult_Max = 8
 }
 
 export const GameServerPing = {
@@ -10658,6 +10711,122 @@ export const CMsgGCCStrike15V2GC2ClientRequestValidation = {
           break;
         case 2:
           message.module = reader.string();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CMsgGCCStrike15V2GC2ClientInitSystem = {
+  encode(
+    message: CMsgGCCStrike15V2GC2ClientInitSystem,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).bool(message.load);
+    writer.uint32(18).string(message.name);
+    writer.uint32(26).string(message.outputname);
+    writer.uint32(34).bytes(message.keyData);
+    writer.uint32(42).bytes(message.shaHash);
+    writer.uint32(48).int32(message.cookie);
+    writer.uint32(58).string(message.manifest);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CMsgGCCStrike15V2GC2ClientInitSystem {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCMsgGCCStrike15V2GC2ClientInitSystem
+    } as CMsgGCCStrike15V2GC2ClientInitSystem;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.load = reader.bool();
+          break;
+        case 2:
+          message.name = reader.string();
+          break;
+        case 3:
+          message.outputname = reader.string();
+          break;
+        case 4:
+          message.keyData = reader.bytes();
+          break;
+        case 5:
+          message.shaHash = reader.bytes();
+          break;
+        case 6:
+          message.cookie = reader.int32();
+          break;
+        case 7:
+          message.manifest = reader.string();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CMsgGCCStrike15V2GC2ClientInitSystemResponse = {
+  encode(
+    message: CMsgGCCStrike15V2GC2ClientInitSystemResponse,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).bool(message.success);
+    writer.uint32(18).string(message.diagnostic);
+    writer.uint32(26).bytes(message.shaHash);
+    writer.uint32(32).int32(message.response);
+    writer.uint32(40).int32(message.errorCode1);
+    writer.uint32(48).int32(message.errorCode2);
+    writer.uint32(56).int64(message.handle);
+    writer.uint32(64).int32(message.einitResult);
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CMsgGCCStrike15V2GC2ClientInitSystemResponse {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCMsgGCCStrike15V2GC2ClientInitSystemResponse
+    } as CMsgGCCStrike15V2GC2ClientInitSystemResponse;
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.success = reader.bool();
+          break;
+        case 2:
+          message.diagnostic = reader.string();
+          break;
+        case 3:
+          message.shaHash = reader.bytes();
+          break;
+        case 4:
+          message.response = reader.int32();
+          break;
+        case 5:
+          message.errorCode1 = reader.int32();
+          break;
+        case 6:
+          message.errorCode2 = reader.int32();
+          break;
+        case 7:
+          message.handle = reader.int64() as Long;
+          break;
+        case 8:
+          message.einitResult = reader.int32() as any;
           break;
         default:
           reader.skipType(tag & 7);
