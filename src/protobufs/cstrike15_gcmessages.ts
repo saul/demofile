@@ -280,6 +280,7 @@ export interface CMsgGCCStrike15V2MatchmakingStart {
   clientVersion: number;
   tournamentMatch: TournamentMatchSetup | undefined;
   primeOnly: boolean;
+  tvControl: number;
 }
 
 export interface CMsgGCCStrike15V2MatchmakingStop {
@@ -434,6 +435,7 @@ export interface CMsgGCCStrike15V2MatchmakingServerRoundStats {
   enemy2ks: number[];
   playerSpawned: number[];
   teamSpawnCount: number[];
+  maxRounds: number;
 }
 
 export interface CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo {
@@ -1047,6 +1049,7 @@ export interface CMsgGCCStrike15V2PartySearchResults_Entry {
   apr: number;
   ark: number;
   loc: number;
+  accountid: number;
 }
 
 export interface CMsgGCCStrike15V2PartyInvite {
@@ -1197,6 +1200,8 @@ export interface CMsgGCCStrike15V2GC2ClientInitSystemResponse {
   errorCode2: number;
   handle: Long;
   einitResult: EInitSystemResult;
+  auxSystem1: number;
+  auxSystem2: number;
 }
 
 const baseGameServerPing: object = {
@@ -1459,7 +1464,8 @@ const baseCMsgGCCStrike15V2MatchmakingStart: object = {
   gameType: 0,
   ticketData: "",
   clientVersion: 0,
-  primeOnly: false
+  primeOnly: false,
+  tvControl: 0
 };
 
 const baseCMsgGCCStrike15V2MatchmakingStop: object = {
@@ -1594,7 +1600,8 @@ const baseCMsgGCCStrike15V2MatchmakingServerRoundStats: object = {
   bSwitchedTeams: false,
   enemy2ks: 0,
   playerSpawned: 0,
-  teamSpawnCount: 0
+  teamSpawnCount: 0,
+  maxRounds: 0
 };
 
 const baseCMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo: object = {
@@ -2142,7 +2149,8 @@ const baseCMsgGCCStrike15V2PartySearchResults_Entry: object = {
   gameType: 0,
   apr: 0,
   ark: 0,
-  loc: 0
+  loc: 0,
+  accountid: 0
 };
 
 const baseCMsgGCCStrike15V2PartyInvite: object = {
@@ -2279,7 +2287,9 @@ const baseCMsgGCCStrike15V2GC2ClientInitSystemResponse: object = {
   errorCode1: 0,
   errorCode2: 0,
   handle: Long.ZERO,
-  einitResult: 0
+  einitResult: 0,
+  auxSystem1: 0,
+  auxSystem2: 0
 };
 
 export const protobufPackage = "";
@@ -2381,7 +2391,8 @@ export enum ECsgoGCMsg {
   k_EMsgGCCStrike15_ClientDeepStats = 9210,
   k_EMsgGCCStrike15_StartAgreementSessionInGame = 9211,
   k_EMsgGCCStrike15_v2_GC2ClientInitSystem = 9212,
-  k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response = 9213
+  k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response = 9213,
+  k_EMsgGCCStrike15_v2_PrivateQueues = 9214
 }
 
 export enum ECsgoSteamUserStat {
@@ -3991,6 +4002,7 @@ export const CMsgGCCStrike15V2MatchmakingStart = {
       ).ldelim();
     }
     writer.uint32(48).bool(message.primeOnly);
+    writer.uint32(56).uint32(message.tvControl);
     return writer;
   },
   decode(
@@ -4033,6 +4045,9 @@ export const CMsgGCCStrike15V2MatchmakingStart = {
           break;
         case 6:
           message.primeOnly = reader.bool();
+          break;
+        case 7:
+          message.tvControl = reader.uint32();
           break;
         default:
           reader.skipType(tag & 7);
@@ -5145,6 +5160,7 @@ export const CMsgGCCStrike15V2MatchmakingServerRoundStats = {
       writer.int32(v);
     }
     writer.ldelim();
+    writer.uint32(248).uint32(message.maxRounds);
     return writer;
   },
   decode(
@@ -5385,6 +5401,9 @@ export const CMsgGCCStrike15V2MatchmakingServerRoundStats = {
           } else {
             message.teamSpawnCount.push(reader.int32());
           }
+          break;
+        case 31:
+          message.maxRounds = reader.uint32();
           break;
         default:
           reader.skipType(tag & 7);
@@ -9810,6 +9829,7 @@ export const CMsgGCCStrike15V2PartySearchResults_Entry = {
     writer.uint32(32).uint32(message.apr);
     writer.uint32(40).uint32(message.ark);
     writer.uint32(48).uint32(message.loc);
+    writer.uint32(56).uint32(message.accountid);
     return writer;
   },
   decode(
@@ -9841,6 +9861,9 @@ export const CMsgGCCStrike15V2PartySearchResults_Entry = {
           break;
         case 6:
           message.loc = reader.uint32();
+          break;
+        case 7:
+          message.accountid = reader.uint32();
           break;
         default:
           reader.skipType(tag & 7);
@@ -10790,6 +10813,8 @@ export const CMsgGCCStrike15V2GC2ClientInitSystemResponse = {
     writer.uint32(48).int32(message.errorCode2);
     writer.uint32(56).int64(message.handle);
     writer.uint32(64).int32(message.einitResult);
+    writer.uint32(72).int32(message.auxSystem1);
+    writer.uint32(80).int32(message.auxSystem2);
     return writer;
   },
   decode(
@@ -10827,6 +10852,12 @@ export const CMsgGCCStrike15V2GC2ClientInitSystemResponse = {
           break;
         case 8:
           message.einitResult = reader.int32() as any;
+          break;
+        case 9:
+          message.auxSystem1 = reader.int32();
+          break;
+        case 10:
+          message.auxSystem2 = reader.int32();
           break;
         default:
           reader.skipType(tag & 7);
