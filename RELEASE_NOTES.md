@@ -6,6 +6,11 @@
 - Unreleased release notes here
 -->
 
+### 2.2.0 (2021-09-28)
+
+- :sparkles: #322: Support encrypted data (e.g. chat from public matchmaking)
+- :zap: Incorporate latest CSGO protobufs and item data
+
 ### 2.1.0 (2021-05-09)
 
 - :zap: #295: Emit `Entities#create` and `Entities#postcreate` at the same time. (`Entities#postcreate` is now deprecated.)

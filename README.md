@@ -17,6 +17,7 @@ The library is also Browserify-able, and a standalone bundle that you can `<scri
 - Console variables (cvar/convars)
 - Entity updates, server classes, data tables
 - String tables
+- Reading encrypted messages (e.g. chat in public matchmaking demos)
 
 ## Installation
 

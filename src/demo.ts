@@ -12,6 +12,7 @@ import { GameRules } from "./entities/gamerules";
 import { Player } from "./entities/player";
 import { Team } from "./entities/team";
 import { GameEvents } from "./gameevents";
+import { IceKey } from "./icekey";
 import * as net from "./net";
 import { NetMessageName } from "./net";
 import {
@@ -451,6 +452,8 @@ export class DemoFile extends EventEmitter {
   private _immediateTimerToken: NodeJS.Immediate | null = null;
   private _timeoutTimerToken: NodeJS.Timer | null = null;
 
+  private _encryptionKey: Uint8Array | null = null;
+
   /**
    * Starts parsing buffer as a demo file.
    *
@@ -484,6 +487,8 @@ export class DemoFile extends EventEmitter {
     this.on("svc_ServerInfo", msg => {
       this.tickInterval = msg.tickInterval;
     });
+
+    this.on("svc_EncryptedData", this._handleEncryptedData.bind(this));
   }
 
   public parse(buffer: Buffer) {
@@ -517,6 +522,62 @@ export class DemoFile extends EventEmitter {
     if (this._timeoutTimerToken) {
       timers.clearTimeout(this._timeoutTimerToken);
       this._timeoutTimerToken = null;
+    }
+  }
+
+  /**
+   * Set encryption key for decrypting `svc_EncryptedData` packets.
+   * This allows decryption of messages from public matchmaking, like
+   * chat messages and caster voice data.
+   *
+   * The key can be extracted from `match730_*.dem.info` files with `extractPublicEncryptionKey`.
+   *
+   * @param publicKey Public encryption key.
+   */
+  public setEncryptionKey(publicKey: Uint8Array | null) {
+    if (publicKey != null && publicKey.length !== 16) {
+      throw new Error(
+        `Public key must be 16 bytes long, got ${publicKey.length} bytes instead`
+      );
+    }
+
+    this._encryptionKey = publicKey;
+  }
+
+  private _handleEncryptedData(msg: CSVCMsgEncryptedData) {
+    if (msg.keyType !== 2 || this._encryptionKey == null) return;
+
+    const key = new IceKey(2);
+    key.set(this._encryptionKey);
+
+    assert(msg.encrypted.length % key.blockSize() === 0);
+
+    const plainText = new Uint8Array(msg.encrypted.length);
+    key.decryptUint8Array(msg.encrypted, plainText);
+
+    // Create a ByteBuffer skipped past the padding
+    const buf = ByteBuffer.wrap(plainText, true);
+    const paddingBytes = buf.readUint8();
+
+    buf.skip(paddingBytes);
+
+    // Read size of netmessage. For some reason, it's encoded
+    // redundantly encoded several times.
+    buf.BE();
+    const bytesWritten = buf.readInt32();
+    buf.LE();
+    assert(buf.remaining() === bytesWritten);
+
+    const cmd = buf.readVarint32();
+    const size = buf.readVarint32();
+    assert(buf.remaining() === size);
+
+    const message = net.findByType(cmd);
+    assert(message != null, `No message handler for ${cmd}`);
+
+    if (message != null && this.listenerCount(message.name)) {
+      const msgInst = message.class.decode(new Uint8Array(buf.toBuffer()));
+      this.emit(message.name, msgInst);
     }
   }
 
