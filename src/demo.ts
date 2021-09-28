@@ -561,8 +561,7 @@ export class DemoFile extends EventEmitter {
 
     buf.skip(paddingBytes);
 
-    // Read size of netmessage. For some reason, it's encoded
-    // redundantly encoded several times.
+    // Read size of netmessage. For some reason, it's encoded several times.
     buf.BE();
     const bytesWritten = buf.readInt32();
     buf.LE();

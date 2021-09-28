@@ -10,6 +10,7 @@ const consts_1 = require("./consts");
 const convars_1 = require("./convars");
 const entities_1 = require("./entities");
 const gameevents_1 = require("./gameevents");
+const icekey_1 = require("./icekey");
 const net = require("./net");
 const stringtables_1 = require("./stringtables");
 const usermessages_1 = require("./usermessages");
@@ -77,6 +78,7 @@ class DemoFile extends events_1.EventEmitter {
         this._lastThreadYieldTime = 0;
         this._immediateTimerToken = null;
         this._timeoutTimerToken = null;
+        this._encryptionKey = null;
         this.entities = new entities_1.Entities();
         this.gameEvents = new gameevents_1.GameEvents();
         this.stringTables = new stringtables_1.StringTables();
@@ -94,6 +96,7 @@ class DemoFile extends events_1.EventEmitter {
         this.on("svc_ServerInfo", msg => {
             this.tickInterval = msg.tickInterval;
         });
+        this.on("svc_EncryptedData", this._handleEncryptedData.bind(this));
     }
     /**
      * @returns Number of ticks per second
@@ -155,6 +158,48 @@ class DemoFile extends events_1.EventEmitter {
         if (this._timeoutTimerToken) {
             timers.clearTimeout(this._timeoutTimerToken);
             this._timeoutTimerToken = null;
+        }
+    }
+    /**
+     * Set encryption key for decrypting `svc_EncryptedData` packets.
+     * This allows decryption of messages from public matchmaking, like
+     * chat messages and caster voice data.
+     *
+     * The key can be extracted from `match730_*.dem.info` files with `extractPublicEncryptionKey`.
+     *
+     * @param publicKey Public encryption key.
+     */
+    setEncryptionKey(publicKey) {
+        if (publicKey != null && publicKey.length !== 16) {
+            throw new Error(`Public key must be 16 bytes long, got ${publicKey.length} bytes instead`);
+        }
+        this._encryptionKey = publicKey;
+    }
+    _handleEncryptedData(msg) {
+        if (msg.keyType !== 2 || this._encryptionKey == null)
+            return;
+        const key = new icekey_1.IceKey(2);
+        key.set(this._encryptionKey);
+        assert(msg.encrypted.length % key.blockSize() === 0);
+        const plainText = new Uint8Array(msg.encrypted.length);
+        key.decryptUint8Array(msg.encrypted, plainText);
+        // Create a ByteBuffer skipped past the padding
+        const buf = ByteBuffer.wrap(plainText, true);
+        const paddingBytes = buf.readUint8();
+        buf.skip(paddingBytes);
+        // Read size of netmessage. For some reason, it's encoded several times.
+        buf.BE();
+        const bytesWritten = buf.readInt32();
+        buf.LE();
+        assert(buf.remaining() === bytesWritten);
+        const cmd = buf.readVarint32();
+        const size = buf.readVarint32();
+        assert(buf.remaining() === size);
+        const message = net.findByType(cmd);
+        assert(message != null, `No message handler for ${cmd}`);
+        if (message != null && this.listenerCount(message.name)) {
+            const msgInst = message.class.decode(new Uint8Array(buf.toBuffer()));
+            this.emit(message.name, msgInst);
         }
     }
     /**
