@@ -122,7 +122,7 @@ exports.itemDefinitionIndexMap = {
     },
     "37": {
         className: "weapon_shield",
-        itemName: "Ballistic Shield"
+        itemName: "Riot Shield"
     },
     "38": {
         className: "weapon_scar20",

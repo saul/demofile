@@ -223,6 +223,7 @@ export declare class DemoFile extends EventEmitter {
     private _lastThreadYieldTime;
     private _immediateTimerToken;
     private _timeoutTimerToken;
+    private _encryptionKey;
     /**
      * Starts parsing buffer as a demo file.
      *
@@ -238,6 +239,17 @@ export declare class DemoFile extends EventEmitter {
      * Cancel the current parse operation.
      */
     cancel(): void;
+    /**
+     * Set encryption key for decrypting `svc_EncryptedData` packets.
+     * This allows decryption of messages from public matchmaking, like
+     * chat messages and caster voice data.
+     *
+     * The key can be extracted from `match730_*.dem.info` files with `extractPublicEncryptionKey`.
+     *
+     * @param publicKey Public encryption key.
+     */
+    setEncryptionKey(publicKey: Uint8Array | null): void;
+    private _handleEncryptedData;
     /**
      * Fired when a packet of this type is hit. `svc_MessageName` events are also fired.
      * @public

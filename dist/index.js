@@ -31,4 +31,6 @@ __exportStar(require("./sharecode"), exports);
 __exportStar(require("./crosshair"), exports);
 var keyvalues_1 = require("./keyvalues");
 Object.defineProperty(exports, "parseBinaryKeyValues", { enumerable: true, get: function () { return keyvalues_1.parseBinaryKeyValues; } });
+var replaykeys_1 = require("./replaykeys");
+Object.defineProperty(exports, "extractPublicEncryptionKey", { enumerable: true, get: function () { return replaykeys_1.extractPublicEncryptionKey; } });
 //# sourceMappingURL=index.js.map

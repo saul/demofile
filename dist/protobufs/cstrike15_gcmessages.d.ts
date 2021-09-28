@@ -247,6 +247,7 @@ export interface CMsgGCCStrike15V2MatchmakingStart {
     clientVersion: number;
     tournamentMatch: TournamentMatchSetup | undefined;
     primeOnly: boolean;
+    tvControl: number;
 }
 export interface CMsgGCCStrike15V2MatchmakingStop {
     abandon: number;
@@ -389,6 +390,7 @@ export interface CMsgGCCStrike15V2MatchmakingServerRoundStats {
     enemy2ks: number[];
     playerSpawned: number[];
     teamSpawnCount: number[];
+    maxRounds: number;
 }
 export interface CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo {
     accountMvp: number;
@@ -758,6 +760,7 @@ export interface CMsgGCCStrike15V2ServerVarValueNotificationInfo {
     accountid: number;
     viewangles: number[];
     type: number;
+    userdata: number[];
 }
 export interface CMsgGCCStrike15V2GiftsLeaderboardRequest {
 }
@@ -914,6 +917,7 @@ export interface CMsgGCCStrike15V2PartySearchResults_Entry {
     apr: number;
     ark: number;
     loc: number;
+    accountid: number;
 }
 export interface CMsgGCCStrike15V2PartyInvite {
     accountid: number;
@@ -1018,10 +1022,33 @@ export interface CMsgGCCStrike15V2GC2ClientRefuseSecureMode {
     kickUser: boolean;
     showTrustedUi: boolean;
     showWarningNotTrusted: boolean;
+    showWarningNotTrusted2: boolean;
+    filesPreventedTrusted: string;
 }
 export interface CMsgGCCStrike15V2GC2ClientRequestValidation {
     fullReport: boolean;
     module: string;
+}
+export interface CMsgGCCStrike15V2GC2ClientInitSystem {
+    load: boolean;
+    name: string;
+    outputname: string;
+    keyData: Uint8Array;
+    shaHash: Uint8Array;
+    cookie: number;
+    manifest: string;
+}
+export interface CMsgGCCStrike15V2GC2ClientInitSystemResponse {
+    success: boolean;
+    diagnostic: string;
+    shaHash: Uint8Array;
+    response: number;
+    errorCode1: number;
+    errorCode2: number;
+    handle: Long;
+    einitResult: EInitSystemResult;
+    auxSystem1: number;
+    auxSystem2: number;
 }
 export declare const protobufPackage = "";
 export declare enum ECsgoGCMsg {
@@ -1119,7 +1146,10 @@ export declare enum ECsgoGCMsg {
     k_EMsgGCCStrike15_v2_GC2ClientRequestValidation = 9207,
     k_EMsgGCCStrike15_v2_ClientRedeemMissionReward = 9209,
     k_EMsgGCCStrike15_ClientDeepStats = 9210,
-    k_EMsgGCCStrike15_StartAgreementSessionInGame = 9211
+    k_EMsgGCCStrike15_StartAgreementSessionInGame = 9211,
+    k_EMsgGCCStrike15_v2_GC2ClientInitSystem = 9212,
+    k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response = 9213,
+    k_EMsgGCCStrike15_v2_PrivateQueues = 9214
 }
 export declare enum ECsgoSteamUserStat {
     k_ECsgoSteamUserStat_XpEarnedGames = 1,
@@ -1130,6 +1160,17 @@ export declare enum EClientReportingVersion {
     k_EClientReportingVersion_OldVersion = 0,
     k_EClientReportingVersion_BetaVersion = 1,
     k_EClientReportingVersion_SupportsTrustedMode = 2
+}
+export declare enum EInitSystemResult {
+    k_EInitSystemResult_Invalid = 0,
+    k_EInitSystemResult_Success = 1,
+    k_EInitSystemResult_None = 2,
+    k_EInitSystemResult_NotFound = 3,
+    k_EInitSystemResult_Existing = 4,
+    k_EInitSystemResult_FailedOpen = 5,
+    k_EInitSystemResult_Mismatch = 6,
+    k_EInitSystemResult_FailedInit = 7,
+    k_EInitSystemResult_Max = 8
 }
 export declare const GameServerPing: {
     encode(message: GameServerPing, writer?: Writer): Writer;
@@ -1746,4 +1787,12 @@ export declare const CMsgGCCStrike15V2GC2ClientRefuseSecureMode: {
 export declare const CMsgGCCStrike15V2GC2ClientRequestValidation: {
     encode(message: CMsgGCCStrike15V2GC2ClientRequestValidation, writer?: Writer): Writer;
     decode(input: Uint8Array | Reader, length?: number | undefined): CMsgGCCStrike15V2GC2ClientRequestValidation;
+};
+export declare const CMsgGCCStrike15V2GC2ClientInitSystem: {
+    encode(message: CMsgGCCStrike15V2GC2ClientInitSystem, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CMsgGCCStrike15V2GC2ClientInitSystem;
+};
+export declare const CMsgGCCStrike15V2GC2ClientInitSystemResponse: {
+    encode(message: CMsgGCCStrike15V2GC2ClientInitSystemResponse, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CMsgGCCStrike15V2GC2ClientInitSystemResponse;
 };
