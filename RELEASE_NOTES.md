@@ -6,6 +6,10 @@
 - Unreleased release notes here
 -->
 
+### 2.3.0 (2021-09-29)
+
+- :sparkles: #19: Support streaming demos
+
 ### 2.2.0 (2021-09-28)
 
 - :sparkles: #322: Support encrypted data (e.g. chat from public matchmaking)
