@@ -38,10 +38,8 @@ export function monitorProgress(demoName: string, demo: DemoFile) {
 }
 
 export function startParsing(demoFileName: string, demo: DemoFile) {
-  fs.readFile(join(root, "demos", demoFileName), (err, buffer) => {
-    expect(err).toBeFalsy();
-    demo.parse(buffer);
-  });
+  const stream = fs.createReadStream(join(root, "demos", demoFileName));
+  demo.parseStream(stream);
 }
 
 export class Timeline {
