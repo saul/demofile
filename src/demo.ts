@@ -811,8 +811,10 @@ export class DemoFile extends EventEmitter {
       ) {
         this.emit("end", { incomplete: true });
       } else {
-        this.emit("error", e);
-        this.emit("end", { error: e, incomplete: false });
+        const error =
+          e instanceof Error ? e : new Error(`Exception during parsing: ${e}`);
+        this.emit("error", error);
+        this.emit("end", { error, incomplete: false });
       }
     }
   }

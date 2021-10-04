@@ -181,13 +181,11 @@ function makeStringDecoder(
 
 function makeInt64Decoder(sendProp: ISendProp): (bitbuf: BitStream) => Long {
   if ((sendProp.flags & SPROP_VARINT) !== 0) {
-    /*eslint-disable no-unreachable*/
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
       throw new Error("64-bit unsigned varint not implemented"); // TODO
     } else {
       throw new Error("64-bit signed varint not implemented"); // TODO
     }
-    /*eslint-enable no-unreachable*/
   } else {
     const highBits = sendProp.numBits - 32;
 

@@ -19,7 +19,7 @@
   },
   "scripts": {
     "test": "jest",
-    "lint": "eslint --ext .ts ./src",
+    "lint": "eslint --report-unused-disable-directives --ext .ts ./src",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "build": "shx rm -rf dist && tsc",

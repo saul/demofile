@@ -62,7 +62,7 @@ export class BaseEntity<
       return null;
     }
 
-    return this._demo.entities.teams[teamNum];
+    return this._demo.entities.teams[teamNum]!;
   }
 
   /**
@@ -75,7 +75,8 @@ export class BaseEntity<
     if (!modelprecache) {
       return null;
     }
-    return modelprecache.entries[this.getProp("DT_BaseEntity", "m_nModelIndex")]
-      .entry;
+    return modelprecache.entries[
+      this.getProp("DT_BaseEntity", "m_nModelIndex")
+    ]!.entry;
   }
 }

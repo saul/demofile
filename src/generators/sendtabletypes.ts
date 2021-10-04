@@ -137,4 +137,9 @@ function parseDemoFile(path: string) {
   });
 }
 
-parseDemoFile(process.argv[2]);
+if (process.argv.length == 3) {
+  parseDemoFile(process.argv[2]!);
+} else {
+  console.error("expected args: <path to .dem>");
+  process.exitCode = 1;
+}
