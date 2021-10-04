@@ -519,12 +519,7 @@ export class DemoFile extends EventEmitter {
           this._bytebuf.offset = this._bytebuf.markedOffset;
         } else {
           stream.off("data", onReceiveChunk);
-
-          if (!this._hasEnded) {
-            this.emit("error", e);
-            this.emit("end", { error: e, incomplete: false });
-            this._hasEnded = true;
-          }
+          this._emitEnd({ error: e, incomplete: false });
         }
       }
     };
@@ -544,24 +539,16 @@ export class DemoFile extends EventEmitter {
     stream.on("data", readHeaderChunk);
 
     stream.on("error", e => {
-      if (!this._hasEnded) {
-        this.emit("error", e);
-        this.emit("end", { error: e, incomplete: false });
-        this._hasEnded = true;
-      }
-
       stream.off("data", onReceiveChunk);
+      this._emitEnd({ error: e, incomplete: false });
     });
 
     stream.on("end", () => {
-      if (this._hasEnded) return;
-      this._hasEnded = true;
-
       const fullyConsumed =
         this._bytebuf?.remaining() === 0 && this._chunks.length === 0;
       if (fullyConsumed) return;
 
-      this.emit("end", { incomplete: true });
+      this._emitEnd({ incomplete: true });
     });
   }
 
@@ -603,6 +590,17 @@ export class DemoFile extends EventEmitter {
     }
 
     this._encryptionKey = publicKey;
+  }
+
+  private _emitEnd(e: IDemoEndEvent) {
+    if (this._hasEnded) return;
+
+    if (e.error) {
+      this.emit("error", e.error);
+    }
+
+    this.emit("end", e);
+    this._hasEnded = true;
   }
 
   private _parseHeader(): boolean {
@@ -891,8 +889,7 @@ export class DemoFile extends EventEmitter {
       case DemoCommands.Stop:
         this.cancel();
         this.emit("tickend", this.currentTick);
-        this.emit("end", { incomplete: false });
-        this._hasEnded = true;
+        this._emitEnd({ incomplete: false });
         return;
       case DemoCommands.CustomData:
         throw new Error("Custom data not supported");
@@ -934,10 +931,9 @@ export class DemoFile extends EventEmitter {
         this.header.playbackTime === 0 &&
         this.header.playbackFrames === 0
       ) {
-        this.emit("end", { incomplete: true });
+        this._emitEnd({ incomplete: true });
       } else {
-        this.emit("error", e);
-        this.emit("end", { error: e, incomplete: false });
+        this._emitEnd({ error: e, incomplete: false });
       }
     }
   }
