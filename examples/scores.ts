@@ -35,8 +35,8 @@ function parseDemoFile(path: string) {
     function logTeamScores() {
       const teams = demoFile.teams;
 
-      const terrorists = teams[TeamNumber.Terrorists];
-      const cts = teams[TeamNumber.CounterTerrorists];
+      const terrorists = teams[TeamNumber.Terrorists]!;
+      const cts = teams[TeamNumber.CounterTerrorists]!;
 
       console.log(
         "\t%s: %s score %d\n\t%s: %s score %d",
@@ -78,4 +78,4 @@ function parseDemoFile(path: string) {
   });
 }
 
-parseDemoFile(process.argv[2]);
+parseDemoFile(process.argv[2]!);
