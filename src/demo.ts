@@ -527,7 +527,7 @@ export class DemoFile extends EventEmitter {
 
     const readHeaderChunk = () => {
       // Wait for enough bytes for us to read the header
-      this._ensureRemaining(1072);
+      if (!this._tryEnsureRemaining(1072)) return;
 
       // Once we've read the header, remove this handler
       stream.off("data", readHeaderChunk);
@@ -823,22 +823,16 @@ export class DemoFile extends EventEmitter {
     this.stringTables.handleStringTables(bitbuf);
   }
 
-  private _ensureRemaining(bytes: number) {
+  private _tryEnsureRemaining(bytes: number) {
     const remaining = this._bytebuf.remaining();
-    if (remaining >= bytes) return;
+    if (remaining >= bytes) return true;
 
     let left = bytes - remaining;
     for (let i = 0; i < this._chunks.length && left > 0; ++i)
       left -= this._chunks[i].length;
 
     // We don't have enough bytes with what we have buffered up
-    if (left > 0) {
-      throw new RangeError(
-        `Not enough data to continue parsing. ${bytes} bytes needed, ${
-          bytes - left
-        } bytes remaining`
-      );
-    }
+    if (left > 0) return false;
 
     // Reset to the marked offset. We're never going to need the bytes preceding it
     const newOffset = this._bytebuf.offset - this._bytebuf.markedOffset;
@@ -855,6 +849,16 @@ export class DemoFile extends EventEmitter {
 
     // Advance to the point we'd already read up to
     this._bytebuf.offset = newOffset;
+
+    return true;
+  }
+
+  private _ensureRemaining(bytes: number) {
+    if (!this._tryEnsureRemaining(bytes)) {
+      throw new RangeError(
+        `Not enough data to continue parsing. ${bytes} bytes needed`
+      );
+    }
   }
 
   private _readCommand() {
