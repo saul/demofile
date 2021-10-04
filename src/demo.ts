@@ -566,6 +566,7 @@ export class DemoFile extends EventEmitter {
   }
 
   public parse(buffer: Buffer) {
+    this._hasEnded = false;
     this._bytebuf = ByteBuffer.wrap(buffer, true);
     const cancelled = this._parseHeader();
     if (!cancelled) timers.setTimeout(this._parseRecurse.bind(this), 0);
@@ -891,6 +892,7 @@ export class DemoFile extends EventEmitter {
         this.cancel();
         this.emit("tickend", this.currentTick);
         this.emit("end", { incomplete: false });
+        this._hasEnded = true;
         return;
       case DemoCommands.CustomData:
         throw new Error("Custom data not supported");
