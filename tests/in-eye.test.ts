@@ -8,10 +8,6 @@ test("in eye demos can be parsed", done => {
 
   const timeline = new Timeline(demo);
 
-  demo.on("start", () => {
-    timeline.log("start", demo.header);
-  });
-
   demo.gameEvents.on("round_end", e => {
     for (const player of demo.players) {
       timeline.log(`player:${player.userId}`, {
