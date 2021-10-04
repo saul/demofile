@@ -8,7 +8,7 @@ import { userMessages } from "./usermessagetypes";
  * Handles user messages for a demo file.
  */
 export class UserMessages extends EventEmitter {
-  public listen(demo: DemoFile) {
+  public listen(demo: DemoFile): void {
     demo.on("svc_UserMessage", this._handleUserMessage.bind(this));
   }
 

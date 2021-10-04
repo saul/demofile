@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/unbound-method */
 import { BitStream, BitView } from "bit-buffer";
 
 const COORD_INTEGER_BITS = 14;
@@ -271,6 +272,7 @@ BitStream.prototype.readBitCellCoordIntegral = function (
 BitStream.prototype.readCString = function (this: BitStream) {
   let s = "";
 
+  // eslint-disable-next-line no-constant-condition
   while (true) {
     const c = this.readUint8();
 

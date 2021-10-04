@@ -11,6 +11,11 @@ export const enum LifeState {
   Dead
 }
 
+export interface Angle2D {
+  pitch: number;
+  yaw: number;
+}
+
 export interface IPlayerRoundStats {
   /**
    * Kills dealt
@@ -89,11 +94,11 @@ export class Player extends BaseEntity<CCSPlayer> {
   /**
    * @returns {int} Current health
    */
-  get health() {
+  get health(): number {
     return this.getProp("DT_BasePlayer", "m_iHealth");
   }
 
-  get eyeAngles() {
+  get eyeAngles(): Angle2D {
     return {
       pitch: this.getProp("DT_CSPlayer", "m_angEyeAngles[0]"),
       yaw: this.getProp("DT_CSPlayer", "m_angEyeAngles[1]")
@@ -150,7 +155,7 @@ export class Player extends BaseEntity<CCSPlayer> {
   get userInfo(): IPlayerInfo | null {
     const userInfoTable = this._demo.stringTables.findTableByName("userinfo");
     return userInfoTable
-      ? userInfoTable.entries[this.clientSlot].userData
+      ? userInfoTable.entries[this.clientSlot]!.userData
       : null;
   }
 
@@ -181,7 +186,7 @@ export class Player extends BaseEntity<CCSPlayer> {
   /**
    * @returns Player name
    */
-  get name() {
+  get name(): string {
     return this.userInfo!.name;
   }
 
@@ -287,7 +292,6 @@ export class Player extends BaseEntity<CCSPlayer> {
       ? CCSPlayerResource[TableName][TableKeys]
       : never
   >(tableName: TableName): ElementType {
-    // tslint:disable-next-line:no-useless-cast
     const array = this._demo.entities.playerResource.getIndexedProps(
       tableName
     )!;
@@ -342,7 +346,7 @@ export class Player extends BaseEntity<CCSPlayer> {
    */
   get score(): number {
     const pr = this._demo.entities.playerResource;
-    return pr.getIndexedProps("m_iScore")[this.index];
+    return pr.getIndexedProps("m_iScore")[this.index]!;
   }
 
   /**
@@ -350,7 +354,7 @@ export class Player extends BaseEntity<CCSPlayer> {
    */
   get mvps(): number {
     const pr = this._demo.entities.playerResource;
-    return pr.getIndexedProps("m_iMVPs")[this.index];
+    return pr.getIndexedProps("m_iMVPs")[this.index]!;
   }
 
   /**
@@ -358,7 +362,7 @@ export class Player extends BaseEntity<CCSPlayer> {
    */
   get clanTag(): string {
     const pr = this._demo.entities.playerResource;
-    return pr.getIndexedProps("m_szClan")[this.index];
+    return pr.getIndexedProps("m_szClan")[this.index]!;
   }
 
   /**
@@ -500,19 +504,19 @@ export class Player extends BaseEntity<CCSPlayer> {
     const headShotKills = this.getIndexedProps("m_iMatchStats_HeadShotKills");
     const objective = this.getIndexedProps("m_iMatchStats_Objective");
 
-    const rounds = [];
+    const rounds = new Array<IPlayerRoundStats>();
     for (let roundIdx = 0; roundIdx < kills.length; ++roundIdx) {
       rounds.push({
-        kills: kills[roundIdx],
-        damage: damage[roundIdx],
-        equipmentValue: equipmentValue[roundIdx],
-        moneySaved: moneySaved[roundIdx],
-        killReward: killReward[roundIdx],
-        liveTime: liveTime[roundIdx],
-        deaths: deaths[roundIdx],
-        assists: assists[roundIdx],
-        headShotKills: headShotKills[roundIdx],
-        objective: objective[roundIdx]
+        kills: kills[roundIdx]!,
+        damage: damage[roundIdx]!,
+        equipmentValue: equipmentValue[roundIdx]!,
+        moneySaved: moneySaved[roundIdx]!,
+        killReward: killReward[roundIdx]!,
+        liveTime: liveTime[roundIdx]!,
+        deaths: deaths[roundIdx]!,
+        assists: assists[roundIdx]!,
+        headShotKills: headShotKills[roundIdx]!,
+        objective: objective[roundIdx]!
       });
     }
 

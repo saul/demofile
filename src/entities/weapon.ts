@@ -3,7 +3,6 @@ import { BaseEntity } from "./baseentity";
 import { itemDefinitionIndexMap } from "./itemdefs";
 import { Player } from "./player";
 
-// tslint:disable-next-line:no-useless-cast
 const qualities = [
   "normal",
   "genuine",

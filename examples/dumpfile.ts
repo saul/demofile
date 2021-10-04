@@ -1,4 +1,4 @@
-// tslint:disable:no-console
+/* eslint-disable no-console */
 
 // This file is an thorough example of how to log player kills,
 // team scores, chat text and server cvar changes from a demo file.

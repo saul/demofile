@@ -1,0 +1,35 @@
+{
+  "env": { "es6": true, "node": true },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "typestrict",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "project": "tsconfig.json", "sourceType": "module" },
+  "plugins": [
+    "eslint-plugin-jsdoc",
+    "eslint-plugin-prefer-arrow",
+    "eslint-plugin-import",
+    "sonarjs",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-console": "error",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/adjacent-overload-signatures": "off",
+    "@typescript-eslint/no-inferrable-types": [
+      "error",
+      {
+        "ignoreParameters": true,
+        "ignoreProperties": true
+      }
+    ],
+    "sonarjs/no-identical-conditions": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-explicit-any": "off"
+    // todo: no-restricted-syntax to allow 'for..in'
+  }
+}
