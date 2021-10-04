@@ -219,6 +219,7 @@ export declare interface DemoFile {
   /**
    * Fired per command. Parameter is a value in range [0,1] that indicates
    * the percentage of the demo file has been parsed so far.
+   * This event is not emitted when parsing streams.
    */
   on(event: "progress", listener: (progressFraction: number) => void): this;
   emit(name: "progress", progressFraction: number): boolean;
