@@ -114,6 +114,7 @@ export interface DT_BaseCSGrenade {
   m_fThrowTime: number;
   m_bLoopingSoundPlaying: boolean;
   m_flThrowStrength: number;
+  m_fDropTime: number;
 }
 
 export interface DT_BaseCSGrenadeProjectile {
@@ -675,6 +676,7 @@ export interface DT_CSRagdoll {
   m_bClientSideAnimation: boolean;
   m_flDeathYaw: number;
   m_flAbsYaw: number;
+  m_bDiedAirborne: boolean;
 }
 
 export interface DT_CSTeam {
@@ -2447,6 +2449,7 @@ export interface DT_WeaponSG556 {
 
 export interface DT_WeaponShield {
   // baseclass: DataTable;
+  m_flDisplayHealth: number;
 }
 
 export interface DT_WeaponSSG08 {
@@ -14932,6 +14935,7 @@ export interface CWeaponShield {
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
   DT_WeaponCSBaseGun: DT_WeaponCSBaseGun;
+  DT_WeaponShield: DT_WeaponShield;
 }
 
 export interface CWeaponSSG08 {

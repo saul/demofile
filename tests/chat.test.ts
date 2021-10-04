@@ -10,10 +10,6 @@ test("public matchmaking chat can be decrypted", done => {
 
   const timeline = new Timeline(demo);
 
-  demo.on("start", () => {
-    timeline.log("start", demo.header);
-  });
-
   demo.userMessages.on("SayText2", um => {
     timeline.log("SayText2", `${um.msgName} ${um.params.join(" ")}`);
   });

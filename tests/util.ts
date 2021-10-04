@@ -21,7 +21,7 @@ export function monitorProgress(demoName: string, demo: DemoFile) {
     startTime = Date.now();
   });
 
-  demo.on("end", () => {
+  demo.on("end", e => {
     if (startTime === 0) return;
 
     // Some demos do not have complete header information.
@@ -29,10 +29,13 @@ export function monitorProgress(demoName: string, demo: DemoFile) {
     let totalTicks = demo.header.playbackTicks || demo.currentTick;
 
     let elapsedSecs = (Date.now() - startTime) / 1000;
+
+    const errorText = e.error ? `\nFailed: ${e.error}` : "";
+
     console.log(
       `[${testName}] Parsed ${totalTicks} ticks from ${demoName} in ${elapsedSecs.toFixed(
         2
-      )} secs (${(totalTicks / elapsedSecs) | 0} ticks/sec)`
+      )} secs (${(totalTicks / elapsedSecs) | 0} ticks/sec)${errorText}`
     );
   });
 }
@@ -55,6 +58,16 @@ export class Timeline {
 
   constructor(demo: DemoFile) {
     this.demo = demo;
+
+    demo.on("start", () => {
+      this.log("start", demo.header);
+    });
+    demo.on("error", e => {
+      this.log("error", e);
+    });
+    demo.on("end", e => {
+      this.log("end", e);
+    });
   }
 
   log(name: string, data: any) {
