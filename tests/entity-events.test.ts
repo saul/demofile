@@ -8,10 +8,6 @@ test("entity events on GOTV demo", done => {
 
   const timeline = new Timeline(demo);
 
-  demo.on("start", () => {
-    timeline.log("start", demo.header);
-  });
-
   demo.gameEvents.on("round_end", e => {
     timeline.log("round_end", {
       ...e,

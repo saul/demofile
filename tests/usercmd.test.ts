@@ -8,10 +8,6 @@ test("usercmds are emitted", done => {
 
   const timeline = new Timeline(demo);
 
-  demo.on("start", () => {
-    timeline.log("start", demo.header);
-  });
-
   demo.on("usercmd", usercmd => {
     if (usercmd.tickCount % 1000 === 0) timeline.log("usercmd", usercmd);
   });
