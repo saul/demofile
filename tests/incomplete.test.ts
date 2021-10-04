@@ -1,7 +1,9 @@
 import { DemoFile } from "../src/index";
-import { monitorProgress, startParsing } from "./util";
+import { monitorProgress, startParsing, startParsingReadFull } from "./util";
 
-test("incomplete demos can be fully parsed", done => {
+const demoFileName = "vitality-vs-faze-m1-mirage.dem";
+
+function makeIncompleteDemo(done: jest.DoneCallback): DemoFile {
   const demoFileName = "vitality-vs-faze-m1-mirage.dem";
   const demo = new DemoFile();
   monitorProgress(demoFileName, demo);
@@ -12,5 +14,13 @@ test("incomplete demos can be fully parsed", done => {
     done();
   });
 
-  startParsing(demoFileName, demo);
+  return demo;
+}
+
+test("incomplete demos can be parsed as a stream", done => {
+  startParsing(demoFileName, makeIncompleteDemo(done));
+});
+
+test("incomplete demos can be parsed from a byte array", done => {
+  startParsingReadFull(demoFileName, makeIncompleteDemo(done));
 });

@@ -456,6 +456,8 @@ export class DemoFile extends EventEmitter {
 
   private _encryptionKey: Uint8Array | null = null;
 
+  private _hasEnded: boolean = false;
+
   /**
    * Starts parsing buffer as a demo file.
    *
@@ -494,8 +496,10 @@ export class DemoFile extends EventEmitter {
   }
 
   public parseStream(stream: Readable) {
+    this._hasEnded = false;
+
     const onReceiveChunk = (chunk: Buffer) => {
-      if (this._bytebuf == null || this._bytebuf.remaining() === 0) {
+      if (this._bytebuf == null) {
         this._bytebuf = ByteBuffer.wrap(chunk, true);
       } else {
         this._chunks.push(chunk);
@@ -505,14 +509,22 @@ export class DemoFile extends EventEmitter {
     const readPacketChunk = () => {
       try {
         // Keep reading until we can't read any more
-        while (this._bytebuf.remaining() > 0) {
+        while (this._bytebuf.remaining() > 0 || this._chunks.length > 0) {
           this._bytebuf.mark();
           this._readCommand();
         }
-      } catch (err) {
-        if (err instanceof RangeError) {
+      } catch (e) {
+        if (e instanceof RangeError) {
           // Reset the byte buffer to the start of the last command
           this._bytebuf.offset = this._bytebuf.markedOffset;
+        } else {
+          stream.off("data", onReceiveChunk);
+
+          if (!this._hasEnded) {
+            this.emit("error", e);
+            this.emit("end", { error: e, incomplete: false });
+            this._hasEnded = true;
+          }
         }
       }
     };
@@ -531,7 +543,20 @@ export class DemoFile extends EventEmitter {
     stream.on("data", onReceiveChunk);
     stream.on("data", readHeaderChunk);
 
+    stream.on("error", e => {
+      if (!this._hasEnded) {
+        this.emit("error", e);
+        this.emit("end", { error: e, incomplete: false });
+        this._hasEnded = true;
+      }
+
+      stream.off("data", onReceiveChunk);
+    });
+
     stream.on("end", () => {
+      if (this._hasEnded) return;
+      this._hasEnded = true;
+
       const fullyConsumed =
         this._bytebuf?.remaining() === 0 && this._chunks.length === 0;
       if (fullyConsumed) return;
@@ -583,7 +608,6 @@ export class DemoFile extends EventEmitter {
     this.header = parseHeaderBytebuf(this._bytebuf);
 
     // #65: Some demos are missing playbackTicks from the header
-    // todo: de-dupe this
     if (this.header.playbackTicks > 0) {
       this.tickInterval = this.header.playbackTime / this.header.playbackTicks;
     }

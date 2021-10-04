@@ -6,7 +6,7 @@
 - Unreleased release notes here
 -->
 
-### 2.3.0 (2021-09-29)
+### 2.3.0 (2021-10-04)
 
 - :sparkles: #19: Support streaming demos
 

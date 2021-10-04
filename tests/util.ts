@@ -42,6 +42,13 @@ export function startParsing(demoFileName: string, demo: DemoFile) {
   demo.parseStream(stream);
 }
 
+export function startParsingReadFull(demoFileName: string, demo: DemoFile) {
+  fs.readFile(join(root, "demos", demoFileName), (err, buffer) => {
+    expect(err).toBeFalsy();
+    demo.parse(buffer);
+  });
+}
+
 export class Timeline {
   events: string[] = [];
   demo: DemoFile;
