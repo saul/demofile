@@ -500,6 +500,7 @@ export class DemoFile extends EventEmitter {
     this._hasEnded = false;
 
     const onReceiveChunk = (chunk: Buffer) => {
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       if (this._bytebuf == null) {
         this._bytebuf = ByteBuffer.wrap(chunk, true);
       } else {
@@ -520,7 +521,11 @@ export class DemoFile extends EventEmitter {
           this._bytebuf.offset = this._bytebuf.markedOffset;
         } else {
           stream.off("data", onReceiveChunk);
-          this._emitEnd({ error: e, incomplete: false });
+          const error =
+            e instanceof Error
+              ? e
+              : new Error(`Exception during parsing: ${e}`);
+          this._emitEnd({ error, incomplete: false });
         }
       }
     };
@@ -546,6 +551,7 @@ export class DemoFile extends EventEmitter {
 
     stream.on("end", () => {
       const fullyConsumed =
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         this._bytebuf?.remaining() === 0 && this._chunks.length === 0;
       if (fullyConsumed) return;
 
@@ -831,7 +837,7 @@ export class DemoFile extends EventEmitter {
 
     let left = bytes - remaining;
     for (let i = 0; i < this._chunks.length && left > 0; ++i)
-      left -= this._chunks[i].length;
+      left -= this._chunks[i]!.length;
 
     // We don't have enough bytes with what we have buffered up
     if (left > 0) return false;
