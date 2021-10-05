@@ -99,10 +99,10 @@ export class IceKey {
     }
 
     this.keySchedule = [];
-    for (let i: number = 0; i < this.rounds; i++) {
+    for (let i = 0; i < this.rounds; i++) {
       this.keySchedule[i] = [];
-      for (let j: number = 0; j < 3; j++) {
-        this.keySchedule[i][j] = 0;
+      for (let j = 0; j < 3; j++) {
+        this.keySchedule[i]![j] = 0;
       }
     }
   }
@@ -118,13 +118,13 @@ export class IceKey {
   }
 
   // Set the key schedule of an ICE key.
-  public set(key: Uint8Array) {
+  public set(key: Uint8Array): void {
     const kb = new Uint16Array(4);
     for (let i = 0; i < 4; i++) kb[i] = 0;
 
     if (this.rounds === 8) {
       for (let i = 0; i < 4; i++)
-        kb[3 - i] = ((key[i * 2] & 0xff) << 8) | (key[i * 2 + 1] & 0xff);
+        kb[3 - i] = ((key[i * 2]! & 0xff) << 8) | (key[i * 2 + 1]! & 0xff);
       this.scheduleBuild(kb, 0, 0);
       return;
     }
@@ -132,32 +132,33 @@ export class IceKey {
     for (let i = 0; i < this.size; i++) {
       for (let j = 0; j < 4; j++)
         kb[3 - j] =
-          ((key[i * 8 + j * 2] & 0xff) << 8) | (key[i * 8 + j * 2 + 1] & 0xff);
+          ((key[i * 8 + j * 2]! & 0xff) << 8) |
+          (key[i * 8 + j * 2 + 1]! & 0xff);
       this.scheduleBuild(kb, i * 8, 0);
       this.scheduleBuild(kb, this.rounds - 8 - i * 8, 8);
     }
   }
 
   // Clear the key schedule to prevent memory snooping.
-  public clear() {
+  public clear(): void {
     for (let i = 0; i < this.rounds; i++)
-      for (let j = 0; j < 3; j++) this.keySchedule[i][j] = 0;
+      for (let j = 0; j < 3; j++) this.keySchedule[i]![j] = 0;
   }
 
   // Encrypt a block of 8 bytes of data.
-  public encrypt(plaintext: Uint8Array, ciphertext: Uint8Array) {
+  public encrypt(plaintext: Uint8Array, ciphertext: Uint8Array): void {
     let i;
     let l = 0;
     let r = 0;
 
     for (i = 0; i < 4; i++) {
-      l |= (plaintext[i] & 0xff) << (24 - i * 8);
-      r |= (plaintext[i + 4] & 0xff) << (24 - i * 8);
+      l |= (plaintext[i]! & 0xff) << (24 - i * 8);
+      r |= (plaintext[i + 4]! & 0xff) << (24 - i * 8);
     }
 
     for (i = 0; i < this.rounds; i += 2) {
-      l ^= this.roundFunc(r, this.keySchedule[i]);
-      r ^= this.roundFunc(l, this.keySchedule[i + 1]);
+      l ^= this.roundFunc(r, this.keySchedule[i]!);
+      r ^= this.roundFunc(l, this.keySchedule[i + 1]!);
     }
 
     for (i = 0; i < 4; i++) {
@@ -170,19 +171,19 @@ export class IceKey {
   }
 
   // Decrypt a block of 8 bytes of data.
-  public decrypt(ciphertext: Uint8Array, plaintext: Uint8Array) {
+  public decrypt(ciphertext: Uint8Array, plaintext: Uint8Array): void {
     let i;
     let l = 0;
     let r = 0;
 
     for (i = 0; i < 4; i++) {
-      l |= (ciphertext[i] & 0xff) << (24 - i * 8);
-      r |= (ciphertext[i + 4] & 0xff) << (24 - i * 8);
+      l |= (ciphertext[i]! & 0xff) << (24 - i * 8);
+      r |= (ciphertext[i + 4]! & 0xff) << (24 - i * 8);
     }
 
     for (i = this.rounds - 1; i > 0; i -= 2) {
-      l ^= this.roundFunc(r, this.keySchedule[i]);
-      r ^= this.roundFunc(l, this.keySchedule[i - 1]);
+      l ^= this.roundFunc(r, this.keySchedule[i]!);
+      r ^= this.roundFunc(l, this.keySchedule[i - 1]!);
     }
 
     for (i = 0; i < 4; i++) {
@@ -199,7 +200,7 @@ export class IceKey {
     plainArray: Uint8Array,
     from?: number,
     to?: number
-  ) {
+  ): void {
     if (from == null) from = 0;
     if (to == null) to = cipherArray.length;
 
@@ -208,13 +209,13 @@ export class IceKey {
     // decrypt full blocks
     while (from + 8 <= to) {
       for (let i = 0; i < 8; i++) {
-        this.cipherHolder[i] = cipherArray[from + i];
+        this.cipherHolder[i] = cipherArray[from + i]!;
       }
 
       this.decrypt(this.cipherHolder, this.plainHolder);
 
       for (let i = 0; i < 8; i++) {
-        plainArray[k + i] = this.plainHolder[i];
+        plainArray[k + i] = this.plainHolder[i]!;
       }
 
       k += 8;
@@ -224,7 +225,7 @@ export class IceKey {
     // remaining bytes do not get encryption, just copy them
     if (((to - from) & 0x7) !== 0) {
       for (let i = from; i < to; i++) {
-        plainArray[k++] = cipherArray[i];
+        plainArray[k++] = cipherArray[i]!;
       }
     }
   }
@@ -266,7 +267,7 @@ export class IceKey {
     let i = 0;
 
     while (x !== 0) {
-      if ((x & 1) !== 0) res |= IceKey.pBox[i];
+      if ((x & 1) !== 0) res |= IceKey.pBox[i]!;
       i++;
       x >>>= 1;
     }
@@ -278,10 +279,10 @@ export class IceKey {
   private spBoxInit() {
     IceKey.spBox = [];
 
-    for (let i: number = 0; i < 4; i++) {
+    for (let i = 0; i < 4; i++) {
       IceKey.spBox[i] = [];
-      for (let j: number = 0; j < 1024; j++) {
-        IceKey.spBox[i][j] = 0;
+      for (let j = 0; j < 1024; j++) {
+        IceKey.spBox[i]![j] = 0;
       }
     }
 
@@ -290,17 +291,19 @@ export class IceKey {
       const row = (i & 0x1) | ((i & 0x200) >>> 8);
       let x;
 
-      x = this.gf_exp7(col ^ IceKey.sXor[0][row], IceKey.sMod[0][row]) << 24;
-      IceKey.spBox[0][i] = this.perm32(x);
+      x =
+        this.gf_exp7(col ^ IceKey.sXor[0]![row]!, IceKey.sMod[0]![row]!) << 24;
+      IceKey.spBox[0]![i] = this.perm32(x);
 
-      x = this.gf_exp7(col ^ IceKey.sXor[1][row], IceKey.sMod[1][row]) << 16;
-      IceKey.spBox[1][i] = this.perm32(x);
+      x =
+        this.gf_exp7(col ^ IceKey.sXor[1]![row]!, IceKey.sMod[1]![row]!) << 16;
+      IceKey.spBox[1]![i] = this.perm32(x);
 
-      x = this.gf_exp7(col ^ IceKey.sXor[2][row], IceKey.sMod[2][row]) << 8;
-      IceKey.spBox[2][i] = this.perm32(x);
+      x = this.gf_exp7(col ^ IceKey.sXor[2]![row]!, IceKey.sMod[2]![row]!) << 8;
+      IceKey.spBox[2]![i] = this.perm32(x);
 
-      x = this.gf_exp7(col ^ IceKey.sXor[3][row], IceKey.sMod[3][row]);
-      IceKey.spBox[3][i] = this.perm32(x);
+      x = this.gf_exp7(col ^ IceKey.sXor[3]![row]!, IceKey.sMod[3]![row]!);
+      IceKey.spBox[3]![i] = this.perm32(x);
     }
   }
 
@@ -310,20 +313,20 @@ export class IceKey {
 
     for (i = 0; i < 8; i++) {
       let j;
-      const kr = IceKey.keyrot[krotIdx + i];
-      const subkey = this.keySchedule[n + i];
+      const kr = IceKey.keyrot[krotIdx + i]!;
+      const subkey = this.keySchedule[n + i]!;
 
-      for (j = 0; j < 3; j++) this.keySchedule[n + i][j] = 0;
+      for (j = 0; j < 3; j++) this.keySchedule[n + i]![j] = 0;
 
       for (j = 0; j < 15; j++) {
         let k;
         const curSk = j % 3;
 
         for (k = 0; k < 4; k++) {
-          const curKb = kb[(kr + k) & 3];
+          const curKb = kb[(kr + k) & 3]!;
           const bit = curKb & 1;
 
-          subkey[curSk] = (subkey[curSk] << 1) | bit;
+          subkey[curSk] = (subkey[curSk]! << 1) | bit;
           kb[(kr + k) & 3] = (curKb >>> 1) | ((bit ^ 1) << 15);
         }
       }
@@ -335,17 +338,17 @@ export class IceKey {
     const tl = ((p >>> 16) & 0x3ff) | (((p >>> 14) | (p << 18)) & 0xffc00);
     const tr = (p & 0x3ff) | ((p << 2) & 0xffc00);
 
-    let al = subkey[2] & (tl ^ tr);
+    let al = subkey[2]! & (tl ^ tr);
     let ar = al ^ tr;
     al ^= tl;
-    al ^= subkey[0];
-    ar ^= subkey[1];
+    al ^= subkey[0]!;
+    ar ^= subkey[1]!;
 
     return (
-      IceKey.spBox[0][al >>> 10] |
-      IceKey.spBox[1][al & 0x3ff] |
-      IceKey.spBox[2][ar >>> 10] |
-      IceKey.spBox[3][ar & 0x3ff]
+      IceKey.spBox[0]![al >>> 10]! |
+      IceKey.spBox[1]![al & 0x3ff]! |
+      IceKey.spBox[2]![ar >>> 10]! |
+      IceKey.spBox[3]![ar & 0x3ff]!
     );
   }
 }

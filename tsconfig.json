@@ -1,11 +1,5 @@
 {
   "compilerOptions": {
-    "plugins": [
-      {
-        "name": "tslint-language-service-ts3",
-        "ignoreDefinitionFiles": true
-      }
-    ],
     "strict": true,
     "rootDir": "./src",
     "outDir": "./dist",
@@ -18,6 +12,7 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
+    "noUncheckedIndexedAccess": true,
     "sourceMap": true
   },
   "compileOnSave": true,

@@ -282,11 +282,11 @@ type MutableTransmitEntities = TransmitEntities & {
 
 function cloneProps(props: UnknownEntityProps): UnknownEntityProps {
   const result = {} as UnknownEntityProps;
-  // tslint:disable-next-line:forin
+  // eslint-disable-next-line no-restricted-syntax
   for (const tableName in props) {
     const oldTable = props[tableName];
     const newTable = {} as Record<string, any>;
-    // tslint:disable-next-line:forin
+    // eslint-disable-next-line no-restricted-syntax
     for (const prop in oldTable) {
       newTable[prop] = oldTable[prop];
     }
@@ -371,7 +371,7 @@ export class Entities extends EventEmitter {
   private _singletonEnts: { [table: string]: Networkable | undefined } = {};
   private _currentServerTick: TickNumber = -1 as TickNumber;
 
-  public listen(demo: DemoFile) {
+  public listen(demo: DemoFile): void {
     this._demo = demo;
     demo.on("svc_PacketEntities", e => this._handlePacketEntities(e));
     demo.on("svc_TempEntities", e => this._handleTempEntities(e));
@@ -398,7 +398,7 @@ export class Entities extends EventEmitter {
    * @param {number} handle - Networked entity handle value
    * @returns {boolean} true if handle is set
    */
-  public isHandleSet(handle: number) {
+  public isHandleSet(handle: number): boolean {
     return handle !== consts.INVALID_NETWORKED_EHANDLE_VALUE;
   }
 
@@ -434,7 +434,8 @@ export class Entities extends EventEmitter {
     const userInfos = userInfoTable.entries;
 
     for (let clientSlot = 0; clientSlot < userInfos.length; ++clientSlot) {
-      const userEntry = userInfos[clientSlot];
+      // We ALWAYS have a user info entry for each client slot
+      const userEntry = userInfos[clientSlot]!;
 
       if (userEntry.userData && userEntry.userData.userId === userId) {
         // UNSAFE: if we have 'userinfo' for this entity, it's definitely a player
@@ -455,7 +456,7 @@ export class Entities extends EventEmitter {
     }
 
     const result = find(
-      ([, ent]) => (ent ? ent.serverClass.name === serverClass : false),
+      ([, ent]) => ent.serverClass.name === serverClass,
       this.entities
     );
     if (!result) {
@@ -483,17 +484,20 @@ export class Entities extends EventEmitter {
     }
   }
 
-  public handleDataTables(chunk: ByteBuffer) {
+  public handleDataTables(chunk: ByteBuffer): void {
+    // eslint-disable-next-line no-constant-condition
     while (true) {
-      // eslint-disable-line no-constant-condition
       const descriptor = net.findByType(chunk.readVarint32());
-      assert(descriptor.name === "svc_SendTable", "expected SendTable message");
+      assert(
+        descriptor?.name === "svc_SendTable",
+        "expected SendTable message"
+      );
 
       const length = chunk.readVarint32();
 
-      const msg: CSVCMsgSendTable = descriptor.class.decode(
+      const msg = descriptor!.class.decode(
         new Uint8Array(chunk.readBytes(length).toBuffer())
-      );
+      ) as CSVCMsgSendTable;
       if (msg.isEnd) {
         break;
       }
@@ -557,10 +561,7 @@ export class Entities extends EventEmitter {
 
       if (prop.type === PropType.DataTable) {
         const subTable = assertExists(this._findTableByName(prop.dtName));
-        excludes.push.apply(
-          excludes,
-          this._gatherExcludes(subTable) as ISendProp[]
-        );
+        excludes.push(...(this._gatherExcludes(subTable) as ISendProp[]));
       }
     }
 
@@ -574,7 +575,7 @@ export class Entities extends EventEmitter {
     const flattened: IFlattenedSendProp[] = [];
 
     for (let index = 0; index < table.props.length; ++index) {
-      const prop = table.props[index];
+      const prop = table.props[index]!;
 
       if (
         (prop.flags & SPROP_INSIDEARRAY) !== 0 ||
@@ -594,7 +595,7 @@ export class Entities extends EventEmitter {
           }
         }
 
-        flattened.push.apply(flattened, childProps);
+        flattened.push(...childProps);
       } else {
         flattened.push({
           prop,
@@ -634,8 +635,8 @@ export class Entities extends EventEmitter {
     // for CHANGES_OFTEN props). It's not a stable sort so it can't just be
     // replaced with JS Array#sort
     for (const priority of priorities) {
+      // eslint-disable-next-line no-constant-condition
       while (true) {
-        // eslint-disable-line no-constant-condition
         let currentProp;
 
         for (
@@ -643,15 +644,15 @@ export class Entities extends EventEmitter {
           currentProp < flattenedProps.length;
           ++currentProp
         ) {
-          const prop = flattenedProps[currentProp].prop;
+          const prop = flattenedProps[currentProp]!.prop;
 
           if (
             prop.priority === priority ||
             (priority === 64 && (prop.flags & SPROP_CHANGES_OFTEN) !== 0)
           ) {
             if (start !== currentProp) {
-              const temp = flattenedProps[start];
-              flattenedProps[start] = flattenedProps[currentProp];
+              const temp = flattenedProps[start]!;
+              flattenedProps[start] = flattenedProps[currentProp]!;
               flattenedProps[currentProp] = temp;
             }
 
@@ -700,9 +701,11 @@ export class Entities extends EventEmitter {
 
     // Try to find a suitable class for this entity
     let klass: NetworkableConstructor = Networkable;
+    // eslint-disable-next-line no-restricted-syntax
     for (const tableName in this.tableClassMap) {
       if (baseline[tableName]) {
-        klass = this.tableClassMap[tableName];
+        // UNSAFE: we know this table exists in `tableClassMap`
+        klass = this.tableClassMap[tableName]!;
         break;
       }
     }
@@ -740,14 +743,14 @@ export class Entities extends EventEmitter {
     entityBitBuffer: BitStream,
     classId: number
   ): ReadonlyArray<IPropUpdate> {
-    const serverClass = this.serverClasses[classId];
+    const serverClass = this.serverClasses[classId]!;
 
     const newWay = entityBitBuffer.readOneBit();
 
     let lastIndex = -1;
     const fieldIndices: number[] = [];
+    // eslint-disable-next-line no-constant-condition
     while (true) {
-      // eslint-disable-line no-constant-condition
       lastIndex = readFieldIndex(entityBitBuffer, lastIndex, newWay);
       if (lastIndex === -1) {
         break;
@@ -756,10 +759,10 @@ export class Entities extends EventEmitter {
       fieldIndices.push(lastIndex);
     }
 
-    const updatedProps = new Array(fieldIndices.length);
+    const updatedProps = new Array<IPropUpdate>(fieldIndices.length);
     for (let i = 0; i < fieldIndices.length; ++i) {
-      const propIndex = fieldIndices[i];
-      const flattenedProp = serverClass.flattenedProps[propIndex];
+      const propIndex = fieldIndices[i]!;
+      const flattenedProp = serverClass.flattenedProps[propIndex]!;
       assert(flattenedProp);
       updatedProps[i] = {
         prop: flattenedProp,
@@ -770,22 +773,24 @@ export class Entities extends EventEmitter {
     return updatedProps;
   }
 
-  private _readNewEntity(entityBitBuffer: BitStream, entity: Networkable<any>) {
+  private _readNewEntity(entityBitBuffer: BitStream, entity: Networkable) {
     const updates = this._parseEntityUpdate(entityBitBuffer, entity.classId);
 
     const recordChanges = this.listenerCount("change") > 0;
 
-    const changes = recordChanges ? new Array(updates.length) : [];
+    const changes = recordChanges
+      ? new Array<IEntityPropChange>(updates.length)
+      : [];
 
     for (let i = 0; i < updates.length; ++i) {
-      const update = updates[i];
+      const update = updates[i]!;
       const tableName = update.prop.table.netTableName;
       const varName = update.prop.prop.varName;
 
       const table = entity.props[tableName];
       const oldValue = table && varName in table ? table[varName] : undefined;
 
-      entity.updateProp(tableName, varName, update.value);
+      (entity as Networkable<any>).updateProp(tableName, varName, update.value);
 
       if (recordChanges) {
         changes[i] = {
@@ -848,7 +853,7 @@ export class Entities extends EventEmitter {
       this.emit("tempent", {
         delay: fireDelay,
         classId: lastClassId,
-        serverClass: this.serverClasses[lastClassId],
+        serverClass: this.serverClasses[lastClassId]!,
         props: lastProps
       });
     }
@@ -919,7 +924,7 @@ export class Entities extends EventEmitter {
         } else {
           // 0b10: FHDR_LEAVEPVS
         }
-        // tslint:disable-next-line:no-identical-conditions
+        // eslint-disable-next-line no-dupe-else-if
       } else if (entityBitBuffer.readOneBit()) {
         // 0b01: FHDR_ENTERPVS
         frame.add(entityIndex);
@@ -929,7 +934,7 @@ export class Entities extends EventEmitter {
           consts.NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS
         );
 
-        const existingBaseline = this._entityBaselines[msg.baseline].get(
+        const existingBaseline = this._entityBaselines[msg.baseline]!.get(
           entityIndex
         );
 
@@ -958,7 +963,7 @@ export class Entities extends EventEmitter {
 
         // Update the OTHER baseline with the merged result of `old baseline + new props`
         if (msg.updateBaseline) {
-          this._entityBaselines[msg.baseline ? 0 : 1].set(entityIndex, {
+          this._entityBaselines[msg.baseline ? 0 : 1]!.set(entityIndex, {
             classId,
             props: cloneProps(entity.props)
           });
@@ -1025,7 +1030,7 @@ export class Entities extends EventEmitter {
 
     this.emit("baselineupdate", {
       classId,
-      serverClass: this.serverClasses[classId],
+      serverClass: this.serverClasses[classId]!,
       baseline
     });
   }
