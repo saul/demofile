@@ -40,7 +40,6 @@
     "big-integer": "^1.6.48",
     "bit-buffer": "0.0.3",
     "bytebuffer": "^5.0.0",
-    "end-of-stream": "^1.4.4",
     "immutable": "^4.0.0-rc.12",
     "iter-tools": "^7.0.2",
     "long": "^3.0.3",
@@ -49,7 +48,6 @@
   "devDependencies": {
     "@node-steam/vdf": "^2.1.0",
     "@types/ansi-styles": "^3.2.0",
-    "@types/end-of-stream": "^1.4.1",
     "@types/jest": "^26.0.24",
     "@types/node": "^10.14.22",
     "@types/request": "^2.48.5",

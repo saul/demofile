@@ -59,7 +59,6 @@ import {
 import { Vector } from "./sendtabletypes";
 import { StringTables } from "./stringtables";
 import { UserMessages } from "./usermessages";
-import * as eos from "end-of-stream";
 
 interface IDemoHeader {
   /**
@@ -535,11 +534,11 @@ export class DemoFile extends EventEmitter {
       // Wait for enough bytes for us to read the header
       if (!this._tryEnsureRemaining(1072)) return;
 
+      // Once we've read the header, remove this handler
+      stream.off("data", readHeaderChunk);
+
       const cancelled = this._parseHeader();
       if (!cancelled) stream.on("data", readPacketChunk);
-
-      // Now we've read the header, remove our handler
-      stream.off("data", readHeaderChunk);
     };
 
     stream.on("data", onReceiveChunk);
@@ -550,12 +549,7 @@ export class DemoFile extends EventEmitter {
       this._emitEnd({ error: e, incomplete: false });
     });
 
-    eos(stream, error => {
-      if (error != null) {
-        this._emitEnd({ error, incomplete: false });
-        return;
-      }
-
+    stream.on("end", () => {
       const fullyConsumed =
         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         this._bytebuf?.remaining() === 0 && this._chunks.length === 0;
