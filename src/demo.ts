@@ -841,10 +841,11 @@ export class DemoFile extends EventEmitter {
     // We don't have enough bytes with what we have buffered up
     if (left > 0) return false;
 
-    // Reset to the marked offset. We're never going to need the bytes preceding it
-    const newOffset = this._bytebuf.offset - this._bytebuf.markedOffset;
-    this._bytebuf.offset = this._bytebuf.markedOffset;
+    const mark = Math.max(0, this._bytebuf.markedOffset);
+    const newOffset = this._bytebuf.offset - mark;
 
+    // Reset to the marked offset. We're never going to need the bytes preceding it
+    this._bytebuf.offset = mark;
     this._bytebuf = ByteBuffer.wrap(
       Buffer.concat([
         new Uint8Array(this._bytebuf.toBuffer()),
