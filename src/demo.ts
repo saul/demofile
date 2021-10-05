@@ -535,11 +535,11 @@ export class DemoFile extends EventEmitter {
       // Wait for enough bytes for us to read the header
       if (!this._tryEnsureRemaining(1072)) return;
 
-      // Once we've read the header, remove this handler
-      stream.off("data", readHeaderChunk);
-
       const cancelled = this._parseHeader();
       if (!cancelled) stream.on("data", readPacketChunk);
+
+      // Now we've read the header, remove our handler
+      stream.off("data", readHeaderChunk);
     };
 
     stream.on("data", onReceiveChunk);
