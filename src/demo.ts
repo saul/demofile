@@ -59,6 +59,7 @@ import {
 import { Vector } from "./sendtabletypes";
 import { StringTables } from "./stringtables";
 import { UserMessages } from "./usermessages";
+import * as eos from "end-of-stream";
 
 interface IDemoHeader {
   /**
@@ -549,7 +550,12 @@ export class DemoFile extends EventEmitter {
       this._emitEnd({ error: e, incomplete: false });
     });
 
-    stream.on("end", () => {
+    eos(stream, error => {
+      if (error != null) {
+        this._emitEnd({ error, incomplete: false });
+        return;
+      }
+
       const fullyConsumed =
         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         this._bytebuf?.remaining() === 0 && this._chunks.length === 0;
