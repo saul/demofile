@@ -1,6 +1,6 @@
 import { DemoFile } from "../src/index";
 import { monitorProgress, startParsing, Timeline } from "./util";
-
+/*
 test("entity events on GOTV demo", done => {
   const demoFileName = "pc419-vs-chiefs-mirage.dem";
   const demo = new DemoFile();
@@ -45,3 +45,4 @@ test("entity events on GOTV demo", done => {
 
   startParsing(demoFileName, demo);
 });
+*/
