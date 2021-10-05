@@ -30,7 +30,7 @@ export type KeyValues = KeyValuesPrimitive[] | KeyValuesPrimitive;
 
 function parseValue(type: KeyValueType, buffer: ByteBuffer): KeyValues {
   switch (type) {
-    case KeyValueType.None:
+    case KeyValueType.None: {
       let inner: { [key: string]: KeyValues } | string[] = {};
       type = buffer.readUint8();
       while (type !== KeyValueType.NumTypes) {
@@ -57,6 +57,7 @@ function parseValue(type: KeyValueType, buffer: ByteBuffer): KeyValues {
         type = buffer.readUint8();
       }
       return inner;
+    }
     case KeyValueType.String:
       return buffer.readCString();
     case KeyValueType.Int:

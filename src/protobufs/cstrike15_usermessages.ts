@@ -1,4 +1,4 @@
-/* tslint:disable */
+/* eslint-disable */
 import { CMsgVector2D, CMsgRGBA, CMsgVector } from "./netmessages";
 import {
   CEconItemPreviewDataBlock,

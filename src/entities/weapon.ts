@@ -3,7 +3,6 @@ import { BaseEntity } from "./baseentity";
 import { itemDefinitionIndexMap } from "./itemdefs";
 import { Player } from "./player";
 
-// tslint:disable-next-line:no-useless-cast
 const qualities = [
   "normal",
   "genuine",
@@ -88,7 +87,7 @@ export class Weapon extends BaseEntity<CWeaponCSBase> {
     if (!this.owner) return null;
     const ammoType = this.getProp("DT_LocalWeaponData", "m_iPrimaryAmmoType");
     if (ammoType === -1) return null;
-    return this.owner.getIndexedProps("m_iAmmo")[ammoType];
+    return this.owner.getIndexedProps("m_iAmmo")[ammoType]!;
   }
 
   /**
@@ -96,6 +95,6 @@ export class Weapon extends BaseEntity<CWeaponCSBase> {
    */
   get quality(): ItemQuality {
     const quality = this.getProp("DT_ScriptCreatedItem", "m_iEntityQuality");
-    return qualities[quality];
+    return qualities[quality]!;
   }
 }

@@ -47,16 +47,16 @@ function parseUserInfoData(buf: Buffer): IPlayerInfo {
   const xuid = Long.fromBits(lo, hi);
   const name = bytebuf
     .readString(MAX_PLAYER_NAME_LENGTH, ByteBuffer.METRICS_BYTES)
-    .split("\0", 2)[0];
+    .split("\0", 2)[0]!;
   const userId = bytebuf.readUint32();
   const guid = bytebuf
     .readString(SIGNED_GUID_LEN + 1, ByteBuffer.METRICS_BYTES)
-    .split("\0", 2)[0];
+    .split("\0", 2)[0]!;
   bytebuf.skip(3);
   const friendsId = bytebuf.readUint32();
   const friendsName = bytebuf
     .readString(MAX_PLAYER_NAME_LENGTH, ByteBuffer.METRICS_BYTES)
-    .split("\0", 2)[0];
+    .split("\0", 2)[0]!;
   const fakePlayer = bytebuf.readByte() !== 0;
   bytebuf.skip(3);
   const isHltv = bytebuf.readByte() !== 0;
@@ -148,7 +148,7 @@ export declare interface StringTables {
  */
 export class StringTables extends EventEmitter {
   public tables: Array<IStringTable<any>> = [];
-  public userDataCallbacks: { [table: string]: (buf: Buffer) => any };
+  public userDataCallbacks: Record<string, ((buf: Buffer) => any) | undefined>;
 
   constructor() {
     super();
@@ -163,7 +163,7 @@ export class StringTables extends EventEmitter {
     };
   }
 
-  public listen(messageEvents: DemoFile) {
+  public listen(messageEvents: DemoFile): void {
     messageEvents.on(
       "svc_UpdateStringTable",
       this._handleUpdateStringTable.bind(this)
@@ -180,7 +180,7 @@ export class StringTables extends EventEmitter {
     return this.tables.find(table => table.name === name);
   }
 
-  public handleStringTables(bitbuf: BitStream) {
+  public handleStringTables(bitbuf: BitStream): void {
     const numTables = bitbuf.readUInt8();
 
     for (let i = 0; i < numTables; ++i) {
@@ -197,7 +197,7 @@ export class StringTables extends EventEmitter {
 
     for (let entryIndex = 0; entryIndex < numEntries; ++entryIndex) {
       const entry = bitbuf.readCString();
-      let userData = null;
+      let userData: unknown = null;
 
       // has user data?
       if (bitbuf.readOneBit()) {
@@ -225,14 +225,15 @@ export class StringTables extends EventEmitter {
       const numStrings = bitbuf.readUInt16();
 
       for (let i = 0; i < numStrings; ++i) {
-        const entry = bitbuf.readCString(); // tslint:disable-line no-dead-store
-        let userData = null;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const entry = bitbuf.readCString();
+        let userData: unknown = null;
 
         if (bitbuf.readOneBit()) {
           const userDataSize = bitbuf.readUInt16();
           const userDataBuf = bitbuf.readBytes(userDataSize);
 
-          // tslint:disable-next-line no-dead-store
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
           userData =
             userDataCallback === undefined
               ? userDataBuf
@@ -303,7 +304,7 @@ export class StringTables extends EventEmitter {
       }
 
       // read in the user data
-      let userData = null;
+      let userData: unknown = null;
 
       if (bitbuf.readOneBit()) {
         // don't read the length, it's fixed length and the length was networked down already
@@ -316,7 +317,7 @@ export class StringTables extends EventEmitter {
         }
 
         if (userDataCallback !== undefined) {
-          userData = userDataCallback(userData);
+          userData = userDataCallback(userData as Buffer);
         }
       } else {
         userData = existingEntry ? existingEntry.userData : null;
@@ -374,9 +375,7 @@ export class StringTables extends EventEmitter {
   private _handleUpdateStringTable(msg: CSVCMsgUpdateStringTable) {
     const bitbuf = BitStream.from(msg.stringData);
 
-    const table = this.tables[msg.tableId];
-    assert(table !== undefined, "bad table index");
-
+    const table = assertExists(this.tables[msg.tableId], "bad table index");
     this._parseStringTableUpdate(bitbuf, table, msg.numChangedEntries);
   }
 }

@@ -25,15 +25,11 @@ export declare interface ConVars {
 export class ConVars extends EventEmitter {
   public vars: Map<string, string> = new Map();
 
-  public listen(demo: DemoFile) {
+  public listen(demo: DemoFile): void {
     demo.on("net_SetConVar", (msg: CNETMsgSetConVar) => {
       const convars = msg.convars;
       if (!convars) return;
       for (const cvar of convars.cvars) {
-        if (cvar.name == null || cvar.value == null) {
-          continue;
-        }
-
         const oldValue = this.vars.get(cvar.name);
         this.vars.set(cvar.name, cvar.value);
 

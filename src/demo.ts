@@ -140,21 +140,21 @@ const enum DemoCommands {
 
 function parseHeaderBytebuf(bytebuf: ByteBuffer): IDemoHeader {
   return {
-    magic: bytebuf.readString(8, ByteBuffer.METRICS_BYTES).split("\0", 2)[0],
+    magic: bytebuf.readString(8, ByteBuffer.METRICS_BYTES).split("\0", 2)[0]!,
     protocol: bytebuf.readInt32(),
     networkProtocol: bytebuf.readInt32(),
     serverName: bytebuf
       .readString(MAX_OSPATH, ByteBuffer.METRICS_BYTES)
-      .split("\0", 2)[0],
+      .split("\0", 2)[0]!,
     clientName: bytebuf
       .readString(MAX_OSPATH, ByteBuffer.METRICS_BYTES)
-      .split("\0", 2)[0],
+      .split("\0", 2)[0]!,
     mapName: bytebuf
       .readString(MAX_OSPATH, ByteBuffer.METRICS_BYTES)
-      .split("\0", 2)[0],
+      .split("\0", 2)[0]!,
     gameDirectory: bytebuf
       .readString(MAX_OSPATH, ByteBuffer.METRICS_BYTES)
-      .split("\0", 2)[0],
+      .split("\0", 2)[0]!,
     playbackTime: bytebuf.readFloat(),
     playbackTicks: bytebuf.readInt32(),
     playbackFrames: bytebuf.readInt32(),
@@ -390,14 +390,14 @@ export class DemoFile extends EventEmitter {
   /**
    * @returns Number of ticks per second
    */
-  get tickRate() {
+  get tickRate(): number {
     return 1.0 / this.tickInterval;
   }
 
   /**
    * @returns Number of seconds elapsed
    */
-  get currentTime() {
+  get currentTime(): number {
     return this.currentTick * this.tickInterval;
   }
 
@@ -496,7 +496,7 @@ export class DemoFile extends EventEmitter {
     this.on("svc_EncryptedData", this._handleEncryptedData.bind(this));
   }
 
-  public parseStream(stream: Readable) {
+  public parseStream(stream: Readable): void {
     this._hasEnded = false;
 
     const onReceiveChunk = (chunk: Buffer) => {
@@ -553,17 +553,19 @@ export class DemoFile extends EventEmitter {
     });
   }
 
-  public parse(buffer: Buffer) {
+  public parse(buffer: Buffer): void {
     this._hasEnded = false;
     this._bytebuf = ByteBuffer.wrap(buffer, true);
     const cancelled = this._parseHeader();
+
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!cancelled) timers.setTimeout(this._parseRecurse.bind(this), 0);
   }
 
   /**
    * Cancel the current parse operation.
    */
-  public cancel() {
+  public cancel(): void {
     if (this._immediateTimerToken) {
       timers.clearImmediate(this._immediateTimerToken);
       this._immediateTimerToken = null;
@@ -583,7 +585,7 @@ export class DemoFile extends EventEmitter {
    *
    * @param publicKey Public encryption key.
    */
-  public setEncryptionKey(publicKey: Uint8Array | null) {
+  public setEncryptionKey(publicKey: Uint8Array | null): void {
     if (publicKey != null && publicKey.length !== 16) {
       throw new Error(
         `Public key must be 16 bytes long, got ${publicKey.length} bytes instead`
@@ -690,7 +692,7 @@ export class DemoFile extends EventEmitter {
       const message = net.findByType(cmd);
       assert(message != null, `No message handler for ${cmd}`);
 
-      if (message === null) {
+      if (message == null) {
         chunk.skip(size);
         continue;
       }
@@ -938,7 +940,9 @@ export class DemoFile extends EventEmitter {
       ) {
         this._emitEnd({ incomplete: true });
       } else {
-        this._emitEnd({ error: e, incomplete: false });
+        const error =
+          e instanceof Error ? e : new Error(`Exception during parsing: ${e}`);
+        this._emitEnd({ error, incomplete: false });
       }
     }
   }

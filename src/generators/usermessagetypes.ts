@@ -1,4 +1,4 @@
-// tslint:disable:no-console
+/* eslint-disable no-console */
 
 import * as assert from "assert";
 import * as fs from "fs";
@@ -8,7 +8,12 @@ const enumRegex = /^enum ECstrike15UserMessages \{\n((?:\tCS_UM_\w+ = \d+;\r?\n)
 const skipUserMessages = ["UpdateTeamMoney", "DisconnectToLobby2"];
 
 const userMessages = new Array<string>();
-const path = process.argv[2];
+
+if (process.argv.length < 3) {
+  throw new Error("expected args: <path to cstrike15_usermessages.proto>");
+}
+
+const path = process.argv[2]!;
 fs.readFile(path, "utf-8", (err, contents) => {
   assert.ifError(err);
 
@@ -17,12 +22,12 @@ fs.readFile(path, "utf-8", (err, contents) => {
     throw new Error(`Could not find ECstrike15UserMessages enum in ${path}`);
   }
 
-  const cases = match[1].split(/\r?\n/);
+  const cases = match[1]!.split(/\r?\n/);
   for (const enumCase of cases) {
-    const m = enumCase.match(/^\tCS_UM_(\w+) = \d+;$/);
+    const m = /^\tCS_UM_(\w+) = \d+;$/.exec(enumCase);
     if (!m) continue;
 
-    const name = m[1];
+    const name = m[1]!;
     if (skipUserMessages.indexOf(name) !== -1) continue;
 
     userMessages.push(name);
@@ -42,11 +47,11 @@ fs.readFile(path, "utf-8", (err, contents) => {
   console.log("");
   console.log(`interface IUserMessageDescriptor {
   name: UserMessageName;
-  class: { decode: (buffer: Uint8Array) => any };
+  class: { decode: (buffer: Uint8Array) => unknown };
 }`);
 
   console.log("");
-  console.log(`export let userMessages: IUserMessageDescriptor[] = [];`);
+  console.log(`export const userMessages: IUserMessageDescriptor[] = [];`);
   for (const name of userMessages) {
     console.log(
       `userMessages[um.ECstrike15UserMessages.CS_UM_${name}] = { name: "${name}", class: um.CCSUsrMsg${name} };`

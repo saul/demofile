@@ -31,10 +31,13 @@ export class GameEvent {
   ): Record<string, string | number | boolean | Uint8Array | Long | undefined> {
     assert(eventMsg.eventid === this.id);
 
-    const event: any = {};
+    const event: Record<
+      string,
+      string | number | boolean | Uint8Array | Long | undefined
+    > = {};
     for (let i = 0; i < this.keyNames.length; ++i) {
-      const keyName = this.keyNames[i];
-      const value = eventMsg.keys[i];
+      const keyName = this.keyNames[i]!;
+      const value = eventMsg.keys[i]!;
 
       switch (value.type as EventKeyType) {
         case EventKeyType.TYPE_STRING:

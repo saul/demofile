@@ -50,44 +50,6 @@ export type PropPrimitive =
   | EntityHandle;
 export type PropValue = PropPrimitive | ReadonlyArray<PropPrimitive>;
 
-export function makeDecoder(
-  sendProp: ISendProp,
-  arrayElementProp: ISendProp | undefined
-): (bitbuf: BitStream) => PropValue {
-  const type = sendProp.type as PropType;
-  assert(type !== PropType.DataTable);
-
-  if (type === PropType.Array) {
-    return makeArrayDecoder(
-      sendProp,
-      assertExists(arrayElementProp, "array prop with no element prop")
-    );
-  } else {
-    return makeValueDecoder(sendProp);
-  }
-}
-
-function makeValueDecoder(
-  sendProp: ISendProp
-): (bitbuf: BitStream) => PropPrimitive {
-  switch (sendProp.type as PropType) {
-    case PropType.Int:
-      return makeIntDecoder(sendProp);
-    case PropType.Float:
-      return makeFloatDecoder(sendProp);
-    case PropType.Vector:
-      return makeVectorDecoder(sendProp);
-    case PropType.VectorXY:
-      return makeVectorXYDecoder(sendProp);
-    case PropType.String:
-      return makeStringDecoder(sendProp);
-    case PropType.Int64:
-      return makeInt64Decoder(sendProp);
-    default:
-      throw new Error(`Unsupported send prop type ${sendProp.type}`);
-  }
-}
-
 function makeIntDecoder(
   sendProp: ISendProp
 ): (bitbuf: BitStream) => number | EntityHandle | boolean {
@@ -219,13 +181,11 @@ function makeStringDecoder(
 
 function makeInt64Decoder(sendProp: ISendProp): (bitbuf: BitStream) => Long {
   if ((sendProp.flags & SPROP_VARINT) !== 0) {
-    /*eslint-disable no-unreachable*/
     if ((sendProp.flags & SPROP_UNSIGNED) !== 0) {
       throw new Error("64-bit unsigned varint not implemented"); // TODO
     } else {
       throw new Error("64-bit signed varint not implemented"); // TODO
     }
-    /*eslint-enable no-unreachable*/
   } else {
     const highBits = sendProp.numBits - 32;
 
@@ -246,6 +206,27 @@ function makeInt64Decoder(sendProp: ISendProp): (bitbuf: BitStream) => Long {
   }
 }
 
+function makeValueDecoder(
+  sendProp: ISendProp
+): (bitbuf: BitStream) => PropPrimitive {
+  switch (sendProp.type as PropType) {
+    case PropType.Int:
+      return makeIntDecoder(sendProp);
+    case PropType.Float:
+      return makeFloatDecoder(sendProp);
+    case PropType.Vector:
+      return makeVectorDecoder(sendProp);
+    case PropType.VectorXY:
+      return makeVectorXYDecoder(sendProp);
+    case PropType.String:
+      return makeStringDecoder(sendProp);
+    case PropType.Int64:
+      return makeInt64Decoder(sendProp);
+    default:
+      throw new Error(`Unsupported send prop type ${sendProp.type}`);
+  }
+}
+
 function makeArrayDecoder(
   sendProp: ISendProp,
   arrayElementProp: ISendProp
@@ -256,10 +237,27 @@ function makeArrayDecoder(
 
   return bitbuf => {
     const numElements = bitbuf.readUBits(numBits);
-    const array = new Array(numElements);
+    const array = new Array<PropPrimitive>(numElements);
     for (let i = 0; i < numElements; ++i) {
       array[i] = elementDecoder(bitbuf);
     }
     return array;
   };
+}
+
+export function makeDecoder(
+  sendProp: ISendProp,
+  arrayElementProp: ISendProp | undefined
+): (bitbuf: BitStream) => PropValue {
+  const type = sendProp.type as PropType;
+  assert(type !== PropType.DataTable);
+
+  if (type === PropType.Array) {
+    return makeArrayDecoder(
+      sendProp,
+      assertExists(arrayElementProp, "array prop with no element prop")
+    );
+  } else {
+    return makeValueDecoder(sendProp);
+  }
 }

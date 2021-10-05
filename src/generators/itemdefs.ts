@@ -1,4 +1,8 @@
-// tslint:disable:no-console
+/* eslint-disable no-console */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import { parse } from "@node-steam/vdf";
 import * as fs from "fs";
@@ -52,7 +56,7 @@ async function parseItems(root: string) {
       JSON.stringify(
         fromEntries(
           Object.entries(items.items)
-            .filter(([key, item]: [string, any]) =>
+            .filter(([_key, item]: [string, any]) =>
               item.name.startsWith("weapon_")
             )
             .map(([key, item]: [string, any]): [number, any] => [
@@ -64,7 +68,7 @@ async function parseItems(root: string) {
                 )
               }
             ])
-            .filter(([key, x]: [number, any]) => x.itemName)
+            .filter(([_key, x]: [number, any]) => x.itemName)
         ),
         null,
         2
@@ -72,6 +76,11 @@ async function parseItems(root: string) {
   );
 }
 
-// argument should be path to csgo mod directory, e.g.:
-// ./GameTracking-CSGO/csgo
-parseItems(process.argv[2]).catch(err => console.error(err));
+if (process.argv.length == 3) {
+  // argument should be path to csgo mod directory, e.g.:
+  // ./GameTracking-CSGO/csgo
+  parseItems(process.argv[2]!).catch(err => console.error(err));
+} else {
+  console.error("expected args: <path to csgo mod directory>");
+  process.exitCode = 1;
+}

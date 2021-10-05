@@ -11,7 +11,7 @@ export class Networkable<Props = UnknownEntityProps> {
    * @returns Object representing the entity's class
    */
   get serverClass(): IServerClass {
-    return this._demo.entities.serverClasses[this.classId];
+    return this._demo.entities.serverClasses[this.classId]!;
   }
 
   /**
@@ -102,8 +102,9 @@ export class Networkable<Props = UnknownEntityProps> {
     Table extends keyof Props,
     VarName extends keyof Props[Table],
     PropType extends Props[Table][VarName]
-  >(tableName: Table, varName: VarName, newValue: PropType) {
+  >(tableName: Table, varName: VarName, newValue: PropType): void {
     const table = this.props[tableName];
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (table === undefined) {
       this.props[tableName] = ({
         [varName]: newValue
