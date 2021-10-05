@@ -564,7 +564,6 @@ export class DemoFile extends EventEmitter {
     this._bytebuf = ByteBuffer.wrap(buffer, true);
     const cancelled = this._parseHeader();
 
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!cancelled) timers.setTimeout(this._parseRecurse.bind(this), 0);
   }
 
