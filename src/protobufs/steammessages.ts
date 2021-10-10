@@ -380,6 +380,7 @@ export interface CMsgGCMsgMasterSetDirectory_SubGC {
 
 export interface CMsgGCMsgMasterSetDirectoryResponse {
   eresult: number;
+  message: string;
 }
 
 export interface CMsgGCMsgWebAPIJobRequestForwardResponse {
@@ -896,7 +897,8 @@ const baseCMsgGCMsgMasterSetDirectory_SubGC: object = {
 };
 
 const baseCMsgGCMsgMasterSetDirectoryResponse: object = {
-  eresult: 0
+  eresult: 0,
+  message: ""
 };
 
 const baseCMsgGCMsgWebAPIJobRequestForwardResponse: object = {
@@ -3500,6 +3502,7 @@ export const CMsgGCMsgMasterSetDirectoryResponse = {
     writer: Writer = Writer.create()
   ): Writer {
     writer.uint32(8).int32(message.eresult);
+    writer.uint32(18).string(message.message);
     return writer;
   },
   decode(
@@ -3516,6 +3519,9 @@ export const CMsgGCMsgMasterSetDirectoryResponse = {
       switch (tag >>> 3) {
         case 1:
           message.eresult = reader.int32();
+          break;
+        case 2:
+          message.message = reader.string();
           break;
         default:
           reader.skipType(tag & 7);
