@@ -808,6 +808,11 @@ export interface CMsgGCCStrike15V2MatchList {
   tournamentinfo: CDataGCCStrike15V2TournamentInfo | undefined;
 }
 
+export interface CMsgGCCStrike15V2MatchListTournamentOperatorMgmt {
+  eventid: number;
+  matches: CDataGCCStrike15V2MatchInfo[];
+}
+
 export interface CMsgGCCStrike15V2Predictions {
   eventId: number;
   groupMatchTeamPicks: CMsgGCCStrike15V2Predictions_GroupMatchTeamPick[];
@@ -1920,6 +1925,10 @@ const baseCMsgGCCStrike15V2MatchList: object = {
   servertime: 0
 };
 
+const baseCMsgGCCStrike15V2MatchListTournamentOperatorMgmt: object = {
+  eventid: 0
+};
+
 const baseCMsgGCCStrike15V2Predictions: object = {
   eventId: 0
 };
@@ -2392,7 +2401,8 @@ export enum ECsgoGCMsg {
   k_EMsgGCCStrike15_StartAgreementSessionInGame = 9211,
   k_EMsgGCCStrike15_v2_GC2ClientInitSystem = 9212,
   k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response = 9213,
-  k_EMsgGCCStrike15_v2_PrivateQueues = 9214
+  k_EMsgGCCStrike15_v2_PrivateQueues = 9214,
+  k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt = 9215
 }
 
 export enum ECsgoSteamUserStat {
@@ -8111,6 +8121,47 @@ export const CMsgGCCStrike15V2MatchList = {
           message.tournamentinfo = CDataGCCStrike15V2TournamentInfo.decode(
             reader,
             reader.uint32()
+          );
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
+export const CMsgGCCStrike15V2MatchListTournamentOperatorMgmt = {
+  encode(
+    message: CMsgGCCStrike15V2MatchListTournamentOperatorMgmt,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).int32(message.eventid);
+    for (const v of message.matches) {
+      CDataGCCStrike15V2MatchInfo.encode(v!, writer.uint32(18).fork()).ldelim();
+    }
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CMsgGCCStrike15V2MatchListTournamentOperatorMgmt {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCMsgGCCStrike15V2MatchListTournamentOperatorMgmt
+    } as CMsgGCCStrike15V2MatchListTournamentOperatorMgmt;
+    message.matches = [];
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.eventid = reader.int32();
+          break;
+        case 2:
+          message.matches.push(
+            CDataGCCStrike15V2MatchInfo.decode(reader, reader.uint32())
           );
           break;
         default:
