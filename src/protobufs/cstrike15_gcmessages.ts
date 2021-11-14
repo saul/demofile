@@ -1194,6 +1194,8 @@ export interface CMsgGCCStrike15V2GC2ClientInitSystem {
   shaHash: Uint8Array;
   cookie: number;
   manifest: string;
+  systemPackage: Uint8Array;
+  loadSystem: boolean;
 }
 
 export interface CMsgGCCStrike15V2GC2ClientInitSystemResponse {
@@ -2286,7 +2288,8 @@ const baseCMsgGCCStrike15V2GC2ClientInitSystem: object = {
   name: "",
   outputname: "",
   cookie: 0,
-  manifest: ""
+  manifest: "",
+  loadSystem: false
 };
 
 const baseCMsgGCCStrike15V2GC2ClientInitSystemResponse: object = {
@@ -10807,6 +10810,8 @@ export const CMsgGCCStrike15V2GC2ClientInitSystem = {
     writer.uint32(42).bytes(message.shaHash);
     writer.uint32(48).int32(message.cookie);
     writer.uint32(58).string(message.manifest);
+    writer.uint32(66).bytes(message.systemPackage);
+    writer.uint32(72).bool(message.loadSystem);
     return writer;
   },
   decode(
@@ -10841,6 +10846,12 @@ export const CMsgGCCStrike15V2GC2ClientInitSystem = {
           break;
         case 7:
           message.manifest = reader.string();
+          break;
+        case 8:
+          message.systemPackage = reader.bytes();
+          break;
+        case 9:
+          message.loadSystem = reader.bool();
           break;
         default:
           reader.skipType(tag & 7);
