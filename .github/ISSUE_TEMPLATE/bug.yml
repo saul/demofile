@@ -1,8 +1,6 @@
 name: 🐛 Bug report
 description: Create a report about a problem you're having
-title: ""
 labels: ["bug"]
-assignees:
 body:
   - type: checkboxes
     id: terms
