@@ -126,9 +126,9 @@ Various examples are available in the `examples` folder:
 
 #### Print kills
 
-```ts
-import fs = require("fs");
-import demofile = require("demofile");
+```js
+const fs = require("fs");
+const demofile = require("demofile");
 
 fs.readFile("test.dem", (err, buffer) => {
   const demoFile = new demofile.DemoFile();
@@ -165,9 +165,9 @@ JW [mac10 HS] Magisk
 
 #### Print player information when it changes
 
-```ts
-import fs = require("fs");
-import demofile = require("demofile");
+```js
+const fs = require("fs");
+const demofile = require("demofile");
 
 fs.readFile("test.dem", (err, buffer) => {
   const demoFile = new demofile.DemoFile();
@@ -185,19 +185,28 @@ fs.readFile("test.dem", (err, buffer) => {
 /* Outputs:
 
 Player info updated:
-12 { unknown_lo: 4294967295,
-  unknown_hi: 4294963202,
-  xuid_lo: 17825793,
-  xuid_hi: 3417033,
-  name: 'HS',
-  userId: 20,
-  guid: 'STEAM_1:1:1708516',
-  friendsId: 3417033,
+0 {
+  xuid: Long { low: 0, high: 0, unsigned: false },
+  name: 'ESEA SourceTV',
+  userId: 2,
+  guid: 'BOT',
+  friendsId: 0,
+  friendsName: '',
+  fakePlayer: true,
+  isHltv: false
+}
+
+Player info updated:
+1 {
+  xuid: Long { low: 32578248, high: 17825793, unsigned: false },
+  name: 'PC419 m0nt-S-',
+  userId: 3,
+  guid: 'STEAM_1:0:16289124',
+  friendsId: 32578248,
   friendsName: '',
   fakePlayer: false,
-  isHltv: false,
-  customFiles: [ 0, 0, 0, 0 ],
-  xuid: Long { low: 3417033, high: 17825793, unsigned: false } }
+  isHltv: false
+}
 
 [repeated for other players]
 */
