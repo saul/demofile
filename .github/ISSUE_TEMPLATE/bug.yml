@@ -1,0 +1,29 @@
+name: 🐛 Bug report
+description: Create a report about a problem you're having
+labels: ["bug"]
+body:
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Research
+      options:
+        - label: I searched but did not find an existing issue or discussion about this bug.
+          required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear and concise description of the bug. Please include what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Code to reproduce
+      description: Please copy and paste the code that reproduces the issue above. This will be automatically formatted into code, so no need for backticks.
+      render: ts
+  - type: textarea
+    id: demo
+    attributes:
+      label: Affected demos
+      description: If applicable, please link to or attach demo files where the issue is seen. You can drag-and-drop demo files into this field.

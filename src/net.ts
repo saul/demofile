@@ -46,7 +46,7 @@ export type NetMessageName =
   | keyof typeof SVCMessages;
 
 interface NetMessage {
-  decode(buf: Uint8Array): any;
+  decode(buf: Uint8Array): unknown;
 }
 
 interface INetMessageDescriptor {
@@ -54,7 +54,7 @@ interface INetMessageDescriptor {
   class: NetMessage;
 }
 
-export let messages: INetMessageDescriptor[] = [];
+export const messages: INetMessageDescriptor[] = [];
 messages[NETMessages.net_NOP] = { name: "net_NOP", class: CNETMsgNOP };
 messages[NETMessages.net_Disconnect] = {
   name: "net_Disconnect",
@@ -190,12 +190,14 @@ messages[SVCMessages.svc_Broadcast_Command] = {
   class: CSVCMsgBroadcastCommand
 };
 
-export function findByName(name: NetMessageName) {
+export function findByName(name: NetMessageName): INetMessageDescriptor {
   return messages.find(
     descriptor => descriptor.name === name
   ) as INetMessageDescriptor;
 }
 
-export function findByType(type: NETMessages | SVCMessages) {
+export function findByType(
+  type: NETMessages | SVCMessages
+): INetMessageDescriptor | undefined {
   return messages[type];
 }

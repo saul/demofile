@@ -12,6 +12,6 @@ rm -r src/protobufs/*.{ts,proto}
 cp GameTracking-CSGO/Protobufs/*.proto src/protobufs
 .protoc/bin/protoc --plugin=node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=src/protobufs --ts_proto_opt=outputJsonMethods=false,forceLong=long,unrecognizedEnum=false -I.protoc/include -Isrc/protobufs src/protobufs/cstrike15_usermessages.proto src/protobufs/netmessages.proto
 
-find src/protobufs -type f -name '*.ts' -exec sed -i '1s|.*|/* tslint:disable */|' {} +
+find src/protobufs -type f -name '*.ts' -exec sed -i '1s|.*|/* eslint-disable */|' {} +
 
 popd

@@ -8,10 +8,6 @@ test("parses real world GOTV demo", done => {
 
   const timeline = new Timeline(demo);
 
-  demo.on("start", () => {
-    timeline.log("start", demo.header);
-  });
-
   demo.conVars.on("change", e => {
     timeline.log("cvar_change", e);
   });
@@ -58,8 +54,8 @@ test("parses real world GOTV demo", done => {
   demo.gameEvents.on("round_officially_ended", e => {
     const teams = demo.teams;
 
-    const terrorists = teams[TeamNumber.Terrorists];
-    const cts = teams[TeamNumber.CounterTerrorists];
+    const terrorists = teams[TeamNumber.Terrorists]!;
+    const cts = teams[TeamNumber.CounterTerrorists]!;
 
     const getTeamData = (team: Team) => ({
       name: team.teamName,

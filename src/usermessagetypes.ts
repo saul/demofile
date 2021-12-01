@@ -78,10 +78,10 @@ export type UserMessageName =
 
 interface IUserMessageDescriptor {
   name: UserMessageName;
-  class: { decode: (buffer: Uint8Array) => any };
+  class: { decode: (buffer: Uint8Array) => unknown };
 }
 
-export let userMessages: IUserMessageDescriptor[] = [];
+export const userMessages: IUserMessageDescriptor[] = [];
 userMessages[um.ECstrike15UserMessages.CS_UM_VGUIMenu] = {
   name: "VGUIMenu",
   class: um.CCSUsrMsgVGUIMenu

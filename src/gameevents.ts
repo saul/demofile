@@ -15,7 +15,7 @@ export class GameEvents extends EventEmitter {
   public gameEventList: GameEvent[] = [];
   private _tickEvents: Array<GameEventEvent<any>> = [];
 
-  public listen(demo: DemoFile) {
+  public listen(demo: DemoFile): void {
     demo.on("svc_GameEventList", this._handleGameEventList.bind(this));
 
     demo.on("svc_GameEvent", msg => {
@@ -39,6 +39,7 @@ export class GameEvents extends EventEmitter {
 
         this.emit("event", {
           name: event.name,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           event: event.event
         });
       });

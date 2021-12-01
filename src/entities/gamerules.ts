@@ -42,6 +42,6 @@ export class GameRules extends Networkable<CCSGameRulesProxy> {
     };
 
     const phase = this.getProp("DT_CSGameRules", "m_gamePhase");
-    return gamePhases[phase];
+    return gamePhases[phase]!;
   }
 }

@@ -1,4 +1,4 @@
-// tslint:disable:no-console
+/* eslint-disable no-console */
 
 import * as assert from "assert";
 import * as fs from "fs";
@@ -175,9 +175,9 @@ function parseDemoFile(path: string) {
       console.log("export type INonSpecificGameEvent =");
       for (let i = 0; i < nonSpecificNames.length; ++i) {
         if (i < nonSpecificNames.length - 1) {
-          console.log(`  ${nonSpecificNames[i]} |`);
+          console.log(`  ${nonSpecificNames[i]!} |`);
         } else {
-          console.log(`  ${nonSpecificNames[i]};`);
+          console.log(`  ${nonSpecificNames[i]!};`);
         }
       }
       console.log("");
@@ -209,4 +209,9 @@ function parseDemoFile(path: string) {
   });
 }
 
-parseDemoFile(process.argv[2]);
+if (process.argv.length == 3) {
+  parseDemoFile(process.argv[2]!);
+} else {
+  console.error("expected args: <path to .dem>");
+  process.exitCode = 1;
+}
