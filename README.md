@@ -19,6 +19,39 @@ The library is also Browserify-able, and a standalone bundle that you can `<scri
 - String tables
 - Reading encrypted messages (e.g. chat in public matchmaking demos)
 
+## Running the examples
+
+Getting started is simple:
+
+```bash
+.../demofile$ npm ci
+.../demofile$ cd examples
+.../demofile/examples$ npm ci
+```
+
+You can now run the example scripts. Take a look in the [`examples`](./examples) folder for some scripts to try out. Detailed descriptions of these scripts can be found below in the [Examples](#examples) section below.
+
+If you don't have any demo files to hand, use the `demos/download.sh` Bash script to download the ones used for testing.
+
+```bash
+.../demofile/examples$ npx ts-node dumpfile.ts ../demos/pc419-vs-chiefs-mirage.dem
+npx: installed 14 in 1.883s
+Demo header: {
+  magic: 'HL2DEMO',
+  protocol: 4,
+  networkProtocol: 13753,
+  serverName: 'Counter-Strike: Global Offensive',
+  clientName: 'GOTV Demo',
+  mapName: 'de_mirage',
+  gameDirectory: 'csgo',
+  playbackTime: 2569.375,
+  playbackTicks: 328880,
+  playbackFrames: 164271,
+  signonLength: 433479
+}
+...
+```
+
 ## Installation
 
 ### Node
