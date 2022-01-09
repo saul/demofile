@@ -18,6 +18,8 @@
   - `other_death`: added `itemDefinition: IItemDefinition | null`, `originalOwner: Player | null`
   - `player_death`: added `itemDefinition: IItemDefinition | null`, `originalOwner: Player | null`
   - `tournament_reward`: added `itemDefinition: IItemDefinition`, `entity: Player`
+- :zap: Added `Networkable#toJSON` that serialises the entity as a string. Example: `#123(CCSPlayer)` \
+   Prior to this change, serialising `Networkable` objects would result in a TypeError due to a circular reference.
 
 ### 2.3.0 (2022-01-09)
 
