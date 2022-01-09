@@ -75,6 +75,9 @@ class Networkable {
     get isDormant() {
         return !this._demo.entities.transmitEntities.has(this.index);
     }
+    toJSON() {
+        return `#${this.index}(${this.serverClass.name})`;
+    }
 }
 exports.Networkable = Networkable;
 //# sourceMappingURL=networkable.js.map

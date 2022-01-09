@@ -1,6 +1,7 @@
 import { Player } from "./entities/player";
 import { BaseEntity } from "./entities/baseentity";
 import { Entities } from "./entities";
+import { IItemDefinition } from "./entities/itemdefs";
 import * as ST from "./sendtabletypes";
 export interface IEventAchievementEarned {
     player: number;
@@ -203,6 +204,7 @@ export interface IEventItemEquip {
     player: Player;
     item: string;
     defindex: number;
+    itemDefinition: IItemDefinition | null;
     canzoom: boolean;
     hassilencer: boolean;
     issilenced: boolean;
@@ -223,12 +225,14 @@ export interface IEventItemPickup {
     item: string;
     silent: boolean;
     defindex: number;
+    itemDefinition: IItemDefinition | null;
 }
 export interface IEventItemRemove {
     userid: number;
     player: Player;
     item: string;
     defindex: number;
+    itemDefinition: IItemDefinition | null;
 }
 export interface IEventItemsGifted {
     player: number;
@@ -236,6 +240,7 @@ export interface IEventItemsGifted {
     numgifts: number;
     giftidx: number;
     accountid: number;
+    entity: Player;
 }
 export interface IEventOtherDeath {
     otherid: number;
@@ -246,7 +251,9 @@ export interface IEventOtherDeath {
     weapon: string;
     weapon_itemid: string;
     weapon_fauxitemid: string;
+    itemDefinition: IItemDefinition | null;
     weapon_originalowner_xuid: string;
+    originalOwner: Player | null;
     headshot: boolean;
     penetrated: number;
     noscope: boolean;
@@ -297,7 +304,9 @@ export interface IEventPlayerDeath {
     weapon: string;
     weapon_itemid: string;
     weapon_fauxitemid: string;
+    itemDefinition: IItemDefinition | null;
     weapon_originalowner_xuid: string;
+    originalOwner: Player | null;
     headshot: boolean;
     dominated: number;
     revenge: number;
@@ -458,8 +467,10 @@ export interface IEventTeamplayBroadcastAudio {
 }
 export interface IEventTournamentReward {
     defindex: number;
+    itemDefinition: IItemDefinition | null;
     totalrewards: number;
     accountid: number;
+    entity: Player;
 }
 export interface IEventWeaponFire {
     userid: number;

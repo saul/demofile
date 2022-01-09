@@ -16,6 +16,7 @@ const player_1 = require("./entities/player");
 const team_1 = require("./entities/team");
 const weapon_1 = require("./entities/weapon");
 const props_1 = require("./props");
+const Long = require("long");
 function isPropExcluded(excludes, table, prop) {
     return excludes.find(excluded => table.netTableName === excluded.dtName &&
         prop.varName === excluded.varName);
@@ -101,6 +102,8 @@ class Entities extends events_1.EventEmitter {
         this._singletonEnts = {};
         this._currentServerTick = -1;
         this._userIdToEntity = new Map();
+        this._steam64IdToEntity = new Map();
+        this._accountNumberToEntity = new Map();
     }
     get playerResource() {
         return this._demo.entities.getSingleton("CCSPlayerResource");
@@ -160,12 +163,35 @@ class Entities extends events_1.EventEmitter {
         return ent;
     }
     /**
-     * Returns the entity specified by a user ID.
+     * Returns the entity that belongs to the player with a given user ID.
      * @param {number} userId - Player user ID
      * @returns {Player|null} Entity referenced by the user ID. `null` if no matching player.
      */
     getByUserId(userId) {
         const entityIndex = this._userIdToEntity.get(userId);
+        if (entityIndex === undefined)
+            return null;
+        return this.entities.get(entityIndex);
+    }
+    /**
+     * Returns the entity that belongs to the player with a given Steam account ID.
+     * @param {number} accountId - Steam account ID
+     * @returns {Player|null} Entity referenced by the account ID. `null` if no matching player.
+     */
+    getByAccountId(accountId) {
+        const entityIndex = this._accountNumberToEntity.get(accountId);
+        if (entityIndex === undefined)
+            return null;
+        return this.entities.get(entityIndex);
+    }
+    /**
+     * Returns the entity that belongs to the player with a given 64-bit Steam ID.
+     * @param {Long|string} steam64Id - 64-bit Steam ID
+     * @returns {Player|null} Entity referenced by the Steam ID. `null` if no matching player.
+     */
+    getBySteam64Id(steam64Id) {
+        const idString = steam64Id instanceof Long ? steam64Id.toString() : steam64Id;
+        const entityIndex = this._steam64IdToEntity.get(idString);
         if (entityIndex === undefined)
             return null;
         return this.entities.get(entityIndex);
@@ -568,6 +594,8 @@ class Entities extends events_1.EventEmitter {
     }
     _handleUserInfoUpdate(clientSlot, playerInfo) {
         this._userIdToEntity.set(playerInfo.userId, clientSlot + 1);
+        this._steam64IdToEntity.set(playerInfo.xuid.toString(), clientSlot + 1);
+        this._accountNumberToEntity.set(playerInfo.friendsId, clientSlot + 1);
     }
     _handleInstanceBaselineUpdate(event) {
         const classId = parseInt(event.entry, 10);

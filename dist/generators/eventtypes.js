@@ -100,32 +100,32 @@ const mappings = {
         if (eventName === "player_connect")
             return null;
         return {
-            player: ["Player", `entities.getByUserId`]
+            player: ["Player", `entities.getByUserId($$)`]
         };
     },
     entindex: (eventName) => ({
         entity: [
             eventName === "bomb_dropped" ? "BaseEntity<ST.CC4>" : "BaseEntity",
-            `entities.entities.get`
+            `entities.entities.get($$)`
         ]
     }),
     hostage: () => ({
-        entity: ["BaseEntity<ST.CHostage>", `entities.entities.get`]
+        entity: ["BaseEntity<ST.CHostage>", `entities.entities.get($$)`]
     }),
     botid: () => ({
-        bot: ["Player", `entities.getByUserId`]
+        bot: ["Player", `entities.getByUserId($$)`]
     }),
     funfact_player: () => ({
-        player: ["Player", `entities.entities.get`]
+        player: ["Player", `entities.entities.get($$)`]
     }),
     otherid: () => ({
-        victim: ["BaseEntity", `entities.entities.get`]
+        victim: ["BaseEntity", `entities.entities.get($$)`]
     }),
     attacker: () => ({
-        attackerEntity: ["Player | null", `entities.getByUserId`]
+        attackerEntity: ["Player | null", `entities.getByUserId($$)`]
     }),
     assister: () => ({
-        assisterEntity: ["Player | null", `entities.getByUserId`]
+        assisterEntity: ["Player | null", `entities.getByUserId($$)`]
     }),
     entityid: (eventName) => {
         const typeName = eventName.startsWith("decoy_")
@@ -142,9 +142,27 @@ const mappings = {
                                 ? `BaseEntity<ST.CSmokeGrenadeProjectile>`
                                 : "BaseEntity";
         return {
-            entity: [typeName, `entities.entities.get`]
+            entity: [typeName, `entities.entities.get($$)`]
         };
-    }
+    },
+    defindex: () => ({
+        itemDefinition: [
+            "IItemDefinition | null",
+            "itemDefinitionIndexMap[$$] || null"
+        ]
+    }),
+    weapon_fauxitemid: () => ({
+        itemDefinition: [
+            "IItemDefinition | null",
+            `$$ != "" ? itemDefinitionIndexMap[Long.fromString($$, true).and(0xFFFF).toString()] : null`
+        ]
+    }),
+    weapon_originalowner_xuid: () => ({
+        originalOwner: ["Player | null", `entities.getBySteam64Id($$)`]
+    }),
+    accountid: () => ({
+        entity: ["Player", `entities.getByAccountId($$)`]
+    })
 };
 function parseDemoFile(path) {
     fs.readFile(path, (err, buffer) => {
@@ -174,7 +192,9 @@ function parseDemoFile(path) {
             console.log(`import { Player } from "./entities/player";`);
             console.log(`import { BaseEntity } from "./entities/baseentity";`);
             console.log(`import { Entities } from "./entities";`);
+            console.log(`import { IItemDefinition, itemDefinitionIndexMap } from "./entities/itemdefs";`);
             console.log(`import * as ST from "./sendtabletypes";`);
+            console.log(`import * as Long from "long";`);
             console.log("");
             const descriptors = e.descriptors
                 .filter(desc => hltvModEvents.has(desc.name))
@@ -207,7 +227,7 @@ function parseDemoFile(path) {
                         const extra = mapping(desc.name) || {};
                         for (const [extraVar, [extraTypeStr, funcName]] of Object.entries(extra)) {
                             console.log(`  ${extraVar}: ${extraTypeStr};`);
-                            annotations.push(`    event.${extraVar} = ${funcName}(event.${key.name})`);
+                            annotations.push(`    event.${extraVar} = ${funcName.replace(/\$\$/g, "event." + key.name)}`);
                         }
                     }
                     if (annotations.length > 0) {
