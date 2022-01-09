@@ -2,6 +2,7 @@ import { EventEmitter } from "events";
 import { DemoFile } from "./demo";
 import { GameEvent } from "./gameevent";
 import { CSVCMsgGameEventList } from "./protobufs/netmessages";
+import { annotateEvent } from "./eventtypes";
 
 interface GameEventEvent<T> {
   name: string;
@@ -16,6 +17,8 @@ export class GameEvents extends EventEmitter {
   private _tickEvents: Array<GameEventEvent<any>> = [];
 
   public listen(demo: DemoFile): void {
+    const entities = demo.entities;
+
     demo.on("svc_GameEventList", this._handleGameEventList.bind(this));
 
     demo.on("svc_GameEvent", msg => {
@@ -29,7 +32,11 @@ export class GameEvents extends EventEmitter {
       // buffer game events until the end of the tick
       this._tickEvents.push({
         name: event.name,
-        event: eventVars
+        event: annotateEvent(
+          entities,
+          event.name,
+          eventVars
+        ) as typeof eventVars
       });
     });
 
