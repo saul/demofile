@@ -6,8 +6,20 @@
 - Unreleased release notes here
 -->
 
+### 2.4.0 (2022-01-09)
+
+- :sparkles: Added more annotations to game events:
+  - `item_equip`: added `itemDefinition: IItemDefinition`
+  - `item_pickup`: added `itemDefinition: IItemDefinition`
+  - `item_remove`: added `itemDefinition: IItemDefinition`
+  - `items_gifted`: added `entity: Player`
+  - `other_death`: added `itemDefinition: IItemDefinition | null`, `originalOwner: Player | null`
+  - `player_death`: added `itemDefinition: IItemDefinition | null`, `originalOwner: Player | null`
+  - `tournament_reward`: added `itemDefinition: IItemDefinition`, `entity: Player`
+
 ### 2.3.0 (2022-01-09)
 
+- :zap: Incorporate latest CSGO protobufs
 - :zap: Improved performance of `Entities#getByUserId`
 - :sparkles: Added various annotations to game events. \
   This will reduce friction when converting user IDs/entity indexes to actual entities.
