@@ -190,6 +190,7 @@ export declare class Entities extends EventEmitter {
     private _demo;
     private _singletonEnts;
     private _currentServerTick;
+    private _userIdToEntity;
     listen(demo: DemoFile): void;
     /**
      * Determines whether handle is set.
@@ -227,5 +228,7 @@ export declare class Entities extends EventEmitter {
     private _handlePacketEntities;
     private _readPacketEntities;
     private _parseInstanceBaseline;
+    private _handleUserInfoUpdate;
+    private _handleInstanceBaselineUpdate;
     private _handleStringTableUpdate;
 }

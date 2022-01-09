@@ -325,6 +325,7 @@ export interface CMsgGCMsgMasterSetDirectory_SubGC {
 }
 export interface CMsgGCMsgMasterSetDirectoryResponse {
     eresult: number;
+    message: string;
 }
 export interface CMsgGCMsgWebAPIJobRequestForwardResponse {
     dirIndex: number;

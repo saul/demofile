@@ -1,11 +1,14 @@
 "use strict";
-// tslint:disable:no-console
+/* eslint-disable no-console */
 Object.defineProperty(exports, "__esModule", { value: true });
 const assert = require("assert");
 const fs = require("fs");
 const enumRegex = /^enum ECstrike15UserMessages \{\n((?:\tCS_UM_\w+ = \d+;\r?\n)+)}$/m;
 const skipUserMessages = ["UpdateTeamMoney", "DisconnectToLobby2"];
 const userMessages = new Array();
+if (process.argv.length < 3) {
+    throw new Error("expected args: <path to cstrike15_usermessages.proto>");
+}
 const path = process.argv[2];
 fs.readFile(path, "utf-8", (err, contents) => {
     assert.ifError(err);
@@ -15,7 +18,7 @@ fs.readFile(path, "utf-8", (err, contents) => {
     }
     const cases = match[1].split(/\r?\n/);
     for (const enumCase of cases) {
-        const m = enumCase.match(/^\tCS_UM_(\w+) = \d+;$/);
+        const m = /^\tCS_UM_(\w+) = \d+;$/.exec(enumCase);
         if (!m)
             continue;
         const name = m[1];
@@ -34,10 +37,10 @@ fs.readFile(path, "utf-8", (err, contents) => {
     console.log("");
     console.log(`interface IUserMessageDescriptor {
   name: UserMessageName;
-  class: { decode: (buffer: Uint8Array) => any };
+  class: { decode: (buffer: Uint8Array) => unknown };
 }`);
     console.log("");
-    console.log(`export let userMessages: IUserMessageDescriptor[] = [];`);
+    console.log(`export const userMessages: IUserMessageDescriptor[] = [];`);
     for (const name of userMessages) {
         console.log(`userMessages[um.ECstrike15UserMessages.CS_UM_${name}] = { name: "${name}", class: um.CCSUsrMsg${name} };`);
     }

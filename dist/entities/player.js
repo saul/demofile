@@ -180,7 +180,6 @@ class Player extends baseentity_1.BaseEntity {
      * @returns {*} Property value
      */
     resourceProp(tableName) {
-        // tslint:disable-next-line:no-useless-cast
         const array = this._demo.entities.playerResource.getIndexedProps(tableName);
         return array[this.index];
     }
@@ -359,7 +358,7 @@ class Player extends baseentity_1.BaseEntity {
         const assists = this.getIndexedProps("m_iMatchStats_Assists");
         const headShotKills = this.getIndexedProps("m_iMatchStats_HeadShotKills");
         const objective = this.getIndexedProps("m_iMatchStats_Objective");
-        const rounds = [];
+        const rounds = new Array();
         for (let roundIdx = 0; roundIdx < kills.length; ++roundIdx) {
             rounds.push({
                 kills: kills[roundIdx],
@@ -380,7 +379,7 @@ class Player extends baseentity_1.BaseEntity {
      * @returns Object representing user-customisable crosshair settings.
      */
     get crosshairInfo() {
-        return crosshair_1.decodeCrosshairCode(this.resourceProp("m_szCrosshairCodes"));
+        return (0, crosshair_1.decodeCrosshairCode)(this.resourceProp("m_szCrosshairCodes"));
     }
 }
 exports.Player = Player;

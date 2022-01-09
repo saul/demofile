@@ -16,9 +16,6 @@ class ConVars extends events_1.EventEmitter {
             if (!convars)
                 return;
             for (const cvar of convars.cvars) {
-                if (cvar.name == null || cvar.value == null) {
-                    continue;
-                }
                 const oldValue = this.vars.get(cvar.name);
                 this.vars.set(cvar.name, cvar.value);
                 const args = {

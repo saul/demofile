@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GameEvents = void 0;
 const events_1 = require("events");
 const gameevent_1 = require("./gameevent");
+const eventtypes_1 = require("./eventtypes");
 /**
  * Manages game events for a demo file.
  */
@@ -13,6 +14,7 @@ class GameEvents extends events_1.EventEmitter {
         this._tickEvents = [];
     }
     listen(demo) {
+        const entities = demo.entities;
         demo.on("svc_GameEventList", this._handleGameEventList.bind(this));
         demo.on("svc_GameEvent", msg => {
             const event = this.gameEventList[msg.eventid];
@@ -23,7 +25,7 @@ class GameEvents extends events_1.EventEmitter {
             // buffer game events until the end of the tick
             this._tickEvents.push({
                 name: event.name,
-                event: eventVars
+                event: (0, eventtypes_1.annotateEvent)(entities, event.name, eventVars)
             });
         });
         demo.on("tickend", () => {
@@ -31,6 +33,7 @@ class GameEvents extends events_1.EventEmitter {
                 this.emit(event.name, event.event);
                 this.emit("event", {
                     name: event.name,
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                     event: event.event
                 });
             });

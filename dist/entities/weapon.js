@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Weapon = void 0;
 const baseentity_1 = require("./baseentity");
 const itemdefs_1 = require("./itemdefs");
-// tslint:disable-next-line:no-useless-cast
 const qualities = [
     "normal",
     "genuine",

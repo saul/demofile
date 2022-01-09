@@ -67,9 +67,7 @@ export declare interface StringTables {
  */
 export declare class StringTables extends EventEmitter {
     tables: Array<IStringTable<any>>;
-    userDataCallbacks: {
-        [table: string]: (buf: Buffer) => any;
-    };
+    userDataCallbacks: Record<string, ((buf: Buffer) => any) | undefined>;
     constructor();
     listen(messageEvents: DemoFile): void;
     handleStringTables(bitbuf: BitStream): void;

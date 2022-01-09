@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CEngineGotvSyncPacket = exports.protobufPackage = void 0;
-/* tslint:disable */
+/* eslint-disable */
 const Long = require("long");
 const minimal_1 = require("protobufjs/minimal");
 const baseCEngineGotvSyncPacket = {

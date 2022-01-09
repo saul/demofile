@@ -74,7 +74,7 @@ class StringTables extends events_1.EventEmitter {
     }
     _handleStringTable(name, bitbuf) {
         const userDataCallback = this.userDataCallbacks[name];
-        const table = assert_exists_1.default(this.findTableByName(name));
+        const table = (0, assert_exists_1.default)(this.findTableByName(name));
         const numEntries = bitbuf.readUInt16();
         for (let entryIndex = 0; entryIndex < numEntries; ++entryIndex) {
             const entry = bitbuf.readCString();
@@ -100,12 +100,13 @@ class StringTables extends events_1.EventEmitter {
         if (bitbuf.readOneBit()) {
             const numStrings = bitbuf.readUInt16();
             for (let i = 0; i < numStrings; ++i) {
-                const entry = bitbuf.readCString(); // tslint:disable-line no-dead-store
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                const entry = bitbuf.readCString();
                 let userData = null;
                 if (bitbuf.readOneBit()) {
                     const userDataSize = bitbuf.readUInt16();
                     const userDataBuf = bitbuf.readBytes(userDataSize);
-                    // tslint:disable-next-line no-dead-store
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
                     userData =
                         userDataCallback === undefined
                             ? userDataBuf
@@ -151,7 +152,7 @@ class StringTables extends events_1.EventEmitter {
             }
             else {
                 // If the string itself hasn't changed, this entry must already exist
-                entry = assert_exists_1.default(existingEntry).entry;
+                entry = (0, assert_exists_1.default)(existingEntry).entry;
             }
             // read in the user data
             let userData = null;
@@ -206,8 +207,7 @@ class StringTables extends events_1.EventEmitter {
     }
     _handleUpdateStringTable(msg) {
         const bitbuf = bitbuffer_1.BitStream.from(msg.stringData);
-        const table = this.tables[msg.tableId];
-        assert(table !== undefined, "bad table index");
+        const table = (0, assert_exists_1.default)(this.tables[msg.tableId], "bad table index");
         this._parseStringTableUpdate(bitbuf, table, msg.numChangedEntries);
     }
 }

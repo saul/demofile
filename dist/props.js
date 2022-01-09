@@ -27,35 +27,6 @@ exports.SPROP_CELL_COORD_INTEGRAL = 1 << 17; // SPROP_CELL_COORD, but coordinate
 exports.SPROP_CHANGES_OFTEN = 1 << 18; // this is an often changed field, moved to head of sendtable so it gets a small index
 exports.SPROP_VARINT = 1 << 19; // use var int encoded (google protobuf style), note you want to include SPROP_UNSIGNED if needed, its more efficient
 const DT_MAX_STRING_BITS = 9;
-function makeDecoder(sendProp, arrayElementProp) {
-    const type = sendProp.type;
-    assert(type !== 6 /* DataTable */);
-    if (type === 5 /* Array */) {
-        return makeArrayDecoder(sendProp, assert_exists_1.default(arrayElementProp, "array prop with no element prop"));
-    }
-    else {
-        return makeValueDecoder(sendProp);
-    }
-}
-exports.makeDecoder = makeDecoder;
-function makeValueDecoder(sendProp) {
-    switch (sendProp.type) {
-        case 0 /* Int */:
-            return makeIntDecoder(sendProp);
-        case 1 /* Float */:
-            return makeFloatDecoder(sendProp);
-        case 2 /* Vector */:
-            return makeVectorDecoder(sendProp);
-        case 3 /* VectorXY */:
-            return makeVectorXYDecoder(sendProp);
-        case 4 /* String */:
-            return makeStringDecoder(sendProp);
-        case 7 /* Int64 */:
-            return makeInt64Decoder(sendProp);
-        default:
-            throw new Error(`Unsupported send prop type ${sendProp.type}`);
-    }
-}
 function makeIntDecoder(sendProp) {
     if ((sendProp.flags & exports.SPROP_VARINT) !== 0) {
         if ((sendProp.flags & exports.SPROP_UNSIGNED) !== 0) {
@@ -179,14 +150,12 @@ function makeStringDecoder(_sendProp) {
 }
 function makeInt64Decoder(sendProp) {
     if ((sendProp.flags & exports.SPROP_VARINT) !== 0) {
-        /*eslint-disable no-unreachable*/
         if ((sendProp.flags & exports.SPROP_UNSIGNED) !== 0) {
             throw new Error("64-bit unsigned varint not implemented"); // TODO
         }
         else {
             throw new Error("64-bit signed varint not implemented"); // TODO
         }
-        /*eslint-enable no-unreachable*/
     }
     else {
         const highBits = sendProp.numBits - 32;
@@ -207,6 +176,24 @@ function makeInt64Decoder(sendProp) {
         }
     }
 }
+function makeValueDecoder(sendProp) {
+    switch (sendProp.type) {
+        case 0 /* Int */:
+            return makeIntDecoder(sendProp);
+        case 1 /* Float */:
+            return makeFloatDecoder(sendProp);
+        case 2 /* Vector */:
+            return makeVectorDecoder(sendProp);
+        case 3 /* VectorXY */:
+            return makeVectorXYDecoder(sendProp);
+        case 4 /* String */:
+            return makeStringDecoder(sendProp);
+        case 7 /* Int64 */:
+            return makeInt64Decoder(sendProp);
+        default:
+            throw new Error(`Unsupported send prop type ${sendProp.type}`);
+    }
+}
 function makeArrayDecoder(sendProp, arrayElementProp) {
     const maxElements = sendProp.numElements;
     const numBits = (Math.log2(maxElements) | 0) + 1;
@@ -220,4 +207,15 @@ function makeArrayDecoder(sendProp, arrayElementProp) {
         return array;
     };
 }
+function makeDecoder(sendProp, arrayElementProp) {
+    const type = sendProp.type;
+    assert(type !== 6 /* DataTable */);
+    if (type === 5 /* Array */) {
+        return makeArrayDecoder(sendProp, (0, assert_exists_1.default)(arrayElementProp, "array prop with no element prop"));
+    }
+    else {
+        return makeValueDecoder(sendProp);
+    }
+}
+exports.makeDecoder = makeDecoder;
 //# sourceMappingURL=props.js.map

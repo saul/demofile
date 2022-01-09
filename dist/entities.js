@@ -53,11 +53,11 @@ function readFieldIndex(entityBitBuffer, lastIndex, newWay) {
 }
 function cloneProps(props) {
     const result = {};
-    // tslint:disable-next-line:forin
+    // eslint-disable-next-line no-restricted-syntax
     for (const tableName in props) {
         const oldTable = props[tableName];
         const newTable = {};
-        // tslint:disable-next-line:forin
+        // eslint-disable-next-line no-restricted-syntax
         for (const prop in oldTable) {
             newTable[prop] = oldTable[prop];
         }
@@ -100,6 +100,7 @@ class Entities extends events_1.EventEmitter {
         this._demo = null;
         this._singletonEnts = {};
         this._currentServerTick = -1;
+        this._userIdToEntity = new Map();
     }
     get playerResource() {
         return this._demo.entities.getSingleton("CCSPlayerResource");
@@ -164,26 +165,17 @@ class Entities extends events_1.EventEmitter {
      * @returns {Player|null} Entity referenced by the user ID. `null` if no matching player.
      */
     getByUserId(userId) {
-        const userInfoTable = this._demo.stringTables.findTableByName("userinfo");
-        if (!userInfoTable) {
+        const entityIndex = this._userIdToEntity.get(userId);
+        if (entityIndex === undefined)
             return null;
-        }
-        const userInfos = userInfoTable.entries;
-        for (let clientSlot = 0; clientSlot < userInfos.length; ++clientSlot) {
-            const userEntry = userInfos[clientSlot];
-            if (userEntry.userData && userEntry.userData.userId === userId) {
-                // UNSAFE: if we have 'userinfo' for this entity, it's definitely a player
-                return this.entities.get(clientSlot + 1);
-            }
-        }
-        return null;
+        return this.entities.get(entityIndex);
     }
     getSingleton(serverClass) {
         const existing = this._singletonEnts[serverClass];
         if (existing) {
             return existing;
         }
-        const result = iter_tools_1.find(([, ent]) => (ent ? ent.serverClass.name === serverClass : false), this.entities);
+        const result = (0, iter_tools_1.find)(([, ent]) => ent.serverClass.name === serverClass, this.entities);
         if (!result) {
             throw new Error(`Missing singleton ${serverClass}`);
         }
@@ -206,10 +198,10 @@ class Entities extends events_1.EventEmitter {
         }
     }
     handleDataTables(chunk) {
+        // eslint-disable-next-line no-constant-condition
         while (true) {
-            // eslint-disable-line no-constant-condition
             const descriptor = net.findByType(chunk.readVarint32());
-            assert(descriptor.name === "svc_SendTable", "expected SendTable message");
+            assert((descriptor === null || descriptor === void 0 ? void 0 : descriptor.name) === "svc_SendTable", "expected SendTable message");
             const length = chunk.readVarint32();
             const msg = descriptor.class.decode(new Uint8Array(chunk.readBytes(length).toBuffer()));
             if (msg.isEnd) {
@@ -224,7 +216,7 @@ class Entities extends events_1.EventEmitter {
             assert(classId === i, "server class entry for invalid class ID");
             const name = chunk.readCString();
             const dtName = chunk.readCString();
-            const dataTable = assert_exists_1.default(this._findTableByName(dtName), "no data table for server class");
+            const dataTable = (0, assert_exists_1.default)(this._findTableByName(dtName), "no data table for server class");
             const serverClass = {
                 name,
                 dtName,
@@ -254,8 +246,8 @@ class Entities extends events_1.EventEmitter {
                 excludes.push(prop);
             }
             if (prop.type === 6 /* DataTable */) {
-                const subTable = assert_exists_1.default(this._findTableByName(prop.dtName));
-                excludes.push.apply(excludes, this._gatherExcludes(subTable));
+                const subTable = (0, assert_exists_1.default)(this._findTableByName(prop.dtName));
+                excludes.push(...this._gatherExcludes(subTable));
             }
         }
         return excludes;
@@ -270,20 +262,20 @@ class Entities extends events_1.EventEmitter {
                 continue;
             }
             if (prop.type === 6 /* DataTable */) {
-                const subTable = assert_exists_1.default(this._findTableByName(prop.dtName));
+                const subTable = (0, assert_exists_1.default)(this._findTableByName(prop.dtName));
                 const childProps = this._gatherProps(subTable, excludes);
                 if ((prop.flags & props_1.SPROP_COLLAPSIBLE) === 0) {
                     for (const fp of childProps) {
                         fp.collapsible = false;
                     }
                 }
-                flattened.push.apply(flattened, childProps);
+                flattened.push(...childProps);
             }
             else {
                 flattened.push({
                     prop,
                     table,
-                    decode: props_1.makeDecoder(prop, prop.type === 5 /* Array */ ? table.props[index - 1] : undefined),
+                    decode: (0, props_1.makeDecoder)(prop, prop.type === 5 /* Array */ ? table.props[index - 1] : undefined),
                     collapsible: true
                 });
             }
@@ -301,8 +293,8 @@ class Entities extends events_1.EventEmitter {
         // for CHANGES_OFTEN props). It's not a stable sort so it can't just be
         // replaced with JS Array#sort
         for (const priority of priorities) {
+            // eslint-disable-next-line no-constant-condition
             while (true) {
-                // eslint-disable-line no-constant-condition
                 let currentProp;
                 for (currentProp = start; currentProp < flattenedProps.length; ++currentProp) {
                     const prop = flattenedProps[currentProp].prop;
@@ -344,8 +336,10 @@ class Entities extends events_1.EventEmitter {
         }
         // Try to find a suitable class for this entity
         let klass = networkable_1.Networkable;
+        // eslint-disable-next-line no-restricted-syntax
         for (const tableName in this.tableClassMap) {
             if (baseline[tableName]) {
+                // UNSAFE: we know this table exists in `tableClassMap`
                 klass = this.tableClassMap[tableName];
                 break;
             }
@@ -380,8 +374,8 @@ class Entities extends events_1.EventEmitter {
         const newWay = entityBitBuffer.readOneBit();
         let lastIndex = -1;
         const fieldIndices = [];
+        // eslint-disable-next-line no-constant-condition
         while (true) {
-            // eslint-disable-line no-constant-condition
             lastIndex = readFieldIndex(entityBitBuffer, lastIndex, newWay);
             if (lastIndex === -1) {
                 break;
@@ -403,7 +397,9 @@ class Entities extends events_1.EventEmitter {
     _readNewEntity(entityBitBuffer, entity) {
         const updates = this._parseEntityUpdate(entityBitBuffer, entity.classId);
         const recordChanges = this.listenerCount("change") > 0;
-        const changes = recordChanges ? new Array(updates.length) : [];
+        const changes = recordChanges
+            ? new Array(updates.length)
+            : [];
         for (let i = 0; i < updates.length; ++i) {
             const update = updates[i];
             const tableName = update.prop.table.netTableName;
@@ -455,7 +451,7 @@ class Entities extends events_1.EventEmitter {
                 // delta against last temp entity
                 assert(lastClassId !== -1, "Delta with no baseline");
                 const updates = this._parseEntityUpdate(entityBitBuffer, lastClassId);
-                lastProps = this._updatesToPropObject(cloneProps(assert_exists_1.default(lastProps)), updates);
+                lastProps = this._updatesToPropObject(cloneProps((0, assert_exists_1.default)(lastProps)), updates);
             }
             this.emit("tempent", {
                 delay: fireDelay,
@@ -468,7 +464,7 @@ class Entities extends events_1.EventEmitter {
     _handlePacketEntities(msg) {
         // Take a copy of the transmitted entities from the delta frame
         // Otherwise start with a blank slate
-        const baseTransmitEntities = assert_exists_1.default(msg.isDelta
+        const baseTransmitEntities = (0, assert_exists_1.default)(msg.isDelta
             ? this._frames.get(msg.deltaFrom)
             : immutable.Set(), `delta from unknown frame ${msg.deltaFrom}`);
         if (!msg.isDelta) {
@@ -488,7 +484,7 @@ class Entities extends events_1.EventEmitter {
         this.transmitEntities = newFrame;
         // Delete old frames that we no longer need to reference
         if (msg.isDelta) {
-            const oldFrames = iter_tools_1.filter(tick => tick < msg.deltaFrom, this._frames.keys());
+            const oldFrames = (0, iter_tools_1.filter)(tick => tick < msg.deltaFrom, this._frames.keys());
             this._frames = this._frames.removeAll(oldFrames);
         }
     }
@@ -508,7 +504,7 @@ class Entities extends events_1.EventEmitter {
                 else {
                     // 0b10: FHDR_LEAVEPVS
                 }
-                // tslint:disable-next-line:no-identical-conditions
+                // eslint-disable-next-line no-dupe-else-if
             }
             else if (entityBitBuffer.readOneBit()) {
                 // 0b01: FHDR_ENTERPVS
@@ -538,7 +534,7 @@ class Entities extends events_1.EventEmitter {
             }
             else {
                 // 0b00: DeltaEnt
-                const entity = assert_exists_1.default(this.entities.get(entityIndex), `missing client entity ${entityIndex}`);
+                const entity = (0, assert_exists_1.default)(this.entities.get(entityIndex), `missing client entity ${entityIndex}`);
                 assert(frame.contains(entityIndex), `delta on dormant entity ${entityIndex}`);
                 this._readNewEntity(entityBitBuffer, entity);
             }
@@ -570,10 +566,10 @@ class Entities extends events_1.EventEmitter {
         }
         return classBaseline;
     }
-    _handleStringTableUpdate(event) {
-        if (event.table.name !== "instancebaseline" || !event.userData) {
-            return;
-        }
+    _handleUserInfoUpdate(clientSlot, playerInfo) {
+        this._userIdToEntity.set(playerInfo.userId, clientSlot + 1);
+    }
+    _handleInstanceBaselineUpdate(event) {
         const classId = parseInt(event.entry, 10);
         const baselineBuf = bitbuffer_1.BitStream.from(event.userData);
         if (!this.serverClasses[classId]) {
@@ -587,6 +583,16 @@ class Entities extends events_1.EventEmitter {
             serverClass: this.serverClasses[classId],
             baseline
         });
+    }
+    _handleStringTableUpdate(event) {
+        if (!event.userData)
+            return;
+        if (event.table.name === "userinfo") {
+            this._handleUserInfoUpdate(event.entryIndex, event.userData);
+        }
+        else if (event.table.name === "instancebaseline") {
+            this._handleInstanceBaselineUpdate(event);
+        }
     }
 }
 exports.Entities = Entities;

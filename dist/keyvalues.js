@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.parseBinaryKeyValues = void 0;
 function parseValue(type, buffer) {
     switch (type) {
-        case 0 /* None */:
+        case 0 /* None */: {
             let inner = {};
             type = buffer.readUint8();
             while (type !== 11 /* NumTypes */) {
@@ -29,6 +29,7 @@ function parseValue(type, buffer) {
                 type = buffer.readUint8();
             }
             return inner;
+        }
         case 1 /* String */:
             return buffer.readCString();
         case 2 /* Int */:

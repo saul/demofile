@@ -144,6 +144,7 @@ class DemoFile extends events_1.EventEmitter {
                 cancelled = true;
             }
         });
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         if (!cancelled)
             timers.setTimeout(this._parseRecurse.bind(this), 0);
     }
@@ -220,7 +221,7 @@ class DemoFile extends events_1.EventEmitter {
             const size = chunk.readVarint32();
             const message = net.findByType(cmd);
             assert(message != null, `No message handler for ${cmd}`);
-            if (message === null) {
+            if (message == null) {
                 chunk.skip(size);
                 continue;
             }
@@ -434,8 +435,9 @@ class DemoFile extends events_1.EventEmitter {
                 this.emit("end", { incomplete: true });
             }
             else {
-                this.emit("error", e);
-                this.emit("end", { error: e, incomplete: false });
+                const error = e instanceof Error ? e : new Error(`Exception during parsing: ${e}`);
+                this.emit("error", error);
+                this.emit("end", { error, incomplete: false });
             }
         }
     }

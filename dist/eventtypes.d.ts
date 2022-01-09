@@ -1,3 +1,7 @@
+import { Player } from "./entities/player";
+import { BaseEntity } from "./entities/baseentity";
+import { Entities } from "./entities";
+import * as ST from "./sendtabletypes";
 export interface IEventAchievementEarned {
     player: number;
     achievement: number;
@@ -8,34 +12,44 @@ export interface IEventBeginNewMatch {
 }
 export interface IEventBombBegindefuse {
     userid: number;
+    player: Player;
     haskit: boolean;
 }
 export interface IEventBombBeginplant {
     userid: number;
+    player: Player;
     site: number;
 }
 export interface IEventBombDefused {
     userid: number;
+    player: Player;
     site: number;
 }
 export interface IEventBombDropped {
     userid: number;
+    player: Player;
     entindex: number;
+    entity: BaseEntity<ST.CC4>;
 }
 export interface IEventBombExploded {
     userid: number;
+    player: Player;
     site: number;
 }
 export interface IEventBombPickup {
     userid: number;
+    player: Player;
 }
 export interface IEventBombPlanted {
     userid: number;
+    player: Player;
     site: number;
 }
 export interface IEventBotTakeover {
     userid: number;
+    player: Player;
     botid: number;
+    bot: Player;
     index: number;
 }
 export interface IEventBuytimeEnded {
@@ -62,30 +76,38 @@ export interface IEventCsWinPanelRound {
     final_event: number;
     funfact_token: string;
     funfact_player: number;
+    player: Player;
     funfact_data1: number;
     funfact_data2: number;
     funfact_data3: number;
 }
 export interface IEventDecoyDetonate {
     userid: number;
+    player: Player;
     entityid: number;
+    entity: BaseEntity<ST.CDecoyProjectile>;
     x: number;
     y: number;
     z: number;
 }
 export interface IEventDecoyStarted {
     userid: number;
+    player: Player;
     entityid: number;
+    entity: BaseEntity<ST.CDecoyProjectile>;
     x: number;
     y: number;
     z: number;
 }
 export interface IEventDefuserDropped {
     entityid: number;
+    entity: BaseEntity;
 }
 export interface IEventDefuserPickup {
     entityid: number;
+    entity: BaseEntity;
     userid: number;
+    player: Player;
 }
 export interface IEventDmBonusWeaponStart {
     time: number;
@@ -111,7 +133,9 @@ export interface IEventFirstbombsIncomingWarning {
 }
 export interface IEventFlashbangDetonate {
     userid: number;
+    player: Player;
     entityid: number;
+    entity: BaseEntity<ST.CBaseCSGrenadeProjectile>;
     x: number;
     y: number;
     z: number;
@@ -121,7 +145,9 @@ export interface IEventGameNewmap {
 }
 export interface IEventHegrenadeDetonate {
     userid: number;
+    player: Player;
     entityid: number;
+    entity: BaseEntity<ST.CBaseCSGrenadeProjectile>;
     x: number;
     y: number;
     z: number;
@@ -139,33 +165,42 @@ export interface IEventHltvStatus {
 }
 export interface IEventHostageHurt {
     userid: number;
+    player: Player;
     hostage: number;
+    entity: BaseEntity<ST.CHostage>;
 }
 export interface IEventHostageKilled {
     userid: number;
+    player: Player;
     hostage: number;
+    entity: BaseEntity<ST.CHostage>;
 }
 export interface IEventHostageRescued {
     userid: number;
+    player: Player;
     hostage: number;
+    entity: BaseEntity<ST.CHostage>;
     site: number;
 }
 export interface IEventHostageRescuedAll {
 }
 export interface IEventInfernoExpire {
     entityid: number;
+    entity: BaseEntity<ST.CInferno>;
     x: number;
     y: number;
     z: number;
 }
 export interface IEventInfernoStartburn {
     entityid: number;
+    entity: BaseEntity<ST.CInferno>;
     x: number;
     y: number;
     z: number;
 }
 export interface IEventItemEquip {
     userid: number;
+    player: Player;
     item: string;
     defindex: number;
     canzoom: boolean;
@@ -184,12 +219,14 @@ export interface IEventItemFound {
 }
 export interface IEventItemPickup {
     userid: number;
+    player: Player;
     item: string;
     silent: boolean;
     defindex: number;
 }
 export interface IEventItemRemove {
     userid: number;
+    player: Player;
     item: string;
     defindex: number;
 }
@@ -202,8 +239,10 @@ export interface IEventItemsGifted {
 }
 export interface IEventOtherDeath {
     otherid: number;
+    victim: BaseEntity;
     othertype: string;
     attacker: number;
+    attackerEntity: Player | null;
     weapon: string;
     weapon_itemid: string;
     weapon_fauxitemid: string;
@@ -216,18 +255,23 @@ export interface IEventOtherDeath {
 }
 export interface IEventPlayerBlind {
     userid: number;
+    player: Player;
     attacker: number;
+    attackerEntity: Player | null;
     entityid: number;
+    entity: BaseEntity<ST.CBaseCSGrenadeProjectile>;
     blind_duration: number;
 }
 export interface IEventPlayerChangename {
     userid: number;
+    player: Player;
     oldname: string;
     newname: string;
 }
 export interface IEventPlayerChat {
     teamonly: boolean;
     userid: number;
+    player: Player;
     text: string;
 }
 export interface IEventPlayerConnect {
@@ -239,12 +283,16 @@ export interface IEventPlayerConnect {
 }
 export interface IEventPlayerConnectFull {
     userid: number;
+    player: Player;
     index: number;
 }
 export interface IEventPlayerDeath {
     userid: number;
+    player: Player;
     attacker: number;
+    attackerEntity: Player | null;
     assister: number;
+    assisterEntity: Player | null;
     assistedflash: boolean;
     weapon: string;
     weapon_itemid: string;
@@ -263,20 +311,25 @@ export interface IEventPlayerDeath {
 }
 export interface IEventPlayerDisconnect {
     userid: number;
+    player: Player;
     reason: string;
     name: string;
     networkid: string;
 }
 export interface IEventPlayerFalldamage {
     userid: number;
+    player: Player;
     damage: number;
 }
 export interface IEventPlayerFootstep {
     userid: number;
+    player: Player;
 }
 export interface IEventPlayerHurt {
     userid: number;
+    player: Player;
     attacker: number;
+    attackerEntity: Player | null;
     health: number;
     armor: number;
     weapon: string;
@@ -288,18 +341,22 @@ export interface IEventPlayerInfo {
     name: string;
     index: number;
     userid: number;
+    player: Player;
     networkid: string;
     bot: boolean;
 }
 export interface IEventPlayerJump {
     userid: number;
+    player: Player;
 }
 export interface IEventPlayerSpawn {
     userid: number;
+    player: Player;
     teamnum: number;
 }
 export interface IEventPlayerTeam {
     userid: number;
+    player: Player;
     team: number;
     oldteam: number;
     disconnect: boolean;
@@ -329,6 +386,7 @@ export interface IEventRoundFreezeEnd {
 }
 export interface IEventRoundMvp {
     userid: number;
+    player: Player;
     reason: number;
     value: number;
     musickitmvps: number;
@@ -370,23 +428,29 @@ export interface IEventServerSpawn {
 }
 export interface IEventSmokegrenadeDetonate {
     userid: number;
+    player: Player;
     entityid: number;
+    entity: BaseEntity<ST.CSmokeGrenadeProjectile>;
     x: number;
     y: number;
     z: number;
 }
 export interface IEventSmokegrenadeExpired {
     userid: number;
+    player: Player;
     entityid: number;
+    entity: BaseEntity<ST.CSmokeGrenadeProjectile>;
     x: number;
     y: number;
     z: number;
 }
 export interface IEventSurvivalParadropBreak {
     entityid: number;
+    entity: BaseEntity;
 }
 export interface IEventSurvivalParadropSpawn {
     entityid: number;
+    entity: BaseEntity;
 }
 export interface IEventTeamplayBroadcastAudio {
     team: number;
@@ -399,22 +463,28 @@ export interface IEventTournamentReward {
 }
 export interface IEventWeaponFire {
     userid: number;
+    player: Player;
     weapon: string;
     silenced: boolean;
 }
 export interface IEventWeaponFireOnEmpty {
     userid: number;
+    player: Player;
     weapon: string;
 }
 export interface IEventWeaponOutofammo {
     userid: number;
+    player: Player;
 }
 export interface IEventWeaponReload {
     userid: number;
+    player: Player;
 }
 export interface IEventWeaponZoom {
     userid: number;
+    player: Player;
 }
+export declare function annotateEvent(entities: Entities, eventName: string, event: any): any;
 export interface INonSpecificGameEventAchievementEarned {
     name: "achievement_earned";
     event: IEventAchievementEarned;

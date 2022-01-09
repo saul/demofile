@@ -2,6 +2,7 @@
 import { EventEmitter } from "events";
 import { DemoFile } from "./demo";
 import { GameEvent } from "./gameevent";
+import "./eventtypes";
 /**
  * Manages game events for a demo file.
  */

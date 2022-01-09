@@ -89,6 +89,31 @@
 					<li>String tables</li>
 					<li>Reading encrypted messages (e.g. chat in public matchmaking demos)</li>
 				</ul>
+				<a href="#running-the-examples" id="running-the-examples" style="color: inherit; text-decoration: none;">
+					<h2>Running the examples</h2>
+				</a>
+				<p>Getting started is simple:</p>
+				<pre><code class="language-bash">.../demofile$ npm ci
+.../demofile$ <span class="hljs-built_in">cd</span> examples
+.../demofile/examples$ npm ci</code></pre>
+				<p>You can now run the example scripts. Take a look in the <a href="./examples"><code>examples</code></a> folder for some scripts to try out. Detailed descriptions of these scripts can be found below in the <a href="#examples">Examples</a> section below.</p>
+				<p>If you don&#39;t have any demo files to hand, use the <code>demos/download.sh</code> Bash script to download the ones used for testing.</p>
+				<pre><code class="language-bash">.../demofile/examples$ npx ts-node dumpfile.ts ../demos/pc419-vs-chiefs-mirage.dem
+npx: installed 14 <span class="hljs-keyword">in</span> 1.883s
+Demo header: {
+  magic: <span class="hljs-string">&#x27;HL2DEMO&#x27;</span>,
+  protocol: 4,
+  networkProtocol: 13753,
+  serverName: <span class="hljs-string">&#x27;Counter-Strike: Global Offensive&#x27;</span>,
+  clientName: <span class="hljs-string">&#x27;GOTV Demo&#x27;</span>,
+  mapName: <span class="hljs-string">&#x27;de_mirage&#x27;</span>,
+  gameDirectory: <span class="hljs-string">&#x27;csgo&#x27;</span>,
+  playbackTime: 2569.375,
+  playbackTicks: 328880,
+  playbackFrames: 164271,
+  signonLength: 433479
+}
+...</code></pre>
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h2>Installation</h2>
 				</a>
@@ -249,8 +274,8 @@
 				<a href="#print-kills" id="print-kills" style="color: inherit; text-decoration: none;">
 					<h4>Print kills</h4>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
-<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
 
 fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
   <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
@@ -286,8 +311,8 @@ JW [mac10 HS] Magisk
 				<a href="#print-player-information-when-it-changes" id="print-player-information-when-it-changes" style="color: inherit; text-decoration: none;">
 					<h4>Print player information when it changes</h4>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
-<span class="hljs-keyword">import</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
 
 fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
   <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
@@ -305,19 +330,28 @@ fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="
 <span class="hljs-comment">/* Outputs:
 
 Player info updated:
-12 { unknown_lo: 4294967295,
-  unknown_hi: 4294963202,
-  xuid_lo: 17825793,
-  xuid_hi: 3417033,
-  name: &#x27;HS&#x27;,
-  userId: 20,
-  guid: &#x27;STEAM_1:1:1708516&#x27;,
-  friendsId: 3417033,
+0 {
+  xuid: Long { low: 0, high: 0, unsigned: false },
+  name: &#x27;ESEA SourceTV&#x27;,
+  userId: 2,
+  guid: &#x27;BOT&#x27;,
+  friendsId: 0,
+  friendsName: &#x27;&#x27;,
+  fakePlayer: true,
+  isHltv: false
+}
+
+Player info updated:
+1 {
+  xuid: Long { low: 32578248, high: 17825793, unsigned: false },
+  name: &#x27;PC419 m0nt-S-&#x27;,
+  userId: 3,
+  guid: &#x27;STEAM_1:0:16289124&#x27;,
+  friendsId: 32578248,
   friendsName: &#x27;&#x27;,
   fakePlayer: false,
-  isHltv: false,
-  customFiles: [ 0, 0, 0, 0 ],
-  xuid: Long { low: 3417033, high: 17825793, unsigned: false } }
+  isHltv: false
+}
 
 [repeated for other players]
 */</span></code></pre>

@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CMsgGCCStrike15V2GC2ClientInitSystemResponse = exports.CMsgGCCStrike15V2GC2ClientInitSystem = exports.CMsgGCCStrike15V2GC2ClientRequestValidation = exports.CMsgGCCStrike15V2GC2ClientRefuseSecureMode = exports.CMsgGCCStrike15V2ClientReportValidation = exports.CVDiagnostic = exports.CMsgGCCStrike15V2ClientPerfReport_Entry = exports.CMsgGCCStrike15V2ClientPerfReport = exports.CMsgGCCStrike15V2GetEventFavoritesResponse = exports.CMsgGCCStrike15V2GetEventFavoritesRequest = exports.CMsgGCCStrike15V2SetEventFavorite = exports.CMsgGCCStrike15V2ClientPartyWarning_Entry = exports.CMsgGCCStrike15V2ClientPartyWarning = exports.CMsgGCCStrike15V2ClientPartyJoinRelay = exports.CMsgGCCStrike15V2ClientAccountBalance = exports.CMsgGCCStrike15V2ClientRequestSouvenir = exports.CMsgGCCStrike15V2ClientRequestOffers = exports.CMsgGCToClientSteamDatagramTicket = exports.CMsgGCCStrike15V2ClientToGCRequestTicket = exports.CMsgGCCStrike15V2AccountRequestCoPlays_Player = exports.CMsgGCCStrike15V2AccountRequestCoPlays = exports.CMsgGCCStrike15V2PartyInvite = exports.CMsgGCCStrike15V2PartySearchResults_Entry = exports.CMsgGCCStrike15V2PartySearchResults = exports.CMsgGCCStrike15V2PartySearch = exports.CMsgGCCStrike15V2PartyRegister = exports.CMsgGCCStrike15V2ClientPollState = exports.CMsgGCCStrike15V2ClientLogonFatalError = exports.CMsgGCCStrike15V2ClientPlayerDecalSign = exports.PlayerDecalDigitalSignature = exports.CMsgGCCStrike15GotvSyncPacket = exports.CMsgGCCStrike15V2ClientAuthKeyCode = exports.CMsgGCCStrike15V2GCToClientChat = exports.CMsgGCCStrike15V2ClientToGCChat = exports.CMsgGCCStrike15V2ClientToGCRequestElevate = exports.CMsgGCCStrike15V2Client2GCStreamUnlock = exports.CMsgGCCStrike15V2Client2GCRequestPrestigeCoin = exports.CMsgGCCStrike15V2AcknowledgePenalty = exports.CMsgGCGlobalGamePlay = exports.CMsgGCGlobalGameUnsubscribe = exports.CMsgGCGlobalGameSubscribe = exports.CSOPersonaDataPublic = exports.CSOAccountRecurringSubscription = exports.CSOAccountSeasonalOperation = exports.CSOQuestProgress = exports.CSOEconCoupon = exports.CMsgGCCStrike15V2GC2ClientTournamentInfo = exports.CMsgGCCStrike15V2Server2GCClientValidate = exports.CMsgGCCStrike15V2ClientSubmitSurveyVote = exports.CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry = exports.CMsgGCCStrike15V2GiftsLeaderboardResponse = exports.CMsgGCCStrike15V2GiftsLeaderboardRequest = exports.CMsgGCCStrike15V2ServerVarValueNotificationInfo = exports.CMsgGCCStrike15V2ClientVarValueNotificationInfo = exports.CMsgCStrike15Welcome = exports.CAttributeString = exports.CMsgGCCStrike15V2Fantasy_FantasyTeam = exports.CMsgGCCStrike15V2Fantasy_FantasySlot = exports.CMsgGCCStrike15V2Fantasy = exports.CMsgGCCStrike15V2Predictions_GroupMatchTeamPick = exports.CMsgGCCStrike15V2Predictions = exports.CMsgGCCStrike15V2MatchList = exports.CDataGCCStrike15V2TournamentInfo = exports.CDataGCCStrike15V2TournamentSection = exports.CDataGCCStrike15V2TournamentGroup_Picks = exports.CDataGCCStrike15V2TournamentGroup = exports.CDataGCCStrike15V2TournamentGroupTeam = exports.CDataGCCStrike15V2MatchInfo = exports.CMsgGCCStrike15V2MatchListRequestFullGameInfo = exports.CMsgGCCStrike15V2MatchListRequestTournamentGames = exports.CMsgGCCStrike15V2MatchListRequestRecentUserGames = exports.CMsgGCCStrike15V2MatchListRequestLiveGameForUser = exports.CMsgGCCStrike15V2MatchListRequestCurrentLiveGames = exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse = exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest = exports.CMsgItemAcknowledged = exports.CMsgGCCStrike15V2MatchEndRewardDropsNotification = exports.CEconItemPreviewDataBlock_Sticker = exports.CEconItemPreviewDataBlock = exports.CMsgGCCStrike15V2MatchEndRunRewardDrops = exports.CMsgGCCStrike15V2Client2GCTextMsg = exports.CMsgGCCStrike15V2GC2ClientTextMsg = exports.CClientHeaderOverwatchEvidence = exports.CMsgGCCStrike15V2PlayerOverwatchCaseStatus = exports.CMsgGCCStrike15V2PlayerOverwatchCaseAssignment = exports.CMsgGCCStrike15V2PlayerOverwatchCaseUpdate = exports.CMsgGCCStrike15V2PlayersProfile = exports.CMsgGCCStrike15V2ClientRequestPlayersProfile = exports.CMsgGCCStrike15V2WatchInfoUsers = exports.CMsgGCCStrike15ClientDeepStats_DeepStatsMatch = exports.CMsgGCCStrike15ClientDeepStats_DeepStatsRange = exports.CMsgGCCStrike15ClientDeepStats = exports.CMsgGCCstrike15V2GC2ServerNotifyXPRewarded = exports.CMsgGCCstrike15V2ClientRedeemMissionReward = exports.CMsgGCCstrike15V2ClientRequestNewMission = exports.CMsgGCCStrike15V2ClientRequestJoinServerData = exports.CMsgGCCStrike15V2ClientRequestJoinFriendData = exports.WatchableMatchInfo = exports.CMsgGCCStrike15V2ClientRequestWatchInfoFriends = exports.CMsgGCCStrike15V2ClientReportResponse = exports.CMsgGCCStrike15V2ClientReportServer = exports.CMsgGCCStrike15V2ClientCommendPlayer = exports.CMsgGCCStrike15V2ClientReportPlayer = exports.CMsgGCCStrike15V2ServerNotificationForUserPenalty = exports.CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate = exports.CMsgGCCStrike15V2ClientGCRankUpdate = exports.CMsgGCCStrike15V2MatchmakingGC2ClientAbandon = exports.CMsgGCCStrike15V2AccountPrivacySettings_Setting = exports.CMsgGCCStrike15V2AccountPrivacySettings = exports.CMsgGCCStrike15V2MatchmakingGC2ClientHello = exports.CMsgGCCStrike15V2MatchmakingClient2GCHello = exports.CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo = exports.CMsgGCCStrike15V2MatchmakingServerRoundStats = exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve = exports.CMsgGCCStrike15V2MatchmakingServerReservationResponse = exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve = exports.CPreMatchInfoData_TeamStats = exports.CPreMatchInfoData = exports.CDataGCCStrike15V2TournamentMatchDraft_Entry = exports.CDataGCCStrike15V2TournamentMatchDraft = exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note = exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate = exports.CMsgGCCStrike15V2MatchmakingClient2ServerPing = exports.CMsgGCCStrike15V2MatchmakingStop = exports.CMsgGCCStrike15V2MatchmakingStart = exports.CMsgGCCStrike15V2GC2ServerReservationUpdate = exports.CMsgGCCStrike15V2MatchmakingGC2ServerConfirm = exports.CMsgGCCStrike15V2MatchmakingGCOperationalStats = exports.CMsgGCServerQuestUpdateData = exports.DeepPlayerMatchEvent = exports.DeepPlayerStatsEntry = exports.PlayerQuestData_QuestItemData = exports.PlayerQuestData = exports.ScoreLeaderboardData_AccountEntries = exports.ScoreLeaderboardData_Entry = exports.ScoreLeaderboardData = exports.MatchEndItemUpdates = exports.XpProgressData = exports.CMsgCsgoSteamUserStatChange = exports.IpAddressMask = exports.ServerHltvInfo = exports.TournamentMatchSetup = exports.AccountActivity = exports.PlayerMedalsInfo = exports.PlayerCommendationInfo = exports.PlayerRankingInfo = exports.OperationalStatisticsPacket = exports.OperationalStatisticElement = exports.OperationalStatisticDescription = exports.GlobalStatistics = exports.TournamentEvent = exports.TournamentTeam = exports.TournamentPlayer = exports.DetailedSearchStatistic = exports.DataCenterPing = exports.GameServerPing = exports.EInitSystemResult = exports.EClientReportingVersion = exports.ECsgoSteamUserStat = exports.ECsgoGCMsg = exports.protobufPackage = void 0;
-/* tslint:disable */
+exports.CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo = exports.CMsgGCCStrike15V2MatchmakingServerRoundStats = exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve = exports.CMsgGCCStrike15V2MatchmakingServerReservationResponse = exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve = exports.CPreMatchInfoData_TeamStats = exports.CPreMatchInfoData = exports.CDataGCCStrike15V2TournamentMatchDraft_Entry = exports.CDataGCCStrike15V2TournamentMatchDraft = exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note = exports.CMsgGCCStrike15V2MatchmakingGC2ClientUpdate = exports.CMsgGCCStrike15V2MatchmakingClient2ServerPing = exports.CMsgGCCStrike15V2MatchmakingStop = exports.CMsgGCCStrike15V2MatchmakingStart = exports.CMsgGCCStrike15V2GC2ServerReservationUpdate = exports.CMsgGCCStrike15V2MatchmakingGC2ServerConfirm = exports.CMsgGCCStrike15V2MatchmakingGCOperationalStats = exports.CMsgGCServerQuestUpdateData = exports.DeepPlayerMatchEvent = exports.DeepPlayerStatsEntry = exports.PlayerQuestData_QuestItemData = exports.PlayerQuestData = exports.ScoreLeaderboardData_AccountEntries = exports.ScoreLeaderboardData_Entry = exports.ScoreLeaderboardData = exports.MatchEndItemUpdates = exports.XpProgressData = exports.CMsgCsgoSteamUserStatChange = exports.IpAddressMask = exports.ServerHltvInfo = exports.TournamentMatchSetup = exports.AccountActivity = exports.PlayerMedalsInfo = exports.PlayerCommendationInfo = exports.PlayerRankingInfo = exports.OperationalStatisticsPacket = exports.OperationalStatisticElement = exports.OperationalStatisticDescription = exports.GlobalStatistics = exports.TournamentEvent = exports.TournamentTeam = exports.TournamentPlayer = exports.DetailedSearchStatistic = exports.DataCenterPing = exports.GameServerPing = exports.EInitSystemResult = exports.EClientReportingVersion = exports.ECsgoSteamUserStat = exports.ECsgoGCMsg = exports.protobufPackage = void 0;
+exports.CMsgGCCStrike15V2MatchList = exports.CDataGCCStrike15V2TournamentInfo = exports.CDataGCCStrike15V2TournamentSection = exports.CDataGCCStrike15V2TournamentGroup_Picks = exports.CDataGCCStrike15V2TournamentGroup = exports.CDataGCCStrike15V2TournamentGroupTeam = exports.CDataGCCStrike15V2MatchInfo = exports.CMsgGCCStrike15V2MatchListRequestFullGameInfo = exports.CMsgGCCStrike15V2MatchListRequestTournamentGames = exports.CMsgGCCStrike15V2MatchListRequestRecentUserGames = exports.CMsgGCCStrike15V2MatchListRequestLiveGameForUser = exports.CMsgGCCStrike15V2MatchListRequestCurrentLiveGames = exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse = exports.CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest = exports.CMsgItemAcknowledged = exports.CMsgGCCStrike15V2MatchEndRewardDropsNotification = exports.CEconItemPreviewDataBlock_Sticker = exports.CEconItemPreviewDataBlock = exports.CMsgGCCStrike15V2MatchEndRunRewardDrops = exports.CMsgGCCStrike15V2Client2GCTextMsg = exports.CMsgGCCStrike15V2GC2ClientTextMsg = exports.CClientHeaderOverwatchEvidence = exports.CMsgGCCStrike15V2PlayerOverwatchCaseStatus = exports.CMsgGCCStrike15V2PlayerOverwatchCaseAssignment = exports.CMsgGCCStrike15V2PlayerOverwatchCaseUpdate = exports.CMsgGCCStrike15V2PlayersProfile = exports.CMsgGCCStrike15V2ClientRequestPlayersProfile = exports.CMsgGCCStrike15V2WatchInfoUsers = exports.CMsgGCCStrike15ClientDeepStats_DeepStatsMatch = exports.CMsgGCCStrike15ClientDeepStats_DeepStatsRange = exports.CMsgGCCStrike15ClientDeepStats = exports.CMsgGCCstrike15V2GC2ServerNotifyXPRewarded = exports.CMsgGCCstrike15V2ClientRedeemMissionReward = exports.CMsgGCCstrike15V2ClientRequestNewMission = exports.CMsgGCCStrike15V2ClientRequestJoinServerData = exports.CMsgGCCStrike15V2ClientRequestJoinFriendData = exports.WatchableMatchInfo = exports.CMsgGCCStrike15V2ClientRequestWatchInfoFriends = exports.CMsgGCCStrike15V2ClientReportResponse = exports.CMsgGCCStrike15V2ClientReportServer = exports.CMsgGCCStrike15V2ClientCommendPlayer = exports.CMsgGCCStrike15V2ClientReportPlayer = exports.CMsgGCCStrike15V2ServerNotificationForUserPenalty = exports.CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate = exports.CMsgGCCStrike15V2ClientGCRankUpdate = exports.CMsgGCCStrike15V2MatchmakingGC2ClientAbandon = exports.CMsgGCCStrike15V2AccountPrivacySettings_Setting = exports.CMsgGCCStrike15V2AccountPrivacySettings = exports.CMsgGCCStrike15V2MatchmakingGC2ClientHello = exports.CMsgGCCStrike15V2MatchmakingClient2GCHello = void 0;
+exports.CMsgGCCStrike15V2ClientPartyWarning = exports.CMsgGCCStrike15V2ClientPartyJoinRelay = exports.CMsgGCCStrike15V2ClientAccountBalance = exports.CMsgGCCStrike15V2ClientRequestSouvenir = exports.CMsgGCCStrike15V2ClientRequestOffers = exports.CMsgGCToClientSteamDatagramTicket = exports.CMsgGCCStrike15V2ClientToGCRequestTicket = exports.CMsgGCCStrike15V2AccountRequestCoPlays_Player = exports.CMsgGCCStrike15V2AccountRequestCoPlays = exports.CMsgGCCStrike15V2PartyInvite = exports.CMsgGCCStrike15V2PartySearchResults_Entry = exports.CMsgGCCStrike15V2PartySearchResults = exports.CMsgGCCStrike15V2PartySearch = exports.CMsgGCCStrike15V2PartyRegister = exports.CMsgGCCStrike15V2ClientPollState = exports.CMsgGCCStrike15V2ClientLogonFatalError = exports.CMsgGCCStrike15V2ClientPlayerDecalSign = exports.PlayerDecalDigitalSignature = exports.CMsgGCCStrike15GotvSyncPacket = exports.CMsgGCCStrike15V2ClientAuthKeyCode = exports.CMsgGCCStrike15V2GCToClientChat = exports.CMsgGCCStrike15V2ClientToGCChat = exports.CMsgGCCStrike15V2ClientToGCRequestElevate = exports.CMsgGCCStrike15V2Client2GCStreamUnlock = exports.CMsgGCCStrike15V2Client2GCRequestPrestigeCoin = exports.CMsgGCCStrike15V2AcknowledgePenalty = exports.CMsgGCGlobalGamePlay = exports.CMsgGCGlobalGameUnsubscribe = exports.CMsgGCGlobalGameSubscribe = exports.CSOPersonaDataPublic = exports.CSOAccountRecurringSubscription = exports.CSOAccountSeasonalOperation = exports.CSOQuestProgress = exports.CSOEconCoupon = exports.CMsgGCCStrike15V2GC2ClientTournamentInfo = exports.CMsgGCCStrike15V2Server2GCClientValidate = exports.CMsgGCCStrike15V2ClientSubmitSurveyVote = exports.CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry = exports.CMsgGCCStrike15V2GiftsLeaderboardResponse = exports.CMsgGCCStrike15V2GiftsLeaderboardRequest = exports.CMsgGCCStrike15V2ServerVarValueNotificationInfo = exports.CMsgGCCStrike15V2ClientVarValueNotificationInfo = exports.CMsgCStrike15Welcome = exports.CAttributeString = exports.CMsgGCCStrike15V2Fantasy_FantasyTeam = exports.CMsgGCCStrike15V2Fantasy_FantasySlot = exports.CMsgGCCStrike15V2Fantasy = exports.CMsgGCCStrike15V2Predictions_GroupMatchTeamPick = exports.CMsgGCCStrike15V2Predictions = exports.CMsgGCCStrike15V2MatchListTournamentOperatorMgmt = void 0;
+exports.CMsgGCCStrike15V2GC2ClientInitSystemResponse = exports.CMsgGCCStrike15V2GC2ClientInitSystem = exports.CMsgGCCStrike15V2GC2ClientRequestValidation = exports.CMsgGCCStrike15V2GC2ClientRefuseSecureMode = exports.CMsgGCCStrike15V2ClientReportValidation = exports.CVDiagnostic = exports.CMsgGCCStrike15V2ClientPerfReport_Entry = exports.CMsgGCCStrike15V2ClientPerfReport = exports.CMsgGCCStrike15V2GetEventFavoritesResponse = exports.CMsgGCCStrike15V2GetEventFavoritesRequest = exports.CMsgGCCStrike15V2SetEventFavorite = exports.CMsgGCCStrike15V2ClientPartyWarning_Entry = void 0;
+/* eslint-disable */
 const Long = require("long");
 const engine_gcmessages_1 = require("./engine_gcmessages");
 const minimal_1 = require("protobufjs/minimal");
@@ -626,6 +629,9 @@ const baseCMsgGCCStrike15V2MatchList = {
     accountid: 0,
     servertime: 0
 };
+const baseCMsgGCCStrike15V2MatchListTournamentOperatorMgmt = {
+    eventid: 0
+};
 const baseCMsgGCCStrike15V2Predictions = {
     eventId: 0
 };
@@ -924,7 +930,8 @@ const baseCMsgGCCStrike15V2GC2ClientInitSystem = {
     name: "",
     outputname: "",
     cookie: 0,
-    manifest: ""
+    manifest: "",
+    loadSystem: false
 };
 const baseCMsgGCCStrike15V2GC2ClientInitSystemResponse = {
     success: false,
@@ -1038,6 +1045,7 @@ var ECsgoGCMsg;
     ECsgoGCMsg[ECsgoGCMsg["k_EMsgGCCStrike15_v2_GC2ClientInitSystem"] = 9212] = "k_EMsgGCCStrike15_v2_GC2ClientInitSystem";
     ECsgoGCMsg[ECsgoGCMsg["k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response"] = 9213] = "k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response";
     ECsgoGCMsg[ECsgoGCMsg["k_EMsgGCCStrike15_v2_PrivateQueues"] = 9214] = "k_EMsgGCCStrike15_v2_PrivateQueues";
+    ECsgoGCMsg[ECsgoGCMsg["k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt"] = 9215] = "k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt";
 })(ECsgoGCMsg = exports.ECsgoGCMsg || (exports.ECsgoGCMsg = {}));
 var ECsgoSteamUserStat;
 (function (ECsgoSteamUserStat) {
@@ -5870,6 +5878,38 @@ exports.CMsgGCCStrike15V2MatchList = {
         return message;
     }
 };
+exports.CMsgGCCStrike15V2MatchListTournamentOperatorMgmt = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        writer.uint32(8).int32(message.eventid);
+        for (const v of message.matches) {
+            exports.CDataGCCStrike15V2MatchInfo.encode(v, writer.uint32(18).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof Uint8Array ? new minimal_1.Reader(input) : input;
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = {
+            ...baseCMsgGCCStrike15V2MatchListTournamentOperatorMgmt
+        };
+        message.matches = [];
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.eventid = reader.int32();
+                    break;
+                case 2:
+                    message.matches.push(exports.CDataGCCStrike15V2MatchInfo.decode(reader, reader.uint32()));
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    }
+};
 exports.CMsgGCCStrike15V2Predictions = {
     encode(message, writer = minimal_1.Writer.create()) {
         writer.uint32(8).uint32(message.eventId);
@@ -8053,6 +8093,8 @@ exports.CMsgGCCStrike15V2GC2ClientInitSystem = {
         writer.uint32(42).bytes(message.shaHash);
         writer.uint32(48).int32(message.cookie);
         writer.uint32(58).string(message.manifest);
+        writer.uint32(66).bytes(message.systemPackage);
+        writer.uint32(72).bool(message.loadSystem);
         return writer;
     },
     decode(input, length) {
@@ -8084,6 +8126,12 @@ exports.CMsgGCCStrike15V2GC2ClientInitSystem = {
                     break;
                 case 7:
                     message.manifest = reader.string();
+                    break;
+                case 8:
+                    message.systemPackage = reader.bytes();
+                    break;
+                case 9:
+                    message.loadSystem = reader.bool();
                     break;
                 default:
                     reader.skipType(tag & 7);

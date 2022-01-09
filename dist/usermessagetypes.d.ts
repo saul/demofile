@@ -3,10 +3,10 @@ export declare type UserMessageName = "VGUIMenu" | "Geiger" | "Train" | "HudText
 interface IUserMessageDescriptor {
     name: UserMessageName;
     class: {
-        decode: (buffer: Uint8Array) => any;
+        decode: (buffer: Uint8Array) => unknown;
     };
 }
-export declare let userMessages: IUserMessageDescriptor[];
+export declare const userMessages: IUserMessageDescriptor[];
 interface IUserMessageEvent {
     name: string;
     msg: any;
