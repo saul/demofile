@@ -33,7 +33,7 @@ import {
   CSVCMsgTempEntities
 } from "./protobufs/netmessages";
 import { CCSGameRulesProxy, CCSPlayerResource } from "./sendtabletypes";
-import { IStringTableUpdateEvent } from "./stringtables";
+import { IPlayerInfo, IStringTableUpdateEvent } from "./stringtables";
 
 export interface NetworkableConstructor<T = Networkable<any>> {
   new (
@@ -371,6 +371,8 @@ export class Entities extends EventEmitter {
   private _singletonEnts: { [table: string]: Networkable | undefined } = {};
   private _currentServerTick: TickNumber = -1 as TickNumber;
 
+  private _userIdToEntity: Map<number, number> = new Map();
+
   public listen(demo: DemoFile): void {
     this._demo = demo;
     demo.on("svc_PacketEntities", e => this._handlePacketEntities(e));
@@ -426,24 +428,9 @@ export class Entities extends EventEmitter {
    * @returns {Player|null} Entity referenced by the user ID. `null` if no matching player.
    */
   public getByUserId(userId: number): Player | null {
-    const userInfoTable = this._demo.stringTables.findTableByName("userinfo");
-    if (!userInfoTable) {
-      return null;
-    }
-
-    const userInfos = userInfoTable.entries;
-
-    for (let clientSlot = 0; clientSlot < userInfos.length; ++clientSlot) {
-      // We ALWAYS have a user info entry for each client slot
-      const userEntry = userInfos[clientSlot]!;
-
-      if (userEntry.userData && userEntry.userData.userId === userId) {
-        // UNSAFE: if we have 'userinfo' for this entity, it's definitely a player
-        return (this.entities.get(clientSlot + 1) as unknown) as Player;
-      }
-    }
-
-    return null;
+    const entityIndex = this._userIdToEntity.get(userId);
+    if (entityIndex === undefined) return null;
+    return (this.entities.get(entityIndex) as unknown) as Player;
   }
 
   public getSingleton<
@@ -1012,13 +999,15 @@ export class Entities extends EventEmitter {
     return classBaseline;
   }
 
-  private _handleStringTableUpdate(event: IStringTableUpdateEvent<Buffer>) {
-    if (event.table.name !== "instancebaseline" || !event.userData) {
-      return;
-    }
+  private _handleUserInfoUpdate(clientSlot: number, playerInfo: IPlayerInfo) {
+    this._userIdToEntity.set(playerInfo.userId, clientSlot + 1);
+  }
 
+  private _handleInstanceBaselineUpdate(
+    event: IStringTableUpdateEvent<Buffer>
+  ) {
     const classId = parseInt(event.entry, 10);
-    const baselineBuf = BitStream.from(event.userData);
+    const baselineBuf = BitStream.from(event.userData!);
 
     if (!this.serverClasses[classId]) {
       this.pendingBaselines[classId] = baselineBuf;
@@ -1033,5 +1022,18 @@ export class Entities extends EventEmitter {
       serverClass: this.serverClasses[classId]!,
       baseline
     });
+  }
+
+  private _handleStringTableUpdate(event: IStringTableUpdateEvent<any>) {
+    if (!event.userData) return;
+
+    if (event.table.name === "userinfo") {
+      this._handleUserInfoUpdate(
+        event.entryIndex,
+        event.userData as IPlayerInfo
+      );
+    } else if (event.table.name === "instancebaseline") {
+      this._handleInstanceBaselineUpdate(event);
+    }
   }
 }

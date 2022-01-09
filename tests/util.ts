@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import { join } from "path";
-import { DemoFile } from "../src/index";
+import { BaseEntity, DemoFile, Networkable } from "../src/index";
 
 const root = join(__dirname, "..");
 
@@ -47,6 +47,14 @@ export function startParsing(demoFileName: string, demo: DemoFile) {
   });
 }
 
+function replacer(key: string, value: any) {
+  if (value instanceof Networkable) {
+    return `#${value.index}(${value.serverClass.name})`;
+  } else {
+    return value;
+  }
+}
+
 export class Timeline {
   events: string[] = [];
   demo: DemoFile;
@@ -66,7 +74,10 @@ export class Timeline {
   }
 
   log(name: string, data: any) {
-    const line = `[${this.demo.currentTick}] ${name}: ${JSON.stringify(data)}`;
+    const line = `[${this.demo.currentTick}] ${name}: ${JSON.stringify(
+      data,
+      replacer
+    )}`;
     this.events[this.events.length] = line;
   }
 
