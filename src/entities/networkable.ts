@@ -121,4 +121,8 @@ export class Networkable<Props = UnknownEntityProps> {
   public get isDormant(): boolean {
     return !this._demo.entities.transmitEntities.has(this.index);
   }
+
+  public toJSON(): string {
+    return `#${this.index}(${this.serverClass.name})`;
+  }
 }

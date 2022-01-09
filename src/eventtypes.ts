@@ -5,7 +5,9 @@
 import { Player } from "./entities/player";
 import { BaseEntity } from "./entities/baseentity";
 import { Entities } from "./entities";
+import { IItemDefinition, itemDefinitionIndexMap } from "./entities/itemdefs";
 import * as ST from "./sendtabletypes";
+import * as Long from "long";
 
 export interface IEventAchievementEarned {
   player: number;
@@ -236,6 +238,7 @@ export interface IEventItemEquip {
   player: Player;
   item: string;
   defindex: number;
+  itemDefinition: IItemDefinition | null;
   canzoom: boolean;
   hassilencer: boolean;
   issilenced: boolean;
@@ -258,6 +261,7 @@ export interface IEventItemPickup {
   item: string;
   silent: boolean;
   defindex: number;
+  itemDefinition: IItemDefinition | null;
 }
 
 export interface IEventItemRemove {
@@ -265,6 +269,7 @@ export interface IEventItemRemove {
   player: Player;
   item: string;
   defindex: number;
+  itemDefinition: IItemDefinition | null;
 }
 
 export interface IEventItemsGifted {
@@ -273,6 +278,7 @@ export interface IEventItemsGifted {
   numgifts: number;
   giftidx: number;
   accountid: number;
+  entity: Player;
 }
 
 export interface IEventOtherDeath {
@@ -284,7 +290,9 @@ export interface IEventOtherDeath {
   weapon: string;
   weapon_itemid: string;
   weapon_fauxitemid: string;
+  itemDefinition: IItemDefinition | null;
   weapon_originalowner_xuid: string;
+  originalOwner: Player | null;
   headshot: boolean;
   penetrated: number;
   noscope: boolean;
@@ -341,7 +349,9 @@ export interface IEventPlayerDeath {
   weapon: string;
   weapon_itemid: string;
   weapon_fauxitemid: string;
+  itemDefinition: IItemDefinition | null;
   weapon_originalowner_xuid: string;
+  originalOwner: Player | null;
   headshot: boolean;
   dominated: number;
   revenge: number;
@@ -522,8 +532,10 @@ export interface IEventTeamplayBroadcastAudio {
 
 export interface IEventTournamentReward {
   defindex: number;
+  itemDefinition: IItemDefinition | null;
   totalrewards: number;
   accountid: number;
+  entity: Player;
 }
 
 export interface IEventWeaponFire {
@@ -611,13 +623,29 @@ export function annotateEvent(
     event.entity = entities.entities.get(event.entityid);
   } else if (eventName === "item_equip") {
     event.player = entities.getByUserId(event.userid);
+    event.itemDefinition = itemDefinitionIndexMap[event.defindex] || null;
   } else if (eventName === "item_pickup") {
     event.player = entities.getByUserId(event.userid);
+    event.itemDefinition = itemDefinitionIndexMap[event.defindex] || null;
   } else if (eventName === "item_remove") {
     event.player = entities.getByUserId(event.userid);
+    event.itemDefinition = itemDefinitionIndexMap[event.defindex] || null;
+  } else if (eventName === "items_gifted") {
+    event.entity = entities.getByAccountId(event.accountid);
   } else if (eventName === "other_death") {
     event.victim = entities.entities.get(event.otherid);
     event.attackerEntity = entities.getByUserId(event.attacker);
+    event.itemDefinition =
+      event.weapon_fauxitemid != ""
+        ? itemDefinitionIndexMap[
+            Long.fromString(event.weapon_fauxitemid, true)
+              .and(0xffff)
+              .toString()
+          ]
+        : null;
+    event.originalOwner = entities.getBySteam64Id(
+      event.weapon_originalowner_xuid
+    );
   } else if (eventName === "player_blind") {
     event.player = entities.getByUserId(event.userid);
     event.attackerEntity = entities.getByUserId(event.attacker);
@@ -632,6 +660,17 @@ export function annotateEvent(
     event.player = entities.getByUserId(event.userid);
     event.attackerEntity = entities.getByUserId(event.attacker);
     event.assisterEntity = entities.getByUserId(event.assister);
+    event.itemDefinition =
+      event.weapon_fauxitemid != ""
+        ? itemDefinitionIndexMap[
+            Long.fromString(event.weapon_fauxitemid, true)
+              .and(0xffff)
+              .toString()
+          ]
+        : null;
+    event.originalOwner = entities.getBySteam64Id(
+      event.weapon_originalowner_xuid
+    );
   } else if (eventName === "player_disconnect") {
     event.player = entities.getByUserId(event.userid);
   } else if (eventName === "player_falldamage") {
@@ -661,6 +700,9 @@ export function annotateEvent(
     event.entity = entities.entities.get(event.entityid);
   } else if (eventName === "survival_paradrop_spawn") {
     event.entity = entities.entities.get(event.entityid);
+  } else if (eventName === "tournament_reward") {
+    event.itemDefinition = itemDefinitionIndexMap[event.defindex] || null;
+    event.entity = entities.getByAccountId(event.accountid);
   } else if (eventName === "weapon_fire") {
     event.player = entities.getByUserId(event.userid);
   } else if (eventName === "weapon_fire_on_empty") {

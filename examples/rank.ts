@@ -28,11 +28,7 @@ function parseDemoFile(path: string) {
     demoFile.userMessages.on("ServerRankUpdate", um => {
       console.log("Player rank updates:");
       for (const update of um.rankUpdate) {
-        const player = demoFile.players.find(
-          player =>
-            player.userInfo &&
-            player.userInfo.xuid.getLowBits() === update.accountId
-        );
+        const player = demoFile.entities.getByAccountId(update.accountId);
         if (!player) console.log(`> (unknown player ${update.accountId})`);
         else
           console.log(
