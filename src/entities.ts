@@ -426,7 +426,7 @@ export class Entities extends EventEmitter {
   }
 
   /**
-   * Returns the player entity that belongs to a given user ID.
+   * Returns the entity that belongs to the player with a given user ID.
    * @param {number} userId - Player user ID
    * @returns {Player|null} Entity referenced by the user ID. `null` if no matching player.
    */
@@ -437,7 +437,7 @@ export class Entities extends EventEmitter {
   }
 
   /**
-   * Returns the player entity that belongs to a given account ID.
+   * Returns the entity that belongs to the player with a given Steam account ID.
    * @param {number} accountId - Steam account ID
    * @returns {Player|null} Entity referenced by the account ID. `null` if no matching player.
    */
@@ -448,7 +448,7 @@ export class Entities extends EventEmitter {
   }
 
   /**
-   * Returns the player entity that belongs to a given Steam ID.
+   * Returns the entity that belongs to the player with a given 64-bit Steam ID.
    * @param {Long|string} xuid - 64-bit Steam ID
    * @returns {Player|null} Entity referenced by the Steam ID. `null` if no matching player.
    */
