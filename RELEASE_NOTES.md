@@ -8,6 +8,8 @@
 
 ### 2.4.0 (2022-01-09)
 
+- :sparkles: Added `Entities#getByAccountId` to get player entities by Steam account ID
+- :sparkles: Added `Entities#getBySteam64Id` to get player entities by 64-bit Steam ID
 - :sparkles: Added more annotations to game events:
   - `item_equip`: added `itemDefinition: IItemDefinition`
   - `item_pickup`: added `itemDefinition: IItemDefinition`
