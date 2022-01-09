@@ -174,7 +174,7 @@ const mappings: Record<string, EventVarMapping | undefined> = {
   }),
 
   weapon_originalowner_xuid: () => ({
-    originalOwner: ["Player | null", `entities.getByXuid($$)`]
+    originalOwner: ["Player | null", `entities.getBySteam64Id($$)`]
   }),
 
   accountid: () => ({

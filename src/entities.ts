@@ -373,7 +373,7 @@ export class Entities extends EventEmitter {
   private _currentServerTick: TickNumber = -1 as TickNumber;
 
   private _userIdToEntity: Map<number, number> = new Map();
-  private _xuidToEntity: Map<string, number> = new Map();
+  private _steam64IdToEntity: Map<string, number> = new Map();
   private _accountNumberToEntity: Map<number, number> = new Map();
 
   public listen(demo: DemoFile): void {
@@ -449,12 +449,13 @@ export class Entities extends EventEmitter {
 
   /**
    * Returns the entity that belongs to the player with a given 64-bit Steam ID.
-   * @param {Long|string} xuid - 64-bit Steam ID
+   * @param {Long|string} steam64Id - 64-bit Steam ID
    * @returns {Player|null} Entity referenced by the Steam ID. `null` if no matching player.
    */
-  public getByXuid(xuid: Long | string): Player | null {
-    const xuidString = xuid instanceof Long ? xuid.toString() : xuid;
-    const entityIndex = this._xuidToEntity.get(xuidString);
+  public getBySteam64Id(steam64Id: Long | string): Player | null {
+    const idString =
+      steam64Id instanceof Long ? steam64Id.toString() : steam64Id;
+    const entityIndex = this._steam64IdToEntity.get(idString);
     if (entityIndex === undefined) return null;
     return (this.entities.get(entityIndex) as unknown) as Player;
   }
@@ -1027,7 +1028,7 @@ export class Entities extends EventEmitter {
 
   private _handleUserInfoUpdate(clientSlot: number, playerInfo: IPlayerInfo) {
     this._userIdToEntity.set(playerInfo.userId, clientSlot + 1);
-    this._xuidToEntity.set(playerInfo.xuid.toString(), clientSlot + 1);
+    this._steam64IdToEntity.set(playerInfo.xuid.toString(), clientSlot + 1);
     this._accountNumberToEntity.set(playerInfo.friendsId, clientSlot + 1);
   }
 

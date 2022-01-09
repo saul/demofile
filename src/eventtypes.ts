@@ -643,7 +643,9 @@ export function annotateEvent(
               .toString()
           ]
         : null;
-    event.originalOwner = entities.getByXuid(event.weapon_originalowner_xuid);
+    event.originalOwner = entities.getBySteam64Id(
+      event.weapon_originalowner_xuid
+    );
   } else if (eventName === "player_blind") {
     event.player = entities.getByUserId(event.userid);
     event.attackerEntity = entities.getByUserId(event.attacker);
@@ -666,7 +668,9 @@ export function annotateEvent(
               .toString()
           ]
         : null;
-    event.originalOwner = entities.getByXuid(event.weapon_originalowner_xuid);
+    event.originalOwner = entities.getBySteam64Id(
+      event.weapon_originalowner_xuid
+    );
   } else if (eventName === "player_disconnect") {
     event.player = entities.getByUserId(event.userid);
   } else if (eventName === "player_falldamage") {
