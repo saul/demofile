@@ -277,7 +277,7 @@ class DemoFile extends events_1.EventEmitter {
         assert(buf.remaining() === size);
         const message = net.findByType(cmd);
         assert(message != null, `No message handler for ${cmd}`);
-        if (message != null && this.listenerCount(message.name)) {
+        if (this.listenerCount(message.name)) {
             const msgInst = message.class.decode(new Uint8Array(buf.toBuffer()));
             this.emit(message.name, msgInst);
         }
@@ -300,10 +300,6 @@ class DemoFile extends events_1.EventEmitter {
             const size = chunk.readVarint32();
             const message = net.findByType(cmd);
             assert(message != null, `No message handler for ${cmd}`);
-            if (message == null) {
-                chunk.skip(size);
-                continue;
-            }
             if (this.listenerCount(message.name)) {
                 const messageBuffer = chunk.readBytes(size);
                 const msgInst = message.class.decode(new Uint8Array(messageBuffer.toBuffer()));

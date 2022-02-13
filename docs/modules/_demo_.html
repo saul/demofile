@@ -101,7 +101,7 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_demo_.html#parseheader" class="tsd-kind-icon">parse<wbr>Header</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_demo_.html#readibytes" class="tsd-kind-icon">readIBytes</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_demo_.html#parseheaderbytebuf" class="tsd-kind-icon">parse<wbr>Header<wbr>Bytebuf</a></li>
 							</ul>
 						</section>
 					</div>
@@ -115,7 +115,7 @@
 					<div class="tsd-signature tsd-kind-icon">Input<wbr>Button<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"attack"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"jump"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"duck"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"forward"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"back"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"use"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"cancel"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"left"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"right"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"moveleft"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"moveright"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"attack2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"run"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"reload"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"alt1"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"alt2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"score"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"speed"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"walk"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"zoom"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"weapon1"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"weapon2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"bullrush"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"grenade1"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"grenade2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"lookspin"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/a4560c9/src/demo.ts#L340">src/demo.ts:340</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/f1182ae/src/demo.ts#L341">src/demo.ts:341</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -126,13 +126,13 @@
 					<a name="parseheader" class="tsd-anchor"></a>
 					<h3>parse<wbr>Header</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">parse<wbr>Header<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_demo_.idemoheader.html" class="tsd-signature-type">IDemoHeader</a></li>
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Header<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ArrayBuffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_demo_.idemoheader.html" class="tsd-signature-type">IDemoHeader</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/a4560c9/src/demo.ts#L145">src/demo.ts:145</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/f1182ae/src/demo.ts#L170">src/demo.ts:170</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -143,7 +143,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+									<h5>buffer: <span class="tsd-signature-type">ArrayBuffer</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Buffer of the demo header</p>
 									</div>
@@ -155,16 +155,16 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="readibytes" class="tsd-anchor"></a>
-					<h3>readIBytes</h3>
+					<a name="parseheaderbytebuf" class="tsd-anchor"></a>
+					<h3>parse<wbr>Header<wbr>Bytebuf</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">readIBytes<span class="tsd-signature-symbol">(</span>bytebuf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ByteBuffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ByteBuffer</span></li>
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Header<wbr>Bytebuf<span class="tsd-signature-symbol">(</span>bytebuf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ByteBuffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_demo_.idemoheader.html" class="tsd-signature-type">IDemoHeader</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/a4560c9/src/demo.ts#L170">src/demo.ts:170</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/f1182ae/src/demo.ts#L141">src/demo.ts:141</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -173,7 +173,7 @@
 									<h5>bytebuf: <span class="tsd-signature-type">ByteBuffer</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ByteBuffer</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_demo_.idemoheader.html" class="tsd-signature-type">IDemoHeader</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -217,7 +217,7 @@
 						<a href="_demo_.html#parseheader" class="tsd-kind-icon">parse<wbr>Header</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_demo_.html#readibytes" class="tsd-kind-icon">readIBytes</a>
+						<a href="_demo_.html#parseheaderbytebuf" class="tsd-kind-icon">parse<wbr>Header<wbr>Bytebuf</a>
 					</li>
 				</ul>
 			</nav>

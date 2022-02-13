@@ -69,6 +69,9 @@
 				</a>
 				<p>A node.js library for parsing Counter-Strike Global Offensive (CSGO) demo files.
 				The library is also Browserify-able, and a standalone bundle that you can <code>&lt;script src=&quot;...&quot;&gt;</code> is available in <a href="browser/bundle.js">browser/bundle.js</a>.</p>
+				<blockquote>
+					<p>⚠️ This library requires Node v14 or later.</p>
+				</blockquote>
 				<a href="#❓-need-help" id="❓-need-help" style="color: inherit; text-decoration: none;">
 					<h3>❓ Need help</h3>
 				</a>
@@ -95,8 +98,9 @@
 				<p>Getting started is simple:</p>
 				<pre><code class="language-bash">.../demofile$ npm ci
 .../demofile$ <span class="hljs-built_in">cd</span> examples
-.../demofile/examples$ npm ci</code></pre>
-				<p>You can now run the example scripts. Take a look in the <a href="./examples"><code>examples</code></a> folder for some scripts to try out. Detailed descriptions of these scripts can be found below in the <a href="#examples">Examples</a> section below.</p>
+.../demofile/examples$ npm ci
+</code></pre>
+				<p>You can now run the example scripts. Take a look in the <a href="https://github.com/saul/demofile/tree/master/examples"><code>examples</code></a> folder for some scripts to try out. Detailed descriptions of these scripts can be found below in the <a href="#examples">Examples</a> section below.</p>
 				<p>If you don&#39;t have any demo files to hand, use the <code>demos/download.sh</code> Bash script to download the ones used for testing.</p>
 				<pre><code class="language-bash">.../demofile/examples$ npx ts-node dumpfile.ts ../demos/pc419-vs-chiefs-mirage.dem
 npx: installed 14 <span class="hljs-keyword">in</span> 1.883s
@@ -113,23 +117,26 @@ Demo header: {
   playbackFrames: 164271,
   signonLength: 433479
 }
-...</code></pre>
+...
+</code></pre>
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h2>Installation</h2>
 				</a>
 				<a href="#node" id="node" style="color: inherit; text-decoration: none;">
 					<h3>Node</h3>
 				</a>
-				<pre><code class="language-bash">npm install --save demofile</code></pre>
+				<pre><code class="language-bash">npm install --save demofile
+</code></pre>
 				<a href="#browser" id="browser" style="color: inherit; text-decoration: none;">
 					<h3>Browser</h3>
 				</a>
-				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;browser/bundle.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;browser/bundle.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
 				<p>The <code>DemoFile</code> module will be available as <code>window.demofile</code>.</p>
 				<a href="#screenshot" id="screenshot" style="color: inherit; text-decoration: none;">
 					<h2>Screenshot</h2>
 				</a>
-				<p>Using the <a href="./examples/dumpfile.ts">dumpfile example</a>:</p>
+				<p>Using the <a href="https://github.com/saul/demofile/blob/master/examples/dumpfile.ts">dumpfile example</a>:</p>
 				<p><img src="./example.png" alt="Example output"></p>
 				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
 					<h2>Documentation</h2>
@@ -239,35 +246,35 @@ Demo header: {
 						</tr>
 					</thead>
 					<tbody><tr>
-							<td><a href="./examples/join-leave.ts"><code>join-leave.ts</code></a></td>
+							<td><a href="https://github.com/saul/demofile/blob/master/examples/join-leave.ts"><code>join-leave.ts</code></a></td>
 							<td>Print all players that join and leave the game during the course of the demo.</td>
 						</tr>
 						<tr>
-							<td><a href="./examples/molotov.ts"><code>molotov.ts</code></a></td>
+							<td><a href="https://github.com/saul/demofile/blob/master/examples/molotov.ts"><code>molotov.ts</code></a></td>
 							<td>Prints the location of molotov/incendiary grenade explosions.</td>
 						</tr>
 						<tr>
-							<td><a href="./examples/plant-site.ts"><code>plant-site.ts</code></a></td>
+							<td><a href="https://github.com/saul/demofile/blob/master/examples/plant-site.ts"><code>plant-site.ts</code></a></td>
 							<td>Prints which player planted the bomb and at which site.</td>
 						</tr>
 						<tr>
-							<td><a href="./examples/purchases.ts"><code>purchases.ts</code></a></td>
+							<td><a href="https://github.com/saul/demofile/blob/master/examples/purchases.ts"><code>purchases.ts</code></a></td>
 							<td>Prints which items are purchased by each player.</td>
 						</tr>
 						<tr>
-							<td><a href="./examples/rank.ts"><code>rank.ts</code></a></td>
+							<td><a href="https://github.com/saul/demofile/blob/master/examples/rank.ts"><code>rank.ts</code></a></td>
 							<td>At the end of the game, prints all player ranks.</td>
 						</tr>
 						<tr>
-							<td><a href="./examples/scores.ts"><code>scores.ts</code></a></td>
+							<td><a href="https://github.com/saul/demofile/blob/master/examples/scores.ts"><code>scores.ts</code></a></td>
 							<td>Prints team scores after each round.</td>
 						</tr>
 						<tr>
-							<td><a href="./examples/tickrate.ts"><code>tickrate.ts</code></a></td>
+							<td><a href="https://github.com/saul/demofile/blob/master/examples/tickrate.ts"><code>tickrate.ts</code></a></td>
 							<td>Prints demo tick rate and duration in seconds.</td>
 						</tr>
 						<tr>
-							<td><a href="./examples/dumpfile.ts"><code>dumpfile.ts</code></a></td>
+							<td><a href="https://github.com/saul/demofile/blob/master/examples/dumpfile.ts"><code>dumpfile.ts</code></a></td>
 							<td>Advanced example of recreating coloured chat messages, round scores and the kill feed.</td>
 						</tr>
 				</tbody></table>
@@ -277,26 +284,24 @@ Demo header: {
 				<pre><code class="language-js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
 <span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
 
-fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
-  <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
+<span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.gameEvents.on(<span class="hljs-string">&quot;player_death&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
-    <span class="hljs-keyword">const</span> victim = demoFile.entities.getByUserId(e.userid);
-    <span class="hljs-keyword">const</span> victimName = victim ? victim.name : <span class="hljs-string">&quot;unnamed&quot;</span>;
+demoFile.gameEvents.on(<span class="hljs-string">&quot;player_death&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+  <span class="hljs-keyword">const</span> victim = demoFile.entities.getByUserId(e.userid);
+  <span class="hljs-keyword">const</span> victimName = victim ? victim.name : <span class="hljs-string">&quot;unnamed&quot;</span>;
 
-    <span class="hljs-comment">// Attacker may have disconnected so be aware.</span>
-    <span class="hljs-comment">// e.g. attacker could have thrown a grenade, disconnected, then that grenade</span>
-    <span class="hljs-comment">// killed another player.</span>
-    <span class="hljs-keyword">const</span> attacker = demoFile.entities.getByUserId(e.attacker);
-    <span class="hljs-keyword">const</span> attackerName = attacker ? attacker.name : <span class="hljs-string">&quot;unnamed&quot;</span>;
+  <span class="hljs-comment">// Attacker may have disconnected so be aware.</span>
+  <span class="hljs-comment">// e.g. attacker could have thrown a grenade, disconnected, then that grenade</span>
+  <span class="hljs-comment">// killed another player.</span>
+  <span class="hljs-keyword">const</span> attacker = demoFile.entities.getByUserId(e.attacker);
+  <span class="hljs-keyword">const</span> attackerName = attacker ? attacker.name : <span class="hljs-string">&quot;unnamed&quot;</span>;
 
-    <span class="hljs-keyword">const</span> headshotText = e.headshot ? <span class="hljs-string">&quot; HS&quot;</span> : <span class="hljs-string">&quot;&quot;</span>;
+  <span class="hljs-keyword">const</span> headshotText = e.headshot ? <span class="hljs-string">&quot; HS&quot;</span> : <span class="hljs-string">&quot;&quot;</span>;
 
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${attackerName}</span> [<span class="hljs-subst">${e.weapon}</span><span class="hljs-subst">${headshotText}</span>] <span class="hljs-subst">${victimName}</span>`</span>);
-  });
-
-  demoFile.parse(buffer);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${attackerName}</span> [<span class="hljs-subst">${e.weapon}</span><span class="hljs-subst">${headshotText}</span>] <span class="hljs-subst">${victimName}</span>`</span>);
 });
+
+demoFile.parseStream(fs.createReadStream(<span class="hljs-string">&quot;test.dem&quot;</span>));
 
 <span class="hljs-comment">/* Outputs:
 
@@ -307,25 +312,24 @@ JW [mac10 HS] Mixwell
 JW [hegrenade] HS
 JW [mac10 HS] Magisk
 
-*/</span></code></pre>
+*/</span>
+</code></pre>
 				<a href="#print-player-information-when-it-changes" id="print-player-information-when-it-changes" style="color: inherit; text-decoration: none;">
 					<h4>Print player information when it changes</h4>
 				</a>
 				<pre><code class="language-js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
 <span class="hljs-keyword">const</span> demofile = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;demofile&quot;</span>);
 
-fs.readFile(<span class="hljs-string">&quot;test.dem&quot;</span>, <span class="hljs-function">(<span class="hljs-params">err, buffer</span>) =&gt;</span> {
-  <span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
+<span class="hljs-keyword">const</span> demoFile = <span class="hljs-keyword">new</span> demofile.DemoFile();
 
-  demoFile.stringTables.on(<span class="hljs-string">&quot;update&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
-    <span class="hljs-keyword">if</span> (e.table.name === <span class="hljs-string">&quot;userinfo&quot;</span> &amp;&amp; e.userData != <span class="hljs-literal">null</span>) {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;\nPlayer info updated:&quot;</span>);
-      <span class="hljs-built_in">console</span>.log(e.entryIndex, e.userData);
-    }
-  });
-
-  demoFile.parse(buffer);
+demoFile.stringTables.on(<span class="hljs-string">&quot;update&quot;</span>, <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+  <span class="hljs-keyword">if</span> (e.table.name === <span class="hljs-string">&quot;userinfo&quot;</span> &amp;&amp; e.userData != <span class="hljs-literal">null</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;\nPlayer info updated:&quot;</span>);
+    <span class="hljs-built_in">console</span>.log(e.entryIndex, e.userData);
+  }
 });
+
+demoFile.parseStream(fs.createReadStream(<span class="hljs-string">&quot;test.dem&quot;</span>));
 
 <span class="hljs-comment">/* Outputs:
 
@@ -354,7 +358,8 @@ Player info updated:
 }
 
 [repeated for other players]
-*/</span></code></pre>
+*/</span>
+</code></pre>
 				<a href="#useful-links" id="useful-links" style="color: inherit; text-decoration: none;">
 					<h3>Useful links</h3>
 				</a>
