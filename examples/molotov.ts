@@ -30,9 +30,9 @@ function parseDemoFile(path: string) {
         continue;
       }
 
-      const inferno = demoFile.entities.entities.get(
+      const inferno = (demoFile.entities.entities.get(
         sound.entityIndex
-      ) as unknown as BaseEntity<CInferno>;
+      ) as unknown) as BaseEntity<CInferno>;
       const pos = inferno.position;
 
       const thrower = inferno.owner as Player;
