@@ -52,7 +52,11 @@ jobs:
         run: |
           npm uninstall demofile
           npm install ../demofile-*.tgz
-          npx ts-node scores.ts ../demos/pc419-vs-chiefs-mirage.dem
+          for file in *.ts
+          do
+            echo "Running example: $file..."
+            npx ts-node "$file" ../demos/pc419-vs-chiefs-mirage.dem
+          done
 
   lint:
     name: Linting

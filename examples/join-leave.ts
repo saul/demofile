@@ -76,4 +76,4 @@ function parseDemoFile(path: string) {
   });
 }
 
-parseDemoFile(process.argv[2]);
+parseDemoFile(process.argv[2]!);
