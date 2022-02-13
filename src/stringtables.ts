@@ -18,7 +18,7 @@ import {
  * @property {string} name - Player name
  * @property {int} userId - Local server user ID, unique while server is running
  * @property {string} guid - Steam2 ID string (e.g. STEAM_0:1:14180732)
- * @property {int} friendsId - Friends identification number
+ * @property {int} friendsId - Steam account number
  * @property {string} friendsName - Friends name
  * @property {bool} fakePlayer - true, if player is a bot
  * @property {bool} isHltv - true, if player is the HLTV proxy

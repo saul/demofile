@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BitView = exports.BitStream = void 0;
+/* eslint-disable @typescript-eslint/unbound-method */
 const bit_buffer_1 = require("bit-buffer");
 Object.defineProperty(exports, "BitStream", { enumerable: true, get: function () { return bit_buffer_1.BitStream; } });
 Object.defineProperty(exports, "BitView", { enumerable: true, get: function () { return bit_buffer_1.BitView; } });
@@ -181,6 +182,7 @@ bit_buffer_1.BitStream.prototype.readBitCellCoordIntegral = function (bits) {
 };
 bit_buffer_1.BitStream.prototype.readCString = function () {
     let s = "";
+    // eslint-disable-next-line no-constant-condition
     while (true) {
         const c = this.readUint8();
         // Stop appending chars once we hit 0x00

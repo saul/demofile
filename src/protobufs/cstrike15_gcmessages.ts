@@ -808,6 +808,11 @@ export interface CMsgGCCStrike15V2MatchList {
   tournamentinfo: CDataGCCStrike15V2TournamentInfo | undefined;
 }
 
+export interface CMsgGCCStrike15V2MatchListTournamentOperatorMgmt {
+  eventid: number;
+  matches: CDataGCCStrike15V2MatchInfo[];
+}
+
 export interface CMsgGCCStrike15V2Predictions {
   eventId: number;
   groupMatchTeamPicks: CMsgGCCStrike15V2Predictions_GroupMatchTeamPick[];
@@ -1189,6 +1194,8 @@ export interface CMsgGCCStrike15V2GC2ClientInitSystem {
   shaHash: Uint8Array;
   cookie: number;
   manifest: string;
+  systemPackage: Uint8Array;
+  loadSystem: boolean;
 }
 
 export interface CMsgGCCStrike15V2GC2ClientInitSystemResponse {
@@ -1920,6 +1927,10 @@ const baseCMsgGCCStrike15V2MatchList: object = {
   servertime: 0
 };
 
+const baseCMsgGCCStrike15V2MatchListTournamentOperatorMgmt: object = {
+  eventid: 0
+};
+
 const baseCMsgGCCStrike15V2Predictions: object = {
   eventId: 0
 };
@@ -2277,7 +2288,8 @@ const baseCMsgGCCStrike15V2GC2ClientInitSystem: object = {
   name: "",
   outputname: "",
   cookie: 0,
-  manifest: ""
+  manifest: "",
+  loadSystem: false
 };
 
 const baseCMsgGCCStrike15V2GC2ClientInitSystemResponse: object = {
@@ -2392,7 +2404,8 @@ export enum ECsgoGCMsg {
   k_EMsgGCCStrike15_StartAgreementSessionInGame = 9211,
   k_EMsgGCCStrike15_v2_GC2ClientInitSystem = 9212,
   k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response = 9213,
-  k_EMsgGCCStrike15_v2_PrivateQueues = 9214
+  k_EMsgGCCStrike15_v2_PrivateQueues = 9214,
+  k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt = 9215
 }
 
 export enum ECsgoSteamUserStat {
@@ -8122,6 +8135,47 @@ export const CMsgGCCStrike15V2MatchList = {
   }
 };
 
+export const CMsgGCCStrike15V2MatchListTournamentOperatorMgmt = {
+  encode(
+    message: CMsgGCCStrike15V2MatchListTournamentOperatorMgmt,
+    writer: Writer = Writer.create()
+  ): Writer {
+    writer.uint32(8).int32(message.eventid);
+    for (const v of message.matches) {
+      CDataGCCStrike15V2MatchInfo.encode(v!, writer.uint32(18).fork()).ldelim();
+    }
+    return writer;
+  },
+  decode(
+    input: Uint8Array | Reader,
+    length?: number
+  ): CMsgGCCStrike15V2MatchListTournamentOperatorMgmt {
+    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = {
+      ...baseCMsgGCCStrike15V2MatchListTournamentOperatorMgmt
+    } as CMsgGCCStrike15V2MatchListTournamentOperatorMgmt;
+    message.matches = [];
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.eventid = reader.int32();
+          break;
+        case 2:
+          message.matches.push(
+            CDataGCCStrike15V2MatchInfo.decode(reader, reader.uint32())
+          );
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  }
+};
+
 export const CMsgGCCStrike15V2Predictions = {
   encode(
     message: CMsgGCCStrike15V2Predictions,
@@ -10756,6 +10810,8 @@ export const CMsgGCCStrike15V2GC2ClientInitSystem = {
     writer.uint32(42).bytes(message.shaHash);
     writer.uint32(48).int32(message.cookie);
     writer.uint32(58).string(message.manifest);
+    writer.uint32(66).bytes(message.systemPackage);
+    writer.uint32(72).bool(message.loadSystem);
     return writer;
   },
   decode(
@@ -10790,6 +10846,12 @@ export const CMsgGCCStrike15V2GC2ClientInitSystem = {
           break;
         case 7:
           message.manifest = reader.string();
+          break;
+        case 8:
+          message.systemPackage = reader.bytes();
+          break;
+        case 9:
+          message.loadSystem = reader.bool();
           break;
         default:
           reader.skipType(tag & 7);

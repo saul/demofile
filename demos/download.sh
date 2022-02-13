@@ -22,7 +22,7 @@ curl 'https://demofiledemos.blob.core.windows.net/demoblobs/test-demos.zip' --ou
 # Downloaded over insecure http, so validate hashes
 sha256sum -c SHA256SUMS
 
-unzip test-demos.zip
+unzip -o test-demos.zip
 
 # Clean up to reduce the size of the 'demos' directory
 rm test-demos.zip

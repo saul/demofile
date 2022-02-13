@@ -713,6 +713,10 @@ export interface CMsgGCCStrike15V2MatchList {
     streams: TournamentTeam[];
     tournamentinfo: CDataGCCStrike15V2TournamentInfo | undefined;
 }
+export interface CMsgGCCStrike15V2MatchListTournamentOperatorMgmt {
+    eventid: number;
+    matches: CDataGCCStrike15V2MatchInfo[];
+}
 export interface CMsgGCCStrike15V2Predictions {
     eventId: number;
     groupMatchTeamPicks: CMsgGCCStrike15V2Predictions_GroupMatchTeamPick[];
@@ -1037,6 +1041,8 @@ export interface CMsgGCCStrike15V2GC2ClientInitSystem {
     shaHash: Uint8Array;
     cookie: number;
     manifest: string;
+    systemPackage: Uint8Array;
+    loadSystem: boolean;
 }
 export interface CMsgGCCStrike15V2GC2ClientInitSystemResponse {
     success: boolean;
@@ -1149,7 +1155,8 @@ export declare enum ECsgoGCMsg {
     k_EMsgGCCStrike15_StartAgreementSessionInGame = 9211,
     k_EMsgGCCStrike15_v2_GC2ClientInitSystem = 9212,
     k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response = 9213,
-    k_EMsgGCCStrike15_v2_PrivateQueues = 9214
+    k_EMsgGCCStrike15_v2_PrivateQueues = 9214,
+    k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt = 9215
 }
 export declare enum ECsgoSteamUserStat {
     k_ECsgoSteamUserStat_XpEarnedGames = 1,
@@ -1551,6 +1558,10 @@ export declare const CDataGCCStrike15V2TournamentInfo: {
 export declare const CMsgGCCStrike15V2MatchList: {
     encode(message: CMsgGCCStrike15V2MatchList, writer?: Writer): Writer;
     decode(input: Uint8Array | Reader, length?: number | undefined): CMsgGCCStrike15V2MatchList;
+};
+export declare const CMsgGCCStrike15V2MatchListTournamentOperatorMgmt: {
+    encode(message: CMsgGCCStrike15V2MatchListTournamentOperatorMgmt, writer?: Writer): Writer;
+    decode(input: Uint8Array | Reader, length?: number | undefined): CMsgGCCStrike15V2MatchListTournamentOperatorMgmt;
 };
 export declare const CMsgGCCStrike15V2Predictions: {
     encode(message: CMsgGCCStrike15V2Predictions, writer?: Writer): Writer;

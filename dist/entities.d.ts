@@ -13,6 +13,7 @@ import { EntityHandle } from "./entityhandle";
 import { PropValue } from "./props";
 import { CSVCMsgSendTable, CSVCMsgSendTable_sendpropT } from "./protobufs/netmessages";
 import { CCSPlayerResource } from "./sendtabletypes";
+import * as Long from "long";
 export interface NetworkableConstructor<T = Networkable<any>> {
     new (demo: DemoFile, index: number, classId: number, serialNum: number, props: any | undefined): T;
 }
@@ -190,6 +191,9 @@ export declare class Entities extends EventEmitter {
     private _demo;
     private _singletonEnts;
     private _currentServerTick;
+    private _userIdToEntity;
+    private _steam64IdToEntity;
+    private _accountNumberToEntity;
     listen(demo: DemoFile): void;
     /**
      * Determines whether handle is set.
@@ -205,11 +209,23 @@ export declare class Entities extends EventEmitter {
      */
     getByHandle(handle: EntityHandle): Networkable | null;
     /**
-     * Returns the entity specified by a user ID.
+     * Returns the entity that belongs to the player with a given user ID.
      * @param {number} userId - Player user ID
      * @returns {Player|null} Entity referenced by the user ID. `null` if no matching player.
      */
     getByUserId(userId: number): Player | null;
+    /**
+     * Returns the entity that belongs to the player with a given Steam account ID.
+     * @param {number} accountId - Steam account ID
+     * @returns {Player|null} Entity referenced by the account ID. `null` if no matching player.
+     */
+    getByAccountId(accountId: number): Player | null;
+    /**
+     * Returns the entity that belongs to the player with a given 64-bit Steam ID.
+     * @param {Long|string} steam64Id - 64-bit Steam ID
+     * @returns {Player|null} Entity referenced by the Steam ID. `null` if no matching player.
+     */
+    getBySteam64Id(steam64Id: Long | string): Player | null;
     getSingleton<TServerClass, TEntityClass extends Networkable<TServerClass>>(serverClass: string): TEntityClass;
     findAllWithTable(table: string): Generator<Networkable>;
     findAllWithClass<T>(klass: NetworkableConstructor<T>): Generator<T>;
@@ -227,5 +243,7 @@ export declare class Entities extends EventEmitter {
     private _handlePacketEntities;
     private _readPacketEntities;
     private _parseInstanceBaseline;
+    private _handleUserInfoUpdate;
+    private _handleInstanceBaselineUpdate;
     private _handleStringTableUpdate;
 }

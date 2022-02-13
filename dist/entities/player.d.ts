@@ -9,6 +9,10 @@ export declare const enum LifeState {
     Dying = 1,
     Dead = 2
 }
+export interface Angle2D {
+    pitch: number;
+    yaw: number;
+}
 export interface IPlayerRoundStats {
     /**
      * Kills dealt
@@ -62,10 +66,7 @@ export declare class Player extends BaseEntity<CCSPlayer> {
      * @returns {int} Current health
      */
     get health(): number;
-    get eyeAngles(): {
-        pitch: number;
-        yaw: number;
-    };
+    get eyeAngles(): Angle2D;
     get position(): Vector;
     get velocity(): Vector;
     /**

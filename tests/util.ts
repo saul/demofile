@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import { join } from "path";
-import { DemoFile } from "../src/index";
+import { BaseEntity, DemoFile, Networkable } from "../src/index";
 
 const root = join(__dirname, "..");
 

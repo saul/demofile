@@ -6,9 +6,75 @@
 - Unreleased release notes here
 -->
 
-### 2.3.0 (2021-10-04)
+### 2.5.0 (2022-02-13)
 
 - :sparkles: #19: Support streaming demos
+
+### 2.4.0 (2022-01-09)
+
+- :sparkles: Added `Entities#getByAccountId` to get player entities by Steam account ID
+- :sparkles: Added `Entities#getBySteam64Id` to get player entities by 64-bit Steam ID
+- :sparkles: Added more annotations to game events:
+  - `item_equip`: added `itemDefinition: IItemDefinition`
+  - `item_pickup`: added `itemDefinition: IItemDefinition`
+  - `item_remove`: added `itemDefinition: IItemDefinition`
+  - `items_gifted`: added `entity: Player`
+  - `other_death`: added `itemDefinition: IItemDefinition | null`, `originalOwner: Player | null`
+  - `player_death`: added `itemDefinition: IItemDefinition | null`, `originalOwner: Player | null`
+  - `tournament_reward`: added `itemDefinition: IItemDefinition`, `entity: Player`
+- :zap: Added `Networkable#toJSON` that serialises the entity as a string. Example: `#123(CCSPlayer)` \
+   Prior to this change, serialising `Networkable` objects would result in a TypeError due to a circular reference.
+
+### 2.3.0 (2022-01-09)
+
+- :zap: Incorporate latest CSGO protobufs
+- :zap: Improved performance of `Entities#getByUserId`
+- :sparkles: Added various annotations to game events. \
+  This will reduce friction when converting user IDs/entity indexes to actual entities.
+  - `bomb_begindefuse`: added `player: Player`
+  - `bomb_beginplant`: added `player: Player`
+  - `bomb_defused`: added `player: Player`
+  - `bomb_dropped`: added `player: Player`, `entity: BaseEntity<CC4>`
+  - `bomb_exploded`: added `player: Player`
+  - `bomb_pickup`: added `player: Player`
+  - `bomb_planted`: added `player: Player`
+  - `bot_takeover`: added `player: Player`, `bot: Player`
+  - `cs_win_panel_round`: added `player: Player`
+  - `decoy_detonate`: added `player: Player`, `entity: BaseEntity<CDecoyProjectile>`
+  - `decoy_started`: added `player: Player`, `entity: BaseEntity<CDecoyProjectile>`
+  - `defuser_dropped`: added `entity: BaseEntity`
+  - `defuser_pickup`: added `entity: BaseEntity`, `player: Player`
+  - `flashbang_detonate`: added `player: Player`, `entity: BaseEntity<CBaseCSGrenadeProjectile>`
+  - `hostage_hurt`: added `player: Player`, `entity: BaseEntity<CHostage>`
+  - `hostage_killed`: added `player: Player`, `entity: BaseEntity<CHostage>`
+  - `hostage_rescued`: added `player: Player`, `entity: BaseEntity<CHostage>`
+  - `inferno_expire`: added `entity: BaseEntity<CInferno>`
+  - `inferno_startburn`: added `entity: BaseEntity<CInferno>`
+  - `item_equip`: added `player: Player`
+  - `item_pickup`: added `player: Player`
+  - `item_remove`: added `player: Player`
+  - `other_death`: added `victim: BaseEntity`, `attackerEntity: Player`
+  - `player_blind`: added `player: Player`, `attackerEntity: Player`, `entity: BaseEntity<CBaseCSGrenadeProjectile>`
+  - `player_changename`: added `player: Player`
+  - `player_chat`: added `player: Player`
+  - `player_connect_full`: added `player: Player`
+  - `player_death`: added `player: Player`, `attackerEntity: Player`, `assisterEntity: BaseEntity`
+  - `player_disconnect`: added `player: Player`
+  - `player_falldamage`: added `player: Player`
+  - `player_footstep`: added `player: Player`
+  - `player_hurt`: added `player: Player`, `attackerEntity: Player`
+  - `player_info`: added `player: Player`
+  - `player_jump`: added `player: Player`
+  - `player_spawn`: added `player: Player`
+  - `player_team`: added `player: Player`
+  - `round_mvp`: added `player: Player`
+  - `smokegrenade_detonate`: added `player: Player`, `entity: BaseEntity<CSmokeGrenadeProjectile>`
+  - `smokegrenade_expired`: added `player: Player`, `entity: BaseEntity<CSmokeGrenadeProjectile>`
+  - `weapon_fire`: added `player: Player`
+  - `weapon_fire_on_empty`: added `player: Player`
+  - `weapon_outofammo`: added `player: Player`
+  - `weapon_reload`: added `player: Player`
+  - `weapon_zoom`: added `player: Player`
 
 ### 2.2.0 (2021-09-28)
 

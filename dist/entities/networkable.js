@@ -58,6 +58,7 @@ class Networkable {
      */
     updateProp(tableName, varName, newValue) {
         const table = this.props[tableName];
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         if (table === undefined) {
             this.props[tableName] = {
                 [varName]: newValue
@@ -73,6 +74,9 @@ class Networkable {
      */
     get isDormant() {
         return !this._demo.entities.transmitEntities.has(this.index);
+    }
+    toJSON() {
+        return `#${this.index}(${this.serverClass.name})`;
     }
 }
 exports.Networkable = Networkable;

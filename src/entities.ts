@@ -33,7 +33,8 @@ import {
   CSVCMsgTempEntities
 } from "./protobufs/netmessages";
 import { CCSGameRulesProxy, CCSPlayerResource } from "./sendtabletypes";
-import { IStringTableUpdateEvent } from "./stringtables";
+import { IPlayerInfo, IStringTableUpdateEvent } from "./stringtables";
+import * as Long from "long";
 
 export interface NetworkableConstructor<T = Networkable<any>> {
   new (
@@ -371,6 +372,10 @@ export class Entities extends EventEmitter {
   private _singletonEnts: { [table: string]: Networkable | undefined } = {};
   private _currentServerTick: TickNumber = -1 as TickNumber;
 
+  private _userIdToEntity: Map<number, number> = new Map();
+  private _steam64IdToEntity: Map<string, number> = new Map();
+  private _accountNumberToEntity: Map<number, number> = new Map();
+
   public listen(demo: DemoFile): void {
     this._demo = demo;
     demo.on("svc_PacketEntities", e => this._handlePacketEntities(e));
@@ -421,29 +426,38 @@ export class Entities extends EventEmitter {
   }
 
   /**
-   * Returns the entity specified by a user ID.
+   * Returns the entity that belongs to the player with a given user ID.
    * @param {number} userId - Player user ID
    * @returns {Player|null} Entity referenced by the user ID. `null` if no matching player.
    */
   public getByUserId(userId: number): Player | null {
-    const userInfoTable = this._demo.stringTables.findTableByName("userinfo");
-    if (!userInfoTable) {
-      return null;
-    }
+    const entityIndex = this._userIdToEntity.get(userId);
+    if (entityIndex === undefined) return null;
+    return (this.entities.get(entityIndex) as unknown) as Player;
+  }
 
-    const userInfos = userInfoTable.entries;
+  /**
+   * Returns the entity that belongs to the player with a given Steam account ID.
+   * @param {number} accountId - Steam account ID
+   * @returns {Player|null} Entity referenced by the account ID. `null` if no matching player.
+   */
+  public getByAccountId(accountId: number): Player | null {
+    const entityIndex = this._accountNumberToEntity.get(accountId);
+    if (entityIndex === undefined) return null;
+    return (this.entities.get(entityIndex) as unknown) as Player;
+  }
 
-    for (let clientSlot = 0; clientSlot < userInfos.length; ++clientSlot) {
-      // We ALWAYS have a user info entry for each client slot
-      const userEntry = userInfos[clientSlot]!;
-
-      if (userEntry.userData && userEntry.userData.userId === userId) {
-        // UNSAFE: if we have 'userinfo' for this entity, it's definitely a player
-        return (this.entities.get(clientSlot + 1) as unknown) as Player;
-      }
-    }
-
-    return null;
+  /**
+   * Returns the entity that belongs to the player with a given 64-bit Steam ID.
+   * @param {Long|string} steam64Id - 64-bit Steam ID
+   * @returns {Player|null} Entity referenced by the Steam ID. `null` if no matching player.
+   */
+  public getBySteam64Id(steam64Id: Long | string): Player | null {
+    const idString =
+      steam64Id instanceof Long ? steam64Id.toString() : steam64Id;
+    const entityIndex = this._steam64IdToEntity.get(idString);
+    if (entityIndex === undefined) return null;
+    return (this.entities.get(entityIndex) as unknown) as Player;
   }
 
   public getSingleton<
@@ -1012,13 +1026,17 @@ export class Entities extends EventEmitter {
     return classBaseline;
   }
 
-  private _handleStringTableUpdate(event: IStringTableUpdateEvent<Buffer>) {
-    if (event.table.name !== "instancebaseline" || !event.userData) {
-      return;
-    }
+  private _handleUserInfoUpdate(clientSlot: number, playerInfo: IPlayerInfo) {
+    this._userIdToEntity.set(playerInfo.userId, clientSlot + 1);
+    this._steam64IdToEntity.set(playerInfo.xuid.toString(), clientSlot + 1);
+    this._accountNumberToEntity.set(playerInfo.friendsId, clientSlot + 1);
+  }
 
+  private _handleInstanceBaselineUpdate(
+    event: IStringTableUpdateEvent<Buffer>
+  ) {
     const classId = parseInt(event.entry, 10);
-    const baselineBuf = BitStream.from(event.userData);
+    const baselineBuf = BitStream.from(event.userData!);
 
     if (!this.serverClasses[classId]) {
       this.pendingBaselines[classId] = baselineBuf;
@@ -1033,5 +1051,18 @@ export class Entities extends EventEmitter {
       serverClass: this.serverClasses[classId]!,
       baseline
     });
+  }
+
+  private _handleStringTableUpdate(event: IStringTableUpdateEvent<any>) {
+    if (!event.userData) return;
+
+    if (event.table.name === "userinfo") {
+      this._handleUserInfoUpdate(
+        event.entryIndex,
+        event.userData as IPlayerInfo
+      );
+    } else if (event.table.name === "instancebaseline") {
+      this._handleInstanceBaselineUpdate(event);
+    }
   }
 }

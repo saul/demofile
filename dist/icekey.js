@@ -71,7 +71,8 @@ class IceKey {
         for (let i = 0; i < this.size; i++) {
             for (let j = 0; j < 4; j++)
                 kb[3 - j] =
-                    ((key[i * 8 + j * 2] & 0xff) << 8) | (key[i * 8 + j * 2 + 1] & 0xff);
+                    ((key[i * 8 + j * 2] & 0xff) << 8) |
+                        (key[i * 8 + j * 2 + 1] & 0xff);
             this.scheduleBuild(kb, i * 8, 0);
             this.scheduleBuild(kb, this.rounds - 8 - i * 8, 8);
         }
@@ -198,9 +199,11 @@ class IceKey {
             const col = (i >>> 1) & 0xff;
             const row = (i & 0x1) | ((i & 0x200) >>> 8);
             let x;
-            x = this.gf_exp7(col ^ IceKey.sXor[0][row], IceKey.sMod[0][row]) << 24;
+            x =
+                this.gf_exp7(col ^ IceKey.sXor[0][row], IceKey.sMod[0][row]) << 24;
             IceKey.spBox[0][i] = this.perm32(x);
-            x = this.gf_exp7(col ^ IceKey.sXor[1][row], IceKey.sMod[1][row]) << 16;
+            x =
+                this.gf_exp7(col ^ IceKey.sXor[1][row], IceKey.sMod[1][row]) << 16;
             IceKey.spBox[1][i] = this.perm32(x);
             x = this.gf_exp7(col ^ IceKey.sXor[2][row], IceKey.sMod[2][row]) << 8;
             IceKey.spBox[2][i] = this.perm32(x);

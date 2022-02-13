@@ -9,7 +9,7 @@ import { BitStream } from "./ext/bitbuffer";
  * @property {string} name - Player name
  * @property {int} userId - Local server user ID, unique while server is running
  * @property {string} guid - Steam2 ID string (e.g. STEAM_0:1:14180732)
- * @property {int} friendsId - Friends identification number
+ * @property {int} friendsId - Steam account number
  * @property {string} friendsName - Friends name
  * @property {bool} fakePlayer - true, if player is a bot
  * @property {bool} isHltv - true, if player is the HLTV proxy
@@ -67,9 +67,7 @@ export declare interface StringTables {
  */
 export declare class StringTables extends EventEmitter {
     tables: Array<IStringTable<any>>;
-    userDataCallbacks: {
-        [table: string]: (buf: Buffer) => any;
-    };
+    userDataCallbacks: Record<string, ((buf: Buffer) => any) | undefined>;
     constructor();
     listen(messageEvents: DemoFile): void;
     handleStringTables(bitbuf: BitStream): void;

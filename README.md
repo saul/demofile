@@ -19,6 +19,39 @@ The library is also Browserify-able, and a standalone bundle that you can `<scri
 - String tables
 - Reading encrypted messages (e.g. chat in public matchmaking demos)
 
+## Running the examples
+
+Getting started is simple:
+
+```bash
+.../demofile$ npm ci
+.../demofile$ cd examples
+.../demofile/examples$ npm ci
+```
+
+You can now run the example scripts. Take a look in the [`examples`](https://github.com/saul/demofile/tree/master/examples) folder for some scripts to try out. Detailed descriptions of these scripts can be found below in the [Examples](#examples) section below.
+
+If you don't have any demo files to hand, use the `demos/download.sh` Bash script to download the ones used for testing.
+
+```bash
+.../demofile/examples$ npx ts-node dumpfile.ts ../demos/pc419-vs-chiefs-mirage.dem
+npx: installed 14 in 1.883s
+Demo header: {
+  magic: 'HL2DEMO',
+  protocol: 4,
+  networkProtocol: 13753,
+  serverName: 'Counter-Strike: Global Offensive',
+  clientName: 'GOTV Demo',
+  mapName: 'de_mirage',
+  gameDirectory: 'csgo',
+  playbackTime: 2569.375,
+  playbackTicks: 328880,
+  playbackFrames: 164271,
+  signonLength: 433479
+}
+...
+```
+
 ## Installation
 
 ### Node
@@ -37,7 +70,7 @@ The `DemoFile` module will be available as `window.demofile`.
 
 ## Screenshot
 
-Using the [dumpfile example](./examples/dumpfile.ts):
+Using the [dumpfile example](https://github.com/saul/demofile/blob/master/examples/dumpfile.ts):
 
 ![Example output](./example.png)
 
@@ -80,22 +113,22 @@ Note that events are fired at the end of a tick, after all entity props and stri
 
 Various examples are available in the `examples` folder:
 
-| Example                                     | Description                                                                            |
-| ------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [`join-leave.ts`](./examples/join-leave.ts) | Print all players that join and leave the game during the course of the demo.          |
-| [`molotov.ts`](./examples/molotov.ts)       | Prints the location of molotov/incendiary grenade explosions.                          |
-| [`plant-site.ts`](./examples/plant-site.ts) | Prints which player planted the bomb and at which site.                                |
-| [`purchases.ts`](./examples/purchases.ts)   | Prints which items are purchased by each player.                                       |
-| [`rank.ts`](./examples/rank.ts)             | At the end of the game, prints all player ranks.                                       |
-| [`scores.ts`](./examples/scores.ts)         | Prints team scores after each round.                                                   |
-| [`tickrate.ts`](./examples/tickrate.ts)     | Prints demo tick rate and duration in seconds.                                         |
-| [`dumpfile.ts`](./examples/dumpfile.ts)     | Advanced example of recreating coloured chat messages, round scores and the kill feed. |
+| Example                                                                                | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [`join-leave.ts`](https://github.com/saul/demofile/blob/master/examples/join-leave.ts) | Print all players that join and leave the game during the course of the demo.          |
+| [`molotov.ts`](https://github.com/saul/demofile/blob/master/examples/molotov.ts)       | Prints the location of molotov/incendiary grenade explosions.                          |
+| [`plant-site.ts`](https://github.com/saul/demofile/blob/master/examples/plant-site.ts) | Prints which player planted the bomb and at which site.                                |
+| [`purchases.ts`](https://github.com/saul/demofile/blob/master/examples/purchases.ts)   | Prints which items are purchased by each player.                                       |
+| [`rank.ts`](https://github.com/saul/demofile/blob/master/examples/rank.ts)             | At the end of the game, prints all player ranks.                                       |
+| [`scores.ts`](https://github.com/saul/demofile/blob/master/examples/scores.ts)         | Prints team scores after each round.                                                   |
+| [`tickrate.ts`](https://github.com/saul/demofile/blob/master/examples/tickrate.ts)     | Prints demo tick rate and duration in seconds.                                         |
+| [`dumpfile.ts`](https://github.com/saul/demofile/blob/master/examples/dumpfile.ts)     | Advanced example of recreating coloured chat messages, round scores and the kill feed. |
 
 #### Print kills
 
-```ts
-import fs = require("fs");
-import demofile = require("demofile");
+```js
+const fs = require("fs");
+const demofile = require("demofile");
 
 fs.readFile("test.dem", (err, buffer) => {
   const demoFile = new demofile.DemoFile();
@@ -132,9 +165,9 @@ JW [mac10 HS] Magisk
 
 #### Print player information when it changes
 
-```ts
-import fs = require("fs");
-import demofile = require("demofile");
+```js
+const fs = require("fs");
+const demofile = require("demofile");
 
 fs.readFile("test.dem", (err, buffer) => {
   const demoFile = new demofile.DemoFile();
@@ -152,19 +185,28 @@ fs.readFile("test.dem", (err, buffer) => {
 /* Outputs:
 
 Player info updated:
-12 { unknown_lo: 4294967295,
-  unknown_hi: 4294963202,
-  xuid_lo: 17825793,
-  xuid_hi: 3417033,
-  name: 'HS',
-  userId: 20,
-  guid: 'STEAM_1:1:1708516',
-  friendsId: 3417033,
+0 {
+  xuid: Long { low: 0, high: 0, unsigned: false },
+  name: 'ESEA SourceTV',
+  userId: 2,
+  guid: 'BOT',
+  friendsId: 0,
+  friendsName: '',
+  fakePlayer: true,
+  isHltv: false
+}
+
+Player info updated:
+1 {
+  xuid: Long { low: 32578248, high: 17825793, unsigned: false },
+  name: 'PC419 m0nt-S-',
+  userId: 3,
+  guid: 'STEAM_1:0:16289124',
+  friendsId: 32578248,
   friendsName: '',
   fakePlayer: false,
-  isHltv: false,
-  customFiles: [ 0, 0, 0, 0 ],
-  xuid: Long { low: 3417033, high: 17825793, unsigned: false } }
+  isHltv: false
+}
 
 [repeated for other players]
 */

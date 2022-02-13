@@ -60,8 +60,7 @@ class BaseEntity extends networkable_1.Networkable {
         if (!modelprecache) {
             return null;
         }
-        return modelprecache.entries[this.getProp("DT_BaseEntity", "m_nModelIndex")]
-            .entry;
+        return modelprecache.entries[this.getProp("DT_BaseEntity", "m_nModelIndex")].entry;
     }
 }
 exports.BaseEntity = BaseEntity;

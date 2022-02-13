@@ -14,7 +14,7 @@ function decodeCrosshairCode(shareCode) {
     function signed(byte) {
         return byte > 127 ? -(~byte & 0xff) - 1 : byte;
     }
-    const bytes = sharecode_1.decodeShareCode(shareCode);
+    const bytes = (0, sharecode_1.decodeShareCode)(shareCode);
     if (bytes[1] !== bytes.slice(2).reduce((x, y) => x + y) % 256) {
         throw new Error("invalid crosshair code");
     }

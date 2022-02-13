@@ -57,4 +57,5 @@ export declare class Networkable<Props = UnknownEntityProps> {
      * Always false on GOTV demos as all entities are always in the PVS.
      */
     get isDormant(): boolean;
+    toJSON(): string;
 }

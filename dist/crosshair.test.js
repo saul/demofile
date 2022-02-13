@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const crosshair_1 = require("./crosshair");
 it("decode crosshair", () => {
-    expect(crosshair_1.decodeCrosshairCode("CSGO-miBcy-2S2P7-h9var-ZqwE3-wmb3K")).toEqual({
+    expect((0, crosshair_1.decodeCrosshairCode)("CSGO-miBcy-2S2P7-h9var-ZqwE3-wmb3K")).toEqual({
         alpha: 205,
         blue: 47,
         gap: 1.0,
@@ -21,7 +21,7 @@ it("decode crosshair", () => {
         style: "ClassicDynamic",
         thickness: 0.5
     });
-    expect(crosshair_1.decodeCrosshairCode("CSGO-TJ2Ft-7QNVV-UwtJJ-uNFVb-BVJGG")).toEqual({
+    expect((0, crosshair_1.decodeCrosshairCode)("CSGO-TJ2Ft-7QNVV-UwtJJ-uNFVb-BVJGG")).toEqual({
         alpha: 36,
         blue: 184,
         gap: -3.5,
@@ -43,12 +43,12 @@ it("decode crosshair", () => {
 });
 it("invalid share code throws", () => {
     expect(() => {
-        crosshair_1.decodeCrosshairCode("CZG0-TJ2Ft-7QNVV-UwtJJ-uNFVb-BVJGF");
+        (0, crosshair_1.decodeCrosshairCode)("CZG0-TJ2Ft-7QNVV-UwtJJ-uNFVb-BVJGF");
     }).toThrowError("invalid share code");
 });
 it("invalid crosshair code throws", () => {
     expect(() => {
-        crosshair_1.decodeCrosshairCode("CSGO-TJ2Ft-7QNVV-UwtJJ-uNFVb-BVJGF");
+        (0, crosshair_1.decodeCrosshairCode)("CSGO-TJ2Ft-7QNVV-UwtJJ-uNFVb-BVJGF");
     }).toThrowError("invalid crosshair code");
 });
 //# sourceMappingURL=crosshair.test.js.map
