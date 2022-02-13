@@ -1,5 +1,6 @@
 /// <reference types="node" />
 import { EventEmitter } from "events";
+import { Readable } from "stream";
 import { ConVars } from "./convars";
 import { Entities } from "./entities";
 import { GameRules } from "./entities/gamerules";
@@ -62,7 +63,7 @@ interface IDemoHeader {
  * @param {ArrayBuffer} buffer - Buffer of the demo header
  * @returns {IDemoHeader} Header object
  */
-export declare function parseHeader(buffer: Buffer): IDemoHeader;
+export declare function parseHeader(buffer: ArrayBuffer): IDemoHeader;
 export interface IDemoStartEvent {
     /**
      * Cancel parsing the demo.
@@ -103,6 +104,7 @@ export declare interface DemoFile {
     /**
      * Fired per command. Parameter is a value in range [0,1] that indicates
      * the percentage of the demo file has been parsed so far.
+     * This event is not emitted when parsing streams.
      */
     on(event: "progress", listener: (progressFraction: number) => void): this;
     emit(name: "progress", progressFraction: number): boolean;
@@ -220,10 +222,12 @@ export declare class DemoFile extends EventEmitter {
     readonly userMessages: UserMessages;
     readonly conVars: ConVars;
     private _bytebuf;
+    private _chunks;
     private _lastThreadYieldTime;
     private _immediateTimerToken;
     private _timeoutTimerToken;
     private _encryptionKey;
+    private _hasEnded;
     /**
      * Starts parsing buffer as a demo file.
      *
@@ -234,6 +238,7 @@ export declare class DemoFile extends EventEmitter {
      * @param {ArrayBuffer} buffer - Buffer pointing to start of demo header
      */
     constructor();
+    parseStream(stream: Readable): void;
     parse(buffer: Buffer): void;
     /**
      * Cancel the current parse operation.
@@ -249,6 +254,9 @@ export declare class DemoFile extends EventEmitter {
      * @param publicKey Public encryption key.
      */
     setEncryptionKey(publicKey: Uint8Array | null): void;
+    private _emitEnd;
+    private _parseHeader;
+    private _readIBytes;
     private _handleEncryptedData;
     /**
      * Fired when a packet of this type is hit. `svc_MessageName` events are also fired.
@@ -260,7 +268,9 @@ export declare class DemoFile extends EventEmitter {
     private _handleDataTables;
     private _handleUserCmd;
     private _handleStringTables;
-    private _recurse;
+    private _tryEnsureRemaining;
+    private _ensureRemaining;
+    private _readCommand;
     private _parseRecurse;
 }
 export {};

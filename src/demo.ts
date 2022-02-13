@@ -5,6 +5,7 @@ import * as ByteBuffer from "bytebuffer";
 import { BitStream } from "./ext/bitbuffer";
 
 import * as assert from "assert";
+import { Readable } from "stream";
 import { MAX_EDICT_BITS, MAX_OSPATH } from "./consts";
 import { ConVars } from "./convars";
 import { Entities } from "./entities";
@@ -137,13 +138,7 @@ const enum DemoCommands {
   StringTables = 9
 }
 
-/**
- * Parses a demo file header from the buffer.
- * @param {ArrayBuffer} buffer - Buffer of the demo header
- * @returns {IDemoHeader} Header object
- */
-export function parseHeader(buffer: Buffer): IDemoHeader {
-  const bytebuf = ByteBuffer.wrap(buffer, true);
+function parseHeaderBytebuf(bytebuf: ByteBuffer): IDemoHeader {
   return {
     magic: bytebuf.readString(8, ByteBuffer.METRICS_BYTES).split("\0", 2)[0]!,
     protocol: bytebuf.readInt32(),
@@ -167,9 +162,14 @@ export function parseHeader(buffer: Buffer): IDemoHeader {
   };
 }
 
-function readIBytes(bytebuf: ByteBuffer) {
-  const length = bytebuf.readInt32();
-  return bytebuf.readBytes(length);
+/**
+ * Parses a demo file header from the buffer.
+ * @param {ArrayBuffer} buffer - Buffer of the demo header
+ * @returns {IDemoHeader} Header object
+ */
+export function parseHeader(buffer: ArrayBuffer): IDemoHeader {
+  const bytebuf = ByteBuffer.wrap(buffer, true);
+  return parseHeaderBytebuf(bytebuf);
 }
 
 export interface IDemoStartEvent {
@@ -219,6 +219,7 @@ export declare interface DemoFile {
   /**
    * Fired per command. Parameter is a value in range [0,1] that indicates
    * the percentage of the demo file has been parsed so far.
+   * This event is not emitted when parsing streams.
    */
   on(event: "progress", listener: (progressFraction: number) => void): this;
   emit(name: "progress", progressFraction: number): boolean;
@@ -448,11 +449,15 @@ export class DemoFile extends EventEmitter {
   public readonly conVars: ConVars;
 
   private _bytebuf!: ByteBuffer;
+  private _chunks: Buffer[] = [];
+
   private _lastThreadYieldTime = 0;
   private _immediateTimerToken: NodeJS.Immediate | null = null;
   private _timeoutTimerToken: NodeJS.Timer | null = null;
 
   private _encryptionKey: Uint8Array | null = null;
+
+  private _hasEnded: boolean = false;
 
   /**
    * Starts parsing buffer as a demo file.
@@ -491,24 +496,74 @@ export class DemoFile extends EventEmitter {
     this.on("svc_EncryptedData", this._handleEncryptedData.bind(this));
   }
 
-  public parse(buffer: Buffer): void {
-    this.header = parseHeader(buffer);
+  public parseStream(stream: Readable): void {
+    this._hasEnded = false;
 
-    // #65: Some demos are missing playbackTicks from the header
-    if (this.header.playbackTicks > 0) {
-      this.tickInterval = this.header.playbackTime / this.header.playbackTicks;
-    }
-
-    this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
-
-    let cancelled = false;
-    this.emit("start", {
-      cancel: () => {
-        cancelled = true;
+    const onReceiveChunk = (chunk: Buffer) => {
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+      if (this._bytebuf == null) {
+        this._bytebuf = ByteBuffer.wrap(chunk, true);
+      } else {
+        this._chunks.push(chunk);
       }
+    };
+
+    const readPacketChunk = () => {
+      try {
+        // Keep reading until we can't read any more
+        while (this._bytebuf.remaining() > 0 || this._chunks.length > 0) {
+          this._bytebuf.mark();
+          this._readCommand();
+        }
+      } catch (e) {
+        if (e instanceof RangeError) {
+          // Reset the byte buffer to the start of the last command
+          this._bytebuf.offset = this._bytebuf.markedOffset;
+        } else {
+          stream.off("data", onReceiveChunk);
+          const error =
+            e instanceof Error
+              ? e
+              : new Error(`Exception during parsing: ${e}`);
+          this._emitEnd({ error, incomplete: false });
+        }
+      }
+    };
+
+    const readHeaderChunk = () => {
+      // Wait for enough bytes for us to read the header
+      if (!this._tryEnsureRemaining(1072)) return;
+
+      // Once we've read the header, remove this handler
+      stream.off("data", readHeaderChunk);
+
+      const cancelled = this._parseHeader();
+      if (!cancelled) stream.on("data", readPacketChunk);
+    };
+
+    stream.on("data", onReceiveChunk);
+    stream.on("data", readHeaderChunk);
+
+    stream.on("error", e => {
+      stream.off("data", onReceiveChunk);
+      this._emitEnd({ error: e, incomplete: false });
     });
 
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    stream.on("end", () => {
+      const fullyConsumed =
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+        this._bytebuf?.remaining() === 0 && this._chunks.length === 0;
+      if (fullyConsumed) return;
+
+      this._emitEnd({ incomplete: true });
+    });
+  }
+
+  public parse(buffer: Buffer): void {
+    this._hasEnded = false;
+    this._bytebuf = ByteBuffer.wrap(buffer, true);
+    const cancelled = this._parseHeader();
+
     if (!cancelled) timers.setTimeout(this._parseRecurse.bind(this), 0);
   }
 
@@ -545,6 +600,42 @@ export class DemoFile extends EventEmitter {
     this._encryptionKey = publicKey;
   }
 
+  private _emitEnd(e: IDemoEndEvent) {
+    if (this._hasEnded) return;
+
+    if (e.error) {
+      this.emit("error", e.error);
+    }
+
+    this.emit("end", e);
+    this._hasEnded = true;
+  }
+
+  private _parseHeader(): boolean {
+    this.header = parseHeaderBytebuf(this._bytebuf);
+
+    // #65: Some demos are missing playbackTicks from the header
+    if (this.header.playbackTicks > 0) {
+      this.tickInterval = this.header.playbackTime / this.header.playbackTicks;
+    }
+
+    let cancelled = false;
+    this.emit("start", {
+      cancel: () => {
+        cancelled = true;
+      }
+    });
+
+    return cancelled;
+  }
+
+  private _readIBytes() {
+    this._ensureRemaining(4);
+    const length = this._bytebuf.readInt32();
+    this._ensureRemaining(length);
+    return this._bytebuf.readBytes(length);
+  }
+
   private _handleEncryptedData(msg: CSVCMsgEncryptedData) {
     if (msg.keyType !== 2 || this._encryptionKey == null) return;
 
@@ -562,8 +653,7 @@ export class DemoFile extends EventEmitter {
 
     buf.skip(paddingBytes);
 
-    // Read size of netmessage. For some reason, it's encoded
-    // redundantly encoded several times.
+    // For some reason, the size is encoded as an int32, then as a varint32
     buf.BE();
     const bytesWritten = buf.readInt32();
     buf.LE();
@@ -576,7 +666,7 @@ export class DemoFile extends EventEmitter {
     const message = net.findByType(cmd);
     assert(message != null, `No message handler for ${cmd}`);
 
-    if (message != null && this.listenerCount(message.name)) {
+    if (this.listenerCount(message.name)) {
       const msgInst = message.class.decode(new Uint8Array(buf.toBuffer()));
       this.emit(message.name, msgInst);
     }
@@ -589,6 +679,8 @@ export class DemoFile extends EventEmitter {
    */
 
   private _handleDemoPacket() {
+    this._ensureRemaining(160);
+
     // skip cmd info
     this._bytebuf.skip(152);
 
@@ -596,7 +688,7 @@ export class DemoFile extends EventEmitter {
     this._bytebuf.readInt32();
     this._bytebuf.readInt32();
 
-    const chunk = readIBytes(this._bytebuf);
+    const chunk = this._readIBytes();
 
     while (chunk.remaining()) {
       const cmd = chunk.readVarint32();
@@ -604,11 +696,6 @@ export class DemoFile extends EventEmitter {
 
       const message = net.findByType(cmd);
       assert(message != null, `No message handler for ${cmd}`);
-
-      if (message == null) {
-        chunk.skip(size);
-        continue;
-      }
 
       if (this.listenerCount(message.name)) {
         const messageBuffer = chunk.readBytes(size);
@@ -623,17 +710,19 @@ export class DemoFile extends EventEmitter {
   }
 
   private _handleDataChunk() {
-    readIBytes(this._bytebuf);
+    this._readIBytes();
   }
 
   private _handleDataTables() {
-    const chunk = readIBytes(this._bytebuf);
+    const chunk = this._readIBytes();
     this.entities.handleDataTables(chunk);
   }
 
   private _handleUserCmd() {
+    this._ensureRemaining(4);
     this._bytebuf.readInt32(); // outgoing sequence
-    const chunk = readIBytes(this._bytebuf);
+
+    const chunk = this._readIBytes();
 
     // If nobody's listening, don't waste cycles decoding it
     if (!this.listenerCount("usercmd")) return;
@@ -729,16 +818,100 @@ export class DemoFile extends EventEmitter {
   }
 
   private _handleStringTables() {
-    const chunk = readIBytes(this._bytebuf);
+    const chunk = this._readIBytes();
     const bitbuf = BitStream.from(
       chunk.buffer.slice(chunk.offset, chunk.limit)
     );
     this.stringTables.handleStringTables(bitbuf);
   }
 
-  private _recurse() {
+  private _tryEnsureRemaining(bytes: number) {
+    const remaining = this._bytebuf.remaining();
+    if (remaining >= bytes) return true;
+
+    let left = bytes - remaining;
+    for (let i = 0; i < this._chunks.length && left > 0; ++i)
+      left -= this._chunks[i]!.length;
+
+    // We don't have enough bytes with what we have buffered up
+    if (left > 0) return false;
+
+    const mark = Math.max(0, this._bytebuf.markedOffset);
+    const newOffset = this._bytebuf.offset - mark;
+
+    // Reset to the marked offset. We're never going to need the bytes preceding it
+    this._bytebuf.offset = mark;
+    this._bytebuf = ByteBuffer.wrap(
+      Buffer.concat([
+        new Uint8Array(this._bytebuf.toBuffer()),
+        ...this._chunks
+      ]),
+      true
+    );
+    this._chunks = [];
+
+    // Advance to the point we'd already read up to
+    this._bytebuf.offset = newOffset;
+
+    return true;
+  }
+
+  private _ensureRemaining(bytes: number) {
+    if (!this._tryEnsureRemaining(bytes)) {
+      throw new RangeError(
+        `Not enough data to continue parsing. ${bytes} bytes needed`
+      );
+    }
+  }
+
+  private _readCommand() {
+    this._ensureRemaining(6);
+
+    const command = this._bytebuf.readUint8();
+    const tick = this._bytebuf.readInt32();
+    this.playerSlot = this._bytebuf.readUint8();
+
+    if (tick !== this.currentTick) {
+      this.emit("tickend", this.currentTick);
+      this.currentTick = tick;
+      this.emit("tickstart", this.currentTick);
+    }
+
+    switch (command) {
+      case DemoCommands.Packet:
+      case DemoCommands.Signon:
+        this._handleDemoPacket();
+        break;
+      case DemoCommands.DataTables:
+        this._handleDataTables();
+        break;
+      case DemoCommands.StringTables:
+        this._handleStringTables();
+        break;
+      case DemoCommands.ConsoleCmd: // TODO
+        this._handleDataChunk();
+        break;
+      case DemoCommands.UserCmd:
+        this._handleUserCmd();
+        break;
+      case DemoCommands.Stop:
+        this.cancel();
+        this.emit("tickend", this.currentTick);
+        this._emitEnd({ incomplete: false });
+        return;
+      case DemoCommands.CustomData:
+        throw new Error("Custom data not supported");
+      case DemoCommands.SyncTick:
+        break;
+      default:
+        throw new Error("Unrecognised command");
+    }
+  }
+
+  private _parseRecurse() {
     const now = Date.now();
 
+    // Schedule another round of parsing
     if (now - this._lastThreadYieldTime < 32) {
       this._immediateTimerToken = timers.setImmediate(
         this._parseRecurse.bind(this)
@@ -750,53 +923,10 @@ export class DemoFile extends EventEmitter {
         0
       );
     }
-  }
-
-  private _parseRecurse() {
-    this._recurse();
 
     try {
       this.emit("progress", this._bytebuf.offset / this._bytebuf.limit);
-
-      const command = this._bytebuf.readUint8();
-      const tick = this._bytebuf.readInt32();
-      this.playerSlot = this._bytebuf.readUint8();
-
-      if (tick !== this.currentTick) {
-        this.emit("tickend", this.currentTick);
-        this.currentTick = tick;
-        this.emit("tickstart", this.currentTick);
-      }
-
-      switch (command) {
-        case DemoCommands.Packet:
-        case DemoCommands.Signon:
-          this._handleDemoPacket();
-          break;
-        case DemoCommands.DataTables:
-          this._handleDataTables();
-          break;
-        case DemoCommands.StringTables:
-          this._handleStringTables();
-          break;
-        case DemoCommands.ConsoleCmd: // TODO
-          this._handleDataChunk();
-          break;
-        case DemoCommands.UserCmd:
-          this._handleUserCmd();
-          break;
-        case DemoCommands.Stop:
-          this.cancel();
-          this.emit("tickend", this.currentTick);
-          this.emit("end", { incomplete: false });
-          return;
-        case DemoCommands.CustomData:
-          throw new Error("Custom data not supported");
-        case DemoCommands.SyncTick:
-          break;
-        default:
-          throw new Error("Unrecognised command");
-      }
+      this._readCommand();
     } catch (e) {
       // Always cancel if we have an error - we've already scheduled the next tick
       this.cancel();
@@ -809,12 +939,11 @@ export class DemoFile extends EventEmitter {
         this.header.playbackTime === 0 &&
         this.header.playbackFrames === 0
       ) {
-        this.emit("end", { incomplete: true });
+        this._emitEnd({ incomplete: true });
       } else {
         const error =
           e instanceof Error ? e : new Error(`Exception during parsing: ${e}`);
-        this.emit("error", error);
-        this.emit("end", { error, incomplete: false });
+        this._emitEnd({ error, incomplete: false });
       }
     }
   }

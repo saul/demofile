@@ -14,13 +14,7 @@ const icekey_1 = require("./icekey");
 const net = require("./net");
 const stringtables_1 = require("./stringtables");
 const usermessages_1 = require("./usermessages");
-/**
- * Parses a demo file header from the buffer.
- * @param {ArrayBuffer} buffer - Buffer of the demo header
- * @returns {IDemoHeader} Header object
- */
-function parseHeader(buffer) {
-    const bytebuf = ByteBuffer.wrap(buffer, true);
+function parseHeaderBytebuf(bytebuf) {
     return {
         magic: bytebuf.readString(8, ByteBuffer.METRICS_BYTES).split("\0", 2)[0],
         protocol: bytebuf.readInt32(),
@@ -43,11 +37,16 @@ function parseHeader(buffer) {
         signonLength: bytebuf.readInt32()
     };
 }
-exports.parseHeader = parseHeader;
-function readIBytes(bytebuf) {
-    const length = bytebuf.readInt32();
-    return bytebuf.readBytes(length);
+/**
+ * Parses a demo file header from the buffer.
+ * @param {ArrayBuffer} buffer - Buffer of the demo header
+ * @returns {IDemoHeader} Header object
+ */
+function parseHeader(buffer) {
+    const bytebuf = ByteBuffer.wrap(buffer, true);
+    return parseHeaderBytebuf(bytebuf);
 }
+exports.parseHeader = parseHeader;
 /**
  * Represents a demo file for parsing.
  */
@@ -75,10 +74,12 @@ class DemoFile extends events_1.EventEmitter {
          * When parsing, set to player slot for current command.
          */
         this.playerSlot = 0;
+        this._chunks = [];
         this._lastThreadYieldTime = 0;
         this._immediateTimerToken = null;
         this._timeoutTimerToken = null;
         this._encryptionKey = null;
+        this._hasEnded = false;
         this.entities = new entities_1.Entities();
         this.gameEvents = new gameevents_1.GameEvents();
         this.stringTables = new stringtables_1.StringTables();
@@ -131,20 +132,69 @@ class DemoFile extends events_1.EventEmitter {
     get gameRules() {
         return this.entities.gameRules;
     }
-    parse(buffer) {
-        this.header = parseHeader(buffer);
-        // #65: Some demos are missing playbackTicks from the header
-        if (this.header.playbackTicks > 0) {
-            this.tickInterval = this.header.playbackTime / this.header.playbackTicks;
-        }
-        this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
-        let cancelled = false;
-        this.emit("start", {
-            cancel: () => {
-                cancelled = true;
+    parseStream(stream) {
+        this._hasEnded = false;
+        const onReceiveChunk = (chunk) => {
+            // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+            if (this._bytebuf == null) {
+                this._bytebuf = ByteBuffer.wrap(chunk, true);
             }
+            else {
+                this._chunks.push(chunk);
+            }
+        };
+        const readPacketChunk = () => {
+            try {
+                // Keep reading until we can't read any more
+                while (this._bytebuf.remaining() > 0 || this._chunks.length > 0) {
+                    this._bytebuf.mark();
+                    this._readCommand();
+                }
+            }
+            catch (e) {
+                if (e instanceof RangeError) {
+                    // Reset the byte buffer to the start of the last command
+                    this._bytebuf.offset = this._bytebuf.markedOffset;
+                }
+                else {
+                    stream.off("data", onReceiveChunk);
+                    const error = e instanceof Error
+                        ? e
+                        : new Error(`Exception during parsing: ${e}`);
+                    this._emitEnd({ error, incomplete: false });
+                }
+            }
+        };
+        const readHeaderChunk = () => {
+            // Wait for enough bytes for us to read the header
+            if (!this._tryEnsureRemaining(1072))
+                return;
+            // Once we've read the header, remove this handler
+            stream.off("data", readHeaderChunk);
+            const cancelled = this._parseHeader();
+            if (!cancelled)
+                stream.on("data", readPacketChunk);
+        };
+        stream.on("data", onReceiveChunk);
+        stream.on("data", readHeaderChunk);
+        stream.on("error", e => {
+            stream.off("data", onReceiveChunk);
+            this._emitEnd({ error: e, incomplete: false });
         });
-        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+        stream.on("end", () => {
+            var _a;
+            const fullyConsumed = 
+            // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+            ((_a = this._bytebuf) === null || _a === void 0 ? void 0 : _a.remaining()) === 0 && this._chunks.length === 0;
+            if (fullyConsumed)
+                return;
+            this._emitEnd({ incomplete: true });
+        });
+    }
+    parse(buffer) {
+        this._hasEnded = false;
+        this._bytebuf = ByteBuffer.wrap(buffer, true);
+        const cancelled = this._parseHeader();
         if (!cancelled)
             timers.setTimeout(this._parseRecurse.bind(this), 0);
     }
@@ -176,6 +226,35 @@ class DemoFile extends events_1.EventEmitter {
         }
         this._encryptionKey = publicKey;
     }
+    _emitEnd(e) {
+        if (this._hasEnded)
+            return;
+        if (e.error) {
+            this.emit("error", e.error);
+        }
+        this.emit("end", e);
+        this._hasEnded = true;
+    }
+    _parseHeader() {
+        this.header = parseHeaderBytebuf(this._bytebuf);
+        // #65: Some demos are missing playbackTicks from the header
+        if (this.header.playbackTicks > 0) {
+            this.tickInterval = this.header.playbackTime / this.header.playbackTicks;
+        }
+        let cancelled = false;
+        this.emit("start", {
+            cancel: () => {
+                cancelled = true;
+            }
+        });
+        return cancelled;
+    }
+    _readIBytes() {
+        this._ensureRemaining(4);
+        const length = this._bytebuf.readInt32();
+        this._ensureRemaining(length);
+        return this._bytebuf.readBytes(length);
+    }
     _handleEncryptedData(msg) {
         if (msg.keyType !== 2 || this._encryptionKey == null)
             return;
@@ -188,8 +267,7 @@ class DemoFile extends events_1.EventEmitter {
         const buf = ByteBuffer.wrap(plainText, true);
         const paddingBytes = buf.readUint8();
         buf.skip(paddingBytes);
-        // Read size of netmessage. For some reason, it's encoded
-        // redundantly encoded several times.
+        // For some reason, the size is encoded as an int32, then as a varint32
         buf.BE();
         const bytesWritten = buf.readInt32();
         buf.LE();
@@ -210,12 +288,13 @@ class DemoFile extends events_1.EventEmitter {
      * @event DemoFile#net_MessageName
      */
     _handleDemoPacket() {
+        this._ensureRemaining(160);
         // skip cmd info
         this._bytebuf.skip(152);
         // skip over sequence info
         this._bytebuf.readInt32();
         this._bytebuf.readInt32();
-        const chunk = readIBytes(this._bytebuf);
+        const chunk = this._readIBytes();
         while (chunk.remaining()) {
             const cmd = chunk.readVarint32();
             const size = chunk.readVarint32();
@@ -236,15 +315,16 @@ class DemoFile extends events_1.EventEmitter {
         }
     }
     _handleDataChunk() {
-        readIBytes(this._bytebuf);
+        this._readIBytes();
     }
     _handleDataTables() {
-        const chunk = readIBytes(this._bytebuf);
+        const chunk = this._readIBytes();
         this.entities.handleDataTables(chunk);
     }
     _handleUserCmd() {
+        this._ensureRemaining(4);
         this._bytebuf.readInt32(); // outgoing sequence
-        const chunk = readIBytes(this._bytebuf);
+        const chunk = this._readIBytes();
         // If nobody's listening, don't waste cycles decoding it
         if (!this.listenerCount("usercmd"))
             return;
@@ -367,12 +447,81 @@ class DemoFile extends events_1.EventEmitter {
         this.emit("usercmd", move);
     }
     _handleStringTables() {
-        const chunk = readIBytes(this._bytebuf);
+        const chunk = this._readIBytes();
         const bitbuf = bitbuffer_1.BitStream.from(chunk.buffer.slice(chunk.offset, chunk.limit));
         this.stringTables.handleStringTables(bitbuf);
     }
-    _recurse() {
+    _tryEnsureRemaining(bytes) {
+        const remaining = this._bytebuf.remaining();
+        if (remaining >= bytes)
+            return true;
+        let left = bytes - remaining;
+        for (let i = 0; i < this._chunks.length && left > 0; ++i)
+            left -= this._chunks[i].length;
+        // We don't have enough bytes with what we have buffered up
+        if (left > 0)
+            return false;
+        const mark = Math.max(0, this._bytebuf.markedOffset);
+        const newOffset = this._bytebuf.offset - mark;
+        // Reset to the marked offset. We're never going to need the bytes preceding it
+        this._bytebuf.offset = mark;
+        this._bytebuf = ByteBuffer.wrap(Buffer.concat([
+            new Uint8Array(this._bytebuf.toBuffer()),
+            ...this._chunks
+        ]), true);
+        this._chunks = [];
+        // Advance to the point we'd already read up to
+        this._bytebuf.offset = newOffset;
+        return true;
+    }
+    _ensureRemaining(bytes) {
+        if (!this._tryEnsureRemaining(bytes)) {
+            throw new RangeError(`Not enough data to continue parsing. ${bytes} bytes needed`);
+        }
+    }
+    _readCommand() {
+        this._ensureRemaining(6);
+        const command = this._bytebuf.readUint8();
+        const tick = this._bytebuf.readInt32();
+        this.playerSlot = this._bytebuf.readUint8();
+        if (tick !== this.currentTick) {
+            this.emit("tickend", this.currentTick);
+            this.currentTick = tick;
+            this.emit("tickstart", this.currentTick);
+        }
+        switch (command) {
+            case 2 /* Packet */:
+            case 1 /* Signon */:
+                this._handleDemoPacket();
+                break;
+            case 6 /* DataTables */:
+                this._handleDataTables();
+                break;
+            case 9 /* StringTables */:
+                this._handleStringTables();
+                break;
+            case 4 /* ConsoleCmd */: // TODO
+                this._handleDataChunk();
+                break;
+            case 5 /* UserCmd */:
+                this._handleUserCmd();
+                break;
+            case 7 /* Stop */:
+                this.cancel();
+                this.emit("tickend", this.currentTick);
+                this._emitEnd({ incomplete: false });
+                return;
+            case 8 /* CustomData */:
+                throw new Error("Custom data not supported");
+            case 3 /* SyncTick */:
+                break;
+            default:
+                throw new Error("Unrecognised command");
+        }
+    }
+    _parseRecurse() {
         const now = Date.now();
+        // Schedule another round of parsing
         if (now - this._lastThreadYieldTime < 32) {
             this._immediateTimerToken = timers.setImmediate(this._parseRecurse.bind(this));
         }
@@ -380,48 +529,9 @@ class DemoFile extends events_1.EventEmitter {
             this._lastThreadYieldTime = now;
             this._timeoutTimerToken = timers.setTimeout(this._parseRecurse.bind(this), 0);
         }
-    }
-    _parseRecurse() {
-        this._recurse();
         try {
             this.emit("progress", this._bytebuf.offset / this._bytebuf.limit);
-            const command = this._bytebuf.readUint8();
-            const tick = this._bytebuf.readInt32();
-            this.playerSlot = this._bytebuf.readUint8();
-            if (tick !== this.currentTick) {
-                this.emit("tickend", this.currentTick);
-                this.currentTick = tick;
-                this.emit("tickstart", this.currentTick);
-            }
-            switch (command) {
-                case 2 /* Packet */:
-                case 1 /* Signon */:
-                    this._handleDemoPacket();
-                    break;
-                case 6 /* DataTables */:
-                    this._handleDataTables();
-                    break;
-                case 9 /* StringTables */:
-                    this._handleStringTables();
-                    break;
-                case 4 /* ConsoleCmd */: // TODO
-                    this._handleDataChunk();
-                    break;
-                case 5 /* UserCmd */:
-                    this._handleUserCmd();
-                    break;
-                case 7 /* Stop */:
-                    this.cancel();
-                    this.emit("tickend", this.currentTick);
-                    this.emit("end", { incomplete: false });
-                    return;
-                case 8 /* CustomData */:
-                    throw new Error("Custom data not supported");
-                case 3 /* SyncTick */:
-                    break;
-                default:
-                    throw new Error("Unrecognised command");
-            }
+            this._readCommand();
         }
         catch (e) {
             // Always cancel if we have an error - we've already scheduled the next tick
@@ -432,12 +542,11 @@ class DemoFile extends events_1.EventEmitter {
                 this.header.playbackTicks === 0 &&
                 this.header.playbackTime === 0 &&
                 this.header.playbackFrames === 0) {
-                this.emit("end", { incomplete: true });
+                this._emitEnd({ incomplete: true });
             }
             else {
                 const error = e instanceof Error ? e : new Error(`Exception during parsing: ${e}`);
-                this.emit("error", error);
-                this.emit("end", { error, incomplete: false });
+                this._emitEnd({ error, incomplete: false });
             }
         }
     }

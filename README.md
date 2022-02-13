@@ -3,6 +3,8 @@
 A node.js library for parsing Counter-Strike Global Offensive (CSGO) demo files.
 The library is also Browserify-able, and a standalone bundle that you can `<script src="...">` is available in [browser/bundle.js](browser/bundle.js).
 
+> ⚠️ This library requires Node v14 or later.
+
 ### ❓ Need help
 
 - First, search the ['Questions' discussion board](https://github.com/saul/demofile/discussions/categories/questions) - your question has probably already been asked.
@@ -130,26 +132,24 @@ Various examples are available in the `examples` folder:
 const fs = require("fs");
 const demofile = require("demofile");
 
-fs.readFile("test.dem", (err, buffer) => {
-  const demoFile = new demofile.DemoFile();
+const demoFile = new demofile.DemoFile();
 
-  demoFile.gameEvents.on("player_death", e => {
-    const victim = demoFile.entities.getByUserId(e.userid);
-    const victimName = victim ? victim.name : "unnamed";
+demoFile.gameEvents.on("player_death", e => {
+  const victim = demoFile.entities.getByUserId(e.userid);
+  const victimName = victim ? victim.name : "unnamed";
 
-    // Attacker may have disconnected so be aware.
-    // e.g. attacker could have thrown a grenade, disconnected, then that grenade
-    // killed another player.
-    const attacker = demoFile.entities.getByUserId(e.attacker);
-    const attackerName = attacker ? attacker.name : "unnamed";
+  // Attacker may have disconnected so be aware.
+  // e.g. attacker could have thrown a grenade, disconnected, then that grenade
+  // killed another player.
+  const attacker = demoFile.entities.getByUserId(e.attacker);
+  const attackerName = attacker ? attacker.name : "unnamed";
 
-    const headshotText = e.headshot ? " HS" : "";
+  const headshotText = e.headshot ? " HS" : "";
 
-    console.log(`${attackerName} [${e.weapon}${headshotText}] ${victimName}`);
-  });
-
-  demoFile.parse(buffer);
+  console.log(`${attackerName} [${e.weapon}${headshotText}] ${victimName}`);
 });
+
+demoFile.parseStream(fs.createReadStream("test.dem"));
 
 /* Outputs:
 
@@ -169,18 +169,16 @@ JW [mac10 HS] Magisk
 const fs = require("fs");
 const demofile = require("demofile");
 
-fs.readFile("test.dem", (err, buffer) => {
-  const demoFile = new demofile.DemoFile();
+const demoFile = new demofile.DemoFile();
 
-  demoFile.stringTables.on("update", e => {
-    if (e.table.name === "userinfo" && e.userData != null) {
-      console.log("\nPlayer info updated:");
-      console.log(e.entryIndex, e.userData);
-    }
-  });
-
-  demoFile.parse(buffer);
+demoFile.stringTables.on("update", e => {
+  if (e.table.name === "userinfo" && e.userData != null) {
+    console.log("\nPlayer info updated:");
+    console.log(e.entryIndex, e.userData);
+  }
 });
+
+demoFile.parseStream(fs.createReadStream("test.dem"));
 
 /* Outputs:
 

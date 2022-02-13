@@ -6,6 +6,10 @@
 - Unreleased release notes here
 -->
 
+### 2.5.0 (2022-02-13)
+
+- :sparkles: #19: Support streaming demos
+
 ### 2.4.0 (2022-01-09)
 
 - :sparkles: Added `Entities#getByAccountId` to get player entities by Steam account ID

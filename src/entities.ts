@@ -509,7 +509,7 @@ export class Entities extends EventEmitter {
 
       const length = chunk.readVarint32();
 
-      const msg = descriptor!.class.decode(
+      const msg = descriptor.class.decode(
         new Uint8Array(chunk.readBytes(length).toBuffer())
       ) as CSVCMsgSendTable;
       if (msg.isEnd) {
