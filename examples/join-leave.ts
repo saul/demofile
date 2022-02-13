@@ -24,56 +24,52 @@ Example output:
 Finished.
 */
 
-import * as assert from "assert";
 import { DemoFile, Player } from "demofile";
 import * as fs from "fs";
 
 function parseDemoFile(path: string) {
-  fs.readFile(path, (err, buffer) => {
-    assert.ifError(err);
+  const stream = fs.createReadStream(path);
+  const demoFile = new DemoFile();
 
-    const demoFile = new DemoFile();
+  demoFile.entities.on("create", e => {
+    // We're only interested in player entities being created.
+    if (!(e.entity instanceof Player)) {
+      return;
+    }
 
-    demoFile.entities.on("create", e => {
-      // We're only interested in player entities being created.
-      if (!(e.entity instanceof Player)) {
-        return;
-      }
-
-      console.log(
-        "[Time: %d] %s (%s) joined the game",
-        demoFile.currentTime,
-        e.entity.name,
-        e.entity.steamId
-      );
-    });
-
-    demoFile.gameEvents.on("player_disconnect", e => {
-      const player = demoFile.entities.getByUserId(e.userid);
-      if (!player) {
-        console.log(`! player_disconnect: unknown player ${e.userid}`);
-        return;
-      }
-
-      console.log(
-        "[Time: %d] %s left the game",
-        demoFile.currentTime,
-        player.name
-      );
-    });
-
-    demoFile.on("end", e => {
-      if (e.error) {
-        console.error("Error during parsing:", e.error);
-        process.exitCode = 1;
-      }
-
-      console.log("Finished.");
-    });
-
-    // Start parsing the buffer now that we've added our event listeners
-    demoFile.parse(buffer);
+    console.log(
+      "[Time: %d] %s (%s) joined the game",
+      demoFile.currentTime,
+      e.entity.name,
+      e.entity.steamId
+    );
   });
+
+  demoFile.gameEvents.on("player_disconnect", e => {
+    const player = demoFile.entities.getByUserId(e.userid);
+    if (!player) {
+      console.log(`! player_disconnect: unknown player ${e.userid}`);
+      return;
+    }
+
+    console.log(
+      "[Time: %d] %s left the game",
+      demoFile.currentTime,
+      player.name
+    );
+  });
+
+  demoFile.on("end", e => {
+    if (e.error) {
+      console.error("Error during parsing:", e.error);
+      process.exitCode = 1;
+    }
+
+    console.log("Finished.");
+  });
+
+  // Start parsing the stream now that we've added our event listeners
+  demoFile.parseStream(stream);
 }
 
 parseDemoFile(process.argv[2]!);

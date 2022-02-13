@@ -16,33 +16,29 @@ Example output:
 Finished.
 */
 
-import * as assert from "assert";
 import { DemoFile } from "demofile";
 import * as fs from "fs";
 
 function parseDemoFile(path: string) {
-  fs.readFile(path, (err, buffer) => {
-    assert.ifError(err);
+  const stream = fs.createReadStream(path);
+  const demoFile = new DemoFile();
 
-    const demoFile = new DemoFile();
-
-    demoFile.gameEvents.on("bomb_planted", e => {
-      const player = demoFile.entities.getByUserId(e.userid)!;
-      console.log(`'${player.name}' planted the bomb at '${player.placeName}'`);
-    });
-
-    demoFile.on("end", e => {
-      if (e.error) {
-        console.error("Error during parsing:", e.error);
-        process.exitCode = 1;
-      }
-
-      console.log("Finished.");
-    });
-
-    // Start parsing the buffer now that we've added our event listeners
-    demoFile.parse(buffer);
+  demoFile.gameEvents.on("bomb_planted", e => {
+    const player = demoFile.entities.getByUserId(e.userid)!;
+    console.log(`'${player.name}' planted the bomb at '${player.placeName}'`);
   });
+
+  demoFile.on("end", e => {
+    if (e.error) {
+      console.error("Error during parsing:", e.error);
+      process.exitCode = 1;
+    }
+
+    console.log("Finished.");
+  });
+
+  // Start parsing the stream now that we've added our event listeners
+  demoFile.parseStream(stream);
 }
 
 parseDemoFile(process.argv[2]!);

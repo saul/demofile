@@ -15,40 +15,34 @@ Player rank updates:
 Finished.
 */
 
-import * as assert from "assert";
 import { DemoFile } from "demofile";
 import * as fs from "fs";
 
 function parseDemoFile(path: string) {
-  fs.readFile(path, (err, buffer) => {
-    assert.ifError(err);
+  const stream = fs.createReadStream(path);
+  const demoFile = new DemoFile();
 
-    const demoFile = new DemoFile();
-
-    demoFile.userMessages.on("ServerRankUpdate", um => {
-      console.log("Player rank updates:");
-      for (const update of um.rankUpdate) {
-        const player = demoFile.entities.getByAccountId(update.accountId);
-        if (!player) console.log(`> (unknown player ${update.accountId})`);
-        else
-          console.log(
-            `> ${player.name}: ${update.rankOld} -> ${update.rankNew}`
-          );
-      }
-    });
-
-    demoFile.on("end", e => {
-      if (e.error) {
-        console.error("Error during parsing:", e.error);
-        process.exitCode = 1;
-      }
-
-      console.log("Finished.");
-    });
-
-    // Start parsing the buffer now that we've added our event listeners
-    demoFile.parse(buffer);
+  demoFile.userMessages.on("ServerRankUpdate", um => {
+    console.log("Player rank updates:");
+    for (const update of um.rankUpdate) {
+      const player = demoFile.entities.getByAccountId(update.accountId);
+      if (!player) console.log(`> (unknown player ${update.accountId})`);
+      else
+        console.log(`> ${player.name}: ${update.rankOld} -> ${update.rankNew}`);
+    }
   });
+
+  demoFile.on("end", e => {
+    if (e.error) {
+      console.error("Error during parsing:", e.error);
+      process.exitCode = 1;
+    }
+
+    console.log("Finished.");
+  });
+
+  // Start parsing the stream now that we've added our event listeners
+  demoFile.parseStream(stream);
 }
 
 parseDemoFile(process.argv[2]!);
