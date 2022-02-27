@@ -107,8 +107,7 @@ export class Player extends BaseEntity<CCSPlayer> {
 
   get position(): Vector {
     const table =
-      this._demo.recordingClientSlot == null ||
-      this.clientSlot === this._demo.recordingClientSlot
+      this._demo.recordingClientSlot == null || this.isRecordingDemo
         ? "DT_CSLocalPlayerExclusive"
         : "DT_CSNonLocalPlayerExclusive";
 
@@ -121,8 +120,7 @@ export class Player extends BaseEntity<CCSPlayer> {
   }
 
   get velocity(): Vector {
-    return this._demo.recordingClientSlot == null ||
-      this.clientSlot === this._demo.recordingClientSlot
+    return this._demo.recordingClientSlot == null || this.isRecordingDemo
       ? {
           x: this.getProp("DT_LocalPlayerExclusive", "m_vecVelocity[0]"),
           y: this.getProp("DT_LocalPlayerExclusive", "m_vecVelocity[1]"),
@@ -535,5 +533,12 @@ export class Player extends BaseEntity<CCSPlayer> {
    */
   get crosshairInfo(): ICrosshairInfo {
     return decodeCrosshairCode(this.resourceProp("m_szCrosshairCodes"));
+  }
+
+  /**
+   * @returns true if this player is recording the demo from their POV.
+   */
+  get isRecordingDemo(): boolean {
+    return this._demo.recordingClientSlot === this.clientSlot;
   }
 }
