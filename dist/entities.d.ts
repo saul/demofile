@@ -191,8 +191,6 @@ export declare class Entities extends EventEmitter {
     private _demo;
     private _singletonEnts;
     private _currentServerTick;
-    private _maxPlayers;
-    private _userInfoTable;
     private _userIdToEntity;
     private _steam64IdToEntity;
     private _accountNumberToEntity;
