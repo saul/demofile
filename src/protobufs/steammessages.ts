@@ -1,6 +1,16 @@
 /* eslint-disable */
+import { util, configure, Writer, Reader } from "protobufjs/minimal";
 import * as Long from "long";
-import { Writer, Reader } from "protobufjs/minimal";
+
+export const protobufPackage = "";
+
+export enum GCProtoBufMsgSrc {
+  GCProtoBufMsgSrc_Unspecified = 0,
+  GCProtoBufMsgSrc_FromSystem = 1,
+  GCProtoBufMsgSrc_FromSteamID = 2,
+  GCProtoBufMsgSrc_FromGC = 3,
+  GCProtoBufMsgSrc_ReplySystem = 4
+}
 
 export interface CMsgProtoBufHeader {
   clientSteamId: Long;
@@ -426,6 +436,14 @@ export interface CMsgGCRoutingInfo {
   webapiParam: string;
 }
 
+export enum CMsgGCRoutingInfo_RoutingMethod {
+  RANDOM = 0,
+  DISCARD = 1,
+  CLIENT_STEAMID = 2,
+  PROTOBUF_FIELD_UINT64 = 3,
+  WEBAPI_PARAM_UINT64 = 4
+}
+
 export interface CMsgGCMsgMasterSetWebAPIRouting {
   entries: CMsgGCMsgMasterSetWebAPIRouting_Entry[];
 }
@@ -456,6 +474,13 @@ export interface CMsgGCMsgMasterSetClientMsgRoutingResponse {
 export interface CMsgGCMsgSetOptions {
   options: CMsgGCMsgSetOptions_Option[];
   clientMsgRanges: CMsgGCMsgSetOptions_MessageRange[];
+}
+
+export enum CMsgGCMsgSetOptions_Option {
+  NOTIFY_USER_SESSIONS = 0,
+  NOTIFY_SERVER_SESSIONS = 1,
+  NOTIFY_ACHIEVEMENTS = 2,
+  NOTIFY_VAC_ACTION = 3
 }
 
 export interface CMsgGCMsgSetOptions_MessageRange {
@@ -536,546 +561,6 @@ export interface CMsgDPPartnerMicroTxnsResponse {
   eerrorcode: CMsgDPPartnerMicroTxnsResponse_EErrorCode;
 }
 
-export interface CChinaAgreementSessionsStartAgreementSessionInGameRequest {
-  appid: number;
-  steamid: Long;
-  clientIpaddress: string;
-}
-
-export interface CChinaAgreementSessionsStartAgreementSessionInGameResponse {
-  agreementUrl: string;
-}
-
-const baseCMsgProtoBufHeader: object = {
-  clientSteamId: Long.UZERO,
-  clientSessionId: 0,
-  sourceAppId: 0,
-  jobIdSource: Long.UZERO,
-  jobIdTarget: Long.UZERO,
-  targetJobName: "",
-  eresult: 0,
-  errorMessage: "",
-  ip: 0,
-  gcMsgSrc: 0,
-  gcDirIndexSource: 0
-};
-
-const baseCMsgWebAPIKey: object = {
-  status: 0,
-  accountId: 0,
-  publisherGroupId: 0,
-  keyId: 0,
-  domain: ""
-};
-
-const baseCMsgHttpRequest: object = {
-  requestMethod: 0,
-  hostname: "",
-  url: "",
-  absoluteTimeout: 0
-};
-
-const baseCMsgHttpRequest_RequestHeader: object = {
-  name: "",
-  value: ""
-};
-
-const baseCMsgHttpRequest_QueryParam: object = {
-  name: ""
-};
-
-const baseCMsgWebAPIRequest: object = {
-  UNUSEDJobName: "",
-  interfaceName: "",
-  methodName: "",
-  version: 0,
-  routingAppId: 0
-};
-
-const baseCMsgHttpResponse: object = {
-  statusCode: 0
-};
-
-const baseCMsgHttpResponse_ResponseHeader: object = {
-  name: "",
-  value: ""
-};
-
-const baseCMsgAMFindAccounts: object = {
-  searchType: 0,
-  searchString: ""
-};
-
-const baseCMsgAMFindAccountsResponse: object = {
-  steamId: Long.UZERO
-};
-
-const baseCMsgNotifyWatchdog: object = {
-  source: 0,
-  alertType: 0,
-  alertDestination: 0,
-  critical: false,
-  time: 0,
-  appid: 0,
-  text: ""
-};
-
-const baseCMsgAMGetLicenses: object = {
-  steamid: Long.UZERO
-};
-
-const baseCMsgPackageLicense: object = {
-  packageId: 0,
-  timeCreated: 0,
-  ownerId: 0
-};
-
-const baseCMsgAMGetLicensesResponse: object = {
-  result: 0
-};
-
-const baseCMsgAMGetUserGameStats: object = {
-  steamId: Long.UZERO,
-  gameId: Long.UZERO,
-  stats: 0
-};
-
-const baseCMsgAMGetUserGameStatsResponse: object = {
-  steamId: Long.UZERO,
-  gameId: Long.UZERO,
-  eresult: 0
-};
-
-const baseCMsgAMGetUserGameStatsResponse_Stats: object = {
-  statId: 0,
-  statValue: 0
-};
-
-const baseCMsgAMGetUserGameStatsResponse_AchievementBlocks: object = {
-  achievementId: 0,
-  achievementBitId: 0,
-  unlockTime: 0
-};
-
-const baseCMsgGCGetCommandList: object = {
-  appId: 0,
-  commandPrefix: ""
-};
-
-const baseCMsgGCGetCommandListResponse: object = {
-  commandName: ""
-};
-
-const baseCGCMsgMemCachedGet: object = {
-  keys: ""
-};
-
-const baseCGCMsgMemCachedGetResponse: object = {};
-
-const baseCGCMsgMemCachedGetResponse_ValueTag: object = {
-  found: false
-};
-
-const baseCGCMsgMemCachedSet: object = {};
-
-const baseCGCMsgMemCachedSet_KeyPair: object = {
-  name: ""
-};
-
-const baseCGCMsgMemCachedDelete: object = {
-  keys: ""
-};
-
-const baseCGCMsgMemCachedStats: object = {};
-
-const baseCGCMsgMemCachedStatsResponse: object = {
-  currConnections: Long.UZERO,
-  cmdGet: Long.UZERO,
-  cmdSet: Long.UZERO,
-  cmdFlush: Long.UZERO,
-  getHits: Long.UZERO,
-  getMisses: Long.UZERO,
-  deleteHits: Long.UZERO,
-  deleteMisses: Long.UZERO,
-  bytesRead: Long.UZERO,
-  bytesWritten: Long.UZERO,
-  limitMaxbytes: Long.UZERO,
-  currItems: Long.UZERO,
-  evictions: Long.UZERO,
-  bytes: Long.UZERO
-};
-
-const baseCGCMsgSQLStats: object = {
-  schemaCatalog: 0
-};
-
-const baseCGCMsgSQLStatsResponse: object = {
-  threads: 0,
-  threadsConnected: 0,
-  threadsActive: 0,
-  operationsSubmitted: 0,
-  preparedStatementsExecuted: 0,
-  nonPreparedStatementsExecuted: 0,
-  deadlockRetries: 0,
-  operationsTimedOutInQueue: 0,
-  errors: 0
-};
-
-const baseCMsgAMAddFreeLicense: object = {
-  steamid: Long.UZERO,
-  ipPublic: 0,
-  packageid: 0,
-  storeCountryCode: ""
-};
-
-const baseCMsgAMAddFreeLicenseResponse: object = {
-  eresult: 0,
-  purchaseResultDetail: 0,
-  transid: Long.UZERO
-};
-
-const baseCGCMsgGetIPLocation: object = {
-  ips: 0
-};
-
-const baseCIPLocationInfo: object = {
-  ip: 0,
-  latitude: 0,
-  longitude: 0,
-  country: "",
-  state: "",
-  city: ""
-};
-
-const baseCGCMsgGetIPLocationResponse: object = {};
-
-const baseCGCMsgSystemStatsSchema: object = {
-  gcAppId: 0
-};
-
-const baseCGCMsgGetSystemStats: object = {};
-
-const baseCGCMsgGetSystemStatsResponse: object = {
-  gcAppId: 0,
-  activeJobs: 0,
-  yieldingJobs: 0,
-  userSessions: 0,
-  gameServerSessions: 0,
-  socaches: 0,
-  socachesToUnload: 0,
-  socachesLoading: 0,
-  writebackQueue: 0,
-  steamidLocks: 0,
-  logonQueue: 0,
-  logonJobs: 0
-};
-
-const baseCMsgAMSendEmail: object = {
-  steamid: Long.UZERO,
-  emailMsgType: 0,
-  emailFormat: 0,
-  sourceGc: 0
-};
-
-const baseCMsgAMSendEmail_ReplacementToken: object = {
-  tokenName: "",
-  tokenValue: ""
-};
-
-const baseCMsgAMSendEmail_PersonaNameReplacementToken: object = {
-  steamid: Long.UZERO,
-  tokenName: ""
-};
-
-const baseCMsgAMSendEmailResponse: object = {
-  eresult: 0
-};
-
-const baseCMsgGCGetEmailTemplate: object = {
-  appId: 0,
-  emailMsgType: 0,
-  emailLang: 0,
-  emailFormat: 0
-};
-
-const baseCMsgGCGetEmailTemplateResponse: object = {
-  eresult: 0,
-  templateExists: false,
-  template: ""
-};
-
-const baseCMsgAMGrantGuestPasses2: object = {
-  steamId: Long.UZERO,
-  packageId: 0,
-  passesToGrant: 0,
-  daysToExpiration: 0,
-  action: 0
-};
-
-const baseCMsgAMGrantGuestPasses2Response: object = {
-  eresult: 0,
-  passesGranted: 0
-};
-
-const baseCGCSystemMsgGetAccountDetails: object = {
-  steamid: Long.UZERO,
-  appid: 0
-};
-
-const baseCGCSystemMsgGetAccountDetailsResponse: object = {
-  eresultDeprecated: 0,
-  accountName: "",
-  personaName: "",
-  isProfilePublic: false,
-  isInventoryPublic: false,
-  isVacBanned: false,
-  isCyberCafe: false,
-  isSchoolAccount: false,
-  isLimited: false,
-  isSubscribed: false,
-  package: 0,
-  isFreeTrialAccount: false,
-  freeTrialExpiration: 0,
-  isLowViolence: false,
-  isAccountLockedDown: false,
-  isCommunityBanned: false,
-  isTradeBanned: false,
-  tradeBanExpiration: 0,
-  accountid: 0,
-  suspensionEndTime: 0,
-  currency: "",
-  steamLevel: 0,
-  friendCount: 0,
-  accountCreationTime: 0,
-  isSteamguardEnabled: false,
-  isPhoneVerified: false,
-  isTwoFactorAuthEnabled: false,
-  twoFactorEnabledTime: 0,
-  phoneVerificationTime: 0,
-  phoneId: Long.UZERO,
-  isPhoneIdentifying: false,
-  rtIdentityLinked: 0,
-  rtBirthDate: 0,
-  txnCountryCode: "",
-  hasAcceptedChinaSsa: false,
-  isBannedSteamChina: false
-};
-
-const baseCMsgGCGetPersonaNames: object = {
-  steamids: Long.UZERO
-};
-
-const baseCMsgGCGetPersonaNamesResponse: object = {
-  failedLookupSteamids: Long.UZERO
-};
-
-const baseCMsgGCGetPersonaNamesResponse_PersonaName: object = {
-  steamid: Long.UZERO,
-  personaName: ""
-};
-
-const baseCMsgGCCheckFriendship: object = {
-  steamidLeft: Long.UZERO,
-  steamidRight: Long.UZERO
-};
-
-const baseCMsgGCCheckFriendshipResponse: object = {
-  success: false,
-  foundFriendship: false
-};
-
-const baseCMsgGCMsgMasterSetDirectory: object = {
-  masterDirIndex: 0
-};
-
-const baseCMsgGCMsgMasterSetDirectory_SubGC: object = {
-  dirIndex: 0,
-  name: "",
-  box: "",
-  commandLine: "",
-  gcBinary: ""
-};
-
-const baseCMsgGCMsgMasterSetDirectoryResponse: object = {
-  eresult: 0,
-  message: ""
-};
-
-const baseCMsgGCMsgWebAPIJobRequestForwardResponse: object = {
-  dirIndex: 0
-};
-
-const baseCGCSystemMsgGetPurchaseTrustRequest: object = {
-  steamid: Long.UZERO
-};
-
-const baseCGCSystemMsgGetPurchaseTrustResponse: object = {
-  hasPriorPurchaseHistory: false,
-  hasNoRecentPasswordResets: false,
-  isWalletCashTrusted: false,
-  timeAllTrusted: 0
-};
-
-const baseCMsgGCHAccountVacStatusChange: object = {
-  steamId: Long.UZERO,
-  appId: 0,
-  rtimeVacbanStarts: 0,
-  isBannedNow: false,
-  isBannedFuture: false
-};
-
-const baseCMsgGCGetPartnerAccountLink: object = {
-  steamid: Long.UZERO
-};
-
-const baseCMsgGCGetPartnerAccountLinkResponse: object = {
-  pwid: 0,
-  nexonid: 0,
-  ageclass: 0,
-  idVerified: false,
-  isAdult: false
-};
-
-const baseCMsgGCRoutingInfo: object = {
-  dirIndex: 0,
-  method: 0,
-  fallback: 0,
-  protobufField: 0,
-  webapiParam: ""
-};
-
-const baseCMsgGCMsgMasterSetWebAPIRouting: object = {};
-
-const baseCMsgGCMsgMasterSetWebAPIRouting_Entry: object = {
-  interfaceName: "",
-  methodName: ""
-};
-
-const baseCMsgGCMsgMasterSetClientMsgRouting: object = {};
-
-const baseCMsgGCMsgMasterSetClientMsgRouting_Entry: object = {
-  msgType: 0
-};
-
-const baseCMsgGCMsgMasterSetWebAPIRoutingResponse: object = {
-  eresult: 0
-};
-
-const baseCMsgGCMsgMasterSetClientMsgRoutingResponse: object = {
-  eresult: 0
-};
-
-const baseCMsgGCMsgSetOptions: object = {
-  options: 0
-};
-
-const baseCMsgGCMsgSetOptions_MessageRange: object = {
-  low: 0,
-  high: 0
-};
-
-const baseCMsgGCHUpdateSession: object = {
-  steamId: Long.UZERO,
-  appId: 0,
-  online: false,
-  serverSteamId: Long.UZERO,
-  serverAddr: 0,
-  serverPort: 0,
-  osType: 0,
-  clientAddr: 0,
-  ownerId: Long.UZERO,
-  cmSessionSysid: 0,
-  cmSessionIdentifier: 0,
-  depotIds: 0
-};
-
-const baseCMsgGCHUpdateSession_ExtraField: object = {
-  name: "",
-  value: ""
-};
-
-const baseCMsgNotificationOfSuspiciousActivity: object = {
-  steamid: Long.UZERO,
-  appid: 0
-};
-
-const baseCMsgNotificationOfSuspiciousActivity_MultipleGameInstances: object = {
-  appInstanceCount: 0,
-  otherSteamids: Long.UZERO
-};
-
-const baseCMsgDPPartnerMicroTxns: object = {
-  appid: 0,
-  gcName: ""
-};
-
-const baseCMsgDPPartnerMicroTxns_PartnerMicroTxn: object = {
-  initTime: 0,
-  lastUpdateTime: 0,
-  txnId: Long.UZERO,
-  accountId: 0,
-  lineItem: 0,
-  itemId: Long.UZERO,
-  defIndex: 0,
-  price: Long.UZERO,
-  tax: Long.UZERO,
-  priceUsd: Long.UZERO,
-  taxUsd: Long.UZERO,
-  purchaseType: 0,
-  steamTxnType: 0,
-  countryCode: "",
-  regionCode: "",
-  quantity: 0,
-  refTransId: Long.UZERO
-};
-
-const baseCMsgDPPartnerMicroTxns_PartnerInfo: object = {
-  partnerId: 0,
-  partnerName: "",
-  currencyCode: "",
-  currencyName: ""
-};
-
-const baseCMsgDPPartnerMicroTxnsResponse: object = {
-  eresult: 0,
-  eerrorcode: 0
-};
-
-const baseCChinaAgreementSessionsStartAgreementSessionInGameRequest: object = {
-  appid: 0,
-  steamid: Long.UZERO,
-  clientIpaddress: ""
-};
-
-const baseCChinaAgreementSessionsStartAgreementSessionInGameResponse: object = {
-  agreementUrl: ""
-};
-
-export const protobufPackage = "";
-
-export enum GCProtoBufMsgSrc {
-  GCProtoBufMsgSrc_Unspecified = 0,
-  GCProtoBufMsgSrc_FromSystem = 1,
-  GCProtoBufMsgSrc_FromSteamID = 2,
-  GCProtoBufMsgSrc_FromGC = 3,
-  GCProtoBufMsgSrc_ReplySystem = 4
-}
-
-export enum CMsgGCRoutingInfo_RoutingMethod {
-  RANDOM = 0,
-  DISCARD = 1,
-  CLIENT_STEAMID = 2,
-  PROTOBUF_FIELD_UINT64 = 3,
-  WEBAPI_PARAM_UINT64 = 4
-}
-
-export enum CMsgGCMsgSetOptions_Option {
-  NOTIFY_USER_SESSIONS = 0,
-  NOTIFY_SERVER_SESSIONS = 1,
-  NOTIFY_ACHIEVEMENTS = 2,
-  NOTIFY_VAC_ACTION = 3
-}
-
 export enum CMsgDPPartnerMicroTxnsResponse_EErrorCode {
   k_MsgValid = 0,
   k_MsgInvalidAppID = 1,
@@ -1088,28 +573,77 @@ export enum CMsgDPPartnerMicroTxnsResponse_EErrorCode {
   k_MsgInvalidTransactionData = 9
 }
 
+export interface CChinaAgreementSessionsStartAgreementSessionInGameRequest {
+  appid: number;
+  steamid: Long;
+  clientIpaddress: string;
+}
+
+export interface CChinaAgreementSessionsStartAgreementSessionInGameResponse {
+  agreementUrl: string;
+}
+
+function createBaseCMsgProtoBufHeader(): CMsgProtoBufHeader {
+  return {
+    clientSteamId: Long.UZERO,
+    clientSessionId: 0,
+    sourceAppId: 0,
+    jobIdSource: Long.UZERO,
+    jobIdTarget: Long.UZERO,
+    targetJobName: "",
+    eresult: 0,
+    errorMessage: "",
+    ip: 0,
+    gcMsgSrc: 0,
+    gcDirIndexSource: 0
+  };
+}
+
 export const CMsgProtoBufHeader = {
   encode(
     message: CMsgProtoBufHeader,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.clientSteamId);
-    writer.uint32(16).int32(message.clientSessionId);
-    writer.uint32(24).uint32(message.sourceAppId);
-    writer.uint32(81).fixed64(message.jobIdSource);
-    writer.uint32(89).fixed64(message.jobIdTarget);
-    writer.uint32(98).string(message.targetJobName);
-    writer.uint32(104).int32(message.eresult);
-    writer.uint32(114).string(message.errorMessage);
-    writer.uint32(120).uint32(message.ip);
-    writer.uint32(1600).int32(message.gcMsgSrc);
-    writer.uint32(1608).uint32(message.gcDirIndexSource);
+    if (!message.clientSteamId.isZero()) {
+      writer.uint32(9).fixed64(message.clientSteamId);
+    }
+    if (message.clientSessionId !== 0) {
+      writer.uint32(16).int32(message.clientSessionId);
+    }
+    if (message.sourceAppId !== 0) {
+      writer.uint32(24).uint32(message.sourceAppId);
+    }
+    if (!message.jobIdSource.isZero()) {
+      writer.uint32(81).fixed64(message.jobIdSource);
+    }
+    if (!message.jobIdTarget.isZero()) {
+      writer.uint32(89).fixed64(message.jobIdTarget);
+    }
+    if (message.targetJobName !== "") {
+      writer.uint32(98).string(message.targetJobName);
+    }
+    if (message.eresult !== 0) {
+      writer.uint32(104).int32(message.eresult);
+    }
+    if (message.errorMessage !== "") {
+      writer.uint32(114).string(message.errorMessage);
+    }
+    if (message.ip !== 0) {
+      writer.uint32(120).uint32(message.ip);
+    }
+    if (message.gcMsgSrc !== 0) {
+      writer.uint32(1600).int32(message.gcMsgSrc);
+    }
+    if (message.gcDirIndexSource !== 0) {
+      writer.uint32(1608).uint32(message.gcDirIndexSource);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgProtoBufHeader {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgProtoBufHeader {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgProtoBufHeader } as CMsgProtoBufHeader;
+    const message = createBaseCMsgProtoBufHeader();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1152,22 +686,64 @@ export const CMsgProtoBufHeader = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgProtoBufHeader>, I>>(
+    object: I
+  ): CMsgProtoBufHeader {
+    const message = createBaseCMsgProtoBufHeader();
+    message.clientSteamId =
+      object.clientSteamId !== undefined && object.clientSteamId !== null
+        ? Long.fromValue(object.clientSteamId)
+        : Long.UZERO;
+    message.clientSessionId = object.clientSessionId ?? 0;
+    message.sourceAppId = object.sourceAppId ?? 0;
+    message.jobIdSource =
+      object.jobIdSource !== undefined && object.jobIdSource !== null
+        ? Long.fromValue(object.jobIdSource)
+        : Long.UZERO;
+    message.jobIdTarget =
+      object.jobIdTarget !== undefined && object.jobIdTarget !== null
+        ? Long.fromValue(object.jobIdTarget)
+        : Long.UZERO;
+    message.targetJobName = object.targetJobName ?? "";
+    message.eresult = object.eresult ?? 0;
+    message.errorMessage = object.errorMessage ?? "";
+    message.ip = object.ip ?? 0;
+    message.gcMsgSrc = object.gcMsgSrc ?? 0;
+    message.gcDirIndexSource = object.gcDirIndexSource ?? 0;
+    return message;
   }
 };
 
+function createBaseCMsgWebAPIKey(): CMsgWebAPIKey {
+  return { status: 0, accountId: 0, publisherGroupId: 0, keyId: 0, domain: "" };
+}
+
 export const CMsgWebAPIKey = {
   encode(message: CMsgWebAPIKey, writer: Writer = Writer.create()): Writer {
-    writer.uint32(8).uint32(message.status);
-    writer.uint32(16).uint32(message.accountId);
-    writer.uint32(24).uint32(message.publisherGroupId);
-    writer.uint32(32).uint32(message.keyId);
-    writer.uint32(42).string(message.domain);
+    if (message.status !== 0) {
+      writer.uint32(8).uint32(message.status);
+    }
+    if (message.accountId !== 0) {
+      writer.uint32(16).uint32(message.accountId);
+    }
+    if (message.publisherGroupId !== 0) {
+      writer.uint32(24).uint32(message.publisherGroupId);
+    }
+    if (message.keyId !== 0) {
+      writer.uint32(32).uint32(message.keyId);
+    }
+    if (message.domain !== "") {
+      writer.uint32(42).string(message.domain);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgWebAPIKey {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgWebAPIKey {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgWebAPIKey } as CMsgWebAPIKey;
+    const message = createBaseCMsgWebAPIKey();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1192,14 +768,45 @@ export const CMsgWebAPIKey = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgWebAPIKey>, I>>(
+    object: I
+  ): CMsgWebAPIKey {
+    const message = createBaseCMsgWebAPIKey();
+    message.status = object.status ?? 0;
+    message.accountId = object.accountId ?? 0;
+    message.publisherGroupId = object.publisherGroupId ?? 0;
+    message.keyId = object.keyId ?? 0;
+    message.domain = object.domain ?? "";
+    return message;
   }
 };
 
+function createBaseCMsgHttpRequest(): CMsgHttpRequest {
+  return {
+    requestMethod: 0,
+    hostname: "",
+    url: "",
+    headers: [],
+    getParams: [],
+    postParams: [],
+    body: new Uint8Array(),
+    absoluteTimeout: 0
+  };
+}
+
 export const CMsgHttpRequest = {
   encode(message: CMsgHttpRequest, writer: Writer = Writer.create()): Writer {
-    writer.uint32(8).uint32(message.requestMethod);
-    writer.uint32(18).string(message.hostname);
-    writer.uint32(26).string(message.url);
+    if (message.requestMethod !== 0) {
+      writer.uint32(8).uint32(message.requestMethod);
+    }
+    if (message.hostname !== "") {
+      writer.uint32(18).string(message.hostname);
+    }
+    if (message.url !== "") {
+      writer.uint32(26).string(message.url);
+    }
     for (const v of message.headers) {
       CMsgHttpRequest_RequestHeader.encode(
         v!,
@@ -1212,17 +819,19 @@ export const CMsgHttpRequest = {
     for (const v of message.postParams) {
       CMsgHttpRequest_QueryParam.encode(v!, writer.uint32(50).fork()).ldelim();
     }
-    writer.uint32(58).bytes(message.body);
-    writer.uint32(64).uint32(message.absoluteTimeout);
+    if (message.body.length !== 0) {
+      writer.uint32(58).bytes(message.body);
+    }
+    if (message.absoluteTimeout !== 0) {
+      writer.uint32(64).uint32(message.absoluteTimeout);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgHttpRequest {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgHttpRequest {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgHttpRequest } as CMsgHttpRequest;
-    message.headers = [];
-    message.getParams = [];
-    message.postParams = [];
+    const message = createBaseCMsgHttpRequest();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1262,27 +871,55 @@ export const CMsgHttpRequest = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgHttpRequest>, I>>(
+    object: I
+  ): CMsgHttpRequest {
+    const message = createBaseCMsgHttpRequest();
+    message.requestMethod = object.requestMethod ?? 0;
+    message.hostname = object.hostname ?? "";
+    message.url = object.url ?? "";
+    message.headers =
+      object.headers?.map(e => CMsgHttpRequest_RequestHeader.fromPartial(e)) ||
+      [];
+    message.getParams =
+      object.getParams?.map(e => CMsgHttpRequest_QueryParam.fromPartial(e)) ||
+      [];
+    message.postParams =
+      object.postParams?.map(e => CMsgHttpRequest_QueryParam.fromPartial(e)) ||
+      [];
+    message.body = object.body ?? new Uint8Array();
+    message.absoluteTimeout = object.absoluteTimeout ?? 0;
+    return message;
   }
 };
+
+function createBaseCMsgHttpRequest_RequestHeader(): CMsgHttpRequest_RequestHeader {
+  return { name: "", value: "" };
+}
 
 export const CMsgHttpRequest_RequestHeader = {
   encode(
     message: CMsgHttpRequest_RequestHeader,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(10).string(message.name);
-    writer.uint32(18).string(message.value);
+    if (message.name !== "") {
+      writer.uint32(10).string(message.name);
+    }
+    if (message.value !== "") {
+      writer.uint32(18).string(message.value);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgHttpRequest_RequestHeader {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgHttpRequest_RequestHeader
-    } as CMsgHttpRequest_RequestHeader;
+    const message = createBaseCMsgHttpRequest_RequestHeader();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1298,27 +935,43 @@ export const CMsgHttpRequest_RequestHeader = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgHttpRequest_RequestHeader>, I>>(
+    object: I
+  ): CMsgHttpRequest_RequestHeader {
+    const message = createBaseCMsgHttpRequest_RequestHeader();
+    message.name = object.name ?? "";
+    message.value = object.value ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgHttpRequest_QueryParam(): CMsgHttpRequest_QueryParam {
+  return { name: "", value: new Uint8Array() };
+}
 
 export const CMsgHttpRequest_QueryParam = {
   encode(
     message: CMsgHttpRequest_QueryParam,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(10).string(message.name);
-    writer.uint32(18).bytes(message.value);
+    if (message.name !== "") {
+      writer.uint32(10).string(message.name);
+    }
+    if (message.value.length !== 0) {
+      writer.uint32(18).bytes(message.value);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgHttpRequest_QueryParam {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgHttpRequest_QueryParam
-    } as CMsgHttpRequest_QueryParam;
+    const message = createBaseCMsgHttpRequest_QueryParam();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1334,31 +987,63 @@ export const CMsgHttpRequest_QueryParam = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgHttpRequest_QueryParam>, I>>(
+    object: I
+  ): CMsgHttpRequest_QueryParam {
+    const message = createBaseCMsgHttpRequest_QueryParam();
+    message.name = object.name ?? "";
+    message.value = object.value ?? new Uint8Array();
+    return message;
   }
 };
 
+function createBaseCMsgWebAPIRequest(): CMsgWebAPIRequest {
+  return {
+    UNUSEDJobName: "",
+    interfaceName: "",
+    methodName: "",
+    version: 0,
+    apiKey: undefined,
+    request: undefined,
+    routingAppId: 0
+  };
+}
+
 export const CMsgWebAPIRequest = {
   encode(message: CMsgWebAPIRequest, writer: Writer = Writer.create()): Writer {
-    writer.uint32(10).string(message.UNUSEDJobName);
-    writer.uint32(18).string(message.interfaceName);
-    writer.uint32(26).string(message.methodName);
-    writer.uint32(32).uint32(message.version);
-    if (message.apiKey !== undefined && message.apiKey !== undefined) {
+    if (message.UNUSEDJobName !== "") {
+      writer.uint32(10).string(message.UNUSEDJobName);
+    }
+    if (message.interfaceName !== "") {
+      writer.uint32(18).string(message.interfaceName);
+    }
+    if (message.methodName !== "") {
+      writer.uint32(26).string(message.methodName);
+    }
+    if (message.version !== 0) {
+      writer.uint32(32).uint32(message.version);
+    }
+    if (message.apiKey !== undefined) {
       CMsgWebAPIKey.encode(message.apiKey, writer.uint32(42).fork()).ldelim();
     }
-    if (message.request !== undefined && message.request !== undefined) {
+    if (message.request !== undefined) {
       CMsgHttpRequest.encode(
         message.request,
         writer.uint32(50).fork()
       ).ldelim();
     }
-    writer.uint32(56).uint32(message.routingAppId);
+    if (message.routingAppId !== 0) {
+      writer.uint32(56).uint32(message.routingAppId);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgWebAPIRequest {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgWebAPIRequest {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgWebAPIRequest } as CMsgWebAPIRequest;
+    const message = createBaseCMsgWebAPIRequest();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1389,26 +1074,54 @@ export const CMsgWebAPIRequest = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgWebAPIRequest>, I>>(
+    object: I
+  ): CMsgWebAPIRequest {
+    const message = createBaseCMsgWebAPIRequest();
+    message.UNUSEDJobName = object.UNUSEDJobName ?? "";
+    message.interfaceName = object.interfaceName ?? "";
+    message.methodName = object.methodName ?? "";
+    message.version = object.version ?? 0;
+    message.apiKey =
+      object.apiKey !== undefined && object.apiKey !== null
+        ? CMsgWebAPIKey.fromPartial(object.apiKey)
+        : undefined;
+    message.request =
+      object.request !== undefined && object.request !== null
+        ? CMsgHttpRequest.fromPartial(object.request)
+        : undefined;
+    message.routingAppId = object.routingAppId ?? 0;
+    return message;
   }
 };
 
+function createBaseCMsgHttpResponse(): CMsgHttpResponse {
+  return { statusCode: 0, headers: [], body: new Uint8Array() };
+}
+
 export const CMsgHttpResponse = {
   encode(message: CMsgHttpResponse, writer: Writer = Writer.create()): Writer {
-    writer.uint32(8).uint32(message.statusCode);
+    if (message.statusCode !== 0) {
+      writer.uint32(8).uint32(message.statusCode);
+    }
     for (const v of message.headers) {
       CMsgHttpResponse_ResponseHeader.encode(
         v!,
         writer.uint32(18).fork()
       ).ldelim();
     }
-    writer.uint32(26).bytes(message.body);
+    if (message.body.length !== 0) {
+      writer.uint32(26).bytes(message.body);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgHttpResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgHttpResponse {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgHttpResponse } as CMsgHttpResponse;
-    message.headers = [];
+    const message = createBaseCMsgHttpResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1429,27 +1142,47 @@ export const CMsgHttpResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgHttpResponse>, I>>(
+    object: I
+  ): CMsgHttpResponse {
+    const message = createBaseCMsgHttpResponse();
+    message.statusCode = object.statusCode ?? 0;
+    message.headers =
+      object.headers?.map(e =>
+        CMsgHttpResponse_ResponseHeader.fromPartial(e)
+      ) || [];
+    message.body = object.body ?? new Uint8Array();
+    return message;
   }
 };
+
+function createBaseCMsgHttpResponse_ResponseHeader(): CMsgHttpResponse_ResponseHeader {
+  return { name: "", value: "" };
+}
 
 export const CMsgHttpResponse_ResponseHeader = {
   encode(
     message: CMsgHttpResponse_ResponseHeader,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(10).string(message.name);
-    writer.uint32(18).string(message.value);
+    if (message.name !== "") {
+      writer.uint32(10).string(message.name);
+    }
+    if (message.value !== "") {
+      writer.uint32(18).string(message.value);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgHttpResponse_ResponseHeader {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgHttpResponse_ResponseHeader
-    } as CMsgHttpResponse_ResponseHeader;
+    const message = createBaseCMsgHttpResponse_ResponseHeader();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1465,22 +1198,40 @@ export const CMsgHttpResponse_ResponseHeader = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgHttpResponse_ResponseHeader>, I>>(
+    object: I
+  ): CMsgHttpResponse_ResponseHeader {
+    const message = createBaseCMsgHttpResponse_ResponseHeader();
+    message.name = object.name ?? "";
+    message.value = object.value ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgAMFindAccounts(): CMsgAMFindAccounts {
+  return { searchType: 0, searchString: "" };
+}
 
 export const CMsgAMFindAccounts = {
   encode(
     message: CMsgAMFindAccounts,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.searchType);
-    writer.uint32(18).string(message.searchString);
+    if (message.searchType !== 0) {
+      writer.uint32(8).uint32(message.searchType);
+    }
+    if (message.searchString !== "") {
+      writer.uint32(18).string(message.searchString);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgAMFindAccounts {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgAMFindAccounts {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgAMFindAccounts } as CMsgAMFindAccounts;
+    const message = createBaseCMsgAMFindAccounts();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1496,8 +1247,21 @@ export const CMsgAMFindAccounts = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgAMFindAccounts>, I>>(
+    object: I
+  ): CMsgAMFindAccounts {
+    const message = createBaseCMsgAMFindAccounts();
+    message.searchType = object.searchType ?? 0;
+    message.searchString = object.searchString ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgAMFindAccountsResponse(): CMsgAMFindAccountsResponse {
+  return { steamId: [] };
+}
 
 export const CMsgAMFindAccountsResponse = {
   encode(
@@ -1511,16 +1275,14 @@ export const CMsgAMFindAccountsResponse = {
     writer.ldelim();
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgAMFindAccountsResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgAMFindAccountsResponse
-    } as CMsgAMFindAccountsResponse;
-    message.steamId = [];
+    const message = createBaseCMsgAMFindAccountsResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1540,27 +1302,62 @@ export const CMsgAMFindAccountsResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgAMFindAccountsResponse>, I>>(
+    object: I
+  ): CMsgAMFindAccountsResponse {
+    const message = createBaseCMsgAMFindAccountsResponse();
+    message.steamId = object.steamId?.map(e => Long.fromValue(e)) || [];
+    return message;
   }
 };
+
+function createBaseCMsgNotifyWatchdog(): CMsgNotifyWatchdog {
+  return {
+    source: 0,
+    alertType: 0,
+    alertDestination: 0,
+    critical: false,
+    time: 0,
+    appid: 0,
+    text: ""
+  };
+}
 
 export const CMsgNotifyWatchdog = {
   encode(
     message: CMsgNotifyWatchdog,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.source);
-    writer.uint32(16).uint32(message.alertType);
-    writer.uint32(24).uint32(message.alertDestination);
-    writer.uint32(32).bool(message.critical);
-    writer.uint32(40).uint32(message.time);
-    writer.uint32(48).uint32(message.appid);
-    writer.uint32(58).string(message.text);
+    if (message.source !== 0) {
+      writer.uint32(8).uint32(message.source);
+    }
+    if (message.alertType !== 0) {
+      writer.uint32(16).uint32(message.alertType);
+    }
+    if (message.alertDestination !== 0) {
+      writer.uint32(24).uint32(message.alertDestination);
+    }
+    if (message.critical === true) {
+      writer.uint32(32).bool(message.critical);
+    }
+    if (message.time !== 0) {
+      writer.uint32(40).uint32(message.time);
+    }
+    if (message.appid !== 0) {
+      writer.uint32(48).uint32(message.appid);
+    }
+    if (message.text !== "") {
+      writer.uint32(58).string(message.text);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgNotifyWatchdog {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgNotifyWatchdog {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgNotifyWatchdog } as CMsgNotifyWatchdog;
+    const message = createBaseCMsgNotifyWatchdog();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1591,18 +1388,39 @@ export const CMsgNotifyWatchdog = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgNotifyWatchdog>, I>>(
+    object: I
+  ): CMsgNotifyWatchdog {
+    const message = createBaseCMsgNotifyWatchdog();
+    message.source = object.source ?? 0;
+    message.alertType = object.alertType ?? 0;
+    message.alertDestination = object.alertDestination ?? 0;
+    message.critical = object.critical ?? false;
+    message.time = object.time ?? 0;
+    message.appid = object.appid ?? 0;
+    message.text = object.text ?? "";
+    return message;
   }
 };
 
+function createBaseCMsgAMGetLicenses(): CMsgAMGetLicenses {
+  return { steamid: Long.UZERO };
+}
+
 export const CMsgAMGetLicenses = {
   encode(message: CMsgAMGetLicenses, writer: Writer = Writer.create()): Writer {
-    writer.uint32(9).fixed64(message.steamid);
+    if (!message.steamid.isZero()) {
+      writer.uint32(9).fixed64(message.steamid);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgAMGetLicenses {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgAMGetLicenses {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgAMGetLicenses } as CMsgAMGetLicenses;
+    const message = createBaseCMsgAMGetLicenses();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1615,23 +1433,45 @@ export const CMsgAMGetLicenses = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgAMGetLicenses>, I>>(
+    object: I
+  ): CMsgAMGetLicenses {
+    const message = createBaseCMsgAMGetLicenses();
+    message.steamid =
+      object.steamid !== undefined && object.steamid !== null
+        ? Long.fromValue(object.steamid)
+        : Long.UZERO;
+    return message;
   }
 };
+
+function createBaseCMsgPackageLicense(): CMsgPackageLicense {
+  return { packageId: 0, timeCreated: 0, ownerId: 0 };
+}
 
 export const CMsgPackageLicense = {
   encode(
     message: CMsgPackageLicense,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.packageId);
-    writer.uint32(16).uint32(message.timeCreated);
-    writer.uint32(24).uint32(message.ownerId);
+    if (message.packageId !== 0) {
+      writer.uint32(8).uint32(message.packageId);
+    }
+    if (message.timeCreated !== 0) {
+      writer.uint32(16).uint32(message.timeCreated);
+    }
+    if (message.ownerId !== 0) {
+      writer.uint32(24).uint32(message.ownerId);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgPackageLicense {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgPackageLicense {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgPackageLicense } as CMsgPackageLicense;
+    const message = createBaseCMsgPackageLicense();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1650,8 +1490,22 @@ export const CMsgPackageLicense = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgPackageLicense>, I>>(
+    object: I
+  ): CMsgPackageLicense {
+    const message = createBaseCMsgPackageLicense();
+    message.packageId = object.packageId ?? 0;
+    message.timeCreated = object.timeCreated ?? 0;
+    message.ownerId = object.ownerId ?? 0;
+    return message;
   }
 };
+
+function createBaseCMsgAMGetLicensesResponse(): CMsgAMGetLicensesResponse {
+  return { license: [], result: 0 };
+}
 
 export const CMsgAMGetLicensesResponse = {
   encode(
@@ -1661,19 +1515,19 @@ export const CMsgAMGetLicensesResponse = {
     for (const v of message.license) {
       CMsgPackageLicense.encode(v!, writer.uint32(10).fork()).ldelim();
     }
-    writer.uint32(16).uint32(message.result);
+    if (message.result !== 0) {
+      writer.uint32(16).uint32(message.result);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgAMGetLicensesResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgAMGetLicensesResponse
-    } as CMsgAMGetLicensesResponse;
-    message.license = [];
+    const message = createBaseCMsgAMGetLicensesResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1691,16 +1545,34 @@ export const CMsgAMGetLicensesResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgAMGetLicensesResponse>, I>>(
+    object: I
+  ): CMsgAMGetLicensesResponse {
+    const message = createBaseCMsgAMGetLicensesResponse();
+    message.license =
+      object.license?.map(e => CMsgPackageLicense.fromPartial(e)) || [];
+    message.result = object.result ?? 0;
+    return message;
   }
 };
+
+function createBaseCMsgAMGetUserGameStats(): CMsgAMGetUserGameStats {
+  return { steamId: Long.UZERO, gameId: Long.UZERO, stats: [] };
+}
 
 export const CMsgAMGetUserGameStats = {
   encode(
     message: CMsgAMGetUserGameStats,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.steamId);
-    writer.uint32(17).fixed64(message.gameId);
+    if (!message.steamId.isZero()) {
+      writer.uint32(9).fixed64(message.steamId);
+    }
+    if (!message.gameId.isZero()) {
+      writer.uint32(17).fixed64(message.gameId);
+    }
     writer.uint32(26).fork();
     for (const v of message.stats) {
       writer.uint32(v);
@@ -1708,11 +1580,11 @@ export const CMsgAMGetUserGameStats = {
     writer.ldelim();
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgAMGetUserGameStats {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgAMGetUserGameStats {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgAMGetUserGameStats } as CMsgAMGetUserGameStats;
-    message.stats = [];
+    const message = createBaseCMsgAMGetUserGameStats();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1738,17 +1610,49 @@ export const CMsgAMGetUserGameStats = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgAMGetUserGameStats>, I>>(
+    object: I
+  ): CMsgAMGetUserGameStats {
+    const message = createBaseCMsgAMGetUserGameStats();
+    message.steamId =
+      object.steamId !== undefined && object.steamId !== null
+        ? Long.fromValue(object.steamId)
+        : Long.UZERO;
+    message.gameId =
+      object.gameId !== undefined && object.gameId !== null
+        ? Long.fromValue(object.gameId)
+        : Long.UZERO;
+    message.stats = object.stats?.map(e => e) || [];
+    return message;
   }
 };
+
+function createBaseCMsgAMGetUserGameStatsResponse(): CMsgAMGetUserGameStatsResponse {
+  return {
+    steamId: Long.UZERO,
+    gameId: Long.UZERO,
+    eresult: 0,
+    stats: [],
+    achievementBlocks: []
+  };
+}
 
 export const CMsgAMGetUserGameStatsResponse = {
   encode(
     message: CMsgAMGetUserGameStatsResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.steamId);
-    writer.uint32(17).fixed64(message.gameId);
-    writer.uint32(24).int32(message.eresult);
+    if (!message.steamId.isZero()) {
+      writer.uint32(9).fixed64(message.steamId);
+    }
+    if (!message.gameId.isZero()) {
+      writer.uint32(17).fixed64(message.gameId);
+    }
+    if (message.eresult !== 0) {
+      writer.uint32(24).int32(message.eresult);
+    }
     for (const v of message.stats) {
       CMsgAMGetUserGameStatsResponse_Stats.encode(
         v!,
@@ -1763,17 +1667,14 @@ export const CMsgAMGetUserGameStatsResponse = {
     }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgAMGetUserGameStatsResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgAMGetUserGameStatsResponse
-    } as CMsgAMGetUserGameStatsResponse;
-    message.stats = [];
-    message.achievementBlocks = [];
+    const message = createBaseCMsgAMGetUserGameStatsResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1805,27 +1706,58 @@ export const CMsgAMGetUserGameStatsResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgAMGetUserGameStatsResponse>, I>>(
+    object: I
+  ): CMsgAMGetUserGameStatsResponse {
+    const message = createBaseCMsgAMGetUserGameStatsResponse();
+    message.steamId =
+      object.steamId !== undefined && object.steamId !== null
+        ? Long.fromValue(object.steamId)
+        : Long.UZERO;
+    message.gameId =
+      object.gameId !== undefined && object.gameId !== null
+        ? Long.fromValue(object.gameId)
+        : Long.UZERO;
+    message.eresult = object.eresult ?? 0;
+    message.stats =
+      object.stats?.map(e =>
+        CMsgAMGetUserGameStatsResponse_Stats.fromPartial(e)
+      ) || [];
+    message.achievementBlocks =
+      object.achievementBlocks?.map(e =>
+        CMsgAMGetUserGameStatsResponse_AchievementBlocks.fromPartial(e)
+      ) || [];
+    return message;
   }
 };
+
+function createBaseCMsgAMGetUserGameStatsResponse_Stats(): CMsgAMGetUserGameStatsResponse_Stats {
+  return { statId: 0, statValue: 0 };
+}
 
 export const CMsgAMGetUserGameStatsResponse_Stats = {
   encode(
     message: CMsgAMGetUserGameStatsResponse_Stats,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.statId);
-    writer.uint32(16).uint32(message.statValue);
+    if (message.statId !== 0) {
+      writer.uint32(8).uint32(message.statId);
+    }
+    if (message.statValue !== 0) {
+      writer.uint32(16).uint32(message.statValue);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgAMGetUserGameStatsResponse_Stats {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgAMGetUserGameStatsResponse_Stats
-    } as CMsgAMGetUserGameStatsResponse_Stats;
+    const message = createBaseCMsgAMGetUserGameStatsResponse_Stats();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1841,28 +1773,46 @@ export const CMsgAMGetUserGameStatsResponse_Stats = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgAMGetUserGameStatsResponse_Stats>, I>
+  >(object: I): CMsgAMGetUserGameStatsResponse_Stats {
+    const message = createBaseCMsgAMGetUserGameStatsResponse_Stats();
+    message.statId = object.statId ?? 0;
+    message.statValue = object.statValue ?? 0;
+    return message;
   }
 };
+
+function createBaseCMsgAMGetUserGameStatsResponse_AchievementBlocks(): CMsgAMGetUserGameStatsResponse_AchievementBlocks {
+  return { achievementId: 0, achievementBitId: 0, unlockTime: 0 };
+}
 
 export const CMsgAMGetUserGameStatsResponse_AchievementBlocks = {
   encode(
     message: CMsgAMGetUserGameStatsResponse_AchievementBlocks,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.achievementId);
-    writer.uint32(16).uint32(message.achievementBitId);
-    writer.uint32(29).fixed32(message.unlockTime);
+    if (message.achievementId !== 0) {
+      writer.uint32(8).uint32(message.achievementId);
+    }
+    if (message.achievementBitId !== 0) {
+      writer.uint32(16).uint32(message.achievementBitId);
+    }
+    if (message.unlockTime !== 0) {
+      writer.uint32(29).fixed32(message.unlockTime);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgAMGetUserGameStatsResponse_AchievementBlocks {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgAMGetUserGameStatsResponse_AchievementBlocks
-    } as CMsgAMGetUserGameStatsResponse_AchievementBlocks;
+    const message = createBaseCMsgAMGetUserGameStatsResponse_AchievementBlocks();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1881,22 +1831,44 @@ export const CMsgAMGetUserGameStatsResponse_AchievementBlocks = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<
+      DeepPartial<CMsgAMGetUserGameStatsResponse_AchievementBlocks>,
+      I
+    >
+  >(object: I): CMsgAMGetUserGameStatsResponse_AchievementBlocks {
+    const message = createBaseCMsgAMGetUserGameStatsResponse_AchievementBlocks();
+    message.achievementId = object.achievementId ?? 0;
+    message.achievementBitId = object.achievementBitId ?? 0;
+    message.unlockTime = object.unlockTime ?? 0;
+    return message;
   }
 };
+
+function createBaseCMsgGCGetCommandList(): CMsgGCGetCommandList {
+  return { appId: 0, commandPrefix: "" };
+}
 
 export const CMsgGCGetCommandList = {
   encode(
     message: CMsgGCGetCommandList,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.appId);
-    writer.uint32(18).string(message.commandPrefix);
+    if (message.appId !== 0) {
+      writer.uint32(8).uint32(message.appId);
+    }
+    if (message.commandPrefix !== "") {
+      writer.uint32(18).string(message.commandPrefix);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgGCGetCommandList {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgGCGetCommandList {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgGCGetCommandList } as CMsgGCGetCommandList;
+    const message = createBaseCMsgGCGetCommandList();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1912,8 +1884,21 @@ export const CMsgGCGetCommandList = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCGetCommandList>, I>>(
+    object: I
+  ): CMsgGCGetCommandList {
+    const message = createBaseCMsgGCGetCommandList();
+    message.appId = object.appId ?? 0;
+    message.commandPrefix = object.commandPrefix ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgGCGetCommandListResponse(): CMsgGCGetCommandListResponse {
+  return { commandName: [] };
+}
 
 export const CMsgGCGetCommandListResponse = {
   encode(
@@ -1925,16 +1910,14 @@ export const CMsgGCGetCommandListResponse = {
     }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCGetCommandListResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCGetCommandListResponse
-    } as CMsgGCGetCommandListResponse;
-    message.commandName = [];
+    const message = createBaseCMsgGCGetCommandListResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1947,8 +1930,20 @@ export const CMsgGCGetCommandListResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCGetCommandListResponse>, I>>(
+    object: I
+  ): CMsgGCGetCommandListResponse {
+    const message = createBaseCMsgGCGetCommandListResponse();
+    message.commandName = object.commandName?.map(e => e) || [];
+    return message;
   }
 };
+
+function createBaseCGCMsgMemCachedGet(): CGCMsgMemCachedGet {
+  return { keys: [] };
+}
 
 export const CGCMsgMemCachedGet = {
   encode(
@@ -1960,11 +1955,11 @@ export const CGCMsgMemCachedGet = {
     }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CGCMsgMemCachedGet {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CGCMsgMemCachedGet {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCGCMsgMemCachedGet } as CGCMsgMemCachedGet;
-    message.keys = [];
+    const message = createBaseCGCMsgMemCachedGet();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1977,8 +1972,20 @@ export const CGCMsgMemCachedGet = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgMemCachedGet>, I>>(
+    object: I
+  ): CGCMsgMemCachedGet {
+    const message = createBaseCGCMsgMemCachedGet();
+    message.keys = object.keys?.map(e => e) || [];
+    return message;
   }
 };
+
+function createBaseCGCMsgMemCachedGetResponse(): CGCMsgMemCachedGetResponse {
+  return { values: [] };
+}
 
 export const CGCMsgMemCachedGetResponse = {
   encode(
@@ -1993,16 +2000,14 @@ export const CGCMsgMemCachedGetResponse = {
     }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CGCMsgMemCachedGetResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCGCMsgMemCachedGetResponse
-    } as CGCMsgMemCachedGetResponse;
-    message.values = [];
+    const message = createBaseCGCMsgMemCachedGetResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2017,27 +2022,45 @@ export const CGCMsgMemCachedGetResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgMemCachedGetResponse>, I>>(
+    object: I
+  ): CGCMsgMemCachedGetResponse {
+    const message = createBaseCGCMsgMemCachedGetResponse();
+    message.values =
+      object.values?.map(e =>
+        CGCMsgMemCachedGetResponse_ValueTag.fromPartial(e)
+      ) || [];
+    return message;
   }
 };
+
+function createBaseCGCMsgMemCachedGetResponse_ValueTag(): CGCMsgMemCachedGetResponse_ValueTag {
+  return { found: false, value: new Uint8Array() };
+}
 
 export const CGCMsgMemCachedGetResponse_ValueTag = {
   encode(
     message: CGCMsgMemCachedGetResponse_ValueTag,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).bool(message.found);
-    writer.uint32(18).bytes(message.value);
+    if (message.found === true) {
+      writer.uint32(8).bool(message.found);
+    }
+    if (message.value.length !== 0) {
+      writer.uint32(18).bytes(message.value);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CGCMsgMemCachedGetResponse_ValueTag {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCGCMsgMemCachedGetResponse_ValueTag
-    } as CGCMsgMemCachedGetResponse_ValueTag;
+    const message = createBaseCGCMsgMemCachedGetResponse_ValueTag();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2053,8 +2076,21 @@ export const CGCMsgMemCachedGetResponse_ValueTag = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CGCMsgMemCachedGetResponse_ValueTag>, I>
+  >(object: I): CGCMsgMemCachedGetResponse_ValueTag {
+    const message = createBaseCGCMsgMemCachedGetResponse_ValueTag();
+    message.found = object.found ?? false;
+    message.value = object.value ?? new Uint8Array();
+    return message;
   }
 };
+
+function createBaseCGCMsgMemCachedSet(): CGCMsgMemCachedSet {
+  return { keys: [] };
+}
 
 export const CGCMsgMemCachedSet = {
   encode(
@@ -2066,11 +2102,11 @@ export const CGCMsgMemCachedSet = {
     }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CGCMsgMemCachedSet {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CGCMsgMemCachedSet {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCGCMsgMemCachedSet } as CGCMsgMemCachedSet;
-    message.keys = [];
+    const message = createBaseCGCMsgMemCachedSet();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2085,27 +2121,43 @@ export const CGCMsgMemCachedSet = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgMemCachedSet>, I>>(
+    object: I
+  ): CGCMsgMemCachedSet {
+    const message = createBaseCGCMsgMemCachedSet();
+    message.keys =
+      object.keys?.map(e => CGCMsgMemCachedSet_KeyPair.fromPartial(e)) || [];
+    return message;
   }
 };
+
+function createBaseCGCMsgMemCachedSet_KeyPair(): CGCMsgMemCachedSet_KeyPair {
+  return { name: "", value: new Uint8Array() };
+}
 
 export const CGCMsgMemCachedSet_KeyPair = {
   encode(
     message: CGCMsgMemCachedSet_KeyPair,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(10).string(message.name);
-    writer.uint32(18).bytes(message.value);
+    if (message.name !== "") {
+      writer.uint32(10).string(message.name);
+    }
+    if (message.value.length !== 0) {
+      writer.uint32(18).bytes(message.value);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CGCMsgMemCachedSet_KeyPair {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCGCMsgMemCachedSet_KeyPair
-    } as CGCMsgMemCachedSet_KeyPair;
+    const message = createBaseCGCMsgMemCachedSet_KeyPair();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2121,8 +2173,21 @@ export const CGCMsgMemCachedSet_KeyPair = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgMemCachedSet_KeyPair>, I>>(
+    object: I
+  ): CGCMsgMemCachedSet_KeyPair {
+    const message = createBaseCGCMsgMemCachedSet_KeyPair();
+    message.name = object.name ?? "";
+    message.value = object.value ?? new Uint8Array();
+    return message;
   }
 };
+
+function createBaseCGCMsgMemCachedDelete(): CGCMsgMemCachedDelete {
+  return { keys: [] };
+}
 
 export const CGCMsgMemCachedDelete = {
   encode(
@@ -2134,11 +2199,11 @@ export const CGCMsgMemCachedDelete = {
     }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CGCMsgMemCachedDelete {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CGCMsgMemCachedDelete {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCGCMsgMemCachedDelete } as CGCMsgMemCachedDelete;
-    message.keys = [];
+    const message = createBaseCGCMsgMemCachedDelete();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2151,17 +2216,30 @@ export const CGCMsgMemCachedDelete = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgMemCachedDelete>, I>>(
+    object: I
+  ): CGCMsgMemCachedDelete {
+    const message = createBaseCGCMsgMemCachedDelete();
+    message.keys = object.keys?.map(e => e) || [];
+    return message;
   }
 };
+
+function createBaseCGCMsgMemCachedStats(): CGCMsgMemCachedStats {
+  return {};
+}
 
 export const CGCMsgMemCachedStats = {
   encode(_: CGCMsgMemCachedStats, writer: Writer = Writer.create()): Writer {
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CGCMsgMemCachedStats {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CGCMsgMemCachedStats {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCGCMsgMemCachedStats } as CGCMsgMemCachedStats;
+    const message = createBaseCGCMsgMemCachedStats();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2171,39 +2249,92 @@ export const CGCMsgMemCachedStats = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgMemCachedStats>, I>>(
+    _: I
+  ): CGCMsgMemCachedStats {
+    const message = createBaseCGCMsgMemCachedStats();
+    return message;
   }
 };
+
+function createBaseCGCMsgMemCachedStatsResponse(): CGCMsgMemCachedStatsResponse {
+  return {
+    currConnections: Long.UZERO,
+    cmdGet: Long.UZERO,
+    cmdSet: Long.UZERO,
+    cmdFlush: Long.UZERO,
+    getHits: Long.UZERO,
+    getMisses: Long.UZERO,
+    deleteHits: Long.UZERO,
+    deleteMisses: Long.UZERO,
+    bytesRead: Long.UZERO,
+    bytesWritten: Long.UZERO,
+    limitMaxbytes: Long.UZERO,
+    currItems: Long.UZERO,
+    evictions: Long.UZERO,
+    bytes: Long.UZERO
+  };
+}
 
 export const CGCMsgMemCachedStatsResponse = {
   encode(
     message: CGCMsgMemCachedStatsResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint64(message.currConnections);
-    writer.uint32(16).uint64(message.cmdGet);
-    writer.uint32(24).uint64(message.cmdSet);
-    writer.uint32(32).uint64(message.cmdFlush);
-    writer.uint32(40).uint64(message.getHits);
-    writer.uint32(48).uint64(message.getMisses);
-    writer.uint32(56).uint64(message.deleteHits);
-    writer.uint32(64).uint64(message.deleteMisses);
-    writer.uint32(72).uint64(message.bytesRead);
-    writer.uint32(80).uint64(message.bytesWritten);
-    writer.uint32(88).uint64(message.limitMaxbytes);
-    writer.uint32(96).uint64(message.currItems);
-    writer.uint32(104).uint64(message.evictions);
-    writer.uint32(112).uint64(message.bytes);
+    if (!message.currConnections.isZero()) {
+      writer.uint32(8).uint64(message.currConnections);
+    }
+    if (!message.cmdGet.isZero()) {
+      writer.uint32(16).uint64(message.cmdGet);
+    }
+    if (!message.cmdSet.isZero()) {
+      writer.uint32(24).uint64(message.cmdSet);
+    }
+    if (!message.cmdFlush.isZero()) {
+      writer.uint32(32).uint64(message.cmdFlush);
+    }
+    if (!message.getHits.isZero()) {
+      writer.uint32(40).uint64(message.getHits);
+    }
+    if (!message.getMisses.isZero()) {
+      writer.uint32(48).uint64(message.getMisses);
+    }
+    if (!message.deleteHits.isZero()) {
+      writer.uint32(56).uint64(message.deleteHits);
+    }
+    if (!message.deleteMisses.isZero()) {
+      writer.uint32(64).uint64(message.deleteMisses);
+    }
+    if (!message.bytesRead.isZero()) {
+      writer.uint32(72).uint64(message.bytesRead);
+    }
+    if (!message.bytesWritten.isZero()) {
+      writer.uint32(80).uint64(message.bytesWritten);
+    }
+    if (!message.limitMaxbytes.isZero()) {
+      writer.uint32(88).uint64(message.limitMaxbytes);
+    }
+    if (!message.currItems.isZero()) {
+      writer.uint32(96).uint64(message.currItems);
+    }
+    if (!message.evictions.isZero()) {
+      writer.uint32(104).uint64(message.evictions);
+    }
+    if (!message.bytes.isZero()) {
+      writer.uint32(112).uint64(message.bytes);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CGCMsgMemCachedStatsResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCGCMsgMemCachedStatsResponse
-    } as CGCMsgMemCachedStatsResponse;
+    const message = createBaseCGCMsgMemCachedStatsResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2255,18 +2386,88 @@ export const CGCMsgMemCachedStatsResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgMemCachedStatsResponse>, I>>(
+    object: I
+  ): CGCMsgMemCachedStatsResponse {
+    const message = createBaseCGCMsgMemCachedStatsResponse();
+    message.currConnections =
+      object.currConnections !== undefined && object.currConnections !== null
+        ? Long.fromValue(object.currConnections)
+        : Long.UZERO;
+    message.cmdGet =
+      object.cmdGet !== undefined && object.cmdGet !== null
+        ? Long.fromValue(object.cmdGet)
+        : Long.UZERO;
+    message.cmdSet =
+      object.cmdSet !== undefined && object.cmdSet !== null
+        ? Long.fromValue(object.cmdSet)
+        : Long.UZERO;
+    message.cmdFlush =
+      object.cmdFlush !== undefined && object.cmdFlush !== null
+        ? Long.fromValue(object.cmdFlush)
+        : Long.UZERO;
+    message.getHits =
+      object.getHits !== undefined && object.getHits !== null
+        ? Long.fromValue(object.getHits)
+        : Long.UZERO;
+    message.getMisses =
+      object.getMisses !== undefined && object.getMisses !== null
+        ? Long.fromValue(object.getMisses)
+        : Long.UZERO;
+    message.deleteHits =
+      object.deleteHits !== undefined && object.deleteHits !== null
+        ? Long.fromValue(object.deleteHits)
+        : Long.UZERO;
+    message.deleteMisses =
+      object.deleteMisses !== undefined && object.deleteMisses !== null
+        ? Long.fromValue(object.deleteMisses)
+        : Long.UZERO;
+    message.bytesRead =
+      object.bytesRead !== undefined && object.bytesRead !== null
+        ? Long.fromValue(object.bytesRead)
+        : Long.UZERO;
+    message.bytesWritten =
+      object.bytesWritten !== undefined && object.bytesWritten !== null
+        ? Long.fromValue(object.bytesWritten)
+        : Long.UZERO;
+    message.limitMaxbytes =
+      object.limitMaxbytes !== undefined && object.limitMaxbytes !== null
+        ? Long.fromValue(object.limitMaxbytes)
+        : Long.UZERO;
+    message.currItems =
+      object.currItems !== undefined && object.currItems !== null
+        ? Long.fromValue(object.currItems)
+        : Long.UZERO;
+    message.evictions =
+      object.evictions !== undefined && object.evictions !== null
+        ? Long.fromValue(object.evictions)
+        : Long.UZERO;
+    message.bytes =
+      object.bytes !== undefined && object.bytes !== null
+        ? Long.fromValue(object.bytes)
+        : Long.UZERO;
+    return message;
   }
 };
 
+function createBaseCGCMsgSQLStats(): CGCMsgSQLStats {
+  return { schemaCatalog: 0 };
+}
+
 export const CGCMsgSQLStats = {
   encode(message: CGCMsgSQLStats, writer: Writer = Writer.create()): Writer {
-    writer.uint32(8).uint32(message.schemaCatalog);
+    if (message.schemaCatalog !== 0) {
+      writer.uint32(8).uint32(message.schemaCatalog);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CGCMsgSQLStats {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CGCMsgSQLStats {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCGCMsgSQLStats } as CGCMsgSQLStats;
+    const message = createBaseCGCMsgSQLStats();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2279,29 +2480,70 @@ export const CGCMsgSQLStats = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgSQLStats>, I>>(
+    object: I
+  ): CGCMsgSQLStats {
+    const message = createBaseCGCMsgSQLStats();
+    message.schemaCatalog = object.schemaCatalog ?? 0;
+    return message;
   }
 };
+
+function createBaseCGCMsgSQLStatsResponse(): CGCMsgSQLStatsResponse {
+  return {
+    threads: 0,
+    threadsConnected: 0,
+    threadsActive: 0,
+    operationsSubmitted: 0,
+    preparedStatementsExecuted: 0,
+    nonPreparedStatementsExecuted: 0,
+    deadlockRetries: 0,
+    operationsTimedOutInQueue: 0,
+    errors: 0
+  };
+}
 
 export const CGCMsgSQLStatsResponse = {
   encode(
     message: CGCMsgSQLStatsResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.threads);
-    writer.uint32(16).uint32(message.threadsConnected);
-    writer.uint32(24).uint32(message.threadsActive);
-    writer.uint32(32).uint32(message.operationsSubmitted);
-    writer.uint32(40).uint32(message.preparedStatementsExecuted);
-    writer.uint32(48).uint32(message.nonPreparedStatementsExecuted);
-    writer.uint32(56).uint32(message.deadlockRetries);
-    writer.uint32(64).uint32(message.operationsTimedOutInQueue);
-    writer.uint32(72).uint32(message.errors);
+    if (message.threads !== 0) {
+      writer.uint32(8).uint32(message.threads);
+    }
+    if (message.threadsConnected !== 0) {
+      writer.uint32(16).uint32(message.threadsConnected);
+    }
+    if (message.threadsActive !== 0) {
+      writer.uint32(24).uint32(message.threadsActive);
+    }
+    if (message.operationsSubmitted !== 0) {
+      writer.uint32(32).uint32(message.operationsSubmitted);
+    }
+    if (message.preparedStatementsExecuted !== 0) {
+      writer.uint32(40).uint32(message.preparedStatementsExecuted);
+    }
+    if (message.nonPreparedStatementsExecuted !== 0) {
+      writer.uint32(48).uint32(message.nonPreparedStatementsExecuted);
+    }
+    if (message.deadlockRetries !== 0) {
+      writer.uint32(56).uint32(message.deadlockRetries);
+    }
+    if (message.operationsTimedOutInQueue !== 0) {
+      writer.uint32(64).uint32(message.operationsTimedOutInQueue);
+    }
+    if (message.errors !== 0) {
+      writer.uint32(72).uint32(message.errors);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CGCMsgSQLStatsResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CGCMsgSQLStatsResponse {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCGCMsgSQLStatsResponse } as CGCMsgSQLStatsResponse;
+    const message = createBaseCGCMsgSQLStatsResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2338,24 +2580,59 @@ export const CGCMsgSQLStatsResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgSQLStatsResponse>, I>>(
+    object: I
+  ): CGCMsgSQLStatsResponse {
+    const message = createBaseCGCMsgSQLStatsResponse();
+    message.threads = object.threads ?? 0;
+    message.threadsConnected = object.threadsConnected ?? 0;
+    message.threadsActive = object.threadsActive ?? 0;
+    message.operationsSubmitted = object.operationsSubmitted ?? 0;
+    message.preparedStatementsExecuted = object.preparedStatementsExecuted ?? 0;
+    message.nonPreparedStatementsExecuted =
+      object.nonPreparedStatementsExecuted ?? 0;
+    message.deadlockRetries = object.deadlockRetries ?? 0;
+    message.operationsTimedOutInQueue = object.operationsTimedOutInQueue ?? 0;
+    message.errors = object.errors ?? 0;
+    return message;
   }
 };
+
+function createBaseCMsgAMAddFreeLicense(): CMsgAMAddFreeLicense {
+  return {
+    steamid: Long.UZERO,
+    ipPublic: 0,
+    packageid: 0,
+    storeCountryCode: ""
+  };
+}
 
 export const CMsgAMAddFreeLicense = {
   encode(
     message: CMsgAMAddFreeLicense,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.steamid);
-    writer.uint32(16).uint32(message.ipPublic);
-    writer.uint32(24).uint32(message.packageid);
-    writer.uint32(34).string(message.storeCountryCode);
+    if (!message.steamid.isZero()) {
+      writer.uint32(9).fixed64(message.steamid);
+    }
+    if (message.ipPublic !== 0) {
+      writer.uint32(16).uint32(message.ipPublic);
+    }
+    if (message.packageid !== 0) {
+      writer.uint32(24).uint32(message.packageid);
+    }
+    if (message.storeCountryCode !== "") {
+      writer.uint32(34).string(message.storeCountryCode);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgAMAddFreeLicense {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgAMAddFreeLicense {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgAMAddFreeLicense } as CMsgAMAddFreeLicense;
+    const message = createBaseCMsgAMAddFreeLicense();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2377,28 +2654,51 @@ export const CMsgAMAddFreeLicense = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgAMAddFreeLicense>, I>>(
+    object: I
+  ): CMsgAMAddFreeLicense {
+    const message = createBaseCMsgAMAddFreeLicense();
+    message.steamid =
+      object.steamid !== undefined && object.steamid !== null
+        ? Long.fromValue(object.steamid)
+        : Long.UZERO;
+    message.ipPublic = object.ipPublic ?? 0;
+    message.packageid = object.packageid ?? 0;
+    message.storeCountryCode = object.storeCountryCode ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgAMAddFreeLicenseResponse(): CMsgAMAddFreeLicenseResponse {
+  return { eresult: 0, purchaseResultDetail: 0, transid: Long.UZERO };
+}
 
 export const CMsgAMAddFreeLicenseResponse = {
   encode(
     message: CMsgAMAddFreeLicenseResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).int32(message.eresult);
-    writer.uint32(16).int32(message.purchaseResultDetail);
-    writer.uint32(25).fixed64(message.transid);
+    if (message.eresult !== 0) {
+      writer.uint32(8).int32(message.eresult);
+    }
+    if (message.purchaseResultDetail !== 0) {
+      writer.uint32(16).int32(message.purchaseResultDetail);
+    }
+    if (!message.transid.isZero()) {
+      writer.uint32(25).fixed64(message.transid);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgAMAddFreeLicenseResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgAMAddFreeLicenseResponse
-    } as CMsgAMAddFreeLicenseResponse;
+    const message = createBaseCMsgAMAddFreeLicenseResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2417,8 +2717,25 @@ export const CMsgAMAddFreeLicenseResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgAMAddFreeLicenseResponse>, I>>(
+    object: I
+  ): CMsgAMAddFreeLicenseResponse {
+    const message = createBaseCMsgAMAddFreeLicenseResponse();
+    message.eresult = object.eresult ?? 0;
+    message.purchaseResultDetail = object.purchaseResultDetail ?? 0;
+    message.transid =
+      object.transid !== undefined && object.transid !== null
+        ? Long.fromValue(object.transid)
+        : Long.UZERO;
+    return message;
   }
 };
+
+function createBaseCGCMsgGetIPLocation(): CGCMsgGetIPLocation {
+  return { ips: [] };
+}
 
 export const CGCMsgGetIPLocation = {
   encode(
@@ -2432,11 +2749,11 @@ export const CGCMsgGetIPLocation = {
     writer.ldelim();
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CGCMsgGetIPLocation {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CGCMsgGetIPLocation {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCGCMsgGetIPLocation } as CGCMsgGetIPLocation;
-    message.ips = [];
+    const message = createBaseCGCMsgGetIPLocation();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2456,23 +2773,48 @@ export const CGCMsgGetIPLocation = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgGetIPLocation>, I>>(
+    object: I
+  ): CGCMsgGetIPLocation {
+    const message = createBaseCGCMsgGetIPLocation();
+    message.ips = object.ips?.map(e => e) || [];
+    return message;
   }
 };
 
+function createBaseCIPLocationInfo(): CIPLocationInfo {
+  return { ip: 0, latitude: 0, longitude: 0, country: "", state: "", city: "" };
+}
+
 export const CIPLocationInfo = {
   encode(message: CIPLocationInfo, writer: Writer = Writer.create()): Writer {
-    writer.uint32(8).uint32(message.ip);
-    writer.uint32(21).float(message.latitude);
-    writer.uint32(29).float(message.longitude);
-    writer.uint32(34).string(message.country);
-    writer.uint32(42).string(message.state);
-    writer.uint32(50).string(message.city);
+    if (message.ip !== 0) {
+      writer.uint32(8).uint32(message.ip);
+    }
+    if (message.latitude !== 0) {
+      writer.uint32(21).float(message.latitude);
+    }
+    if (message.longitude !== 0) {
+      writer.uint32(29).float(message.longitude);
+    }
+    if (message.country !== "") {
+      writer.uint32(34).string(message.country);
+    }
+    if (message.state !== "") {
+      writer.uint32(42).string(message.state);
+    }
+    if (message.city !== "") {
+      writer.uint32(50).string(message.city);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CIPLocationInfo {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CIPLocationInfo {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCIPLocationInfo } as CIPLocationInfo;
+    const message = createBaseCIPLocationInfo();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2500,8 +2842,25 @@ export const CIPLocationInfo = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CIPLocationInfo>, I>>(
+    object: I
+  ): CIPLocationInfo {
+    const message = createBaseCIPLocationInfo();
+    message.ip = object.ip ?? 0;
+    message.latitude = object.latitude ?? 0;
+    message.longitude = object.longitude ?? 0;
+    message.country = object.country ?? "";
+    message.state = object.state ?? "";
+    message.city = object.city ?? "";
+    return message;
   }
 };
+
+function createBaseCGCMsgGetIPLocationResponse(): CGCMsgGetIPLocationResponse {
+  return { infos: [] };
+}
 
 export const CGCMsgGetIPLocationResponse = {
   encode(
@@ -2513,16 +2872,14 @@ export const CGCMsgGetIPLocationResponse = {
     }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CGCMsgGetIPLocationResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCGCMsgGetIPLocationResponse
-    } as CGCMsgGetIPLocationResponse;
-    message.infos = [];
+    const message = createBaseCGCMsgGetIPLocationResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2535,24 +2892,40 @@ export const CGCMsgGetIPLocationResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgGetIPLocationResponse>, I>>(
+    object: I
+  ): CGCMsgGetIPLocationResponse {
+    const message = createBaseCGCMsgGetIPLocationResponse();
+    message.infos =
+      object.infos?.map(e => CIPLocationInfo.fromPartial(e)) || [];
+    return message;
   }
 };
+
+function createBaseCGCMsgSystemStatsSchema(): CGCMsgSystemStatsSchema {
+  return { gcAppId: 0, schemaKv: new Uint8Array() };
+}
 
 export const CGCMsgSystemStatsSchema = {
   encode(
     message: CGCMsgSystemStatsSchema,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.gcAppId);
-    writer.uint32(18).bytes(message.schemaKv);
+    if (message.gcAppId !== 0) {
+      writer.uint32(8).uint32(message.gcAppId);
+    }
+    if (message.schemaKv.length !== 0) {
+      writer.uint32(18).bytes(message.schemaKv);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CGCMsgSystemStatsSchema {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CGCMsgSystemStatsSchema {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCGCMsgSystemStatsSchema
-    } as CGCMsgSystemStatsSchema;
+    const message = createBaseCGCMsgSystemStatsSchema();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2568,17 +2941,31 @@ export const CGCMsgSystemStatsSchema = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgSystemStatsSchema>, I>>(
+    object: I
+  ): CGCMsgSystemStatsSchema {
+    const message = createBaseCGCMsgSystemStatsSchema();
+    message.gcAppId = object.gcAppId ?? 0;
+    message.schemaKv = object.schemaKv ?? new Uint8Array();
+    return message;
   }
 };
+
+function createBaseCGCMsgGetSystemStats(): CGCMsgGetSystemStats {
+  return {};
+}
 
 export const CGCMsgGetSystemStats = {
   encode(_: CGCMsgGetSystemStats, writer: Writer = Writer.create()): Writer {
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CGCMsgGetSystemStats {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CGCMsgGetSystemStats {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCGCMsgGetSystemStats } as CGCMsgGetSystemStats;
+    const message = createBaseCGCMsgGetSystemStats();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2588,38 +2975,88 @@ export const CGCMsgGetSystemStats = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgGetSystemStats>, I>>(
+    _: I
+  ): CGCMsgGetSystemStats {
+    const message = createBaseCGCMsgGetSystemStats();
+    return message;
   }
 };
+
+function createBaseCGCMsgGetSystemStatsResponse(): CGCMsgGetSystemStatsResponse {
+  return {
+    gcAppId: 0,
+    statsKv: new Uint8Array(),
+    activeJobs: 0,
+    yieldingJobs: 0,
+    userSessions: 0,
+    gameServerSessions: 0,
+    socaches: 0,
+    socachesToUnload: 0,
+    socachesLoading: 0,
+    writebackQueue: 0,
+    steamidLocks: 0,
+    logonQueue: 0,
+    logonJobs: 0
+  };
+}
 
 export const CGCMsgGetSystemStatsResponse = {
   encode(
     message: CGCMsgGetSystemStatsResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.gcAppId);
-    writer.uint32(18).bytes(message.statsKv);
-    writer.uint32(24).uint32(message.activeJobs);
-    writer.uint32(32).uint32(message.yieldingJobs);
-    writer.uint32(40).uint32(message.userSessions);
-    writer.uint32(48).uint32(message.gameServerSessions);
-    writer.uint32(56).uint32(message.socaches);
-    writer.uint32(64).uint32(message.socachesToUnload);
-    writer.uint32(72).uint32(message.socachesLoading);
-    writer.uint32(80).uint32(message.writebackQueue);
-    writer.uint32(88).uint32(message.steamidLocks);
-    writer.uint32(96).uint32(message.logonQueue);
-    writer.uint32(104).uint32(message.logonJobs);
+    if (message.gcAppId !== 0) {
+      writer.uint32(8).uint32(message.gcAppId);
+    }
+    if (message.statsKv.length !== 0) {
+      writer.uint32(18).bytes(message.statsKv);
+    }
+    if (message.activeJobs !== 0) {
+      writer.uint32(24).uint32(message.activeJobs);
+    }
+    if (message.yieldingJobs !== 0) {
+      writer.uint32(32).uint32(message.yieldingJobs);
+    }
+    if (message.userSessions !== 0) {
+      writer.uint32(40).uint32(message.userSessions);
+    }
+    if (message.gameServerSessions !== 0) {
+      writer.uint32(48).uint32(message.gameServerSessions);
+    }
+    if (message.socaches !== 0) {
+      writer.uint32(56).uint32(message.socaches);
+    }
+    if (message.socachesToUnload !== 0) {
+      writer.uint32(64).uint32(message.socachesToUnload);
+    }
+    if (message.socachesLoading !== 0) {
+      writer.uint32(72).uint32(message.socachesLoading);
+    }
+    if (message.writebackQueue !== 0) {
+      writer.uint32(80).uint32(message.writebackQueue);
+    }
+    if (message.steamidLocks !== 0) {
+      writer.uint32(88).uint32(message.steamidLocks);
+    }
+    if (message.logonQueue !== 0) {
+      writer.uint32(96).uint32(message.logonQueue);
+    }
+    if (message.logonJobs !== 0) {
+      writer.uint32(104).uint32(message.logonJobs);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CGCMsgGetSystemStatsResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCGCMsgGetSystemStatsResponse
-    } as CGCMsgGetSystemStatsResponse;
+    const message = createBaseCGCMsgGetSystemStatsResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2668,21 +3105,60 @@ export const CGCMsgGetSystemStatsResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCMsgGetSystemStatsResponse>, I>>(
+    object: I
+  ): CGCMsgGetSystemStatsResponse {
+    const message = createBaseCGCMsgGetSystemStatsResponse();
+    message.gcAppId = object.gcAppId ?? 0;
+    message.statsKv = object.statsKv ?? new Uint8Array();
+    message.activeJobs = object.activeJobs ?? 0;
+    message.yieldingJobs = object.yieldingJobs ?? 0;
+    message.userSessions = object.userSessions ?? 0;
+    message.gameServerSessions = object.gameServerSessions ?? 0;
+    message.socaches = object.socaches ?? 0;
+    message.socachesToUnload = object.socachesToUnload ?? 0;
+    message.socachesLoading = object.socachesLoading ?? 0;
+    message.writebackQueue = object.writebackQueue ?? 0;
+    message.steamidLocks = object.steamidLocks ?? 0;
+    message.logonQueue = object.logonQueue ?? 0;
+    message.logonJobs = object.logonJobs ?? 0;
+    return message;
   }
 };
 
+function createBaseCMsgAMSendEmail(): CMsgAMSendEmail {
+  return {
+    steamid: Long.UZERO,
+    emailMsgType: 0,
+    emailFormat: 0,
+    personaNameTokens: [],
+    sourceGc: 0,
+    tokens: []
+  };
+}
+
 export const CMsgAMSendEmail = {
   encode(message: CMsgAMSendEmail, writer: Writer = Writer.create()): Writer {
-    writer.uint32(9).fixed64(message.steamid);
-    writer.uint32(16).uint32(message.emailMsgType);
-    writer.uint32(24).uint32(message.emailFormat);
+    if (!message.steamid.isZero()) {
+      writer.uint32(9).fixed64(message.steamid);
+    }
+    if (message.emailMsgType !== 0) {
+      writer.uint32(16).uint32(message.emailMsgType);
+    }
+    if (message.emailFormat !== 0) {
+      writer.uint32(24).uint32(message.emailFormat);
+    }
     for (const v of message.personaNameTokens) {
       CMsgAMSendEmail_PersonaNameReplacementToken.encode(
         v!,
         writer.uint32(42).fork()
       ).ldelim();
     }
-    writer.uint32(48).uint32(message.sourceGc);
+    if (message.sourceGc !== 0) {
+      writer.uint32(48).uint32(message.sourceGc);
+    }
     for (const v of message.tokens) {
       CMsgAMSendEmail_ReplacementToken.encode(
         v!,
@@ -2691,12 +3167,11 @@ export const CMsgAMSendEmail = {
     }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgAMSendEmail {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgAMSendEmail {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgAMSendEmail } as CMsgAMSendEmail;
-    message.personaNameTokens = [];
-    message.tokens = [];
+    const message = createBaseCMsgAMSendEmail();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2731,27 +3206,56 @@ export const CMsgAMSendEmail = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgAMSendEmail>, I>>(
+    object: I
+  ): CMsgAMSendEmail {
+    const message = createBaseCMsgAMSendEmail();
+    message.steamid =
+      object.steamid !== undefined && object.steamid !== null
+        ? Long.fromValue(object.steamid)
+        : Long.UZERO;
+    message.emailMsgType = object.emailMsgType ?? 0;
+    message.emailFormat = object.emailFormat ?? 0;
+    message.personaNameTokens =
+      object.personaNameTokens?.map(e =>
+        CMsgAMSendEmail_PersonaNameReplacementToken.fromPartial(e)
+      ) || [];
+    message.sourceGc = object.sourceGc ?? 0;
+    message.tokens =
+      object.tokens?.map(e =>
+        CMsgAMSendEmail_ReplacementToken.fromPartial(e)
+      ) || [];
+    return message;
   }
 };
+
+function createBaseCMsgAMSendEmail_ReplacementToken(): CMsgAMSendEmail_ReplacementToken {
+  return { tokenName: "", tokenValue: "" };
+}
 
 export const CMsgAMSendEmail_ReplacementToken = {
   encode(
     message: CMsgAMSendEmail_ReplacementToken,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(10).string(message.tokenName);
-    writer.uint32(18).string(message.tokenValue);
+    if (message.tokenName !== "") {
+      writer.uint32(10).string(message.tokenName);
+    }
+    if (message.tokenValue !== "") {
+      writer.uint32(18).string(message.tokenValue);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgAMSendEmail_ReplacementToken {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgAMSendEmail_ReplacementToken
-    } as CMsgAMSendEmail_ReplacementToken;
+    const message = createBaseCMsgAMSendEmail_ReplacementToken();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2767,27 +3271,43 @@ export const CMsgAMSendEmail_ReplacementToken = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgAMSendEmail_ReplacementToken>, I>
+  >(object: I): CMsgAMSendEmail_ReplacementToken {
+    const message = createBaseCMsgAMSendEmail_ReplacementToken();
+    message.tokenName = object.tokenName ?? "";
+    message.tokenValue = object.tokenValue ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgAMSendEmail_PersonaNameReplacementToken(): CMsgAMSendEmail_PersonaNameReplacementToken {
+  return { steamid: Long.UZERO, tokenName: "" };
+}
 
 export const CMsgAMSendEmail_PersonaNameReplacementToken = {
   encode(
     message: CMsgAMSendEmail_PersonaNameReplacementToken,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.steamid);
-    writer.uint32(18).string(message.tokenName);
+    if (!message.steamid.isZero()) {
+      writer.uint32(9).fixed64(message.steamid);
+    }
+    if (message.tokenName !== "") {
+      writer.uint32(18).string(message.tokenName);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgAMSendEmail_PersonaNameReplacementToken {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgAMSendEmail_PersonaNameReplacementToken
-    } as CMsgAMSendEmail_PersonaNameReplacementToken;
+    const message = createBaseCMsgAMSendEmail_PersonaNameReplacementToken();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2803,23 +3323,40 @@ export const CMsgAMSendEmail_PersonaNameReplacementToken = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgAMSendEmail_PersonaNameReplacementToken>, I>
+  >(object: I): CMsgAMSendEmail_PersonaNameReplacementToken {
+    const message = createBaseCMsgAMSendEmail_PersonaNameReplacementToken();
+    message.steamid =
+      object.steamid !== undefined && object.steamid !== null
+        ? Long.fromValue(object.steamid)
+        : Long.UZERO;
+    message.tokenName = object.tokenName ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgAMSendEmailResponse(): CMsgAMSendEmailResponse {
+  return { eresult: 0 };
+}
 
 export const CMsgAMSendEmailResponse = {
   encode(
     message: CMsgAMSendEmailResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.eresult);
+    if (message.eresult !== 0) {
+      writer.uint32(8).uint32(message.eresult);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgAMSendEmailResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgAMSendEmailResponse {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgAMSendEmailResponse
-    } as CMsgAMSendEmailResponse;
+    const message = createBaseCMsgAMSendEmailResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2832,24 +3369,45 @@ export const CMsgAMSendEmailResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgAMSendEmailResponse>, I>>(
+    object: I
+  ): CMsgAMSendEmailResponse {
+    const message = createBaseCMsgAMSendEmailResponse();
+    message.eresult = object.eresult ?? 0;
+    return message;
   }
 };
+
+function createBaseCMsgGCGetEmailTemplate(): CMsgGCGetEmailTemplate {
+  return { appId: 0, emailMsgType: 0, emailLang: 0, emailFormat: 0 };
+}
 
 export const CMsgGCGetEmailTemplate = {
   encode(
     message: CMsgGCGetEmailTemplate,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.appId);
-    writer.uint32(16).uint32(message.emailMsgType);
-    writer.uint32(24).int32(message.emailLang);
-    writer.uint32(32).int32(message.emailFormat);
+    if (message.appId !== 0) {
+      writer.uint32(8).uint32(message.appId);
+    }
+    if (message.emailMsgType !== 0) {
+      writer.uint32(16).uint32(message.emailMsgType);
+    }
+    if (message.emailLang !== 0) {
+      writer.uint32(24).int32(message.emailLang);
+    }
+    if (message.emailFormat !== 0) {
+      writer.uint32(32).int32(message.emailFormat);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgGCGetEmailTemplate {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgGCGetEmailTemplate {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgGCGetEmailTemplate } as CMsgGCGetEmailTemplate;
+    const message = createBaseCMsgGCGetEmailTemplate();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2871,28 +3429,48 @@ export const CMsgGCGetEmailTemplate = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCGetEmailTemplate>, I>>(
+    object: I
+  ): CMsgGCGetEmailTemplate {
+    const message = createBaseCMsgGCGetEmailTemplate();
+    message.appId = object.appId ?? 0;
+    message.emailMsgType = object.emailMsgType ?? 0;
+    message.emailLang = object.emailLang ?? 0;
+    message.emailFormat = object.emailFormat ?? 0;
+    return message;
   }
 };
+
+function createBaseCMsgGCGetEmailTemplateResponse(): CMsgGCGetEmailTemplateResponse {
+  return { eresult: 0, templateExists: false, template: "" };
+}
 
 export const CMsgGCGetEmailTemplateResponse = {
   encode(
     message: CMsgGCGetEmailTemplateResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.eresult);
-    writer.uint32(16).bool(message.templateExists);
-    writer.uint32(26).string(message.template);
+    if (message.eresult !== 0) {
+      writer.uint32(8).uint32(message.eresult);
+    }
+    if (message.templateExists === true) {
+      writer.uint32(16).bool(message.templateExists);
+    }
+    if (message.template !== "") {
+      writer.uint32(26).string(message.template);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCGetEmailTemplateResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCGetEmailTemplateResponse
-    } as CMsgGCGetEmailTemplateResponse;
+    const message = createBaseCMsgGCGetEmailTemplateResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2911,27 +3489,56 @@ export const CMsgGCGetEmailTemplateResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCGetEmailTemplateResponse>, I>>(
+    object: I
+  ): CMsgGCGetEmailTemplateResponse {
+    const message = createBaseCMsgGCGetEmailTemplateResponse();
+    message.eresult = object.eresult ?? 0;
+    message.templateExists = object.templateExists ?? false;
+    message.template = object.template ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgAMGrantGuestPasses2(): CMsgAMGrantGuestPasses2 {
+  return {
+    steamId: Long.UZERO,
+    packageId: 0,
+    passesToGrant: 0,
+    daysToExpiration: 0,
+    action: 0
+  };
+}
 
 export const CMsgAMGrantGuestPasses2 = {
   encode(
     message: CMsgAMGrantGuestPasses2,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.steamId);
-    writer.uint32(16).uint32(message.packageId);
-    writer.uint32(24).int32(message.passesToGrant);
-    writer.uint32(32).int32(message.daysToExpiration);
-    writer.uint32(40).int32(message.action);
+    if (!message.steamId.isZero()) {
+      writer.uint32(9).fixed64(message.steamId);
+    }
+    if (message.packageId !== 0) {
+      writer.uint32(16).uint32(message.packageId);
+    }
+    if (message.passesToGrant !== 0) {
+      writer.uint32(24).int32(message.passesToGrant);
+    }
+    if (message.daysToExpiration !== 0) {
+      writer.uint32(32).int32(message.daysToExpiration);
+    }
+    if (message.action !== 0) {
+      writer.uint32(40).int32(message.action);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgAMGrantGuestPasses2 {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgAMGrantGuestPasses2 {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgAMGrantGuestPasses2
-    } as CMsgAMGrantGuestPasses2;
+    const message = createBaseCMsgAMGrantGuestPasses2();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2956,27 +3563,49 @@ export const CMsgAMGrantGuestPasses2 = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgAMGrantGuestPasses2>, I>>(
+    object: I
+  ): CMsgAMGrantGuestPasses2 {
+    const message = createBaseCMsgAMGrantGuestPasses2();
+    message.steamId =
+      object.steamId !== undefined && object.steamId !== null
+        ? Long.fromValue(object.steamId)
+        : Long.UZERO;
+    message.packageId = object.packageId ?? 0;
+    message.passesToGrant = object.passesToGrant ?? 0;
+    message.daysToExpiration = object.daysToExpiration ?? 0;
+    message.action = object.action ?? 0;
+    return message;
   }
 };
+
+function createBaseCMsgAMGrantGuestPasses2Response(): CMsgAMGrantGuestPasses2Response {
+  return { eresult: 0, passesGranted: 0 };
+}
 
 export const CMsgAMGrantGuestPasses2Response = {
   encode(
     message: CMsgAMGrantGuestPasses2Response,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).int32(message.eresult);
-    writer.uint32(16).int32(message.passesGranted);
+    if (message.eresult !== 0) {
+      writer.uint32(8).int32(message.eresult);
+    }
+    if (message.passesGranted !== 0) {
+      writer.uint32(16).int32(message.passesGranted);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgAMGrantGuestPasses2Response {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgAMGrantGuestPasses2Response
-    } as CMsgAMGrantGuestPasses2Response;
+    const message = createBaseCMsgAMGrantGuestPasses2Response();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2992,27 +3621,43 @@ export const CMsgAMGrantGuestPasses2Response = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgAMGrantGuestPasses2Response>, I>>(
+    object: I
+  ): CMsgAMGrantGuestPasses2Response {
+    const message = createBaseCMsgAMGrantGuestPasses2Response();
+    message.eresult = object.eresult ?? 0;
+    message.passesGranted = object.passesGranted ?? 0;
+    return message;
   }
 };
+
+function createBaseCGCSystemMsgGetAccountDetails(): CGCSystemMsgGetAccountDetails {
+  return { steamid: Long.UZERO, appid: 0 };
+}
 
 export const CGCSystemMsgGetAccountDetails = {
   encode(
     message: CGCSystemMsgGetAccountDetails,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.steamid);
-    writer.uint32(16).uint32(message.appid);
+    if (!message.steamid.isZero()) {
+      writer.uint32(9).fixed64(message.steamid);
+    }
+    if (message.appid !== 0) {
+      writer.uint32(16).uint32(message.appid);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CGCSystemMsgGetAccountDetails {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCGCSystemMsgGetAccountDetails
-    } as CGCSystemMsgGetAccountDetails;
+    const message = createBaseCGCSystemMsgGetAccountDetails();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3028,61 +3673,185 @@ export const CGCSystemMsgGetAccountDetails = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CGCSystemMsgGetAccountDetails>, I>>(
+    object: I
+  ): CGCSystemMsgGetAccountDetails {
+    const message = createBaseCGCSystemMsgGetAccountDetails();
+    message.steamid =
+      object.steamid !== undefined && object.steamid !== null
+        ? Long.fromValue(object.steamid)
+        : Long.UZERO;
+    message.appid = object.appid ?? 0;
+    return message;
   }
 };
+
+function createBaseCGCSystemMsgGetAccountDetailsResponse(): CGCSystemMsgGetAccountDetailsResponse {
+  return {
+    eresultDeprecated: 0,
+    accountName: "",
+    personaName: "",
+    isProfilePublic: false,
+    isInventoryPublic: false,
+    isVacBanned: false,
+    isCyberCafe: false,
+    isSchoolAccount: false,
+    isLimited: false,
+    isSubscribed: false,
+    package: 0,
+    isFreeTrialAccount: false,
+    freeTrialExpiration: 0,
+    isLowViolence: false,
+    isAccountLockedDown: false,
+    isCommunityBanned: false,
+    isTradeBanned: false,
+    tradeBanExpiration: 0,
+    accountid: 0,
+    suspensionEndTime: 0,
+    currency: "",
+    steamLevel: 0,
+    friendCount: 0,
+    accountCreationTime: 0,
+    isSteamguardEnabled: false,
+    isPhoneVerified: false,
+    isTwoFactorAuthEnabled: false,
+    twoFactorEnabledTime: 0,
+    phoneVerificationTime: 0,
+    phoneId: Long.UZERO,
+    isPhoneIdentifying: false,
+    rtIdentityLinked: 0,
+    rtBirthDate: 0,
+    txnCountryCode: "",
+    hasAcceptedChinaSsa: false,
+    isBannedSteamChina: false
+  };
+}
 
 export const CGCSystemMsgGetAccountDetailsResponse = {
   encode(
     message: CGCSystemMsgGetAccountDetailsResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.eresultDeprecated);
-    writer.uint32(18).string(message.accountName);
-    writer.uint32(26).string(message.personaName);
-    writer.uint32(32).bool(message.isProfilePublic);
-    writer.uint32(40).bool(message.isInventoryPublic);
-    writer.uint32(56).bool(message.isVacBanned);
-    writer.uint32(64).bool(message.isCyberCafe);
-    writer.uint32(72).bool(message.isSchoolAccount);
-    writer.uint32(80).bool(message.isLimited);
-    writer.uint32(88).bool(message.isSubscribed);
-    writer.uint32(96).uint32(message.package);
-    writer.uint32(104).bool(message.isFreeTrialAccount);
-    writer.uint32(112).uint32(message.freeTrialExpiration);
-    writer.uint32(120).bool(message.isLowViolence);
-    writer.uint32(128).bool(message.isAccountLockedDown);
-    writer.uint32(136).bool(message.isCommunityBanned);
-    writer.uint32(144).bool(message.isTradeBanned);
-    writer.uint32(152).uint32(message.tradeBanExpiration);
-    writer.uint32(160).uint32(message.accountid);
-    writer.uint32(168).uint32(message.suspensionEndTime);
-    writer.uint32(178).string(message.currency);
-    writer.uint32(184).uint32(message.steamLevel);
-    writer.uint32(192).uint32(message.friendCount);
-    writer.uint32(200).uint32(message.accountCreationTime);
-    writer.uint32(216).bool(message.isSteamguardEnabled);
-    writer.uint32(224).bool(message.isPhoneVerified);
-    writer.uint32(232).bool(message.isTwoFactorAuthEnabled);
-    writer.uint32(240).uint32(message.twoFactorEnabledTime);
-    writer.uint32(248).uint32(message.phoneVerificationTime);
-    writer.uint32(264).uint64(message.phoneId);
-    writer.uint32(272).bool(message.isPhoneIdentifying);
-    writer.uint32(280).uint32(message.rtIdentityLinked);
-    writer.uint32(288).uint32(message.rtBirthDate);
-    writer.uint32(298).string(message.txnCountryCode);
-    writer.uint32(304).bool(message.hasAcceptedChinaSsa);
-    writer.uint32(312).bool(message.isBannedSteamChina);
+    if (message.eresultDeprecated !== 0) {
+      writer.uint32(8).uint32(message.eresultDeprecated);
+    }
+    if (message.accountName !== "") {
+      writer.uint32(18).string(message.accountName);
+    }
+    if (message.personaName !== "") {
+      writer.uint32(26).string(message.personaName);
+    }
+    if (message.isProfilePublic === true) {
+      writer.uint32(32).bool(message.isProfilePublic);
+    }
+    if (message.isInventoryPublic === true) {
+      writer.uint32(40).bool(message.isInventoryPublic);
+    }
+    if (message.isVacBanned === true) {
+      writer.uint32(56).bool(message.isVacBanned);
+    }
+    if (message.isCyberCafe === true) {
+      writer.uint32(64).bool(message.isCyberCafe);
+    }
+    if (message.isSchoolAccount === true) {
+      writer.uint32(72).bool(message.isSchoolAccount);
+    }
+    if (message.isLimited === true) {
+      writer.uint32(80).bool(message.isLimited);
+    }
+    if (message.isSubscribed === true) {
+      writer.uint32(88).bool(message.isSubscribed);
+    }
+    if (message.package !== 0) {
+      writer.uint32(96).uint32(message.package);
+    }
+    if (message.isFreeTrialAccount === true) {
+      writer.uint32(104).bool(message.isFreeTrialAccount);
+    }
+    if (message.freeTrialExpiration !== 0) {
+      writer.uint32(112).uint32(message.freeTrialExpiration);
+    }
+    if (message.isLowViolence === true) {
+      writer.uint32(120).bool(message.isLowViolence);
+    }
+    if (message.isAccountLockedDown === true) {
+      writer.uint32(128).bool(message.isAccountLockedDown);
+    }
+    if (message.isCommunityBanned === true) {
+      writer.uint32(136).bool(message.isCommunityBanned);
+    }
+    if (message.isTradeBanned === true) {
+      writer.uint32(144).bool(message.isTradeBanned);
+    }
+    if (message.tradeBanExpiration !== 0) {
+      writer.uint32(152).uint32(message.tradeBanExpiration);
+    }
+    if (message.accountid !== 0) {
+      writer.uint32(160).uint32(message.accountid);
+    }
+    if (message.suspensionEndTime !== 0) {
+      writer.uint32(168).uint32(message.suspensionEndTime);
+    }
+    if (message.currency !== "") {
+      writer.uint32(178).string(message.currency);
+    }
+    if (message.steamLevel !== 0) {
+      writer.uint32(184).uint32(message.steamLevel);
+    }
+    if (message.friendCount !== 0) {
+      writer.uint32(192).uint32(message.friendCount);
+    }
+    if (message.accountCreationTime !== 0) {
+      writer.uint32(200).uint32(message.accountCreationTime);
+    }
+    if (message.isSteamguardEnabled === true) {
+      writer.uint32(216).bool(message.isSteamguardEnabled);
+    }
+    if (message.isPhoneVerified === true) {
+      writer.uint32(224).bool(message.isPhoneVerified);
+    }
+    if (message.isTwoFactorAuthEnabled === true) {
+      writer.uint32(232).bool(message.isTwoFactorAuthEnabled);
+    }
+    if (message.twoFactorEnabledTime !== 0) {
+      writer.uint32(240).uint32(message.twoFactorEnabledTime);
+    }
+    if (message.phoneVerificationTime !== 0) {
+      writer.uint32(248).uint32(message.phoneVerificationTime);
+    }
+    if (!message.phoneId.isZero()) {
+      writer.uint32(264).uint64(message.phoneId);
+    }
+    if (message.isPhoneIdentifying === true) {
+      writer.uint32(272).bool(message.isPhoneIdentifying);
+    }
+    if (message.rtIdentityLinked !== 0) {
+      writer.uint32(280).uint32(message.rtIdentityLinked);
+    }
+    if (message.rtBirthDate !== 0) {
+      writer.uint32(288).uint32(message.rtBirthDate);
+    }
+    if (message.txnCountryCode !== "") {
+      writer.uint32(298).string(message.txnCountryCode);
+    }
+    if (message.hasAcceptedChinaSsa === true) {
+      writer.uint32(304).bool(message.hasAcceptedChinaSsa);
+    }
+    if (message.isBannedSteamChina === true) {
+      writer.uint32(312).bool(message.isBannedSteamChina);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CGCSystemMsgGetAccountDetailsResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCGCSystemMsgGetAccountDetailsResponse
-    } as CGCSystemMsgGetAccountDetailsResponse;
+    const message = createBaseCGCSystemMsgGetAccountDetailsResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3200,8 +3969,58 @@ export const CGCSystemMsgGetAccountDetailsResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CGCSystemMsgGetAccountDetailsResponse>, I>
+  >(object: I): CGCSystemMsgGetAccountDetailsResponse {
+    const message = createBaseCGCSystemMsgGetAccountDetailsResponse();
+    message.eresultDeprecated = object.eresultDeprecated ?? 0;
+    message.accountName = object.accountName ?? "";
+    message.personaName = object.personaName ?? "";
+    message.isProfilePublic = object.isProfilePublic ?? false;
+    message.isInventoryPublic = object.isInventoryPublic ?? false;
+    message.isVacBanned = object.isVacBanned ?? false;
+    message.isCyberCafe = object.isCyberCafe ?? false;
+    message.isSchoolAccount = object.isSchoolAccount ?? false;
+    message.isLimited = object.isLimited ?? false;
+    message.isSubscribed = object.isSubscribed ?? false;
+    message.package = object.package ?? 0;
+    message.isFreeTrialAccount = object.isFreeTrialAccount ?? false;
+    message.freeTrialExpiration = object.freeTrialExpiration ?? 0;
+    message.isLowViolence = object.isLowViolence ?? false;
+    message.isAccountLockedDown = object.isAccountLockedDown ?? false;
+    message.isCommunityBanned = object.isCommunityBanned ?? false;
+    message.isTradeBanned = object.isTradeBanned ?? false;
+    message.tradeBanExpiration = object.tradeBanExpiration ?? 0;
+    message.accountid = object.accountid ?? 0;
+    message.suspensionEndTime = object.suspensionEndTime ?? 0;
+    message.currency = object.currency ?? "";
+    message.steamLevel = object.steamLevel ?? 0;
+    message.friendCount = object.friendCount ?? 0;
+    message.accountCreationTime = object.accountCreationTime ?? 0;
+    message.isSteamguardEnabled = object.isSteamguardEnabled ?? false;
+    message.isPhoneVerified = object.isPhoneVerified ?? false;
+    message.isTwoFactorAuthEnabled = object.isTwoFactorAuthEnabled ?? false;
+    message.twoFactorEnabledTime = object.twoFactorEnabledTime ?? 0;
+    message.phoneVerificationTime = object.phoneVerificationTime ?? 0;
+    message.phoneId =
+      object.phoneId !== undefined && object.phoneId !== null
+        ? Long.fromValue(object.phoneId)
+        : Long.UZERO;
+    message.isPhoneIdentifying = object.isPhoneIdentifying ?? false;
+    message.rtIdentityLinked = object.rtIdentityLinked ?? 0;
+    message.rtBirthDate = object.rtBirthDate ?? 0;
+    message.txnCountryCode = object.txnCountryCode ?? "";
+    message.hasAcceptedChinaSsa = object.hasAcceptedChinaSsa ?? false;
+    message.isBannedSteamChina = object.isBannedSteamChina ?? false;
+    return message;
   }
 };
+
+function createBaseCMsgGCGetPersonaNames(): CMsgGCGetPersonaNames {
+  return { steamids: [] };
+}
 
 export const CMsgGCGetPersonaNames = {
   encode(
@@ -3215,11 +4034,11 @@ export const CMsgGCGetPersonaNames = {
     writer.ldelim();
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgGCGetPersonaNames {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgGCGetPersonaNames {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgGCGetPersonaNames } as CMsgGCGetPersonaNames;
-    message.steamids = [];
+    const message = createBaseCMsgGCGetPersonaNames();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3239,8 +4058,20 @@ export const CMsgGCGetPersonaNames = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCGetPersonaNames>, I>>(
+    object: I
+  ): CMsgGCGetPersonaNames {
+    const message = createBaseCMsgGCGetPersonaNames();
+    message.steamids = object.steamids?.map(e => Long.fromValue(e)) || [];
+    return message;
   }
 };
+
+function createBaseCMsgGCGetPersonaNamesResponse(): CMsgGCGetPersonaNamesResponse {
+  return { succeededLookups: [], failedLookupSteamids: [] };
+}
 
 export const CMsgGCGetPersonaNamesResponse = {
   encode(
@@ -3260,17 +4091,14 @@ export const CMsgGCGetPersonaNamesResponse = {
     writer.ldelim();
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCGetPersonaNamesResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCGetPersonaNamesResponse
-    } as CMsgGCGetPersonaNamesResponse;
-    message.succeededLookups = [];
-    message.failedLookupSteamids = [];
+    const message = createBaseCMsgGCGetPersonaNamesResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3298,27 +4126,47 @@ export const CMsgGCGetPersonaNamesResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCGetPersonaNamesResponse>, I>>(
+    object: I
+  ): CMsgGCGetPersonaNamesResponse {
+    const message = createBaseCMsgGCGetPersonaNamesResponse();
+    message.succeededLookups =
+      object.succeededLookups?.map(e =>
+        CMsgGCGetPersonaNamesResponse_PersonaName.fromPartial(e)
+      ) || [];
+    message.failedLookupSteamids =
+      object.failedLookupSteamids?.map(e => Long.fromValue(e)) || [];
+    return message;
   }
 };
+
+function createBaseCMsgGCGetPersonaNamesResponse_PersonaName(): CMsgGCGetPersonaNamesResponse_PersonaName {
+  return { steamid: Long.UZERO, personaName: "" };
+}
 
 export const CMsgGCGetPersonaNamesResponse_PersonaName = {
   encode(
     message: CMsgGCGetPersonaNamesResponse_PersonaName,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.steamid);
-    writer.uint32(18).string(message.personaName);
+    if (!message.steamid.isZero()) {
+      writer.uint32(9).fixed64(message.steamid);
+    }
+    if (message.personaName !== "") {
+      writer.uint32(18).string(message.personaName);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCGetPersonaNamesResponse_PersonaName {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCGetPersonaNamesResponse_PersonaName
-    } as CMsgGCGetPersonaNamesResponse_PersonaName;
+    const message = createBaseCMsgGCGetPersonaNamesResponse_PersonaName();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3334,22 +4182,43 @@ export const CMsgGCGetPersonaNamesResponse_PersonaName = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgGCGetPersonaNamesResponse_PersonaName>, I>
+  >(object: I): CMsgGCGetPersonaNamesResponse_PersonaName {
+    const message = createBaseCMsgGCGetPersonaNamesResponse_PersonaName();
+    message.steamid =
+      object.steamid !== undefined && object.steamid !== null
+        ? Long.fromValue(object.steamid)
+        : Long.UZERO;
+    message.personaName = object.personaName ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgGCCheckFriendship(): CMsgGCCheckFriendship {
+  return { steamidLeft: Long.UZERO, steamidRight: Long.UZERO };
+}
 
 export const CMsgGCCheckFriendship = {
   encode(
     message: CMsgGCCheckFriendship,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.steamidLeft);
-    writer.uint32(17).fixed64(message.steamidRight);
+    if (!message.steamidLeft.isZero()) {
+      writer.uint32(9).fixed64(message.steamidLeft);
+    }
+    if (!message.steamidRight.isZero()) {
+      writer.uint32(17).fixed64(message.steamidRight);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgGCCheckFriendship {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgGCCheckFriendship {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgGCCheckFriendship } as CMsgGCCheckFriendship;
+    const message = createBaseCMsgGCCheckFriendship();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3365,27 +4234,49 @@ export const CMsgGCCheckFriendship = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCCheckFriendship>, I>>(
+    object: I
+  ): CMsgGCCheckFriendship {
+    const message = createBaseCMsgGCCheckFriendship();
+    message.steamidLeft =
+      object.steamidLeft !== undefined && object.steamidLeft !== null
+        ? Long.fromValue(object.steamidLeft)
+        : Long.UZERO;
+    message.steamidRight =
+      object.steamidRight !== undefined && object.steamidRight !== null
+        ? Long.fromValue(object.steamidRight)
+        : Long.UZERO;
+    return message;
   }
 };
+
+function createBaseCMsgGCCheckFriendshipResponse(): CMsgGCCheckFriendshipResponse {
+  return { success: false, foundFriendship: false };
+}
 
 export const CMsgGCCheckFriendshipResponse = {
   encode(
     message: CMsgGCCheckFriendshipResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).bool(message.success);
-    writer.uint32(16).bool(message.foundFriendship);
+    if (message.success === true) {
+      writer.uint32(8).bool(message.success);
+    }
+    if (message.foundFriendship === true) {
+      writer.uint32(16).bool(message.foundFriendship);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCCheckFriendshipResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCCheckFriendshipResponse
-    } as CMsgGCCheckFriendshipResponse;
+    const message = createBaseCMsgGCCheckFriendshipResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3401,15 +4292,30 @@ export const CMsgGCCheckFriendshipResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCCheckFriendshipResponse>, I>>(
+    object: I
+  ): CMsgGCCheckFriendshipResponse {
+    const message = createBaseCMsgGCCheckFriendshipResponse();
+    message.success = object.success ?? false;
+    message.foundFriendship = object.foundFriendship ?? false;
+    return message;
   }
 };
+
+function createBaseCMsgGCMsgMasterSetDirectory(): CMsgGCMsgMasterSetDirectory {
+  return { masterDirIndex: 0, dir: [] };
+}
 
 export const CMsgGCMsgMasterSetDirectory = {
   encode(
     message: CMsgGCMsgMasterSetDirectory,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.masterDirIndex);
+    if (message.masterDirIndex !== 0) {
+      writer.uint32(8).uint32(message.masterDirIndex);
+    }
     for (const v of message.dir) {
       CMsgGCMsgMasterSetDirectory_SubGC.encode(
         v!,
@@ -3418,16 +4324,14 @@ export const CMsgGCMsgMasterSetDirectory = {
     }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetDirectory {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCMsgMasterSetDirectory
-    } as CMsgGCMsgMasterSetDirectory;
-    message.dir = [];
+    const message = createBaseCMsgGCMsgMasterSetDirectory();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3445,30 +4349,54 @@ export const CMsgGCMsgMasterSetDirectory = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCMsgMasterSetDirectory>, I>>(
+    object: I
+  ): CMsgGCMsgMasterSetDirectory {
+    const message = createBaseCMsgGCMsgMasterSetDirectory();
+    message.masterDirIndex = object.masterDirIndex ?? 0;
+    message.dir =
+      object.dir?.map(e => CMsgGCMsgMasterSetDirectory_SubGC.fromPartial(e)) ||
+      [];
+    return message;
   }
 };
+
+function createBaseCMsgGCMsgMasterSetDirectory_SubGC(): CMsgGCMsgMasterSetDirectory_SubGC {
+  return { dirIndex: 0, name: "", box: "", commandLine: "", gcBinary: "" };
+}
 
 export const CMsgGCMsgMasterSetDirectory_SubGC = {
   encode(
     message: CMsgGCMsgMasterSetDirectory_SubGC,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.dirIndex);
-    writer.uint32(18).string(message.name);
-    writer.uint32(26).string(message.box);
-    writer.uint32(34).string(message.commandLine);
-    writer.uint32(42).string(message.gcBinary);
+    if (message.dirIndex !== 0) {
+      writer.uint32(8).uint32(message.dirIndex);
+    }
+    if (message.name !== "") {
+      writer.uint32(18).string(message.name);
+    }
+    if (message.box !== "") {
+      writer.uint32(26).string(message.box);
+    }
+    if (message.commandLine !== "") {
+      writer.uint32(34).string(message.commandLine);
+    }
+    if (message.gcBinary !== "") {
+      writer.uint32(42).string(message.gcBinary);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetDirectory_SubGC {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCMsgMasterSetDirectory_SubGC
-    } as CMsgGCMsgMasterSetDirectory_SubGC;
+    const message = createBaseCMsgGCMsgMasterSetDirectory_SubGC();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3493,27 +4421,46 @@ export const CMsgGCMsgMasterSetDirectory_SubGC = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgGCMsgMasterSetDirectory_SubGC>, I>
+  >(object: I): CMsgGCMsgMasterSetDirectory_SubGC {
+    const message = createBaseCMsgGCMsgMasterSetDirectory_SubGC();
+    message.dirIndex = object.dirIndex ?? 0;
+    message.name = object.name ?? "";
+    message.box = object.box ?? "";
+    message.commandLine = object.commandLine ?? "";
+    message.gcBinary = object.gcBinary ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgGCMsgMasterSetDirectoryResponse(): CMsgGCMsgMasterSetDirectoryResponse {
+  return { eresult: 0, message: "" };
+}
 
 export const CMsgGCMsgMasterSetDirectoryResponse = {
   encode(
     message: CMsgGCMsgMasterSetDirectoryResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).int32(message.eresult);
-    writer.uint32(18).string(message.message);
+    if (message.eresult !== 0) {
+      writer.uint32(8).int32(message.eresult);
+    }
+    if (message.message !== "") {
+      writer.uint32(18).string(message.message);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetDirectoryResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCMsgMasterSetDirectoryResponse
-    } as CMsgGCMsgMasterSetDirectoryResponse;
+    const message = createBaseCMsgGCMsgMasterSetDirectoryResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3529,26 +4476,40 @@ export const CMsgGCMsgMasterSetDirectoryResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgGCMsgMasterSetDirectoryResponse>, I>
+  >(object: I): CMsgGCMsgMasterSetDirectoryResponse {
+    const message = createBaseCMsgGCMsgMasterSetDirectoryResponse();
+    message.eresult = object.eresult ?? 0;
+    message.message = object.message ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgGCMsgWebAPIJobRequestForwardResponse(): CMsgGCMsgWebAPIJobRequestForwardResponse {
+  return { dirIndex: 0 };
+}
 
 export const CMsgGCMsgWebAPIJobRequestForwardResponse = {
   encode(
     message: CMsgGCMsgWebAPIJobRequestForwardResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.dirIndex);
+    if (message.dirIndex !== 0) {
+      writer.uint32(8).uint32(message.dirIndex);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgWebAPIJobRequestForwardResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCMsgWebAPIJobRequestForwardResponse
-    } as CMsgGCMsgWebAPIJobRequestForwardResponse;
+    const message = createBaseCMsgGCMsgWebAPIJobRequestForwardResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3561,26 +4522,39 @@ export const CMsgGCMsgWebAPIJobRequestForwardResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgGCMsgWebAPIJobRequestForwardResponse>, I>
+  >(object: I): CMsgGCMsgWebAPIJobRequestForwardResponse {
+    const message = createBaseCMsgGCMsgWebAPIJobRequestForwardResponse();
+    message.dirIndex = object.dirIndex ?? 0;
+    return message;
   }
 };
+
+function createBaseCGCSystemMsgGetPurchaseTrustRequest(): CGCSystemMsgGetPurchaseTrustRequest {
+  return { steamid: Long.UZERO };
+}
 
 export const CGCSystemMsgGetPurchaseTrustRequest = {
   encode(
     message: CGCSystemMsgGetPurchaseTrustRequest,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.steamid);
+    if (!message.steamid.isZero()) {
+      writer.uint32(9).fixed64(message.steamid);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CGCSystemMsgGetPurchaseTrustRequest {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCGCSystemMsgGetPurchaseTrustRequest
-    } as CGCSystemMsgGetPurchaseTrustRequest;
+    const message = createBaseCGCSystemMsgGetPurchaseTrustRequest();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3593,29 +4567,56 @@ export const CGCSystemMsgGetPurchaseTrustRequest = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CGCSystemMsgGetPurchaseTrustRequest>, I>
+  >(object: I): CGCSystemMsgGetPurchaseTrustRequest {
+    const message = createBaseCGCSystemMsgGetPurchaseTrustRequest();
+    message.steamid =
+      object.steamid !== undefined && object.steamid !== null
+        ? Long.fromValue(object.steamid)
+        : Long.UZERO;
+    return message;
   }
 };
+
+function createBaseCGCSystemMsgGetPurchaseTrustResponse(): CGCSystemMsgGetPurchaseTrustResponse {
+  return {
+    hasPriorPurchaseHistory: false,
+    hasNoRecentPasswordResets: false,
+    isWalletCashTrusted: false,
+    timeAllTrusted: 0
+  };
+}
 
 export const CGCSystemMsgGetPurchaseTrustResponse = {
   encode(
     message: CGCSystemMsgGetPurchaseTrustResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).bool(message.hasPriorPurchaseHistory);
-    writer.uint32(16).bool(message.hasNoRecentPasswordResets);
-    writer.uint32(24).bool(message.isWalletCashTrusted);
-    writer.uint32(32).uint32(message.timeAllTrusted);
+    if (message.hasPriorPurchaseHistory === true) {
+      writer.uint32(8).bool(message.hasPriorPurchaseHistory);
+    }
+    if (message.hasNoRecentPasswordResets === true) {
+      writer.uint32(16).bool(message.hasNoRecentPasswordResets);
+    }
+    if (message.isWalletCashTrusted === true) {
+      writer.uint32(24).bool(message.isWalletCashTrusted);
+    }
+    if (message.timeAllTrusted !== 0) {
+      writer.uint32(32).uint32(message.timeAllTrusted);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CGCSystemMsgGetPurchaseTrustResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCGCSystemMsgGetPurchaseTrustResponse
-    } as CGCSystemMsgGetPurchaseTrustResponse;
+    const message = createBaseCGCSystemMsgGetPurchaseTrustResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3637,30 +4638,61 @@ export const CGCSystemMsgGetPurchaseTrustResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CGCSystemMsgGetPurchaseTrustResponse>, I>
+  >(object: I): CGCSystemMsgGetPurchaseTrustResponse {
+    const message = createBaseCGCSystemMsgGetPurchaseTrustResponse();
+    message.hasPriorPurchaseHistory = object.hasPriorPurchaseHistory ?? false;
+    message.hasNoRecentPasswordResets =
+      object.hasNoRecentPasswordResets ?? false;
+    message.isWalletCashTrusted = object.isWalletCashTrusted ?? false;
+    message.timeAllTrusted = object.timeAllTrusted ?? 0;
+    return message;
   }
 };
+
+function createBaseCMsgGCHAccountVacStatusChange(): CMsgGCHAccountVacStatusChange {
+  return {
+    steamId: Long.UZERO,
+    appId: 0,
+    rtimeVacbanStarts: 0,
+    isBannedNow: false,
+    isBannedFuture: false
+  };
+}
 
 export const CMsgGCHAccountVacStatusChange = {
   encode(
     message: CMsgGCHAccountVacStatusChange,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.steamId);
-    writer.uint32(16).uint32(message.appId);
-    writer.uint32(24).uint32(message.rtimeVacbanStarts);
-    writer.uint32(32).bool(message.isBannedNow);
-    writer.uint32(40).bool(message.isBannedFuture);
+    if (!message.steamId.isZero()) {
+      writer.uint32(9).fixed64(message.steamId);
+    }
+    if (message.appId !== 0) {
+      writer.uint32(16).uint32(message.appId);
+    }
+    if (message.rtimeVacbanStarts !== 0) {
+      writer.uint32(24).uint32(message.rtimeVacbanStarts);
+    }
+    if (message.isBannedNow === true) {
+      writer.uint32(32).bool(message.isBannedNow);
+    }
+    if (message.isBannedFuture === true) {
+      writer.uint32(40).bool(message.isBannedFuture);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCHAccountVacStatusChange {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCHAccountVacStatusChange
-    } as CMsgGCHAccountVacStatusChange;
+    const message = createBaseCMsgGCHAccountVacStatusChange();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3685,26 +4717,46 @@ export const CMsgGCHAccountVacStatusChange = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCHAccountVacStatusChange>, I>>(
+    object: I
+  ): CMsgGCHAccountVacStatusChange {
+    const message = createBaseCMsgGCHAccountVacStatusChange();
+    message.steamId =
+      object.steamId !== undefined && object.steamId !== null
+        ? Long.fromValue(object.steamId)
+        : Long.UZERO;
+    message.appId = object.appId ?? 0;
+    message.rtimeVacbanStarts = object.rtimeVacbanStarts ?? 0;
+    message.isBannedNow = object.isBannedNow ?? false;
+    message.isBannedFuture = object.isBannedFuture ?? false;
+    return message;
   }
 };
+
+function createBaseCMsgGCGetPartnerAccountLink(): CMsgGCGetPartnerAccountLink {
+  return { steamid: Long.UZERO };
+}
 
 export const CMsgGCGetPartnerAccountLink = {
   encode(
     message: CMsgGCGetPartnerAccountLink,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.steamid);
+    if (!message.steamid.isZero()) {
+      writer.uint32(9).fixed64(message.steamid);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCGetPartnerAccountLink {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCGetPartnerAccountLink
-    } as CMsgGCGetPartnerAccountLink;
+    const message = createBaseCMsgGCGetPartnerAccountLink();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3717,30 +4769,60 @@ export const CMsgGCGetPartnerAccountLink = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCGetPartnerAccountLink>, I>>(
+    object: I
+  ): CMsgGCGetPartnerAccountLink {
+    const message = createBaseCMsgGCGetPartnerAccountLink();
+    message.steamid =
+      object.steamid !== undefined && object.steamid !== null
+        ? Long.fromValue(object.steamid)
+        : Long.UZERO;
+    return message;
   }
 };
+
+function createBaseCMsgGCGetPartnerAccountLinkResponse(): CMsgGCGetPartnerAccountLinkResponse {
+  return {
+    pwid: 0,
+    nexonid: 0,
+    ageclass: 0,
+    idVerified: false,
+    isAdult: false
+  };
+}
 
 export const CMsgGCGetPartnerAccountLinkResponse = {
   encode(
     message: CMsgGCGetPartnerAccountLinkResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.pwid);
-    writer.uint32(16).uint32(message.nexonid);
-    writer.uint32(24).int32(message.ageclass);
-    writer.uint32(32).bool(message.idVerified);
-    writer.uint32(40).bool(message.isAdult);
+    if (message.pwid !== 0) {
+      writer.uint32(8).uint32(message.pwid);
+    }
+    if (message.nexonid !== 0) {
+      writer.uint32(16).uint32(message.nexonid);
+    }
+    if (message.ageclass !== 0) {
+      writer.uint32(24).int32(message.ageclass);
+    }
+    if (message.idVerified === true) {
+      writer.uint32(32).bool(message.idVerified);
+    }
+    if (message.isAdult === true) {
+      writer.uint32(40).bool(message.isAdult);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCGetPartnerAccountLinkResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCGetPartnerAccountLinkResponse
-    } as CMsgGCGetPartnerAccountLinkResponse;
+    const message = createBaseCMsgGCGetPartnerAccountLinkResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3765,8 +4847,30 @@ export const CMsgGCGetPartnerAccountLinkResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgGCGetPartnerAccountLinkResponse>, I>
+  >(object: I): CMsgGCGetPartnerAccountLinkResponse {
+    const message = createBaseCMsgGCGetPartnerAccountLinkResponse();
+    message.pwid = object.pwid ?? 0;
+    message.nexonid = object.nexonid ?? 0;
+    message.ageclass = object.ageclass ?? 0;
+    message.idVerified = object.idVerified ?? false;
+    message.isAdult = object.isAdult ?? false;
+    return message;
   }
 };
+
+function createBaseCMsgGCRoutingInfo(): CMsgGCRoutingInfo {
+  return {
+    dirIndex: [],
+    method: 0,
+    fallback: 0,
+    protobufField: 0,
+    webapiParam: ""
+  };
+}
 
 export const CMsgGCRoutingInfo = {
   encode(message: CMsgGCRoutingInfo, writer: Writer = Writer.create()): Writer {
@@ -3775,17 +4879,25 @@ export const CMsgGCRoutingInfo = {
       writer.uint32(v);
     }
     writer.ldelim();
-    writer.uint32(16).int32(message.method);
-    writer.uint32(24).int32(message.fallback);
-    writer.uint32(32).uint32(message.protobufField);
-    writer.uint32(42).string(message.webapiParam);
+    if (message.method !== 0) {
+      writer.uint32(16).int32(message.method);
+    }
+    if (message.fallback !== 0) {
+      writer.uint32(24).int32(message.fallback);
+    }
+    if (message.protobufField !== 0) {
+      writer.uint32(32).uint32(message.protobufField);
+    }
+    if (message.webapiParam !== "") {
+      writer.uint32(42).string(message.webapiParam);
+    }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgGCRoutingInfo {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgGCRoutingInfo {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgGCRoutingInfo } as CMsgGCRoutingInfo;
-    message.dirIndex = [];
+    const message = createBaseCMsgGCRoutingInfo();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3817,8 +4929,24 @@ export const CMsgGCRoutingInfo = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCRoutingInfo>, I>>(
+    object: I
+  ): CMsgGCRoutingInfo {
+    const message = createBaseCMsgGCRoutingInfo();
+    message.dirIndex = object.dirIndex?.map(e => e) || [];
+    message.method = object.method ?? 0;
+    message.fallback = object.fallback ?? 0;
+    message.protobufField = object.protobufField ?? 0;
+    message.webapiParam = object.webapiParam ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgGCMsgMasterSetWebAPIRouting(): CMsgGCMsgMasterSetWebAPIRouting {
+  return { entries: [] };
+}
 
 export const CMsgGCMsgMasterSetWebAPIRouting = {
   encode(
@@ -3833,16 +4961,14 @@ export const CMsgGCMsgMasterSetWebAPIRouting = {
     }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetWebAPIRouting {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCMsgMasterSetWebAPIRouting
-    } as CMsgGCMsgMasterSetWebAPIRouting;
-    message.entries = [];
+    const message = createBaseCMsgGCMsgMasterSetWebAPIRouting();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3860,17 +4986,36 @@ export const CMsgGCMsgMasterSetWebAPIRouting = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCMsgMasterSetWebAPIRouting>, I>>(
+    object: I
+  ): CMsgGCMsgMasterSetWebAPIRouting {
+    const message = createBaseCMsgGCMsgMasterSetWebAPIRouting();
+    message.entries =
+      object.entries?.map(e =>
+        CMsgGCMsgMasterSetWebAPIRouting_Entry.fromPartial(e)
+      ) || [];
+    return message;
   }
 };
+
+function createBaseCMsgGCMsgMasterSetWebAPIRouting_Entry(): CMsgGCMsgMasterSetWebAPIRouting_Entry {
+  return { interfaceName: "", methodName: "", routing: undefined };
+}
 
 export const CMsgGCMsgMasterSetWebAPIRouting_Entry = {
   encode(
     message: CMsgGCMsgMasterSetWebAPIRouting_Entry,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(10).string(message.interfaceName);
-    writer.uint32(18).string(message.methodName);
-    if (message.routing !== undefined && message.routing !== undefined) {
+    if (message.interfaceName !== "") {
+      writer.uint32(10).string(message.interfaceName);
+    }
+    if (message.methodName !== "") {
+      writer.uint32(18).string(message.methodName);
+    }
+    if (message.routing !== undefined) {
       CMsgGCRoutingInfo.encode(
         message.routing,
         writer.uint32(26).fork()
@@ -3878,15 +5023,14 @@ export const CMsgGCMsgMasterSetWebAPIRouting_Entry = {
     }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetWebAPIRouting_Entry {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCMsgMasterSetWebAPIRouting_Entry
-    } as CMsgGCMsgMasterSetWebAPIRouting_Entry;
+    const message = createBaseCMsgGCMsgMasterSetWebAPIRouting_Entry();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3905,8 +5049,25 @@ export const CMsgGCMsgMasterSetWebAPIRouting_Entry = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgGCMsgMasterSetWebAPIRouting_Entry>, I>
+  >(object: I): CMsgGCMsgMasterSetWebAPIRouting_Entry {
+    const message = createBaseCMsgGCMsgMasterSetWebAPIRouting_Entry();
+    message.interfaceName = object.interfaceName ?? "";
+    message.methodName = object.methodName ?? "";
+    message.routing =
+      object.routing !== undefined && object.routing !== null
+        ? CMsgGCRoutingInfo.fromPartial(object.routing)
+        : undefined;
+    return message;
   }
 };
+
+function createBaseCMsgGCMsgMasterSetClientMsgRouting(): CMsgGCMsgMasterSetClientMsgRouting {
+  return { entries: [] };
+}
 
 export const CMsgGCMsgMasterSetClientMsgRouting = {
   encode(
@@ -3921,16 +5082,14 @@ export const CMsgGCMsgMasterSetClientMsgRouting = {
     }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetClientMsgRouting {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCMsgMasterSetClientMsgRouting
-    } as CMsgGCMsgMasterSetClientMsgRouting;
-    message.entries = [];
+    const message = createBaseCMsgGCMsgMasterSetClientMsgRouting();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3948,16 +5107,33 @@ export const CMsgGCMsgMasterSetClientMsgRouting = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgGCMsgMasterSetClientMsgRouting>, I>
+  >(object: I): CMsgGCMsgMasterSetClientMsgRouting {
+    const message = createBaseCMsgGCMsgMasterSetClientMsgRouting();
+    message.entries =
+      object.entries?.map(e =>
+        CMsgGCMsgMasterSetClientMsgRouting_Entry.fromPartial(e)
+      ) || [];
+    return message;
   }
 };
+
+function createBaseCMsgGCMsgMasterSetClientMsgRouting_Entry(): CMsgGCMsgMasterSetClientMsgRouting_Entry {
+  return { msgType: 0, routing: undefined };
+}
 
 export const CMsgGCMsgMasterSetClientMsgRouting_Entry = {
   encode(
     message: CMsgGCMsgMasterSetClientMsgRouting_Entry,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.msgType);
-    if (message.routing !== undefined && message.routing !== undefined) {
+    if (message.msgType !== 0) {
+      writer.uint32(8).uint32(message.msgType);
+    }
+    if (message.routing !== undefined) {
       CMsgGCRoutingInfo.encode(
         message.routing,
         writer.uint32(18).fork()
@@ -3965,15 +5141,14 @@ export const CMsgGCMsgMasterSetClientMsgRouting_Entry = {
     }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetClientMsgRouting_Entry {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCMsgMasterSetClientMsgRouting_Entry
-    } as CMsgGCMsgMasterSetClientMsgRouting_Entry;
+    const message = createBaseCMsgGCMsgMasterSetClientMsgRouting_Entry();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -3989,26 +5164,43 @@ export const CMsgGCMsgMasterSetClientMsgRouting_Entry = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgGCMsgMasterSetClientMsgRouting_Entry>, I>
+  >(object: I): CMsgGCMsgMasterSetClientMsgRouting_Entry {
+    const message = createBaseCMsgGCMsgMasterSetClientMsgRouting_Entry();
+    message.msgType = object.msgType ?? 0;
+    message.routing =
+      object.routing !== undefined && object.routing !== null
+        ? CMsgGCRoutingInfo.fromPartial(object.routing)
+        : undefined;
+    return message;
   }
 };
+
+function createBaseCMsgGCMsgMasterSetWebAPIRoutingResponse(): CMsgGCMsgMasterSetWebAPIRoutingResponse {
+  return { eresult: 0 };
+}
 
 export const CMsgGCMsgMasterSetWebAPIRoutingResponse = {
   encode(
     message: CMsgGCMsgMasterSetWebAPIRoutingResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).int32(message.eresult);
+    if (message.eresult !== 0) {
+      writer.uint32(8).int32(message.eresult);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetWebAPIRoutingResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCMsgMasterSetWebAPIRoutingResponse
-    } as CMsgGCMsgMasterSetWebAPIRoutingResponse;
+    const message = createBaseCMsgGCMsgMasterSetWebAPIRoutingResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4021,26 +5213,39 @@ export const CMsgGCMsgMasterSetWebAPIRoutingResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgGCMsgMasterSetWebAPIRoutingResponse>, I>
+  >(object: I): CMsgGCMsgMasterSetWebAPIRoutingResponse {
+    const message = createBaseCMsgGCMsgMasterSetWebAPIRoutingResponse();
+    message.eresult = object.eresult ?? 0;
+    return message;
   }
 };
+
+function createBaseCMsgGCMsgMasterSetClientMsgRoutingResponse(): CMsgGCMsgMasterSetClientMsgRoutingResponse {
+  return { eresult: 0 };
+}
 
 export const CMsgGCMsgMasterSetClientMsgRoutingResponse = {
   encode(
     message: CMsgGCMsgMasterSetClientMsgRoutingResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).int32(message.eresult);
+    if (message.eresult !== 0) {
+      writer.uint32(8).int32(message.eresult);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgMasterSetClientMsgRoutingResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCMsgMasterSetClientMsgRoutingResponse
-    } as CMsgGCMsgMasterSetClientMsgRoutingResponse;
+    const message = createBaseCMsgGCMsgMasterSetClientMsgRoutingResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4053,8 +5258,20 @@ export const CMsgGCMsgMasterSetClientMsgRoutingResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgGCMsgMasterSetClientMsgRoutingResponse>, I>
+  >(object: I): CMsgGCMsgMasterSetClientMsgRoutingResponse {
+    const message = createBaseCMsgGCMsgMasterSetClientMsgRoutingResponse();
+    message.eresult = object.eresult ?? 0;
+    return message;
   }
 };
+
+function createBaseCMsgGCMsgSetOptions(): CMsgGCMsgSetOptions {
+  return { options: [], clientMsgRanges: [] };
+}
 
 export const CMsgGCMsgSetOptions = {
   encode(
@@ -4074,12 +5291,11 @@ export const CMsgGCMsgSetOptions = {
     }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgGCMsgSetOptions {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgGCMsgSetOptions {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgGCMsgSetOptions } as CMsgGCMsgSetOptions;
-    message.options = [];
-    message.clientMsgRanges = [];
+    const message = createBaseCMsgGCMsgSetOptions();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4104,27 +5320,46 @@ export const CMsgGCMsgSetOptions = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCMsgSetOptions>, I>>(
+    object: I
+  ): CMsgGCMsgSetOptions {
+    const message = createBaseCMsgGCMsgSetOptions();
+    message.options = object.options?.map(e => e) || [];
+    message.clientMsgRanges =
+      object.clientMsgRanges?.map(e =>
+        CMsgGCMsgSetOptions_MessageRange.fromPartial(e)
+      ) || [];
+    return message;
   }
 };
+
+function createBaseCMsgGCMsgSetOptions_MessageRange(): CMsgGCMsgSetOptions_MessageRange {
+  return { low: 0, high: 0 };
+}
 
 export const CMsgGCMsgSetOptions_MessageRange = {
   encode(
     message: CMsgGCMsgSetOptions_MessageRange,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.low);
-    writer.uint32(16).uint32(message.high);
+    if (message.low !== 0) {
+      writer.uint32(8).uint32(message.low);
+    }
+    if (message.high !== 0) {
+      writer.uint32(16).uint32(message.high);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCMsgSetOptions_MessageRange {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCMsgSetOptions_MessageRange
-    } as CMsgGCMsgSetOptions_MessageRange;
+    const message = createBaseCMsgGCMsgSetOptions_MessageRange();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4140,31 +5375,80 @@ export const CMsgGCMsgSetOptions_MessageRange = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgGCMsgSetOptions_MessageRange>, I>
+  >(object: I): CMsgGCMsgSetOptions_MessageRange {
+    const message = createBaseCMsgGCMsgSetOptions_MessageRange();
+    message.low = object.low ?? 0;
+    message.high = object.high ?? 0;
+    return message;
   }
 };
+
+function createBaseCMsgGCHUpdateSession(): CMsgGCHUpdateSession {
+  return {
+    steamId: Long.UZERO,
+    appId: 0,
+    online: false,
+    serverSteamId: Long.UZERO,
+    serverAddr: 0,
+    serverPort: 0,
+    osType: 0,
+    clientAddr: 0,
+    extraFields: [],
+    ownerId: Long.UZERO,
+    cmSessionSysid: 0,
+    cmSessionIdentifier: 0,
+    depotIds: []
+  };
+}
 
 export const CMsgGCHUpdateSession = {
   encode(
     message: CMsgGCHUpdateSession,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.steamId);
-    writer.uint32(16).uint32(message.appId);
-    writer.uint32(24).bool(message.online);
-    writer.uint32(33).fixed64(message.serverSteamId);
-    writer.uint32(40).uint32(message.serverAddr);
-    writer.uint32(48).uint32(message.serverPort);
-    writer.uint32(56).uint32(message.osType);
-    writer.uint32(64).uint32(message.clientAddr);
+    if (!message.steamId.isZero()) {
+      writer.uint32(9).fixed64(message.steamId);
+    }
+    if (message.appId !== 0) {
+      writer.uint32(16).uint32(message.appId);
+    }
+    if (message.online === true) {
+      writer.uint32(24).bool(message.online);
+    }
+    if (!message.serverSteamId.isZero()) {
+      writer.uint32(33).fixed64(message.serverSteamId);
+    }
+    if (message.serverAddr !== 0) {
+      writer.uint32(40).uint32(message.serverAddr);
+    }
+    if (message.serverPort !== 0) {
+      writer.uint32(48).uint32(message.serverPort);
+    }
+    if (message.osType !== 0) {
+      writer.uint32(56).uint32(message.osType);
+    }
+    if (message.clientAddr !== 0) {
+      writer.uint32(64).uint32(message.clientAddr);
+    }
     for (const v of message.extraFields) {
       CMsgGCHUpdateSession_ExtraField.encode(
         v!,
         writer.uint32(74).fork()
       ).ldelim();
     }
-    writer.uint32(81).fixed64(message.ownerId);
-    writer.uint32(88).uint32(message.cmSessionSysid);
-    writer.uint32(96).uint32(message.cmSessionIdentifier);
+    if (!message.ownerId.isZero()) {
+      writer.uint32(81).fixed64(message.ownerId);
+    }
+    if (message.cmSessionSysid !== 0) {
+      writer.uint32(88).uint32(message.cmSessionSysid);
+    }
+    if (message.cmSessionIdentifier !== 0) {
+      writer.uint32(96).uint32(message.cmSessionIdentifier);
+    }
     writer.uint32(106).fork();
     for (const v of message.depotIds) {
       writer.uint32(v);
@@ -4172,12 +5456,11 @@ export const CMsgGCHUpdateSession = {
     writer.ldelim();
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgGCHUpdateSession {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgGCHUpdateSession {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgGCHUpdateSession } as CMsgGCHUpdateSession;
-    message.extraFields = [];
-    message.depotIds = [];
+    const message = createBaseCMsgGCHUpdateSession();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4235,27 +5518,66 @@ export const CMsgGCHUpdateSession = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCHUpdateSession>, I>>(
+    object: I
+  ): CMsgGCHUpdateSession {
+    const message = createBaseCMsgGCHUpdateSession();
+    message.steamId =
+      object.steamId !== undefined && object.steamId !== null
+        ? Long.fromValue(object.steamId)
+        : Long.UZERO;
+    message.appId = object.appId ?? 0;
+    message.online = object.online ?? false;
+    message.serverSteamId =
+      object.serverSteamId !== undefined && object.serverSteamId !== null
+        ? Long.fromValue(object.serverSteamId)
+        : Long.UZERO;
+    message.serverAddr = object.serverAddr ?? 0;
+    message.serverPort = object.serverPort ?? 0;
+    message.osType = object.osType ?? 0;
+    message.clientAddr = object.clientAddr ?? 0;
+    message.extraFields =
+      object.extraFields?.map(e =>
+        CMsgGCHUpdateSession_ExtraField.fromPartial(e)
+      ) || [];
+    message.ownerId =
+      object.ownerId !== undefined && object.ownerId !== null
+        ? Long.fromValue(object.ownerId)
+        : Long.UZERO;
+    message.cmSessionSysid = object.cmSessionSysid ?? 0;
+    message.cmSessionIdentifier = object.cmSessionIdentifier ?? 0;
+    message.depotIds = object.depotIds?.map(e => e) || [];
+    return message;
   }
 };
+
+function createBaseCMsgGCHUpdateSession_ExtraField(): CMsgGCHUpdateSession_ExtraField {
+  return { name: "", value: "" };
+}
 
 export const CMsgGCHUpdateSession_ExtraField = {
   encode(
     message: CMsgGCHUpdateSession_ExtraField,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(10).string(message.name);
-    writer.uint32(18).string(message.value);
+    if (message.name !== "") {
+      writer.uint32(10).string(message.name);
+    }
+    if (message.value !== "") {
+      writer.uint32(18).string(message.value);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgGCHUpdateSession_ExtraField {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgGCHUpdateSession_ExtraField
-    } as CMsgGCHUpdateSession_ExtraField;
+    const message = createBaseCMsgGCHUpdateSession_ExtraField();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4271,20 +5593,34 @@ export const CMsgGCHUpdateSession_ExtraField = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgGCHUpdateSession_ExtraField>, I>>(
+    object: I
+  ): CMsgGCHUpdateSession_ExtraField {
+    const message = createBaseCMsgGCHUpdateSession_ExtraField();
+    message.name = object.name ?? "";
+    message.value = object.value ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgNotificationOfSuspiciousActivity(): CMsgNotificationOfSuspiciousActivity {
+  return { steamid: Long.UZERO, appid: 0, multipleInstances: undefined };
+}
 
 export const CMsgNotificationOfSuspiciousActivity = {
   encode(
     message: CMsgNotificationOfSuspiciousActivity,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(9).fixed64(message.steamid);
-    writer.uint32(16).uint32(message.appid);
-    if (
-      message.multipleInstances !== undefined &&
-      message.multipleInstances !== undefined
-    ) {
+    if (!message.steamid.isZero()) {
+      writer.uint32(9).fixed64(message.steamid);
+    }
+    if (message.appid !== 0) {
+      writer.uint32(16).uint32(message.appid);
+    }
+    if (message.multipleInstances !== undefined) {
       CMsgNotificationOfSuspiciousActivity_MultipleGameInstances.encode(
         message.multipleInstances,
         writer.uint32(26).fork()
@@ -4292,15 +5628,14 @@ export const CMsgNotificationOfSuspiciousActivity = {
     }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgNotificationOfSuspiciousActivity {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgNotificationOfSuspiciousActivity
-    } as CMsgNotificationOfSuspiciousActivity;
+    const message = createBaseCMsgNotificationOfSuspiciousActivity();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4322,15 +5657,40 @@ export const CMsgNotificationOfSuspiciousActivity = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgNotificationOfSuspiciousActivity>, I>
+  >(object: I): CMsgNotificationOfSuspiciousActivity {
+    const message = createBaseCMsgNotificationOfSuspiciousActivity();
+    message.steamid =
+      object.steamid !== undefined && object.steamid !== null
+        ? Long.fromValue(object.steamid)
+        : Long.UZERO;
+    message.appid = object.appid ?? 0;
+    message.multipleInstances =
+      object.multipleInstances !== undefined &&
+      object.multipleInstances !== null
+        ? CMsgNotificationOfSuspiciousActivity_MultipleGameInstances.fromPartial(
+            object.multipleInstances
+          )
+        : undefined;
+    return message;
   }
 };
+
+function createBaseCMsgNotificationOfSuspiciousActivity_MultipleGameInstances(): CMsgNotificationOfSuspiciousActivity_MultipleGameInstances {
+  return { appInstanceCount: 0, otherSteamids: [] };
+}
 
 export const CMsgNotificationOfSuspiciousActivity_MultipleGameInstances = {
   encode(
     message: CMsgNotificationOfSuspiciousActivity_MultipleGameInstances,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.appInstanceCount);
+    if (message.appInstanceCount !== 0) {
+      writer.uint32(8).uint32(message.appInstanceCount);
+    }
     writer.uint32(18).fork();
     for (const v of message.otherSteamids) {
       writer.fixed64(v);
@@ -4338,16 +5698,14 @@ export const CMsgNotificationOfSuspiciousActivity_MultipleGameInstances = {
     writer.ldelim();
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgNotificationOfSuspiciousActivity_MultipleGameInstances {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgNotificationOfSuspiciousActivity_MultipleGameInstances
-    } as CMsgNotificationOfSuspiciousActivity_MultipleGameInstances;
-    message.otherSteamids = [];
+    const message = createBaseCMsgNotificationOfSuspiciousActivity_MultipleGameInstances();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4370,17 +5728,38 @@ export const CMsgNotificationOfSuspiciousActivity_MultipleGameInstances = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<
+      DeepPartial<CMsgNotificationOfSuspiciousActivity_MultipleGameInstances>,
+      I
+    >
+  >(object: I): CMsgNotificationOfSuspiciousActivity_MultipleGameInstances {
+    const message = createBaseCMsgNotificationOfSuspiciousActivity_MultipleGameInstances();
+    message.appInstanceCount = object.appInstanceCount ?? 0;
+    message.otherSteamids =
+      object.otherSteamids?.map(e => Long.fromValue(e)) || [];
+    return message;
   }
 };
+
+function createBaseCMsgDPPartnerMicroTxns(): CMsgDPPartnerMicroTxns {
+  return { appid: 0, gcName: "", partner: undefined, transactions: [] };
+}
 
 export const CMsgDPPartnerMicroTxns = {
   encode(
     message: CMsgDPPartnerMicroTxns,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.appid);
-    writer.uint32(18).string(message.gcName);
-    if (message.partner !== undefined && message.partner !== undefined) {
+    if (message.appid !== 0) {
+      writer.uint32(8).uint32(message.appid);
+    }
+    if (message.gcName !== "") {
+      writer.uint32(18).string(message.gcName);
+    }
+    if (message.partner !== undefined) {
       CMsgDPPartnerMicroTxns_PartnerInfo.encode(
         message.partner,
         writer.uint32(26).fork()
@@ -4394,11 +5773,11 @@ export const CMsgDPPartnerMicroTxns = {
     }
     return writer;
   },
-  decode(input: Uint8Array | Reader, length?: number): CMsgDPPartnerMicroTxns {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+
+  decode(input: Reader | Uint8Array, length?: number): CMsgDPPartnerMicroTxns {
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseCMsgDPPartnerMicroTxns } as CMsgDPPartnerMicroTxns;
-    message.transactions = [];
+    const message = createBaseCMsgDPPartnerMicroTxns();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4428,42 +5807,114 @@ export const CMsgDPPartnerMicroTxns = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgDPPartnerMicroTxns>, I>>(
+    object: I
+  ): CMsgDPPartnerMicroTxns {
+    const message = createBaseCMsgDPPartnerMicroTxns();
+    message.appid = object.appid ?? 0;
+    message.gcName = object.gcName ?? "";
+    message.partner =
+      object.partner !== undefined && object.partner !== null
+        ? CMsgDPPartnerMicroTxns_PartnerInfo.fromPartial(object.partner)
+        : undefined;
+    message.transactions =
+      object.transactions?.map(e =>
+        CMsgDPPartnerMicroTxns_PartnerMicroTxn.fromPartial(e)
+      ) || [];
+    return message;
   }
 };
+
+function createBaseCMsgDPPartnerMicroTxns_PartnerMicroTxn(): CMsgDPPartnerMicroTxns_PartnerMicroTxn {
+  return {
+    initTime: 0,
+    lastUpdateTime: 0,
+    txnId: Long.UZERO,
+    accountId: 0,
+    lineItem: 0,
+    itemId: Long.UZERO,
+    defIndex: 0,
+    price: Long.UZERO,
+    tax: Long.UZERO,
+    priceUsd: Long.UZERO,
+    taxUsd: Long.UZERO,
+    purchaseType: 0,
+    steamTxnType: 0,
+    countryCode: "",
+    regionCode: "",
+    quantity: 0,
+    refTransId: Long.UZERO
+  };
+}
 
 export const CMsgDPPartnerMicroTxns_PartnerMicroTxn = {
   encode(
     message: CMsgDPPartnerMicroTxns_PartnerMicroTxn,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.initTime);
-    writer.uint32(16).uint32(message.lastUpdateTime);
-    writer.uint32(24).uint64(message.txnId);
-    writer.uint32(32).uint32(message.accountId);
-    writer.uint32(40).uint32(message.lineItem);
-    writer.uint32(48).uint64(message.itemId);
-    writer.uint32(56).uint32(message.defIndex);
-    writer.uint32(64).uint64(message.price);
-    writer.uint32(72).uint64(message.tax);
-    writer.uint32(80).uint64(message.priceUsd);
-    writer.uint32(88).uint64(message.taxUsd);
-    writer.uint32(96).uint32(message.purchaseType);
-    writer.uint32(104).uint32(message.steamTxnType);
-    writer.uint32(114).string(message.countryCode);
-    writer.uint32(122).string(message.regionCode);
-    writer.uint32(128).int32(message.quantity);
-    writer.uint32(136).uint64(message.refTransId);
+    if (message.initTime !== 0) {
+      writer.uint32(8).uint32(message.initTime);
+    }
+    if (message.lastUpdateTime !== 0) {
+      writer.uint32(16).uint32(message.lastUpdateTime);
+    }
+    if (!message.txnId.isZero()) {
+      writer.uint32(24).uint64(message.txnId);
+    }
+    if (message.accountId !== 0) {
+      writer.uint32(32).uint32(message.accountId);
+    }
+    if (message.lineItem !== 0) {
+      writer.uint32(40).uint32(message.lineItem);
+    }
+    if (!message.itemId.isZero()) {
+      writer.uint32(48).uint64(message.itemId);
+    }
+    if (message.defIndex !== 0) {
+      writer.uint32(56).uint32(message.defIndex);
+    }
+    if (!message.price.isZero()) {
+      writer.uint32(64).uint64(message.price);
+    }
+    if (!message.tax.isZero()) {
+      writer.uint32(72).uint64(message.tax);
+    }
+    if (!message.priceUsd.isZero()) {
+      writer.uint32(80).uint64(message.priceUsd);
+    }
+    if (!message.taxUsd.isZero()) {
+      writer.uint32(88).uint64(message.taxUsd);
+    }
+    if (message.purchaseType !== 0) {
+      writer.uint32(96).uint32(message.purchaseType);
+    }
+    if (message.steamTxnType !== 0) {
+      writer.uint32(104).uint32(message.steamTxnType);
+    }
+    if (message.countryCode !== "") {
+      writer.uint32(114).string(message.countryCode);
+    }
+    if (message.regionCode !== "") {
+      writer.uint32(122).string(message.regionCode);
+    }
+    if (message.quantity !== 0) {
+      writer.uint32(128).int32(message.quantity);
+    }
+    if (!message.refTransId.isZero()) {
+      writer.uint32(136).uint64(message.refTransId);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgDPPartnerMicroTxns_PartnerMicroTxn {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgDPPartnerMicroTxns_PartnerMicroTxn
-    } as CMsgDPPartnerMicroTxns_PartnerMicroTxn;
+    const message = createBaseCMsgDPPartnerMicroTxns_PartnerMicroTxn();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4524,29 +5975,85 @@ export const CMsgDPPartnerMicroTxns_PartnerMicroTxn = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgDPPartnerMicroTxns_PartnerMicroTxn>, I>
+  >(object: I): CMsgDPPartnerMicroTxns_PartnerMicroTxn {
+    const message = createBaseCMsgDPPartnerMicroTxns_PartnerMicroTxn();
+    message.initTime = object.initTime ?? 0;
+    message.lastUpdateTime = object.lastUpdateTime ?? 0;
+    message.txnId =
+      object.txnId !== undefined && object.txnId !== null
+        ? Long.fromValue(object.txnId)
+        : Long.UZERO;
+    message.accountId = object.accountId ?? 0;
+    message.lineItem = object.lineItem ?? 0;
+    message.itemId =
+      object.itemId !== undefined && object.itemId !== null
+        ? Long.fromValue(object.itemId)
+        : Long.UZERO;
+    message.defIndex = object.defIndex ?? 0;
+    message.price =
+      object.price !== undefined && object.price !== null
+        ? Long.fromValue(object.price)
+        : Long.UZERO;
+    message.tax =
+      object.tax !== undefined && object.tax !== null
+        ? Long.fromValue(object.tax)
+        : Long.UZERO;
+    message.priceUsd =
+      object.priceUsd !== undefined && object.priceUsd !== null
+        ? Long.fromValue(object.priceUsd)
+        : Long.UZERO;
+    message.taxUsd =
+      object.taxUsd !== undefined && object.taxUsd !== null
+        ? Long.fromValue(object.taxUsd)
+        : Long.UZERO;
+    message.purchaseType = object.purchaseType ?? 0;
+    message.steamTxnType = object.steamTxnType ?? 0;
+    message.countryCode = object.countryCode ?? "";
+    message.regionCode = object.regionCode ?? "";
+    message.quantity = object.quantity ?? 0;
+    message.refTransId =
+      object.refTransId !== undefined && object.refTransId !== null
+        ? Long.fromValue(object.refTransId)
+        : Long.UZERO;
+    return message;
   }
 };
+
+function createBaseCMsgDPPartnerMicroTxns_PartnerInfo(): CMsgDPPartnerMicroTxns_PartnerInfo {
+  return { partnerId: 0, partnerName: "", currencyCode: "", currencyName: "" };
+}
 
 export const CMsgDPPartnerMicroTxns_PartnerInfo = {
   encode(
     message: CMsgDPPartnerMicroTxns_PartnerInfo,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.partnerId);
-    writer.uint32(18).string(message.partnerName);
-    writer.uint32(26).string(message.currencyCode);
-    writer.uint32(34).string(message.currencyName);
+    if (message.partnerId !== 0) {
+      writer.uint32(8).uint32(message.partnerId);
+    }
+    if (message.partnerName !== "") {
+      writer.uint32(18).string(message.partnerName);
+    }
+    if (message.currencyCode !== "") {
+      writer.uint32(26).string(message.currencyCode);
+    }
+    if (message.currencyName !== "") {
+      writer.uint32(34).string(message.currencyName);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgDPPartnerMicroTxns_PartnerInfo {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgDPPartnerMicroTxns_PartnerInfo
-    } as CMsgDPPartnerMicroTxns_PartnerInfo;
+    const message = createBaseCMsgDPPartnerMicroTxns_PartnerInfo();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4568,27 +6075,45 @@ export const CMsgDPPartnerMicroTxns_PartnerInfo = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<DeepPartial<CMsgDPPartnerMicroTxns_PartnerInfo>, I>
+  >(object: I): CMsgDPPartnerMicroTxns_PartnerInfo {
+    const message = createBaseCMsgDPPartnerMicroTxns_PartnerInfo();
+    message.partnerId = object.partnerId ?? 0;
+    message.partnerName = object.partnerName ?? "";
+    message.currencyCode = object.currencyCode ?? "";
+    message.currencyName = object.currencyName ?? "";
+    return message;
   }
 };
+
+function createBaseCMsgDPPartnerMicroTxnsResponse(): CMsgDPPartnerMicroTxnsResponse {
+  return { eresult: 0, eerrorcode: 0 };
+}
 
 export const CMsgDPPartnerMicroTxnsResponse = {
   encode(
     message: CMsgDPPartnerMicroTxnsResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.eresult);
-    writer.uint32(16).int32(message.eerrorcode);
+    if (message.eresult !== 0) {
+      writer.uint32(8).uint32(message.eresult);
+    }
+    if (message.eerrorcode !== 0) {
+      writer.uint32(16).int32(message.eerrorcode);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CMsgDPPartnerMicroTxnsResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCMsgDPPartnerMicroTxnsResponse
-    } as CMsgDPPartnerMicroTxnsResponse;
+    const message = createBaseCMsgDPPartnerMicroTxnsResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4604,28 +6129,46 @@ export const CMsgDPPartnerMicroTxnsResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CMsgDPPartnerMicroTxnsResponse>, I>>(
+    object: I
+  ): CMsgDPPartnerMicroTxnsResponse {
+    const message = createBaseCMsgDPPartnerMicroTxnsResponse();
+    message.eresult = object.eresult ?? 0;
+    message.eerrorcode = object.eerrorcode ?? 0;
+    return message;
   }
 };
+
+function createBaseCChinaAgreementSessionsStartAgreementSessionInGameRequest(): CChinaAgreementSessionsStartAgreementSessionInGameRequest {
+  return { appid: 0, steamid: Long.UZERO, clientIpaddress: "" };
+}
 
 export const CChinaAgreementSessionsStartAgreementSessionInGameRequest = {
   encode(
     message: CChinaAgreementSessionsStartAgreementSessionInGameRequest,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(8).uint32(message.appid);
-    writer.uint32(17).fixed64(message.steamid);
-    writer.uint32(26).string(message.clientIpaddress);
+    if (message.appid !== 0) {
+      writer.uint32(8).uint32(message.appid);
+    }
+    if (!message.steamid.isZero()) {
+      writer.uint32(17).fixed64(message.steamid);
+    }
+    if (message.clientIpaddress !== "") {
+      writer.uint32(26).string(message.clientIpaddress);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CChinaAgreementSessionsStartAgreementSessionInGameRequest {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCChinaAgreementSessionsStartAgreementSessionInGameRequest
-    } as CChinaAgreementSessionsStartAgreementSessionInGameRequest;
+    const message = createBaseCChinaAgreementSessionsStartAgreementSessionInGameRequest();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4644,26 +6187,47 @@ export const CChinaAgreementSessionsStartAgreementSessionInGameRequest = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<
+      DeepPartial<CChinaAgreementSessionsStartAgreementSessionInGameRequest>,
+      I
+    >
+  >(object: I): CChinaAgreementSessionsStartAgreementSessionInGameRequest {
+    const message = createBaseCChinaAgreementSessionsStartAgreementSessionInGameRequest();
+    message.appid = object.appid ?? 0;
+    message.steamid =
+      object.steamid !== undefined && object.steamid !== null
+        ? Long.fromValue(object.steamid)
+        : Long.UZERO;
+    message.clientIpaddress = object.clientIpaddress ?? "";
+    return message;
   }
 };
+
+function createBaseCChinaAgreementSessionsStartAgreementSessionInGameResponse(): CChinaAgreementSessionsStartAgreementSessionInGameResponse {
+  return { agreementUrl: "" };
+}
 
 export const CChinaAgreementSessionsStartAgreementSessionInGameResponse = {
   encode(
     message: CChinaAgreementSessionsStartAgreementSessionInGameResponse,
     writer: Writer = Writer.create()
   ): Writer {
-    writer.uint32(10).string(message.agreementUrl);
+    if (message.agreementUrl !== "") {
+      writer.uint32(10).string(message.agreementUrl);
+    }
     return writer;
   },
+
   decode(
-    input: Uint8Array | Reader,
+    input: Reader | Uint8Array,
     length?: number
   ): CChinaAgreementSessionsStartAgreementSessionInGameResponse {
-    const reader = input instanceof Uint8Array ? new Reader(input) : input;
+    const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseCChinaAgreementSessionsStartAgreementSessionInGameResponse
-    } as CChinaAgreementSessionsStartAgreementSessionInGameResponse;
+    const message = createBaseCChinaAgreementSessionsStartAgreementSessionInGameResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4676,5 +6240,51 @@ export const CChinaAgreementSessionsStartAgreementSessionInGameResponse = {
       }
     }
     return message;
+  },
+
+  fromPartial<
+    I extends Exact<
+      DeepPartial<CChinaAgreementSessionsStartAgreementSessionInGameResponse>,
+      I
+    >
+  >(object: I): CChinaAgreementSessionsStartAgreementSessionInGameResponse {
+    const message = createBaseCChinaAgreementSessionsStartAgreementSessionInGameResponse();
+    message.agreementUrl = object.agreementUrl ?? "";
+    return message;
   }
 };
+
+type Builtin =
+  | Date
+  | Function
+  | Uint8Array
+  | string
+  | number
+  | boolean
+  | undefined;
+
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends Long
+  ? string | number | Long
+  : T extends Array<infer U>
+  ? Array<DeepPartial<U>>
+  : T extends ReadonlyArray<infer U>
+  ? ReadonlyArray<DeepPartial<U>>
+  : T extends {}
+  ? { [K in keyof T]?: DeepPartial<T[K]> }
+  : Partial<T>;
+
+type KeysOfUnion<T> = T extends T ? keyof T : never;
+export type Exact<P, I extends P> = P extends Builtin
+  ? P
+  : P &
+      { [K in keyof P]: Exact<P[K], I[K]> } &
+      Record<Exclude<keyof I, KeysOfUnion<P>>, never>;
+
+// If you get a compile-error about 'Constructor<Long> and ... have no overlap',
+// add '--ts_proto_opt=esModuleInterop=true' as a flag when calling 'protoc'.
+if (util.Long !== Long) {
+  util.Long = Long as any;
+  configure();
+}
