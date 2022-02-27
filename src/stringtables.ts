@@ -79,6 +79,7 @@ export interface IStringTableUpdateEvent<T> {
   entryIndex: number;
   entry: string;
   userData: T | null;
+  oldUserData: T | null;
 }
 
 export interface IStringTableEntry<T> {
@@ -210,13 +211,15 @@ export class StringTables extends EventEmitter {
             : userDataCallback(userDataBuf);
       }
 
+      const oldUserData: unknown = table.entries[entryIndex]?.userData;
       table.entries[entryIndex] = { entry, userData };
 
       this.emit("update", {
         table,
         entryIndex,
         entry,
-        userData
+        userData,
+        oldUserData
       });
     }
 
@@ -320,9 +323,10 @@ export class StringTables extends EventEmitter {
           userData = userDataCallback(userData as Buffer);
         }
       } else {
-        userData = existingEntry ? existingEntry.userData : null;
+        userData = existingEntry?.userData;
       }
 
+      const oldUserData: unknown = existingEntry?.userData;
       table.entries[entryIndex] = { entry, userData };
 
       // add to history
@@ -336,7 +340,8 @@ export class StringTables extends EventEmitter {
         table,
         entryIndex,
         entry,
-        userData
+        userData,
+        oldUserData
       });
     }
   }
