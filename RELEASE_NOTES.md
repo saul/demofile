@@ -3,12 +3,8 @@
 <!--
 ### Unreleased
 
-- Unreleased release notes here
--->
-
-### 2.7.0 (2022-02-27)
-
 - :sparkles: Added `paintKit` annotation to `player_death` game event
+-->
 
 ### 2.6.0 (2022-02-27)
 

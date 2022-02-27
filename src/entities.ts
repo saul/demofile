@@ -35,6 +35,7 @@ import {
 import { CCSGameRulesProxy, CCSPlayerResource } from "./sendtabletypes";
 import { IPlayerInfo, IStringTableUpdateEvent } from "./stringtables";
 import * as Long from "long";
+import { IStringTable } from ".";
 
 export interface NetworkableConstructor<T = Networkable<any>> {
   new (
@@ -321,7 +322,19 @@ export class Entities extends EventEmitter {
   }
 
   get players(): ReadonlyArray<Player> {
-    return Array.from(this.findAllWithClass(Player));
+    const players = [];
+    for (let i = 1; i <= this._maxPlayers; ++i) {
+      const entity = this.entities.get(i) as Player | undefined;
+
+      // Only return players that are fully connected
+      if (
+        entity != null &&
+        this._userInfoTable.entries[entity.clientSlot]?.userData != null
+      ) {
+        players.push(entity);
+      }
+    }
+    return players;
   }
 
   get weapons(): ReadonlyArray<Weapon> {
@@ -371,6 +384,8 @@ export class Entities extends EventEmitter {
   private _demo: DemoFile = null!;
   private _singletonEnts: { [table: string]: Networkable | undefined } = {};
   private _currentServerTick: TickNumber = -1 as TickNumber;
+  private _maxPlayers: number = 0;
+  private _userInfoTable: IStringTable<IPlayerInfo> = null!;
 
   private _userIdToEntity: Map<number, number> = new Map();
   private _steam64IdToEntity: Map<string, number> = new Map();
@@ -380,8 +395,15 @@ export class Entities extends EventEmitter {
     this._demo = demo;
     demo.on("svc_PacketEntities", e => this._handlePacketEntities(e));
     demo.on("svc_TempEntities", e => this._handleTempEntities(e));
+    demo.on("svc_ServerInfo", e => {
+      this._maxPlayers = e.maxClients;
+    });
     demo.on("net_Tick", e => {
       this._currentServerTick = e.tick as TickNumber;
+    });
+    demo.stringTables.on("create", table => {
+      if (table.name === "userinfo")
+        this._userInfoTable = table as IStringTable<IPlayerInfo>;
     });
     demo.stringTables.on("update", e => this._handleStringTableUpdate(e));
 
@@ -1029,17 +1051,31 @@ export class Entities extends EventEmitter {
     return classBaseline;
   }
 
-  private _handleUserInfoUpdate(clientSlot: number, playerInfo: IPlayerInfo) {
-    this._userIdToEntity.set(playerInfo.userId, clientSlot + 1);
-    this._steam64IdToEntity.set(playerInfo.xuid.toString(), clientSlot + 1);
-    this._accountNumberToEntity.set(playerInfo.friendsId, clientSlot + 1);
+  private _handleUserInfoUpdate(
+    clientSlot: number,
+    oldPlayerInfo: IPlayerInfo | null,
+    playerInfo: IPlayerInfo | null
+  ) {
+    if (oldPlayerInfo != null) {
+      this._userIdToEntity.delete(oldPlayerInfo.userId);
+      this._steam64IdToEntity.delete(oldPlayerInfo.xuid.toString());
+      this._accountNumberToEntity.delete(oldPlayerInfo.friendsId);
+    }
+
+    if (playerInfo != null) {
+      this._userIdToEntity.set(playerInfo.userId, clientSlot + 1);
+      this._steam64IdToEntity.set(playerInfo.xuid.toString(), clientSlot + 1);
+      this._accountNumberToEntity.set(playerInfo.friendsId, clientSlot + 1);
+    }
   }
 
   private _handleInstanceBaselineUpdate(
     event: IStringTableUpdateEvent<Buffer>
   ) {
+    if (!event.userData) return;
+
     const classId = parseInt(event.entry, 10);
-    const baselineBuf = BitStream.from(event.userData!);
+    const baselineBuf = BitStream.from(event.userData);
 
     if (!this.serverClasses[classId]) {
       this.pendingBaselines[classId] = baselineBuf;
@@ -1057,12 +1093,11 @@ export class Entities extends EventEmitter {
   }
 
   private _handleStringTableUpdate(event: IStringTableUpdateEvent<any>) {
-    if (!event.userData) return;
-
     if (event.table.name === "userinfo") {
       this._handleUserInfoUpdate(
         event.entryIndex,
-        event.userData as IPlayerInfo
+        event.oldUserData as IPlayerInfo | null,
+        event.userData as IPlayerInfo | null
       );
     } else if (event.table.name === "instancebaseline") {
       this._handleInstanceBaselineUpdate(event);

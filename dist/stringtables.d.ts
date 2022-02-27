@@ -30,6 +30,7 @@ export interface IStringTableUpdateEvent<T> {
     entryIndex: number;
     entry: string;
     userData: T | null;
+    oldUserData: T | null;
 }
 export interface IStringTableEntry<T> {
     entry: string;
