@@ -74,6 +74,34 @@ async function parseItems(root: string) {
         2
       )
   );
+
+  console.log("");
+  console.log(`export interface IPaintKit {
+  name: string;
+  tag: string;
+}`);
+  console.log("");
+
+  console.log(
+    `export const paintKitIndexMap: {
+  [paintKitIndex: string]: IPaintKit | undefined;
+} = ` +
+      JSON.stringify(
+        fromEntries(
+          Object.entries(items.paint_kits)
+            .map(([key, item]: [string, any]): [number, any] => [
+              parseInt(key, 10),
+              {
+                name: item.name,
+                tag: translate(item.description_tag)
+              }
+            ])
+            .filter(([_key, x]: [number, any]) => x.tag)
+        ),
+        null,
+        2
+      )
+  );
 }
 
 if (process.argv.length == 3) {

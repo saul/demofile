@@ -5,7 +5,6 @@ export interface IItemDefinition {
   itemName: string;
   className: string;
 }
-
 export const itemDefinitionIndexMap: {
   [itemIndex: string]: IItemDefinition | undefined;
 } = {
@@ -127,7 +126,7 @@ export const itemDefinitionIndexMap: {
   },
   "37": {
     className: "weapon_shield",
-    itemName: "Riot Shield"
+    itemName: "Ballistic Shield"
   },
   "38": {
     className: "weapon_scar20",
@@ -328,5 +327,3531 @@ export const itemDefinitionIndexMap: {
   "525": {
     className: "weapon_knife_skeleton",
     itemName: "Skeleton Knife"
+  }
+};
+
+export interface IPaintKit {
+  name: string;
+  tag: string;
+}
+
+export const paintKitIndexMap: {
+  [paintKitIndex: string]: IPaintKit | undefined;
+} = {
+  "0": {
+    name: "default",
+    tag: "-"
+  },
+  "2": {
+    name: "so_olive",
+    tag: "Groundwater"
+  },
+  "3": {
+    name: "so_red",
+    tag: "Candy Apple"
+  },
+  "5": {
+    name: "hy_ddpat",
+    tag: "Forest DDPAT"
+  },
+  "6": {
+    name: "hy_arctic",
+    tag: "Arctic Camo"
+  },
+  "8": {
+    name: "hy_desert",
+    tag: "Desert Storm"
+  },
+  "9": {
+    name: "hy_tiger",
+    tag: "Bengal Tiger"
+  },
+  "10": {
+    name: "hy_copperhead",
+    tag: "Copperhead"
+  },
+  "11": {
+    name: "hy_skulls",
+    tag: "Skulls"
+  },
+  "12": {
+    name: "hy_webs",
+    tag: "Crimson Web"
+  },
+  "13": {
+    name: "hy_splatter",
+    tag: "Blue Streak"
+  },
+  "14": {
+    name: "hy_ak47lam",
+    tag: "Red Laminate"
+  },
+  "15": {
+    name: "hy_gelpen",
+    tag: "Gunsmoke"
+  },
+  "16": {
+    name: "hy_v_tiger",
+    tag: "Jungle Tiger"
+  },
+  "17": {
+    name: "hy_ddpat_urb",
+    tag: "Urban DDPAT"
+  },
+  "20": {
+    name: "hy_zombie",
+    tag: "Virus"
+  },
+  "21": {
+    name: "hy_granite",
+    tag: "Granite Marbleized"
+  },
+  "22": {
+    name: "sp_spray",
+    tag: "Contrast Spray"
+  },
+  "25": {
+    name: "sp_leaves",
+    tag: "Forest Leaves"
+  },
+  "26": {
+    name: "sp_short_tape",
+    tag: "Lichen Dashed"
+  },
+  "27": {
+    name: "sp_tape",
+    tag: "Bone Mask"
+  },
+  "28": {
+    name: "an_navy",
+    tag: "Anodized Navy"
+  },
+  "30": {
+    name: "sp_snake",
+    tag: "Snake Camo"
+  },
+  "32": {
+    name: "an_silver",
+    tag: "Silver"
+  },
+  "33": {
+    name: "an_red",
+    tag: "Hot Rod"
+  },
+  "34": {
+    name: "am_urban",
+    tag: "Metallic DDPAT"
+  },
+  "36": {
+    name: "am_ossify",
+    tag: "Ossified"
+  },
+  "37": {
+    name: "aa_flames",
+    tag: "Blaze"
+  },
+  "38": {
+    name: "aa_fade",
+    tag: "Fade"
+  },
+  "39": {
+    name: "so_yellow",
+    tag: "Bulldozer"
+  },
+  "40": {
+    name: "so_night",
+    tag: "Night"
+  },
+  "41": {
+    name: "aq_copper",
+    tag: "Copper"
+  },
+  "42": {
+    name: "aq_blued",
+    tag: "Blue Steel"
+  },
+  "43": {
+    name: "aq_forced",
+    tag: "Stained"
+  },
+  "44": {
+    name: "aq_oiled",
+    tag: "Case Hardened"
+  },
+  "46": {
+    name: "so_pmc",
+    tag: "Contractor"
+  },
+  "47": {
+    name: "so_space_marine",
+    tag: "Colony"
+  },
+  "48": {
+    name: "am_dragon_glock",
+    tag: "Dragon Tattoo"
+  },
+  "51": {
+    name: "am_lightning_awp",
+    tag: "Lightning Strike"
+  },
+  "59": {
+    name: "am_zebra",
+    tag: "Slaughter"
+  },
+  "60": {
+    name: "am_zebra_dark",
+    tag: "Dark Water"
+  },
+  "61": {
+    name: "aa_vertigo",
+    tag: "Hypnotic"
+  },
+  "62": {
+    name: "cu_spring_nova",
+    tag: "Bloomstick"
+  },
+  "67": {
+    name: "am_slither_p90",
+    tag: "Cold Blooded"
+  },
+  "70": {
+    name: "am_carbon_fiber",
+    tag: "Carbon Fiber"
+  },
+  "71": {
+    name: "am_scorpion_p2000",
+    tag: "Scorpion"
+  },
+  "72": {
+    name: "sp_mesh_tan",
+    tag: "Safari Mesh"
+  },
+  "73": {
+    name: "hy_feathers_aug",
+    tag: "Wings"
+  },
+  "74": {
+    name: "hy_arctic_contrast",
+    tag: "Polar Camo"
+  },
+  "75": {
+    name: "hy_blizzard",
+    tag: "Blizzard Marbleized"
+  },
+  "76": {
+    name: "hy_forest_winter",
+    tag: "Winter Forest"
+  },
+  "77": {
+    name: "hy_forest_boreal",
+    tag: "Boreal Forest"
+  },
+  "78": {
+    name: "hy_forest_night",
+    tag: "Forest Night"
+  },
+  "83": {
+    name: "hy_ddpat_orange",
+    tag: "Orange DDPAT"
+  },
+  "84": {
+    name: "hy_ddpat_pink",
+    tag: "Pink DDPAT"
+  },
+  "90": {
+    name: "hy_mottled_sand",
+    tag: "Mudder"
+  },
+  "92": {
+    name: "hy_reef",
+    tag: "Cyanospatter"
+  },
+  "93": {
+    name: "so_caramel",
+    tag: "Caramel"
+  },
+  "95": {
+    name: "so_grassland",
+    tag: "Grassland"
+  },
+  "96": {
+    name: "so_moss",
+    tag: "Blue Spruce"
+  },
+  "98": {
+    name: "so_purple",
+    tag: "Ultraviolet"
+  },
+  "99": {
+    name: "so_sand",
+    tag: "Sand Dune"
+  },
+  "100": {
+    name: "so_stormfront",
+    tag: "Storm"
+  },
+  "101": {
+    name: "so_tornado",
+    tag: "Tornado"
+  },
+  "102": {
+    name: "so_whiteout",
+    tag: "Whiteout"
+  },
+  "104": {
+    name: "sp_leaves_grassland",
+    tag: "Grassland Leaves"
+  },
+  "107": {
+    name: "sp_mesh_arctic_contrast",
+    tag: "Polar Mesh"
+  },
+  "110": {
+    name: "sp_mesh_forest_fire",
+    tag: "Condemned"
+  },
+  "111": {
+    name: "sp_mesh_glacier",
+    tag: "Glacier Mesh"
+  },
+  "116": {
+    name: "sp_mesh_sand",
+    tag: "Sand Mesh"
+  },
+  "119": {
+    name: "sp_spray_desert_sage",
+    tag: "Sage Spray"
+  },
+  "122": {
+    name: "sp_spray_jungle",
+    tag: "Jungle Spray"
+  },
+  "124": {
+    name: "sp_spray_sand",
+    tag: "Sand Spray"
+  },
+  "125": {
+    name: "cu_xray_p250",
+    tag: "X-Ray"
+  },
+  "135": {
+    name: "sp_tape_dots_urban",
+    tag: "Urban Perforated"
+  },
+  "136": {
+    name: "sp_tape_dots_waves",
+    tag: "Waves Perforated"
+  },
+  "141": {
+    name: "sp_tape_orange",
+    tag: "Orange Peel"
+  },
+  "143": {
+    name: "sp_tape_urban",
+    tag: "Urban Masked"
+  },
+  "147": {
+    name: "sp_tape_short_jungle",
+    tag: "Jungle Dashed"
+  },
+  "148": {
+    name: "sp_tape_short_sand",
+    tag: "Sand Dashed"
+  },
+  "149": {
+    name: "sp_tape_short_urban",
+    tag: "Urban Dashed"
+  },
+  "151": {
+    name: "so_jungle",
+    tag: "Jungle"
+  },
+  "153": {
+    name: "so_tangerine",
+    tag: "Demolition"
+  },
+  "154": {
+    name: "cu_broken_path_famas",
+    tag: "Afterimage"
+  },
+  "155": {
+    name: "cu_bullet_rain_m4a1",
+    tag: "Bullet Rain"
+  },
+  "156": {
+    name: "cu_catskulls_p90",
+    tag: "Death by Kitty"
+  },
+  "157": {
+    name: "sp_palm",
+    tag: "Palm"
+  },
+  "158": {
+    name: "cu_walnut_nova",
+    tag: "Walnut"
+  },
+  "159": {
+    name: "aq_brass",
+    tag: "Brass"
+  },
+  "162": {
+    name: "sp_splash_p250",
+    tag: "Splash"
+  },
+  "164": {
+    name: "hy_hunter_modern",
+    tag: "Modern Hunter"
+  },
+  "165": {
+    name: "hy_hunter_blaze_pink",
+    tag: "Splash Jam"
+  },
+  "166": {
+    name: "hy_hunter_blaze_orange",
+    tag: "Blaze Orange"
+  },
+  "167": {
+    name: "sp_nukestripe_orange",
+    tag: "Radiation Hazard"
+  },
+  "168": {
+    name: "sp_nukestripe_green",
+    tag: "Nuclear Threat"
+  },
+  "169": {
+    name: "sp_nukestripe_maroon",
+    tag: "Fallout Warning"
+  },
+  "170": {
+    name: "sp_zebracam",
+    tag: "Predator"
+  },
+  "171": {
+    name: "sp_nukestripe_brown",
+    tag: "Irradiated Alert"
+  },
+  "172": {
+    name: "hy_ak47lam_bw",
+    tag: "Black Laminate"
+  },
+  "174": {
+    name: "hy_blam_simple",
+    tag: "BOOM"
+  },
+  "175": {
+    name: "sp_dapple",
+    tag: "Scorched"
+  },
+  "176": {
+    name: "sp_zebracam_bw",
+    tag: "Faded Zebra"
+  },
+  "177": {
+    name: "hy_icosahedron",
+    tag: "Memento"
+  },
+  "178": {
+    name: "hy_doomkitty",
+    tag: "Doomkitty"
+  },
+  "179": {
+    name: "sp_nukestripe_green_tec9",
+    tag: "Nuclear Threat"
+  },
+  "180": {
+    name: "cu_fireserpent_ak47_bravo",
+    tag: "Fire Serpent"
+  },
+  "181": {
+    name: "cu_favela_awp",
+    tag: "Corticera"
+  },
+  "182": {
+    name: "cu_dragon_p90_bravo",
+    tag: "Emerald Dragon"
+  },
+  "183": {
+    name: "hy_siege_bravo",
+    tag: "Overgrowth"
+  },
+  "184": {
+    name: "cu_favela_p2000",
+    tag: "Corticera"
+  },
+  "185": {
+    name: "am_scales_bravo",
+    tag: "Golden Koi"
+  },
+  "186": {
+    name: "sp_spray_waves_bravo",
+    tag: "Wave Spray"
+  },
+  "187": {
+    name: "sp_star_bravo",
+    tag: "Zirka"
+  },
+  "188": {
+    name: "aq_etched_mac10_bravo",
+    tag: "Graven"
+  },
+  "189": {
+    name: "hy_ocean_bravo",
+    tag: "Bright Water"
+  },
+  "190": {
+    name: "cu_season_elites_bravo",
+    tag: "Black Limba"
+  },
+  "191": {
+    name: "hy_seaside_bravo",
+    tag: "Tempest"
+  },
+  "192": {
+    name: "hy_crumple_bravo",
+    tag: "Shattered"
+  },
+  "193": {
+    name: "sp_skull_diagram_bravo",
+    tag: "Bone Pile"
+  },
+  "194": {
+    name: "sp_spitfire_famas_bravo",
+    tag: "Spitfire"
+  },
+  "195": {
+    name: "hy_bluepolygon_bravo",
+    tag: "Demeter"
+  },
+  "196": {
+    name: "an_emerald_bravo",
+    tag: "Emerald"
+  },
+  "197": {
+    name: "an_navy_bravo",
+    tag: "Anodized Navy"
+  },
+  "198": {
+    name: "sp_hazard_bravo",
+    tag: "Hazard"
+  },
+  "199": {
+    name: "sp_tape_dots_bravo",
+    tag: "Dry Season"
+  },
+  "200": {
+    name: "hy_mayan_dreams_bravo",
+    tag: "Mayan Dreams"
+  },
+  "201": {
+    name: "sp_palm_bravo",
+    tag: "Palm"
+  },
+  "202": {
+    name: "hy_ddpat_jungle_bravo",
+    tag: "Jungle DDPAT"
+  },
+  "203": {
+    name: "aq_steel_bravo",
+    tag: "Rust Coat"
+  },
+  "204": {
+    name: "hy_ali_tile_bravo",
+    tag: "Mosaico"
+  },
+  "205": {
+    name: "so_jungle_bravo",
+    tag: "Jungle"
+  },
+  "206": {
+    name: "so_tornado_bravo",
+    tag: "Tornado"
+  },
+  "207": {
+    name: "hy_crumple_dark_bravo",
+    tag: "Facets"
+  },
+  "208": {
+    name: "so_sand_bravo",
+    tag: "Sand Dune"
+  },
+  "209": {
+    name: "so_olive_bravo",
+    tag: "Groundwater"
+  },
+  "210": {
+    name: "an_gunmetal_bravo",
+    tag: "Anodized Gunmetal"
+  },
+  "211": {
+    name: "am_ossify_blue_p2000_bravo",
+    tag: "Ocean Foam"
+  },
+  "212": {
+    name: "am_crumple_bravo",
+    tag: "Graphite"
+  },
+  "213": {
+    name: "am_ossify_blue",
+    tag: "Ocean Foam"
+  },
+  "214": {
+    name: "am_crumple",
+    tag: "Graphite"
+  },
+  "215": {
+    name: "cu_xray_m4",
+    tag: "X-Ray"
+  },
+  "216": {
+    name: "an_titanium30v",
+    tag: "Blue Titanium"
+  },
+  "217": {
+    name: "hy_redtiger",
+    tag: "Blood Tiger"
+  },
+  "218": {
+    name: "hy_bluehex",
+    tag: "Hexane"
+  },
+  "219": {
+    name: "hy_redhex",
+    tag: "Hive"
+  },
+  "220": {
+    name: "am_ossify_red",
+    tag: "Hemoglobin"
+  },
+  "221": {
+    name: "am_electric_red",
+    tag: "Serum"
+  },
+  "222": {
+    name: "cu_shark",
+    tag: "Blood in the Water"
+  },
+  "223": {
+    name: "hy_flowers",
+    tag: "Nightshade"
+  },
+  "224": {
+    name: "hy_water_crest",
+    tag: "Water Sigil"
+  },
+  "225": {
+    name: "sp_camo_wood_blue",
+    tag: "Ghost Camo"
+  },
+  "226": {
+    name: "hy_ak47lam_blue",
+    tag: "Blue Laminate"
+  },
+  "227": {
+    name: "hy_hive",
+    tag: "Electric Hive"
+  },
+  "228": {
+    name: "hy_modspots",
+    tag: "Blind Spot"
+  },
+  "229": {
+    name: "sp_zebracam_blue",
+    tag: "Azure Zebra"
+  },
+  "230": {
+    name: "am_ddpatdense_silver",
+    tag: "Steel Disruption"
+  },
+  "231": {
+    name: "am_ddpatdense_peacock",
+    tag: "Cobalt Disruption"
+  },
+  "232": {
+    name: "hy_webs_darker",
+    tag: "Crimson Web"
+  },
+  "233": {
+    name: "sp_palm_shadow",
+    tag: "Tropical Storm"
+  },
+  "234": {
+    name: "sp_twigs",
+    tag: "Ash Wood"
+  },
+  "235": {
+    name: "hy_varicamo",
+    tag: "VariCamo"
+  },
+  "236": {
+    name: "hy_varicamo_night",
+    tag: "Night Ops"
+  },
+  "237": {
+    name: "hy_varicamo_urban",
+    tag: "Urban Rubble"
+  },
+  "238": {
+    name: "hy_varicamo_blue",
+    tag: "VariCamo Blue"
+  },
+  "240": {
+    name: "hy_varicamo_desert",
+    tag: "CaliCamo"
+  },
+  "241": {
+    name: "sp_mesh_slashes",
+    tag: "Hunting Blind"
+  },
+  "242": {
+    name: "sp_mesh_army",
+    tag: "Army Mesh"
+  },
+  "243": {
+    name: "sp_mesh_python",
+    tag: "Gator Mesh"
+  },
+  "244": {
+    name: "sp_mesh_hot_and_cold",
+    tag: "Teardown"
+  },
+  "245": {
+    name: "sp_spray_army",
+    tag: "Army Recon"
+  },
+  "246": {
+    name: "aa_fade_metallic",
+    tag: "Amber Fade"
+  },
+  "247": {
+    name: "aq_damascus_sg553",
+    tag: "Damascus Steel"
+  },
+  "248": {
+    name: "am_crystallized",
+    tag: "Red Quartz"
+  },
+  "249": {
+    name: "am_crystallized_blue",
+    tag: "Cobalt Quartz"
+  },
+  "250": {
+    name: "hy_varicamo_red",
+    tag: "Full Stop"
+  },
+  "251": {
+    name: "hy_snakeskin",
+    tag: "Pit Viper"
+  },
+  "252": {
+    name: "am_crystallized_silver",
+    tag: "Silver Quartz"
+  },
+  "253": {
+    name: "aa_fade_grassland",
+    tag: "Acid Fade"
+  },
+  "254": {
+    name: "so_orange_accents",
+    tag: "Nitro"
+  },
+  "255": {
+    name: "cu_m4_asimov",
+    tag: "Asiimov"
+  },
+  "256": {
+    name: "cu_sawedoff_octopump",
+    tag: "The Kraken"
+  },
+  "257": {
+    name: "cu_m4a1-s_elegant",
+    tag: "Guardian"
+  },
+  "258": {
+    name: "cu_p250_refined",
+    tag: "Mehndi"
+  },
+  "259": {
+    name: "cu_awp_cobra",
+    tag: "Redline"
+  },
+  "260": {
+    name: "cu_famas_pulse",
+    tag: "Pulse"
+  },
+  "261": {
+    name: "hy_marina_sunrise",
+    tag: "Marina"
+  },
+  "262": {
+    name: "am_thorny_rose_mp9",
+    tag: "Rose Iron"
+  },
+  "263": {
+    name: "cu_skull_nova",
+    tag: "Rising Skull"
+  },
+  "264": {
+    name: "cu_sandstorm",
+    tag: "Sandstorm"
+  },
+  "265": {
+    name: "hy_kami",
+    tag: "Kami"
+  },
+  "266": {
+    name: "aq_obsidian",
+    tag: "Magma"
+  },
+  "267": {
+    name: "am_turqoise_halftone",
+    tag: "Cobalt Halftone"
+  },
+  "268": {
+    name: "am_diamond_plate",
+    tag: "Tread Plate"
+  },
+  "269": {
+    name: "am_fuschia",
+    tag: "The Fuschia Is Now"
+  },
+  "270": {
+    name: "aq_etched_cz75",
+    tag: "Victoria"
+  },
+  "271": {
+    name: "am_p250_beaded_paint",
+    tag: "Undertow"
+  },
+  "272": {
+    name: "am_fluted_tec9",
+    tag: "Titanium Bit"
+  },
+  "273": {
+    name: "aq_engraved_deagle",
+    tag: "Heirloom"
+  },
+  "274": {
+    name: "am_copper_flecks",
+    tag: "Copper Galaxy"
+  },
+  "275": {
+    name: "hy_poly_camo",
+    tag: "Red FragCam"
+  },
+  "276": {
+    name: "so_panther",
+    tag: "Panther"
+  },
+  "277": {
+    name: "aq_usp_stainless",
+    tag: "Stainless"
+  },
+  "278": {
+    name: "hy_craquelure",
+    tag: "Blue Fissure"
+  },
+  "279": {
+    name: "cu_awp_asimov",
+    tag: "Asiimov"
+  },
+  "280": {
+    name: "cu_aug_chameleonaire",
+    tag: "Chameleon"
+  },
+  "281": {
+    name: "cu_ump_corporal",
+    tag: "Corporal"
+  },
+  "282": {
+    name: "cu_ak47_cobra",
+    tag: "Redline"
+  },
+  "283": {
+    name: "cu_p90_trigon",
+    tag: "Trigon"
+  },
+  "284": {
+    name: "cu_mac10_redhot",
+    tag: "Heat"
+  },
+  "285": {
+    name: "sp_negev_turq_terrain",
+    tag: "Terrain"
+  },
+  "286": {
+    name: "cu_nova_antique",
+    tag: "Antique"
+  },
+  "287": {
+    name: "cu_sg553_pulse",
+    tag: "Pulse"
+  },
+  "288": {
+    name: "an_famas_sgt",
+    tag: "Sergeant"
+  },
+  "289": {
+    name: "cu_tec9_sandstorm",
+    tag: "Sandstorm"
+  },
+  "290": {
+    name: "cu_usp_elegant",
+    tag: "Guardian"
+  },
+  "291": {
+    name: "cu_mag7_heaven",
+    tag: "Heaven Guard"
+  },
+  "293": {
+    name: "hy_nerodia",
+    tag: "Death Rattle"
+  },
+  "294": {
+    name: "so_green",
+    tag: "Green Apple"
+  },
+  "295": {
+    name: "cu_money",
+    tag: "Franklin"
+  },
+  "296": {
+    name: "am_crystallized_dark",
+    tag: "Meteorite"
+  },
+  "297": {
+    name: "so_orca",
+    tag: "Tuxedo"
+  },
+  "298": {
+    name: "am_army_shine",
+    tag: "Army Sheen"
+  },
+  "299": {
+    name: "am_oval_hex",
+    tag: "Caged Steel"
+  },
+  "300": {
+    name: "cu_pinstripe_ak47",
+    tag: "Emerald Pinstripe"
+  },
+  "301": {
+    name: "am_m4a1-s_alloy_orange",
+    tag: "Atomic Alloy"
+  },
+  "302": {
+    name: "cu_ak47_rubber",
+    tag: "Vulcan"
+  },
+  "303": {
+    name: "cu_tec9_asiimov",
+    tag: "Isaac"
+  },
+  "304": {
+    name: "cu_ssg08_immortal",
+    tag: "Slashed"
+  },
+  "305": {
+    name: "cu_aug_progressiv",
+    tag: "Torque"
+  },
+  "306": {
+    name: "cu_bizon_antique",
+    tag: "Antique"
+  },
+  "307": {
+    name: "cu_retribution",
+    tag: "Retribution"
+  },
+  "308": {
+    name: "hy_galil_kami",
+    tag: "Kami"
+  },
+  "309": {
+    name: "cu_m4a1_howling",
+    tag: "Howl"
+  },
+  "310": {
+    name: "cu_mac10_decay",
+    tag: "Curse"
+  },
+  "311": {
+    name: "cu_p90_scorpius",
+    tag: "Desert Warfare"
+  },
+  "312": {
+    name: "cu_scar_cyrex",
+    tag: "Cyrex"
+  },
+  "313": {
+    name: "cu_usp_spitfire",
+    tag: "Orion"
+  },
+  "314": {
+    name: "cu_xm1014_heaven_guard",
+    tag: "Heaven Guard"
+  },
+  "315": {
+    name: "am_nitrogen",
+    tag: "Poison Dart"
+  },
+  "316": {
+    name: "cu_panther_ak47",
+    tag: "Jaguar"
+  },
+  "317": {
+    name: "cu_bratatat_negev",
+    tag: "Bratatat"
+  },
+  "318": {
+    name: "cu_usp_sandpapered",
+    tag: "Road Rash"
+  },
+  "319": {
+    name: "hy_ssg08_marker",
+    tag: "Detour"
+  },
+  "320": {
+    name: "hy_snakeskin_red",
+    tag: "Red Python"
+  },
+  "321": {
+    name: "cu_m4a1-s_silence",
+    tag: "Master Piece"
+  },
+  "322": {
+    name: "so_orange_accents2",
+    tag: "Nitro"
+  },
+  "323": {
+    name: "aq_steel",
+    tag: "Rust Coat"
+  },
+  "325": {
+    name: "am_royal",
+    tag: "Chalice"
+  },
+  "326": {
+    name: "am_metals",
+    tag: "Knight"
+  },
+  "327": {
+    name: "am_chainmail",
+    tag: "Chainmail"
+  },
+  "328": {
+    name: "aq_handcannon",
+    tag: "Hand Cannon"
+  },
+  "329": {
+    name: "am_metal_inlay",
+    tag: "Dark Age"
+  },
+  "330": {
+    name: "hy_vines",
+    tag: "Briar"
+  },
+  "332": {
+    name: "hy_indigo_usp",
+    tag: "Royal Blue"
+  },
+  "333": {
+    name: "so_indigo_and_grey",
+    tag: "Indigo"
+  },
+  "334": {
+    name: "am_gyrate",
+    tag: "Twist"
+  },
+  "335": {
+    name: "an_royalbleed",
+    tag: "Module"
+  },
+  "336": {
+    name: "cu_titanstorm",
+    tag: "Desert-Strike"
+  },
+  "337": {
+    name: "cu_korupt",
+    tag: "Tatter"
+  },
+  "338": {
+    name: "cu_p2000_pulse",
+    tag: "Pulse"
+  },
+  "339": {
+    name: "cu_kaiman",
+    tag: "Caiman"
+  },
+  "340": {
+    name: "cu_well_traveled_ak47",
+    tag: "Jet Set"
+  },
+  "341": {
+    name: "cu_green_leather_ak47",
+    tag: "First Class"
+  },
+  "342": {
+    name: "cu_brown_leather_p90",
+    tag: "Leather"
+  },
+  "343": {
+    name: "cu_luggage_mac10",
+    tag: "Commuter"
+  },
+  "344": {
+    name: "cu_medieval_dragon_awp",
+    tag: "Dragon Lore"
+  },
+  "345": {
+    name: "cu_green_leather_sawedoff",
+    tag: "First Class"
+  },
+  "346": {
+    name: "cu_luggage_p2000",
+    tag: "Coach Class"
+  },
+  "347": {
+    name: "aq_pilot_deagle",
+    tag: "Pilot"
+  },
+  "348": {
+    name: "cu_leather_xm1014",
+    tag: "Red Leather"
+  },
+  "349": {
+    name: "cu_bizon-osiris",
+    tag: "Osiris"
+  },
+  "350": {
+    name: "cu_c75a-tiger",
+    tag: "Tigris"
+  },
+  "351": {
+    name: "cu_deagle_aureus",
+    tag: "Conspiracy"
+  },
+  "352": {
+    name: "aq_57_feathers",
+    tag: "Fowl Play"
+  },
+  "353": {
+    name: "cu_glock-liquescent",
+    tag: "Water Elemental"
+  },
+  "354": {
+    name: "cu_mp7-commander",
+    tag: "Urban Hazard"
+  },
+  "355": {
+    name: "cu_negev_titanstorm",
+    tag: "Desert-Strike"
+  },
+  "356": {
+    name: "cu_nova_koi",
+    tag: "Koi"
+  },
+  "357": {
+    name: "cu_p2000_ivory",
+    tag: "Ivory"
+  },
+  "358": {
+    name: "cu_bittersweet",
+    tag: "Supernova"
+  },
+  "359": {
+    name: "cu_p90-asiimov",
+    tag: "Asiimov"
+  },
+  "360": {
+    name: "cu_m4a1s_cyrex",
+    tag: "Cyrex"
+  },
+  "361": {
+    name: "aq_leviathan",
+    tag: "Abyss"
+  },
+  "362": {
+    name: "hy_lines_orange",
+    tag: "Labyrinth"
+  },
+  "363": {
+    name: "cu_luggage_sg553",
+    tag: "Traveler"
+  },
+  "364": {
+    name: "cu_luggage_usp-s",
+    tag: "Business Class"
+  },
+  "365": {
+    name: "hy_plaid1",
+    tag: "Olive Plaid"
+  },
+  "366": {
+    name: "hy_plaid2",
+    tag: "Green Plaid"
+  },
+  "367": {
+    name: "am_nuclear_pattern1_glock",
+    tag: "Reactor"
+  },
+  "368": {
+    name: "hy_nuclear_pattern2_mp9",
+    tag: "Setting Sun"
+  },
+  "369": {
+    name: "sp_nuclear_pattern3_negev",
+    tag: "Nuclear Waste"
+  },
+  "370": {
+    name: "am_nuclear_skulls1_xm1014",
+    tag: "Bone Machine"
+  },
+  "371": {
+    name: "am_nuclear_skulls2_famas",
+    tag: "Styx"
+  },
+  "372": {
+    name: "am_nuclear_skulls3_mac10",
+    tag: "Nuclear Garden"
+  },
+  "373": {
+    name: "hy_nuclear_skulls4_p250",
+    tag: "Contamination"
+  },
+  "374": {
+    name: "hy_nuclear_skulls5_tec9",
+    tag: "Toxic"
+  },
+  "375": {
+    name: "sp_nukestripe_orange_aug",
+    tag: "Radiation Hazard"
+  },
+  "376": {
+    name: "so_grey_nuclear_green_bizon",
+    tag: "Chemical Green"
+  },
+  "377": {
+    name: "so_grey_nuclear_orange_five_seven",
+    tag: "Hot Shot"
+  },
+  "378": {
+    name: "sp_nukestripe_maroon_sg553",
+    tag: "Fallout Warning"
+  },
+  "379": {
+    name: "cu_cerbrus_galil",
+    tag: "Cerberus"
+  },
+  "380": {
+    name: "cu_tribute_ak47",
+    tag: "Wasteland Rebel"
+  },
+  "381": {
+    name: "aq_glock_coiled",
+    tag: "Grinder"
+  },
+  "382": {
+    name: "am_g3sg1_murky",
+    tag: "Murky"
+  },
+  "383": {
+    name: "aq_m4a1s_basilisk",
+    tag: "Basilisk"
+  },
+  "384": {
+    name: "cu_m4a4_griffin",
+    tag: "Griffin"
+  },
+  "385": {
+    name: "sp_mag7_firebitten",
+    tag: "Firestarter"
+  },
+  "386": {
+    name: "cu_mp9_chevron",
+    tag: "Dart"
+  },
+  "387": {
+    name: "cu_fiveseven_urban_hazard",
+    tag: "Urban Hazard"
+  },
+  "388": {
+    name: "aq_p250_cartel",
+    tag: "Cartel"
+  },
+  "389": {
+    name: "cu_p2000_fire_elemental",
+    tag: "Fire Elemental"
+  },
+  "390": {
+    name: "aq_sawedoff_blackgold",
+    tag: "Highwayman"
+  },
+  "391": {
+    name: "cu_scar20_intervention",
+    tag: "Cardiac"
+  },
+  "392": {
+    name: "sp_ump45_d-visions",
+    tag: "Delusion"
+  },
+  "393": {
+    name: "cu_xm1014_caritas",
+    tag: "Tranquility"
+  },
+  "394": {
+    name: "aq_ak47_cartel",
+    tag: "Cartel"
+  },
+  "395": {
+    name: "am_awp_glory",
+    tag: "Man-o'-war"
+  },
+  "396": {
+    name: "cu_elites_urbanstorm",
+    tag: "Urban Shock"
+  },
+  "397": {
+    name: "aq_deagle_naga",
+    tag: "Naga"
+  },
+  "398": {
+    name: "cu_galil_abrasion",
+    tag: "Chatterbox"
+  },
+  "399": {
+    name: "cu_glock_deathtoll",
+    tag: "Catacombs"
+  },
+  "400": {
+    name: "cu_m4a4_ancestral",
+    tag: "Θ╛ìτÄï (Dragon King)"
+  },
+  "401": {
+    name: "cu_m249_sektor",
+    tag: "System Lock"
+  },
+  "402": {
+    name: "am_mac10_malachite",
+    tag: "Malachite"
+  },
+  "403": {
+    name: "cu_mp9_deadly_poison",
+    tag: "Deadly Poison"
+  },
+  "404": {
+    name: "cu_p250_mandala",
+    tag: "Muertos"
+  },
+  "405": {
+    name: "cu_sawedoff_deva",
+    tag: "Serenity"
+  },
+  "406": {
+    name: "aq_scar20_leak",
+    tag: "Grotto"
+  },
+  "407": {
+    name: "aq_xm1014_sigla",
+    tag: "Quicksilver"
+  },
+  "409": {
+    name: "an_tiger_orange",
+    tag: "Tiger Tooth"
+  },
+  "410": {
+    name: "aq_damascus",
+    tag: "Damascus Steel"
+  },
+  "411": {
+    name: "aq_damascus_90",
+    tag: "Damascus Steel"
+  },
+  "413": {
+    name: "am_marble_fade",
+    tag: "Marble Fade"
+  },
+  "414": {
+    name: "aq_steel_knife",
+    tag: "Rust Coat"
+  },
+  "415": {
+    name: "am_ruby_marbleized",
+    tag: "Doppler"
+  },
+  "416": {
+    name: "am_sapphire_marbleized",
+    tag: "Doppler"
+  },
+  "417": {
+    name: "am_blackpearl_marbleized",
+    tag: "Doppler"
+  },
+  "418": {
+    name: "am_doppler_phase1",
+    tag: "Doppler"
+  },
+  "419": {
+    name: "am_doppler_phase2",
+    tag: "Doppler"
+  },
+  "420": {
+    name: "am_doppler_phase3",
+    tag: "Doppler"
+  },
+  "421": {
+    name: "am_doppler_phase4",
+    tag: "Doppler"
+  },
+  "422": {
+    name: "cu_ak47_mastery",
+    tag: "Elite Build"
+  },
+  "423": {
+    name: "aq_mp7_ultramodern",
+    tag: "Armor Core"
+  },
+  "424": {
+    name: "aq_awp_twine",
+    tag: "Worm God"
+  },
+  "425": {
+    name: "am_bronze_sparkle",
+    tag: "Bronze Deco"
+  },
+  "426": {
+    name: "aq_p250_contour",
+    tag: "Valence"
+  },
+  "427": {
+    name: "cu_fiveseven_banana",
+    tag: "Monkey Business"
+  },
+  "428": {
+    name: "cu_galil_eco",
+    tag: "Eco"
+  },
+  "429": {
+    name: "aq_famas_jinn",
+    tag: "Djinn"
+  },
+  "430": {
+    name: "cu_m4a1_hyper_beast",
+    tag: "Hyper Beast"
+  },
+  "431": {
+    name: "cu_mag7_redhot",
+    tag: "Heat"
+  },
+  "432": {
+    name: "am_negev_glory",
+    tag: "Man-o'-war"
+  },
+  "433": {
+    name: "cu_mac10_neonrider",
+    tag: "Neon Rider"
+  },
+  "434": {
+    name: "cu_sawedoff_origami",
+    tag: "Origami"
+  },
+  "435": {
+    name: "cu_cz75_precision",
+    tag: "Pole Position"
+  },
+  "436": {
+    name: "am_ump_racer",
+    tag: "Grand Prix"
+  },
+  "437": {
+    name: "am_aqua_flecks",
+    tag: "Twilight Galaxy"
+  },
+  "438": {
+    name: "cu_chronos_g3sg1",
+    tag: "Chronos"
+  },
+  "439": {
+    name: "hy_hades",
+    tag: "Hades"
+  },
+  "440": {
+    name: "hy_icarus",
+    tag: "Icarus Fell"
+  },
+  "441": {
+    name: "cu_labyrinth",
+    tag: "Minotaur's Labyrinth"
+  },
+  "442": {
+    name: "sp_labyrinth",
+    tag: "Asterion"
+  },
+  "443": {
+    name: "sp_labyrinth2",
+    tag: "Pathfinder"
+  },
+  "444": {
+    name: "sp_labyrinth3",
+    tag: "Daedalus"
+  },
+  "445": {
+    name: "an_red_m4a1s",
+    tag: "Hot Rod"
+  },
+  "446": {
+    name: "cu_medusa_awp",
+    tag: "Medusa"
+  },
+  "447": {
+    name: "gs_mother_of_pearl_elite",
+    tag: "Duelist"
+  },
+  "448": {
+    name: "aa_pandora",
+    tag: "Pandora's Box"
+  },
+  "449": {
+    name: "cu_poseidon",
+    tag: "Poseidon"
+  },
+  "450": {
+    name: "hy_zodiac1",
+    tag: "Moon in Libra"
+  },
+  "451": {
+    name: "hy_zodiac2",
+    tag: "Sun in Leo"
+  },
+  "452": {
+    name: "hy_zodiac3",
+    tag: "Shipping Forecast"
+  },
+  "453": {
+    name: "an_emerald",
+    tag: "Emerald"
+  },
+  "454": {
+    name: "so_khaki_green",
+    tag: "Para Green"
+  },
+  "455": {
+    name: "cu_anime_aug",
+    tag: "Akihabara Accept"
+  },
+  "456": {
+    name: "am_bamboo_jungle",
+    tag: "Hydroponic"
+  },
+  "457": {
+    name: "hy_bamboo_jungle_ink",
+    tag: "Bamboo Print"
+  },
+  "458": {
+    name: "hy_bamboo_jungle_black",
+    tag: "Bamboo Shadow"
+  },
+  "459": {
+    name: "hy_bamboo_jungle",
+    tag: "Bamboo Forest"
+  },
+  "460": {
+    name: "am_geometric_steps",
+    tag: "Aqua Terrace"
+  },
+  "462": {
+    name: "hy_geometric_steps_green",
+    tag: "Counter Terrace"
+  },
+  "463": {
+    name: "hy_geometric_steps_yellow",
+    tag: "Terrace"
+  },
+  "464": {
+    name: "hy_kimono_diamonds",
+    tag: "Neon Kimono"
+  },
+  "465": {
+    name: "hy_kimono_diamonds_orange",
+    tag: "Orange Kimono"
+  },
+  "466": {
+    name: "hy_kimono_diamonds_red",
+    tag: "Crimson Kimono"
+  },
+  "467": {
+    name: "sp_kimono_diamonds",
+    tag: "Mint Kimono"
+  },
+  "468": {
+    name: "am_seastorm",
+    tag: "Midnight Storm"
+  },
+  "469": {
+    name: "am_seastorm_blood",
+    tag: "Sunset Storm σú▒"
+  },
+  "470": {
+    name: "am_seastorm_shojo",
+    tag: "Sunset Storm σ╝É"
+  },
+  "471": {
+    name: "am_kimono_sunrise",
+    tag: "Daybreak"
+  },
+  "472": {
+    name: "so_keycolors",
+    tag: "Impact Drill"
+  },
+  "473": {
+    name: "so_aqua",
+    tag: "Seabird"
+  },
+  "474": {
+    name: "cu_ak47_courage_alt",
+    tag: "Aquamarine Revenge"
+  },
+  "475": {
+    name: "cu_awp_hyper_beast",
+    tag: "Hyper Beast"
+  },
+  "476": {
+    name: "cu_cz75a_chastizer",
+    tag: "Yellow Jacket"
+  },
+  "477": {
+    name: "am_famas_dots",
+    tag: "Neural Net"
+  },
+  "478": {
+    name: "cu_galilar_particles",
+    tag: "Rocket Pop"
+  },
+  "479": {
+    name: "aq_glock18_flames_blue",
+    tag: "Bunsen Burner"
+  },
+  "480": {
+    name: "cu_m4a4_evil_daimyo",
+    tag: "Evil Daimyo"
+  },
+  "481": {
+    name: "cu_mp7_nemsis",
+    tag: "Nemesis"
+  },
+  "482": {
+    name: "am_mp9_nitrogen",
+    tag: "Ruby Poison Dart"
+  },
+  "483": {
+    name: "cu_negev_annihilator",
+    tag: "Loudmouth"
+  },
+  "484": {
+    name: "cu_nova_ranger",
+    tag: "Ranger"
+  },
+  "485": {
+    name: "aq_p2000_boom",
+    tag: "Handgun"
+  },
+  "486": {
+    name: "cu_p90_mastery",
+    tag: "Elite Build"
+  },
+  "487": {
+    name: "cu_sg553_cyrex",
+    tag: "Cyrex"
+  },
+  "488": {
+    name: "cu_ump45_uproar",
+    tag: "Riot"
+  },
+  "489": {
+    name: "cu_usp_progressiv",
+    tag: "Torque"
+  },
+  "490": {
+    name: "cu_ak47_winter_sport",
+    tag: "Frontside Misty"
+  },
+  "491": {
+    name: "cu_dualberretta_dragons",
+    tag: "Dualing Dragons"
+  },
+  "492": {
+    name: "cu_famas_lenta",
+    tag: "Survivor Z"
+  },
+  "493": {
+    name: "gs_g3sg1_flux_purple",
+    tag: "Flux"
+  },
+  "494": {
+    name: "gs_galil_nightwing",
+    tag: "Stone Cold"
+  },
+  "495": {
+    name: "gs_glock18_wrathys",
+    tag: "Wraiths"
+  },
+  "496": {
+    name: "gs_m249_nebula_crusader",
+    tag: "Nebula Crusader"
+  },
+  "497": {
+    name: "gs_m4a1s_snakebite_gold",
+    tag: "Golden Coil"
+  },
+  "498": {
+    name: "cu_mac10_alekhya_duo",
+    tag: "Rangeen"
+  },
+  "499": {
+    name: "cu_mag7_myrcene",
+    tag: "Cobalt Core"
+  },
+  "500": {
+    name: "cu_mp7_classified",
+    tag: "Special Delivery"
+  },
+  "501": {
+    name: "hy_p250_crackshot",
+    tag: "Wingshot"
+  },
+  "502": {
+    name: "gs_scar20_peacemaker03",
+    tag: "Green Marine"
+  },
+  "503": {
+    name: "cu_ssg08_technicality",
+    tag: "Big Iron"
+  },
+  "504": {
+    name: "cu_usp_kill_confirmed",
+    tag: "Kill Confirmed"
+  },
+  "505": {
+    name: "aq_xm1014_scumbria",
+    tag: "Scumbria"
+  },
+  "506": {
+    name: "cu_ak47_point_disarray",
+    tag: "Point Disarray"
+  },
+  "507": {
+    name: "am_aug_jumble",
+    tag: "Ricochet"
+  },
+  "508": {
+    name: "cu_bizon_noxious",
+    tag: "Fuel Rod"
+  },
+  "509": {
+    name: "aq_deagle_corinthian",
+    tag: "Corinthian"
+  },
+  "510": {
+    name: "cu_fiveseven_retrobution",
+    tag: "Retrobution"
+  },
+  "511": {
+    name: "cu_g3sg1_executioner",
+    tag: "The Executioner"
+  },
+  "512": {
+    name: "gs_m4a4_royal_squire",
+    tag: "Royal Paladin"
+  },
+  "514": {
+    name: "cu_negev_impact",
+    tag: "Power Loader"
+  },
+  "515": {
+    name: "am_p2000_imperial_red",
+    tag: "Imperial"
+  },
+  "516": {
+    name: "cu_p90_shapewood",
+    tag: "Shapewood"
+  },
+  "517": {
+    name: "gs_sawedoff_necromancer",
+    tag: "Yorick"
+  },
+  "518": {
+    name: "hy_scar20_jungler",
+    tag: "Outbreak"
+  },
+  "519": {
+    name: "gs_sg553_tiger_moth",
+    tag: "Tiger Moth"
+  },
+  "520": {
+    name: "cu_tec9_avalanche",
+    tag: "Avalanche"
+  },
+  "521": {
+    name: "aq_xm1014_hot_rod",
+    tag: "Teclu Burner"
+  },
+  "522": {
+    name: "aa_fade_revolver",
+    tag: "Fade"
+  },
+  "523": {
+    name: "aa_fade_metallic_revolver",
+    tag: "Amber Fade"
+  },
+  "524": {
+    name: "gs_ak47_supercharged",
+    tag: "Fuel Injector"
+  },
+  "525": {
+    name: "cu_awp_mastery",
+    tag: "Elite Build"
+  },
+  "526": {
+    name: "cu_bizon_citizen",
+    tag: "Photic Zone"
+  },
+  "527": {
+    name: "aq_deserteagle_kumichodragon",
+    tag: "Kumicho Dragon"
+  },
+  "528": {
+    name: "aq_dualberettas_cartel",
+    tag: "Cartel"
+  },
+  "529": {
+    name: "aq_famas_contour",
+    tag: "Valence"
+  },
+  "530": {
+    name: "cu_fiveseven_augmented",
+    tag: "Triumvirate"
+  },
+  "532": {
+    name: "gs_glock18_award",
+    tag: "Royal Legion"
+  },
+  "533": {
+    name: "gs_m4a4_pioneer",
+    tag: "The Battlestar"
+  },
+  "534": {
+    name: "am_mac10_electricity",
+    tag: "Lapis Gator"
+  },
+  "535": {
+    name: "gs_mag7_praetorian",
+    tag: "Praetorian"
+  },
+  "536": {
+    name: "sp_mp7_impire",
+    tag: "Impire"
+  },
+  "537": {
+    name: "cu_nova_hyperbeast",
+    tag: "Hyper Beast"
+  },
+  "538": {
+    name: "cu_ssg08_necropos",
+    tag: "Necropos"
+  },
+  "539": {
+    name: "gs_tec9_jambiya",
+    tag: "Jambiya"
+  },
+  "540": {
+    name: "gs_usp_voltage",
+    tag: "Lead Conduit"
+  },
+  "541": {
+    name: "cu_aug_swallows",
+    tag: "Fleet Flock"
+  },
+  "542": {
+    name: "cu_bizon_Curse",
+    tag: "Judgement of Anubis"
+  },
+  "543": {
+    name: "gs_cz75a_redastor",
+    tag: "Red Astor"
+  },
+  "544": {
+    name: "gs_dualberettas_ventilators",
+    tag: "Ventilators"
+  },
+  "545": {
+    name: "sp_g3sg1_militiaorange",
+    tag: "Orange Crash"
+  },
+  "546": {
+    name: "gs_galilar_incenerator",
+    tag: "Firefight"
+  },
+  "547": {
+    name: "cu_m249_spectre",
+    tag: "Spectre"
+  },
+  "548": {
+    name: "cu_m4a1s_soultaker",
+    tag: "Chantico's Fire"
+  },
+  "549": {
+    name: "am_mp9_bioleak",
+    tag: "Bioleak"
+  },
+  "550": {
+    name: "hy_p2000_oceani",
+    tag: "Oceanic"
+  },
+  "551": {
+    name: "cu_p250_asiimov",
+    tag: "Asiimov"
+  },
+  "552": {
+    name: "gs_sawedoff_fubar",
+    tag: "Fubar"
+  },
+  "553": {
+    name: "cu_sg553_atlas",
+    tag: "Atlas"
+  },
+  "554": {
+    name: "gs_ssg08_armacore",
+    tag: "Ghost Crusader"
+  },
+  "555": {
+    name: "am_tec9_redblast",
+    tag: "Re-Entry"
+  },
+  "556": {
+    name: "cu_ump45_primalsaber",
+    tag: "Primal Saber"
+  },
+  "557": {
+    name: "cu_xm1014_spectrum",
+    tag: "Black Tie"
+  },
+  "558": {
+    name: "cu_bayonet_lore",
+    tag: "Lore"
+  },
+  "559": {
+    name: "cu_flip_lore",
+    tag: "Lore"
+  },
+  "560": {
+    name: "cu_gut_lore",
+    tag: "Lore"
+  },
+  "561": {
+    name: "cu_karam_lore",
+    tag: "Lore"
+  },
+  "562": {
+    name: "cu_m9_bay_lore",
+    tag: "Lore"
+  },
+  "563": {
+    name: "cu_bayonet_stonewash",
+    tag: "Black Laminate"
+  },
+  "564": {
+    name: "cu_flip_stonewash",
+    tag: "Black Laminate"
+  },
+  "565": {
+    name: "cu_gut_stonewash",
+    tag: "Black Laminate"
+  },
+  "566": {
+    name: "cu_karam_stonewash",
+    tag: "Black Laminate"
+  },
+  "567": {
+    name: "cu_m9_bay_stonewash",
+    tag: "Black Laminate"
+  },
+  "568": {
+    name: "am_emerald_marbleized",
+    tag: "Gamma Doppler"
+  },
+  "569": {
+    name: "am_gamma_doppler_phase1",
+    tag: "Gamma Doppler"
+  },
+  "570": {
+    name: "am_gamma_doppler_phase2",
+    tag: "Gamma Doppler"
+  },
+  "571": {
+    name: "am_gamma_doppler_phase3",
+    tag: "Gamma Doppler"
+  },
+  "572": {
+    name: "am_gamma_doppler_phase4",
+    tag: "Gamma Doppler"
+  },
+  "573": {
+    name: "gs_bayonet_autotronic",
+    tag: "Autotronic"
+  },
+  "574": {
+    name: "gs_flip_autotronic",
+    tag: "Autotronic"
+  },
+  "575": {
+    name: "gs_gut_autotronic",
+    tag: "Autotronic"
+  },
+  "576": {
+    name: "gs_karam_autotronic",
+    tag: "Autotronic"
+  },
+  "577": {
+    name: "gs_m9_bay_autotronic",
+    tag: "Autotronic"
+  },
+  "578": {
+    name: "hy_ocean_knife",
+    tag: "Bright Water"
+  },
+  "579": {
+    name: "hy_ocean_knife_90",
+    tag: "Bright Water"
+  },
+  "580": {
+    name: "am_marked_up",
+    tag: "Freehand"
+  },
+  "581": {
+    name: "am_marked_up_90",
+    tag: "Freehand"
+  },
+  "582": {
+    name: "am_marked_up_fine",
+    tag: "Freehand"
+  },
+  "583": {
+    name: "gs_aug_aristocrat",
+    tag: "Aristocrat"
+  },
+  "584": {
+    name: "gs_awp_phobos",
+    tag: "Phobos"
+  },
+  "585": {
+    name: "cu_five_seven_daimyo",
+    tag: "Violent Daimyo"
+  },
+  "586": {
+    name: "cu_glock_wasteland_rebel",
+    tag: "Wasteland Rebel"
+  },
+  "587": {
+    name: "gs_m4a1_mecha_industries",
+    tag: "Mecha Industries"
+  },
+  "588": {
+    name: "cu_m4a4_desolate_space",
+    tag: "Desolate Space"
+  },
+  "589": {
+    name: "aq_mac_10_alien_camo",
+    tag: "Carnivore"
+  },
+  "590": {
+    name: "aq_nova_sci_fi",
+    tag: "Exo"
+  },
+  "591": {
+    name: "gs_p2000_imperial_dragon",
+    tag: "Imperial Dragon"
+  },
+  "592": {
+    name: "gs_p250_metal_panels",
+    tag: "Iron Clad"
+  },
+  "593": {
+    name: "gs_p90_full_throttle",
+    tag: "Chopper"
+  },
+  "594": {
+    name: "gs_pp_bizon_harvester",
+    tag: "Harvester"
+  },
+  "595": {
+    name: "cu_r8_cybersport",
+    tag: "Reboot"
+  },
+  "596": {
+    name: "cu_sawed_off_lime",
+    tag: "Limelight"
+  },
+  "597": {
+    name: "gs_scar20_bloodsport",
+    tag: "Bloodsport"
+  },
+  "598": {
+    name: "cu_sg553_aerial",
+    tag: "Aerial"
+  },
+  "599": {
+    name: "am_tec_9_sea_salt",
+    tag: "Ice Cap"
+  },
+  "600": {
+    name: "cu_ak47_anarchy",
+    tag: "Neon Revolution"
+  },
+  "601": {
+    name: "gs_aug_syd_mead",
+    tag: "Syd Mead"
+  },
+  "602": {
+    name: "gs_cz75_tread",
+    tag: "Imprint"
+  },
+  "603": {
+    name: "aq_desert_eagle_constable",
+    tag: "Directive"
+  },
+  "604": {
+    name: "gs_famas_rally",
+    tag: "Roll Cage"
+  },
+  "605": {
+    name: "aq_five_seven_scumbria",
+    tag: "Scumbria"
+  },
+  "606": {
+    name: "gs_g3sg1_ventilator",
+    tag: "Ventilator"
+  },
+  "607": {
+    name: "cu_glock18_weasel",
+    tag: "Weasel"
+  },
+  "608": {
+    name: "cu_mag7_tribal",
+    tag: "Petroglyph"
+  },
+  "609": {
+    name: "cu_mp9_narcis",
+    tag: "Airlock"
+  },
+  "610": {
+    name: "hy_negev_dazzle",
+    tag: "Dazzle"
+  },
+  "611": {
+    name: "cu_p90_grimm",
+    tag: "Grim"
+  },
+  "612": {
+    name: "gs_scar20_powercore",
+    tag: "Powercore"
+  },
+  "613": {
+    name: "cu_sg556_triarch",
+    tag: "Triarch"
+  },
+  "614": {
+    name: "gs_tec9_supercharged",
+    tag: "Fuel Injector"
+  },
+  "615": {
+    name: "cu_ump45_metritera",
+    tag: "Briefing"
+  },
+  "616": {
+    name: "hy_xm1014_fractal_blue",
+    tag: "Slipstream"
+  },
+  "617": {
+    name: "am_blackpearl_marbleized_b",
+    tag: "Doppler"
+  },
+  "618": {
+    name: "am_doppler_phase2_b",
+    tag: "Doppler"
+  },
+  "619": {
+    name: "am_sapphire_marbleized_b",
+    tag: "Doppler"
+  },
+  "620": {
+    name: "cu_purple_huntsman",
+    tag: "Ultraviolet"
+  },
+  "621": {
+    name: "so_purple_falchion",
+    tag: "Ultraviolet"
+  },
+  "622": {
+    name: "am_czv2_mf",
+    tag: "Polymer"
+  },
+  "623": {
+    name: "aq_glock_dark-fall",
+    tag: "Ironwork"
+  },
+  "624": {
+    name: "cu_ssg08_dragonfire_scope",
+    tag: "Dragonfire"
+  },
+  "625": {
+    name: "gs_dual_berettas_golden_venice",
+    tag: "Royal Consorts"
+  },
+  "626": {
+    name: "gs_famas_mecha",
+    tag: "Mecha Industries"
+  },
+  "627": {
+    name: "gs_final_pooldeadv2",
+    tag: "Cirrus"
+  },
+  "628": {
+    name: "gs_g3sg1_viper_yellow",
+    tag: "Stinger"
+  },
+  "629": {
+    name: "cu_galil_ar-camo",
+    tag: "Black Sand"
+  },
+  "630": {
+    name: "aa_hide-mp9",
+    tag: "Sand Scale"
+  },
+  "631": {
+    name: "cu_m4a1_flashback",
+    tag: "Flashback"
+  },
+  "632": {
+    name: "gs_m4a4_sector",
+    tag: "Buzz Kill"
+  },
+  "633": {
+    name: "am_mag7_malform",
+    tag: "Sonar"
+  },
+  "634": {
+    name: "am_nova_sand",
+    tag: "Gila"
+  },
+  "635": {
+    name: "gs_p2000-sport",
+    tag: "Turf"
+  },
+  "636": {
+    name: "gs_p90_shallow_grave",
+    tag: "Shallow Grave"
+  },
+  "637": {
+    name: "cu_usp_cyrex",
+    tag: "Cyrex"
+  },
+  "638": {
+    name: "cu_wp_sawedoff",
+    tag: "Wasteland Princess"
+  },
+  "639": {
+    name: "gs_ak47_bloodsport",
+    tag: "Bloodsport"
+  },
+  "640": {
+    name: "cu_awp_psychopath",
+    tag: "Fever Dream"
+  },
+  "641": {
+    name: "hy_bizon_torn_green",
+    tag: "Jungle Slipstream"
+  },
+  "642": {
+    name: "cu_blueprint_scar",
+    tag: "Blueprint"
+  },
+  "643": {
+    name: "gs_cz_snakes_purple",
+    tag: "Xiangliu"
+  },
+  "644": {
+    name: "gs_m4a1_decimator",
+    tag: "Decimator"
+  },
+  "645": {
+    name: "cu_desert_eagle_corroden",
+    tag: "Oxide Blaze"
+  },
+  "646": {
+    name: "cu_fiveseven_vein",
+    tag: "Capillary"
+  },
+  "647": {
+    name: "sp_galil_wave",
+    tag: "Crimson Tsunami"
+  },
+  "648": {
+    name: "sp_m249_frog_original",
+    tag: "Emerald Poison Dart"
+  },
+  "649": {
+    name: "sp_mp7_tribal_yellow",
+    tag: "Akoben"
+  },
+  "650": {
+    name: "am_p250_sputnik",
+    tag: "Ripple"
+  },
+  "651": {
+    name: "aa_mac10_the_last_dive",
+    tag: "Last Dive"
+  },
+  "652": {
+    name: "gs_ump_abyss",
+    tag: "Scaffold"
+  },
+  "653": {
+    name: "cu_usps_noir",
+    tag: "Neo-Noir"
+  },
+  "654": {
+    name: "aq_xm_leaf_fade",
+    tag: "Seasons"
+  },
+  "655": {
+    name: "aq_sawedoff_zander2",
+    tag: "Zander"
+  },
+  "656": {
+    name: "gs_ak_colony01_red",
+    tag: "Orbit Mk01"
+  },
+  "657": {
+    name: "cu_usps_blueprint",
+    tag: "Blueprint"
+  },
+  "658": {
+    name: "gs_dualberettas_cobra",
+    tag: "Cobra Strike"
+  },
+  "659": {
+    name: "sp_famas_macabre",
+    tag: "Macabre"
+  },
+  "660": {
+    name: "cu_fiveseven_hyperbeast",
+    tag: "Hyper Beast"
+  },
+  "661": {
+    name: "cu_galil_candychaos",
+    tag: "Sugar Rush"
+  },
+  "662": {
+    name: "cu_awp_hannya",
+    tag: "Oni Taiji"
+  },
+  "663": {
+    name: "cu_m4a1s_metritera",
+    tag: "Briefing"
+  },
+  "664": {
+    name: "cu_m4a4_hellfire",
+    tag: "Hellfire"
+  },
+  "665": {
+    name: "am_mac10_aloha",
+    tag: "Aloha"
+  },
+  "666": {
+    name: "am_mag7_caustic",
+    tag: "Hard Water"
+  },
+  "667": {
+    name: "cu_p2000_hunter",
+    tag: "Woodsman"
+  },
+  "668": {
+    name: "cu_p250_axiom",
+    tag: "Red Rock"
+  },
+  "669": {
+    name: "hy_p90_barebones_blue",
+    tag: "Death Grip"
+  },
+  "670": {
+    name: "cu_ssg08_deathshead",
+    tag: "Death's Head"
+  },
+  "671": {
+    name: "aq_tec9_chalk_pattern",
+    tag: "Cut Out"
+  },
+  "672": {
+    name: "aq_ump45_flameflower",
+    tag: "Metal Flowers"
+  },
+  "673": {
+    name: "aq_sawed-off_flower",
+    tag: "Morris"
+  },
+  "674": {
+    name: "cu_aug_orange_triangle",
+    tag: "Triqua"
+  },
+  "675": {
+    name: "gs_ak47_empress",
+    tag: "The Empress"
+  },
+  "676": {
+    name: "cu_bizon_all_in",
+    tag: "High Roller"
+  },
+  "677": {
+    name: "gs_g3sg1_cetme_redux",
+    tag: "Hunter"
+  },
+  "678": {
+    name: "cu_p250_cybercroc",
+    tag: "See Ya Later"
+  },
+  "679": {
+    name: "cu_mp9_goo",
+    tag: "Goo"
+  },
+  "680": {
+    name: "cu_glock_indigo",
+    tag: "Off World"
+  },
+  "681": {
+    name: "gs_m4a1_shatter",
+    tag: "Leaded Glass"
+  },
+  "682": {
+    name: "am_mac10_oceani",
+    tag: "Oceanic"
+  },
+  "683": {
+    name: "gs_r8_llamacannon",
+    tag: "Llama Cannon"
+  },
+  "684": {
+    name: "cu_tec9_cracked_opal",
+    tag: "Cracked Opal"
+  },
+  "685": {
+    name: "hy_scar20_jungle_slipstream",
+    tag: "Jungle Slipstream"
+  },
+  "686": {
+    name: "gs_sg553_phantom",
+    tag: "Phantom"
+  },
+  "687": {
+    name: "gs_cz75_tacticat",
+    tag: "Tacticat"
+  },
+  "688": {
+    name: "cu_ump45_x-ray_machine",
+    tag: "Exposure"
+  },
+  "689": {
+    name: "aq_xm1014_ziggy_anarchy",
+    tag: "Ziggy"
+  },
+  "690": {
+    name: "gs_aug_stymphalian_birds",
+    tag: "Stymphalian"
+  },
+  "691": {
+    name: "gs_awp_death",
+    tag: "Mortis"
+  },
+  "692": {
+    name: "cu_bizon_riot",
+    tag: "Night Riot"
+  },
+  "693": {
+    name: "gs_fiveseven_hot_rod_violet",
+    tag: "Flame Test"
+  },
+  "694": {
+    name: "aa_glock_18_urban_moon_fever",
+    tag: "Moonrise"
+  },
+  "695": {
+    name: "cu_m4a4_neo_noir",
+    tag: "Neo-Noir"
+  },
+  "696": {
+    name: "gs_mp7_bloodsport",
+    tag: "Bloodsport"
+  },
+  "697": {
+    name: "cu_mp9_black_sand",
+    tag: "Black Sand"
+  },
+  "698": {
+    name: "sp_negev_lionfish",
+    tag: "Lionfish"
+  },
+  "699": {
+    name: "gs_nova_anchorite",
+    tag: "Wild Six"
+  },
+  "700": {
+    name: "cu_p2000_urban_hazard",
+    tag: "Urban Hazard"
+  },
+  "701": {
+    name: "gs_revolver_tread",
+    tag: "Grip"
+  },
+  "702": {
+    name: "sp_sg533_aloha",
+    tag: "Aloha"
+  },
+  "703": {
+    name: "aq_mag7_swag7",
+    tag: "SWAG-7"
+  },
+  "704": {
+    name: "cu_ump45_white_fang",
+    tag: "Arctic Wolf"
+  },
+  "705": {
+    name: "cu_usp_cut",
+    tag: "Cortex"
+  },
+  "706": {
+    name: "cu_xm1014_oxide_blaze",
+    tag: "Oxide Blaze"
+  },
+  "707": {
+    name: "cu_ak_neon_rider",
+    tag: "Neon Rider"
+  },
+  "708": {
+    name: "hy_aug_torn_orange",
+    tag: "Amber Slipstream"
+  },
+  "709": {
+    name: "cu_cz75_eco",
+    tag: "Eco"
+  },
+  "710": {
+    name: "sp_elites_winter_raider",
+    tag: "Shred"
+  },
+  "711": {
+    name: "gs_deagle_aggressor",
+    tag: "Code Red"
+  },
+  "712": {
+    name: "gs_g3sg1_buccaneer",
+    tag: "High Seas"
+  },
+  "713": {
+    name: "gs_glock_thunder_dust",
+    tag: "Warhawk"
+  },
+  "714": {
+    name: "cu_m4a1s_nightmare",
+    tag: "Nightmare"
+  },
+  "715": {
+    name: "cu_mp9_vein",
+    tag: "Capillary"
+  },
+  "716": {
+    name: "cu_nova_toy_soldier",
+    tag: "Toy Soldier"
+  },
+  "717": {
+    name: "gs_p90_tread",
+    tag: "Traction"
+  },
+  "718": {
+    name: "am_awp_pawpaw",
+    tag: "PAW"
+  },
+  "719": {
+    name: "gs_powercore_mp7",
+    tag: "Powercore"
+  },
+  "720": {
+    name: "cu_sawedoff_devourer",
+    tag: "Devourer"
+  },
+  "721": {
+    name: "cu_r8_survivalist",
+    tag: "Survivalist"
+  },
+  "722": {
+    name: "cu_tec9_snake",
+    tag: "Snek-9"
+  },
+  "723": {
+    name: "cu_famas_owl_orange",
+    tag: "Eye of Athena"
+  },
+  "724": {
+    name: "cu_ak_island_floral",
+    tag: "Wild Lotus"
+  },
+  "725": {
+    name: "hy_bloom_red",
+    tag: "Day Lily"
+  },
+  "726": {
+    name: "sp_bloom_orange",
+    tag: "Sunset Lily"
+  },
+  "727": {
+    name: "am_bloom_blue",
+    tag: "Midnight Lily"
+  },
+  "728": {
+    name: "sp_bud_green",
+    tag: "Teal Blossom"
+  },
+  "729": {
+    name: "hy_bud_red",
+    tag: "Crimson Blossom"
+  },
+  "730": {
+    name: "sp_bud_blue",
+    tag: "Dark Blossom"
+  },
+  "731": {
+    name: "hy_leaf_green",
+    tag: "Banana Leaf"
+  },
+  "732": {
+    name: "hy_leaf_blue",
+    tag: "Synth Leaf"
+  },
+  "733": {
+    name: "sp_leaf_orange",
+    tag: "Rust Leaf"
+  },
+  "734": {
+    name: "cu_mp9_island_floral",
+    tag: "Wild Lily"
+  },
+  "735": {
+    name: "sp_nightstripe",
+    tag: "Night Stripe"
+  },
+  "736": {
+    name: "gs_awp_enamel",
+    tag: "The Prince"
+  },
+  "737": {
+    name: "gs_mag7_glass",
+    tag: "Cinquedea"
+  },
+  "738": {
+    name: "hy_murano_orange",
+    tag: "Orange Murano"
+  },
+  "739": {
+    name: "am_murano_violet",
+    tag: "Violet Murano"
+  },
+  "740": {
+    name: "hy_murano_blue",
+    tag: "Navy Murano"
+  },
+  "741": {
+    name: "am_ren_dark",
+    tag: "Dark Filigree"
+  },
+  "742": {
+    name: "am_ren_red",
+    tag: "Red Filigree"
+  },
+  "743": {
+    name: "hy_ren_orange",
+    tag: "Orange Filigree"
+  },
+  "744": {
+    name: "am_veneto_red",
+    tag: "Baroque Red"
+  },
+  "745": {
+    name: "hy_veneto_purple",
+    tag: "Baroque Purple"
+  },
+  "746": {
+    name: "am_veneto2",
+    tag: "Baroque Orange"
+  },
+  "747": {
+    name: "cu_dual_elites_rally",
+    tag: "Twin Turbo"
+  },
+  "748": {
+    name: "gs_mac10_checker",
+    tag: "Calf Skin"
+  },
+  "749": {
+    name: "gs_p250_checker",
+    tag: "Vino Primo"
+  },
+  "750": {
+    name: "cu_sg553_rally",
+    tag: "Integrale"
+  },
+  "751": {
+    name: "gs_ssg08_checker",
+    tag: "Hand Brake"
+  },
+  "752": {
+    name: "aa_fade_mp7",
+    tag: "Fade"
+  },
+  "753": {
+    name: "sp_tape_short_rally",
+    tag: "Dirt Drop"
+  },
+  "754": {
+    name: "aq_steel_inferno",
+    tag: "Rust Coat"
+  },
+  "755": {
+    name: "hy_splatter3",
+    tag: "Slide"
+  },
+  "756": {
+    name: "gs_awp_gungnir",
+    tag: "Gungnir"
+  },
+  "757": {
+    name: "am_jorm_green",
+    tag: "Emerald J├╢rmungandr"
+  },
+  "758": {
+    name: "am_jorm_orange",
+    tag: "Flame J├╢rmungandr"
+  },
+  "759": {
+    name: "am_jorm_blue",
+    tag: "Astral J├╢rmungandr"
+  },
+  "760": {
+    name: "am_knots_silver",
+    tag: "Frost Borre"
+  },
+  "761": {
+    name: "am_knots_brown",
+    tag: "Copper Borre"
+  },
+  "762": {
+    name: "so_rune_stone",
+    tag: "Red Stone"
+  },
+  "763": {
+    name: "gs_negev_thor",
+    tag: "Mj├╢lnir"
+  },
+  "775": {
+    name: "hy_blueprint_white",
+    tag: "Facility Sketch"
+  },
+  "776": {
+    name: "hy_blueprint_aqua",
+    tag: "Facility Negative"
+  },
+  "777": {
+    name: "hy_blueprint_red",
+    tag: "Facility Draft"
+  },
+  "778": {
+    name: "hy_blueprint_bluered",
+    tag: "Facility Dark"
+  },
+  "779": {
+    name: "am_circuitboard_orange",
+    tag: "Random Access"
+  },
+  "780": {
+    name: "am_circuitboard_silver",
+    tag: "Mainframe"
+  },
+  "781": {
+    name: "am_circuitboard_aqua",
+    tag: "Co-Processor"
+  },
+  "782": {
+    name: "am_circuitboard_green",
+    tag: "Motherboard"
+  },
+  "783": {
+    name: "hy_ducts_yellow",
+    tag: "Bulkhead"
+  },
+  "784": {
+    name: "hy_ducts_green",
+    tag: "Coolant"
+  },
+  "785": {
+    name: "hy_ducts_grey",
+    tag: "Mandrel"
+  },
+  "786": {
+    name: "hy_ducts_blue",
+    tag: "Exchanger"
+  },
+  "787": {
+    name: "hy_nuclear_hotorange",
+    tag: "Core Breach"
+  },
+  "788": {
+    name: "hy_nuclear_skulls_redblue",
+    tag: "Acheron"
+  },
+  "789": {
+    name: "am_nuclear_skulls_green",
+    tag: "Nuclear Garden"
+  },
+  "790": {
+    name: "hy_nuclear_skulls_aqua",
+    tag: "Cold Fusion"
+  },
+  "791": {
+    name: "gs_tec9_envoy",
+    tag: "Remote Control"
+  },
+  "792": {
+    name: "gs_m4a1s_operator",
+    tag: "Control Panel"
+  },
+  "793": {
+    name: "hy_red_hex",
+    tag: "Converter"
+  },
+  "794": {
+    name: "sp_mesh_safetyblack",
+    tag: "Sweeper"
+  },
+  "795": {
+    name: "hy_mesh_safetyorange",
+    tag: "Safety Net"
+  },
+  "796": {
+    name: "sp_mesh_safetyred",
+    tag: "Check Engine"
+  },
+  "797": {
+    name: "aa_vertigo_red",
+    tag: "Brake Light"
+  },
+  "798": {
+    name: "so_orange_accents3",
+    tag: "Nitro"
+  },
+  "799": {
+    name: "aa_vertigo_blue",
+    tag: "High Beam"
+  },
+  "800": {
+    name: "hy_labrat_mp5",
+    tag: "Lab Rats"
+  },
+  "801": {
+    name: "cu_ak47_asiimov",
+    tag: "Asiimov"
+  },
+  "802": {
+    name: "cu_ump_arrows",
+    tag: "Momentum"
+  },
+  "803": {
+    name: "cu_awp_neonoir",
+    tag: "Neo-Noir"
+  },
+  "804": {
+    name: "gs_mp9_colony01",
+    tag: "Modest Threat"
+  },
+  "805": {
+    name: "gs_deagle_mecha",
+    tag: "Mecha Industries"
+  },
+  "806": {
+    name: "gs_g3sg1_savage",
+    tag: "Scavenger"
+  },
+  "807": {
+    name: "hy_galil_signal_red",
+    tag: "Signal"
+  },
+  "808": {
+    name: "cu_glock18_corroden",
+    tag: "Oxide Blaze"
+  },
+  "809": {
+    name: "gs_nova_hunter_brute",
+    tag: "Wood Fired"
+  },
+  "810": {
+    name: "gs_mp5_festival_drip",
+    tag: "Phosphor"
+  },
+  "811": {
+    name: "gs_m4a4_chopper_ghost",
+    tag: "Magnesium"
+  },
+  "812": {
+    name: "gs_mac10_exo_pipes",
+    tag: "Pipe Down"
+  },
+  "813": {
+    name: "aa_p250_gravediggers",
+    tag: "Nevermore"
+  },
+  "814": {
+    name: "cu_sawedoff_black_sand",
+    tag: "Black Sand"
+  },
+  "815": {
+    name: "gs_sg553_over_heated",
+    tag: "Danger Close"
+  },
+  "816": {
+    name: "gs_tec9_fubar",
+    tag: "Fubar"
+  },
+  "817": {
+    name: "cu_usp_flashback",
+    tag: "Flashback"
+  },
+  "835": {
+    name: "sp_famas_ghost_insects",
+    tag: "Crypsis"
+  },
+  "836": {
+    name: "cu_ak47_aztec",
+    tag: "Uncharted"
+  },
+  "837": {
+    name: "cu_five_seven_angry",
+    tag: "Angry Mob"
+  },
+  "838": {
+    name: "cu_awp_viper",
+    tag: "Atheris"
+  },
+  "839": {
+    name: "cu_tec9_bamboo",
+    tag: "Bamboozle"
+  },
+  "840": {
+    name: "gs_mac10_fish_bait",
+    tag: "Whitefish"
+  },
+  "841": {
+    name: "gs_deagle_exo",
+    tag: "Light Rail"
+  },
+  "842": {
+    name: "sp_galil_akoben",
+    tag: "Akoben"
+  },
+  "843": {
+    name: "cu_revolver_oppressor",
+    tag: "Skull Crusher"
+  },
+  "844": {
+    name: "gs_m4a4_emperor",
+    tag: "The Emperor"
+  },
+  "845": {
+    name: "cu_aug_momentum",
+    tag: "Momentum"
+  },
+  "846": {
+    name: "gs_mp5sd_astromatic",
+    tag: "Gauss"
+  },
+  "847": {
+    name: "cu_mp7_racketeer",
+    tag: "Mischief"
+  },
+  "848": {
+    name: "aq_p250_verdigris",
+    tag: "Verdigris"
+  },
+  "849": {
+    name: "cu_p90_offworld",
+    tag: "Off World"
+  },
+  "850": {
+    name: "cu_xm1014_incinerator",
+    tag: "Incinegator"
+  },
+  "851": {
+    name: "aa_ump45_moonrise_sunset",
+    tag: "Moonrise"
+  },
+  "852": {
+    name: "am_doppler_phase1_widow",
+    tag: "Doppler"
+  },
+  "853": {
+    name: "am_doppler_phase2_widow",
+    tag: "Doppler"
+  },
+  "854": {
+    name: "am_doppler_phase3_widow",
+    tag: "Doppler"
+  },
+  "855": {
+    name: "am_doppler_phase4_widow",
+    tag: "Doppler"
+  },
+  "856": {
+    name: "am_marble_fade_widow",
+    tag: "Marble Fade"
+  },
+  "857": {
+    name: "aq_damascus_prisma",
+    tag: "Damascus Steel"
+  },
+  "858": {
+    name: "aq_damascus_widow",
+    tag: "Damascus Steel"
+  },
+  "859": {
+    name: "am_crystallized_green",
+    tag: "Emerald Quartz"
+  },
+  "860": {
+    name: "hy_gelpen_dark",
+    tag: "Pyre"
+  },
+  "861": {
+    name: "sp_asgard_wall",
+    tag: "Barricade"
+  },
+  "862": {
+    name: "am_crystallized_dark_green",
+    tag: "Moss Quartz"
+  },
+  "863": {
+    name: "sp_knots_blue",
+    tag: "Night Borre"
+  },
+  "864": {
+    name: "so_red_sg553",
+    tag: "Candy Apple"
+  },
+  "865": {
+    name: "hy_canals_tile",
+    tag: "Stone Mosaico"
+  },
+  "866": {
+    name: "sp_spray_water",
+    tag: "Canal Spray"
+  },
+  "867": {
+    name: "am_stained_glass",
+    tag: "Stained Glass"
+  },
+  "868": {
+    name: "hy_flowers_stmarc",
+    tag: "Sea Calico"
+  },
+  "869": {
+    name: "sp_palm_sunset",
+    tag: "Sundown"
+  },
+  "870": {
+    name: "sp_palm_green",
+    tag: "Jungle Thicket"
+  },
+  "871": {
+    name: "sp_twigs_beach",
+    tag: "Surfwood"
+  },
+  "872": {
+    name: "hy_bamboo_stmarc",
+    tag: "Bamboo Garden"
+  },
+  "873": {
+    name: "so_aqua_stmarc",
+    tag: "Seabird"
+  },
+  "884": {
+    name: "cu_bizon_road_warrior",
+    tag: "Embargo"
+  },
+  "885": {
+    name: "gs_ak47_nibbler",
+    tag: "Rat Rod"
+  },
+  "886": {
+    name: "cu_aug_whitefang",
+    tag: "Arctic Wolf"
+  },
+  "887": {
+    name: "cu_awp_virus",
+    tag: "Containment Breach"
+  },
+  "888": {
+    name: "gs_mp5_etch",
+    tag: "Acid Wash"
+  },
+  "889": {
+    name: "gs_tec9_decimator",
+    tag: "Decimator"
+  },
+  "890": {
+    name: "cu_nova_featherswing",
+    tag: "Plume"
+  },
+  "891": {
+    name: "cu_g3sg1_blacksand",
+    tag: "Black Sand"
+  },
+  "892": {
+    name: "gs_r8_memento",
+    tag: "Memento"
+  },
+  "893": {
+    name: "cu_mp7_replica",
+    tag: "Neon Ply"
+  },
+  "894": {
+    name: "cu_p2000_obsidian",
+    tag: "Obsidian"
+  },
+  "895": {
+    name: "gs_dual_elites_rose",
+    tag: "Balance"
+  },
+  "896": {
+    name: "sp_scar20_striker_dust",
+    tag: "Torn"
+  },
+  "897": {
+    name: "cu_sg553_reactor",
+    tag: "Colony IV"
+  },
+  "898": {
+    name: "gs_mac10_stalker",
+    tag: "Stalker"
+  },
+  "899": {
+    name: "cu_ssg08_tickler",
+    tag: "Bloodshot"
+  },
+  "900": {
+    name: "gs_m249_warbird_veteran",
+    tag: "Warbird"
+  },
+  "902": {
+    name: "aq_m249_aztec",
+    tag: "Aztec"
+  },
+  "903": {
+    name: "gs_dual_elites_classic",
+    tag: "Elite 1.6"
+  },
+  "904": {
+    name: "cu_famas_nuke_tension",
+    tag: "Decommissioned"
+  },
+  "905": {
+    name: "cu_tec9_flash",
+    tag: "Flash Out"
+  },
+  "906": {
+    name: "cu_fiveseven_gsg9",
+    tag: "Buddy"
+  },
+  "907": {
+    name: "gs_p250_inferno",
+    tag: "Inferno"
+  },
+  "908": {
+    name: "gs_mac10_dust_crate",
+    tag: "Classic Crate"
+  },
+  "909": {
+    name: "gs_mag7_popdog",
+    tag: "Popdog"
+  },
+  "910": {
+    name: "cu_mp9_hydra",
+    tag: "Hydra"
+  },
+  "911": {
+    name: "cu_p90_nostalgia",
+    tag: "Nostalgia"
+  },
+  "913": {
+    name: "am_aug_death_by_doggy",
+    tag: "Death by Puppy"
+  },
+  "914": {
+    name: "cu_scar_assault",
+    tag: "Assault"
+  },
+  "915": {
+    name: "gs_mp5_fbi",
+    tag: "Agent"
+  },
+  "916": {
+    name: "cu_ump_bomb",
+    tag: "Plastique"
+  },
+  "917": {
+    name: "cu_awp_wildfire",
+    tag: "Wildfire"
+  },
+  "918": {
+    name: "cu_glock_hero",
+    tag: "Sacrifice"
+  },
+  "919": {
+    name: "gs_famas_legacy_gold",
+    tag: "Commemoration"
+  },
+  "920": {
+    name: "hy_veneto_tan",
+    tag: "Boroque Sand"
+  },
+  "941": {
+    name: "cu_ak-47_phantom_disruptor",
+    tag: "Phantom Disruptor"
+  },
+  "942": {
+    name: "gs_aug_thunderstorm",
+    tag: "Tom Cat"
+  },
+  "943": {
+    name: "cu_awp_vein",
+    tag: "Capillary"
+  },
+  "944": {
+    name: "cu_cz75_cerakote",
+    tag: "Distressed"
+  },
+  "945": {
+    name: "cu_deagle_replica",
+    tag: "Blue Ply"
+  },
+  "946": {
+    name: "cu_m4a1s_csgo2048",
+    tag: "Player Two"
+  },
+  "947": {
+    name: "cu_mac10_nacre",
+    tag: "Disco Tech"
+  },
+  "948": {
+    name: "gs_mag7_justice",
+    tag: "Justice"
+  },
+  "949": {
+    name: "cu_mp5_desert_strike",
+    tag: "Desert Strike"
+  },
+  "950": {
+    name: "cu_negev_prototype",
+    tag: "Prototype"
+  },
+  "951": {
+    name: "aq_p2000_acid_clover",
+    tag: "Acid Etched"
+  },
+  "952": {
+    name: "gs_r8_leviathan",
+    tag: "Bone Forged"
+  },
+  "953": {
+    name: "cu_sawedoff_apocalypto",
+    tag: "Apocalypto"
+  },
+  "954": {
+    name: "gs_scar20_enforcer",
+    tag: "Enforcer"
+  },
+  "955": {
+    name: "cu_sg553_darkwing",
+    tag: "Darkwing"
+  },
+  "956": {
+    name: "cu_ssg08_fever_dream",
+    tag: "Fever Dream"
+  },
+  "957": {
+    name: "cu_glock18_warmaiden",
+    tag: "Bullet Queen"
+  },
+  "958": {
+    name: "cu_negev_ultralight",
+    tag: "Ultralight"
+  },
+  "959": {
+    name: "cu_ak47_anubis",
+    tag: "Legion of Anubis"
+  },
+  "960": {
+    name: "aq_p2000_lost_world",
+    tag: "Gnarled"
+  },
+  "961": {
+    name: "cu_mag7_monster_call",
+    tag: "Monster Call"
+  },
+  "962": {
+    name: "cu_deag_printstream",
+    tag: "Printstream"
+  },
+  "963": {
+    name: "cu_glock_eyecontact",
+    tag: "Vogue"
+  },
+  "964": {
+    name: "gs_tec9_guerilla",
+    tag: "Brother"
+  },
+  "965": {
+    name: "cu_mac10_isoonna",
+    tag: "Allure"
+  },
+  "966": {
+    name: "gs_sg553_rusty",
+    tag: "Ol' Rusty"
+  },
+  "967": {
+    name: "cu_ssg08_mainframe",
+    tag: "Mainframe 001"
+  },
+  "968": {
+    name: "cu_p250_cassette",
+    tag: "Cassette"
+  },
+  "969": {
+    name: "gs_p90_container",
+    tag: "Freight"
+  },
+  "970": {
+    name: "cu_xm1014_amulet_blue",
+    tag: "Entombed"
+  },
+  "971": {
+    name: "cu_m4a4_queenfairy",
+    tag: "Tooth Fairy"
+  },
+  "972": {
+    name: "gs_galil_phoenix",
+    tag: "Connexion"
+  },
+  "973": {
+    name: "gs_bizon_hellraider",
+    tag: "Runic"
+  },
+  "974": {
+    name: "gs_mp5sd_wasteland_legacy",
+    tag: "Kitbash"
+  },
+  "10006": {
+    name: "bloodhound_black_silver",
+    tag: "Charred"
+  },
+  "10007": {
+    name: "bloodhound_snakeskin_brass",
+    tag: "Snakebite"
+  },
+  "10008": {
+    name: "bloodhound_metallic",
+    tag: "Bronzed"
+  },
+  "10009": {
+    name: "handwrap_leathery",
+    tag: "Leather"
+  },
+  "10010": {
+    name: "handwrap_camo_grey",
+    tag: "Spruce DDPAT"
+  },
+  "10013": {
+    name: "slick_black",
+    tag: "Lunar Weave"
+  },
+  "10015": {
+    name: "slick_military",
+    tag: "Convoy"
+  },
+  "10016": {
+    name: "slick_red",
+    tag: "Crimson Weave"
+  },
+  "10018": {
+    name: "sporty_light_blue",
+    tag: "Superconductor"
+  },
+  "10019": {
+    name: "sporty_military",
+    tag: "Arid"
+  },
+  "10021": {
+    name: "handwrap_red_slaughter",
+    tag: "Slaughter"
+  },
+  "10024": {
+    name: "motorcycle_basic_black",
+    tag: "Eclipse"
+  },
+  "10026": {
+    name: "motorcycle_mint_triangle",
+    tag: "Spearmint"
+  },
+  "10027": {
+    name: "motorcycle_mono_boom",
+    tag: "Boom!"
+  },
+  "10028": {
+    name: "motorcycle_triangle_blue",
+    tag: "Cool Mint"
+  },
+  "10030": {
+    name: "specialist_ddpat_green_camo",
+    tag: "Forest DDPAT"
+  },
+  "10033": {
+    name: "specialist_kimono_diamonds_red",
+    tag: "Crimson Kimono"
+  },
+  "10034": {
+    name: "specialist_emerald_web",
+    tag: "Emerald Web"
+  },
+  "10035": {
+    name: "specialist_orange_white",
+    tag: "Foundation"
+  },
+  "10036": {
+    name: "handwrap_fabric_orange_camo",
+    tag: "Badlands"
+  },
+  "10037": {
+    name: "sporty_purple",
+    tag: "Pandora's Box"
+  },
+  "10038": {
+    name: "sporty_green",
+    tag: "Hedge Maze"
+  },
+  "10039": {
+    name: "bloodhound_guerrilla",
+    tag: "Guerrilla"
+  },
+  "10040": {
+    name: "slick_snakeskin_yellow",
+    tag: "Diamondback"
+  },
+  "10041": {
+    name: "slick_snakeskin_white",
+    tag: "King Snake"
+  },
+  "10042": {
+    name: "slick_plaid_purple",
+    tag: "Imperial Plaid"
+  },
+  "10043": {
+    name: "slick_stitched_black_orange",
+    tag: "Overtake"
+  },
+  "10044": {
+    name: "slick_stitched_green_grey",
+    tag: "Racing Green"
+  },
+  "10045": {
+    name: "sporty_poison_frog_blue_white",
+    tag: "Amphibious"
+  },
+  "10046": {
+    name: "sporty_poison_frog_red_green",
+    tag: "Bronze Morph"
+  },
+  "10047": {
+    name: "sporty_black_webbing_yellow",
+    tag: "Omega"
+  },
+  "10048": {
+    name: "sporty_blue_pink",
+    tag: "Vice"
+  },
+  "10049": {
+    name: "motorcycle_choco_boom",
+    tag: "POW!"
+  },
+  "10050": {
+    name: "motorcycle_basic_green_orange",
+    tag: "Turtle"
+  },
+  "10051": {
+    name: "motorcycle_yellow_camo",
+    tag: "Transport"
+  },
+  "10052": {
+    name: "motorcycle_trigrid_blue",
+    tag: "Polygon"
+  },
+  "10053": {
+    name: "handwrap_leathery_fabric_blue_skulls",
+    tag: "Cobalt Skulls"
+  },
+  "10054": {
+    name: "handwrap_leathery_fabric_geometric_blue",
+    tag: "Overprint"
+  },
+  "10055": {
+    name: "handwrap_leathery_ducttape",
+    tag: "Duct Tape"
+  },
+  "10056": {
+    name: "handwrap_leathery_fabric_green_camo",
+    tag: "Arboreal"
+  },
+  "10057": {
+    name: "bloodhound_hydra_black_green",
+    tag: "Emerald"
+  },
+  "10058": {
+    name: "bloodhound_hydra_green_leather_mesh_brass",
+    tag: "Mangrove"
+  },
+  "10059": {
+    name: "bloodhound_hydra_snakeskin_brass",
+    tag: "Rattler"
+  },
+  "10060": {
+    name: "bloodhound_hydra_case_hardened",
+    tag: "Case Hardened"
+  },
+  "10061": {
+    name: "specialist_webs_red",
+    tag: "Crimson Web"
+  },
+  "10062": {
+    name: "specialist_forest_brown",
+    tag: "Buckshot"
+  },
+  "10063": {
+    name: "specialist_fade",
+    tag: "Fade"
+  },
+  "10064": {
+    name: "specialist_winterhex",
+    tag: "Mogul"
   }
 };
