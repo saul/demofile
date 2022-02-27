@@ -33,9 +33,12 @@ import {
   CSVCMsgTempEntities
 } from "./protobufs/netmessages";
 import { CCSGameRulesProxy, CCSPlayerResource } from "./sendtabletypes";
-import { IPlayerInfo, IStringTableUpdateEvent } from "./stringtables";
+import {
+  IPlayerInfo,
+  IStringTableUpdateEvent,
+  IStringTable
+} from "./stringtables";
 import * as Long from "long";
-import { IStringTable } from ".";
 
 export interface NetworkableConstructor<T = Networkable<any>> {
   new (

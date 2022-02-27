@@ -57,7 +57,11 @@ import {
   CSVCMsgVoiceInit
 } from "./protobufs/netmessages";
 import { Vector } from "./sendtabletypes";
-import { StringTables } from "./stringtables";
+import {
+  IPlayerInfo,
+  IStringTableUpdateEvent,
+  StringTables
+} from "./stringtables";
 import { UserMessages } from "./usermessages";
 
 interface IDemoHeader {
@@ -438,9 +442,16 @@ export class DemoFile extends EventEmitter {
   public header!: IDemoHeader;
 
   /**
-   * When parsing, set to player slot for current command.
+   * When parsing, set to the splitscreen slot for the current command.
+   * @deprecated Splitscreen slot is unused for PC games.
    */
   public playerSlot: number = 0;
+
+  /**
+   * Set to the client slot of the recording player.
+   * Always null for GOTV demos.
+   */
+  public recordingClientSlot: number | null = null;
 
   public readonly entities: Entities;
   public readonly gameEvents: GameEvents;
@@ -619,6 +630,11 @@ export class DemoFile extends EventEmitter {
       this.tickInterval = this.header.playbackTime / this.header.playbackTicks;
     }
 
+    // If this is a POV demo, try to figure out who the recording player is
+    if (this.header.clientName !== "GOTV Demo") {
+      this.stringTables.on("update", this._handleStringTableUpdate.bind(this));
+    }
+
     let cancelled = false;
     this.emit("start", {
       cancel: () => {
@@ -669,6 +685,17 @@ export class DemoFile extends EventEmitter {
     if (this.listenerCount(message.name)) {
       const msgInst = message.class.decode(new Uint8Array(buf.toBuffer()));
       this.emit(message.name, msgInst);
+    }
+  }
+
+  private _handleStringTableUpdate(update: IStringTableUpdateEvent<unknown>) {
+    if (this.recordingClientSlot != null) return;
+
+    if (update.table.name === "userinfo" && update.userData != null) {
+      const playerInfo = update.userData as IPlayerInfo;
+      if (playerInfo.name === this.header.clientName) {
+        this.recordingClientSlot = update.entryIndex;
+      }
     }
   }
 
