@@ -843,7 +843,10 @@ export class Entities extends EventEmitter {
     let lastClassId = -1;
     let lastProps: UnknownEntityProps | null = null;
 
-    for (let i = 0; i < msg.numEntries; ++i) {
+    // Reliable tempents are sent with 0 entries, but really they have 1
+    const numEntries = msg.numEntries === 0 ? 1 : msg.numEntries;
+
+    for (let i = 0; i < numEntries; ++i) {
       let fireDelay = 0.0;
       if (entityBitBuffer.readOneBit()) {
         fireDelay = entityBitBuffer.readSBits(8) / 100.0;
