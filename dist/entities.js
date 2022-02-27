@@ -463,7 +463,9 @@ class Entities extends events_1.EventEmitter {
         const entityBitBuffer = bitbuffer_1.BitStream.from(msg.entityData);
         let lastClassId = -1;
         let lastProps = null;
-        for (let i = 0; i < msg.numEntries; ++i) {
+        // Reliable tempents are sent with 0 entries, but really they have 1
+        const numEntries = msg.numEntries === 0 ? 1 : msg.numEntries;
+        for (let i = 0; i < numEntries; ++i) {
             let fireDelay = 0.0;
             if (entityBitBuffer.readOneBit()) {
                 fireDelay = entityBitBuffer.readSBits(8) / 100.0;
