@@ -106,20 +106,27 @@ export class Player extends BaseEntity<CCSPlayer> {
   }
 
   get position(): Vector {
-    const xy = this.getProp("DT_CSLocalPlayerExclusive", "m_vecOrigin");
+    const table =
+      this._demo.recordingClientSlot == null || this.isRecordingDemo
+        ? "DT_CSLocalPlayerExclusive"
+        : "DT_CSNonLocalPlayerExclusive";
+
+    const xy = this.getProp(table, "m_vecOrigin");
     return {
       x: xy.x,
       y: xy.y,
-      z: this.getProp("DT_CSLocalPlayerExclusive", "m_vecOrigin[2]")
+      z: this.getProp(table, "m_vecOrigin[2]")
     };
   }
 
   get velocity(): Vector {
-    return {
-      x: this.getProp("DT_LocalPlayerExclusive", "m_vecVelocity[0]"),
-      y: this.getProp("DT_LocalPlayerExclusive", "m_vecVelocity[1]"),
-      z: this.getProp("DT_LocalPlayerExclusive", "m_vecVelocity[2]")
-    };
+    return this._demo.recordingClientSlot == null || this.isRecordingDemo
+      ? {
+          x: this.getProp("DT_LocalPlayerExclusive", "m_vecVelocity[0]"),
+          y: this.getProp("DT_LocalPlayerExclusive", "m_vecVelocity[1]"),
+          z: this.getProp("DT_LocalPlayerExclusive", "m_vecVelocity[2]")
+        }
+      : { x: 0, y: 0, z: 0 };
   }
 
   /**
@@ -153,10 +160,8 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @returns User info associated with this player
    */
   get userInfo(): IPlayerInfo | null {
-    const userInfoTable = this._demo.stringTables.findTableByName("userinfo");
-    return userInfoTable
-      ? userInfoTable.entries[this.clientSlot]!.userData
-      : null;
+    return this._demo.entities._userInfoTable.entries[this.clientSlot]!
+      .userData;
   }
 
   /**
@@ -528,5 +533,12 @@ export class Player extends BaseEntity<CCSPlayer> {
    */
   get crosshairInfo(): ICrosshairInfo {
     return decodeCrosshairCode(this.resourceProp("m_szCrosshairCodes"));
+  }
+
+  /**
+   * @returns true if this player is recording the demo from their POV.
+   */
+  get isRecordingDemo(): boolean {
+    return this._demo.recordingClientSlot === this.clientSlot;
   }
 }
