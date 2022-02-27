@@ -124,6 +124,7 @@ Various examples are available in the `examples` folder:
 | [`rank.ts`](https://github.com/saul/demofile/blob/master/examples/rank.ts)             | At the end of the game, prints all player ranks.                                       |
 | [`scores.ts`](https://github.com/saul/demofile/blob/master/examples/scores.ts)         | Prints team scores after each round.                                                   |
 | [`tickrate.ts`](https://github.com/saul/demofile/blob/master/examples/tickrate.ts)     | Prints demo tick rate and duration in seconds.                                         |
+| [`paintkits.ts`](https://github.com/saul/demofile/blob/master/examples/paintkits.ts)   | Collects paint kits of each weapon that is used in a kill.                             |
 | [`dumpfile.ts`](https://github.com/saul/demofile/blob/master/examples/dumpfile.ts)     | Advanced example of recreating coloured chat messages, round scores and the kill feed. |
 
 #### Print kills

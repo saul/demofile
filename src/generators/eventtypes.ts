@@ -170,6 +170,10 @@ const mappings: Record<string, EventVarMapping | undefined> = {
     itemDefinition: [
       "IItemDefinition | null",
       `$$ != "" ? itemDefinitionIndexMap[Long.fromString($$, true).and(0xFFFF).toString()] : null`
+    ],
+    paintKit: [
+      "IPaintKit | null",
+      `$$ != "" ? paintKitIndexMap[Long.fromString($$, true).shiftRightUnsigned(16).and(0xFFFF).toString()] : null`
     ]
   }),
 
@@ -219,7 +223,7 @@ function parseDemoFile(path: string) {
       console.log(`import { BaseEntity } from "./entities/baseentity";`);
       console.log(`import { Entities } from "./entities";`);
       console.log(
-        `import { IItemDefinition, itemDefinitionIndexMap } from "./entities/itemdefs";`
+        `import { IItemDefinition, itemDefinitionIndexMap, IPaintKit, paintKitIndexMap } from "./entities/itemdefs";`
       );
       console.log(`import * as ST from "./sendtabletypes";`);
       console.log(`import * as Long from "long";`);

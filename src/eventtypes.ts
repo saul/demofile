@@ -5,7 +5,12 @@
 import { Player } from "./entities/player";
 import { BaseEntity } from "./entities/baseentity";
 import { Entities } from "./entities";
-import { IItemDefinition, itemDefinitionIndexMap } from "./entities/itemdefs";
+import {
+  IItemDefinition,
+  itemDefinitionIndexMap,
+  IPaintKit,
+  paintKitIndexMap
+} from "./entities/itemdefs";
 import * as ST from "./sendtabletypes";
 import * as Long from "long";
 
@@ -291,6 +296,7 @@ export interface IEventOtherDeath {
   weapon_itemid: string;
   weapon_fauxitemid: string;
   itemDefinition: IItemDefinition | null;
+  paintKit: IPaintKit | null;
   weapon_originalowner_xuid: string;
   originalOwner: Player | null;
   headshot: boolean;
@@ -350,6 +356,7 @@ export interface IEventPlayerDeath {
   weapon_itemid: string;
   weapon_fauxitemid: string;
   itemDefinition: IItemDefinition | null;
+  paintKit: IPaintKit | null;
   weapon_originalowner_xuid: string;
   originalOwner: Player | null;
   headshot: boolean;
@@ -643,6 +650,15 @@ export function annotateEvent(
               .toString()
           ]
         : null;
+    event.paintKit =
+      event.weapon_fauxitemid != ""
+        ? paintKitIndexMap[
+            Long.fromString(event.weapon_fauxitemid, true)
+              .shiftRightUnsigned(16)
+              .and(0xffff)
+              .toString()
+          ]
+        : null;
     event.originalOwner = entities.getBySteam64Id(
       event.weapon_originalowner_xuid
     );
@@ -664,6 +680,15 @@ export function annotateEvent(
       event.weapon_fauxitemid != ""
         ? itemDefinitionIndexMap[
             Long.fromString(event.weapon_fauxitemid, true)
+              .and(0xffff)
+              .toString()
+          ]
+        : null;
+    event.paintKit =
+      event.weapon_fauxitemid != ""
+        ? paintKitIndexMap[
+            Long.fromString(event.weapon_fauxitemid, true)
+              .shiftRightUnsigned(16)
               .and(0xffff)
               .toString()
           ]
