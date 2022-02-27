@@ -24,7 +24,7 @@
     "format:check": "prettier --check .",
     "build": "shx rm -rf dist && tsc",
     "watch": "tsc -w",
-    "generate-docs": "shx rm -rf docs && typedoc --out docs/ && shx touch docs/.nojekyll",
+    "generate-docs": "shx rm -rf docs && typedoc --out docs/ && shx touch docs/.nojekyll && echo demofile.dev > docs/CNAME",
     "bundle": "npm run build && browserify browser/app.js -d -o browser/bundle.js",
     "preversion": "npm run lint --fix && shx rm -rf dist browser/bundle.js && npm run bundle && git add -A browser/bundle.js dist/**",
     "version": "npm run generate-docs && git add -A docs",

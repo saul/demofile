@@ -23,12 +23,21 @@ function parseDemoFile(path: string) {
   const stream = fs.createReadStream(path);
   const demoFile = new DemoFile();
 
-  demoFile.entities.on("postcreate", e => {
+  demoFile.entities.on("create", e => {
     const weapon = e.entity;
     if (!(weapon instanceof Weapon)) return;
 
     const owner = weapon.owner;
     if (!owner) return;
+
+    // Skip over weapons that are given and not bought
+    if (
+      weapon.serverClass.name === "CKnife" ||
+      weapon.serverClass.name === "CC4" ||
+      (owner.teamNumber === 2 && weapon.serverClass.name === "CWeaponGlock") ||
+      (owner.teamNumber === 3 && weapon.serverClass.name === "CWeaponHKP2000")
+    )
+      return;
 
     console.log(
       `'${owner.name}' just bought a '${weapon.itemName}' (${weapon.quality})`
