@@ -3,8 +3,17 @@
 <!--
 ### Unreleased
 
-- :sparkles: Added `paintKit` annotation to `player_death` game event
 -->
+
+### 2.7.0 (2022-02-27)
+
+- :sparkles: Added `paintKit` annotation to `player_death` game event
+- :bug: `Entities#getByUserId` et al returning invalid data when passed IDs of disconnected players
+- :bug: `Entities#players` sometimes returning players that are not fully connected
+- :bug: `Player#position` returning the incorrect position for non-local players in POV demos
+- :sparkles: Added `Player#isRecordingDemo` - true if this player is recording the demo from their POV
+- :sparkles: Added `oldUserData` to the string table update event
+- :zap: Deprecated `DemoFile#playerSlot` - splitscreen slot is unused for PC games
 
 ### 2.6.0 (2022-02-27)
 
