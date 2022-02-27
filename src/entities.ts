@@ -330,10 +330,7 @@ export class Entities extends EventEmitter {
       const entity = this.entities.get(i) as Player | undefined;
 
       // Only return players that are fully connected
-      if (
-        entity != null &&
-        this._userInfoTable.entries[entity.clientSlot]?.userData != null
-      ) {
+      if (entity?.userInfo != null) {
         players.push(entity);
       }
     }
@@ -388,7 +385,7 @@ export class Entities extends EventEmitter {
   private _singletonEnts: { [table: string]: Networkable | undefined } = {};
   private _currentServerTick: TickNumber = -1 as TickNumber;
   private _maxPlayers: number = 0;
-  private _userInfoTable: IStringTable<IPlayerInfo> = null!;
+  public _userInfoTable: IStringTable<IPlayerInfo> = null!;
 
   private _userIdToEntity: Map<number, number> = new Map();
   private _steam64IdToEntity: Map<string, number> = new Map();

@@ -162,10 +162,8 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @returns User info associated with this player
    */
   get userInfo(): IPlayerInfo | null {
-    const userInfoTable = this._demo.stringTables.findTableByName("userinfo");
-    return userInfoTable
-      ? userInfoTable.entries[this.clientSlot]!.userData
-      : null;
+    return this._demo.entities._userInfoTable.entries[this.clientSlot]!
+      .userData;
   }
 
   /**
