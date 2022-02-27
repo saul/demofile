@@ -44,6 +44,24 @@ async function parseItems(root) {
             }
         ])
             .filter(([_key, x]) => x.itemName)), null, 2));
+    console.log("");
+    console.log(`export interface IPaintKit {
+  name: string;
+  tag: string;
+}`);
+    console.log("");
+    console.log(`export const paintKitIndexMap: {
+  [paintKitIndex: string]: IPaintKit | undefined;
+} = ` +
+        JSON.stringify(fromEntries(Object.entries(items.paint_kits)
+            .map(([key, item]) => [
+            parseInt(key, 10),
+            {
+                name: item.name,
+                tag: translate(item.description_tag)
+            }
+        ])
+            .filter(([_key, x]) => x.tag)), null, 2));
 }
 if (process.argv.length == 3) {
     // argument should be path to csgo mod directory, e.g.:

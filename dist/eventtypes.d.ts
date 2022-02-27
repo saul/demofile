@@ -1,7 +1,7 @@
 import { Player } from "./entities/player";
 import { BaseEntity } from "./entities/baseentity";
 import { Entities } from "./entities";
-import { IItemDefinition } from "./entities/itemdefs";
+import { IItemDefinition, IPaintKit } from "./entities/itemdefs";
 import * as ST from "./sendtabletypes";
 export interface IEventAchievementEarned {
     player: number;
@@ -252,6 +252,7 @@ export interface IEventOtherDeath {
     weapon_itemid: string;
     weapon_fauxitemid: string;
     itemDefinition: IItemDefinition | null;
+    paintKit: IPaintKit | null;
     weapon_originalowner_xuid: string;
     originalOwner: Player | null;
     headshot: boolean;
@@ -305,6 +306,7 @@ export interface IEventPlayerDeath {
     weapon_itemid: string;
     weapon_fauxitemid: string;
     itemDefinition: IItemDefinition | null;
+    paintKit: IPaintKit | null;
     weapon_originalowner_xuid: string;
     originalOwner: Player | null;
     headshot: boolean;

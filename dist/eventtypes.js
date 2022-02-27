@@ -101,6 +101,13 @@ function annotateEvent(entities, eventName, event) {
                     .and(0xffff)
                     .toString()]
                 : null;
+        event.paintKit =
+            event.weapon_fauxitemid != ""
+                ? itemdefs_1.paintKitIndexMap[Long.fromString(event.weapon_fauxitemid, true)
+                    .shiftRightUnsigned(16)
+                    .and(0xffff)
+                    .toString()]
+                : null;
         event.originalOwner = entities.getBySteam64Id(event.weapon_originalowner_xuid);
     }
     else if (eventName === "player_blind") {
@@ -124,6 +131,13 @@ function annotateEvent(entities, eventName, event) {
         event.itemDefinition =
             event.weapon_fauxitemid != ""
                 ? itemdefs_1.itemDefinitionIndexMap[Long.fromString(event.weapon_fauxitemid, true)
+                    .and(0xffff)
+                    .toString()]
+                : null;
+        event.paintKit =
+            event.weapon_fauxitemid != ""
+                ? itemdefs_1.paintKitIndexMap[Long.fromString(event.weapon_fauxitemid, true)
+                    .shiftRightUnsigned(16)
                     .and(0xffff)
                     .toString()]
                 : null;

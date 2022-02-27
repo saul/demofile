@@ -71,9 +71,15 @@ class DemoFile extends events_1.EventEmitter {
          */
         this.tickInterval = NaN;
         /**
-         * When parsing, set to player slot for current command.
+         * When parsing, set to the splitscreen slot for the current command.
+         * @deprecated Splitscreen slot is unused for PC games.
          */
         this.playerSlot = 0;
+        /**
+         * Set to the client slot of the recording player.
+         * Always null for GOTV demos.
+         */
+        this.recordingClientSlot = null;
         this._chunks = [];
         this._lastThreadYieldTime = 0;
         this._immediateTimerToken = null;
@@ -241,6 +247,10 @@ class DemoFile extends events_1.EventEmitter {
         if (this.header.playbackTicks > 0) {
             this.tickInterval = this.header.playbackTime / this.header.playbackTicks;
         }
+        // If this is a POV demo, try to figure out who the recording player is
+        if (this.header.clientName !== "GOTV Demo") {
+            this.stringTables.on("update", this._handleStringTableUpdate.bind(this));
+        }
         let cancelled = false;
         this.emit("start", {
             cancel: () => {
@@ -280,6 +290,16 @@ class DemoFile extends events_1.EventEmitter {
         if (this.listenerCount(message.name)) {
             const msgInst = message.class.decode(new Uint8Array(buf.toBuffer()));
             this.emit(message.name, msgInst);
+        }
+    }
+    _handleStringTableUpdate(update) {
+        if (this.recordingClientSlot != null)
+            return;
+        if (update.table.name === "userinfo" && update.userData != null) {
+            const playerInfo = update.userData;
+            if (playerInfo.name === this.header.clientName) {
+                this.recordingClientSlot = update.entryIndex;
+            }
         }
     }
     /**

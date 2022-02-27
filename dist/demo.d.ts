@@ -213,9 +213,15 @@ export declare class DemoFile extends EventEmitter {
     tickInterval: number;
     header: IDemoHeader;
     /**
-     * When parsing, set to player slot for current command.
+     * When parsing, set to the splitscreen slot for the current command.
+     * @deprecated Splitscreen slot is unused for PC games.
      */
     playerSlot: number;
+    /**
+     * Set to the client slot of the recording player.
+     * Always null for GOTV demos.
+     */
+    recordingClientSlot: number | null;
     readonly entities: Entities;
     readonly gameEvents: GameEvents;
     readonly stringTables: StringTables;
@@ -258,6 +264,7 @@ export declare class DemoFile extends EventEmitter {
     private _parseHeader;
     private _readIBytes;
     private _handleEncryptedData;
+    private _handleStringTableUpdate;
     /**
      * Fired when a packet of this type is hit. `svc_MessageName` events are also fired.
      * @public

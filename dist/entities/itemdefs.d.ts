@@ -5,3 +5,10 @@ export interface IItemDefinition {
 export declare const itemDefinitionIndexMap: {
     [itemIndex: string]: IItemDefinition | undefined;
 };
+export interface IPaintKit {
+    name: string;
+    tag: string;
+}
+export declare const paintKitIndexMap: {
+    [paintKitIndex: string]: IPaintKit | undefined;
+};

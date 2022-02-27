@@ -265,4 +265,8 @@ export declare class Player extends BaseEntity<CCSPlayer> {
      * @returns Object representing user-customisable crosshair settings.
      */
     get crosshairInfo(): ICrosshairInfo;
+    /**
+     * @returns true if this player is recording the demo from their POV.
+     */
+    get isRecordingDemo(): boolean;
 }

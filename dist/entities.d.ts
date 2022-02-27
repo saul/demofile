@@ -13,6 +13,7 @@ import { EntityHandle } from "./entityhandle";
 import { PropValue } from "./props";
 import { CSVCMsgSendTable, CSVCMsgSendTable_sendpropT } from "./protobufs/netmessages";
 import { CCSPlayerResource } from "./sendtabletypes";
+import { IPlayerInfo, IStringTable } from "./stringtables";
 import * as Long from "long";
 export interface NetworkableConstructor<T = Networkable<any>> {
     new (demo: DemoFile, index: number, classId: number, serialNum: number, props: any | undefined): T;
@@ -191,6 +192,8 @@ export declare class Entities extends EventEmitter {
     private _demo;
     private _singletonEnts;
     private _currentServerTick;
+    private _maxPlayers;
+    _userInfoTable: IStringTable<IPlayerInfo>;
     private _userIdToEntity;
     private _steam64IdToEntity;
     private _accountNumberToEntity;

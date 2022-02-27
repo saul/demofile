@@ -73,6 +73,7 @@ class StringTables extends events_1.EventEmitter {
         }
     }
     _handleStringTable(name, bitbuf) {
+        var _a;
         const userDataCallback = this.userDataCallbacks[name];
         const table = (0, assert_exists_1.default)(this.findTableByName(name));
         const numEntries = bitbuf.readUInt16();
@@ -88,12 +89,14 @@ class StringTables extends events_1.EventEmitter {
                         ? userDataBuf
                         : userDataCallback(userDataBuf);
             }
+            const oldUserData = (_a = table.entries[entryIndex]) === null || _a === void 0 ? void 0 : _a.userData;
             table.entries[entryIndex] = { entry, userData };
             this.emit("update", {
                 table,
                 entryIndex,
                 entry,
-                userData
+                userData,
+                oldUserData
             });
         }
         // parse client-side entries
@@ -171,8 +174,9 @@ class StringTables extends events_1.EventEmitter {
                 }
             }
             else {
-                userData = existingEntry ? existingEntry.userData : null;
+                userData = existingEntry === null || existingEntry === void 0 ? void 0 : existingEntry.userData;
             }
+            const oldUserData = existingEntry === null || existingEntry === void 0 ? void 0 : existingEntry.userData;
             table.entries[entryIndex] = { entry, userData };
             // add to history
             if (history.length > 31) {
@@ -183,7 +187,8 @@ class StringTables extends events_1.EventEmitter {
                 table,
                 entryIndex,
                 entry,
-                userData
+                userData,
+                oldUserData
             });
         }
     }

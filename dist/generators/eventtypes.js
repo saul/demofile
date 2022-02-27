@@ -155,6 +155,10 @@ const mappings = {
         itemDefinition: [
             "IItemDefinition | null",
             `$$ != "" ? itemDefinitionIndexMap[Long.fromString($$, true).and(0xFFFF).toString()] : null`
+        ],
+        paintKit: [
+            "IPaintKit | null",
+            `$$ != "" ? paintKitIndexMap[Long.fromString($$, true).shiftRightUnsigned(16).and(0xFFFF).toString()] : null`
         ]
     }),
     weapon_originalowner_xuid: () => ({
@@ -192,7 +196,7 @@ function parseDemoFile(path) {
             console.log(`import { Player } from "./entities/player";`);
             console.log(`import { BaseEntity } from "./entities/baseentity";`);
             console.log(`import { Entities } from "./entities";`);
-            console.log(`import { IItemDefinition, itemDefinitionIndexMap } from "./entities/itemdefs";`);
+            console.log(`import { IItemDefinition, itemDefinitionIndexMap, IPaintKit, paintKitIndexMap } from "./entities/itemdefs";`);
             console.log(`import * as ST from "./sendtabletypes";`);
             console.log(`import * as Long from "long";`);
             console.log("");
