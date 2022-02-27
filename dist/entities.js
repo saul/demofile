@@ -101,8 +101,6 @@ class Entities extends events_1.EventEmitter {
         this._demo = null;
         this._singletonEnts = {};
         this._currentServerTick = -1;
-        this._maxPlayers = 0;
-        this._userInfoTable = null;
         this._userIdToEntity = new Map();
         this._steam64IdToEntity = new Map();
         this._accountNumberToEntity = new Map();
@@ -117,17 +115,7 @@ class Entities extends events_1.EventEmitter {
         return Array.from(this.findAllWithClass(team_1.Team));
     }
     get players() {
-        var _a;
-        const players = [];
-        for (let i = 1; i <= this._maxPlayers; ++i) {
-            const entity = this.entities.get(i);
-            // Only return players that are fully connected
-            if (entity != null &&
-                ((_a = this._userInfoTable.entries[entity.clientSlot]) === null || _a === void 0 ? void 0 : _a.userData) != null) {
-                players.push(entity);
-            }
-        }
-        return players;
+        return Array.from(this.findAllWithClass(player_1.Player));
     }
     get weapons() {
         return Array.from(this.findAllWithClass(weapon_1.Weapon));
@@ -136,15 +124,8 @@ class Entities extends events_1.EventEmitter {
         this._demo = demo;
         demo.on("svc_PacketEntities", e => this._handlePacketEntities(e));
         demo.on("svc_TempEntities", e => this._handleTempEntities(e));
-        demo.on("svc_ServerInfo", e => {
-            this._maxPlayers = e.maxClients;
-        });
         demo.on("net_Tick", e => {
             this._currentServerTick = e.tick;
-        });
-        demo.stringTables.on("create", table => {
-            if (table.name === "userinfo")
-                this._userInfoTable = table;
         });
         demo.stringTables.on("update", e => this._handleStringTableUpdate(e));
         demo.on("tickend", () => {
@@ -613,21 +594,12 @@ class Entities extends events_1.EventEmitter {
         }
         return classBaseline;
     }
-    _handleUserInfoUpdate(clientSlot, oldPlayerInfo, playerInfo) {
-        if (oldPlayerInfo != null) {
-            this._userIdToEntity.delete(oldPlayerInfo.userId);
-            this._steam64IdToEntity.delete(oldPlayerInfo.xuid.toString());
-            this._accountNumberToEntity.delete(oldPlayerInfo.friendsId);
-        }
-        if (playerInfo != null) {
-            this._userIdToEntity.set(playerInfo.userId, clientSlot + 1);
-            this._steam64IdToEntity.set(playerInfo.xuid.toString(), clientSlot + 1);
-            this._accountNumberToEntity.set(playerInfo.friendsId, clientSlot + 1);
-        }
+    _handleUserInfoUpdate(clientSlot, playerInfo) {
+        this._userIdToEntity.set(playerInfo.userId, clientSlot + 1);
+        this._steam64IdToEntity.set(playerInfo.xuid.toString(), clientSlot + 1);
+        this._accountNumberToEntity.set(playerInfo.friendsId, clientSlot + 1);
     }
     _handleInstanceBaselineUpdate(event) {
-        if (!event.userData)
-            return;
         const classId = parseInt(event.entry, 10);
         const baselineBuf = bitbuffer_1.BitStream.from(event.userData);
         if (!this.serverClasses[classId]) {
@@ -643,8 +615,10 @@ class Entities extends events_1.EventEmitter {
         });
     }
     _handleStringTableUpdate(event) {
+        if (!event.userData)
+            return;
         if (event.table.name === "userinfo") {
-            this._handleUserInfoUpdate(event.entryIndex, event.oldUserData, event.userData);
+            this._handleUserInfoUpdate(event.entryIndex, event.userData);
         }
         else if (event.table.name === "instancebaseline") {
             this._handleInstanceBaselineUpdate(event);
