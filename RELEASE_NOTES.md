@@ -6,6 +6,10 @@
 - Unreleased release notes here
 -->
 
+### 2.6.0 (2022-02-27)
+
+- :bug: Fixed reliable temporary entities not triggering the `tempents` event
+
 ### 2.5.0 (2022-02-13)
 
 - :sparkles: #19: Support streaming demos
