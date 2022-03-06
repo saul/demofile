@@ -5,6 +5,7 @@ export interface IItemDefinition {
   itemName: string;
   className: string;
 }
+
 export const itemDefinitionIndexMap: {
   [itemIndex: string]: IItemDefinition | undefined;
 } = {
@@ -126,7 +127,7 @@ export const itemDefinitionIndexMap: {
   },
   "37": {
     className: "weapon_shield",
-    itemName: "Ballistic Shield"
+    itemName: "Riot Shield"
   },
   "38": {
     className: "weapon_scar20",
@@ -1624,7 +1625,7 @@ export const paintKitIndexMap: {
   },
   "400": {
     name: "cu_m4a4_ancestral",
-    tag: "Θ╛ìτÄï (Dragon King)"
+    tag: "龍王 (Dragon King)"
   },
   "401": {
     name: "cu_m249_sektor",
@@ -1888,11 +1889,11 @@ export const paintKitIndexMap: {
   },
   "469": {
     name: "am_seastorm_blood",
-    tag: "Sunset Storm σú▒"
+    tag: "Sunset Storm 壱"
   },
   "470": {
     name: "am_seastorm_shojo",
-    tag: "Sunset Storm σ╝É"
+    tag: "Sunset Storm 弐"
   },
   "471": {
     name: "am_kimono_sunrise",
@@ -3032,15 +3033,15 @@ export const paintKitIndexMap: {
   },
   "757": {
     name: "am_jorm_green",
-    tag: "Emerald J├╢rmungandr"
+    tag: "Emerald Jörmungandr"
   },
   "758": {
     name: "am_jorm_orange",
-    tag: "Flame J├╢rmungandr"
+    tag: "Flame Jörmungandr"
   },
   "759": {
     name: "am_jorm_blue",
-    tag: "Astral J├╢rmungandr"
+    tag: "Astral Jörmungandr"
   },
   "760": {
     name: "am_knots_silver",
@@ -3056,7 +3057,15 @@ export const paintKitIndexMap: {
   },
   "763": {
     name: "gs_negev_thor",
-    tag: "Mj├╢lnir"
+    tag: "Mjölnir"
+  },
+  "764": {
+    name: "gs_deagle_fennec",
+    tag: "Fennec Fox"
+  },
+  "765": {
+    name: "aa_desert_bloom_bright",
+    tag: "Desert Blossom"
   },
   "775": {
     name: "hy_blueprint_white",
@@ -3230,6 +3239,54 @@ export const paintKitIndexMap: {
     name: "cu_usp_flashback",
     tag: "Flashback"
   },
+  "818": {
+    name: "am_ddpat_purple",
+    tag: "Purple DDPAT"
+  },
+  "819": {
+    name: "gs_awp_hydra",
+    tag: "Desert Hydra"
+  },
+  "820": {
+    name: "am_mirage_flowers_metalic",
+    tag: "Music Box"
+  },
+  "821": {
+    name: "am_moro_textile_bright",
+    tag: "Elegant Vines"
+  },
+  "822": {
+    name: "am_navy_shine",
+    tag: "Navy Sheen"
+  },
+  "823": {
+    name: "gs_aug_sand_storm",
+    tag: "Sand Storm"
+  },
+  "824": {
+    name: "sp_dry_wood",
+    tag: "Drift Wood"
+  },
+  "825": {
+    name: "sp_desert_skulls_dawn",
+    tag: "Drought"
+  },
+  "826": {
+    name: "sp_mirage_flowers_tan",
+    tag: "Sienna Damask"
+  },
+  "827": {
+    name: "sp_moro_carving_burnt",
+    tag: "Humidor"
+  },
+  "828": {
+    name: "sp_moro_textile_green_vine",
+    tag: "Verdant Growth"
+  },
+  "829": {
+    name: "hy_lizard_skin",
+    tag: "Anolis"
+  },
   "835": {
     name: "sp_famas_ghost_insects",
     tag: "Crypsis"
@@ -3386,6 +3443,14 @@ export const paintKitIndexMap: {
     name: "so_aqua_stmarc",
     tag: "Seabird"
   },
+  "879": {
+    name: "aa_fade_ump",
+    tag: "Fade"
+  },
+  "880": {
+    name: "hy_desert_bloom",
+    tag: "Parched"
+  },
   "884": {
     name: "cu_bizon_road_warrior",
     tag: "Embargo"
@@ -3526,6 +3591,66 @@ export const paintKitIndexMap: {
     name: "hy_veneto_tan",
     tag: "Boroque Sand"
   },
+  "921": {
+    name: "gs_ak47_gold_arabesque",
+    tag: "Gold Arabesque"
+  },
+  "922": {
+    name: "am_lizard_red",
+    tag: "Orange Anolis"
+  },
+  "923": {
+    name: "gs_mp5_neon_flektarn",
+    tag: "Oxide Oasis"
+  },
+  "924": {
+    name: "hy_brush_camo_tan",
+    tag: "Desert Brush"
+  },
+  "925": {
+    name: "hy_ddpat_desert",
+    tag: "Desert DDPAT"
+  },
+  "926": {
+    name: "hy_ddpat_urban_red",
+    tag: "Red DDPAT"
+  },
+  "927": {
+    name: "hy_dry_wood",
+    tag: "Spalted Wood"
+  },
+  "928": {
+    name: "hy_desert_multicam",
+    tag: "Black & Tan"
+  },
+  "929": {
+    name: "hy_torn_camo_paints",
+    tag: "Quick Sand"
+  },
+  "930": {
+    name: "sp_moro_carving_lightblue",
+    tag: "New Roots"
+  },
+  "931": {
+    name: "sp_moro_carving_yellow",
+    tag: "Old Roots"
+  },
+  "932": {
+    name: "sp_moro_textile_purple_yellow",
+    tag: "Withered Vine"
+  },
+  "933": {
+    name: "sp_palm_night",
+    tag: "Midnight Palm"
+  },
+  "934": {
+    name: "sp_desert_skulls",
+    tag: "Bleached"
+  },
+  "935": {
+    name: "sp_zebracam_red",
+    tag: "Prey"
+  },
   "941": {
     name: "cu_ak-47_phantom_disruptor",
     tag: "Phantom Disruptor"
@@ -3661,6 +3786,650 @@ export const paintKitIndexMap: {
   "974": {
     name: "gs_mp5sd_wasteland_legacy",
     tag: "Kitbash"
+  },
+  "975": {
+    name: "gs_awp_exoskeleton",
+    tag: "Exoskeleton"
+  },
+  "976": {
+    name: "gs_cz75_vendetta",
+    tag: "Vendetta"
+  },
+  "977": {
+    name: "hy_p90_dino_rampage",
+    tag: "Cocoa Rampage"
+  },
+  "978": {
+    name: "gs_dual_elites_dezastre",
+    tag: "Dezastre"
+  },
+  "979": {
+    name: "cu_five_seven_diary",
+    tag: "Fairy Tale"
+  },
+  "980": {
+    name: "gs_g3sg1_disrupt",
+    tag: "Digital Mesh"
+  },
+  "981": {
+    name: "gs_galil_vandal",
+    tag: "Vandal"
+  },
+  "982": {
+    name: "cu_p250_infect",
+    tag: "Contaminant"
+  },
+  "983": {
+    name: "cu_m249_deep_relief",
+    tag: "Deep Relief"
+  },
+  "984": {
+    name: "cu_m4a1s_printstream",
+    tag: "Printstream"
+  },
+  "985": {
+    name: "cu_m4a4_cyberpunk",
+    tag: "Cyber Security"
+  },
+  "986": {
+    name: "gs_mp5_conditionzero",
+    tag: "Condition Zero"
+  },
+  "987": {
+    name: "cu_nova_polymer",
+    tag: "Clear Polymer"
+  },
+  "988": {
+    name: "cu_glock_noir",
+    tag: "Neo-Noir"
+  },
+  "989": {
+    name: "cu_ssg08_chromatic",
+    tag: "Parallax"
+  },
+  "990": {
+    name: "gs_ump_gold_bismuth",
+    tag: "Gold Bismuth"
+  },
+  "991": {
+    name: "cu_usp_krokos",
+    tag: "Monster Mashup"
+  },
+  "992": {
+    name: "am_numbers_bronze",
+    tag: "The Bronze"
+  },
+  "993": {
+    name: "cu_csgo_camo",
+    tag: "Global Offensive"
+  },
+  "994": {
+    name: "am_authority_brown",
+    tag: "Charter"
+  },
+  "995": {
+    name: "am_intelligence_grey",
+    tag: "Surveillance"
+  },
+  "996": {
+    name: "am_intelligence_orange",
+    tag: "Threat Detected"
+  },
+  "997": {
+    name: "am_numbers_red_blue",
+    tag: "Dispatch"
+  },
+  "998": {
+    name: "hy_numbers_green",
+    tag: "Switch Board"
+  },
+  "999": {
+    name: "am_numbers_magenta",
+    tag: "Prime Conspiracy"
+  },
+  "1000": {
+    name: "cu_jaguar_p90",
+    tag: "Run and Hide"
+  },
+  "1001": {
+    name: "cu_m4a1_snake",
+    tag: "Welcome to the Jungle"
+  },
+  "1002": {
+    name: "aa_fade_red_blue",
+    tag: "Berries And Cherries"
+  },
+  "1003": {
+    name: "cu_ump_crime_scene",
+    tag: "Crime Scene"
+  },
+  "1004": {
+    name: "cu_ak_xray",
+    tag: "X-Ray"
+  },
+  "1005": {
+    name: "am_heist_plans_green",
+    tag: "Heist"
+  },
+  "1006": {
+    name: "am_heist_plans_purple",
+    tag: "Night Heist"
+  },
+  "1007": {
+    name: "am_heist_plans_yellow",
+    tag: "Vault Heist"
+  },
+  "1008": {
+    name: "hy_houndstooth_brown",
+    tag: "Houndstooth"
+  },
+  "1009": {
+    name: "gs_mac10_snake",
+    tag: "Hot Snakes"
+  },
+  "1010": {
+    name: "hy_phoenix_tags_lilac",
+    tag: "Phoenix Chalk"
+  },
+  "1011": {
+    name: "am_phoenix_tags_blue",
+    tag: "Phoenix Marker"
+  },
+  "1012": {
+    name: "hy_phoenix_tags_red",
+    tag: "Phoenix Stencil"
+  },
+  "1013": {
+    name: "sp_phoenix_tags_purple",
+    tag: "Phoenix Blacklight"
+  },
+  "1014": {
+    name: "hy_tigers_tan",
+    tag: "Clay Ambush"
+  },
+  "1015": {
+    name: "am_tigers_brown",
+    tag: "Tiger Pit"
+  },
+  "1016": {
+    name: "cu_money_glock",
+    tag: "Franklin"
+  },
+  "1017": {
+    name: "am_m4a1s_bluesmoke",
+    tag: "Blue Phosphor"
+  },
+  "1018": {
+    name: "cu_ak_jaguar",
+    tag: "Panthera onca"
+  },
+  "1019": {
+    name: "am_black_panther",
+    tag: "Panther Camo"
+  },
+  "1020": {
+    name: "aa_ancient_brown",
+    tag: "Ancient Earth"
+  },
+  "1021": {
+    name: "am_ancient_warm",
+    tag: "Ancient Lore"
+  },
+  "1022": {
+    name: "aa_ruins_green",
+    tag: "Lush Ruins"
+  },
+  "1023": {
+    name: "hy_drywood_green",
+    tag: "Tall Grass"
+  },
+  "1024": {
+    name: "hy_ancient_tiles_peach",
+    tag: "Blast From the Past"
+  },
+  "1025": {
+    name: "am_gold_brick",
+    tag: "Gold Brick"
+  },
+  "1026": {
+    name: "aa_awp_fade",
+    tag: "Fade"
+  },
+  "1027": {
+    name: "am_intelligence_magenta",
+    tag: "Target Acquired"
+  },
+  "1028": {
+    name: "hy_authority_purple",
+    tag: "Magna Carta"
+  },
+  "1029": {
+    name: "am_tigers_blue",
+    tag: "Silk Tiger"
+  },
+  "1030": {
+    name: "hy_p250_tiger",
+    tag: "Bengal Tiger"
+  },
+  "1031": {
+    name: "sp_ancient_bright",
+    tag: "Ancient Visions"
+  },
+  "1032": {
+    name: "hy_ruins_red",
+    tag: "Dusk Ruins"
+  },
+  "1033": {
+    name: "am_jade",
+    tag: "Carved Jade"
+  },
+  "1034": {
+    name: "am_ancient_wine",
+    tag: "Ancient Ritual"
+  },
+  "1035": {
+    name: "gs_ak47_professional",
+    tag: "Slate"
+  },
+  "1036": {
+    name: "cu_cz75_whirlwind",
+    tag: "Circaetus"
+  },
+  "1037": {
+    name: "cu_mp9_food_chain",
+    tag: "Food Chain"
+  },
+  "1038": {
+    name: "cu_galil_chroma_pink",
+    tag: "Chromatic Aberration"
+  },
+  "1039": {
+    name: "gs_glock_polymer",
+    tag: "Clear Polymer"
+  },
+  "1040": {
+    name: "gs_usps_hangedman",
+    tag: "The Traitor"
+  },
+  "1041": {
+    name: "cu_m4a4_love",
+    tag: "In Living Color"
+  },
+  "1042": {
+    name: "gs_m249_combine",
+    tag: "O.S.I.P.R."
+  },
+  "1043": {
+    name: "cu_negev_devtexture",
+    tag: "dev_texture"
+  },
+  "1044": {
+    name: "gs_p250_cybershell",
+    tag: "Cyber Shell"
+  },
+  "1045": {
+    name: "cu_mac10_portable",
+    tag: "Button Masher"
+  },
+  "1046": {
+    name: "aq_xm1014_punk",
+    tag: "XOXO"
+  },
+  "1047": {
+    name: "gs_r8_rustking",
+    tag: "Junk Yard"
+  },
+  "1048": {
+    name: "gs_sg553_deathmetal",
+    tag: "Heavy Metal"
+  },
+  "1049": {
+    name: "am_ump45_electrowave",
+    tag: "Oscillator"
+  },
+  "1050": {
+    name: "cu_deag_trigger_discipline",
+    tag: "Trigger Discipline"
+  },
+  "1051": {
+    name: "sp_nova_wind_dispersal",
+    tag: "Windblown"
+  },
+  "1052": {
+    name: "cu_ssg08_scorpion",
+    tag: "Death Strike"
+  },
+  "1053": {
+    name: "am_nuclear_pattern4_famas",
+    tag: "Meltdown"
+  },
+  "1055": {
+    name: "aa_spacerace_orange",
+    tag: "Space Race"
+  },
+  "1056": {
+    name: "sp_spacerace_blue",
+    tag: "Sputnik"
+  },
+  "1058": {
+    name: "hy_technowar_rwb",
+    tag: "POP AWP"
+  },
+  "1059": {
+    name: "sp_technowar_red",
+    tag: "Fizzy POP"
+  },
+  "1060": {
+    name: "hy_trainarchitect_green",
+    tag: "Spring Twilly"
+  },
+  "1061": {
+    name: "hy_trainarchitect",
+    tag: "Autumn Twilly"
+  },
+  "1063": {
+    name: "gs_m4a4_coalition",
+    tag: "The Coalition"
+  },
+  "1064": {
+    name: "gs_train_cz75",
+    tag: "Syndicate"
+  },
+  "1065": {
+    name: "so_whiteout_riptide",
+    tag: "Whiteout"
+  },
+  "1066": {
+    name: "aa_wiring_yellow",
+    tag: "Faulty Wiring"
+  },
+  "1067": {
+    name: "cu_mac10_propaganda",
+    tag: "Propaganda"
+  },
+  "1070": {
+    name: "hy_ak47lam_green",
+    tag: "Green Laminate"
+  },
+  "1071": {
+    name: "sp_galil_caution",
+    tag: "CAUTION!"
+  },
+  "1072": {
+    name: "hy_geometric_steps_pearl",
+    tag: "Prism Terrace"
+  },
+  "1073": {
+    name: "gs_m4a1_vertigo",
+    tag: "Imminent Danger"
+  },
+  "1074": {
+    name: "hy_vertigogeo",
+    tag: "Schematic"
+  },
+  "1075": {
+    name: "hy_vertigospray_blue",
+    tag: "Strats"
+  },
+  "1076": {
+    name: "hy_vertigoillusion",
+    tag: "Framework"
+  },
+  "1077": {
+    name: "hy_vertigoillusion_yellow",
+    tag: "Interlock"
+  },
+  "1078": {
+    name: "sp_tire_tread_blue",
+    tag: "Blue Tire"
+  },
+  "1079": {
+    name: "sp_tire_tread_red",
+    tag: "Red Tire"
+  },
+  "1080": {
+    name: "hy_vertigospray",
+    tag: "Infrastructure"
+  },
+  "1081": {
+    name: "aa_vertigogeo_neon",
+    tag: "Digital Architect"
+  },
+  "1082": {
+    name: "cu_vertigo_fiveseven",
+    tag: "Fall Hazard"
+  },
+  "1083": {
+    name: "aa_wiring",
+    tag: "Breaker Box"
+  },
+  "1084": {
+    name: "cu_sg553_caution",
+    tag: "Hazard Pay"
+  },
+  "1085": {
+    name: "aa_engine_performance",
+    tag: "Mechanism"
+  },
+  "1086": {
+    name: "sp_engine_dirty",
+    tag: "Oil Change"
+  },
+  "1087": {
+    name: "gs_ak47_abstract",
+    tag: "Leet Museo"
+  },
+  "1088": {
+    name: "gs_aug_plague",
+    tag: "Plague"
+  },
+  "1089": {
+    name: "gs_mag7_bismuth",
+    tag: "BI83 Spectrum"
+  },
+  "1090": {
+    name: "cu_deagle_kitch",
+    tag: "Ocean Drive"
+  },
+  "1091": {
+    name: "gs_dual_berettas_tread",
+    tag: "Tread"
+  },
+  "1092": {
+    name: "cu_famas_spectron",
+    tag: "ZX Spectron"
+  },
+  "1093": {
+    name: "gs_five_seven_efusion",
+    tag: "Boost Protocol"
+  },
+  "1094": {
+    name: "aa_mp9_fuji_pink",
+    tag: "Mount Fuji"
+  },
+  "1095": {
+    name: "cu_g3sg1_tacticalmap",
+    tag: "Keeping Tabs"
+  },
+  "1096": {
+    name: "cu_mp7_khaki",
+    tag: "Guerrilla"
+  },
+  "1097": {
+    name: "gs_m4_flowers",
+    tag: "Spider Lily"
+  },
+  "1098": {
+    name: "cu_mac10_toybox",
+    tag: "Toybox"
+  },
+  "1099": {
+    name: "gs_bizon_flasher",
+    tag: "Lumen"
+  },
+  "1100": {
+    name: "cu_glock_snackattack",
+    tag: "Snack Attack"
+  },
+  "1101": {
+    name: "cu_ssg_overtake",
+    tag: "Turbo Peek"
+  },
+  "1102": {
+    name: "cu_usp_black_lotus",
+    tag: "Black Lotus"
+  },
+  "1103": {
+    name: "gs_xm1014_watchdog",
+    tag: "Watchdog"
+  },
+  "1104": {
+    name: "cu_bowie_lore",
+    tag: "Lore"
+  },
+  "1105": {
+    name: "cu_butterfly_lore",
+    tag: "Lore"
+  },
+  "1106": {
+    name: "cu_falchion_lore",
+    tag: "Lore"
+  },
+  "1107": {
+    name: "cu_huntsman_lore",
+    tag: "Lore"
+  },
+  "1108": {
+    name: "cu_push_lore",
+    tag: "Lore"
+  },
+  "1109": {
+    name: "gs_bowie_black_laminate",
+    tag: "Black Laminate"
+  },
+  "1110": {
+    name: "gs_butterfly_black_laminate",
+    tag: "Black Laminate"
+  },
+  "1111": {
+    name: "gs_falchion_black_laminate",
+    tag: "Black Laminate"
+  },
+  "1112": {
+    name: "gs_huntsman_black_laminate",
+    tag: "Black Laminate"
+  },
+  "1113": {
+    name: "gs_push_black_laminate",
+    tag: "Black Laminate"
+  },
+  "1114": {
+    name: "gs_bowie_autotronic",
+    tag: "Autotronic"
+  },
+  "1115": {
+    name: "gs_butterfly_autotronic",
+    tag: "Autotronic"
+  },
+  "1116": {
+    name: "gs_falchion_autotronic",
+    tag: "Autotronic"
+  },
+  "1117": {
+    name: "gs_huntsman_autotronic",
+    tag: "Autotronic"
+  },
+  "1118": {
+    name: "gs_push_autotronic",
+    tag: "Autotronic"
+  },
+  "1119": {
+    name: "am_emerald_marbleized_glock",
+    tag: "Gamma Doppler"
+  },
+  "1120": {
+    name: "am_gamma_doppler_phase1_glock",
+    tag: "Gamma Doppler"
+  },
+  "1121": {
+    name: "am_gamma_doppler_phase2_glock",
+    tag: "Gamma Doppler"
+  },
+  "1122": {
+    name: "am_gamma_doppler_phase3_glock",
+    tag: "Gamma Doppler"
+  },
+  "1123": {
+    name: "am_gamma_doppler_phase4_glock",
+    tag: "Gamma Doppler"
+  },
+  "1125": {
+    name: "cu_bizon_spacecat",
+    tag: "Space Cat"
+  },
+  "1126": {
+    name: "cu_elites_beware",
+    tag: "Melondrama"
+  },
+  "1127": {
+    name: "gs_famas_rapid_eyes",
+    tag: "Rapid Eye Movement"
+  },
+  "1128": {
+    name: "cu_fiveseven_alpha_omega",
+    tag: "Scrawl"
+  },
+  "1129": {
+    name: "cu_g3sg1_glade",
+    tag: "Dream Glade"
+  },
+  "1130": {
+    name: "gs_m4a1s_insomnia",
+    tag: "Night Terror"
+  },
+  "1131": {
+    name: "cu_mac10_pixie",
+    tag: "Ensnared"
+  },
+  "1132": {
+    name: "cu_mag7_predictor",
+    tag: "Foresight"
+  },
+  "1133": {
+    name: "cu_mp7_fear",
+    tag: "Abyssal Apparition"
+  },
+  "1134": {
+    name: "gs_mp9_starlight",
+    tag: "Starlight Protector"
+  },
+  "1135": {
+    name: "am_xm_zombie_offensive",
+    tag: "Zombie Offensive"
+  },
+  "1136": {
+    name: "cu_usp_to_hell",
+    tag: "Ticket to Hell"
+  },
+  "1137": {
+    name: "gs_mp5_kid_necronomicon",
+    tag: "Necro Jr."
+  },
+  "1138": {
+    name: "cu_p2k_flying_dream",
+    tag: "Lifted Spirits"
+  },
+  "1139": {
+    name: "sp_scar_chickenfight",
+    tag: "Poultrygeist"
+  },
+  "1140": {
+    name: "cu_sawedoff_ouija",
+    tag: "Spirit Board"
+  },
+  "1141": {
+    name: "cu_ak47_nightwish",
+    tag: "Nightwish"
   },
   "10006": {
     name: "bloodhound_black_silver",
@@ -3853,5 +4622,101 @@ export const paintKitIndexMap: {
   "10064": {
     name: "specialist_winterhex",
     tag: "Mogul"
+  },
+  "10065": {
+    name: "specialist_marble_fade",
+    tag: "Marble Fade"
+  },
+  "10066": {
+    name: "specialist_ricksaw_camo",
+    tag: "Lt. Commander"
+  },
+  "10067": {
+    name: "specialist_tiger_orange",
+    tag: "Tiger Strike"
+  },
+  "10068": {
+    name: "specialist_fbi",
+    tag: "Field Agent"
+  },
+  "10069": {
+    name: "slick_rezan",
+    tag: "Rezan the Red"
+  },
+  "10070": {
+    name: "slick_jaguar_white",
+    tag: "Snow Leopard"
+  },
+  "10071": {
+    name: "slick_jaguar_yellow",
+    tag: "Queen Jaguar"
+  },
+  "10072": {
+    name: "slick_stitched_black_white",
+    tag: "Black Tie"
+  },
+  "10073": {
+    name: "sporty_slingshot",
+    tag: "Slingshot"
+  },
+  "10074": {
+    name: "sporty_hunter",
+    tag: "Big Game"
+  },
+  "10075": {
+    name: "sporty_houndstooth_red",
+    tag: "Scarlet Shamagh"
+  },
+  "10076": {
+    name: "sporty_jaguar",
+    tag: "Nocts"
+  },
+  "10077": {
+    name: "motorcycle_checker_flag_blue_green",
+    tag: "Finish Line"
+  },
+  "10078": {
+    name: "motorcycle_smoke",
+    tag: "Smoke Out"
+  },
+  "10079": {
+    name: "motorcycle_carbonfiber_red",
+    tag: "Blood Pressure"
+  },
+  "10080": {
+    name: "motorcycle_commando_ksk",
+    tag: "3rd Commando Company"
+  },
+  "10081": {
+    name: "handwrap_fabric_houndstooth_orange",
+    tag: "Desert Shamagh"
+  },
+  "10082": {
+    name: "handwrap_leathery_fabric_giraffe",
+    tag: "Giraffe"
+  },
+  "10083": {
+    name: "handwrap_leathery_snakeskin_orange",
+    tag: "Constrictor"
+  },
+  "10084": {
+    name: "handwrap_leathery_caution",
+    tag: "CAUTION!"
+  },
+  "10085": {
+    name: "operation10_metalic_green",
+    tag: "Jade"
+  },
+  "10086": {
+    name: "operation10_poison_frog_black_yellow",
+    tag: "Yellow-banded"
+  },
+  "10087": {
+    name: "operation10_floral",
+    tag: "Needle Point"
+  },
+  "10088": {
+    name: "operation10_snakeskin_black",
+    tag: "Unhinged"
   }
 };
