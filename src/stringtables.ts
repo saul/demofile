@@ -74,26 +74,55 @@ function parseUserInfoData(buf: Buffer): IPlayerInfo {
   };
 }
 
-export interface IStringTableUpdateEvent<T> {
-  table: IStringTable<T>;
+export type IUserInfoStringTableUpdateEvent = {
+  name: "userinfo";
+  table: IUserInfoStringTable;
+} & Omit<IUnknownStringTableUpdateEvent<IPlayerInfo>, "name" | "table">;
+
+export type IInstanceBaselineStringTableUpdateEvent = {
+  name: "instancebaseline";
+  table: IInstanceBaselineStringTable;
+} & Omit<IUnknownStringTableUpdateEvent<Buffer>, "name" | "table">;
+
+export interface IUnknownStringTableUpdateEvent<T = unknown> {
+  name: Exclude<WellKnownStringTable, "userinfo" | "instancebaseline">;
+  table: IUnknownStringTable<T>;
   entryIndex: number;
   entry: string;
   userData: T | null;
   oldUserData: T | null;
 }
 
+export type IStringTableUpdateEvent =
+  | IUserInfoStringTableUpdateEvent
+  | IInstanceBaselineStringTableUpdateEvent
+  | IUnknownStringTableUpdateEvent;
+
 export interface IStringTableEntry<T> {
   entry: string;
   userData: T | null;
 }
 
-export interface IStringTable<T> {
-  name: string;
+export type IUserInfoStringTable = {
+  name: "userinfo";
+} & Omit<IUnknownStringTable<IPlayerInfo>, "name">;
+
+export type IInstanceBaselineStringTable = {
+  name: "instancebaseline";
+} & Omit<IUnknownStringTable<Buffer>, "name">;
+
+export interface IUnknownStringTable<T = unknown> {
+  name: Exclude<WellKnownStringTable, "userinfo" | "instancebaseline">;
   entries: Array<IStringTableEntry<T>>;
   userDataSizeBits: number;
   userDataFixedSize: boolean;
   maxEntries: number;
 }
+
+export type IStringTable =
+  | IUserInfoStringTable
+  | IInstanceBaselineStringTable
+  | IUnknownStringTable;
 
 export type WellKnownStringTable =
   | "downloadables"
@@ -117,38 +146,38 @@ export type WellKnownStringTable =
   | "GameRulesCreation";
 
 export declare interface StringTables {
-  findTableByName(table: "userinfo"): IStringTable<IPlayerInfo> | undefined;
+  findTableByName(table: "userinfo"): IUserInfoStringTable | undefined;
   findTableByName(
-    table: WellKnownStringTable
-  ): IStringTable<Buffer> | undefined;
+    table: "instancebaseline"
+  ): IInstanceBaselineStringTable | undefined;
+  findTableByName(
+    table: Exclude<WellKnownStringTable, "userinfo" | "instancebaseline">
+  ): IUnknownStringTable | undefined;
 
   /**
    * Fired when a table is created. Entries are empty at this point.
    */
-  on(event: "create", listener: (table: IStringTable<any>) => void): this;
-  emit(name: "create", event: IStringTable<any>): boolean;
+  on(event: "create", listener: (table: IStringTable) => void): this;
+  emit(name: "create", event: IStringTable): boolean;
 
   /**
    * Fired after a table is created. Entries have been populated by now.
    */
-  on(event: "postcreate", listener: (table: IStringTable<any>) => void): this;
-  emit(name: "postcreate", event: IStringTable<any>): boolean;
+  on(event: "postcreate", listener: (table: IStringTable) => void): this;
+  emit(name: "postcreate", event: IStringTable): boolean;
 
   /**
    * Fired when a string table entry is updated.
    */
-  on(
-    event: "update",
-    listener: (event: IStringTableUpdateEvent<any>) => void
-  ): this;
-  emit(name: "update", event: IStringTableUpdateEvent<any>): boolean;
+  on(event: "update", listener: (event: IStringTableUpdateEvent) => void): this;
+  emit(name: "update", event: IStringTableUpdateEvent): boolean;
 }
 
 /**
  * Handles string tables for a demo file.
  */
 export class StringTables extends EventEmitter {
-  public tables: Array<IStringTable<any>> = [];
+  public tables: Array<IStringTable> = [];
   public userDataCallbacks: Record<string, ((buf: Buffer) => any) | undefined>;
 
   constructor() {
@@ -175,9 +204,7 @@ export class StringTables extends EventEmitter {
     );
   }
 
-  public findTableByName(
-    name: WellKnownStringTable
-  ): IStringTable<any> | undefined {
+  public findTableByName(name: WellKnownStringTable): IStringTable | undefined {
     return this.tables.find(table => table.name === name);
   }
 
@@ -215,12 +242,13 @@ export class StringTables extends EventEmitter {
       table.entries[entryIndex] = { entry, userData };
 
       this.emit("update", {
+        name: table.name,
         table,
         entryIndex,
         entry,
         userData,
         oldUserData
-      });
+      } as IStringTableUpdateEvent);
     }
 
     // parse client-side entries
@@ -253,7 +281,7 @@ export class StringTables extends EventEmitter {
 
   private _parseStringTableUpdate(
     bitbuf: BitStream,
-    table: IStringTable<any>,
+    table: IStringTable,
     entries: number
   ) {
     const history: Array<string | null> = [];
@@ -337,12 +365,13 @@ export class StringTables extends EventEmitter {
       history.push(entry);
 
       this.emit("update", {
+        name: table.name,
         table,
         entryIndex,
         entry,
         userData,
         oldUserData
-      });
+      } as IStringTableUpdateEvent);
     }
   }
 
@@ -362,8 +391,8 @@ export class StringTables extends EventEmitter {
     assert(msg.userDataSizeBits <= 32, "userdata value too large");
 
     // create an empty table
-    const table: IStringTable<any> = {
-      name: msg.name,
+    const table: IStringTable = {
+      name: msg.name as Exclude<WellKnownStringTable, "userinfo">,
       entries: [],
       userDataSizeBits: msg.userDataSizeBits,
       userDataFixedSize: msg.userDataFixedSize,
@@ -375,6 +404,8 @@ export class StringTables extends EventEmitter {
     this._parseStringTableUpdate(bitbuf, table, msg.numEntries);
 
     this.tables.push(table);
+
+    // todo: emit "postcreate"?
   }
 
   private _handleUpdateStringTable(msg: CSVCMsgUpdateStringTable) {
