@@ -7,7 +7,7 @@ class EntityHandle {
         this.value = value;
     }
     get isValid() {
-        return this.value !== consts_1.NUM_NETWORKED_EHANDLE_BITS;
+        return this.value !== consts_1.INVALID_NETWORKED_EHANDLE_VALUE;
     }
     get index() {
         return this.value & consts_1.NETWORKED_EHANDLE_ENT_ENTRY_MASK;
