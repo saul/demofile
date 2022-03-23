@@ -5,6 +5,10 @@
 
 -->
 
+### 2.7.1 (2022-03-23)
+
+- :bug: Fixed `EntityHandle#isValid` always returning `true`
+
 ### 2.7.0 (2022-02-27)
 
 - :sparkles: Added `paintKit` annotation to `player_death` game event
