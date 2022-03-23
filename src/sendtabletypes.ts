@@ -11896,7 +11896,7 @@ export interface CAK47 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -12004,7 +12004,7 @@ export interface CBaseCSGrenade {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -12205,7 +12205,7 @@ export interface CBreachCharge {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -12259,7 +12259,7 @@ export interface CBumpMine {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -12294,7 +12294,7 @@ export interface CC4 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -12355,7 +12355,15 @@ export interface CCSGameRulesProxy {
 }
 
 export interface CCSPlayer {
-  DT_BaseEntity: DT_BaseEntity;
+  DT_BaseEntity: Omit<
+    DT_BaseEntity,
+    | "m_angRotation"
+    | "m_vecOrigin"
+    | "m_cellbits"
+    | "m_cellX"
+    | "m_cellY"
+    | "m_cellZ"
+  >;
   DT_LocalPlayerExclusive: DT_LocalPlayerExclusive;
   DT_CSLocalPlayerExclusive: DT_CSLocalPlayerExclusive;
   DT_CSNonLocalPlayerExclusive: DT_CSNonLocalPlayerExclusive;
@@ -12383,7 +12391,15 @@ export interface CCSPlayer {
   m_rank: m_rank;
   m_passiveItems: m_passiveItems;
   m_vecPlayerPatchEconIndices: m_vecPlayerPatchEconIndices;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<
+    DT_BaseAnimating,
+    | "m_flPoseParameter"
+    | "m_flPlaybackRate"
+    | "m_nSequence"
+    | "m_nNewSequenceParity"
+    | "m_nResetEventsParity"
+    | "m_nMuzzleFlashParity"
+  >;
   DT_BaseFlex: DT_BaseFlex;
   DT_BaseCombatCharacter: DT_BaseCombatCharacter;
   m_iMatchStats_Deaths: m_iMatchStats_Deaths;
@@ -12506,7 +12522,7 @@ export interface CDEagle {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -12530,7 +12546,7 @@ export interface CDecoyGrenade {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -12555,7 +12571,10 @@ export interface CDrone {
   m_bSpottedByMask: m_bSpottedByMask;
   m_flEncodedController: m_flEncodedController;
   DT_CollisionProperty: DT_CollisionProperty;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<
+    DT_BaseAnimating,
+    "m_flPoseParameter" | "m_flPlaybackRate" | "m_nMuzzleFlashParity"
+  >;
   DT_BreakableProp: DT_BreakableProp;
   DT_PhysicsProp: DT_PhysicsProp;
   DT_Drone: DT_Drone;
@@ -12683,7 +12702,10 @@ export interface CEnvDOFController {
 }
 
 export interface CEnvGasCanister {
-  DT_BaseEntity: DT_BaseEntity;
+  DT_BaseEntity: Omit<
+    DT_BaseEntity,
+    "m_vecOrigin" | "m_cellbits" | "m_cellX" | "m_cellY" | "m_cellZ"
+  >;
   DT_ServerAnimationData: DT_ServerAnimationData;
   DT_EnvGasCanister: DT_EnvGasCanister;
   DT_CollisionProperty: DT_CollisionProperty;
@@ -12797,7 +12819,7 @@ export interface CFists {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -12821,7 +12843,7 @@ export interface CFlashbang {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -12905,7 +12927,10 @@ export interface CFuncReflectiveGlass {
 }
 
 export interface CFuncRotating {
-  DT_BaseEntity: DT_BaseEntity;
+  DT_BaseEntity: Omit<
+    DT_BaseEntity,
+    "m_angRotation" | "m_vecOrigin" | "m_flSimulationTime"
+  >;
   DT_FuncRotating: DT_FuncRotating;
   m_bSpottedByMask: m_bSpottedByMask;
   DT_CollisionProperty: DT_CollisionProperty;
@@ -12957,7 +12982,7 @@ export interface CHEGrenade {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -12973,7 +12998,14 @@ export interface CHostage {
   DT_BCCLocalPlayerExclusive: DT_BCCLocalPlayerExclusive;
   m_hMyWeapons: m_hMyWeapons;
   m_hMyWearables: m_hMyWearables;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<
+    DT_BaseAnimating,
+    | "m_flPoseParameter"
+    | "m_flPlaybackRate"
+    | "m_nSequence"
+    | "m_nNewSequenceParity"
+    | "m_nResetEventsParity"
+  >;
   DT_BaseFlex: DT_BaseFlex;
   DT_BaseCombatCharacter: DT_BaseCombatCharacter;
   DT_CHostage: DT_CHostage;
@@ -13006,7 +13038,7 @@ export interface CIncendiaryGrenade {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -13058,7 +13090,7 @@ export interface CItem_Healthshot {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -13121,7 +13153,7 @@ export interface CKnife {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -13144,7 +13176,7 @@ export interface CKnifeGG {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -13195,7 +13227,7 @@ export interface CMelee {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -13219,7 +13251,7 @@ export interface CMolotovGrenade {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -13247,7 +13279,10 @@ export interface CMovieDisplay {
 }
 
 export interface CParadropChopper {
-  DT_BaseEntity: DT_BaseEntity;
+  DT_BaseEntity: Omit<
+    DT_BaseEntity,
+    "m_vecOrigin" | "m_cellbits" | "m_cellX" | "m_cellY" | "m_cellZ"
+  >;
   DT_ServerAnimationData: DT_ServerAnimationData;
   DT_ParadropChopper: DT_ParadropChopper;
   DT_CollisionProperty: DT_CollisionProperty;
@@ -13295,7 +13330,10 @@ export interface CPhysicsProp {
   m_bSpottedByMask: m_bSpottedByMask;
   m_flEncodedController: m_flEncodedController;
   DT_CollisionProperty: DT_CollisionProperty;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<
+    DT_BaseAnimating,
+    "m_flPoseParameter" | "m_flPlaybackRate" | "m_nMuzzleFlashParity"
+  >;
   DT_BreakableProp: DT_BreakableProp;
   DT_PhysicsProp: DT_PhysicsProp;
 }
@@ -13306,7 +13344,10 @@ export interface CPhysicsPropMultiplayer {
   m_bSpottedByMask: m_bSpottedByMask;
   m_flEncodedController: m_flEncodedController;
   DT_CollisionProperty: DT_CollisionProperty;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<
+    DT_BaseAnimating,
+    "m_flPoseParameter" | "m_flPlaybackRate" | "m_nMuzzleFlashParity"
+  >;
   DT_BreakableProp: DT_BreakableProp;
   DT_PhysicsProp: DT_PhysicsProp;
   DT_PhysicsPropMultiplayer: DT_PhysicsPropMultiplayer;
@@ -13328,7 +13369,10 @@ export interface CPhysPropAmmoBox {
   m_bSpottedByMask: m_bSpottedByMask;
   m_flEncodedController: m_flEncodedController;
   DT_CollisionProperty: DT_CollisionProperty;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<
+    DT_BaseAnimating,
+    "m_flPoseParameter" | "m_flPlaybackRate" | "m_nMuzzleFlashParity"
+  >;
   DT_BreakableProp: DT_BreakableProp;
   DT_PhysicsProp: DT_PhysicsProp;
   DT_PhysicsPropMultiplayer: DT_PhysicsPropMultiplayer;
@@ -13340,7 +13384,10 @@ export interface CPhysPropLootCrate {
   m_bSpottedByMask: m_bSpottedByMask;
   m_flEncodedController: m_flEncodedController;
   DT_CollisionProperty: DT_CollisionProperty;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<
+    DT_BaseAnimating,
+    "m_flPoseParameter" | "m_flPlaybackRate" | "m_nMuzzleFlashParity"
+  >;
   DT_BreakableProp: DT_BreakableProp;
   DT_PhysicsProp: DT_PhysicsProp;
   DT_PhysicsPropMultiplayer: DT_PhysicsPropMultiplayer;
@@ -13353,7 +13400,10 @@ export interface CPhysPropRadarJammer {
   m_bSpottedByMask: m_bSpottedByMask;
   m_flEncodedController: m_flEncodedController;
   DT_CollisionProperty: DT_CollisionProperty;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<
+    DT_BaseAnimating,
+    "m_flPoseParameter" | "m_flPlaybackRate" | "m_nMuzzleFlashParity"
+  >;
   DT_BreakableProp: DT_BreakableProp;
   DT_PhysicsProp: DT_PhysicsProp;
   DT_PhysicsPropMultiplayer: DT_PhysicsPropMultiplayer;
@@ -13365,7 +13415,10 @@ export interface CPhysPropWeaponUpgrade {
   m_bSpottedByMask: m_bSpottedByMask;
   m_flEncodedController: m_flEncodedController;
   DT_CollisionProperty: DT_CollisionProperty;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<
+    DT_BaseAnimating,
+    "m_flPoseParameter" | "m_flPlaybackRate" | "m_nMuzzleFlashParity"
+  >;
   DT_BreakableProp: DT_BreakableProp;
   DT_PhysicsProp: DT_PhysicsProp;
   DT_PhysicsPropMultiplayer: DT_PhysicsPropMultiplayer;
@@ -13572,7 +13625,7 @@ export interface CSCAR17 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -13602,7 +13655,7 @@ export interface CSensorGrenade {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -13650,7 +13703,7 @@ export interface CSmokeGrenade {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -13694,7 +13747,7 @@ export interface CSnowball {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -13762,7 +13815,10 @@ export interface CStatueProp {
   m_bSpottedByMask: m_bSpottedByMask;
   m_flEncodedController: m_flEncodedController;
   DT_CollisionProperty: DT_CollisionProperty;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<
+    DT_BaseAnimating,
+    "m_flPoseParameter" | "m_flPlaybackRate" | "m_nMuzzleFlashParity"
+  >;
   DT_BreakableProp: DT_BreakableProp;
   DT_PhysicsProp: DT_PhysicsProp;
   DT_StatueProp: DT_StatueProp;
@@ -13784,7 +13840,10 @@ export interface CSunlightShadowControl {
 }
 
 export interface CSurvivalSpawnChopper {
-  DT_BaseEntity: DT_BaseEntity;
+  DT_BaseEntity: Omit<
+    DT_BaseEntity,
+    "m_vecOrigin" | "m_cellbits" | "m_cellX" | "m_cellY" | "m_cellZ"
+  >;
   DT_ServerAnimationData: DT_ServerAnimationData;
   DT_SurvivalSpawnChopper: DT_SurvivalSpawnChopper;
   DT_CollisionProperty: DT_CollisionProperty;
@@ -13811,7 +13870,7 @@ export interface CTablet {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14116,7 +14175,7 @@ export interface CWeaponAug {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14140,7 +14199,7 @@ export interface CWeaponAWP {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14164,7 +14223,7 @@ export interface CWeaponBaseItem {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14188,7 +14247,7 @@ export interface CWeaponBizon {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14212,7 +14271,7 @@ export interface CWeaponCSBase {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14235,7 +14294,7 @@ export interface CWeaponCSBaseGun {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14281,7 +14340,7 @@ export interface CWeaponElite {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14305,7 +14364,7 @@ export interface CWeaponFamas {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14329,7 +14388,7 @@ export interface CWeaponFiveSeven {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14353,7 +14412,7 @@ export interface CWeaponG3SG1 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14377,7 +14436,7 @@ export interface CWeaponGalil {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14401,7 +14460,7 @@ export interface CWeaponGalilAR {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14425,7 +14484,7 @@ export interface CWeaponGlock {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14449,7 +14508,7 @@ export interface CWeaponHKP2000 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14473,7 +14532,7 @@ export interface CWeaponM249 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14497,7 +14556,7 @@ export interface CWeaponM3 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14521,7 +14580,7 @@ export interface CWeaponM4A1 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14545,7 +14604,7 @@ export interface CWeaponMAC10 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14569,7 +14628,7 @@ export interface CWeaponMag7 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14593,7 +14652,7 @@ export interface CWeaponMP5Navy {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14617,7 +14676,7 @@ export interface CWeaponMP7 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14641,7 +14700,7 @@ export interface CWeaponMP9 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14665,7 +14724,7 @@ export interface CWeaponNegev {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14689,7 +14748,7 @@ export interface CWeaponNOVA {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14713,7 +14772,7 @@ export interface CWeaponP228 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14737,7 +14796,7 @@ export interface CWeaponP250 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14761,7 +14820,7 @@ export interface CWeaponP90 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14785,7 +14844,7 @@ export interface CWeaponSawedoff {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14809,7 +14868,7 @@ export interface CWeaponSCAR20 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14833,7 +14892,7 @@ export interface CWeaponScout {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14857,7 +14916,7 @@ export interface CWeaponSG550 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14881,7 +14940,7 @@ export interface CWeaponSG552 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14905,7 +14964,7 @@ export interface CWeaponSG556 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14929,7 +14988,7 @@ export interface CWeaponShield {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14954,7 +15013,7 @@ export interface CWeaponSSG08 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -14978,7 +15037,7 @@ export interface CWeaponTaser {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -15003,7 +15062,7 @@ export interface CWeaponTec9 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -15027,7 +15086,7 @@ export interface CWeaponTMP {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -15051,7 +15110,7 @@ export interface CWeaponUMP45 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -15075,7 +15134,7 @@ export interface CWeaponUSP {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -15099,7 +15158,7 @@ export interface CWeaponXM1014 {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
@@ -15123,7 +15182,7 @@ export interface CWeaponZoneRepulsor {
   DT_AttributeContainer: DT_AttributeContainer;
   DT_LocalWeaponData: DT_LocalWeaponData;
   DT_LocalActiveWeaponData: DT_LocalActiveWeaponData;
-  DT_BaseAnimating: DT_BaseAnimating;
+  DT_BaseAnimating: Omit<DT_BaseAnimating, "m_nSequence">;
   DT_BaseFlex: DT_BaseFlex;
   DT_EconEntity: DT_EconEntity;
   DT_BaseCombatWeapon: DT_BaseCombatWeapon;
