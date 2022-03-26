@@ -79,7 +79,6 @@ const supplement: ISupplementInfo = {
           sound.entityIndex
         ) as unknown) as BaseEntity<CBaseCSGrenadeProjectile>;
 
-        //console.log(`${projectile.modelName} bounced!`);
         trajectories.get(sound.entityIndex)?.push(projectile.position);
       }
     }
