@@ -10,40 +10,22 @@ Molotov thrown by CHF| zephh exploded at (-815.5625,275.90625,-166.4375)
 Finished.
 */
 
-import { DemoFile, BaseEntity, CInferno, Player } from "demofile";
+import { DemoFile } from "demofile";
 import * as fs from "fs";
-
-//const SEED = 1146049601;
-const molotovExplode = 3580951569; // murmurHash2("inferno.start", SEED);
-const incExplode = 1110819271; // murmurHash2("inferno.start_incgrenade", SEED);
 
 function parseDemoFile(path: string) {
   const stream = fs.createReadStream(path);
   const demoFile = new DemoFile();
 
-  demoFile.on("svc_Sounds", e => {
-    for (const sound of e.sounds) {
-      if (
-        sound.soundNumHandle !== molotovExplode &&
-        sound.soundNumHandle !== incExplode
-      ) {
-        continue;
-      }
+  demoFile.on("molotovDetonate", e => {
+    const isMolotov = e.type === "molotov";
+    const pos = e.projectile.position;
 
-      const inferno = (demoFile.entities.entities.get(
-        sound.entityIndex
-      ) as unknown) as BaseEntity<CInferno>;
-      const pos = inferno.position;
-
-      const thrower = inferno.owner as Player;
-      const isMolotov = sound.soundNumHandle === molotovExplode;
-
-      console.log(
-        `${isMolotov ? "Molotov" : "Incendiary"} thrown by ${
-          thrower.name
-        } exploded at (${pos.x},${pos.y},${pos.z})`
-      );
-    }
+    console.log(
+      `${isMolotov ? "Molotov" : "Incendiary"} thrown by ${
+        e.thrower.name
+      } exploded at (${pos.x},${pos.y},${pos.z})`
+    );
   });
 
   demoFile.on("end", e => {
