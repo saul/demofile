@@ -22,7 +22,9 @@ function parseDemoFile(path: string) {
     const end = e.trajectory[e.trajectory.length - 1]!;
 
     console.log(
-      `${e.projectile.modelName} thrown by ${e.thrower.name}`,
+      `${e.projectile.modelName} thrown by ${e.thrower.name} (${
+        e.trajectory.length - 2
+      } bounces)`,
       start,
       "->",
       end

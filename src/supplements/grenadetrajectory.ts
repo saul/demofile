@@ -11,10 +11,20 @@ import {
 } from "../eventtypes";
 import { CSVCMsgSounds } from "../protobufs/netmessages";
 import { CBaseCSGrenadeProjectile, Vector } from "../sendtabletypes";
+import { IStringTableUpdateEvent } from "../stringtables";
 import { IMolotovDetonateEvent } from "./molotovdetonate";
 import { ISupplementInfo } from "./supplementinfo";
 
-const bounceSounds = [
+const bounceSoundNames = [
+  ")weapons/incgrenade/inc_grenade_bounce-1.wav",
+  "~physics/glass/glass_bottle_impact_hard1.wav",
+  "~physics/glass/glass_bottle_impact_hard2.wav",
+  "~physics/glass/glass_bottle_impact_hard3.wav",
+  ")weapons/flashbang/grenade_hit1.wav",
+  "~)weapons/hegrenade/he_bounce-1.wav"
+];
+
+const bounceSoundHandles = [
   3517485368, // murmurhash.v2("incgrenade.bounce", 1146049601)
   4043884250, // murmurhash.v2("glassbottle.impacthard", 1146049601)
   900914967, // murmurhash.v2("flashbang.bounce", 1146049601)
@@ -47,14 +57,29 @@ const supplement: ISupplementInfo = {
       trajectories.delete(event.index);
     }
 
+    // Find the index of the bounce sounds.
+    const bounceSounds: number[] = [];
+    function onStringTableUpdate(e: IStringTableUpdateEvent<unknown>): void {
+      if (e.table.name === "soundprecache") {
+        if (bounceSoundNames.indexOf(e.entry) >= 0) {
+          bounceSounds.push(e.entryIndex);
+        }
+      }
+    }
+
     function onSound(e: CSVCMsgSounds) {
       for (const sound of e.sounds) {
-        if (bounceSounds.indexOf(sound.soundNumHandle) < 0) continue;
+        if (sound.soundNumHandle === 0) {
+          if (bounceSounds.indexOf(sound.soundNum) < 0) continue;
+        } else {
+          if (bounceSoundHandles.indexOf(sound.soundNumHandle) < 0) continue;
+        }
 
         const projectile = (demo.entities.entities.get(
           sound.entityIndex
         ) as unknown) as BaseEntity<CBaseCSGrenadeProjectile>;
 
+        //console.log(`${projectile.modelName} bounced!`);
         trajectories.get(sound.entityIndex)?.push(projectile.position);
       }
     }
@@ -93,6 +118,7 @@ const supplement: ISupplementInfo = {
 
     demo.on("svc_Sounds", onSound);
     demo.on("molotovDetonate", onMolotovDetonate);
+    demo.stringTables.on("update", onStringTableUpdate);
     demo.entities.on("create", onEntityCreate);
     demo.entities.on("remove", onEntityRemove);
     demo.gameEvents.on("decoy_detonate", onGrenadeDetonateEvent);
@@ -103,6 +129,7 @@ const supplement: ISupplementInfo = {
     return () => {
       demo.off("svc_Sounds", onSound);
       demo.off("molotovDetonate", onMolotovDetonate);
+      demo.stringTables.off("update", onStringTableUpdate);
       demo.entities.off("create", onEntityCreate);
       demo.entities.off("remove", onEntityRemove);
       demo.gameEvents.off("decoy_detonate", onGrenadeDetonateEvent);

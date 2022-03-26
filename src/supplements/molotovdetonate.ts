@@ -1,14 +1,11 @@
+import { SND_STOP } from "../consts";
 import { DemoFile } from "../demo";
-import { IEntityCreationEvent } from "../entities";
 import { BaseEntity } from "../entities/baseentity";
 import { Player } from "../entities/player";
 import { CSVCMsgSounds } from "../protobufs/netmessages";
-import { CInferno, CMolotovProjectile } from "../sendtabletypes";
+import { CMolotovProjectile } from "../sendtabletypes";
 import { IStringTableUpdateEvent } from "../stringtables";
 import { ISupplementInfo } from "./supplementinfo";
-
-const SND_STOP = 1 << 2;
-const SND_IS_SCRIPTHANDLE = 1 << 10;
 
 const molotovLoop = 1051353634; // murmurhash.v2("molotov.loop", 1146049601)
 
@@ -52,7 +49,7 @@ const supplement: ISupplementInfo = {
 
       for (const sound of e.sounds) {
         // We only care about the fire loop sound
-        if ((sound.flags & SND_IS_SCRIPTHANDLE) === 0) {
+        if (sound.soundNumHandle === 0) {
           if (sound.soundNum !== fireLoopSoundIndex) continue;
         } else {
           // todo: never actually see this
