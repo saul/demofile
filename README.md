@@ -115,17 +115,18 @@ Note that events are fired at the end of a tick, after all entity props and stri
 
 Various examples are available in the `examples` folder:
 
-| Example                                                                                | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [`join-leave.ts`](https://github.com/saul/demofile/blob/master/examples/join-leave.ts) | Print all players that join and leave the game during the course of the demo.          |
-| [`molotov.ts`](https://github.com/saul/demofile/blob/master/examples/molotov.ts)       | Prints the location of molotov/incendiary grenade explosions.                          |
-| [`plant-site.ts`](https://github.com/saul/demofile/blob/master/examples/plant-site.ts) | Prints which player planted the bomb and at which site.                                |
-| [`purchases.ts`](https://github.com/saul/demofile/blob/master/examples/purchases.ts)   | Prints which items are purchased by each player.                                       |
-| [`rank.ts`](https://github.com/saul/demofile/blob/master/examples/rank.ts)             | At the end of the game, prints all player ranks.                                       |
-| [`scores.ts`](https://github.com/saul/demofile/blob/master/examples/scores.ts)         | Prints team scores after each round.                                                   |
-| [`tickrate.ts`](https://github.com/saul/demofile/blob/master/examples/tickrate.ts)     | Prints demo tick rate and duration in seconds.                                         |
-| [`paintkits.ts`](https://github.com/saul/demofile/blob/master/examples/paintkits.ts)   | Collects paint kits of each weapon that is used in a kill.                             |
-| [`dumpfile.ts`](https://github.com/saul/demofile/blob/master/examples/dumpfile.ts)     | Advanced example of recreating coloured chat messages, round scores and the kill feed. |
+| Example                                                                                        | Description                                                                            |
+| ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [`join-leave.ts`](https://github.com/saul/demofile/blob/master/examples/join-leave.ts)         | Print all players that join and leave the game during the course of the demo.          |
+| [`molotov.ts`](https://github.com/saul/demofile/blob/master/examples/molotov.ts)               | Prints the location of molotov/incendiary grenade explosions.                          |
+| [`paintkits.ts`](https://github.com/saul/demofile/blob/master/examples/paintkits.ts)           | Collects paint kits of each weapon that is used in a kill.                             |
+| [`plant-site.ts`](https://github.com/saul/demofile/blob/master/examples/plant-site.ts)         | Prints which player planted the bomb and at which site.                                |
+| [`purchases.ts`](https://github.com/saul/demofile/blob/master/examples/purchases.ts)           | Prints which items are purchased by each player.                                       |
+| [`rank.ts`](https://github.com/saul/demofile/blob/master/examples/rank.ts)                     | At the end of the game, prints all player ranks.                                       |
+| [`scores.ts`](https://github.com/saul/demofile/blob/master/examples/scores.ts)                 | Prints team scores after each round.                                                   |
+| [`tickrate.ts`](https://github.com/saul/demofile/blob/master/examples/tickrate.ts)             | Prints demo tick rate and duration in seconds.                                         |
+| [`trajectory.ts`](https://github.com/saul/demofile/blob/master/examples/trajectory.ts)         | Prints grenade trajectories and who threw them.                                        |
+| ⚠ Advanced: [`dumpfile.ts`](https://github.com/saul/demofile/blob/master/examples/dumpfile.ts) | Advanced example of recreating coloured chat messages, round scores and the kill feed. |
 
 #### Print kills
 
