@@ -9,7 +9,10 @@ test("grenade events from GOTV demo", done => {
   const timeline = new Timeline(demo);
 
   demo.on("molotovDetonate", e => {
-    timeline.log("molotovDetonate", e);
+    timeline.log("molotovDetonate", {
+      ...e,
+      grenadeType: e.projectile.grenadeType
+    });
   });
 
   demo.on("grenadeTrajectory", e => {
