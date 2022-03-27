@@ -120,6 +120,8 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_demo_.demofile.html#_hasended" class="tsd-kind-icon">_has<wbr>Ended</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_demo_.demofile.html#_immediatetimertoken" class="tsd-kind-icon">_immediate<wbr>Timer<wbr>Token</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_demo_.demofile.html#_lastthreadyieldtime" class="tsd-kind-icon">_last<wbr>Thread<wbr>Yield<wbr>Time</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_demo_.demofile.html#_supplementcleanupfns" class="tsd-kind-icon">_supplement<wbr>Cleanup<wbr>Fns</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_demo_.demofile.html#_supplementevents" class="tsd-kind-icon">_supplement<wbr>Events</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_demo_.demofile.html#_timeouttimertoken" class="tsd-kind-icon">_timeout<wbr>Timer<wbr>Token</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_demo_.demofile.html#convars" class="tsd-kind-icon">con<wbr>Vars</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_demo_.demofile.html#currenttick" class="tsd-kind-icon">current<wbr>Tick</a></li>
@@ -149,6 +151,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_demo_.demofile.html#_emitend" class="tsd-kind-icon">_emit<wbr>End</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_demo_.demofile.html#_ensureremaining" class="tsd-kind-icon">_ensure<wbr>Remaining</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_demo_.demofile.html#_findsupplement" class="tsd-kind-icon">_find<wbr>Supplement</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_demo_.demofile.html#_handledatachunk" class="tsd-kind-icon">_handle<wbr>Data<wbr>Chunk</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_demo_.demofile.html#_handledatatables" class="tsd-kind-icon">_handle<wbr>Data<wbr>Tables</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_demo_.demofile.html#_handleencrypteddata" class="tsd-kind-icon">_handle<wbr>Encrypted<wbr>Data</a></li>
@@ -207,7 +210,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_entities_.entities.html">Entities</a>.<a href="_entities_.entities.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L471">src/demo.ts:471</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L518">src/demo.ts:518</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -243,7 +246,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L708">src/demo.ts:708</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L795">src/demo.ts:795</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -264,7 +267,7 @@
 					<div class="tsd-signature tsd-kind-icon">_bytebuf<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ByteBuffer</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L462">src/demo.ts:462</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L502">src/demo.ts:502</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -274,7 +277,7 @@
 					<div class="tsd-signature tsd-kind-icon">_chunks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L463">src/demo.ts:463</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L503">src/demo.ts:503</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -284,7 +287,7 @@
 					<div class="tsd-signature tsd-kind-icon">_encryption<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Uint8Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L469">src/demo.ts:469</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L509">src/demo.ts:509</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -294,7 +297,7 @@
 					<div class="tsd-signature tsd-kind-icon">_has<wbr>Ended<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L471">src/demo.ts:471</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L511">src/demo.ts:511</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -304,7 +307,7 @@
 					<div class="tsd-signature tsd-kind-icon">_immediate<wbr>Timer<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Immediate</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L466">src/demo.ts:466</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L506">src/demo.ts:506</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -314,7 +317,27 @@
 					<div class="tsd-signature tsd-kind-icon">_last<wbr>Thread<wbr>Yield<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L465">src/demo.ts:465</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L505">src/demo.ts:505</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_supplementcleanupfns" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _supplement<wbr>Cleanup<wbr>Fns</h3>
+					<div class="tsd-signature tsd-kind-icon">_supplement<wbr>Cleanup<wbr>Fns<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_supplements_supplementinfo_.isupplementinfo.html" class="tsd-signature-type">ISupplementInfo</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Map()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L518">src/demo.ts:518</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_supplementevents" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _supplement<wbr>Events</h3>
+					<div class="tsd-signature tsd-kind-icon">_supplement<wbr>Events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="../interfaces/_supplements_supplementinfo_.isupplementinfo.html" class="tsd-signature-type">ISupplementInfo</a><span class="tsd-signature-symbol">, </span><a href="../interfaces/_supplements_supplementinfo_.isupplementinfo.html" class="tsd-signature-type">ISupplementInfo</a><span class="tsd-signature-symbol">, </span><a href="../interfaces/_supplements_supplementinfo_.isupplementinfo.html" class="tsd-signature-type">ISupplementInfo</a><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> = [grenadeTrajectory,molotovDetonate,itemPurchase] as const</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L513">src/demo.ts:513</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -324,7 +347,7 @@
 					<div class="tsd-signature tsd-kind-icon">_timeout<wbr>Timer<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Timer</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L467">src/demo.ts:467</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L507">src/demo.ts:507</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -334,17 +357,17 @@
 					<div class="tsd-signature tsd-kind-icon">con<wbr>Vars<span class="tsd-signature-symbol">:</span> <a href="_convars_.convars.html" class="tsd-signature-type">ConVars</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L460">src/demo.ts:460</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L500">src/demo.ts:500</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="currenttick" class="tsd-anchor"></a>
 					<h3>current<wbr>Tick</h3>
-					<div class="tsd-signature tsd-kind-icon">current<wbr>Tick<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Tick<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = -1</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L435">src/demo.ts:435</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L475">src/demo.ts:475</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -359,7 +382,7 @@
 					<div class="tsd-signature tsd-kind-icon">entities<span class="tsd-signature-symbol">:</span> <a href="_entities_.entities.html" class="tsd-signature-type">Entities</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L456">src/demo.ts:456</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L496">src/demo.ts:496</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -369,7 +392,7 @@
 					<div class="tsd-signature tsd-kind-icon">game<wbr>Events<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_eventtypes_._gameevents_.gameevents.html" class="tsd-signature-type">GameEvents</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L457">src/demo.ts:457</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L497">src/demo.ts:497</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -379,7 +402,7 @@
 					<div class="tsd-signature tsd-kind-icon">header<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_demo_.idemoheader.html" class="tsd-signature-type">IDemoHeader</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L442">src/demo.ts:442</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L482">src/demo.ts:482</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -389,7 +412,7 @@
 					<div class="tsd-signature tsd-kind-icon">player<wbr>Slot<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L448">src/demo.ts:448</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L488">src/demo.ts:488</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -409,7 +432,7 @@
 					<div class="tsd-signature tsd-kind-icon">recording<wbr>Client<wbr>Slot<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L454">src/demo.ts:454</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L494">src/demo.ts:494</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -425,7 +448,7 @@
 					<div class="tsd-signature tsd-kind-icon">string<wbr>Tables<span class="tsd-signature-symbol">:</span> <a href="_stringtables_.stringtables.html" class="tsd-signature-type">StringTables</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L458">src/demo.ts:458</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L498">src/demo.ts:498</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -435,7 +458,7 @@
 					<div class="tsd-signature tsd-kind-icon">tick<wbr>Interval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = NaN</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L440">src/demo.ts:440</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L480">src/demo.ts:480</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -450,7 +473,7 @@
 					<div class="tsd-signature tsd-kind-icon">user<wbr>Messages<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_usermessagetypes_._usermessages_.usermessages.html" class="tsd-signature-type">UserMessages</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L459">src/demo.ts:459</a></li>
+							<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L499">src/demo.ts:499</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -478,7 +501,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L404">src/demo.ts:404</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L444">src/demo.ts:444</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -498,7 +521,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L428">src/demo.ts:428</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L468">src/demo.ts:468</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -521,7 +544,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L412">src/demo.ts:412</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L452">src/demo.ts:452</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -544,7 +567,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L420">src/demo.ts:420</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L460">src/demo.ts:460</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -567,7 +590,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L397">src/demo.ts:397</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L437">src/demo.ts:437</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -590,7 +613,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L614">src/demo.ts:614</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L701">src/demo.ts:701</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -613,7 +636,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L886">src/demo.ts:886</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L973">src/demo.ts:973</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -627,6 +650,29 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_findsupplement" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _find<wbr>Supplement</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_find<wbr>Supplement<span class="tsd-signature-symbol">(</span>eventName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_supplements_supplementinfo_.isupplementinfo.html" class="tsd-signature-type">ISupplementInfo</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L590">src/demo.ts:590</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>eventName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_supplements_supplementinfo_.isupplementinfo.html" class="tsd-signature-type">ISupplementInfo</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
 					<a name="_handledatachunk" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _handle<wbr>Data<wbr>Chunk</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
@@ -636,7 +682,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L739">src/demo.ts:739</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L826">src/demo.ts:826</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -653,7 +699,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L743">src/demo.ts:743</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L830">src/demo.ts:830</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -670,7 +716,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L655">src/demo.ts:655</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L742">src/demo.ts:742</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -693,7 +739,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L691">src/demo.ts:691</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L778">src/demo.ts:778</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -716,7 +762,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L847">src/demo.ts:847</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L934">src/demo.ts:934</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -733,7 +779,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L748">src/demo.ts:748</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L835">src/demo.ts:835</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -750,7 +796,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L625">src/demo.ts:625</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L712">src/demo.ts:712</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -767,7 +813,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L938">src/demo.ts:938</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L1025">src/demo.ts:1025</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -784,7 +830,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L894">src/demo.ts:894</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L981">src/demo.ts:981</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -801,7 +847,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L648">src/demo.ts:648</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L735">src/demo.ts:735</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ByteBuffer</span></h4>
@@ -818,7 +864,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L855">src/demo.ts:855</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L942">src/demo.ts:942</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -886,7 +932,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L584">src/demo.ts:584</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L671">src/demo.ts:671</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -908,6 +954,9 @@
 						<li class="tsd-signature tsd-kind-icon">emit<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"tickstart"</span>, tick<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 						<li class="tsd-signature tsd-kind-icon">emit<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"progress"</span>, progressFraction<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 						<li class="tsd-signature tsd-kind-icon">emit<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"usercmd"</span>, userCmd<span class="tsd-signature-symbol">: </span><a href="../interfaces/_demo_.iusercmd.html" class="tsd-signature-type">IUserCmd</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">emit<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"grenadeTrajectory"</span>, event<span class="tsd-signature-symbol">: </span><a href="../interfaces/_supplements_grenadetrajectory_.igrenadetrajectoryevent.html" class="tsd-signature-type">IGrenadeTrajectoryEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">emit<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"molotovDetonate"</span>, event<span class="tsd-signature-symbol">: </span><a href="../interfaces/_supplements_molotovdetonate_.imolotovdetonateevent.html" class="tsd-signature-type">IMolotovDetonateEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">emit<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"itemPurchase"</span>, event<span class="tsd-signature-symbol">: </span><a href="../interfaces/_supplements_itempurchase_.iitempurchaseevent.html" class="tsd-signature-type">IItemPurchaseEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 						<li class="tsd-signature tsd-kind-icon">emit<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"tickend"</span>, tick<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 						<li class="tsd-signature tsd-kind-icon">emit<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><a href="../modules/_net_.html#netmessagename" class="tsd-signature-type">NetMessageName</a>, msg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
@@ -916,7 +965,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L203">src/demo.ts:203</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L212">src/demo.ts:212</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -934,7 +983,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L209">src/demo.ts:209</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L218">src/demo.ts:218</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -952,7 +1001,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L215">src/demo.ts:215</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L224">src/demo.ts:224</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -970,7 +1019,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L221">src/demo.ts:221</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L230">src/demo.ts:230</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -988,7 +1037,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L229">src/demo.ts:229</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L238">src/demo.ts:238</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1006,7 +1055,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L236">src/demo.ts:236</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L245">src/demo.ts:245</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1024,7 +1073,61 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L242">src/demo.ts:242</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L257">src/demo.ts:257</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">"grenadeTrajectory"</span></h5>
+								</li>
+								<li>
+									<h5>event: <a href="../interfaces/_supplements_grenadetrajectory_.igrenadetrajectoryevent.html" class="tsd-signature-type">IGrenadeTrajectoryEvent</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L267">src/demo.ts:267</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">"molotovDetonate"</span></h5>
+								</li>
+								<li>
+									<h5>event: <a href="../interfaces/_supplements_molotovdetonate_.imolotovdetonateevent.html" class="tsd-signature-type">IMolotovDetonateEvent</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L276">src/demo.ts:276</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">"itemPurchase"</span></h5>
+								</li>
+								<li>
+									<h5>event: <a href="../interfaces/_supplements_itempurchase_.iitempurchaseevent.html" class="tsd-signature-type">IItemPurchaseEvent</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L282">src/demo.ts:282</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1042,7 +1145,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L244">src/demo.ts:244</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L284">src/demo.ts:284</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1197,6 +1300,11 @@
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"tickstart"</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>tick<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"progress"</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>progressFraction<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"usercmd"</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>userCmd<span class="tsd-signature-symbol">: </span><a href="../interfaces/_demo_.iusercmd.html" class="tsd-signature-type">IUserCmd</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"newListener"</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"removeListener"</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"grenadeTrajectory"</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../interfaces/_supplements_grenadetrajectory_.igrenadetrajectoryevent.html" class="tsd-signature-type">IGrenadeTrajectoryEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"molotovDetonate"</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../interfaces/_supplements_molotovdetonate_.imolotovdetonateevent.html" class="tsd-signature-type">IMolotovDetonateEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"itemPurchase"</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../interfaces/_supplements_itempurchase_.iitempurchaseevent.html" class="tsd-signature-type">IItemPurchaseEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"tickend"</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>tick<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"net_NOP"</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>msg<span class="tsd-signature-symbol">: </span><a href="../interfaces/_protobufs_netmessages_.cnetmsgnop.html" class="tsd-signature-type">CNETMsgNOP</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"net_Disconnect"</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>msg<span class="tsd-signature-symbol">: </span><a href="../interfaces/_protobufs_netmessages_.cnetmsgdisconnect.html" class="tsd-signature-type">CNETMsgDisconnect</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
@@ -1242,7 +1350,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L202">src/demo.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L211">src/demo.ts:211</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1283,7 +1391,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L208">src/demo.ts:208</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L217">src/demo.ts:217</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1324,7 +1432,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L214">src/demo.ts:214</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L223">src/demo.ts:223</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1365,7 +1473,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L220">src/demo.ts:220</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L229">src/demo.ts:229</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1406,7 +1514,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L228">src/demo.ts:228</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L237">src/demo.ts:237</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1449,7 +1557,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L235">src/demo.ts:235</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L244">src/demo.ts:244</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1491,7 +1599,203 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L241">src/demo.ts:241</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L247">src/demo.ts:247</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">"newListener"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>event: <span class="tsd-signature-type">string</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L248">src/demo.ts:248</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">"removeListener"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>event: <span class="tsd-signature-type">string</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L253">src/demo.ts:253</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fired when a grenade detonates, giving information about its trajectory and who threw it.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">"grenadeTrajectory"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../interfaces/_supplements_grenadetrajectory_.igrenadetrajectoryevent.html" class="tsd-signature-type">IGrenadeTrajectoryEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../interfaces/_supplements_grenadetrajectory_.igrenadetrajectoryevent.html" class="tsd-signature-type">IGrenadeTrajectoryEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>event: <a href="../interfaces/_supplements_grenadetrajectory_.igrenadetrajectoryevent.html" class="tsd-signature-type">IGrenadeTrajectoryEvent</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L263">src/demo.ts:263</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fired when a molotov or incendiary grenade detonates, giving information about who threw it.
+									This is due to lack of information on the <code>molotov_detonate</code> game event.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">"molotovDetonate"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../interfaces/_supplements_molotovdetonate_.imolotovdetonateevent.html" class="tsd-signature-type">IMolotovDetonateEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../interfaces/_supplements_molotovdetonate_.imolotovdetonateevent.html" class="tsd-signature-type">IMolotovDetonateEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>event: <a href="../interfaces/_supplements_molotovdetonate_.imolotovdetonateevent.html" class="tsd-signature-type">IMolotovDetonateEvent</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L272">src/demo.ts:272</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fired when a player purchases an item.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">"itemPurchase"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../interfaces/_supplements_itempurchase_.iitempurchaseevent.html" class="tsd-signature-type">IItemPurchaseEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../interfaces/_supplements_itempurchase_.iitempurchaseevent.html" class="tsd-signature-type">IItemPurchaseEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>event: <a href="../interfaces/_supplements_itempurchase_.iitempurchaseevent.html" class="tsd-signature-type">IItemPurchaseEvent</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L281">src/demo.ts:281</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1532,7 +1836,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L245">src/demo.ts:245</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L285">src/demo.ts:285</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1568,7 +1872,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L246">src/demo.ts:246</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L286">src/demo.ts:286</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1604,7 +1908,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L250">src/demo.ts:250</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L290">src/demo.ts:290</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1640,7 +1944,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L251">src/demo.ts:251</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L291">src/demo.ts:291</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1676,7 +1980,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L255">src/demo.ts:255</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L295">src/demo.ts:295</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1712,7 +2016,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L256">src/demo.ts:256</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L296">src/demo.ts:296</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1748,7 +2052,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L257">src/demo.ts:257</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L297">src/demo.ts:297</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1784,7 +2088,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L258">src/demo.ts:258</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L298">src/demo.ts:298</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1820,7 +2124,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L262">src/demo.ts:262</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L302">src/demo.ts:302</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1856,7 +2160,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L266">src/demo.ts:266</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L306">src/demo.ts:306</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1892,7 +2196,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L270">src/demo.ts:270</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L310">src/demo.ts:310</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1928,7 +2232,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L271">src/demo.ts:271</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L311">src/demo.ts:311</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1964,7 +2268,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L272">src/demo.ts:272</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L312">src/demo.ts:312</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2000,7 +2304,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L273">src/demo.ts:273</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L313">src/demo.ts:313</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2036,7 +2340,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L277">src/demo.ts:277</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L317">src/demo.ts:317</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2072,7 +2376,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L281">src/demo.ts:281</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L321">src/demo.ts:321</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2108,7 +2412,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L282">src/demo.ts:282</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L322">src/demo.ts:322</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2144,7 +2448,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L283">src/demo.ts:283</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L323">src/demo.ts:323</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2180,7 +2484,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L284">src/demo.ts:284</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L324">src/demo.ts:324</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2216,7 +2520,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L285">src/demo.ts:285</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L325">src/demo.ts:325</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2252,7 +2556,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L286">src/demo.ts:286</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L326">src/demo.ts:326</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2288,7 +2592,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L287">src/demo.ts:287</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L327">src/demo.ts:327</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2324,7 +2628,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L291">src/demo.ts:291</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L331">src/demo.ts:331</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2360,7 +2664,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L292">src/demo.ts:292</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L332">src/demo.ts:332</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2396,7 +2700,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L296">src/demo.ts:296</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L336">src/demo.ts:336</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2432,7 +2736,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L300">src/demo.ts:300</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L340">src/demo.ts:340</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2468,7 +2772,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L304">src/demo.ts:304</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L344">src/demo.ts:344</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2504,7 +2808,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L305">src/demo.ts:305</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L345">src/demo.ts:345</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2540,7 +2844,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L309">src/demo.ts:309</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L349">src/demo.ts:349</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2576,7 +2880,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L313">src/demo.ts:313</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L353">src/demo.ts:353</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2612,7 +2916,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L314">src/demo.ts:314</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L354">src/demo.ts:354</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2648,7 +2952,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L315">src/demo.ts:315</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L355">src/demo.ts:355</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2684,7 +2988,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L319">src/demo.ts:319</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L359">src/demo.ts:359</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2720,7 +3024,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L323">src/demo.ts:323</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L363">src/demo.ts:363</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2756,7 +3060,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L327">src/demo.ts:327</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L367">src/demo.ts:367</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2792,7 +3096,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L331">src/demo.ts:331</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L371">src/demo.ts:371</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2828,7 +3132,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L335">src/demo.ts:335</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L375">src/demo.ts:375</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2864,7 +3168,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_gameevents_.gameevents.html">GameEvents</a>.<a href="_gameevents_.gameevents.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L339">src/demo.ts:339</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L379">src/demo.ts:379</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2953,7 +3257,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L573">src/demo.ts:573</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L660">src/demo.ts:660</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2976,7 +3280,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L510">src/demo.ts:510</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L597">src/demo.ts:597</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3182,7 +3486,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saul/demofile/blob/863ea5e/src/demo.ts#L604">src/demo.ts:604</a></li>
+									<li>Defined in <a href="https://github.com/saul/demofile/blob/23cccc6/src/demo.ts#L691">src/demo.ts:691</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3361,6 +3665,12 @@
 								<a href="_demo_.demofile.html#_lastthreadyieldtime" class="tsd-kind-icon">_last<wbr>Thread<wbr>Yield<wbr>Time</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_demo_.demofile.html#_supplementcleanupfns" class="tsd-kind-icon">_supplement<wbr>Cleanup<wbr>Fns</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_demo_.demofile.html#_supplementevents" class="tsd-kind-icon">_supplement<wbr>Events</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_demo_.demofile.html#_timeouttimertoken" class="tsd-kind-icon">_timeout<wbr>Timer<wbr>Token</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -3416,6 +3726,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="_demo_.demofile.html#_ensureremaining" class="tsd-kind-icon">_ensure<wbr>Remaining</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_demo_.demofile.html#_findsupplement" class="tsd-kind-icon">_find<wbr>Supplement</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="_demo_.demofile.html#_handledatachunk" class="tsd-kind-icon">_handle<wbr>Data<wbr>Chunk</a>

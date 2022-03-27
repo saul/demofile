@@ -14,6 +14,10 @@ const icekey_1 = require("./icekey");
 const net = require("./net");
 const stringtables_1 = require("./stringtables");
 const usermessages_1 = require("./usermessages");
+const assert_exists_1 = require("./assert-exists");
+const grenadetrajectory_1 = require("./supplements/grenadetrajectory");
+const molotovdetonate_1 = require("./supplements/molotovdetonate");
+const itempurchase_1 = require("./supplements/itempurchase");
 function parseHeaderBytebuf(bytebuf) {
     return {
         magic: bytebuf.readString(8, ByteBuffer.METRICS_BYTES).split("\0", 2)[0],
@@ -65,7 +69,7 @@ class DemoFile extends events_1.EventEmitter {
         /**
          * When parsing, set to current tick.
          */
-        this.currentTick = 0;
+        this.currentTick = -1;
         /**
          * Number of seconds per tick
          */
@@ -86,6 +90,12 @@ class DemoFile extends events_1.EventEmitter {
         this._timeoutTimerToken = null;
         this._encryptionKey = null;
         this._hasEnded = false;
+        this._supplementEvents = [
+            grenadetrajectory_1.default,
+            molotovdetonate_1.default,
+            itempurchase_1.default
+        ];
+        this._supplementCleanupFns = new Map();
         this.entities = new entities_1.Entities();
         this.gameEvents = new gameevents_1.GameEvents();
         this.stringTables = new stringtables_1.StringTables();
@@ -104,6 +114,31 @@ class DemoFile extends events_1.EventEmitter {
             this.tickInterval = msg.tickInterval;
         });
         this.on("svc_EncryptedData", this._handleEncryptedData.bind(this));
+        this.on("newListener", (event) => {
+            // If we already have listeners for this event, nothing to do
+            if (this.listenerCount(event) > 0)
+                return;
+            const supplement = this._findSupplement(event);
+            if (supplement == null)
+                return;
+            const cleanupFn = supplement.setup(this);
+            this._supplementCleanupFns.set(supplement, cleanupFn);
+        });
+        this.on("removeListener", (event) => {
+            // If there are still listeners for this event, early out
+            if (this.listenerCount(event) > 0)
+                return;
+            const supplement = this._findSupplement(event);
+            if (supplement == null)
+                return;
+            // Don't cleanup if there are listeners on other emits that this supplement emits
+            const existingListenerCount = supplement.emits.reduce((prev, name) => prev + this.listenerCount(name), 0);
+            if (existingListenerCount > 0)
+                return;
+            const cleanupFn = (0, assert_exists_1.default)(this._supplementCleanupFns.get(supplement));
+            cleanupFn();
+            this._supplementCleanupFns.delete(supplement);
+        });
     }
     /**
      * @returns Number of ticks per second
@@ -137,6 +172,13 @@ class DemoFile extends events_1.EventEmitter {
      */
     get gameRules() {
         return this.entities.gameRules;
+    }
+    _findSupplement(eventName) {
+        for (const supplement of this._supplementEvents) {
+            if (supplement.emits.indexOf(eventName) >= 0)
+                return supplement;
+        }
+        return null;
     }
     parseStream(stream) {
         this._hasEnded = false;

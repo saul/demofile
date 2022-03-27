@@ -12,6 +12,9 @@ import { CNETMsgDisconnect, CNETMsgFile, CNETMsgNOP, CNETMsgPlayerAvatarData, CN
 import { Vector } from "./sendtabletypes";
 import { StringTables } from "./stringtables";
 import { UserMessages } from "./usermessages";
+import { IGrenadeTrajectoryEvent } from "./supplements/grenadetrajectory";
+import { IMolotovDetonateEvent } from "./supplements/molotovdetonate";
+import { IItemPurchaseEvent } from "./supplements/itempurchase";
 interface IDemoHeader {
     /**
      * Header magic (HL2DEMO)
@@ -114,6 +117,24 @@ export declare interface DemoFile {
      */
     on(event: "usercmd", listener: (userCmd: IUserCmd) => void): this;
     emit(name: "usercmd", userCmd: IUserCmd): boolean;
+    on(event: "newListener", listener: (event: string) => void): this;
+    on(event: "removeListener", listener: (event: string) => void): this;
+    /**
+     * Fired when a grenade detonates, giving information about its trajectory and who threw it.
+     */
+    on(event: "grenadeTrajectory", listener: (event: IGrenadeTrajectoryEvent) => void): this;
+    emit(name: "grenadeTrajectory", event: IGrenadeTrajectoryEvent): boolean;
+    /**
+     * Fired when a molotov or incendiary grenade detonates, giving information about who threw it.
+     * This is due to lack of information on the `molotov_detonate` game event.
+     */
+    on(event: "molotovDetonate", listener: (event: IMolotovDetonateEvent) => void): this;
+    emit(name: "molotovDetonate", event: IMolotovDetonateEvent): boolean;
+    /**
+     * Fired when a player purchases an item.
+     */
+    on(event: "itemPurchase", listener: (event: IItemPurchaseEvent) => void): this;
+    emit(name: "itemPurchase", event: IItemPurchaseEvent): boolean;
     /**
      * Fired after all commands are processed for a tick.
      */
@@ -234,6 +255,8 @@ export declare class DemoFile extends EventEmitter {
     private _timeoutTimerToken;
     private _encryptionKey;
     private _hasEnded;
+    private _supplementEvents;
+    private _supplementCleanupFns;
     /**
      * Starts parsing buffer as a demo file.
      *
@@ -244,6 +267,7 @@ export declare class DemoFile extends EventEmitter {
      * @param {ArrayBuffer} buffer - Buffer pointing to start of demo header
      */
     constructor();
+    private _findSupplement;
     parseStream(stream: Readable): void;
     parse(buffer: Buffer): void;
     /**

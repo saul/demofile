@@ -183,6 +183,7 @@ export declare class Entities extends EventEmitter {
     tableClassMap: {
         [tableName: string]: NetworkableConstructor;
     };
+    private _serverClassConstructor;
     /**
      * Set of which entities were active in the most recent tick.
      */

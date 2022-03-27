@@ -11,3 +11,4 @@ export declare const MAX_CUSTOM_FILES = 4;
 export declare const SUBSTRING_BITS = 5;
 export declare const MAX_USERDATA_BITS = 14;
 export declare const INVALID_NETWORKED_EHANDLE_VALUE: number;
+export declare const SND_STOP: number;

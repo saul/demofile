@@ -17,6 +17,7 @@ const team_1 = require("./entities/team");
 const weapon_1 = require("./entities/weapon");
 const props_1 = require("./props");
 const Long = require("long");
+const projectile_1 = require("./entities/projectile");
 function isPropExcluded(excludes, table, prop) {
     return excludes.find(excluded => table.netTableName === excluded.dtName &&
         prop.varName === excluded.varName);
@@ -86,9 +87,11 @@ class Entities extends events_1.EventEmitter {
             DT_CSPlayer: player_1.Player,
             DT_Team: team_1.Team,
             DT_CSGameRules: gamerules_1.GameRules,
+            DT_BaseCSGrenadeProjectile: projectile_1.Projectile,
             DT_WeaponCSBase: weapon_1.Weapon,
             DT_BaseEntity: baseentity_1.BaseEntity
         };
+        this._serverClassConstructor = new Map();
         /**
          * Set of which entities were active in the most recent tick.
          */
@@ -267,6 +270,15 @@ class Entities extends events_1.EventEmitter {
                 flattenedProps: this._flattenDataTable(dataTable)
             };
             this.serverClasses.push(serverClass);
+            // Find the constructor for this server class
+            const tablesInClass = new Set(serverClass.flattenedProps.map(prop => prop.table.netTableName));
+            // eslint-disable-next-line no-restricted-syntax
+            for (const tableName in this.tableClassMap) {
+                if (tablesInClass.has(tableName)) {
+                    this._serverClassConstructor.set(classId, this.tableClassMap[tableName]);
+                    break;
+                }
+            }
             // parse any pending baseline
             const pendingBaseline = this.pendingBaselines[classId];
             if (pendingBaseline) {
@@ -377,16 +389,7 @@ class Entities extends events_1.EventEmitter {
         if (existingEntity) {
             this._removeEntity(index, true);
         }
-        // Try to find a suitable class for this entity
-        let klass = networkable_1.Networkable;
-        // eslint-disable-next-line no-restricted-syntax
-        for (const tableName in this.tableClassMap) {
-            if (baseline[tableName]) {
-                // UNSAFE: we know this table exists in `tableClassMap`
-                klass = this.tableClassMap[tableName];
-                break;
-            }
-        }
+        const klass = this._serverClassConstructor.get(classId) || networkable_1.Networkable;
         const entity = new klass(this._demo, index, classId, serialNum, props);
         this.entities.set(index, entity);
         return entity;

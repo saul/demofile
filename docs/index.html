@@ -206,7 +206,7 @@ Demo header: {
 						<tr>
 							<td><a href="https://saul.github.io/demofile/classes/_entities_baseentity_.baseentity.html">BaseEntity</a></td>
 							<td></td>
-							<td>Base class of most in-game entities (e.g. players, weapons, all other renderable entities).</td>
+							<td>Base class of the vast majority of in-game entities (e.g. players, weapons, all other renderable entities).</td>
 						</tr>
 						<tr>
 							<td><a href="https://saul.github.io/demofile/classes/_entities_player_.player.html">Player</a></td>
@@ -215,13 +215,18 @@ Demo header: {
 						</tr>
 						<tr>
 							<td><a href="https://saul.github.io/demofile/classes/_entities_team_.team.html">Team</a></td>
-							<td><code>player.team</code></td>
+							<td><code>demoFile.entities.teams</code><br><code>player.team</code></td>
 							<td>Represents a team (terrorists, counter-terrorists, spectators).</td>
 						</tr>
 						<tr>
 							<td><a href="https://saul.github.io/demofile/classes/_entities_weapon_.weapon.html">Weapon</a></td>
 							<td><code>demoFile.entities.weapons</code><br><code>player.weapon</code><br><code>player.weapons</code></td>
 							<td>Represents an in-game weapon (guns, grenades, knifes).</td>
+						</tr>
+						<tr>
+							<td><a href="https://saul.github.io/demofile/classes/_entities_projectile_.projectile.html">Projectile</a></td>
+							<td></td>
+							<td>Represents a thrown grenade projectile (e.g. a flying smoke grenade).</td>
 						</tr>
 						<tr>
 							<td><a href="https://saul.github.io/demofile/classes/_entities_gamerules_.gamerules.html">GameRules</a></td>
@@ -254,6 +259,10 @@ Demo header: {
 							<td>Prints the location of molotov/incendiary grenade explosions.</td>
 						</tr>
 						<tr>
+							<td><a href="https://github.com/saul/demofile/blob/master/examples/paintkits.ts"><code>paintkits.ts</code></a></td>
+							<td>Collects paint kits of each weapon that is used in a kill.</td>
+						</tr>
+						<tr>
 							<td><a href="https://github.com/saul/demofile/blob/master/examples/plant-site.ts"><code>plant-site.ts</code></a></td>
 							<td>Prints which player planted the bomb and at which site.</td>
 						</tr>
@@ -274,11 +283,11 @@ Demo header: {
 							<td>Prints demo tick rate and duration in seconds.</td>
 						</tr>
 						<tr>
-							<td><a href="https://github.com/saul/demofile/blob/master/examples/paintkits.ts"><code>paintkits.ts</code></a></td>
-							<td>Collects paint kits of each weapon that is used in a kill.</td>
+							<td><a href="https://github.com/saul/demofile/blob/master/examples/trajectory.ts"><code>trajectory.ts</code></a></td>
+							<td>Prints grenade trajectories and who threw them.</td>
 						</tr>
 						<tr>
-							<td><a href="https://github.com/saul/demofile/blob/master/examples/dumpfile.ts"><code>dumpfile.ts</code></a></td>
+							<td>⚠ Advanced: <a href="https://github.com/saul/demofile/blob/master/examples/dumpfile.ts"><code>dumpfile.ts</code></a></td>
 							<td>Advanced example of recreating coloured chat messages, round scores and the kill feed.</td>
 						</tr>
 				</tbody></table>
@@ -419,6 +428,9 @@ Player info updated:
 						<a href="modules/_entities_player_.html">&quot;entities/player&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/_entities_projectile_.html">&quot;entities/projectile&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/_entities_team_.html">&quot;entities/team&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -495,6 +507,18 @@ Player info updated:
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_stringtables_.html">&quot;stringtables&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_supplements_grenadetrajectory_.html">&quot;supplements/grenadetrajectory&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_supplements_itempurchase_.html">&quot;supplements/itempurchase&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_supplements_molotovdetonate_.html">&quot;supplements/molotovdetonate&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_supplements_supplementinfo_.html">&quot;supplements/supplementinfo&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_usermessages_.html">&quot;usermessages&quot;</a>
