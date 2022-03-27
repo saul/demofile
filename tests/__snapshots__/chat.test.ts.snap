@@ -2,7 +2,7 @@
 
 exports[`public matchmaking chat can be decrypted: timeline 1`] = `
 Array [
-  "[0] start: {\\"magic\\":\\"HL2DEMO\\",\\"protocol\\":4,\\"networkProtocol\\":13775,\\"serverName\\":\\"Valve CS:GO EU North Server (srcds106.188.41)\\",\\"clientName\\":\\"GOTV Demo\\",\\"mapName\\":\\"de_mirage\\",\\"gameDirectory\\":\\"csgo\\",\\"playbackTime\\":2843.296875,\\"playbackTicks\\":181971,\\"playbackFrames\\":90920,\\"signonLength\\":564847}",
+  "[-1] start: {\\"magic\\":\\"HL2DEMO\\",\\"protocol\\":4,\\"networkProtocol\\":13775,\\"serverName\\":\\"Valve CS:GO EU North Server (srcds106.188.41)\\",\\"clientName\\":\\"GOTV Demo\\",\\"mapName\\":\\"de_mirage\\",\\"gameDirectory\\":\\"csgo\\",\\"playbackTime\\":2843.296875,\\"playbackTicks\\":181971,\\"playbackFrames\\":90920,\\"signonLength\\":564847}",
   "[5327] SayText2: \\"Cstrike_Chat_All Black_Yuzia lol  \\"",
   "[6949] SayText2: \\"Cstrike_Chat_All lil bo peep glhf  \\"",
   "[23156] SayText2: \\"Cstrike_Chat_AllDead lil bo peep НИХУЯ ПАПОРОТНИК ТВОРИТ РЕПЧИНУ ПОД БИТ  \\"",

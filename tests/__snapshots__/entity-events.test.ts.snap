@@ -2,7 +2,7 @@
 
 exports[`entity events on GOTV demo: timeline 1`] = `
 Array [
-  "[0] start: {\\"magic\\":\\"HL2DEMO\\",\\"protocol\\":4,\\"networkProtocol\\":13753,\\"serverName\\":\\"Counter-Strike: Global Offensive\\",\\"clientName\\":\\"GOTV Demo\\",\\"mapName\\":\\"de_mirage\\",\\"gameDirectory\\":\\"csgo\\",\\"playbackTime\\":2569.375,\\"playbackTicks\\":328880,\\"playbackFrames\\":164271,\\"signonLength\\":433479}",
+  "[-1] start: {\\"magic\\":\\"HL2DEMO\\",\\"protocol\\":4,\\"networkProtocol\\":13753,\\"serverName\\":\\"Counter-Strike: Global Offensive\\",\\"clientName\\":\\"GOTV Demo\\",\\"mapName\\":\\"de_mirage\\",\\"gameDirectory\\":\\"csgo\\",\\"playbackTime\\":2569.375,\\"playbackTicks\\":328880,\\"playbackFrames\\":164271,\\"signonLength\\":433479}",
   "[0] entities.create: {\\"index\\":0,\\"serialNum\\":906,\\"serverClass\\":\\"CWorld\\"}",
   "[0] entities.create: {\\"index\\":1,\\"serialNum\\":365,\\"serverClass\\":\\"CCSPlayer\\"}",
   "[0] entities.create: {\\"index\\":2,\\"serialNum\\":782,\\"serverClass\\":\\"CCSPlayer\\"}",
