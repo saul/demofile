@@ -18,7 +18,7 @@ export interface IMolotovDetonateEvent {
 const supplement: ISupplementInfo = {
   emits: ["molotovDetonate"],
   setup: function molotovDetonate(demo: DemoFile) {
-    if (demo.currentTick !== 0) {
+    if (demo.currentTick >= 0) {
       throw new Error(
         "molotovDetonate event listeners must be added before parsing starts."
       );

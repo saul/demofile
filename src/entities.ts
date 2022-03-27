@@ -366,6 +366,11 @@ export class Entities extends EventEmitter {
     DT_BaseEntity: BaseEntity
   };
 
+  private _serverClassConstructor: Map<
+    number,
+    NetworkableConstructor
+  > = new Map();
+
   /**
    * Set of which entities were active in the most recent tick.
    */
@@ -566,6 +571,22 @@ export class Entities extends EventEmitter {
 
       this.serverClasses.push(serverClass);
 
+      // Find the constructor for this server class
+      const tablesInClass = new Set(
+        serverClass.flattenedProps.map(prop => prop.table.netTableName)
+      );
+
+      // eslint-disable-next-line no-restricted-syntax
+      for (const tableName in this.tableClassMap) {
+        if (tablesInClass.has(tableName)) {
+          this._serverClassConstructor.set(
+            classId,
+            this.tableClassMap[tableName]!
+          );
+          break;
+        }
+      }
+
       // parse any pending baseline
       const pendingBaseline = this.pendingBaselines[classId];
       if (pendingBaseline) {
@@ -735,17 +756,7 @@ export class Entities extends EventEmitter {
       this._removeEntity(index, true);
     }
 
-    // Try to find a suitable class for this entity
-    let klass: NetworkableConstructor = Networkable;
-    // eslint-disable-next-line no-restricted-syntax
-    for (const tableName in this.tableClassMap) {
-      if (baseline[tableName]) {
-        // UNSAFE: we know this table exists in `tableClassMap`
-        klass = this.tableClassMap[tableName]!;
-        break;
-      }
-    }
-
+    const klass = this._serverClassConstructor.get(classId) || Networkable;
     const entity = new klass(this._demo, index, classId, serialNum, props);
     this.entities.set(index, entity);
     return entity;

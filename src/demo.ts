@@ -71,6 +71,7 @@ import grenadeTrajectory, {
 import molotovDetonate, {
   IMolotovDetonateEvent
 } from "./supplements/molotovdetonate";
+import itemPurchase, { IItemPurchaseEvent } from "./supplements/itempurchase";
 
 interface IDemoHeader {
   /**
@@ -264,6 +265,15 @@ export declare interface DemoFile {
     listener: (event: IMolotovDetonateEvent) => void
   ): this;
   emit(name: "molotovDetonate", event: IMolotovDetonateEvent): boolean;
+
+  /**
+   * Fired when a player purchases an item.
+   */
+  on(
+    event: "itemPurchase",
+    listener: (event: IItemPurchaseEvent) => void
+  ): this;
+  emit(name: "itemPurchase", event: IItemPurchaseEvent): boolean;
 
   /**
    * Fired after all commands are processed for a tick.
@@ -462,7 +472,7 @@ export class DemoFile extends EventEmitter {
   /**
    * When parsing, set to current tick.
    */
-  public currentTick: number = 0;
+  public currentTick: number = -1;
 
   /**
    * Number of seconds per tick
@@ -500,7 +510,11 @@ export class DemoFile extends EventEmitter {
 
   private _hasEnded: boolean = false;
 
-  private _supplementEvents = [grenadeTrajectory, molotovDetonate] as const;
+  private _supplementEvents = [
+    grenadeTrajectory,
+    molotovDetonate,
+    itemPurchase
+  ] as const;
   private _supplementCleanupFns: Map<ISupplementInfo, () => void> = new Map();
 
   /**
