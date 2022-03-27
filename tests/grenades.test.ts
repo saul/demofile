@@ -13,7 +13,10 @@ test("grenade events from GOTV demo", done => {
   });
 
   demo.on("grenadeTrajectory", e => {
-    timeline.log("grenadeTrajectory", e);
+    timeline.log("grenadeTrajectory", {
+      ...e,
+      grenadeType: e.projectile.grenadeType
+    });
   });
 
   demo.on("end", e => {
