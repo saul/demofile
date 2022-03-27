@@ -39,6 +39,7 @@ import {
   IStringTable
 } from "./stringtables";
 import * as Long from "long";
+import { Projectile } from "./entities/projectile";
 
 export interface NetworkableConstructor<T = Networkable<any>> {
   new (
@@ -362,6 +363,7 @@ export class Entities extends EventEmitter {
     DT_CSPlayer: Player,
     DT_Team: Team,
     DT_CSGameRules: GameRules,
+    DT_BaseCSGrenadeProjectile: Projectile,
     DT_WeaponCSBase: Weapon,
     DT_BaseEntity: BaseEntity
   };

@@ -1,38 +1,24 @@
 import * as assert from "assert";
 import { DemoFile } from "../demo";
-import { IEntityCreationEvent, IEntityRemoveEvent } from "../entities";
-import { BaseEntity } from "../entities/baseentity";
+import {
+  IEntityChangeEvent,
+  IEntityCreationEvent,
+  IEntityRemoveEvent
+} from "../entities";
 import { Player } from "../entities/player";
+import { Projectile } from "../entities/projectile";
 import {
   IEventDecoyDetonate,
   IEventFlashbangDetonate,
   IEventHegrenadeDetonate,
   IEventSmokegrenadeDetonate
 } from "../eventtypes";
-import { CSVCMsgSounds } from "../protobufs/netmessages";
-import { CBaseCSGrenadeProjectile, Vector } from "../sendtabletypes";
-import { IStringTableUpdateEvent } from "../stringtables";
+import { Vector } from "../sendtabletypes";
 import { IMolotovDetonateEvent } from "./molotovdetonate";
 import { ISupplementInfo } from "./supplementinfo";
 
-const bounceSoundNames = [
-  ")weapons/incgrenade/inc_grenade_bounce-1.wav",
-  "~physics/glass/glass_bottle_impact_hard1.wav",
-  "~physics/glass/glass_bottle_impact_hard2.wav",
-  "~physics/glass/glass_bottle_impact_hard3.wav",
-  ")weapons/flashbang/grenade_hit1.wav",
-  "~)weapons/hegrenade/he_bounce-1.wav"
-];
-
-const bounceSoundHandles = [
-  3517485368, // murmurhash.v2("incgrenade.bounce", 1146049601)
-  4043884250, // murmurhash.v2("glassbottle.impacthard", 1146049601)
-  900914967, // murmurhash.v2("flashbang.bounce", 1146049601)
-  512390212 // murmurhash.v2("hegrenade.bounce", 1146049601)
-];
-
 export interface IGrenadeTrajectoryEvent {
-  projectile: BaseEntity<CBaseCSGrenadeProjectile>;
+  projectile: Projectile;
   thrower: Player;
   trajectory: ReadonlyArray<Vector>;
 }
@@ -44,11 +30,10 @@ const supplement: ISupplementInfo = {
 
     function onEntityCreate(event: IEntityCreationEvent) {
       // We only care about grenade projectiles
-      if (!("DT_BaseCSGrenadeProjectile" in event.entity.props)) return;
-      const entity = (event.entity as unknown) as BaseEntity;
+      if (!(event.entity instanceof Projectile)) return;
 
-      assert(!trajectories.has(entity.index));
-      trajectories.set(entity.index, [entity.position]);
+      assert(!trajectories.has(event.entity.index));
+      trajectories.set(event.entity.index, [event.entity.position]);
     }
 
     function onEntityRemove(event: IEntityRemoveEvent) {
@@ -57,29 +42,18 @@ const supplement: ISupplementInfo = {
       trajectories.delete(event.index);
     }
 
-    // Find the index of the bounce sounds.
-    const bounceSounds: number[] = [];
-    function onStringTableUpdate(e: IStringTableUpdateEvent<unknown>): void {
-      if (e.table.name === "soundprecache") {
-        if (bounceSoundNames.indexOf(e.entry) >= 0) {
-          bounceSounds.push(e.entryIndex);
+    function onEntityChange(event: IEntityChangeEvent) {
+      const index = event.entity.index;
+      if (!trajectories.has(index)) return;
+      const projectile = (event.entity as unknown) as Projectile;
+
+      for (const change of event.changes) {
+        if (change.varName !== "m_nBounces") continue;
+        const oldValue = (change.oldValue || 0) as number;
+        const newValue = change.newValue;
+        if (newValue > oldValue) {
+          trajectories.get(index)!.push(projectile.position);
         }
-      }
-    }
-
-    function onSound(e: CSVCMsgSounds) {
-      for (const sound of e.sounds) {
-        if (sound.soundNumHandle === 0) {
-          if (bounceSounds.indexOf(sound.soundNum) < 0) continue;
-        } else {
-          if (bounceSoundHandles.indexOf(sound.soundNumHandle) < 0) continue;
-        }
-
-        const projectile = (demo.entities.entities.get(
-          sound.entityIndex
-        ) as unknown) as BaseEntity<CBaseCSGrenadeProjectile>;
-
-        trajectories.get(sound.entityIndex)?.push(projectile.position);
       }
     }
 
@@ -90,7 +64,7 @@ const supplement: ISupplementInfo = {
         | IEventHegrenadeDetonate
         | IEventSmokegrenadeDetonate
     ) {
-      const projectile = event.entity;
+      const projectile = event.entity as Projectile;
 
       // todo: when could this be null?
       const trajectory = trajectories.get(event.entityid)!;
@@ -115,10 +89,9 @@ const supplement: ISupplementInfo = {
       });
     }
 
-    demo.on("svc_Sounds", onSound);
     demo.on("molotovDetonate", onMolotovDetonate);
-    demo.stringTables.on("update", onStringTableUpdate);
     demo.entities.on("create", onEntityCreate);
+    demo.entities.on("change", onEntityChange);
     demo.entities.on("remove", onEntityRemove);
     demo.gameEvents.on("decoy_detonate", onGrenadeDetonateEvent);
     demo.gameEvents.on("flashbang_detonate", onGrenadeDetonateEvent);
@@ -126,10 +99,9 @@ const supplement: ISupplementInfo = {
     demo.gameEvents.on("smokegrenade_detonate", onGrenadeDetonateEvent);
 
     return () => {
-      demo.off("svc_Sounds", onSound);
       demo.off("molotovDetonate", onMolotovDetonate);
-      demo.stringTables.off("update", onStringTableUpdate);
       demo.entities.off("create", onEntityCreate);
+      demo.entities.off("change", onEntityChange);
       demo.entities.off("remove", onEntityRemove);
       demo.gameEvents.off("decoy_detonate", onGrenadeDetonateEvent);
       demo.gameEvents.off("flashbang_detonate", onGrenadeDetonateEvent);

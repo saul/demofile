@@ -1,18 +1,16 @@
 import { SND_STOP } from "../consts";
 import { DemoFile } from "../demo";
-import { BaseEntity } from "../entities/baseentity";
 import { Player } from "../entities/player";
+import { Projectile } from "../entities/projectile";
 import { CSVCMsgSounds } from "../protobufs/netmessages";
-import { CMolotovProjectile } from "../sendtabletypes";
 import { IStringTableUpdateEvent } from "../stringtables";
 import { ISupplementInfo } from "./supplementinfo";
 
 const molotovLoop = 1051353634; // murmurhash.v2("molotov.loop", 1146049601)
 
 export interface IMolotovDetonateEvent {
-  type: "molotov" | "incendiary";
   thrower: Player;
-  projectile: BaseEntity<CMolotovProjectile>;
+  projectile: Projectile;
 }
 
 const supplement: ISupplementInfo = {
@@ -62,7 +60,7 @@ const supplement: ISupplementInfo = {
 
         const projectile = (demo.entities.entities.get(
           sound.entityIndex
-        ) as unknown) as BaseEntity<CMolotovProjectile> | undefined;
+        ) as unknown) as Projectile | undefined;
 
         if (!projectile) continue;
 
@@ -72,9 +70,6 @@ const supplement: ISupplementInfo = {
           const thrower = projectile.owner as Player;
 
           demo.emit("molotovDetonate", {
-            type: projectile.getProp("DT_MolotovProjectile", "m_bIsIncGrenade")
-              ? "incendiary"
-              : "molotov",
             thrower,
             projectile
           });
