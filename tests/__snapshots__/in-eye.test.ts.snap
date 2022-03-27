@@ -2,7 +2,7 @@
 
 exports[`in eye demos can be parsed: timeline 1`] = `
 Array [
-  "[0] start: {\\"magic\\":\\"HL2DEMO\\",\\"protocol\\":4,\\"networkProtocol\\":13637,\\"serverName\\":\\"=[A:1:2901688322:9953]:0\\",\\"clientName\\":\\"Haegemonia76\\",\\"mapName\\":\\"de_inferno\\",\\"gameDirectory\\":\\"csgo\\",\\"playbackTime\\":2832.78125,\\"playbackTicks\\":181298,\\"playbackFrames\\":179417,\\"signonLength\\":343573}",
+  "[-1] start: {\\"magic\\":\\"HL2DEMO\\",\\"protocol\\":4,\\"networkProtocol\\":13637,\\"serverName\\":\\"=[A:1:2901688322:9953]:0\\",\\"clientName\\":\\"Haegemonia76\\",\\"mapName\\":\\"de_inferno\\",\\"gameDirectory\\":\\"csgo\\",\\"playbackTime\\":2832.78125,\\"playbackTicks\\":181298,\\"playbackFrames\\":179417,\\"signonLength\\":343573}",
   "[0] entities.create: {\\"index\\":0,\\"serialNum\\":905,\\"serverClass\\":\\"CWorld\\"}",
   "[0] entities.create: {\\"index\\":1,\\"serialNum\\":363,\\"serverClass\\":\\"CCSPlayer\\"}",
   "[0] entities.create: {\\"index\\":3,\\"serialNum\\":839,\\"serverClass\\":\\"CCSPlayer\\"}",

@@ -63,6 +63,15 @@ import {
   StringTables
 } from "./stringtables";
 import { UserMessages } from "./usermessages";
+import assertExists from "./assert-exists";
+import { ISupplementInfo } from "./supplements/supplementinfo";
+import grenadeTrajectory, {
+  IGrenadeTrajectoryEvent
+} from "./supplements/grenadetrajectory";
+import molotovDetonate, {
+  IMolotovDetonateEvent
+} from "./supplements/molotovdetonate";
+import itemPurchase, { IItemPurchaseEvent } from "./supplements/itempurchase";
 
 interface IDemoHeader {
   /**
@@ -234,6 +243,37 @@ export declare interface DemoFile {
    */
   on(event: "usercmd", listener: (userCmd: IUserCmd) => void): this;
   emit(name: "usercmd", userCmd: IUserCmd): boolean;
+
+  on(event: "newListener", listener: (event: string) => void): this;
+  on(event: "removeListener", listener: (event: string) => void): this;
+
+  /**
+   * Fired when a grenade detonates, giving information about its trajectory and who threw it.
+   */
+  on(
+    event: "grenadeTrajectory",
+    listener: (event: IGrenadeTrajectoryEvent) => void
+  ): this;
+  emit(name: "grenadeTrajectory", event: IGrenadeTrajectoryEvent): boolean;
+
+  /**
+   * Fired when a molotov or incendiary grenade detonates, giving information about who threw it.
+   * This is due to lack of information on the `molotov_detonate` game event.
+   */
+  on(
+    event: "molotovDetonate",
+    listener: (event: IMolotovDetonateEvent) => void
+  ): this;
+  emit(name: "molotovDetonate", event: IMolotovDetonateEvent): boolean;
+
+  /**
+   * Fired when a player purchases an item.
+   */
+  on(
+    event: "itemPurchase",
+    listener: (event: IItemPurchaseEvent) => void
+  ): this;
+  emit(name: "itemPurchase", event: IItemPurchaseEvent): boolean;
 
   /**
    * Fired after all commands are processed for a tick.
@@ -432,7 +472,7 @@ export class DemoFile extends EventEmitter {
   /**
    * When parsing, set to current tick.
    */
-  public currentTick: number = 0;
+  public currentTick: number = -1;
 
   /**
    * Number of seconds per tick
@@ -470,6 +510,13 @@ export class DemoFile extends EventEmitter {
 
   private _hasEnded: boolean = false;
 
+  private _supplementEvents = [
+    grenadeTrajectory,
+    molotovDetonate,
+    itemPurchase
+  ] as const;
+  private _supplementCleanupFns: Map<ISupplementInfo, () => void> = new Map();
+
   /**
    * Starts parsing buffer as a demo file.
    *
@@ -505,6 +552,46 @@ export class DemoFile extends EventEmitter {
     });
 
     this.on("svc_EncryptedData", this._handleEncryptedData.bind(this));
+
+    this.on("newListener", (event: string) => {
+      // If we already have listeners for this event, nothing to do
+      if (this.listenerCount(event) > 0) return;
+
+      const supplement = this._findSupplement(event);
+      if (supplement == null) return;
+
+      const cleanupFn = supplement.setup(this);
+      this._supplementCleanupFns.set(supplement, cleanupFn);
+    });
+
+    this.on("removeListener", (event: string) => {
+      // If there are still listeners for this event, early out
+      if (this.listenerCount(event) > 0) return;
+
+      const supplement = this._findSupplement(event);
+      if (supplement == null) return;
+
+      // Don't cleanup if there are listeners on other emits that this supplement emits
+      const existingListenerCount = supplement.emits.reduce(
+        (prev, name) => prev + this.listenerCount(name),
+        0
+      );
+      if (existingListenerCount > 0) return;
+
+      const cleanupFn = assertExists(
+        this._supplementCleanupFns.get(supplement)
+      );
+      cleanupFn();
+
+      this._supplementCleanupFns.delete(supplement);
+    });
+  }
+
+  private _findSupplement(eventName: string): ISupplementInfo | null {
+    for (const supplement of this._supplementEvents) {
+      if (supplement.emits.indexOf(eventName) >= 0) return supplement;
+    }
+    return null;
   }
 
   public parseStream(stream: Readable): void {

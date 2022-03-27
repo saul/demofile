@@ -5,6 +5,15 @@
 
 -->
 
+### 2.8.0 (2022-03-27)
+
+- :sparkles: Added `DemoFile#molotovDetonate` event
+- :sparkles: Added `DemoFile#grenadeTrajectory` event
+- :sparkles: Added `DemoFile#itemPurchase` event
+- :bug: Fixed some entities not having the right class (e.g. incendiary grenades). \
+  This could manifest as `Player#weapons` not containing all items owned by the player.
+- :zap: `DemoFile#currentTick` is now `-1` before parsing begins
+
 ### 2.7.1 (2022-03-23)
 
 - :bug: Fixed `EntityHandle#isValid` always returning `true`

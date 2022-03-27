@@ -96,14 +96,15 @@ The _DemoFile_ object has properties which point to instances of several other c
 
 There are several classes which allow access to different types of entities (e.g. players, items, props). These are summarised below:
 
-| Entity                                                                                         | Usage                                                                         | Description                                                                                 |
-| ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| [Networkable](https://saul.github.io/demofile/classes/_entities_networkable_.networkable.html) | `demoFile.entities.getByHandle`<br>`demoFile.entities.entities.get(entIndex)` | Base class of all in-game entities, even non-renderable entities (e.g. `CCSTeam`).          |
-| [BaseEntity](https://saul.github.io/demofile/classes/_entities_baseentity_.baseentity.html)    |                                                                               | Base class of most in-game entities (e.g. players, weapons, all other renderable entities). |
-| [Player](https://saul.github.io/demofile/classes/_entities_player_.player.html)                | `demoFile.entities.players`<br>`demoFile.entities.getByUserId`                | Represents an in-game player.                                                               |
-| [Team](https://saul.github.io/demofile/classes/_entities_team_.team.html)                      | `player.team`                                                                 | Represents a team (terrorists, counter-terrorists, spectators).                             |
-| [Weapon](https://saul.github.io/demofile/classes/_entities_weapon_.weapon.html)                | `demoFile.entities.weapons`<br>`player.weapon`<br>`player.weapons`            | Represents an in-game weapon (guns, grenades, knifes).                                      |
-| [GameRules](https://saul.github.io/demofile/classes/_entities_gamerules_.gamerules.html)       | `demoFile.gameRules`                                                          | Represents the game rules and parts of the match state (e.g. round number, is warmup)       |
+| Entity                                                                                         | Usage                                                                         | Description                                                                                                 |
+| ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| [Networkable](https://saul.github.io/demofile/classes/_entities_networkable_.networkable.html) | `demoFile.entities.getByHandle`<br>`demoFile.entities.entities.get(entIndex)` | Base class of all in-game entities, even non-renderable entities (e.g. `CCSTeam`).                          |
+| [BaseEntity](https://saul.github.io/demofile/classes/_entities_baseentity_.baseentity.html)    |                                                                               | Base class of the vast majority of in-game entities (e.g. players, weapons, all other renderable entities). |
+| [Player](https://saul.github.io/demofile/classes/_entities_player_.player.html)                | `demoFile.entities.players`<br>`demoFile.entities.getByUserId`                | Represents an in-game player.                                                                               |
+| [Team](https://saul.github.io/demofile/classes/_entities_team_.team.html)                      | `demoFile.entities.teams`<br>`player.team`                                    | Represents a team (terrorists, counter-terrorists, spectators).                                             |
+| [Weapon](https://saul.github.io/demofile/classes/_entities_weapon_.weapon.html)                | `demoFile.entities.weapons`<br>`player.weapon`<br>`player.weapons`            | Represents an in-game weapon (guns, grenades, knifes).                                                      |
+| [Projectile](https://saul.github.io/demofile/classes/_entities_projectile_.projectile.html)    |                                                                               | Represents a thrown grenade projectile (e.g. a flying smoke grenade).                                       |
+| [GameRules](https://saul.github.io/demofile/classes/_entities_gamerules_.gamerules.html)       | `demoFile.gameRules`                                                          | Represents the game rules and parts of the match state (e.g. round number, is warmup)                       |
 
 ## API
 
@@ -115,17 +116,18 @@ Note that events are fired at the end of a tick, after all entity props and stri
 
 Various examples are available in the `examples` folder:
 
-| Example                                                                                | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [`join-leave.ts`](https://github.com/saul/demofile/blob/master/examples/join-leave.ts) | Print all players that join and leave the game during the course of the demo.          |
-| [`molotov.ts`](https://github.com/saul/demofile/blob/master/examples/molotov.ts)       | Prints the location of molotov/incendiary grenade explosions.                          |
-| [`plant-site.ts`](https://github.com/saul/demofile/blob/master/examples/plant-site.ts) | Prints which player planted the bomb and at which site.                                |
-| [`purchases.ts`](https://github.com/saul/demofile/blob/master/examples/purchases.ts)   | Prints which items are purchased by each player.                                       |
-| [`rank.ts`](https://github.com/saul/demofile/blob/master/examples/rank.ts)             | At the end of the game, prints all player ranks.                                       |
-| [`scores.ts`](https://github.com/saul/demofile/blob/master/examples/scores.ts)         | Prints team scores after each round.                                                   |
-| [`tickrate.ts`](https://github.com/saul/demofile/blob/master/examples/tickrate.ts)     | Prints demo tick rate and duration in seconds.                                         |
-| [`paintkits.ts`](https://github.com/saul/demofile/blob/master/examples/paintkits.ts)   | Collects paint kits of each weapon that is used in a kill.                             |
-| [`dumpfile.ts`](https://github.com/saul/demofile/blob/master/examples/dumpfile.ts)     | Advanced example of recreating coloured chat messages, round scores and the kill feed. |
+| Example                                                                                        | Description                                                                            |
+| ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [`join-leave.ts`](https://github.com/saul/demofile/blob/master/examples/join-leave.ts)         | Print all players that join and leave the game during the course of the demo.          |
+| [`molotov.ts`](https://github.com/saul/demofile/blob/master/examples/molotov.ts)               | Prints the location of molotov/incendiary grenade explosions.                          |
+| [`paintkits.ts`](https://github.com/saul/demofile/blob/master/examples/paintkits.ts)           | Collects paint kits of each weapon that is used in a kill.                             |
+| [`plant-site.ts`](https://github.com/saul/demofile/blob/master/examples/plant-site.ts)         | Prints which player planted the bomb and at which site.                                |
+| [`purchases.ts`](https://github.com/saul/demofile/blob/master/examples/purchases.ts)           | Prints which items are purchased by each player.                                       |
+| [`rank.ts`](https://github.com/saul/demofile/blob/master/examples/rank.ts)                     | At the end of the game, prints all player ranks.                                       |
+| [`scores.ts`](https://github.com/saul/demofile/blob/master/examples/scores.ts)                 | Prints team scores after each round.                                                   |
+| [`tickrate.ts`](https://github.com/saul/demofile/blob/master/examples/tickrate.ts)             | Prints demo tick rate and duration in seconds.                                         |
+| [`trajectory.ts`](https://github.com/saul/demofile/blob/master/examples/trajectory.ts)         | Prints grenade trajectories and who threw them.                                        |
+| ⚠ Advanced: [`dumpfile.ts`](https://github.com/saul/demofile/blob/master/examples/dumpfile.ts) | Advanced example of recreating coloured chat messages, round scores and the kill feed. |
 
 #### Print kills
 

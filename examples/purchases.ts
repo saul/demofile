@@ -2,45 +2,32 @@
 Example output:
 
 ...
-'PC419 m0nt-S-' just bought a 'M9 Bayonet' (unusual)
-'PC419 m0nt-S-' just bought a 'USP-S' (strange)
-'PC419 valentino' just bought a 'Karambit' (unusual)
-'PC419 valentino' just bought a 'USP-S' (unique)
-'PC419 DANZ' just bought a 'Karambit' (unusual)
-'PC419 DANZ' just bought a 'USP-S' (unique)
-'CHF| soju_j' just bought a 'Knife' (normal)
-'CHF| soju_j' just bought a 'Glock-18' (unique)
-'CHF| zephh' just bought a 'Butterfly Knife' (unusual)
-'CHF| zephh' just bought a 'Glock-18' (unique)
-'CHF| soju_j' just bought a 'C4 Explosive' (normal)
+'PC419 FluentSwede' bought 1 'High Explosive Grenade' (normal)
+'CHF| yam-' bought 1 'Smoke Grenade' (normal)
+'CHF| yam-' bought 1 'Molotov' (normal)
+'PC419 m0nt-S-' bought 1 'P250' (strange)
+'CHF| soju_j' bought 1 'AK-47' (unique)
+'CHF| soju_j' bought 1 'Kevlar' (normal)
+'CHF| soju_j' bought 1 'Smoke Grenade' (normal)
+'CHF| soju_j' bought 1 'Molotov' (normal)
+'CHF| soju_j' bought 1 'Flashbang' (normal)
+'CHF| soju_j' bought 1 'Flashbang' (normal)
+'CHF| yam-' bought 1 'Flashbang' (normal)
 Finished.
 */
 
-import { DemoFile, Weapon } from "demofile";
+import { DemoFile } from "demofile";
 import * as fs from "fs";
 
 function parseDemoFile(path: string) {
   const stream = fs.createReadStream(path);
   const demoFile = new DemoFile();
 
-  demoFile.entities.on("create", e => {
-    const weapon = e.entity;
-    if (!(weapon instanceof Weapon)) return;
-
-    const owner = weapon.owner;
-    if (!owner) return;
-
-    // Skip over weapons that are given and not bought
-    if (
-      weapon.serverClass.name === "CKnife" ||
-      weapon.serverClass.name === "CC4" ||
-      (owner.teamNumber === 2 && weapon.serverClass.name === "CWeaponGlock") ||
-      (owner.teamNumber === 3 && weapon.serverClass.name === "CWeaponHKP2000")
-    )
-      return;
-
+  demoFile.on("itemPurchase", e => {
     console.log(
-      `'${owner.name}' just bought a '${weapon.itemName}' (${weapon.quality})`
+      `'${e.player.name}' bought ${e.count} '${e.itemName}' (${
+        e.weapon?.quality || "normal"
+      })`
     );
   });
 
