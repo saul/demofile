@@ -1,12 +1,17 @@
 /* eslint-disable no-console */
 
-// This file is an thorough example of how to log player kills,
+// This file is a advanced example of how to log player kills,
 // team scores, chat text and server cvar changes from a demo file.
 
 import * as ansiStyles from "ansi-styles";
 import * as fs from "fs";
 import * as util from "util";
-import { DemoFile, Player, TeamNumber } from "demofile";
+import {
+  DemoFile,
+  extractPublicEncryptionKey,
+  Player,
+  TeamNumber
+} from "demofile";
 
 const colourReplacements = [
   { pattern: /\x01/g, ansi: ansiStyles.whiteBright.open }, // Default
@@ -43,143 +48,148 @@ function teamNumberToAnsi(teamNum: TeamNumber) {
   return ansiStyles.gray.open;
 }
 
-function parseDemoFile(path: string) {
-  const stream = fs.createReadStream(path);
-  const demoFile = new DemoFile();
+const filePath = process.argv[2]!;
+const stream = fs.createReadStream(filePath);
+const demoFile = new DemoFile();
 
-  function logTeamScores() {
-    const teams = demoFile.teams;
-
-    const terrorists = teams[TeamNumber.Terrorists]!;
-    const cts = teams[TeamNumber.CounterTerrorists]!;
-
-    console.log(
-      "\t%s: %s score %d\n\t%s: %s score %d",
-      terrorists.teamName,
-      terrorists.clanName,
-      terrorists.score,
-      cts.teamName,
-      cts.clanName,
-      cts.score
-    );
-  }
-
-  function formatSayText(entityIndex: number, text: string) {
-    text = "\x01" + text;
-
-    // If we have an entity index set, colour 0x03 in that entity's team colour
-    if (entityIndex > 0) {
-      const ent = demoFile.entities.entities.get(entityIndex);
-      if (ent instanceof Player) {
-        text = text.replace(/\x03/g, teamNumberToAnsi(ent.teamNumber));
-      }
-    }
-
-    // Replace each colour code with its corresponding ANSI escape sequence
-    for (const r of colourReplacements) {
-      text = text.replace(r.pattern, ansiStyles.reset.open + r.ansi);
-    }
-
-    return text + ansiStyles.reset.open;
-  }
-
-  demoFile.on("start", () => {
-    console.log("Demo header:", demoFile.header);
-  });
-
-  demoFile.on("end", e => {
-    if (e.error) {
-      console.error("Error during parsing:", e.error);
-    } else {
-      logTeamScores();
-    }
-
-    console.log("Finished.");
-  });
-
-  demoFile.conVars.on("change", e => {
-    console.log("%s: %s -> %s", e.name, e.oldValue, e.value);
-  });
-
-  demoFile.gameEvents.on("player_death", e => {
-    const victim = demoFile.entities.getByUserId(e.userid);
-    const victimColour = teamNumberToAnsi(
-      victim ? victim.teamNumber : TeamNumber.Spectator
-    );
-    const victimName = victim ? victim.name : "unnamed";
-
-    const attacker = demoFile.entities.getByUserId(e.attacker);
-    const attackerColour = teamNumberToAnsi(
-      attacker ? attacker.teamNumber : TeamNumber.Spectator
-    );
-    const attackerName = attacker ? attacker.name : "unnamed";
-
-    const headshotText = e.headshot ? " HS" : "";
-
-    console.log(
-      `${attackerColour}${attackerName}${ansiStyles.reset.open} [${e.weapon}${headshotText}] ${victimColour}${victimName}${ansiStyles.reset.open}`
-    );
-  });
-
-  demoFile.userMessages.on("TextMsg", e => {
-    const params = e.params
-      .map(param =>
-        param[0] === "#" ? standardMessages[param.substring(1)] || param : param
-      )
-      .filter(s => s.length) as [string, ...string[]];
-
-    const formatted = util.format.apply(null, params);
-    console.log(formatSayText(0, formatted));
-  });
-
-  demoFile.userMessages.on("SayText", e => {
-    console.log(formatSayText(0, e.text));
-  });
-
-  demoFile.userMessages.on("SayText2", e => {
-    const nonEmptyParams = e.params.filter(s => s.length);
-    const msgText = standardMessages[e.msgName];
-    const formatted = msgText
-      ? util.format.apply(null, [msgText, ...nonEmptyParams])
-      : `${e.msgName} ${nonEmptyParams.join(" ")}`;
-
-    console.log(formatSayText(e.entIdx, formatted));
-  });
-
-  demoFile.gameEvents.on("round_end", e => {
-    console.log(
-      "*** Round ended '%s' (reason: %s, tick: %d, time: %d secs)",
-      demoFile.gameRules.phase,
-      e.reason,
-      demoFile.currentTick,
-      demoFile.currentTime | 0
-    );
-
-    // We can't print the team scores here as they haven't been updated yet.
-    // See round_officially_ended below.
-  });
-
-  demoFile.gameEvents.on("round_officially_ended", logTeamScores);
-
-  demoFile.entities.on("create", e => {
-    // We're only interested in player entities being created.
-    if (!(e.entity instanceof Player)) {
-      return;
-    }
-
-    console.log("%s (%s) joined the game", e.entity.name, e.entity.steamId);
-  });
-
-  demoFile.entities.on("beforeremove", e => {
-    if (!(e.entity instanceof Player)) {
-      return;
-    }
-
-    console.log("%s left the game", e.entity.name);
-  });
-
-  // Start parsing the stream now that we've added our event listeners
-  demoFile.parseStream(stream);
+// Read the match info from a '.info' file if one exists alongside the demo.
+if (fs.existsSync(filePath + ".info")) {
+  const encryptionKey = extractPublicEncryptionKey(
+    fs.readFileSync(filePath + ".info")
+  );
+  demoFile.setEncryptionKey(encryptionKey);
 }
 
-parseDemoFile(process.argv[2]!);
+function logTeamScores() {
+  const teams = demoFile.teams;
+
+  const terrorists = teams[TeamNumber.Terrorists]!;
+  const cts = teams[TeamNumber.CounterTerrorists]!;
+
+  console.log(
+    "\t%s: %s score %d\n\t%s: %s score %d",
+    terrorists.teamName,
+    terrorists.clanName,
+    terrorists.score,
+    cts.teamName,
+    cts.clanName,
+    cts.score
+  );
+}
+
+function formatSayText(entityIndex: number, text: string) {
+  text = "\x01" + text;
+
+  // If we have an entity index set, colour 0x03 in that entity's team colour
+  if (entityIndex > 0) {
+    const ent = demoFile.entities.entities.get(entityIndex);
+    if (ent instanceof Player) {
+      text = text.replace(/\x03/g, teamNumberToAnsi(ent.teamNumber));
+    }
+  }
+
+  // Replace each colour code with its corresponding ANSI escape sequence
+  for (const r of colourReplacements) {
+    text = text.replace(r.pattern, ansiStyles.reset.open + r.ansi);
+  }
+
+  return text + ansiStyles.reset.open;
+}
+
+demoFile.on("start", () => {
+  console.log("Demo header:", demoFile.header);
+});
+
+demoFile.on("end", e => {
+  if (e.error) {
+    console.error("Error during parsing:", e.error);
+  } else {
+    logTeamScores();
+  }
+
+  console.log("Finished.");
+});
+
+demoFile.conVars.on("change", e => {
+  console.log("%s: %s -> %s", e.name, e.oldValue, e.value);
+});
+
+demoFile.gameEvents.on("player_death", e => {
+  const victim = demoFile.entities.getByUserId(e.userid);
+  const victimColour = teamNumberToAnsi(
+    victim ? victim.teamNumber : TeamNumber.Spectator
+  );
+  const victimName = victim ? victim.name : "unnamed";
+
+  const attacker = demoFile.entities.getByUserId(e.attacker);
+  const attackerColour = teamNumberToAnsi(
+    attacker ? attacker.teamNumber : TeamNumber.Spectator
+  );
+  const attackerName = attacker ? attacker.name : "unnamed";
+
+  const headshotText = e.headshot ? " HS" : "";
+
+  console.log(
+    `${attackerColour}${attackerName}${ansiStyles.reset.open} [${e.weapon}${headshotText}] ${victimColour}${victimName}${ansiStyles.reset.open}`
+  );
+});
+
+demoFile.userMessages.on("TextMsg", e => {
+  const params = e.params
+    .map(param =>
+      param[0] === "#" ? standardMessages[param.substring(1)] || param : param
+    )
+    .filter(s => s.length) as [string, ...string[]];
+
+  const formatted = util.format.apply(null, params);
+  console.log(formatSayText(0, formatted));
+});
+
+demoFile.userMessages.on("SayText", e => {
+  console.log(formatSayText(0, e.text));
+});
+
+demoFile.userMessages.on("SayText2", e => {
+  const nonEmptyParams = e.params.filter(s => s.length);
+  const msgText = standardMessages[e.msgName];
+  const formatted = msgText
+    ? util.format.apply(null, [msgText, ...nonEmptyParams])
+    : `${e.msgName} ${nonEmptyParams.join(" ")}`;
+
+  console.log(formatSayText(e.entIdx, formatted));
+});
+
+demoFile.gameEvents.on("round_end", e => {
+  console.log(
+    "*** Round ended '%s' (reason: %s, tick: %d, time: %d secs)",
+    demoFile.gameRules.phase,
+    e.reason,
+    demoFile.currentTick,
+    demoFile.currentTime | 0
+  );
+
+  // We can't print the team scores here as they haven't been updated yet.
+  // See round_officially_ended below.
+});
+
+demoFile.gameEvents.on("round_officially_ended", logTeamScores);
+
+demoFile.entities.on("create", e => {
+  // We're only interested in player entities being created.
+  if (!(e.entity instanceof Player)) {
+    return;
+  }
+
+  console.log("%s (%s) joined the game", e.entity.name, e.entity.steamId);
+});
+
+demoFile.entities.on("beforeremove", e => {
+  if (!(e.entity instanceof Player)) {
+    return;
+  }
+
+  console.log("%s left the game", e.entity.name);
+});
+
+// Start parsing the stream now that we've added our event listeners
+demoFile.parseStream(stream);
