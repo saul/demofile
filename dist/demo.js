@@ -113,7 +113,16 @@ class DemoFile extends events_1.EventEmitter {
         this.on("svc_ServerInfo", msg => {
             this.tickInterval = msg.tickInterval;
         });
-        this.on("svc_EncryptedData", this._handleEncryptedData.bind(this));
+        this.on("svc_EncryptedData", msg => {
+            if (!this._handleEncryptedData(msg)) {
+                // Some demos appear to have the encryption key recorded
+                // incorrectly in the .dem.info file. Don't throw an error
+                // if we can't decode it correctly.
+                // The game client silently skips bad encrypted messages.
+                // See https://github.com/saul/demofile/issues/322#issuecomment-1085776379
+                this.emit("warning", { message: "Unable to read encrypted message" });
+            }
+        });
         this.on("newListener", (event) => {
             // If we already have listeners for this event, nothing to do
             if (this.listenerCount(event) > 0)
@@ -309,7 +318,7 @@ class DemoFile extends events_1.EventEmitter {
     }
     _handleEncryptedData(msg) {
         if (msg.keyType !== 2 || this._encryptionKey == null)
-            return;
+            return true;
         const key = new icekey_1.IceKey(2);
         key.set(this._encryptionKey);
         assert(msg.encrypted.length % key.blockSize() === 0);
@@ -318,21 +327,26 @@ class DemoFile extends events_1.EventEmitter {
         // Create a ByteBuffer skipped past the padding
         const buf = ByteBuffer.wrap(plainText, true);
         const paddingBytes = buf.readUint8();
+        if (paddingBytes + 4 > buf.remaining())
+            return false;
         buf.skip(paddingBytes);
         // For some reason, the size is encoded as an int32, then as a varint32
         buf.BE();
         const bytesWritten = buf.readInt32();
         buf.LE();
-        assert(buf.remaining() === bytesWritten);
+        if (buf.remaining() !== bytesWritten)
+            return false;
         const cmd = buf.readVarint32();
         const size = buf.readVarint32();
-        assert(buf.remaining() === size);
+        if (buf.remaining() !== size)
+            return false;
         const message = net.findByType(cmd);
         assert(message != null, `No message handler for ${cmd}`);
         if (this.listenerCount(message.name)) {
             const msgInst = message.class.decode(new Uint8Array(buf.toBuffer()));
             this.emit(message.name, msgInst);
         }
+        return true;
     }
     _handleStringTableUpdate(update) {
         if (this.recordingClientSlot != null)
