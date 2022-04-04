@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-// This file is a advanced example of how to log player kills,
+// This file is an advanced example of how to log player kills,
 // team scores, chat text and server cvar changes from a demo file.
 
 import * as ansiStyles from "ansi-styles";
