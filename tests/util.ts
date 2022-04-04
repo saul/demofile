@@ -62,6 +62,9 @@ export class Timeline {
     demo.on("start", () => {
       this.log("start", demo.header);
     });
+    demo.on("warning", e => {
+      this.log("warning", e);
+    });
     demo.on("error", e => {
       this.log("error", e);
     });
