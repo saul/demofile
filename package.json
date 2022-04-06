@@ -22,7 +22,7 @@
     "lint": "eslint --report-unused-disable-directives --ext .ts ./src",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "build": "shx rm -rf dist && shx rm tsconfig.tsbuildinfo && tsc",
+    "build": "shx rm -rf dist && shx rm -f tsconfig.tsbuildinfo && tsc",
     "build:incremental": "tsc --incremental",
     "watch": "tsc -w",
     "generate-docs": "shx rm -rf docs && typedoc --out docs/ && shx touch docs/.nojekyll && echo demofile.dev > docs/CNAME",
