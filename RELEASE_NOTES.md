@@ -5,6 +5,10 @@
 
 -->
 
+### 2.9.1 (2022-04-06)
+
+- :bug: #361: Fixed stream ending mid-parse when reading from a Gunzip stream
+
 ### 2.9.0 (2022-04-04)
 
 - :sparkles: Added `DemoFile#warning` event

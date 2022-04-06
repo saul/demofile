@@ -1,6 +1,6 @@
 {
   "name": "demofile",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "author": "Saul Rennison <saul.rennison@gmail.com>",
   "typings": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -22,7 +22,8 @@
     "lint": "eslint --report-unused-disable-directives --ext .ts ./src",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "build": "shx rm -rf dist && tsc",
+    "build": "shx rm -rf dist && shx rm -f tsconfig.tsbuildinfo && tsc",
+    "build:incremental": "tsc --incremental",
     "watch": "tsc -w",
     "generate-docs": "shx rm -rf docs && typedoc --out docs/ && shx touch docs/.nojekyll && echo demofile.dev > docs/CNAME",
     "bundle": "npm run build && browserify browser/app.js -d -o browser/bundle.js",

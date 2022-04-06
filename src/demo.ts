@@ -638,7 +638,7 @@ export class DemoFile extends EventEmitter {
       } catch (e) {
         if (e instanceof RangeError) {
           // Reset the byte buffer to the start of the last command
-          this._bytebuf.offset = this._bytebuf.markedOffset;
+          this._bytebuf.offset = Math.max(0, this._bytebuf.markedOffset);
         } else {
           stream.off("data", onReceiveChunk);
           const error =
