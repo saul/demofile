@@ -14,13 +14,9 @@ export interface IItemPurchaseEvent {
 }
 
 const equipmentIdMap: Record<string, string | undefined> = {
-  "50": "C4",
-  "51": "Kevlar",
-  "52": "Assault Suit",
-  "53": "Heavy Assault Suit",
-  "54": "Night Vision Goggles",
-  "55": "Defuser",
-  "56": "Cutters"
+  "50": "Kevlar",
+  "51": "Assault Suit",
+  "55": "Defuser"
 };
 
 const supplement: ISupplementInfo = {

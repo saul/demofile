@@ -5,6 +5,10 @@
 
 -->
 
+### 2.9.2 (2022-04-15)
+
+- :bug: #364: Fixed incorrect C4/kevlar/assault suit equipment ID in `DemoFile#itemPurchase` event
+
 ### 2.9.1 (2022-04-06)
 
 - :bug: #361: Fixed stream ending mid-parse when reading from a Gunzip stream
