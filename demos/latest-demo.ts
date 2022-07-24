@@ -20,6 +20,8 @@ import { Options } from "selenium-webdriver/chrome";
     .withCapabilities(options)
     .build();
 
+  driver.manage().setTimeouts({ implicit: 5000 });
+
   try {
     console.log("Navigating to hltv.org...");
     await driver.get("https://www.hltv.org/results?content=demo&gameType=CSGO");
