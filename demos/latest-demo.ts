@@ -34,7 +34,7 @@ import { Options } from "selenium-webdriver/chrome";
       .click();
 
     // Wait for page to reload
-    driver.wait(until.stalenessOf(oldPage));
+    await driver.wait(until.stalenessOf(oldPage));
 
     const matchElem = await driver.findElement(
       By.css(`.result-con > a[href^="/matches/"]`)
