@@ -24,6 +24,9 @@ import { Options } from "selenium-webdriver/chrome";
     console.log("Navigating to hltv.org...");
     await driver.get("https://www.hltv.org/results?content=demo&gameType=CSGO");
 
+    console.log("Dismissing cookie popup...");
+    driver.findElement(By.id("CybotCookiebotDialogBodyButtonDecline")).click();
+
     const matchElem = await driver.findElement(
       By.css(`.result-con > a[href^="/matches/"]`)
     );
