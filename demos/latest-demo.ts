@@ -4,7 +4,7 @@
 import * as fs from "fs";
 import { join } from "path";
 import * as request from "request";
-import { Builder, By } from "selenium-webdriver";
+import { Builder, By, until } from "selenium-webdriver";
 import { Options } from "selenium-webdriver/chrome";
 
 (async () => {
@@ -26,10 +26,15 @@ import { Options } from "selenium-webdriver/chrome";
     console.log("Navigating to hltv.org...");
     await driver.get("https://www.hltv.org/results?content=demo&gameType=CSGO");
 
+    const oldPage = driver.findElement(By.css("html"));
+
     console.log("Dismissing cookie popup...");
     await driver
       .findElement(By.id("CybotCookiebotDialogBodyButtonDecline"))
       .click();
+
+    // Wait for page to reload
+    driver.wait(until.stalenessOf(oldPage));
 
     const matchElem = await driver.findElement(
       By.css(`.result-con > a[href^="/matches/"]`)
