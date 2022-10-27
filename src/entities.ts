@@ -36,7 +36,8 @@ import { CCSGameRulesProxy, CCSPlayerResource } from "./sendtabletypes";
 import {
   IPlayerInfo,
   IStringTableUpdateEvent,
-  IStringTable
+  IInstanceBaselineStringTableUpdateEvent,
+  IUserInfoStringTable
 } from "./stringtables";
 import * as Long from "long";
 import { Projectile } from "./entities/projectile";
@@ -392,7 +393,7 @@ export class Entities extends EventEmitter {
   private _singletonEnts: { [table: string]: Networkable | undefined } = {};
   private _currentServerTick: TickNumber = -1 as TickNumber;
   private _maxPlayers: number = 0;
-  public _userInfoTable: IStringTable<IPlayerInfo> = null!;
+  public _userInfoTable: IUserInfoStringTable = null!;
 
   private _userIdToEntity: Map<number, number> = new Map();
   private _steam64IdToEntity: Map<string, number> = new Map();
@@ -409,8 +410,7 @@ export class Entities extends EventEmitter {
       this._currentServerTick = e.tick as TickNumber;
     });
     demo.stringTables.on("create", table => {
-      if (table.name === "userinfo")
-        this._userInfoTable = table as IStringTable<IPlayerInfo>;
+      if (table.name === "userinfo") this._userInfoTable = table;
     });
     demo.stringTables.on("update", e => this._handleStringTableUpdate(e));
 
@@ -1083,7 +1083,7 @@ export class Entities extends EventEmitter {
   }
 
   private _handleInstanceBaselineUpdate(
-    event: IStringTableUpdateEvent<Buffer>
+    event: IInstanceBaselineStringTableUpdateEvent
   ) {
     if (!event.userData) return;
 
@@ -1105,14 +1105,14 @@ export class Entities extends EventEmitter {
     });
   }
 
-  private _handleStringTableUpdate(event: IStringTableUpdateEvent<any>) {
-    if (event.table.name === "userinfo") {
+  private _handleStringTableUpdate(event: IStringTableUpdateEvent) {
+    if (event.name === "userinfo") {
       this._handleUserInfoUpdate(
         event.entryIndex,
-        event.oldUserData as IPlayerInfo | null,
-        event.userData as IPlayerInfo | null
+        event.oldUserData,
+        event.userData
       );
-    } else if (event.table.name === "instancebaseline") {
+    } else if (event.name === "instancebaseline") {
       this._handleInstanceBaselineUpdate(event);
     }
   }

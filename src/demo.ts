@@ -801,11 +801,11 @@ export class DemoFile extends EventEmitter {
     return true;
   }
 
-  private _handleStringTableUpdate(update: IStringTableUpdateEvent<unknown>) {
+  private _handleStringTableUpdate(update: IStringTableUpdateEvent) {
     if (this.recordingClientSlot != null) return;
 
-    if (update.table.name === "userinfo" && update.userData != null) {
-      const playerInfo = update.userData as IPlayerInfo;
+    if (update.name === "userinfo" && update.userData != null) {
+      const playerInfo = update.userData;
       if (playerInfo.name === this.header.clientName) {
         this.recordingClientSlot = update.entryIndex;
       }
