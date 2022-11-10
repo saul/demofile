@@ -43,6 +43,7 @@
     "immutable": "^4.0.0-rc.12",
     "iter-tools": "^7.0.2",
     "long": "^3.0.3",
+    "node-fetch": "^3.2.8",
     "protobufjs": "^6.8.8"
   },
   "devDependencies": {

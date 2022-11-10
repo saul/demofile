@@ -1,9 +1,12 @@
 import { EventEmitter } from "events";
 import * as timers from "timers";
+import fetch from "node-fetch";
+import { URL } from "url";
 
 import * as ByteBuffer from "bytebuffer";
 import { BitStream } from "./ext/bitbuffer";
 
+import { ISyncDto } from "./syncdto";
 import * as assert from "assert";
 import { Readable } from "stream";
 import { MAX_EDICT_BITS, MAX_OSPATH } from "./consts";
@@ -510,6 +513,8 @@ export class DemoFile extends EventEmitter {
 
   private _hasEnded: boolean = false;
 
+  private _isBroadcastFragment: boolean = false;
+
   private _supplementEvents = [
     grenadeTrajectory,
     molotovDetonate,
@@ -592,6 +597,91 @@ export class DemoFile extends EventEmitter {
       if (supplement.emits.indexOf(eventName) >= 0) return supplement;
     }
     return null;
+  }
+
+  public async parseBroadcast(url: string): Promise<void> {
+    // Some packets are formatted slightly differently in
+    // broadcast fragments compared to a normal demo file.
+    this._isBroadcastFragment = true;
+
+    const syncUrl = new URL("sync", url).toString();
+    const syncResponse = await fetch(syncUrl);
+    if (!syncResponse.ok) {
+      throw new Error(
+        `Failed to fetch ${syncUrl}: ${syncResponse.status} ${syncResponse.statusText}`
+      );
+    }
+
+    const syncDto = (await syncResponse.json()) as ISyncDto;
+    this.header = {
+      magic: "HL2DEMO",
+      protocol: syncDto.protocol,
+      networkProtocol: 0,
+      serverName: "GOTV Broadcast",
+      clientName: "GOTV Demo",
+      mapName: syncDto.map,
+      gameDirectory: "csgo",
+      playbackTime: 0,
+      playbackTicks: 0,
+      playbackFrames: 0,
+      signonLength: 0
+    };
+    this.tickInterval = 1 / syncDto.tps;
+
+    let cancelled = false;
+    this.emit("start", {
+      cancel() {
+        cancelled = true;
+      }
+    });
+
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    if (cancelled) {
+      return;
+    }
+
+    const startUrl = new URL(
+      `${syncDto.signup_fragment | 0}/start`,
+      url
+    ).toString();
+    const startResponse = await fetch(startUrl);
+    if (!startResponse.ok) {
+      throw new Error(
+        `Failed to fetch ${startUrl}: ${startResponse.status} ${startResponse.statusText}`
+      );
+    }
+
+    // Read the signon fragment
+    this._bytebuf = ByteBuffer.wrap(await startResponse.arrayBuffer(), true);
+    this._readCommand();
+
+    // Keep reading fragments until we run out
+    let fragment = syncDto.fragment;
+    let fragmentType = "full";
+
+    while (!this._hasEnded) {
+      // todo: need to read full fragment initially
+      const fragmentUrl = new URL(`${fragment}/${fragmentType}`).toString();
+      const fragmentResponse = await fetch(fragmentUrl);
+      if (!fragmentResponse.ok) {
+        // todo: make delay random between 1-2 secs
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        continue;
+      }
+
+      if (fragmentType == "full") {
+        fragmentType = "delta";
+      } else {
+        fragment += 1;
+      }
+
+      // todo: wrap in try/catch? on error, re-sync?
+      this._bytebuf = ByteBuffer.wrap(
+        await fragmentResponse.arrayBuffer(),
+        true
+      );
+      this._readCommand();
+    }
   }
 
   public parseStream(stream: Readable): void {
@@ -793,14 +883,16 @@ export class DemoFile extends EventEmitter {
    */
 
   private _handleDemoPacket() {
-    this._ensureRemaining(160);
+    if (!this._isBroadcastFragment) {
+      this._ensureRemaining(160);
 
-    // skip cmd info
-    this._bytebuf.skip(152);
+      // skip cmd info
+      this._bytebuf.skip(152);
 
-    // skip over sequence info
-    this._bytebuf.readInt32();
-    this._bytebuf.readInt32();
+      // skip over sequence info
+      this._bytebuf.readInt32();
+      this._bytebuf.readInt32();
+    }
 
     const chunk = this._readIBytes();
 
@@ -828,7 +920,9 @@ export class DemoFile extends EventEmitter {
   }
 
   private _handleDataTables() {
-    const chunk = this._readIBytes();
+    const chunk = this._isBroadcastFragment
+      ? this._bytebuf
+      : this._readIBytes();
     this.entities.handleDataTables(chunk);
   }
 
