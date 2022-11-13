@@ -3,6 +3,8 @@
 A node.js library for parsing Counter-Strike Global Offensive (CSGO) demo files.
 The library is also Browserify-able, and a standalone bundle that you can `<script src="...">` is available in [browser/bundle.js](browser/bundle.js).
 
+This library also supports streaming from [GOTV broadcasts](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Broadcast) over HTTP, with `DemoFile#parseBroadcast`.
+
 > ⚠️ This library requires Node v14 or later.
 
 ### ❓ Need help
@@ -20,6 +22,7 @@ The library is also Browserify-able, and a standalone bundle that you can `<scri
 - Entity updates, server classes, data tables
 - String tables
 - Reading encrypted messages (e.g. chat in public matchmaking demos)
+- Streaming from [GOTV broadcasts over HTTP](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Broadcast)
 
 ## Running the examples
 

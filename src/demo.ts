@@ -154,7 +154,7 @@ const enum DemoCommands {
   StringTables = 9
 }
 
-function fetch(url: string): Promise<Buffer> {
+function httpGet(url: string): Promise<Buffer> {
   return new Promise((resolve, reject) => {
     https
       .request(url, res => {
@@ -623,15 +623,28 @@ export class DemoFile extends EventEmitter {
     return null;
   }
 
+  /**
+   * Start streaming a GOTV broadcast over HTTP.
+   * Will keep streaming until the broadcast finishes.
+   *
+   * @param url URL to the GOTV broadcast.
+   * @returns Promise that resolves then the broadcast finishes.
+   */
   public async parseBroadcast(url: string): Promise<void> {
+    if (!url.endsWith("/")) url += "/";
+
     // Some packets are formatted slightly differently in
     // broadcast fragments compared to a normal demo file.
     this._isBroadcastFragment = true;
 
     const syncUrl = new URL("sync", url).toString();
-    const syncResponse = await fetch(syncUrl);
+    const syncResponse = await httpGet(syncUrl);
 
     const syncDto = JSON.parse(syncResponse.toString()) as ISyncDto;
+    if (syncDto.protocol !== 4) {
+      throw new Error(`expected protocol version 4, got: ${syncDto.protocol}`);
+    }
+
     this.header = {
       magic: "HL2DEMO",
       protocol: syncDto.protocol,
@@ -663,7 +676,7 @@ export class DemoFile extends EventEmitter {
       `${syncDto.signup_fragment | 0}/start`,
       url
     ).toString();
-    const startResponse = await fetch(startUrl);
+    const startResponse = await httpGet(startUrl);
 
     // Read the signon fragment
     this._bytebuf = ByteBuffer.wrap(startResponse, true);
@@ -683,22 +696,23 @@ export class DemoFile extends EventEmitter {
 
       let fragmentResponse: Buffer;
       try {
-        fragmentResponse = await fetch(fragmentUrl);
+        fragmentResponse = await httpGet(fragmentUrl);
       } catch {
-        // Wait for 1-2 secs before retrying
+        // HTTP 404 errors are expected - each fragment only lasts for a few seconds.
+        // Wait for 1-2 secs before retrying to avoid spamming the relay.
         await new Promise(resolve =>
           setTimeout(resolve, 1000 + Math.random() * 1000)
         );
         continue;
       }
 
+      // We need to request {fragment}/full + {fragment}/delta
       if (fragmentType == "full") {
         fragmentType = "delta";
       } else {
         fragment += 1;
       }
 
-      // todo: wrap in try/catch and re-sync on error?
       this._bytebuf = ByteBuffer.wrap(fragmentResponse, true);
       while (this._bytebuf.remaining() > 0) {
         this._readCommand();
