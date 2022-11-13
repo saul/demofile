@@ -605,8 +605,6 @@ export class Entities extends EventEmitter {
       }
     }
 
-    //assert.equal(chunk.remaining(), 0);
-
     this.emit("datatablesready");
   }
 
