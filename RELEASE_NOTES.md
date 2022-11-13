@@ -5,6 +5,10 @@
 
 -->
 
+### 2.10.0 (2022-11-13)
+
+- :sparkles: #373: Added support for streaming GOTV broadcasts over HTTP
+
 ### 2.9.2 (2022-04-15)
 
 - :bug: #364: Fixed incorrect C4/kevlar/assault suit equipment ID in `DemoFile#itemPurchase` event
