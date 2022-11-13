@@ -345,6 +345,6 @@ Array [
   "[149715] game_event: {\\"name\\":\\"hltv_status\\",\\"event\\":{\\"clients\\":12,\\"slots\\":860,\\"proxies\\":4,\\"master\\":\\"\\",\\"externaltotal\\":0,\\"externallinked\\":0}}",
   "[149716] game_event: {\\"name\\":\\"hltv_status\\",\\"event\\":{\\"clients\\":12,\\"slots\\":860,\\"proxies\\":4,\\"master\\":\\"\\",\\"externaltotal\\":0,\\"externallinked\\":0}}",
   "[149889] game_event: {\\"name\\":\\"hltv_chase\\",\\"event\\":{\\"target1\\":4,\\"target2\\":9,\\"distance\\":112,\\"theta\\":20,\\"phi\\":20,\\"inertia\\":0,\\"ineye\\":1}}",
-  "[1088553216] end: {\\"incomplete\\":false}",
+  "[149889] end: {\\"incomplete\\":false}",
 ]
 `;

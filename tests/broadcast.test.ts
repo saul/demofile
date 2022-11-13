@@ -1,7 +1,6 @@
 import { DemoFile, Player, Team, TeamNumber } from "../src/index";
 import { monitorProgress, Timeline } from "./util";
 import * as nock from "nock";
-import * as ByteBuffer from "bytebuffer";
 
 test("broadcast stream can be read", done => {
   const demo = new DemoFile();
@@ -108,7 +107,7 @@ test("broadcast stream can be read", done => {
   // Construct a fake 'dem_stop' fragment to finish the stream
   nock("https://demofile.local")
     .get(`/live/391/delta`)
-    .reply(200, Buffer.from(new Uint8Array([7, 0, 0, 0, 0, 0])));
+    .reply(200, Buffer.from(new Uint8Array([7, 129, 73, 2, 0, 0])));
 
   demo.parseBroadcast("https://demofile.local/live/");
 });
