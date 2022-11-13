@@ -231,11 +231,16 @@ class DemoFile extends events_1.EventEmitter {
         if (syncDto.protocol !== 4) {
             throw new Error(`expected protocol version 4, got: ${syncDto.protocol}`);
         }
+        if (syncDto.token_redirect != null) {
+            url = new url_1.URL(syncDto.token_redirect, url).toString();
+            if (!url.endsWith("/"))
+                url += "/";
+        }
         this.header = {
             magic: "HL2DEMO",
             protocol: syncDto.protocol,
             networkProtocol: 0,
-            serverName: "GOTV Broadcast",
+            serverName: `GOTV Broadcast: ${url}`,
             clientName: "GOTV Demo",
             mapName: syncDto.map,
             gameDirectory: "csgo",

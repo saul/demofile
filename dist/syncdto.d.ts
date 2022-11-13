@@ -6,6 +6,7 @@ export interface ISyncDto {
     readonly fragment: number;
     readonly signup_fragment: number;
     readonly tps: number;
+    readonly token_redirect: string | undefined;
     readonly map: string;
     readonly protocol: number;
 }

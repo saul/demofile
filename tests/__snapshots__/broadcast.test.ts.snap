@@ -2,7 +2,7 @@
 
 exports[`broadcast stream can be read from https://demofile.local/live/: timeline 1`] = `
 Array [
-  "[-1] start: {\\"magic\\":\\"HL2DEMO\\",\\"protocol\\":4,\\"networkProtocol\\":0,\\"serverName\\":\\"GOTV Broadcast\\",\\"clientName\\":\\"GOTV Demo\\",\\"mapName\\":\\"de_overpass\\",\\"gameDirectory\\":\\"csgo\\",\\"playbackTime\\":0,\\"playbackTicks\\":0,\\"playbackFrames\\":0,\\"signonLength\\":0}",
+  "[-1] start: {\\"magic\\":\\"HL2DEMO\\",\\"protocol\\":4,\\"networkProtocol\\":0,\\"serverName\\":\\"GOTV Broadcast: https://demofile.local/live/token/s85568392924415606t1668116271/\\",\\"clientName\\":\\"GOTV Demo\\",\\"mapName\\":\\"de_overpass\\",\\"gameDirectory\\":\\"csgo\\",\\"playbackTime\\":0,\\"playbackTicks\\":0,\\"playbackFrames\\":0,\\"signonLength\\":0}",
   "[0] cvar_change: {\\"name\\":\\"cash_team_rescued_hostage\\",\\"value\\":\\"600\\"}",
   "[0] cvar_change: {\\"name\\":\\"bot_autodifficulty_threshold_high\\",\\"value\\":\\"0\\"}",
   "[0] cvar_change: {\\"name\\":\\"cash_team_win_by_defusing_bomb\\",\\"value\\":\\"3500\\"}",
@@ -351,7 +351,7 @@ Array [
 
 exports[`broadcast stream can be read from https://demofile.local/live: timeline 1`] = `
 Array [
-  "[-1] start: {\\"magic\\":\\"HL2DEMO\\",\\"protocol\\":4,\\"networkProtocol\\":0,\\"serverName\\":\\"GOTV Broadcast\\",\\"clientName\\":\\"GOTV Demo\\",\\"mapName\\":\\"de_overpass\\",\\"gameDirectory\\":\\"csgo\\",\\"playbackTime\\":0,\\"playbackTicks\\":0,\\"playbackFrames\\":0,\\"signonLength\\":0}",
+  "[-1] start: {\\"magic\\":\\"HL2DEMO\\",\\"protocol\\":4,\\"networkProtocol\\":0,\\"serverName\\":\\"GOTV Broadcast: https://demofile.local/live/token/s85568392924415606t1668116271/\\",\\"clientName\\":\\"GOTV Demo\\",\\"mapName\\":\\"de_overpass\\",\\"gameDirectory\\":\\"csgo\\",\\"playbackTime\\":0,\\"playbackTicks\\":0,\\"playbackFrames\\":0,\\"signonLength\\":0}",
   "[0] cvar_change: {\\"name\\":\\"cash_team_rescued_hostage\\",\\"value\\":\\"600\\"}",
   "[0] cvar_change: {\\"name\\":\\"bot_autodifficulty_threshold_high\\",\\"value\\":\\"0\\"}",
   "[0] cvar_change: {\\"name\\":\\"cash_team_win_by_defusing_bomb\\",\\"value\\":\\"3500\\"}",

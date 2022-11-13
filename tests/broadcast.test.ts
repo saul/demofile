@@ -90,27 +90,27 @@ import * as nock from "nock";
       .replyWithFile(200, __dirname + "/fragments/sync.json");
 
     nock("https://demofile.local")
-      .get("/live/0/start")
+      .get("/live/token/s85568392924415606t1668116271/0/start")
       .replyWithFile(200, __dirname + "/fragments/0_start.bin");
 
     nock("https://demofile.local")
-      .get("/live/386/full")
+      .get("/live/token/s85568392924415606t1668116271/386/full")
       .replyWithFile(200, __dirname + "/fragments/386_full.bin");
 
     [386, 387, 388, 389, 390].forEach(fragmentId => {
       nock("https://demofile.local")
-        .get(`/live/${fragmentId}/delta`)
+        .get(`/live/token/s85568392924415606t1668116271/${fragmentId}/delta`)
         .replyWithFile(200, __dirname + `/fragments/${fragmentId}_delta.bin`);
     });
 
     // Assume last fragment could not be found for the first attempt
     nock("https://demofile.local")
-      .get(`/live/391/delta`)
+      .get(`/live/token/s85568392924415606t1668116271/391/delta`)
       .reply(404, "not found");
 
     // Construct a fake 'dem_stop' fragment to finish the stream
     nock("https://demofile.local")
-      .get(`/live/391/delta`)
+      .get(`/live/token/s85568392924415606t1668116271/391/delta`)
       .reply(200, Buffer.from(new Uint8Array([7, 129, 73, 2, 0, 0])));
 
     demo.parseBroadcast(url);
