@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 import * as timers from "timers";
-import fetch from "node-fetch";
 import { URL } from "url";
+import * as https from "https";
 
 import * as ByteBuffer from "bytebuffer";
 import { BitStream } from "./ext/bitbuffer";
@@ -154,6 +154,30 @@ const enum DemoCommands {
   StringTables = 9
 }
 
+function fetch(url: string): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    https
+      .request(url, res => {
+        const chunks: Buffer[] = [];
+
+        res.on("data", chunk => {
+          chunks.push(chunk);
+        });
+
+        res.on("end", () => {
+          if (res.statusCode == 200) {
+            resolve(Buffer.concat(chunks));
+          } else {
+            reject(
+              `request '${url}' failed: ${res.statusCode} (${res.statusMessage})`
+            );
+          }
+        });
+      })
+      .end();
+  });
+}
+
 function parseHeaderBytebuf(bytebuf: ByteBuffer): IDemoHeader {
   return {
     magic: bytebuf.readString(8, ByteBuffer.METRICS_BYTES).split("\0", 2)[0]!,
@@ -235,7 +259,7 @@ export declare interface DemoFile {
   /**
    * Fired per command. Parameter is a value in range [0,1] that indicates
    * the percentage of the demo file has been parsed so far.
-   * This event is not emitted when parsing streams.
+   * This event is not emitted when parsing streams or broadcasts.
    */
   on(event: "progress", listener: (progressFraction: number) => void): this;
   emit(name: "progress", progressFraction: number): boolean;
@@ -606,13 +630,8 @@ export class DemoFile extends EventEmitter {
 
     const syncUrl = new URL("sync", url).toString();
     const syncResponse = await fetch(syncUrl);
-    if (!syncResponse.ok) {
-      throw new Error(
-        `Failed to fetch ${syncUrl}: ${syncResponse.status} ${syncResponse.statusText}`
-      );
-    }
 
-    const syncDto = (await syncResponse.json()) as ISyncDto;
+    const syncDto = JSON.parse(syncResponse.toString()) as ISyncDto;
     this.header = {
       magic: "HL2DEMO",
       protocol: syncDto.protocol,
@@ -645,27 +664,31 @@ export class DemoFile extends EventEmitter {
       url
     ).toString();
     const startResponse = await fetch(startUrl);
-    if (!startResponse.ok) {
-      throw new Error(
-        `Failed to fetch ${startUrl}: ${startResponse.status} ${startResponse.statusText}`
-      );
-    }
 
     // Read the signon fragment
-    this._bytebuf = ByteBuffer.wrap(await startResponse.arrayBuffer(), true);
-    this._readCommand();
+    this._bytebuf = ByteBuffer.wrap(startResponse, true);
+    while (this._bytebuf.remaining() > 0) {
+      this._readCommand();
+    }
 
     // Keep reading fragments until we run out
-    let fragment = syncDto.fragment;
+    let fragment = syncDto.fragment | 0;
     let fragmentType = "full";
 
     while (!this._hasEnded) {
-      // todo: need to read full fragment initially
-      const fragmentUrl = new URL(`${fragment}/${fragmentType}`).toString();
-      const fragmentResponse = await fetch(fragmentUrl);
-      if (!fragmentResponse.ok) {
-        // todo: make delay random between 1-2 secs
-        await new Promise(resolve => setTimeout(resolve, 1000));
+      const fragmentUrl = new URL(
+        `${fragment}/${fragmentType}`,
+        url
+      ).toString();
+
+      let fragmentResponse: Buffer;
+      try {
+        fragmentResponse = await fetch(fragmentUrl);
+      } catch {
+        // Wait for 1-2 secs before retrying
+        await new Promise(resolve =>
+          setTimeout(resolve, 1000 + Math.random() * 1000)
+        );
         continue;
       }
 
@@ -675,12 +698,11 @@ export class DemoFile extends EventEmitter {
         fragment += 1;
       }
 
-      // todo: wrap in try/catch? on error, re-sync?
-      this._bytebuf = ByteBuffer.wrap(
-        await fragmentResponse.arrayBuffer(),
-        true
-      );
-      this._readCommand();
+      // todo: wrap in try/catch and re-sync on error?
+      this._bytebuf = ByteBuffer.wrap(fragmentResponse, true);
+      while (this._bytebuf.remaining() > 0) {
+        this._readCommand();
+      }
     }
   }
 
@@ -1112,7 +1134,7 @@ export class DemoFile extends EventEmitter {
       case DemoCommands.SyncTick:
         break;
       default:
-        throw new Error("Unrecognised command");
+        throw new Error(`Unrecognised command: ${command}`);
     }
   }
 

@@ -21,12 +21,20 @@ export function monitorProgress(demoName: string, demo: DemoFile) {
     startTime = Date.now();
   });
 
+  // Some demos (such as broadcast streams) start at later ticks
+  let startTick = 0;
+  demo.on("tickstart", () => {
+    if (startTick == 0 && demo.currentTick > 0) {
+      startTick = demo.currentTick;
+    }
+  });
+
   demo.on("end", e => {
     if (startTime === 0) return;
 
     // Some demos do not have complete header information.
-    // Treat current tick at the end of the demo as the total number of ticks.
-    let totalTicks = demo.header.playbackTicks || demo.currentTick;
+    // Treat current tick at the end of the demo (minus first non-zero tick we saw) as the total number of ticks.
+    let totalTicks = demo.header.playbackTicks || demo.currentTick - startTick;
 
     let elapsedSecs = (Date.now() - startTime) / 1000;
 
