@@ -8,6 +8,7 @@
 ### 2.10.0 (2022-11-13)
 
 - :sparkles: #373: Added support for streaming GOTV broadcasts over HTTP
+- Upgrade packages
 
 ### 2.9.2 (2022-04-15)
 
