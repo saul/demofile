@@ -3,10 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.parseBinaryKeyValues = void 0;
 function parseValue(type, buffer) {
     switch (type) {
-        case 0 /* None */: {
+        case 0 /* KeyValueType.None */: {
             let inner = {};
             type = buffer.readUint8();
-            while (type !== 11 /* NumTypes */) {
+            while (type !== 11 /* KeyValueType.NumTypes */) {
                 const name = buffer.readCString();
                 const value = parseValue(type, buffer);
                 if (name === "") {
@@ -30,30 +30,30 @@ function parseValue(type, buffer) {
             }
             return inner;
         }
-        case 1 /* String */:
+        case 1 /* KeyValueType.String */:
             return buffer.readCString();
-        case 2 /* Int */:
+        case 2 /* KeyValueType.Int */:
             return buffer.readInt();
-        case 3 /* Float */:
+        case 3 /* KeyValueType.Float */:
             return buffer.readFloat();
-        case 4 /* Ptr */:
+        case 4 /* KeyValueType.Ptr */:
             return buffer.readUint32();
-        case 5 /* WString */:
+        case 5 /* KeyValueType.WString */:
             throw new Error("wstring values are not supported");
-        case 6 /* Color */:
+        case 6 /* KeyValueType.Color */:
             return {
                 r: buffer.readUint8(),
                 g: buffer.readUint8(),
                 b: buffer.readUint8(),
                 a: buffer.readUint8()
             };
-        case 7 /* UInt64 */:
+        case 7 /* KeyValueType.UInt64 */:
             return buffer.readUint64();
-        case 8 /* CompiledIntByte */:
+        case 8 /* KeyValueType.CompiledIntByte */:
             return buffer.readUint8();
-        case 9 /* CompiledInt0 */:
+        case 9 /* KeyValueType.CompiledInt0 */:
             return 0;
-        case 10 /* CompiledInt1 */:
+        case 10 /* KeyValueType.CompiledInt1 */:
             return 1;
         default:
             throw new Error(`Invalid KeyValues types ${type}`);

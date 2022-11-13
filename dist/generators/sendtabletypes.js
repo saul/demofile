@@ -27,7 +27,7 @@ function parseDemoFile(path) {
                         console.log(`  // ${prop.dtName}.${prop.varName} - excluded`);
                         continue;
                     }
-                    if (prop.type === 0 /* Int */) {
+                    if (prop.type === 0 /* PropType.Int */) {
                         if (prop.numBits === 1) {
                             typeStr = "boolean";
                         }
@@ -40,28 +40,28 @@ function parseDemoFile(path) {
                             typeStr = "number";
                         }
                     }
-                    else if (prop.type === 1 /* Float */) {
+                    else if (prop.type === 1 /* PropType.Float */) {
                         typeStr = "number";
                     }
-                    else if (prop.type === 2 /* Vector */) {
+                    else if (prop.type === 2 /* PropType.Vector */) {
                         typeStr = "Vector";
                     }
-                    else if (prop.type === 3 /* VectorXY */) {
+                    else if (prop.type === 3 /* PropType.VectorXY */) {
                         typeStr = "Vector";
                     }
-                    else if (prop.type === 4 /* String */) {
+                    else if (prop.type === 4 /* PropType.String */) {
                         typeStr = "string";
                     }
-                    else if (prop.type === 5 /* Array */) {
+                    else if (prop.type === 5 /* PropType.Array */) {
                         if (typeof lastElemType === "undefined")
                             throw new Error("Array prop type was not preceded by SPROP_INSIDEARRAY");
                         typeStr = `ReadonlyArray<${lastElemType}>`;
                     }
-                    else if (prop.type === 6 /* DataTable */) {
+                    else if (prop.type === 6 /* PropType.DataTable */) {
                         console.log(`  // ${prop.varName}: DataTable;`);
                         continue;
                     }
-                    else if (prop.type === 7 /* Int64 */) {
+                    else if (prop.type === 7 /* PropType.Int64 */) {
                         typeStr = "Long";
                     }
                     else {
