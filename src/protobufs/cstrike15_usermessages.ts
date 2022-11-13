@@ -87,7 +87,8 @@ export enum ECstrike15UserMessages {
   CS_UM_EndOfMatchAllPlayersData = 75,
   CS_UM_RoundImpactScoreData = 79,
   CS_UM_CurrentRoundOdds = 80,
-  CS_UM_DeepStats = 81
+  CS_UM_DeepStats = 81,
+  CS_UM_UtilMsg = 82
 }
 
 export enum ECSUsrMsgDisconnectToLobbyAction {
@@ -602,6 +603,15 @@ export interface CCSUsrMsgClientInfo {
 export interface CCSUsrMsgServerRankRevealAll {
   secondsTillShutdown: number;
   reservation: CMsgGCCStrike15V2MatchmakingGC2ServerReserve | undefined;
+}
+
+export interface CCSUsrMsgUtilMsg {
+  utilAction: string;
+  util1: number;
+  util2: number;
+  util3: number;
+  util4: number;
+  util5: number;
 }
 
 function createBaseCCSUsrMsgVGUIMenu(): CCSUsrMsgVGUIMenu {
@@ -5771,6 +5781,80 @@ export const CCSUsrMsgServerRankRevealAll = {
             object.reservation
           )
         : undefined;
+    return message;
+  }
+};
+
+function createBaseCCSUsrMsgUtilMsg(): CCSUsrMsgUtilMsg {
+  return { utilAction: "", util1: 0, util2: 0, util3: 0, util4: 0, util5: 0 };
+}
+
+export const CCSUsrMsgUtilMsg = {
+  encode(message: CCSUsrMsgUtilMsg, writer: Writer = Writer.create()): Writer {
+    if (message.utilAction !== "") {
+      writer.uint32(10).string(message.utilAction);
+    }
+    if (message.util1 !== 0) {
+      writer.uint32(16).int32(message.util1);
+    }
+    if (message.util2 !== 0) {
+      writer.uint32(24).int32(message.util2);
+    }
+    if (message.util3 !== 0) {
+      writer.uint32(32).int32(message.util3);
+    }
+    if (message.util4 !== 0) {
+      writer.uint32(40).int32(message.util4);
+    }
+    if (message.util5 !== 0) {
+      writer.uint32(48).int32(message.util5);
+    }
+    return writer;
+  },
+
+  decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgUtilMsg {
+    const reader = input instanceof Reader ? input : new Reader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseCCSUsrMsgUtilMsg();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.utilAction = reader.string();
+          break;
+        case 2:
+          message.util1 = reader.int32();
+          break;
+        case 3:
+          message.util2 = reader.int32();
+          break;
+        case 4:
+          message.util3 = reader.int32();
+          break;
+        case 5:
+          message.util4 = reader.int32();
+          break;
+        case 6:
+          message.util5 = reader.int32();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  },
+
+  fromPartial<I extends Exact<DeepPartial<CCSUsrMsgUtilMsg>, I>>(
+    object: I
+  ): CCSUsrMsgUtilMsg {
+    const message = createBaseCCSUsrMsgUtilMsg();
+    message.utilAction = object.utilAction ?? "";
+    message.util1 = object.util1 ?? 0;
+    message.util2 = object.util2 ?? 0;
+    message.util3 = object.util3 ?? 0;
+    message.util4 = object.util4 ?? 0;
+    message.util5 = object.util5 ?? 0;
     return message;
   }
 };

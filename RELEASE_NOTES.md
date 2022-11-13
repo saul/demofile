@@ -5,6 +5,21 @@
 
 -->
 
+### 2.9.2 (2022-04-15)
+
+- :bug: #364: Fixed incorrect C4/kevlar/assault suit equipment ID in `DemoFile#itemPurchase` event
+
+### 2.9.1 (2022-04-06)
+
+- :bug: #361: Fixed stream ending mid-parse when reading from a Gunzip stream
+
+### 2.9.0 (2022-04-04)
+
+- :sparkles: Added `DemoFile#warning` event
+  - Emitted when a non-fatal error occurs during parsing, e.g. when an encrypted message cannot be read
+- :sparkles: The `dumpfile` example now tries to read the decryption key from a `.dem.info` file that lives alongside the `.dem` file
+- :bug: 15-byte encryption keys are now correctly padded to 16 bytes
+
 ### 2.8.0 (2022-03-27)
 
 - :sparkles: Added `DemoFile#molotovDetonate` event

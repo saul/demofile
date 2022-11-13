@@ -74,7 +74,8 @@ export type UserMessageName =
   | "EndOfMatchAllPlayersData"
   | "RoundImpactScoreData"
   | "CurrentRoundOdds"
-  | "DeepStats";
+  | "DeepStats"
+  | "UtilMsg";
 
 interface IUserMessageDescriptor {
   name: UserMessageName;
@@ -370,6 +371,10 @@ userMessages[um.ECstrike15UserMessages.CS_UM_DeepStats] = {
   name: "DeepStats",
   class: um.CCSUsrMsgDeepStats
 };
+userMessages[um.ECstrike15UserMessages.CS_UM_UtilMsg] = {
+  name: "UtilMsg",
+  class: um.CCSUsrMsgUtilMsg
+};
 
 interface IUserMessageEvent {
   name: string;
@@ -636,5 +641,6 @@ declare module "./usermessages" {
       message: "DeepStats",
       listener: (msg: um.CCSUsrMsgDeepStats) => void
     ): this;
+    on(message: "UtilMsg", listener: (msg: um.CCSUsrMsgUtilMsg) => void): this;
   }
 }

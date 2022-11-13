@@ -4431,6 +4431,74 @@ export const paintKitIndexMap: {
     name: "cu_ak47_nightwish",
     tag: "Nightwish"
   },
+  "1142": {
+    name: "cu_usp_printstream",
+    tag: "Printstream"
+  },
+  "1143": {
+    name: "cu_ak47_cogthings",
+    tag: "Ice Coaled"
+  },
+  "1144": {
+    name: "cu_awp_chroma_pink",
+    tag: "Chromatic Aberration"
+  },
+  "1145": {
+    name: "gs_revolver_purple_elite",
+    tag: "Crazy 8"
+  },
+  "1146": {
+    name: "gs_famas_corp_meow",
+    tag: "Meow 36"
+  },
+  "1147": {
+    name: "cu_galil_destroyer",
+    tag: "Destroyer"
+  },
+  "1148": {
+    name: "cu_m249_downvote",
+    tag: "Downtown"
+  },
+  "1149": {
+    name: "cu_m4a4_elite_tactical",
+    tag: "Poly Mag"
+  },
+  "1150": {
+    name: "cu_mac10_monkeyflage",
+    tag: "Monkeyflage"
+  },
+  "1151": {
+    name: "cu_sg553_cyber_dragon",
+    tag: "Dragon Tech"
+  },
+  "1152": {
+    name: "cu_negev_clear_sky",
+    tag: "Drop Me"
+  },
+  "1153": {
+    name: "gs_p250_visions",
+    tag: "Visions"
+  },
+  "1154": {
+    name: "gs_p90_tangled",
+    tag: "Vent Rush"
+  },
+  "1155": {
+    name: "cu_sawedoff_kisslove",
+    tag: "Kiss♥Love"
+  },
+  "1156": {
+    name: "cu_dual_elites_evil_flora",
+    tag: "Flora Carnivora"
+  },
+  "1157": {
+    name: "gs_ump_roadblock",
+    tag: "Roadblock"
+  },
+  "1158": {
+    name: "gs_glock_elite_camo",
+    tag: "Winterized"
+  },
   "10006": {
     name: "bloodhound_black_silver",
     tag: "Charred"

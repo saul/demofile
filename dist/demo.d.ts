@@ -83,6 +83,12 @@ export interface IDemoEndEvent {
      */
     incomplete: boolean;
 }
+export interface IDemoWarningEvent {
+    /**
+     * Message explaining the warning.
+     */
+    message: string;
+}
 export declare interface DemoFile {
     /**
      * Fired when parsing begins.
@@ -90,10 +96,15 @@ export declare interface DemoFile {
     on(event: "start", listener: (event: IDemoStartEvent) => void): this;
     emit(name: "start", event: IDemoStartEvent): boolean;
     /**
-     * Fired when parsing failed.
+     * Fired when a fatal error occurs during parsing.
      */
     on(event: "error", listener: (error: Error) => void): this;
     emit(name: "error", error: Error): boolean;
+    /**
+     * Fired when a non-fatal error occurs during parsing.
+     */
+    on(event: "warning", listener: (event: IDemoWarningEvent) => void): this;
+    emit(name: "warning", event: IDemoWarningEvent): boolean;
     /**
      * Fired when parsing has finished, successfully or otherwise.
      */

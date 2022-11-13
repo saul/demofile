@@ -231,6 +231,13 @@ export interface IDemoEndEvent {
   incomplete: boolean;
 }
 
+export interface IDemoWarningEvent {
+  /**
+   * Message explaining the warning.
+   */
+  message: string;
+}
+
 export declare interface DemoFile {
   /**
    * Fired when parsing begins.
@@ -239,10 +246,16 @@ export declare interface DemoFile {
   emit(name: "start", event: IDemoStartEvent): boolean;
 
   /**
-   * Fired when parsing failed.
+   * Fired when a fatal error occurs during parsing.
    */
   on(event: "error", listener: (error: Error) => void): this;
   emit(name: "error", error: Error): boolean;
+
+  /**
+   * Fired when a non-fatal error occurs during parsing.
+   */
+  on(event: "warning", listener: (event: IDemoWarningEvent) => void): this;
+  emit(name: "warning", event: IDemoWarningEvent): boolean;
 
   /**
    * Fired when parsing has finished, successfully or otherwise.
@@ -580,7 +593,16 @@ export class DemoFile extends EventEmitter {
       this.tickInterval = msg.tickInterval;
     });
 
-    this.on("svc_EncryptedData", this._handleEncryptedData.bind(this));
+    this.on("svc_EncryptedData", msg => {
+      if (!this._handleEncryptedData(msg)) {
+        // Some demos appear to have the encryption key recorded
+        // incorrectly in the .dem.info file. Don't throw an error
+        // if we can't decode it correctly.
+        // The game client silently skips bad encrypted messages.
+        // See https://github.com/saul/demofile/issues/322#issuecomment-1085776379
+        this.emit("warning", { message: "Unable to read encrypted message" });
+      }
+    });
 
     this.on("newListener", (event: string) => {
       // If we already have listeners for this event, nothing to do
@@ -742,7 +764,7 @@ export class DemoFile extends EventEmitter {
       } catch (e) {
         if (e instanceof RangeError) {
           // Reset the byte buffer to the start of the last command
-          this._bytebuf.offset = this._bytebuf.markedOffset;
+          this._bytebuf.offset = Math.max(0, this._bytebuf.markedOffset);
         } else {
           stream.off("data", onReceiveChunk);
           const error =
@@ -865,8 +887,8 @@ export class DemoFile extends EventEmitter {
     return this._bytebuf.readBytes(length);
   }
 
-  private _handleEncryptedData(msg: CSVCMsgEncryptedData) {
-    if (msg.keyType !== 2 || this._encryptionKey == null) return;
+  private _handleEncryptedData(msg: CSVCMsgEncryptedData): boolean {
+    if (msg.keyType !== 2 || this._encryptionKey == null) return true;
 
     const key = new IceKey(2);
     key.set(this._encryptionKey);
@@ -879,6 +901,7 @@ export class DemoFile extends EventEmitter {
     // Create a ByteBuffer skipped past the padding
     const buf = ByteBuffer.wrap(plainText, true);
     const paddingBytes = buf.readUint8();
+    if (paddingBytes + 4 > buf.remaining()) return false;
 
     buf.skip(paddingBytes);
 
@@ -886,11 +909,12 @@ export class DemoFile extends EventEmitter {
     buf.BE();
     const bytesWritten = buf.readInt32();
     buf.LE();
-    assert(buf.remaining() === bytesWritten);
+
+    if (buf.remaining() !== bytesWritten) return false;
 
     const cmd = buf.readVarint32();
     const size = buf.readVarint32();
-    assert(buf.remaining() === size);
+    if (buf.remaining() !== size) return false;
 
     const message = net.findByType(cmd);
     assert(message != null, `No message handler for ${cmd}`);
@@ -899,6 +923,8 @@ export class DemoFile extends EventEmitter {
       const msgInst = message.class.decode(new Uint8Array(buf.toBuffer()));
       this.emit(message.name, msgInst);
     }
+
+    return true;
   }
 
   private _handleStringTableUpdate(update: IStringTableUpdateEvent<unknown>) {
