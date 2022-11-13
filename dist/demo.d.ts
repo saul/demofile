@@ -118,7 +118,7 @@ export declare interface DemoFile {
     /**
      * Fired per command. Parameter is a value in range [0,1] that indicates
      * the percentage of the demo file has been parsed so far.
-     * This event is not emitted when parsing streams.
+     * This event is not emitted when parsing streams or broadcasts.
      */
     on(event: "progress", listener: (progressFraction: number) => void): this;
     emit(name: "progress", progressFraction: number): boolean;
@@ -266,6 +266,7 @@ export declare class DemoFile extends EventEmitter {
     private _timeoutTimerToken;
     private _encryptionKey;
     private _hasEnded;
+    private _isBroadcastFragment;
     private _supplementEvents;
     private _supplementCleanupFns;
     /**
@@ -279,6 +280,14 @@ export declare class DemoFile extends EventEmitter {
      */
     constructor();
     private _findSupplement;
+    /**
+     * Start streaming a GOTV broadcast over HTTP.
+     * Will keep streaming until the broadcast finishes.
+     *
+     * @param url URL to the GOTV broadcast.
+     * @returns Promise that resolves then the broadcast finishes.
+     */
+    parseBroadcast(url: string): Promise<void>;
     parseStream(stream: Readable): void;
     parse(buffer: Buffer): void;
     /**

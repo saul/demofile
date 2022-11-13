@@ -293,4 +293,8 @@ exports.userMessages[um.ECstrike15UserMessages.CS_UM_DeepStats] = {
     name: "DeepStats",
     class: um.CCSUsrMsgDeepStats
 };
+exports.userMessages[um.ECstrike15UserMessages.CS_UM_UtilMsg] = {
+    name: "UtilMsg",
+    class: um.CCSUsrMsgUtilMsg
+};
 //# sourceMappingURL=usermessagetypes.js.map

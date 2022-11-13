@@ -77,7 +77,8 @@ export declare enum ECstrike15UserMessages {
     CS_UM_EndOfMatchAllPlayersData = 75,
     CS_UM_RoundImpactScoreData = 79,
     CS_UM_CurrentRoundOdds = 80,
-    CS_UM_DeepStats = 81
+    CS_UM_DeepStats = 81,
+    CS_UM_UtilMsg = 82
 }
 export declare enum ECSUsrMsgDisconnectToLobbyAction {
     k_ECSUsrMsg_DisconnectToLobby_Action_Default = 0,
@@ -504,6 +505,14 @@ export interface CCSUsrMsgClientInfo {
 export interface CCSUsrMsgServerRankRevealAll {
     secondsTillShutdown: number;
     reservation: CMsgGCCStrike15V2MatchmakingGC2ServerReserve | undefined;
+}
+export interface CCSUsrMsgUtilMsg {
+    utilAction: string;
+    util1: number;
+    util2: number;
+    util3: number;
+    util4: number;
+    util5: number;
 }
 export declare const CCSUsrMsgVGUIMenu: {
     encode(message: CCSUsrMsgVGUIMenu, writer?: Writer): Writer;
@@ -5259,6 +5268,25 @@ export declare const CCSUsrMsgServerRankRevealAll: {
             tvControl?: number | undefined;
         } & Record<Exclude<keyof I["reservation"], keyof CMsgGCCStrike15V2MatchmakingGC2ServerReserve>, never>) | undefined;
     } & Record<Exclude<keyof I, keyof CCSUsrMsgServerRankRevealAll>, never>>(object: I): CCSUsrMsgServerRankRevealAll;
+};
+export declare const CCSUsrMsgUtilMsg: {
+    encode(message: CCSUsrMsgUtilMsg, writer?: Writer): Writer;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgUtilMsg;
+    fromPartial<I extends {
+        utilAction?: string | undefined;
+        util1?: number | undefined;
+        util2?: number | undefined;
+        util3?: number | undefined;
+        util4?: number | undefined;
+        util5?: number | undefined;
+    } & {
+        utilAction?: string | undefined;
+        util1?: number | undefined;
+        util2?: number | undefined;
+        util3?: number | undefined;
+        util4?: number | undefined;
+        util5?: number | undefined;
+    } & Record<Exclude<keyof I, keyof CCSUsrMsgUtilMsg>, never>>(object: I): CCSUsrMsgUtilMsg;
 };
 declare type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export declare type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

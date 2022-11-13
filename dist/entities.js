@@ -291,7 +291,6 @@ class Entities extends events_1.EventEmitter {
                 delete this.pendingBaselines[classId];
             }
         }
-        assert.equal(chunk.remaining(), 0);
         this.emit("datatablesready");
     }
     _gatherExcludes(table) {
