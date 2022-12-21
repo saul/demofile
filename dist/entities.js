@@ -291,7 +291,6 @@ class Entities extends events_1.EventEmitter {
                 delete this.pendingBaselines[classId];
             }
         }
-        assert.equal(chunk.remaining(), 0);
         this.emit("datatablesready");
     }
     _gatherExcludes(table) {
@@ -300,7 +299,7 @@ class Entities extends events_1.EventEmitter {
             if ((prop.flags & props_1.SPROP_EXCLUDE) !== 0) {
                 excludes.push(prop);
             }
-            if (prop.type === 6 /* DataTable */) {
+            if (prop.type === 6 /* PropType.DataTable */) {
                 const subTable = (0, assert_exists_1.default)(this._findTableByName(prop.dtName));
                 excludes.push(...this._gatherExcludes(subTable));
             }
@@ -316,7 +315,7 @@ class Entities extends events_1.EventEmitter {
                 isPropExcluded(excludes, table, prop)) {
                 continue;
             }
-            if (prop.type === 6 /* DataTable */) {
+            if (prop.type === 6 /* PropType.DataTable */) {
                 const subTable = (0, assert_exists_1.default)(this._findTableByName(prop.dtName));
                 const childProps = this._gatherProps(subTable, excludes);
                 if ((prop.flags & props_1.SPROP_COLLAPSIBLE) === 0) {
@@ -330,7 +329,7 @@ class Entities extends events_1.EventEmitter {
                 flattened.push({
                     prop,
                     table,
-                    decode: (0, props_1.makeDecoder)(prop, prop.type === 5 /* Array */ ? table.props[index - 1] : undefined),
+                    decode: (0, props_1.makeDecoder)(prop, prop.type === 5 /* PropType.Array */ ? table.props[index - 1] : undefined),
                     collapsible: true
                 });
             }
@@ -391,6 +390,7 @@ class Entities extends events_1.EventEmitter {
         }
         const klass = this._serverClassConstructor.get(classId) || networkable_1.Networkable;
         const entity = new klass(this._demo, index, classId, serialNum, props);
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         this.entities.set(index, entity);
         return entity;
     }
@@ -565,6 +565,7 @@ class Entities extends events_1.EventEmitter {
                     : undefined;
                 const existingEntity = this.entities.get(entityIndex);
                 const entity = this._addEntity(entityIndex, classId, serialNum, existingEntity, entityBaselineProps);
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
                 this._readNewEntity(entityBitBuffer, entity);
                 if (entity !== existingEntity) {
                     const eventVars = { entity };
@@ -576,6 +577,7 @@ class Entities extends events_1.EventEmitter {
                 if (msg.updateBaseline) {
                     this._entityBaselines[msg.baseline ? 0 : 1].set(entityIndex, {
                         classId,
+                        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
                         props: cloneProps(entity.props)
                     });
                 }
@@ -648,6 +650,7 @@ class Entities extends events_1.EventEmitter {
             this._handleUserInfoUpdate(event.entryIndex, event.oldUserData, event.userData);
         }
         else if (event.table.name === "instancebaseline") {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
             this._handleInstanceBaselineUpdate(event);
         }
     }

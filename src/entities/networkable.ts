@@ -87,9 +87,9 @@ export class Networkable<Props = UnknownEntityProps> {
     if (!("000" in this.props[tableName])) {
       return undefined as ArrayType;
     }
-    return (Object.values(this.props[tableName]) as ReadonlyArray<
-      any
-    >) as ArrayType;
+    return Object.values(
+      this.props[tableName]
+    ) as ReadonlyArray<any> as ArrayType;
   }
 
   /**
@@ -106,9 +106,9 @@ export class Networkable<Props = UnknownEntityProps> {
     const table = this.props[tableName];
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (table === undefined) {
-      this.props[tableName] = ({
+      this.props[tableName] = {
         [varName]: newValue
-      } as unknown) as Props[Table];
+      } as unknown as Props[Table];
     } else {
       table[varName] = newValue;
     }

@@ -1,4 +1,3 @@
-/// <reference types="long" />
 import { EntityHandle } from "./entityhandle";
 export interface Vector {
     readonly x: number;
@@ -2197,6 +2196,7 @@ export interface DT_Local {
     m_bDucking: boolean;
     m_flLastDuckTime: number;
     m_bInDuckJump: boolean;
+    m_nOldButtons: number;
     m_nDuckTimeMsecs: number;
     m_nDuckJumpTimeMsecs: number;
     m_nJumpTimeMsecs: number;

@@ -368,10 +368,8 @@ export class Entities extends EventEmitter {
     DT_BaseEntity: BaseEntity
   };
 
-  private _serverClassConstructor: Map<
-    number,
-    NetworkableConstructor
-  > = new Map();
+  private _serverClassConstructor: Map<number, NetworkableConstructor> =
+    new Map();
 
   /**
    * Set of which entities were active in the most recent tick.
@@ -383,10 +381,8 @@ export class Entities extends EventEmitter {
     new Map()
   ];
 
-  private _frames: immutable.Map<
-    TickNumber,
-    TransmitEntities
-  > = immutable.Map();
+  private _frames: immutable.Map<TickNumber, TransmitEntities> =
+    immutable.Map();
 
   private _demo: DemoFile = null!;
   private _singletonEnts: { [table: string]: Networkable | undefined } = {};
@@ -462,7 +458,7 @@ export class Entities extends EventEmitter {
   public getByUserId(userId: number): Player | null {
     const entityIndex = this._userIdToEntity.get(userId);
     if (entityIndex === undefined) return null;
-    return (this.entities.get(entityIndex) as unknown) as Player;
+    return this.entities.get(entityIndex) as unknown as Player;
   }
 
   /**
@@ -473,7 +469,7 @@ export class Entities extends EventEmitter {
   public getByAccountId(accountId: number): Player | null {
     const entityIndex = this._accountNumberToEntity.get(accountId);
     if (entityIndex === undefined) return null;
-    return (this.entities.get(entityIndex) as unknown) as Player;
+    return this.entities.get(entityIndex) as unknown as Player;
   }
 
   /**
@@ -486,7 +482,7 @@ export class Entities extends EventEmitter {
       steam64Id instanceof Long ? steam64Id.toString() : steam64Id;
     const entityIndex = this._steam64IdToEntity.get(idString);
     if (entityIndex === undefined) return null;
-    return (this.entities.get(entityIndex) as unknown) as Player;
+    return this.entities.get(entityIndex) as unknown as Player;
   }
 
   public getSingleton<
@@ -495,7 +491,7 @@ export class Entities extends EventEmitter {
   >(serverClass: string): TEntityClass {
     const existing = this._singletonEnts[serverClass];
     if (existing) {
-      return (existing as unknown) as TEntityClass;
+      return existing as unknown as TEntityClass;
     }
 
     const result = find(
@@ -508,7 +504,7 @@ export class Entities extends EventEmitter {
 
     const [, entity] = result;
     this._singletonEnts[serverClass] = entity;
-    return (entity as unknown) as TEntityClass;
+    return entity as unknown as TEntityClass;
   }
 
   public *findAllWithTable(table: string): Generator<Networkable> {
@@ -604,8 +600,6 @@ export class Entities extends EventEmitter {
         delete this.pendingBaselines[classId];
       }
     }
-
-    assert.equal(chunk.remaining(), 0);
 
     this.emit("datatablesready");
   }
@@ -760,6 +754,7 @@ export class Entities extends EventEmitter {
 
     const klass = this._serverClassConstructor.get(classId) || Networkable;
     const entity = new klass(this._demo, index, classId, serialNum, props);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     this.entities.set(index, entity);
     return entity;
   }
@@ -986,9 +981,8 @@ export class Entities extends EventEmitter {
           consts.NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS
         );
 
-        const existingBaseline = this._entityBaselines[msg.baseline]!.get(
-          entityIndex
-        );
+        const existingBaseline =
+          this._entityBaselines[msg.baseline]!.get(entityIndex);
 
         const entityBaselineProps =
           msg.isDelta && existingBaseline?.classId === classId
@@ -1003,6 +997,7 @@ export class Entities extends EventEmitter {
           existingEntity,
           entityBaselineProps
         );
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         this._readNewEntity(entityBitBuffer, entity);
 
         if (entity !== existingEntity) {
@@ -1017,6 +1012,7 @@ export class Entities extends EventEmitter {
         if (msg.updateBaseline) {
           this._entityBaselines[msg.baseline ? 0 : 1]!.set(entityIndex, {
             classId,
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
             props: cloneProps(entity.props)
           });
         }
@@ -1113,6 +1109,7 @@ export class Entities extends EventEmitter {
         event.userData as IPlayerInfo | null
       );
     } else if (event.table.name === "instancebaseline") {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       this._handleInstanceBaselineUpdate(event);
     }
   }

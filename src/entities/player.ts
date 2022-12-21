@@ -236,11 +236,11 @@ export class Player extends BaseEntity<CCSPlayer> {
    * @returns All weapons helds by this player
    */
   get weapons(): Weapon[] {
-    return (this.getIndexedProps("m_hMyWeapons")
+    return this.getIndexedProps("m_hMyWeapons")
       .map(handle => this._demo.entities.getByHandle(handle))
       .filter(ent =>
         ent ? ent instanceof Weapon : false
-      ) as unknown) as Weapon[];
+      ) as unknown as Weapon[];
   }
 
   /**
@@ -297,9 +297,8 @@ export class Player extends BaseEntity<CCSPlayer> {
       ? CCSPlayerResource[TableName][TableKeys]
       : never
   >(tableName: TableName): ElementType {
-    const array = this._demo.entities.playerResource.getIndexedProps(
-      tableName
-    )!;
+    const array =
+      this._demo.entities.playerResource.getIndexedProps(tableName)!;
     return array[this.index] as ElementType;
   }
 

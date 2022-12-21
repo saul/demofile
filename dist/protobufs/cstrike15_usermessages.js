@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CCSUsrMsgVoteStart = exports.CCSUsrMsgCallVoteFailed = exports.CCSUsrMsgXRankUpd = exports.CCSUsrMsgXRankGet = exports.CCSUsrMsgPlayerDecalDigitalSignature = exports.CCSUsrMsgScoreLeaderboardData = exports.CCSUsrMsgQuestProgress = exports.CCSUsrMsgDisplayInventory = exports.CCSUsrMsgPlayerStatsUpdate_Stat = exports.CCSUsrMsgPlayerStatsUpdate = exports.CCSUsrMsgMatchEndConditions = exports.CCSUsrMsgAchievementEvent = exports.CCSUsrMsgCurrentTimescale = exports.CCSUsrMsgDesiredTimescale = exports.CCSUsrMsgKillCam = exports.CCSUsrMsgReportHit = exports.CCSUsrMsgAdjustMoney = exports.CCSUsrMsgEntityOutlineHighlight = exports.CCSUsrMsgUpdateScreenHealthBar = exports.CCSUsrMsgWeaponSound = exports.CCSUsrMsgReloadEffect = exports.CCSUsrMsgSendPlayerItemFound = exports.CCSUsrMsgSendPlayerItemDrops = exports.CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate = exports.CCSUsrMsgProcessSpottedEntityUpdate = exports.CCSUsrMsgKeyHintText = exports.CCSUsrMsgHintText = exports.CCSUsrMsgRadioText = exports.CCSUsrMsgDamage = exports.CCSUsrMsgVoiceMask_PlayerMask = exports.CCSUsrMsgVoiceMask = exports.CCSUsrMsgRawAudio = exports.CCSUsrMsgSendAudio = exports.CCSUsrMsgCloseCaptionDirect = exports.CCSUsrMsgCloseCaption = exports.CCSUsrMsgRumble = exports.CCSUsrMsgFade = exports.CCSUsrMsgShake = exports.CCSUsrMsgHudMsg = exports.CCSUsrMsgTextMsg = exports.CCSUsrMsgSayText2 = exports.CCSUsrMsgSayText = exports.CCSUsrMsgHudText = exports.CCSUsrMsgTrain = exports.CCSUsrMsgGeiger = exports.CCSUsrMsgVGUIMenu_Subkey = exports.CCSUsrMsgVGUIMenu = exports.ECSUsrMsgDisconnectToLobbyAction = exports.ECstrike15UserMessages = exports.protobufPackage = void 0;
-exports.CCSUsrMsgServerRankRevealAll = exports.CCSUsrMsgClientInfo = exports.CCSUsrMsgWarmupHasEnded = exports.CCSUsrMsgDisconnectToLobby = exports.CCSUsrMsgStopSpectatorMode = exports.CCSUsrMsgRequestState = exports.CCSUsrMsgGameTitle = exports.CCSUsrMsgResetHud = exports.CCSUsrMsgDeepStats = exports.CCSUsrMsgCurrentRoundOdds = exports.CCSUsrMsgRoundImpactScoreData_InitialConditions = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Damage = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Objective = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Victim = exports.CCSUsrMsgRoundImpactScoreData_RisEvent = exports.CCSUsrMsgRoundImpactScoreData = exports.CCSUsrMsgEndOfMatchAllPlayersData_PlayerData = exports.CCSUsrMsgEndOfMatchAllPlayersData_Accolade = exports.CCSUsrMsgEndOfMatchAllPlayersData = exports.CCSUsrMsgSurvivalStats_Damage = exports.CCSUsrMsgSurvivalStats_Placement = exports.CCSUsrMsgSurvivalStats_Fact = exports.CCSUsrMsgSurvivalStats = exports.CCSUsrMsgSSUI = exports.CCSUsrMsgRoundBackupFilenames = exports.CCSUsrMsgGlowPropTurnOff = exports.CCSUsrMsgItemDrop = exports.CCSUsrMsgMatchStatsUpdate = exports.CCSUsrMsgMarkAchievement = exports.CCSUsrMsgAmmoDenied = exports.CCSUsrMsgBarTime = exports.CCSUsrMsgShowMenu = exports.CCSUsrMsgItemPickup = exports.CCSUsrMsgXpUpdate = exports.CCSUsrMsgServerRankUpdate_RankUpdate = exports.CCSUsrMsgServerRankUpdate = exports.CCSUsrMsgSendLastKillerDamageToClient = exports.CCSUsrMsgVoteSetup = exports.CCSUsrMsgVoteFailed = exports.CCSUsrMsgVotePass = void 0;
+exports.CCSUsrMsgUtilMsg = exports.CCSUsrMsgServerRankRevealAll = exports.CCSUsrMsgClientInfo = exports.CCSUsrMsgWarmupHasEnded = exports.CCSUsrMsgDisconnectToLobby = exports.CCSUsrMsgStopSpectatorMode = exports.CCSUsrMsgRequestState = exports.CCSUsrMsgGameTitle = exports.CCSUsrMsgResetHud = exports.CCSUsrMsgDeepStats = exports.CCSUsrMsgCurrentRoundOdds = exports.CCSUsrMsgRoundImpactScoreData_InitialConditions = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Damage = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Objective = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Victim = exports.CCSUsrMsgRoundImpactScoreData_RisEvent = exports.CCSUsrMsgRoundImpactScoreData = exports.CCSUsrMsgEndOfMatchAllPlayersData_PlayerData = exports.CCSUsrMsgEndOfMatchAllPlayersData_Accolade = exports.CCSUsrMsgEndOfMatchAllPlayersData = exports.CCSUsrMsgSurvivalStats_Damage = exports.CCSUsrMsgSurvivalStats_Placement = exports.CCSUsrMsgSurvivalStats_Fact = exports.CCSUsrMsgSurvivalStats = exports.CCSUsrMsgSSUI = exports.CCSUsrMsgRoundBackupFilenames = exports.CCSUsrMsgGlowPropTurnOff = exports.CCSUsrMsgItemDrop = exports.CCSUsrMsgMatchStatsUpdate = exports.CCSUsrMsgMarkAchievement = exports.CCSUsrMsgAmmoDenied = exports.CCSUsrMsgBarTime = exports.CCSUsrMsgShowMenu = exports.CCSUsrMsgItemPickup = exports.CCSUsrMsgXpUpdate = exports.CCSUsrMsgServerRankUpdate_RankUpdate = exports.CCSUsrMsgServerRankUpdate = exports.CCSUsrMsgSendLastKillerDamageToClient = exports.CCSUsrMsgVoteSetup = exports.CCSUsrMsgVoteFailed = exports.CCSUsrMsgVotePass = void 0;
 /* eslint-disable */
 const minimal_1 = require("protobufjs/minimal");
 const Long = require("long");
@@ -84,6 +84,7 @@ var ECstrike15UserMessages;
     ECstrike15UserMessages[ECstrike15UserMessages["CS_UM_RoundImpactScoreData"] = 79] = "CS_UM_RoundImpactScoreData";
     ECstrike15UserMessages[ECstrike15UserMessages["CS_UM_CurrentRoundOdds"] = 80] = "CS_UM_CurrentRoundOdds";
     ECstrike15UserMessages[ECstrike15UserMessages["CS_UM_DeepStats"] = 81] = "CS_UM_DeepStats";
+    ECstrike15UserMessages[ECstrike15UserMessages["CS_UM_UtilMsg"] = 82] = "CS_UM_UtilMsg";
 })(ECstrike15UserMessages = exports.ECstrike15UserMessages || (exports.ECstrike15UserMessages = {}));
 var ECSUsrMsgDisconnectToLobbyAction;
 (function (ECSUsrMsgDisconnectToLobbyAction) {
@@ -3573,7 +3574,8 @@ exports.CCSUsrMsgEndOfMatchAllPlayersData_PlayerData = {
                     message.teamnumber = reader.int32();
                     break;
                 case 5:
-                    message.nomination = exports.CCSUsrMsgEndOfMatchAllPlayersData_Accolade.decode(reader, reader.uint32());
+                    message.nomination =
+                        exports.CCSUsrMsgEndOfMatchAllPlayersData_Accolade.decode(reader, reader.uint32());
                     break;
                 case 6:
                     message.items.push(cstrike15_gcmessages_1.CEconItemPreviewDataBlock.decode(reader, reader.uint32()));
@@ -3633,7 +3635,8 @@ exports.CCSUsrMsgRoundImpactScoreData = {
             const tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
-                    message.initConditions = exports.CCSUsrMsgRoundImpactScoreData_InitialConditions.decode(reader, reader.uint32());
+                    message.initConditions =
+                        exports.CCSUsrMsgRoundImpactScoreData_InitialConditions.decode(reader, reader.uint32());
                     break;
                 case 2:
                     message.allRisEventData.push(exports.CCSUsrMsgRoundImpactScoreData_RisEvent.decode(reader, reader.uint32()));
@@ -3713,10 +3716,12 @@ exports.CCSUsrMsgRoundImpactScoreData_RisEvent = {
                     message.tAlive = reader.int32();
                     break;
                 case 5:
-                    message.victimData = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Victim.decode(reader, reader.uint32());
+                    message.victimData =
+                        exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Victim.decode(reader, reader.uint32());
                     break;
                 case 6:
-                    message.objectiveData = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Objective.decode(reader, reader.uint32());
+                    message.objectiveData =
+                        exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Objective.decode(reader, reader.uint32());
                     break;
                 case 7:
                     message.allDamageData.push(exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Damage.decode(reader, reader.uint32()));
@@ -4320,7 +4325,8 @@ exports.CCSUsrMsgServerRankRevealAll = {
                     message.secondsTillShutdown = reader.int32();
                     break;
                 case 2:
-                    message.reservation = cstrike15_gcmessages_1.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(reader, reader.uint32());
+                    message.reservation =
+                        cstrike15_gcmessages_1.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(reader, reader.uint32());
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -4337,6 +4343,75 @@ exports.CCSUsrMsgServerRankRevealAll = {
             object.reservation !== undefined && object.reservation !== null
                 ? cstrike15_gcmessages_1.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.fromPartial(object.reservation)
                 : undefined;
+        return message;
+    }
+};
+function createBaseCCSUsrMsgUtilMsg() {
+    return { utilAction: "", util1: 0, util2: 0, util3: 0, util4: 0, util5: 0 };
+}
+exports.CCSUsrMsgUtilMsg = {
+    encode(message, writer = minimal_1.Writer.create()) {
+        if (message.utilAction !== "") {
+            writer.uint32(10).string(message.utilAction);
+        }
+        if (message.util1 !== 0) {
+            writer.uint32(16).int32(message.util1);
+        }
+        if (message.util2 !== 0) {
+            writer.uint32(24).int32(message.util2);
+        }
+        if (message.util3 !== 0) {
+            writer.uint32(32).int32(message.util3);
+        }
+        if (message.util4 !== 0) {
+            writer.uint32(40).int32(message.util4);
+        }
+        if (message.util5 !== 0) {
+            writer.uint32(48).int32(message.util5);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof minimal_1.Reader ? input : new minimal_1.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseCCSUsrMsgUtilMsg();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.utilAction = reader.string();
+                    break;
+                case 2:
+                    message.util1 = reader.int32();
+                    break;
+                case 3:
+                    message.util2 = reader.int32();
+                    break;
+                case 4:
+                    message.util3 = reader.int32();
+                    break;
+                case 5:
+                    message.util4 = reader.int32();
+                    break;
+                case 6:
+                    message.util5 = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        var _a, _b, _c, _d, _e, _f;
+        const message = createBaseCCSUsrMsgUtilMsg();
+        message.utilAction = (_a = object.utilAction) !== null && _a !== void 0 ? _a : "";
+        message.util1 = (_b = object.util1) !== null && _b !== void 0 ? _b : 0;
+        message.util2 = (_c = object.util2) !== null && _c !== void 0 ? _c : 0;
+        message.util3 = (_d = object.util3) !== null && _d !== void 0 ? _d : 0;
+        message.util4 = (_e = object.util4) !== null && _e !== void 0 ? _e : 0;
+        message.util5 = (_f = object.util5) !== null && _f !== void 0 ? _f : 0;
         return message;
     }
 };

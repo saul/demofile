@@ -68,7 +68,7 @@ class Player extends baseentity_1.BaseEntity {
      * @returns lifeState == 0
      */
     get isAlive() {
-        return this.lifeState === 0 /* Alive */;
+        return this.lifeState === 0 /* LifeState.Alive */;
     }
     /**
      * @returns User info associated with this player

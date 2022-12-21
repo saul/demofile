@@ -21,6 +21,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Upgrade NPM
+        run: npm install -g npm
       - name: Install packages
         run: npm ci
       - name: Build TypeScript
@@ -52,8 +54,12 @@ jobs:
         run: |
           npm uninstall demofile
           npm install ../demofile-*.tgz
-          for file in *.ts
-          do
+
+          for file in *.ts; do
+            if [[ "$file" == 'dumpbroadcast.ts' ]]; then
+              continue
+            fi
+
             echo "Running example: $file..."
             npx ts-node "$file" ../demos/pc419-vs-chiefs-mirage.dem
           done
@@ -67,6 +73,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
+      - name: Upgrade NPM
+        run: npm install -g npm
       - run: npm ci
       - run: npm run build
       - run: npm run format:check
@@ -85,6 +93,8 @@ jobs:
         with:
           node-version: 14.x
           registry-url: "https://registry.npmjs.org"
+      - name: Upgrade NPM
+        run: npm install -g npm
       - name: Install packages
         run: npm ci
       - name: Pull version from package.json

@@ -3,7 +3,8 @@
 import * as assert from "assert";
 import * as fs from "fs";
 
-const enumRegex = /^enum ECstrike15UserMessages \{\n((?:\tCS_UM_\w+ = \d+;\r?\n)+)}$/m;
+const enumRegex =
+  /^enum ECstrike15UserMessages \{\n((?:\tCS_UM_\w+ = \d+;\r?\n)+)}$/m;
 
 const skipUserMessages = ["UpdateTeamMoney", "DisconnectToLobby2"];
 

@@ -45,7 +45,7 @@ const supplement: ISupplementInfo = {
     function onEntityChange(event: IEntityChangeEvent) {
       const index = event.entity.index;
       if (!trajectories.has(index)) return;
-      const projectile = (event.entity as unknown) as Projectile;
+      const projectile = event.entity as unknown as Projectile;
 
       for (const change of event.changes) {
         if (change.varName !== "m_nBounces") continue;

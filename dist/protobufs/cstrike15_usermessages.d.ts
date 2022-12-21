@@ -77,7 +77,8 @@ export declare enum ECstrike15UserMessages {
     CS_UM_EndOfMatchAllPlayersData = 75,
     CS_UM_RoundImpactScoreData = 79,
     CS_UM_CurrentRoundOdds = 80,
-    CS_UM_DeepStats = 81
+    CS_UM_DeepStats = 81,
+    CS_UM_UtilMsg = 82
 }
 export declare enum ECSUsrMsgDisconnectToLobbyAction {
     k_ECSUsrMsg_DisconnectToLobby_Action_Default = 0,
@@ -505,9 +506,17 @@ export interface CCSUsrMsgServerRankRevealAll {
     secondsTillShutdown: number;
     reservation: CMsgGCCStrike15V2MatchmakingGC2ServerReserve | undefined;
 }
+export interface CCSUsrMsgUtilMsg {
+    utilAction: string;
+    util1: number;
+    util2: number;
+    util3: number;
+    util4: number;
+    util5: number;
+}
 export declare const CCSUsrMsgVGUIMenu: {
     encode(message: CCSUsrMsgVGUIMenu, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgVGUIMenu;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgVGUIMenu;
     fromPartial<I extends {
         name?: string | undefined;
         show?: boolean | undefined;
@@ -535,7 +544,7 @@ export declare const CCSUsrMsgVGUIMenu: {
 };
 export declare const CCSUsrMsgVGUIMenu_Subkey: {
     encode(message: CCSUsrMsgVGUIMenu_Subkey, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgVGUIMenu_Subkey;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgVGUIMenu_Subkey;
     fromPartial<I extends {
         name?: string | undefined;
         str?: string | undefined;
@@ -546,7 +555,7 @@ export declare const CCSUsrMsgVGUIMenu_Subkey: {
 };
 export declare const CCSUsrMsgGeiger: {
     encode(message: CCSUsrMsgGeiger, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgGeiger;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgGeiger;
     fromPartial<I extends {
         range?: number | undefined;
     } & {
@@ -555,7 +564,7 @@ export declare const CCSUsrMsgGeiger: {
 };
 export declare const CCSUsrMsgTrain: {
     encode(message: CCSUsrMsgTrain, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgTrain;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgTrain;
     fromPartial<I extends {
         train?: number | undefined;
     } & {
@@ -564,7 +573,7 @@ export declare const CCSUsrMsgTrain: {
 };
 export declare const CCSUsrMsgHudText: {
     encode(message: CCSUsrMsgHudText, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgHudText;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgHudText;
     fromPartial<I extends {
         text?: string | undefined;
     } & {
@@ -573,7 +582,7 @@ export declare const CCSUsrMsgHudText: {
 };
 export declare const CCSUsrMsgSayText: {
     encode(message: CCSUsrMsgSayText, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgSayText;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgSayText;
     fromPartial<I extends {
         entIdx?: number | undefined;
         text?: string | undefined;
@@ -588,7 +597,7 @@ export declare const CCSUsrMsgSayText: {
 };
 export declare const CCSUsrMsgSayText2: {
     encode(message: CCSUsrMsgSayText2, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgSayText2;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgSayText2;
     fromPartial<I extends {
         entIdx?: number | undefined;
         chat?: boolean | undefined;
@@ -605,7 +614,7 @@ export declare const CCSUsrMsgSayText2: {
 };
 export declare const CCSUsrMsgTextMsg: {
     encode(message: CCSUsrMsgTextMsg, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgTextMsg;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgTextMsg;
     fromPartial<I extends {
         msgDst?: number | undefined;
         params?: string[] | undefined;
@@ -616,7 +625,7 @@ export declare const CCSUsrMsgTextMsg: {
 };
 export declare const CCSUsrMsgHudMsg: {
     encode(message: CCSUsrMsgHudMsg, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgHudMsg;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgHudMsg;
     fromPartial<I extends {
         channel?: number | undefined;
         pos?: {
@@ -682,7 +691,7 @@ export declare const CCSUsrMsgHudMsg: {
 };
 export declare const CCSUsrMsgShake: {
     encode(message: CCSUsrMsgShake, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgShake;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgShake;
     fromPartial<I extends {
         command?: number | undefined;
         localAmplitude?: number | undefined;
@@ -697,7 +706,7 @@ export declare const CCSUsrMsgShake: {
 };
 export declare const CCSUsrMsgFade: {
     encode(message: CCSUsrMsgFade, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgFade;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgFade;
     fromPartial<I extends {
         duration?: number | undefined;
         holdTime?: number | undefined;
@@ -727,7 +736,7 @@ export declare const CCSUsrMsgFade: {
 };
 export declare const CCSUsrMsgRumble: {
     encode(message: CCSUsrMsgRumble, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgRumble;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgRumble;
     fromPartial<I extends {
         index?: number | undefined;
         data?: number | undefined;
@@ -740,7 +749,7 @@ export declare const CCSUsrMsgRumble: {
 };
 export declare const CCSUsrMsgCloseCaption: {
     encode(message: CCSUsrMsgCloseCaption, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgCloseCaption;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgCloseCaption;
     fromPartial<I extends {
         hash?: number | undefined;
         duration?: number | undefined;
@@ -755,7 +764,7 @@ export declare const CCSUsrMsgCloseCaption: {
 };
 export declare const CCSUsrMsgCloseCaptionDirect: {
     encode(message: CCSUsrMsgCloseCaptionDirect, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgCloseCaptionDirect;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgCloseCaptionDirect;
     fromPartial<I extends {
         hash?: number | undefined;
         duration?: number | undefined;
@@ -768,7 +777,7 @@ export declare const CCSUsrMsgCloseCaptionDirect: {
 };
 export declare const CCSUsrMsgSendAudio: {
     encode(message: CCSUsrMsgSendAudio, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgSendAudio;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgSendAudio;
     fromPartial<I extends {
         radioSound?: string | undefined;
     } & {
@@ -777,7 +786,7 @@ export declare const CCSUsrMsgSendAudio: {
 };
 export declare const CCSUsrMsgRawAudio: {
     encode(message: CCSUsrMsgRawAudio, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgRawAudio;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgRawAudio;
     fromPartial<I extends {
         pitch?: number | undefined;
         entidx?: number | undefined;
@@ -792,7 +801,7 @@ export declare const CCSUsrMsgRawAudio: {
 };
 export declare const CCSUsrMsgVoiceMask: {
     encode(message: CCSUsrMsgVoiceMask, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgVoiceMask;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgVoiceMask;
     fromPartial<I extends {
         playerMasks?: {
             gameRulesMask?: number | undefined;
@@ -818,7 +827,7 @@ export declare const CCSUsrMsgVoiceMask: {
 };
 export declare const CCSUsrMsgVoiceMask_PlayerMask: {
     encode(message: CCSUsrMsgVoiceMask_PlayerMask, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgVoiceMask_PlayerMask;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgVoiceMask_PlayerMask;
     fromPartial<I extends {
         gameRulesMask?: number | undefined;
         banMasks?: number | undefined;
@@ -829,7 +838,7 @@ export declare const CCSUsrMsgVoiceMask_PlayerMask: {
 };
 export declare const CCSUsrMsgDamage: {
     encode(message: CCSUsrMsgDamage, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgDamage;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgDamage;
     fromPartial<I extends {
         amount?: number | undefined;
         inflictorWorldPos?: {
@@ -854,7 +863,7 @@ export declare const CCSUsrMsgDamage: {
 };
 export declare const CCSUsrMsgRadioText: {
     encode(message: CCSUsrMsgRadioText, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgRadioText;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgRadioText;
     fromPartial<I extends {
         msgDst?: number | undefined;
         client?: number | undefined;
@@ -869,7 +878,7 @@ export declare const CCSUsrMsgRadioText: {
 };
 export declare const CCSUsrMsgHintText: {
     encode(message: CCSUsrMsgHintText, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgHintText;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgHintText;
     fromPartial<I extends {
         text?: string | undefined;
     } & {
@@ -878,7 +887,7 @@ export declare const CCSUsrMsgHintText: {
 };
 export declare const CCSUsrMsgKeyHintText: {
     encode(message: CCSUsrMsgKeyHintText, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgKeyHintText;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgKeyHintText;
     fromPartial<I extends {
         hints?: string[] | undefined;
     } & {
@@ -887,7 +896,7 @@ export declare const CCSUsrMsgKeyHintText: {
 };
 export declare const CCSUsrMsgProcessSpottedEntityUpdate: {
     encode(message: CCSUsrMsgProcessSpottedEntityUpdate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgProcessSpottedEntityUpdate;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgProcessSpottedEntityUpdate;
     fromPartial<I extends {
         newUpdate?: boolean | undefined;
         entityUpdates?: {
@@ -948,7 +957,7 @@ export declare const CCSUsrMsgProcessSpottedEntityUpdate: {
 };
 export declare const CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate: {
     encode(message: CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate;
     fromPartial<I extends {
         entityIdx?: number | undefined;
         classId?: number | undefined;
@@ -973,7 +982,7 @@ export declare const CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate: {
 };
 export declare const CCSUsrMsgSendPlayerItemDrops: {
     encode(message: CCSUsrMsgSendPlayerItemDrops, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgSendPlayerItemDrops;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgSendPlayerItemDrops;
     fromPartial<I extends {
         entityUpdates?: {
             accountid?: number | undefined;
@@ -1190,7 +1199,7 @@ export declare const CCSUsrMsgSendPlayerItemDrops: {
 };
 export declare const CCSUsrMsgSendPlayerItemFound: {
     encode(message: CCSUsrMsgSendPlayerItemFound, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgSendPlayerItemFound;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgSendPlayerItemFound;
     fromPartial<I extends {
         iteminfo?: {
             accountid?: number | undefined;
@@ -1357,7 +1366,7 @@ export declare const CCSUsrMsgSendPlayerItemFound: {
 };
 export declare const CCSUsrMsgReloadEffect: {
     encode(message: CCSUsrMsgReloadEffect, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgReloadEffect;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgReloadEffect;
     fromPartial<I extends {
         entidx?: number | undefined;
         actanim?: number | undefined;
@@ -1374,7 +1383,7 @@ export declare const CCSUsrMsgReloadEffect: {
 };
 export declare const CCSUsrMsgWeaponSound: {
     encode(message: CCSUsrMsgWeaponSound, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgWeaponSound;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgWeaponSound;
     fromPartial<I extends {
         entidx?: number | undefined;
         originX?: number | undefined;
@@ -1393,7 +1402,7 @@ export declare const CCSUsrMsgWeaponSound: {
 };
 export declare const CCSUsrMsgUpdateScreenHealthBar: {
     encode(message: CCSUsrMsgUpdateScreenHealthBar, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgUpdateScreenHealthBar;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgUpdateScreenHealthBar;
     fromPartial<I extends {
         entidx?: number | undefined;
         healthratioOld?: number | undefined;
@@ -1408,7 +1417,7 @@ export declare const CCSUsrMsgUpdateScreenHealthBar: {
 };
 export declare const CCSUsrMsgEntityOutlineHighlight: {
     encode(message: CCSUsrMsgEntityOutlineHighlight, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgEntityOutlineHighlight;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgEntityOutlineHighlight;
     fromPartial<I extends {
         entidx?: number | undefined;
         removehighlight?: boolean | undefined;
@@ -1419,7 +1428,7 @@ export declare const CCSUsrMsgEntityOutlineHighlight: {
 };
 export declare const CCSUsrMsgAdjustMoney: {
     encode(message: CCSUsrMsgAdjustMoney, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgAdjustMoney;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgAdjustMoney;
     fromPartial<I extends {
         amount?: number | undefined;
     } & {
@@ -1428,7 +1437,7 @@ export declare const CCSUsrMsgAdjustMoney: {
 };
 export declare const CCSUsrMsgReportHit: {
     encode(message: CCSUsrMsgReportHit, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgReportHit;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgReportHit;
     fromPartial<I extends {
         posX?: number | undefined;
         posY?: number | undefined;
@@ -1443,7 +1452,7 @@ export declare const CCSUsrMsgReportHit: {
 };
 export declare const CCSUsrMsgKillCam: {
     encode(message: CCSUsrMsgKillCam, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgKillCam;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgKillCam;
     fromPartial<I extends {
         obsMode?: number | undefined;
         firstTarget?: number | undefined;
@@ -1456,7 +1465,7 @@ export declare const CCSUsrMsgKillCam: {
 };
 export declare const CCSUsrMsgDesiredTimescale: {
     encode(message: CCSUsrMsgDesiredTimescale, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgDesiredTimescale;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgDesiredTimescale;
     fromPartial<I extends {
         desiredTimescale?: number | undefined;
         durationRealtimeSec?: number | undefined;
@@ -1471,7 +1480,7 @@ export declare const CCSUsrMsgDesiredTimescale: {
 };
 export declare const CCSUsrMsgCurrentTimescale: {
     encode(message: CCSUsrMsgCurrentTimescale, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgCurrentTimescale;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgCurrentTimescale;
     fromPartial<I extends {
         curTimescale?: number | undefined;
     } & {
@@ -1480,7 +1489,7 @@ export declare const CCSUsrMsgCurrentTimescale: {
 };
 export declare const CCSUsrMsgAchievementEvent: {
     encode(message: CCSUsrMsgAchievementEvent, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgAchievementEvent;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgAchievementEvent;
     fromPartial<I extends {
         achievement?: number | undefined;
         count?: number | undefined;
@@ -1493,7 +1502,7 @@ export declare const CCSUsrMsgAchievementEvent: {
 };
 export declare const CCSUsrMsgMatchEndConditions: {
     encode(message: CCSUsrMsgMatchEndConditions, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgMatchEndConditions;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgMatchEndConditions;
     fromPartial<I extends {
         fraglimit?: number | undefined;
         mpMaxrounds?: number | undefined;
@@ -1508,7 +1517,7 @@ export declare const CCSUsrMsgMatchEndConditions: {
 };
 export declare const CCSUsrMsgPlayerStatsUpdate: {
     encode(message: CCSUsrMsgPlayerStatsUpdate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgPlayerStatsUpdate;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgPlayerStatsUpdate;
     fromPartial<I extends {
         version?: number | undefined;
         stats?: {
@@ -1538,7 +1547,7 @@ export declare const CCSUsrMsgPlayerStatsUpdate: {
 };
 export declare const CCSUsrMsgPlayerStatsUpdate_Stat: {
     encode(message: CCSUsrMsgPlayerStatsUpdate_Stat, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgPlayerStatsUpdate_Stat;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgPlayerStatsUpdate_Stat;
     fromPartial<I extends {
         idx?: number | undefined;
         delta?: number | undefined;
@@ -1549,7 +1558,7 @@ export declare const CCSUsrMsgPlayerStatsUpdate_Stat: {
 };
 export declare const CCSUsrMsgDisplayInventory: {
     encode(message: CCSUsrMsgDisplayInventory, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgDisplayInventory;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgDisplayInventory;
     fromPartial<I extends {
         display?: boolean | undefined;
         userId?: number | undefined;
@@ -1560,7 +1569,7 @@ export declare const CCSUsrMsgDisplayInventory: {
 };
 export declare const CCSUsrMsgQuestProgress: {
     encode(message: CCSUsrMsgQuestProgress, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgQuestProgress;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgQuestProgress;
     fromPartial<I extends {
         questId?: number | undefined;
         normalPoints?: number | undefined;
@@ -1575,7 +1584,7 @@ export declare const CCSUsrMsgQuestProgress: {
 };
 export declare const CCSUsrMsgScoreLeaderboardData: {
     encode(message: CCSUsrMsgScoreLeaderboardData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgScoreLeaderboardData;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgScoreLeaderboardData;
     fromPartial<I extends {
         data?: {
             questId?: string | number | Long.Long | undefined;
@@ -1719,7 +1728,7 @@ export declare const CCSUsrMsgScoreLeaderboardData: {
 };
 export declare const CCSUsrMsgPlayerDecalDigitalSignature: {
     encode(message: CCSUsrMsgPlayerDecalDigitalSignature, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgPlayerDecalDigitalSignature;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgPlayerDecalDigitalSignature;
     fromPartial<I extends {
         data?: {
             signature?: Uint8Array | undefined;
@@ -1773,7 +1782,7 @@ export declare const CCSUsrMsgPlayerDecalDigitalSignature: {
 };
 export declare const CCSUsrMsgXRankGet: {
     encode(message: CCSUsrMsgXRankGet, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgXRankGet;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgXRankGet;
     fromPartial<I extends {
         modeIdx?: number | undefined;
         controller?: number | undefined;
@@ -1784,7 +1793,7 @@ export declare const CCSUsrMsgXRankGet: {
 };
 export declare const CCSUsrMsgXRankUpd: {
     encode(message: CCSUsrMsgXRankUpd, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgXRankUpd;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgXRankUpd;
     fromPartial<I extends {
         modeIdx?: number | undefined;
         controller?: number | undefined;
@@ -1797,7 +1806,7 @@ export declare const CCSUsrMsgXRankUpd: {
 };
 export declare const CCSUsrMsgCallVoteFailed: {
     encode(message: CCSUsrMsgCallVoteFailed, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgCallVoteFailed;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgCallVoteFailed;
     fromPartial<I extends {
         reason?: number | undefined;
         time?: number | undefined;
@@ -1808,7 +1817,7 @@ export declare const CCSUsrMsgCallVoteFailed: {
 };
 export declare const CCSUsrMsgVoteStart: {
     encode(message: CCSUsrMsgVoteStart, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgVoteStart;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgVoteStart;
     fromPartial<I extends {
         team?: number | undefined;
         entIdx?: number | undefined;
@@ -1831,7 +1840,7 @@ export declare const CCSUsrMsgVoteStart: {
 };
 export declare const CCSUsrMsgVotePass: {
     encode(message: CCSUsrMsgVotePass, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgVotePass;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgVotePass;
     fromPartial<I extends {
         team?: number | undefined;
         voteType?: number | undefined;
@@ -1846,7 +1855,7 @@ export declare const CCSUsrMsgVotePass: {
 };
 export declare const CCSUsrMsgVoteFailed: {
     encode(message: CCSUsrMsgVoteFailed, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgVoteFailed;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgVoteFailed;
     fromPartial<I extends {
         team?: number | undefined;
         reason?: number | undefined;
@@ -1857,7 +1866,7 @@ export declare const CCSUsrMsgVoteFailed: {
 };
 export declare const CCSUsrMsgVoteSetup: {
     encode(message: CCSUsrMsgVoteSetup, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgVoteSetup;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgVoteSetup;
     fromPartial<I extends {
         potentialIssues?: string[] | undefined;
     } & {
@@ -1866,7 +1875,7 @@ export declare const CCSUsrMsgVoteSetup: {
 };
 export declare const CCSUsrMsgSendLastKillerDamageToClient: {
     encode(message: CCSUsrMsgSendLastKillerDamageToClient, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgSendLastKillerDamageToClient;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgSendLastKillerDamageToClient;
     fromPartial<I extends {
         numHitsGiven?: number | undefined;
         damageGiven?: number | undefined;
@@ -1881,7 +1890,7 @@ export declare const CCSUsrMsgSendLastKillerDamageToClient: {
 };
 export declare const CCSUsrMsgServerRankUpdate: {
     encode(message: CCSUsrMsgServerRankUpdate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgServerRankUpdate;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgServerRankUpdate;
     fromPartial<I extends {
         rankUpdate?: {
             accountId?: number | undefined;
@@ -1925,7 +1934,7 @@ export declare const CCSUsrMsgServerRankUpdate: {
 };
 export declare const CCSUsrMsgServerRankUpdate_RankUpdate: {
     encode(message: CCSUsrMsgServerRankUpdate_RankUpdate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgServerRankUpdate_RankUpdate;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgServerRankUpdate_RankUpdate;
     fromPartial<I extends {
         accountId?: number | undefined;
         rankOld?: number | undefined;
@@ -1944,7 +1953,7 @@ export declare const CCSUsrMsgServerRankUpdate_RankUpdate: {
 };
 export declare const CCSUsrMsgXpUpdate: {
     encode(message: CCSUsrMsgXpUpdate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgXpUpdate;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgXpUpdate;
     fromPartial<I extends {
         data?: {
             xpProgressData?: {
@@ -1992,7 +2001,7 @@ export declare const CCSUsrMsgXpUpdate: {
 };
 export declare const CCSUsrMsgItemPickup: {
     encode(message: CCSUsrMsgItemPickup, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgItemPickup;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgItemPickup;
     fromPartial<I extends {
         item?: string | undefined;
     } & {
@@ -2001,7 +2010,7 @@ export declare const CCSUsrMsgItemPickup: {
 };
 export declare const CCSUsrMsgShowMenu: {
     encode(message: CCSUsrMsgShowMenu, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgShowMenu;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgShowMenu;
     fromPartial<I extends {
         bitsValidSlots?: number | undefined;
         displayTime?: number | undefined;
@@ -2014,7 +2023,7 @@ export declare const CCSUsrMsgShowMenu: {
 };
 export declare const CCSUsrMsgBarTime: {
     encode(message: CCSUsrMsgBarTime, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgBarTime;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgBarTime;
     fromPartial<I extends {
         time?: string | undefined;
     } & {
@@ -2023,7 +2032,7 @@ export declare const CCSUsrMsgBarTime: {
 };
 export declare const CCSUsrMsgAmmoDenied: {
     encode(message: CCSUsrMsgAmmoDenied, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgAmmoDenied;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgAmmoDenied;
     fromPartial<I extends {
         ammoIdx?: number | undefined;
     } & {
@@ -2032,7 +2041,7 @@ export declare const CCSUsrMsgAmmoDenied: {
 };
 export declare const CCSUsrMsgMarkAchievement: {
     encode(message: CCSUsrMsgMarkAchievement, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgMarkAchievement;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgMarkAchievement;
     fromPartial<I extends {
         achievement?: string | undefined;
     } & {
@@ -2041,7 +2050,7 @@ export declare const CCSUsrMsgMarkAchievement: {
 };
 export declare const CCSUsrMsgMatchStatsUpdate: {
     encode(message: CCSUsrMsgMatchStatsUpdate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgMatchStatsUpdate;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgMatchStatsUpdate;
     fromPartial<I extends {
         update?: string | undefined;
     } & {
@@ -2050,7 +2059,7 @@ export declare const CCSUsrMsgMatchStatsUpdate: {
 };
 export declare const CCSUsrMsgItemDrop: {
     encode(message: CCSUsrMsgItemDrop, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgItemDrop;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgItemDrop;
     fromPartial<I extends {
         itemid?: string | number | Long.Long | undefined;
         death?: boolean | undefined;
@@ -2118,7 +2127,7 @@ export declare const CCSUsrMsgItemDrop: {
 };
 export declare const CCSUsrMsgGlowPropTurnOff: {
     encode(message: CCSUsrMsgGlowPropTurnOff, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgGlowPropTurnOff;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgGlowPropTurnOff;
     fromPartial<I extends {
         entidx?: number | undefined;
     } & {
@@ -2127,7 +2136,7 @@ export declare const CCSUsrMsgGlowPropTurnOff: {
 };
 export declare const CCSUsrMsgRoundBackupFilenames: {
     encode(message: CCSUsrMsgRoundBackupFilenames, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgRoundBackupFilenames;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgRoundBackupFilenames;
     fromPartial<I extends {
         count?: number | undefined;
         index?: number | undefined;
@@ -2142,7 +2151,7 @@ export declare const CCSUsrMsgRoundBackupFilenames: {
 };
 export declare const CCSUsrMsgSSUI: {
     encode(message: CCSUsrMsgSSUI, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgSSUI;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgSSUI;
     fromPartial<I extends {
         show?: boolean | undefined;
         startTime?: number | undefined;
@@ -2155,7 +2164,7 @@ export declare const CCSUsrMsgSSUI: {
 };
 export declare const CCSUsrMsgSurvivalStats: {
     encode(message: CCSUsrMsgSurvivalStats, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgSurvivalStats;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgSurvivalStats;
     fromPartial<I extends {
         xuid?: string | number | Long.Long | undefined;
         facts?: {
@@ -2418,7 +2427,7 @@ export declare const CCSUsrMsgSurvivalStats: {
 };
 export declare const CCSUsrMsgSurvivalStats_Fact: {
     encode(message: CCSUsrMsgSurvivalStats_Fact, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgSurvivalStats_Fact;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgSurvivalStats_Fact;
     fromPartial<I extends {
         type?: number | undefined;
         display?: number | undefined;
@@ -2433,7 +2442,7 @@ export declare const CCSUsrMsgSurvivalStats_Fact: {
 };
 export declare const CCSUsrMsgSurvivalStats_Placement: {
     encode(message: CCSUsrMsgSurvivalStats_Placement, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgSurvivalStats_Placement;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgSurvivalStats_Placement;
     fromPartial<I extends {
         xuid?: string | number | Long.Long | undefined;
         teamnumber?: number | undefined;
@@ -2503,7 +2512,7 @@ export declare const CCSUsrMsgSurvivalStats_Placement: {
 };
 export declare const CCSUsrMsgSurvivalStats_Damage: {
     encode(message: CCSUsrMsgSurvivalStats_Damage, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgSurvivalStats_Damage;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgSurvivalStats_Damage;
     fromPartial<I extends {
         xuid?: string | number | Long.Long | undefined;
         to?: number | undefined;
@@ -2577,7 +2586,7 @@ export declare const CCSUsrMsgSurvivalStats_Damage: {
 };
 export declare const CCSUsrMsgEndOfMatchAllPlayersData: {
     encode(message: CCSUsrMsgEndOfMatchAllPlayersData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgEndOfMatchAllPlayersData;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgEndOfMatchAllPlayersData;
     fromPartial<I extends {
         allplayerdata?: {
             entindex?: number | undefined;
@@ -3000,7 +3009,7 @@ export declare const CCSUsrMsgEndOfMatchAllPlayersData: {
 };
 export declare const CCSUsrMsgEndOfMatchAllPlayersData_Accolade: {
     encode(message: CCSUsrMsgEndOfMatchAllPlayersData_Accolade, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgEndOfMatchAllPlayersData_Accolade;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgEndOfMatchAllPlayersData_Accolade;
     fromPartial<I extends {
         eaccolade?: number | undefined;
         value?: number | undefined;
@@ -3013,7 +3022,7 @@ export declare const CCSUsrMsgEndOfMatchAllPlayersData_Accolade: {
 };
 export declare const CCSUsrMsgEndOfMatchAllPlayersData_PlayerData: {
     encode(message: CCSUsrMsgEndOfMatchAllPlayersData_PlayerData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgEndOfMatchAllPlayersData_PlayerData;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgEndOfMatchAllPlayersData_PlayerData;
     fromPartial<I extends {
         entindex?: number | undefined;
         xuid?: string | number | Long.Long | undefined;
@@ -3313,7 +3322,7 @@ export declare const CCSUsrMsgEndOfMatchAllPlayersData_PlayerData: {
 };
 export declare const CCSUsrMsgRoundImpactScoreData: {
     encode(message: CCSUsrMsgRoundImpactScoreData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgRoundImpactScoreData;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgRoundImpactScoreData;
     fromPartial<I extends {
         initConditions?: {
             ctEquipValue?: number | undefined;
@@ -3600,7 +3609,7 @@ export declare const CCSUsrMsgRoundImpactScoreData: {
 };
 export declare const CCSUsrMsgRoundImpactScoreData_RisEvent: {
     encode(message: CCSUsrMsgRoundImpactScoreData_RisEvent, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgRoundImpactScoreData_RisEvent;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgRoundImpactScoreData_RisEvent;
     fromPartial<I extends {
         timestamp?: number | undefined;
         terroristOdds?: number | undefined;
@@ -3797,7 +3806,7 @@ export declare const CCSUsrMsgRoundImpactScoreData_RisEvent: {
 };
 export declare const CCSUsrMsgRoundImpactScoreData_RisEvent_Victim: {
     encode(message: CCSUsrMsgRoundImpactScoreData_RisEvent_Victim, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgRoundImpactScoreData_RisEvent_Victim;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgRoundImpactScoreData_RisEvent_Victim;
     fromPartial<I extends {
         teamNumber?: number | undefined;
         entindex?: number | undefined;
@@ -3873,7 +3882,7 @@ export declare const CCSUsrMsgRoundImpactScoreData_RisEvent_Victim: {
 };
 export declare const CCSUsrMsgRoundImpactScoreData_RisEvent_Objective: {
     encode(message: CCSUsrMsgRoundImpactScoreData_RisEvent_Objective, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgRoundImpactScoreData_RisEvent_Objective;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgRoundImpactScoreData_RisEvent_Objective;
     fromPartial<I extends {
         type?: number | undefined;
     } & {
@@ -3882,7 +3891,7 @@ export declare const CCSUsrMsgRoundImpactScoreData_RisEvent_Objective: {
 };
 export declare const CCSUsrMsgRoundImpactScoreData_RisEvent_Damage: {
     encode(message: CCSUsrMsgRoundImpactScoreData_RisEvent_Damage, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgRoundImpactScoreData_RisEvent_Damage;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgRoundImpactScoreData_RisEvent_Damage;
     fromPartial<I extends {
         targetEntindex?: number | undefined;
         targetXuid?: string | number | Long.Long | undefined;
@@ -3958,7 +3967,7 @@ export declare const CCSUsrMsgRoundImpactScoreData_RisEvent_Damage: {
 };
 export declare const CCSUsrMsgRoundImpactScoreData_InitialConditions: {
     encode(message: CCSUsrMsgRoundImpactScoreData_InitialConditions, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgRoundImpactScoreData_InitialConditions;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgRoundImpactScoreData_InitialConditions;
     fromPartial<I extends {
         ctEquipValue?: number | undefined;
         tEquipValue?: number | undefined;
@@ -3971,7 +3980,7 @@ export declare const CCSUsrMsgRoundImpactScoreData_InitialConditions: {
 };
 export declare const CCSUsrMsgCurrentRoundOdds: {
     encode(message: CCSUsrMsgCurrentRoundOdds, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgCurrentRoundOdds;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgCurrentRoundOdds;
     fromPartial<I extends {
         odds?: number | undefined;
     } & {
@@ -3980,7 +3989,7 @@ export declare const CCSUsrMsgCurrentRoundOdds: {
 };
 export declare const CCSUsrMsgDeepStats: {
     encode(message: CCSUsrMsgDeepStats, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgDeepStats;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgDeepStats;
     fromPartial<I extends {
         stats?: {
             accountId?: number | undefined;
@@ -4487,7 +4496,7 @@ export declare const CCSUsrMsgDeepStats: {
 };
 export declare const CCSUsrMsgResetHud: {
     encode(message: CCSUsrMsgResetHud, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgResetHud;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgResetHud;
     fromPartial<I extends {
         reset?: boolean | undefined;
     } & {
@@ -4496,7 +4505,7 @@ export declare const CCSUsrMsgResetHud: {
 };
 export declare const CCSUsrMsgGameTitle: {
     encode(message: CCSUsrMsgGameTitle, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgGameTitle;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgGameTitle;
     fromPartial<I extends {
         dummy?: number | undefined;
     } & {
@@ -4505,7 +4514,7 @@ export declare const CCSUsrMsgGameTitle: {
 };
 export declare const CCSUsrMsgRequestState: {
     encode(message: CCSUsrMsgRequestState, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgRequestState;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgRequestState;
     fromPartial<I extends {
         dummy?: number | undefined;
     } & {
@@ -4514,7 +4523,7 @@ export declare const CCSUsrMsgRequestState: {
 };
 export declare const CCSUsrMsgStopSpectatorMode: {
     encode(message: CCSUsrMsgStopSpectatorMode, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgStopSpectatorMode;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgStopSpectatorMode;
     fromPartial<I extends {
         dummy?: number | undefined;
     } & {
@@ -4523,7 +4532,7 @@ export declare const CCSUsrMsgStopSpectatorMode: {
 };
 export declare const CCSUsrMsgDisconnectToLobby: {
     encode(message: CCSUsrMsgDisconnectToLobby, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgDisconnectToLobby;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgDisconnectToLobby;
     fromPartial<I extends {
         dummy?: number | undefined;
     } & {
@@ -4532,7 +4541,7 @@ export declare const CCSUsrMsgDisconnectToLobby: {
 };
 export declare const CCSUsrMsgWarmupHasEnded: {
     encode(message: CCSUsrMsgWarmupHasEnded, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgWarmupHasEnded;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgWarmupHasEnded;
     fromPartial<I extends {
         dummy?: number | undefined;
     } & {
@@ -4541,7 +4550,7 @@ export declare const CCSUsrMsgWarmupHasEnded: {
 };
 export declare const CCSUsrMsgClientInfo: {
     encode(message: CCSUsrMsgClientInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgClientInfo;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgClientInfo;
     fromPartial<I extends {
         dummy?: number | undefined;
     } & {
@@ -4550,7 +4559,7 @@ export declare const CCSUsrMsgClientInfo: {
 };
 export declare const CCSUsrMsgServerRankRevealAll: {
     encode(message: CCSUsrMsgServerRankRevealAll, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number | undefined): CCSUsrMsgServerRankRevealAll;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgServerRankRevealAll;
     fromPartial<I extends {
         secondsTillShutdown?: number | undefined;
         reservation?: {
@@ -5259,6 +5268,25 @@ export declare const CCSUsrMsgServerRankRevealAll: {
             tvControl?: number | undefined;
         } & Record<Exclude<keyof I["reservation"], keyof CMsgGCCStrike15V2MatchmakingGC2ServerReserve>, never>) | undefined;
     } & Record<Exclude<keyof I, keyof CCSUsrMsgServerRankRevealAll>, never>>(object: I): CCSUsrMsgServerRankRevealAll;
+};
+export declare const CCSUsrMsgUtilMsg: {
+    encode(message: CCSUsrMsgUtilMsg, writer?: Writer): Writer;
+    decode(input: Reader | Uint8Array, length?: number): CCSUsrMsgUtilMsg;
+    fromPartial<I extends {
+        utilAction?: string | undefined;
+        util1?: number | undefined;
+        util2?: number | undefined;
+        util3?: number | undefined;
+        util4?: number | undefined;
+        util5?: number | undefined;
+    } & {
+        utilAction?: string | undefined;
+        util1?: number | undefined;
+        util2?: number | undefined;
+        util3?: number | undefined;
+        util4?: number | undefined;
+        util5?: number | undefined;
+    } & Record<Exclude<keyof I, keyof CCSUsrMsgUtilMsg>, never>>(object: I): CCSUsrMsgUtilMsg;
 };
 declare type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export declare type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

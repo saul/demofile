@@ -1,4 +1,3 @@
-/// <reference types="long" />
 /// <reference types="bytebuffer" />
 interface Color {
     r: number;

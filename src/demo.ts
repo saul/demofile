@@ -1,9 +1,12 @@
 import { EventEmitter } from "events";
 import * as timers from "timers";
+import { URL } from "url";
+import * as https from "https";
 
 import * as ByteBuffer from "bytebuffer";
 import { BitStream } from "./ext/bitbuffer";
 
+import { ISyncDto } from "./syncdto";
 import * as assert from "assert";
 import { Readable } from "stream";
 import { MAX_EDICT_BITS, MAX_OSPATH } from "./consts";
@@ -151,6 +154,30 @@ const enum DemoCommands {
   StringTables = 9
 }
 
+function httpGet(url: string): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    https
+      .request(url, res => {
+        const chunks: Buffer[] = [];
+
+        res.on("data", chunk => {
+          chunks.push(chunk as Buffer);
+        });
+
+        res.on("end", () => {
+          if (res.statusCode == 200) {
+            resolve(Buffer.concat(chunks));
+          } else {
+            reject(
+              `request '${url}' failed: ${res.statusCode} (${res.statusMessage})`
+            );
+          }
+        });
+      })
+      .end();
+  });
+}
+
 function parseHeaderBytebuf(bytebuf: ByteBuffer): IDemoHeader {
   return {
     magic: bytebuf.readString(8, ByteBuffer.METRICS_BYTES).split("\0", 2)[0]!,
@@ -245,7 +272,7 @@ export declare interface DemoFile {
   /**
    * Fired per command. Parameter is a value in range [0,1] that indicates
    * the percentage of the demo file has been parsed so far.
-   * This event is not emitted when parsing streams.
+   * This event is not emitted when parsing streams or broadcasts.
    */
   on(event: "progress", listener: (progressFraction: number) => void): this;
   emit(name: "progress", progressFraction: number): boolean;
@@ -523,6 +550,8 @@ export class DemoFile extends EventEmitter {
 
   private _hasEnded: boolean = false;
 
+  private _isBroadcastFragment: boolean = false;
+
   private _supplementEvents = [
     grenadeTrajectory,
     molotovDetonate,
@@ -614,6 +643,108 @@ export class DemoFile extends EventEmitter {
       if (supplement.emits.indexOf(eventName) >= 0) return supplement;
     }
     return null;
+  }
+
+  /**
+   * Start streaming a GOTV broadcast over HTTP.
+   * Will keep streaming until the broadcast finishes.
+   *
+   * @param url URL to the GOTV broadcast.
+   * @returns Promise that resolves then the broadcast finishes.
+   */
+  public async parseBroadcast(url: string): Promise<void> {
+    if (!url.endsWith("/")) url += "/";
+
+    // Some packets are formatted slightly differently in
+    // broadcast fragments compared to a normal demo file.
+    this._isBroadcastFragment = true;
+
+    const syncUrl = new URL("sync", url).toString();
+    const syncResponse = await httpGet(syncUrl);
+
+    const syncDto = JSON.parse(syncResponse.toString()) as ISyncDto;
+    if (syncDto.protocol !== 4) {
+      throw new Error(`expected protocol version 4, got: ${syncDto.protocol}`);
+    }
+
+    if (syncDto.token_redirect != null) {
+      url = new URL(syncDto.token_redirect, url).toString();
+      if (!url.endsWith("/")) url += "/";
+    }
+
+    this.header = {
+      magic: "HL2DEMO",
+      protocol: syncDto.protocol,
+      networkProtocol: 0,
+      serverName: `GOTV Broadcast: ${url}`,
+      clientName: "GOTV Demo",
+      mapName: syncDto.map,
+      gameDirectory: "csgo",
+      playbackTime: 0,
+      playbackTicks: 0,
+      playbackFrames: 0,
+      signonLength: 0
+    };
+    this.tickInterval = 1 / syncDto.tps;
+
+    let cancelled = false;
+    this.emit("start", {
+      cancel() {
+        cancelled = true;
+      }
+    });
+
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    if (cancelled) {
+      return;
+    }
+
+    const startUrl = new URL(
+      `${syncDto.signup_fragment | 0}/start`,
+      url
+    ).toString();
+    const startResponse = await httpGet(startUrl);
+
+    // Read the signon fragment
+    this._bytebuf = ByteBuffer.wrap(startResponse, true);
+    while (this._bytebuf.remaining() > 0) {
+      this._readCommand();
+    }
+
+    // Keep reading fragments until we run out
+    let fragment = syncDto.fragment | 0;
+    let fragmentType = "full";
+
+    while (!this._hasEnded) {
+      const fragmentUrl = new URL(
+        `${fragment}/${fragmentType}`,
+        url
+      ).toString();
+
+      let fragmentResponse: Buffer;
+      try {
+        fragmentResponse = await httpGet(fragmentUrl);
+      } catch {
+        // HTTP 404 errors are expected - each fragment only lasts for a few seconds.
+        // Wait for 1-2 secs before retrying to avoid spamming the relay.
+        await new Promise(resolve =>
+          setTimeout(resolve, 1000 + Math.random() * 1000)
+        );
+        continue;
+      }
+
+      // We need to request {fragment}/full + {fragment}/delta
+      if (fragmentType == "full") {
+        fragmentType = "delta";
+      } else {
+        fragment += 1;
+      }
+
+      this._bytebuf = ByteBuffer.wrap(fragmentResponse, true);
+      while (this._bytebuf.remaining() > 0) {
+        this._readCommand();
+      }
+    }
   }
 
   public parseStream(stream: Readable): void {
@@ -819,14 +950,16 @@ export class DemoFile extends EventEmitter {
    */
 
   private _handleDemoPacket() {
-    this._ensureRemaining(160);
+    if (!this._isBroadcastFragment) {
+      this._ensureRemaining(160);
 
-    // skip cmd info
-    this._bytebuf.skip(152);
+      // skip cmd info
+      this._bytebuf.skip(152);
 
-    // skip over sequence info
-    this._bytebuf.readInt32();
-    this._bytebuf.readInt32();
+      // skip over sequence info
+      this._bytebuf.readInt32();
+      this._bytebuf.readInt32();
+    }
 
     const chunk = this._readIBytes();
 
@@ -854,7 +987,9 @@ export class DemoFile extends EventEmitter {
   }
 
   private _handleDataTables() {
-    const chunk = this._readIBytes();
+    const chunk = this._isBroadcastFragment
+      ? this._bytebuf
+      : this._readIBytes();
     this.entities.handleDataTables(chunk);
   }
 
@@ -1044,7 +1179,7 @@ export class DemoFile extends EventEmitter {
       case DemoCommands.SyncTick:
         break;
       default:
-        throw new Error("Unrecognised command");
+        throw new Error(`Unrecognised command: ${command}`);
     }
   }
 

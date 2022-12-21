@@ -178,17 +178,17 @@ function makeInt64Decoder(sendProp) {
 }
 function makeValueDecoder(sendProp) {
     switch (sendProp.type) {
-        case 0 /* Int */:
+        case 0 /* PropType.Int */:
             return makeIntDecoder(sendProp);
-        case 1 /* Float */:
+        case 1 /* PropType.Float */:
             return makeFloatDecoder(sendProp);
-        case 2 /* Vector */:
+        case 2 /* PropType.Vector */:
             return makeVectorDecoder(sendProp);
-        case 3 /* VectorXY */:
+        case 3 /* PropType.VectorXY */:
             return makeVectorXYDecoder(sendProp);
-        case 4 /* String */:
+        case 4 /* PropType.String */:
             return makeStringDecoder(sendProp);
-        case 7 /* Int64 */:
+        case 7 /* PropType.Int64 */:
             return makeInt64Decoder(sendProp);
         default:
             throw new Error(`Unsupported send prop type ${sendProp.type}`);
@@ -209,8 +209,8 @@ function makeArrayDecoder(sendProp, arrayElementProp) {
 }
 function makeDecoder(sendProp, arrayElementProp) {
     const type = sendProp.type;
-    assert(type !== 6 /* DataTable */);
-    if (type === 5 /* Array */) {
+    assert(type !== 6 /* PropType.DataTable */);
+    if (type === 5 /* PropType.Array */) {
         return makeArrayDecoder(sendProp, (0, assert_exists_1.default)(arrayElementProp, "array prop with no element prop"));
     }
     else {

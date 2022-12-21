@@ -58,9 +58,9 @@ const supplement: ISupplementInfo = {
         // and is stopped on detonation.
         if ((sound.flags & SND_STOP) === 0) continue;
 
-        const projectile = (demo.entities.entities.get(
+        const projectile = demo.entities.entities.get(
           sound.entityIndex
-        ) as unknown) as Projectile | undefined;
+        ) as unknown as Projectile | undefined;
 
         if (!projectile) continue;
 

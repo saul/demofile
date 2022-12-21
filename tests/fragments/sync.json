@@ -1,0 +1,12 @@
+{
+  "tick": 85762,
+  "endtick": 86146,
+  "rtdelay": 259.108054909,
+  "rcvage": 244.062714955,
+  "fragment": 386,
+  "signup_fragment": 0,
+  "tps": 128,
+  "token_redirect": "token/s85568392924415606t1668116271",
+  "map": "de_overpass",
+  "protocol": 4
+}

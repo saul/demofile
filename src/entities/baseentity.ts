@@ -31,9 +31,9 @@ export class BaseEntity<
    */
   get moveParent(): BaseEntity | null {
     // UNSAFE: cast here as move parent will always be a proper entity
-    return (this._demo.entities.getByHandle(
+    return this._demo.entities.getByHandle(
       this.getProp("DT_BaseEntity", "moveparent")
-    ) as unknown) as BaseEntity | null;
+    ) as unknown as BaseEntity | null;
   }
 
   /**
@@ -41,9 +41,9 @@ export class BaseEntity<
    */
   get owner(): BaseEntity | null {
     // UNSAFE: cast here as owner will always be a proper entity
-    return (this._demo.entities.getByHandle(
+    return this._demo.entities.getByHandle(
       this.getProp("DT_BaseEntity", "m_hOwnerEntity")
-    ) as unknown) as BaseEntity | null;
+    ) as unknown as BaseEntity | null;
   }
 
   /**
@@ -69,9 +69,8 @@ export class BaseEntity<
    * @returns Name of the model that should be rendered for this entity. (e.g. 'models/Weapons/w_eq_smokegrenade_thrown.mdl')
    */
   get modelName(): string | null {
-    const modelprecache = this._demo.stringTables.findTableByName(
-      "modelprecache"
-    );
+    const modelprecache =
+      this._demo.stringTables.findTableByName("modelprecache");
     if (!modelprecache) {
       return null;
     }

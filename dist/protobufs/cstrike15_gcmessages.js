@@ -3562,7 +3562,8 @@ exports.CMsgGCCStrike15V2MatchmakingServerReservationResponse = {
                     message.reservationid = reader.uint64();
                     break;
                 case 2:
-                    message.reservation = exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(reader, reader.uint32());
+                    message.reservation =
+                        exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(reader, reader.uint32());
                     break;
                 case 3:
                     message.map = reader.string();
@@ -3725,7 +3726,8 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve = {
                     message.reservationid = reader.uint64();
                     break;
                 case 5:
-                    message.reservation = exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(reader, reader.uint32());
+                    message.reservation =
+                        exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(reader, reader.uint32());
                     break;
                 case 6:
                     message.map = reader.string();
@@ -3937,7 +3939,8 @@ exports.CMsgGCCStrike15V2MatchmakingServerRoundStats = {
                     message.reservationid = reader.uint64();
                     break;
                 case 2:
-                    message.reservation = exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(reader, reader.uint32());
+                    message.reservation =
+                        exports.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(reader, reader.uint32());
                     break;
                 case 3:
                     message.map = reader.string();
@@ -4113,7 +4116,8 @@ exports.CMsgGCCStrike15V2MatchmakingServerRoundStats = {
                     }
                     break;
                 case 26:
-                    message.dropInfo = exports.CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo.decode(reader, reader.uint32());
+                    message.dropInfo =
+                        exports.CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo.decode(reader, reader.uint32());
                     break;
                 case 27:
                     message.bSwitchedTeams = reader.bool();
@@ -4365,7 +4369,8 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientHello = {
                     message.accountId = reader.uint32();
                     break;
                 case 2:
-                    message.ongoingmatch = exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve.decode(reader, reader.uint32());
+                    message.ongoingmatch =
+                        exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve.decode(reader, reader.uint32());
                     break;
                 case 3:
                     message.globalStats = exports.GlobalStatistics.decode(reader, reader.uint32());
@@ -4589,7 +4594,8 @@ exports.CMsgGCCStrike15V2MatchmakingGC2ClientAbandon = {
                     message.accountId = reader.uint32();
                     break;
                 case 2:
-                    message.abandonedMatch = exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve.decode(reader, reader.uint32());
+                    message.abandonedMatch =
+                        exports.CMsgGCCStrike15V2MatchmakingGC2ClientReserve.decode(reader, reader.uint32());
                     break;
                 case 3:
                     message.penaltySeconds = reader.uint32();
@@ -6393,7 +6399,8 @@ exports.CMsgGCCStrike15V2MatchEndRunRewardDrops = {
             const tag = reader.uint32();
             switch (tag >>> 3) {
                 case 3:
-                    message.serverinfo = exports.CMsgGCCStrike15V2MatchmakingServerReservationResponse.decode(reader, reader.uint32());
+                    message.serverinfo =
+                        exports.CMsgGCCStrike15V2MatchmakingServerReservationResponse.decode(reader, reader.uint32());
                     break;
                 case 4:
                     message.matchEndQuestData = exports.CMsgGCServerQuestUpdateData.decode(reader, reader.uint32());
@@ -7070,7 +7077,8 @@ exports.CDataGCCStrike15V2MatchInfo = {
                     message.watchablematchinfo = exports.WatchableMatchInfo.decode(reader, reader.uint32());
                     break;
                 case 4:
-                    message.roundstatsLegacy = exports.CMsgGCCStrike15V2MatchmakingServerRoundStats.decode(reader, reader.uint32());
+                    message.roundstatsLegacy =
+                        exports.CMsgGCCStrike15V2MatchmakingServerRoundStats.decode(reader, reader.uint32());
                     break;
                 case 5:
                     message.roundstatsall.push(exports.CMsgGCCStrike15V2MatchmakingServerRoundStats.decode(reader, reader.uint32()));

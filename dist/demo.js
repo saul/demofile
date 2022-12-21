@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DemoFile = exports.parseHeader = void 0;
 const events_1 = require("events");
 const timers = require("timers");
+const url_1 = require("url");
+const https = require("https");
 const ByteBuffer = require("bytebuffer");
 const bitbuffer_1 = require("./ext/bitbuffer");
 const assert = require("assert");
@@ -18,6 +20,26 @@ const assert_exists_1 = require("./assert-exists");
 const grenadetrajectory_1 = require("./supplements/grenadetrajectory");
 const molotovdetonate_1 = require("./supplements/molotovdetonate");
 const itempurchase_1 = require("./supplements/itempurchase");
+function httpGet(url) {
+    return new Promise((resolve, reject) => {
+        https
+            .request(url, res => {
+            const chunks = [];
+            res.on("data", chunk => {
+                chunks.push(chunk);
+            });
+            res.on("end", () => {
+                if (res.statusCode == 200) {
+                    resolve(Buffer.concat(chunks));
+                }
+                else {
+                    reject(`request '${url}' failed: ${res.statusCode} (${res.statusMessage})`);
+                }
+            });
+        })
+            .end();
+    });
+}
 function parseHeaderBytebuf(bytebuf) {
     return {
         magic: bytebuf.readString(8, ByteBuffer.METRICS_BYTES).split("\0", 2)[0],
@@ -90,6 +112,7 @@ class DemoFile extends events_1.EventEmitter {
         this._timeoutTimerToken = null;
         this._encryptionKey = null;
         this._hasEnded = false;
+        this._isBroadcastFragment = false;
         this._supplementEvents = [
             grenadetrajectory_1.default,
             molotovdetonate_1.default,
@@ -188,6 +211,89 @@ class DemoFile extends events_1.EventEmitter {
                 return supplement;
         }
         return null;
+    }
+    /**
+     * Start streaming a GOTV broadcast over HTTP.
+     * Will keep streaming until the broadcast finishes.
+     *
+     * @param url URL to the GOTV broadcast.
+     * @returns Promise that resolves then the broadcast finishes.
+     */
+    async parseBroadcast(url) {
+        if (!url.endsWith("/"))
+            url += "/";
+        // Some packets are formatted slightly differently in
+        // broadcast fragments compared to a normal demo file.
+        this._isBroadcastFragment = true;
+        const syncUrl = new url_1.URL("sync", url).toString();
+        const syncResponse = await httpGet(syncUrl);
+        const syncDto = JSON.parse(syncResponse.toString());
+        if (syncDto.protocol !== 4) {
+            throw new Error(`expected protocol version 4, got: ${syncDto.protocol}`);
+        }
+        if (syncDto.token_redirect != null) {
+            url = new url_1.URL(syncDto.token_redirect, url).toString();
+            if (!url.endsWith("/"))
+                url += "/";
+        }
+        this.header = {
+            magic: "HL2DEMO",
+            protocol: syncDto.protocol,
+            networkProtocol: 0,
+            serverName: `GOTV Broadcast: ${url}`,
+            clientName: "GOTV Demo",
+            mapName: syncDto.map,
+            gameDirectory: "csgo",
+            playbackTime: 0,
+            playbackTicks: 0,
+            playbackFrames: 0,
+            signonLength: 0
+        };
+        this.tickInterval = 1 / syncDto.tps;
+        let cancelled = false;
+        this.emit("start", {
+            cancel() {
+                cancelled = true;
+            }
+        });
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+        if (cancelled) {
+            return;
+        }
+        const startUrl = new url_1.URL(`${syncDto.signup_fragment | 0}/start`, url).toString();
+        const startResponse = await httpGet(startUrl);
+        // Read the signon fragment
+        this._bytebuf = ByteBuffer.wrap(startResponse, true);
+        while (this._bytebuf.remaining() > 0) {
+            this._readCommand();
+        }
+        // Keep reading fragments until we run out
+        let fragment = syncDto.fragment | 0;
+        let fragmentType = "full";
+        while (!this._hasEnded) {
+            const fragmentUrl = new url_1.URL(`${fragment}/${fragmentType}`, url).toString();
+            let fragmentResponse;
+            try {
+                fragmentResponse = await httpGet(fragmentUrl);
+            }
+            catch {
+                // HTTP 404 errors are expected - each fragment only lasts for a few seconds.
+                // Wait for 1-2 secs before retrying to avoid spamming the relay.
+                await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1000));
+                continue;
+            }
+            // We need to request {fragment}/full + {fragment}/delta
+            if (fragmentType == "full") {
+                fragmentType = "delta";
+            }
+            else {
+                fragment += 1;
+            }
+            this._bytebuf = ByteBuffer.wrap(fragmentResponse, true);
+            while (this._bytebuf.remaining() > 0) {
+                this._readCommand();
+            }
+        }
     }
     parseStream(stream) {
         this._hasEnded = false;
@@ -364,12 +470,14 @@ class DemoFile extends events_1.EventEmitter {
      * @event DemoFile#net_MessageName
      */
     _handleDemoPacket() {
-        this._ensureRemaining(160);
-        // skip cmd info
-        this._bytebuf.skip(152);
-        // skip over sequence info
-        this._bytebuf.readInt32();
-        this._bytebuf.readInt32();
+        if (!this._isBroadcastFragment) {
+            this._ensureRemaining(160);
+            // skip cmd info
+            this._bytebuf.skip(152);
+            // skip over sequence info
+            this._bytebuf.readInt32();
+            this._bytebuf.readInt32();
+        }
         const chunk = this._readIBytes();
         while (chunk.remaining()) {
             const cmd = chunk.readVarint32();
@@ -390,7 +498,9 @@ class DemoFile extends events_1.EventEmitter {
         this._readIBytes();
     }
     _handleDataTables() {
-        const chunk = this._readIBytes();
+        const chunk = this._isBroadcastFragment
+            ? this._bytebuf
+            : this._readIBytes();
         this.entities.handleDataTables(chunk);
     }
     _handleUserCmd() {
@@ -562,33 +672,33 @@ class DemoFile extends events_1.EventEmitter {
             this.emit("tickstart", this.currentTick);
         }
         switch (command) {
-            case 2 /* Packet */:
-            case 1 /* Signon */:
+            case 2 /* DemoCommands.Packet */:
+            case 1 /* DemoCommands.Signon */:
                 this._handleDemoPacket();
                 break;
-            case 6 /* DataTables */:
+            case 6 /* DemoCommands.DataTables */:
                 this._handleDataTables();
                 break;
-            case 9 /* StringTables */:
+            case 9 /* DemoCommands.StringTables */:
                 this._handleStringTables();
                 break;
-            case 4 /* ConsoleCmd */: // TODO
+            case 4 /* DemoCommands.ConsoleCmd */: // TODO
                 this._handleDataChunk();
                 break;
-            case 5 /* UserCmd */:
+            case 5 /* DemoCommands.UserCmd */:
                 this._handleUserCmd();
                 break;
-            case 7 /* Stop */:
+            case 7 /* DemoCommands.Stop */:
                 this.cancel();
                 this.emit("tickend", this.currentTick);
                 this._emitEnd({ incomplete: false });
                 return;
-            case 8 /* CustomData */:
+            case 8 /* DemoCommands.CustomData */:
                 throw new Error("Custom data not supported");
-            case 3 /* SyncTick */:
+            case 3 /* DemoCommands.SyncTick */:
                 break;
             default:
-                throw new Error("Unrecognised command");
+                throw new Error(`Unrecognised command: ${command}`);
         }
     }
     _parseRecurse() {

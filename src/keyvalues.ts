@@ -88,9 +88,9 @@ function parseValue(type: KeyValueType, buffer: ByteBuffer): KeyValues {
   }
 }
 
-export function parseBinaryKeyValues(
-  buffer: ByteBuffer
-): { [name: string]: KeyValues } {
+export function parseBinaryKeyValues(buffer: ByteBuffer): {
+  [name: string]: KeyValues;
+} {
   const type = buffer.readUint8();
   return {
     [buffer.readCString()]: parseValue(type, buffer)

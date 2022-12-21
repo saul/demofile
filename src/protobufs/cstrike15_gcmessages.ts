@@ -4522,7 +4522,8 @@ export const CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note = {
   ): CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -4552,7 +4553,8 @@ export const CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note = {
       I
     >
   >(object: I): CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note {
-    const message = createBaseCMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note();
     message.type = object.type ?? 0;
     message.regionId = object.regionId ?? 0;
     message.regionR = object.regionR ?? 0;
@@ -5234,7 +5236,8 @@ export const CMsgGCCStrike15V2MatchmakingServerReservationResponse = {
   ): CMsgGCCStrike15V2MatchmakingServerReservationResponse {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2MatchmakingServerReservationResponse();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchmakingServerReservationResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -5242,10 +5245,11 @@ export const CMsgGCCStrike15V2MatchmakingServerReservationResponse = {
           message.reservationid = reader.uint64() as Long;
           break;
         case 2:
-          message.reservation = CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(
-            reader,
-            reader.uint32()
-          );
+          message.reservation =
+            CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         case 3:
           message.map = reader.string();
@@ -5320,7 +5324,8 @@ export const CMsgGCCStrike15V2MatchmakingServerReservationResponse = {
       I
     >
   >(object: I): CMsgGCCStrike15V2MatchmakingServerReservationResponse {
-    const message = createBaseCMsgGCCStrike15V2MatchmakingServerReservationResponse();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchmakingServerReservationResponse();
     message.reservationid =
       object.reservationid !== undefined && object.reservationid !== null
         ? Long.fromValue(object.reservationid)
@@ -5425,10 +5430,11 @@ export const CMsgGCCStrike15V2MatchmakingGC2ClientReserve = {
           message.reservationid = reader.uint64() as Long;
           break;
         case 5:
-          message.reservation = CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(
-            reader,
-            reader.uint32()
-          );
+          message.reservation =
+            CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         case 6:
           message.map = reader.string();
@@ -5665,10 +5671,11 @@ export const CMsgGCCStrike15V2MatchmakingServerRoundStats = {
           message.reservationid = reader.uint64() as Long;
           break;
         case 2:
-          message.reservation = CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(
-            reader,
-            reader.uint32()
-          );
+          message.reservation =
+            CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         case 3:
           message.map = reader.string();
@@ -5834,10 +5841,11 @@ export const CMsgGCCStrike15V2MatchmakingServerRoundStats = {
           }
           break;
         case 26:
-          message.dropInfo = CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo.decode(
-            reader,
-            reader.uint32()
-          );
+          message.dropInfo =
+            CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         case 27:
           message.bSwitchedTeams = reader.bool();
@@ -5964,7 +5972,8 @@ export const CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo = {
   ): CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -5985,7 +5994,8 @@ export const CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo = {
       I
     >
   >(object: I): CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo {
-    const message = createBaseCMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo();
     message.accountMvp = object.accountMvp ?? 0;
     return message;
   }
@@ -6156,10 +6166,11 @@ export const CMsgGCCStrike15V2MatchmakingGC2ClientHello = {
           message.accountId = reader.uint32();
           break;
         case 2:
-          message.ongoingmatch = CMsgGCCStrike15V2MatchmakingGC2ClientReserve.decode(
-            reader,
-            reader.uint32()
-          );
+          message.ongoingmatch =
+            CMsgGCCStrike15V2MatchmakingGC2ClientReserve.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         case 3:
           message.globalStats = GlobalStatistics.decode(
@@ -6452,10 +6463,11 @@ export const CMsgGCCStrike15V2MatchmakingGC2ClientAbandon = {
           message.accountId = reader.uint32();
           break;
         case 2:
-          message.abandonedMatch = CMsgGCCStrike15V2MatchmakingGC2ClientReserve.decode(
-            reader,
-            reader.uint32()
-          );
+          message.abandonedMatch =
+            CMsgGCCStrike15V2MatchmakingGC2ClientReserve.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         case 3:
           message.penaltySeconds = reader.uint32();
@@ -6560,7 +6572,8 @@ export const CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate = {
   ): CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -6581,7 +6594,8 @@ export const CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate = {
       I
     >
   >(object: I): CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate {
-    const message = createBaseCMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate();
     message.mainPostUrl = object.mainPostUrl ?? "";
     return message;
   }
@@ -6617,7 +6631,8 @@ export const CMsgGCCStrike15V2ServerNotificationForUserPenalty = {
   ): CMsgGCCStrike15V2ServerNotificationForUserPenalty {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2ServerNotificationForUserPenalty();
+    const message =
+      createBaseCMsgGCCStrike15V2ServerNotificationForUserPenalty();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -6647,7 +6662,8 @@ export const CMsgGCCStrike15V2ServerNotificationForUserPenalty = {
       I
     >
   >(object: I): CMsgGCCStrike15V2ServerNotificationForUserPenalty {
-    const message = createBaseCMsgGCCStrike15V2ServerNotificationForUserPenalty();
+    const message =
+      createBaseCMsgGCCStrike15V2ServerNotificationForUserPenalty();
     message.accountId = object.accountId ?? 0;
     message.reason = object.reason ?? 0;
     message.seconds = object.seconds ?? 0;
@@ -8647,10 +8663,11 @@ export const CMsgGCCStrike15V2MatchEndRunRewardDrops = {
       const tag = reader.uint32();
       switch (tag >>> 3) {
         case 3:
-          message.serverinfo = CMsgGCCStrike15V2MatchmakingServerReservationResponse.decode(
-            reader,
-            reader.uint32()
-          );
+          message.serverinfo =
+            CMsgGCCStrike15V2MatchmakingServerReservationResponse.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         case 4:
           message.matchEndQuestData = CMsgGCServerQuestUpdateData.decode(
@@ -8983,7 +9000,8 @@ export const CMsgGCCStrike15V2MatchEndRewardDropsNotification = {
   ): CMsgGCCStrike15V2MatchEndRewardDropsNotification {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2MatchEndRewardDropsNotification();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchEndRewardDropsNotification();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -9007,7 +9025,8 @@ export const CMsgGCCStrike15V2MatchEndRewardDropsNotification = {
       I
     >
   >(object: I): CMsgGCCStrike15V2MatchEndRewardDropsNotification {
-    const message = createBaseCMsgGCCStrike15V2MatchEndRewardDropsNotification();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchEndRewardDropsNotification();
     message.iteminfo =
       object.iteminfo !== undefined && object.iteminfo !== null
         ? CEconItemPreviewDataBlock.fromPartial(object.iteminfo)
@@ -9102,7 +9121,8 @@ export const CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest = {
   ): CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest();
+    const message =
+      createBaseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -9132,7 +9152,8 @@ export const CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest = {
       I
     >
   >(object: I): CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest {
-    const message = createBaseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest();
+    const message =
+      createBaseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest();
     message.paramS =
       object.paramS !== undefined && object.paramS !== null
         ? Long.fromValue(object.paramS)
@@ -9177,7 +9198,8 @@ export const CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse = {
   ): CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse();
+    const message =
+      createBaseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -9201,7 +9223,8 @@ export const CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse = {
       I
     >
   >(object: I): CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse {
-    const message = createBaseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse();
+    const message =
+      createBaseCMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse();
     message.iteminfo =
       object.iteminfo !== undefined && object.iteminfo !== null
         ? CEconItemPreviewDataBlock.fromPartial(object.iteminfo)
@@ -9228,7 +9251,8 @@ export const CMsgGCCStrike15V2MatchListRequestCurrentLiveGames = {
   ): CMsgGCCStrike15V2MatchListRequestCurrentLiveGames {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2MatchListRequestCurrentLiveGames();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchListRequestCurrentLiveGames();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -9246,7 +9270,8 @@ export const CMsgGCCStrike15V2MatchListRequestCurrentLiveGames = {
       I
     >
   >(_: I): CMsgGCCStrike15V2MatchListRequestCurrentLiveGames {
-    const message = createBaseCMsgGCCStrike15V2MatchListRequestCurrentLiveGames();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchListRequestCurrentLiveGames();
     return message;
   }
 };
@@ -9272,7 +9297,8 @@ export const CMsgGCCStrike15V2MatchListRequestLiveGameForUser = {
   ): CMsgGCCStrike15V2MatchListRequestLiveGameForUser {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2MatchListRequestLiveGameForUser();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchListRequestLiveGameForUser();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -9293,7 +9319,8 @@ export const CMsgGCCStrike15V2MatchListRequestLiveGameForUser = {
       I
     >
   >(object: I): CMsgGCCStrike15V2MatchListRequestLiveGameForUser {
-    const message = createBaseCMsgGCCStrike15V2MatchListRequestLiveGameForUser();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchListRequestLiveGameForUser();
     message.accountid = object.accountid ?? 0;
     return message;
   }
@@ -9320,7 +9347,8 @@ export const CMsgGCCStrike15V2MatchListRequestRecentUserGames = {
   ): CMsgGCCStrike15V2MatchListRequestRecentUserGames {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2MatchListRequestRecentUserGames();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchListRequestRecentUserGames();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -9341,7 +9369,8 @@ export const CMsgGCCStrike15V2MatchListRequestRecentUserGames = {
       I
     >
   >(object: I): CMsgGCCStrike15V2MatchListRequestRecentUserGames {
-    const message = createBaseCMsgGCCStrike15V2MatchListRequestRecentUserGames();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchListRequestRecentUserGames();
     message.accountid = object.accountid ?? 0;
     return message;
   }
@@ -9368,7 +9397,8 @@ export const CMsgGCCStrike15V2MatchListRequestTournamentGames = {
   ): CMsgGCCStrike15V2MatchListRequestTournamentGames {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2MatchListRequestTournamentGames();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchListRequestTournamentGames();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -9389,7 +9419,8 @@ export const CMsgGCCStrike15V2MatchListRequestTournamentGames = {
       I
     >
   >(object: I): CMsgGCCStrike15V2MatchListRequestTournamentGames {
-    const message = createBaseCMsgGCCStrike15V2MatchListRequestTournamentGames();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchListRequestTournamentGames();
     message.eventid = object.eventid ?? 0;
     return message;
   }
@@ -9528,10 +9559,11 @@ export const CDataGCCStrike15V2MatchInfo = {
           );
           break;
         case 4:
-          message.roundstatsLegacy = CMsgGCCStrike15V2MatchmakingServerRoundStats.decode(
-            reader,
-            reader.uint32()
-          );
+          message.roundstatsLegacy =
+            CMsgGCCStrike15V2MatchmakingServerRoundStats.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         case 5:
           message.roundstatsall.push(
@@ -10118,7 +10150,8 @@ export const CMsgGCCStrike15V2MatchListTournamentOperatorMgmt = {
   ): CMsgGCCStrike15V2MatchListTournamentOperatorMgmt {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2MatchListTournamentOperatorMgmt();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchListTournamentOperatorMgmt();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -10144,7 +10177,8 @@ export const CMsgGCCStrike15V2MatchListTournamentOperatorMgmt = {
       I
     >
   >(object: I): CMsgGCCStrike15V2MatchListTournamentOperatorMgmt {
-    const message = createBaseCMsgGCCStrike15V2MatchListTournamentOperatorMgmt();
+    const message =
+      createBaseCMsgGCCStrike15V2MatchListTournamentOperatorMgmt();
     message.eventid = object.eventid ?? 0;
     message.matches =
       object.matches?.map(e => CDataGCCStrike15V2MatchInfo.fromPartial(e)) ||
@@ -10937,7 +10971,8 @@ export const CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry = {
   ): CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry();
+    const message =
+      createBaseCMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -10957,13 +10992,12 @@ export const CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry = {
 
   fromPartial<
     I extends Exact<
-      DeepPartial<
-        CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry
-      >,
+      DeepPartial<CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry>,
       I
     >
   >(object: I): CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry {
-    const message = createBaseCMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry();
+    const message =
+      createBaseCMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry();
     message.accountid = object.accountid ?? 0;
     message.gifts = object.gifts ?? 0;
     return message;
@@ -14387,9 +14421,10 @@ export type DeepPartial<T> = T extends Builtin
 type KeysOfUnion<T> = T extends T ? keyof T : never;
 export type Exact<P, I extends P> = P extends Builtin
   ? P
-  : P &
-      { [K in keyof P]: Exact<P[K], I[K]> } &
-      Record<Exclude<keyof I, KeysOfUnion<P>>, never>;
+  : P & { [K in keyof P]: Exact<P[K], I[K]> } & Record<
+        Exclude<keyof I, KeysOfUnion<P>>,
+        never
+      >;
 
 // If you get a compile-error about 'Constructor<Long> and ... have no overlap',
 // add '--ts_proto_opt=esModuleInterop=true' as a flag when calling 'protoc'.

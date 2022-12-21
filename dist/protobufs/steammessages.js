@@ -4295,7 +4295,8 @@ exports.CMsgNotificationOfSuspiciousActivity = {
                     message.appid = reader.uint32();
                     break;
                 case 3:
-                    message.multipleInstances = exports.CMsgNotificationOfSuspiciousActivity_MultipleGameInstances.decode(reader, reader.uint32());
+                    message.multipleInstances =
+                        exports.CMsgNotificationOfSuspiciousActivity_MultipleGameInstances.decode(reader, reader.uint32());
                     break;
                 default:
                     reader.skipType(tag & 7);
