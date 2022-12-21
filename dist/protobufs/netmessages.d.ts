@@ -423,7 +423,7 @@ export interface CSVCMsgBroadcastCommand {
 }
 export declare const CMsgVector: {
     encode(message: CMsgVector, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgVector;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgVector;
     fromPartial<I extends {
         x?: number | undefined;
         y?: number | undefined;
@@ -436,7 +436,7 @@ export declare const CMsgVector: {
 };
 export declare const CMsgVector2D: {
     encode(message: CMsgVector2D, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgVector2D;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgVector2D;
     fromPartial<I extends {
         x?: number | undefined;
         y?: number | undefined;
@@ -447,7 +447,7 @@ export declare const CMsgVector2D: {
 };
 export declare const CMsgQAngle: {
     encode(message: CMsgQAngle, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgQAngle;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgQAngle;
     fromPartial<I extends {
         x?: number | undefined;
         y?: number | undefined;
@@ -460,7 +460,7 @@ export declare const CMsgQAngle: {
 };
 export declare const CMsgRGBA: {
     encode(message: CMsgRGBA, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgRGBA;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgRGBA;
     fromPartial<I extends {
         r?: number | undefined;
         g?: number | undefined;
@@ -475,7 +475,7 @@ export declare const CMsgRGBA: {
 };
 export declare const CNETMsgTick: {
     encode(message: CNETMsgTick, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CNETMsgTick;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CNETMsgTick;
     fromPartial<I extends {
         tick?: number | undefined;
         hostComputationtime?: number | undefined;
@@ -492,7 +492,7 @@ export declare const CNETMsgTick: {
 };
 export declare const CNETMsgStringCmd: {
     encode(message: CNETMsgStringCmd, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CNETMsgStringCmd;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CNETMsgStringCmd;
     fromPartial<I extends {
         command?: string | undefined;
     } & {
@@ -501,7 +501,7 @@ export declare const CNETMsgStringCmd: {
 };
 export declare const CNETMsgSignonState: {
     encode(message: CNETMsgSignonState, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CNETMsgSignonState;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CNETMsgSignonState;
     fromPartial<I extends {
         signonState?: number | undefined;
         spawnCount?: number | undefined;
@@ -518,7 +518,7 @@ export declare const CNETMsgSignonState: {
 };
 export declare const CMsgCVars: {
     encode(message: CMsgCVars, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgCVars;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgCVars;
     fromPartial<I extends {
         cvars?: {
             name?: string | undefined;
@@ -547,7 +547,7 @@ export declare const CMsgCVars: {
 };
 export declare const CMsgCVars_CVar: {
     encode(message: CMsgCVars_CVar, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgCVars_CVar;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgCVars_CVar;
     fromPartial<I extends {
         name?: string | undefined;
         value?: string | undefined;
@@ -560,7 +560,7 @@ export declare const CMsgCVars_CVar: {
 };
 export declare const CNETMsgSetConVar: {
     encode(message: CNETMsgSetConVar, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CNETMsgSetConVar;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CNETMsgSetConVar;
     fromPartial<I extends {
         convars?: {
             cvars?: {
@@ -599,12 +599,12 @@ export declare const CNETMsgSetConVar: {
 };
 export declare const CNETMsgNOP: {
     encode(_: CNETMsgNOP, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CNETMsgNOP;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CNETMsgNOP;
     fromPartial<I extends {} & {} & Record<Exclude<keyof I, never>, never>>(_: I): CNETMsgNOP;
 };
 export declare const CNETMsgDisconnect: {
     encode(message: CNETMsgDisconnect, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CNETMsgDisconnect;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CNETMsgDisconnect;
     fromPartial<I extends {
         text?: string | undefined;
     } & {
@@ -613,7 +613,7 @@ export declare const CNETMsgDisconnect: {
 };
 export declare const CNETMsgFile: {
     encode(message: CNETMsgFile, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CNETMsgFile;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CNETMsgFile;
     fromPartial<I extends {
         transferId?: number | undefined;
         fileName?: string | undefined;
@@ -628,7 +628,7 @@ export declare const CNETMsgFile: {
 };
 export declare const CNETMsgSplitScreenUser: {
     encode(message: CNETMsgSplitScreenUser, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CNETMsgSplitScreenUser;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CNETMsgSplitScreenUser;
     fromPartial<I extends {
         slot?: number | undefined;
     } & {
@@ -637,7 +637,7 @@ export declare const CNETMsgSplitScreenUser: {
 };
 export declare const CNETMsgPlayerAvatarData: {
     encode(message: CNETMsgPlayerAvatarData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CNETMsgPlayerAvatarData;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CNETMsgPlayerAvatarData;
     fromPartial<I extends {
         accountid?: number | undefined;
         rgb?: Uint8Array | undefined;
@@ -648,7 +648,7 @@ export declare const CNETMsgPlayerAvatarData: {
 };
 export declare const CCLCMsgClientInfo: {
     encode(message: CCLCMsgClientInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CCLCMsgClientInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CCLCMsgClientInfo;
     fromPartial<I extends {
         sendTableCrc?: number | undefined;
         serverCount?: number | undefined;
@@ -669,7 +669,7 @@ export declare const CCLCMsgClientInfo: {
 };
 export declare const CCLCMsgMove: {
     encode(message: CCLCMsgMove, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CCLCMsgMove;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CCLCMsgMove;
     fromPartial<I extends {
         numBackupCommands?: number | undefined;
         numNewCommands?: number | undefined;
@@ -682,7 +682,7 @@ export declare const CCLCMsgMove: {
 };
 export declare const CCLCMsgVoiceData: {
     encode(message: CCLCMsgVoiceData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CCLCMsgVoiceData;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CCLCMsgVoiceData;
     fromPartial<I extends {
         data?: Uint8Array | undefined;
         xuid?: string | number | Long.Long | undefined;
@@ -758,7 +758,7 @@ export declare const CCLCMsgVoiceData: {
 };
 export declare const CCLCMsgBaselineAck: {
     encode(message: CCLCMsgBaselineAck, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CCLCMsgBaselineAck;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CCLCMsgBaselineAck;
     fromPartial<I extends {
         baselineTick?: number | undefined;
         baselineNr?: number | undefined;
@@ -769,7 +769,7 @@ export declare const CCLCMsgBaselineAck: {
 };
 export declare const CCLCMsgListenEvents: {
     encode(message: CCLCMsgListenEvents, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CCLCMsgListenEvents;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CCLCMsgListenEvents;
     fromPartial<I extends {
         eventMask?: number[] | undefined;
     } & {
@@ -778,7 +778,7 @@ export declare const CCLCMsgListenEvents: {
 };
 export declare const CCLCMsgRespondCvarValue: {
     encode(message: CCLCMsgRespondCvarValue, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CCLCMsgRespondCvarValue;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CCLCMsgRespondCvarValue;
     fromPartial<I extends {
         cookie?: number | undefined;
         statusCode?: number | undefined;
@@ -793,7 +793,7 @@ export declare const CCLCMsgRespondCvarValue: {
 };
 export declare const CCLCMsgFileCRCCheck: {
     encode(message: CCLCMsgFileCRCCheck, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CCLCMsgFileCRCCheck;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CCLCMsgFileCRCCheck;
     fromPartial<I extends {
         codePath?: number | undefined;
         path?: string | undefined;
@@ -822,7 +822,7 @@ export declare const CCLCMsgFileCRCCheck: {
 };
 export declare const CCLCMsgLoadingProgress: {
     encode(message: CCLCMsgLoadingProgress, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CCLCMsgLoadingProgress;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CCLCMsgLoadingProgress;
     fromPartial<I extends {
         progress?: number | undefined;
     } & {
@@ -831,7 +831,7 @@ export declare const CCLCMsgLoadingProgress: {
 };
 export declare const CCLCMsgSplitPlayerConnect: {
     encode(message: CCLCMsgSplitPlayerConnect, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CCLCMsgSplitPlayerConnect;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CCLCMsgSplitPlayerConnect;
     fromPartial<I extends {
         convars?: {
             cvars?: {
@@ -870,7 +870,7 @@ export declare const CCLCMsgSplitPlayerConnect: {
 };
 export declare const CCLCMsgCmdKeyValues: {
     encode(message: CCLCMsgCmdKeyValues, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CCLCMsgCmdKeyValues;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CCLCMsgCmdKeyValues;
     fromPartial<I extends {
         keyvalues?: Uint8Array | undefined;
     } & {
@@ -879,7 +879,7 @@ export declare const CCLCMsgCmdKeyValues: {
 };
 export declare const CSVCMsgServerInfo: {
     encode(message: CSVCMsgServerInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgServerInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgServerInfo;
     fromPartial<I extends {
         protocol?: number | undefined;
         serverCount?: number | undefined;
@@ -987,7 +987,7 @@ export declare const CSVCMsgServerInfo: {
 };
 export declare const CSVCMsgClassInfo: {
     encode(message: CSVCMsgClassInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgClassInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgClassInfo;
     fromPartial<I extends {
         createOnClient?: boolean | undefined;
         classes?: {
@@ -1018,7 +1018,7 @@ export declare const CSVCMsgClassInfo: {
 };
 export declare const CSVCMsgClassInfo_classT: {
     encode(message: CSVCMsgClassInfo_classT, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgClassInfo_classT;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgClassInfo_classT;
     fromPartial<I extends {
         classId?: number | undefined;
         dataTableName?: string | undefined;
@@ -1031,7 +1031,7 @@ export declare const CSVCMsgClassInfo_classT: {
 };
 export declare const CSVCMsgSendTable: {
     encode(message: CSVCMsgSendTable, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgSendTable;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgSendTable;
     fromPartial<I extends {
         isEnd?: boolean | undefined;
         netTableName?: string | undefined;
@@ -1096,7 +1096,7 @@ export declare const CSVCMsgSendTable: {
 };
 export declare const CSVCMsgSendTable_sendpropT: {
     encode(message: CSVCMsgSendTable_sendpropT, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgSendTable_sendpropT;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgSendTable_sendpropT;
     fromPartial<I extends {
         type?: number | undefined;
         varName?: string | undefined;
@@ -1121,7 +1121,7 @@ export declare const CSVCMsgSendTable_sendpropT: {
 };
 export declare const CSVCMsgPrint: {
     encode(message: CSVCMsgPrint, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgPrint;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgPrint;
     fromPartial<I extends {
         text?: string | undefined;
     } & {
@@ -1130,7 +1130,7 @@ export declare const CSVCMsgPrint: {
 };
 export declare const CSVCMsgSetPause: {
     encode(message: CSVCMsgSetPause, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgSetPause;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgSetPause;
     fromPartial<I extends {
         paused?: boolean | undefined;
     } & {
@@ -1139,7 +1139,7 @@ export declare const CSVCMsgSetPause: {
 };
 export declare const CSVCMsgSetView: {
     encode(message: CSVCMsgSetView, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgSetView;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgSetView;
     fromPartial<I extends {
         entityIndex?: number | undefined;
     } & {
@@ -1148,7 +1148,7 @@ export declare const CSVCMsgSetView: {
 };
 export declare const CSVCMsgCreateStringTable: {
     encode(message: CSVCMsgCreateStringTable, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgCreateStringTable;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgCreateStringTable;
     fromPartial<I extends {
         name?: string | undefined;
         maxEntries?: number | undefined;
@@ -1171,7 +1171,7 @@ export declare const CSVCMsgCreateStringTable: {
 };
 export declare const CSVCMsgUpdateStringTable: {
     encode(message: CSVCMsgUpdateStringTable, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgUpdateStringTable;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgUpdateStringTable;
     fromPartial<I extends {
         tableId?: number | undefined;
         numChangedEntries?: number | undefined;
@@ -1184,7 +1184,7 @@ export declare const CSVCMsgUpdateStringTable: {
 };
 export declare const CSVCMsgVoiceInit: {
     encode(message: CSVCMsgVoiceInit, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgVoiceInit;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgVoiceInit;
     fromPartial<I extends {
         quality?: number | undefined;
         codec?: string | undefined;
@@ -1197,7 +1197,7 @@ export declare const CSVCMsgVoiceInit: {
 };
 export declare const CSVCMsgVoiceData: {
     encode(message: CSVCMsgVoiceData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgVoiceData;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgVoiceData;
     fromPartial<I extends {
         client?: number | undefined;
         proximity?: boolean | undefined;
@@ -1281,7 +1281,7 @@ export declare const CSVCMsgVoiceData: {
 };
 export declare const CSVCMsgFixAngle: {
     encode(message: CSVCMsgFixAngle, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgFixAngle;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgFixAngle;
     fromPartial<I extends {
         relative?: boolean | undefined;
         angle?: {
@@ -1304,7 +1304,7 @@ export declare const CSVCMsgFixAngle: {
 };
 export declare const CSVCMsgCrosshairAngle: {
     encode(message: CSVCMsgCrosshairAngle, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgCrosshairAngle;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgCrosshairAngle;
     fromPartial<I extends {
         angle?: {
             x?: number | undefined;
@@ -1325,7 +1325,7 @@ export declare const CSVCMsgCrosshairAngle: {
 };
 export declare const CSVCMsgPrefetch: {
     encode(message: CSVCMsgPrefetch, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgPrefetch;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgPrefetch;
     fromPartial<I extends {
         soundIndex?: number | undefined;
     } & {
@@ -1334,7 +1334,7 @@ export declare const CSVCMsgPrefetch: {
 };
 export declare const CSVCMsgBSPDecal: {
     encode(message: CSVCMsgBSPDecal, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgBSPDecal;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgBSPDecal;
     fromPartial<I extends {
         pos?: {
             x?: number | undefined;
@@ -1363,7 +1363,7 @@ export declare const CSVCMsgBSPDecal: {
 };
 export declare const CSVCMsgSplitScreen: {
     encode(message: CSVCMsgSplitScreen, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgSplitScreen;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgSplitScreen;
     fromPartial<I extends {
         type?: ESplitScreenMessageType | undefined;
         slot?: number | undefined;
@@ -1376,7 +1376,7 @@ export declare const CSVCMsgSplitScreen: {
 };
 export declare const CSVCMsgGetCvarValue: {
     encode(message: CSVCMsgGetCvarValue, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgGetCvarValue;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgGetCvarValue;
     fromPartial<I extends {
         cookie?: number | undefined;
         cvarName?: string | undefined;
@@ -1387,7 +1387,7 @@ export declare const CSVCMsgGetCvarValue: {
 };
 export declare const CSVCMsgMenu: {
     encode(message: CSVCMsgMenu, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgMenu;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgMenu;
     fromPartial<I extends {
         dialogType?: number | undefined;
         menuKeyValues?: Uint8Array | undefined;
@@ -1398,7 +1398,7 @@ export declare const CSVCMsgMenu: {
 };
 export declare const CSVCMsgUserMessage: {
     encode(message: CSVCMsgUserMessage, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgUserMessage;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgUserMessage;
     fromPartial<I extends {
         msgType?: number | undefined;
         msgData?: Uint8Array | undefined;
@@ -1411,7 +1411,7 @@ export declare const CSVCMsgUserMessage: {
 };
 export declare const CSVCMsgPaintmapData: {
     encode(message: CSVCMsgPaintmapData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgPaintmapData;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgPaintmapData;
     fromPartial<I extends {
         paintmap?: Uint8Array | undefined;
     } & {
@@ -1420,7 +1420,7 @@ export declare const CSVCMsgPaintmapData: {
 };
 export declare const CSVCMsgGameEvent: {
     encode(message: CSVCMsgGameEvent, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgGameEvent;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgGameEvent;
     fromPartial<I extends {
         eventName?: string | undefined;
         eventid?: number | undefined;
@@ -1542,7 +1542,7 @@ export declare const CSVCMsgGameEvent: {
 };
 export declare const CSVCMsgGameEvent_keyT: {
     encode(message: CSVCMsgGameEvent_keyT, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgGameEvent_keyT;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgGameEvent_keyT;
     fromPartial<I extends {
         type?: number | undefined;
         valString?: string | undefined;
@@ -1624,7 +1624,7 @@ export declare const CSVCMsgGameEvent_keyT: {
 };
 export declare const CSVCMsgGameEventList: {
     encode(message: CSVCMsgGameEventList, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgGameEventList;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgGameEventList;
     fromPartial<I extends {
         descriptors?: {
             eventid?: number | undefined;
@@ -1677,7 +1677,7 @@ export declare const CSVCMsgGameEventList: {
 };
 export declare const CSVCMsgGameEventList_keyT: {
     encode(message: CSVCMsgGameEventList_keyT, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgGameEventList_keyT;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgGameEventList_keyT;
     fromPartial<I extends {
         type?: number | undefined;
         name?: string | undefined;
@@ -1688,7 +1688,7 @@ export declare const CSVCMsgGameEventList_keyT: {
 };
 export declare const CSVCMsgGameEventList_descriptorT: {
     encode(message: CSVCMsgGameEventList_descriptorT, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgGameEventList_descriptorT;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgGameEventList_descriptorT;
     fromPartial<I extends {
         eventid?: number | undefined;
         name?: string | undefined;
@@ -1716,7 +1716,7 @@ export declare const CSVCMsgGameEventList_descriptorT: {
 };
 export declare const CSVCMsgTempEntities: {
     encode(message: CSVCMsgTempEntities, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgTempEntities;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgTempEntities;
     fromPartial<I extends {
         reliable?: boolean | undefined;
         numEntries?: number | undefined;
@@ -1729,7 +1729,7 @@ export declare const CSVCMsgTempEntities: {
 };
 export declare const CSVCMsgPacketEntities: {
     encode(message: CSVCMsgPacketEntities, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgPacketEntities;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgPacketEntities;
     fromPartial<I extends {
         maxEntries?: number | undefined;
         updatedEntries?: number | undefined;
@@ -1750,7 +1750,7 @@ export declare const CSVCMsgPacketEntities: {
 };
 export declare const CSVCMsgSounds: {
     encode(message: CSVCMsgSounds, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgSounds;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgSounds;
     fromPartial<I extends {
         reliableSound?: boolean | undefined;
         sounds?: {
@@ -1851,7 +1851,7 @@ export declare const CSVCMsgSounds: {
 };
 export declare const CSVCMsgSounds_sounddataT: {
     encode(message: CSVCMsgSounds_sounddataT, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgSounds_sounddataT;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgSounds_sounddataT;
     fromPartial<I extends {
         originX?: number | undefined;
         originY?: number | undefined;
@@ -1892,7 +1892,7 @@ export declare const CSVCMsgSounds_sounddataT: {
 };
 export declare const CSVCMsgEntityMsg: {
     encode(message: CSVCMsgEntityMsg, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgEntityMsg;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgEntityMsg;
     fromPartial<I extends {
         entIndex?: number | undefined;
         classId?: number | undefined;
@@ -1905,7 +1905,7 @@ export declare const CSVCMsgEntityMsg: {
 };
 export declare const CSVCMsgCmdKeyValues: {
     encode(message: CSVCMsgCmdKeyValues, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgCmdKeyValues;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgCmdKeyValues;
     fromPartial<I extends {
         keyvalues?: Uint8Array | undefined;
     } & {
@@ -1914,7 +1914,7 @@ export declare const CSVCMsgCmdKeyValues: {
 };
 export declare const CSVCMsgEncryptedData: {
     encode(message: CSVCMsgEncryptedData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgEncryptedData;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgEncryptedData;
     fromPartial<I extends {
         encrypted?: Uint8Array | undefined;
         keyType?: number | undefined;
@@ -1925,7 +1925,7 @@ export declare const CSVCMsgEncryptedData: {
 };
 export declare const CSVCMsgHltvReplay: {
     encode(message: CSVCMsgHltvReplay, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgHltvReplay;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgHltvReplay;
     fromPartial<I extends {
         delay?: number | undefined;
         primaryTarget?: number | undefined;
@@ -1946,7 +1946,7 @@ export declare const CSVCMsgHltvReplay: {
 };
 export declare const CCLCMsgHltvReplay: {
     encode(message: CCLCMsgHltvReplay, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CCLCMsgHltvReplay;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CCLCMsgHltvReplay;
     fromPartial<I extends {
         request?: number | undefined;
         slowdownLength?: number | undefined;
@@ -1963,7 +1963,7 @@ export declare const CCLCMsgHltvReplay: {
 };
 export declare const CSVCMsgBroadcastCommand: {
     encode(message: CSVCMsgBroadcastCommand, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSVCMsgBroadcastCommand;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSVCMsgBroadcastCommand;
     fromPartial<I extends {
         cmd?: string | undefined;
     } & {

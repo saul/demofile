@@ -1182,7 +1182,7 @@ export interface CMsgGCCStrike15V2GC2ClientInitSystemResponse {
 }
 export declare const GameServerPing: {
     encode(message: GameServerPing, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): GameServerPing;
+    decode(input: Reader | Uint8Array, length?: number | undefined): GameServerPing;
     fromPartial<I extends {
         ping?: number | undefined;
         ip?: number | undefined;
@@ -1195,7 +1195,7 @@ export declare const GameServerPing: {
 };
 export declare const DataCenterPing: {
     encode(message: DataCenterPing, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): DataCenterPing;
+    decode(input: Reader | Uint8Array, length?: number | undefined): DataCenterPing;
     fromPartial<I extends {
         dataCenterId?: number | undefined;
         ping?: number | undefined;
@@ -1206,7 +1206,7 @@ export declare const DataCenterPing: {
 };
 export declare const DetailedSearchStatistic: {
     encode(message: DetailedSearchStatistic, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): DetailedSearchStatistic;
+    decode(input: Reader | Uint8Array, length?: number | undefined): DetailedSearchStatistic;
     fromPartial<I extends {
         gameType?: number | undefined;
         searchTimeAvg?: number | undefined;
@@ -1219,7 +1219,7 @@ export declare const DetailedSearchStatistic: {
 };
 export declare const TournamentPlayer: {
     encode(message: TournamentPlayer, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): TournamentPlayer;
+    decode(input: Reader | Uint8Array, length?: number | undefined): TournamentPlayer;
     fromPartial<I extends {
         accountId?: number | undefined;
         playerNick?: string | undefined;
@@ -1240,7 +1240,7 @@ export declare const TournamentPlayer: {
 };
 export declare const TournamentTeam: {
     encode(message: TournamentTeam, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): TournamentTeam;
+    decode(input: Reader | Uint8Array, length?: number | undefined): TournamentTeam;
     fromPartial<I extends {
         teamId?: number | undefined;
         teamTag?: string | undefined;
@@ -1297,7 +1297,7 @@ export declare const TournamentTeam: {
 };
 export declare const TournamentEvent: {
     encode(message: TournamentEvent, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): TournamentEvent;
+    decode(input: Reader | Uint8Array, length?: number | undefined): TournamentEvent;
     fromPartial<I extends {
         eventId?: number | undefined;
         eventTag?: string | undefined;
@@ -1322,7 +1322,7 @@ export declare const TournamentEvent: {
 };
 export declare const GlobalStatistics: {
     encode(message: GlobalStatistics, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): GlobalStatistics;
+    decode(input: Reader | Uint8Array, length?: number | undefined): GlobalStatistics;
     fromPartial<I extends {
         playersOnline?: number | undefined;
         serversOnline?: number | undefined;
@@ -1379,7 +1379,7 @@ export declare const GlobalStatistics: {
 };
 export declare const OperationalStatisticDescription: {
     encode(message: OperationalStatisticDescription, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): OperationalStatisticDescription;
+    decode(input: Reader | Uint8Array, length?: number | undefined): OperationalStatisticDescription;
     fromPartial<I extends {
         name?: string | undefined;
         idkey?: number | undefined;
@@ -1390,7 +1390,7 @@ export declare const OperationalStatisticDescription: {
 };
 export declare const OperationalStatisticElement: {
     encode(message: OperationalStatisticElement, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): OperationalStatisticElement;
+    decode(input: Reader | Uint8Array, length?: number | undefined): OperationalStatisticElement;
     fromPartial<I extends {
         idkey?: number | undefined;
         values?: number[] | undefined;
@@ -1401,7 +1401,7 @@ export declare const OperationalStatisticElement: {
 };
 export declare const OperationalStatisticsPacket: {
     encode(message: OperationalStatisticsPacket, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): OperationalStatisticsPacket;
+    decode(input: Reader | Uint8Array, length?: number | undefined): OperationalStatisticsPacket;
     fromPartial<I extends {
         packetid?: number | undefined;
         mstimestamp?: number | undefined;
@@ -1429,7 +1429,7 @@ export declare const OperationalStatisticsPacket: {
 };
 export declare const PlayerRankingInfo: {
     encode(message: PlayerRankingInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): PlayerRankingInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): PlayerRankingInfo;
     fromPartial<I extends {
         accountId?: number | undefined;
         rankId?: number | undefined;
@@ -1448,7 +1448,7 @@ export declare const PlayerRankingInfo: {
 };
 export declare const PlayerCommendationInfo: {
     encode(message: PlayerCommendationInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): PlayerCommendationInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): PlayerCommendationInfo;
     fromPartial<I extends {
         cmdFriendly?: number | undefined;
         cmdTeaching?: number | undefined;
@@ -1461,7 +1461,7 @@ export declare const PlayerCommendationInfo: {
 };
 export declare const PlayerMedalsInfo: {
     encode(message: PlayerMedalsInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): PlayerMedalsInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): PlayerMedalsInfo;
     fromPartial<I extends {
         displayItemsDefidx?: number[] | undefined;
         featuredDisplayItemDefidx?: number | undefined;
@@ -1472,7 +1472,7 @@ export declare const PlayerMedalsInfo: {
 };
 export declare const AccountActivity: {
     encode(message: AccountActivity, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): AccountActivity;
+    decode(input: Reader | Uint8Array, length?: number | undefined): AccountActivity;
     fromPartial<I extends {
         activity?: number | undefined;
         mode?: number | undefined;
@@ -1544,7 +1544,7 @@ export declare const AccountActivity: {
 };
 export declare const TournamentMatchSetup: {
     encode(message: TournamentMatchSetup, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): TournamentMatchSetup;
+    decode(input: Reader | Uint8Array, length?: number | undefined): TournamentMatchSetup;
     fromPartial<I extends {
         eventId?: number | undefined;
         teamIdCt?: number | undefined;
@@ -1559,7 +1559,7 @@ export declare const TournamentMatchSetup: {
 };
 export declare const ServerHltvInfo: {
     encode(message: ServerHltvInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): ServerHltvInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): ServerHltvInfo;
     fromPartial<I extends {
         tvUdpPort?: number | undefined;
         tvWatchKey?: string | number | Long.Long | undefined;
@@ -1777,7 +1777,7 @@ export declare const ServerHltvInfo: {
 };
 export declare const IpAddressMask: {
     encode(message: IpAddressMask, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): IpAddressMask;
+    decode(input: Reader | Uint8Array, length?: number | undefined): IpAddressMask;
     fromPartial<I extends {
         a?: number | undefined;
         b?: number | undefined;
@@ -1796,7 +1796,7 @@ export declare const IpAddressMask: {
 };
 export declare const CMsgCsgoSteamUserStatChange: {
     encode(message: CMsgCsgoSteamUserStatChange, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgCsgoSteamUserStatChange;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgCsgoSteamUserStatChange;
     fromPartial<I extends {
         ecsgosteamuserstat?: number | undefined;
         delta?: number | undefined;
@@ -1809,7 +1809,7 @@ export declare const CMsgCsgoSteamUserStatChange: {
 };
 export declare const XpProgressData: {
     encode(message: XpProgressData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): XpProgressData;
+    decode(input: Reader | Uint8Array, length?: number | undefined): XpProgressData;
     fromPartial<I extends {
         xpPoints?: number | undefined;
         xpCategory?: number | undefined;
@@ -1820,7 +1820,7 @@ export declare const XpProgressData: {
 };
 export declare const MatchEndItemUpdates: {
     encode(message: MatchEndItemUpdates, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): MatchEndItemUpdates;
+    decode(input: Reader | Uint8Array, length?: number | undefined): MatchEndItemUpdates;
     fromPartial<I extends {
         itemId?: string | number | Long.Long | undefined;
         itemAttrDefidx?: number | undefined;
@@ -1890,7 +1890,7 @@ export declare const MatchEndItemUpdates: {
 };
 export declare const ScoreLeaderboardData: {
     encode(message: ScoreLeaderboardData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): ScoreLeaderboardData;
+    decode(input: Reader | Uint8Array, length?: number | undefined): ScoreLeaderboardData;
     fromPartial<I extends {
         questId?: string | number | Long.Long | undefined;
         score?: number | undefined;
@@ -2016,7 +2016,7 @@ export declare const ScoreLeaderboardData: {
 };
 export declare const ScoreLeaderboardData_Entry: {
     encode(message: ScoreLeaderboardData_Entry, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): ScoreLeaderboardData_Entry;
+    decode(input: Reader | Uint8Array, length?: number | undefined): ScoreLeaderboardData_Entry;
     fromPartial<I extends {
         tag?: number | undefined;
         val?: number | undefined;
@@ -2027,7 +2027,7 @@ export declare const ScoreLeaderboardData_Entry: {
 };
 export declare const ScoreLeaderboardData_AccountEntries: {
     encode(message: ScoreLeaderboardData_AccountEntries, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): ScoreLeaderboardData_AccountEntries;
+    decode(input: Reader | Uint8Array, length?: number | undefined): ScoreLeaderboardData_AccountEntries;
     fromPartial<I extends {
         accountid?: number | undefined;
         entries?: {
@@ -2053,7 +2053,7 @@ export declare const ScoreLeaderboardData_AccountEntries: {
 };
 export declare const PlayerQuestData: {
     encode(message: PlayerQuestData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): PlayerQuestData;
+    decode(input: Reader | Uint8Array, length?: number | undefined): PlayerQuestData;
     fromPartial<I extends {
         questerAccountId?: number | undefined;
         questItemData?: {
@@ -2265,7 +2265,7 @@ export declare const PlayerQuestData: {
 };
 export declare const PlayerQuestData_QuestItemData: {
     encode(message: PlayerQuestData_QuestItemData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): PlayerQuestData_QuestItemData;
+    decode(input: Reader | Uint8Array, length?: number | undefined): PlayerQuestData_QuestItemData;
     fromPartial<I extends {
         questId?: string | number | Long.Long | undefined;
         questNormalPointsEarned?: number | undefined;
@@ -2335,7 +2335,7 @@ export declare const PlayerQuestData_QuestItemData: {
 };
 export declare const DeepPlayerStatsEntry: {
     encode(message: DeepPlayerStatsEntry, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): DeepPlayerStatsEntry;
+    decode(input: Reader | Uint8Array, length?: number | undefined): DeepPlayerStatsEntry;
     fromPartial<I extends {
         accountid?: number | undefined;
         matchId?: string | number | Long.Long | undefined;
@@ -2455,7 +2455,7 @@ export declare const DeepPlayerStatsEntry: {
 };
 export declare const DeepPlayerMatchEvent: {
     encode(message: DeepPlayerMatchEvent, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): DeepPlayerMatchEvent;
+    decode(input: Reader | Uint8Array, length?: number | undefined): DeepPlayerMatchEvent;
     fromPartial<I extends {
         accountid?: number | undefined;
         matchId?: string | number | Long.Long | undefined;
@@ -2547,7 +2547,7 @@ export declare const DeepPlayerMatchEvent: {
 };
 export declare const CMsgGCServerQuestUpdateData: {
     encode(message: CMsgGCServerQuestUpdateData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCServerQuestUpdateData;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCServerQuestUpdateData;
     fromPartial<I extends {
         playerQuestData?: {
             questerAccountId?: number | undefined;
@@ -2976,7 +2976,7 @@ export declare const CMsgGCServerQuestUpdateData: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingGCOperationalStats: {
     encode(message: CMsgGCCStrike15V2MatchmakingGCOperationalStats, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingGCOperationalStats;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingGCOperationalStats;
     fromPartial<I extends {
         packetid?: number | undefined;
         namekeys?: {
@@ -3048,7 +3048,7 @@ export declare const CMsgGCCStrike15V2MatchmakingGCOperationalStats: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingGC2ServerConfirm: {
     encode(message: CMsgGCCStrike15V2MatchmakingGC2ServerConfirm, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingGC2ServerConfirm;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingGC2ServerConfirm;
     fromPartial<I extends {
         token?: number | undefined;
         stamp?: number | undefined;
@@ -3118,7 +3118,7 @@ export declare const CMsgGCCStrike15V2MatchmakingGC2ServerConfirm: {
 };
 export declare const CMsgGCCStrike15V2GC2ServerReservationUpdate: {
     encode(message: CMsgGCCStrike15V2GC2ServerReservationUpdate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2GC2ServerReservationUpdate;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2GC2ServerReservationUpdate;
     fromPartial<I extends {
         viewersExternalTotal?: number | undefined;
         viewersExternalSteam?: number | undefined;
@@ -3129,7 +3129,7 @@ export declare const CMsgGCCStrike15V2GC2ServerReservationUpdate: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingStart: {
     encode(message: CMsgGCCStrike15V2MatchmakingStart, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingStart;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingStart;
     fromPartial<I extends {
         accountIds?: number[] | undefined;
         gameType?: number | undefined;
@@ -3224,7 +3224,7 @@ export declare const CMsgGCCStrike15V2MatchmakingStart: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingStop: {
     encode(message: CMsgGCCStrike15V2MatchmakingStop, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingStop;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingStop;
     fromPartial<I extends {
         abandon?: number | undefined;
     } & {
@@ -3233,7 +3233,7 @@ export declare const CMsgGCCStrike15V2MatchmakingStop: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingClient2ServerPing: {
     encode(message: CMsgGCCStrike15V2MatchmakingClient2ServerPing, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingClient2ServerPing;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingClient2ServerPing;
     fromPartial<I extends {
         gameserverpings?: {
             ping?: number | undefined;
@@ -3287,7 +3287,7 @@ export declare const CMsgGCCStrike15V2MatchmakingClient2ServerPing: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingGC2ClientUpdate: {
     encode(message: CMsgGCCStrike15V2MatchmakingGC2ClientUpdate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingGC2ClientUpdate;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingGC2ClientUpdate;
     fromPartial<I extends {
         matchmaking?: number | undefined;
         waitingAccountIdSessions?: number[] | undefined;
@@ -3444,7 +3444,7 @@ export declare const CMsgGCCStrike15V2MatchmakingGC2ClientUpdate: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note: {
     encode(message: CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note;
     fromPartial<I extends {
         type?: number | undefined;
         regionId?: number | undefined;
@@ -3459,7 +3459,7 @@ export declare const CMsgGCCStrike15V2MatchmakingGC2ClientUpdate_Note: {
 };
 export declare const CDataGCCStrike15V2TournamentMatchDraft: {
     encode(message: CDataGCCStrike15V2TournamentMatchDraft, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CDataGCCStrike15V2TournamentMatchDraft;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CDataGCCStrike15V2TournamentMatchDraft;
     fromPartial<I extends {
         eventId?: number | undefined;
         eventStageId?: number | undefined;
@@ -3501,7 +3501,7 @@ export declare const CDataGCCStrike15V2TournamentMatchDraft: {
 };
 export declare const CDataGCCStrike15V2TournamentMatchDraft_Entry: {
     encode(message: CDataGCCStrike15V2TournamentMatchDraft_Entry, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CDataGCCStrike15V2TournamentMatchDraft_Entry;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CDataGCCStrike15V2TournamentMatchDraft_Entry;
     fromPartial<I extends {
         mapid?: number | undefined;
         teamIdCt?: number | undefined;
@@ -3512,7 +3512,7 @@ export declare const CDataGCCStrike15V2TournamentMatchDraft_Entry: {
 };
 export declare const CPreMatchInfoData: {
     encode(message: CPreMatchInfoData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CPreMatchInfoData;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CPreMatchInfoData;
     fromPartial<I extends {
         predictionsPct?: number | undefined;
         draft?: {
@@ -3598,7 +3598,7 @@ export declare const CPreMatchInfoData: {
 };
 export declare const CPreMatchInfoData_TeamStats: {
     encode(message: CPreMatchInfoData_TeamStats, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CPreMatchInfoData_TeamStats;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CPreMatchInfoData_TeamStats;
     fromPartial<I extends {
         matchInfoIdxtxt?: number | undefined;
         matchInfoTxt?: string | undefined;
@@ -3611,7 +3611,7 @@ export declare const CPreMatchInfoData_TeamStats: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingGC2ServerReserve: {
     encode(message: CMsgGCCStrike15V2MatchmakingGC2ServerReserve, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingGC2ServerReserve;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingGC2ServerReserve;
     fromPartial<I extends {
         accountIds?: number[] | undefined;
         gameType?: number | undefined;
@@ -4237,7 +4237,7 @@ export declare const CMsgGCCStrike15V2MatchmakingGC2ServerReserve: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingServerReservationResponse: {
     encode(message: CMsgGCCStrike15V2MatchmakingServerReservationResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingServerReservationResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingServerReservationResponse;
     fromPartial<I extends {
         reservationid?: string | number | Long.Long | undefined;
         reservation?: {
@@ -5327,7 +5327,7 @@ export declare const CMsgGCCStrike15V2MatchmakingServerReservationResponse: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingGC2ClientReserve: {
     encode(message: CMsgGCCStrike15V2MatchmakingGC2ClientReserve, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingGC2ClientReserve;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingGC2ClientReserve;
     fromPartial<I extends {
         serverid?: string | number | Long.Long | undefined;
         directUdpIp?: number | undefined;
@@ -6163,7 +6163,7 @@ export declare const CMsgGCCStrike15V2MatchmakingGC2ClientReserve: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingServerRoundStats: {
     encode(message: CMsgGCCStrike15V2MatchmakingServerRoundStats, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingServerRoundStats;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingServerRoundStats;
     fromPartial<I extends {
         reservationid?: string | number | Long.Long | undefined;
         reservation?: {
@@ -7065,7 +7065,7 @@ export declare const CMsgGCCStrike15V2MatchmakingServerRoundStats: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo: {
     encode(message: CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo;
     fromPartial<I extends {
         accountMvp?: number | undefined;
     } & {
@@ -7074,12 +7074,12 @@ export declare const CMsgGCCStrike15V2MatchmakingServerRoundStats_DropInfo: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingClient2GCHello: {
     encode(_: CMsgGCCStrike15V2MatchmakingClient2GCHello, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingClient2GCHello;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingClient2GCHello;
     fromPartial<I extends {} & {} & Record<Exclude<keyof I, never>, never>>(_: I): CMsgGCCStrike15V2MatchmakingClient2GCHello;
 };
 export declare const CMsgGCCStrike15V2MatchmakingGC2ClientHello: {
     encode(message: CMsgGCCStrike15V2MatchmakingGC2ClientHello, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingGC2ClientHello;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingGC2ClientHello;
     fromPartial<I extends {
         accountId?: number | undefined;
         ongoingmatch?: {
@@ -8504,7 +8504,7 @@ export declare const CMsgGCCStrike15V2MatchmakingGC2ClientHello: {
 };
 export declare const CMsgGCCStrike15V2AccountPrivacySettings: {
     encode(message: CMsgGCCStrike15V2AccountPrivacySettings, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2AccountPrivacySettings;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2AccountPrivacySettings;
     fromPartial<I extends {
         settings?: {
             settingType?: number | undefined;
@@ -8528,7 +8528,7 @@ export declare const CMsgGCCStrike15V2AccountPrivacySettings: {
 };
 export declare const CMsgGCCStrike15V2AccountPrivacySettings_Setting: {
     encode(message: CMsgGCCStrike15V2AccountPrivacySettings_Setting, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2AccountPrivacySettings_Setting;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2AccountPrivacySettings_Setting;
     fromPartial<I extends {
         settingType?: number | undefined;
         settingValue?: number | undefined;
@@ -8539,7 +8539,7 @@ export declare const CMsgGCCStrike15V2AccountPrivacySettings_Setting: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingGC2ClientAbandon: {
     encode(message: CMsgGCCStrike15V2MatchmakingGC2ClientAbandon, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingGC2ClientAbandon;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingGC2ClientAbandon;
     fromPartial<I extends {
         accountId?: number | undefined;
         abandonedMatch?: {
@@ -9473,7 +9473,7 @@ export declare const CMsgGCCStrike15V2MatchmakingGC2ClientAbandon: {
 };
 export declare const CMsgGCCStrike15V2ClientGCRankUpdate: {
     encode(message: CMsgGCCStrike15V2ClientGCRankUpdate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientGCRankUpdate;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientGCRankUpdate;
     fromPartial<I extends {
         rankings?: {
             accountId?: number | undefined;
@@ -9517,7 +9517,7 @@ export declare const CMsgGCCStrike15V2ClientGCRankUpdate: {
 };
 export declare const CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate: {
     encode(message: CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate;
     fromPartial<I extends {
         mainPostUrl?: string | undefined;
     } & {
@@ -9526,7 +9526,7 @@ export declare const CMsgGCCStrike15V2MatchmakingOperator2GCBlogUpdate: {
 };
 export declare const CMsgGCCStrike15V2ServerNotificationForUserPenalty: {
     encode(message: CMsgGCCStrike15V2ServerNotificationForUserPenalty, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ServerNotificationForUserPenalty;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ServerNotificationForUserPenalty;
     fromPartial<I extends {
         accountId?: number | undefined;
         reason?: number | undefined;
@@ -9541,7 +9541,7 @@ export declare const CMsgGCCStrike15V2ServerNotificationForUserPenalty: {
 };
 export declare const CMsgGCCStrike15V2ClientReportPlayer: {
     encode(message: CMsgGCCStrike15V2ClientReportPlayer, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientReportPlayer;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientReportPlayer;
     fromPartial<I extends {
         accountId?: number | undefined;
         rptAimbot?: number | undefined;
@@ -9623,7 +9623,7 @@ export declare const CMsgGCCStrike15V2ClientReportPlayer: {
 };
 export declare const CMsgGCCStrike15V2ClientCommendPlayer: {
     encode(message: CMsgGCCStrike15V2ClientCommendPlayer, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientCommendPlayer;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientCommendPlayer;
     fromPartial<I extends {
         accountId?: number | undefined;
         matchId?: string | number | Long.Long | undefined;
@@ -9707,7 +9707,7 @@ export declare const CMsgGCCStrike15V2ClientCommendPlayer: {
 };
 export declare const CMsgGCCStrike15V2ClientReportServer: {
     encode(message: CMsgGCCStrike15V2ClientReportServer, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientReportServer;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientReportServer;
     fromPartial<I extends {
         rptPoorperf?: number | undefined;
         rptAbusivemodels?: number | undefined;
@@ -9783,7 +9783,7 @@ export declare const CMsgGCCStrike15V2ClientReportServer: {
 };
 export declare const CMsgGCCStrike15V2ClientReportResponse: {
     encode(message: CMsgGCCStrike15V2ClientReportResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientReportResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientReportResponse;
     fromPartial<I extends {
         confirmationId?: string | number | Long.Long | undefined;
         accountId?: number | undefined;
@@ -9859,7 +9859,7 @@ export declare const CMsgGCCStrike15V2ClientReportResponse: {
 };
 export declare const CMsgGCCStrike15V2ClientRequestWatchInfoFriends: {
     encode(message: CMsgGCCStrike15V2ClientRequestWatchInfoFriends, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientRequestWatchInfoFriends;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientRequestWatchInfoFriends;
     fromPartial<I extends {
         requestId?: number | undefined;
         accountIds?: number[] | undefined;
@@ -10007,7 +10007,7 @@ export declare const CMsgGCCStrike15V2ClientRequestWatchInfoFriends: {
 };
 export declare const WatchableMatchInfo: {
     encode(message: WatchableMatchInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): WatchableMatchInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): WatchableMatchInfo;
     fromPartial<I extends {
         serverIp?: number | undefined;
         tvPort?: number | undefined;
@@ -10325,7 +10325,7 @@ export declare const WatchableMatchInfo: {
 };
 export declare const CMsgGCCStrike15V2ClientRequestJoinFriendData: {
     encode(message: CMsgGCCStrike15V2ClientRequestJoinFriendData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientRequestJoinFriendData;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientRequestJoinFriendData;
     fromPartial<I extends {
         version?: number | undefined;
         accountId?: number | undefined;
@@ -11263,7 +11263,7 @@ export declare const CMsgGCCStrike15V2ClientRequestJoinFriendData: {
 };
 export declare const CMsgGCCStrike15V2ClientRequestJoinServerData: {
     encode(message: CMsgGCCStrike15V2ClientRequestJoinServerData, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientRequestJoinServerData;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientRequestJoinServerData;
     fromPartial<I extends {
         version?: number | undefined;
         accountId?: number | undefined;
@@ -12260,7 +12260,7 @@ export declare const CMsgGCCStrike15V2ClientRequestJoinServerData: {
 };
 export declare const CMsgGCCstrike15V2ClientRequestNewMission: {
     encode(message: CMsgGCCstrike15V2ClientRequestNewMission, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCstrike15V2ClientRequestNewMission;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCstrike15V2ClientRequestNewMission;
     fromPartial<I extends {
         missionId?: number | undefined;
         campaignId?: number | undefined;
@@ -12271,7 +12271,7 @@ export declare const CMsgGCCstrike15V2ClientRequestNewMission: {
 };
 export declare const CMsgGCCstrike15V2ClientRedeemMissionReward: {
     encode(message: CMsgGCCstrike15V2ClientRedeemMissionReward, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCstrike15V2ClientRedeemMissionReward;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCstrike15V2ClientRedeemMissionReward;
     fromPartial<I extends {
         campaignId?: number | undefined;
         redeemId?: number | undefined;
@@ -12286,7 +12286,7 @@ export declare const CMsgGCCstrike15V2ClientRedeemMissionReward: {
 };
 export declare const CMsgGCCstrike15V2GC2ServerNotifyXPRewarded: {
     encode(message: CMsgGCCstrike15V2GC2ServerNotifyXPRewarded, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCstrike15V2GC2ServerNotifyXPRewarded;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCstrike15V2GC2ServerNotifyXPRewarded;
     fromPartial<I extends {
         xpProgressData?: {
             xpPoints?: number | undefined;
@@ -12320,7 +12320,7 @@ export declare const CMsgGCCstrike15V2GC2ServerNotifyXPRewarded: {
 };
 export declare const CMsgGCCStrike15ClientDeepStats: {
     encode(message: CMsgGCCStrike15ClientDeepStats, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15ClientDeepStats;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15ClientDeepStats;
     fromPartial<I extends {
         accountId?: number | undefined;
         range?: {
@@ -12768,7 +12768,7 @@ export declare const CMsgGCCStrike15ClientDeepStats: {
 };
 export declare const CMsgGCCStrike15ClientDeepStats_DeepStatsRange: {
     encode(message: CMsgGCCStrike15ClientDeepStats_DeepStatsRange, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15ClientDeepStats_DeepStatsRange;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15ClientDeepStats_DeepStatsRange;
     fromPartial<I extends {
         begin?: number | undefined;
         end?: number | undefined;
@@ -12781,7 +12781,7 @@ export declare const CMsgGCCStrike15ClientDeepStats_DeepStatsRange: {
 };
 export declare const CMsgGCCStrike15ClientDeepStats_DeepStatsMatch: {
     encode(message: CMsgGCCStrike15ClientDeepStats_DeepStatsMatch, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15ClientDeepStats_DeepStatsMatch;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15ClientDeepStats_DeepStatsMatch;
     fromPartial<I extends {
         player?: {
             accountid?: number | undefined;
@@ -13068,7 +13068,7 @@ export declare const CMsgGCCStrike15ClientDeepStats_DeepStatsMatch: {
 };
 export declare const CMsgGCCStrike15V2WatchInfoUsers: {
     encode(message: CMsgGCCStrike15V2WatchInfoUsers, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2WatchInfoUsers;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2WatchInfoUsers;
     fromPartial<I extends {
         requestId?: number | undefined;
         accountIds?: number[] | undefined;
@@ -13438,7 +13438,7 @@ export declare const CMsgGCCStrike15V2WatchInfoUsers: {
 };
 export declare const CMsgGCCStrike15V2ClientRequestPlayersProfile: {
     encode(message: CMsgGCCStrike15V2ClientRequestPlayersProfile, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientRequestPlayersProfile;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientRequestPlayersProfile;
     fromPartial<I extends {
         requestIdDeprecated?: number | undefined;
         accountIdsDeprecated?: number[] | undefined;
@@ -13453,7 +13453,7 @@ export declare const CMsgGCCStrike15V2ClientRequestPlayersProfile: {
 };
 export declare const CMsgGCCStrike15V2PlayersProfile: {
     encode(message: CMsgGCCStrike15V2PlayersProfile, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2PlayersProfile;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2PlayersProfile;
     fromPartial<I extends {
         requestId?: number | undefined;
         accountProfiles?: {
@@ -15490,7 +15490,7 @@ export declare const CMsgGCCStrike15V2PlayersProfile: {
 };
 export declare const CMsgGCCStrike15V2PlayerOverwatchCaseUpdate: {
     encode(message: CMsgGCCStrike15V2PlayerOverwatchCaseUpdate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2PlayerOverwatchCaseUpdate;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2PlayerOverwatchCaseUpdate;
     fromPartial<I extends {
         caseid?: string | number | Long.Long | undefined;
         suspectid?: number | undefined;
@@ -15570,7 +15570,7 @@ export declare const CMsgGCCStrike15V2PlayerOverwatchCaseUpdate: {
 };
 export declare const CMsgGCCStrike15V2PlayerOverwatchCaseAssignment: {
     encode(message: CMsgGCCStrike15V2PlayerOverwatchCaseAssignment, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2PlayerOverwatchCaseAssignment;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2PlayerOverwatchCaseAssignment;
     fromPartial<I extends {
         caseid?: string | number | Long.Long | undefined;
         caseurl?: string | undefined;
@@ -15656,7 +15656,7 @@ export declare const CMsgGCCStrike15V2PlayerOverwatchCaseAssignment: {
 };
 export declare const CMsgGCCStrike15V2PlayerOverwatchCaseStatus: {
     encode(message: CMsgGCCStrike15V2PlayerOverwatchCaseStatus, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2PlayerOverwatchCaseStatus;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2PlayerOverwatchCaseStatus;
     fromPartial<I extends {
         caseid?: string | number | Long.Long | undefined;
         statusid?: number | undefined;
@@ -15724,7 +15724,7 @@ export declare const CMsgGCCStrike15V2PlayerOverwatchCaseStatus: {
 };
 export declare const CClientHeaderOverwatchEvidence: {
     encode(message: CClientHeaderOverwatchEvidence, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CClientHeaderOverwatchEvidence;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CClientHeaderOverwatchEvidence;
     fromPartial<I extends {
         accountid?: number | undefined;
         caseid?: string | number | Long.Long | undefined;
@@ -15792,7 +15792,7 @@ export declare const CClientHeaderOverwatchEvidence: {
 };
 export declare const CMsgGCCStrike15V2GC2ClientTextMsg: {
     encode(message: CMsgGCCStrike15V2GC2ClientTextMsg, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2GC2ClientTextMsg;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2GC2ClientTextMsg;
     fromPartial<I extends {
         id?: number | undefined;
         type?: number | undefined;
@@ -15805,7 +15805,7 @@ export declare const CMsgGCCStrike15V2GC2ClientTextMsg: {
 };
 export declare const CMsgGCCStrike15V2Client2GCTextMsg: {
     encode(message: CMsgGCCStrike15V2Client2GCTextMsg, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2Client2GCTextMsg;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2Client2GCTextMsg;
     fromPartial<I extends {
         id?: number | undefined;
         args?: Uint8Array[] | undefined;
@@ -15816,7 +15816,7 @@ export declare const CMsgGCCStrike15V2Client2GCTextMsg: {
 };
 export declare const CMsgGCCStrike15V2MatchEndRunRewardDrops: {
     encode(message: CMsgGCCStrike15V2MatchEndRunRewardDrops, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchEndRunRewardDrops;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchEndRunRewardDrops;
     fromPartial<I extends {
         serverinfo?: {
             reservationid?: string | number | Long.Long | undefined;
@@ -17498,7 +17498,7 @@ export declare const CMsgGCCStrike15V2MatchEndRunRewardDrops: {
 };
 export declare const CEconItemPreviewDataBlock: {
     encode(message: CEconItemPreviewDataBlock, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CEconItemPreviewDataBlock;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CEconItemPreviewDataBlock;
     fromPartial<I extends {
         accountid?: number | undefined;
         itemid?: string | number | Long.Long | undefined;
@@ -17633,7 +17633,7 @@ export declare const CEconItemPreviewDataBlock: {
 };
 export declare const CEconItemPreviewDataBlock_Sticker: {
     encode(message: CEconItemPreviewDataBlock_Sticker, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CEconItemPreviewDataBlock_Sticker;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CEconItemPreviewDataBlock_Sticker;
     fromPartial<I extends {
         slot?: number | undefined;
         stickerId?: number | undefined;
@@ -17652,7 +17652,7 @@ export declare const CEconItemPreviewDataBlock_Sticker: {
 };
 export declare const CMsgGCCStrike15V2MatchEndRewardDropsNotification: {
     encode(message: CMsgGCCStrike15V2MatchEndRewardDropsNotification, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchEndRewardDropsNotification;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchEndRewardDropsNotification;
     fromPartial<I extends {
         iteminfo?: {
             accountid?: number | undefined;
@@ -17817,7 +17817,7 @@ export declare const CMsgGCCStrike15V2MatchEndRewardDropsNotification: {
 };
 export declare const CMsgItemAcknowledged: {
     encode(message: CMsgItemAcknowledged, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgItemAcknowledged;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgItemAcknowledged;
     fromPartial<I extends {
         iteminfo?: {
             accountid?: number | undefined;
@@ -17982,7 +17982,7 @@ export declare const CMsgItemAcknowledged: {
 };
 export declare const CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest: {
     encode(message: CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest;
     fromPartial<I extends {
         paramS?: string | number | Long.Long | undefined;
         paramA?: string | number | Long.Long | undefined;
@@ -18225,7 +18225,7 @@ export declare const CMsgGCCStrike15V2Client2GCEconPreviewDataBlockRequest: {
 };
 export declare const CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse: {
     encode(message: CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse;
     fromPartial<I extends {
         iteminfo?: {
             accountid?: number | undefined;
@@ -18390,12 +18390,12 @@ export declare const CMsgGCCStrike15V2Client2GCEconPreviewDataBlockResponse: {
 };
 export declare const CMsgGCCStrike15V2MatchListRequestCurrentLiveGames: {
     encode(_: CMsgGCCStrike15V2MatchListRequestCurrentLiveGames, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchListRequestCurrentLiveGames;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchListRequestCurrentLiveGames;
     fromPartial<I extends {} & {} & Record<Exclude<keyof I, never>, never>>(_: I): CMsgGCCStrike15V2MatchListRequestCurrentLiveGames;
 };
 export declare const CMsgGCCStrike15V2MatchListRequestLiveGameForUser: {
     encode(message: CMsgGCCStrike15V2MatchListRequestLiveGameForUser, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchListRequestLiveGameForUser;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchListRequestLiveGameForUser;
     fromPartial<I extends {
         accountid?: number | undefined;
     } & {
@@ -18404,7 +18404,7 @@ export declare const CMsgGCCStrike15V2MatchListRequestLiveGameForUser: {
 };
 export declare const CMsgGCCStrike15V2MatchListRequestRecentUserGames: {
     encode(message: CMsgGCCStrike15V2MatchListRequestRecentUserGames, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchListRequestRecentUserGames;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchListRequestRecentUserGames;
     fromPartial<I extends {
         accountid?: number | undefined;
     } & {
@@ -18413,7 +18413,7 @@ export declare const CMsgGCCStrike15V2MatchListRequestRecentUserGames: {
 };
 export declare const CMsgGCCStrike15V2MatchListRequestTournamentGames: {
     encode(message: CMsgGCCStrike15V2MatchListRequestTournamentGames, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchListRequestTournamentGames;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchListRequestTournamentGames;
     fromPartial<I extends {
         eventid?: number | undefined;
     } & {
@@ -18422,7 +18422,7 @@ export declare const CMsgGCCStrike15V2MatchListRequestTournamentGames: {
 };
 export declare const CMsgGCCStrike15V2MatchListRequestFullGameInfo: {
     encode(message: CMsgGCCStrike15V2MatchListRequestFullGameInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchListRequestFullGameInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchListRequestFullGameInfo;
     fromPartial<I extends {
         matchid?: string | number | Long.Long | undefined;
         outcomeid?: string | number | Long.Long | undefined;
@@ -18549,7 +18549,7 @@ export declare const CMsgGCCStrike15V2MatchListRequestFullGameInfo: {
 };
 export declare const CDataGCCStrike15V2MatchInfo: {
     encode(message: CDataGCCStrike15V2MatchInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CDataGCCStrike15V2MatchInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CDataGCCStrike15V2MatchInfo;
     fromPartial<I extends {
         matchid?: string | number | Long.Long | undefined;
         matchtime?: number | undefined;
@@ -21216,7 +21216,7 @@ export declare const CDataGCCStrike15V2MatchInfo: {
 };
 export declare const CDataGCCStrike15V2TournamentGroupTeam: {
     encode(message: CDataGCCStrike15V2TournamentGroupTeam, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CDataGCCStrike15V2TournamentGroupTeam;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CDataGCCStrike15V2TournamentGroupTeam;
     fromPartial<I extends {
         teamId?: number | undefined;
         score?: number | undefined;
@@ -21229,7 +21229,7 @@ export declare const CDataGCCStrike15V2TournamentGroupTeam: {
 };
 export declare const CDataGCCStrike15V2TournamentGroup: {
     encode(message: CDataGCCStrike15V2TournamentGroup, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CDataGCCStrike15V2TournamentGroup;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CDataGCCStrike15V2TournamentGroup;
     fromPartial<I extends {
         groupid?: number | undefined;
         name?: string | undefined;
@@ -21286,7 +21286,7 @@ export declare const CDataGCCStrike15V2TournamentGroup: {
 };
 export declare const CDataGCCStrike15V2TournamentGroup_Picks: {
     encode(message: CDataGCCStrike15V2TournamentGroup_Picks, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CDataGCCStrike15V2TournamentGroup_Picks;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CDataGCCStrike15V2TournamentGroup_Picks;
     fromPartial<I extends {
         pickids?: number[] | undefined;
     } & {
@@ -21295,7 +21295,7 @@ export declare const CDataGCCStrike15V2TournamentGroup_Picks: {
 };
 export declare const CDataGCCStrike15V2TournamentSection: {
     encode(message: CDataGCCStrike15V2TournamentSection, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CDataGCCStrike15V2TournamentSection;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CDataGCCStrike15V2TournamentSection;
     fromPartial<I extends {
         sectionid?: number | undefined;
         name?: string | undefined;
@@ -21413,7 +21413,7 @@ export declare const CDataGCCStrike15V2TournamentSection: {
 };
 export declare const CDataGCCStrike15V2TournamentInfo: {
     encode(message: CDataGCCStrike15V2TournamentInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CDataGCCStrike15V2TournamentInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CDataGCCStrike15V2TournamentInfo;
     fromPartial<I extends {
         sections?: {
             sectionid?: number | undefined;
@@ -21729,7 +21729,7 @@ export declare const CDataGCCStrike15V2TournamentInfo: {
 };
 export declare const CMsgGCCStrike15V2MatchList: {
     encode(message: CMsgGCCStrike15V2MatchList, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchList;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchList;
     fromPartial<I extends {
         msgrequestid?: number | undefined;
         accountid?: number | undefined;
@@ -25633,7 +25633,7 @@ export declare const CMsgGCCStrike15V2MatchList: {
 };
 export declare const CMsgGCCStrike15V2MatchListTournamentOperatorMgmt: {
     encode(message: CMsgGCCStrike15V2MatchListTournamentOperatorMgmt, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2MatchListTournamentOperatorMgmt;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2MatchListTournamentOperatorMgmt;
     fromPartial<I extends {
         eventid?: number | undefined;
         matches?: {
@@ -29074,7 +29074,7 @@ export declare const CMsgGCCStrike15V2MatchListTournamentOperatorMgmt: {
 };
 export declare const CMsgGCCStrike15V2Predictions: {
     encode(message: CMsgGCCStrike15V2Predictions, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2Predictions;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2Predictions;
     fromPartial<I extends {
         eventId?: number | undefined;
         groupMatchTeamPicks?: {
@@ -29172,7 +29172,7 @@ export declare const CMsgGCCStrike15V2Predictions: {
 };
 export declare const CMsgGCCStrike15V2Predictions_GroupMatchTeamPick: {
     encode(message: CMsgGCCStrike15V2Predictions_GroupMatchTeamPick, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2Predictions_GroupMatchTeamPick;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2Predictions_GroupMatchTeamPick;
     fromPartial<I extends {
         sectionid?: number | undefined;
         groupid?: number | undefined;
@@ -29246,7 +29246,7 @@ export declare const CMsgGCCStrike15V2Predictions_GroupMatchTeamPick: {
 };
 export declare const CMsgGCCStrike15V2Fantasy: {
     encode(message: CMsgGCCStrike15V2Fantasy, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2Fantasy;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2Fantasy;
     fromPartial<I extends {
         eventId?: number | undefined;
         teams?: {
@@ -29361,7 +29361,7 @@ export declare const CMsgGCCStrike15V2Fantasy: {
 };
 export declare const CMsgGCCStrike15V2Fantasy_FantasySlot: {
     encode(message: CMsgGCCStrike15V2Fantasy_FantasySlot, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2Fantasy_FantasySlot;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2Fantasy_FantasySlot;
     fromPartial<I extends {
         type?: number | undefined;
         pick?: number | undefined;
@@ -29431,7 +29431,7 @@ export declare const CMsgGCCStrike15V2Fantasy_FantasySlot: {
 };
 export declare const CMsgGCCStrike15V2Fantasy_FantasyTeam: {
     encode(message: CMsgGCCStrike15V2Fantasy_FantasyTeam, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2Fantasy_FantasyTeam;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2Fantasy_FantasyTeam;
     fromPartial<I extends {
         sectionid?: number | undefined;
         slots?: {
@@ -29519,7 +29519,7 @@ export declare const CMsgGCCStrike15V2Fantasy_FantasyTeam: {
 };
 export declare const CAttributeString: {
     encode(message: CAttributeString, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CAttributeString;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CAttributeString;
     fromPartial<I extends {
         value?: string | undefined;
     } & {
@@ -29528,7 +29528,7 @@ export declare const CAttributeString: {
 };
 export declare const CMsgCStrike15Welcome: {
     encode(message: CMsgCStrike15Welcome, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgCStrike15Welcome;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgCStrike15Welcome;
     fromPartial<I extends {
         storeItemHash?: number | undefined;
         timeplayedconsecutively?: number | undefined;
@@ -29663,7 +29663,7 @@ export declare const CMsgCStrike15Welcome: {
 };
 export declare const CMsgGCCStrike15V2ClientVarValueNotificationInfo: {
     encode(message: CMsgGCCStrike15V2ClientVarValueNotificationInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientVarValueNotificationInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientVarValueNotificationInfo;
     fromPartial<I extends {
         valueName?: string | undefined;
         valueInt?: number | undefined;
@@ -29680,7 +29680,7 @@ export declare const CMsgGCCStrike15V2ClientVarValueNotificationInfo: {
 };
 export declare const CMsgGCCStrike15V2ServerVarValueNotificationInfo: {
     encode(message: CMsgGCCStrike15V2ServerVarValueNotificationInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ServerVarValueNotificationInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ServerVarValueNotificationInfo;
     fromPartial<I extends {
         accountid?: number | undefined;
         viewangles?: number[] | undefined;
@@ -29695,12 +29695,12 @@ export declare const CMsgGCCStrike15V2ServerVarValueNotificationInfo: {
 };
 export declare const CMsgGCCStrike15V2GiftsLeaderboardRequest: {
     encode(_: CMsgGCCStrike15V2GiftsLeaderboardRequest, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2GiftsLeaderboardRequest;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2GiftsLeaderboardRequest;
     fromPartial<I extends {} & {} & Record<Exclude<keyof I, never>, never>>(_: I): CMsgGCCStrike15V2GiftsLeaderboardRequest;
 };
 export declare const CMsgGCCStrike15V2GiftsLeaderboardResponse: {
     encode(message: CMsgGCCStrike15V2GiftsLeaderboardResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2GiftsLeaderboardResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2GiftsLeaderboardResponse;
     fromPartial<I extends {
         servertime?: number | undefined;
         timePeriodSeconds?: number | undefined;
@@ -29732,7 +29732,7 @@ export declare const CMsgGCCStrike15V2GiftsLeaderboardResponse: {
 };
 export declare const CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry: {
     encode(message: CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEntry;
     fromPartial<I extends {
         accountid?: number | undefined;
         gifts?: number | undefined;
@@ -29743,7 +29743,7 @@ export declare const CMsgGCCStrike15V2GiftsLeaderboardResponse_GiftLeaderboardEn
 };
 export declare const CMsgGCCStrike15V2ClientSubmitSurveyVote: {
     encode(message: CMsgGCCStrike15V2ClientSubmitSurveyVote, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientSubmitSurveyVote;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientSubmitSurveyVote;
     fromPartial<I extends {
         surveyId?: number | undefined;
         vote?: number | undefined;
@@ -29754,7 +29754,7 @@ export declare const CMsgGCCStrike15V2ClientSubmitSurveyVote: {
 };
 export declare const CMsgGCCStrike15V2Server2GCClientValidate: {
     encode(message: CMsgGCCStrike15V2Server2GCClientValidate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2Server2GCClientValidate;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2Server2GCClientValidate;
     fromPartial<I extends {
         accountid?: number | undefined;
     } & {
@@ -29763,7 +29763,7 @@ export declare const CMsgGCCStrike15V2Server2GCClientValidate: {
 };
 export declare const CMsgGCCStrike15V2GC2ClientTournamentInfo: {
     encode(message: CMsgGCCStrike15V2GC2ClientTournamentInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2GC2ClientTournamentInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2GC2ClientTournamentInfo;
     fromPartial<I extends {
         eventid?: number | undefined;
         stageid?: number | undefined;
@@ -29778,7 +29778,7 @@ export declare const CMsgGCCStrike15V2GC2ClientTournamentInfo: {
 };
 export declare const CSOEconCoupon: {
     encode(message: CSOEconCoupon, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSOEconCoupon;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSOEconCoupon;
     fromPartial<I extends {
         entryid?: number | undefined;
         defidx?: number | undefined;
@@ -29791,7 +29791,7 @@ export declare const CSOEconCoupon: {
 };
 export declare const CSOQuestProgress: {
     encode(message: CSOQuestProgress, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSOQuestProgress;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSOQuestProgress;
     fromPartial<I extends {
         questid?: number | undefined;
         pointsRemaining?: number | undefined;
@@ -29804,7 +29804,7 @@ export declare const CSOQuestProgress: {
 };
 export declare const CSOAccountSeasonalOperation: {
     encode(message: CSOAccountSeasonalOperation, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSOAccountSeasonalOperation;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSOAccountSeasonalOperation;
     fromPartial<I extends {
         seasonValue?: number | undefined;
         tierUnlocked?: number | undefined;
@@ -29825,7 +29825,7 @@ export declare const CSOAccountSeasonalOperation: {
 };
 export declare const CSOAccountRecurringSubscription: {
     encode(message: CSOAccountRecurringSubscription, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSOAccountRecurringSubscription;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSOAccountRecurringSubscription;
     fromPartial<I extends {
         timeNextCycle?: number | undefined;
         timeInitiated?: number | undefined;
@@ -29836,7 +29836,7 @@ export declare const CSOAccountRecurringSubscription: {
 };
 export declare const CSOPersonaDataPublic: {
     encode(message: CSOPersonaDataPublic, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CSOPersonaDataPublic;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CSOPersonaDataPublic;
     fromPartial<I extends {
         playerLevel?: number | undefined;
         commendation?: {
@@ -29861,7 +29861,7 @@ export declare const CSOPersonaDataPublic: {
 };
 export declare const CMsgGCGlobalGameSubscribe: {
     encode(message: CMsgGCGlobalGameSubscribe, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCGlobalGameSubscribe;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCGlobalGameSubscribe;
     fromPartial<I extends {
         ticket?: string | number | Long.Long | undefined;
     } & {
@@ -29927,7 +29927,7 @@ export declare const CMsgGCGlobalGameSubscribe: {
 };
 export declare const CMsgGCGlobalGameUnsubscribe: {
     encode(message: CMsgGCGlobalGameUnsubscribe, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCGlobalGameUnsubscribe;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCGlobalGameUnsubscribe;
     fromPartial<I extends {
         timeleft?: number | undefined;
     } & {
@@ -29936,7 +29936,7 @@ export declare const CMsgGCGlobalGameUnsubscribe: {
 };
 export declare const CMsgGCGlobalGamePlay: {
     encode(message: CMsgGCGlobalGamePlay, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCGlobalGamePlay;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCGlobalGamePlay;
     fromPartial<I extends {
         ticket?: string | number | Long.Long | undefined;
         gametimems?: number | undefined;
@@ -30006,7 +30006,7 @@ export declare const CMsgGCGlobalGamePlay: {
 };
 export declare const CMsgGCCStrike15V2AcknowledgePenalty: {
     encode(message: CMsgGCCStrike15V2AcknowledgePenalty, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2AcknowledgePenalty;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2AcknowledgePenalty;
     fromPartial<I extends {
         acknowledged?: number | undefined;
     } & {
@@ -30015,7 +30015,7 @@ export declare const CMsgGCCStrike15V2AcknowledgePenalty: {
 };
 export declare const CMsgGCCStrike15V2Client2GCRequestPrestigeCoin: {
     encode(message: CMsgGCCStrike15V2Client2GCRequestPrestigeCoin, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2Client2GCRequestPrestigeCoin;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2Client2GCRequestPrestigeCoin;
     fromPartial<I extends {
         defindex?: number | undefined;
         upgradeid?: string | number | Long.Long | undefined;
@@ -30087,7 +30087,7 @@ export declare const CMsgGCCStrike15V2Client2GCRequestPrestigeCoin: {
 };
 export declare const CMsgGCCStrike15V2Client2GCStreamUnlock: {
     encode(message: CMsgGCCStrike15V2Client2GCStreamUnlock, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2Client2GCStreamUnlock;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2Client2GCStreamUnlock;
     fromPartial<I extends {
         ticket?: string | number | Long.Long | undefined;
         os?: number | undefined;
@@ -30155,7 +30155,7 @@ export declare const CMsgGCCStrike15V2Client2GCStreamUnlock: {
 };
 export declare const CMsgGCCStrike15V2ClientToGCRequestElevate: {
     encode(message: CMsgGCCStrike15V2ClientToGCRequestElevate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientToGCRequestElevate;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientToGCRequestElevate;
     fromPartial<I extends {
         stage?: number | undefined;
     } & {
@@ -30164,7 +30164,7 @@ export declare const CMsgGCCStrike15V2ClientToGCRequestElevate: {
 };
 export declare const CMsgGCCStrike15V2ClientToGCChat: {
     encode(message: CMsgGCCStrike15V2ClientToGCChat, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientToGCChat;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientToGCChat;
     fromPartial<I extends {
         matchId?: string | number | Long.Long | undefined;
         text?: string | undefined;
@@ -30232,7 +30232,7 @@ export declare const CMsgGCCStrike15V2ClientToGCChat: {
 };
 export declare const CMsgGCCStrike15V2GCToClientChat: {
     encode(message: CMsgGCCStrike15V2GCToClientChat, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2GCToClientChat;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2GCToClientChat;
     fromPartial<I extends {
         accountId?: number | undefined;
         text?: string | undefined;
@@ -30243,7 +30243,7 @@ export declare const CMsgGCCStrike15V2GCToClientChat: {
 };
 export declare const CMsgGCCStrike15V2ClientAuthKeyCode: {
     encode(message: CMsgGCCStrike15V2ClientAuthKeyCode, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientAuthKeyCode;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientAuthKeyCode;
     fromPartial<I extends {
         eventid?: number | undefined;
         code?: string | undefined;
@@ -30254,7 +30254,7 @@ export declare const CMsgGCCStrike15V2ClientAuthKeyCode: {
 };
 export declare const CMsgGCCStrike15GotvSyncPacket: {
     encode(message: CMsgGCCStrike15GotvSyncPacket, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15GotvSyncPacket;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15GotvSyncPacket;
     fromPartial<I extends {
         data?: {
             matchId?: string | number | Long.Long | undefined;
@@ -30353,7 +30353,7 @@ export declare const CMsgGCCStrike15GotvSyncPacket: {
 };
 export declare const PlayerDecalDigitalSignature: {
     encode(message: PlayerDecalDigitalSignature, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): PlayerDecalDigitalSignature;
+    decode(input: Reader | Uint8Array, length?: number | undefined): PlayerDecalDigitalSignature;
     fromPartial<I extends {
         signature?: Uint8Array | undefined;
         accountid?: number | undefined;
@@ -30388,7 +30388,7 @@ export declare const PlayerDecalDigitalSignature: {
 };
 export declare const CMsgGCCStrike15V2ClientPlayerDecalSign: {
     encode(message: CMsgGCCStrike15V2ClientPlayerDecalSign, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientPlayerDecalSign;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientPlayerDecalSign;
     fromPartial<I extends {
         data?: {
             signature?: Uint8Array | undefined;
@@ -30501,7 +30501,7 @@ export declare const CMsgGCCStrike15V2ClientPlayerDecalSign: {
 };
 export declare const CMsgGCCStrike15V2ClientLogonFatalError: {
     encode(message: CMsgGCCStrike15V2ClientLogonFatalError, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientLogonFatalError;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientLogonFatalError;
     fromPartial<I extends {
         errorcode?: number | undefined;
         message?: string | undefined;
@@ -30514,7 +30514,7 @@ export declare const CMsgGCCStrike15V2ClientLogonFatalError: {
 };
 export declare const CMsgGCCStrike15V2ClientPollState: {
     encode(message: CMsgGCCStrike15V2ClientPollState, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientPollState;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientPollState;
     fromPartial<I extends {
         pollid?: number | undefined;
         names?: string[] | undefined;
@@ -30527,7 +30527,7 @@ export declare const CMsgGCCStrike15V2ClientPollState: {
 };
 export declare const CMsgGCCStrike15V2PartyRegister: {
     encode(message: CMsgGCCStrike15V2PartyRegister, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2PartyRegister;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2PartyRegister;
     fromPartial<I extends {
         id?: number | undefined;
         ver?: number | undefined;
@@ -30552,7 +30552,7 @@ export declare const CMsgGCCStrike15V2PartyRegister: {
 };
 export declare const CMsgGCCStrike15V2PartySearch: {
     encode(message: CMsgGCCStrike15V2PartySearch, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2PartySearch;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2PartySearch;
     fromPartial<I extends {
         ver?: number | undefined;
         apr?: number | undefined;
@@ -30571,7 +30571,7 @@ export declare const CMsgGCCStrike15V2PartySearch: {
 };
 export declare const CMsgGCCStrike15V2PartySearchResults: {
     encode(message: CMsgGCCStrike15V2PartySearchResults, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2PartySearchResults;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2PartySearchResults;
     fromPartial<I extends {
         entries?: {
             id?: number | undefined;
@@ -30620,7 +30620,7 @@ export declare const CMsgGCCStrike15V2PartySearchResults: {
 };
 export declare const CMsgGCCStrike15V2PartySearchResults_Entry: {
     encode(message: CMsgGCCStrike15V2PartySearchResults_Entry, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2PartySearchResults_Entry;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2PartySearchResults_Entry;
     fromPartial<I extends {
         id?: number | undefined;
         grp?: number | undefined;
@@ -30641,7 +30641,7 @@ export declare const CMsgGCCStrike15V2PartySearchResults_Entry: {
 };
 export declare const CMsgGCCStrike15V2PartyInvite: {
     encode(message: CMsgGCCStrike15V2PartyInvite, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2PartyInvite;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2PartyInvite;
     fromPartial<I extends {
         accountid?: number | undefined;
         lobbyid?: number | undefined;
@@ -30652,7 +30652,7 @@ export declare const CMsgGCCStrike15V2PartyInvite: {
 };
 export declare const CMsgGCCStrike15V2AccountRequestCoPlays: {
     encode(message: CMsgGCCStrike15V2AccountRequestCoPlays, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2AccountRequestCoPlays;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2AccountRequestCoPlays;
     fromPartial<I extends {
         players?: {
             accountid?: number | undefined;
@@ -30683,7 +30683,7 @@ export declare const CMsgGCCStrike15V2AccountRequestCoPlays: {
 };
 export declare const CMsgGCCStrike15V2AccountRequestCoPlays_Player: {
     encode(message: CMsgGCCStrike15V2AccountRequestCoPlays_Player, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2AccountRequestCoPlays_Player;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2AccountRequestCoPlays_Player;
     fromPartial<I extends {
         accountid?: number | undefined;
         rtcoplay?: number | undefined;
@@ -30696,7 +30696,7 @@ export declare const CMsgGCCStrike15V2AccountRequestCoPlays_Player: {
 };
 export declare const CMsgGCCStrike15V2ClientToGCRequestTicket: {
     encode(message: CMsgGCCStrike15V2ClientToGCRequestTicket, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientToGCRequestTicket;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientToGCRequestTicket;
     fromPartial<I extends {
         authorizedSteamId?: string | number | Long.Long | undefined;
         authorizedPublicIp?: number | undefined;
@@ -30825,7 +30825,7 @@ export declare const CMsgGCCStrike15V2ClientToGCRequestTicket: {
 };
 export declare const CMsgGCToClientSteamDatagramTicket: {
     encode(message: CMsgGCToClientSteamDatagramTicket, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCToClientSteamDatagramTicket;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCToClientSteamDatagramTicket;
     fromPartial<I extends {
         serializedTicket?: Uint8Array | undefined;
     } & {
@@ -30834,12 +30834,12 @@ export declare const CMsgGCToClientSteamDatagramTicket: {
 };
 export declare const CMsgGCCStrike15V2ClientRequestOffers: {
     encode(_: CMsgGCCStrike15V2ClientRequestOffers, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientRequestOffers;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientRequestOffers;
     fromPartial<I extends {} & {} & Record<Exclude<keyof I, never>, never>>(_: I): CMsgGCCStrike15V2ClientRequestOffers;
 };
 export declare const CMsgGCCStrike15V2ClientRequestSouvenir: {
     encode(message: CMsgGCCStrike15V2ClientRequestSouvenir, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientRequestSouvenir;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientRequestSouvenir;
     fromPartial<I extends {
         itemid?: string | number | Long.Long | undefined;
         matchid?: string | number | Long.Long | undefined;
@@ -30966,7 +30966,7 @@ export declare const CMsgGCCStrike15V2ClientRequestSouvenir: {
 };
 export declare const CMsgGCCStrike15V2ClientAccountBalance: {
     encode(message: CMsgGCCStrike15V2ClientAccountBalance, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientAccountBalance;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientAccountBalance;
     fromPartial<I extends {
         amount?: string | number | Long.Long | undefined;
         url?: string | undefined;
@@ -31034,7 +31034,7 @@ export declare const CMsgGCCStrike15V2ClientAccountBalance: {
 };
 export declare const CMsgGCCStrike15V2ClientPartyJoinRelay: {
     encode(message: CMsgGCCStrike15V2ClientPartyJoinRelay, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientPartyJoinRelay;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientPartyJoinRelay;
     fromPartial<I extends {
         accountid?: number | undefined;
         lobbyid?: string | number | Long.Long | undefined;
@@ -31102,7 +31102,7 @@ export declare const CMsgGCCStrike15V2ClientPartyJoinRelay: {
 };
 export declare const CMsgGCCStrike15V2ClientPartyWarning: {
     encode(message: CMsgGCCStrike15V2ClientPartyWarning, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientPartyWarning;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientPartyWarning;
     fromPartial<I extends {
         entries?: {
             accountid?: number | undefined;
@@ -31126,7 +31126,7 @@ export declare const CMsgGCCStrike15V2ClientPartyWarning: {
 };
 export declare const CMsgGCCStrike15V2ClientPartyWarning_Entry: {
     encode(message: CMsgGCCStrike15V2ClientPartyWarning_Entry, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientPartyWarning_Entry;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientPartyWarning_Entry;
     fromPartial<I extends {
         accountid?: number | undefined;
         warntype?: number | undefined;
@@ -31137,7 +31137,7 @@ export declare const CMsgGCCStrike15V2ClientPartyWarning_Entry: {
 };
 export declare const CMsgGCCStrike15V2SetEventFavorite: {
     encode(message: CMsgGCCStrike15V2SetEventFavorite, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2SetEventFavorite;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2SetEventFavorite;
     fromPartial<I extends {
         eventid?: string | number | Long.Long | undefined;
         isFavorite?: boolean | undefined;
@@ -31205,7 +31205,7 @@ export declare const CMsgGCCStrike15V2SetEventFavorite: {
 };
 export declare const CMsgGCCStrike15V2GetEventFavoritesRequest: {
     encode(message: CMsgGCCStrike15V2GetEventFavoritesRequest, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2GetEventFavoritesRequest;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2GetEventFavoritesRequest;
     fromPartial<I extends {
         allEvents?: boolean | undefined;
     } & {
@@ -31214,7 +31214,7 @@ export declare const CMsgGCCStrike15V2GetEventFavoritesRequest: {
 };
 export declare const CMsgGCCStrike15V2GetEventFavoritesResponse: {
     encode(message: CMsgGCCStrike15V2GetEventFavoritesResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2GetEventFavoritesResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2GetEventFavoritesResponse;
     fromPartial<I extends {
         allEvents?: boolean | undefined;
         jsonFavorites?: string | undefined;
@@ -31227,7 +31227,7 @@ export declare const CMsgGCCStrike15V2GetEventFavoritesResponse: {
 };
 export declare const CMsgGCCStrike15V2ClientPerfReport: {
     encode(message: CMsgGCCStrike15V2ClientPerfReport, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientPerfReport;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientPerfReport;
     fromPartial<I extends {
         entries?: {
             perfcounter?: number | undefined;
@@ -31271,7 +31271,7 @@ export declare const CMsgGCCStrike15V2ClientPerfReport: {
 };
 export declare const CMsgGCCStrike15V2ClientPerfReport_Entry: {
     encode(message: CMsgGCCStrike15V2ClientPerfReport_Entry, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientPerfReport_Entry;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientPerfReport_Entry;
     fromPartial<I extends {
         perfcounter?: number | undefined;
         length?: number | undefined;
@@ -31290,7 +31290,7 @@ export declare const CMsgGCCStrike15V2ClientPerfReport_Entry: {
 };
 export declare const CVDiagnostic: {
     encode(message: CVDiagnostic, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CVDiagnostic;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CVDiagnostic;
     fromPartial<I extends {
         id?: number | undefined;
         extended?: number | undefined;
@@ -31362,7 +31362,7 @@ export declare const CVDiagnostic: {
 };
 export declare const CMsgGCCStrike15V2ClientReportValidation: {
     encode(message: CMsgGCCStrike15V2ClientReportValidation, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2ClientReportValidation;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2ClientReportValidation;
     fromPartial<I extends {
         fileReport?: string | undefined;
         commandLine?: string | undefined;
@@ -31776,7 +31776,7 @@ export declare const CMsgGCCStrike15V2ClientReportValidation: {
 };
 export declare const CMsgGCCStrike15V2GC2ClientRefuseSecureMode: {
     encode(message: CMsgGCCStrike15V2GC2ClientRefuseSecureMode, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2GC2ClientRefuseSecureMode;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2GC2ClientRefuseSecureMode;
     fromPartial<I extends {
         fileReport?: string | undefined;
         offerInsecureMode?: boolean | undefined;
@@ -31801,7 +31801,7 @@ export declare const CMsgGCCStrike15V2GC2ClientRefuseSecureMode: {
 };
 export declare const CMsgGCCStrike15V2GC2ClientRequestValidation: {
     encode(message: CMsgGCCStrike15V2GC2ClientRequestValidation, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2GC2ClientRequestValidation;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2GC2ClientRequestValidation;
     fromPartial<I extends {
         fullReport?: boolean | undefined;
         module?: string | undefined;
@@ -31812,7 +31812,7 @@ export declare const CMsgGCCStrike15V2GC2ClientRequestValidation: {
 };
 export declare const CMsgGCCStrike15V2GC2ClientInitSystem: {
     encode(message: CMsgGCCStrike15V2GC2ClientInitSystem, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2GC2ClientInitSystem;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2GC2ClientInitSystem;
     fromPartial<I extends {
         load?: boolean | undefined;
         name?: string | undefined;
@@ -31837,7 +31837,7 @@ export declare const CMsgGCCStrike15V2GC2ClientInitSystem: {
 };
 export declare const CMsgGCCStrike15V2GC2ClientInitSystemResponse: {
     encode(message: CMsgGCCStrike15V2GC2ClientInitSystemResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCStrike15V2GC2ClientInitSystemResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCStrike15V2GC2ClientInitSystemResponse;
     fromPartial<I extends {
         success?: boolean | undefined;
         diagnostic?: string | undefined;

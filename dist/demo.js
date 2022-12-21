@@ -672,30 +672,30 @@ class DemoFile extends events_1.EventEmitter {
             this.emit("tickstart", this.currentTick);
         }
         switch (command) {
-            case 2 /* DemoCommands.Packet */:
-            case 1 /* DemoCommands.Signon */:
+            case 2 /* Packet */:
+            case 1 /* Signon */:
                 this._handleDemoPacket();
                 break;
-            case 6 /* DemoCommands.DataTables */:
+            case 6 /* DataTables */:
                 this._handleDataTables();
                 break;
-            case 9 /* DemoCommands.StringTables */:
+            case 9 /* StringTables */:
                 this._handleStringTables();
                 break;
-            case 4 /* DemoCommands.ConsoleCmd */: // TODO
+            case 4 /* ConsoleCmd */: // TODO
                 this._handleDataChunk();
                 break;
-            case 5 /* DemoCommands.UserCmd */:
+            case 5 /* UserCmd */:
                 this._handleUserCmd();
                 break;
-            case 7 /* DemoCommands.Stop */:
+            case 7 /* Stop */:
                 this.cancel();
                 this.emit("tickend", this.currentTick);
                 this._emitEnd({ incomplete: false });
                 return;
-            case 8 /* DemoCommands.CustomData */:
+            case 8 /* CustomData */:
                 throw new Error("Custom data not supported");
-            case 3 /* DemoCommands.SyncTick */:
+            case 3 /* SyncTick */:
                 break;
             default:
                 throw new Error(`Unrecognised command: ${command}`);

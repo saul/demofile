@@ -299,7 +299,7 @@ class Entities extends events_1.EventEmitter {
             if ((prop.flags & props_1.SPROP_EXCLUDE) !== 0) {
                 excludes.push(prop);
             }
-            if (prop.type === 6 /* PropType.DataTable */) {
+            if (prop.type === 6 /* DataTable */) {
                 const subTable = (0, assert_exists_1.default)(this._findTableByName(prop.dtName));
                 excludes.push(...this._gatherExcludes(subTable));
             }
@@ -315,7 +315,7 @@ class Entities extends events_1.EventEmitter {
                 isPropExcluded(excludes, table, prop)) {
                 continue;
             }
-            if (prop.type === 6 /* PropType.DataTable */) {
+            if (prop.type === 6 /* DataTable */) {
                 const subTable = (0, assert_exists_1.default)(this._findTableByName(prop.dtName));
                 const childProps = this._gatherProps(subTable, excludes);
                 if ((prop.flags & props_1.SPROP_COLLAPSIBLE) === 0) {
@@ -329,7 +329,7 @@ class Entities extends events_1.EventEmitter {
                 flattened.push({
                     prop,
                     table,
-                    decode: (0, props_1.makeDecoder)(prop, prop.type === 5 /* PropType.Array */ ? table.props[index - 1] : undefined),
+                    decode: (0, props_1.makeDecoder)(prop, prop.type === 5 /* Array */ ? table.props[index - 1] : undefined),
                     collapsible: true
                 });
             }

@@ -1,5 +1,4 @@
 /// <reference types="node" />
-/// <reference types="node" />
 import { EventEmitter } from "events";
 import * as Long from "long";
 import { DemoFile } from "./demo";

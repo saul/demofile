@@ -497,7 +497,7 @@ export interface CChinaAgreementSessionsStartAgreementSessionInGameResponse {
 }
 export declare const CMsgProtoBufHeader: {
     encode(message: CMsgProtoBufHeader, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgProtoBufHeader;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgProtoBufHeader;
     fromPartial<I extends {
         clientSteamId?: string | number | Long.Long | undefined;
         clientSessionId?: number | undefined;
@@ -697,7 +697,7 @@ export declare const CMsgProtoBufHeader: {
 };
 export declare const CMsgWebAPIKey: {
     encode(message: CMsgWebAPIKey, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgWebAPIKey;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgWebAPIKey;
     fromPartial<I extends {
         status?: number | undefined;
         accountId?: number | undefined;
@@ -714,7 +714,7 @@ export declare const CMsgWebAPIKey: {
 };
 export declare const CMsgHttpRequest: {
     encode(message: CMsgHttpRequest, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgHttpRequest;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgHttpRequest;
     fromPartial<I extends {
         requestMethod?: number | undefined;
         hostname?: string | undefined;
@@ -782,7 +782,7 @@ export declare const CMsgHttpRequest: {
 };
 export declare const CMsgHttpRequest_RequestHeader: {
     encode(message: CMsgHttpRequest_RequestHeader, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgHttpRequest_RequestHeader;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgHttpRequest_RequestHeader;
     fromPartial<I extends {
         name?: string | undefined;
         value?: string | undefined;
@@ -793,7 +793,7 @@ export declare const CMsgHttpRequest_RequestHeader: {
 };
 export declare const CMsgHttpRequest_QueryParam: {
     encode(message: CMsgHttpRequest_QueryParam, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgHttpRequest_QueryParam;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgHttpRequest_QueryParam;
     fromPartial<I extends {
         name?: string | undefined;
         value?: Uint8Array | undefined;
@@ -804,7 +804,7 @@ export declare const CMsgHttpRequest_QueryParam: {
 };
 export declare const CMsgWebAPIRequest: {
     encode(message: CMsgWebAPIRequest, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgWebAPIRequest;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgWebAPIRequest;
     fromPartial<I extends {
         UNUSEDJobName?: string | undefined;
         interfaceName?: string | undefined;
@@ -924,7 +924,7 @@ export declare const CMsgWebAPIRequest: {
 };
 export declare const CMsgHttpResponse: {
     encode(message: CMsgHttpResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgHttpResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgHttpResponse;
     fromPartial<I extends {
         statusCode?: number | undefined;
         headers?: {
@@ -952,7 +952,7 @@ export declare const CMsgHttpResponse: {
 };
 export declare const CMsgHttpResponse_ResponseHeader: {
     encode(message: CMsgHttpResponse_ResponseHeader, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgHttpResponse_ResponseHeader;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgHttpResponse_ResponseHeader;
     fromPartial<I extends {
         name?: string | undefined;
         value?: string | undefined;
@@ -963,7 +963,7 @@ export declare const CMsgHttpResponse_ResponseHeader: {
 };
 export declare const CMsgAMFindAccounts: {
     encode(message: CMsgAMFindAccounts, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMFindAccounts;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMFindAccounts;
     fromPartial<I extends {
         searchType?: number | undefined;
         searchString?: string | undefined;
@@ -974,7 +974,7 @@ export declare const CMsgAMFindAccounts: {
 };
 export declare const CMsgAMFindAccountsResponse: {
     encode(message: CMsgAMFindAccountsResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMFindAccountsResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMFindAccountsResponse;
     fromPartial<I extends {
         steamId?: (string | number | Long.Long)[] | undefined;
     } & {
@@ -1040,7 +1040,7 @@ export declare const CMsgAMFindAccountsResponse: {
 };
 export declare const CMsgNotifyWatchdog: {
     encode(message: CMsgNotifyWatchdog, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgNotifyWatchdog;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgNotifyWatchdog;
     fromPartial<I extends {
         source?: number | undefined;
         alertType?: number | undefined;
@@ -1061,7 +1061,7 @@ export declare const CMsgNotifyWatchdog: {
 };
 export declare const CMsgAMGetLicenses: {
     encode(message: CMsgAMGetLicenses, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMGetLicenses;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMGetLicenses;
     fromPartial<I extends {
         steamid?: string | number | Long.Long | undefined;
     } & {
@@ -1127,7 +1127,7 @@ export declare const CMsgAMGetLicenses: {
 };
 export declare const CMsgPackageLicense: {
     encode(message: CMsgPackageLicense, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgPackageLicense;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgPackageLicense;
     fromPartial<I extends {
         packageId?: number | undefined;
         timeCreated?: number | undefined;
@@ -1140,7 +1140,7 @@ export declare const CMsgPackageLicense: {
 };
 export declare const CMsgAMGetLicensesResponse: {
     encode(message: CMsgAMGetLicensesResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMGetLicensesResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMGetLicensesResponse;
     fromPartial<I extends {
         license?: {
             packageId?: number | undefined;
@@ -1171,7 +1171,7 @@ export declare const CMsgAMGetLicensesResponse: {
 };
 export declare const CMsgAMGetUserGameStats: {
     encode(message: CMsgAMGetUserGameStats, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMGetUserGameStats;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMGetUserGameStats;
     fromPartial<I extends {
         steamId?: string | number | Long.Long | undefined;
         gameId?: string | number | Long.Long | undefined;
@@ -1298,7 +1298,7 @@ export declare const CMsgAMGetUserGameStats: {
 };
 export declare const CMsgAMGetUserGameStatsResponse: {
     encode(message: CMsgAMGetUserGameStatsResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMGetUserGameStatsResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMGetUserGameStatsResponse;
     fromPartial<I extends {
         steamId?: string | number | Long.Long | undefined;
         gameId?: string | number | Long.Long | undefined;
@@ -1464,7 +1464,7 @@ export declare const CMsgAMGetUserGameStatsResponse: {
 };
 export declare const CMsgAMGetUserGameStatsResponse_Stats: {
     encode(message: CMsgAMGetUserGameStatsResponse_Stats, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMGetUserGameStatsResponse_Stats;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMGetUserGameStatsResponse_Stats;
     fromPartial<I extends {
         statId?: number | undefined;
         statValue?: number | undefined;
@@ -1475,7 +1475,7 @@ export declare const CMsgAMGetUserGameStatsResponse_Stats: {
 };
 export declare const CMsgAMGetUserGameStatsResponse_AchievementBlocks: {
     encode(message: CMsgAMGetUserGameStatsResponse_AchievementBlocks, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMGetUserGameStatsResponse_AchievementBlocks;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMGetUserGameStatsResponse_AchievementBlocks;
     fromPartial<I extends {
         achievementId?: number | undefined;
         achievementBitId?: number | undefined;
@@ -1488,7 +1488,7 @@ export declare const CMsgAMGetUserGameStatsResponse_AchievementBlocks: {
 };
 export declare const CMsgGCGetCommandList: {
     encode(message: CMsgGCGetCommandList, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCGetCommandList;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCGetCommandList;
     fromPartial<I extends {
         appId?: number | undefined;
         commandPrefix?: string | undefined;
@@ -1499,7 +1499,7 @@ export declare const CMsgGCGetCommandList: {
 };
 export declare const CMsgGCGetCommandListResponse: {
     encode(message: CMsgGCGetCommandListResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCGetCommandListResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCGetCommandListResponse;
     fromPartial<I extends {
         commandName?: string[] | undefined;
     } & {
@@ -1508,7 +1508,7 @@ export declare const CMsgGCGetCommandListResponse: {
 };
 export declare const CGCMsgMemCachedGet: {
     encode(message: CGCMsgMemCachedGet, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgMemCachedGet;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgMemCachedGet;
     fromPartial<I extends {
         keys?: string[] | undefined;
     } & {
@@ -1517,7 +1517,7 @@ export declare const CGCMsgMemCachedGet: {
 };
 export declare const CGCMsgMemCachedGetResponse: {
     encode(message: CGCMsgMemCachedGetResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgMemCachedGetResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgMemCachedGetResponse;
     fromPartial<I extends {
         values?: {
             found?: boolean | undefined;
@@ -1541,7 +1541,7 @@ export declare const CGCMsgMemCachedGetResponse: {
 };
 export declare const CGCMsgMemCachedGetResponse_ValueTag: {
     encode(message: CGCMsgMemCachedGetResponse_ValueTag, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgMemCachedGetResponse_ValueTag;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgMemCachedGetResponse_ValueTag;
     fromPartial<I extends {
         found?: boolean | undefined;
         value?: Uint8Array | undefined;
@@ -1552,7 +1552,7 @@ export declare const CGCMsgMemCachedGetResponse_ValueTag: {
 };
 export declare const CGCMsgMemCachedSet: {
     encode(message: CGCMsgMemCachedSet, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgMemCachedSet;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgMemCachedSet;
     fromPartial<I extends {
         keys?: {
             name?: string | undefined;
@@ -1576,7 +1576,7 @@ export declare const CGCMsgMemCachedSet: {
 };
 export declare const CGCMsgMemCachedSet_KeyPair: {
     encode(message: CGCMsgMemCachedSet_KeyPair, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgMemCachedSet_KeyPair;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgMemCachedSet_KeyPair;
     fromPartial<I extends {
         name?: string | undefined;
         value?: Uint8Array | undefined;
@@ -1587,7 +1587,7 @@ export declare const CGCMsgMemCachedSet_KeyPair: {
 };
 export declare const CGCMsgMemCachedDelete: {
     encode(message: CGCMsgMemCachedDelete, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgMemCachedDelete;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgMemCachedDelete;
     fromPartial<I extends {
         keys?: string[] | undefined;
     } & {
@@ -1596,12 +1596,12 @@ export declare const CGCMsgMemCachedDelete: {
 };
 export declare const CGCMsgMemCachedStats: {
     encode(_: CGCMsgMemCachedStats, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgMemCachedStats;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgMemCachedStats;
     fromPartial<I extends {} & {} & Record<Exclude<keyof I, never>, never>>(_: I): CGCMsgMemCachedStats;
 };
 export declare const CGCMsgMemCachedStatsResponse: {
     encode(message: CGCMsgMemCachedStatsResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgMemCachedStatsResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgMemCachedStatsResponse;
     fromPartial<I extends {
         currConnections?: string | number | Long.Long | undefined;
         cmdGet?: string | number | Long.Long | undefined;
@@ -2434,7 +2434,7 @@ export declare const CGCMsgMemCachedStatsResponse: {
 };
 export declare const CGCMsgSQLStats: {
     encode(message: CGCMsgSQLStats, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgSQLStats;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgSQLStats;
     fromPartial<I extends {
         schemaCatalog?: number | undefined;
     } & {
@@ -2443,7 +2443,7 @@ export declare const CGCMsgSQLStats: {
 };
 export declare const CGCMsgSQLStatsResponse: {
     encode(message: CGCMsgSQLStatsResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgSQLStatsResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgSQLStatsResponse;
     fromPartial<I extends {
         threads?: number | undefined;
         threadsConnected?: number | undefined;
@@ -2468,7 +2468,7 @@ export declare const CGCMsgSQLStatsResponse: {
 };
 export declare const CMsgAMAddFreeLicense: {
     encode(message: CMsgAMAddFreeLicense, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMAddFreeLicense;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMAddFreeLicense;
     fromPartial<I extends {
         steamid?: string | number | Long.Long | undefined;
         ipPublic?: number | undefined;
@@ -2540,7 +2540,7 @@ export declare const CMsgAMAddFreeLicense: {
 };
 export declare const CMsgAMAddFreeLicenseResponse: {
     encode(message: CMsgAMAddFreeLicenseResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMAddFreeLicenseResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMAddFreeLicenseResponse;
     fromPartial<I extends {
         eresult?: number | undefined;
         purchaseResultDetail?: number | undefined;
@@ -2610,7 +2610,7 @@ export declare const CMsgAMAddFreeLicenseResponse: {
 };
 export declare const CGCMsgGetIPLocation: {
     encode(message: CGCMsgGetIPLocation, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgGetIPLocation;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgGetIPLocation;
     fromPartial<I extends {
         ips?: number[] | undefined;
     } & {
@@ -2619,7 +2619,7 @@ export declare const CGCMsgGetIPLocation: {
 };
 export declare const CIPLocationInfo: {
     encode(message: CIPLocationInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CIPLocationInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CIPLocationInfo;
     fromPartial<I extends {
         ip?: number | undefined;
         latitude?: number | undefined;
@@ -2638,7 +2638,7 @@ export declare const CIPLocationInfo: {
 };
 export declare const CGCMsgGetIPLocationResponse: {
     encode(message: CGCMsgGetIPLocationResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgGetIPLocationResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgGetIPLocationResponse;
     fromPartial<I extends {
         infos?: {
             ip?: number | undefined;
@@ -2682,7 +2682,7 @@ export declare const CGCMsgGetIPLocationResponse: {
 };
 export declare const CGCMsgSystemStatsSchema: {
     encode(message: CGCMsgSystemStatsSchema, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgSystemStatsSchema;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgSystemStatsSchema;
     fromPartial<I extends {
         gcAppId?: number | undefined;
         schemaKv?: Uint8Array | undefined;
@@ -2693,12 +2693,12 @@ export declare const CGCMsgSystemStatsSchema: {
 };
 export declare const CGCMsgGetSystemStats: {
     encode(_: CGCMsgGetSystemStats, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgGetSystemStats;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgGetSystemStats;
     fromPartial<I extends {} & {} & Record<Exclude<keyof I, never>, never>>(_: I): CGCMsgGetSystemStats;
 };
 export declare const CGCMsgGetSystemStatsResponse: {
     encode(message: CGCMsgGetSystemStatsResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCMsgGetSystemStatsResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCMsgGetSystemStatsResponse;
     fromPartial<I extends {
         gcAppId?: number | undefined;
         statsKv?: Uint8Array | undefined;
@@ -2731,7 +2731,7 @@ export declare const CGCMsgGetSystemStatsResponse: {
 };
 export declare const CMsgAMSendEmail: {
     encode(message: CMsgAMSendEmail, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMSendEmail;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMSendEmail;
     fromPartial<I extends {
         steamid?: string | number | Long.Long | undefined;
         emailMsgType?: number | undefined;
@@ -2894,7 +2894,7 @@ export declare const CMsgAMSendEmail: {
 };
 export declare const CMsgAMSendEmail_ReplacementToken: {
     encode(message: CMsgAMSendEmail_ReplacementToken, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMSendEmail_ReplacementToken;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMSendEmail_ReplacementToken;
     fromPartial<I extends {
         tokenName?: string | undefined;
         tokenValue?: string | undefined;
@@ -2905,7 +2905,7 @@ export declare const CMsgAMSendEmail_ReplacementToken: {
 };
 export declare const CMsgAMSendEmail_PersonaNameReplacementToken: {
     encode(message: CMsgAMSendEmail_PersonaNameReplacementToken, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMSendEmail_PersonaNameReplacementToken;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMSendEmail_PersonaNameReplacementToken;
     fromPartial<I extends {
         steamid?: string | number | Long.Long | undefined;
         tokenName?: string | undefined;
@@ -2973,7 +2973,7 @@ export declare const CMsgAMSendEmail_PersonaNameReplacementToken: {
 };
 export declare const CMsgAMSendEmailResponse: {
     encode(message: CMsgAMSendEmailResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMSendEmailResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMSendEmailResponse;
     fromPartial<I extends {
         eresult?: number | undefined;
     } & {
@@ -2982,7 +2982,7 @@ export declare const CMsgAMSendEmailResponse: {
 };
 export declare const CMsgGCGetEmailTemplate: {
     encode(message: CMsgGCGetEmailTemplate, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCGetEmailTemplate;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCGetEmailTemplate;
     fromPartial<I extends {
         appId?: number | undefined;
         emailMsgType?: number | undefined;
@@ -2997,7 +2997,7 @@ export declare const CMsgGCGetEmailTemplate: {
 };
 export declare const CMsgGCGetEmailTemplateResponse: {
     encode(message: CMsgGCGetEmailTemplateResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCGetEmailTemplateResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCGetEmailTemplateResponse;
     fromPartial<I extends {
         eresult?: number | undefined;
         templateExists?: boolean | undefined;
@@ -3010,7 +3010,7 @@ export declare const CMsgGCGetEmailTemplateResponse: {
 };
 export declare const CMsgAMGrantGuestPasses2: {
     encode(message: CMsgAMGrantGuestPasses2, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMGrantGuestPasses2;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMGrantGuestPasses2;
     fromPartial<I extends {
         steamId?: string | number | Long.Long | undefined;
         packageId?: number | undefined;
@@ -3084,7 +3084,7 @@ export declare const CMsgAMGrantGuestPasses2: {
 };
 export declare const CMsgAMGrantGuestPasses2Response: {
     encode(message: CMsgAMGrantGuestPasses2Response, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgAMGrantGuestPasses2Response;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgAMGrantGuestPasses2Response;
     fromPartial<I extends {
         eresult?: number | undefined;
         passesGranted?: number | undefined;
@@ -3095,7 +3095,7 @@ export declare const CMsgAMGrantGuestPasses2Response: {
 };
 export declare const CGCSystemMsgGetAccountDetails: {
     encode(message: CGCSystemMsgGetAccountDetails, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCSystemMsgGetAccountDetails;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCSystemMsgGetAccountDetails;
     fromPartial<I extends {
         steamid?: string | number | Long.Long | undefined;
         appid?: number | undefined;
@@ -3163,7 +3163,7 @@ export declare const CGCSystemMsgGetAccountDetails: {
 };
 export declare const CGCSystemMsgGetAccountDetailsResponse: {
     encode(message: CGCSystemMsgGetAccountDetailsResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCSystemMsgGetAccountDetailsResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCSystemMsgGetAccountDetailsResponse;
     fromPartial<I extends {
         eresultDeprecated?: number | undefined;
         accountName?: string | undefined;
@@ -3299,7 +3299,7 @@ export declare const CGCSystemMsgGetAccountDetailsResponse: {
 };
 export declare const CMsgGCGetPersonaNames: {
     encode(message: CMsgGCGetPersonaNames, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCGetPersonaNames;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCGetPersonaNames;
     fromPartial<I extends {
         steamids?: (string | number | Long.Long)[] | undefined;
     } & {
@@ -3365,7 +3365,7 @@ export declare const CMsgGCGetPersonaNames: {
 };
 export declare const CMsgGCGetPersonaNamesResponse: {
     encode(message: CMsgGCGetPersonaNamesResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCGetPersonaNamesResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCGetPersonaNamesResponse;
     fromPartial<I extends {
         succeededLookups?: {
             steamid?: string | number | Long.Long | undefined;
@@ -3505,7 +3505,7 @@ export declare const CMsgGCGetPersonaNamesResponse: {
 };
 export declare const CMsgGCGetPersonaNamesResponse_PersonaName: {
     encode(message: CMsgGCGetPersonaNamesResponse_PersonaName, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCGetPersonaNamesResponse_PersonaName;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCGetPersonaNamesResponse_PersonaName;
     fromPartial<I extends {
         steamid?: string | number | Long.Long | undefined;
         personaName?: string | undefined;
@@ -3573,7 +3573,7 @@ export declare const CMsgGCGetPersonaNamesResponse_PersonaName: {
 };
 export declare const CMsgGCCheckFriendship: {
     encode(message: CMsgGCCheckFriendship, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCheckFriendship;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCheckFriendship;
     fromPartial<I extends {
         steamidLeft?: string | number | Long.Long | undefined;
         steamidRight?: string | number | Long.Long | undefined;
@@ -3698,7 +3698,7 @@ export declare const CMsgGCCheckFriendship: {
 };
 export declare const CMsgGCCheckFriendshipResponse: {
     encode(message: CMsgGCCheckFriendshipResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCCheckFriendshipResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCCheckFriendshipResponse;
     fromPartial<I extends {
         success?: boolean | undefined;
         foundFriendship?: boolean | undefined;
@@ -3709,7 +3709,7 @@ export declare const CMsgGCCheckFriendshipResponse: {
 };
 export declare const CMsgGCMsgMasterSetDirectory: {
     encode(message: CMsgGCMsgMasterSetDirectory, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCMsgMasterSetDirectory;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCMsgMasterSetDirectory;
     fromPartial<I extends {
         masterDirIndex?: number | undefined;
         dir?: {
@@ -3750,7 +3750,7 @@ export declare const CMsgGCMsgMasterSetDirectory: {
 };
 export declare const CMsgGCMsgMasterSetDirectory_SubGC: {
     encode(message: CMsgGCMsgMasterSetDirectory_SubGC, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCMsgMasterSetDirectory_SubGC;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCMsgMasterSetDirectory_SubGC;
     fromPartial<I extends {
         dirIndex?: number | undefined;
         name?: string | undefined;
@@ -3767,7 +3767,7 @@ export declare const CMsgGCMsgMasterSetDirectory_SubGC: {
 };
 export declare const CMsgGCMsgMasterSetDirectoryResponse: {
     encode(message: CMsgGCMsgMasterSetDirectoryResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCMsgMasterSetDirectoryResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCMsgMasterSetDirectoryResponse;
     fromPartial<I extends {
         eresult?: number | undefined;
         message?: string | undefined;
@@ -3778,7 +3778,7 @@ export declare const CMsgGCMsgMasterSetDirectoryResponse: {
 };
 export declare const CMsgGCMsgWebAPIJobRequestForwardResponse: {
     encode(message: CMsgGCMsgWebAPIJobRequestForwardResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCMsgWebAPIJobRequestForwardResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCMsgWebAPIJobRequestForwardResponse;
     fromPartial<I extends {
         dirIndex?: number | undefined;
     } & {
@@ -3787,7 +3787,7 @@ export declare const CMsgGCMsgWebAPIJobRequestForwardResponse: {
 };
 export declare const CGCSystemMsgGetPurchaseTrustRequest: {
     encode(message: CGCSystemMsgGetPurchaseTrustRequest, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCSystemMsgGetPurchaseTrustRequest;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCSystemMsgGetPurchaseTrustRequest;
     fromPartial<I extends {
         steamid?: string | number | Long.Long | undefined;
     } & {
@@ -3853,7 +3853,7 @@ export declare const CGCSystemMsgGetPurchaseTrustRequest: {
 };
 export declare const CGCSystemMsgGetPurchaseTrustResponse: {
     encode(message: CGCSystemMsgGetPurchaseTrustResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CGCSystemMsgGetPurchaseTrustResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CGCSystemMsgGetPurchaseTrustResponse;
     fromPartial<I extends {
         hasPriorPurchaseHistory?: boolean | undefined;
         hasNoRecentPasswordResets?: boolean | undefined;
@@ -3868,7 +3868,7 @@ export declare const CGCSystemMsgGetPurchaseTrustResponse: {
 };
 export declare const CMsgGCHAccountVacStatusChange: {
     encode(message: CMsgGCHAccountVacStatusChange, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCHAccountVacStatusChange;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCHAccountVacStatusChange;
     fromPartial<I extends {
         steamId?: string | number | Long.Long | undefined;
         appId?: number | undefined;
@@ -3942,7 +3942,7 @@ export declare const CMsgGCHAccountVacStatusChange: {
 };
 export declare const CMsgGCGetPartnerAccountLink: {
     encode(message: CMsgGCGetPartnerAccountLink, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCGetPartnerAccountLink;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCGetPartnerAccountLink;
     fromPartial<I extends {
         steamid?: string | number | Long.Long | undefined;
     } & {
@@ -4008,7 +4008,7 @@ export declare const CMsgGCGetPartnerAccountLink: {
 };
 export declare const CMsgGCGetPartnerAccountLinkResponse: {
     encode(message: CMsgGCGetPartnerAccountLinkResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCGetPartnerAccountLinkResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCGetPartnerAccountLinkResponse;
     fromPartial<I extends {
         pwid?: number | undefined;
         nexonid?: number | undefined;
@@ -4025,7 +4025,7 @@ export declare const CMsgGCGetPartnerAccountLinkResponse: {
 };
 export declare const CMsgGCRoutingInfo: {
     encode(message: CMsgGCRoutingInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCRoutingInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCRoutingInfo;
     fromPartial<I extends {
         dirIndex?: number[] | undefined;
         method?: CMsgGCRoutingInfo_RoutingMethod | undefined;
@@ -4042,7 +4042,7 @@ export declare const CMsgGCRoutingInfo: {
 };
 export declare const CMsgGCMsgMasterSetWebAPIRouting: {
     encode(message: CMsgGCMsgMasterSetWebAPIRouting, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCMsgMasterSetWebAPIRouting;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCMsgMasterSetWebAPIRouting;
     fromPartial<I extends {
         entries?: {
             interfaceName?: string | undefined;
@@ -4107,7 +4107,7 @@ export declare const CMsgGCMsgMasterSetWebAPIRouting: {
 };
 export declare const CMsgGCMsgMasterSetWebAPIRouting_Entry: {
     encode(message: CMsgGCMsgMasterSetWebAPIRouting_Entry, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCMsgMasterSetWebAPIRouting_Entry;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCMsgMasterSetWebAPIRouting_Entry;
     fromPartial<I extends {
         interfaceName?: string | undefined;
         methodName?: string | undefined;
@@ -4138,7 +4138,7 @@ export declare const CMsgGCMsgMasterSetWebAPIRouting_Entry: {
 };
 export declare const CMsgGCMsgMasterSetClientMsgRouting: {
     encode(message: CMsgGCMsgMasterSetClientMsgRouting, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCMsgMasterSetClientMsgRouting;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCMsgMasterSetClientMsgRouting;
     fromPartial<I extends {
         entries?: {
             msgType?: number | undefined;
@@ -4198,7 +4198,7 @@ export declare const CMsgGCMsgMasterSetClientMsgRouting: {
 };
 export declare const CMsgGCMsgMasterSetClientMsgRouting_Entry: {
     encode(message: CMsgGCMsgMasterSetClientMsgRouting_Entry, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCMsgMasterSetClientMsgRouting_Entry;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCMsgMasterSetClientMsgRouting_Entry;
     fromPartial<I extends {
         msgType?: number | undefined;
         routing?: {
@@ -4227,7 +4227,7 @@ export declare const CMsgGCMsgMasterSetClientMsgRouting_Entry: {
 };
 export declare const CMsgGCMsgMasterSetWebAPIRoutingResponse: {
     encode(message: CMsgGCMsgMasterSetWebAPIRoutingResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCMsgMasterSetWebAPIRoutingResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCMsgMasterSetWebAPIRoutingResponse;
     fromPartial<I extends {
         eresult?: number | undefined;
     } & {
@@ -4236,7 +4236,7 @@ export declare const CMsgGCMsgMasterSetWebAPIRoutingResponse: {
 };
 export declare const CMsgGCMsgMasterSetClientMsgRoutingResponse: {
     encode(message: CMsgGCMsgMasterSetClientMsgRoutingResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCMsgMasterSetClientMsgRoutingResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCMsgMasterSetClientMsgRoutingResponse;
     fromPartial<I extends {
         eresult?: number | undefined;
     } & {
@@ -4245,7 +4245,7 @@ export declare const CMsgGCMsgMasterSetClientMsgRoutingResponse: {
 };
 export declare const CMsgGCMsgSetOptions: {
     encode(message: CMsgGCMsgSetOptions, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCMsgSetOptions;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCMsgSetOptions;
     fromPartial<I extends {
         options?: CMsgGCMsgSetOptions_Option[] | undefined;
         clientMsgRanges?: {
@@ -4271,7 +4271,7 @@ export declare const CMsgGCMsgSetOptions: {
 };
 export declare const CMsgGCMsgSetOptions_MessageRange: {
     encode(message: CMsgGCMsgSetOptions_MessageRange, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCMsgSetOptions_MessageRange;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCMsgSetOptions_MessageRange;
     fromPartial<I extends {
         low?: number | undefined;
         high?: number | undefined;
@@ -4282,7 +4282,7 @@ export declare const CMsgGCMsgSetOptions_MessageRange: {
 };
 export declare const CMsgGCHUpdateSession: {
     encode(message: CMsgGCHUpdateSession, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCHUpdateSession;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCHUpdateSession;
     fromPartial<I extends {
         steamId?: string | number | Long.Long | undefined;
         appId?: number | undefined;
@@ -4501,7 +4501,7 @@ export declare const CMsgGCHUpdateSession: {
 };
 export declare const CMsgGCHUpdateSession_ExtraField: {
     encode(message: CMsgGCHUpdateSession_ExtraField, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgGCHUpdateSession_ExtraField;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgGCHUpdateSession_ExtraField;
     fromPartial<I extends {
         name?: string | undefined;
         value?: string | undefined;
@@ -4512,7 +4512,7 @@ export declare const CMsgGCHUpdateSession_ExtraField: {
 };
 export declare const CMsgNotificationOfSuspiciousActivity: {
     encode(message: CMsgNotificationOfSuspiciousActivity, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgNotificationOfSuspiciousActivity;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgNotificationOfSuspiciousActivity;
     fromPartial<I extends {
         steamid?: string | number | Long.Long | undefined;
         appid?: number | undefined;
@@ -4648,7 +4648,7 @@ export declare const CMsgNotificationOfSuspiciousActivity: {
 };
 export declare const CMsgNotificationOfSuspiciousActivity_MultipleGameInstances: {
     encode(message: CMsgNotificationOfSuspiciousActivity_MultipleGameInstances, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgNotificationOfSuspiciousActivity_MultipleGameInstances;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgNotificationOfSuspiciousActivity_MultipleGameInstances;
     fromPartial<I extends {
         appInstanceCount?: number | undefined;
         otherSteamids?: (string | number | Long.Long)[] | undefined;
@@ -4716,7 +4716,7 @@ export declare const CMsgNotificationOfSuspiciousActivity_MultipleGameInstances:
 };
 export declare const CMsgDPPartnerMicroTxns: {
     encode(message: CMsgDPPartnerMicroTxns, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgDPPartnerMicroTxns;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgDPPartnerMicroTxns;
     fromPartial<I extends {
         appid?: number | undefined;
         gcName?: string | undefined;
@@ -5235,7 +5235,7 @@ export declare const CMsgDPPartnerMicroTxns: {
 };
 export declare const CMsgDPPartnerMicroTxns_PartnerMicroTxn: {
     encode(message: CMsgDPPartnerMicroTxns_PartnerMicroTxn, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgDPPartnerMicroTxns_PartnerMicroTxn;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgDPPartnerMicroTxns_PartnerMicroTxn;
     fromPartial<I extends {
         initTime?: number | undefined;
         lastUpdateTime?: number | undefined;
@@ -5675,7 +5675,7 @@ export declare const CMsgDPPartnerMicroTxns_PartnerMicroTxn: {
 };
 export declare const CMsgDPPartnerMicroTxns_PartnerInfo: {
     encode(message: CMsgDPPartnerMicroTxns_PartnerInfo, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgDPPartnerMicroTxns_PartnerInfo;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgDPPartnerMicroTxns_PartnerInfo;
     fromPartial<I extends {
         partnerId?: number | undefined;
         partnerName?: string | undefined;
@@ -5690,7 +5690,7 @@ export declare const CMsgDPPartnerMicroTxns_PartnerInfo: {
 };
 export declare const CMsgDPPartnerMicroTxnsResponse: {
     encode(message: CMsgDPPartnerMicroTxnsResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CMsgDPPartnerMicroTxnsResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CMsgDPPartnerMicroTxnsResponse;
     fromPartial<I extends {
         eresult?: number | undefined;
         eerrorcode?: CMsgDPPartnerMicroTxnsResponse_EErrorCode | undefined;
@@ -5701,7 +5701,7 @@ export declare const CMsgDPPartnerMicroTxnsResponse: {
 };
 export declare const CChinaAgreementSessionsStartAgreementSessionInGameRequest: {
     encode(message: CChinaAgreementSessionsStartAgreementSessionInGameRequest, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CChinaAgreementSessionsStartAgreementSessionInGameRequest;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CChinaAgreementSessionsStartAgreementSessionInGameRequest;
     fromPartial<I extends {
         appid?: number | undefined;
         steamid?: string | number | Long.Long | undefined;
@@ -5771,7 +5771,7 @@ export declare const CChinaAgreementSessionsStartAgreementSessionInGameRequest: 
 };
 export declare const CChinaAgreementSessionsStartAgreementSessionInGameResponse: {
     encode(message: CChinaAgreementSessionsStartAgreementSessionInGameResponse, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CChinaAgreementSessionsStartAgreementSessionInGameResponse;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CChinaAgreementSessionsStartAgreementSessionInGameResponse;
     fromPartial<I extends {
         agreementUrl?: string | undefined;
     } & {

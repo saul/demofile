@@ -15,7 +15,7 @@ export interface CEngineGotvSyncPacket {
 }
 export declare const CEngineGotvSyncPacket: {
     encode(message: CEngineGotvSyncPacket, writer?: Writer): Writer;
-    decode(input: Reader | Uint8Array, length?: number): CEngineGotvSyncPacket;
+    decode(input: Reader | Uint8Array, length?: number | undefined): CEngineGotvSyncPacket;
     fromPartial<I extends {
         matchId?: string | number | Long.Long | undefined;
         instanceId?: number | undefined;
