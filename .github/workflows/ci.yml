@@ -54,8 +54,12 @@ jobs:
         run: |
           npm uninstall demofile
           npm install ../demofile-*.tgz
-          for file in *.ts
-          do
+
+          for file in *.ts; do
+            if [[ "$file" == 'dumpbroadcast.ts' ]]; then
+              continue
+            fi
+
             echo "Running example: $file..."
             npx ts-node "$file" ../demos/pc419-vs-chiefs-mirage.dem
           done
