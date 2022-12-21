@@ -1812,7 +1812,8 @@ export const CMsgAMGetUserGameStatsResponse_AchievementBlocks = {
   ): CMsgAMGetUserGameStatsResponse_AchievementBlocks {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgAMGetUserGameStatsResponse_AchievementBlocks();
+    const message =
+      createBaseCMsgAMGetUserGameStatsResponse_AchievementBlocks();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1839,7 +1840,8 @@ export const CMsgAMGetUserGameStatsResponse_AchievementBlocks = {
       I
     >
   >(object: I): CMsgAMGetUserGameStatsResponse_AchievementBlocks {
-    const message = createBaseCMsgAMGetUserGameStatsResponse_AchievementBlocks();
+    const message =
+      createBaseCMsgAMGetUserGameStatsResponse_AchievementBlocks();
     message.achievementId = object.achievementId ?? 0;
     message.achievementBitId = object.achievementBitId ?? 0;
     message.unlockTime = object.unlockTime ?? 0;
@@ -5646,10 +5648,11 @@ export const CMsgNotificationOfSuspiciousActivity = {
           message.appid = reader.uint32();
           break;
         case 3:
-          message.multipleInstances = CMsgNotificationOfSuspiciousActivity_MultipleGameInstances.decode(
-            reader,
-            reader.uint32()
-          );
+          message.multipleInstances =
+            CMsgNotificationOfSuspiciousActivity_MultipleGameInstances.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         default:
           reader.skipType(tag & 7);
@@ -5705,7 +5708,8 @@ export const CMsgNotificationOfSuspiciousActivity_MultipleGameInstances = {
   ): CMsgNotificationOfSuspiciousActivity_MultipleGameInstances {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCMsgNotificationOfSuspiciousActivity_MultipleGameInstances();
+    const message =
+      createBaseCMsgNotificationOfSuspiciousActivity_MultipleGameInstances();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -5736,7 +5740,8 @@ export const CMsgNotificationOfSuspiciousActivity_MultipleGameInstances = {
       I
     >
   >(object: I): CMsgNotificationOfSuspiciousActivity_MultipleGameInstances {
-    const message = createBaseCMsgNotificationOfSuspiciousActivity_MultipleGameInstances();
+    const message =
+      createBaseCMsgNotificationOfSuspiciousActivity_MultipleGameInstances();
     message.appInstanceCount = object.appInstanceCount ?? 0;
     message.otherSteamids =
       object.otherSteamids?.map(e => Long.fromValue(e)) || [];
@@ -6168,7 +6173,8 @@ export const CChinaAgreementSessionsStartAgreementSessionInGameRequest = {
   ): CChinaAgreementSessionsStartAgreementSessionInGameRequest {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCChinaAgreementSessionsStartAgreementSessionInGameRequest();
+    const message =
+      createBaseCChinaAgreementSessionsStartAgreementSessionInGameRequest();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -6195,7 +6201,8 @@ export const CChinaAgreementSessionsStartAgreementSessionInGameRequest = {
       I
     >
   >(object: I): CChinaAgreementSessionsStartAgreementSessionInGameRequest {
-    const message = createBaseCChinaAgreementSessionsStartAgreementSessionInGameRequest();
+    const message =
+      createBaseCChinaAgreementSessionsStartAgreementSessionInGameRequest();
     message.appid = object.appid ?? 0;
     message.steamid =
       object.steamid !== undefined && object.steamid !== null
@@ -6227,7 +6234,8 @@ export const CChinaAgreementSessionsStartAgreementSessionInGameResponse = {
   ): CChinaAgreementSessionsStartAgreementSessionInGameResponse {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCChinaAgreementSessionsStartAgreementSessionInGameResponse();
+    const message =
+      createBaseCChinaAgreementSessionsStartAgreementSessionInGameResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -6248,7 +6256,8 @@ export const CChinaAgreementSessionsStartAgreementSessionInGameResponse = {
       I
     >
   >(object: I): CChinaAgreementSessionsStartAgreementSessionInGameResponse {
-    const message = createBaseCChinaAgreementSessionsStartAgreementSessionInGameResponse();
+    const message =
+      createBaseCChinaAgreementSessionsStartAgreementSessionInGameResponse();
     message.agreementUrl = object.agreementUrl ?? "";
     return message;
   }
@@ -6278,9 +6287,10 @@ export type DeepPartial<T> = T extends Builtin
 type KeysOfUnion<T> = T extends T ? keyof T : never;
 export type Exact<P, I extends P> = P extends Builtin
   ? P
-  : P &
-      { [K in keyof P]: Exact<P[K], I[K]> } &
-      Record<Exclude<keyof I, KeysOfUnion<P>>, never>;
+  : P & { [K in keyof P]: Exact<P[K], I[K]> } & Record<
+        Exclude<keyof I, KeysOfUnion<P>>,
+        never
+      >;
 
 // If you get a compile-error about 'Constructor<Long> and ... have no overlap',
 // add '--ts_proto_opt=esModuleInterop=true' as a flag when calling 'protoc'.

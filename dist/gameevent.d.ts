@@ -1,4 +1,3 @@
-/// <reference types="long" />
 import { CSVCMsgGameEvent, CSVCMsgGameEventList_descriptorT } from "./protobufs/netmessages";
 export declare class GameEvent {
     name: string;

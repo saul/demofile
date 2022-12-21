@@ -1974,7 +1974,8 @@ export const CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate = {
   ): CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate();
+    const message =
+      createBaseCCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2019,7 +2020,8 @@ export const CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate = {
       I
     >
   >(object: I): CCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate {
-    const message = createBaseCCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate();
+    const message =
+      createBaseCCSUsrMsgProcessSpottedEntityUpdate_SpottedEntityUpdate();
     message.entityIdx = object.entityIdx ?? 0;
     message.classId = object.classId ?? 0;
     message.originX = object.originX ?? 0;
@@ -4779,10 +4781,11 @@ export const CCSUsrMsgEndOfMatchAllPlayersData_PlayerData = {
           message.teamnumber = reader.int32();
           break;
         case 5:
-          message.nomination = CCSUsrMsgEndOfMatchAllPlayersData_Accolade.decode(
-            reader,
-            reader.uint32()
-          );
+          message.nomination =
+            CCSUsrMsgEndOfMatchAllPlayersData_Accolade.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         case 6:
           message.items.push(
@@ -4866,10 +4869,11 @@ export const CCSUsrMsgRoundImpactScoreData = {
       const tag = reader.uint32();
       switch (tag >>> 3) {
         case 1:
-          message.initConditions = CCSUsrMsgRoundImpactScoreData_InitialConditions.decode(
-            reader,
-            reader.uint32()
-          );
+          message.initConditions =
+            CCSUsrMsgRoundImpactScoreData_InitialConditions.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         case 2:
           message.allRisEventData.push(
@@ -4978,16 +4982,18 @@ export const CCSUsrMsgRoundImpactScoreData_RisEvent = {
           message.tAlive = reader.int32();
           break;
         case 5:
-          message.victimData = CCSUsrMsgRoundImpactScoreData_RisEvent_Victim.decode(
-            reader,
-            reader.uint32()
-          );
+          message.victimData =
+            CCSUsrMsgRoundImpactScoreData_RisEvent_Victim.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         case 6:
-          message.objectiveData = CCSUsrMsgRoundImpactScoreData_RisEvent_Objective.decode(
-            reader,
-            reader.uint32()
-          );
+          message.objectiveData =
+            CCSUsrMsgRoundImpactScoreData_RisEvent_Objective.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         case 7:
           message.allDamageData.push(
@@ -5147,7 +5153,8 @@ export const CCSUsrMsgRoundImpactScoreData_RisEvent_Objective = {
   ): CCSUsrMsgRoundImpactScoreData_RisEvent_Objective {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCCSUsrMsgRoundImpactScoreData_RisEvent_Objective();
+    const message =
+      createBaseCCSUsrMsgRoundImpactScoreData_RisEvent_Objective();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -5168,7 +5175,8 @@ export const CCSUsrMsgRoundImpactScoreData_RisEvent_Objective = {
       I
     >
   >(object: I): CCSUsrMsgRoundImpactScoreData_RisEvent_Objective {
-    const message = createBaseCCSUsrMsgRoundImpactScoreData_RisEvent_Objective();
+    const message =
+      createBaseCCSUsrMsgRoundImpactScoreData_RisEvent_Objective();
     message.type = object.type ?? 0;
     return message;
   }
@@ -5757,10 +5765,11 @@ export const CCSUsrMsgServerRankRevealAll = {
           message.secondsTillShutdown = reader.int32();
           break;
         case 2:
-          message.reservation = CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(
-            reader,
-            reader.uint32()
-          );
+          message.reservation =
+            CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(
+              reader,
+              reader.uint32()
+            );
           break;
         default:
           reader.skipType(tag & 7);
@@ -5883,9 +5892,10 @@ export type DeepPartial<T> = T extends Builtin
 type KeysOfUnion<T> = T extends T ? keyof T : never;
 export type Exact<P, I extends P> = P extends Builtin
   ? P
-  : P &
-      { [K in keyof P]: Exact<P[K], I[K]> } &
-      Record<Exclude<keyof I, KeysOfUnion<P>>, never>;
+  : P & { [K in keyof P]: Exact<P[K], I[K]> } & Record<
+        Exclude<keyof I, KeysOfUnion<P>>,
+        never
+      >;
 
 // If you get a compile-error about 'Constructor<Long> and ... have no overlap',
 // add '--ts_proto_opt=esModuleInterop=true' as a flag when calling 'protoc'.

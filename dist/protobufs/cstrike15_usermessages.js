@@ -3574,7 +3574,8 @@ exports.CCSUsrMsgEndOfMatchAllPlayersData_PlayerData = {
                     message.teamnumber = reader.int32();
                     break;
                 case 5:
-                    message.nomination = exports.CCSUsrMsgEndOfMatchAllPlayersData_Accolade.decode(reader, reader.uint32());
+                    message.nomination =
+                        exports.CCSUsrMsgEndOfMatchAllPlayersData_Accolade.decode(reader, reader.uint32());
                     break;
                 case 6:
                     message.items.push(cstrike15_gcmessages_1.CEconItemPreviewDataBlock.decode(reader, reader.uint32()));
@@ -3634,7 +3635,8 @@ exports.CCSUsrMsgRoundImpactScoreData = {
             const tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
-                    message.initConditions = exports.CCSUsrMsgRoundImpactScoreData_InitialConditions.decode(reader, reader.uint32());
+                    message.initConditions =
+                        exports.CCSUsrMsgRoundImpactScoreData_InitialConditions.decode(reader, reader.uint32());
                     break;
                 case 2:
                     message.allRisEventData.push(exports.CCSUsrMsgRoundImpactScoreData_RisEvent.decode(reader, reader.uint32()));
@@ -3714,10 +3716,12 @@ exports.CCSUsrMsgRoundImpactScoreData_RisEvent = {
                     message.tAlive = reader.int32();
                     break;
                 case 5:
-                    message.victimData = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Victim.decode(reader, reader.uint32());
+                    message.victimData =
+                        exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Victim.decode(reader, reader.uint32());
                     break;
                 case 6:
-                    message.objectiveData = exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Objective.decode(reader, reader.uint32());
+                    message.objectiveData =
+                        exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Objective.decode(reader, reader.uint32());
                     break;
                 case 7:
                     message.allDamageData.push(exports.CCSUsrMsgRoundImpactScoreData_RisEvent_Damage.decode(reader, reader.uint32()));
@@ -4321,7 +4325,8 @@ exports.CCSUsrMsgServerRankRevealAll = {
                     message.secondsTillShutdown = reader.int32();
                     break;
                 case 2:
-                    message.reservation = cstrike15_gcmessages_1.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(reader, reader.uint32());
+                    message.reservation =
+                        cstrike15_gcmessages_1.CMsgGCCStrike15V2MatchmakingGC2ServerReserve.decode(reader, reader.uint32());
                     break;
                 default:
                     reader.skipType(tag & 7);

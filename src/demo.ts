@@ -161,7 +161,7 @@ function httpGet(url: string): Promise<Buffer> {
         const chunks: Buffer[] = [];
 
         res.on("data", chunk => {
-          chunks.push(chunk);
+          chunks.push(chunk as Buffer);
         });
 
         res.on("end", () => {
