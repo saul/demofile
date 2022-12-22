@@ -23,6 +23,7 @@ __exportStar(require("./entities/networkable"), exports);
 __exportStar(require("./entities/player"), exports);
 __exportStar(require("./entities/team"), exports);
 __exportStar(require("./entities/weapon"), exports);
+__exportStar(require("./entities/projectile"), exports);
 __exportStar(require("./ext/bitbuffer"), exports);
 __exportStar(require("./convars"), exports);
 __exportStar(require("./demo"), exports);

@@ -5,6 +5,7 @@ export * from "./entities/networkable";
 export * from "./entities/player";
 export * from "./entities/team";
 export * from "./entities/weapon";
+export * from "./entities/projectile";
 export * from "./ext/bitbuffer";
 export * from "./convars";
 export * from "./demo";
