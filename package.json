@@ -25,7 +25,7 @@
     "build": "shx rm -rf dist && shx rm -f tsconfig.tsbuildinfo && tsc",
     "build:incremental": "tsc --incremental",
     "watch": "tsc -w",
-    "generate-docs": "shx rm -rf docs && typedoc --out docs/ && shx touch docs/.nojekyll && echo demofile.dev > docs/CNAME",
+    "generate-docs": "shx rm -rf docs && typedoc --out docs/ src/index.ts && shx touch docs/.nojekyll && echo demofile.dev > docs/CNAME",
     "bundle": "npm run build && browserify browser/app.js -d -o browser/bundle.js",
     "preversion": "npm run lint --fix && shx rm -rf dist browser/bundle.js && npm run bundle && git add -A browser/bundle.js dist/**",
     "version": "npm run generate-docs && git add -A docs",

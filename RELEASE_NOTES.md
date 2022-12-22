@@ -5,7 +5,7 @@
 
 -->
 
-### 2.10.0 (2022-12-21)
+### 2.10.0 (2022-12-22)
 
 - :sparkles: #373: Added support for streaming GOTV broadcasts over HTTP
 - Upgrade packages

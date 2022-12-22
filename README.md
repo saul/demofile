@@ -83,31 +83,31 @@ Using the [dumpfile example](https://github.com/saul/demofile/blob/master/exampl
 
 Auto-generated API documentation is available at [saul.github.io/demofile](https://saul.github.io/demofile).
 
-| Class                                                                   | Description                         |
-| ----------------------------------------------------------------------- | ----------------------------------- |
-| [DemoFile](https://saul.github.io/demofile/classes/_demo_demofile.html) | Represents a demo file for parsing. |
+| Class                                                             | Description                         |
+| ----------------------------------------------------------------- | ----------------------------------- |
+| [DemoFile](https://saul.github.io/demofile/classes/DemoFile.html) | Represents a demo file for parsing. |
 
 The _DemoFile_ object has properties which point to instances of several other classes that can be used to inspect and listen to changes in the game world:
 
-| Class                                                                                    | Property                | Description                                                                            |
-| ---------------------------------------------------------------------------------------- | ----------------------- | -------------------------------------------------------------------------------------- |
-| [ConVars](https://saul.github.io/demofile/classes/_convars_.convars.html)                | `demoFile.conVars`      | Manages console variables. (Only `FCVAR_NOTIFY` and `FCVAR_REPLICATED` are available.) |
-| [Entities](https://saul.github.io/demofile/classes/_entities_.entities.html)             | `demoFile.entities`     | Represents entities and networked properties within a demo.                            |
-| [GameEvents](https://saul.github.io/demofile/classes/_gameevents_.gameevents.html)       | `demoFile.gameEvents`   | Manages game events for a demo file. (e.g. `player_death`, `bomb_defused`)             |
-| [StringTables](https://saul.github.io/demofile/classes/_stringtables_.stringtables.html) | `demoFile.stringTables` | Handles string tables for a demo file. (e.g. `userinfo`)                               |
-| [UserMessages](https://saul.github.io/demofile/classes/_usermessages_.usermessages.html) | `demoFile.userMessages` | Handles user messages for a demo file. (e.g. `SayText` for in-game chat messages)      |
+| Class                                                                     | Property                | Description                                                                            |
+| ------------------------------------------------------------------------- | ----------------------- | -------------------------------------------------------------------------------------- |
+| [ConVars](https://saul.github.io/demofile/classes/ConVars.html)           | `demoFile.conVars`      | Manages console variables. (Only `FCVAR_NOTIFY` and `FCVAR_REPLICATED` are available.) |
+| [Entities](https://saul.github.io/demofile/classes/Entities.html)         | `demoFile.entities`     | Represents entities and networked properties within a demo.                            |
+| [GameEvents](https://saul.github.io/demofile/classes/GameEvents.html)     | `demoFile.gameEvents`   | Manages game events for a demo file. (e.g. `player_death`, `bomb_defused`)             |
+| [StringTables](https://saul.github.io/demofile/classes/StringTables.html) | `demoFile.stringTables` | Handles string tables for a demo file. (e.g. `userinfo`)                               |
+| [UserMessages](https://saul.github.io/demofile/classes/UserMessages.html) | `demoFile.userMessages` | Handles user messages for a demo file. (e.g. `SayText` for in-game chat messages)      |
 
 There are several classes which allow access to different types of entities (e.g. players, items, props). These are summarised below:
 
-| Entity                                                                                         | Usage                                                                         | Description                                                                                                 |
-| ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| [Networkable](https://saul.github.io/demofile/classes/_entities_networkable_.networkable.html) | `demoFile.entities.getByHandle`<br>`demoFile.entities.entities.get(entIndex)` | Base class of all in-game entities, even non-renderable entities (e.g. `CCSTeam`).                          |
-| [BaseEntity](https://saul.github.io/demofile/classes/_entities_baseentity_.baseentity.html)    |                                                                               | Base class of the vast majority of in-game entities (e.g. players, weapons, all other renderable entities). |
-| [Player](https://saul.github.io/demofile/classes/_entities_player_.player.html)                | `demoFile.entities.players`<br>`demoFile.entities.getByUserId`                | Represents an in-game player.                                                                               |
-| [Team](https://saul.github.io/demofile/classes/_entities_team_.team.html)                      | `demoFile.entities.teams`<br>`player.team`                                    | Represents a team (terrorists, counter-terrorists, spectators).                                             |
-| [Weapon](https://saul.github.io/demofile/classes/_entities_weapon_.weapon.html)                | `demoFile.entities.weapons`<br>`player.weapon`<br>`player.weapons`            | Represents an in-game weapon (guns, grenades, knifes).                                                      |
-| [Projectile](https://saul.github.io/demofile/classes/_entities_projectile_.projectile.html)    |                                                                               | Represents a thrown grenade projectile (e.g. a flying smoke grenade).                                       |
-| [GameRules](https://saul.github.io/demofile/classes/_entities_gamerules_.gamerules.html)       | `demoFile.gameRules`                                                          | Represents the game rules and parts of the match state (e.g. round number, is warmup)                       |
+| Entity                                                                  | Usage                                                                         | Description                                                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| [Networkable](https://saul.github.io/demofile/classes/Networkable.html) | `demoFile.entities.getByHandle`<br>`demoFile.entities.entities.get(entIndex)` | Base class of all in-game entities, even non-renderable entities (e.g. `CCSTeam`).                          |
+| [BaseEntity](https://saul.github.io/demofile/classes/BaseEntity.html)   |                                                                               | Base class of the vast majority of in-game entities (e.g. players, weapons, all other renderable entities). |
+| [Player](https://saul.github.io/demofile/classes/Player.html)           | `demoFile.entities.players`<br>`demoFile.entities.getByUserId`                | Represents an in-game player.                                                                               |
+| [Team](https://saul.github.io/demofile/classes/Team.html)               | `demoFile.entities.teams`<br>`player.team`                                    | Represents a team (terrorists, counter-terrorists, spectators).                                             |
+| [Weapon](https://saul.github.io/demofile/classes/Weapon.html)           | `demoFile.entities.weapons`<br>`player.weapon`<br>`player.weapons`            | Represents an in-game weapon (guns, grenades, knifes).                                                      |
+| [Projectile](https://saul.github.io/demofile/classes/Projectile.html)   |                                                                               | Represents a thrown grenade projectile (e.g. a flying smoke grenade).                                       |
+| [GameRules](https://saul.github.io/demofile/classes/GameRules.html)     | `demoFile.gameRules`                                                          | Represents the game rules and parts of the match state (e.g. round number, is warmup)                       |
 
 ## API
 
