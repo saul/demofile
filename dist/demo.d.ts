@@ -268,6 +268,7 @@ export declare class DemoFile extends EventEmitter {
     private _timeoutTimerToken;
     private _encryptionKey;
     private _hasEnded;
+    private _abortController;
     private _isBroadcastFragment;
     private _supplementEvents;
     private _supplementCleanupFns;
@@ -287,7 +288,7 @@ export declare class DemoFile extends EventEmitter {
      * Will keep streaming until the broadcast finishes.
      *
      * @param url URL to the GOTV broadcast.
-     * @returns Promise that resolves then the broadcast finishes.
+     * @returns Promise that resolves when the broadcast finishes.
      */
     parseBroadcast(url: string): Promise<void>;
     parseStream(stream: Readable): void;

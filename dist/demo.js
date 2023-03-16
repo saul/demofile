@@ -4,6 +4,7 @@ exports.DemoFile = exports.parseHeader = void 0;
 const events_1 = require("events");
 const timers = require("timers");
 const url_1 = require("url");
+const http = require("http");
 const https = require("https");
 const ByteBuffer = require("bytebuffer");
 const bitbuffer_1 = require("./ext/bitbuffer");
@@ -20,9 +21,11 @@ const assert_exists_1 = require("./assert-exists");
 const grenadetrajectory_1 = require("./supplements/grenadetrajectory");
 const molotovdetonate_1 = require("./supplements/molotovdetonate");
 const itempurchase_1 = require("./supplements/itempurchase");
-function httpGet(url) {
+function httpGet(url, signal) {
     return new Promise((resolve, reject) => {
-        https
+        const isHttps = url.startsWith("https:");
+        const protocolModule = isHttps ? https : http;
+        const req = protocolModule
             .request(url, res => {
             const chunks = [];
             res.on("data", chunk => {
@@ -37,7 +40,23 @@ function httpGet(url) {
                 }
             });
         })
+            .on("error", err => {
+            reject(err);
+        })
             .end();
+        signal.addEventListener("abort", () => {
+            req.destroy();
+            reject(new Error("Request aborted"));
+        });
+    });
+}
+async function delay(msec, signal) {
+    return new Promise((resolve, reject) => {
+        const timeout = setTimeout(resolve, msec);
+        signal.addEventListener("abort", () => {
+            clearTimeout(timeout);
+            reject(new Error("Aborted"));
+        });
     });
 }
 function parseHeaderBytebuf(bytebuf) {
@@ -112,6 +131,7 @@ class DemoFile extends events_1.EventEmitter {
         this._timeoutTimerToken = null;
         this._encryptionKey = null;
         this._hasEnded = false;
+        this._abortController = new AbortController();
         this._isBroadcastFragment = false;
         this._supplementEvents = [
             grenadetrajectory_1.default,
@@ -217,16 +237,18 @@ class DemoFile extends events_1.EventEmitter {
      * Will keep streaming until the broadcast finishes.
      *
      * @param url URL to the GOTV broadcast.
-     * @returns Promise that resolves then the broadcast finishes.
+     * @returns Promise that resolves when the broadcast finishes.
      */
     async parseBroadcast(url) {
+        this._abortController = new AbortController();
+        const signal = this._abortController.signal;
         if (!url.endsWith("/"))
             url += "/";
         // Some packets are formatted slightly differently in
         // broadcast fragments compared to a normal demo file.
         this._isBroadcastFragment = true;
         const syncUrl = new url_1.URL("sync", url).toString();
-        const syncResponse = await httpGet(syncUrl);
+        const syncResponse = await httpGet(syncUrl, signal);
         const syncDto = JSON.parse(syncResponse.toString());
         if (syncDto.protocol !== 4) {
             throw new Error(`expected protocol version 4, got: ${syncDto.protocol}`);
@@ -261,25 +283,25 @@ class DemoFile extends events_1.EventEmitter {
             return;
         }
         const startUrl = new url_1.URL(`${syncDto.signup_fragment | 0}/start`, url).toString();
-        const startResponse = await httpGet(startUrl);
+        const startResponse = await httpGet(startUrl, signal);
         // Read the signon fragment
         this._bytebuf = ByteBuffer.wrap(startResponse, true);
-        while (this._bytebuf.remaining() > 0) {
+        while (this._bytebuf.remaining() > 0 && !signal.aborted) {
             this._readCommand();
         }
         // Keep reading fragments until we run out
         let fragment = syncDto.fragment | 0;
         let fragmentType = "full";
-        while (!this._hasEnded) {
+        while (!this._hasEnded && !signal.aborted) {
             const fragmentUrl = new url_1.URL(`${fragment}/${fragmentType}`, url).toString();
             let fragmentResponse;
             try {
-                fragmentResponse = await httpGet(fragmentUrl);
+                fragmentResponse = await httpGet(fragmentUrl, signal);
             }
             catch {
                 // HTTP 404 errors are expected - each fragment only lasts for a few seconds.
                 // Wait for 1-2 secs before retrying to avoid spamming the relay.
-                await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1000));
+                await delay(1000 + Math.random() * 1000, signal);
                 continue;
             }
             // We need to request {fragment}/full + {fragment}/delta
@@ -290,12 +312,14 @@ class DemoFile extends events_1.EventEmitter {
                 fragment += 1;
             }
             this._bytebuf = ByteBuffer.wrap(fragmentResponse, true);
-            while (this._bytebuf.remaining() > 0) {
+            while (this._bytebuf.remaining() > 0 && !signal.aborted) {
                 this._readCommand();
             }
         }
     }
     parseStream(stream) {
+        this._abortController = new AbortController();
+        const signal = this._abortController.signal;
         this._hasEnded = false;
         const onReceiveChunk = (chunk) => {
             // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
@@ -353,6 +377,9 @@ class DemoFile extends events_1.EventEmitter {
                 return;
             this._emitEnd({ incomplete: true });
         });
+        signal.addEventListener("abort", () => {
+            stream.destroy();
+        });
     }
     parse(buffer) {
         this._hasEnded = false;
@@ -365,6 +392,7 @@ class DemoFile extends events_1.EventEmitter {
      * Cancel the current parse operation.
      */
     cancel() {
+        this._abortController.abort();
         if (this._immediateTimerToken) {
             timers.clearImmediate(this._immediateTimerToken);
             this._immediateTimerToken = null;

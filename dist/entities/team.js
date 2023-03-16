@@ -1,8 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Team = void 0;
+exports.Team = exports.TeamNumber = void 0;
 const networkable_1 = require("./networkable");
 const player_1 = require("./player");
+var TeamNumber;
+(function (TeamNumber) {
+    TeamNumber[TeamNumber["Unassigned"] = 0] = "Unassigned";
+    TeamNumber[TeamNumber["Spectator"] = 1] = "Spectator";
+    TeamNumber[TeamNumber["Terrorists"] = 2] = "Terrorists";
+    TeamNumber[TeamNumber["CounterTerrorists"] = 3] = "CounterTerrorists";
+})(TeamNumber = exports.TeamNumber || (exports.TeamNumber = {}));
 /**
  * Represents an in-game team.
  */

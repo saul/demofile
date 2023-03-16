@@ -1,3 +1,4 @@
+/// <reference types="long" />
 import { EntityHandle } from "./entityhandle";
 export interface Vector {
     readonly x: number;

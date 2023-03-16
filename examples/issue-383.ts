@@ -2,8 +2,8 @@ import { DemoFile, TeamNumber } from "demofile";
 import * as fs from "fs";
 
 //async function parseDemoFile(url: string) {
-const parseDemoFile = (path: string): Promise<{ t: string; ct: string }> =>
-  new Promise((resolve, reject) => {
+function parseDemoFile(path: string): Promise<{ t: string; ct: string }> {
+  return new Promise((resolve, reject) => {
     const stream = fs.createReadStream(path);
     const df = new DemoFile();
 
@@ -36,10 +36,7 @@ const parseDemoFile = (path: string): Promise<{ t: string; ct: string }> =>
       }
     });
 
-    df.gameEvents.on("event", e => console.log("Event:", e.name));
-
     df.on("end", e => {
-      console.log("Done!");
       if (e.error) {
         reject(e.error);
       } else {
@@ -51,6 +48,7 @@ const parseDemoFile = (path: string): Promise<{ t: string; ct: string }> =>
     //await df.parseBroadcast(url, abortController.signal);
     df.parseStream(stream);
   });
+}
 
 //parseDemoFile("https://url/match/s111t222");
 parseDemoFile(process.argv[2]!).then(res => console.log("Teams:", res));

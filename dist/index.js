@@ -17,6 +17,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.extractPublicEncryptionKey = exports.parseBinaryKeyValues = void 0;
+require("abortcontroller-polyfill/dist/abortcontroller-polyfill-only");
 __exportStar(require("./entities/baseentity"), exports);
 __exportStar(require("./entities/gamerules"), exports);
 __exportStar(require("./entities/networkable"), exports);

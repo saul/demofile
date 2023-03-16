@@ -190,6 +190,17 @@ function httpGet(url: string, signal: AbortSignal): Promise<Buffer> {
   });
 }
 
+async function delay(msec: number, signal: AbortSignal): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const timeout = setTimeout(resolve, msec);
+
+    signal.addEventListener("abort", () => {
+      clearTimeout(timeout);
+      reject(new Error("Aborted"));
+    });
+  });
+}
+
 function parseHeaderBytebuf(bytebuf: ByteBuffer): IDemoHeader {
   return {
     magic: bytebuf.readString(8, ByteBuffer.METRICS_BYTES).split("\0", 2)[0]!,
@@ -743,9 +754,7 @@ export class DemoFile extends EventEmitter {
       } catch {
         // HTTP 404 errors are expected - each fragment only lasts for a few seconds.
         // Wait for 1-2 secs before retrying to avoid spamming the relay.
-        await new Promise(resolve =>
-          setTimeout(resolve, 1000 + Math.random() * 1000)
-        );
+        await delay(1000 + Math.random() * 1000, signal);
         continue;
       }
 
