@@ -38,6 +38,7 @@
   ],
   "dependencies": {
     "@types/bytebuffer": "^5.0.44",
+    "abortcontroller-polyfill": "^1.7.5",
     "big-integer": "^1.6.51",
     "bit-buffer": "0.0.3",
     "bytebuffer": "^5.0.1",

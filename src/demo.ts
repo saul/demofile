@@ -1,6 +1,7 @@
 import { EventEmitter } from "events";
 import * as timers from "timers";
 import { URL } from "url";
+import * as http from "http";
 import * as https from "https";
 
 import * as ByteBuffer from "bytebuffer";
@@ -154,9 +155,12 @@ const enum DemoCommands {
   StringTables = 9
 }
 
-function httpGet(url: string): Promise<Buffer> {
+function httpGet(url: string, signal: AbortSignal): Promise<Buffer> {
   return new Promise((resolve, reject) => {
-    https
+    const isHttps = url.startsWith("https:");
+    const protocolModule = isHttps ? https : http;
+
+    const req = protocolModule
       .request(url, res => {
         const chunks: Buffer[] = [];
 
@@ -174,7 +178,15 @@ function httpGet(url: string): Promise<Buffer> {
           }
         });
       })
+      .on("error", err => {
+        reject(err);
+      })
       .end();
+
+    signal.addEventListener("abort", () => {
+      req.destroy();
+      reject(new Error("Request aborted"));
+    });
   });
 }
 
@@ -549,6 +561,7 @@ export class DemoFile extends EventEmitter {
   private _encryptionKey: Uint8Array | null = null;
 
   private _hasEnded: boolean = false;
+  private _abortController: AbortController = new AbortController();
 
   private _isBroadcastFragment: boolean = false;
 
@@ -650,9 +663,12 @@ export class DemoFile extends EventEmitter {
    * Will keep streaming until the broadcast finishes.
    *
    * @param url URL to the GOTV broadcast.
-   * @returns Promise that resolves then the broadcast finishes.
+   * @returns Promise that resolves when the broadcast finishes.
    */
   public async parseBroadcast(url: string): Promise<void> {
+    this._abortController = new AbortController();
+    const signal = this._abortController.signal;
+
     if (!url.endsWith("/")) url += "/";
 
     // Some packets are formatted slightly differently in
@@ -660,7 +676,7 @@ export class DemoFile extends EventEmitter {
     this._isBroadcastFragment = true;
 
     const syncUrl = new URL("sync", url).toString();
-    const syncResponse = await httpGet(syncUrl);
+    const syncResponse = await httpGet(syncUrl, signal);
 
     const syncDto = JSON.parse(syncResponse.toString()) as ISyncDto;
     if (syncDto.protocol !== 4) {
@@ -703,11 +719,11 @@ export class DemoFile extends EventEmitter {
       `${syncDto.signup_fragment | 0}/start`,
       url
     ).toString();
-    const startResponse = await httpGet(startUrl);
+    const startResponse = await httpGet(startUrl, signal);
 
     // Read the signon fragment
     this._bytebuf = ByteBuffer.wrap(startResponse, true);
-    while (this._bytebuf.remaining() > 0) {
+    while (this._bytebuf.remaining() > 0 && !signal.aborted) {
       this._readCommand();
     }
 
@@ -715,7 +731,7 @@ export class DemoFile extends EventEmitter {
     let fragment = syncDto.fragment | 0;
     let fragmentType = "full";
 
-    while (!this._hasEnded) {
+    while (!this._hasEnded && !signal.aborted) {
       const fragmentUrl = new URL(
         `${fragment}/${fragmentType}`,
         url
@@ -723,7 +739,7 @@ export class DemoFile extends EventEmitter {
 
       let fragmentResponse: Buffer;
       try {
-        fragmentResponse = await httpGet(fragmentUrl);
+        fragmentResponse = await httpGet(fragmentUrl, signal);
       } catch {
         // HTTP 404 errors are expected - each fragment only lasts for a few seconds.
         // Wait for 1-2 secs before retrying to avoid spamming the relay.
@@ -741,13 +757,15 @@ export class DemoFile extends EventEmitter {
       }
 
       this._bytebuf = ByteBuffer.wrap(fragmentResponse, true);
-      while (this._bytebuf.remaining() > 0) {
+      while (this._bytebuf.remaining() > 0 && !signal.aborted) {
         this._readCommand();
       }
     }
   }
 
   public parseStream(stream: Readable): void {
+    this._abortController = new AbortController();
+    const signal = this._abortController.signal;
     this._hasEnded = false;
 
     const onReceiveChunk = (chunk: Buffer) => {
@@ -808,6 +826,10 @@ export class DemoFile extends EventEmitter {
 
       this._emitEnd({ incomplete: true });
     });
+
+    signal.addEventListener("abort", () => {
+      stream.destroy();
+    });
   }
 
   public parse(buffer: Buffer): void {
@@ -822,6 +844,8 @@ export class DemoFile extends EventEmitter {
    * Cancel the current parse operation.
    */
   public cancel(): void {
+    this._abortController.abort();
+
     if (this._immediateTimerToken) {
       timers.clearImmediate(this._immediateTimerToken);
       this._immediateTimerToken = null;

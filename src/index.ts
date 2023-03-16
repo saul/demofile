@@ -1,6 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="../typings/bit-buffer.d.ts" />
 
+import "abortcontroller-polyfill/dist/polyfill-patch-fetch";
+
 export * from "./entities/baseentity";
 export * from "./entities/gamerules";
 export * from "./entities/networkable";
