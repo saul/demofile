@@ -6,5 +6,5 @@
       "extensions": ["esbenp.prettier-vscode"]
     }
   },
-  "postCreateCommand": "npm ci && bash demos/download.sh"
+  "postCreateCommand": "npm install -g npm && hash -r && npm ci && bash demos/download.sh"
 }
