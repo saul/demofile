@@ -17,7 +17,7 @@ sudo apt-get install unzip
 # testgamedeouf.dem
 # => from https://drive.google.com/file/d/1KJkFq9vzIH-lBzVHaL6TQdk0Q9IJep_R/view?usp=sharing
 
-curl 'https://demofiledemos.blob.core.windows.net/demoblobs/test-demos.zip' --output test-demos.zip
+curl 'https://pub-a8d637387e674410b0a08d82245e9d84.r2.dev/test-demos.zip' --output test-demos.zip
 
 # Downloaded over insecure http, so validate hashes
 sha256sum -c SHA256SUMS
