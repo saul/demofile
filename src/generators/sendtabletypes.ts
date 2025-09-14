@@ -29,7 +29,10 @@ function parseDemoFile(path: string) {
       );
       console.log();
 
+      const excludes: Record<string, Record<string, string[]>> = {};
+
       for (const dt of demoFile.entities.dataTables) {
+        excludes[dt.netTableName] = {};
         console.log(`export interface ${dt.netTableName} {`);
 
         let lastElemType: string | undefined;
@@ -37,6 +40,11 @@ function parseDemoFile(path: string) {
           let typeStr;
 
           if ((prop.flags & SPROP_EXCLUDE) !== 0) {
+            if (!excludes[dt.netTableName]![prop.dtName]) {
+              excludes[dt.netTableName]![prop.dtName] = [];
+            }
+            excludes[dt.netTableName]![prop.dtName]!.push(prop.varName);
+
             console.log(`  // ${prop.dtName}.${prop.varName} - excluded`);
             continue;
           }
@@ -118,12 +126,34 @@ function parseDemoFile(path: string) {
 
         console.log(`export interface ${serverClass.name} {`);
 
+        const excludedInClass = dataTableNames.reduce(
+          (acc: Record<string, string[]>, dataTable) => {
+            for (const [excludedTable, excludedProps] of Object.entries(
+              excludes[dataTable]!
+            )) {
+              if (!acc[excludedTable]) {
+                acc[excludedTable] = excludedProps;
+              } else {
+                acc[excludedTable]!.push(...excludedProps);
+              }
+            }
+            return acc;
+          },
+          {}
+        );
+
         for (const dataTable of dataTableNames) {
           if (dataTable === "DT_AnimTimeMustBeFirst") {
             continue;
           }
 
-          console.log(`  ${dataTable}: ${dataTable};`);
+          const excludedProps = excludedInClass[dataTable] || [];
+          const dataTableType =
+            excludedProps.length > 0
+              ? `Omit<${dataTable}, "${excludedProps.join('" | "')}">`
+              : dataTable;
+
+          console.log(`  ${dataTable}: ${dataTableType};`);
         }
 
         console.log(`}`);
